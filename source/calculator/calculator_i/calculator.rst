@@ -7,6 +7,7 @@
 .. _variable: https://grokipedia.com/page/Variable_symbol
 .. _variables: variable_
 .. _Substitution: https://grokipedia.com/page/Substitution_(logic)#substitution-logic
+.. _unittest.TestCase assert methods: `assert methods`_
 
 #################################################################################
 how to make a calculator 1
@@ -1815,7 +1816,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
                     # random_second_number
                     self.random_second_number
                 ),
-                random_first_number+random_second_number
+                random_first_number-random_second_number
             )
 
   still green
@@ -1833,8 +1834,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
                     # random_second_number
                     self.random_second_number
                 ),
-                # random_first_number+random_second_number
-                self.random_first_number+self.random_second_number
+                # random_first_number-random_second_number
+                self.random_first_number-self.random_second_number
             )
 
   green
@@ -1850,10 +1851,10 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
                     self.random_first_number,
                     self.random_second_number
                 ),
-                self.random_first_number+self.random_second_number
+                self.random_first_number-self.random_second_number
             )
 
-        def test_subtraction(self):
+        def test_multiplication(self):
 
   still green
 
@@ -1862,7 +1863,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_multiplication`
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 33
     :emphasize-lines: 2-5
 
         def test_multiplication(self):
@@ -1878,7 +1879,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.multiply`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 39
     :emphasize-lines: 3-6
 
             self.assertEqual(
@@ -1888,7 +1889,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
                     # random_second_number
                     self.random_second_number
                 ),
-                random_first_number+random_second_number
+                random_first_number*random_second_number
             )
 
   still green
@@ -1896,7 +1897,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 39
     :emphasize-lines: 8-9
 
             self.assertEqual(
@@ -1906,8 +1907,8 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
                     # random_second_number
                     self.random_second_number
                 ),
-                # random_first_number+random_second_number
-                self.random_first_number+self.random_second_number
+                # random_first_number*random_second_number
+                self.random_first_number*self.random_second_number
             )
 
   green
@@ -1915,7 +1916,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_multiplication`
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 33
 
         def test_multiplication(self):
             self.assertEqual(
@@ -1923,170 +1924,104 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
                     self.random_first_number,
                     self.random_second_number
                 ),
-                self.random_first_number+self.random_second_number
+                self.random_first_number*self.random_second_number
             )
 
-        def test_multiplication(self):
+        def test_division(self):
 
   still green
 
 ----
 
-*
-  and in ``test_subtraction``
+* I use the new :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_division`
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 3, 5
+    :lineno-start: 42
+    :emphasize-lines: 2-5
 
-        def test_subtraction(self):
+        def test_division(self):
             # random_first_number = a_random_number()
             random_first_number = self.random_first_number
             # random_second_number = a_random_number()
             random_second_number = self.random_second_number
 
             self.assertEqual(
-                src.calculator.subtract(
-                    random_first_number,
-                    random_second_number
-                ),
-                random_first_number-random_second_number
-            )
 
-  the terminal_ shows the tests are still passing. The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase`_ :ref:`methods<what is a function?>` like assertEqual_ or assertFalse_
+  the test is still green
 
-* I remove the commented lines in ``test_addition``
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.divide`` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 15
-
-        def test_addition(self):
-            random_first_number = self.random_first_number
-            random_second_number = self.random_second_number
-
-  and do the same thing in ``test_subtraction``
-
-  .. code-block:: python
-    :lineno-start: 27
-
-        def test_subtraction(self):
-            random_first_number = self.random_first_number
-            random_second_number = self.random_second_number
-
-* I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly in ``test_addition``
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 3-6, 8
+    :lineno-start: 48
+    :emphasize-lines: 3-6
 
             self.assertEqual(
-                src.calculator.add(
+                src.calculator.divide(
                     # random_first_number,
                     self.random_first_number,
                     # random_second_number
                     self.random_second_number
                 ),
-                # random_first_number+random_second_number
-                self.random_first_number+self.random_second_number
+                random_first_number/random_second_number
             )
 
-  the test is still green. I remove the commented lines
+  still green
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 48
+    :emphasize-lines: 8-9
 
             self.assertEqual(
-                src.calculator.add(
-                    self.random_first_number,
-                    self.random_second_number
-                ),
-                self.random_first_number+self.random_second_number
-            )
-
-* I do the same thing in ``test_subtraction``
-
-  .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 3-6, 8
-
-            self.assertEqual(
-                src.calculator.subtract(
+                src.calculator.divide(
                     # random_first_number,
                     self.random_first_number,
                     # random_second_number
                     self.random_second_number
                 ),
-                # random_first_number-random_second_number
-                self.random_first_number-self.random_second_number
+                # random_first_number/random_second_number
+                self.random_first_number/self.random_second_number
             )
 
-  the test is still green. I remove the commented lines
+  green
+
+* I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_division`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 42
 
+        def test_division(self):
             self.assertEqual(
-                src.calculator.subtract(
+                src.calculator.divide(
                     self.random_first_number,
                     self.random_second_number
                 ),
-                self.random_first_number-self.random_second_number
+                self.random_first_number/self.random_second_number
             )
-
-* I remove the ``first_random_number`` and ``second_random_number`` :ref:`variables<what is a variable?>` from ``test_addition`` and ``test_subtraction`` because they are no longer used
-
-  .. code-block:: python
-    :lineno-start: 10
-
-    class TestCalculator(unittest.TestCase):
-
-        random_first_number = a_random_number()
-        random_second_number = a_random_number()
-
-        def test_addition(self):
-            self.assertEqual(
-                src.calculator.add(
-                    self.random_first_number,
-                    self.random_second_number
-                ),
-                self.random_first_number+self.random_second_number
-            )
-
-        def test_subtraction(self):
-            self.assertEqual(
-                src.calculator.subtract(
-                    self.random_first_number,
-                    self.random_second_number
-                ),
-                self.random_first_number-self.random_second_number
-            )
-
-
-    # TODO
-
-  and the tests are still green!
-
-* I remove ``test subtraction`` from the TODO list
-
-  .. code-block:: python
-    :lineno-start: 34
-
-    # TODO
-    # test multiplication
-    # test division
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypError
 
+  still green
 
+----
 
+All the tests are passing, though they all look the same, :ref:`there has to be a better way<how to make a calculator 2>`.
 
+The ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` are made once as :ref:`class attributes<test_attribute_error_w_class_attributes>` and used later in each test with ``self.random_first_number`` and ``self.random_second_number``, the same way I use `unittest.TestCase assert methods`_ like assertEqual_ with ``self.assertEqual``
+
+----
 
 *********************************************************************************
 test_calculator_tests
 *********************************************************************************
 
-Since everything is green, I can write the program_ that makes the tests pass without looking at them
+Since everything is green, I can write the program_ that makes the tests pass without looking at the tests
 
 ----
 
