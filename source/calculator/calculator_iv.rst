@@ -746,14 +746,14 @@ the test passes
 how to make a decorator function
 *********************************************************************************
 
-3 of the :ref:`functions<what is a function?>` in the :ref:`calculator program<how to make a calculator>` have the same :ref:`if statement<if statements>`. How can I remove this repetition?
+3 of the :ref:`functions<what is a function?>` in the :ref:`calculator program<how to make a calculator>` have the same :ref:`if statement<if statements>`
 
 .. code-block:: python
 
   if first_input is None or second_input is None:
       return 'brmph?! Numbers only. Try again...'
 
-The only difference between the 3 :ref:`functions<what is a function?>` is in what they do with the inputs
+How can I remove this repetition? The only difference between the 3 :ref:`functions<what is a function?>` is in what they do with the inputs
 
 
 .. code-block:: python
@@ -1077,11 +1077,220 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
+* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
 
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 14, 16-17
+
+        def test_calculator_raises_type_error_w_strings(self):
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.divide('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.multiply('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.subtract('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+* I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`subtract function<test_subtraction>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3-6
+
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        try:
+            return first_input - second_input
+        except TypeError:
+            return 'brmph?! Numbers only. Try again...'
+
+  the test passes
 
 ----
 
+3 of the :ref:`functions<what is a function?>` in the :ref:`calculator program<how to make a calculator>` have the same :ref:`exception handler<how to use try...except...else>`
+
+.. code-block:: python
+
+  try:
+      something
+  except TypeError:
+      return 'brmph?! Numbers only. Try again...'
+
+the :ref:`divide function<test_division>` is different because it has another :ref:`except clause<how to use try...except...else>`
+
+.. code-block:: python
+
+  except ZeroDivisionError:
+      return 'brmph?! I cannot divide by 0. Try again...'
+
+I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the repetition of the :ref:`exception handler<how to use try...except...else>` from the :ref:`functions<what is a function?>`
+
+* I add a new :ref:`decorator function<what is a function?>` to ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-7
+
+    def type_error_handler(function):
+        def handler(first_input, second_input):
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return 'brmph?! Numbers only. Try again...'
+        return handler
+
+
+    def input_is_not_none(function):
+
+  The ``type_error_handler`` :ref:`function<what is a function?>`
+
+  - takes a :ref:`given function<what is a function?>` as input
+  - tries to return the result of calling the :ref:`given function<what is a function?>` with the inputs
+  - if the call to the :ref:`given function<what is a function?>` with the inputs raises :ref:`TypeError<what causes TypeError?>` it returns a message
+
+* I use it to wrap the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 1
+
+    @type_error_handler
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        try:
+            return first_input - second_input
+        except TypeError:
+            return 'brmph?! Numbers only. Try again...'
+
+  the tests are still green
+
+* I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 18
+
+    @type_error_handler
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @input_is_not_none
+    def multiply(first_input, second_input):
+
+  still green
+
+* I wrap the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 1
+
+    @type_error_handler
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        try:
+            return first_input * second_input
+        except TypeError:
+            return 'brmph?! Numbers only. Try again...'
+
+  green
+
+* I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+    @type_error_handler
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @input_is_not_none
+    def divide(first_input, second_input):
+
+  still green
+
+* I wrap the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 1
+
+    @type_error_handler
+    @input_is_not_none
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+        except TypeError:
+            return 'brmph?! Numbers only. Try again...'
+
+  the test is still green
+
+* I remove the second :ref:`except clause<how to use try...except...else>`
+
+  .. code-block:: python
+    :lineno-start: 30
+
+    @type_error_handler
+    @input_is_not_none
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @input_is_not_none
+    def add(first_input, second_input):
+
+  still green
+
 ----
+
+* The two :ref:`decorator functions<what is a function?>` both return the result of calling the :ref:`given functions<what is a function?>`. I make a new :ref:`decorator<what is a function?>` to do the work of ``type_error_handler`` and ``input_is_not_none``
+
+  .. code-block:: python
+    :lineno-start: 1-11
+
+    def numbers_only(function):
+        def wrapper(first_input, second_input):
+            error_message = 'brmph?! Numbers only. Try again...'
+            if first_input is None or second_input is None:
+                return error_message
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return wrapper
+
+
+    def type_error_handler(function):
+
+
 
 ----
 
@@ -1408,12 +1617,6 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 ----
 ----
 ----
-the :ref:`divide function<test_division>` is different because it has another :ref:`except clause<how to use try...except...else>`
-
-.. code-block:: python
-
-  except ZeroDivisionError:
-      return 'brmph?! I cannot divide by 0. Try again...'
 
 the other part that is different for all the :ref:`functions<what is a function?>` are the calculations
 
@@ -1440,7 +1643,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :linenos:
     :emphasize-lines: 1-7
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             try:
                 return function(first_input, second_input)
@@ -1451,7 +1654,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
 
     def subtract(first_input, second_input):
 
-  The ``only_takes_numbers`` :ref:`function<what is a function?>` takes a :ref:`function<what is a function?>` as input
+  The ``numbers_only`` :ref:`function<what is a function?>` takes a :ref:`function<what is a function?>` as input
 
   - it tries to return the result of the :ref:`function<what is a function?>` working on the two inputs
   - if TypeError_ is raised it returns the error message
@@ -1462,19 +1665,19 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :lineno-start: 10
     :emphasize-lines: 1
 
-    @only_takes_numbers
+    @numbers_only
     def subtract(first_input, second_input):
         try:
 
   the test is still green
 
-* I remove the parts that are also in the ``only_takes_numbers`` :ref:`function<what is a function?>`
+* I remove the parts that are also in the ``numbers_only`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 15
     :emphasize-lines: 3
 
-    @only_takes_numbers
+    @numbers_only
     def subtract(first_input, second_input):
         return first_input - second_input
 
@@ -1489,19 +1692,19 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :lineno-start: 15
     :emphasize-lines: 1
 
-    @only_takes_numbers
+    @numbers_only
     def multiply(first_input, second_input):
         try:
 
   the test is green again
 
-* I remove the parts that are also in the ``only_takes_numbers`` :ref:`function<what is a function?>`
+* I remove the parts that are also in the ``numbers_only`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 15
     :emphasize-lines: 3
 
-    @only_takes_numbers
+    @numbers_only
     def multiply(first_input, second_input):
         return first_input * second_input
 
@@ -1516,7 +1719,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :lineno-start: 20
     :emphasize-lines: 1
 
-    @only_takes_numbers
+    @numbers_only
     def divide(first_input, second_input):
         try:
 
@@ -1527,7 +1730,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
   .. code-block:: python
     :lineno-start: 20
 
-    @only_takes_numbers
+    @numbers_only
     def divide(first_input, second_input):
         try:
             return first_input / second_input
@@ -1539,13 +1742,13 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
 
   all the tests are still green
 
-* one more to go, I wrap the :ref:`add function<test_addition>` with the ``only_takes_numbers`` :ref:`function<what is a function?>`
+* one more to go, I wrap the :ref:`add function<test_addition>` with the ``numbers_only`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 28
     :emphasize-lines: 1
 
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
 
@@ -1557,7 +1760,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :lineno-start: 28
     :emphasize-lines: 6
 
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
         if isinstance(first_input, str) or isinstance(second_input, str):
             return 'brmph?! Numbers only. Try again...'
@@ -1576,7 +1779,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         return isinstance(something, str)
 
 
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
         if is_string(first_input) or is_string(second_input):
             return 'brmph?! Numbers only. Try again...'
@@ -1604,7 +1807,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         return isinstance(first_input, str) or isinstance(second_input, str)
 
 
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
         if one_input_is_a_string(first_input, second_input):
             return 'brmph?! Numbers only. Try again...'
@@ -1632,7 +1835,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         return wrapper
 
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
 
 * then use it to wrap the :ref:`add function<test_addition>`
 
@@ -1640,7 +1843,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :lineno-start: 37
 
     @reject_strings
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
 
   the test is still green
@@ -1652,13 +1855,13 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :emphasize-lines: 4
 
     @reject_strings
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
         return first_input + second_input
 
   the test is still green
 
-* the ``reject_strings`` and ``only_takes_numbers`` :ref:`functions<what is a function?>` have parts that are the same
+* the ``reject_strings`` and ``numbers_only`` :ref:`functions<what is a function?>` have parts that are the same
 
   .. code-block:: python
 
@@ -1669,13 +1872,13 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
             return function(first_input, second_input)
         return wrapper
 
-  I make a new :ref:`function<what is a function?>` that has the :ref:`if statement<if statements>` from ``reject_strings`` and the :ref:`exception handler<how to use try...except...else>` from ``only_takes_numbers``
+  I make a new :ref:`function<what is a function?>` that has the :ref:`if statement<if statements>` from ``reject_strings`` and the :ref:`exception handler<how to use try...except...else>` from ``numbers_only``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1-10
 
-    def only_takes_numbers_and_rejects_strings(function):
+    def numbers_only_and_rejects_strings(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
                 return 'brmph?! Numbers only. Try again...'
@@ -1695,9 +1898,9 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :lineno-start: 49
     :emphasize-lines: 1
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     @reject_strings
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
         return first_input + second_input
 
@@ -1708,32 +1911,32 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
   .. code-block:: python
     :lineno-start: 49
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def add(first_input, second_input):
         return first_input + second_input
 
   still green
 
-* I wrap the other :ref:`functions<what is a function?>` with ``only_takes_numbers_and_reject_strings``
+* I wrap the other :ref:`functions<what is a function?>` with ``numbers_only_and_reject_strings``
 
   .. code-block:: python
     :lineno-start: 31
     :emphasize-lines: 1, 7, 13
 
-    @only_takes_numbers_and_rejects_strings
-    @only_takes_numbers
+    @numbers_only_and_rejects_strings
+    @numbers_only
     def subtract(first_input, second_input):
         return first_input - second_input
 
 
-    @only_takes_numbers_and_rejects_strings
-    @only_takes_numbers
+    @numbers_only_and_rejects_strings
+    @numbers_only
     def multiply(first_input, second_input):
         return first_input * second_input
 
 
-    @only_takes_numbers_and_rejects_strings
-    @only_takes_numbers
+    @numbers_only_and_rejects_strings
+    @numbers_only
     def divide(first_input, second_input):
         try:
             return first_input / second_input
@@ -1741,27 +1944,27 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
             return 'brmph?! I cannot divide by 0. Try again...'
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def add(first_input, second_input):
 
   the test is green again
 
-* I remove ``only_takes_numbers`` from each :ref:`function<what is a function?>`
+* I remove ``numbers_only`` from each :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 31
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def subtract(first_input, second_input):
         return first_input - second_input
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def multiply(first_input, second_input):
         return first_input * second_input
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def divide(first_input, second_input):
         try:
             return first_input / second_input
@@ -1769,18 +1972,18 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
             return 'brmph?! I cannot divide by 0. Try again...'
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def add(first_input, second_input):
         return first_input + second_input
 
   the test is still green
 
-* I remove the ``reject_strings`` and ``only_takes_numbers`` :ref:`functions<what is a function?>`
+* I remove the ``reject_strings`` and ``numbers_only`` :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:
 
-    def only_takes_numbers_and_rejects_strings(function):
+    def numbers_only_and_rejects_strings(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
                 return 'brmph?! Numbers only. Try again...'
@@ -1792,17 +1995,17 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         return wrapper
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def subtract(first_input, second_input):
         return first_input - second_input
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def multiply(first_input, second_input):
         return first_input * second_input
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def divide(first_input, second_input):
         try:
             return first_input / second_input
@@ -1810,7 +2013,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
             return 'brmph?! I cannot divide by 0. Try again...'
 
 
-    @only_takes_numbers_and_rejects_strings
+    @numbers_only_and_rejects_strings
     def add(first_input, second_input):
         return first_input + second_input
 
@@ -1820,7 +2023,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :linenos:
     :emphasize-lines: 1, 13, 18, 23, 31
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             if isinstance(first_input, str) or isinstance(second_input, str):
                 return 'brmph?! Numbers only. Try again...'
@@ -1832,17 +2035,17 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         return wrapper
 
 
-    @only_takes_numbers
+    @numbers_only
     def subtract(first_input, second_input):
         return first_input - second_input
 
 
-    @only_takes_numbers
+    @numbers_only
     def multiply(first_input, second_input):
         return first_input * second_input
 
 
-    @only_takes_numbers
+    @numbers_only
     def divide(first_input, second_input):
         try:
             return first_input / second_input
@@ -1850,7 +2053,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
             return 'brmph?! I cannot divide by 0. Try again...'
 
 
-    @only_takes_numbers
+    @numbers_only
     def add(first_input, second_input):
         return first_input + second_input
 
@@ -1862,7 +2065,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
     :linenos:
     :emphasize-lines: 3, 6, 11
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             error_message = 'brmph?! Numbers only. Try again...'
 

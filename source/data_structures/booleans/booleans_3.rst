@@ -8,7 +8,7 @@
 booleans 3
 #################################################################################
 
-I added a new :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail.
+I added a new :ref:`if statement<if statements>` to the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>` because when I tested it with different :ref:`data types<data structures>`, :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` passed the condition, and made the test fail.
 
 This means that they are also integers_ or floats_ even though they are :ref:`booleans<what are booleans?>`. I want to find out if :ref:`booleans<what are booleans?>` are integers_ or floats_
 
@@ -174,7 +174,7 @@ the test passes
     # Exceptions Encountered
     # AssertionError
 
-* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
+* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -406,7 +406,7 @@ the test passes
 
             self.assertNotIsInstance(True, float)
 
-  the test passes. This is why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` allows integers_ and floats_
+  the test passes. This is why my test with different :ref:`data types<data structures>` failed. :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are integers_ and the :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`function<what is a function?>` allows integers_ and floats_
 
 * I add a comment
 
@@ -419,7 +419,7 @@ the test passes
     # True is not a float
     # the empty dictionary is False
 
-* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``only_takes_numbers`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
+* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
     :lineno-start: 22

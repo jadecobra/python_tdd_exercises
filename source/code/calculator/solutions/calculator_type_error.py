@@ -1,4 +1,4 @@
-def only_takes_numbers(function):
+def numbers_only(function):
     def wrapper(first_input, second_input):
         error_message = 'brmph?! Numbers only. Try again...'
         if isinstance(first_input, str) or isinstance(second_input, str):
@@ -11,17 +11,17 @@ def only_takes_numbers(function):
     return wrapper
 
 
-@only_takes_numbers
+@numbers_only
 def subtract(first_input, second_input):
     return first_input - second_input
 
 
-@only_takes_numbers
+@numbers_only
 def multiply(first_input, second_input):
     return first_input * second_input
 
 
-@only_takes_numbers
+@numbers_only
 def divide(first_input, second_input):
     try:
         return first_input / second_input
@@ -29,6 +29,6 @@ def divide(first_input, second_input):
         return 'brmph?! I cannot divide by 0. Try again...'
 
 
-@only_takes_numbers
+@numbers_only
 def add(first_input, second_input):
     return first_input + second_input

@@ -136,7 +136,7 @@ test_calculator_w_getattribute
 
   .. code-block:: python
 
-    AssertionError: <function only_takes_numbers.<locals>.wrapper at 0xffff1a2bc3d4> != ABCD.EFGHIJKLMN
+    AssertionError: <function numbers_only.<locals>.wrapper at 0xffff1a2bc3d4> != ABCD.EFGHIJKLMN
 
   I have to call the :ref:`function<what is a function?>` after ``__getattribute__`` returns it
 
@@ -164,7 +164,7 @@ test_calculator_w_getattribute
 
   .. code-block:: python
 
-    TypeError: only_takes_numbers.<locals>.wrapper() missing 2 required positional arguments: 'first_input' and 'second_input'
+    TypeError: numbers_only.<locals>.wrapper() missing 2 required positional arguments: 'first_input' and 'second_input'
 
   I have to give the inputs to the :ref:`function<what is a function?>`
 
@@ -877,7 +877,7 @@ test_calculator_w_getattribute
 
   .. code-block:: python
 
-    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+    TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
   good, the tests work
 

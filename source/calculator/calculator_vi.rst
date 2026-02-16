@@ -150,7 +150,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
 
-Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py`` is doing its job, the :ref:`calculator<how to make a calculator>` only takes numbers
+Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py`` is doing its job, the :ref:`calculator<how to make a calculator>` only takes numbers
 
 ----
 
@@ -212,7 +212,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
   the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data`` so that I can see which one caused the error
 
-* I add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` in the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
+* I add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -240,7 +240,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
     :linenos:
     :emphasize-lines: 6-9, 11-13, 15-18
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
             error_message = 'brmph?! Numbers only. Try again...'
@@ -267,7 +267,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
   .. code-block:: python
     :linenos:
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
             error_message = 'brmph?! Numbers only. Try again...'

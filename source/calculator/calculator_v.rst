@@ -169,7 +169,7 @@ the test passes
                 'brmph?! Numbers only. Try again...'
             )
 
-  the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``only_takes_numbers`` :ref:`function<what is a function?>`. Never again
+  the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``numbers_only`` :ref:`function<what is a function?>`. Never again
 
 * I add a :ref:`variable<what is a variable?>` to remove the repetition
 
@@ -238,13 +238,13 @@ how to multiply a list
 
 * I open ``calculator.py`` in the :ref:`editor<2 editors>`
 
-* I add an :ref:`if statement<if statements>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
+* I add an :ref:`if statement<if statements>` to the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 7-8, 10-13
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             error_message = 'brmph?! Numbers only. Try again...'
 
@@ -259,7 +259,7 @@ how to multiply a list
                 return error_message
         return wrapper
 
-  the test passes. The ``only_takes_numbers`` :ref:`function<what is a function?>` looks ugly now, there has to be a better way
+  the test passes. The ``numbers_only`` :ref:`function<what is a function?>` looks ugly now, there has to be a better way
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` to ``test_calculator.py``
 
@@ -357,13 +357,13 @@ how to test if something is an instance of more than one type
 
 The `isinstance function`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<what is a class?>` in the tuple_
 
-* I add a :ref:`variable<what is a variable?>` to the ``only_takes_numbers`` :ref:`function<what is a function?>` in ``calculator.py``
+* I add a :ref:`variable<what is a variable?>` to the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3, 5-8, 11-12
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             bad_types = (str, list)
             error_message = 'brmph?! Numbers only. Try again...'
@@ -389,7 +389,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
   .. code-block:: python
     :linenos:
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             bad_types = (str, list)
             error_message = 'brmph?! Numbers only. Try again...'
@@ -411,7 +411,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
     :linenos:
     :emphasize-lines: 3, 7-8, 10-16
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
             bad_types = (str, list)
@@ -436,7 +436,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
   .. code-block:: python
     :linenos:
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
             error_message = 'brmph?! Numbers only. Try again...'
@@ -500,7 +500,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which allows m
   .. code-block:: python
     :linenos:
 
-    def only_takes_numbers(function):
+    def numbers_only(function):
         def wrapper(first_input, second_input):
             good_types = (int, float)
             error_message = 'brmph?! Numbers only. Try again...'
@@ -866,7 +866,7 @@ the terminal_ shows :ref:`TypeError`
 
 .. code-block:: shell
 
-  TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+  TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
 ----
 
@@ -912,7 +912,7 @@ the test passes
 
   .. code-block:: shell
 
-    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+    TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
 * I add assertRaises_
 
@@ -941,7 +941,7 @@ the test passes
 
   .. code-block:: shell
 
-    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+    TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
 * I add assertRaises_
 
@@ -970,7 +970,7 @@ the test passes
 
   .. code-block:: shell
 
-    TypeError: only_takes_numbers.<locals>.wrapper() takes 2 positional arguments but 3 were given
+    TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
 
 * I handle the :ref:`Exception<errors>`
 
@@ -1025,7 +1025,7 @@ review
 I added these tests to the :ref:`calculator program<how to make a calculator 3>` after testing :ref:`lists<what is a list?>`
 
 * :ref:`test_calculator_sends_message_when_input_is_not_a_number`
-* :ref:`add more instance tests to the only_takes_numbers function<how to test if something is an instance of more than one type>`
+* :ref:`add more instance tests to the numbers_only function<how to test if something is an instance of more than one type>`
 * :ref:`test_calculator_w_list_items`
 * :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
