@@ -948,7 +948,136 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I
+* to continue with the goal that the :ref:`calculator functions<how to make a calculator 1>` send a message when they gets something that is not a number, I change assertRaises_ to assertEqual_ in :ref:`test_calculator_raises_type_error_w_strings` for the :ref:`add function<test_addition>` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 2, 4-5
+
+        def test_calculator_raises_type_error_w_strings(self):
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                'brmph?! Numbers only! Try again...'
+            )
+            with self.assertRaises(TypeError):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError
+
+  I could have added a message to the `raise statement`_ for that :ref:`Exception<errors>`
+
+* I change the `raise statement`_ to a `return statement`_ with a message in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 8
+
+    @input_is_not_none
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        else:
+            return first_input + second_input
+
+  the test passes
+
+----
+
+* I change assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 6,8-9
+
+        def test_calculator_raises_type_error_w_strings(self):
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.divide('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            with self.assertRaises(TypeError):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+* I add another :ref:`except clause<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 7-8
+
+    @input_is_not_none
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+        except TypeError:
+            return 'brmph?! Numbers only. Try again...'
+
+  the test passes
+
+----
+
+* I change assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 10,12-13
+
+        def test_calculator_raises_type_error_w_strings(self):
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.divide('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.multiply('1', '1'),
+                'brmph?! Numbers only. Try again...'
+            )
+            with self.assertRaises(TypeError):
+                src.calculator.subtract('1', '1')
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: none
+
+    TypeError: can't multiply sequence by non-int of type 'str'
+
+* I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 3-6
+
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        try:
+            return first_input * second_input
+        except TypeError:
+            return 'brmph?! Numbers only. Try again...'
+
+  the test passes
+
+----
+
+
 
 ----
 
