@@ -1199,7 +1199,7 @@ close the project
 *********************************************************************************
 
 * I close ``attribute_error.py`` and ``test_attribute_error.py``  in the :ref:`editors<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``attribute_error``
 

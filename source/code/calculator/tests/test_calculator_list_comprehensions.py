@@ -52,7 +52,7 @@ class TestCalculator(unittest.TestCase):
         except ZeroDivisionError:
             self.assertEqual(
                 src.calculator.divide(self.random_first_number, 0),
-                'brmph?! cannot divide by 0. Try again...'
+                'brmph?! I cannot divide by 0. Try again...'
             )
 
     def test_calculator_sends_message_when_input_is_not_a_number(self):

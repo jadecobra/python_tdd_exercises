@@ -938,7 +938,7 @@ test_calculator_w_getattribute
                     self.random_first_number / self.random_second_number
                 )
             except ZeroDivisionError:
-                self.division_result = 'brmph?! cannot divide by 0. Try again...'
+                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
 
             self.calculator_tests_a = {
                 'add': (
@@ -973,7 +973,7 @@ test_calculator_w_getattribute
                     self.random_first_number / self.random_second_number
                 )
             except ZeroDivisionError:
-                self.division_result = 'brmph?! cannot divide by 0. Try again...'
+                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
 
             self.calculator_tests = {
                 'add': (
@@ -1962,7 +1962,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line, the terminal_ shows
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line, the terminal_ shows
 
   .. code-block:: python
 

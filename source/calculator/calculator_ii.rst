@@ -58,7 +58,7 @@ open the project
     configfile: pyproject.toml
     collected 4 items
 
-    tests/test_calculator.py ....                                        [100%]
+    tests/test_calculator.py ....                                 [100%]
 
     ======================== 4 passed in X.YZs =========================
 
@@ -134,7 +134,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``calculator``
 
@@ -167,12 +167,6 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 * :ref:`KeyError<test_key_error>`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` and
 * :ref:`The Mother of all Exceptions<test_catching_exceptions_in_tests>`
-
-----
-
-:ref:`How many questions can you answer after going through this chapter?<questions about testing Exceptions>`
-
-----
 
 *************************************************************************************
 code from the chapter

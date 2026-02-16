@@ -18,7 +18,7 @@ class TestCalculator(unittest.TestCase):
                 self.random_first_number / self.random_second_number
             )
         except ZeroDivisionError:
-            self.division_result = 'brmph?! cannot divide by 0. Try again...'
+            self.division_result = 'brmph?! I cannot divide by 0. Try again...'
 
         self.calculator_tests = {
             'add': (

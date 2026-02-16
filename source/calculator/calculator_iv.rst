@@ -10,7 +10,7 @@
 how to make a calculator 4
 #################################################################################
 
-I want to use TypeError_ with :ref:`exception handlers<how to use try...except...else>` to make sure that the :ref:`calculator program<how to make a calculator>` only works with numbers, the way a Calculator would in the real world.
+I want to use TypeError_ with :ref:`exception handlers<how to use try...except...else>` to make sure that the :ref:`calculator program<how to make a calculator>` only works with numbers, like a Calculator in the real world.
 
 ----
 
@@ -32,14 +32,14 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
@@ -53,7 +53,7 @@ open the project
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
@@ -69,7 +69,7 @@ open the project
 ----
 
 *********************************************************************************
-test_calculator_raises_type_error
+test_calculator_raises_type_error_w_none
 *********************************************************************************
 
 ----
@@ -98,7 +98,7 @@ I add a new failing test to show that the :ref:`calculator<how to make a calcula
           except ZeroDivisionError:
               self.assertEqual(
                   src.calculator.divide(self.random_first_number, 0),
-                  'brmph?! cannot divide by 0. Try again...'
+                  'brmph?! I cannot divide by 0. Try again...'
               )
 
       def test_calculator_raises_type_error_w_none(self):
@@ -109,7 +109,7 @@ I add a new failing test to show that the :ref:`calculator<how to make a calcula
 
 the terminal_ shows TypeError_
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
@@ -154,11 +154,11 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for /: 'NoneType' and 'NoneType'
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
     :lineno-start: 58
@@ -183,11 +183,11 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
     :lineno-start: 60
@@ -212,11 +212,11 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
-  I add the `assertRaises method`_
+* I add the `assertRaises method`_
 
   .. code-block:: python
     :lineno-start: 57
@@ -237,7 +237,11 @@ the test passes
 
   the test passes
 
-The ``calculator`` raises TypeError_ when given :ref:`None<what is None?>` as input. What does it do when the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
+:ref:`The calculator raises TypeError when None is given as input<test_calculator_raises_type_error_w_none>`.
+
+What does it do if the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
+
+----
 
 *********************************************************************************
 test_calculator_raises_type_error_w_strings
@@ -251,7 +255,7 @@ test_calculator_raises_type_error_w_strings
 
 ----
 
-I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_an_assertion`  to test the :ref:`add function<test_addition>` with strings_
+I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_an_assertion`, to test the :ref:`add function<test_addition>` with strings_
 
 .. code-block:: python
   :lineno-start: 64
@@ -268,7 +272,7 @@ I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: '11' != '2'
 
@@ -310,7 +314,7 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
@@ -343,7 +347,7 @@ the test passes
 
     TypeError: can't multiply sequence by non-int of type 'str'
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
     :lineno-start: 69
@@ -368,21 +372,20 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for -: 'str' and 'str'
 
-  I add assertRaises_
+* I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 8-9
+    :lineno-start: 67
+    :emphasize-lines: 7-8
 
-        def test_calculator_w_strings(self):
+        def test_calculator_with_strings(self):
+            self.assertEqual(src.calculator.add('1', '1'), '11')
             with self.assertRaises(TypeError):
-                src.calculator.add(None, None)
-            with self.assertRaises(TypeError):
-                src.calculator.divide(None, None)
+                src.calculator.divide('1', '1')
             with self.assertRaises(TypeError):
                 src.calculator.multiply('1', '1')
             with self.assertRaises(TypeError):
@@ -390,13 +393,15 @@ the test passes
 
   the test passes
 
----------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how to test if something is an instance of an object in a program
----------------------------------------------------------------------------------
+*********************************************************************************
 
 I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions<what is a function?>` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the `assertIsInstance method`_ from when I tested :ref:`None<what is None?>`, it checks if one thing is an instance or child of a :ref:`class<what is a class?>`
 
-* I change the assertEqual_ to assertRaises_ in ``test_calculator_with_strings`` in ``test_calculator.py``
+* I change the assertEqual_ to assertRaises_ in :ref:`test_calculator_with_strings<test_calculator_raises_type_error_w_strings>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -410,7 +415,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: TypeError not raised
 
@@ -439,9 +444,11 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
       * ``first_input`` is NOT a string_ and ``second_input`` is a string_
       * ``first_input`` is a string_ and ``second_input`` is a string_
 
-      the statement is only :ref:`False<test_what_is_false>` if ``first_input`` is NOT a string_ and ``second_input`` is NOT a string_. This is :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`, which only returns :ref:`False<test_what_is_false>`, if the two inputs are :ref:`False<test_what_is_false>`
+      the statement is only :ref:`False<test_what_is_false>` if ``first_input`` is NOT a string_ and ``second_input`` is NOT a string_.
 
-* I change the name of the test to be clearer
+    This is :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`, which only returns :ref:`False<test_what_is_false>`, if the two inputs are :ref:`False<test_what_is_false>`
+
+* I change the name of the test to say what it does
 
   .. code-block:: python
     :lineno-start: 67
@@ -466,7 +473,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 test_calculator_sends_message_when_input_is_not_a_number
 *********************************************************************************
 
-I want the :ref:`calculator functions<how to make a calculator>` to send a message when the input is not a number, not raise TypeError_ which causes the program to stop. I want the user to be able to try again with different input
+I want the :ref:`calculator functions<how to make a calculator>` to send a message when it gets something that is not a number, not raise TypeError_ which causes the program to stop. I want the user to be able to try again with different input.
 
 ----
 
@@ -476,11 +483,11 @@ I want the :ref:`calculator functions<how to make a calculator>` to send a messa
 
 ----
 
-I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_w_none``
+I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in :ref:`test_calculator_raises_type_error_w_none`
 
 .. code-block:: python
   :lineno-start: 57
-  :emphasize-lines: 2-5
+  :emphasize-lines: 2,4-5
 
       def test_calculator_raises_type_error_w_none(self):
           self.assertEqual(
@@ -496,7 +503,7 @@ I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addit
 
 the terminal_ shows TypeError_
 
-.. code-block:: shell
+.. code-block:: python
 
   TypeError: unsupported operand type(s) for +: 'NoneType' and 'NoneType'
 
@@ -533,11 +540,58 @@ the test passes
 
 ----
 
-* I want the same thing to happen when the :ref:`add function<test_addition>` gets a string_ as input. I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in ``test_calculator_raises_type_error_w_strings`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 6,8-9
+
+        def test_calculator_raises_type_error_w_none(self):
+            self.assertEqual(
+                src.calculator.add(None, None),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.divide(None, None),
+                'brmph?! Numbers only. Try again...'
+            )
+            with self.assertRaises(TypeError):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for /: 'NoneType' and 'NoneType'
+
+* I add another :ref:`except clause<how to use try...except...else>` to the :ref:`exception handler<how to use try...except...else>` in the :ref:`divide function<test_division>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 6-7
+
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+        except TypeError:
+            return 'brmph?! Numbers only. Try again...'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+----
+
+----
+
+----
+
+----
+
+* I want the same thing to happen if the :ref:`add function<test_addition>` gets a string_ as input. I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 70
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2,4-5
 
         def test_calculator_raises_type_error_w_strings(self):
             self.assertEqual(
@@ -549,7 +603,7 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError
 
@@ -570,7 +624,7 @@ the test passes
 
   the test passes
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_w_strings`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 69
@@ -588,33 +642,27 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
-* I add another :ref:`except clause<how to use try...except...else>` to the :ref:`exception handler<how to use try...except...else>` in the :ref:`divide function<test_division>` in ``calculator.py``
+----
 
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 6-7
+----
 
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! cannot divide by 0. Try again...'
-        except TypeError:
-            return 'brmph?! Numbers only. Try again...'
+----
+
+----
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: TypeError not raised
 
-  ``test_calculator_raises_type_error_w_none`` fails because it expects TypeError_ when the inputs are not numbers
+  :ref:`test_calculator_raises_type_error_w_none` fails because it expects TypeError_ if the inputs are not numbers
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator_raises_type_error_w_none`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -632,7 +680,7 @@ the test passes
 
   the test passes
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_w_none``
+* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 62
@@ -650,7 +698,7 @@ the test passes
 
   the terminal_ shows TypeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
 
@@ -668,11 +716,11 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: TypeError not raised
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in ``test_calculator_raises_type_error_w_strings`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 78
@@ -689,7 +737,7 @@ the test passes
 
   the test passes
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_w_strings``
+* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in :ref:`test_calculator_raises_type_error_w_strings`
 
   .. code-block:: python
     :lineno-start: 84
@@ -727,11 +775,11 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: TypeError not raised
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator_raises_type_error_w_none`` in ``test_calculator.py``
+* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -753,10 +801,10 @@ the test passes
 
   That was a lot of doing the same thing over and over again.
 
-  - ``test_calculator_raises_type_error_w_none`` and ``test_calculator_raises_type_error_w_strings`` both look the same
+  - :ref:`test_calculator_raises_type_error_w_none` and :ref:`test_calculator_raises_type_error_w_strings` both look the same
   - the :ref:`calculator<how to make a calculator>` no longer raises TypeError_ when any of the inputs are NOT a number
 
-* I remove the name of ``test_calculator_raises_type_error_w_strings`` to make its :ref:`assertions<what is an assertion?>` part of ``test_calculator_raises_type_error_w_none``
+* I remove the name of :ref:`test_calculator_raises_type_error_w_strings` to make its :ref:`assertions<what is an assertion?>` part of :ref:`test_calculator_raises_type_error_w_none`
 
   .. code-block:: python
     :lineno-start: 70
@@ -786,7 +834,7 @@ the test passes
 
     # Exceptions seen
 
-* I change the name from ``test_calculator_raises_type_error_w_none`` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
+* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
 
   .. code-block:: python
     :lineno-start: 57
@@ -839,7 +887,7 @@ the test passes
                 error_message
             )
 
-  still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator<how to make a calculator>` :ref:`functions<what is a function?>` return an error message when they get input that is NOT a number
+  still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator<how to make a calculator>` :ref:`functions<what is a function?>` return an error message if they get input that is NOT a number
 
   .. code-block:: python
 
@@ -871,7 +919,7 @@ the :ref:`divide function<test_division>` is different because it has another :r
 .. code-block:: python
 
   except ZeroDivisionError:
-      return 'brmph?! cannot divide by 0. Try again...'
+      return 'brmph?! I cannot divide by 0. Try again...'
 
 the other part that is different for all the :ref:`functions<what is a function?>` are the calculations
 
@@ -990,7 +1038,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'brmph?! cannot divide by 0. Try again...'
+            return 'brmph?! I cannot divide by 0. Try again...'
 
 
     def add(first_number, second_input):
@@ -1196,7 +1244,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'brmph?! cannot divide by 0. Try again...'
+            return 'brmph?! I cannot divide by 0. Try again...'
 
 
     @only_takes_numbers_and_rejects_strings
@@ -1224,7 +1272,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'brmph?! cannot divide by 0. Try again...'
+            return 'brmph?! I cannot divide by 0. Try again...'
 
 
     @only_takes_numbers_and_rejects_strings
@@ -1265,7 +1313,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'brmph?! cannot divide by 0. Try again...'
+            return 'brmph?! I cannot divide by 0. Try again...'
 
 
     @only_takes_numbers_and_rejects_strings
@@ -1305,7 +1353,7 @@ A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'brmph?! cannot divide by 0. Try again...'
+            return 'brmph?! I cannot divide by 0. Try again...'
 
 
     @only_takes_numbers
@@ -1342,18 +1390,18 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``calculator``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 

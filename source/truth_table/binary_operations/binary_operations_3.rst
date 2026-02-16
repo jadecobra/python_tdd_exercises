@@ -1469,7 +1469,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_binary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``truth_table``
 

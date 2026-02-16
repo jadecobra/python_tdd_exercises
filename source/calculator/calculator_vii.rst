@@ -611,7 +611,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
             except ZeroDivisionError:
                 self.assertEqual(
                     src.calculator.divide(self.random_first_number, 0),
-                    'brmph?! cannot divide by 0. Try again...'
+                    'brmph?! I cannot divide by 0. Try again...'
                 )
 
         def test_calculator_functions(self):
@@ -954,7 +954,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                     self.random_first_number / self.random_second_number
                 )
             except ZeroDivisionError:
-                self.division_result = 'brmph?! cannot divide by 0. Try again...'
+                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
 
 * I use the new :ref:`class attribute (variable) <test_attribute_error_w_class_attributes>` in ``test_calculator_functions``
 
@@ -1040,7 +1040,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
 * I remove the lines I commented out to replace with ``self.division_result``
 
-* I remove ``test_division``
+* I remove :ref:`test_division`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1054,7 +1054,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                     self.random_first_number / self.random_second_number
                 )
             except ZeroDivisionError:
-                self.division_result = 'brmph?! cannot divide by 0. Try again...'
+                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
 
         def test_calculator_functions(self):
 
@@ -1077,7 +1077,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
     :emphasize-lines: 4-27
 
             except ZeroDivisionError:
-                self.division_result = 'brmph?! cannot divide by 0. Try again...'
+                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
 
             self.arithmetic_tests = {
                 'addition': {
@@ -1462,7 +1462,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line, the terminal_ shows
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line, the terminal_ shows
 
   .. code-block:: python
 

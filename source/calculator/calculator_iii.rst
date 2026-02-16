@@ -8,7 +8,7 @@
 how to make a calculator 3
 #################################################################################
 
-I want the :ref:`divide function<test_division>` in the :ref:`calculator project<how to make a calculator>` to return ``undefined`` when :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised so that the program_ can continue to work after ``0`` is given as the second number
+I want the :ref:`divide function<test_division>` in the :ref:`calculator project<how to make a calculator>` to return a message when ``0`` is given as the second number, so that the program can continue to work after :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised.
 
 ----
 
@@ -30,14 +30,14 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python/calculator
 
@@ -51,14 +51,14 @@ open the project
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
     configfile: pyproject.toml
     collected 4 items
 
-    tests/test_calculator.py ....                                        [100%]
+    tests/test_calculator.py ....                                 [100%]
 
     ======================== 4 passed in X.YZs =========================
 
@@ -78,31 +78,31 @@ test_division_handles_zero_division_error
 
 ----
 
-I change the last :ref:`assertion<what is an assertion?>` in ``test_division``
+I change the assertRaises_ to assertEqual_ in :ref:`test_division`
 
 .. code-block:: python
   :lineno-start: 42
-  :emphasize-lines: 9-12
+  :emphasize-lines: 9, 11-12
 
-      def test_division(self):
-          self.assertEqual(
-              src.calculator.divide(
-                  self.random_first_number,
-                  self.random_second_number
-              ),
-              self.random_first_number/self.random_second_number
-          )
-          self.assertEqual(
-              src.calculator.divide(self.random_first_number, 0),
-              'brmph?! cannot divide by 0. Try again...'
-          )
+        def test_division(self):
+            self.assertEqual(
+                src.calculator.divide(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(self.random_first_number, 0),
+                'brmph?! I cannot divide by 0. Try again...'
+            )
 
 
   # Exceptions seen
 
 the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-.. code-block:: shell
+.. code-block:: python
 
   ZeroDivisionError: float division by zero
 
@@ -114,11 +114,12 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
 
 ----
 
-* I add it to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 58
     :emphasize-lines: 6
+    :emphasize-text: ZeroDivisionError
 
     # Exceptions seen
     # AssertionError
@@ -138,11 +139,9 @@ the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in
         try:
             return first_input / second_input
         except ZeroDivisionError:
-            return 'brmph?! cannot divide by 0. Try again...'
+            return 'brmph?! I cannot divide by 0. Try again...'
 
   the test passes.
-
-There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first part of ``test_division`` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 ----
 
@@ -151,6 +150,8 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 =================================================================================
 
 ----
+
+There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first :ref:`assertion<what is an assertion?>` of :ref:`test_division` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 * I add a `return statement`_ to the ``a_random_number`` :ref:`function<what is a function?>` in ``test_calculator.py`` to make it happen
 
@@ -164,14 +165,20 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 
   the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. code-block:: python
+    :emphasize-lines: 7
 
+        def test_division(self):
+            self.assertEqual(
+                src.calculator.divide(
+                    self.random_first_number,
+                    self.random_second_number
+                ),
     >           self.random_first_number/self.random_second_number
             )
     E       ZeroDivisionError: division by zero
 
-  the expectation calculation in ``test_division`` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'brmph?! cannot divide by 0. Try again...'``
+  the expectated calculation in :ref:`test_division` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'brmph?! I cannot divide by 0. Try again...'``
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the test
 
@@ -191,12 +198,12 @@ There is a problem, the test uses random numbers, which means at some point ``ra
           except ZeroDivisionError:
               self.assertEqual(
                   src.calculator.divide(self.random_first_number, 0),
-                  'brmph?! cannot divide by 0. Try again...'
+                  'brmph?! I cannot divide by 0. Try again...'
               )
 
   the test passes
 
-* I remove the `return statement`_ from ``a_random_number`` to go back to testing with a range of numbers
+* I remove the `return statement`_ from ``a_random_number`` to go back to testing with a range of random numbers
 
   .. code-block:: python
     :linenos:
@@ -221,18 +228,18 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``calculator``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     ...\pumping_python
 
@@ -260,12 +267,6 @@ I ran tests to show that
 
 * I can use assertRaisesRegex_ to catch :ref:`Exceptions<errors>` with messages
 * I can use :ref:`try..except...else<how to use try...except...else>` to make programs that can choose what to do when :ref:`Exceptions<errors>` are raised
-
-----
-
-:ref:`How many questions can you answer after going through this chapter?<questions about handling Exceptions>`
-
-----
 
 *************************************************************************************
 code from the chapter

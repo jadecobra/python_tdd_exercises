@@ -206,8 +206,8 @@ Lovely! The :ref:`if statement<if statements>` in the ``only_takes_numbers`` :re
 
     tests/test_calculator.py:72: AssertionError
     ============= short test summary info ==============
-    SUBFAILED(i=True) ...   - AssertionError: UVW.XYZABCDEFGHIJKL != 'brmph?!? ...
-    SUBFAILED(i=False) ...  - AssertionError: MNO.PQRSTUVWXYZABCD != 'brmph?!? ...
+    SUBFAILED(i=True) ...   - AssertionError: UVW.XYZABCDEFGHIJKL != 'brmph?! ...
+    SUBFAILED(i=False) ...  - AssertionError: MNO.PQRSTUVWXYZABCD != 'brmph?! ...
     =========== 2 failed, 7 passed in X.YZs ============
 
   the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data`` so that I can see which one caused the error
@@ -497,7 +497,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests and the terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``calculator``
 

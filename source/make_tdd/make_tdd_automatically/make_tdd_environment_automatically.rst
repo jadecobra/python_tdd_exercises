@@ -292,7 +292,7 @@ how to make a shell script run as a command
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests, the terminal_ shows
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests, the terminal_ shows
 
   .. code-block:: shell
 
@@ -373,7 +373,7 @@ how to use makePythonTdd.sh to make a different project
 
   I make the test pass
 
-* I click in the terminal_ and use :kbd:`q` on the keyboard to leave the tests, the terminal_ shows
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests, the terminal_ shows
 
   .. code-block:: shell
 
