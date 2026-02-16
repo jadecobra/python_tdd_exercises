@@ -743,7 +743,7 @@ the test passes
 ----
 
 *********************************************************************************
-how to make a decorator function
+what is a decorator function?
 *********************************************************************************
 
 3 of the :ref:`functions<what is a function?>` in the :ref:`calculator program<how to make a calculator>` have the same :ref:`if statement<if statements>`
@@ -764,7 +764,7 @@ How can I remove this repetition? The only difference between the 3 :ref:`functi
 
 I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the repetition from those 3 :ref:`functions<what is a function?>`. It is a :ref:`function<what is a function?>` that takes another :ref:`function<what is a function?>` as input.
 
-* I add a :ref:`decorator function<what is a function?>` to ``calculator.py``
+* I add a :ref:`decorator function<what is a decorator function?>` to ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -1145,7 +1145,7 @@ the :ref:`divide function<test_division>` is different because it has another :r
 
 I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the repetition of the :ref:`exception handler<how to use try...except...else>` from the :ref:`functions<what is a function?>`
 
-* I add a new :ref:`decorator function<what is a function?>` to ``calculator.py``
+* I add a new :ref:`decorator function<what is a decorator function?>` to ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -1271,33 +1271,232 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* The two :ref:`decorator functions<what is a function?>` both return the result of calling the :ref:`given functions<what is a function?>`. I make a new :ref:`decorator<what is a function?>` to do the work of ``type_error_handler`` and ``input_is_not_none``
+* The two :ref:`decorator functions<what is a decorator function?>` both return the result of calling the :ref:`given functions<what is a function?>` or an error message
 
   .. code-block:: python
-    :lineno-start: 1-11
+
+    return function(first_input, second_input)
+    return 'brmph?! Numbers only. Try again...'
+
+  I make a new :ref:`decorator<what is a decorator function?>` to do the work of ``type_error_handler`` and ``input_is_not_none``
+
+  .. code-block:: python
+    :lineno-start: 1-12
 
     def numbers_only(function):
-        def wrapper(first_input, second_input):
+        def decorator(first_input, second_input):
             error_message = 'brmph?! Numbers only. Try again...'
             if first_input is None or second_input is None:
                 return error_message
-            try:
-                return function(first_input, second_input)
-            except TypeError:
-                return error_message
-        return wrapper
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return decorator
 
 
     def type_error_handler(function):
 
+  The ``numbers_only`` :ref:`function<what is a function?>`
+
+  - takes a :ref:`given function<what is a function?>` as input
+  - makes a :ref:`variable<what is a variable?>` named ``error_message`` for the error message
+  - uses :ref:`logical disjunction<test_logical_disjunction>` to check the inputs
+
+    * if the first input is :ref:`None<what is None?>` or the second input is :ref:`None<what is None?>` it returns the error message
+    * if the two inputs are both NOT :ref:`None<what is None?>` it tries to return the result of calling the :ref:`given function<what is a function?>` with the inputs
+
+      - if the call to the :ref:`given function<what is a function?>` with the inputs raises :ref:`TypeError<what causes TypeError?>` it returns a message
+
+* I use ``numbers_only`` to :ref:`wrap<what is a decorator function?>` the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 1
+
+    @numbers_only
+    @type_error_handler
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+  the tests are still green
+
+* I remove the other :ref:`wrappers<what is a decorator function?>` from the the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 76
+
+    @numbers_only
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @type_error_handler
+    @input_is_not_none
+    def multiply(first_input, second_input):
+
+  still green
+
+* I :ref:`wrap<what is a decorator function?>` the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 1
+
+    @numbers_only
+    @type_error_handler
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+  green
+
+* I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 44
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @type_error_handler
+    @input_is_not_none
+    def divide(first_input, second_input):
+
+  still green
+
+* I :ref:`wrap<what is a decorator function?>` the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 1
+
+    @numbers_only
+    @type_error_handler
+    @input_is_not_none
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+  the tests are still green
+
+* I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 41
+
+    @numbers_only
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @type_error_handler
+    @input_is_not_none
+    def add(first_input, second_input):
+
+  still green
+
+* I :ref:`wrap<what is a decorator function?>` the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 1
+
+    @numbers_only
+    @type_error_handler
+    @input_is_not_none
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        else:
+            return first_input + second_input
+
+  green
+
+* I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 41
+
+    @numbers_only
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        else:
+            return first_input + second_input
+
+  still green
+
+* I remove ``type_error_handler`` and ``input_is_not_none`` because they are no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    def numbers_only(function):
+        def decorator(first_input, second_input):
+            error_message = 'brmph?! Numbers only. Try again...'
+            if first_input is None or second_input is None:
+                return error_message
+            else:
+                try:
+                    return function(first_input, second_input)
+                except TypeError:
+                    return error_message
+        return decorator
+
+
+    @numbers_only
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @numbers_only
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @numbers_only
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        else:
+            return first_input + second_input
 
 
 ----
 
 * I  change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in :ref:`test_calculator_raises_type_error_w_strings`
 
-  .. code-block:: python
-    :lineno-start: 76
+
 
 
 ----
