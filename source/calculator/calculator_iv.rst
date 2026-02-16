@@ -425,10 +425,14 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2-6
 
     def add(first_input, second_input):
-        if isinstance(first_input, str) or isinstance(second_input, str):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
             raise TypeError
         else:
             return first_input + second_input
@@ -519,10 +523,14 @@ I add an :ref:`exception handler<how to use try...except...else>` to the `else c
 
 .. code-block:: python
   :lineno-start: 16
-  :emphasize-lines: 4-8
+  :emphasize-lines: 8-12
 
   def add(first_input, second_input):
-      if isinstance(first_input, str) or isinstance(second_input, str):
+      if (
+          isinstance(first_input, str)
+          or
+          isinstance(second_input, str)
+      ):
           raise TypeError
       else:
           try:
@@ -579,11 +587,380 @@ the test passes
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
+  .. code-block:: python
+
+    AssertionError: TypeError not raised
+
+  my change made the :ref:`assertion<what is an assertion?>` in :ref:`test_calculator_raises_type_error_w_strings` fail
+
+* I undo the change, then add an :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-3
+
+    def divide(first_input, second_input):
+        if first_input is None or second_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    def add(first_input, second_input):
+
+  the test passes
+
 ----
+
+* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 5,7-8
+
+          self.assertEqual(
+              src.calculator.divide(None, None),
+              'brmph?! Numbers only. Try again...'
+          )
+          self.assertEqual(
+              src.calculator.multiply(None, None),
+              'brmph?! Numbers only. Try again...'
+          )
+          with self.assertRaises(TypeError):
+              src.calculator.subtract(None, None)
+
+      def test_calculator_raises_type_error_w_strings(self):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
+
+* I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2-3
+
+    def multiply(first_input, second_input):
+        if first_input is None or second_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+
+    def divide(first_input, second_input):
+
+  the test passes
+
+----
+
+* I change the assertRaises_ for the :ref:`subtract function<test_subtraction>` to assertEqual_ in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 5, 7-8
+
+            self.assertEqual(
+                src.calculator.multiply(None, None),
+                'brmph?! Numbers only. Try again...'
+            )
+            self.assertEqual(
+                src.calculator.subtract(None, None),
+                'brmph?! Numbers only. Try again...'
+            )
+
+        def test_calculator_raises_type_error_w_strings(self):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+
+* I add an :ref:`if statement<if statements>` to the :ref:`subtract function<test_subtraction>` in ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    def subtract(first_input, second_input):
+        if first_input is None or second_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        return first_input - second_input
+
+
+    def multiply(first_input, second_input):
+
+  the test passes
+
+----
+
+* I add a :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 2
+
+        def test_calculator_raises_type_error_w_none(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+            self.assertEqual(
+                src.calculator.add(None, None),
+                'brmph?! Numbers only. Try again...'
+            )
+
+* I use it to remove the repetition of the error message
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 5,9,13,17
+
+        def test_calculator_raises_type_error_w_none(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+            self.assertEqual(
+                src.calculator.add(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.multiply(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract(None, None),
+                error_message
+            )
+
+        def test_calculator_raises_type_error_w_strings(self):
+
+  the test is still green
+
+----
+
+*********************************************************************************
+how to make a decorator function
+*********************************************************************************
+
+3 of the :ref:`functions<what is a function?>` in the :ref:`calculator program<how to make a calculator>` have the same :ref:`if statement<if statements>`. How can I remove this repetition?
+
+.. code-block:: python
+
+  if first_input is None or second_input is None:
+      return 'brmph?! Numbers only. Try again...'
+
+The only difference between the 3 :ref:`functions<what is a function?>` is in what they do with the inputs
+
+
+.. code-block:: python
+
+  return first_input - second_input
+  return first_input * second_input
+  return first_input / second_input
+
+I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the repetition from those 3 :ref:`functions<what is a function?>`. It is a :ref:`function<what is a function?>` that takes another :ref:`function<what is a function?>` as input.
+
+* I add a :ref:`decorator function<what is a function?>` to ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-6
+
+    def input_is_not_none(function):
+        def wrapper(first_input, second_input):
+            if first_input is None or second_input is None:
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
+
+
+    def subtract(first_input, second_input):
+
+  The ``input_is_not_none`` :ref:`function<what is a function?>`
+
+  - takes a :ref:`given function<what is a function?>` as input
+  - uses :ref:`logical disjunction<test_logical_disjunction>` to check the inputs
+
+    * if the first input is :ref:`None<what is None?>` or the second input is :ref:`None<what is None?>` it returns an error message
+    * if the two inputs are both NOT :ref:`None<what is None?>` it returns the result of calling the :ref:`given function<what is a function?>` with the inputs
+
+* I use it with the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 1
+
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        if first_input is None or second_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        return first_input - second_input
+
+  the tests are still green
+
+* I remove the :ref:`if statement<if statements>` from the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 9
+
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    def multiply(first_input, second_input):
+
+  still green
+
+* I use ``input_is_not_none`` with the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 1
+
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        if first_input is None or second_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+  green
+
+* I remove the :ref:`if statement<if statements>` from the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 14
+
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    def divide(first_input, second_input):
+
+  still green
+
+* I wrap the :ref:`divide function<test_division>` with ``input_is_not_none``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1
+
+    @input_is_not_none
+    def divide(first_input, second_input):
+        if first_input is None or second_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+  the tests are still green
+
+* I remove the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 19
+
+    @input_is_not_none
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    def add(first_input, second_input):
+
+  still green
+
+* I try it with the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 1
+
+    @input_is_not_none
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            raise TypeError
+        else:
+            try:
+                return first_input + second_input
+            except TypeError:
+                return 'brmph?! Numbers only. Try again...'
+
+  the tests are still green
+
+* I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 32
+
+    def input_is_not_none(function):
+        def wrapper(first_input, second_input):
+            if first_input is None or second_input is None:
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
+
+
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @input_is_not_none
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @input_is_not_none
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            raise TypeError
+        else:
+            return first_input + second_input
+
+
+  still green
+
+----
+
+* I
 
 ----
 
 ----
+
+----
+
+* I  change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in :ref:`test_calculator_raises_type_error_w_strings`
+
+  .. code-block:: python
+    :lineno-start: 76
+
 
 ----
 
@@ -899,21 +1276,9 @@ the test passes
   there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers`
 
 ----
-
-*********************************************************************************
-how to make a decorator function
-*********************************************************************************
-
-All the :ref:`functions<what is a function?>` in the :ref:`calculator program<how to make a calculator>` have the same :ref:`exception handler<how to use try...except...else>`
-
-
-.. code-block:: python
-
-  try:
-      something
-  except TypeError:
-      return 'brmph?! Numbers only. Try again...'
-
+----
+----
+----
 the :ref:`divide function<test_division>` is different because it has another :ref:`except clause<how to use try...except...else>`
 
 .. code-block:: python
