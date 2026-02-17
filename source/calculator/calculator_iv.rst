@@ -1513,12 +1513,60 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
   still green
 
-* I put the :ref:`assertions<what is an assertion?>` of :ref:`test_calculator_raises_type_error_w_none` and :ref:`test_calculator_raises_type_error_w_strings` together and remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
+* I remove the name of :ref:`test_calculator_raises_type_error_w_strings` make its :ref:`assertions<what is an assertion?>` part of  :ref:`test_calculator_raises_type_error_w_none`
+
+  .. code-block:: python
+    :lineno-start: 67
+
+            self.assertEqual(
+                src.calculator.multiply(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract(None, None),
+                error_message
+            )
+
+            error_message = 'brmph?! Numbers only. Try again...'
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide('1', '1'),
+                error_message
+            )
+
+* I remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 67
+
+            self.assertEqual(
+                src.calculator.multiply(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide('1', '1'),
+                error_message
+            )
+            self.assertEqual(
+
+* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
 
   .. code-block:: python
     :lineno-start: 57
+    :emphasize-lines: 1
 
-        def test_calculator_raises_type_error_w_none(self):
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
             error_message = 'brmph?! Numbers only. Try again...'
             self.assertEqual(
                 src.calculator.add(None, None),
@@ -1555,15 +1603,10 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 
     # Exceptions seen
-
-* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
-
-  .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 1
-
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
-            self.assertEqual(
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
 
   the tests are still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator functions<how to make a calculator>` return an error message if they get input that is NOT a number
 
