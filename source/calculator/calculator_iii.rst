@@ -291,7 +291,7 @@ you know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to make a Python Test Driven Development environment automatically` or :ref:`how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux`
+* :ref:`how to make a Python Test Driven Development environment automatically<how to make a test driven development environment 2>`
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 
