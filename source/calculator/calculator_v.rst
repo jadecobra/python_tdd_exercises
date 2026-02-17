@@ -429,7 +429,7 @@ how to multiply a list
 
     # Exceptions seen
 
-  still green. :ref:`test_calculator_sends_message_when_input_is_not_a_number` is getting long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
+  still green. :ref:`test_calculator_sends_message_when_input_is_not_a_number` is getting long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<test_calculator_w_a_for_loop>`
 
 ----
 

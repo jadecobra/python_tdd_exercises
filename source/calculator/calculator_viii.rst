@@ -70,7 +70,7 @@ open the project
     configfile: pyproject.toml
     collected 6 items
 
-    tests/test_calculator.py ......                                      [100%]
+    tests/test_calculator.py ......                               [100%]
 
     ======================== 6 passed in X.YZs =========================
 

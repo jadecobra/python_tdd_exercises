@@ -1623,7 +1623,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         error_message
     )
 
-  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers`, especially since I want to test the other data types - :ref:`booleans<what are booleans?>`, tuples_, :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>`. I do not think I am ready to write 4 :ref:`assertions<what is an assertion?>` for each one.
+  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<test_calculator_w_a_for_loop>`, especially since I want to test the other data types - :ref:`booleans<what are booleans?>`, tuples_, :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>`. I do not think I am ready to write 4 :ref:`assertions<what is an assertion?>` for each one.
 
 ----
 

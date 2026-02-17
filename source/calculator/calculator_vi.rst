@@ -58,7 +58,7 @@ open the project
     configfile: pyproject.toml
     collected 7 items
 
-    tests/test_calculator.py .......                                     [100%]
+    tests/test_calculator.py .......                              [100%]
 
     ======================== 7 passed in X.YZs =========================
 
@@ -70,14 +70,12 @@ open the project
 how to make sure the calculator tests use new numbers for every test
 *********************************************************************************
 
-I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I had a new :ref:`list<lists>` and :ref:`iterable<what is an iterable?>` for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
-
-
+I used the `setUp method`_ in :ref:`list comprehensions` to make sure that I have a new :ref:`list<lists>` and :ref:`iterable<what is an iterable?>` for every test. I want to do the same thing with the :ref:`calculator<how to make a calculator>`, to make sure that each test uses 2 new different random numbers, not the same random numbers for every test
 
 ----
 
 =================================================================================
-:yellow:`REFACTOR`: make it better
+:red:`RED`: make it fail
 =================================================================================
 
 ----
@@ -91,22 +89,70 @@ I add the `setUp method`_ to the ``TestCalculator`` :ref:`class<what is a class?
   class TestCalculator(unittest.TestCase):
 
       def setUp(self):
-          self.random_first_number = a_random_number()
-          self.random_second_number = a_random_number()
+          random_first_number = a_random_number()
+          random_second_number = a_random_number()
 
       def test_addition(self):
 
-the test is still green. The `setUp method`_ runs before every test, giving ``random_first_number`` and ``random_second_number`` new random values for each test
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: 'TestCalculator' object has no attribute 'random_first_number'
+
+``random_first_number`` and ``random_second_number`` can no longer be reached because they belong to the `setUp method`_, I have to make sure they are :ref:`class attributes<test_attribute_error_w_class_attributes>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add ``self.`` to ``random_first_number``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 2
+
+          def setUp(self):
+              self.random_first_number = a_random_number()
+              random_second_number = a_random_number()
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: 'TestCalculator' object has no attribute 'random_second_number'. Did you mean: 'random_first_number'?
+
+* I add ``self.`` to ``random_second_number``
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 5
+
+    class TestCalculator(unittest.TestCase):
+
+        def setUp(self):
+            self.random_first_number = a_random_number()
+            self.random_second_number = a_random_number()
+
+        def test_addition(self):
+
+  the test passes.
+
+The `setUp method`_ runs before every test, giving ``random_first_number`` and ``random_second_number`` new random values for each test.
 
 ----
 
 *************************************************************************************
-a better way to test the calculator with inputs that are NOT numbers
+test_calculator_w_a_for_loop
 *************************************************************************************
 
 I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries`.
 
-Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test for each :ref:`data type<data structures>`
+Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test with 4 or more :ref:`assertions<what is an assertion?>` for each :ref:`data type<data structures>`
 
 ----
 
@@ -116,13 +162,25 @@ Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do t
 
 ----
 
-I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_message_when_input_is_not_a_number``
+I add a new test with a `for loop`_ and an :ref:`assertion<what is an assertion?>` to ``test_calculator.py``
 
 .. code-block:: python
-  :lineno-start: 58
-  :emphasize-lines: 4-16
+  :lineno-start: 164
+  :emphasize-lines: 13-14, 16-28
 
-      def test_calculator_sends_message_when_input_is_not_a_number(self):
+      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+          not_two_numbers = [0, 1, 2]
+
+          with self.assertRaises(TypeError):
+              src.calculator.add(*not_two_numbers)
+          with self.assertRaises(TypeError):
+              src.calculator.divide(*not_two_numbers)
+          with self.assertRaises(TypeError):
+              src.calculator.multiply(*not_two_numbers)
+          with self.assertRaises(TypeError):
+              src.calculator.subtract(*not_two_numbers)
+
+      def test_calculator_w_a_for_loop(self):
           error_message = 'brmph?! Numbers only. Try again...'
 
           for data in (
@@ -139,18 +197,14 @@ I add a new :ref:`assertion<what is an assertion?>` to ``test_calculator_sends_m
                   'BOOM!!!'
               )
 
-          self.assertEqual(
-              src.calculator.add(None, None),
-              error_message
-          )
+
+  # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
-
-Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py`` is doing its job, the :ref:`calculator<how to make a calculator>` only takes numbers
+  AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'s
 
 ----
 
@@ -163,7 +217,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`fun
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 188
     :emphasize-lines: 3
 
                 self.assertEqual(
@@ -177,26 +231,33 @@ Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`fun
 
     AssertionError: ABC.DEFGHIJKLMNOPQR != 'brmph?! Numbers only. Try again...'
 
-  there is a problem. One of the :ref:`data types<data structures>` I am testing is being allowed by the :ref:`if statement<if statements>`, which means one of them is also an integer_ or is a float_. I need a way to know which one is causing the problem
+  there is a problem. One of the :ref:`data types<data structures>` I am testing is getting to the :ref:`add function<test_addition>` so I get a result back instead of a message. How can I tell which of the :ref:`data types<data structures>` caused the failure?
 
-* the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a loop, I add it to the test
+* the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a `for loop`_, I add it to the test
 
   .. code-block:: python
     :lineno-start: 68
-    :emphasize-lines: 3-7
+    :emphasize-lines: 13-17
 
+        def test_calculator_w_a_for_loop(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            for data in (
+                None,
+                True, False,
+                str(),
+                tuple(),
+                list(),
+                set(),
                 dict(),
             ):
-                with self.subTest(i=data):
+                with self.subTest(data_type=data):
                     self.assertEqual(
                         src.calculator.add(data, a_random_number()),
                         error_message
                     )
 
-            self.assertEqual(
-                src.calculator.add(None, None),
-                error_message
-            )
+        def test_calculator_w_a_for_loop(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<data structures>` I am testing
 
@@ -204,15 +265,124 @@ Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`fun
     :emphasize-lines: 3, 4
     :emphasize-text: SUBFAILED True False
 
-    tests/test_calculator.py:72: AssertionError
+    tests/test_calculator.py:189: AssertionError
     ============= short test summary info ==============
-    SUBFAILED(i=True) ...   - AssertionError: UVW.XYZABCDEFGHIJKL != 'brmph?! ...
-    SUBFAILED(i=False) ...  - AssertionError: MNO.PQRSTUVWXYZABCD != 'brmph?! ...
+    SUBFAILED(data_type=True) ...   - AssertionError: UVW.XYZABCDEFGHIJKL != 'brmph?! Numbers only. Try again...'
+    SUBFAILED(data_type=False) ...  - AssertionError: MNO.PQRSTUVWXYZABCD != 'brmph?! Numbers only. Try again...'
     =========== 2 failed, 7 passed in X.YZs ============
 
-  the `unittest.TestCase.subTest method`_ runs the code in its context as a sub test, showing the values I give in ``i=data`` so that I can see which one caused the error
+  the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. Are :ref:`booleans<what are booleans?>` numbers?
 
-* I add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
+* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+
+* then add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` to the :ref:`add function<test_addition>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 9-16
+
+    @numbers_only
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        if (
+            isinstance(first_input, bool)
+            or
+            isinstance(second_input, bool)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+  the test passes. These two :ref:`if statements` look the same
+
+  .. code-block:: python
+
+    if (
+        isinstance(first_input, data_type)
+        or
+        isinstance(second_input, data_type)
+    ):
+        return 'brmph?! Numbers only. Try again...'
+
+  the only difference are the data types
+
+  .. code-block:: python
+
+    isinstance(something, str)
+    isinstance(something, bool)
+
+----
+
+*********************************************************************************
+how to test if something is an instance of more than one type
+*********************************************************************************
+
+The `isinstance function`_ can take a tuple_ as the second input, which means I can if the first input is an instance of any of the :ref:`objects<what is a class?>` in the tuple_
+
+* I add a new :ref:`if statement<if statements>` to the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 3-19
+
+    @numbers_only
+    def add(first_input, second_input):
+        # if (
+        #     isinstance(first_input, str)
+        #     or
+        #     isinstance(second_input, str)
+        # ):
+        #     return 'brmph?! Numbers only. Try again...'
+        # if (
+        #     isinstance(first_input, bool)
+        #     or
+        #     isinstance(second_input, bool)
+        # ):
+        if (
+            isinstance(first_input, (str, bool))
+            or
+            isinstance(second_input, (str, bool))
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+  the test is still green
+
+* I remove the other :ref:`if statements`
+
+  .. code-block:: python
+    :lineno-start: 38
+
+    @numbers_only
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, (str, bool))
+            or
+            isinstance(second_input, (str, bool))
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+  still green
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>` to :ref:`test_calculator_w_a_for_loop`
+
+
+
+----
+
+----
+
+----
+
+----
+* in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -290,7 +460,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`fun
     :lineno-start: 70
     :emphasize-lines: 6-9
 
-                with self.subTest(i=data):
+                with self.subTest(data_type=data):
                     self.assertEqual(
                         src.calculator.add(data, a_random_number()),
                         error_message
@@ -404,7 +574,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`fun
                 set(),
                 dict(),
             ):
-                with self.subTest(i=data):
+                with self.subTest(data_type=data):
                     self.assertEqual(
                         src.calculator.add(data, a_random_number()),
                         error_message
@@ -444,7 +614,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`fun
                 set(), {0, 1, 2, 'n'},
                 dict(), {'key': 'value'},
             ):
-                with self.subTest(i=data):
+                with self.subTest(data_type=data):
 
   the test is still green
 
@@ -488,7 +658,7 @@ Lovely! The :ref:`if statement<if statements>` in the ``numbers_only`` :ref:`fun
 
 * I remove it from the test and things are green again
 
-:ref:`I know a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
+:ref:`I know a better way to test the calculator with inputs that are NOT numbers<test_calculator_w_a_for_loop>`
 
 ----
 
