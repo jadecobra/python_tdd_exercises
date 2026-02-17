@@ -503,7 +503,11 @@ I change the expectation to the right calculation
                 self.random_first_number+self.random_second_number
             )
 
-the test passes
+the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``self.random_first_number`` and ``self.random_second_number``, this means
+
+- ``two_numbers[0]`` is ``self.random_first_number``
+- ``two_numbers[1]`` is ``self.random_second_number``
+
 
 ----
 
@@ -540,31 +544,43 @@ the test passes
 
     AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
 
-* I change the calculation
+* I change the calculation to division
 
   .. code-block:: python
     :lineno-start: 125
-    :emphasize-lines: 3
-
-          self.assertEqual(
-              src.calculator.divide(two_numbers[-2], two_numbers[-1]),
-              self.random_first_number/self.random_second_number
-          )
-
-  the test passes
-
-* I add another :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 5-8
+    :emphasize-lines: 6
 
             self.assertEqual(
-                src.calculator.divide(two_numbers[-2], two_numbers[-1]),
+                src.calculator.divide(
+                    two_numbers[-2],
+                    two_numbers[-1]
+                ),
+                self.random_first_number/self.random_second_number
+            )
+
+  the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``self.random_first_number`` and ``self.random_second_number``, this means
+
+- ``two_numbers[-2]`` is ``self.random_first_number``
+- ``two_numbers[-1]`` is ``self.random_second_number``
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 125
+    :emphasize-lines: 8-14
+
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers[-2],
+                    two_numbers[-1]
+                ),
                 self.random_first_number/self.random_second_number
             )
             self.assertEqual(
-                src.calculator.multiply(two_numbers[1], two_numbers[-1]),
+                src.calculator.multiply(
+                    two_numbers[1],
+                    two_numbers[-1]
+                ),
                 self.random_first_number*self.random_second_number
             )
 
@@ -577,28 +593,40 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 3
+    :lineno-start: 132
+    :emphasize-lines: 6
 
             self.assertEqual(
-                src.calculator.multiply(two_numbers[1], two_numbers[-1]),
+                src.calculator.multiply(
+                    two_numbers[1],
+                    two_numbers[-1]
+                ),
                 self.random_second_number*self.random_second_number
             )
 
-  the test passes
+  the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``self.random_first_number`` and ``self.random_second_number``, this means
+
+- ``two_numbers[1]`` is ``self.random_second_number``
+- ``two_numbers[-1]`` is ``self.random_second_number``
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 5-8
+    :lineno-start: 132
+    :emphasize-lines: 8-14
 
             self.assertEqual(
-                src.calculator.multiply(two_numbers[1], two_numbers[-1]),
+                src.calculator.multiply(
+                    two_numbers[1],
+                    two_numbers[-1]
+                ),
                 self.random_second_number*self.random_second_number
             )
             self.assertEqual(
-                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
+                src.calculator.subtract(
+                    two_numbers[-2],
+                    two_numbers[0]
+                ),
                 self.random_first_number-self.random_second_number
             )
 
@@ -611,27 +639,38 @@ the test passes
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 3
+    :lineno-start: 139
+    :emphasize-lines: 6
 
             self.assertEqual(
-                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
+                src.calculator.subtract(
+                    two_numbers[-2],
+                    two_numbers[0]
+                ),
                 self.random_first_number-self.random_first_number
             )
 
 
     # Exceptions seen
 
-  the test passes
+  the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``self.random_first_number`` and ``self.random_second_number``, this means
 
-* I use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the `positional arguments<test_functions_w_positional_arguments>` in :ref:`test_functions_w_unknown_arguments`
+- ``two_numbers[-2]`` is ``self.random_first_number``
+- ``two_numbers[0]`` is ``self.random_first_number``
+
+----
+
+* I use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the :ref:`positional arguments<test_functions_w_positional_arguments>` in :ref:`test_functions_w_unknown_arguments`
 
   .. code-block:: python
-    :lineno-start: 127
-    :emphasize-lines: 5-8
+    :lineno-start: 139
+    :emphasize-lines: 8-11
 
             self.assertEqual(
-                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
+                src.calculator.subtract(
+                    two_numbers[-2],
+                    two_numbers[0]
+                ),
                 self.random_first_number-self.random_first_number
             )
             self.assertEqual(
@@ -645,10 +684,10 @@ the test passes
 
     AssertionError: GHI.JKLMNOPQRSTUVW != XYZ.ABCDEFGHIJKLMN
 
-* I change the expectation
+* I change the expectation to match the result of adding the two numbers from the :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 146
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -656,12 +695,19 @@ the test passes
                 self.random_first_number+self.random_second_number
             )
 
-  the test passes
-
-* I add another :ref:`assertion<what is an assertion?>`
+  the test passes. The `starred expression`_ gives the items of the list in the same order every time, this means these statements are the same
 
   .. code-block:: python
-    :lineno-start: 131
+
+    src.calculator.add(*two_numbers)
+    src.calculator.add(self.random_first_number, self.random_second_number)
+
+  because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``self.random_first_number`` and ``self.random_second_number``
+
+* I add another :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 146
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -682,7 +728,7 @@ the test passes
 * I change the calculation
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 150
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -695,7 +741,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 150
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -713,10 +759,10 @@ the test passes
 
     AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
 
-* I change the calculation
+* I change the calculation in the expectation to :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 139
+    :lineno-start: 154
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -729,7 +775,7 @@ the test passes
 * I add the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 139
+    :lineno-start: 154
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -747,16 +793,65 @@ the test passes
 
     AssertionError: JKL.MNOPQRSTUVWXYZ != ABC.DEFGHIJKLMNOP
 
-* I change the expectation
+* I change the expectation to :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 3
+    :lineno-start: 112
+    :emphasize-lines: 49
 
+        def test_calculator_w_list_items(self):
+            two_numbers =[
+                self.random_first_number,
+                self.random_second_number
+            ]
+
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers[0],
+                    two_numbers[1]
+                ),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers[-2],
+                    two_numbers[-1]
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(
+                    two_numbers[1],
+                    two_numbers[-1]
+                ),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(
+                    two_numbers[-2],
+                    two_numbers[0]
+                ),
+                self.random_first_number-self.random_first_number
+            )
+            self.assertEqual(
+                src.calculator.add(*two_numbers),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(*two_numbers),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(*two_numbers),
+                self.random_first_number*self.random_second_number
+            )
             self.assertEqual(
                 src.calculator.subtract(*two_numbers),
                 self.random_first_number-self.random_second_number
             )
+
+
+    # Exceptions seen
 
   the test passes
 
@@ -766,7 +861,7 @@ the test passes
 test_calculator_raises_type_error_when_given_more_than_two_inputs
 *********************************************************************************
 
-It is important to note that the star expression always gives the items from the list in order, and I cannot use a :ref:`list<lists>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
+It is important to remember that the `starred expression`_ always gives the items from the :ref:`list<what is a list?>` in order, and I cannot use a :ref:`list<lists>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
 ----
 
@@ -776,10 +871,10 @@ It is important to note that the star expression always gives the items from the
 
 ----
 
-I add a new test to show the problem when I have more than 2 inputs and use a star expression
+I add a new test to show the problem when I have more than 2 inputs and use a `starred expression`_
 
 .. code-block:: python
-  :lineno-start: 143
+  :lineno-start: 158
   :emphasize-lines: 6-7, 9
 
           self.assertEqual(
