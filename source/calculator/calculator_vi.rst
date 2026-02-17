@@ -371,8 +371,90 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>` to :ref:`test_calculator_w_a_for_loop`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>` to :ref:`test_calculator_w_a_for_loop` in ``test_calculator.py``
 
+  .. code-block:: python
+    :lineno-start: 176
+    :emphasize-lines: 18-21
+
+        def test_calculator_w_a_for_loop(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            for data in (
+                None,
+                True, False,
+                str(),
+                tuple(),
+                list(),
+                set(),
+                dict(),
+            ):
+                with self.subTest(data_type=data):
+                    self.assertEqual(
+                        src.calculator.add(data, a_random_number()),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.divide(data, a_random_number()),
+                        'BOOM!!!'
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    ===================== short test summary info ======================
+    SUBFAILED(data_type=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=True) ... - AssertionError: -A.BCDEFGHIJKLMNOPQRS != 'BOOM!!!'
+    SUBFAILED(data_type=False) ...- AssertionError: -T.U != 'BOOM!!!'
+    SUBFAILED(data_type='') ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=()) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=[]) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=set()) ...- AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type={}) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    =================== 8 failed, 8 passed in V.WXs ====================
+
+* I change the expectation to use the error message
+
+  .. code-block:: python
+    :lineno-start: 193
+    :emphasize-lines: 3
+
+                    self.assertEqual(
+                        src.calculator.divide(data, a_random_number()),
+                        error_message
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(data_type=True) ...  - AssertionError: Y.ZABCDEFGHIJKLMNOP != 'brmph?! Numbers only. Try again...'
+    SUBFAILED(data_type=False) ... - AssertionError: Q.R != 'brmph?! Numbers only. Try again...'
+
+* I add an :ref:`if statement<if statements>` to the :ref:`divide function<test_division>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 30
+
+    @numbers_only
+    def divide(first_input, second_input):
+        if (
+            isinstance(first_input, (str, bool))
+            or
+            isinstance(second_input, (str, bool))
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @numbers_only
+    def add(first_input, second_input):
+
+  the test passes
 
 
 ----
