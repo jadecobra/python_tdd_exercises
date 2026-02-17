@@ -149,7 +149,7 @@
 .. _source code: https://grokipedia.com/page/Source_code
 .. _click here to see the source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
 .. _staticmethod decorator: https://docs.python.org/3/library/functions.html#staticmethod
-.. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#arbitrary-argument-lists
+.. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: str_

@@ -213,9 +213,11 @@ the test passes
 
   the test is still green
 
----------------------------------------------------------------------------------
+----
+
+*********************************************************************************
 how to multiply a list
----------------------------------------------------------------------------------
+*********************************************************************************
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
@@ -232,13 +234,16 @@ how to multiply a list
                 'BOOM!!!'
             )
 
+
+    # Exceptions seen
+
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
     AssertionError: [0, 1, 2, 3, 0, 1, 2, 3] != 'BOOM!!!'
 
-  :ref:`I know how to multiply a list<how to multiply a list>`
+  :ref:`oh wow! I now know how to multiply a list<how to multiply a list>`
 
 * I change the expectation of the test to the error message
 
@@ -259,30 +264,25 @@ how to multiply a list
 
 * I open ``calculator.py`` in the :ref:`editor<2 editors>`
 
-* I add an :ref:`if statement<if statements>` to the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7-8, 10-13
+    :lineno-start: 19
+    :emphasize-lines: 3-7
 
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            error_message = 'brmph?! Numbers only. Try again...'
+    @numbers_only
+    def multiply(first_input, second_input):
+        if (
+            isinstance(first_input, list)
+            or
+            isinstance(second_input, list)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
 
-            if isinstance(first_input, str) or isinstance(second_input, str):
-                return error_message
-            if isinstance(first_input, list) or isinstance(second_input, list):
-                return error_message
+  the test passes
 
-            try:
-                return function(first_input, second_input)
-            except TypeError:
-                return error_message
-        return wrapper
-
-  the test passes. The ``numbers_only`` :ref:`function<what is a function?>` looks ugly now, there has to be a better way
-
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` to ``test_calculator.py``
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` in :ref:`test_calculator_sends_message_when_input_is_a_list` to ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 105
@@ -297,6 +297,9 @@ how to multiply a list
                 'BOOM!!!'
             )
 
+
+    # Exceptions seen
+
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
@@ -306,26 +309,10 @@ how to multiply a list
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 109
-    :emphasize-lines: 3
+    :lineno-start: 93
+    :emphasize-lines: 19
 
-            self.assertEqual(
-                src.calculator.subtract(a_list, 3),
-                error_message
-            )
-
-  the test passes
-
-* I remove the name of the test to move the new :ref:`assertions<what is an assertion?>` to ``test_calculator_sends_message_when_input_is_not_a_number``
-
-  .. code-block:: python
-    :lineno-start: 88
-
-            self.assertEqual(
-                src.calculator.subtract('1', '1'),
-                error_message
-            )
-
+        def test_calculator_sends_message_when_input_is_a_list(self):
             a_list = [0, 1, 2, 3]
             error_message = 'brmph?! Numbers only. Try again...'
 
@@ -349,13 +336,72 @@ how to multiply a list
 
     # Exceptions seen
 
-  the tests are still green
+  the test passes
 
-* I remove the duplication of the ``error_message`` :ref:`variable<what is a variable?>`
+* I remove the name of the test to move the new :ref:`assertions<what is an assertion?>` to :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 84
 
+            self.assertEqual(
+                src.calculator.multiply('1', '1'),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract('1', '1'),
+                error_message
+            )
+
+            a_list = [0, 1, 2, 3]
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            self.assertEqual(
+                src.calculator.add(a_list, 0),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide(a_list, 1),
+                error_message
+            )
+
+  the tests are still green
+
+* I remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 57
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            self.assertEqual(
+                src.calculator.add(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.multiply(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract(None, None),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.divide('1', '1'),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.multiply('1', '1'),
+                error_message
+            )
             self.assertEqual(
                 src.calculator.subtract('1', '1'),
                 error_message
@@ -367,175 +413,23 @@ how to multiply a list
                 src.calculator.add(a_list, 0),
                 error_message
             )
+            self.assertEqual(
+                src.calculator.divide(a_list, 1),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.multiply(a_list, 2),
+                error_message
+            )
+            self.assertEqual(
+                src.calculator.subtract(a_list, 3),
+                error_message
+            )
 
-  still green. This test is long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
-
-----
-
-*********************************************************************************
-how to test if something is an instance of more than one type
-*********************************************************************************
-
-The `isinstance function`_ can take a tuple_ as the second input, which allows me to check if the first input is an instance of any of the :ref:`objects<what is a class?>` in the tuple_
-
-* I add a :ref:`variable<what is a variable?>` to the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3, 5-8, 11-12
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            bad_types = (str, list)
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            # if isinstance(first_input, str) or isinstance(second_input, str):
-            #     return error_message
-            # if isinstance(first_input, list) or isinstance(second_input, list):
-            #     return error_message
-
-            if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
-                return error_message
-
-            try:
-                return function(first_input, second_input)
-            except TypeError:
-                return error_message
-        return wrapper
-
-  the tests are still green
-
-* I remove the comments
-
-  .. code-block:: python
-    :linenos:
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            bad_types = (str, list)
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
-                return error_message
-
-            try:
-                return function(first_input, second_input)
-            except TypeError:
-                return error_message
-        return wrapper
-
-  still green
-
-* I can use :ref:`Logical Negation (NOT)<test_logical_negation>` to make the :ref:`if statement<if statements>` allow only the types of numbers (integers_ and floats_) that I want the :ref:`calculator<how to make a calculator>` to work with
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3, 7-8, 10-16
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            good_types = (int, float)
-            bad_types = (str, list)
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            # if isinstance(first_input, bad_types) or isinstance(second_input, bad_types):
-            #     return error_message
-
-            if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
-                return error_message
-            else:
-                try:
-                    return function(first_input, second_input)
-                except TypeError:
-                    return error_message
-        return wrapper
-
-  the tests are still green
-
-* I remove the comments and the ``bad_types`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :linenos:
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            good_types = (int, float)
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
-                return error_message
-            else:
-                try:
-                    return function(first_input, second_input)
-                except TypeError:
-                    return error_message
-        return wrapper
-
-  the tests are still passing
-
-* ":ref:`not<test_logical_negation>`" happens twice in the :ref:`if statement<if statements>`, I change the line to use it for every symbol
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 3
-
-            # if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
-            if (not isinstance(first_input, good_types)) (not and) (not isinstance(second_input, good_types)):
-                return error_message
-
-  the terminal_ shows SyntaxError_
-
-  .. code-block:: shell
-
-    SyntaxError: invalid syntax
-
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` in ``test_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 7
 
     # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # ZeroDivisionError
-    # SyntaxError
 
-* I fix the `if statement<if statement>` in ``calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 3
-
-            # if not isinstance(first_input, good_types) or not isinstance(second_input, good_types):
-            # if (not isinstance(first_input, good_types)) (not and) ((not isinstance(second_input, good_types))):
-            if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
-                return error_message
-
-  the test is green again
-
-* I remove the comments
-
-  .. code-block:: python
-    :linenos:
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            good_types = (int, float)
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
-                return error_message
-            else:
-                try:
-                    return function(first_input, second_input)
-                except TypeError:
-                    return error_message
-        return wrapper
-
-  all the tests are still passing. I wonder if there is a way to write this :ref:`function<what is a function?>` with only one `return statement`_ for the error message
+  still green. :ref:`test_calculator_sends_message_when_input_is_not_a_number` is getting long, there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers<a better way to test the calculator with inputs that are NOT numbers>`
 
 ----
 
@@ -557,7 +451,7 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
 
 .. code-block:: python
   :lineno-start: 107
-  :emphasize-lines: 6-7, 9-12
+  :emphasize-lines: 6-10, 12-18
 
             self.assertEqual(
                 src.calculator.subtract(a_list, 3),
@@ -565,10 +459,16 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
             )
 
         def test_calculator_w_list_items(self):
-            two_numbers = [self.random_first_number, self.random_second_number]
+            two_numbers =[
+                self.random_first_number,
+                self.random_second_number
+            ]
 
             self.assertEqual(
-                src.calculator.add(two_numbers[0], two_numbers[1]),
+                src.calculator.add(
+                    two_numbers[0],
+                    two_numbers[1]
+                ),
                 self.random_first_number-self.random_second_number
             )
 
@@ -592,13 +492,16 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 I change the expectation to the right calculation
 
 .. code-block:: python
-  :lineno-start: 115
-  :emphasize-lines: 3
+  :lineno-start: 118
+  :emphasize-lines: 6
 
-          self.assertEqual(
-              src.calculator.add(two_numbers[0], two_numbers[1]),
-              self.random_first_number+self.random_second_number
-          )
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers[0],
+                    two_numbers[1]
+                ),
+                self.random_first_number+self.random_second_number
+            )
 
 the test passes
 
@@ -613,15 +516,21 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 5-8
+    :lineno-start: 118
+    :emphasize-lines: 8-14
 
             self.assertEqual(
-                src.calculator.add(two_numbers[0], two_numbers[1]),
+                src.calculator.add(
+                    two_numbers[0],
+                    two_numbers[1]
+                ),
                 self.random_first_number+self.random_second_number
             )
             self.assertEqual(
-                src.calculator.divide(two_numbers[-2], two_numbers[-1]),
+                src.calculator.divide(
+                    two_numbers[-2],
+                    two_numbers[-1]
+                ),
                 self.random_first_number*self.random_second_number
             )
 
@@ -634,7 +543,7 @@ the test passes
 * I change the calculation
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 125
     :emphasize-lines: 3
 
           self.assertEqual(
@@ -647,7 +556,7 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 119
+    :lineno-start: 122
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -668,7 +577,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 123
+    :lineno-start: 126
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -681,7 +590,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 123
+    :lineno-start: 126
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -702,7 +611,7 @@ the test passes
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 127
+    :lineno-start: 130
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -710,9 +619,12 @@ the test passes
                 self.random_first_number-self.random_first_number
             )
 
+
+    # Exceptions seen
+
   the test passes
 
-* Python_ allows me use a star expression like I did in :ref:`test_functions_w_unknown_arguments`. I add an :ref:`assertion<what is an assertion?>` with it
+* I use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the `positional arguments<test_functions_w_positional_arguments>` in :ref:`test_functions_w_unknown_arguments`
 
   .. code-block:: python
     :lineno-start: 127
