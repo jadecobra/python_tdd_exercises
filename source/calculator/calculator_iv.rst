@@ -706,6 +706,7 @@ the test passes
 
         def test_calculator_raises_type_error_w_none(self):
             error_message = 'brmph?! Numbers only. Try again...'
+
             self.assertEqual(
                 src.calculator.add(None, None),
                 'brmph?! Numbers only. Try again...'
@@ -715,10 +716,11 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 5,9,13,17
+    :emphasize-lines: 6,10,14,18
 
         def test_calculator_raises_type_error_w_none(self):
             error_message = 'brmph?! Numbers only. Try again...'
+
             self.assertEqual(
                 src.calculator.add(None, None),
                 error_message
@@ -951,7 +953,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * to continue with the goal that the :ref:`calculator functions<how to make a calculator 1>` send a message when they gets something that is not a number, I change assertRaises_ to assertEqual_ in :ref:`test_calculator_raises_type_error_w_strings` for the :ref:`add function<test_addition>` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 77
     :emphasize-lines: 2, 4-5
 
         def test_calculator_raises_type_error_w_strings(self):
@@ -993,7 +995,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I change assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 77
     :emphasize-lines: 6,8-9
 
         def test_calculator_raises_type_error_w_strings(self):
@@ -1035,7 +1037,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I change assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 77
     :emphasize-lines: 10,12-13
 
         def test_calculator_raises_type_error_w_strings(self):
@@ -1080,7 +1082,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 77
     :emphasize-lines: 14, 16-17
 
         def test_calculator_raises_type_error_w_strings(self):
@@ -1473,11 +1475,12 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I add a :ref:`variable<what is a variable?>` to :ref:`test_calculator_raises_type_error_w_strings`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 77
     :emphasize-lines: 1
 
         def test_calculator_raises_type_error_w_strings(self):
             error_message = 'brmph?! Numbers only. Try again...'
+
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 'brmph?! Numbers only. Try again...'
@@ -1486,11 +1489,12 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I use the :ref:`variable<what is a variable?>` to remove the repetition of the error message
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 5,9,13,17
+    :lineno-start: 77
+    :emphasize-lines: 6,10,14,18
 
         def test_calculator_raises_type_error_w_strings(self):
             error_message = 'brmph?! Numbers only. Try again...'
+
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 error_message
@@ -1513,10 +1517,10 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
   still green
 
-* I remove the name of :ref:`test_calculator_raises_type_error_w_strings` make its :ref:`assertions<what is an assertion?>` part of  :ref:`test_calculator_raises_type_error_w_none`
+* I remove the name of :ref:`test_calculator_raises_type_error_w_strings` to make its :ref:`assertions<what is an assertion?>` part of  :ref:`test_calculator_raises_type_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 68
 
             self.assertEqual(
                 src.calculator.multiply(None, None),
@@ -1528,6 +1532,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             )
 
             error_message = 'brmph?! Numbers only. Try again...'
+
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 error_message
@@ -1540,7 +1545,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 68
 
             self.assertEqual(
                 src.calculator.multiply(None, None),
@@ -1568,6 +1573,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
             error_message = 'brmph?! Numbers only. Try again...'
+
             self.assertEqual(
                 src.calculator.add(None, None),
                 error_message
@@ -1617,7 +1623,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         error_message
     )
 
-  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers`, especially since I want to test the other data types - :ref:`booleans<what are booleans?>`, tuples_, :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>`. I do not think I am ready to write 4 tests for each one.
+  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers`, especially since I want to test the other data types - :ref:`booleans<what are booleans?>`, tuples_, :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>`. I do not think I am ready to write 4 :ref:`assertions<what is an assertion?>` for each one.
 
 ----
 

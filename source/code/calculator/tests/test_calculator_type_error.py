@@ -56,7 +56,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_calculator_sends_message_when_input_is_not_a_number(self):
         error_message = 'brmph?! Numbers only. Try again...'
-
+        
         self.assertEqual(
             src.calculator.add(None, None),
             error_message
@@ -96,4 +96,3 @@ class TestCalculator(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
-# ZeroDivisionError
