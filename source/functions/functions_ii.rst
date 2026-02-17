@@ -116,7 +116,7 @@ a better way to handle the results changing
 I change the expectation
 
 .. code-block:: python
-  :lineno-start: 14
+  :lineno-start: 11
   :emphasize-lines: 4
 
             x = 3
