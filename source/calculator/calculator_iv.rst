@@ -1496,60 +1496,56 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-----
-
-
-
-* I remove the name of :ref:`test_calculator_raises_type_error_w_strings` to make its :ref:`assertions<what is an assertion?>` part of :ref:`test_calculator_raises_type_error_w_none`
+* I add a :ref:`variable<what is a variable?>` to :ref:`test_calculator_raises_type_error_w_strings`
 
   .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 5-20
+    :lineno-start: 76
+    :emphasize-lines: 1
 
-            self.assertEqual(
-                src.calculator.subtract(None, None),
-                'brmph?! Numbers only. Try again...'
-            )
+        def test_calculator_raises_type_error_w_strings(self):
+            error_message = 'brmph?! Numbers only. Try again...'
             self.assertEqual(
                 src.calculator.add('1', '1'),
                 'brmph?! Numbers only. Try again...'
             )
+
+* I use the :ref:`variable<what is a variable?>` to remove the repetition of the error message
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 5,9,13,17
+
+        def test_calculator_raises_type_error_w_strings(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+            self.assertEqual(
+                src.calculator.add('1', '1'),
+                error_message
+            )
             self.assertEqual(
                 src.calculator.divide('1', '1'),
-                'brmph?! Numbers only. Try again...'
+                error_message
             )
             self.assertEqual(
                 src.calculator.multiply('1', '1'),
-                'brmph?! Numbers only. Try again...'
+                error_message
             )
             self.assertEqual(
                 src.calculator.subtract('1', '1'),
-                'brmph?! Numbers only. Try again...'
+                error_message
             )
 
 
     # Exceptions seen
 
-* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
+  still green
+
+* I put the :ref:`assertions<what is an assertion?>` of :ref:`test_calculator_raises_type_error_w_none` and :ref:`test_calculator_raises_type_error_w_strings` together and remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 1
 
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
-            self.assertEqual(
-
-  the tests are still green
-
-* I have the same error message 8 times in this test. I use a :ref:`variable<what is a variable?>` to make it better
-
-  .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 2, 6, 10, 14, 18, 22, 26, 30, 34
-
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
+        def test_calculator_raises_type_error_w_none(self):
             error_message = 'brmph?! Numbers only. Try again...'
-
             self.assertEqual(
                 src.calculator.add(None, None),
                 error_message
@@ -1583,7 +1579,19 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
                 error_message
             )
 
-  still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator<how to make a calculator>` :ref:`functions<what is a function?>` return an error message if they get input that is NOT a number
+
+    # Exceptions seen
+
+* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 1
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            self.assertEqual(
+
+  the tests are still green. All these :ref:`assertions<what is an assertion?>` look the same, they check that the :ref:`calculator functions<how to make a calculator>` return an error message if they get input that is NOT a number
 
   .. code-block:: python
 
@@ -1592,163 +1600,9 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         error_message
     )
 
-  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers`
+  there has to be :ref:`a better way to test the calculator with inputs that are NOT numbers`, especially since I want to test the other data types - :ref:`booleans<what are booleans?>`, tuples_, :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>`. I do not think I am ready to write 4 tests for each one.
 
 ----
-----
-----
-----
-
-the other part that is different for all the :ref:`functions<what is a function?>` are the calculations
-
-.. code-block:: python
-
-  return first_input - second_input
-  return first_input * second_input
-  return first_input / second_input
-  return first_input + second_input
-
-----
-
-=================================================================================
-what is a decorator function?
-=================================================================================
-
-----
-
-A decorator or wrapper :ref:`function<what is a function?>` takes another :ref:`function<what is a function?>` as input and returns a :ref:`function<what is a function?>`. I can use it to remove the :ref:`exception handler<how to use try...except...else>` that is the same in all of the :ref:`calculator functions<how to make a calculator>`
-
-* I add a new :ref:`function<what is a function?>` add the top of ``calculator.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-7
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            try:
-                return function(first_input, second_input)
-            except TypeError:
-                return 'brmph?! Numbers only. Try again...'
-        return wrapper
-
-
-    def subtract(first_input, second_input):
-
-  The ``numbers_only`` :ref:`function<what is a function?>` takes a :ref:`function<what is a function?>` as input
-
-  - it tries to return the result of the :ref:`function<what is a function?>` working on the two inputs
-  - if TypeError_ is raised it returns the error message
-
-* I use it to wrap the :ref:`subtract function<test_subtraction>`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 1
-
-    @numbers_only
-    def subtract(first_input, second_input):
-        try:
-
-  the test is still green
-
-* I remove the parts that are also in the ``numbers_only`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 3
-
-    @numbers_only
-    def subtract(first_input, second_input):
-        return first_input - second_input
-
-
-    def multiply(first_input, second_input):
-
-  still green
-
-* I do the same thing with the :ref:`multiply function<test_multiplication>`
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 1
-
-    @numbers_only
-    def multiply(first_input, second_input):
-        try:
-
-  the test is green again
-
-* I remove the parts that are also in the ``numbers_only`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 3
-
-    @numbers_only
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    def divide(first_input, second_input):
-
-  the tests are still passing
-
-* on to the :ref:`divide function<test_functions>`
-
-  .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 1
-
-    @numbers_only
-    def divide(first_input, second_input):
-        try:
-
-  still green
-
-* I remove the :ref:`except clause<how to use try...except...else>` for TypeError_
-
-  .. code-block:: python
-    :lineno-start: 20
-
-    @numbers_only
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! I cannot divide by 0. Try again...'
-
-
-    def add(first_number, second_input):
-
-  all the tests are still green
-
-* one more to go, I wrap the :ref:`add function<test_addition>` with the ``numbers_only`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 1
-
-    @numbers_only
-    def add(first_input, second_input):
-        if isinstance(first_input, str) or isinstance(second_input, str):
-
-  the test is still green
-
-* I remove the :ref:`exception handler<how to use try...except...else>` from the `else clause`_
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 6
-
-    @numbers_only
-    def add(first_input, second_input):
-        if isinstance(first_input, str) or isinstance(second_input, str):
-            return 'brmph?! Numbers only. Try again...'
-        else:
-            return first_input + second_input
-
-  green! Lovely!
 
 * I can make a :ref:`function<what is a function?>` for the condition in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
 
