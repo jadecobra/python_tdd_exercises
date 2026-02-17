@@ -1,14 +1,14 @@
 def numbers_only(function):
-    def wrapper(first_input, second_input):
+    def decorator(first_input, second_input):
         error_message = 'brmph?! Numbers only. Try again...'
-        if isinstance(first_input, str) or isinstance(second_input, str):
+        if first_input is None or second_input is None:
             return error_message
         else:
             try:
                 return function(first_input, second_input)
             except TypeError:
                 return error_message
-    return wrapper
+    return decorator
 
 
 @numbers_only
@@ -31,4 +31,11 @@ def divide(first_input, second_input):
 
 @numbers_only
 def add(first_input, second_input):
-    return first_input + second_input
+    if (
+        isinstance(first_input, str)
+        or
+        isinstance(second_input, str)
+    ):
+        return 'brmph?! Numbers only. Try again...'
+    else:
+        return first_input + second_input
