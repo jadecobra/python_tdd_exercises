@@ -122,7 +122,7 @@ table of contents
   connect the dots<dot_notation>
   exceptions/index
   data_structures/index
-  how_to/index
+  how to<how_to/index>
   catalog of tests<catalog_of_tests>
   all the code in this book<catalog_of_code>
   learning_models
