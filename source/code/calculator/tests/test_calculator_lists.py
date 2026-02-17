@@ -110,38 +110,53 @@ class TestCalculator(unittest.TestCase):
         )
 
     def test_calculator_w_list_items(self):
-        a_list = [self.random_first_number, self.random_second_number]
+        two_numbers =[
+            self.random_first_number,
+            self.random_second_number
+        ]
 
         self.assertEqual(
-            src.calculator.add(a_list[0], a_list[1]),
+            src.calculator.add(
+                two_numbers[0],
+                two_numbers[1]
+            ),
             self.random_first_number+self.random_second_number
         )
         self.assertEqual(
-            src.calculator.divide(a_list[-2], a_list[-1]),
+            src.calculator.divide(
+                two_numbers[-2],
+                two_numbers[-1]
+            ),
             self.random_first_number/self.random_second_number
         )
         self.assertEqual(
-            src.calculator.multiply(a_list[1], a_list[-1]),
+            src.calculator.multiply(
+                two_numbers[1],
+                two_numbers[-1]
+            ),
             self.random_second_number*self.random_second_number
         )
         self.assertEqual(
-            src.calculator.subtract(a_list[-2], a_list[0]),
+            src.calculator.subtract(
+                two_numbers[-2],
+                two_numbers[0]
+            ),
             self.random_first_number-self.random_first_number
         )
         self.assertEqual(
-            src.calculator.add(*a_list),
+            src.calculator.add(*two_numbers),
             self.random_first_number+self.random_second_number
         )
         self.assertEqual(
-            src.calculator.divide(*a_list),
+            src.calculator.divide(*two_numbers),
             self.random_first_number/self.random_second_number
         )
         self.assertEqual(
-            src.calculator.multiply(*a_list),
+            src.calculator.multiply(*two_numbers),
             self.random_first_number*self.random_second_number
         )
         self.assertEqual(
-            src.calculator.subtract(*a_list),
+            src.calculator.subtract(*two_numbers),
             self.random_first_number-self.random_second_number
         )
 
@@ -163,5 +178,3 @@ class TestCalculator(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
-# ZeroDivisionError
-# SyntaxError

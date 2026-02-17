@@ -1059,7 +1059,6 @@ review
 I added these tests to the :ref:`calculator program<how to make a calculator 3>` after testing :ref:`lists<what is a list?>`
 
 * :ref:`test_calculator_sends_message_when_input_is_not_a_number`
-* :ref:`add more instance tests to the numbers_only function<how to test if something is an instance of more than one type>`
 * :ref:`test_calculator_w_list_items`
 * :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
