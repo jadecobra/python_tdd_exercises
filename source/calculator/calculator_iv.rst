@@ -1465,32 +1465,6 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
     @numbers_only
     def subtract(first_input, second_input):
-        return first_input - second_input
-
-
-    @numbers_only
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    @numbers_only
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! I cannot divide by 0. Try again...'
-
-
-    @numbers_only
-    def add(first_input, second_input):
-        if (
-            isinstance(first_input, str)
-            or
-            isinstance(second_input, str)
-        ):
-            return 'brmph?! Numbers only. Try again...'
-        else:
-            return first_input + second_input
 
   all tests are still green
 
@@ -1607,8 +1581,16 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I can make a :ref:`function<what is a function?>` for the condition in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 1-2, 7
+    :lineno-start: 24
+    :emphasize-lines: 9-10
+
+    @numbers_only
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
 
     def is_string(something):
         return isinstance(something, str)
@@ -1616,302 +1598,133 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
     @numbers_only
     def add(first_input, second_input):
+
+* then use ``is_string`` in the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 3-8
+
+    @numbers_only
+    def add(first_input, second_input):
+        # if (
+        #     isinstance(first_input, str)
+        #     or
+        #     isinstance(second_input, str)
+        # ):
         if is_string(first_input) or is_string(second_input):
             return 'brmph?! Numbers only. Try again...'
         else:
             return first_input + second_input
 
-  the test is still green
-
-  - This removes the duplication of ``str`` in the call to the `isinstance function`_
-
-    .. code-block:: python
-
-      isinstance(first_input, str)
-      isinstance(second_input, str):
-
-  - it also adds 2 lines of code to remove 6 characters. WOW!
-
-* I can make a :ref:`function<what is a function?>` for the whole :ref:`if statement<if statements>` in the :ref:`add function<test_addition>`
+  the test is still green. This removes the duplication of ``str`` in the call to the `isinstance function`_
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 1-2, 7
+
+    isinstance(first_input, str)
+    isinstance(second_input, str)
+
+  it also adds 2 lines of code to remove 6 characters. WOW!
+
+* I undo the change
+
+* I can make a :ref:`function<what is a function?>` for the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 9-14
+
+    @numbers_only
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
 
     def one_input_is_a_string(first_input, second_input):
-        return isinstance(first_input, str) or isinstance(second_input, str)
+        return (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        )
 
 
     @numbers_only
     def add(first_input, second_input):
+
+* then use ``one_input_is_a_string`` in the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 3-8
+
+    @numbers_only
+    def add(first_input, second_input):
+        # if (
+        #     isinstance(first_input, str)
+        #     or
+        #     isinstance(second_input, str)
+        # ):
         if one_input_is_a_string(first_input, second_input):
             return 'brmph?! Numbers only. Try again...'
         else:
             return first_input + second_input
 
-  the test is still green.
 
-  - the ``one_input_is_a_string`` :ref:`function<what is a function?>` looks the same as :ref:`Logical Disjunction from the Truth Table<test_logical_disjunction>`
-  - this makes it easier to change the :ref:`condition<if statements>` later without touching the :ref:`add function<test_addition>`
-  - it still adds 2 lines of code
+  the test is still green. the ``one_input_is_a_string`` :ref:`function<what is a function?>`
 
-* I can also make a decorator :ref:`function<what is a function?>` for the :ref:`if statement<if statements>` to practice making a decorator :ref:`function<what is a function?>`
+  - also uses :ref:`logical disjunction<test_logical_disjunction>` like the :ref:`if statement<if statements>` in ``numbers_only``
+  - makes it easier to change the :ref:`condition<if statements>` later without touching the :ref:`add function<test_addition>`
+  - still adds 2 lines of code
+
+* enough experiments for now. I undo the change because I do not need it
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-7
-
-    def reject_strings(function):
-        def wrapper(first_input, second_input):
-            if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'brmph?! Numbers only. Try again...'
-            else:
-                return function(first_input, second_input)
-        return wrapper
-
 
     def numbers_only(function):
-
-* then use it to wrap the :ref:`add function<test_addition>`
-
-  .. code-block:: python
-    :lineno-start: 37
-
-    @reject_strings
-    @numbers_only
-    def add(first_input, second_input):
-
-  the test is still green
-
-* I remove the :ref:`if statement<if statements>` from the :ref:`add function<test_addition>`
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 4
-
-    @reject_strings
-    @numbers_only
-    def add(first_input, second_input):
-        return first_input + second_input
-
-  the test is still green
-
-* the ``reject_strings`` and ``numbers_only`` :ref:`functions<what is a function?>` have parts that are the same
-
-  .. code-block:: python
-
-        def wrapper(first_input, second_input):
-            ...
-            return 'brmph?! Numbers only. Try again...'
-            ...
-            return function(first_input, second_input)
-        return wrapper
-
-  I make a new :ref:`function<what is a function?>` that has the :ref:`if statement<if statements>` from ``reject_strings`` and the :ref:`exception handler<how to use try...except...else>` from ``numbers_only``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-10
-
-    def numbers_only_and_rejects_strings(function):
-        def wrapper(first_input, second_input):
-            if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'brmph?! Numbers only. Try again...'
-            else:
-                try:
-                    return function(first_input, second_input)
-                except TypeError:
-                    return 'brmph?! Numbers only. Try again...'
-        return wrapper
-
-
-    def reject_strings(function):
-
-* I use the new :ref:`function<what is a function?>` to wrap the :ref:`add function<test_addition>`
-
-  .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 1
-
-    @numbers_only_and_rejects_strings
-    @reject_strings
-    @numbers_only
-    def add(first_input, second_input):
-        return first_input + second_input
-
-  the test is still green
-
-* I remove the other wrappers from the :ref:`add function<test_addition>`
-
-  .. code-block:: python
-    :lineno-start: 49
-
-    @numbers_only_and_rejects_strings
-    def add(first_input, second_input):
-        return first_input + second_input
-
-  still green
-
-* I wrap the other :ref:`functions<what is a function?>` with ``numbers_only_and_reject_strings``
-
-  .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 1, 7, 13
-
-    @numbers_only_and_rejects_strings
-    @numbers_only
-    def subtract(first_input, second_input):
-        return first_input - second_input
-
-
-    @numbers_only_and_rejects_strings
-    @numbers_only
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    @numbers_only_and_rejects_strings
-    @numbers_only
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! I cannot divide by 0. Try again...'
-
-
-    @numbers_only_and_rejects_strings
-    def add(first_input, second_input):
-
-  the test is green again
-
-* I remove ``numbers_only`` from each :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 31
-
-    @numbers_only_and_rejects_strings
-    def subtract(first_input, second_input):
-        return first_input - second_input
-
-
-    @numbers_only_and_rejects_strings
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    @numbers_only_and_rejects_strings
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! I cannot divide by 0. Try again...'
-
-
-    @numbers_only_and_rejects_strings
-    def add(first_input, second_input):
-        return first_input + second_input
-
-  the test is still green
-
-* I remove the ``reject_strings`` and ``numbers_only`` :ref:`functions<what is a function?>`
-
-  .. code-block:: python
-    :linenos:
-
-    def numbers_only_and_rejects_strings(function):
-        def wrapper(first_input, second_input):
-            if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'brmph?! Numbers only. Try again...'
-            else:
-                try:
-                    return function(first_input, second_input)
-                except TypeError:
-                    return 'brmph?! Numbers only. Try again...'
-        return wrapper
-
-
-    @numbers_only_and_rejects_strings
-    def subtract(first_input, second_input):
-        return first_input - second_input
-
-
-    @numbers_only_and_rejects_strings
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    @numbers_only_and_rejects_strings
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! I cannot divide by 0. Try again...'
-
-
-    @numbers_only_and_rejects_strings
-    def add(first_input, second_input):
-        return first_input + second_input
-
-* I change the name of the new decorator :ref:`function<what is a function?>` to make it easier
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1, 13, 18, 23, 31
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
-            if isinstance(first_input, str) or isinstance(second_input, str):
-                return 'brmph?! Numbers only. Try again...'
-            else:
-                try:
-                    return function(first_input, second_input)
-                except TypeError:
-                    return 'brmph?! Numbers only. Try again...'
-        return wrapper
-
-
-    @numbers_only
-    def subtract(first_input, second_input):
-        return first_input - second_input
-
-
-    @numbers_only
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    @numbers_only
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! I cannot divide by 0. Try again...'
-
-
-    @numbers_only
-    def add(first_input, second_input):
-        return first_input + second_input
-
-  still green
-
-* There is also duplication of the error message. I add a :ref:`variable<what is a variable?>` to remove it
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3, 6, 11
-
-    def numbers_only(function):
-        def wrapper(first_input, second_input):
+        def decorator(first_input, second_input):
             error_message = 'brmph?! Numbers only. Try again...'
-
-            if isinstance(first_input, str) or isinstance(second_input, str):
+            if first_input is None or second_input is None:
                 return error_message
             else:
                 try:
                     return function(first_input, second_input)
                 except TypeError:
                     return error_message
-        return wrapper
+        return decorator
+
+
+    @numbers_only
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @numbers_only
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @numbers_only
+    def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        else:
+            return first_input + second_input
+
 
   and all the tests are still passing. The world is my oyster!
 
