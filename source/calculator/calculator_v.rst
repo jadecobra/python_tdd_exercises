@@ -878,7 +878,7 @@ I add a new test to show the problem when I have more than 2 inputs and use a `s
   :emphasize-lines: 6-7, 9
 
           self.assertEqual(
-              src.calculator.subtract(*a_list),
+              src.calculator.subtract(*two_numbers),
               self.random_first_number-self.random_second_number
           )
 
@@ -907,7 +907,7 @@ the terminal_ shows :ref:`TypeError`
 I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
 
 .. code-block:: python
-  :lineno-start: 148
+  :lineno-start: 163
   :emphasize-lines: 4-5
 
       def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
@@ -929,8 +929,11 @@ the test passes
 * I add a failing line for :ref:`division<test_division>` with the new :ref:`list<lists>`
 
   .. code-block:: python
-    :lineno-start: 151
-    :emphasize-lines: 3
+    :lineno-start: 163
+    :emphasize-lines: 6
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            not_two_numbers = [0, 1, 2]
 
             with self.assertRaises(TypeError):
                 src.calculator.add(*not_two_numbers)
@@ -945,7 +948,7 @@ the test passes
 * I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 166
     :emphasize-lines: 3-4
 
             with self.assertRaises(TypeError):
@@ -953,12 +956,12 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.divide(*not_two_numbers)
 
-    the test passes
+  the test passes
 
 * I add a line for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 153
+    :lineno-start: 168
     :emphasize-lines: 3
 
             with self.assertRaises(TypeError):
@@ -974,7 +977,7 @@ the test passes
 * I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 153
+    :lineno-start: 168
     :emphasize-lines: 3-4
 
             with self.assertRaises(TypeError):
@@ -987,7 +990,7 @@ the test passes
 * I add the last line
 
   .. code-block:: python
-    :lineno-start: 155
+    :lineno-start: 170
     :emphasize-lines: 3
 
             with self.assertRaises(TypeError):
@@ -1003,7 +1006,7 @@ the test passes
 * I handle the :ref:`Exception<errors>`
 
   .. code-block:: python
-    :lineno-start: 148
+    :lineno-start: 163
     :emphasize-lines: 10-11
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
@@ -1017,6 +1020,9 @@ the test passes
                 src.calculator.multiply(*not_two_numbers)
             with self.assertRaises(TypeError):
                 src.calculator.subtract(*not_two_numbers)
+
+
+    # Exceptions seen
 
   the test passes
 
