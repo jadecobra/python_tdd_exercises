@@ -58,7 +58,7 @@ open the project
     configfile: pyproject.toml
     collected 5 items
 
-    tests/test_calculator.py ....                                        [100%]
+    tests/test_calculator.py .....                                [100%]
 
     ======================== 5 passed in X.YZs =========================
 
@@ -140,8 +140,11 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` for the next :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 5-8
+    :lineno-start: 93
+    :emphasize-lines: 8-11
+
+        def test_calculator_sends_message_when_input_is_a_list(self):
+            a_list = [0, 1, 2, 3]
 
             self.assertEqual(
                 src.calculator.add(a_list, 0),
@@ -151,6 +154,9 @@ the test passes
                 src.calculator.divide(a_list, 1),
                 'BAP!!!'
             )
+
+
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -171,7 +177,22 @@ the test passes
 
   the test passes. Wait a minute! I just wrote the same thing twice, and I did it 8 times before in :ref:`test_calculator_sends_message_when_input_is_not_a_number` and 2 times in the ``numbers_only`` :ref:`function<what is a function?>`. Never again
 
-* I add a :ref:`variable<what is a variable?>` to remove the repetition
+* I add a :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 3
+
+        def test_calculator_sends_message_when_input_is_a_list(self):
+            a_list = [0, 1, 2, 3]
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            self.assertEqual(
+                src.calculator.add(a_list, 0),
+                'brmph?! Numbers only. Try again...'
+            )
+
+* I use the :ref:`variable<what is a variable?>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 93
