@@ -303,29 +303,31 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the test passes. The two :ref:`if statements` in the :ref:`add function<test_addition>` look the same
-
-  .. code-block:: python
-
-    if (
-        isinstance(first_input, data_type)
-        or
-        isinstance(second_input, data_type)
-    ):
-        return 'brmph?! Numbers only. Try again...'
-
-  the only difference are the data types
-
-  .. code-block:: python
-
-    isinstance(something, str)
-    isinstance(something, bool)
+  the test passes
 
 ----
 
 *********************************************************************************
 how to test if something is an instance of more than one type
 *********************************************************************************
+
+The two :ref:`if statements` in the :ref:`add function<test_addition>` look the same
+
+.. code-block:: python
+
+  if (
+      isinstance(first_input, data_type)
+      or
+      isinstance(second_input, data_type)
+  ):
+      return 'brmph?! Numbers only. Try again...'
+
+the only difference are the data types
+
+.. code-block:: python
+
+  isinstance(something, str)
+  isinstance(something, bool)
 
 The `isinstance function`_ can take a tuple_ as the second input, which means I can if the first input is an instance of any of the :ref:`objects<what is a class?>` in the tuple_
 
@@ -648,39 +650,8 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   .. code-block:: python
     :lineno-start: 207
-    :emphasize-lines: 36
+    :emphasize-lines: 5
 
-        def test_calculator_w_a_for_loop(self):
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            for data in (
-                None,
-                True, False,
-                str(),
-                tuple(),
-                list(),
-                set(),
-                dict(),
-            ):
-                with self.subTest(data_type=data):
-                    self.assertEqual(
-                        src.calculator.add(
-                            data, a_random_number()
-                        ),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.divide(
-                            data, a_random_number()
-                        ),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.multiply(
-                            data, a_random_number()
-                        ),
-                        error_message
-                    )
                     self.assertEqual(
                         src.calculator.subtract(
                             data, a_random_number()
@@ -741,12 +712,11 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-13, 18
+    :emphasize-lines: 6-11
 
     def numbers_only(function):
         def decorator(first_input, second_input):
             error_message = 'brmph?! Numbers only. Try again...'
-
             if first_input is None or second_input is None:
                 return error_message
             if (
@@ -825,58 +795,107 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     def add(first_input, second_input):
         return first_input + second_input
 
-  all the tests are still green
-
-----
-* in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-4
-
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            if isinstance(first_input, bool) or isinstance(second_input, bool):
-                return error_message
-            if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
-
-  the test passes
+  the tests are still green
 
 ----
 
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I can use a `for loop`_ to make the :ref:`if statements` simpler
+* I add a :ref:`variable<what is a variable?>` to the ``numbers_only`` :ref:`decorator function<what is a decorator function?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-9, 11-13, 15-18
+    :emphasize-lines: 3, 6
 
     def numbers_only(function):
-        def wrapper(first_input, second_input):
-            good_types = (int, float)
+        def decorator(first_input, second_input):
+            bad_data_types = (str, list, bool)
             error_message = 'brmph?! Numbers only. Try again...'
 
-            # if isinstance(first_input, bool) or isinstance(second_input, bool):
+            if first_input is None or second_input is None:
+
+* I use the :ref:`variable<what is a variable?>` to remove the repetition of ``(str, list, bool)``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4-5, 7-8
+
+            if first_input is None or second_input is None:
+                return error_message
+            if (
+                # isinstance(first_input, (str, list, bool))
+                isinstance(first_input, bad_data_types)
+                or
+                # isinstance(second_input, (str, list, bool))
+                isinstance(second_input, bad_data_types)
+            ):
+                return error_message
+
+  still green
+
+* I remove the commented lines then use a `for loop`_ with the :ref:`if statements`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-13, 15-19
+
+    def numbers_only(function):
+        def decorator(first_input, second_input):
+            bad_data_types = (str, list, bool)
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            # if first_input is None or second_input is None:
             #     return error_message
-            # if not (isinstance(first_input, good_types) and isinstance(second_input, good_types)):
+            # if (
+            #     isinstance(first_input, bad_data_types)
+            #     or
+            #     isinstance(second_input, bad_data_types)
+            # ):
             #     return error_message
 
             for value in (first_input, second_input):
-                if isinstance(value, bool) or not isinstance(value, good_types):
+                if value is None:
+                    return error_message
+                if isinstance(value, bad_data_types):
                     return error_message
 
             try:
                 return function(first_input, second_input)
             except TypeError:
                 return error_message
-        return wrapper
+        return decorator
 
-  the test is still green
+  green
+
+* I remove the commented lines then put the two :ref:`if statements` together with :ref:`logical disjunction<test_logical_disjunction>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-10, 12-17
+
+    def numbers_only(function):
+        def decorator(first_input, second_input):
+            bad_data_types = (str, list, bool)
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            for value in (first_input, second_input):
+                # if value is None:
+                #     return error_message
+                # if isinstance(value, bad_data_types):
+                #     return error_message
+
+                if (
+                    value is None
+                    or
+                    isinstance(value, bad_data_types)
+                ):
+                    return error_message
+
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return decorator
+
+  still green
 
 * I remove the commented lines
 
@@ -884,21 +903,121 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     :linenos:
 
     def numbers_only(function):
-        def wrapper(first_input, second_input):
-            good_types = (int, float)
+        def decorator(first_input, second_input):
+            bad_data_types = (str, list, bool)
             error_message = 'brmph?! Numbers only. Try again...'
 
             for value in (first_input, second_input):
-                if isinstance(value, bool) or not isinstance(value, good_types):
+                if (
+                    value is None
+                    or
+                    isinstance(value, bad_data_types)
+                ):
                     return error_message
 
             try:
                 return function(first_input, second_input)
             except TypeError:
                 return error_message
-        return wrapper
+        return decorator
 
-  still green
+
+    @numbers_only
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @numbers_only
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @numbers_only
+    def add(first_input, second_input):
+        return first_input + second_input
+
+  the tests are still green
+
+* I remove :ref:`test_calculator_sends_message_when_input_is_not_a_number` because it tests :ref:`None<what is None?>`, strings_  and :ref:`lists<what is a list?>`, while :ref:`test_calculator_w_a_for_loop` tests :ref:`None<what is None?>`, :ref:`booleans<what are booleans?>`, strings_, tuples_, :ref:`lists<what is a list?>`, sets_ and :ref:`dictionaries<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 43
+
+        def test_division(self):
+            try:
+                self.assertEqual(
+                    src.calculator.divide(
+                        self.random_first_number,
+                        self.random_second_number
+                    ),
+                    self.random_first_number/self.random_second_number
+                )
+            except ZeroDivisionError:
+                self.assertEqual(
+                    src.calculator.divide(self.random_first_number, 0),
+                    'brmph?! I cannot divide by 0. Try again...'
+                )
+
+        def test_calculator_w_list_items(self):
+
+* I change the name of :ref:`test_calculator_w_a_for_loop` to :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+
+  .. code-block:: python
+    :lineno-start: 121
+    :emphasize-lines: 1
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            for data in (
+                None,
+                True, False,
+                str(),
+                tuple(),
+                list(),
+                set(),
+                dict(),
+            ):
+                with self.subTest(data_type=data):
+                    self.assertEqual(
+                        src.calculator.add(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.divide(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.multiply(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.subtract(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
 
 ----
 

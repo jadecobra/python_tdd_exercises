@@ -1029,7 +1029,7 @@ the terminal_ shows all tests are passing. The `assertRaises method`_ checks tha
             with self.assertRaises(Exception):
                 1 / 0
 
-  all the tests are still green.
+  the tests are still green.
 
   The problem with using :ref:`Exception<errors>` to catch its children, is it does not tell anyone that reads the code what the actual :ref:`error<errors>` is or which line caused it, especially when there is more than one line of code in the context.
 
