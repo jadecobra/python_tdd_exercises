@@ -1,8 +1,5 @@
 .. danger::
 
-  DANGER WILL ROBINSON! This chapter is still UNDER CONSTRUCTION.
-  It is DEFINITELY full of mistakes and may be completely different when I am done editing it though most of the code should work
-
 #################################################################################
 functions: tests and solutions
 #################################################################################
@@ -13,7 +10,7 @@ functions: tests
 
 the code in ``functions/tests/test_functions.py`` from :ref:`functions<what is a function?>`
 
-.. literalinclude:: functions/test_functions_i.py
+.. literalinclude:: functions/test_functions_1.py
   :language: python
   :linenos:
 
@@ -35,7 +32,7 @@ functions 2: tests
 
 the code in ``functions/tests/test_functions.py`` from :ref:`functions 2`
 
-.. literalinclude:: functions/test_functions_ii.py
+.. literalinclude:: functions/test_functions_calculator.py
   :language: python
   :linenos:
 
@@ -47,6 +44,6 @@ functions 3: solutions
 
 the solutions in ``functions/tests/test_functions.py`` from :ref:`functions 3`
 
-.. literalinclude:: functions/test_functions_iii.py
+.. literalinclude:: functions/test_functions_list_comprehensions.py
   :language: python
   :linenos:

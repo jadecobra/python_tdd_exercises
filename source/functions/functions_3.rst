@@ -4,18 +4,11 @@
 
 .. include:: ../links.rst
 
-.. _function: https://docs.python.org/3/glossary.html#term-function
-.. _functions: :ref:`function<what is a function?>`
-.. _argument: https://docs.python.org/3/glossary.html#term-argument
-.. _arguments: argument_
-.. _keyword arguments: arguments_
-.. _positional arguments: arguments_
-
 #################################################################################
-functions 2
+functions 3
 #################################################################################
 
-Since I know how to use :ref:`variables<what is a variable?>`, I can do better with the results of :ref:`test_why_use_a_function`
+Since I know how to use :ref:`for loops<what is a for loop?>`, I can do better with the :ref:`assertions<what is an assertion?>` of :ref:`test_why_use_a_function`
 
 ----
 
@@ -62,7 +55,7 @@ open the project
 ----
 
 *********************************************************************************
-a better way to handle the results changing
+a better way to test why use a function
 *********************************************************************************
 
 ----
@@ -73,7 +66,7 @@ a better way to handle the results changing
 
 ----
 
-* I add 2 :ref:`variables<what is a variable?>` to :ref:`test_why_use_a_function`
+* I add a `for loop`_ and `range object`_ to :ref:`test_why_use_a_function`
 
   .. code-block:: python
     :lineno-start: 7
@@ -116,7 +109,7 @@ a better way to handle the results changing
 I change the expectation
 
 .. code-block:: python
-  :lineno-start: 11
+  :lineno-start: 14
   :emphasize-lines: 4
 
             x = 3

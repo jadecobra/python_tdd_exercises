@@ -65,7 +65,7 @@ the chapters
   list_comprehensions
   make a calculator 6<../../calculator/calculator_vi>
   ../../data_structures/booleans/booleans_3
-  ../../functions/functions_iii
+  ../../functions/functions_3
 
 ----
 
