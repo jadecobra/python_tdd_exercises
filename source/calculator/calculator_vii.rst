@@ -249,7 +249,7 @@ the test passes
 
     TypeError: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
 
-* the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` dictionary_ must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``. I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the test
+* the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :ref:`dictionary<what is a dictionary?>` must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``. I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the test
 
   .. code-block:: python
     :lineno-start: 124
@@ -432,7 +432,7 @@ the test passes
 
   the test is still green
 
-* I can also use a dictionary_ with a :ref:`for loop<what is a for loop?>` to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler at the same time
+* I can also use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what is a for loop?>` to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler at the same time
 
   .. code-block:: python
     :lineno-start: 58
@@ -570,7 +570,7 @@ the test passes
 test_calculator_functions
 *********************************************************************************
 
-I want to use a dictionary_ to write one test that covers all the :ref:`4 calculator functions: addition, subtraction, division and multiplication<how to make a calculator>`
+I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that covers all the :ref:`4 calculator functions: addition, subtraction, division and multiplication<how to make a calculator>`
 
 ----
 
@@ -629,7 +629,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
 ----
 
-* I need a way to add the calculations for each operation to the :ref:`assertion<what is an assertion?>`. I add another dictionary_
+* I need a way to add the calculations for each operation to the :ref:`assertion<what is an assertion?>`. I add another :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -654,7 +654,7 @@ I want to use a dictionary_ to write one test that covers all the :ref:`4 calcul
 
             for operation in arithmetic:
 
-* I use the new dictionary_ for the calculation in the :ref:`assertion<what is an assertion?>`
+* I use the new :ref:`dictionary<what is a dictionary?>` for the calculation in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -748,7 +748,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
 ----
 
-* the two dictionaries_ in this test have the same :ref:`keys<test_keys_of_a_dictionary>`, I can put them together
+* the two :ref:`dictionaries<what is a dictionary?>` in this test have the same :ref:`keys<test_keys_of_a_dictionary>`, I can put them together
 
   .. code-block:: python
     :lineno-start: 75
@@ -843,7 +843,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   the test passes
 
-* I remove the other dictionaries_ and :ref:`for loop<what is a for loop?>`
+* I remove the other :ref:`dictionaries<what is a dictionary?>` and :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1048,7 +1048,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   all tests are still green
 
-* the dictionaries_ in ``test_calculator_functions`` and ``test_calculator_sends_message_when_input_is_not_a_number`` are similar, I add a new dictionary_ in the `setUp method`_ to replace them
+* the :ref:`dictionaries<what is a dictionary?>` in ``test_calculator_functions`` and ``test_calculator_sends_message_when_input_is_not_a_number`` are similar, I add a new :ref:`dictionary<what is a dictionary?>` in the `setUp method`_ to replace them
 
   .. code-block:: python
     :lineno-start: 19
@@ -1105,7 +1105,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   the test is still green
 
-* I remove the commented lines and ``arithemtic_tests`` dictionary_ from ``test_calculator_functions``
+* I remove the commented lines and ``arithemtic_tests`` :ref:`dictionary<what is a dictionary?>` from ``test_calculator_functions``
 
   .. code-block:: python
     :lineno-start: 47
@@ -1144,7 +1144,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   the test is still green
 
-* I remove the commented lines and the ``arithmetic`` dictionary_
+* I remove the commented lines and the ``arithmetic`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1174,7 +1174,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   still green
 
-* I add a :ref:`for loop<what is a for loop?>` to use the ``arithmetic_tests`` dictionary_ in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+* I add a :ref:`for loop<what is a for loop?>` to use the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
     :lineno-start: 180

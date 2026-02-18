@@ -785,7 +785,7 @@ I add assertRaises_
 
   # Exceptions seen
 
-the test passes. I cannot use dictionaries_, sets_ or :ref:`lists` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`. They are not hashable_, which means they can change in their lifetime
+the test passes. I cannot use :ref:`dictionaries<what is a dictionary?>`, sets_ or :ref:`lists` as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`. They are not hashable_, which means they can change in their lifetime
 
 ----
 
@@ -801,7 +801,7 @@ test_attributes_and_methods_of_dictionaries
 
 ----
 
-I add a new test with the `dir built-in function`_ to see the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of dictionaries_
+I add a new test with the `dir built-in function`_ to see the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of :ref:`dictionaries<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 41
@@ -922,7 +922,7 @@ It also gives me a message about how to show the full difference between the two
 
   the test passes
 
-* I copy the names that do NOT have double underscores (__) and paste them below the test to make a TODO list that I use to test what I can do with dictionaries_
+* I copy the names that do NOT have double underscores (__) and paste them below the test to make a TODO list that I use to test what I can do with :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 93
@@ -2122,7 +2122,7 @@ test_pop_removes_given_key_from_a_dictionary_and_returns_its_value
 
 ----
 
-I wonder if the `pop method`_ of dictionaries_ behaves the same way as the :ref:`pop method of lists<test_pop_removes_and_returns_last_item_from_a_list>`. I add a test for it
+I wonder if the `pop method`_ of :ref:`dictionaries<what is a dictionary?>` behaves the same way as the :ref:`pop method of lists<test_pop_removes_and_returns_last_item_from_a_list>`. I add a test for it
 
 .. code-block:: python
   :lineno-start: 145
@@ -3667,7 +3667,7 @@ I also ran these tests for the :ref:`methods of dictionaries<test_attributes_and
 * :ref:`test_update_a_dictionary`
 * :ref:`test_values_of_a_dictionary`
 
-and a test for the important :ref:`Exception<errors>` to know when working with dictionaries_ - :ref:`KeyError<test_key_error>`
+and a test for the important :ref:`Exception<errors>` to know when working with :ref:`dictionaries<what is a dictionary?>` - :ref:`KeyError<test_key_error>`
 
 ----
 
