@@ -1,17 +1,21 @@
 def numbers_only(function):
-    def wrapper(first_input, second_input):
-        good_types = (int, float)
+    def decorator(first_input, second_input):
+        bad_data_types = (str, list, bool)
         error_message = 'brmph?! Numbers only. Try again...'
 
         for value in (first_input, second_input):
-            if isinstance(value, bool) or not isinstance(value, good_types):
+            if (
+                value is None
+                or
+                isinstance(value, bad_data_types)
+            ):
                 return error_message
 
         try:
             return function(first_input, second_input)
         except TypeError:
             return error_message
-    return wrapper
+    return decorator
 
 
 @numbers_only

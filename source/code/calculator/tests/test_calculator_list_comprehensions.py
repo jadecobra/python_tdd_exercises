@@ -55,69 +55,54 @@ class TestCalculator(unittest.TestCase):
                 'brmph?! I cannot divide by 0. Try again...'
             )
 
-    def test_calculator_sends_message_when_input_is_not_a_number(self):
-        error_message = 'brmph?! Numbers only. Try again...'
-
-        for data in (
-            None,
-            True, False,
-            str(),
-            tuple(),
-            list(),
-            set(),
-            dict(),
-        ):
-            with self.subTest(i=data):
-                self.assertEqual(
-                    src.calculator.add(data, a_random_number()),
-                    error_message
-                )
-                self.assertEqual(
-                    src.calculator.divide(data, a_random_number()),
-                    error_message
-                )
-                self.assertEqual(
-                    src.calculator.multiply(data, a_random_number()),
-                    error_message
-                )
-                self.assertEqual(
-                    src.calculator.subtract(data, a_random_number()),
-                    error_message
-                )
-
     def test_calculator_w_list_items(self):
-        a_list = [self.random_first_number, self.random_second_number]
+        two_numbers =[
+            self.random_first_number,
+            self.random_second_number
+        ]
 
         self.assertEqual(
-            src.calculator.add(a_list[0], a_list[1]),
+            src.calculator.add(
+                two_numbers[0],
+                two_numbers[1]
+            ),
             self.random_first_number+self.random_second_number
         )
         self.assertEqual(
-            src.calculator.divide(a_list[-2], a_list[-1]),
+            src.calculator.divide(
+                two_numbers[-2],
+                two_numbers[-1]
+            ),
             self.random_first_number/self.random_second_number
         )
         self.assertEqual(
-            src.calculator.multiply(a_list[1], a_list[-1]),
+            src.calculator.multiply(
+                two_numbers[1],
+                two_numbers[-1]
+            ),
             self.random_second_number*self.random_second_number
         )
         self.assertEqual(
-            src.calculator.subtract(a_list[-2], a_list[0]),
+            src.calculator.subtract(
+                two_numbers[-2],
+                two_numbers[0]
+            ),
             self.random_first_number-self.random_first_number
         )
         self.assertEqual(
-            src.calculator.add(*a_list),
+            src.calculator.add(*two_numbers),
             self.random_first_number+self.random_second_number
         )
         self.assertEqual(
-            src.calculator.divide(*a_list),
+            src.calculator.divide(*two_numbers),
             self.random_first_number/self.random_second_number
         )
         self.assertEqual(
-            src.calculator.multiply(*a_list),
+            src.calculator.multiply(*two_numbers),
             self.random_first_number*self.random_second_number
         )
         self.assertEqual(
-            src.calculator.subtract(*a_list),
+            src.calculator.subtract(*two_numbers),
             self.random_first_number-self.random_second_number
         )
 
@@ -133,11 +118,62 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(TypeError):
             src.calculator.subtract(*not_two_numbers)
 
+    def test_calculator_sends_message_when_input_is_not_a_number(self):
+        error_message = 'brmph?! Numbers only. Try again...'
+
+        [
+            self.assertEqual(
+                src.calculator.add(data_type, a_random_number()),
+                error_message
+            ) for data_type in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            )
+        ]
+
+        for data_type in (
+            None,
+            True, False,
+            str(), 'text',
+            tuple(), (0, 1, 2, 'n'),
+            list(), [0, 1, 2, 'n'],
+            set(), {0, 1, 2, 'n'},
+            dict(), {'key': 'value'},
+        ):
+            with self.subTest(data_type=data_type):
+                self.assertEqual(
+                    src.calculator.add(
+                        data_type, a_random_number()
+                    ),
+                    error_message
+                )
+                self.assertEqual(
+                    src.calculator.divide(
+                        data_type, a_random_number()
+                    ),
+                    error_message
+                )
+                self.assertEqual(
+                    src.calculator.multiply(
+                        data_type, a_random_number()
+                    ),
+                    error_message
+                )
+                self.assertEqual(
+                    src.calculator.subtract(
+                        data_type, a_random_number()
+                    ),
+                    error_message
+                )
+
 
 # Exceptions seen
 # AssertionError
 # NameError
 # AttributeError
 # TypeError
-# ZeroDivisionError
-# SyntaxError

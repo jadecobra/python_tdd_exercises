@@ -183,7 +183,7 @@ I add a new test with a `for loop`_ and an :ref:`assertion<what is an assertion?
       def test_calculator_w_a_for_loop(self):
           error_message = 'brmph?! Numbers only. Try again...'
 
-          for data in (
+          for data_type in (
               None,
               True, False,
               str(),
@@ -194,7 +194,7 @@ I add a new test with a `for loop`_ and an :ref:`assertion<what is an assertion?
           ):
               self.assertEqual(
                   src.calculator.add(
-                      data, a_random_number()
+                      data_type, a_random_number()
                   ),
                   'BOOM!!!'
               )
@@ -224,7 +224,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
                 self.assertEqual(
                     src.calculator.add(
-                        data, a_random_number()
+                        data_type, a_random_number()
                     ),
                     error_message
                 )
@@ -246,7 +246,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
         def test_calculator_w_a_for_loop(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
-            for data in (
+            for data_type in (
                 None,
                 True, False,
                 str(),
@@ -255,10 +255,10 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                 set(),
                 dict(),
             ):
-                with self.subTest(data_type=data):
+                with self.subTest(data_type=data_type):
                     self.assertEqual(
                         src.calculator.add(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
@@ -277,7 +277,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     SUBFAILED(data_type=False) ...  - AssertionError: MNO.PQRSTUVWXYZABCD != 'brmph?! Numbers only. Try again...'
     =========== 2 failed, 7 passed in X.YZs ============
 
-  the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. :ref:`Is a boolean a number?<booleans 3>`
+  the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data_type`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. :ref:`Is a boolean a number?<booleans 3>`
 
 * I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
@@ -388,7 +388,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
         def test_calculator_w_a_for_loop(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
-            for data in (
+            for data_type in (
                 None,
                 True, False,
                 str(),
@@ -397,16 +397,16 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                 set(),
                 dict(),
             ):
-                with self.subTest(data_type=data):
+                with self.subTest(data_type=data_type):
                     self.assertEqual(
                         src.calculator.add(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
                     self.assertEqual(
                         src.calculator.divide(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         'BOOM!!!'
                     )
@@ -434,7 +434,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
                     self.assertEqual(
                         src.calculator.divide(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
@@ -481,13 +481,13 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
                     self.assertEqual(
                         src.calculator.divide(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
                     self.assertEqual(
                         src.calculator.multiply(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         'BOOM!!!'
                     )
@@ -518,7 +518,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
                     self.assertEqual(
                         src.calculator.multiply(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
@@ -619,13 +619,13 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
                     self.assertEqual(
                         src.calculator.multiply(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
                     self.assertEqual(
                         src.calculator.subtract(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         'BOOM!!!'
                     )
@@ -654,7 +654,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
                     self.assertEqual(
                         src.calculator.subtract(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
@@ -977,7 +977,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
-            for data in (
+            for data_type in (
                 None,
                 True, False,
                 str(),
@@ -986,28 +986,28 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                 set(),
                 dict(),
             ):
-                with self.subTest(data_type=data):
+                with self.subTest(data_type=data_type):
                     self.assertEqual(
                         src.calculator.add(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
                     self.assertEqual(
                         src.calculator.divide(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
                     self.assertEqual(
                         src.calculator.multiply(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
                     self.assertEqual(
                         src.calculator.subtract(
-                            data, a_random_number()
+                            data_type, a_random_number()
                         ),
                         error_message
                     )
@@ -1021,128 +1021,16 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
 ----
 
-----
-
-----
-
-----
-
-* I think you can tell what will happen next. I change the expectation to match
+* Using a `for loop`_ means I do not have to write a lot of tests. I can add more data to the :ref:`iterable<what is an iterable?>` without having to add more tests
 
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 3
-
-                    self.assertEqual(
-                        src.calculator.divide(data, a_random_number()),
-                        error_message
-                    )
-
-  the test passes
-
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for each :ref:`data type<data structures>`
-
-  .. code-block:: python
-
-    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 3
-
-                    self.assertEqual(
-                        src.calculator.multiply(data, a_random_number()),
-                        error_message
-                    )
-
-  the test passes
-
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`subtraction<test_subtraction>`
-
-  .. code-block:: python
-    :lineno-start: 79
-    :emphasize-lines: 5-8
-
-                    self.assertEqual(
-                        src.calculator.multiply(data, a_random_number()),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.subtract(data, a_random_number()),
-                        'BOOM!!!'
-                    )
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all the :ref:`data types<data structures>` I am testing
-
-  .. code-block:: python
-
-    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
-
-* I change the expectation to match
-
-  .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 3
-
-                    self.assertEqual(
-                        src.calculator.subtract(data, a_random_number()),
-                        error_message
-                    )
-
-  the test passes
-
-* I remove the other :ref:`assertions<what is an assertion?>` in the test because they are now covered by the `for loop`_
-
-  .. code-block:: python
-    :lineno-start: 58
-
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            for data in (
-                None,
-                True, False,
-                str(),
-                tuple(),
-                list(),
-                set(),
-                dict(),
-            ):
-                with self.subTest(data_type=data):
-                    self.assertEqual(
-                        src.calculator.add(data, a_random_number()),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.divide(data, a_random_number()),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.multiply(data, a_random_number()),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.subtract(data, a_random_number()),
-                        error_message
-                    )
-
-        def test_calculator_w_list_items(self):
-
-  Using a `for loop`_ saved me having to write a lot of tests
-
-* I can add more data to the :ref:`iterable<what is an iterable?>` without having to add more tests
-
-  .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 121
     :emphasize-lines: 7-11
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
-            for data in (
+            for data_type in (
                 None,
                 True, False,
                 str(), 'text',
@@ -1151,35 +1039,35 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                 set(), {0, 1, 2, 'n'},
                 dict(), {'key': 'value'},
             ):
-                with self.subTest(data_type=data):
+                with self.subTest(data_type=data_type):
 
   the test is still green
 
-* I could also write the test with a :ref:`list comprehension<list comprehensions>`, though it looks ugly
+* I can also write the test with a :ref:`list comprehension<list comprehensions>`, though it looks ugly
 
   .. code-block:: python
-    :lineno-start: 84
-    :emphasize-lines: 6-17
+    :lineno-start: 121
+    :emphasize-lines: 4-17
 
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            [
                 self.assertEqual(
-                    src.calculator.subtract(data, a_random_number()),
-                    error_message
+                    src.calculator.add(data_type, a_random_number()),
+                    'BOOM!!!'
+                ) for data_type in (
+                    None,
+                    True, False,
+                    str(), 'text',
+                    tuple(), (0, 1, 2, 'n'),
+                    list(), [0, 1, 2, 'n'],
+                    set(), {0, 1, 2, 'n'},
+                    dict(), {'key': 'value'},
                 )
+            ]
 
-        [
-            self.assertEqual(
-                src.calculator.add(data, a_random_number),
-                'BOOM!!!'
-            ) for data in (
-                None, True, False, str(), 'text',
-                tuple(), (0, 1, 2, 'n'),
-                list(), [0, 1, 2, 'n'],
-                set(), {0, 1, 2, 'n'},
-                dict(), {'key': 'value'},
-            )
-        ]
-
-    def test_calculator_w_list_items(self):
+            for data_type in (
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1187,11 +1075,31 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
     AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
 
-  There are a few problems with doing it this way
+* I change the expectation to the error message
 
-  - I make a :ref:`list<lists>` when I do not need it
-  - I would not have been able to tell which data type failed since I cannot use the `subTest method`_ with this
-  - I would have to repeat all those lines for each :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>`
+  .. code-block:: python
+    :lineno-start: 4
+
+            [
+                self.assertEqual(
+                    src.calculator.add(data_type, a_random_number()),
+                    error_message
+                ) for data_type in (
+                    None,
+                    True, False,
+                    str(), 'text',
+                    tuple(), (0, 1, 2, 'n'),
+                    list(), [0, 1, 2, 'n'],
+                    set(), {0, 1, 2, 'n'},
+                    dict(), {'key': 'value'},
+                )
+            ]
+
+  the test passes. There are a few problems with doing it this way
+
+  - it makes a :ref:`list<lists>` that is never used
+  - I could tell which data type caused the failure since I cannot use the `subTest method`_ in the :ref:`list comprehension<list comprehensions>`
+  - I would have to repeat all those lines for the other :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>`
 
 * I remove it from the test and things are green again
 
@@ -1238,7 +1146,15 @@ I ran tests to show I can make a :ref:`list<lists>` from an :ref:`iterable<what 
   - :ref:`transform the list with a process<test_making_a_list_w_processes>`
   - :ref:`transform and filter the list<test_making_a_list_w_processes_and_conditions>`
 
-I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with :ref:`list comprehensions` to make a :ref:`list<lists>` with one line. I think of it as ``[process(item) for item in iterable if condition/NOT condition]``
+I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making_a_list_w_conditions>` with :ref:`list comprehensions` to make a :ref:`list<lists>` with one line. I think of it as
+
+.. code-block:: python
+
+  [
+      process(item)
+      for item in iterable
+      if condition/not condition
+  ]
 
 I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of these
 
