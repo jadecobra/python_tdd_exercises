@@ -62,7 +62,7 @@ open the project
   the terminal_ shows
 
   .. code-block:: python
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
     configfile: pyproject.toml
