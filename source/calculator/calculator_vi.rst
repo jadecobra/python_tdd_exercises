@@ -577,9 +577,9 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
         # ):
         #     return 'brmph?! Numbers only. Try again...'
         if (
-            isinstance(first_input, (bool, list))
+            isinstance(first_input, (list, bool))
             or
-            isinstance(second_input, (bool, list))
+            isinstance(second_input, (list, bool))
         ):
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
@@ -594,9 +594,9 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def multiply(first_input, second_input):
         if (
-            isinstance(first_input, (bool, list))
+            isinstance(first_input, (list, bool))
             or
-            isinstance(second_input, (bool, list))
+            isinstance(second_input, (list, bool))
         ):
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
@@ -648,14 +648,48 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   .. code-block:: python
     :lineno-start: 207
-    :emphasize-lines: 5
+    :emphasize-lines: 36
 
+        def test_calculator_w_a_for_loop(self):
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            for data in (
+                None,
+                True, False,
+                str(),
+                tuple(),
+                list(),
+                set(),
+                dict(),
+            ):
+                with self.subTest(data_type=data):
+                    self.assertEqual(
+                        src.calculator.add(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.divide(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.multiply(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
                     self.assertEqual(
                         src.calculator.subtract(
                             data, a_random_number()
                         ),
                         error_message
                     )
+
+
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -684,7 +718,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def multiply(first_input, second_input):
 
-  :ref:`it looks like booleans are numbers<booleans 3>`
+  the test passes. :ref:`it looks like booleans are numbers<booleans 3>`
 
 ----
 
@@ -698,10 +732,100 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
         isinstance(second_input, bool)
     )
 
-  - the :ref:`add function<test_addition>` has ``str`` as well
-  - the :ref:``
+  the difference between them is that the
+
+  - :ref:`add function<test_addition>` has ``(str, bool)``
+  - :ref:`multiply function<test_multiplication>` has ``(list, bool)``
+
+  I add the :ref:`if statement<if statements>` to the ``numbers_only`` :ref:`decorator function<what is a decorator function?>` to remove repetition
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-13, 18
+
+    def numbers_only(function):
+        def decorator(first_input, second_input):
+            error_message = 'brmph?! Numbers only. Try again...'
+
+            if first_input is None or second_input is None:
+                return error_message
+            if (
+                isinstance(first_input, (str, list, bool))
+                or
+                isinstance(second_input, (str, list, bool))
+            ):
+                return error_message
+
+            try:
+                return function(first_input, second_input)
+            except TypeError:
+                return error_message
+        return decorator
 
 
+    @numbers_only
+    def subtract(first_input, second_input):
+
+  the tests are still green
+
+* I remove the :ref:`if statement<if statements>` from the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 21
+
+    @numbers_only
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @numbers_only
+    def multiply(first_input, second_input):
+
+  still green
+
+* I remove the :ref:`if statement<if statements>` from the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 26
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
+
+    @numbers_only
+    def divide(first_input, second_input):
+
+  green
+
+* I remove the :ref:`if statement<if statements>` from the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 31
+
+    @numbers_only
+    def divide(first_input, second_input):
+        try:
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
+
+
+    @numbers_only
+    def add(first_input, second_input):
+
+  still green
+
+* I remove the :ref:`if statement<if statements>` from the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 39
+
+    @numbers_only
+    def add(first_input, second_input):
+        return first_input + second_input
+
+  all the tests are still green
 
 ----
 * in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
