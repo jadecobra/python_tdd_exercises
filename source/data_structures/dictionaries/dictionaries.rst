@@ -1272,7 +1272,7 @@ the terminal_ shows :ref:`TypeError`
 
     AssertionError: {0: None, 1: None} is not None
 
-  the `fromkeys method`_ returns a dictionary_ that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None<what is None?>`. It reminds me of a :ref:`list comprehension<list comprehensions>`
+  the `fromkeys method`_ returns a dictionary_ that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None<what is None?>`. It reminds me of a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`
 
 * I add the dictionary_ as an expectation
 

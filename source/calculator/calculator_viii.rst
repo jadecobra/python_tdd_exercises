@@ -1826,7 +1826,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-* I add a :ref:`decorator function<how to make a decorator function>` to remove the repetition of the :ref:`if statements` because they are all the same
+* I add a :ref:`decorator function<what is a decorator function?>` to remove the repetition of the :ref:`if statements` because they are all the same
 
   .. code-block:: python
     :linenos:
@@ -1848,7 +1848,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     def add(first_input, second_input):
 
-* I use the new :ref:`function<what is a function?>` to :ref:`wrap<how to make a decorator function>` the ``add`` :ref:`function<what is a function?>`
+* I use the new :ref:`function<what is a function?>` to :ref:`wrap<what is a decorator function?>` the ``add`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 15

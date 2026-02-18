@@ -10,7 +10,6 @@
 .. _filter object: filter_
 .. _filterfalse: https://docs.python.org/3/library/itertools.html#itertools.filterfalse
 .. _filterfalse method: filterfalse_
-.. _itertools module: https://docs.python.org/3/library/itertools.html
 .. _map: https://docs.python.org/3/library/functions.html#map
 .. _map object: map_
 .. _tell the difference between test iterations: https://docs.python.org/3/library/unittest.html#distinguishing-test-iterations-using-subtests

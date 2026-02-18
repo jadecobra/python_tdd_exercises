@@ -902,7 +902,7 @@ test_factory_takes_keyword_arguments
 
     TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
 
-  :ref:`I cannot do arithmetic with None<test_calculator_raises_type_error>` and I want the value for this year
+  :ref:`I cannot do arithmetic with None<test_calculator_raises_type_error_w_none>` and I want the value for this year
 
 * I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
 
@@ -1130,6 +1130,7 @@ test_factory_takes_keyword_arguments
                     age=this_year()-year_of_birth,
                 )
             )
+
   green
 
 * I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the :ref:`dictionary<what is a dictionary?>`

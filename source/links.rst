@@ -86,6 +86,7 @@
 .. _int: https://docs.python.org/3/library/functions.html#int
 .. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
 .. _isinstance function: isinstance_
+.. _itertools module: https://docs.python.org/3/library/itertools.html
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _object: https://docs.python.org/3/glossary.html#term-object
 .. _objects: object_

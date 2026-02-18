@@ -1043,7 +1043,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   the test is still green
 
-* I can also write the test with a :ref:`list comprehension<list comprehensions>`, though it looks ugly
+* I can also write the test with a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`, though it looks ugly
 
   .. code-block:: python
     :lineno-start: 121
