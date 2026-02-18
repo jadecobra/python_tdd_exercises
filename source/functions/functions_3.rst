@@ -479,28 +479,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make functions_ with
-
-* the def_ keyword
-* :ref:`positional arguments<test_functions_w_positional_arguments>`
-* :ref:`keyword arguments<test_functions_w_keyword_arguments>`
-* :ref:`positional and keyword arguments<test_functions_w_positional_and_keyword_arguments>`
-* :ref:`default values<test_functions_w_default_arguments>`
-* :ref:`can take any number of inputs<test_functions_w_unknown_arguments>`
-
-as a reminder
-
-* :ref:`I can use '*args' when I do not know how many positional arguments the function has to take<test_functions_w_unknown_arguments>`
-* :ref:`positional arguments are taken as a tuple<how Python reads positional arguments>`
-* :ref:`positional arguments must come before keyword arguments<test_functions_w_default_arguments>`
-* :ref:`I can use '**kwargs' when I do not know how many keyword arguments the function<test_functions_w_unknown_arguments>`
-* :ref:`keyword arguments are taken as a dictionary<how Python reads keyword arguments>`
-* :ref:`the identity function returns its input<test_identity_function>`
-* :ref:`constant functions always return the same thing<test_constant_function>`
-* :ref:`nothing runs after the return statement in a function<test_what_happens_after_a_function_returns>`
-* :ref:`functions return None by default<test_making_a_function_w_return_none>`
-
-:ref:`How many questions can you answer about functions?<questions about functions>`
+I used a :ref:`for loop<what is a variable?>` to remove repetition
 
 ----
 
@@ -527,30 +506,14 @@ you know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to use a variable<functions 2>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to test the calculator with lists<how to make a calculator 4>`
+* :ref:`how to use list comprehensions<list comprehensions>`
 
-There is a problem, I have done these same steps for each of the chapters up till now
-
-* I give the project a name
-* :ref:`I make a directory for the project<how to make a directory for the project>`
-* :ref:`I change directory to the project<how to change directory to the project>`
-* :ref:`I make a directory for the source code<how to make a directory for the source code>`
-* :ref:`I make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
-* :ref:`I make a directory for the tests<how to make a directory for the tests>`
-* :ref:`I make the 'tests' directory a Python package<how to make the tests a Python package>`
-* :ref:`I make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
-* :ref:`I add the first failing test to the test file<test_failure>`
-* :ref:`I make a requirements file for the Python packages I need<how to write text to a file>`
-* :ref:`I setup the project with uv<how to setup a project with uv>`
-* :ref:`I install the Python packages I gave in the requirements file<how to install Python packages with uv>`
-* :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
-* :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
-* I make the test pass
-* then I start working on the project
-
-I think I know how to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`. I am going to :ref:`write a program that will do all the steps for making a project for me<how to make a Python Test Driven Development environment automatically>`, so I never have to do those steps again.
-
-:ref:`Would you like to know how to make a Python Test Driven Development environment automatically?<how to make a test driven development environment 2>`
+:ref:`Would you like to test dictionaries?<what is a dictionary?>`
 
 ----
 

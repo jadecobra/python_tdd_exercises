@@ -479,28 +479,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make functions_ with
-
-* the def_ keyword
-* :ref:`positional arguments<test_functions_w_positional_arguments>`
-* :ref:`keyword arguments<test_functions_w_keyword_arguments>`
-* :ref:`positional and keyword arguments<test_functions_w_positional_and_keyword_arguments>`
-* :ref:`default values<test_functions_w_default_arguments>`
-* :ref:`can take any number of inputs<test_functions_w_unknown_arguments>`
-
-as a reminder
-
-* :ref:`I can use '*args' when I do not know how many positional arguments the function has to take<test_functions_w_unknown_arguments>`
-* :ref:`positional arguments are taken as a tuple<how Python reads positional arguments>`
-* :ref:`positional arguments must come before keyword arguments<test_functions_w_default_arguments>`
-* :ref:`I can use '**kwargs' when I do not know how many keyword arguments the function<test_functions_w_unknown_arguments>`
-* :ref:`keyword arguments are taken as a dictionary<how Python reads keyword arguments>`
-* :ref:`the identity function returns its input<test_identity_function>`
-* :ref:`constant functions always return the same thing<test_constant_function>`
-* :ref:`nothing runs after the return statement in a function<test_what_happens_after_a_function_returns>`
-* :ref:`functions return None by default<test_making_a_function_w_return_none>`
-
-:ref:`How many questions can you answer about functions?<questions about functions>`
+I used :ref:`variables<what is a variable?>` to remove repetition
 
 ----
 
