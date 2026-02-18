@@ -345,31 +345,51 @@ this means
 
 ----
 
-* I use ``**`` like I did for the :ref:`keyword arguments<test_functions_w_keyword_arguments>` in :ref:`test_functions_w_unknown_arguments`
+*********************************************************************************
+test calculator with ** expression
+*********************************************************************************
 
-  .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 8-11
+----
 
-            self.assertEqual(
-                src.calculator.subtract(
-                    two_numbers['x'],
-                    two_numbers['x'],
-                ),
-                self.random_first_number-self.random_first_number
-            )
-            self.assertEqual(
-                src.calculator.add(**two_numbers),
-                self.random_first_number-self.random_second_number
-            )
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
-  the terminal_ shows :ref:`TypeError`
+----
 
-  .. code-block:: python
+I use ``**`` like I did for the :ref:`keyword arguments<test_functions_w_keyword_arguments>` in :ref:`test_functions_w_unknown_arguments`
 
-    TypeError: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
+.. code-block:: python
+  :lineno-start: 136
+  :emphasize-lines: 8-11
 
-  the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :ref:`dictionary<what is a dictionary?>` must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``
+          self.assertEqual(
+              src.calculator.subtract(
+                  two_numbers['x'],
+                  two_numbers['x'],
+              ),
+              self.random_first_number-self.random_first_number
+          )
+          self.assertEqual(
+              src.calculator.add(**two_numbers),
+              self.random_first_number-self.random_second_number
+          )
+
+the terminal_ shows :ref:`TypeError`
+
+.. code-block:: python
+
+  TypeError: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
+
+the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :ref:`dictionary<what is a dictionary?>` must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the :ref:`dictionary<what is a dictionary?>`
 
@@ -645,6 +665,14 @@ this means
 
   the test passes
 
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
@@ -794,6 +822,18 @@ this means
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
   the test passes
+
+----
+
+*********************************************************************************
+test calculator with dictionary values
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
 ----
 

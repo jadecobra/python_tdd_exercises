@@ -660,49 +660,77 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
 
 ----
 
-* I use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the :ref:`positional arguments<test_functions_w_positional_arguments>` in :ref:`test_functions_w_unknown_arguments`
+*********************************************************************************
+test calculator with * expression
+*********************************************************************************
 
-  .. code-block:: python
-    :lineno-start: 139
-    :emphasize-lines: 8-11
+----
 
-            self.assertEqual(
-                src.calculator.subtract(
-                    two_numbers[-2],
-                    two_numbers[0]
-                ),
-                self.random_first_number-self.random_first_number
-            )
-            self.assertEqual(
-                src.calculator.add(*two_numbers),
-                self.random_first_number-self.random_second_number
-            )
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+----
 
-  .. code-block:: shell
+I can use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the :ref:`positional arguments<test_functions_w_positional_arguments>` in :ref:`test_functions_w_unknown_arguments`
 
-    AssertionError: GHI.JKLMNOPQRSTUVW != XYZ.ABCDEFGHIJKLMN
+.. code-block:: python
+  :lineno-start: 139
+  :emphasize-lines: 8-11
 
-* I change the expectation to match the result of adding the two numbers from the :ref:`list<what is a list?>`
+        self.assertEqual(
+            src.calculator.subtract(
+                two_numbers[-2],
+                two_numbers[0]
+            ),
+            self.random_first_number-self.random_first_number
+        )
+        self.assertEqual(
+            src.calculator.add(*two_numbers),
+            self.random_first_number-self.random_second_number
+        )
 
-  .. code-block:: python
-    :lineno-start: 146
-    :emphasize-lines: 3
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-            self.assertEqual(
-                src.calculator.add(*two_numbers),
-                self.random_first_number+self.random_second_number
-            )
+.. code-block:: shell
 
-  the test passes. The `starred expression`_ gives the items of the list in the same order every time, this means these statements are the same
+  AssertionError: GHI.JKLMNOPQRSTUVW != XYZ.ABCDEFGHIJKLMN
 
-  .. code-block:: python
+----
 
-    src.calculator.add(*two_numbers)
-    src.calculator.add(self.random_first_number, self.random_second_number)
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-  because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``self.random_first_number`` and ``self.random_second_number``
+----
+
+I change the expectation to match the result of adding the two numbers from the :ref:`list<what is a list?>`
+
+.. code-block:: python
+  :lineno-start: 146
+  :emphasize-lines: 3
+
+          self.assertEqual(
+              src.calculator.add(*two_numbers),
+              self.random_first_number+self.random_second_number
+          )
+
+the test passes. The `starred expression`_ gives the items of the list in the same order every time, this means these statements are the same
+
+.. code-block:: python
+
+  src.calculator.add(*two_numbers)
+  src.calculator.add(self.random_first_number, self.random_second_number)
+
+because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``self.random_first_number`` and ``self.random_second_number``
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
 
