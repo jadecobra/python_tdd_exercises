@@ -454,7 +454,7 @@ the test passes
 
   the test is still green
 
-* I can also use a dictionary_ with a `for loop`_ to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler at the same time
+* I can also use a dictionary_ with a :ref:`for loop<what is a for loop?>` to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler at the same time
 
   .. code-block:: python
     :lineno-start: 58
@@ -810,7 +810,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
             for operation in arithmetic:
 
-* I add a new :ref:`assertion<what is an assertion?>` in a `for loop`_ with the `subTest method`_
+* I add a new :ref:`assertion<what is an assertion?>` in a :ref:`for loop<what is a for loop?>` with the `subTest method`_
 
   .. code-block:: python
     :lineno-start: 107
@@ -865,7 +865,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   the test passes
 
-* I remove the other dictionaries_ and `for loop`_
+* I remove the other dictionaries_ and :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1196,7 +1196,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   still green
 
-* I add a `for loop`_ to use the ``arithmetic_tests`` dictionary_ in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+* I add a :ref:`for loop<what is a for loop?>` to use the ``arithmetic_tests`` dictionary_ in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
     :lineno-start: 180
@@ -1309,7 +1309,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
                         *[0, 1, 2]
                     )
 
-* I add a `for loop`_ to ``test_calculator_w_list_items``
+* I add a :ref:`for loop<what is a for loop?>` to ``test_calculator_w_list_items``
 
   .. code-block:: python
     :lineno-start: 115
@@ -1380,7 +1380,7 @@ This test goes through every operation in the ``arithmetic`` :ref:`dictionary<wh
 
   still green
 
-* I add a `for loop`_ to ``test_calculator_w_dictionary_items``
+* I add a :ref:`for loop<what is a for loop?>` to ``test_calculator_w_dictionary_items``
 
   .. code-block:: python
     :lineno-start: 159

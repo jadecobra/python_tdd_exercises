@@ -157,7 +157,7 @@ What if I want the person to send a message about themselves. How would I do tha
 
 ----
 
-I add a `for loop`_ with the `subTest method`_ and an :ref:`assertion<what is an assertion?>`
+I add a :ref:`for loop<what is a for loop?>` with the `subTest method`_ and an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 66
@@ -624,7 +624,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   the test is still green
 
-* I copy the `for loop`_ with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_greeting` and paste it in ``test_classy_person_greeting``
+* I copy the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_greeting` and paste it in ``test_classy_person_greeting``
 
   .. code-block:: python
     :lineno-start: 94
@@ -2267,7 +2267,7 @@ I want to add randomness to the test
 
   the test is still green
 
-* I remove the 3 people I made with the ``factory`` :ref:`function<what is a function?>` and the `for loop`_ with the :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers all their cases and more
+* I remove the 3 people I made with the ``factory`` :ref:`function<what is a function?>` and the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers all their cases and more
 
   .. code-block:: python
     :lineno-start: 61
@@ -2741,7 +2741,7 @@ I want to add randomness to the test
 
   still green
 
-* I remove the 3 people I made with the ``Person`` :ref:`class<what is a class?>` and the `for loop`_ with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers those cases and more
+* I remove the 3 people I made with the ``Person`` :ref:`class<what is a class?>` and the :ref:`for loop<what is a for loop?>` with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers those cases and more
 
   .. code-block:: python
     :lineno-start: 78

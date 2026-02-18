@@ -66,7 +66,7 @@ a better way to test why use a function
 
 ----
 
-* I add a `for loop`_ and `range object`_ to :ref:`test_why_use_a_function`
+* I add a :ref:`for loop<what is a for loop?>` and `range object`_ to :ref:`test_why_use_a_function`
 
   .. code-block:: python
     :lineno-start: 7

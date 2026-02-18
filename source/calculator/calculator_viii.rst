@@ -266,7 +266,7 @@ test_calculator_w_getattribute
 
   the test passes
 
-* I add a `for loop`_
+* I add a :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 64
@@ -491,7 +491,7 @@ test_calculator_w_getattribute
 
   the test is still green
 
-* I use ``self.calculator_tests_a`` in the `for loop`_
+* I use ``self.calculator_tests_a`` in the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 75
@@ -592,7 +592,7 @@ test_calculator_w_getattribute
 
 ----
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number` in a new `for loop`_
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number` in a new :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 84
@@ -637,7 +637,7 @@ test_calculator_w_getattribute
 
   the test passes
 
-* I remove the other `for loop`_
+* I remove the other :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 74
@@ -695,7 +695,7 @@ test_calculator_w_getattribute
 
 ----
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` with ``self.calculator_tests_a`` in a new `for loop`_ in :ref:`test_calculator_w_list_items`
+* I use the ``__getattribute__`` :ref:`method<what is a function?>` with ``self.calculator_tests_a`` in a new :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_w_list_items`
 
   .. code-block:: python
     :lineno-start: 115
@@ -744,7 +744,7 @@ test_calculator_w_getattribute
 
   the test passes
 
-* I remove the other `for loop`_
+* I remove the other :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 110
@@ -818,7 +818,7 @@ test_calculator_w_getattribute
 
   the test passes
 
-* I remove the `for loop`_
+* I remove the :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 151
@@ -846,7 +846,7 @@ test_calculator_w_getattribute
 
 ----
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` with ``self.calculator_tests_a`` in a new `for loop`_ in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+* I use the ``__getattribute__`` :ref:`method<what is a function?>` with ``self.calculator_tests_a`` in a new :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
     :lineno-start: 168
@@ -902,7 +902,7 @@ test_calculator_w_getattribute
 
   the test passes
 
-* I remove the other `for loop`_
+* I remove the other :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 168

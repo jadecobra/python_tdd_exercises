@@ -152,7 +152,7 @@ test_calculator_w_a_for_loop
 
 I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries`.
 
-Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test with 4 or more :ref:`assertions<what is an assertion?>` for each :ref:`data type<data structures>`
+Since I know how to use a :ref:`for loop<what is a for loop?>` and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test with 4 or more :ref:`assertions<what is an assertion?>` for each :ref:`data type<data structures>`
 
 ----
 
@@ -162,7 +162,7 @@ Since I know how to use a `for loop`_ and :ref:`list comprehensions`, I can do t
 
 ----
 
-I add a new test with a `for loop`_ and an :ref:`assertion<what is an assertion?>` to ``test_calculator.py``
+I add a new test with a :ref:`for loop<what is a for loop?>` and an :ref:`assertion<what is an assertion?>` to ``test_calculator.py``
 
 .. code-block:: python
   :lineno-start: 164
@@ -237,7 +237,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   One of the :ref:`data types<data structures>` from the test gets to the :ref:`add function<test_addition>` so it returns a number and not a message. How can I tell which :ref:`data type<data structures>` caused the failure?
 
-* the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a `for loop`_, I add it to the test
+* the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a :ref:`for loop<what is a for loop?>`, I add it to the test
 
   .. code-block:: python
     :lineno-start: 176
@@ -831,7 +831,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   still green
 
-* I remove the commented lines then use a `for loop`_ with the :ref:`if statements`
+* I remove the commented lines then use a :ref:`for loop<what is a for loop?>` with the :ref:`if statements`
 
   .. code-block:: python
     :linenos:
@@ -1021,7 +1021,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
 ----
 
-* Using a `for loop`_ means I do not have to write a lot of tests. I can add more data to the :ref:`iterable<what is an iterable?>` without having to add more tests
+* Using a :ref:`for loop<what is a for loop?>` means I do not have to write a lot of tests. I can add more data to the :ref:`iterable<what is an iterable?>` without having to add more tests
 
   .. code-block:: python
     :lineno-start: 121

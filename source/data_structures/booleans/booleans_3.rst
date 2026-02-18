@@ -212,7 +212,7 @@ the test passes
             self.assertNotIsInstance(False, float)
             self.assertFalse(False)
 
-* I use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_false`
+* I use a :ref:`for loop<what is a for loop?>` for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 6
@@ -457,7 +457,7 @@ the test passes
             self.assertNotIsInstance(True, float)
             self.assertTrue(True)
 
-* I use a `for loop`_ for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_true`
+* I use a :ref:`for loop<what is a for loop?>` for the :ref:`assertions<what is an assertion?>` that :ref:`test_what_is_true`
 
   .. code-block:: python
     :lineno-start: 22
