@@ -1068,6 +1068,14 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
             ]
 
             for data_type in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1100,8 +1108,6 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
   - it makes a :ref:`list<lists>` that is never used
   - I could tell which data type caused the failure since I cannot use the `subTest method`_ in the :ref:`list comprehension<list comprehensions>`
   - I would have to repeat all those lines for the other :ref:`function<what is a function?>` in the :ref:`calculator program<how to make a calculator>`
-
-* I remove it from the test and things are green again
 
 :ref:`I know a better way to test the calculator with inputs that are NOT numbers<test_calculator_w_a_for_loop>`
 

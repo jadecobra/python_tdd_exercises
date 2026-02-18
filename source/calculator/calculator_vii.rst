@@ -837,44 +837,151 @@ test calculator with dictionary values
 
 ----
 
-* I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator>` in :ref:`test_calculator_w_list_items`
+I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator>` in :ref:`test_calculator_w_list_items`
+
+.. code-block:: python
+  :lineno-start: 58
+  :emphasize-lines: 2-9
+
+      def test_calculator_w_list_items(self):
+          # two_numbers = [
+          #     self.random_first_number,
+          #     self.random_second_number
+          # ]
+          a_dictionary = {
+              'x': self.random_first_number,
+              'y': self.random_second_number
+          }
+
+          self.assertEqual(
+              src.calculator.add(
+                  two_numbers[0],
+                  two_numbers[1]
+              ),
+              self.random_first_number+self.random_second_number
+          )
+
+the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'two_numbers' is not defined
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a new :ref:`variable<what is a variable?>` and make a :ref:`list<what is a list?>` from the :ref:`values<test_values_of_a_dictionary>` of the :ref:`dictionary<what is a dictionary?>`
+
+.. code-block:: python
+  :lineno-start: 58
+  :emphasize-lines: 10
+
+      def test_calculator_w_list_items(self):
+          # two_numbers = [
+          #     self.random_first_number,
+          #     self.random_second_number
+          # ]
+          a_dictionary = {
+              'x': self.random_first_number,
+              'y': self.random_second_number
+          }
+          two_numbers = list(a_dictionary.values())
+
+          self.assertEqual(
+              src.calculator.add(
+                  two_numbers[0],
+                  two_numbers[1]
+              ),
+              self.random_first_number+self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.divide(
+                  two_numbers[-2],
+                  two_numbers[-1]
+              ),
+              self.random_first_number/self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.multiply(
+                  two_numbers[1],
+                  two_numbers[-1]
+              ),
+              self.random_second_number*self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.subtract(
+                  two_numbers[-2],
+                  two_numbers[0]
+              ),
+              self.random_first_number-self.random_first_number
+          )
+          self.assertEqual(
+              src.calculator.add(*two_numbers),
+              self.random_first_number+self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.divide(*two_numbers),
+              self.random_first_number/self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.multiply(*two_numbers),
+              self.random_first_number*self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.subtract(*two_numbers),
+              self.random_first_number-self.random_second_number
+          )
+
+      def test_calculator_w_dictionary_items(self):
+
+the test is green again
+
+----
+
+*********************************************************************************
+test_calculator_w_for_loops_and_dictionaries
+*********************************************************************************
+
+I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what is a for loop?>` to in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a new test with a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 2-7
-
-        def test_calculator_w_list_items(self):
-            # two_numbers = [self.random_first_number, self.random_second_number]
-            a_dictionary = {
-                'x': self.random_first_number,
-                'y': self.random_second_number
-            }
-            two_numbers = list(a_dictionary.values())
-
-            self.assertEqual(
-                src.calculator.add(two_numbers[0], two_numbers[1]),
-                self.random_first_number+self.random_second_number
-            )
-
-  the test is still green
-
-* I can also use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what is a for loop?>` to make ``test_calculator_sends_message_when_input_is_not_a_number`` more complex and simpler at the same time
-
-  .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 4-9, 21-25
+    :lineno-start: 177
+    :emphasize-lines: 54-60
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
             error_message = 'brmph?! Numbers only. Try again...'
 
-            arithmetic = {
-                'addition': src.calculator.add,
-                'subtraction': src.calculator.subtract,
-                'multiplication': src.calculator.multiply,
-                'division': src.calculator.divide,
-            }
+            [
+                self.assertEqual(
+                    src.calculator.add(data_type, a_random_number()),
+                    error_message
+                ) for data_type in (
+                    None,
+                    True, False,
+                    str(), 'text',
+                    tuple(), (0, 1, 2, 'n'),
+                    list(), [0, 1, 2, 'n'],
+                    set(), {0, 1, 2, 'n'},
+                    dict(), {'key': 'value'},
+                )
+            ]
 
-            for data in (
+            for data_type in (
                 None,
                 True, False,
                 str(), 'text',
@@ -883,82 +990,192 @@ test calculator with dictionary values
                 set(), {0, 1, 2, 'n'},
                 dict(), {'key': 'value'},
             ):
-                with self.subTest(i=data):
-                    for operation in arithmetic:
+                with self.subTest(data_type=data_type):
+                    self.assertEqual(
+                        src.calculator.add(
+                            data_type, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.divide(
+                            data_type, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.multiply(
+                            data_type, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.subtract(
+                            data_type, a_random_number()
+                        ),
+                        error_message
+                    )
+
+        def test_calculator_w_for_loops_and_dictionaries(self):
+            arithmetic = {
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'multiplication': src.calculator.multiply,
+                'division': src.calculator.divide,
+            }
+
+
+    # Exceptions seen
+
+  ``arithmetic`` is a :ref:`dictionary<what is a dictionary?>` with the names of the Arithmetic_ operations as :ref:`keys<test_keys_of_a_dictionary>`, this means
+
+  .. code-block:: python
+
+    arithmetic['addition'] is src.calculator.add
+    arithmetic['subtract'] is src.calculator.subtract
+    arithmetic['multiplication'] is src.calculator.multiply
+    arithmetic['division'] is src.calculator.divide
+
+  it also means that
+
+  .. code-block:: python
+
+    arithmetic['addition'](x, y) is src.calculator.add(x, y)
+    arithmetic['subtract'](x, y) is src.calculator.subtract(x, y)
+    arithmetic['multiplication'](x, y) is src.calculator.multiply(x, y)
+    arithmetic['division'](x, y) is src.calculator.divide(x, y)
+
+* I add :ref:`for loops<what is a for loop?>` with the `subTest method`_
+
+  .. code-block:: python
+    :lineno-start: 230
+    :emphasize-lines: 9-28
+
+        def test_calculator_w_for_loops_and_dictionaries(self):
+            arithmetic = {
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'multiplication': src.calculator.multiply,
+                'division': src.calculator.divide,
+            }
+
+            for bad_input in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                for operation in arithmetic:
+                    with self.subTest(
+                        operation=operation,
+                        bad_input=bad_input,
+                    ):
                         self.assertEqual(
-                            arithmetic[operation](data, a_random_number()),
+                            arithmetic[operation](
+                                bad_input, a_random_number()
+                            ),
                             'BOOM!!!'
                         )
-                    self.assertEqual(
-                        src.calculator.add(data, a_random_number()),
-                        error_message
-                    )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for every case in the :ref:`iterable<what is an iterable?>`
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='addition', bad_input=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(operation='subtraction', bad_input=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(operation='multiplication', bad_input=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(operation='division', bad_input=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    ...
+    SUBFAILED(operation='addition', bad_input={'key': 'value'}) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(operation='subtraction', bad_input={'key': 'value'}) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(operation='multiplication', bad_input={'key': 'value'}) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(operation='division', bad_input={'key': 'value'}) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    =================== 52 failed, 9 passed in R.STs ===================
+
+  The second :ref:`for loop<what is a for loop?>` goes over the :ref:`keys<test_keys_of_a_dictionary>` of the :ref:`dictionary<what is a dictionary?>` and runs 4 tests for every bad input in the ``bad_inputs`` tuple_. The two :ref:`for loops<what is a for loop?>` together go every combination of operations and bad inputs
 
   .. code-block:: python
 
-    SUBFAILED(i=None) ...             - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=True) ...             - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=False) ...            - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i='') ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i='text') ...           - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=()) ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=(0, 1, 2, 'n')) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=[]) ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=[0, 1, 2, 'n']) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i=set()) ...            - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={0, 1, 2, 'n'}) ...   - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={}) ...               - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
-    SUBFAILED(i={'key': 'value'}) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM'
+    (addition, None)
+    (subtraction, None)
+    (multiplication, None)
+    (division, None)
+    ...
+    (addition, tuple())
+    (subtraction, tuple())
+    (multiplication, tuple())
+    (division, tuple())
+    ...
+    (addition, {'key': 'value'})
+    (subtraction, {'key': 'value'})
+    (multiplication, {'key': 'value'})
+    (division, {'key': 'value'})
 
-  the test works
+  this means I do not have to write 52 tests
 
-  .. NOTE::
+----
 
-    ``arithmetic[operation](data, a_random_number())`` represents every operation in the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` and every item in the :ref:`iterable<what is an iterable?>` for example
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-    .. code-block:: python
+----
 
-      arithmetic['addition'](None, a_random_number())
-      arithmetic['subtraction']((0, 1, 2, 'n'), a_random_number())
-      arithmetic['division'](dict(), a_random_number())
-      arithmetic['multiplication']('text', a_random_number())
+I change the expectation to the error message
 
-    these 4 examples are translated by the computer to
+.. code-block:: python
+  :lineno-start: 252
+  :emphasize-lines: 5
 
-    .. code-block:: python
+                  self.assertEqual(
+                      arithmetic[operation](
+                          bad_input, a_random_number()
+                      ),
+                      'brmph?! Numbers only. Try again...'
+                  )
 
-      src.calculator.add(None, a_random_number())
-      src.calculator.subtract((0, 1, 2, 'n'), a_random_number())
-      src.calculator.divide(dict(), a_random_number())
-      src.calculator.multiply('text', a_random_number())
+the test passes
 
-    If I had to write a test for each operation and each data item, I would end up with a total of 52 tests. Too much
+----
 
-* I change the expectation
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
-  .. code-block:: python
-    :lineno-start: 77
-    :emphasize-lines: 5
+----
 
-                with self.subTest(i=data):
-                    for operation in arithmetic:
-                        self.assertEqual(
-                            arithmetic[operation](data, a_random_number),
-                            error_message
-                        )
-
-  the test passes
-
-* I remove the other :ref:`assertions<what is an assertion?>`
+* I remove :ref:`test_calculator_sends_message_when_input_is_not_a_number` because :ref:`test_calculator_sends_message_when_input_is_not_a_number` covers all its :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 165
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            not_two_numbers = [0, 1, 2]
+
+            with self.assertRaises(TypeError):
+                src.calculator.add(*not_two_numbers)
+            with self.assertRaises(TypeError):
+                src.calculator.divide(*not_two_numbers)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(*not_two_numbers)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(*not_two_numbers)
+
+        def test_calculator_w_for_loops_and_dictionaries(self):
+
+* I change the name of :ref:`test_calculator_w_for_loops_and_dictionaries` to :ref:`test_calculator_sends_message_when_input_is_not_a_number` to say what it does
+
+  .. code-block:: python
+    :lineno-start: 177
+    :emphasize-lines: 1
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'brmph?! Numbers only. Try again...'
-
             arithmetic = {
                 'addition': src.calculator.add,
                 'subtraction': src.calculator.subtract,
@@ -966,7 +1183,7 @@ test calculator with dictionary values
                 'division': src.calculator.divide,
             }
 
-            for data in (
+            for bad_input in (
                 None,
                 True, False,
                 str(), 'text',
@@ -975,20 +1192,22 @@ test calculator with dictionary values
                 set(), {0, 1, 2, 'n'},
                 dict(), {'key': 'value'},
             ):
-                with self.subTest(i=data):
-                    for operation in arithmetic:
+                for operation in arithmetic:
+                    with self.subTest(
+                        operation=operation,
+                        bad_input=bad_input,
+                    ):
                         self.assertEqual(
-                            arithmetic[operation](data, a_random_number()),
-                            error_message
+                            arithmetic[operation](
+                                bad_input, a_random_number()
+                            ),
+                            'brmph?! Numbers only. Try again...'
                         )
-                    self.assertEqual(
-                        src.calculator.add(data, a_random_number()),
-                        error_message
-                    )
 
-        def test_calculator_w_list_items(self):
 
-  this solution is not as easy to read as what was there before especially for someone new to Python_. :ref:`There has to be a better way<test_calculator_functions>`
+    # Exceptions seen
+
+  this solution is not as easy to read as what was there before. :ref:`Is there a better way?<test_calculator_functions>`
 
 ----
 
@@ -996,7 +1215,7 @@ test calculator with dictionary values
 test_calculator_functions
 *********************************************************************************
 
-I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that covers all the :ref:`4 calculator functions: addition, subtraction, division and multiplication<how to make a calculator>`
+I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that covers all the :ref:`4 arithmetic functions: addition, subtraction, division and multiplication<how to make a calculator>` and check their results are correct
 
 ----
 
@@ -1009,14 +1228,37 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 * I add a new test
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 7-13, 15-23
+    :lineno-start: 177
+    :emphasize-lines: 30-36, 38-46
 
-            except ZeroDivisionError:
-                self.assertEqual(
-                    src.calculator.divide(self.random_first_number, 0),
-                    'brmph?! I cannot divide by 0. Try again...'
-                )
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            arithmetic = {
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'multiplication': src.calculator.multiply,
+                'division': src.calculator.divide,
+            }
+
+            for bad_input in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                for operation in arithmetic:
+                    with self.subTest(
+                        operation=operation,
+                        bad_input=bad_input,
+                    ):
+                        self.assertEqual(
+                            arithmetic[operation](
+                                bad_input, a_random_number()
+                            ),
+                            'brmph?! Numbers only. Try again...'
+                        )
 
         def test_calculator_functions(self):
             arithmetic = {
@@ -1036,7 +1278,8 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
                         'BOOM!!!'
                     )
 
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
+
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the 4 arithmetic operations
 
@@ -1047,6 +1290,8 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
     SUBFAILED(operation='division') ...       - AssertionError: Y.ABCDEFGHIJKLMNOP != 'BOOM!!!'
     SUBFAILED(operation='multiplication') ... - AssertionError: QRSTUV.WXYZABCDEFG != 'BOOM!!!'
 
+  how do I add the results?
+
 ----
 
 =================================================================================
@@ -1055,14 +1300,20 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 
 ----
 
-* I need a way to add the calculations for each operation to the :ref:`assertion<what is an assertion?>`. I add another :ref:`dictionary<what is a dictionary?>`
+* I add a :ref:`dictionary<what is a dictionary?>` for the calculations of each operation
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 3-16
+    :lineno-start: 206
+    :emphasize-lines: 9-22
 
+        def test_calculator_functions(self):
+            arithmetic = {
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'division': src.calculator.divide,
                 'multiplication': src.calculator.multiply,
             }
+
             expectations = {
                 'addition': (
                     self.random_first_number+self.random_second_number
@@ -1083,7 +1334,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 * I use the new :ref:`dictionary<what is a dictionary?>` for the calculation in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 229
     :emphasize-lines: 8
 
             for operation in arithmetic:
@@ -1098,22 +1349,61 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 
   the test passes.
 
-This test goes through every operation in the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` then calls the :ref:`function<what is a function?>` that is its :ref:`value<test_values_of_a_dictionary>` with ``self.random_first_number`` and ``self.random_second_number`` as input, and checks if the result is the :ref:`value<test_values_of_a_dictionary>` for the :ref:`key<test_keys_of_a_dictionary>` in the ``expectations`` :ref:`dictionary<what is a dictionary?>`
+This test goes through every operation in the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` then calls the :ref:`function<what is a function?>` that is its :ref:`value<test_values_of_a_dictionary>` with ``self.random_first_number`` and ``self.random_second_number`` as input, and checks if the result is the :ref:`value<test_values_of_a_dictionary>` for the :ref:`operation key<test_keys_of_a_dictionary>` in the ``expectations`` :ref:`dictionary<what is a dictionary?>`. I think of it as
 
-* In other words
+.. code-block:: python
+
+  self.assertEqual(
+      arithmetic[operation](x, y),
+      expectations[operation]
+  )
+
+- ``operation`` can be ``addition``, ``subtraction``, ``multiplication`` or ``division``
+- in this case ``x`` is ``self.first_random_number``
+- in this case ``y`` is ``self.second_random_number``
+
+this means all these statements are the same
+
+* for :ref:`addition<test_addition>`
 
   .. code-block:: python
 
-    arithmetic['addition'](self.first_random_number, self.second_random_number)
-    arithmetic['subtraction'](self.first_random_number, self.second_random_number)
-    arithmetic['division'](self.first_random_number, self.second_random_number)
-    arithmetic['multiplication'](self.first_random_number, self.second_random_number)
+    arithmetic['addition'](x, y)
+    src.calculator.add(x, y)
+    expectations['addition']
+    x+y
+
+* for :ref:`subtraction<test_subtraction>`
+
+  .. code-block:: python
+
+    arithmetic['subtraction'](x, y)
+    src.calculator.add(x, y)
+    expectations['subtraction']
+    x+y
+
+* for :ref:`multiplication<test_multiplication>`
+
+  .. code-block:: python
+
+    arithmetic['multiplication'](x, y)
+    src.calculator.add(x, y)
+    expectations['multiplication']
+    x+y
+
+* for :ref:`division<test_division>`
+
+  .. code-block:: python
+
+    arithmetic['division'](x, y)
+    src.calculator.add(x, y)
+    expectations['division']
+    x+y
 
 * these four statements get translated by the computer to
 
   .. code-block:: python
 
-    src.calculator.add(self.first_random_number, self.second_random_number)
     src.calculator.subtract(self.first_random_number, self.second_random_number)
     src.calculator.divide((self.first_random_number, self.second_random_number)
     src.calculator.multiply(self.first_random_number, self.second_random_number)
