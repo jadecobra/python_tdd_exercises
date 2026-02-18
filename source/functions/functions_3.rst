@@ -7,6 +7,7 @@
 .. _product method: product_
 
 
+
 #################################################################################
 functions 3
 #################################################################################
@@ -252,17 +253,17 @@ the test passes
 * I change the calculation in the expectation
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 15
     :emphasize-lines: 1
 
                     self.assertEqual(add(x, y), x+y)
 
   the test passes. That used ``for`` 3 times, confusing.
 
-* I can do the same thing with the `product method`_ from the `itertools module`_ which comes with Python_
+* I can do the same thing with the `product method`_ from the `itertools module`_ which comes with Python_, it needs an `import statement`_
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 17
     :emphasize-lines: 5-8
 
             for x, y in ((x, y) for x in numbers for y in numbers):
@@ -274,400 +275,86 @@ the test passes
                 with self.subTest(x=x, y=y):
                     self.assertEqual(add(x, y), x+100)
 
-
-  not as confusing
-
-----
-
-----
-
-----
-
-
-
-
-
-
-* I add a :ref:`for loop<what is a for loop?>` and `range object`_ to :ref:`test_why_use_a_function`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5-6
-
-        def test_why_use_a_function(self):
-            def add_x(x=3, y=0):
-                return x + y
-
-            x = 3
-            y = 0
-            self.assertEqual(add_x(y=0), 3)
-
-* I use the :ref:`variables<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3-4
-
-            x = 3
-            y = 0
-            # self.assertEqual(add_x(y=0), 3)
-            self.assertEqual(add_x(x, y), x+x)
-            self.assertEqual(add_x(y=1), 4)
-
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 3 != 6
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I change the expectation
-
-.. code-block:: python
-  :lineno-start: 14
-  :emphasize-lines: 4
-
-            x = 3
-            y = 0
-            # self.assertEqual(add_x(y=0), 3)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=1), 4)
-
-the test passes
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the comment then do the same thing for the next :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 4-6
-
-            x = 3
-            y = 0
-            self.assertEqual(add_x(x, y), x+y)
-            y = 1
-            # self.assertEqual(add_x(y=1), 4)
-            self.assertEqual(add_x(x, y), x+x)
-            self.assertEqual(add_x(y=2), 5)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 4 != 6
+    ================== 100 failed, 12 passed in X.YZs ===================
 
 * I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 3
-
-            y = 1
-            # self.assertEqual(add_x(y=1), 4)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=2), 5)
-
-  the test passes. Wait a minute, ``self.assertEqual(add_x(x, y), x+y)`` is also a repetition!
-
-* I remove the comment then add a :ref:`variable<what is a variable?>` for the next :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 3-5
-
-            y = 1
-            self.assertEqual(add_x(x, y), x+y)
-            y = 2
-            # self.assertEqual(add_x(y=2), 5)
-            self.assertEqual(add_x(x, y), y+y)
-            self.assertEqual(add_x(y=3), 6)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 5 != 4
-
-* I change the expectation to the right calculation
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3
-
-            y = 2
-            # self.assertEqual(add_x(y=2), 5)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=3), 6)
-
-  the test passes, this is the same as the :ref:`add function<test_addition>` from :ref:`how to make a calculator<how to make a calculator 1>`
-
-* I remove the comment, then add a :ref:`variable<what is a variable?>` for the next :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3-5
-
-            y = 2
-            self.assertEqual(add_x(x, y), x+y)
-            y = 3
-            # self.assertEqual(add_x(y=3), 6)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=4), 7)
-
-  the test is still green because ``x`` and ``y`` are both ``3``
-
-* on to the next one
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 3-5
-
-            y = 3
-            self.assertEqual(add_x(x, y), x+y)
-            y = 4
-            # self.assertEqual(add_x(y=4), 7)
-            self.assertEqual(add_x(x, y), y+y)
-            self.assertEqual(add_x(y=5), 8)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 7 != 8
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 3
-
-            y = 4
-            # self.assertEqual(add_x(y=4), 7)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=5), 8)
-
-  the test passes
-
-* I remove the comment, then add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 3-5
-
-            y = 4
-            self.assertEqual(add_x(x, y), x+y)
-            y = 5
-            # self.assertEqual(add_x(y=5), 8)
-            self.assertEqual(add_x(x, x), x+y)
-            self.assertEqual(add_x(y=6), 9)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 6 != 8
-
-* I change the call
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 3
-
-            y = 5
-            # self.assertEqual(add_x(y=5), 8)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=6), 9)
-
-  the test passes
-
-* I remove the comment then add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 3-5
-
-            y = 5
-            self.assertEqual(add_x(x, y), x+y)
-            y = 6
-            # self.assertEqual(add_x(y=6), 9)
-            self.assertEqual(add_x(y, y), x+y)
-            self.assertEqual(add_x(y=7), 10)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 12 != 9
-
-* I change the call
 
   .. code-block:: python
     :lineno-start: 24
-    :emphasize-lines: 3
+    :emphasize-lines: 1
 
-            y = 6
-            # self.assertEqual(add_x(y=6), 9)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=7), 10)
-
-  the test passes
-
-* I remove the comment then add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 3-5
-
-            y = 6
-            self.assertEqual(add_x(x, y), x+y)
-            y = 7
-            # self.assertEqual(add_x(y=7), 10)
-            self.assertEqual(add_x(x, y), y+y)
-            self.assertEqual(add_x(y=8), 11)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 10 != 14
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 3
-
-            y = 7
-            # self.assertEqual(add_x(y=7), 10)
-            self.assertEqual(add_x(x, y), x+y)
-            self.assertEqual(add_x(y=8), 11)
-
-  the test passes
-
-* I remove the comment then add one more :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 3-5
-
-            y = 7
-            self.assertEqual(add_x(x, y), x+y)
-            y = 8
-            # self.assertEqual(add_x(y=8), 11)
-            self.assertEqual(add_x(x, y), x+x)
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 11 != 6
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 3
-
-            y = 8
-            # self.assertEqual(add_x(y=8), 11)
-            self.assertEqual(add_x(x, y), x+y)
-
-  the test passes
-
-* I remove the comment then use the ``Rename Symbol`` feature to change the name of the ``add_x`` :ref:`function<what is a function?>` to ``add``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2, 7, 9, 11, 13, 15, 17, 19, 21, 23
-    :emphasize-text: add
-
-        def test_why_use_a_function(self):
-            def add(x=3, y=0):
-                return x + y
-
-            x = 4
-            y = 0
-            self.assertEqual(add(x, y), x+y)
-            y = 1
-            self.assertEqual(add(x, y), x+y)
-            y = 2
-            self.assertEqual(add(x, y), x+y)
-            y = 3
-            self.assertEqual(add(x, y), x+y)
-            y = 4
-            self.assertEqual(add(x, y), x+y)
-            y = 5
-            self.assertEqual(add(x, y), x+y)
-            y = 6
-            self.assertEqual(add(x, y), x+y)
-            y = 7
-            self.assertEqual(add(x, y), x+y)
-            y = 8
-            self.assertEqual(add(x, y), x+y)
+                    self.assertEqual(add(x, y), x+y)
 
         def test_making_a_function_w_pass(self):
 
-* I only have to make a change in one place if I want to test what happens when I add ``4`` to a number. I change ``x``
+  the test passes, not as confusing.
+
+* I can use a `range object`_ to make the test use more than 10 numbers
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5
+    :lineno-start: 11
+    :emphasize-lines: 1-2
 
-        def test_why_use_a_function(self):
-            def add(x=3, y=0):
-                return x + y
-
-            x = 4
-            y = 0
-            self.assertEqual(add(x, y), x+y)
+            # numbers = range(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+            numbers = range(-10, 10)
+            for y in numbers:
 
   the test is still green
 
-* I only have to make a change in one place if I want to test what happens when I add ``5`` to a number. I change ``x``
+* I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5
+    :lineno-start: 11
+    :emphasize-lines: 6
 
-        def test_why_use_a_function(self):
-            def add(x=3, y=0):
-                return x + y
+            # numbers = range(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+            numbers = range(-10, 10)
+            for y in numbers:
+                for x in numbers:
+                    with self.subTest(x=x, y=y):
+                        self.assertEqual(add(x, y), x+100)
 
-            x = 5
-            y = 0
-            self.assertEqual(add_x(x, y), x+y)
-
-  still green.
-
-* I only have to make a change in one place if I want to test what happens when I add ``6`` to a number. I change ``x``
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5
+
+    ================== 400 failed, 12 passed in X.YZs ===================
+
+  the test takes longer to run because there are more numbers to calculate
+
+* I change the expectation back then remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 5
+
+    class TestFunctions(unittest.TestCase):
 
         def test_why_use_a_function(self):
-            def add(x=3, y=0):
+            def add(x, y):
                 return x + y
 
-            x = 6
-            y = 0
-            self.assertEqual(add_x(x, y), x+y)
+            numbers = range(-10, 10)
+            for y in numbers:
+                for x in numbers:
+                    with self.subTest(x=x, y=y):
+                        self.assertEqual(add(x, y), x+y)
 
-  green. Much better than what I had before, the test passes for any number I try, but :ref:`there has to be a better way that does not need all these lines of code<what is a for loop?>`
+            for x, y in ((x, y) for x in numbers for y in numbers):
+                with self.subTest(x=x, y=y):
+                    self.assertEqual(add(x, y), x+y)
+
+            import itertools
+            for x, y in itertools.product(numbers, repeat=2):
+                with self.subTest(x=x, y=y):
+                    self.assertEqual(add(x, y), x+y)
+
+        def test_making_a_function_w_pass(self):
+
+  the test is green again
 
 :ref:`I can use a for loop to remove duplication<what is a for loop?>`
 
@@ -701,7 +388,9 @@ close the project
 review
 *********************************************************************************
 
-I used a :ref:`for loop<what is a variable?>` to remove repetition
+I used a :ref:`for loop<what is a variable?>` to remove repetition.
+
+`Why did my "list comprehensions" look like tuples and not lists? <https://docs.python.org/3/glossary.html#term-generator-expression>`_
 
 ----
 
