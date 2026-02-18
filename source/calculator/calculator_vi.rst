@@ -436,6 +436,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   .. code-block:: python
     :lineno-start: 30
+    :emphasize-lines: 3-8
 
     @numbers_only
     def divide(first_input, second_input):
@@ -456,8 +457,85 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   the test passes
 
-
 ----
+
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 193
+    :emphasize-lines: 5-8
+
+                    self.assertEqual(
+                        src.calculator.divide(data, a_random_number()),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.multiply(data, a_random_number()),
+                        'BOOM!!!'
+                    )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(data_type=None) ...  - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=True) ...  - AssertionError: ST.UVWXYZABCDEFGHI != 'BOOM!!!'
+    SUBFAILED(data_type=False) ... - AssertionError: J.K != 'BOOM!!!'
+    SUBFAILED(data_type='') ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=()) ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=[]) ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=set()) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type={}) ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+
+  they look the same as with the :ref:`divide function<test_division>`
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 197
+
+                    self.assertEqual(
+                        src.calculator.multiply(data, a_random_number()),
+                        error_message
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(data_type=True) ...  - AssertionError: -LMN.OPQRSTUVWXYZAB != 'brmph?! Numbers only. Try again...'
+    SUBFAILED(data_type=False) ... - AssertionError: -C.D != 'brmph?! Numbers only. Try again...'
+
+* I add "the :ref:`if statement<if statements>`" to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 9-14
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        if (
+            isinstance(first_input, list)
+            or
+            isinstance(second_input, list)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        if (
+            isinstance(first_input, bool)
+            or
+            isinstance(second_input, bool)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+
+    @numbers_only
+    def divide(first_input, second_input):
+
+
 
 ----
 
@@ -536,27 +614,13 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   still green
 
-* I add another :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>` in ``test_calculator.py``
+----
 
-  .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 6-9
+----
 
-                with self.subTest(data_type=data):
-                    self.assertEqual(
-                        src.calculator.add(data, a_random_number()),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.divide(data, a_random_number()),
-                        'BOOM!!!'
-                    )
+----
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for all the :ref:`data types<data structures>` in the test
-
-  .. code-block:: python
-
-    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+----
 
 * I think you can tell what will happen next. I change the expectation to match
 
@@ -571,20 +635,6 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
-
-  .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 5-8
-
-                    self.assertEqual(
-                        src.calculator.divide(data, a_random_number()),
-                        error_message
-                    )
-                    self.assertEqual(
-                        src.calculator.multiply(data, a_random_number()),
-                        'BOOM!!!'
-                    )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for each :ref:`data type<data structures>`
 
