@@ -69,27 +69,75 @@ test_calculator_w_dictionary_items
 I add a new test
 
 .. code-block:: python
-  :lineno-start: 119
-  :emphasize-lines: 6-10, 12-15
+  :lineno-start: 58
+  :emphasize-lines: 52-56, 58-64
 
-            self.assertEqual(
-                src.calculator.subtract(*a_list),
-                self.random_first_number-self.random_second_number
-            )
+      def test_calculator_w_list_items(self):
+          two_numbers = [
+              self.random_first_number,
+              self.random_second_number
+          ]
 
-        def test_calculator_w_dictionary_items(self):
-            two_numbers = {
-                'x': self.random_first_number,
-                'y': self.random_second_number,
-            }
+          self.assertEqual(
+              src.calculator.add(
+                  two_numbers[0],
+                  two_numbers[1]
+              ),
+              self.random_first_number+self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.divide(
+                  two_numbers[-2],
+                  two_numbers[-1]
+              ),
+              self.random_first_number/self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.multiply(
+                  two_numbers[1],
+                  two_numbers[-1]
+              ),
+              self.random_second_number*self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.subtract(
+                  two_numbers[-2],
+                  two_numbers[0]
+              ),
+              self.random_first_number-self.random_first_number
+          )
+          self.assertEqual(
+              src.calculator.add(*two_numbers),
+              self.random_first_number+self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.divide(*two_numbers),
+              self.random_first_number/self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.multiply(*two_numbers),
+              self.random_first_number*self.random_second_number
+          )
+          self.assertEqual(
+              src.calculator.subtract(*two_numbers),
+              self.random_first_number-self.random_second_number
+          )
 
-            self.assertEqual(
-                src.calculator.add(two_numbers['x'], two_numbers['y']),
-                self.random_first_number+self.random_first_number
-            )
+      def test_calculator_w_dictionary_items(self):
+          two_numbers = {
+              'x': self.random_first_number,
+              'y': self.random_second_number,
+          }
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            not_two_numbers = [0, 1, 2]
+          self.assertEqual(
+              src.calculator.add(
+                  two_numbers['x'],
+                  two_numbers['y']
+              ),
+              self.random_first_number+self.random_first_number
+          )
+
+      def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -108,15 +156,26 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 I change the expectation to the right calculation
 
 .. code-block:: python
-  :lineno-start: 130
-  :emphasize-lines: 3
+  :lineno-start: 115
+  :emphasize-lines: 6
 
           self.assertEqual(
-              src.calculator.add(two_numbers['x'], two_numbers['y']),
+              src.calculator.add(
+                  two_numbers['x'],
+                  two_numbers['y']
+              ),
               self.random_first_number+self.random_second_number
           )
 
-the test passes
+the test passes. ``two_numbers`` is a :ref:`dictionary<what is a dictionary?>` with two :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+
+- ``'x': self.random_first_number``
+- ``'y': self.random_second_number``
+
+this means
+
+- ``two_numbers['x']`` is ``self.random_first_number``
+- ``two_numbers['y']`` is ``self.random_second_number``
 
 ----
 
@@ -129,15 +188,21 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 5-8
+    :lineno-start: 115
+    :emphasize-lines: 8-14
 
             self.assertEqual(
-                src.calculator.add(two_numbers['x'], two_numbers['y']),
+                src.calculator.add(
+                    two_numbers['x'],
+                    two_numbers['y']
+                ),
                 self.random_first_number+self.random_second_number
             )
             self.assertEqual(
-                src.calculator.divide(two_numbers['x'], two_numbers['y']),
+                src.calculator.divide(
+                    two_numbers['x'],
+                    two_numbers['y']
+                ),
                 self.random_first_number*self.random_second_number
             )
 
@@ -147,31 +212,40 @@ the test passes
 
     AssertionError: D.EFGHIJKLMNOPQRST != UVWXY.ZABCDEFGHIJ
 
-* I change the calculation
+* I change the calculation to :ref:`division<test_division>`
 
   .. code-block:: python
-    :lineno-start: 134
-    :emphasize-lines: 3
+    :lineno-start: 122
+    :emphasize-lines: 6
 
             self.assertEqual(
-                src.calculator.divide(two_numbers['x'], two_numbers['y']),
+                src.calculator.divide(
+                    two_numbers['x'],
+                    two_numbers['y']
+                ),
                 self.random_first_number/self.random_second_number
             )
 
   the test passes
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 134
-    :emphasize-lines: 5-8
+    :lineno-start: 122
+    :emphasize-lines: 8-14
 
             self.assertEqual(
-                src.calculator.divide(two_numbers['x'], two_numbers['y']),
+                src.calculator.divide(
+                    two_numbers['x'],
+                    two_numbers['y']
+                ),
                 self.random_first_number/self.random_second_number
             )
             self.assertEqual(
-                src.calculator.multiply(two_numbers['y'], two_numbers['y']),
+                src.calculator.multiply(
+                    two_numbers['y'],
+                    two_numbers['y']
+                ),
                 self.random_first_number*self.random_second_number
             )
 
@@ -181,14 +255,17 @@ the test passes
 
     AssertionError: EFGHIJ.KLMNOPQRSTU != VWXYZ.ABCDEFGHIJKL
 
-* I change the expectation
+* I change the expectation to use the correct :ref:`variables<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 123
-    :emphasize-lines: 3
+    :lineno-start: 129
+    :emphasize-lines: 6
 
             self.assertEqual(
-                src.calculator.multiply(two_numbers['y'], two_numbers['y']),
+                src.calculator.multiply(
+                    two_numbers['y'],
+                    two_numbers['y']
+                ),
                 self.random_second_number*self.random_second_number
             )
 
@@ -197,15 +274,21 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 138
-    :emphasize-lines: 5-8
+    :lineno-start: 129
+    :emphasize-lines: 8-14
 
             self.assertEqual(
-                src.calculator.multiply(two_numbers['y'], two_numbers['y']),
+                src.calculator.multiply(
+                    two_numbers['y'],
+                    two_numbers['y']
+                ),
                 self.random_second_number*self.random_second_number
             )
             self.assertEqual(
-                src.calculator.subtract(two_numbers['x'], two_numbers['x']),
+                src.calculator.subtract(
+                    two_numbers['x'],
+                    two_numbers['x'],
+                ),
                 self.random_first_number-self.random_second_number
             )
 
@@ -218,24 +301,61 @@ the test passes
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 142
-    :emphasize-lines: 3
+    :lineno-start: 109
+    :emphasize-lines: 33
+
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                'first_input': self.random_first_number,
+                'second_input': self.random_second_number,
+            }
 
             self.assertEqual(
-                src.calculator.subtract(two_numbers['x'], two_numbers['x']),
+                src.calculator.add(
+                    two_numbers['x'],
+                    two_numbers['y']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers['x'],
+                    two_numbers['y']
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(
+                    two_numbers['y'],
+                    two_numbers['y']
+                ),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(
+                    two_numbers['x'],
+                    two_numbers['x'],
+                ),
                 self.random_first_number-self.random_first_number
             )
 
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+
   the test passes
 
-* Python_ allows me use a double starred expression like I did in :ref:`test_functions_w_unknown_arguments`. I add an :ref:`assertion<what is an assertion?>` with it
+----
+
+* I use ``**`` like I did for the :ref:`keyword arguments<test_functions_w_keyword_arguments>` in :ref:`test_functions_w_unknown_arguments`
 
   .. code-block:: python
-    :lineno-start: 142
-    :emphasize-lines: 5-8
+    :lineno-start: 136
+    :emphasize-lines: 8-11
 
             self.assertEqual(
-                src.calculator.subtract(two_numbers['x'], two_numbers['x']),
+                src.calculator.subtract(
+                    two_numbers['x'],
+                    two_numbers['x'],
+                ),
                 self.random_first_number-self.random_first_number
             )
             self.assertEqual(
@@ -249,11 +369,211 @@ the test passes
 
     TypeError: numbers_only.<locals>.wrapper() got an unexpected keyword argument 'x'
 
-* the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :ref:`dictionary<what is a dictionary?>` must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``. I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the test
+  the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :ref:`dictionary<what is a dictionary?>` must be the same as the names of the arguments the :ref:`calculator functions<how to make a calculator>` receive - ``first_input`` and ``second_input`` not ``x`` and ``y``
+
+* I change ``x`` and ``y`` to ``first_input`` and ``second_input`` in the :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 3-6
+
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                # 'x': self.random_first_number,
+                'first_input': self.random_first_number,
+                # 'y': self.random_second_number,
+                'second_input': self.random_second_number,
+            }
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: 'x'
+
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 214
+    :emphasize-lines: 6
+    :emphasize-text: KeyError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # KeyError
+
+* I remove the comments to put ``x`` and ``y`` back as :ref:`keys<test_keys_of_a_dictionary>` in the :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 3, 5
+
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                'x': self.random_first_number,
+                'first_input': self.random_first_number,
+                'y': self.random_second_number,
+                'second_input': self.random_second_number,
+            }
+
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers['x'],
+                    two_numbers['y']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
+
+  the same :ref:`Exception<errors>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
+
+* I change ``two_numbers['x']`` to ``two_numbers['first_input']`` to use the new :ref:`keys<test_keys_of_a_dictionary>` in the :ref:`assertions<What is an assertion?>` for :ref:`addition<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 117
+
+            self.assertEqual(
+                src.calculator.add(
+                    # two_numbers['x'],
+                    two_numbers['first_input'],
+                    two_numbers['y']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+
+  .. code-block:: python
+
+    TypeError: numbers_only.<locals>.decorator() got an unexpected keyword argument 'x'
+
+  the same :ref:`Exception<errors>` I had before I added the :ref:`keys<test_keys_of_a_dictionary>` to the :ref:`dictionary<what is a dictionary?>`
+
+* I comment out the :ref:`assertion<what is an assertion?>` with ``**two_numbers``
+
+  .. code-block:: python
+    :lineno-start: 139
+    :emphasize-lines: 8-11
+
+            self.assertEqual(
+                src.calculator.subtract(
+                    two_numbers['x'],
+                    two_numbers['x'],
+                ),
+                self.random_first_number-self.random_first_number
+            )
+            # self.assertEqual(
+            #     src.calculator.add(**two_numbers),
+            #     self.random_first_number-self.random_second_number
+            # )
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+
+  the test is green again
+
+* I use ``two_numbers['second_input']`` for ``two_numbers['y']``
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 5-6
+
+            self.assertEqual(
+                src.calculator.add(
+                    # two_numbers['x'],
+                    two_numbers['first_input'],
+                    # two_numbers['y']
+                    two_numbers['second_input']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+
+  the test is still green
+
+* I remove the commented lines then make the same change for :ref:`division<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 10-13
+
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(
+                    # two_numbers['x'],
+                    two_numbers['first_input'],
+                    # two_numbers['y']
+                    two_numbers['second_input']
+                ),
+                self.random_first_number/self.random_second_number
+            )
+
+  still green
+
+* I do the same thing for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
     :lineno-start: 124
-    :emphasize-lines: 3-4, 9-10, 16-17, 23-24, 30-31
+    :emphasize-lines: 10-13
+
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(
+                    # two_numbers['y'],
+                    two_numbers['second_input'],
+                    # two_numbers['y']
+                    two_numbers['second_input']
+                ),
+                self.random_second_number*self.random_second_number
+            )
+
+  green
+
+* I do it in the :ref:`assertions<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 10-13
+
+            self.assertEqual(
+                src.calculator.multiply(
+                    two_numbers['second_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(
+                    # two_numbers['x'],
+                    two_numbers['first_input'],
+                    # two_numbers['x'],
+                    two_numbers['first_input']
+                ),
+                self.random_first_number-self.random_first_number
+            )
+
+  still green
+
+* I remove the ``x`` and ``y`` :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 109
 
         def test_calculator_w_dictionary_items(self):
             two_numbers = {
@@ -289,6 +609,22 @@ the test passes
                 ),
                 self.random_first_number-self.random_first_number
             )
+            # self.assertEqual(
+            #     src.calculator.add(**two_numbers),
+            #     self.random_first_number-self.random_second_number
+            # )
+
+  the tests are still green
+
+* I remove the comments from the :ref:`assertion<what is an assertion?>` with ``**two_numbers``
+
+  .. code-block:: python
+    :lineno-start: 143
+
+            self.assertEqual(
+                src.calculator.add(**two_numbers),
+                self.random_first_number-self.random_second_number
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -296,10 +632,10 @@ the test passes
 
     AssertionError: VWX.YZABCDEFGHIJK != LMN.OPQRSTUVWXYZABC
 
-* I change the calculation in the :ref:`assertion<what is an assertion?>`
+* I change the calculation in the :ref:`assertion<what is an assertion?>` to :ref:`addition<test_addition>`
 
   .. code-block:: python
-    :lineno-start: 158
+    :lineno-start: 143
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -309,10 +645,10 @@ the test passes
 
   the test passes
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :lineno-start: 158
+    :lineno-start: 143
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -330,10 +666,10 @@ the test passes
 
     AssertionError: H.IJKLMNOPQRSTUVWX != YZABCD.EFGHIJKLMNO
 
-* I change the calculation
+* I change the calculation to use :ref:`division<test_division>`
 
   .. code-block:: python
-    :lineno-start: 162
+    :lineno-start: 147
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -346,7 +682,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 162
+    :lineno-start: 147
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -364,10 +700,10 @@ the test passes
 
     AssertionError: IJKLMN.OPQRSTUVWX != Y.ZABCDEFGHIJKLMNOP
 
-* I change the calculation
+* I change the calculation to :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 166
+    :lineno-start: 151
     :emphasize-lines: 3
 
             self.assertEqual(
@@ -380,7 +716,7 @@ the test passes
 * I add the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 166
+    :lineno-start: 151
     :emphasize-lines: 5-8
 
             self.assertEqual(
@@ -401,17 +737,67 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 170
-    :emphasize-lines: 3
+    :lineno-start: 109
+    :emphasize-lines: 49
 
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                'first_input': self.random_first_number,
+                'second_input': self.random_second_number,
+            }
+
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(
+                    two_numbers['second_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(
+                    two_numbers['first_input'],
+                    two_numbers['first_input']
+                ),
+                self.random_first_number-self.random_first_number
+            )
+            self.assertEqual(
+                src.calculator.add(**two_numbers),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(**two_numbers),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(**two_numbers),
+                self.random_first_number*self.random_second_number
+            )
             self.assertEqual(
                 src.calculator.subtract(**two_numbers),
                 self.random_first_number-self.random_second_number
             )
 
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+
   the test passes
 
-* I can use the :ref:`values method<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator>` in ``test_calculator_w_list_items``
+----
+
+* I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` to make a :ref:`list<lists>` to test the :ref:`calculator<how to make a calculator>` in :ref:`test_calculator_w_list_items`
 
   .. code-block:: python
     :lineno-start: 88

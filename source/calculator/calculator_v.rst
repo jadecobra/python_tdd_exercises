@@ -459,7 +459,7 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
             )
 
         def test_calculator_w_list_items(self):
-            two_numbers =[
+            two_numbers = [
                 self.random_first_number,
                 self.random_second_number
             ]
@@ -800,7 +800,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
     :emphasize-lines: 49
 
         def test_calculator_w_list_items(self):
-            two_numbers =[
+            two_numbers = [
                 self.random_first_number,
                 self.random_second_number
             ]

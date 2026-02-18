@@ -56,7 +56,7 @@ class TestCalculator(unittest.TestCase):
             )
 
     def test_calculator_w_list_items(self):
-        two_numbers =[
+        two_numbers = [
             self.random_first_number,
             self.random_second_number
         ]
