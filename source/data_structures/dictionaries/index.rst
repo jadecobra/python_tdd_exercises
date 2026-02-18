@@ -5,33 +5,10 @@
 .. include:: ../../links.rst
 
 .. _more_on_lists: https://docs.python.org/3/tutorial/datastructures.html?highlight=list#more-on-lists
-.. _append: more_on_lists_
-.. _append method: more_on_lists_
-.. _count: more_on_lists_
-.. _count method: more_on_lists_
-.. _clear: more_on_lists_
-.. _clear method: more_on_lists_
-.. _copy: more_on_lists_
-.. _copy method: more_on_lists_
-.. _pop: more_on_lists_
-.. _pop method:
-.. _insert: more_on_lists_
-.. _insert method: more_on_lists_
-.. _index: more_on_lists_
-.. _index method: more_on_lists_
-.. _remove:
-.. _remove method: more_on_lists_
-.. _reverse: more_on_lists_
-.. _reverse method: more_on_lists_
-.. _sort: more_on_lists_
-.. _sort method: more_on_lists_
-.. _extend: more_on_lists_
-.. _extend method: more_on_lists_
-.. _list: https://docs.python.org/3/library/stdtypes.html#list
-.. _lists: list_
-.. _slicing: https://docs.python.org/3/reference/expressions.html#slicings
-.. _IndexError: https://docs.python.org/3/library/exceptions.html#IndexError
-.. _iterable: https://docs.python.org/3/glossary.html#term-iterable
+.. _dict: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
+.. _dict class: dict_
+.. _dictionary: dict_
+.. _dictionaries: dictionary_
 
 
 #################################################################################

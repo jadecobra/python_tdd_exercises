@@ -20,38 +20,16 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python/calculator
-
-* I activate the `virtual environment`_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: Powershell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    (.venv) .../pumping_python/calculator
 
 * I use ``pytest-watcher`` to run the tests
 
@@ -63,8 +41,8 @@ open the project
 
   the terminal_ shows
 
-  .. code-block:: python
-    :emphasize-lines: 4
+  .. code-block:: shell
+    :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
     configfile: pyproject.toml

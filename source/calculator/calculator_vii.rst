@@ -8,7 +8,7 @@
 how to make a calculator 7
 #################################################################################
 
-I can use a dictionary_ to test the :ref:`calculator functions<how to make a calculator>` as long as its values are numbers
+I want to test the :ref:`calculator<how to make a calculator>` with a :ref:`dictionary<what is a dictionary?>`
 
 ----
 
@@ -18,38 +18,16 @@ open the project
 
 * I `change directory`_ to the ``calculator`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     cd calculator
 
   the terminal_ shows I am in the ``calculator`` folder_
 
-  .. code-block:: python
+  .. code-block:: shell
 
     .../pumping_python/calculator
-
-* I activate the `virtual environment`_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    source .venv/bin/activate
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``.venv/bin/activate.ps1`` NOT ``source .venv/bin/activate``
-
-    .. code-block:: Powershell
-      :emphasize-lines: 1
-
-      .venv/scripts/activate.ps1
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    (.venv) .../pumping_python/calculator
 
 * I use ``pytest-watcher`` to run the tests
 
@@ -61,7 +39,7 @@ open the project
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 5
 
     rootdir: .../pumping_python/calculator
@@ -88,7 +66,7 @@ test_calculator_w_dictionary_items
 
 ----
 
-I add a new test to use a dictionary_ to test the :ref:`calculator<how to make a calculator>`
+I add a new test
 
 .. code-block:: python
   :lineno-start: 119
