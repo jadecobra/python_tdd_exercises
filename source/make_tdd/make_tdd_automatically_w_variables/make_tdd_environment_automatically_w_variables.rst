@@ -284,7 +284,7 @@ Here are a few other examples
     ├── tests
     └── .venv
 
-* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` variable_. For example, when I type this in the terminal_
+* I can now make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` with ``makePythonTdd.sh`` when I give it a name for the ``PROJECT_NAME`` :ref:`variable<what is a variable?>`. For example, when I type this in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
