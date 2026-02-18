@@ -1371,7 +1371,7 @@ this means all these statements are the same
     arithmetic['addition'](x, y)
     src.calculator.add(x, y)
     expectations['addition']
-    x+y
+    x + y
 
 * for :ref:`subtraction<test_subtraction>`
 
@@ -1380,7 +1380,7 @@ this means all these statements are the same
     arithmetic['subtraction'](x, y)
     src.calculator.add(x, y)
     expectations['subtraction']
-    x+y
+    x - y
 
 * for :ref:`multiplication<test_multiplication>`
 
@@ -1389,7 +1389,7 @@ this means all these statements are the same
     arithmetic['multiplication'](x, y)
     src.calculator.add(x, y)
     expectations['multiplication']
-    x+y
+    x * y
 
 * for :ref:`division<test_division>`
 
@@ -1398,63 +1398,7 @@ this means all these statements are the same
     arithmetic['division'](x, y)
     src.calculator.add(x, y)
     expectations['division']
-    x+y
-
-* these four statements get translated by the computer to
-
-  .. code-block:: python
-
-    src.calculator.subtract(self.first_random_number, self.second_random_number)
-    src.calculator.divide((self.first_random_number, self.second_random_number)
-    src.calculator.multiply(self.first_random_number, self.second_random_number)
-
-* then the computer checks if the results of the operations are the same as
-
-  .. code-block:: python
-
-    expectations['addition']
-    expectations['subtraction']
-    expectations['division']
-    expectations['multiplication']
-
-  which are
-
-  .. code-block:: python
-
-    self.random_first_number+self.random_second_number
-    self.random_first_number-self.random_second_number
-    self.random_first_number/self.random_second_number
-    self.random_first_number*self.random_second_number
-
-* the test is checking if these statements are equal
-
-  for :ref:`addition<test_addition>`
-
-  .. code-block:: python
-
-    src.calculator.add(self.first_random_number, self.second_random_number)
-    self.random_first_number+self.random_second_number
-
-  for :ref:`subtraction<test_subtraction>`
-
-  .. code-block:: python
-
-    src.calculator.subtract(self.first_random_number, self.second_random_number)
-    self.random_first_number-self.random_second_number
-
-  for :ref:`division<test_division>`
-
-  .. code-block:: python
-
-    src.calculator.divide((self.first_random_number, self.second_random_number)
-    self.random_first_number/self.random_second_number
-
-  for :ref:`multiplication<test_multiplication>`
-
-  .. code-block:: python
-
-    src.calculator.multiply(self.first_random_number, self.second_random_number)
-    self.random_first_number*self.random_second_number
+    x / y
 
 ----
 
