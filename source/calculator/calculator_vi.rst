@@ -166,7 +166,7 @@ I add a new test with a `for loop`_ and an :ref:`assertion<what is an assertion?
 
 .. code-block:: python
   :lineno-start: 164
-  :emphasize-lines: 13-14, 16-28
+  :emphasize-lines: 13-14, 16-30
 
       def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
           not_two_numbers = [0, 1, 2]
@@ -193,7 +193,9 @@ I add a new test with a `for loop`_ and an :ref:`assertion<what is an assertion?
               dict(),
           ):
               self.assertEqual(
-                  src.calculator.add(data, a_random_number()),
+                  src.calculator.add(
+                      data, a_random_number()
+                  ),
                   'BOOM!!!'
               )
 
@@ -218,10 +220,12 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :lineno-start: 188
-    :emphasize-lines: 3
+    :emphasize-lines: 5
 
                 self.assertEqual(
-                    src.calculator.add(data, a_random_number()),
+                    src.calculator.add(
+                        data, a_random_number()
+                    ),
                     error_message
                 )
 
@@ -231,13 +235,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     AssertionError: ABC.DEFGHIJKLMNOPQR != 'brmph?! Numbers only. Try again...'
 
-  there is a problem. One of the :ref:`data types<data structures>` I am testing is getting to the :ref:`add function<test_addition>` so I get a result back instead of a message. How can I tell which of the :ref:`data types<data structures>` caused the failure?
+  One of the :ref:`data types<data structures>` from the test gets to the :ref:`add function<test_addition>` so it returns a number and not a message. How can I tell which :ref:`data type<data structures>` caused the failure?
 
 * the `unittest.TestCase class`_ has a way to tell which item is causing my failure when I am using a `for loop`_, I add it to the test
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 13-17
+    :lineno-start: 176
+    :emphasize-lines: 13-19
 
         def test_calculator_w_a_for_loop(self):
             error_message = 'brmph?! Numbers only. Try again...'
@@ -253,11 +257,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             ):
                 with self.subTest(data_type=data):
                     self.assertEqual(
-                        src.calculator.add(data, a_random_number()),
+                        src.calculator.add(
+                            data, a_random_number()
+                        ),
                         error_message
                     )
 
-        def test_calculator_w_a_for_loop(self):
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<data structures>` I am testing
 
@@ -271,7 +277,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     SUBFAILED(data_type=False) ...  - AssertionError: MNO.PQRSTUVWXYZABCD != 'brmph?! Numbers only. Try again...'
     =========== 2 failed, 7 passed in X.YZs ============
 
-  the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. Are :ref:`booleans<what are booleans?>` numbers?
+  the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. :ref:`Is a boolean a number?<booleans 3>`
 
 * I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
@@ -297,7 +303,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the test passes. These two :ref:`if statements` look the same
+  the test passes. The two :ref:`if statements` in the :ref:`add function<test_addition>` look the same
 
   .. code-block:: python
 
@@ -375,7 +381,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   .. code-block:: python
     :lineno-start: 176
-    :emphasize-lines: 18-21
+    :emphasize-lines: 20-25
 
         def test_calculator_w_a_for_loop(self):
             error_message = 'brmph?! Numbers only. Try again...'
@@ -391,11 +397,15 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
             ):
                 with self.subTest(data_type=data):
                     self.assertEqual(
-                        src.calculator.add(data, a_random_number()),
+                        src.calculator.add(
+                            data, a_random_number()
+                        ),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.divide(data, a_random_number()),
+                        src.calculator.divide(
+                            data, a_random_number()
+                        ),
                         'BOOM!!!'
                     )
 
@@ -417,11 +427,13 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I change the expectation to use the error message
 
   .. code-block:: python
-    :lineno-start: 193
-    :emphasize-lines: 3
+    :lineno-start: 195
+    :emphasize-lines: 5
 
                     self.assertEqual(
-                        src.calculator.divide(data, a_random_number()),
+                        src.calculator.divide(
+                            data, a_random_number()
+                        ),
                         error_message
                     )
 
@@ -441,9 +453,9 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def divide(first_input, second_input):
         if (
-            isinstance(first_input, (str, bool))
+            isinstance(first_input, bool)
             or
-            isinstance(second_input, (str, bool))
+            isinstance(second_input, bool)
         ):
             return 'brmph?! Numbers only. Try again...'
         try:
@@ -462,15 +474,19 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>` in ``test_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 193
-    :emphasize-lines: 5-8
+    :lineno-start: 195
+    :emphasize-lines: 7-12
 
                     self.assertEqual(
-                        src.calculator.divide(data, a_random_number()),
+                        src.calculator.divide(
+                            data, a_random_number()
+                        ),
                         error_message
                     )
                     self.assertEqual(
-                        src.calculator.multiply(data, a_random_number()),
+                        src.calculator.multiply(
+                            data, a_random_number()
+                        ),
                         'BOOM!!!'
                     )
 
@@ -495,10 +511,13 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for :ref:`multiplication<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 197
+    :lineno-start: 201
+    :emphasize-lines: 5
 
                     self.assertEqual(
-                        src.calculator.multiply(data, a_random_number()),
+                        src.calculator.multiply(
+                            data, a_random_number()
+                        ),
                         error_message
                     )
 
@@ -509,7 +528,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     SUBFAILED(data_type=True) ...  - AssertionError: -LMN.OPQRSTUVWXYZAB != 'brmph?! Numbers only. Try again...'
     SUBFAILED(data_type=False) ... - AssertionError: -C.D != 'brmph?! Numbers only. Try again...'
 
-* I add "the :ref:`if statement<if statements>`" to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -535,11 +554,154 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def divide(first_input, second_input):
 
+  the test passes
 
+* I add a new :ref:`if statement<if statements>` to put the two statements together
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 3-20
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        # if (
+        #     isinstance(first_input, list)
+        #     or
+        #     isinstance(second_input, list)
+        # ):
+        #     return 'brmph?! Numbers only. Try again...'
+        # if (
+        #     isinstance(first_input, bool)
+        #     or
+        #     isinstance(second_input, bool)
+        # ):
+        #     return 'brmph?! Numbers only. Try again...'
+        if (
+            isinstance(first_input, (bool, list))
+            or
+            isinstance(second_input, (bool, list))
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+  the test is still green
+
+* I remove the other :ref:`if statements`
+
+  .. code-block:: python
+    :lineno-start:  19
+
+    @numbers_only
+    def multiply(first_input, second_input):
+        if (
+            isinstance(first_input, (bool, list))
+            or
+            isinstance(second_input, (bool, list))
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+
+    @numbers_only
+    def divide(first_input, second_input):
+
+  still green
 
 ----
 
+* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 201
+    :emphasize-lines: 7-12
+
+                    self.assertEqual(
+                        src.calculator.multiply(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+                    self.assertEqual(
+                        src.calculator.subtract(
+                            data, a_random_number()
+                        ),
+                        'BOOM!!!'
+                    )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(data_type=None) ...  - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=True) ...  - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=False) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type='') ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=()) ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=[]) ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type=set()) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+    SUBFAILED(data_type={}) ...    - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+
+* I change the expectation to use the error message
+
+  .. code-block:: python
+    :lineno-start: 207
+    :emphasize-lines: 5
+
+                    self.assertEqual(
+                        src.calculator.subtract(
+                            data, a_random_number()
+                        ),
+                        error_message
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(data_type=True) ... - AssertionError: EFG.HIJKLMNOPQRSTU != 'brmph?! Numbers only. Try again...'
+    SUBFAILED(data_type=False) ... - AssertionError: VWX.YZABCDEFGHIJK != 'brmph?! Numbers only. Try again...'
+
+* I add an :ref:`if statement<if statements>` to the :ref:`subtract function<test_subtraction>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 3-8
+
+    @numbers_only
+    def subtract(first_input, second_input):
+        if (
+            isinstance(first_input, bool)
+            or
+            isinstance(second_input, bool)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input - second_input
+
+
+    @numbers_only
+    def multiply(first_input, second_input):
+
+  :ref:`it looks like booleans are numbers<booleans 3>`
+
 ----
+
+* All 4 :ref:`calculator functions<how to make a calculator>` have the same :ref:`if statement<if statements>`
+
+  .. code-block:: python
+
+    if (
+        isinstance(first_input, bool)
+        or
+        isinstance(second_input, bool)
+    )
+
+  - the :ref:`add function<test_addition>` has ``str`` as well
+  - the :ref:``
+
+
 
 ----
 * in the ``numbers_only`` :ref:`function<what is a function?>` in ``calculator.py``
