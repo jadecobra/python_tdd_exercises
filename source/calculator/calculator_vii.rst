@@ -947,7 +947,7 @@ the test is green again
 test_calculator_w_for_loops_and_dictionaries
 *********************************************************************************
 
-I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what is a for loop?>` to in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
 ----
 
@@ -1408,42 +1408,46 @@ this means all these statements are the same
 
 ----
 
-* the two :ref:`dictionaries<what is a dictionary?>` in this test have the same :ref:`keys<test_keys_of_a_dictionary>`, I can put them together
+* I can put the two :ref:`dictionaries<what is a dictionary?>` in this test together because they have the same :ref:`keys<test_keys_of_a_dictionary>`
 
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 6-31
+    :lineno-start: 214
+    :emphasize-lines: 16-35
 
+            expectations = {
+                'addition': (
+                    self.random_first_number+self.random_second_number
+                ),
+                'subtraction': (
+                    self.random_first_number-self.random_second_number
+                ),
+                'division': (
+                    self.random_first_number/self.random_second_number
+                ),
                 'multiplication': (
                     self.random_first_number*self.random_second_number
                 )
             }
 
+            x = self.random_first_number
+            y = self.random_second_number
             arithmetic_tests = {
                 'addition': {
                     'function': src.calculator.add,
-                    'expectation': (
-                        self.random_first_number+self.random_second_number
-                    ),
+                    'expectation': x+y,
                 },
                 'subtraction': {
                     'function': src.calculator.subtract,
-                    'expectation': (
-                        self.random_first_number-self.random_second_number
-                    ),
+                    'expectation': x-y,
                 },
                 'division': {
                     'function': src.calculator.divide,
-                    'expectation': (
-                        self.random_first_number/self.random_second_number
-                    ),
+                    'expectation': x/y,
                 },
                 'multiplication': {
-                    'function': src.calculator.divide,
-                    'expectation': (
-                        self.random_first_number*self.random_second_number
-                    ),
-                }
+                    'function': src.calculator.multiply,
+                    'expectation': x*y,
+                },
             }
 
             for operation in arithmetic:
@@ -1451,7 +1455,7 @@ this means all these statements are the same
 * I add a new :ref:`assertion<what is an assertion?>` in a :ref:`for loop<what is a for loop?>` with the `subTest method`_
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 250
     :emphasize-lines: 11-19
 
             for operation in arithmetic:
@@ -1467,12 +1471,12 @@ this means all these statements are the same
             for operation in arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        arithmetic_tests[operation]['function'](
-                            self.random_first_number,
-                            self.random_second_number
-                        ),
+                        arithmetic_tests[operation]['function'](x, y),
                         'BOOM!!!'
                     )
+
+
+    # Exceptions seen
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
@@ -1488,16 +1492,13 @@ this means all these statements are the same
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 8
+    :lineno-start: 260
+    :emphasize-lines: 5
 
             for operation in arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        arithmetic_tests[operation]['function'](
-                            self.random_first_number,
-                            self.random_second_number
-                        ),
+                        arithmetic_tests[operation]['function'](x, y),
                         arithmetic_tests[operation]['expectation']
                     )
 
@@ -1506,51 +1507,48 @@ this means all these statements are the same
 * I remove the other :ref:`dictionaries<what is a dictionary?>` and :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 206
 
         def test_calculator_functions(self):
+            x = self.random_first_number
+            y = self.random_second_number
             arithmetic_tests = {
                 'addition': {
                     'function': src.calculator.add,
-                    'expectation': (
-                        self.random_first_number+self.random_second_number
-                    ),
+                    'expectation': x+y,
                 },
                 'subtraction': {
                     'function': src.calculator.subtract,
-                    'expectation': (
-                        self.random_first_number-self.random_second_number
-                    ),
+                    'expectation': x-y,
                 },
                 'division': {
                     'function': src.calculator.divide,
-                    'expectation': (
-                        self.random_first_number/self.random_second_number
-                    ),
+                    'expectation': x/y,
                 },
                 'multiplication': {
                     'function': src.calculator.multiply,
-                    'expectation': (
-                        self.random_first_number*self.random_second_number
-                    ),
-                }
+                    'expectation': x*y,
+                },
             }
 
             for operation in arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        arithmetic_tests[operation]['function'](
-                            self.random_first_number,
-                            self.random_second_number
-                        ),
+                        arithmetic_tests[operation]['function'](x, y),
                         arithmetic_tests[operation]['expectation']
                     )
 
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-* I remove the ``test_addition``, ``test_subtraction`` and ``test_multiplication`` :ref:`methods<what is a function?>`
+    # Exceptions seen
+
+  much better
+
+----
+
+* I remove :ref:`test_addition`, :ref:`test_subtraction` and :ref:`test_multiplication`
 
   .. code-block:: python
+    :lineno-start: 10
 
     class TestCalculator(unittest.TestCase):
 
@@ -1560,202 +1558,331 @@ this means all these statements are the same
 
         def test_division(self):
 
-* I need a way to handle :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in ``test_calculator_functions`` for the :ref:`divide function<test_division>`. I change ``random_second_number`` to ``0`` in the `setUp method`_ to make :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` happen in the tests
+  I have to handle :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` in :ref:`test_calculator_functions` before I can remove :ref:`test_division`
+
+* I change ``y`` to ``0`` in :ref:`test_calculator_functions`
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 3-4
+    :lineno-start: 179
+    :emphasize-lines: 2-3
 
-        def setUp(self):
-            self.random_first_number = a_random_number()
-            # self.random_second_number = a_random_number()
-            self.random_second_number = 0
+        def test_calculator_functions(self):
+            x = self.random_first_number
+            # y = self.random_second_number
+            y = 0
 
-        def test_division(self):
+            arithmetic_tests = {
 
-  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` for 3 tests
-
-  .. code-block:: python
-
-    FAILED tests/test_calculator.py::TestCalculator::test_calculator_functions - ZeroDivisionError: float division by zero
-    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
-    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - ZeroDivisionError: float division by zero
-
-* I use an :ref:`exception handler<how to use try...except...else>` to add a new :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to the `setUp method`_ for the result of :ref:`division<test_division>`
+  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
-    :lineno-start: 15
 
-            self.random_second_number = 0
+    ZeroDivisionError: float division by zero
+
+  good
+
+* I add an :ref:`exception handler<how to use try...except...else>` to make a :ref:`variable<what is a variable?>` for the result of :ref:`division<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 179
+
+        def test_calculator_functions(self):
+            x = self.random_first_number
+            # y = self.random_second_number
+            y = 0
+
             try:
-                self.division_result = (
-                    self.random_first_number / self.random_second_number
-                )
+                division_result = x / y
             except ZeroDivisionError:
-                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
+                division_result = 'BOOM!!!'
 
-* I use the new :ref:`class attribute (variable) <test_attribute_error_w_class_attributes>` in ``test_calculator_functions``
+            arithmetic_tests = {
 
-  .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 3-6
-
-                'division': {
-                    'function': src.calculator.divide,
-                    # 'expectation': (
-                    #     self.random_first_number/self.random_second_number
-                    # ),
-                    'expectation': self.division_result,
-                },
-
-  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` for 2 tests
+  here is what the :ref:`exception handler<how to use try...except...else>` does
 
   .. code-block:: python
 
-    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
-    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_list_items - ZeroDivisionError: float division by zero
+    try:
+        division_result = x / y
 
-  progress
-
-* I add the :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to ``test_calculator_w_list_items``
-
-  .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 3-4
-
-            self.assertEqual(
-                src.calculator.divide(two_numbers[-2], two_numbers[-1]),
-                # self.random_first_number/self.random_second_number
-                self.division_result
-            )
-
-  and
-
-  .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 3-4
-
-            self.assertEqual(
-                src.calculator.divide(*two_numbers),
-                # self.random_first_number/self.random_second_number
-                self.division_result
-            )
-
-  the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` for 1 test
+  try to point ``division_result`` to the result of dividing ``x`` by ``y``
 
   .. code-block:: python
 
-    FAILED tests/test_calculator.py::TestCalculator::test_calculator_w_dictionary_items - ZeroDivisionError: float division by zero
+    except ZeroDivisionError:
+        division_result = 'BOOM!!!'
 
-* I add the :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to ``test_calculator_w_dictionary_items``
+  if :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` is raised when trying to divide ``x`` by ``y``, point ``division_result`` to ``'BOOM!!!'``
 
-  .. code-block:: python
-    :lineno-start: 163
-    :emphasize-lines: 6-7
-
-            self.assertEqual(
-                src.calculator.divide(
-                    two_numbers['first_input'],
-                    two_numbers['second_input']
-                ),
-                # self.random_first_number/self.random_second_number
-                self.division_result
-            )
-
-  and
+* I use ``division_result`` in the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 189
-    :emphasize-lines: 3-4
+    :emphasize-lines: 12-13
 
-            self.assertEqual(
-                src.calculator.divide(**two_numbers),
-                # self.random_first_number/self.random_second_number
-                self.division_result
-            )
+            arithmetic_tests = {
+                'addition': {
+                    'function': src.calculator.add,
+                    'expectation': x+y,
+                },
+                'subtraction': {
+                    'function': src.calculator.subtract,
+                    'expectation': x-y,
+                },
+                'division': {
+                    'function': src.calculator.divide,
+                    # 'expectation': x/y,
+                    'expectation': division_result,
+                },
+                'multiplication': {
+                    'function': src.calculator.multiply,
+                    'expectation': x*y,
+                },
+            }
 
-  the test is green again again. Lovely!
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I remove the lines I commented out to replace with ``self.division_result``
+  .. code-block:: python
 
-* I remove :ref:`test_division`
+    AssertionError: 'brmph?! I cannot divide by 0. Try again...' != 'BOOM!!!'
+
+* I change ``'BOOM!!!'`` to the error message
+
+  .. code-block:: python
+    :lineno-start: 184
+    :emphasize-lines: 3
+
+            try:
+                division_result = x / y
+            except ZeroDivisionError:
+                division_result = 'brmph?! I cannot divide by 0. Try again...'
+
+  the test passes. Progress
+
+* I change ``y`` back to ``self.random_second_number``
+
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 3
+
+        def test_calculator_functions(self):
+            x = self.random_first_number
+            y = self.random_second_number
+
+            try:
+                division_result = x / y
+            except ZeroDivisionError:
+                division_result = 'brmph?! I cannot divide by 0. Try again...'
+
+            arithmetic_tests = {
+                'addition': {
+                    'function': src.calculator.add,
+                    'expectation': x+y,
+                },
+                'subtraction': {
+                    'function': src.calculator.subtract,
+                    'expectation': x-y,
+                },
+                'division': {
+                    'function': src.calculator.divide,
+                    'expectation': division_result,
+                },
+                'multiplication': {
+                    'function': src.calculator.multiply,
+                    'expectation': x*y,
+                },
+            }
+
+            for operation in arithmetic_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        arithmetic_tests[operation]['function'](x, y),
+                        arithmetic_tests[operation]['expectation']
+                    )
+
+
+    # Exceptions seen
+
+  the test is still green
+
+----
+
+I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from :ref:`test_calculator_functions` and the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` from :ref:`test_calculator_sends_message_when_input_is_not_a_number` together because they have the same :ref:`keys<test_keys_of_a_dictionary>`.
+
+* I add the :ref:`variables<what is a variable?>` from :ref:`test_calculator_functions` to the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 12
+    :emphasize-lines: 5-6, 8-11, 13-30
 
         def setUp(self):
             self.random_first_number = a_random_number()
-            # self.random_second_number = a_random_number()
-            self.random_second_number = 0
+            self.random_second_number = a_random_number()
+
+            x = self.random_first_number
+            y = self.random_second_number
+
             try:
-                self.division_result = (
-                    self.random_first_number / self.random_second_number
-                )
+                division_result = x / y
             except ZeroDivisionError:
-                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
-
-        def test_calculator_functions(self):
-
-* I change ``self.random_second_number`` back to a random float_
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 3
-
-    def setUp(self):
-        self.random_first_number = a_random_number()
-        self.random_second_number = a_random_number()
-
-  all tests are still green
-
-* the :ref:`dictionaries<what is a dictionary?>` in ``test_calculator_functions`` and ``test_calculator_sends_message_when_input_is_not_a_number`` are similar, I add a new :ref:`dictionary<what is a dictionary?>` in the `setUp method`_ to replace them
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 4-27
-
-            except ZeroDivisionError:
-                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
+                division_result = 'brmph?! I cannot divide by 0. Try again...'
 
             self.arithmetic_tests = {
                 'addition': {
                     'function': src.calculator.add,
-                    'expectation': (
-                        self.random_first_number+self.random_second_number
-                    ),
+                    'expectation': x+y,
                 },
                 'subtraction': {
                     'function': src.calculator.subtract,
-                    'expectation': (
-                        self.random_first_number-self.random_second_number
-                    ),
+                    'expectation': x-y,
                 },
                 'division': {
                     'function': src.calculator.divide,
-                    'expectation': self.division_result,
+                    'expectation': division_result,
                 },
                 'multiplication': {
                     'function': src.calculator.multiply,
-                    'expectation': (
-                        self.random_first_number*self.random_second_number
-                    ),
+                    'expectation': x*y,
                 }
             }
 
-        def test_calculator_functions(self):
-
-* then I use it in ``test_calculator_functions``
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_functions`
 
   .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 1-2, 5-6, 10-11
+    :lineno-start: 219
+    :emphasize-lines: 1-2
 
             # for operation in arithmetic_tests:
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
-                        # arithmetic_tests[operation]['function'](
+                        arithmetic_tests[operation]['function'](x, y),
+                        arithmetic_tests[operation]['expectation']
+                    )
+
+  the test is still green
+
+* I use it in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 222
+    :emphasize-lines: 2-3
+
+                    self.assertEqual(
+                        # arithmetic_tests[operation]['function'](x, y),
                         self.arithmetic_tests[operation]['function'](
+                            x, y
+                        ),
+                        arithmetic_tests[operation]['expectation']
+                    )
+
+  still green
+
+* I use it for the expectation
+
+  .. code-block:: python
+    :lineno-start: 222
+    :emphasize-lines: 6-7
+
+                    self.assertEqual(
+                        # arithmetic_tests[operation]['function'](x, y),
+                        self.arithmetic_tests[operation]['function'](
+                            x, y
+                        ),
+                        # arithmetic_tests[operation]['expectation']
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+  the test is still green
+
+* I comment out the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_functions`
+
+  .. code-block:: python
+    :lineno-start: 195
+
+            try:
+                division_result = x / y
+            except ZeroDivisionError:
+                division_result = 'brmph?! I cannot divide by 0. Try again...'
+
+            # arithmetic_tests = {
+            #     'addition': {
+            #         'function': src.calculator.add,
+            #         'expectation': x+y,
+            #     },
+            #     'subtraction': {
+            #         'function': src.calculator.subtract,
+            #         'expectation': x-y,
+            #     },
+            #     'division': {
+            #         'function': src.calculator.divide,
+            #         'expectation': division_result,
+            #     },
+            #     'multiplication': {
+            #         'function': src.calculator.multiply,
+            #         'expectation': x*y,
+            #     },
+            # }
+
+            # for operation in arithmetic_tests:
+
+  still green
+
+* I comment out the :ref:`exception handler<how to use try...except...else>`
+
+  .. code-block:: python
+    :lineno-start: 191
+
+        def test_calculator_functions(self):
+            x = self.random_first_number
+            y = self.random_second_number
+
+            # try:
+            #     division_result = x / y
+            # except ZeroDivisionError:
+            #     division_result = 'brmph?! I cannot divide by 0. Try again...'
+
+  green
+
+* I comment out the ``x`` and ``y`` :ref:`variables<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 191
+
+        def test_calculator_functions(self):
+            # x = self.random_first_number
+            # y = self.random_second_number
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='addition') ...       - NameError: name 'x' is not defined
+    SUBFAILED(operation='subtraction') ...    - NameError: name 'x' is not defined
+    SUBFAILED(operation='division') ...       - NameError: name 'x' is not defined
+    SUBFAILED(operation='multiplication') ... - NameError: name 'x' is not defined
+
+* I undo the change
+
+  .. code-block:: python
+    :lineno-start: 191
+
+        def test_calculator_functions(self):
+            x = self.random_first_number
+            y = self.random_second_number
+
+  the test is green again
+
+* I change the inputs in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 222
+    :emphasize-lines: 4-6
+
+                    self.assertEqual(
+                        # arithmetic_tests[operation]['function'](x, y),
+                        self.arithmetic_tests[operation]['function'](
+                            # x, y
                             self.random_first_number,
                             self.random_second_number
                         ),
@@ -1765,10 +1892,22 @@ this means all these statements are the same
 
   the test is still green
 
-* I remove the commented lines and ``arithemtic_tests`` :ref:`dictionary<what is a dictionary?>` from ``test_calculator_functions``
+* I comment out ``x`` and ``y`` again
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 191
+    :emphasize-lines: 2-3
+
+        def test_calculator_functions(self):
+            # x = self.random_first_number
+            # y = self.random_second_number
+
+  green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 191
 
         def test_calculator_functions(self):
             for operation in self.arithmetic_tests:
@@ -1781,11 +1920,60 @@ this means all these statements are the same
                         self.arithmetic_tests[operation]['expectation']
                     )
 
+
+    # Exceptions seen
+
+----
+
+* I use the new :ref:`class attribute <test_attribute_error_w_class_attributes>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+
+  .. code-block:: python
+    :lineno-start: 162
+    :emphasize-lines: 18-19
+
         def test_calculator_sends_message_when_input_is_not_a_number(self):
+            arithmetic = {
+                'addition': src.calculator.add,
+                'subtraction': src.calculator.subtract,
+                'multiplication': src.calculator.multiply,
+                'division': src.calculator.divide,
+            }
 
-  still green
+            for bad_input in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                # for operation in arithmetic:
+                for operation in self.arithmetic_tests:
+                    with self.subTest(
+                        operation=operation,
+                        bad_input=bad_input,
+                    ):
+                        self.assertEqual(
+                            arithmetic[operation](
+                                bad_input, a_random_number()
+                            ),
+                            'brmph?! Numbers only. Try again...'
+                        )
 
-* I use the new :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` in ``test_calculator_sends_message_when_input_is_not_a_number``
+        def test_calculator_functions(self):
+
+----
+
+----
+
+----
+
+----
+
+----
+
+
 
   .. code-block:: python
     :lineno-start: 77
