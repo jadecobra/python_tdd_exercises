@@ -10,7 +10,7 @@
 how to make a calculator 8
 #################################################################################
 
-I can use the ``__getattribute__`` :ref:`method<what is a function?>` that comes with every Python_ :ref:`object<what is a class?>` in the :ref:`calculator<how to make a calculator>` tests
+I can use the ``__getattribute__`` :ref:`method<what is a function?>` that comes with every :ref:`Python object<what is a class?>` in the :ref:`calculator tests<how to make a calculator>`
 
 ----
 
@@ -46,11 +46,11 @@ open the project
 
     rootdir: .../pumping_python/calculator
     configfile: pyproject.toml
-    collected 6 items
+    collected 5 items
 
-    tests/test_calculator.py ......                               [100%]
+    tests/test_calculator.py .....                                [100%]
 
-    ======================== 6 passed in X.YZs =========================
+    ======================== 5 passed in X.YZs =========================
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
 
@@ -68,159 +68,222 @@ test_calculator_w_getattribute
 
 ----
 
-* I add a test with a :ref:`dictionary<what is a dictionary?>`
+I add a new test
 
-  .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 9-14
+.. code-block:: python
+  :lineno-start: 168
+  :emphasize-lines: 12-16
 
-                'multiplication': {
-                    'function': src.calculator.multiply,
-                    'expectation': (
-                        self.random_first_number*self.random_second_number
-                    ),
-                },
-            }
+      def test_calculator_functions(self):
+          for operation in self.arithmetic_tests:
+              with self.subTest(operation=operation):
+                  self.assertEqual(
+                      self.arithmetic_tests[operation]['function'](
+                          self.random_first_number,
+                          self.random_second_number
+                      ),
+                      self.arithmetic_tests[operation]['expectation']
+                  )
+
+      def test_calculator_w_getattribute(self):
+          self.assertEqual(
+              src.calculator.__getattribute__('BOOM!!!'),
+              src.calculator.add
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: python
+
+  AttributeError: module 'src.calculator' has no attribute 'BOOM!!!'
+
+* ``__getattribute__`` is a :ref:`method<what is a function?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<what is a class?>`
+
+  - if the name is NOT an :ref:`attribute<what is an attribute?>` it raises :ref:`AttributeError<what causes AttributeError?>`
+  - if the name is an :ref:`attribute<what is an attribute?>` it returns the object it points to
+
+* ``src.calculator.__getattribute__('BOOM!!!')`` checks if the ``calculator.py`` :ref:`module<what is a module?>` in the ``src`` folder_ has anything named ``BOOM!!!``
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change ``'BOOM!!!'`` to ``'add'``
+
+.. code-block:: python
+  :lineno-start: 179
+  :emphasize-lines: 4
 
         def test_calculator_w_getattribute(self):
-            calculator_tests = {
-                'add': (
-                    self.random_first_number+self.random_second_number
-                )
-            }
-
-        def test_calculator_functions(self):
-
-* I add an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 7-10
-
-        def test_calculator_w_getattribute(self):
-            calculator_tests = {
-                'add': (
-                    self.random_first_number+self.random_second_number
-                )
-            }
             self.assertEqual(
                 src.calculator.__getattribute__('add'),
-                calculator_tests['add']
+                src.calculator.add
             )
 
-        def test_calculator_functions(self):
+the test passes because the :ref:`add function<test_addition>` is an :ref:`attribute<what is an attribute?>` of ``src.calculator``
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a call to the :ref:`add function<test_addition>`
+
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 4-7
+
+        def test_calculator_w_getattribute(self):
+            self.assertEqual(
+                src.calculator.__getattribute__('add'),
+                src.calculator.add(
+                    self.random_first_number,
+                    self.random_second_number
+                )
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: <function numbers_only.<locals>.wrapper at 0xffff1a2bc3d4> != ABCD.EFGHIJKLMN
+    AssertionError: <function numbers_only.<locals>.decorator at 0xffffa1234bc0> != DEF.GHIJKLMNOPQRS
 
-  I have to call the :ref:`function<what is a function?>` after ``__getattribute__`` returns it
 
-----
+  I have to call the :ref:`add function<test_addition>` after ``__getattribute__`` returns it
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add parentheses after to make it a call
+* I add parentheses at the end of the line to make it a call
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 2
+    :lineno-start: 179
+    :emphasize-lines: 3-6
     :emphasize-text: ( )
 
-            self.assertEqual(
-                src.calculator.__getattribute__('add')(),
-                calculator_tests['add']
-            )
-
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: numbers_only.<locals>.wrapper() missing 2 required positional arguments: 'first_input' and 'second_input'
-
-  I have to give the inputs to the :ref:`function<what is a function?>`
-
-* I add inputs in the parentheses
-
-  .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 8-11
-
         def test_calculator_w_getattribute(self):
-            calculator_tests = {
-                'add': (
-                    self.random_first_number+self.random_second_number
-                )
-            }
             self.assertEqual(
                 src.calculator.__getattribute__('add')(
                     self.random_first_number,
                     self.random_second_number
                 ),
-                calculator_tests['add']
+                src.calculator.add(
+                    self.random_first_number,
+                    self.random_second_number
+                )
             )
-
-        def test_calculator_functions(self):
 
   the test passes
 
-  - ``src.calculator.__getattribute__('add')`` returns ``src.calculator.add``
-  - ``calculator_tests['add']`` returns ``self.random_first_number + self.random_second_number``
-  - ``object.__getattribute__(something)`` checks if ``something`` is in ``object`` and returns it
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add another operation to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
+* I add a :ref:`variables<what is a variable?>` and a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 6-8
+    :lineno-start: 179
+    :emphasize-lines: 2-4
 
         def test_calculator_w_getattribute(self):
-            calculator_tests = {
-                'add': (
-                    self.random_first_number+self.random_second_number
-                ),
-                'subtract': (
-                    self.random_first_number-self.random_second_number
-                )
-            }
+            x = self.random_first_number
+            y = self.random_second_number
+            calculator_tests = {'add': x+y}
+
             self.assertEqual(
 
-* I add an :ref:`assertion<what is an assertion?>`
+
+* I use the :ref:`dictionary<what is a dictionary?>` to change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 8-14
+    :lineno-start: 184
+    :emphasize-lines: 6-10
 
             self.assertEqual(
                 src.calculator.__getattribute__('add')(
                     self.random_first_number,
                     self.random_second_number
                 ),
-                calculator_tests['add']
-            )
-            self.assertEqual(
-                src.calculator.__getattribute__('subtract')(
-                    self.random_first_number,
-                    self.random_second_number
-                ),
+                # src.calculator.add(
+                #     self.random_first_number,
+                #     self.random_second_number
+                # )
                 calculator_tests['add']
             )
 
-        def test_calculator_functions(self):
+  the test is still green
+
+* I use the :ref:`variables<what is a variable?>` for ``self.random_first_number`` and ``self.random_second_number`` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 184
+    :emphasize-lines: 3-5
+
+            self.assertEqual(
+                src.calculator.__getattribute__('add')(
+                    # self.random_first_number,
+                    # self.random_second_number
+                    x, y
+                ),
+                # src.calculator.add(
+                #     self.random_first_number,
+                #     self.random_second_number
+                # )
+                calculator_tests['add']
+            )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 184
+
+        def test_calculator_w_getattribute(self):
+            x = self.random_first_number
+            y = self.random_second_number
+            calculator_tests = {'add': x+y}
+
+            self.assertEqual(
+                src.calculator.__getattribute__('add')(x, y),
+                calculator_tests['add']
+            )
+
+  green
+
+----
+
+* I add :ref:`subtraction<test_subtraction>` to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 4-7
+
+        def test_calculator_w_getattribute(self):
+            x = self.random_first_number
+            y = self.random_second_number
+            calculator_tests = {
+                'add': x+y,
+                'subtract': x-y,
+            }
+
+* then I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 187
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.__getattribute__('add')(x, y),
+                calculator_tests['add']
+            )
+            self.assertEqual(
+                src.calculator.__getattribute__('subtract')(x, y),
+                calculator_tests['add']
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -231,18 +294,71 @@ test_calculator_w_getattribute
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 6
+    :lineno-start: 191
+    :emphasize-lines: 3
 
-                self.assertEqual(
-                    src.calculator.__getattribute__('subtract')(
-                        self.random_first_number,
-                        self.random_second_number
-                    ),
-                    calculator_tests['subtract']
-                )
+            self.assertEqual(
+                src.calculator.__getattribute__('subtract')(x, y),
+                calculator_tests['subtract']
+            )
 
   the test passes
+
+----
+
+* I add :ref:`multiplication<test_multiplication>` to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 7
+
+        def test_calculator_w_getattribute(self):
+            x = self.random_first_number
+            y = self.random_second_number
+            calculator_tests = {
+                'add': x+y,
+                'subtract': x-y,
+                'multiply': x*y,
+            }
+
+* then I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 192
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.__getattribute__('subtract')(x, y),
+                calculator_tests['subtract']
+            )
+            self.assertEqual(
+                src.calculator.__getattribute__('multiply')(x, y),
+                calculator_tests['subtract']
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: WXYZA.BCDEFGHIJKLMNO != PQ.RSTUVWXYZABCDE
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 196
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.__getattribute__('multiply')(x, y),
+                calculator_tests['multiply']
+            )
+
+  the test passes
+
+----
+
+----
+
 
 * I add a :ref:`for loop<what is a for loop?>`
 
