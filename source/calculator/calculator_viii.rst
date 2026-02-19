@@ -1386,6 +1386,8 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: divide() got an unexpected keyword argument 'first_input'
 
+----
+
 * I add a name to the :ref:`divide function<test_division>`
 
   .. code-block:: python
@@ -1401,7 +1403,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: divide() missing 1 required positional argument: 'first_input'
 
-* I add a default argument to make it a choice
+* I add a default value to make it a choice
 
   .. code-block:: python
     :lineno-start: 5
@@ -1459,16 +1461,16 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    TypeError: divide() got an unexpected keyword argument 'first_input'
+    TypeError: multiply() got an unexpected keyword argument 'first_input'
 
-* I use the ``Rename Symbol`` feature to change the name
+* I use the ``Rename Symbol`` feature to change the names in the parentheses
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 9
     :emphasize-lines: 1-2
 
-    def divide(first_input, y):
-        return first_input / y
+    def multiply(first_input, y):
+        return first_input * y
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1508,7 +1510,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: add() got an unexpected keyword argument 'first_input'
 
-* I change the names in the ``add`` :ref:`function<what is a function?>`
+* I change the names in the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :linenos:
@@ -1521,108 +1523,72 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for +: 'dict' and 'float'
+    SUBFAILED(operation='divide', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for /: 'dict' and 'float'
 
-* I add an :ref:`if statement<if statements>`
+----
+
+* I add an :ref:`if statement<if statements>` to the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 5
     :emphasize-lines: 2-3
     :emphasize-text: dict
 
-    def add(first_input, second_input):
+    def divide(first_input=None, second_input=None):
         if isinstance(first_input, dict):
             return None
-        return first_input + second_input
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None != 'brmph?! Numbers only. Try again...'
-
-* I change the `return statement`_
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-    :emphasize-text: dict
-
-    def add(first_input, second_input):
-        if isinstance(first_input, dict):
-            return 'brmph?! Numbers only. Try again...'
-        return first_input + second_input
-
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: unsupported operand type(s) for -: 'dict' and 'float'
-
-* I add an :ref:`if statement<if statements>` to the ``subtract`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2-3
-    :emphasize-text: dict
-
-    def subtract(first_input, second_input):
-        if isinstance(first_input, dict):
-            return None
-        return first_input - second_input
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None != 'brmph?! Numbers only. Try again...'
-
-* I change the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 3
-    :emphasize-text: dict
-
-    def subtract(first_input, second_input):
-        if isinstance(first_input, dict):
-            return 'brmph?! Numbers only. Try again...'
-        return first_input - second_input
-
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: unsupported operand type(s) for /: 'dict' and 'float'
-
-  same problem, same solution
-
-* I add an :ref:`if statement<if statements>` with the same message in the ``divide`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2-3
-    :emphasize-text: dict
-
-    def divide(first_input, second_input):
-        if isinstance(first_input, dict):
-            return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != 'brmph?! Numbers only. Try again...'
+
+* I change the `return statement`_ of the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+    :emphasize-text: dict
+
+    def add(first_input, second_input):
+        if isinstance(first_input, dict):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for *: 'dict' and 'float'
+    SUBFAILED(operation='multiply', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for *: 'dict' and 'float'
 
-* I add the same :ref:`if statement<if statements>` to the ``multiply`` :ref:`function<what is a function?>`
+* I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 11
     :emphasize-lines: 2-3
     :emphasize-text: dict
 
-    def multiply(first_input=None, second_input=None):
+    def multiply(first_input, second_input):
+        if isinstance(first_input, dict):
+            return None
+        return first_input * second_input
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != 'brmph?! Numbers only. Try again...'
+
+* I change the `return statement`_ of the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
+    :emphasize-text: dict
+
+    def multiply(first_input, second_input):
         if isinstance(first_input, dict):
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
@@ -1631,17 +1597,37 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for +: 'set' and 'float'
+    SUBFAILED(operation='subtract', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for -: 'dict' and 'float'
 
-* I add to the :ref:`if statement<if statements>`
+  same problem, same solution
+
+* I add an :ref:`if statement<if statements>` with the same message in the :ref:`subtract function<test_subtraction>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2-3
+    :emphasize-text: dict
+
+    def subtract(first_input, second_input):
+        if isinstance(first_input, dict):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input - second_input
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='add', bad_input={'key': 'value'}) ... - TypeError: unsupported operand type(s) for +: 'dict' and 'float'
+
+* I add the same :ref:`if statement<if statements>` to the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
-    :emphasize-text: set
+    :emphasize-lines: 2-3
+    :emphasize-text: dict
 
     def add(first_input, second_input):
-        if isinstance(first_input, (dict, set)):
+        if isinstance(first_input, dict):
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
@@ -1649,9 +1635,47 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for -: 'set' and 'float'
+    SUBFAILED(operation='divide', bad_input={'n', 0, 2, 1}) ... - TypeError: unsupported operand type(s) for /: 'set' and 'float'
 
-* I change the :ref:`if statement<if statements>` in the ``subtract`` :ref:`function<what is a function?>`
+----
+
+* I add set_ to the :ref:`if statement<if statements>` in the :ref:`divide function<test_division>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 2
+    :emphasize-text: set
+
+    def divide(first_input=None, second_input=None):
+        if isinstance(first_input, (dict, set)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='multiply', bad_input={0, 1, 2, 'n'}) ... - TypeError: unsupported operand type(s) for *: 'set' and 'float'
+
+* I do the same thing to the :ref:`if statement<if statements>` in the :ref:`multiply function<test_multiplication>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
+    :emphasize-text: set
+
+    def multiply(first_input, second_input):
+        if isinstance(first_input, (dict, set)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input * second_input
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='subtract', bad_input={0, 1, 2, 'n'}) ... - TypeError: unsupported operand type(s) for -: 'set' and 'float'
+
+* I change the :ref:`if statement<if statements>` in the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -1667,34 +1691,17 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-     TypeError: unsupported operand type(s) for *: 'set' and 'float'
+    SUBFAILED(operation='add', bad_input={0, 1, 2, 'n'}) ... - TypeError: unsupported operand type(s) for +: 'set' and 'float'
 
-* I change the :ref:`if statement<if statements>` in the ``multiply`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-text: set
-
-    def multiply(first_input=None, second_input=None):
-        if isinstance(first_input, (dict, set)):
-            return 'brmph?! Numbers only. Try again...'
-        return first_input * second_input
-
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: can only concatenate list (not "float") to list
-
-* I add another :ref:`data type<data structures>` to the :ref:`if statement<if statements>` of the ``add`` :ref:`function<what is a function?>`
+* I add set_ to the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2
-    :emphasize-text: list
+    :emphasize-text: set
 
     def add(first_input, second_input):
-        if isinstance(first_input, (dict, set, list)):
+        if isinstance(first_input, (dict, set)):
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
@@ -1702,24 +1709,50 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for -: 'list' and 'float'
+    SUBFAILED(operation='divide', bad_input=[0, 1, 2, 'n']) ... - TypeError: unsupported operand type(s) for /: 'list' and 'float'
 
-  it looks I will have to do this for all the other operations
+----
 
-* I add the :ref:`list<what is a list?>` to the :ref:`if statement<if statements>` in the other :ref:`functions<what is a function?>`
+* I add :ref:`list<what is a list?>` to the :ref:`if statement<if statements>` of the :ref:`divide function<test_division>`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 2, 8, 14
+    :emphasize-lines: 2
     :emphasize-text: list
 
-    def divide(first_input, second_input):
+    def divide(first_input=None, second_input=None):
+        if isinstance(first_input, (dict, set, list)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='multiply', bad_input=[0, 1, 2, 'n']) ... - TypeError: can't multiply sequence by non-int of type 'float'
+
+  the error message is different but the :ref:`function<what is a function?>` got ``[0, 1, 2, 'n']`` as input, it looks I will have to do this for all the other operations
+
+* I add :ref:`list<what is a list?>` to the :ref:`if statement<if statements>` in the other :ref:`functions<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2, 14, 20
+    :emphasize-text: list
+
+    def add(first_input, second_input):
+        if isinstance(first_input, (dict, set, list)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+
+    def divide(first_input=None, second_input=None):
         if isinstance(first_input, (dict, set, list)):
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
 
-    def multiply(first_input=None, second_input=None):
+    def multiply(first_input, second_input):
         if isinstance(first_input, (dict, set, list)):
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
@@ -1734,27 +1767,29 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    TypeError: can only concatenate tuple (not "float") to tuple
+    SUBFAILED(operation='divide', bad_input=(0, 1, 2, 'n')) ... - TypeError: unsupported operand type(s) for /: 'tuple' and 'float'
 
   another :ref:`data type<data structures>`, there has to be a better way
 
-* I add tuple_ to the `isinstance built-in function`_ in the :ref:`if statement<if statements>` of the ``add`` :ref:`function<what is a function?>`
+----
+
+* I add tuple_ to the `isinstance built-in function`_ in the :ref:`if statement<if statements>` of the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 7
     :emphasize-lines: 2
     :emphasize-text: tuple
 
-    def add(first_input, second_input):
+    def divide(first_input=None, second_input=None):
         if isinstance(first_input, (dict, set, list, tuple)):
             return 'brmph?! Numbers only. Try again...'
-        return first_input + second_input
+        return first_input / second_input
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for -: 'tuple' and 'float'
+    SUBFAILED(operation='multiply', bad_input=(0, 1, 2, 'n')) ... - TypeError: can't multiply sequence by non-int of type 'float'
 
   same problem, same solution
 
@@ -1762,16 +1797,22 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 2, 8, 14
+    :emphasize-lines: 2, 14, 20
     :emphasize-text: tuple
 
-    def divide(first_input, second_input):
+    def add(first_input, second_input):
+        if isinstance(first_input, (dict, set, list, tuple)):
+            return 'brmph?! Numbers only. Try again...'
+        return first_input + second_input
+
+
+    def divide(first_input=None, second_input=None):
         if isinstance(first_input, (dict, set, list, tuple)):
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
 
-    def multiply(first_input=None, second_input=None):
+    def multiply(first_input, second_input):
         if isinstance(first_input, (dict, set, list, tuple)):
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
@@ -1787,6 +1828,8 @@ I want to write the solution that will make all the tests in ``test_calculator.p
   .. code-block:: python
 
     TypeError: can only concatenate str (not "float") to str
+
+----
 
 * I add str_ to the :ref:`if statements` of the 4 :ref:`functions`
 
