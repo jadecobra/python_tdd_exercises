@@ -1831,7 +1831,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-* I add str_ to the :ref:`if statements` of the 4 :ref:`functions`
+* I add str_ to the :ref:`if statements` of the 4 :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1844,13 +1844,13 @@ I want to write the solution that will make all the tests in ``test_calculator.p
         return first_input + second_input
 
 
-    def divide(first_input, second_input):
+    def divide(first_input=None, second_input=None):
         if isinstance(first_input, (dict, set, list, tuple, str)):
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
 
-    def multiply(first_input=None, second_input=None):
+    def multiply(first_input, second_input):
         if isinstance(first_input, (dict, set, list, tuple, str)):
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
@@ -1865,38 +1865,51 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    SUBFAILED(i=True) ...  - AssertionError: TUV.VWXYZABCDEFGHI != 'brmph?! Numbers on...
-    SUBFAILED(i=False) ... - AssertionError: JKL.MNOPQRSTUVWXYZ != 'brmph?! Numbers on...
+    SUBFAILED(operation='divide', bad_input=False) ... - AssertionError: 0.0 != 'brmph?! Numbers only. Try again...'
 
-  2 of the failures are for :ref:`booleans<what are booleans?>`
+  the input is a :ref:`boolean<what are booleans?>` in this case
+
+----
 
 * I add bool_ to the :ref:`if statements` of the :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2, 8, 14, 20
+    :emphasize-lines: 2-5, 11-14, 20-23, 29-32
     :emphasize-text: bool
 
     def add(first_input, second_input):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ):
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
 
-    def divide(first_input, second_input):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
+    def divide(first_input=None, second_input=None):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ):
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
 
-    def multiply(first_input=None, second_input=None):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
+    def multiply(first_input, second_input):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ):
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
 
 
     def subtract(first_input, second_input):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool)):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ):
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
@@ -1904,7 +1917,27 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for +: 'NoneType' and 'float'
+    SUBFAILED(operation='divide', bad_input=None) ... - TypeError: unsupported operand type(s) for /: 'NoneType' and 'float'
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
+
+----
 
 * I add :ref:`None<what is None?>` to the call to the `isinstance built-in function`_ in the :ref:`if statements` of the :ref:`functions<what is a function?>`
 
