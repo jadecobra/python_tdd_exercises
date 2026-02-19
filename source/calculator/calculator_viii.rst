@@ -851,7 +851,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
             for operation in self.calculator_tests:
                 with self.subTest(operation=operation):
 
-  the terminal_ shows :ref:`KeyError<test_key_error>` for 4 tests
+  the terminal_ shows :ref:`KeyError<test_key_error>` for the 4 tests
 
 * I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
 
@@ -866,6 +866,8 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         ),
                         self.arithmetic_tests[operation]['expectation']
                     )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` for the 4 sub tests
 
 * I use ``self.calculator_tests`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -937,7 +939,117 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
 ----
 
+* I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>` of  :ref:`test_calculator_w_list_items`
 
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 12-13
+
+      def test_calculator_w_list_items(self):
+          # two_numbers = [
+          #     self.random_first_number,
+          #     self.random_second_number
+          # ]
+          a_dictionary = {
+              'x': self.random_first_number,
+              'y': self.random_second_number
+          }
+          two_numbers = list(a_dictionary.values())
+
+          # for operation in self.arithmetic_tests:
+          for operation in self.calculator_tests:
+              with self.subTest(operation=operation):
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` for the 4 sub tests
+
+* I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 2-3
+
+                    self.assertEqual(
+                        # self.arithmetic_tests[operation]['function'](
+                        src.calculator.__getattribute__(operation)(
+                            *two_numbers
+                        ),
+                        self.arithmetic_tests[operation]['expectation']
+                    )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` for the sub tests
+
+* I use ``self.calculator_tests`` in the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 6-7
+
+                    self.assertEqual(
+                        # self.arithmetic_tests[operation]['function'](
+                        src.calculator.__getattribute__(operation)(
+                            *two_numbers
+                        ),
+                        # self.arithmetic_tests[operation]['expectation']
+                        self.calculator_tests[operation]
+                    )
+
+  the test passes
+
+* I remove the new commented lines
+
+  .. code-block:: python
+    :lineno-start: 50
+
+        def test_calculator_w_list_items(self):
+            # two_numbers = [
+            #     self.random_first_number,
+            #     self.random_second_number
+            # ]
+            a_dictionary = {
+                'x': self.random_first_number,
+                'y': self.random_second_number
+            }
+            two_numbers = list(a_dictionary.values())
+
+            for operation in self.calculator_tests:
+                with self.subTest(operation=operation):
+                    self.assertEqual(
+                        src.calculator.__getattribute__(operation)(
+                            *two_numbers
+                        ),
+                        self.calculator_tests[operation]
+                    )
+
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers[0],
+                    two_numbers[1]
+                ),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers[-2],
+                    two_numbers[-1]
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(
+                    two_numbers[1],
+                    two_numbers[-1]
+                ),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(
+                    two_numbers[-2],
+                    two_numbers[0]
+                ),
+                self.random_first_number-self.random_first_number
+            )
+
+        def test_calculator_w_dictionary_items(self):
 
 ----
 
