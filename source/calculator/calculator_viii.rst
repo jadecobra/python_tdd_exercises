@@ -1921,53 +1921,20 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-----
-
-----
-
-----
-
-----
-
-----
-
-----
-
-----
-
-----
-
-----
-
-* I add :ref:`None<what is None?>` to the call to the `isinstance built-in function`_ in the :ref:`if statements` of the :ref:`functions<what is a function?>`
+* I add :ref:`None<what is None?>` to the call to the `isinstance built-in function`_ in the :ref:`if statement<if statements>` of the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2, 8, 14, 20
+    :lineno-start: 10
+    :emphasize-lines: 4
     :emphasize-text: None
 
-    def add(first_input, second_input):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
-            return 'brmph?! Numbers only. Try again...'
-        return first_input + second_input
-
-
-    def divide(first_input, second_input):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
+    def divide(first_input=None, second_input=None):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool, None)
+        ):
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
-
-
-    def multiply(first_input=None, second_input=None):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
-            return 'brmph?! Numbers only. Try again...'
-        return first_input * second_input
-
-
-    def subtract(first_input, second_input):
-        if isinstance(first_input, (dict, set, list, tuple, str, bool, None)):
-            return 'brmph?! Numbers only. Try again...'
-        return first_input - second_input
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1975,50 +1942,92 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
 
-  that change made things worse. I cannot use :ref:`None<what is None?>` in the `isinstance built-in function`_
+  I cannot use :ref:`None<what is None?>` in the `isinstance built-in function`_
 
 * I undo the change then add a new condition
 
   .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 4-5
+
+    def divide(first_input=None, second_input=None):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='multiply', bad_input=None) ... - TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
+
+  same problem, same ...
+
+* I add the new condition to the :ref:`if statement<if statements>` of the other :ref:`functions<what is a function?>`
+
+  .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-5, 11-14, 20-23, 29-32
+    :emphasize-lines: 5, 23, 32
 
     def add(first_input, second_input):
-        if (
-            isinstance(first_input, (dict, set, list, tuple, str, bool))
-            or first_input is None
-        ):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
 
-    def divide(first_input, second_input):
-        if (
-            isinstance(first_input, (dict, set, list, tuple, str, bool))
-            or first_input is None
-        ):
+    def divide(first_input=None, second_input=None):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
 
-    def multiply(first_input=None, second_input=None):
-        if (
-            isinstance(first_input, (dict, set, list, tuple, str, bool))
-            or first_input is None
-        ):
+    def multiply(first_input, second_input):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
 
 
     def subtract(first_input, second_input):
-        if (
-            isinstance(first_input, (dict, set, list, tuple, str, bool))
-            or first_input is None
-        ):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the test passes
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: TypeError not raised
+
+* I remove the default values from the :ref:`divide function<test_division>` because it is the only one that is different from the others
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 1
+
+    def divide(first_input, second_input):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
+            return 'brmph?! Numbers only. Try again...'
+        return first_input / second_input
+
+  the test passes. Time to play
 
 ----
 
@@ -2028,21 +2037,18 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-* I add a :ref:`decorator function<what is a decorator function?>` to remove the repetition of the :ref:`if statements` because they are all the same
+* I add a :ref:`decorator function<what is a decorator function?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-12
+    :emphasize-lines: 1-9
 
     def check_input(function):
         def wrapper(first_input, second_input):
-            if (
-                isinstance(
-                    first_input,
-                    (dict, set, list, tuple, str, bool)
-                ) or
-                first_input is None
-            ):
+            if isinstance(
+                first_input,
+                (dict, set, list, tuple, str, bool)
+            ) or first_input is None:
                 return 'brmph?! Numbers only. Try again...'
             return function(first_input, second_input)
         return wrapper
@@ -2050,18 +2056,18 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     def add(first_input, second_input):
 
-* I use the new :ref:`function<what is a function?>` to :ref:`wrap<what is a decorator function?>` the ``add`` :ref:`function<what is a function?>`
+* I use it to :ref:`wrap<what is a decorator function?>` the :ref:`add function<test_addition>`
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 12
     :emphasize-lines: 1
 
     @check_input
     def add(first_input, second_input):
-        if (
-            isinstance(first_input, (dict, set, list, tuple, str, bool))
-            or first_input is None
-        ):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
@@ -2070,7 +2076,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I remove the :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 12
 
     @check_input
     def add(first_input, second_input):
@@ -2081,18 +2087,18 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   still green
 
-* I do the same thing with the ``divide`` :ref:`function<what is a function?>`
+* I do the same thing to the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 17
     :emphasize-lines: 1
 
     @check_input
     def divide(first_input, second_input):
-        if (
-            isinstance(first_input, (dict, set, list, tuple, str, bool))
-            or first_input is None
-        ):
+        if isinstance(
+            first_input,
+            (dict, set, list, tuple, str, bool)
+        ) or first_input is None:
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
@@ -2101,14 +2107,14 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I remove the :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 17
 
     @check_input
     def divide(first_input, second_input):
         return first_input / second_input
 
 
-    def multiply(first_input=None, second_input=None):
+    def multiply(first_input, second_input):
 
   the test is still green
 
@@ -2155,7 +2161,12 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-All the tests are passing, but there is a problem. What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test. I am still learning
+All the tests are passing, but there are problems.
+
+* What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test
+* It looks like the test for how the :ref:`calculator<how to make a calculator>` handles :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` never runs. I need to make that test better
+
+I wonder what else I missed. I am still learning
 
 ----
 
