@@ -1053,395 +1053,159 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
 ----
 
-
-----
-
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` with ``self.calculator_tests`` in a new :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_w_list_items`
-
-  .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 9-16
-
-            for operation in self.calculator_tests:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        self.calculator_tests[operation]['function'](
-                            *two_numbers
-                        ),
-                        self.calculator_tests[operation]['expectation']
-                    )
-            for operation in self.calculator_tests_a:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            *two_numbers
-                        ),
-                        1
-                    )
-
-        def test_calculator_w_dictionary_items(self):
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
-
-  .. code-block:: python
-
-    AssertionError: CDEF.GHIJKLMNOPQRS != 1
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 123
-
-            for operation in self.calculator_tests_a:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            *two_numbers
-                        ),
-                        self.calculator_tests_a[operation]
-                    )
-
-        def test_calculator_w_dictionary_items(self):
-
-  the test passes
-
-* I remove the other :ref:`for loop<what is a for loop?>`
-
-  .. code-block:: python
-    :lineno-start: 110
-
-            self.assertEqual(
-                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
-                self.random_first_number-self.random_first_number
-            )
-
-            for operation in self.calculator_tests_a:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            *two_numbers
-                        ),
-                        self.calculator_tests_a[operation]
-                    )
-
-        def test_calculator_w_dictionary_items(self):
-
-  the test is still green
-
-----
-
-* I do the same thing in :ref:`test_calculator_w_dictionary_items`
-
-  .. code-block:: python
-    :lineno-start: 159
-    :emphasize-lines: 9-16
-
-            for operation in self.calculator_tests:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        self.calculator_tests[operation]['function'](
-                            **two_numbers
-                        ),
-                        self.calculator_tests[operation]['expectation']
-                    )
-            for operation in self.calculator_tests_a:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            **two_numbers
-                        ),
-                        1
-                    )
-
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
-
-  .. code-block:: python
-
-    AssertionError: TUVW.XYZABCDEFGHI != 1
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 167
-
-            for operation in self.calculator_tests_a:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            **two_numbers
-                        ),
-                        self.calculator_tests_a[operation]
-                    )
-
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-
-  the test passes
-
-* I remove the :ref:`for loop<what is a for loop?>`
-
-  .. code-block:: python
-    :lineno-start: 151
-
-            self.assertEqual(
-                src.calculator.subtract(
-                    two_numbers['first_input'],
-                    two_numbers['first_input']
-                ),
-                self.random_first_number-self.random_first_number
-            )
-
-            for operation in self.calculator_tests_a:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            **two_numbers
-                        ),
-                        self.calculator_tests_a[operation]
-                    )
-
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-
-  the test is still green
-
-----
-
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` with ``self.calculator_tests_a`` in a new :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
-
-  .. code-block:: python
-    :lineno-start: 168
-    :emphasize-lines: 10-17
-
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            for operation in self.calculator_tests:
-                with (
-                    self.subTest(operation=operation),
-                    self.assertRaises(TypeError),
-                ):
-                    self.calculator_tests[operation]['function'](
-                        *[0, 1, 2]
-                    )
-            for operation in self.calculator_tests_a:
-                with (
-                    self.subTest(operation=operation),
-                    self.assertRaises(ZeroDivisionError),
-                ):
-                    src.calculator.__getattribute__(operation)(
-                        *[0, 1, 2]
-                    )
-
-
-    # Exceptions seen
-
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>` for each operation
-
-  .. code-block:: python
-
-    TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were given
-
-  good, the tests work
-
-* I change the :ref:`Exception<errors>` to match
-
-  .. code-block:: python
-    :lineno-start: 177
-    :emphasize-lines: 4
-    :emphasize-text: TypeError
-
-            for operation in self.calculator_tests_a:
-                with (
-                    self.subTest(operation=operation),
-                    self.assertRaises(TypeError),
-                ):
-                    src.calculator.__getattribute__(operation)(
-                        *[0, 1, 2]
-                    )
-
-
-    # Exceptions seen
-
-  the test passes
-
-* I remove the other :ref:`for loop<what is a for loop?>`
-
-  .. code-block:: python
-    :lineno-start: 168
-
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            for operation in self.calculator_tests_a:
-                with (
-                    self.subTest(operation=operation),
-                    self.assertRaises(TypeError),
-                ):
-                    src.calculator.__getattribute__(operation)(
-                        *[0, 1, 2]
-                    )
-
-
-    # Exceptions seen
-
-  the test is still green
-
-----
-
-* I remove ``self.calculator_tests`` from the `setUp method`_ because it is no longer used
+* I comment out ``self.arithmetic_tests`` in the `setUp method`_ to see if there are any tests that still use it
 
   .. code-block:: python
     :lineno-start: 12
+    :emphasize-lines: 20-37
 
         def setUp(self):
-            self.history = {}
             self.random_first_number = a_random_number()
             self.random_second_number = a_random_number()
+
+            x = self.random_first_number
+            y = self.random_second_number
+
             try:
-                self.division_result = (
-                    self.random_first_number / self.random_second_number
-                )
+                division_result = x / y
             except ZeroDivisionError:
-                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
-
-            self.calculator_tests_a = {
-                'add': (
-                    self.random_first_number+self.random_second_number
-                ),
-                'subtract': (
-                    self.random_first_number-self.random_second_number
-                ),
-                'divide': self.division_result,
-                'multiply': (
-                    self.random_first_number*self.random_second_number
-                ),
-            }
-
-        def test_calculator_functions(self):
-
-  the tests are still green
-
-* I use the ``Rename Symbol`` feature to change ``self.calculator_tests_a`` to ``self.calculator_tests``
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 12
-    :emphasize-text: calculator_tests
-
-        def setUp(self):
-            self.history = {}
-            self.random_first_number = a_random_number()
-            self.random_second_number = a_random_number()
-            try:
-                self.division_result = (
-                    self.random_first_number / self.random_second_number
-                )
-            except ZeroDivisionError:
-                self.division_result = 'brmph?! I cannot divide by 0. Try again...'
+                division_result = 'brmph?! I cannot divide by 0. Try again...'
 
             self.calculator_tests = {
-                'add': (
-                    self.random_first_number+self.random_second_number
-                ),
-                'subtract': (
-                    self.random_first_number-self.random_second_number
-                ),
-                'divide': self.division_result,
-                'multiply': (
-                    self.random_first_number*self.random_second_number
-                ),
+                'add': x+y,
+                'subtract': x-y,
+                'multiply': x*y,
+                'divide': division_result
             }
 
-        def test_calculator_functions(self):
-
-  .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 2, 9
-    :emphasize-text: calculator_tests
-
-        def test_calculator_functions(self):
-            for operation in self.calculator_tests:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            self.random_first_number,
-                            self.random_second_number
-                        ),
-                        self.calculator_tests[operation]
-                    )
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 12
-    :emphasize-text: calculator_tests
-
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
-            for data in (
-                None,
-                True, False,
-                str(), 'text',
-                tuple(), (0, 1, 2, 'n'),
-                list(), [0, 1, 2, 'n'],
-                set(), {0, 1, 2, 'n'},
-                dict(), {'key': 'value'},
-            ):
-                with self.subTest(i=data):
-                    for operation in self.calculator_tests:
-                        self.assertEqual(
-                            src.calculator.__getattribute__(operation)(
-                                data, a_random_number()
-                            ),
-                            'brmph?! Numbers only. Try again...'
-                        )
+            # self.arithmetic_tests = {
+            #     'addition': {
+            #         'function': src.calculator.add,
+            #         'expectation': x+y,
+            #     },
+            #     'subtraction': {
+            #         'function': src.calculator.subtract,
+            #         'expectation': x-y,
+            #     },
+            #     'division': {
+            #         'function': src.calculator.divide,
+            #         'expectation': division_result,
+            #     },
+            #     'multiplication': {
+            #         'function': src.calculator.multiply,
+            #         'expectation': x*y,
+            #     }
+            # }
 
         def test_calculator_w_list_items(self):
 
-  .. code-block:: python
-    :lineno-start: 91
-    :emphasize-lines: 1, 7
-    :emphasize-text: calculator_tests
+  the tests are still green
 
-            for operation in self.calculator_tests:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            *two_numbers
-                        ),
-                        self.calculator_tests[operation]
-                    )
-
-        def test_calculator_w_dictionary_items(self):
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 135
-    :emphasize-lines: 1, 7
-    :emphasize-text: calculator_tests
+    :lineno-start: 12
 
-            for operation in self.calculator_tests:
-                with self.subTest(operation=operation):
-                    self.assertEqual(
-                        src.calculator.__getattribute__(operation)(
-                            **two_numbers
-                        ),
-                        self.calculator_tests[operation]
-                    )
+        def setUp(self):
+            self.random_first_number = a_random_number()
+            self.random_second_number = a_random_number()
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            x = self.random_first_number
+            y = self.random_second_number
+
+            try:
+                division_result = x / y
+            except ZeroDivisionError:
+                division_result = 'brmph?! I cannot divide by 0. Try again...'
+
+            self.calculator_tests = {
+                'add': x+y,
+                'subtract': x-y,
+                'multiply': x*y,
+                'divide': division_result
+            }
+
+        def test_calculator_w_list_items(self):
+
+----
+
+* I make a :ref:`function<what is a function?>` for the :ref:`division result<test_division>` because I can
 
   .. code-block:: python
-    :lineno-start: 144
-    :emphasize-lines: 2
-    :emphasize-text: calculator_tests
+    :lineno-start: 10
+    :emphasize-lines: 3-7
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            for operation in self.calculator_tests:
-                with (
-                    self.subTest(operation=operation),
-                    self.assertRaises(TypeError),
-                ):
-                    src.calculator.__getattribute__(operation)(
-                        *[0, 1, 2]
-                    )
+    class TestCalculator(unittest.TestCase):
 
+        def get_division_result(x, y):
+            try:
+                return x / y
+            except ZeroDivisionError:
+                return 'brmph?! I cannot divide by 0. Try again...'
 
-    # Exceptions seen
+        def setUp(self):
+
+* I use the new :ref:`function<what is a function?>` in ``self.calculator_tests``
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines:
+
+            self.calculator_tests = {
+                'add': x+y,
+                'subtract': x-y,
+                'multiply': x*y,
+                # 'divide': division_result
+                'divide': self.get_division_result(x, y)
+            }
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: TestCalculator.get_division_result() takes 2 positional arguments but 3 were given
+
+  I forgot to make ``get_division_result`` a staticmethod_ since it does not do anything with the rest of the :ref:`class<what is a class?>`
+
+* I :ref:`wrap<what is a decorator function?>` ``get_division_result`` with the `staticmethod decorator`_
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3
+
+    class TestCalculator(unittest.TestCase):
+
+        @staticmethod
+        def get_division_result(x, y):
+            try:
+                return x / y
+            except ZeroDivisionError:
+                return 'brmph?! I cannot divide by 0. Try again...'
+
+        def setUp(self):
+
+  the test passes
+
+* I remove the commented line and the :ref:`exception handler<how to use try...except...else>` from the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 19
+
+    def setUp(self):
+        self.random_first_number = a_random_number()
+        self.random_second_number = a_random_number()
+
+        x = self.random_first_number
+        y = self.random_second_number
+
+        self.calculator_tests = {
+            'add': x+y,
+            'subtract': x-y,
+            'multiply': x*y,
+            'divide': self.get_division_result(x, y)
+        }
+
+    def test_calculator_w_list_items(self):
 
 all the tests are passing and I feel like magic
 
@@ -1462,8 +1226,8 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 ----
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-
-* I delete all the text in ``calculator.py``, the terminal_ shows 3 passing tests and :ref:`AttributeError<what causes AttributeError?>` for 23 failing tests, I start with the last one
+* I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* then I delete everything in ``calculator.py``, the terminal_ shows 3 passing tests and :ref:`AttributeError<what causes AttributeError?>` for 70 failing tests, I start with the last one
 
   .. code-block:: python
 
@@ -1616,64 +1380,65 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def subtract(x, y):
         return x - y
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: multiply() got an unexpected keyword argument 'first_input'
+    TypeError: divide() got an unexpected keyword argument 'first_input'
 
-* I add a name to the ``multiply`` :ref:`function<what is a function?>`
+* I add a name to the :ref:`divide function<test_division>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 5
     :emphasize-lines: 1
 
-    def multiply(x, y, first_input):
-        return x * y
+    def divide(x, y, first_input):
+        return x / y
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: multiply() missing 1 required positional argument: 'first_input'
+    TypeError: divide() missing 1 required positional argument: 'first_input'
 
 * I add a default argument to make it a choice
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 5
+    :emphasize-lines: 1
 
-    def multiply(x, y, first_input=None):
-        return x * y
+    def divide(x, y, first_input=None):
+        return x / y
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: multiply() got an unexpected keyword argument 'second_input'
+    TypeError: divide() got an unexpected keyword argument 'second_input'
 
 * I add ``second_input`` with a default value to the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 5
     :emphasize-lines: 1
 
-    def multiply(x, y, first_input=None, second_input=None):
-        return x * y
+    def divide(x, y, first_input=None, second_input=None):
+        return x / y
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: multiply() missing 2 required positional arguments: 'x' and 'y'
+    TypeError: divide() missing 2 required positional arguments: 'x' and 'y'
 
-* my solution makes no sense, I remove ``x`` and ``y`` from the parentheses
+* the test must be calling :ref:`divide<test_division>` with :ref:`positional arguments<test_functions_w_positional_arguments>` in some cases and with :ref:`keyword arguments<test_functions_w_keyword_arguments>` in others. My solution does not work, I remove ``x`` and ``y`` from the parentheses
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 5
     :emphasize-lines: 1
 
-    def multiply(first_input=None, second_input=None):
-        return x * y
+    def divide(first_input=None, second_input=None):
+        return x / y
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -1684,11 +1449,11 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 * I change the names in the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 1-2
+    :lineno-start: 5
+    :emphasize-lines: 2
 
-    def multiply(first_input=None, second_input=None):
-        return first_input * second_input
+    def divide(first_input=None, second_input=None):
+        return first_input / second_input
 
   the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1696,7 +1461,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: divide() got an unexpected keyword argument 'first_input'
 
-* I use ``Rename Symbol`` to change the name
+* I use the ``Rename Symbol`` feature to change the name
 
   .. code-block:: python
     :lineno-start: 5
