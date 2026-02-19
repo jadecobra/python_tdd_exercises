@@ -1923,6 +1923,8 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
     # Exceptions seen
 
+  the test is still green
+
 ----
 
 * I use the new :ref:`class attribute <test_attribute_error_w_class_attributes>` in the :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
@@ -1963,44 +1965,31 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_functions(self):
 
-----
+  still green
 
-----
-
-----
-
-----
-
-----
-
-
+* I use it in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 77
-    :emphasize-lines: 2-3, 5-8
+    :lineno-start: 185
+    :emphasize-lines: 2-3
 
-                with self.subTest(i=data):
-                    # for operation in arithmetic:
-                    for operation in self.arithmetic_tests:
                         self.assertEqual(
-                            # arithmetic[operation](data, a_random_number()),
+                            # arithmetic[operation](
                             self.arithmetic_tests[operation]['function'](
-                                data, a_random_number()
+                                bad_input, a_random_number()
                             ),
-                            error_message
+                            'brmph?! Numbers only. Try again...'
                         )
 
-  the test is still green
+  green
 
-* I remove the commented lines and the ``arithmetic`` :ref:`dictionary<what is a dictionary?>`
+* I remove the commented lines and the ``arithmetic`` :ref:`variable<what is a variable?>` because it is no longer used
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 162
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            error_message = 'brmph?! Numbers only. Try again...'
-
-            for data in (
+            for bad_input in (
                 None,
                 True, False,
                 str(), 'text',
@@ -2009,27 +1998,32 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                 set(), {0, 1, 2, 'n'},
                 dict(), {'key': 'value'},
             ):
-                with self.subTest(i=data):
-                    for operation in self.arithmetic_tests:
+                for operation in self.arithmetic_tests:
+                    with self.subTest(
+                        operation=operation,
+                        bad_input=bad_input,
+                    ):
                         self.assertEqual(
                             self.arithmetic_tests[operation]['function'](
-                                data, a_random_number()
+                                bad_input, a_random_number()
                             ),
-                            error_message
+                            'brmph?! Numbers only. Try again...'
                         )
 
-        def test_calculator_w_list_items(self):
+        def test_calculator_functions(self):
 
-  still green
+  green around the roses
 
-* I add a :ref:`for loop<what is a for loop?>` to use the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
+----
+
+* I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_raises_type_error_when_given_more_than_two_inputs`
 
   .. code-block:: python
-    :lineno-start: 180
+    :lineno-start: 150
     :emphasize-lines: 4-8
 
-            with self.assertRaises(TypeError):
-                src.calculator.subtract(*not_two_numbers)
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+            not_two_numbers = [0, 1, 2]
 
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
@@ -2037,29 +2031,37 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         **not_two_numbers
                     )
 
-
-    # Exceptions seen
+            with self.assertRaises(TypeError):
+                src.calculator.add(*not_two_numbers)
+            with self.assertRaises(TypeError):
+                src.calculator.divide(*not_two_numbers)
+            with self.assertRaises(TypeError):
+                src.calculator.multiply(*not_two_numbers)
+            with self.assertRaises(TypeError):
+                src.calculator.subtract(*not_two_numbers)
 
   the terminal_ shows :ref:`TypeError` for all 4 cases
 
   .. code-block:: python
 
-    SUBFAILED(operation='addition') ...       - TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were ...
-    SUBFAILED(operation='subtraction') ...    - TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were ...
-    SUBFAILED(operation='division') ...       - TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were ...
-    SUBFAILED(operation='multiplication') ... - TypeError: numbers_only.<locals>.wrapper() takes 2 positional arguments but 3 were ...
+    SUBFAILED(operation='addition') ...       - TypeError: src.calculator.numbers_only.<locals>.decorator() argument after ** must be a m...
+    SUBFAILED(operation='subtraction') ...    - TypeError: src.calculator.numbers_only.<locals>.decorator() argument after ** must be a m...
+    SUBFAILED(operation='division') ...       - TypeError: src.calculator.numbers_only.<locals>.decorator() argument after ** must be a m...
+    SUBFAILED(operation='multiplication') ... - TypeError: src.calculator.numbers_only.<locals>.decorator() argument after ** must be a m...
+
+  lovely! The test works
 
 * I add the `assertRaises method`_
 
   .. code-block:: python
-    :lineno-start: 183
+    :lineno-start: 153
     :emphasize-lines: 3-6
 
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     with self.assertRaises(TypeError):
                         self.arithmetic_tests[operation]['function'](
-                            *not_two_numbers
+                            **not_two_numbers
                         )
 
   the test passes
@@ -2076,37 +2078,32 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                 with self.subTest(operation=operation):
                     with self.assertRaises(TypeError):
                         self.arithmetic_tests[operation]['function'](
-                            *not_two_numbers
+                            **not_two_numbers
                         )
 
-
-    # Exceptions seen
-
-  still green
-
-* I no longer need the :ref:`variable<what is a variable?>`, I remove it and use the :ref:`list<lists>` directly in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 171
-    :emphasize-lines: 5-7
-
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
-            for operation in self.arithmetic_tests:
-                with self.subTest(operation=operation):
-                    with self.assertRaises(TypeError):
-                        self.arithmetic_tests[operation]['function'](
-                            *[0, 1, 2]
-                        )
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
 
   the test is still green
 
-* Python_ allows me to put the 2 `with statements`_ together as one
+* I use the :ref:`list<what is a list?>` for the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 171
-    :emphasize-lines: 3-11
+    :lineno-start: 156
+    :emphasize-lines: 2-3
 
-        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+                        self.arithmetic_tests[operation]['function'](
+                            # **not_two_numbers
+                            [0, 1, 2]
+                        )
+
+  still green
+
+* I put the two `with statements`_ together
+
+  .. code-block:: python
+    :lineno-start: 153
+    :emphasize-lines: 2-7
+
             for operation in self.arithmetic_tests:
                 # with self.subTest(operation=operation):
                 #     with self.assertRaises(TypeError):
@@ -2115,15 +2112,16 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                     self.assertRaises(TypeError),
                 ):
                     self.arithmetic_tests[operation]['function'](
-                        *[0, 1, 2]
+                        # **not_two_numbers
+                        [0, 1, 2]
                     )
 
-  still green
+  green
 
-* I remove the commented lines
+* I remove the commented lines and ``not_two_numbers`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 171
+    :lineno-start: 150
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
             for operation in self.arithmetic_tests:
@@ -2132,8 +2130,14 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                     self.assertRaises(TypeError),
                 ):
                     self.arithmetic_tests[operation]['function'](
-                        *[0, 1, 2]
+                        [0, 1, 2]
                     )
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+
+  still green
+
+----
 
 * I add a :ref:`for loop<what is a for loop?>` to ``test_calculator_w_list_items``
 
