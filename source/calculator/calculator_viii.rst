@@ -357,8 +357,57 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
 ----
 
-----
+* I add :ref:`division<test_division>` to the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
 
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 8
+
+        def test_calculator_w_getattribute(self):
+            x = self.random_first_number
+            y = self.random_second_number
+            calculator_tests = {
+                'add': x+y,
+                'subtract': x-y,
+                'multiply': x*y,
+                'divide': x/y,
+            }
+
+* then I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 197
+    :emphasize-lines: 5-8
+
+            self.assertEqual(
+                src.calculator.__getattribute__('multiply')(x, y),
+                calculator_tests['multiply']
+            )
+            self.assertEqual(
+                src.calculator.__getattribute__('divide')(x, y),
+                calculator_tests['multiply']
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: F.GHIJKLMNOPQRST != UVWXY.ZABCDEFGH
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 201
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                src.calculator.__getattribute__('divide')(x, y),
+                calculator_tests['divide']
+            )
+
+  the test passes
+
+----
 
 * I add a :ref:`for loop<what is a for loop?>`
 
