@@ -30,7 +30,6 @@ class TestInfiniteLearningModel(unittest.TestCase):
         )
 
     def test_learning_model_when_expectations_are_greater_than_reality(self):
-
         expectations = self.reality + 1
 
         self.assertGreater(
