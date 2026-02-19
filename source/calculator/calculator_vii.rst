@@ -1650,7 +1650,7 @@ this means all these statements are the same
 
   .. code-block:: python
     :lineno-start: 184
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
             try:
                 division_result = x / y
@@ -2102,7 +2102,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
   .. code-block:: python
     :lineno-start: 153
-    :emphasize-lines: 2-7
+    :emphasize-lines: 2-11
 
             for operation in self.arithmetic_tests:
                 # with self.subTest(operation=operation):
@@ -2139,76 +2139,155 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
 ----
 
-* I add a :ref:`for loop<what is a for loop?>` to ``test_calculator_w_list_items``
+* I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_w_dictionary_items`
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 6-13
+    :lineno-start: 99
+    :emphasize-lines: 7-14
 
-            self.assertEqual(
-                src.calculator.subtract(*two_numbers),
-                self.random_first_number-self.random_second_number
-            )
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                'first_input': self.random_first_number,
+                'second_input': self.random_second_number,
+            }
 
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
                         self.arithmetic_tests[operation]['function'](
-                            *two_numbers
+                            **two_numbers
                         ),
                         'BOOM!!!'
                     )
 
-        def test_calculator_w_dictionary_items(self):
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(
+                    two_numbers['second_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(
+                    two_numbers['first_input'],
+                    two_numbers['first_input']
+                ),
+                self.random_first_number-self.random_first_number
+            )
+            self.assertEqual(
+                src.calculator.add(**two_numbers),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(**two_numbers),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(**two_numbers),
+                self.random_first_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(**two_numbers),
+                self.random_first_number-self.random_second_number
+            )
+
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
   .. code-block:: python
 
-    SUBFAILED(operation='addition') ...       - AssertionError: YZA.BCDEFGHIJKLMNO != 'BOOM!!!'
-    SUBFAILED(operation='subtraction') ...    - AssertionError: PQR.STUVWXYZABCDE != 'BOOM!!!'
-    SUBFAILED(operation='division') ...       - AssertionError: F.GHIJKLMNOPQRSTUV != 'BOOM!!!'
-    SUBFAILED(operation='multiplication') ... - AssertionError: WXYABC.DEFGHIJKLMN != 'BOOM!!!'
+    SUBFAILED(operation='addition') ...       - AssertionError: XYZ.ABCDEFGHIJKLM != 'BOOM!!!'
+    SUBFAILED(operation='subtraction') ...    - AssertionError: NOP.QRSTUVWXYZABC != 'BOOM!!!'
+    SUBFAILED(operation='division') ...       - AssertionError: D.EFGHIJKLMNOPQRS != 'BOOM!!!'
+    SUBFAILED(operation='multiplication') ... - AssertionError: TUVWX.YZABCDEFGHI != 'BOOM!!!'
 
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 7
+    :lineno-start: 107
+    :emphasize-lines: 5
 
-            for operation in self.arithmetic_tests:
-                with self.subTest(operation=operation):
                     self.assertEqual(
                         self.arithmetic_tests[operation]['function'](
-                            *two_numbers
+                            **two_numbers
                         ),
                         self.arithmetic_tests[operation]['expectation']
                     )
 
   the test passes
 
-* I remove all the :ref:`assertions<what is an assertion?>` for the starred expression
+* I remove all the :ref:`assertions<what is an assertion?>` that have ``**two_numbers``
 
   .. code-block:: python
     :lineno-start: 99
 
-            self.assertEqual(
-                src.calculator.subtract(two_numbers[-2], two_numbers[0]),
-                self.random_first_number-self.random_first_number
-            )
+        def test_calculator_w_dictionary_items(self):
+            two_numbers = {
+                'first_input': self.random_first_number,
+                'second_input': self.random_second_number,
+            }
 
             for operation in self.arithmetic_tests:
                 with self.subTest(operation=operation):
                     self.assertEqual(
                         self.arithmetic_tests[operation]['function'](
-                            *two_numbers
+                            **two_numbers
                         ),
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-        def test_calculator_w_dictionary_items(self):
+            self.assertEqual(
+                src.calculator.add(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number+self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.divide(
+                    two_numbers['first_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_first_number/self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.multiply(
+                    two_numbers['second_input'],
+                    two_numbers['second_input']
+                ),
+                self.random_second_number*self.random_second_number
+            )
+            self.assertEqual(
+                src.calculator.subtract(
+                    two_numbers['first_input'],
+                    two_numbers['first_input']
+                ),
+                self.random_first_number-self.random_first_number
+            )
 
-  still green
+        def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
+
+  the test is still green
+
+----
+
+* I add a :ref:`for loop<what is a for loop?>` to use the ``self.arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_w_dictionary_items`
+
 
 * I add a :ref:`for loop<what is a for loop?>` to ``test_calculator_w_dictionary_items``
 
