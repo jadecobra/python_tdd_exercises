@@ -2215,9 +2215,12 @@ close the project
 review
 *********************************************************************************
 
-I used the ``__getattribute__`` built-in :ref:`function<what is a function?>` to make the calculator tests simpler.
+* I used the ``__getattribute__`` built-in :ref:`function<what is a function?>` to make the calculator tests simpler.
 
-I rewrote the solution after rewriting the tests and found that I did not add a test for bad second inputs
+* I rewrote the solution after rewriting the tests and found that
+
+  - I did not add a test for bad second inputs
+  - the test for handling :ref:`ZeroDivisionError<test_catching_zero_division_error>` has a problem
 
 ----
 
