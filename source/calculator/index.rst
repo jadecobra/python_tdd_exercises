@@ -28,14 +28,14 @@ These chapters cover making a calculator from the different things learned in ot
   :titlesonly:
   :maxdepth: 1
 
-  make a calculator 1<calculator_i/index>
-  make a calculator 2<calculator_ii>
-  make a calculator 3<calculator_iii>
-  make a calculator 4<calculator_iv>
-  make a calculator 5<calculator_v>
-  make a calculator 6<calculator_vi>
-  make a calculator 7<calculator_vii>
-  make a calculator 8<calculator_viii>
+  make a calculator 1<calculator_1/index>
+  make a calculator 2<calculator_2>
+  make a calculator 3<calculator_3>
+  make a calculator 4<calculator_4>
+  make a calculator 5<calculator_5>
+  make a calculator 6<calculator_6>
+  make a calculator 7<calculator_7>
+  make a calculator 8<calculator_8>
 
 *************************************************************************************
 what is next?

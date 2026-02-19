@@ -27,7 +27,7 @@ the chapters
   :maxdepth: 1
 
   TypeError?<TypeError>
-  make a calculator 4<../../calculator/calculator_iv>
+  make a calculator 4<../../calculator/calculator_4>
 
 ----
 

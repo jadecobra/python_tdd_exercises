@@ -30,7 +30,7 @@ the chapters
   classes
   inheritance
   ../../data_structures/booleans/booleans_4
-  make a calculator 8<../../calculator/calculator_viii>
+  make a calculator 8<../../calculator/calculator_8>
 
 ----
 
