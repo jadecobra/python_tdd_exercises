@@ -2220,7 +2220,7 @@ review
 * I rewrote the solution after rewriting the tests and found that
 
   - I did not add a test for bad second inputs
-  - the test for handling :ref:`ZeroDivisionError<test_catching_zero_division_error>` has a problem
+  - the test for handling :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` has a problem
 
 ----
 
