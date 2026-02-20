@@ -1,5 +1,4 @@
 .. _and: https://docs.python.org/3/reference/expressions.html#and
-.. _arithmetic: https://grokipedia.com/page/Arithmetic
 .. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
 .. _assert statement: assert_
 .. _assertion: assert_
@@ -216,6 +215,7 @@
 ----
 
 .. _Algebra: https://grokipedia.com/page/Algebra
+.. _Arithmetic: https://grokipedia.com/page/Arithmetic
 .. _Computer Programming: https://grokipedia.com/page/Computer_programming
 .. _Debian: https://www.debian.org
 .. _Exclusive OR: https://grokipedia.com/page/Exclusive_or
@@ -223,6 +223,7 @@
 .. _Mathematics: https://grokipedia.com/page/Mathematics
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _removing duplication: `remove duplication`_
+.. _HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
 .. _I do not repeat myself: `remove duplication`_
 .. _Indentation: https://peps.python.org/pep-0008/#indentation
 .. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)

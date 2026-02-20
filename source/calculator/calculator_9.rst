@@ -9,7 +9,6 @@
 .. _404 Not Found: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404
 .. _200 OK: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/200
 .. _jinja2.exceptions.TemplateNotFound: https://jinja.palletsprojects.com/en/stable/api/#jinja2.TemplateNotFound
-.. _HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
 .. _assertIn method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIn
 .. _unittest.TestCase.assertIn method: `assertIn method`_
 .. _decode method: https://docs.python.org/3/library/stdtypes.html#bytes.decode
