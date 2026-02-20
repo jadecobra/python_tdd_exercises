@@ -39,7 +39,7 @@ who is this for?
   - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
-  - :ref:`ModuleNotFoundError<what is a module?>`
+  - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
   - :ref:`TypeError`
   - ValueError_

@@ -137,6 +137,15 @@ Enclosures must be closed once open, which means they happen in pairs for exampl
 
     {}
 
+* HTML_ tags
+
+  .. code-block:: python
+
+    <></>
+
+  - ``<>`` opens the :ref:`enclosure<enclosures>`
+  - ``</>`` closes the :ref:`enclosure<enclosures>`
+
 The `Integrated Development Environment (IDE)`_ takes care of this, it automatically closes them when you open one
 
 ----
@@ -146,25 +155,31 @@ quotes
 *********************************************************************************
 
 
-Quotes are for strings_ and can be
+Quotes are for strings_ and bytes_ can be
 
 * single quotes
 
   .. code-block:: python
 
-    'single quotes'
+     'single quotes string'
+    b'single quotes bytes'
 
 * double quotes
 
   .. code-block:: python
 
-    "double quotes"
+     "double quotes string"
+    b"double quotes bytes"
 
 * triple single quotes to write one string_ on many lines
 
   .. code-block:: python
 
-    '''text on different lines
+    '''string on different lines
+    with
+    triple double quotes
+    '''
+    b'''bytes on different lines
     with
     triple double quotes
     '''
@@ -173,7 +188,11 @@ Quotes are for strings_ and can be
 
   .. code-block:: python
 
-    """text on different lines
+    """string on different lines
+    with
+    triple double quotes
+    """
+    b"""bytes on different lines
     with
     triple double quotes
     """

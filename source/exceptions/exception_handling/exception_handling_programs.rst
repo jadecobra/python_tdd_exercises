@@ -628,7 +628,7 @@ how to use try...except...else
 
     Exception: BOOM!!!!
 
-  because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError<what is a module?>`. The `try statement`_ only catches the :ref:`Exception<errors>` given in the ``except`` block and its children, all others are raised
+  because :ref:`Exception<errors>` is not :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`. The `try statement`_ only catches the :ref:`Exception<errors>` given in the ``except`` block and its children, all others are raised
 
 * I change it back to what works
 
@@ -681,7 +681,7 @@ I ran tests to show that
 * I can cause any :ref:`Exception<errors>` I want with the raise_ keyword
 * I can use the `assertRaises method`_ to catch :ref:`Exceptions<errors>` in tests and tested these
 
-  - :ref:`ModuleNotFoundError<what is a module?>`
+  - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
   - :ref:`AttributeError<what causes AttributeError?>`
   - :ref:`TypeError`
