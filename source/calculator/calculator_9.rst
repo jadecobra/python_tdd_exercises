@@ -12,6 +12,10 @@
 .. _assertIn method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIn
 .. _unittest.TestCase.assertIn method: `assertIn method`_
 .. _decode method: https://docs.python.org/3/library/stdtypes.html#bytes.decode
+.. _HTTP request methods: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
+.. _HTTP request method: `HTTP request methods`_
+.. _GET request method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/GET
+.. _POST request method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST
 
 #################################################################################
 how to make a calculator 9
@@ -263,7 +267,8 @@ test_home_page
 
   - ``client = src.website.app.test_client()`` points the name ``client`` to the Flask_ app in ``website.py``
   - ``response = client.get('/')`` points the name ``response`` to the result of the call to the ``get`` :ref:`method<what is a function?>` of the :ref:`client object<what is a class?>`
-  - ``client.get('/')`` returns an :ref:`response object<what is a class?>`
+  - the ``get`` :ref:`method<what is a function?>` calls the `GET request method`_ which is an `HTTP request method`_ to get information from a server
+  - ``client.get('/')`` returns a :ref:`response object<what is a class?>`
   - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
   - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object`
   - the above can also be written as ``src.website.app.test_client().get('/').status_code``
@@ -316,6 +321,9 @@ test_home_page
     jinja2.exceptions.TemplateNotFound: index.html
 
   I have to make a template file for ``index.html``
+
+  - ``@app.route`` is a :ref:`decorator function<what is a decorator function?>` that routes the pages of the website to the :ref:`function<what is a function?>` it :ref:`wraps<what is a decorator function?>`
+  - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
 
 * I add a new folder_ to the ``src`` folder_ named ``templates``, the terminal_ still shows the same :ref:`Exception<errors>`
 * I add a new file_ in the ``templates`` folder named ``index.html``, the terminal_ still shows the same :ref:`Exception<errors>`
@@ -389,27 +397,28 @@ how to view the website
 
   there is nothing in ``src/templates/index.html``
 
-* I open ``index.html`` from the ``templates`` folder_, then add some HTML_
+* I open ``index.html`` from the ``templates`` folder_ in the :ref:`editor<2 editors>`, then add some HTML_
 
-  .. code-block:: python
+  .. code-block:: HTML
+    :emphasize-lines: 1
 
     <h1>Calculator</h1>
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` because `pytest-watcher`_ only checks my :ref:`Python files<what is a module?>`, it does not run the tests when I change other files
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` because `pytest-watcher`_ only checks my :ref:`Python files<what is a module?>`, it does not run the tests when I change other files_
 
   - ``<></>`` are called tags, they are :ref:`enclosures`
   - ``<h1>HEADING</h1>`` tells the computer to make ``HEADING`` a heading
 
 * I go back to ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard and the test passes
 
-* I go back to the browser and hit ``refresh``, it shows ``Calculator``
+* I go back to the browser and click ``refresh``, it shows ``Calculator``
 
   .. image:: /_static/calculator/calculator_heading.png
     :width: 600
     :align: center
     :alt: Calculator Header
 
-  I know how to make a website with Python_
+  Yes! I know how to make a website with Python_!!
 
 ----
 
@@ -429,25 +438,27 @@ I add a new test for doing calculations with the website
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 7-17
+  :emphasize-lines: 7-16
 
-      def test_home_page(self):
-          client = src.website.app.test_client()
-          response = client.get('/')
-          self.assertEqual(response.status_code, 200)
-          self.assertIn(b'Calculator', response.data)
+        def test_home_page(self):
+            client = src.website.app.test_client()
+            response = client.get('/')
+            self.assertEqual(response.status_code, 200)
+            self.assertIn('Calculator', response.data.decode())
 
-      def test_calculate_route(self):
-          client = src.website.app.test_client()
-          response = client.post(
-              '/calculate',
-              data={
-                  'first_input': 0,
-                  'second_input': 1,
-                  'operation': 'add',
-              }
-          )
-          self.assertEqual(response.status_code, 200)
+        def test_calculate(self):
+            client = src.website.app.test_client()
+            response = client.post(
+                '/calculate',
+                data={
+                    'first_input': 0,
+                    'second_input': 1,
+                }
+            )
+            self.assertEqual(response.status_code, 200)
+
+
+    # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -455,7 +466,10 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 404 != 200
 
-the address for ``calculate`` does not exist yet
+this is like :ref:`AttributeError<what causes AttributeError?>` the address for ``calculate`` does not exist yet.
+
+- ``client.post`` calls the ``post`` :ref:`method<what is a function?>`
+- the ``post`` :ref:`method<what is a function?>` calls the `POST request method`_ which is an `HTTP request method`_ to send information to a server, I am using to test sending numbers to the website to do a calculation
 
 ----
 
