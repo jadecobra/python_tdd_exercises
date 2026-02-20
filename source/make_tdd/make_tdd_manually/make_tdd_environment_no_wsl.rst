@@ -338,7 +338,7 @@ how to manually run tests on Windows without WSL
 
 ----
 
-* I use the `unittest module`_ from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
+* I use the `unittest module`_ from `The Python Standard Library`_ that comes with Python_ to run tests. I type this in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -479,7 +479,7 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
   Here is an explanation of the code I typed in the file_
 
-  - ``import unittest`` imports the `unittest module`_ from the `Python standard library`_, this is what I am using for testing
+  - ``import unittest`` imports the `unittest module`_ from `The Python Standard Library`_, this is what I am using for testing
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<what causes AttributeError?>` and :ref:`methods (functions)<what is a function?>` that belong together, I cover this in more detail in the :ref:`classes chapter<what is a class?>`
@@ -746,7 +746,7 @@ how to run the tests automatically on Windows without Windows Subsystem for Linu
 
 I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a Python_ file_ changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
+pytest_ is a `Python package`_ like unittest_, it is not part of `The Python Standard Library`_
 
 I type it in the terminal_
 
@@ -785,7 +785,7 @@ how to make a virtual environment on Windows without WSL
 
 ----
 
-* I make a `virtual environment`_ with the venv_ :ref:`module<what is a module?>` from the `Python standard library`_
+* I make a `virtual environment`_ with the venv_ :ref:`module<what is a module?>` from `The Python Standard Library`_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1
@@ -796,7 +796,7 @@ how to make a virtual environment on Windows without WSL
 
   - ``python`` is the `Python program`_
   - ``-m`` is an option passed to Python_ to run the :ref:`module<what is a module?>` given after the option
-  - venv_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to make a `virtual environment`_ with a given name
+  - venv_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_, it is used to make a `virtual environment`_ with a given name
   - ``.venv`` is the name I am giving for this `virtual environment`_
 
     .. IMPORTANT:: ``.venv`` is Python_ convention, I can use any name I want for the virtual environment
@@ -916,7 +916,7 @@ the terminal_ shows
   pip     x.y
 
 - `pytest-watcher`_ is not in the list
-- pip_ is a :ref:`module<what is a module?>` from the `Python standard library`_, it is used to install `Python packages`_
+- pip_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_, it is used to install `Python packages`_
 
 ----
 

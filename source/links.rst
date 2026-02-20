@@ -119,8 +119,8 @@
 .. _Python packages: `Python package`_
 .. _packages: `Python package`_
 .. _Python documentation for strings: https://docs.python.org/3/library/string.html?highlight=string#module-string
-.. _Python's online documentation: https://docs.python.org/3/search.html
-.. _Python standard library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
+.. _Python's online documentation: https://docs.python.org/3/search.
+.. _The Python Standard Library: https://docs.python.org/3/tutorial/stdlib.html?highlight=standard%20library
 .. _pyproject.toml: https://python-poetry.org/docs/pyproject/
 .. _pwd: touch aka_current_working_directory
 .. _raise: https://docs.python.org/3/reference/simple_stmts.html#the-raise-statement

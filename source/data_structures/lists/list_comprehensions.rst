@@ -1500,7 +1500,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes, but this is not sexy
 
-* another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of the `Python standard library`_ and needs an `import statement`_
+* another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of `The Python Standard Library`_ and needs an `import statement`_
 
   .. code-block:: python
     :lineno-start: 21

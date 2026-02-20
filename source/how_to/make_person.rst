@@ -918,7 +918,7 @@ test_factory_takes_keyword_arguments
     def this_year():
         return None
 
-  datetime_ is a :ref:`module<what is a module?>` from the `Python standard library`_ that is used for dates and times
+  datetime_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used for dates and times
 
 * I change the `return statement`_ in the ``this_year`` :ref:`function <what is a function?>`
 
@@ -1201,7 +1201,7 @@ I want to use random values in the test. I add an `import statement`_ at the top
   import src.person
   import unittest
 
-random_ is a :ref:`module<what is a module?>` from the `Python standard library`_ that is used to make fake random numbers
+random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used to make fake random numbers
 
 ----
 

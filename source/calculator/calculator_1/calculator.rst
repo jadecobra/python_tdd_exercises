@@ -1070,7 +1070,7 @@ All the :ref:`assertions<what is an assertion?>` in :ref:`test_addition` do the 
 
 I want to use random numbers for ``first_number`` and ``second_number`` to make sure that the ``add`` :ref:`function<what is a function?>` always returns the result of adding the two numbers without knowing what the numbers are.
 
-I can do this with the `random module`_ from the `Python standard library`_, it is a :ref:`module<what is a module?>` from the `Python standard library`_ that is used to make fake random numbers
+I can do this with the `random module`_ from `The Python Standard Library`_, it is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used to make fake random numbers
 
 
 * I add an `import statement`_ for the `random module`_ at the top of ``test_calculator.py``

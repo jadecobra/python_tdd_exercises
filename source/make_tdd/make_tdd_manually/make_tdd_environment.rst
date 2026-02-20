@@ -340,7 +340,7 @@ how to manually run tests
 
 ----
 
-* I use the `unittest module`_ from the `Python standard library`_ that comes with Python_ to run tests. I type this in the terminal_
+* I use the `unittest module`_ from `The Python Standard Library`_ that comes with Python_ to run tests. I type this in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -483,7 +483,7 @@ how to make a Python file for the tests in the 'tests' directory
 
   Here is an explanation of the code I typed in the file_
 
-  - ``import unittest`` imports the `unittest module`_ from the `Python standard library`_, this is what I am using for testing
+  - ``import unittest`` imports the `unittest module`_ from `The Python Standard Library`_, this is what I am using for testing
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<what causes AttributeError?>` and :ref:`methods (functions)<what is a function?>` that belong together, :ref:`see the classes chapter for more<what is a class?>`
@@ -757,7 +757,7 @@ how to run the tests automatically
 
 I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a :ref:`Python file<what is a module?>` changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not part of the `Python standard library`_
+pytest_ is a `Python package`_ like unittest_, it is not part of `The Python Standard Library`_
 
 I type `pytest-watcher`_ in the terminal_
 
