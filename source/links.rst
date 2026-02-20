@@ -104,6 +104,8 @@
 .. _mv program: mv_
 .. _or: https://docs.python.org/3/reference/expressions.html#or
 .. _pass: https://docs.python.org/3/tutorial/controlflow.html#pass-statements
+.. _pathlib: https://docs.python.org/3/library/pathlib.html#module-pathlib
+.. _pathlib module: pathlib_
 .. _plain text: https://grokipedia.com/page/Plain_text
 .. _pip: https://packaging.python.org/en/latest/key_projects/#pip
 .. _program: `computer program`_
@@ -143,6 +145,8 @@
 .. _setUp method: setUp_
 .. _shebang: https://grokipedia.com/page/Shebang_(Unix)
 .. _standard output (stdout): https://grokipedia.com/page/Standard_streams#standard-output-stdout
+.. _sys: https://docs.python.org/3/library/sys.html#module-sys
+.. _sys module: sys_
 .. _source code: https://grokipedia.com/page/Source_code
 .. _click here to see the source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
 .. _staticmethod: https://docs.python.org/3/library/functions.html#staticmethod

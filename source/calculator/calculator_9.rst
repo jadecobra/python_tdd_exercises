@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _bytes object: bytes_
+.. _bytes objects: bytes_
 .. _Flask: https://flask.palletsprojects.com/en/stable/
 .. _HTTP status code: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 .. _404 Not Found: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404
@@ -16,6 +18,8 @@
 .. _HTTP request method: `HTTP request methods`_
 .. _GET request method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/GET
 .. _POST request method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST
+.. _sys.path: https://docs.python.org/3/library/sys.html#sys.path
+.. _system path: `sys.path`_
 
 #################################################################################
 how to make a calculator 9
@@ -273,7 +277,7 @@ test_home_page
   - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object`
   - the above can also be written as ``src.website.app.test_client().get('/').status_code``
   - ``404`` is `HTTP status code`_, it is short for `404 Not Found`_ which means the page cannot be found
-  - I want a ``200`` `HTTP status code`_, it is short for `200 OK` and means the request was successful
+  - I want a ``200`` `HTTP status code`_, it is short for `200 OK`_ and means the request was successful
 
 * I change the expectation in the :ref:`assertion<what is an assertion?>`
 
@@ -369,33 +373,33 @@ how to view the website
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 5
+    :emphasize-lines: 5-8
 
         def test_home_page(self):
             client = src.website.app.test_client()
             response = client.get('/')
             self.assertEqual(response.status_code, 200)
-            self.assertIn('Calculator', response.data.decode())
+            self.assertEqual(
+                response.data,
+                '<h1>Calculator</h1>'
+            )
 
-  - the `assertIn method`_ checks if the input on the left is part of the :ref:`object<what is a class?>` on the right.
-  - ``response.data.decode()`` returns the result of calling the ``decode`` :ref:`method<what is a function?>` of the ``data`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``response`` :ref:`object<what is a class?>`
-  - the `decode method`_ is part of the bytes_ data type, it converts bytes_ to strings_
-  - bytes_ are like strings_ , they have a ``b`` before the :ref:`quotes`, for example
-
-    .. code-block:: python
-
-      b'single quote byte'
-      b'''triple single quote byte'''
-      b"double quote byte"
-      b"""triple double quote byte"""
-
-  The terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'Calculator' not found in ''
+    AssertionError: b'' != '<h1>Calculator</h1>'
 
-  there is nothing in ``src/templates/index.html``
+  - there is nothing in ``src/templates/index.html``
+  - ``b''`` is the empty `bytes object`_
+  - `bytes objects`_ are like strings_ , they have a ``b`` before the :ref:`quotes`, for example
+
+    .. code-block:: python
+
+      b'single quote bytes'
+      b'''triple single quote bytes'''
+      b"double quote bytes"
+      b"""triple double quote bytes"""
 
 * I open ``index.html`` from the ``templates`` folder_ in the :ref:`editor<2 editors>`, then add some HTML_
 
@@ -409,7 +413,24 @@ how to view the website
   - ``<></>`` are called tags, they are :ref:`enclosures`
   - ``<h1>HEADING</h1>`` tells the computer to make ``HEADING`` a heading
 
-* I go back to ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard and the test passes
+* I go back to ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the test, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: b'<h1>Calculator</h1>' != '<h1>Calculator</h1>'
+
+* I make the expectation a `bytes object`_
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                response.data,
+                b'<h1>Calculator</h1>'
+            )
+
+  the test passes
 
 * I go back to the browser and click ``refresh``, it shows ``Calculator``
 
@@ -438,15 +459,18 @@ I add a new test for doing calculations with the website
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 7-16
+  :emphasize-lines: 10-19
 
         def test_home_page(self):
             client = src.website.app.test_client()
             response = client.get('/')
             self.assertEqual(response.status_code, 200)
-            self.assertIn('Calculator', response.data.decode())
+            self.assertEqual(
+                response.data.decode(),
+                '<h1>Calculator</h1>'
+            )
 
-        def test_calculate(self):
+        def test_calculation(self):
             client = src.website.app.test_client()
             response = client.post(
                 '/calculate',
@@ -466,10 +490,10 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   AssertionError: 404 != 200
 
-this is like :ref:`AttributeError<what causes AttributeError?>` the address for ``calculate`` does not exist yet.
+this is like :ref:`AttributeError<what causes AttributeError?>`, the address for ``calculate`` does not exist yet.
 
 * ``client.post`` calls the ``post`` :ref:`method<what is a function?>`
-* the ``post`` :ref:`method<what is a function?>` calls the `POST request method`_ which is an `HTTP request method`_ to send information to a server. I am using it to test sending numbers to the website to do a calculation
+* which calls the `POST request method`_, an `HTTP request method`_ that sends information to a server. I am using it to test sending numbers to the website to do a calculation
 * the ``post`` :ref:`method<what is a function?>` is called with 2 inputs in this case
 
   - ``'/calculate'`` - the path to the :ref:`function<what is a function?>` in ``website.py``
@@ -483,37 +507,149 @@ this is like :ref:`AttributeError<what causes AttributeError?>` the address for 
 
 ----
 
-I add a new :ref:`function<what is a function?>` to ``website.py``
+* I add a new :ref:`function<what is a function?>` to ``website.py``
 
-.. code-block:: python
-  :lineno-start: 8
-  :emphasize-lines: 6-9, 11-12
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6-9, 11-15
 
-  @app.route('/')
-  def home():
-      return flask.render_template('index.html')
+      @app.route('/')
+      def home():
+          return flask.render_template('index.html')
 
 
-  @app.route('/calculate', methods=['POST'])
-  def calculate():
-      first_input = flask.request.form.get('first_input')
-      second_input = flask.request.form.get('second_input')
+      @app.route('/calculate', methods=['POST'])
+      def calculate():
+          first_input = flask.request.form.get('first_input')
+          second_input = flask.request.form.get('second_input')
 
-      result = src.calculator.add(first_input, second_input)
-      return f'<h2>{first_input} + {second_input} = {result}</h2>'
+          result = calculator.add(first_input, second_input)
+          return (
+              f'<h2>{first_input} + {second_input} '
+              f'= {result}</h2>'
+          )
 
-the test passes because the route to ``/calculate`` now exists
+  - ``@app.route`` is a :ref:`decorator function<what is a decorator function?>` that routes the pages of the website to the :ref:`function<what is a function?>` it :ref:`wraps<what is a decorator function?>`
+  - ``'/calculate'`` is the route I want to point to the ``calculate`` :ref:`function<what is a function>`
+  - ``['POST']`` is a :ref:`list<what is a list?>` of `HTTP request methods`_ that I can send, in this case I am using the `POST request method`_ to send information to the server
+  - ``flask.request.form.get(NAME)`` uses the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``NAME`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary>` when the user makes a request
+  - ``<h2>SMALLER HEADING</h2>`` tells the computer to make ``SMALLER HEADING`` a heading that is smaller than ``h1`` headings
 
-* ``@app.route`` is a :ref:`decorator function<what is a decorator function?>` that routes the pages of the website to the :ref:`function<what is a function?>` it :ref:`wraps<what is a decorator function?>`
-* ``'/calculate'`` is the route I want to point to the ``calculate`` :ref:`function<what is a function>`
-* ``['POST']`` is a :ref:`list<what is a list?>` of `HTTP request methods`_ that I can send, in this case I am using the `POST request method`_ to send information to the server
-* ``flask.request.form.get(NAME)`` uses the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``NAME`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary>` when the user makes a request
-* ``<h2>SMALLER HEADING</h2>`` tells the computer to make ``SMALLER HEADING`` a heading that is smaller than ``h1`` headings
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'calculator' is not defined. Did you mean: 'calculate'?
+
+* I add an `import statement`_ for the ``calculator`` :ref:`module<what is a module?>` at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import calculator
+    import flask
+
+  the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'calculator
+
+  because the test cannot find the ``calculator.py`` :ref:`module<what is a module?>`
+
+* I change the `import statement`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import src.calculator
+    import flask
+
+  the test passes and the terminal_ for the website shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'src'
+
+  this is a problem
+
+  - ``website.py`` is in the ``src`` folder_ with ``calculator.py`` so ``import src.calculator`` will not work for the website
+  - ``test_calculator_website.py`` is in the ``tests`` folder_ so ``import calculator`` will not work for the tests
+
+  I need a way that allows both the tests and website to work
+
+* I change the `import statement`_ back
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import calculator
+    import flask
+
+  the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'calculator'
+
+* I add an `import statement`_ for the `sys module`_, it is part of `The Python Standard Library`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import sys
+
+    import calculator
+    import flask
+
+  I can use sys_ to get :ref:`variables<what is a variable?>` that the computer uses without going to the terminal_
+
+* I add another `import statement`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import pathlib
+    import sys
+
+    import calculator
+    import flask
+
+  - the `pathlib module`_ is also part of `The Python Standard Library`_
+  - I can use it to get paths(addresses) for files_ and folders_ on the computer without going to the terminal_
+
+* I use pathlib_ to add the path for ``calculator.py`` to the `system path`_ which is a :ref:`list<what is a list?>` of strings_ where Python_ looks for :ref:`modules<what is a module?>` when I write an `import statement`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-5
+
+    import pathlib
+    import sys
+    sys.path.insert(
+        0, str(pathlib.Path(__file__).resolve().parent)
+    )
+
+    import calculator
+    import flask
+
+  the test passes and the terminal_ for the browser shows no errors
+
+  - the path to ``calculator.py`` is now correct for ``website.py`` and ``test_calculator.py``
+  - ``sys.path.insert`` uses the :ref:`insert method of lists<test_insert_item_at_position_in_a_list>` to place the ``src`` folder_ as the first item in the :ref:`list<what is a list>` for Python_ to look for :ref:`modules<what is a module?>`
+  - ``pathlib.Path(__file__).resolve().parent`` returns the parent of the current file - ``src`` in this case
+  - ``__file__`` is a variable with the name of the file ``website.py`` in this case
+  - the route to ``/calculate`` now exists
 
 ----
 
 =================================================================================
-:green:`GREEN`: make it pass
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 ----
@@ -524,7 +660,7 @@ the test passes because the route to ``/calculate`` now exists
     :lineno-start: 13
     :emphasize-lines: 11
 
-        def test_calculate(self):
+        def test_calculations(self):
             client = src.website.app.test_client()
             response = client.post(
                 '/calculate',
@@ -534,39 +670,69 @@ the test passes because the route to ``/calculate`` now exists
                 }
             )
             self.assertEqual(response.status_code, 200)
-            self.assertIn('BOOM!!!', response.data.decode())
+            self.assertEqual(response.data, 'BOOM!!!')
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'BOOM!!!' not found in '<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>'
+    AssertionError: 'BOOM!!!' != '<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>'
 
   Ah! The calculator only works with numbers. The numbers I sent as values in the test ``0`` and ``1`` are getting converted to something the :ref:`calculator<how to make a calculator>` does not like
+
+  - ``response.data.decode()`` returns the result of calling the ``decode`` :ref:`method<what is a function?>` of the ``data`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``response`` :ref:`object<what is a class?>`
+  - the `decode method`_ is part of the bytes_ data type, it converts bytes_ to strings_
 
 * I change ``first_input`` to a float_ in ``website.py``
 
   .. code-block:: python
     :lineno-start: 13
+    :emphasize-lines: 4
 
     @app.route('/calculate', methods=['POST'])
     def calculate():
-        first_input = float(flask.request.form.get('first_input'))
+        first_input = flask.request.form.get('first_input')
+        first_input = float(first_input)
         second_input = flask.request.form.get('second_input')
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for +: 'float' and 'str'
+
+* I change ``second_input`` to a float_
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 6
+
+    @app.route('/calculate', methods=['POST'])
+    def calculate():
+        first_input = flask.request.form.get('first_input')
+        first_input = float(first_input)
+        second_input = flask.request.form.get('second_input')
+        second_input = float(second_input)
+
+        result = calculator.add(first_input, second_input)
+        return f'<h2>{first_input} + {second_input} = {result}</h2>'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'BOOM!!!' not found in '<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>'
+    AssertionError: 'BOOM!!!' != '<h2>0.0 + 1.0 = 1.0</h2>'
 
-* I change ``BOOM!!!`` to the expected result
+* I copy the result from the terminal_ and paste it in ``test_calculator_website.py``
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 1
+    :lineno-start: 23
+    :emphasize-lines: 1-4
 
-            self.assertIn(b'result: 1.0', response.data)
+            self.assertEqual(
+                '<h2>0.0 + 1.0 = 1.0</h2>',
+                response.data.decode()
+            )
 
   the test passes
 
