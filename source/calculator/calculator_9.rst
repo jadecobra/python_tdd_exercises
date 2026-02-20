@@ -468,8 +468,12 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 this is like :ref:`AttributeError<what causes AttributeError?>` the address for ``calculate`` does not exist yet.
 
-- ``client.post`` calls the ``post`` :ref:`method<what is a function?>`
-- the ``post`` :ref:`method<what is a function?>` calls the `POST request method`_ which is an `HTTP request method`_ to send information to a server, I am using to test sending numbers to the website to do a calculation
+* ``client.post`` calls the ``post`` :ref:`method<what is a function?>`
+* the ``post`` :ref:`method<what is a function?>` calls the `POST request method`_ which is an `HTTP request method`_ to send information to a server. I am using it to test sending numbers to the website to do a calculation
+* the ``post`` :ref:`method<what is a function?>` is called with 2 inputs in this case
+
+  - ``'/calculate'`` - the path to the :ref:`function<what is a function?>` in ``website.py``
+  - ``data`` - a :ref:`dictionary<what is a dictionary?>` with the inputs I want the :ref:`function<what is a function?>` to process
 
 ----
 
@@ -483,6 +487,7 @@ I add a new :ref:`function<what is a function?>` to ``website.py``
 
 .. code-block:: python
   :lineno-start: 8
+  :emphasize-lines: 6-9, 11-12
 
   @app.route('/')
   def home():
@@ -491,14 +496,19 @@ I add a new :ref:`function<what is a function?>` to ``website.py``
 
   @app.route('/calculate', methods=['POST'])
   def calculate():
-      first_input = float(flask.request.form.get('first_input', 0))
-      second_input = float(flask.request.form.get('second_input', 0))
-      operation = flask.request.form.get('operation')
+      first_input = flask.request.form.get('first_input')
+      second_input = flask.request.form.get('second_input')
 
       result = src.calculator.add(first_input, second_input)
-      return f'<h1>result: {result}</h1>'
+      return f'<h2>{first_input} + {second_input} = {result}</h2>'
 
 the test passes because the route to ``/calculate`` now exists
+
+* ``@app.route`` is a :ref:`decorator function<what is a decorator function?>` that routes the pages of the website to the :ref:`function<what is a function?>` it :ref:`wraps<what is a decorator function?>`
+* ``'/calculate'`` is the route I want to point to the ``calculate`` :ref:`function<what is a function>`
+* ``['POST']`` is a :ref:`list<what is a list?>` of `HTTP request methods`_ that I can send, in this case I am using the `POST request method`_ to send information to the server
+* ``flask.request.form.get(NAME)`` uses the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``NAME`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary>` when the user makes a request
+* ``<h2>SMALLER HEADING</h2>`` tells the computer to make ``SMALLER HEADING`` a heading that is smaller than ``h1`` headings
 
 ----
 
@@ -511,27 +521,44 @@ the test passes because the route to ``/calculate`` now exists
 * I add an :ref:`assertion<what is an assertion?>` to make sure I get the right result back in ``test_calculator_website.py``
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 12
+    :lineno-start: 13
+    :emphasize-lines: 11
 
-        def test_calculate_route(self):
+        def test_calculate(self):
             client = src.website.app.test_client()
             response = client.post(
                 '/calculate',
                 data={
                     'first_input': 0,
                     'second_input': 1,
-                    'operation': 'add',
                 }
             )
             self.assertEqual(response.status_code, 200)
-            self.assertIn(b'BOOM!!!', response.data)
+            self.assertIn('BOOM!!!', response.data.decode())
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: b'BOOM!!!' not found in b'<h1>result: 1.0</h1>'
+    AssertionError: 'BOOM!!!' not found in '<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>'
+
+  Ah! The calculator only works with numbers. The numbers I sent as values in the test ``0`` and ``1`` are getting converted to something the :ref:`calculator<how to make a calculator>` does not like
+
+* I change ``first_input`` to a float_ in ``website.py``
+
+  .. code-block:: python
+    :lineno-start: 13
+
+    @app.route('/calculate', methods=['POST'])
+    def calculate():
+        first_input = float(flask.request.form.get('first_input'))
+        second_input = flask.request.form.get('second_input')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'BOOM!!!' not found in '<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>'
 
 * I change ``BOOM!!!`` to the expected result
 
