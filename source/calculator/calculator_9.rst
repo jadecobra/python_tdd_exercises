@@ -14,6 +14,7 @@
 .. _assertIn method: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIn
 .. _unittest.TestCase.assertIn method: `assertIn method`_
 .. _decode method: https://docs.python.org/3/library/stdtypes.html#bytes.decode
+.. _bytes.decode: https://docs.python.org/3/library/stdtypes.html#bytes.decode
 .. _HTTP request methods: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
 .. _HTTP request method: `HTTP request methods`_
 .. _GET request method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/GET
@@ -274,7 +275,7 @@ test_home_page
   - the ``get`` :ref:`method<what is a function?>` calls the `GET request method`_ which is an `HTTP request method`_ to get information from a server
   - ``client.get('/')`` returns a :ref:`response object<what is a class?>`
   - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
-  - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object`
+  - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object<what is a class?>`
   - the above can also be written as ``src.website.app.test_client().get('/').status_code``
   - ``404`` is `HTTP status code`_, it is short for `404 Not Found`_ which means the page cannot be found
   - I want a ``200`` `HTTP status code`_, it is short for `200 OK`_ and means the request was successful
@@ -328,6 +329,19 @@ test_home_page
 
   - ``@app.route`` is a :ref:`decorator function<what is a decorator function?>` that routes the pages of the website to the :ref:`function<what is a function?>` it :ref:`wraps<what is a decorator function?>`
   - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
+
+* I add `jinja2.exceptions.TemplateNotFound`_ to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :emphasize-lines: 6
+    :emphasize-text: jinja2.exceptions.TemplateNotFound
+
+    # Exceptions seen
+    # NameError
+    # ModuleNotFoundError
+    # AttributeError
+    # AssertionError
+    # jinja2.exceptions.TemplateNotFound
 
 * I add a new folder_ to the ``src`` folder_ named ``templates``, the terminal_ still shows the same :ref:`Exception<errors>`
 * I add a new file_ in the ``templates`` folder named ``index.html``, the terminal_ still shows the same :ref:`Exception<errors>`
@@ -530,14 +544,14 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
           )
 
   - ``@app.route`` is a :ref:`decorator function<what is a decorator function?>` that routes the pages of the website to the :ref:`function<what is a function?>` it :ref:`wraps<what is a decorator function?>`
-  - ``'/calculate'`` is the route I want to point to the ``calculate`` :ref:`function<what is a function>`
+  - ``'/calculate'`` is the route I want to point to the ``calculate`` :ref:`function<what is a function?>`
   - ``['POST']`` is a :ref:`list<what is a list?>` of `HTTP request methods`_ that I can send, in this case I am using the `POST request method`_ to send information to the server
-  - ``flask.request.form.get(NAME)`` uses the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``NAME`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary>` when the user makes a request
+  - ``flask.request.form.get(NAME)`` uses the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``NAME`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` when the user makes a request
   - ``<h2>SMALLER HEADING</h2>`` tells the computer to make ``SMALLER HEADING`` a heading that is smaller than ``h1`` headings
 
   the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'calculator' is not defined. Did you mean: 'calculate'?
 
@@ -641,7 +655,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   the test passes and the terminal_ for the browser shows no errors
 
   - the path to ``calculator.py`` is now correct for ``website.py`` and ``test_calculator.py``
-  - ``sys.path.insert`` uses the :ref:`insert method of lists<test_insert_item_at_position_in_a_list>` to place the ``src`` folder_ as the first item in the :ref:`list<what is a list>` for Python_ to look for :ref:`modules<what is a module?>`
+  - ``sys.path.insert`` uses the :ref:`insert method of lists<test_insert_item_at_position_in_a_list>` to place the ``src`` folder_ as the first item in the :ref:`list<what is a list?>` for Python_ to look for :ref:`modules<what is a module?>`
   - ``pathlib.Path(__file__).resolve().parent`` returns the parent of the current file - ``src`` in this case
   - ``__file__`` is a variable with the name of the file ``website.py`` in this case
   - the route to ``/calculate`` now exists
@@ -676,17 +690,14 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 
   .. code-block:: python
 
-    AssertionError: 'BOOM!!!' != '<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>'
+    AssertionError: b'<h2>0 + 1 = brmph?! Numbers only. Try again...</h2>' != 'BOOM!!!'
 
   Ah! The calculator only works with numbers. The numbers I sent as values in the test ``0`` and ``1`` are getting converted to something the :ref:`calculator<how to make a calculator>` does not like
-
-  - ``response.data.decode()`` returns the result of calling the ``decode`` :ref:`method<what is a function?>` of the ``data`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``response`` :ref:`object<what is a class?>`
-  - the `decode method`_ is part of the bytes_ data type, it converts bytes_ to strings_
 
 * I change ``first_input`` to a float_ in ``website.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 19
     :emphasize-lines: 4
 
     @app.route('/calculate', methods=['POST'])
@@ -704,7 +715,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I change ``second_input`` to a float_
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 19
     :emphasize-lines: 6
 
     @app.route('/calculate', methods=['POST'])
@@ -715,26 +726,144 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
         second_input = float(second_input)
 
         result = calculator.add(first_input, second_input)
-        return f'<h2>{first_input} + {second_input} = {result}</h2>'
+        return (
+            f'<h2>{first_input} + {second_input} '
+            f'= {result}</h2>'
+        )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'BOOM!!!' != '<h2>0.0 + 1.0 = 1.0</h2>'
+    AssertionError: b'<h2>0.0 + 1.0 = 1.0</h2>' != 'BOOM!!!'
 
 * I copy the result from the terminal_ and paste it in ``test_calculator_website.py``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 1-4
+    :lineno-start: 16
+    :emphasize-lines: 11-14
 
+        def test_calculations(self):
+            client = src.website.app.test_client()
+            response = client.post(
+                '/calculate',
+                data={
+                    'first_input': 0,
+                    'second_input': 1,
+                }
+            )
+            self.assertEqual(response.status_code, 200)
             self.assertEqual(
-                '<h2>0.0 + 1.0 = 1.0</h2>',
-                response.data.decode()
+                response.data,
+                b'<h2>0.0 + 1.0 = 1.0</h2>'
             )
 
   the test passes
+
+* I want to use random numbers in the test. I add an `import statement`_ for the ``test_calculator`` :ref:`module<what is a module?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
+
+    import src.website
+    import tests.test_calculator
+    import unittest
+
+* I point a :ref:`variable<what is a variable?>` to the result of a call to the ``a_random_number`` :ref:`function<what is a function?>` of ``test_calculator``
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2
+
+        def test_calculations(self):
+            x = tests.test_calculator.a_random_number()
+            client = src.website.app.test_client()
+
+* I use the new :ref:`variable<what is a variable?>` as the first input
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4-5
+
+            response = client.post(
+                '/calculate',
+                data={
+                    # 'first_input': 0,
+                    'first_input': x,
+                    'second_input': 1,
+                }
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: b'<h2>ABC.DEFGHIJKLMNOP + 1.0 = ABQ.DEFGHIJKLMNOP</h2>' != b'<h2>0.0 + 1.0 = 1.0</h2>'
+
+  good, the input gets to the website
+
+* I try an `f-string`_ so I can use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                response.data,
+                fb'<h2>0.0 + 1.0 = 1.0</h2>'
+            )
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I cannot make a `bytes object`_ an `f-string`_
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 7
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # NameError
+    # ModuleNotFoundError
+    # AttributeError
+    # AssertionError
+    # jinja2.exceptions.TemplateNotFound
+    # SyntaxError
+
+* I change the object to a string_ with `bytes.decode`_
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            self.assertEqual(
+                response.data.decode(),
+                f'<h2>0.0 + 1.0 = 1.0</h2>'
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '<h2>RS.TUVWXYZABCDEFG + 1.0 = RH.TUVWXYZABCDEFG</h2>' != '<h2>0.0 + 1.0 = 1.0</h2>'
+
+  - ``response.data.decode()`` returns the result of calling the `decode method`_ of the ``data`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``response`` :ref:`object<what is a class?>`
+  - the `decode method`_ is part of the bytes_ data type, it converts bytes_ to strings_
+
+* I add the :ref:`variable<what is a variable?>` to the expectation
+
+  .. code-block:: python
+    :lineno-start:
+
+
+
 
 ----
 
@@ -754,7 +883,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
     import src.website
     import unittest
 
-* I add a :ref:`variable<what is a variable>` to the test
+* I add a :ref:`variable<what is a variable>?` to the test
 
   .. code-block:: python
     :lineno-start: 14
