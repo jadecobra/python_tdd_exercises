@@ -21,6 +21,7 @@
 .. _POST request method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/POST
 .. _sys.path: https://docs.python.org/3/library/sys.html#sys.path
 .. _system path: `sys.path`_
+.. _HTML forms: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms
 
 #################################################################################
 how to make a calculator 9
@@ -418,6 +419,7 @@ how to view the website
 * I open ``index.html`` from the ``templates`` folder_ in the :ref:`editor<2 editors>`, then add some HTML_
 
   .. code-block:: HTML
+    :linenos:
     :emphasize-lines: 1
 
     <h1>Calculator</h1>
@@ -837,7 +839,13 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
     # jinja2.exceptions.TemplateNotFound
     # SyntaxError
 
-* I change the object to a string_ with `bytes.decode`_
+----
+
+*********************************************************************************
+how to change a bytes object to a string
+*********************************************************************************
+
+* I change the `bytes object`_ to a string_ with `bytes.decode`_
 
   .. code-block:: python
     :lineno-start: 29
@@ -860,61 +868,42 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * I add the :ref:`variable<what is a variable?>` to the expectation
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 29
+    :emphasize-lines: 3
 
-
-
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I import the `random module`_ to make random numbers for the test
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import random
-    import src.website
-    import unittest
-
-* I add a :ref:`variable<what is a variable>?` to the test
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2
-
-        def test_calculate_route(self):
-            x = random.randint(-1000, 1000)
-
-            client = src.website.app.test_client()
-            response = client.post(
-                '/calculate',
-                data={
-                    'first_input': x,
-                    'second_input': 1,
-                }
+            self.assertEqual(
+                response.data.decode(),
+                f'<h2>{x} + 1.0 = {x+1}</h2>'
             )
-            self.assertEqual(response.status_code, 200)
-            self.assertIn(b'result: 1.0', response.data)
 
-* I use ``x`` for the first input
+  the test passes
+
+----
+
+* I add another :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines:
+    :lineno-start: 17
+    :emphasize-lines: 3
+
+        def test_calculations(self):
+            x = tests.test_calculator.a_random_number()
+            y = tests.test_calculator.a_random_number()
+            client = src.website.app.test_client()
+
+* I use the :ref:`variable<what is a variable?>` for the second input
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 6-7
 
             response = client.post(
                 '/calculate',
                 data={
                     # 'first_input': 0,
                     'first_input': x,
-                    'second_input': 1,
+                    # 'second_input': 1,
+                    'second_input': y,
                 }
             )
 
@@ -922,13 +911,350 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 
   .. code-block:: python
 
-    AssertionError: 'result: 1.0' not found in '<h1>result: ABC.D</h1>'
+    AssertionError: '<h2>HIJ.KLMNOPQRSTUVWX + YZA.BCDEFGHIJKLMNOP = QRS.TUVWXYZABCDEFG</h2>' != '<h2>-HIJ.KLMNOPQRSTUVWX + 1.0 = HIY.KLMNOPQRSTUVWX</h2>'
 
-
-
-* I add ``x`` in an `f-string`_ to the :ref:`assertion<what is an assertion?>` for the result
+* I add ``y`` to the `f-string`_ in the expectation
 
   .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                response.data.decode(),
+                f'<h2>{x} + {y} = {x+y}</h2>'
+            )
+
+  the test passes
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 17
+
+        def test_calculations(self):
+            x = tests.test_calculator.a_random_number()
+            y = tests.test_calculator.a_random_number()
+            client = src.website.app.test_client()
+            response = client.post(
+                '/calculate',
+                data={
+                    'first_input': x,
+                    'second_input': y,
+                }
+            )
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(
+                response.data.decode(),
+                f'<h2>{x} + {y} = {x+y}</h2>'
+            )
+
+  the test is still green
+
+* I want to test the other operations. I add a :ref:`dictionary<what is a dictionary?>` for the operations
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 5-10
+
+        def test_calculations(self):
+            x = tests.test_calculator.a_random_number()
+            y = tests.test_calculator.a_random_number()
+
+            operations = {
+                'add': '+',
+                'subtract': '-',
+                'divide': '/',
+                'multiply': '*',
+            }
+
+            client = src.website.app.test_client()
+
+* I add a :ref:`for loop<what is a for loop?>` to the test
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 3-16
+
+            client = src.website.app.test_client()
+
+            for operation in operations:
+                with self.subTest(operation=operation):
+                    response = client.post(
+                        '/calculate',
+                        data={
+                            'first_input': x,
+                            'second_input': y,
+                        }
+                    )
+                    self.assertEqual(response.status_code, 200)
+                    self.assertEqual(
+                        response.data.decode(),
+                        f'<h2>{x} + {y} = {x+y}</h2>'
+                    )
+
+
+    # Exceptions seen
+
+* I add a :ref:`key<test_keys_of_a_dictionary>` to the ``data`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 6
+
+                    response = client.post(
+                        '/calculate',
+                        data={
+                            'first_input': x,
+                            'second_input': y,
+                            'operation': operation,
+                        }
+                    )
+
+* I add a :ref:`variable<what is a variable?>` for the :ref:`calculator function<how to make a calculator>`
+
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 3-5
+
+                    self.assertEqual(response.status_code, 200)
+
+                    function = src.calculator.__getattribute__(
+                        operation
+                    )
+                    self.assertEqual(
+                        response.data.decode(),
+                        f'<h2>{x} + {y} = {x+y}</h2>'
+                    )
+
+* I add another :ref:`variable<what is a variable?>` for the expected result
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 4
+
+                    function = src.calculator.__getattribute__(
+                        operation
+                    )
+                    result = function(x, y)
+                    self.assertEqual(
+                        response.data.decode(),
+                        f'<h2>{x} + {y} = {x+y}</h2>'
+                    )
+
+* I change the expectation in the :ref:`assertion<what is an assertion?>` to use the new :ref:`variables<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 3-7
+
+                    self.assertEqual(
+                        response.data.decode(),
+                        # f'<h2>{x} + {y} = {x+y}</h2>'
+                        (
+                            f'<h2>{x} {operations[operation]} {y} '
+                            f'= {result}</h2>'
+                        )
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '<h2>YZA.BCDEFGHIJKLMNO + PQR.STUVWXYZABCDEFG = HIJ.KLMNOPQRSTUVWXY</h2>' != '<h2>YZA.BCDEFGHIJKLMNO * PQR.STUVWXYZABCDEFG = ZABCD.EFGHIJKLMNO</h2>'
+
+  - the subtest for :ref:`addition<test_addition>` passes
+  - the operation symbols for the other 3 functions and their results changed
+
+* I add a :ref:`variable<what is a variable?>` for value the test passes for the operation
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 7
+
+    @app.route('/calculate', methods=['POST'])
+    def calculate():
+        first_input = flask.request.form.get('first_input')
+        first_input = float(first_input)
+        second_input = flask.request.form.get('second_input')
+        second_input = float(second_input)
+        operation = flask.request.form.get('operation')
+
+        result = calculator.add(first_input, second_input)
+
+  the test still shows :ref:`AssertionError<what causes AssertionError?>` for the 3 sub tests
+
+* I add a :ref:`dictionary<what is a dictionary?>` for the operations
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3-8
+
+        operation = flask.request.form.get('operation')
+
+        operations = {
+            'add': '+',
+            'subtract': '-',
+            'divide': '/',
+            'multiply': '*',
+        }
+
+        result = calculator.add(first_input, second_input)
+
+* I use the ``__getattribute__`` :ref:`method<what is a function?>` for the result
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 1-4
+
+        # result = calculator.add(first_input, second_input)
+        result = calculator.__getattribute__(operation)(
+            first_input, second_input
+        )
+        return (
+            f'<h2>{first_input} + {second_input} '
+            f'= {result}</h2>'
+        )
+
+* I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 2-3
+
+        return (
+            # f'<h2>{first_input} + {second_input} '
+            f'<h2>{first_input} {operations[operation]} {second_input} '
+            f'= {result}</h2>'
+        )
+
+  the test passes
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+    @app.route('/calculate', methods=['POST'])
+    def calculate():
+        first_input = flask.request.form.get('first_input')
+        first_input = float(first_input)
+        second_input = flask.request.form.get('second_input')
+        second_input = float(second_input)
+        operation = flask.request.form.get('operation')
+
+        operations = {
+            'add': '+',
+            'subtract': '-',
+            'divide': '/',
+            'multiply': '*',
+        }
+
+        result = calculator.__getattribute__(operation)(
+            first_input, second_input
+        )
+        return (
+            f'<h2>{first_input} {operations[operation]} {second_input} '
+            f'= {result}</h2>'
+        )
+
+  the test is still green
+
+* I remove the comments from :ref:`test_calculations` in ``test_calculator_website.py``
+
+  .. code-block:: python
+    :lineno-start: 17
+
+        def test_calculations(self):
+            x = tests.test_calculator.a_random_number()
+            y = tests.test_calculator.a_random_number()
+
+            operations = {
+                'add': '+',
+                'subtract': '-',
+                'divide': '/',
+                'multiply': '*',
+            }
+
+            client = src.website.app.test_client()
+
+            for operation in operations:
+                with self.subTest(operation=operation):
+                    response = client.post(
+                        '/calculate',
+                        data={
+                            'first_input': x,
+                            'second_input': y,
+                            'operation': operation,
+                        }
+                    )
+                    self.assertEqual(response.status_code, 200)
+
+                    function = src.calculator.__getattribute__(
+                        operation
+                    )
+                    result = function(x, y)
+                    self.assertEqual(
+                        response.data.decode(),
+                        (
+                            f'<h2>{x} {operations[operation]} {y} '
+                            f'= {result}</h2>'
+                        )
+                    )
+
+
+    # Exceptions seen
+
+----
+
+*********************************************************************************
+how to make a form
+*********************************************************************************
+
+`HTML Forms`_ are the most popular thing we see with websites, we use them when we sign in or put any information on a website. I can add a form to the website for users to do calculations since the route now exists.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add more HTML_ to ``index.html`` in the ``templates`` folder_ in the ``src`` folder_
+
+.. code-block:: HTML
+  :lineno-start: 1
+  :emphasize-lines: 2-3
+
+    <h1>Calculator</h1>
+    <form method="post" action="/calculate">
+    </form>
+
+
+
+* I add a :ref:`dictionary<what is a dictionary?>` for operations to the ``calculate`` :ref:`function<what is a function?>` in ``website.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 8-13
+
+    @app.route('/calculate', methods=['POST'])
+    def calculate():
+        first_input = flask.request.form.get('first_input')
+        first_input = float(first_input)
+        second_input = flask.request.form.get('second_input')
+        second_input = float(second_input)
+
+        operations = {
+            'add': '+',
+            'subtract': '-',
+            'divide': '/',
+            'multiply': '*',
+        }
+
+        result = calculator.add(first_input, second_input)
+
+
 
 ----
 
@@ -1073,6 +1399,8 @@ test_error_handling_in_web
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
+
+----
 
 I add tests for errors
 
