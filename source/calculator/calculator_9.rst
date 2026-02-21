@@ -1220,175 +1220,211 @@ how to make a form
 
 ----
 
-I add more HTML_ to ``index.html`` in the ``templates`` folder_ in the ``src`` folder_
+* I add more HTML_ to ``index.html`` in the ``templates`` folder_ in the ``src`` folder_
 
-.. code-block:: HTML
-  :lineno-start: 1
-  :emphasize-lines: 2-3
+  .. code-block:: HTML
+    :lineno-start: 1
+    :emphasize-lines: 2-3
 
-    <h1>Calculator</h1>
-    <form method="post" action="/calculate">
-    </form>
+      <h1>Calculator</h1>
+      <form method="post" action="/calculate">
+      </form>
 
+  - ``<form></form>`` is an HTML_ tag (:ref:`enclosure<enclosures>`) for making forms
+  -  ``method="post"`` means the form will use the `POST request method`_
+  -  ``action="/calculate"`` means the form will send the data to the ``calculate`` :ref:`function<what is a function?>` in ``website.py``
 
-
-* I add a :ref:`dictionary<what is a dictionary?>` for operations to the ``calculate`` :ref:`function<what is a function?>` in ``website.py``
+* I go to the website and click refresh, there is no change
+* I click on ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the tests again, the terminal_ shows :ref:`AssertionError`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 8-13
 
-    @app.route('/calculate', methods=['POST'])
-    def calculate():
-        first_input = flask.request.form.get('first_input')
-        first_input = float(first_input)
-        second_input = flask.request.form.get('second_input')
-        second_input = float(second_input)
+    AssertionError: b'<h1>Calculator</h1>\n<form method="post" action="/calculate">\n</form>' != b'<h1>Calculator</h1>'
 
-        operations = {
-            'add': '+',
-            'subtract': '-',
-            'divide': '/',
-            'multiply': '*',
-        }
-
-        result = calculator.add(first_input, second_input)
-
-
+  my change made :ref:`test_home_page` fail because there is now more HTML_ on that page
 
 ----
 
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
 ----
 
-----
-
-
-
-
-I open ``src/app.py`` and add the route
+I change the assertion to look for the title and not the entire page
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 7-20
-
-    @app.route('/')
-    def home():
-        return render_template('index.html')
-
-    @app.route('/calculate', methods=['POST'])
-    def calculate():
-        first = float(request.form['first'])
-        operation = request.form['operation']
-        second = float(request.form['second'])
-
-        from src.calculator import add, subtract, multiply, divide
-
-        ops = {
-            'add': add,
-            'subtract': subtract,
-            'multiply': multiply,
-            'divide': divide
-        }
-
-        result = ops[operation](first, second)
-        return f"<h1>Result: {result}</h1>"
-
-I add the import for request at the top
-
-.. code-block:: python
-  :lineno-start: 1
-
-  from flask import Flask, render_template, request
-
-the test passes.
-
-
-    def test_calculate_route(self):
-        x = tests.test_calculator.a_random_number()
-        y = tests.test_calculator.a_random_number()
-
-        client = src.website.app.test_client()
-        response = client.post(
-            '/calculate',
-            data={
-                # 'first_input': 0,
-                'first_input': x,
-                'second_input': 1,
-                'operation': 'add',
-            }
-        )
-        self.assertEqual(response.status_code, 200)
-        # self.assertIn(b'result: 1.0', response.data)
-        self.assertIn(b'result: 1.0', response.data)
-
-----
-
-
-----
-
-----
-
-----
-
-----
-
-
-----
-
-
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 5-12
-
+  :lineno-start: 8
+  :emphasize-lines: 5-7
 
       def test_home_page(self):
-          client = app.test_client()
+          client = src.website.app.test_client()
           response = client.get('/')
           self.assertEqual(response.status_code, 200)
-          self.assertIn(b'Calculator', response.data)
+          self.assertIn(
+              b'<h1>Calculator</h1>',
+              response.data
+          )
 
-  the test still fails because there is no template.
+      def test_calculations(self):
 
-* I make the templates folder and file
+the test passes because the `assertIn method`_ of the `unittest.TestCase class`_ checks if the thing on the left is in the :ref:`object<what is a class?>` on the right
 
-  .. code-block:: shell
-    :emphasize-lines: 1-2
+----
 
-    mkdir templates
-    touch templates/index.html
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
-* I open ``templates/index.html`` and add a simple page
+----
 
-  .. code-block:: html
-    :linenos:
+* I add more HTML_ to ``index.html`` in the ``templates`` folder_ in the ``src`` folder_
 
-    <h1>Calculator</h1>
+  .. code-block:: HTML
+    :lineno-start: 2
+    :emphasize-lines: 2
+
     <form method="post" action="/calculate">
-        <input type="number" name="first" required>
+        <input type="number" name="first_input" required>
+    </form>
+
+* I go to the browser and click refresh to see the change, the website has a place where I can put numbers or use the up and down arrows to change the numbers
+
+  .. image:: /_static/calculator/calculator_first_input.png
+    :width: 600
+    :align: center
+    :alt: Calculator form with first input
+
+* I use :kbd:`ctrl+s` on the keyboard in ``test_calculator_website.py`` to run the tests, still green
+
+* I add another input for the second number in ``index.html``
+
+  .. code-block:: HTML
+    :lineno-start: 2
+    :emphasize-lines: 3
+
+    <form method="post" action="/calculate">
+        <input type="number" name="first_input" required>
+        <input type="number" name="second_input" required>
+    </form>
+
+* I go to the browser and click refresh to see the change, the website now has 2 places for me to put numbers
+
+  .. image:: /_static/calculator/calculator_second_input.png
+    :width: 600
+    :align: center
+    :alt: Calculator form with second input
+
+* I use :kbd:`ctrl+s` on the keyboard in ``test_calculator_website.py`` to run the tests, green
+
+* I add options for the operation in ``index.html``
+
+  .. code-block:: HTML
+    :lineno-start: 2
+    :emphasize-lines: 4-6
+
+    <form method="post" action="/calculate">
+        <input type="number" name="first_input" required>
+        <input type="number" name="second_input" required>
+        <select name="operation">
+            <option value="add">+</option>
+        </select>
+    </form>
+
+* I go to the browser and click refresh to see the change, the website now has a place for me to choose the operation, even though ``+`` is the only option
+
+  .. image:: /_static/calculator/calculator_first_operation.png
+    :width: 600
+    :align: center
+    :alt: Calculator form with first operation
+
+* I use :kbd:`ctrl+s` on the keyboard in ``website.py`` to run the tests, they are still green
+
+* I want the operation to show up between the 2 numbers, I change the order in ``index.html``
+
+  .. code-block:: HTML
+    :lineno-start: 2
+    :emphasize-lines: 3-6
+
+    <form method="post" action="/calculate">
+        <input type="number" name="first_input" required>
+        <select name="operation">
+            <option value="add">+</option>
+        </select>
+        <input type="number" name="second_input" required>
+    </form>
+
+* I go to the browser and click refresh to see the change, the operation is now between the 2 numbers
+
+  .. image:: /_static/calculator/calculator_first_operation_reorder.png
+    :width: 600
+    :align: center
+    :alt: Calculator form with first operation redordered
+
+* I use :kbd:`ctrl+s` on the keyboard in ``website.py`` to run the tests. Green
+
+* I add the other operations to ``index.html``
+
+  .. code-block:: HTML
+    :lineno-start: 2
+    :emphasize-lines: 5-7
+
+    <form method="post" action="/calculate">
+        <input type="number" name="first_input" required>
         <select name="operation">
             <option value="add">+</option>
             <option value="subtract">-</option>
-            <option value="multiply">*</option>
             <option value="divide">/</option>
+            <option value="multiply">*</option>
         </select>
-        <input type="number" name="second" required>
-        <button type="submit">Calculate</button>
+        <input type="number" name="second_input" required>
     </form>
 
-  the test passes.
+  the browser shows all the options when I click refresh
 
+* I add a button to the form so the user can submit the numbers and operation for a calculation
 
-@app.route('/calculate', methods=['POST'])
-def calculate():
-    first_input = flask.request.form.get('first_input', 0)
-    second_input = flask.request.form.get('second_input', 0)
-    operation = flask.request.form.get('operation')
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11
 
-    result = src.calculator.add(first_input, second_input)
-    return f'<h1>result: {result}</h1>'
+    <h1>Calculator</h1>
+    <form method="post" action="/calculate">
+        <input type="number" name="first_input" required>
+        <select name="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="divide">/</option>
+            <option value="multiply">*</option>
+        </select>
+        <input type="number" name="second_input" required>
+        <button type="submit">calculate</button>
+    </form>
 
+* I go to the browser and click refresh to see the change
 
+  .. image:: /_static/calculator/calculator_submit_button.png
+    :width: 600
+    :align: center
+    :alt: Calculator form with calculate button
+
+* I enter ``10000`` as the first number and ``20000`` as the second number, with ``*`` as the operation
+
+  .. image:: /_static/calculator/calculator_first_calculation.png
+    :width: 600
+    :align: center
+    :alt: Calculator form first calculation
+
+  I click ``calculate`` and the browser shows
+
+  .. image:: /_static/calculator/calculator_first_result.png
+    :width: 600
+    :align: center
+    :alt: Calculator first result
+
+ugly and it works
+
+----
 
 *********************************************************************************
 test_error_handling_in_web
