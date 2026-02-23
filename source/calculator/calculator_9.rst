@@ -460,7 +460,7 @@ how to view the website
 ----
 
 *********************************************************************************
-test_calculate_route
+test_calculations
 *********************************************************************************
 
 ----
@@ -1235,13 +1235,13 @@ how to make a form
   -  ``action="/calculate"`` means the form will send the data to the ``calculate`` :ref:`function<what is a function?>` in ``website.py``
 
 * I go to the website and click refresh, there is no change
-* I click on ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the tests again, the terminal_ shows :ref:`AssertionError`
+* I click on ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the tests again, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: b'<h1>Calculator</h1>\n<form method="post" action="/calculate">\n</form>' != b'<h1>Calculator</h1>'
 
-  my change made :ref:`test_home_page` fail because there is now more HTML_ on that page
+  the change made :ref:`test_home_page` fail because there is now more HTML_
 
 ----
 
@@ -1427,8 +1427,10 @@ ugly and it works
 ----
 
 *********************************************************************************
-test_error_handling_in_web
+fix handling ZeroDivisionError in division
 *********************************************************************************
+
+I want to make sure the :ref:`division function<test_division>` returns a message when the second number is ``0``
 
 ----
 
@@ -1438,36 +1440,82 @@ test_error_handling_in_web
 
 ----
 
-I add tests for errors
+I add a new test
 
 .. code-block:: python
-  :lineno-start: 30
-  :emphasize-lines: 5-20
+  :lineno-start: 17
+  :emphasize-lines: 38-40, 42-53
 
-      def test_calculate_route(self):
-          ...
+      def test_calculations(self):
+          x = tests.test_calculator.a_random_number()
+          y = tests.test_calculator.a_random_number()
 
-      def test_error_handling_in_web(self):
-          from src.app import app
-          client = app.test_client()
+          operations = {
+              'add': '+',
+              'subtract': '-',
+              'divide': '/',
+              'multiply': '*',
+          }
 
-          # non-number
-          response = client.post('/calculate', data={
-              'first': 'abc',
-              'operation': 'add',
-              'second': '3'
-          })
-          self.assertIn(b'brmph?! Numbers only', response.data)
+          client = src.website.app.test_client()
 
-          # divide by zero
-          response = client.post('/calculate', data={
-              'first': '5',
-              'operation': 'divide',
-              'second': '0'
-          })
-          self.assertIn(b'I cannot divide by 0', response.data)
+          for operation in operations:
+              with self.subTest(operation=operation):
+                  response = client.post(
+                      '/calculate',
+                      data={
+                          'first_input': x,
+                          'second_input': y,
+                          'operation': operation,
+                      }
+                  )
+                  self.assertEqual(response.status_code, 200)
 
-the tests fail with exceptions or wrong messages.
+                  function = src.calculator.__getattribute__(
+                      operation
+                  )
+                  result = function(x, y)
+                  self.assertEqual(
+                      response.data.decode(),
+                      (
+                          f'<h2>{x} {operations[operation]} {y} '
+                          f'= {result}</h2>'
+                      )
+                  )
+
+      def test_website_handling_zero_division_error(self):
+          x = tests.test_calculator.a_random_number()
+          client = src.website.app.test_client()
+
+          response = client.post(
+              '/calculate',
+              data={
+                  'first_input': x,
+                  'second_input': 0,
+                  'operation': 'divide',
+              }
+          )
+          self.assertEqual(
+              response.data.decode(),
+              'brmph?! I cannot divide by 0. Try again...'
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` in ``short test summary info``
+
+.. code-block:: python
+
+  AssertionError: '<!doctype html>\n<html lang=en>\n<title>5[225 chars]p>\n' != 'brmph?! I cannot divide by 0.
+
+and in the traceback it shows the :ref:`AssertionError<what causes AssertionError?>` was caused by :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+
+.. code-block:: python
+
+  ZeroDivisionError: float division by zero
+
+good
 
 ----
 
@@ -1475,54 +1523,415 @@ the tests fail with exceptions or wrong messages.
 :green:`GREEN`: make it pass
 =================================================================================
 
-I update the calculate route to catch exceptions and use the existing error messages
+----
 
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 10-25
+* I open ``calculator.py`` from the ``src`` folder_
 
-    def calculate():
+* I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-6
+
+    @check_input
+    def divide(first_input, second_input):
         try:
-            first = float(request.form['first'])
-            operation = request.form['operation']
-            second = float(request.form['second'])
+            return first_input / second_input
+        except ZeroDivisionError:
+            return 'brmph?! I cannot divide by 0. Try again...'
 
-            from src.calculator import add, subtract, multiply, divide
 
-            ops = {
-                'add': add,
-                'subtract': subtract,
-                'multiply': multiply,
-                'divide': divide
+    @check_input
+    def multiply(first_input, second_input):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '<h2>PQ.RSTUVWXYZABCDEF / 0.0 = brmph?! I cannot divide by 0. Try again...</h2>' != 'brmph?! I cannot divide by 0. Try again...'
+
+  okay. It returns the right error message
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` in ``test_calculator_website.py``
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 15-18
+
+        def test_website_handling_zero_division_error(self):
+            x = tests.test_calculator.a_random_number()
+            client = src.website.app.test_client()
+
+            response = client.post(
+                '/calculate',
+                data={
+                    'first_input': x,
+                    'second_input': 0,
+                    'operation': 'divide',
+                }
+            )
+            self.assertEqual(
+                response.data.decode(),
+                (
+                    f'<h2>{x} / 0.0 = '
+                    'brmph?! I cannot divide by 0. Try again...</h2>'
+                )
+            )
+
+
+    # Exceptions seen
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I made the same client in each test. I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for it in the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3-4
+
+    class TestCalculatorWebsite(unittest.TestCase):
+
+        def setUp(self):
+            self.client = src.website.app.test_client()
+
+        def test_home_page(self):
+
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_home_page`
+
+  .. code-block:: python
+    :lineno-start: 11
+
+        def test_home_page(self):
+            # client = src.website.app.test_client()
+            client = self.client
+            response = client.get('/')
+
+  the test is still green
+
+* I use it directly in the response
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 1
+
+            response = self.client.get('/')
+
+  still green
+
+* I remove the ``client`` :ref:`variable<what is a variable?>` and the commented line
+
+  .. code-block:: python
+    :lineno-start: 11
+
+        def test_home_page(self):
+            response = self.client.get('/')
+            self.assertEqual(response.status_code, 200)
+            self.assertIn(
+                b'<h1>Calculator</h1>',
+                response.data
+            )
+
+        def test_calculations(self):
+
+  green
+
+----
+
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_calculations`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 3-4
+
+            for operation in operations:
+                with self.subTest(operation=operation):
+                    # response = client.post(
+                    response = self.client.post(
+                        '/calculate',
+                        data={
+                            'first_input': x,
+                            'second_input': y,
+                            'operation': operation,
+                        }
+                    )
+
+  still green
+
+* I remove the commented line and the ``client`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_calculations(self):
+            x = tests.test_calculator.a_random_number()
+            y = tests.test_calculator.a_random_number()
+
+            operations = {
+                'add': '+',
+                'subtract': '-',
+                'divide': '/',
+                'multiply': '*',
             }
 
-            result = ops[operation](first, second)
-            return render_template('index.html', result=result)
-        except Exception as e:
-            error = str(e)
-            if 'Numbers only' in error or 'brmph' in error:
-                error = 'brmph?! Numbers only. Try again...'
-            elif 'division by zero' in error:
-                error = 'brmph?! I cannot divide by 0. Try again...'
-            return render_template('index.html', error=error)
+            for operation in operations:
+                with self.subTest(operation=operation):
+                    response = self.client.post(
+                        '/calculate',
+                        data={
+                            'first_input': x,
+                            'second_input': y,
+                            'operation': operation,
+                        }
+                    )
+                    self.assertEqual(response.status_code, 200)
 
-I update the template to show result or error
+                    function = src.calculator.__getattribute__(
+                        operation
+                    )
+                    result = function(x, y)
+                    self.assertEqual(
+                        response.data.decode(),
+                        (
+                            f'<h2>{x} {operations[operation]} {y} '
+                            f'= {result}</h2>'
+                        )
+                    )
 
-.. code-block:: html
-  :lineno-start: 1
-  :emphasize-lines: 10-20
+        def test_website_handling_zero_division_error(self):
 
-    <h1>Calculator</h1>
-    {% if result is defined %}
-        <h2>Result: {{ result }}</h2>
-    {% endif %}
-    {% if error is defined %}
-        <h2 style="color:red">{{ error }}</h2>
-    {% endif %}
-    <form method="post" action="/calculate">
-        ...
+  the test is still green
 
-the tests pass.
+----
+
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 5-6
+
+        def test_website_handling_zero_division_error(self):
+            x = tests.test_calculator.a_random_number()
+            client = src.website.app.test_client()
+
+            # response = client.post(
+            response = self.client.post(
+                '/calculate',
+                data={
+                    'first_input': x,
+                    'second_input': 0,
+                    'operation': 'divide',
+                }
+            )
+
+  still green
+
+* I remove the commented line and ``client`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 54
+
+        def test_website_handling_zero_division_error(self):
+            x = tests.test_calculator.a_random_number()
+            response = self.client.post(
+                '/calculate',
+                data={
+                    'first_input': x,
+                    'second_input': 0,
+                    'operation': 'divide',
+                }
+            )
+            self.assertEqual(
+                response.data.decode(),
+                (
+                    f'<h2>{x} / 0.0 = '
+                    'brmph?! I cannot divide by 0. Try again...</h2>'
+                )
+            )
+
+
+    # Exceptions seen
+
+  green
+
+----
+
+* I add :ref:`class attributes<test_attribute_error_w_class_attributes>` for the random numbers to the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 3
+
+        def setUp(self):
+            self.client = src.website.app.test_client()
+            self.x = tests.test_calculator.a_random_number()
+
+        def test_home_page(self):
+
+* I use it in :ref:`test_calculations`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 2-3
+
+        def test_calculations(self):
+            # x = tests.test_calculator.a_random_number()
+            x = self.x
+            y = tests.test_calculator.a_random_number()
+
+  still green
+
+* I use the ``Rename Symbol`` to change ``x`` to ``self.x``
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 3, 18, 28, 32
+
+        def test_calculations(self):
+            # x = tests.test_calculator.a_random_number()
+            self.x = self.x
+            y = tests.test_calculator.a_random_number()
+
+            operations = {
+                'add': '+',
+                'subtract': '-',
+                'divide': '/',
+                'multiply': '*',
+            }
+
+            for operation in operations:
+                with self.subTest(operation=operation):
+                    response = self.client.post(
+                        '/calculate',
+                        data={
+                            'first_input': self.x,
+                            'second_input': y,
+                            'operation': operation,
+                        }
+                    )
+                    self.assertEqual(response.status_code, 200)
+
+                    function = src.calculator.__getattribute__(
+                        operation
+                    )
+                    result = function(self.x, y)
+                    self.assertEqual(
+                        response.data.decode(),
+                        (
+                            f'<h2>{self.x} {operations[operation]} {y} '
+                            f'= {result}</h2>'
+                        )
+                    )
+
+  the test is still green
+
+* I remove the commented line and ``self.x = self.x``
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_calculations(self):
+            y = tests.test_calculator.a_random_number()
+
+            operations = {
+                'add': '+',
+                'subtract': '-',
+                'divide': '/',
+                'multiply': '*',
+            }
+
+            for operation in operations:
+                with self.subTest(operation=operation):
+                    response = self.client.post(
+                        '/calculate',
+                        data={
+                            'first_input': self.x,
+                            'second_input': y,
+                            'operation': operation,
+                        }
+                    )
+                    self.assertEqual(response.status_code, 200)
+
+                    function = src.calculator.__getattribute__(
+                        operation
+                    )
+                    result = function(self.x, y)
+                    self.assertEqual(
+                        response.data.decode(),
+                        (
+                            f'<h2>{self.x} {operations[operation]} {y} '
+                            f'= {result}</h2>'
+                        )
+                    )
+
+        def test_website_handling_zero_division_error(self):
+
+* I use the ``Rename Symbol`` feature to change ``x`` to ``self.x`` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
+
+  .. code-block:: python
+    :lineno-start: 54
+    :emphasize-lines: 2, 6, 14
+
+        def test_website_handling_zero_division_error(self):
+            self.x = tests.test_calculator.a_random_number()
+            response = self.client.post(
+                '/calculate',
+                data={
+                    'first_input': self.x,
+                    'second_input': 0,
+                    'operation': 'divide',
+                }
+            )
+            self.assertEqual(
+                response.data.decode(),
+                (
+                    f'<h2>{self.x} / 0.0 = '
+                    'brmph?! I cannot divide by 0. Try again...</h2>'
+                )
+            )
+
+  still green
+
+* I remove ``self.x = tests.test_calculator.a_random_number()``
+
+  .. code-block:: python
+    :lineno-start: 54
+
+        def test_website_handling_zero_division_error(self):
+            response = self.client.post(
+                '/calculate',
+                data={
+                    'first_input': self.x,
+                    'second_input': 0,
+                    'operation': 'divide',
+                }
+            )
+            self.assertEqual(
+                response.data.decode(),
+                (
+                    f'<h2>{self.x} / 0.0 = '
+                    'brmph?! I cannot divide by 0. Try again...</h2>'
+                )
+            )
+
+
+    # Exceptions seen
+
+----
+
+*********************************************************************************
+test_calculator_sends_message_when_inputs_are_not_numbers
+*********************************************************************************
+
+
+
 
 ----
 
