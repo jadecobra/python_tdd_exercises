@@ -148,3 +148,38 @@ the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a cal
 .. literalinclude:: calculator/tests/test_calculator_dictionaries.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+how to make a calculator 9: tests
+*********************************************************************************
+
+the code in ``calculator/tests/test_calculator_website.py`` from :ref:`how to make a calculator 9`
+
+.. literalinclude:: calculator/tests/test_calculator_website.py
+  :language: python
+  :linenos:
+
+the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 9`
+
+.. literalinclude:: calculator/tests/test_calculator_9.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
+how to make a calculator 9: solutions
+*********************************************************************************
+
+the code in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 9`
+
+.. literalinclude:: calculator/calculator_website.py
+  :language: python
+  :linenos:
+
+
+the code in ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
+
+.. literalinclude:: calculator/website.py
+  :language: python
+  :linenos:
