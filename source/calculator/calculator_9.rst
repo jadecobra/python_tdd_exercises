@@ -2118,10 +2118,9 @@ review
 
 I ran tests to show that
 
-* I can use `Flask`_ with TDD
-* I can make routes, handle forms, and integrate the existing calculator
-* Error messages from the calculator appear nicely in the browser
-* The website reuses all the hard work from chapters 1-8
+* I can use `Flask`_ with `Test Driven Developments`_
+* I can make routes, handle forms, and use the existing :ref:`calculator<how to make a calculator>`
+* Error messages from the calculator appear in the browser
 
 *************************************************************************************
 code from the chapter
