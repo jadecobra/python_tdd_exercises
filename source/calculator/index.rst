@@ -36,6 +36,7 @@ These chapters cover making a calculator from the different things learned in ot
   make a calculator 6<calculator_6>
   make a calculator 7<calculator_7>
   make a calculator 8<calculator_8>
+  make a calculator 9<calculator_9>
 
 *************************************************************************************
 what is next?

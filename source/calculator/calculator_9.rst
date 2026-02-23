@@ -1930,8 +1930,158 @@ good
 test_calculator_sends_message_when_inputs_are_not_numbers
 *********************************************************************************
 
+time to fix the problem with the second input in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
+* I open ``test_calculator.py`` from the tests_ folder
 
+* I make a :ref:`variable<what is a variable?>` for the bad inputs in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 2-10
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            bad_inputs = (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            )
+            for bad_input in (
+
+  the test is still green
+
+* I change the first :ref:`for loop<what is a for loop?>`
+
+  .. code-block:: python
+    :lineno-start: 146
+    :emphasize-lines: 1-10
+
+            # for bad_input in (
+            #     None,
+            #     True, False,
+            #     str(), 'text',
+            #     tuple(), (0, 1, 2, 'n'),
+            #     list(), [0, 1, 2, 'n'],
+            #     set(), {0, 1, 2, 'n'},
+            #     dict(), {'key': 'value'},
+            # ):
+            for bad_input in bad_inputs:
+
+  still green
+
+* I add another :ref:`for loop<what is a for loop?>` and move everything after it to the right
+
+  .. code-block:: python
+    :lineno-start: 155
+
+            for bad_input in bad_inputs:
+                for second_input in bad_inputs:
+                    for operation in self.calculator_tests:
+                        with self.subTest(
+                            operation=operation,
+                            bad_input=bad_input,
+                        ):
+                            self.assertEqual(
+                                src.calculator.__getattribute__(operation)(
+                                    bad_input, a_random_number()
+                                ),
+                                'brmph?! Numbers only. Try again...'
+                            )
+
+  green
+
+* I add ``second_input`` to the `subTest method`_
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 4
+
+                        with self.subTest(
+                            operation=operation,
+                            bad_input=bad_input,
+                            y=second_input,
+                        ):
+
+  still green
+
+* I change the second input in the call to the :ref:`calculator functions<how to make a calculator>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 163
+    :emphasize-lines: 3-4
+
+                            self.assertEqual(
+                                src.calculator.__getattribute__(operation)(
+                                    # bad_input, a_random_number()
+                                    bad_input, second_input
+                                ),
+                                'brmph?! Numbers only. Try again...'
+                            )
+
+  the test is still green
+
+* I change the expectation to make sure the test still works
+
+  .. code-block:: python
+    :lineno-start: 163
+    :emphasize-lines: 6-7
+
+                            self.assertEqual(
+                                src.calculator.__getattribute__(operation)(
+                                    # bad_input, a_random_number()
+                                    bad_input, second_input
+                                ),
+                                # 'brmph?! Numbers only. Try again...'
+                                'BOOM!!!'
+                            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
+
+  for 676 failures that are all the ways the bad inputs can be sent with the operations, it works
+
+* I change the expectation back, and the test goes back to green
+
+* I remove the commented lines
+
+* I use the ``Rename Symbol`` feature to change ``bad_input`` to ``x`` and ``second_input`` to ``y``
+
+  .. code-block::
+    :lineno-start: 136
+    :emphasize-lines: 11-12, 16, 20
+
+        def test_calculator_sends_message_when_input_is_not_a_number(self):
+            bad_inputs = (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            )
+            for x in bad_inputs:
+                for y in bad_inputs:
+                    for operation in self.calculator_tests:
+                        with self.subTest(
+                            operation=operation,
+                            x=x, y=y,
+                        ):
+                            self.assertEqual(
+                                src.calculator.__getattribute__(operation)(
+                                    x, y
+                                ),
+                                'brmph?! Numbers only. Try again...'
+                            )
+
+        def test_calculator_functions(self):
 
 ----
 
@@ -1939,14 +2089,26 @@ test_calculator_sends_message_when_inputs_are_not_numbers
 close the project
 *********************************************************************************
 
-* I close all files
-* I click in the terminal_, then use :kbd:`q` to leave the tests
-* I `change directory`_ to the parent
+* I close ``test_calculator.py``, ``test_calculator_website.py``, ``calculator.py``, ``website.py`` and ``index.html`` in the :ref:`editor<2 editors>`
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
-  .. code-block:: shell
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+
 
 ----
 
