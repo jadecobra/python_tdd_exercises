@@ -2161,7 +2161,7 @@ I ran tests to show that
 
 * I can can make a website with `Flask`_
 * I can make routes, handle forms, and use the :ref:`calculator program<how to make a calculator>` I made earlier
-* Error messages from the calculator show up in the browser
+* The website shows error message from the :ref:`calculator<how to make a calculator>` when the user tries to divide by ``0``
 * The website makes sure the user can only use numbers
 * My tests make sure that if someone uses the program_ and does not send numbers, they get a message
 
