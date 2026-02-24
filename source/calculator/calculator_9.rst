@@ -1998,144 +1998,131 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 6-9
 
-                list(), [0, 1, 2, 'n'],
-                set(), {0, 1, 2, 'n'},
-                dict(), {'key': 'value'},
-            )
-            for bad_input in (
+    def check_input(function):
+        def wrapper(first_input, second_input):
+            if isinstance(
+                first_input,
+                (dict, set, list, tuple, str, bool)
+            ) or isinstance(
+                second_input,
+                (dict, set, list, tuple, str, bool)
+            ) or first_input is None:
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='add', bad_input=None) ... - TypeError: unsupported operand type(s) for +: 'float' and 'NoneType'
+    SUBFAILED(operation='subtract', bad_input=None) ... - TypeError: unsupported operand type(s) for -: 'float' and 'NoneType'
+    SUBFAILED(operation='multiply', bad_input=None) ... - TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
+    SUBFAILED(operation='divide', bad_input=None) ... - TypeError: unsupported operand type(s) for /: 'float' and 'NoneType'
+
+* I add a condition for when the second input is :ref:`None<what is None?>` to the :ref:`if statement<if statements>` in ``check_input`` in ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 9
+
+    def check_input(function):
+        def wrapper(first_input, second_input):
+            if isinstance(
+                first_input,
+                (dict, set, list, tuple, str, bool)
+            ) or isinstance(
+                second_input,
+                (dict, set, list, tuple, str, bool)
+            ) or first_input is None or second_input is None:
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I make a :ref:`variable<what is a variable?>` for the bad inputs, to remove repetition
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def check_input(function):
+        def wrapper(first_input, second_input):
+            bad_inputs = (dict, set, list, tuple, str, bool)
+            if isinstance(
+
+* I use the new :ref:`variable<what is a variable?>` in the :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6, 8-9
+
+    def check_input(function):
+        def wrapper(first_input, second_input):
+            bad_inputs = (dict, set, list, tuple, str, bool)
+            if isinstance(
+                first_input, bad_inputs
+                # (dict, set, list, tuple, str, bool)
+            ) or isinstance(
+                second_input, bad_inputs
+                # (dict, set, list, tuple, str, bool)
+            ) or first_input is None or second_input is None:
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
 
   the test is still green
 
-* I change the first :ref:`for loop<what is a for loop?>`
+* I add a :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
-    :lineno-start: 146
-    :emphasize-lines: 1-10
+    :lineno-start: 11
+    :emphasize-lines: 2-8
 
-            # for bad_input in (
-            #     None,
-            #     True, False,
-            #     str(), 'text',
-            #     tuple(), (0, 1, 2, 'n'),
-            #     list(), [0, 1, 2, 'n'],
-            #     set(), {0, 1, 2, 'n'},
-            #     dict(), {'key': 'value'},
-            # ):
-            for bad_input in bad_inputs:
+                return 'brmph?! Numbers only. Try again...'
+            for argument in (first_input, second_input):
+                if (
+                    isinstance(argument, bad_inputs)
+                    or
+                    argument is None
+                ):
+                    return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
 
   still green
 
-* I add another :ref:`for loop<what is a for loop?>` and move everything after it to the right
+* I remove the other :ref:`if statements`
 
   .. code-block:: python
-    :lineno-start: 155
+    :linenos:
 
-            for bad_input in bad_inputs:
-                for second_input in bad_inputs:
-                    for operation in self.calculator_tests:
-                        with self.subTest(
-                            operation=operation,
-                            bad_input=bad_input,
-                        ):
-                            self.assertEqual(
-                                src.calculator.__getattribute__(operation)(
-                                    bad_input, a_random_number()
-                                ),
-                                'brmph?! Numbers only. Try again...'
-                            )
+    def check_input(function):
+        def wrapper(first_input, second_input):
+            bad_inputs = (dict, set, list, tuple, str, bool)
+            for argument in (first_input, second_input):
+                if (
+                    isinstance(argument, bad_inputs)
+                    or
+                    argument is None
+                ):
+                    return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
 
   green
 
-* I add ``second_input`` to the `subTest method`_
-
-  .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 4
-
-                        with self.subTest(
-                            operation=operation,
-                            bad_input=bad_input,
-                            y=second_input,
-                        ):
-
-  still green
-
-* I change the second input in the call to the :ref:`calculator functions<how to make a calculator>` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 163
-    :emphasize-lines: 3-4
-
-                            self.assertEqual(
-                                src.calculator.__getattribute__(operation)(
-                                    # bad_input, a_random_number()
-                                    bad_input, second_input
-                                ),
-                                'brmph?! Numbers only. Try again...'
-                            )
-
-  the test is still green
-
-* I change the expectation to make sure the test still works
-
-  .. code-block:: python
-    :lineno-start: 163
-    :emphasize-lines: 6-7
-
-                            self.assertEqual(
-                                src.calculator.__getattribute__(operation)(
-                                    # bad_input, a_random_number()
-                                    bad_input, second_input
-                                ),
-                                # 'brmph?! Numbers only. Try again...'
-                                'BOOM!!!'
-                            )
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
-
-  for 676 failures that are all the ways the bad inputs can be sent with the operations, it works
-
-* I change the expectation back, and the test goes back to green
-
-* I remove the commented lines
-
-* I use the ``Rename Symbol`` feature to change ``bad_input`` to ``x`` and ``second_input`` to ``y``
-
-  .. code-block::
-    :lineno-start: 136
-    :emphasize-lines: 11-12, 16, 20
-
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
-            bad_inputs = (
-                None,
-                True, False,
-                str(), 'text',
-                tuple(), (0, 1, 2, 'n'),
-                list(), [0, 1, 2, 'n'],
-                set(), {0, 1, 2, 'n'},
-                dict(), {'key': 'value'},
-            )
-            for x in bad_inputs:
-                for y in bad_inputs:
-                    for operation in self.calculator_tests:
-                        with self.subTest(
-                            operation=operation,
-                            x=x, y=y,
-                        ):
-                            self.assertEqual(
-                                src.calculator.__getattribute__(operation)(
-                                    x, y
-                                ),
-                                'brmph?! Numbers only. Try again...'
-                            )
-
-        def test_calculator_functions(self):
 
 ----
 
@@ -2172,9 +2159,11 @@ review
 
 I ran tests to show that
 
-* I can use `Flask`_ with `Test Driven Developments`_
-* I can make routes, handle forms, and use the existing :ref:`calculator<how to make a calculator>`
-* Error messages from the calculator appear in the browser
+* I can can make a website with `Flask`_
+* I can make routes, handle forms, and use the :ref:`calculator program<how to make a calculator>` I made earlier
+* Error messages from the calculator show up in the browser
+* The website makes sure the user can only use numbers
+* My tests make sure that if someone uses the program_ and does not send numbers, they get a message
 
 *************************************************************************************
 code from the chapter
@@ -2188,11 +2177,27 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you know
+Your magic powers are growing. You know
 
-* how to make a test driven development environment
-* how to build a full calculator with TDD
-* how to turn it into a website with Flask
+* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
+* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
+* :ref:`how to make functions<what is a function?>`
+* :ref:`how to pass values from tests to functions<how to pass values>`
+* :ref:`what is None and NOT None<what is None?>`
+* :ref:`what is True and False in Python<what are booleans?>`
+* :ref:`how to write programs that make decisions<truth table>`
+* :ref:`how to make a calculator<how to make a calculator>`
+* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
+* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
+* :ref:`how to raise TypeError<TypeError>`
+* :ref:`what you can do with Lists<lists>`
+* :ref:`how to use list comprehensions<list comprehensions>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`what you can do with dictionaries<dictionaries>`
+* :ref:`what you can do with classes<what is a class?>`
+* :ref:`how to make a website with flask<how to make a calculator 9>`
+
+:ref:`Would you like to see another way to make a webesite for the Calculator?<how to make a calculator 10>`
 
 -----
 
