@@ -22,7 +22,7 @@ how to make a calculator 6: tests
 
 the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 6`
 
-.. literalinclude:: calculator/tests/test_calculator_list_comprehensions.py
+.. literalinclude:: calculator/tests/test_calculator_6.py
   :language: python
   :linenos:
 
@@ -32,7 +32,7 @@ how to make a calculator 6: solutions
 
 the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 6`
 
-.. literalinclude:: calculator/solutions/calculator_list_comprehensions.py
+.. literalinclude:: calculator/solutions/calculator_6.py
   :language: python
   :linenos:
 

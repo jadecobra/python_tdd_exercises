@@ -21,6 +21,6 @@ how to make a calculator 7: tests
 
 the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 7`
 
-.. literalinclude:: calculator/tests/test_calculator_dictionaries.py
+.. literalinclude:: calculator/tests/test_calculator_8.py
   :language: python
   :linenos:

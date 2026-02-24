@@ -21,7 +21,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/calculator/tests/test_calculator_streamlit.py
+.. literalinclude:: ../code/calculator/tests/test_calculator_10.py
   :language: python
   :linenos:
 
@@ -82,7 +82,7 @@ I open ``tests/test_calculator_streamlit.py`` and write
       def test_streamlit_can_be_imported(self):
           self.assertIsNotNone(st)
 
-the terminal shows :ref:`ModuleNotFoundError`
+the terminal shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
 ----
 
@@ -115,7 +115,7 @@ I add a test for the app itself
           from src.streamlit_app import main
           self.assertTrue(callable(main))
 
-the terminal shows :ref:`ModuleNotFoundError`
+the terminal shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
 ----
 
@@ -286,7 +286,7 @@ This is the real power of Test-Driven Development.
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<streamlit: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: tests>`
 
 ----
 
@@ -301,8 +301,6 @@ You now know how to:
 * Build programs with Test-Driven Development
 * Turn them into Flask websites
 * Turn them into beautiful Streamlit apps
-
-:ref:`Would you like to deploy your Streamlit calculator to the internet for free so anyone can use it?<how to deploy streamlit app>`
 
 -----
 

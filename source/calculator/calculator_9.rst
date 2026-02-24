@@ -2126,7 +2126,7 @@ I ran tests to show that
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 9: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 9: tests>`
 
 ----
 
@@ -2139,8 +2139,6 @@ you know
 * how to make a test driven development environment
 * how to build a full calculator with TDD
 * how to turn it into a website with Flask
-
-:ref:`Would you like to deploy the website?<how to deploy a flask app>` or add a database for calculation history?
 
 -----
 

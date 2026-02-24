@@ -18,7 +18,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/calculator/tests/test_calculator_list_comprehensions.py
+.. literalinclude:: ../code/calculator/tests/test_calculator_6.py
   :language: python
   :linenos:
 

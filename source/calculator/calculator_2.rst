@@ -18,7 +18,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/calculator/tests/test_calculator_exceptions_tests.py
+.. literalinclude:: ../code/calculator/tests/test_calculator_2.py
   :language: python
   :linenos:
 

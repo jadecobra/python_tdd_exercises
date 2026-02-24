@@ -25,7 +25,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../../code/calculator/tests/test_calculator.py
+.. literalinclude:: ../../code/calculator/tests/test_calculator_1.py
   :language: python
   :linenos:
 
