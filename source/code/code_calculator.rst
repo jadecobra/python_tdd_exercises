@@ -173,14 +173,14 @@ how to make a calculator 9: solutions
 
 the code in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 9`
 
-.. literalinclude:: calculator/calculator_9.py
+.. literalinclude:: calculator/solutions/calculator_9.py
   :language: python
   :linenos:
 
 
 the code in ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
 
-.. literalinclude:: calculator/website.py
+.. literalinclude:: calculator/solutions/website.py
   :language: python
   :linenos:
 
@@ -202,13 +202,13 @@ how to make a calculator 10: solutions
 
 the code in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 9`
 
-.. literalinclude:: calculator/calculator_10.py
+.. literalinclude:: calculator/solutions/calculator_10.py
   :language: python
   :linenos:
 
 
 the code in ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
 
-.. literalinclude:: calculator/website.py
+.. literalinclude:: calculator/solutions/website.py
   :language: python
   :linenos:

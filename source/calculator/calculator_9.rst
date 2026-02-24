@@ -1932,20 +1932,74 @@ test_calculator_sends_message_when_inputs_are_not_numbers
 
 time to fix the problem with the second input in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
-* I open ``test_calculator.py`` from the tests_ folder
+----
 
-* I make a :ref:`variable<what is a variable?>` for the bad inputs in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I open ``test_calculator.py`` from the ``tests`` folder_
+
+* I add another :ref:`assertion<what is an assertion?>` where the second input is not a number and the first input is a number
 
   .. code-block:: python
     :lineno-start: 136
-    :emphasize-lines: 2-10
+    :emphasize-lines: 22-27
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
-            bad_inputs = (
+            for bad_input in (
                 None,
                 True, False,
                 str(), 'text',
                 tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                for operation in self.calculator_tests:
+                    with self.subTest(
+                        operation=operation,
+                        bad_input=bad_input,
+                    ):
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                bad_input, a_random_number()
+                            ),
+                            'brmph?! Numbers only. Try again...'
+                        )
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                a_random_number(), bad_input
+                            ),
+                            'brmph?! Numbers only. Try again...'
+                        )
+
+        def test_calculator_functions(self):
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: unsupported operand type(s) for /: 'float' and 'dict
+
+  for the 52 sub tests where the first input is a number and the second input is not a number
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a condition to the :ref:`if statement<if statements>` in the ``check_input`` :ref:`decorator function<what is a decorator function?>` in ``calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
                 list(), [0, 1, 2, 'n'],
                 set(), {0, 1, 2, 'n'},
                 dict(), {'key': 'value'},

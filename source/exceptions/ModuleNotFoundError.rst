@@ -5,7 +5,6 @@
 .. include:: ../links.rst
 
 .. _ModuleNotFoundError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
-.. _sys module: https://docs.python.org/3/library/sys.html#module-sys
 .. _sys.path: https://docs.python.org/3/library/sys.html#sys.path
 
 #################################################################################

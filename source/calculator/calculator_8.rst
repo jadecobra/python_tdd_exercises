@@ -590,7 +590,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
   .. code-block:: python
     :lineno-start: 200
-    :emphasize-lines: 8-9
+    :emphasize-lines: 5-6
 
                     self.assertEqual(
                         src.calculator.__getattribute__(operation)(
@@ -1149,7 +1149,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
   .. code-block:: python
     :lineno-start: 30
-    :emphasize-lines:
+    :emphasize-lines: 5-6
 
             self.calculator_tests = {
                 'add': x+y,

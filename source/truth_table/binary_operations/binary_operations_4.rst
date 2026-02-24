@@ -586,7 +586,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`Tr
 
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
-  - the second input, if the first input is :ref:`True<test_what_is_true>
+  - the second input, if the first input is :ref:`True<test_what_is_true>`
 
 * I add the next case to :ref:`test_logical_equality` in ``test_truth_table.py``
 

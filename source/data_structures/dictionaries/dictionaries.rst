@@ -1337,7 +1337,7 @@ the terminal_ shows :ref:`TypeError`
   the :ref:`dictionary<what is a dictionary?>` did not change
 
 * I remove the last line I added
-* then change the call to fromkeys_ to use the `dict class`_
+* then change the call to fromkeys_ to use the :ref:`dict class<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 110
@@ -1418,7 +1418,7 @@ the terminal_ shows :ref:`TypeError`
                 {0: 'default', 1: 'default'}
             )
 
-  the test is green again. This is like a dict_ comprehension because it made a :ref:`dictionary<what is a dictionary?>` using the items from the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`
+  the test is green again. This is like a dict comprehension because it made a :ref:`dictionary<what is a dictionary?>` using the items from the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`
 
 * I change the name of the test
 
