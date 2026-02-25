@@ -15,6 +15,18 @@ I can use the ``__getattribute__`` :ref:`method<what is a function?>` that comes
 ----
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/calculator/tests/test_calculator_8.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 open the project
 *********************************************************************************
 

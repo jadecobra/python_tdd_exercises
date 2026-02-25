@@ -200,14 +200,14 @@ the code in ``calculator/tests/test_calculator_website.py`` from :ref:`how to ma
 how to make a calculator 10: solutions
 *********************************************************************************
 
-the code in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 9`
+the code in ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10`
 
-.. literalinclude:: calculator/solutions/calculator_10.py
+.. literalinclude:: calculator/solutions/streamlit_calculator.py
   :language: python
   :linenos:
 
 
-the code in ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
+the code in ``calculator/src/website.py`` from :ref:`how to make a calculator 10`
 
 .. literalinclude:: calculator/solutions/website.py
   :language: python

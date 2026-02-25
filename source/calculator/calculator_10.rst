@@ -4,14 +4,15 @@
 
 .. include:: ../links.rst
 
+.. _streamlit: https://streamlit.io
+.. _AppTest: docs.streamlit.io/develop/api-reference/app-testing#the-apptest-class
+.. _from_file method: docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest#apptestfrom_file
+
 #################################################################################
 how to make a calculator 10
 #################################################################################
 
-I have a solid calculator from chapters 1–8 and a Flask website from chapter 9.
-Now I want to make it **beautiful and ridiculously easy** to use by turning it into a modern web app with **Streamlit**.
-
-Streamlit lets me build professional-looking web apps with almost no extra code.
+I want to try another way to make a website for the :ref:`Calculator<how to make a calculator>`, the last one is not beautiful yet. I test Streamlit_ which lets me build professional-looking web applications with almost no extra code.
 
 ----
 
@@ -38,59 +39,51 @@ open the project
 
     cd calculator
 
-* I install Streamlit
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    uv add streamlit
-
-* I use ``pytest-watcher`` to run the tests
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    uv run pytest-watcher . --now
-
-* I create a new test file for the Streamlit version
+* I make a new test file_ for the Streamlit_ website
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     touch tests/test_calculator_streamlit.py
 
-----
+* I add streamlit_ to the ``requirements.txt`` file_
 
-*********************************************************************************
-test_streamlit_installed
-*********************************************************************************
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
+    echo "streamlit" >> requirements.txt
 
-I open ``tests/test_calculator_streamlit.py`` and write
+  Streamlit_ is a Python_ library that is used for making websites, it is not part of `The Python Standard Library`_
 
-.. code-block:: python
-  :linenos:
+* I install the `Python packages`_ I gave in the requirements file_
 
-  import unittest
-  import streamlit as st
+  .. code-block:: python
+    :emphasize-lines: 1
 
-  class TestCalculatorStreamlit(unittest.TestCase):
+    uv add --requirement requirements.txt
 
-      def test_streamlit_can_be_imported(self):
-          self.assertIsNotNone(st)
+  the terminal shows it installed the `Python packages`_
 
-the terminal shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+* I use ``pytest-watcher`` to run the tests
 
-----
+  .. code-block:: shell
+    :emphasize-lines: 1
+    :emphasize-text: .
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
+    uv run pytest-watcher . --now
 
-I already ran ``uv add streamlit``, so the test passes.
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    rootdir: .../pumping_python/calculator
+    configfile: pyproject.toml
+    collected 8 items
+
+    tests/test_calculator.py .....                                [ 62%]
+    tests/test_calculator_website.py ...                          [100%]
+
+    ======================== 5 passed in X.YZs =========================
 
 ----
 
@@ -98,22 +91,428 @@ I already ran ``uv add streamlit``, so the test passes.
 test_streamlit_calculator_app
 *********************************************************************************
 
+----
+
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
 
-I add a test for the app itself
+----
 
-.. code-block:: python
-  :lineno-start: 8
-  :emphasize-lines: 5-12
+* I open ``test_calculator_streamlit.py`` from the ``tests`` folder_ in the :ref:`editor<2 editors>`
 
-      def test_streamlit_can_be_imported(self):
-          ...
+* I add a new test in ``test_calculator_streamlit.py``
 
-      def test_streamlit_calculator_app(self):
-          from src.streamlit_app import main
-          self.assertTrue(callable(main))
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1, 4, 6-9
+
+    import unittest
+
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+        def test_streamlit_calculator(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'streamlit' is not defined
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 12-13
+    :emphasize-text: NameError
+
+    import unittest
+
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+        def test_streamlit_calculator(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+
+
+    # Exceptions seen
+    # NameError
+
+* I add an `import statement`_ at the top of the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import streamlit
+    import unittest
+
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'streamlit' has no attribute 'testing'
+
+* I add more to the `import statement`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import streamlit.testing
+    import unittest
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'streamlit.testing' has no attribute 'v1'
+
+* I add ``v1`` to the `import statement`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import streamlit.testing.v1
+    import unittest
+
+  the test passes
+
+  I am using ``streamlit.testing.v1.AppTest.from_file`` to test the website made with streamlit_
+
+  - AppTest_ is a :ref:`class<what is a class?>` from ``v1`` in ``testing`` in the streamlit_ library
+  - ``.from_file`` uses the `from_file method`_ to run the :ref:`Python module<what is a module?>` that I use to make the application
+
+* I add more to the test to see what happens when I try to run the application even though ``src/streamlit_calculator.py`` is empty
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5
+
+        def test_streamlit_calculator(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+
+  the test is still green
+
+* I add an :ref:`assertion<what is an assertion?>` for the title of the application
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6
+
+        def test_streamlit_calculator(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+            self.assertEqual(tester.title, 'Calculator')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: ElementList() != 'Calculator'
+
+* I open ``streamlit_calculator.py``
+* I add code to make a streamlit_ application
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1, 4-5
+
+    import streamlit
+
+
+    def main():
+        streamlit.title('Calculator')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: ElementList() != 'Calculator'
+
+* I add an :ref:`if statement<if statements>` to run the ``main`` :ref:`function<what is a function?>` when the :ref:`module<what is a module?>` gets called as a script
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 5-6
+
+    def main():
+        streamlit.title('Calculator')
+
+
+    if __name__ == '__main__':
+        main()
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: ElementList(_list=[Title(tag='h1')]) != 'Calculator'
+
+  - when I import a :ref:`module<what is a module?>` nothing happens until I call or use the things in it
+  - ``if __name__ == '__main__':`` calls ``main()`` only when ``src/streamlit_calculator.py`` gets called like a script for example ``python3 src/streamlit_calculator.py``
+  - I could write it without the :ref:`condition<if statements>` which can lead to things I do not want when I import the file. It is better to use the :ref:`condition<if statements>`
+  - it looks like ``ElementList(_list=[Title(tag='h1')])`` has a :ref:`list<what is a list?>` and I know how to work with :ref:`lists<what is a list?>`
+
+* I change the :ref:`assertion<what is an assertion?>` in ``test_calculator_streamlit.py``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 1
+
+            self.assertEqual(tester.title[0], 'Calculator')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Title(tag='h1') != 'Calculator'
+
+* I use the ``value`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``Title`` :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 1
+
+            self.assertEqual(tester.title[0].value, 'Calculator')
+
+  the test passes
+
+Time to run the app
+
+----
+
+*********************************************************************************
+how to view the streamlit calculator website
+*********************************************************************************
+
+* I open a new terminal_ then use uv_
+
+  .. code-block:: python
+    :emphasize-lines:
+
+    uv run streamlit run src/streamlit_calculator.py
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+
+
+      You can now view your Streamlit app in your browser.
+
+      Local URL: http://localhost:8501
+      Network URL: http://ABC.DEF.GHI.JKL:8501
+      External URL: http://MNO.PQR.STU.VWX:8501
+
+  it might also show a dialog box like this, and I click on ``Open in Browser``
+
+  .. image:: /_static/calculator/streamlit_dialog.png
+    :width: 600
+    :align: center
+    :alt: Confirm you want to view Streamlit app in browser
+
+  or I use :kbd:`ctrl/option` on the keyboard and click on ``http://localhost:8501`` with the mouse to open the browser and it shows
+
+  .. image:: /_static/calculator/calculator_streamlit_title.png
+    :width: 600
+    :align: center
+    :alt: Calculator Streamlit App with Title
+
+  Success!
+
+  .. danger::
+
+* I click the 3 dots by ``Deploy`` on the right hand side
+
+  .. image:: /_static/calculator/streamlit_deploy_menu.png
+    :width: 600
+    :align: center
+    :alt: Streamlit Deploy Menu
+
+* then I click on ``Settings`` then the checkmark by ``Run on save`` to make sure the website changes as I make changes to the code
+
+  .. image:: /_static/calculator/streamlit_deploy_settings.png
+    :width: 600
+    :align: center
+    :alt: Streamlit Deploy Settings
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+
+
+
+----
+
+----
+
+----
+
+----
+
+----
+
+  .. code-block:: python
+
+    import streamlit
+
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.header('BOOM!!!')
+
+
+    if __name__ == '__main__':
+        main()
+
+
+  .. code-block:: python
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+        def test_streamlit_calculator(self):
+            self.maxDiff = None
+            tester = streamlit.testing.v1.AppTest.from_file('src/streamlit_calculator.py')
+            tester.run()
+            self.assertEqual(
+                dir(tester),
+                [
+                    '__class__',
+                    '__delattr__',
+                    '__dict__',
+                    '__dir__',
+                    '__doc__',
+                    '__eq__',
+                    '__firstlineno__',
+                    '__format__',
+                    '__ge__',
+                    '__getattribute__',
+                    '__getitem__',
+                    '__getstate__',
+                    '__gt__',
+                    '__hash__',
+                    '__init__',
+                    '__init_subclass__',
+                    '__iter__',
+                    '__le__',
+                    '__len__',
+                    '__lt__',
+                    '__module__',
+                    '__ne__',
+                    '__new__',
+                    '__reduce__',
+                    '__reduce_ex__',
+                    '__repr__',
+                    '__setattr__',
+                    '__sizeof__',
+                    '__static_attributes__',
+                    '__str__',
+                    '__subclasshook__',
+                    '__weakref__',
+                    '_from_string',
+                    '_page_hash',
+                    '_run',
+                    '_script_path',
+                    '_tree',
+                    'args',
+                    'button',
+                    'button_group',
+                    'caption',
+                    'chat_input',
+                    'chat_message',
+                    'checkbox',
+                    'code',
+                    'color_picker',
+                    'columns',
+                    'dataframe',
+                    'date_input',
+                    'datetime_input',
+                    'default_timeout',
+                    'divider',
+                    'error',
+                    'exception',
+                    'expander',
+                    'from_file',
+                    'from_function',
+                    'from_string',
+                    'get',
+                    'header',
+                    'info',
+                    'json',
+                    'kwargs',
+                    'latex',
+                    'main',
+                    'markdown',
+                    'metric',
+                    'multiselect',
+                    'number_input',
+                    'query_params',
+                    'radio',
+                    'run',
+                    'secrets',
+                    'select_slider',
+                    'selectbox',
+                    'session_state',
+                    'sidebar',
+                    'slider',
+                    'status',
+                    'subheader',
+                    'success',
+                    'switch_page',
+                    'table',
+                    'tabs',
+                    'text',
+                    'text_area',
+                    'text_input',
+                    'time_input',
+                    'title',
+                    'toast',
+                    'toggle',
+                    'warning'
+                ]
+            )
+            self.assertEqual(
+                tester.title[0].value,
+                'Calculator'
+            )
+
+
+
+    .. code-block:: python
+      :lineno-start: 8
+      :emphasize-lines: 5-12
+
+          def test_streamlit_can_be_imported(self):
+              ...
+
+          def test_streamlit_calculator_app(self):
+              from src.streamlit_app import main
+              self.assertTrue(callable(main))
 
 the terminal shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 

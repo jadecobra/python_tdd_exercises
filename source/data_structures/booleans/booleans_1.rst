@@ -175,7 +175,7 @@ start the project
 
     rm main.py
 
-* I install the Python packages I gave in the requirements file_
+* I install the `Python packages`_ I gave in the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1

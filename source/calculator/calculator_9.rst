@@ -76,7 +76,7 @@ open the project
 
   Flask_ is a Python_ library that is used for making websites, it is not part of `The Python Standard Library`_
 
-* I install the Python packages I gave in the requirements file_
+* I install the `Python packages`_ I gave in the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -375,14 +375,14 @@ how to view the website
      * Debugger is active!
      * Debugger PIN: ABC-DEF-GHI
 
-* it might also show a dialog box like this, and I click on ``Open in Browser``
+  it might also show a dialog box like this, and I click on ``Open in Browser``
 
   .. image:: /_static/calculator/flask_dialog.png
     :width: 600
     :align: center
-    :alt: Confirm you want to run Flask Development Server
+    :alt: Confirm you want to view Flask Development Server
 
-  or I use :kbd:`ctrl` on the keyboard and click on ``http://127.0.0.1:5000`` with the mouse to open the browser and it shows an empty page. Success!
+  or I use :kbd:`ctrl/option` on the keyboard and click on ``http://127.0.0.1:5000`` with the mouse to open the browser and it shows an empty page. Success!
 
 * I add another :ref:`assertion<what is an assertion?>` for text from the website to :ref:`test_home_page` in ``test_calculator_website.py``
 
@@ -1945,24 +1945,9 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 * I add another :ref:`assertion<what is an assertion?>` where the second input is not a number and the first input is a number
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 22-27
+    :lineno-start: 151
+    :emphasize-lines: 7-12
 
-        def test_calculator_sends_message_when_input_is_not_a_number(self):
-            for bad_input in (
-                None,
-                True, False,
-                str(), 'text',
-                tuple(), (0, 1, 2, 'n'),
-                list(), [0, 1, 2, 'n'],
-                set(), {0, 1, 2, 'n'},
-                dict(), {'key': 'value'},
-            ):
-                for operation in self.calculator_tests:
-                    with self.subTest(
-                        operation=operation,
-                        bad_input=bad_input,
-                    ):
                         self.assertEqual(
                             src.calculator.__getattribute__(operation)(
                                 bad_input, a_random_number()
@@ -2051,7 +2036,43 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 
 ----
 
-* I make a :ref:`variable<what is a variable?>` for the bad inputs, to remove repetition
+* I change the name of :ref:`test_calculator_sends_message_when_input_is_not_a_number` to :ref:`test_calculator_sends_message_when_inputs_are_not_numbers` in ``test_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 1
+
+        def test_calculator_sends_message_when_inputs_are_not_numbers(self):
+            for bad_input in (
+                None,
+                True, False,
+                str(), 'text',
+                tuple(), (0, 1, 2, 'n'),
+                list(), [0, 1, 2, 'n'],
+                set(), {0, 1, 2, 'n'},
+                dict(), {'key': 'value'},
+            ):
+                for operation in self.calculator_tests:
+                    with self.subTest(
+                        operation=operation,
+                        bad_input=bad_input,
+                    ):
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                bad_input, a_random_number()
+                            ),
+                            'brmph?! Numbers only. Try again...'
+                        )
+                        self.assertEqual(
+                            src.calculator.__getattribute__(operation)(
+                                a_random_number(), bad_input
+                            ),
+                            'brmph?! Numbers only. Try again...'
+                        )
+
+        def test_calculator_functions(self):
+
+* I make a :ref:`variable<what is a variable?>` for the bad inputs, to remove repetition in ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -2197,7 +2218,7 @@ Your magic powers are growing. You know
 * :ref:`what you can do with classes<what is a class?>`
 * :ref:`how to make a website with flask<how to make a calculator 9>`
 
-:ref:`Would you like to see another way to make a webesite for the Calculator?<how to make a calculator 10>`
+:ref:`Would you like to see another way to make a website for the Calculator?<how to make a calculator 10>`
 
 -----
 

@@ -13,6 +13,18 @@ I want to test the :ref:`calculator<how to make a calculator>` with a :ref:`dict
 ----
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/calculator/tests/test_calculator_7.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 open the project
 *********************************************************************************
 
@@ -2441,7 +2453,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
   the test is still green
 
-I think it is time to take nap. That was a lot. 
+I think it is time to take nap. That was a lot.
 
 ----
 
