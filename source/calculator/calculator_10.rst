@@ -44,7 +44,7 @@ open the project
   .. code-block:: shell
     :emphasize-lines: 1
 
-    touch tests/test_calculator_streamlit.py
+    touch tests/test_streamlit_calculator.py
 
 * I add streamlit_ to the ``requirements.txt`` file_
 
@@ -99,9 +99,9 @@ test_streamlit_calculator_app
 
 ----
 
-* I open ``test_calculator_streamlit.py`` from the ``tests`` folder_ in the :ref:`editor<2 editors>`
+* I open ``test_streamlit_calculator.py`` from the ``tests`` folder_ in the :ref:`editor<2 editors>`
 
-* I add a new test in ``test_calculator_streamlit.py``
+* I add a new test in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -273,11 +273,11 @@ test_streamlit_calculator_app
     AssertionError: ElementList(_list=[Title(tag='h1')]) != 'Calculator'
 
   - when I import a :ref:`module<what is a module?>` nothing happens until I call or use the things in it
-  - ``if __name__ == '__main__':`` calls ``main()`` only when ``src/streamlit_calculator.py`` gets called like a script for example ``python3 src/streamlit_calculator.py``
+  - ``if __name__ == '__main__':`` calls ``main()`` only when ``src/streamlit_calculator.py`` gets called like a script for example ``python3 src/streamlit_calculator.py`` not when it is imported
   - I could write it without the :ref:`condition<if statements>` which can lead to things I do not want when I import the file. It is better to use the :ref:`condition<if statements>`
   - it looks like ``ElementList(_list=[Title(tag='h1')])`` has a :ref:`list<what is a list?>` and I know how to work with :ref:`lists<what is a list?>`
 
-* I change the :ref:`assertion<what is an assertion?>` in ``test_calculator_streamlit.py``
+* I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -309,6 +309,10 @@ Time to run the app
 how to view the streamlit calculator website
 *********************************************************************************
 
+.. WARNING::
+
+  The `Network URL` is the IP address of your computer, this next step opens a port to the Internet and anyone with that address and port can view your application
+
 * I open a new terminal_ then use uv_
 
   .. code-block:: python
@@ -333,39 +337,189 @@ how to view the streamlit calculator website
 
   .. image:: /_static/calculator/streamlit_dialog.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Confirm you want to view Streamlit app in browser
 
   or I use :kbd:`ctrl/option` on the keyboard and click on ``http://localhost:8501`` with the mouse to open the browser and it shows
 
   .. image:: /_static/calculator/calculator_streamlit_title.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator Streamlit App with Title
 
   Success!
-
-  .. danger::
 
 * I click the 3 dots by ``Deploy`` on the right hand side
 
   .. image:: /_static/calculator/streamlit_deploy_menu.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Streamlit Deploy Menu
 
 * then I click on ``Settings`` then the checkmark by ``Run on save`` to make sure the website changes as I make changes to the code
 
   .. image:: /_static/calculator/streamlit_deploy_settings.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Streamlit Deploy Settings
 
-* I add an :ref:`assertion<what is an assertion?>`
+----
+
+*********************************************************************************
+how to add a display
+*********************************************************************************
+
+* I want the :ref:`calculator<how to make a calculator>` to have a place to show results as the user clicks the numbers for a calculation. I add it to the ``main`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+
+* I go to the browser and there is a display bar under the ``Calculator`` title
+
+  .. image:: /_static/calculator/calculator_streamlit_display.png
+    :width: 600
+    :align: left
+    :alt: Calculate Streamlit Display
+
+----
+
+*********************************************************************************
+how to add buttons
+*********************************************************************************
+
+Calculators have buttons for the numbers and operations.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+-----
+
+I add an :ref:`assertion<what is an assertion?>` for the ``4`` columns that hold the buttons in ``test_streamlit_calculator.py``
+
+.. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 7
+
+      def test_streamlit_calculator(self):
+          tester = streamlit.testing.v1.AppTest.from_file(
+              'src/streamlit_calculator.py'
+          )
+          tester.run()
+          self.assertEqual(tester.title[0].value, 'Calculator')
+          self.assertEqual(len(tester.columns), 4)
+
+the terminal_ shows :ref:`AssertionError`
+
+.. code-block:: python
+
+  AssertionError: 0 != 4
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add columns to ``streamlit_calculator.py``
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 5-7
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+
+        column_1, column_2, column_3, operation = streamlit.columns(
+            4, vertical_alignment='bottom'
+        )
+
+the test passes, even though the website still looks the same
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` for a button in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+
+            self.assertEqual(tester.title[0].value, 'Calculator')
+            self.assertEqual(len(tester.columns), 4)
+            self.assertEqual(tester.columns[0].button, '<-')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError>`
 
   .. code-block:: python
 
+    AssertionError: WidgetList() != '<-'
 
+* I add a button to the first column in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 5
+
+    column_1, column_2, column_3, operation = streamlit.columns(
+        4, vertical_alignment='bottom'
+    )
+
+    column_1.button('<-', type='secondary', width='stretch')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: WidgetList(_list=[Button(label='<-')]) != '<-'
+
+  progress
+
+* I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the button to get it, because it is in a :ref:`list<what is a list?>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 1
+
+            self.assertEqual(tester.columns[0].button[0], '<-')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Button(label='<-') != '<-'
+
+* I use the ``label`` :ref:`attribute<test_attribute_error_w_class_attributes>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 1
+
+            self.assertEqual(tester.columns[0].button[0].label, '<-')
+
+  the test passes
+
+* I go to the browser and see the button I just added
+
+  .. image:: /_static/calculator/calculator_streamlit_first_button.png
+    :width: 600
+    :align: left
+    :alt: Calculate Streamlit First Button
 
 ----
 
