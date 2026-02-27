@@ -409,7 +409,7 @@ how to add a display
 test_streamlit_calculator_buttons
 *********************************************************************************
 
-Calculators have buttons for the numbers and operations, they are setup in rows and columns.
+Calculators have buttons for the numbers and operations, they are set up in rows and columns.
 
 ----
 
@@ -423,7 +423,7 @@ I add a new test with an :ref:`assertion<what is an assertion?>` for the ``4`` c
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 7
+  :emphasize-lines: 8-13
 
         def test_streamlit_calculator_title(self):
             tester = streamlit.testing.v1.AppTest.from_file(
@@ -482,10 +482,10 @@ the test passes, even though the website still looks the same
   .. TIP:: ``<-`` is :kbd:`<+-` on the keyboard
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 18
     :emphasize-lines: 4
 
-            self.assertEqual(tester.title[0].value, 'Calculator')
+            tester.run()
             self.assertEqual(len(tester.columns), 4)
 
             self.assertEqual(tester.columns[0].button, '<-')
@@ -516,10 +516,10 @@ the test passes, even though the website still looks the same
 
   progress
 
-* I can use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the button to get it, because it is in a :ref:`list<what is a list?>`
+* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the button to get it, because it is in a :ref:`list<what is a list?>` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 21
     :emphasize-lines: 1
 
             self.assertEqual(tester.columns[0].button[0], '<-')
@@ -533,7 +533,7 @@ the test passes, even though the website still looks the same
 * I use the ``label`` :ref:`attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 21
     :emphasize-lines: 1
 
             self.assertEqual(tester.columns[0].button[0].label, '<-')
@@ -550,7 +550,7 @@ the test passes, even though the website still looks the same
 * I add an :ref:`assertion<what is an assertion?>` for the next button in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 21
     :emphasize-lines: 2
 
             self.assertEqual(tester.columns[0].button[0].label, '<-')
@@ -565,7 +565,7 @@ the test passes, even though the website still looks the same
 * I add :ref:`IndexError<test_index_error>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 25
     :emphasize-lines: 5
     :emphasize-text: IndexError
 
@@ -579,6 +579,7 @@ the test passes, even though the website still looks the same
 
   .. code-block:: python
     :lineno-start: 12
+    :emphasize-lines: 2
 
         column_1.button('<-', type='secondary', width='stretch')
         column_1.button('7', type='secondary', width='stretch')
@@ -588,7 +589,7 @@ the test passes, even though the website still looks the same
 * I add another :ref:`assertion<what is an assertion?>` to ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 21
     :emphasize-lines: 3
 
             self.assertEqual(tester.columns[0].button[0].label, '<-')
@@ -616,7 +617,7 @@ the test passes, even though the website still looks the same
 * I add another :ref:`assertion<what is an assertion?>` to ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 21
     :emphasize-lines: 4
 
             self.assertEqual(tester.columns[0].button[0].label, '<-')
@@ -646,7 +647,7 @@ the test passes, even though the website still looks the same
 * I add the last :ref:`assertion<what is an assertion?>` for this column to ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 21
     :emphasize-lines: 5
 
             self.assertEqual(tester.columns[0].button[0].label, '<-')
@@ -692,13 +693,26 @@ the test passes, even though the website still looks the same
 
   lovely, it looks more like a Calculator
 
-* I use a :ref:`for loop<what is a for loop?>` with the `subTest method`_ for the :ref:`assertions<what is an assertion?>` for the columns in ``test_streamlit_calculator.py``
+----
+
+* the last 5 :ref:`assertions<what causes AssertionError?>` look the same
 
   .. code-block:: python
-    :lineno-start: 20
+
+    self.assertEqual(tester.columns[0].button[X].label, Y)
+
+  the parts that change are
+
+  - the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the button :ref:`list<what is a list?>` and
+  - the label for the button
+
+  I add a :ref:`for loop<what is a for loop?>` with the `subTest method`_ for the :ref:`assertions<what is an assertion?>` for the columns in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 19
     :emphasize-lines: 3-9
 
-            self.assertEqual(tester.columns[0].button[4].label, '+/-')
+            self.assertEqual(len(tester.columns), 4)
 
             labels = ('<-', '7', '4', '1', '+/-')
             for index in range(len(labels)):
@@ -708,8 +722,11 @@ the test passes, even though the website still looks the same
                         'BOOM!!!'
                     )
 
+            self.assertEqual(tester.columns[0].button[0].label, '<-')
 
-    # Exceptions seen
+  - ``for index in range(len(labels)):`` runs the code below it 5 times, once for each number in the range, that is it goes ``0``, ``1``, ``2``, ``3`` and ``4`` as the values for index because
+  - ``len(labels)`` returns the number of items in ``labels`` in this case ``5``
+  - ``range(len(labels))`` returns a `range object`_ that goes from ``0`` to the length of the ``labels`` tuple plus ``1``, this is important since we start counting from 0
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -724,7 +741,7 @@ the test passes, even though the website still looks the same
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 24
     :emphasize-lines: 3
 
                     self.assertEqual(
@@ -737,15 +754,13 @@ the test passes, even though the website still looks the same
 * I remove the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 14
 
-        def test_streamlit_calculator_title(self):
+        def test_streamlit_calculator_buttons(self):
             tester = streamlit.testing.v1.AppTest.from_file(
                 'src/streamlit_calculator.py'
             )
             tester.run()
-            self.maxDiff = None
-            self.assertEqual(tester.title[0].value, 'Calculator')
             self.assertEqual(len(tester.columns), 4)
 
             labels = ('<-', '7', '4', '1', '+/-')
@@ -766,7 +781,7 @@ the test passes, even though the website still looks the same
 * I add a :ref:`for loop<what is a for loop?>` for the next column
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 21
     :emphasize-lines: 9-15
 
             labels = ('<-', '7', '4', '1', '+/-')
@@ -830,10 +845,10 @@ the test passes, even though the website still looks the same
 
 ----
 
-* I add a :ref:`for loop<what is a for loop?>` to ``test_streamlit_calculator.py``
+* I add a :ref:`for loop<what is a for loop?>` for the third column to ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 29
     :emphasize-lines: 9-15
 
             labels = ('C', '8', '5', '2', '0')
@@ -893,12 +908,12 @@ the test passes, even though the website still looks the same
 * I add a :ref:`for loop<what is a for loop?>` to test the last column in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 37
     :emphasize-lines: 9-15
 
             labels = ('AC', '9', '6', '3', '.')
             for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
+                with self.subTest(labels=labels[index]):
                     self.assertEqual(
                         tester.columns[2].button[index].label,
                         labels[index]
@@ -911,6 +926,9 @@ the test passes, even though the website still looks the same
                         tester.columns[3].button[index].label,
                         labels[index]
                     )
+
+
+    # Exceptions seen
 
   the terminal_ shows :ref:`IndexError<test_index_error>`
 
@@ -972,7 +990,7 @@ the test passes, even though the website still looks the same
 * I change the labels in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 45
     :emphasize-lines: 1
 
             labels = ('/', 'X', r'\-', r'\+', '=')
@@ -992,7 +1010,7 @@ the test passes, even though the website still looks the same
 
   .. code-block:: python
 
-    labels = (x, y, z, a, b
+    labels = (a, b, c, d, e)
     for index in range(len(labels)):
         with self.subTest(label=labels[index]):
             self.assertEqual(
@@ -1020,12 +1038,17 @@ the test passes, even though the website still looks the same
 
         def test_streamlit_calculator_title(self):
 
-* I use it for the first :ref:`for loop<what is a for loop?>`
+* I use it for the first :ref:`for loop<what is a for loop?>` in :ref:`test_streamlit_calculator_buttons`
 
   .. code-block:: python
     :lineno-start: 22
-    :emphasize-lines: 3-6
+    :emphasize-lines: 8-11
 
+        def test_streamlit_calculator_buttons(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
             self.assertEqual(len(tester.columns), 4)
 
             self.assert_buttons_in_column(
@@ -1050,7 +1073,7 @@ the test passes, even though the website still looks the same
 * I change the labels
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 30
     :emphasize-lines: 2
 
             self.assert_buttons_in_column(
@@ -1060,10 +1083,10 @@ the test passes, even though the website still looks the same
 
   the test passes
 
-* I add another call to the ``assert_buttons_in_column`` :ref:`method<what is a method?>` for the second column
+* I add another call to the ``assert_buttons_in_column`` :ref:`method<what is a function?>` for the second column
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 29
     :emphasize-lines: 5-8
 
             self.assert_buttons_in_column(
@@ -1088,7 +1111,7 @@ the test passes, even though the website still looks the same
 * I change the column
 
   .. code-block:: python
-    :lineno-start: 28
+    :lineno-start: 35
     :emphasize-lines: 3
 
             self.assert_buttons_in_column(
@@ -1101,7 +1124,7 @@ the test passes, even though the website still looks the same
 * I add 2 more calls for the other columns
 
   .. code-block:: python
-    :lineno-start: 28
+    :lineno-start: 33
     :emphasize-lines: 5-12
 
             self.assert_buttons_in_column(
@@ -1130,10 +1153,12 @@ the test passes, even though the website still looks the same
         column=tester.columns[number]
     )
 
-  the parts that change are the labels and the numbers used to :ref:`index<test_index_returns_first_position_of_item_in_a_list>` the ``tester.columns`` :ref:`list<what is a list?>`. I add a :ref:`for loop<what is a for loop?>`
+  the parts that change are the labels and the numbers used to :ref:`index<test_index_returns_first_position_of_item_in_a_list>` the ``tester.columns`` :ref:`list<what is a list?>`.
+
+  I add a :ref:`variable<what is a variable?>` and a :ref:`for loop<what is a for loop?>`
 
   .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 27
     :emphasize-lines: 3-14
 
             self.assertEqual(len(tester.columns), 4)
@@ -1147,18 +1172,18 @@ the test passes, even though the website still looks the same
             for index in range(len(all_labels)):
                 with self.subTest(index=index):
                     self.assert_buttons_in_column(
-                        labels=(0, 1, 2, 3),
+                        labels=(0, 1, 2, 3, 4),
                         column=tester.columns[index]
                     )
 
             self.assert_buttons_in_column(
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with 16 failed
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with 20 failed
 
 * I change the labels in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 37
     :emphasize-lines: 2
 
                     self.assert_buttons_in_column(
@@ -1199,6 +1224,54 @@ the test passes, even though the website still looks the same
     # Exceptions seen
 
 ----
+
+* I change the type for all the buttons in the fourth column to make their colors different ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 1-5
+    :emphasize-text: primary
+
+        operation.button('/', type='primary', width='stretch')
+        operation.button('X', type='primary', width='stretch')
+        operation.button(r'\-', type='primary', width='stretch')
+        operation.button(r'\+', type='primary', width='stretch')
+        operation.button('=', type='primary', width='stretch')
+
+* I change the type for the ``AC`` button
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 1
+    :emphasize-text: primary
+
+        column_3.button('AC', type='primary', width='stretch')
+        column_3.button('9', type='secondary', width='stretch')
+        column_3.button('6', type='secondary', width='stretch')
+        column_3.button('3', type='secondary', width='stretch')
+        column_3.button('.', type='secondary', width='stretch')
+
+* I change the type for ``C`` button
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 1
+    :emphasize-text: primary
+
+        column_2.button('C', type='primary', width='stretch')
+        column_2.button('8', type='secondary', width='stretch')
+        column_2.button('5', type='secondary', width='stretch')
+        column_2.button('2', type='secondary', width='stretch')
+        column_2.button('0', type='secondary', width='stretch')
+
+* I check the browser
+
+  .. image:: /_static/calculator/calculator_streamlit_primary_buttons.png
+    :width: 600
+    :align: left
+    :alt: Calculator Streamlit Primary Buttons
+
+  much better
 
 ----
 
