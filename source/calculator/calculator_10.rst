@@ -362,7 +362,7 @@ how to view the streamlit calculator website
 
   or I use :kbd:`ctrl/option` on the keyboard and click on ``http://localhost:8501`` with the mouse to open the browser and it shows
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_title.png
+  .. image:: /_static/calculator/streamlit/title.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit App with Title
@@ -733,10 +733,10 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
 * I go to the browser and click refresh
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_display.png
+  .. image:: /_static/calculator/streamlit/display.png
     :width: 600
     :align: left
-    :alt: Calculate Streamlit Display
+    :alt: Calculator Streamlit Display
 
   there is a display bar under the ``Calculator`` title
 
@@ -887,13 +887,256 @@ I want to add buttons for the numbers and operations.
 
 * I go to the browser, click refresh
 
-  .. image:: /_static/calculator/streamlit/streamlit/calculator_streamlit_first_button_no_column.png
+  .. image:: /_static/calculator/streamlit/no_column_first_button.png
     :width: 600
     :align: left
-    :alt: Calculate Streamlit First Button no column
+    :alt: Calculator Streamlit First Button no column
 
   I see the button I just added
 
+* I add an :ref:`assertion<what is an assertion?>` for the next button, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 7
+
+        def test_streamlit_calculator_buttons(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+            self.assertEqual(tester.button('<-').label, '<-')
+            self.assertEqual(tester.button('7').label, '7')
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '7'
+
+* I add the button to ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 6
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+
+        streamlit.button('<-', key='<-')
+        streamlit.button('7', key='7')
+
+  the test passes
+
+* I check the browser
+
+  .. image:: /_static/calculator/streamlit/no_column_second_button.png
+    :width: 600
+    :align: left
+    :alt: Calculator Streamlit Second Button no column
+
+  the second button is there
+
+* I add :ref:`assertions<what is an assertion?>` for the other buttons, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 8-24
+
+        def test_streamlit_calculator_buttons(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+            self.assertEqual(tester.button('<-').label, '<-')
+            self.assertEqual(tester.button('7').label, '7')
+            self.assertEqual(tester.button('4').label, '4')
+            self.assertEqual(tester.button('1').label, '1')
+            self.assertEqual(tester.button('+/-').label, '+/-')
+            self.assertEqual(tester.button('C').label, 'C')
+            self.assertEqual(tester.button('8').label, '8')
+            self.assertEqual(tester.button('5').label, '5')
+            self.assertEqual(tester.button('2').label, '2')
+            self.assertEqual(tester.button('0').label, '0')
+            self.assertEqual(tester.button('AC').label, 'AC')
+            self.assertEqual(tester.button('9').label, '9')
+            self.assertEqual(tester.button('6').label, '6')
+            self.assertEqual(tester.button('3').label, '3')
+            self.assertEqual(tester.button('/').label, '/')
+            self.assertEqual(tester.button('X').label, 'X')
+            self.assertEqual(tester.button('-').label, '-')
+            self.assertEqual(tester.button('+').label, '+')
+            self.assertEqual(tester.button('=').label, '=')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '4'
+
+* I add the buttons to ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 7-23
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+
+        streamlit.button('<-', key='<-')
+        streamlit.button('7', key='7')
+        streamlit.button('4', key='4')
+        streamlit.button('1', key='1')
+        streamlit.button('+/-', key='+/-')
+        streamlit.button('C', key='C')
+        streamlit.button('8', key='8')
+        streamlit.button('5', key='5')
+        streamlit.button('2', key='2')
+        streamlit.button('0', key='0')
+        streamlit.button('AC', key='AC')
+        streamlit.button('9', key='9')
+        streamlit.button('6', key='6')
+        streamlit.button('3', key='3')
+        streamlit.button('/', key='/')
+        streamlit.button('X', key='X')
+        streamlit.button('-', key='-')
+        streamlit.button('+', key='+')
+        streamlit.button('=', key='=')
+
+
+    if __name__ == '__main__':
+
+  the test passes
+
+* I check the browser
+
+  .. image:: /_static/calculator/streamlit/no_column_all_buttons.png
+    :width: 600
+    :align: left
+    :alt: Calculator Streamlit All Buttons no column
+
+  I see more buttons, and problems
+
+  - all the buttons are in one column, simple calculators have 4, 3 for numbers, 1 for operations
+  - 2 buttons are missing - addition and subtraction
+  - the buttons have different sizes
+
+* before I continue, there is some repetition to remove. Each test makes the same tester :ref:`object<what is a class?>`. I add it to the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 5
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+        def setUp(self):
+            self.tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            self.tester.run()
+
+        def test_streamlit_calculator_title(self):
+
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_title`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 6-7
+
+        def test_streamlit_calculator_title(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+            # self.assertEqual(tester.title[0].value, 'Calculator')
+            self.assertEqual(self.tester.title[0].value, 'Calculator')
+
+  the test is still green
+
+* I remove the other lines in :ref:`test_streamlit_calculator_title`
+
+  .. code-block:: python
+    :lineno-start: 13
+
+        def test_streamlit_calculator_title(self):
+            self.assertEqual(self.tester.title[0].value, 'Calculator')
+
+        def test_streamlit_calculator_display(self):
+
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_display`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 7-8
+
+        def test_streamlit_calculator_display(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+            self.assertEqual(
+                # tester.main.children[1].type,
+                self.tester.main.children[1].type,
+                'flex_container'
+            )
+
+  still green
+
+* I remove the other statements in :ref:`test_streamlit_calculator_display`
+
+  .. code-block:: python
+    :lineno-start: 16
+
+        def test_streamlit_calculator_display(self):
+            self.assertEqual(
+                self.tester.main.children[1].type,
+                'flex_container'
+            )
+
+        def test_streamlit_calculator_buttons(self):
+
+* I do the same thing in :ref:`test_streamlit_calculator_buttons`
+
+  .. code-block:: python
+    :lineno-start: 22
+
+        def test_streamlit_calculator_buttons(self):
+            self.assertEqual(self.tester.button('<-').label, '<-')
+            self.assertEqual(self.tester.button('7').label, '7')
+            self.assertEqual(self.tester.button('4').label, '4')
+            self.assertEqual(self.tester.button('1').label, '1')
+            self.assertEqual(self.tester.button('+/-').label, '+/-')
+            self.assertEqual(self.tester.button('C').label, 'C')
+            self.assertEqual(self.tester.button('8').label, '8')
+            self.assertEqual(self.tester.button('5').label, '5')
+            self.assertEqual(self.tester.button('2').label, '2')
+            self.assertEqual(self.tester.button('0').label, '0')
+            self.assertEqual(self.tester.button('AC').label, 'AC')
+            self.assertEqual(self.tester.button('9').label, '9')
+            self.assertEqual(self.tester.button('6').label, '6')
+            self.assertEqual(self.tester.button('3').label, '3')
+            self.assertEqual(self.tester.button('/').label, '/')
+            self.assertEqual(self.tester.button('X').label, 'X')
+            self.assertEqual(self.tester.button('-').label, '-')
+            self.assertEqual(self.tester.button('+').label, '+')
+            self.assertEqual(self.tester.button('=').label, '=')
+
+
+    # Exceptions seen
+
+  green. On to columns
+
+----
+
+*********************************************************************************
+test_streamlit_calculator_columns
+*********************************************************************************
+
+Buttons on Calculators are arranged in Columns or Rows. I can do the same thing with Streamlit_
 
 
 
@@ -1082,7 +1325,7 @@ I want to add buttons for the numbers and operations.
 
 * I click ``refresh`` in the browser and see all the columns I added
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_1.png
+  .. image:: /_static/calculator/streamlit/column_1.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit First Column
@@ -1232,7 +1475,7 @@ I want to add buttons for the numbers and operations.
 
 * I click ``refresh`` in the browser
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_2.png
+  .. image:: /_static/calculator/streamlit/column_2.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Second Column
@@ -1292,7 +1535,7 @@ I want to add buttons for the numbers and operations.
 
 * I refresh the browser
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_3.png
+  .. image:: /_static/calculator/streamlit/column_3.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Third Column
@@ -1354,7 +1597,7 @@ I want to add buttons for the numbers and operations.
 
 * I refresh the browser
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_4.png
+  .. image:: /_static/calculator/streamlit/column_4.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Fourth Column
@@ -1395,7 +1638,7 @@ I want to add buttons for the numbers and operations.
 
 * I check the browser
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_all_labels.png
+  .. image:: /_static/calculator/streamlit/all_labels.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit All labels
@@ -1754,7 +1997,7 @@ I want to add buttons for the numbers and operations.
 
 * I check the browser
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_primary_buttons.png
+  .. image:: /_static/calculator/streamlit/primary_buttons.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Primary Buttons
@@ -1814,7 +2057,7 @@ I want the calculator to show the number when I click on a button
 
 * I go to the browser and click on the ``7`` button
 
-  .. image:: /_static/calculator/streamlit/calculator_streamlit_display_7.png
+  .. image:: /_static/calculator/streamlit/display_7.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Display 7 on click
@@ -2021,7 +2264,7 @@ They work the same as :ref:`class attributes<test_attribute_error_w_class_attrib
                     '__repr__',
                     '__setattr__',
                     '__sizeof__',
-                    '__static_attributes__',
+                    '_/_static_attributes__',
                     '__str__',
                     '__subclasshook__',
                     '__weakref__',
