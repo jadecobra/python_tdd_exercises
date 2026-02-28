@@ -5,8 +5,12 @@
 .. include:: ../links.rst
 
 .. _streamlit: https://streamlit.io
+.. _streamlit buttons: docs.streamlit.io/develop/api-reference/widgets/st.button#stbutton
+.. _streamlit container: docs.streamlit.io/develop/api-reference/layout/st.container#stcontainer
+.. _streamlit Block object: docs.streamlit.io/develop/api-reference/app-testing/testing-element-classes#sttestingv1element_treeblock
 .. _AppTest: docs.streamlit.io/develop/api-reference/app-testing#the-apptest-class
 .. _from_file method: docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest#apptestfrom_file
+.. _session state object: https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state
 
 #################################################################################
 how to make a calculator 10
@@ -258,7 +262,7 @@ test_streamlit_calculator_title
     # AssertionError
 
 * I open ``streamlit_calculator.py``
-* I add code to make a streamlit_ application
+* I add code to make a streamlit_ application with a title
 
   .. code-block:: python
     :linenos:
@@ -297,10 +301,9 @@ test_streamlit_calculator_title
 
   - when I import a :ref:`module<what is a module?>` nothing happens until I call or use the things in it
   - ``if __name__ == '__main__':`` calls ``main()`` only when ``src/streamlit_calculator.py`` gets called like a script for example ``python3 src/streamlit_calculator.py`` not when it is imported
-  - I could write it without the :ref:`condition<if statements>` which can lead to things I do not want when I import the file. It is better to use the :ref:`condition<if statements>`
   - it looks like ``ElementList(_list=[Title(tag='h1')])`` has a :ref:`list<what is a list?>` and I know how to work with :ref:`lists<what is a list?>`
 
-* I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
+* I change the :ref:`assertion<what is an assertion?>` to get the first item from the :ref:`list<what is a list?>` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -333,7 +336,7 @@ how to view the streamlit calculator website
 * I open a new terminal_ then use uv_
 
   .. code-block:: python
-    :emphasize-lines:
+    :emphasize-lines: 1
 
     uv run streamlit run src/streamlit_calculator.py
 
@@ -352,14 +355,14 @@ how to view the streamlit calculator website
 
   it might also show a dialog box like this, and I click on ``Open in Browser``
 
-  .. image:: /_static/calculator/streamlit_dialog.png
+  .. image:: /_static/calculator/streamlit/streamlit_dialog.png
     :width: 600
     :align: left
     :alt: Confirm you want to view Streamlit app in browser
 
   or I use :kbd:`ctrl/option` on the keyboard and click on ``http://localhost:8501`` with the mouse to open the browser and it shows
 
-  .. image:: /_static/calculator/calculator_streamlit_title.png
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_title.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit App with Title
@@ -368,14 +371,16 @@ how to view the streamlit calculator website
 
 * I click the 3 dots by ``Deploy`` on the right hand side
 
-  .. image:: /_static/calculator/streamlit_deploy_menu.png
+  .. image:: /_static/calculator/streamlit/streamlit_deploy_menu.png
     :width: 600
     :align: left
     :alt: Streamlit Deploy Menu
 
-* then I click on ``Settings`` then the checkmark by ``Run on save`` to make sure the website changes as I make changes to the code
+* I click on ``Settings``
 
-  .. image:: /_static/calculator/streamlit_deploy_settings.png
+* I click the checkmark by ``Run on save`` to make sure the website changes as I make changes to the code
+
+  .. image:: /_static/calculator/streamlit/streamlit_deploy_settings.png
     :width: 600
     :align: left
     :alt: Streamlit Deploy Settings
@@ -383,33 +388,10 @@ how to view the streamlit calculator website
 ----
 
 *********************************************************************************
-how to add a display
+test_streamlit_calculator_display
 *********************************************************************************
 
-* I want the :ref:`calculator<how to make a calculator>` to have a place to show results as the user clicks the numbers for a calculation. I add it to the ``main`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3
-
-    def main():
-        streamlit.title('Calculator')
-        streamlit.container(border=True)
-
-* I go to the browser and there is a display bar under the ``Calculator`` title
-
-  .. image:: /_static/calculator/calculator_streamlit_display.png
-    :width: 600
-    :align: left
-    :alt: Calculate Streamlit Display
-
-----
-
-*********************************************************************************
-test_streamlit_calculator_buttons
-*********************************************************************************
-
-Calculators have buttons for the numbers and operations, they are set up in rows and columns.
+I want the :ref:`calculator<how to make a calculator>` to have a place to show results as the user clicks the numbers for a calculation
 
 ----
 
@@ -419,31 +401,408 @@ Calculators have buttons for the numbers and operations, they are set up in rows
 
 -----
 
-I add a new test with an :ref:`assertion<what is an assertion?>` for the ``4`` columns that hold the buttons in ``test_streamlit_calculator.py``
+I add a test to see all the things in the application
 
 .. code-block:: python
   :lineno-start: 7
   :emphasize-lines: 8-13
 
-        def test_streamlit_calculator_title(self):
+      def test_streamlit_calculator_title(self):
+          tester = streamlit.testing.v1.AppTest.from_file(
+              'src/streamlit_calculator.py'
+          )
+          tester.run()
+          self.assertEqual(tester.title[0].value, 'Calculator')
+
+      def test_streamlit_calculator_display(self):
+          tester = streamlit.testing.v1.AppTest.from_file(
+              'src/streamlit_calculator.py'
+          )
+          tester.run()
+          self.assertIsNone(tester.main)
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  E       AssertionError: SpecialBlock(
+  E           type='main',
+  E           children={
+  E               0: Title(tag='h1')
+  E           }
+  E       ) is not None
+
+I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionary<what is a dictionary?>`. I know how to work with :ref:`dictionaries<what is a dictionary?>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+-----
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 6
+
+        def test_streamlit_calculator_display(self):
             tester = streamlit.testing.v1.AppTest.from_file(
                 'src/streamlit_calculator.py'
             )
             tester.run()
-            self.assertEqual(tester.title[0].value, 'Calculator')
+            self.assertEqual(tester.main.children, {})
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {0: Title(tag='h1')} != {}
+
+  the only thing in the application is the title
+
+* I copy the :ref:`dictionary<what is a dictionary?>` from the terminal_ and use it as the expectation
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1-4
+
+            self.assertEqual(
+                tester.main.children,
+                {0: Title(tag='h1')}
+            )
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'Title' is not defined
+
+* I change the ``Title`` :ref:`object<what is a class?>` to ``tester.title[0]``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                tester.main.children,
+                {0: tester.title[0]}
+            )
+
+  the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+-----
+
+* I add a `streamlit container`_ with a border to the ``main`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {0: Title(tag='h1'), 1: Block(
+       type='flex_container'
+    )} != {0: Title(tag='h1')}
+
+  there is a new :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` because I added something to the application
+
+* I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 5
+
+            self.assertEqual(
+                tester.main.children,
+                {
+                    0: tester.title[0],
+                    1: Block(type='flex_container')
+                }
+            )
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'Block' is not defined
+
+* I change the :ref:`assertion<what is an assertion?>` to get the `streamlit Block object`_
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2, 5
+
+            self.assertEqual(
+                tester.main.children[1],
+                {
+                    0: tester.title[0],
+                    # 1: Block(type='flex_container')
+                }
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Block(
+       type='flex_container'
+    )
+
+* I use the ``__dict__`` :ref:`attribute<test_attribute_error_w_class_attributes>` to get the `streamlit Block object`_ as a :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 2
+
+            self.assertEqual(
+                tester.main.children[1].__dict__,
+                {
+                    0: tester.title[0],
+                    # 1: Block(type='flex_container')
+                }
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {'children': {}, 'proto': flex_container {[503 chars] )
+
+* I set maxDiff_ to :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1
+
+            self.maxDiff = None
+            self.assertEqual(
+                tester.main.children[1].__dict__,
+                {
+                    0: tester.title[0],
+                    # 1: Block(type='flex_container')
+                }
+            )
+
+  the terminal_ shows the full difference
+
+* I copy the :ref:`dictionary<what is a dictionary?>`, remove the extra characters and use it as the expectation
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 3-37
+
+            self.assertEqual(
+                tester.main.children[1].__dict__,
+                {
+                    'children': {},
+                    'proto': flex_container {
+                        gap_config {
+                            gap_size: SMALL
+                        }
+                        direction: VERTICAL
+                        justify: JUSTIFY_START
+                        align: ALIGN_START
+                    }
+                    height_config {
+                        use_content: true
+                    }
+                    width_config {
+                        use_stretch: true
+                    },
+                    'root': {
+                        0: SpecialBlock(
+                            type='main',
+                            children={
+                                0: Title(tag='h1'),
+                                1: Block(
+                                    type='flex_container'
+                                )
+                            }
+                        ),
+                        1: SpecialBlock(
+                            type='sidebar'
+                        ),
+                        2: SpecialBlock(
+                            type='event'
+                        )
+                    },
+                    'type': 'flex_container'
+                }
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows SyntaxError_
+
+  .. code-block:: shell
+
+    SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+  this :ref:`dictionary<what is a dictionary?>` has too many things
+
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 5
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # NameError
+    # AttributeError
+    # AssertionError
+    # SyntaxError
+
+* I change the :ref:`assertion<what is an assertion?>` to use the ``type`` :ref:`key<test_keys_of_a_dictionary>`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 2-3
+
+            self.assertEqual(
+                tester.main.children[1].type,
+                ''
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'flex_container' != ''
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                tester.main.children[1].type,
+                'flex_container'
+            )
+
+  the test passes
+
+* I remove maxDiff_
+
+  .. code-block:: python
+    :lineno-start: 14
+
+        def test_streamlit_calculator_display(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+            self.assertEqual(
+                tester.main.children[1].type,
+                'flex_container'
+            )
+
+
+    # Exceptions seen
+
+* I go to the browser and things look the same as before. I need to add a border
+
+* I add a border in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+
+  the test is still green
+
+* I go to the browser and click refresh
+
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_display.png
+    :width: 600
+    :align: left
+    :alt: Calculate Streamlit Display
+
+  there is a display bar under the ``Calculator`` title
+
+----
+
+*********************************************************************************
+test_streamlit_calculator_buttons
+*********************************************************************************
+
+I want to add buttons for the numbers and operations.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+-----
+
+* I add a new test with an :ref:`assertion<what is an assertion?>` for the first button, in ``test_streamlit_calculator.py``
+
+  .. NOTE:: ``<-`` is :kbd:`<+-` on the keyboard
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 11-16
+
+        def test_streamlit_calculator_display(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+            self.assertEqual(
+                tester.main.children[1].type,
+                'flex_container'
+            )
 
         def test_streamlit_calculator_buttons(self):
             tester = streamlit.testing.v1.AppTest.from_file(
                 'src/streamlit_calculator.py'
             )
             tester.run()
-            self.assertEqual(len(tester.columns), 4)
+            self.assertIsNone(tester.button('<-'))
 
-the terminal_ shows :ref:`AssertionError`
 
-.. code-block:: python
+    # Exceptions seen
 
-  AssertionError: 0 != 4
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '<-'
+
+* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 6
+    :emphasize-text: KeyError
+
+    # Exceptions seen
+    # NameError
+    # AttributeError
+    # AssertionError
+    # SyntaxError
+    # KeyError
 
 ----
 
@@ -453,21 +812,70 @@ the terminal_ shows :ref:`AssertionError`
 
 ----
 
-I add columns to ``streamlit_calculator.py``
+* I add a button in ``streamlit_calculator.py``
 
-.. code-block:: python
-  :lineno-start: 4
-  :emphasize-lines: 5-7
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 5
 
-  def main():
-      streamlit.title('Calculator')
-      streamlit.container(border=True)
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
 
-      column_1, column_2, column_3, operation = streamlit.columns(
-          4, vertical_alignment='bottom'
-      )
+        streamlit.button('<-')
 
-the test passes, even though the website still looks the same
+  the terminal_ still shows :ref:`KeyError<test_key_error>`
+
+* I use the ``key`` parameter
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1
+
+        streamlit.button('<-', key='<-')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Button(key='<-', label='<-') is not None
+
+* I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 1
+
+            self.assertIsNone(tester.button('<-').label)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '<-' is not None
+
+* I change assertIsNone_ to assertEqual_
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 1
+
+            self.assertEqual(tester.button('<-').label, '')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '<-' != ''
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 29
+
+            self.assertEqual(tester.button('<-').label, '<-')
+
+  the test passes
 
 ----
 
@@ -477,24 +885,17 @@ the test passes, even though the website still looks the same
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for a button in ``test_streamlit_calculator.py``
+* I go to the browser, click refresh
 
-  .. TIP:: ``<-`` is :kbd:`<+-` on the keyboard
+  .. image:: /_static/calculator/streamlit/streamlit/calculator_streamlit_first_button_no_column.png
+    :width: 600
+    :align: left
+    :alt: Calculate Streamlit First Button no column
 
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 4
+  I see the button I just added
 
-            tester.run()
-            self.assertEqual(len(tester.columns), 4)
 
-            self.assertEqual(tester.columns[0].button, '<-')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError>`
-
-  .. code-block:: python
-
-    AssertionError: WidgetList() != '<-'
 
 * I add a button to the first column in ``streamlit_calculator.py``
 
@@ -540,12 +941,7 @@ the test passes, even though the website still looks the same
 
   the test passes
 
-* I go to the browser and see the button I just added
 
-  .. image:: /_static/calculator/calculator_streamlit_first_button.png
-    :width: 600
-    :align: left
-    :alt: Calculate Streamlit First Button
 
 * I add an :ref:`assertion<what is an assertion?>` for the next button in ``test_streamlit_calculator.py``
 
@@ -686,7 +1082,7 @@ the test passes, even though the website still looks the same
 
 * I click ``refresh`` in the browser and see all the columns I added
 
-  .. image:: /_static/calculator/calculator_streamlit_column_1.png
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_1.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit First Column
@@ -836,7 +1232,7 @@ the test passes, even though the website still looks the same
 
 * I click ``refresh`` in the browser
 
-  .. image:: /_static/calculator/calculator_streamlit_column_2.png
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_2.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Second Column
@@ -896,7 +1292,7 @@ the test passes, even though the website still looks the same
 
 * I refresh the browser
 
-  .. image:: /_static/calculator/calculator_streamlit_column_3.png
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_3.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Third Column
@@ -958,7 +1354,7 @@ the test passes, even though the website still looks the same
 
 * I refresh the browser
 
-  .. image:: /_static/calculator/calculator_streamlit_column_4.png
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_column_4.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Fourth Column
@@ -999,7 +1395,7 @@ the test passes, even though the website still looks the same
 
 * I check the browser
 
-  .. image:: /_static/calculator/calculator_streamlit_all_labels.png
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_all_labels.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit All labels
@@ -1223,6 +1619,98 @@ the test passes, even though the website still looks the same
 
     # Exceptions seen
 
+* I add the tester to the `setUp method`_
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-7
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+        def setUp(self):
+            self.tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            self.tester.run()
+
+        def assert_buttons_in_column(self, labels, column):
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_title`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 7
+
+        def test_streamlit_calculator_title(self):
+            # tester = streamlit.testing.v1.AppTest.from_file(
+            #    'src/streamlit_calculator.py'
+            # )
+            # tester.run()
+            # self.assertEqual(tester.title[0].value, 'Calculator')
+            self.assertEqual(self.tester.title[0].value, 'Calculator')
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 7
+
+        def test_streamlit_calculator_title(self):
+            self.assertEqual(self.tester.title[0].value, 'Calculator')
+
+* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_buttons`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-7, 19-20
+
+        def test_streamlit_calculator_buttons(self):
+            # tester = streamlit.testing.v1.AppTest.from_file(
+            #     'src/streamlit_calculator.py'
+            # )
+            # tester.run()
+            # self.assertEqual(len(tester.columns), 4)
+            self.assertEqual(len(self.tester.columns), 4)
+
+            all_labels = (
+                ('<-', '7', '4', '1', '+/-'),
+                ('C', '8', '5', '2', '0'),
+                ('AC', '9', '6', '3', '.'),
+                ('/', 'X', r'\-', r'\+', '='),
+            )
+            for index in range(len(all_labels)):
+                with self.subTest(index=index):
+                    self.assert_buttons_in_column(
+                        labels=all_labels[index],
+                        # column=tester.columns[index]
+                        column=self.tester.columns[index]
+                    )
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 24
+
+        def test_streamlit_calculator_buttons(self):
+            self.assertEqual(len(self.tester.columns), 4)
+
+            all_labels = (
+                ('<-', '7', '4', '1', '+/-'),
+                ('C', '8', '5', '2', '0'),
+                ('AC', '9', '6', '3', '.'),
+                ('/', 'X', r'\-', r'\+', '='),
+            )
+            for index in range(len(all_labels)):
+                with self.subTest(index=index):
+                    self.assert_buttons_in_column(
+                        labels=all_labels[index],
+                        column=self.tester.columns[index]
+                    )
+
 ----
 
 * I change the type for all the buttons in the fourth column to make their colors different ``streamlit_calculator.py``
@@ -1266,7 +1754,7 @@ the test passes, even though the website still looks the same
 
 * I check the browser
 
-  .. image:: /_static/calculator/calculator_streamlit_primary_buttons.png
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_primary_buttons.png
     :width: 600
     :align: left
     :alt: Calculator Streamlit Primary Buttons
@@ -1275,8 +1763,211 @@ the test passes, even though the website still looks the same
 
 ----
 
+*********************************************************************************
+how to display the numbers when I click on them
+*********************************************************************************
+
+I want the calculator to show the number when I click on a button
+
+* I add a :ref:`variable<what is a variable?>` for the container to be able to use it to show the numbers
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3
+
+    def main():
+        streamlit.title('Calculator')
+        display = streamlit.container(border=True)
+
+        column_1, column_2, column_3, operation = streamlit.columns(
+
+* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is clicked. It is also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_functions_w_positional_arguments>` that the :ref:`function<what is a function?>` takes. I add a :ref:`function<what is a function?>` to show the text of the button when it is clicked
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import streamlit
+
+
+    def show(display, number):
+        display.write(number)
+
+
+    def main():
+
+* I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2-5
+    :emphasize-text: on_click args
+
+        column_1.button('<-', type='secondary', width='stretch')
+        column_1.button(
+            '7', type='secondary', width='stretch',
+            on_click=show, args=[display, '7']
+        )
+        column_1.button('4', type='secondary', width='stretch')
+        column_1.button('1', type='secondary', width='stretch')
+        column_1.button('+/-', type='secondary', width='stretch')
+
+* I go to the browser and click on the ``7`` button
+
+  .. image:: /_static/calculator/streamlit/calculator_streamlit_display_7.png
+    :width: 600
+    :align: left
+    :alt: Calculator Streamlit Display 7 on click
+
+* I make the same change for the other numbers
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 7-8, 11-12, 18-19, 22-23, 26-27, 30-31, 36-37, 40-41, 44-45, 48-49
+    :emphasize-text: on_click args
+
+        column_1.button('<-', type='secondary', width='stretch')
+        column_1.button(
+            '7', type='secondary', width='stretch',
+            on_click=show, args=[display, '7'],
+        )
+        column_1.button(
+            '4', type='secondary', width='stretch',
+            on_click=show, args=[display, '4'],
+        )
+        column_1.button(
+            '1', type='secondary', width='stretch',
+            on_click=show, args=[display, '1'],
+        )
+        column_1.button('+/-', type='secondary', width='stretch')
+
+        column_2.button('C', type='primary', width='stretch')
+        column_2.button(
+            '8', type='secondary', width='stretch',
+            on_click=show, args=[display, '8'],
+        )
+        column_2.button(
+            '5', type='secondary', width='stretch',
+            on_click=show, args=[display, '5'],
+        )
+        column_2.button(
+            '2', type='secondary', width='stretch',
+            on_click=show, args=[display, '2'],
+        )
+        column_2.button(
+            '0', type='secondary', width='stretch',
+            on_click=show, args=[display, '0'],
+        )
+
+        column_3.button('AC', type='primary', width='stretch')
+        column_3.button(
+            '9', type='secondary', width='stretch',
+            on_click=show, args=[display, '9'],
+        )
+        column_3.button(
+            '6', type='secondary', width='stretch',
+            on_click=show, args=[display, '6'],
+        )
+        column_3.button(
+            '3', type='secondary', width='stretch',
+            on_click=show, args=[display, '3'],
+        )
+        column_3.button(
+            '.', type='secondary', width='stretch',
+            on_click=show, args=[display, '.'],
+        )
+
+* I go to the browser to test the numbers and they show up in the display with one problem - every time I press a button it shows a new number. I want the numbers to stay so that I can make numbers that have more than one digit
+
 ----
 
+*********************************************************************************
+how to use state
+*********************************************************************************
+
+streamlit_ has a `session state object`_ that I can use to keep values in between button presses.
+
+They work the same as :ref:`class attributes<test_attribute_error_w_class_attributes>`. They are also :ref:`dictionaries<what is a dictionary?>` in that I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a test for the `session state object`_ that will hold the number as I click the buttons in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 17-18
+
+        def test_streamlit_calculator_buttons(self):
+            self.assertEqual(len(self.tester.columns), 4)
+
+            all_labels = (
+                ('<-', '7', '4', '1', '+/-'),
+                ('C', '8', '5', '2', '0'),
+                ('AC', '9', '6', '3', '.'),
+                ('/', 'X', r'\-', r'\+', '='),
+            )
+            for index in range(len(all_labels)):
+                with self.subTest(index=index):
+                    self.assert_buttons_in_column(
+                        labels=all_labels[index],
+                        column=self.tester.columns[index]
+                    )
+
+        def test_streamlit_calculator_state(self):
+            self.assertIsNone(self.tester.session_state.number)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: number not found in session_state.
+
+* I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a :ref:`key<test_keys_of_a_dictionary>` that will hold the numbers to show in the Calculator, in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 3
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.session_state.setdefault('number', 0)
+        display = streamlit.container(border=True)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 is not None
+
+* I change the assertIsNone_ to assertEqual_ in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 2
+
+        def test_streamlit_calculator_state(self):
+            self.assertEqual(self.tester.session_state.number, 0)
+
+  the test passes
+
+----
+
+
+
+----
+
+----
+
+----
   .. code-block:: python
 
     import streamlit

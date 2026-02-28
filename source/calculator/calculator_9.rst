@@ -377,7 +377,7 @@ how to view the website
 
   it might also show a dialog box like this, and I click on ``Open in Browser``
 
-  .. image:: /_static/calculator/flask_dialog.png
+  .. image:: /_static/calculator/website/flask_dialog.png
     :width: 600
     :align: center
     :alt: Confirm you want to view Flask Development Server
@@ -450,7 +450,7 @@ how to view the website
 
 * I go back to the browser and click ``refresh``, it shows ``Calculator``
 
-  .. image:: /_static/calculator/calculator_heading.png
+  .. image:: /_static/calculator/website/calculator_heading.png
     :width: 600
     :align: center
     :alt: Calculator Header
@@ -1290,7 +1290,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
 * I go to the browser and click refresh to see the change, the website has a place where I can put numbers or use the up and down arrows to change the numbers
 
-  .. image:: /_static/calculator/calculator_first_input.png
+  .. image:: /_static/calculator/website/calculator_first_input.png
     :width: 600
     :align: center
     :alt: Calculator form with first input
@@ -1310,7 +1310,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
 * I go to the browser and click refresh to see the change, the website now has 2 places for me to put numbers
 
-  .. image:: /_static/calculator/calculator_second_input.png
+  .. image:: /_static/calculator/website/calculator_second_input.png
     :width: 600
     :align: center
     :alt: Calculator form with second input
@@ -1333,7 +1333,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
 * I go to the browser and click refresh to see the change, the website now has a place for me to choose the operation, even though ``+`` is the only option
 
-  .. image:: /_static/calculator/calculator_first_operation.png
+  .. image:: /_static/calculator/website/calculator_first_operation.png
     :width: 600
     :align: center
     :alt: Calculator form with first operation
@@ -1356,7 +1356,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
 * I go to the browser and click refresh to see the change, the operation is now between the 2 numbers
 
-  .. image:: /_static/calculator/calculator_first_operation_reorder.png
+  .. image:: /_static/calculator/website/calculator_first_operation_reorder.png
     :width: 600
     :align: center
     :alt: Calculator form with first operation redordered
@@ -1403,21 +1403,21 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
 * I go to the browser and click refresh to see the change
 
-  .. image:: /_static/calculator/calculator_submit_button.png
+  .. image:: /_static/calculator/website/calculator_submit_button.png
     :width: 600
     :align: center
     :alt: Calculator form with calculate button
 
 * I enter ``10000`` as the first number and ``20000`` as the second number, with ``*`` as the operation
 
-  .. image:: /_static/calculator/calculator_first_calculation.png
+  .. image:: /_static/calculator/website/calculator_first_calculation.png
     :width: 600
     :align: center
     :alt: Calculator form first calculation
 
   I click ``calculate`` and the browser shows
 
-  .. image:: /_static/calculator/calculator_first_result.png
+  .. image:: /_static/calculator/website/calculator_first_result.png
     :width: 600
     :align: center
     :alt: Calculator first result

@@ -91,7 +91,6 @@ def main():
         4, vertical_alignment='bottom'
     )
 
-
     add_button('/', operation, type='primary', on_click=make_variables, display=display)
     add_button('\*', operation, type='primary', on_click=make_variables, display=display)
     add_button('\-', operation, type='primary', on_click=make_variables, display=display)
