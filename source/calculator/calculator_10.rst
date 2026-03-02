@@ -8,6 +8,7 @@
 .. _streamlit buttons: docs.streamlit.io/develop/api-reference/widgets/st.button#stbutton
 .. _streamlit container: docs.streamlit.io/develop/api-reference/layout/st.container#stcontainer
 .. _streamlit Block object: docs.streamlit.io/develop/api-reference/app-testing/testing-element-classes#sttestingv1element_treeblock
+.. _streamlit tester object: docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest#sttestingv1apptest
 .. _AppTest: docs.streamlit.io/develop/api-reference/app-testing#the-apptest-class
 .. _from_file method: docs.streamlit.io/develop/api-reference/app-testing/st.testing.v1.apptest#apptestfrom_file
 .. _session state object: https://docs.streamlit.io/develop/api-reference/caching-and-state/st.session_state
@@ -942,7 +943,7 @@ I want to add buttons for the numbers and operations.
 
   .. code-block:: python
     :lineno-start: 24
-    :emphasize-lines: 8-24
+    :emphasize-lines: 8-25
 
         def test_streamlit_calculator_buttons(self):
             tester = streamlit.testing.v1.AppTest.from_file(
@@ -963,6 +964,7 @@ I want to add buttons for the numbers and operations.
             self.assertEqual(tester.button('9').label, '9')
             self.assertEqual(tester.button('6').label, '6')
             self.assertEqual(tester.button('3').label, '3')
+            self.assertEqual(tester.button('.').label, '.')
             self.assertEqual(tester.button('/').label, '/')
             self.assertEqual(tester.button('X').label, 'X')
             self.assertEqual(tester.button('-').label, '-')
@@ -982,7 +984,7 @@ I want to add buttons for the numbers and operations.
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 7-23
+    :emphasize-lines: 7-24
 
     def main():
         streamlit.title('Calculator')
@@ -1002,6 +1004,7 @@ I want to add buttons for the numbers and operations.
         streamlit.button('9', key='9')
         streamlit.button('6', key='6')
         streamlit.button('3', key='3')
+        streamlit.button('.', key='.')
         streamlit.button('/', key='/')
         streamlit.button('X', key='X')
         streamlit.button('-', key='-')
@@ -1017,7 +1020,7 @@ I want to add buttons for the numbers and operations.
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-23
+    :emphasize-lines: 5-24
 
     import streamlit
 
@@ -1037,6 +1040,7 @@ I want to add buttons for the numbers and operations.
         streamlit.button('9', key='9')
         streamlit.button('6', key='6')
         streamlit.button('3', key='3')
+        streamlit.button('.', key='.')
         streamlit.button('/', key='/')
         streamlit.button('X', key='X')
         streamlit.button('-', key='-')
@@ -1049,7 +1053,8 @@ I want to add buttons for the numbers and operations.
 * I call the new :ref:`function<what is a function?>` in ``main``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 27
+    :emphasize-lines: 4
 
     def main():
         streamlit.title('Calculator')
@@ -1069,7 +1074,7 @@ I want to add buttons for the numbers and operations.
 * I add ``streamlit.errors.StreamlitDuplicateElementKey`` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 51
     :emphasize-lines: 7
     :emphasize-text: streamlit.errors.StreamlitDuplicateElementKey
 
@@ -1083,7 +1088,7 @@ I want to add buttons for the numbers and operations.
 
 * I check the browser and see the :ref:`Exception<errors>` is still there
 
-* I remove the buttons from ``main``
+* I remove the buttons from ``main`` in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1110,11 +1115,11 @@ I want to add buttons for the numbers and operations.
 
   I see all the buttons, and problems
 
-  - all the buttons are in one column, simple calculators have 4, 3 for numbers, 1 for operations
+  - all the buttons are in one column, simple calculators have 4 - 3 for numbers, 1 for operations
   - 2 buttons are missing - addition and subtraction
   - the buttons have different sizes
 
-* before I continue, there is some repetition to remove. Each test makes the same tester :ref:`object<what is a class?>`. I add it to the `setUp method`_
+* before I continue, there is some repetition to remove. Each test makes the same `streamlit tester object`_. I add it to the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 5
@@ -1191,6 +1196,7 @@ I want to add buttons for the numbers and operations.
 
   .. code-block:: python
     :lineno-start: 22
+    :emphasize-text: self.tester
 
         def test_streamlit_calculator_buttons(self):
             self.assertEqual(self.tester.button('<-').label, '<-')
@@ -1207,6 +1213,7 @@ I want to add buttons for the numbers and operations.
             self.assertEqual(self.tester.button('9').label, '9')
             self.assertEqual(self.tester.button('6').label, '6')
             self.assertEqual(self.tester.button('3').label, '3')
+            self.assertEqual(self.tester.button('.').label, '.')
             self.assertEqual(self.tester.button('/').label, '/')
             self.assertEqual(self.tester.button('X').label, 'X')
             self.assertEqual(self.tester.button('-').label, '-')
@@ -1312,7 +1319,7 @@ the test passes
 
   the test passes
 
-* I give the columns names because so I can put buttons in them, in ``streamlit_calculator.py``
+* I give the columns names because I want to put buttons in them, in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 31
@@ -1446,7 +1453,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 61
-    :emphasize-lines: 6-21
+    :emphasize-lines: 6-25
 
             self.assertEqual(
                 self.tester.columns[0].button('+/-').label,
@@ -1469,6 +1476,10 @@ the test passes
                 self.tester.columns[1].button('2').label,
                 '2'
             )
+            self.assertEqual(
+                self.tester.columns[1].button('0').label,
+                '0'
+            )
 
 
     # Exceptions seen
@@ -1482,7 +1493,7 @@ the test passes
 * I move buttons to the second column in ``streamlit_calculator,py``
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 11
     :emphasize-lines: 3-7
 
         column_1.button('+/-', key='+/-')
@@ -1509,7 +1520,7 @@ the test passes
 * I add :ref:`assertions<what is an assertion?>` for the third column, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 86
     :emphasize-lines: 6-25
 
             self.assertEqual(
@@ -1565,473 +1576,173 @@ the test passes
 
 * I check the browser
 
-  .. code-block:: python
+  .. image:: /_static/calculator/streamlit/3_columns.png
+    :width: 600
+    :align: left
+    :alt: Calculator 3 Columns
 
+  3 columns
 
-
-----
-
-----
-
-----
-
-----
-
-
-* I add a button to the first column in ``streamlit_calculator.py``
+* On to the next one. I add :ref:`assertions<what is an assertion?>` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 5
+    :lineno-start: 102
+    :emphasize-lines: 6-25
 
-        column_1, column_2, column_3, operation = streamlit.columns(
-            4, vertical_alignment='bottom'
-        )
+            self.assertEqual(
+                self.tester.columns[2].button('.').label,
+                '.'
+            )
 
-        column_1.button('<-', type='secondary', width='stretch')
+            self.assertEqual(
+                self.tester.columns[3].button('/').label,
+                '/'
+            )
+            self.assertEqual(
+                self.tester.columns[3].button('X').label,
+                'X'
+            )
+            self.assertEqual(
+                self.tester.columns[3].button('-').label,
+                '-'
+            )
+            self.assertEqual(
+                self.tester.columns[3].button('+').label,
+                '+'
+            )
+            self.assertEqual(
+                self.tester.columns[3].button('=').label,
+                '='
+            )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: WidgetList(_list=[Button(label='<-')]) != '<-'
-
-  progress
-
-* I use the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the button to get it, because it is in a :ref:`list<what is a list?>` in ``test_streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 1
-
-            self.assertEqual(tester.columns[0].button[0], '<-')
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: Button(label='<-') != '<-'
-
-* I use the ``label`` :ref:`attribute<test_attribute_error_w_class_attributes>`
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 1
-
-            self.assertEqual(tester.columns[0].button[0].label, '<-')
-
-  the test passes
-
-
-
-* I add an :ref:`assertion<what is an assertion?>` for the next button in ``test_streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2
-
-            self.assertEqual(tester.columns[0].button[0].label, '<-')
-            self.assertEqual(tester.columns[0].button[1].label, '7')
-
-  the terminal_ shows :ref:`IndexError<test_index_error>`
-
-  .. code-block:: python
-
-    IndexError: list index out of range
-
-* I add :ref:`IndexError<test_index_error>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5
-    :emphasize-text: IndexError
 
     # Exceptions seen
-    # NameError
-    # AttributeError
-    # AssertionError
-    # IndexError
 
-* I add a button for ``7`` to ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 2
-
-        column_1.button('<-', type='secondary', width='stretch')
-        column_1.button('7', type='secondary', width='stretch')
-
-  a duplication. The test passes
-
-* I add another :ref:`assertion<what is an assertion?>` to ``test_streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 3
-
-            self.assertEqual(tester.columns[0].button[0].label, '<-')
-            self.assertEqual(tester.columns[0].button[1].label, '7')
-            self.assertEqual(tester.columns[0].button[2].label, '4')
-
-  the terminal_ shows :ref:`IndexError<test_index_error>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
-    IndexError: list index out of range
+    KeyError: '/'
 
-* I add a button for ``4`` to ``streamlit_calculator.py``
+* I move the buttons to the fourth column in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 3
+    :lineno-start: 23
+    :emphasize-lines: 3-7
 
-        column_1.button('<-', type='secondary', width='stretch')
-        column_1.button('7', type='secondary', width='stretch')
-        column_1.button('4', type='secondary', width='stretch')
+        column_3.button('.', key='.')
+
+        operations.button('/', key='/')
+        operations.button('X', key='X')
+        operations.button('-', key='-')
+        operations.button('+', key='+')
+        operations.button('=', key='=')
+
+
+    def main():
 
   the test passes
 
-* I add another :ref:`assertion<what is an assertion?>` to ``test_streamlit_calculator.py``
+* I look in the browser
 
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 4
+  .. image:: /_static/calculator/streamlit/4_columns.png
+    :width: 600
+    :align: left
+    :alt: Calculator 4 Columns
 
-            self.assertEqual(tester.columns[0].button[0].label, '<-')
-            self.assertEqual(tester.columns[0].button[1].label, '7')
-            self.assertEqual(tester.columns[0].button[2].label, '4')
-            self.assertEqual(tester.columns[0].button[3].label, '1')
+  there are 4 columns. I want all of them to be the same size
 
-  the terminal_ shows :ref:`IndexError<test_index_error>`
-
-  .. code-block:: python
-
-    IndexError: list index out of range
-
-* I add a button for ``1`` to ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 4
-
-        column_1.button('<-', type='secondary', width='stretch')
-        column_1.button('7', type='secondary', width='stretch')
-        column_1.button('4', type='secondary', width='stretch')
-        column_1.button('1', type='secondary', width='stretch')
-
-  the test passes
-
-* I add the last :ref:`assertion<what is an assertion?>` for this column to ``test_streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5
-
-            self.assertEqual(tester.columns[0].button[0].label, '<-')
-            self.assertEqual(tester.columns[0].button[1].label, '7')
-            self.assertEqual(tester.columns[0].button[2].label, '4')
-            self.assertEqual(tester.columns[0].button[3].label, '1')
-            self.assertEqual(tester.columns[0].button[4].label, '+/-')
-
-  the terminal_ shows :ref:`IndexError<test_index_error>`
-
-  .. code-block:: python
-
-    IndexError: list index out of range
-
-* I add a button for ``+/-`` to ``streamlit_calculator.py``
+* `streamlit buttons`_ have a ``width`` option. I set it to ``stretch`` for the ``<-`` button in the first column in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 13
+    :emphasize-lines: 4
+    :emphasize-text: width
 
-    def main():
-        streamlit.title('Calculator')
-        streamlit.container(border=True)
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
 
-        column_1, column_2, column_3, operation = streamlit.columns(
-            4, vertical_alignment='bottom'
-        )
-
-        column_1.button('<-', type='secondary', width='stretch')
-        column_1.button('7', type='secondary', width='stretch')
-        column_1.button('4', type='secondary', width='stretch')
-        column_1.button('1', type='secondary', width='stretch')
-        column_1.button('+/-', type='secondary', width='stretch')
-
-  the test passes
-
-* I click ``refresh`` in the browser and see all the columns I added
-
-  .. image:: /_static/calculator/streamlit/column_1.png
-    :width: 600
-    :align: left
-    :alt: Calculator Streamlit First Column
-
-  lovely, it looks more like a Calculator
-
-----
-
-* the last 5 :ref:`assertions<what causes AssertionError?>` look the same
-
-  .. code-block:: python
-
-    self.assertEqual(tester.columns[0].button[X].label, Y)
-
-  the parts that change are
-
-  - the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` of the button :ref:`list<what is a list?>` and
-  - the label for the button
-
-  I add a :ref:`for loop<what is a for loop?>` with the `subTest method`_ for the :ref:`assertions<what is an assertion?>` for the columns in ``test_streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 3-9
-
-            self.assertEqual(len(tester.columns), 4)
-
-            labels = ('<-', '7', '4', '1', '+/-')
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        tester.columns[0].button[index].label,
-                        'BOOM!!!'
-                    )
-
-            self.assertEqual(tester.columns[0].button[0].label, '<-')
-
-  - ``for index in range(len(labels)):`` runs the code below it 5 times, once for each number in the range, that is it goes ``0``, ``1``, ``2``, ``3`` and ``4`` as the values for index because
-  - ``len(labels)`` returns the number of items in ``labels`` in this case ``5``
-  - ``range(len(labels))`` returns a `range object`_ that goes from ``0`` to the length of the ``labels`` tuple plus ``1``, this is important since we start counting from 0
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    SUBFAILED(label='<-') ... - AssertionError: '<-' != 'BOOM!!!'
-    SUBFAILED(label='7') ... - AssertionError: '7' != 'BOOM!!!'
-    SUBFAILED(label='4') ... - AssertionError: '4' != 'BOOM!!!'
-    SUBFAILED(label='1') ... - AssertionError: '1' != 'BOOM!!!'
-    SUBFAILED(label='+/-') ... - AssertionError: '+/-' != 'BOOM!!!'
-
-* I change the expectation of the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 3
-
-                    self.assertEqual(
-                        tester.columns[0].button[index].label,
-                        labels[index]
-                    )
-
-  the test passes
-
-* I remove the other :ref:`assertions<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 14
-
-        def test_streamlit_calculator_buttons(self):
-            tester = streamlit.testing.v1.AppTest.from_file(
-                'src/streamlit_calculator.py'
-            )
-            tester.run()
-            self.assertEqual(len(tester.columns), 4)
-
-            labels = ('<-', '7', '4', '1', '+/-')
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        tester.columns[0].button[index].label,
-                        labels[index]
-                    )
-
-
-    # Exceptions seen
+        column_1.button('<-', key='<-', width='stretch')
+        column_1.button('7', key='7')
 
   the test is still green
 
-----
+* I check the browser
 
-* I add a :ref:`for loop<what is a for loop?>` for the next column
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 9-15
-
-            labels = ('<-', '7', '4', '1', '+/-')
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        tester.columns[0].button[index].label,
-                        labels[index]
-                    )
-
-            labels = ('C', '8', '5', '2', '0')
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        tester.columns[1].button[index].label,
-                        labels[index]
-                    )
-
-
-    # Exceptions seen
-
-  more repetition. The terminal_ shows :ref:`IndexError<test_index_error>`
-
-  .. code-block:: python
-
-    SUBFAILED(label='C') ... - IndexError: list index out of range
-    SUBFAILED(label='8') ... - IndexError: list index out of range
-    SUBFAILED(label='5') ... - IndexError: list index out of range
-    SUBFAILED(label='2') ... - IndexError: list index out of range
-    SUBFAILED(label='0') ... - IndexError: list index out of range
-
-* I add buttons for each label to the second column in ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 7-11
-    :emphasize-text: column_2
-
-        column_1.button('<-', type='secondary', width='stretch')
-        column_1.button('7', type='secondary', width='stretch')
-        column_1.button('4', type='secondary', width='stretch')
-        column_1.button('1', type='secondary', width='stretch')
-        column_1.button('+/-', type='secondary', width='stretch')
-
-        column_2.button('C', type='secondary', width='stretch')
-        column_2.button('8', type='secondary', width='stretch')
-        column_2.button('5', type='secondary', width='stretch')
-        column_2.button('2', type='secondary', width='stretch')
-        column_2.button('0', type='secondary', width='stretch')
-
-  the test passes
-
-* I click ``refresh`` in the browser
-
-  .. image:: /_static/calculator/streamlit/column_2.png
+  .. image:: /_static/calculator/streamlit/stretch_first_button.png
     :width: 600
     :align: left
-    :alt: Calculator Streamlit Second Column
+    :alt: Calculator Stretched First
 
-  alright
+  okay, I think this works
 
-----
-
-* I add a :ref:`for loop<what is a for loop?>` for the third column to ``test_streamlit_calculator.py``
+* I stretch the rest of the buttons in the first column
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 9-15
+    :lineno-start: 4
+    :emphasize-lines: 5-8
+    :emphasize-text: stretch
 
-            labels = ('C', '8', '5', '2', '0')
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        tester.columns[1].button[index].label,
-                        labels[index]
-                    )
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
 
-            labels = ('AC', '9', '6', '3', '.')
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        tester.columns[2].button[index].label,
-                        labels[index]
-                    )
+        column_1.button('<-', key='<-', width='stretch')
+        column_1.button('7', key='7', width='stretch')
+        column_1.button('4', key='4', width='stretch')
+        column_1.button('1', key='1', width='stretch')
+        column_1.button('+/-', key='+/-', width='stretch')
 
-  the terminal_ shows :ref:`IndexError<test_index_error>`
+        column_2.button('C', key='C')
 
-  .. code-block:: python
+  still green
 
-    IndexError: list index out of range
+* I check the browser
 
-* I add the buttons to ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 7-11
-    :emphasize-text: column_3
-
-        column_2.button('C', type='secondary', width='stretch')
-        column_2.button('8', type='secondary', width='stretch')
-        column_2.button('5', type='secondary', width='stretch')
-        column_2.button('2', type='secondary', width='stretch')
-        column_2.button('0', type='secondary', width='stretch')
-
-        column_3.button('AC', type='secondary', width='stretch')
-        column_3.button('9', type='secondary', width='stretch')
-        column_3.button('6', type='secondary', width='stretch')
-        column_3.button('3', type='secondary', width='stretch')
-        column_3.button('.', type='secondary', width='stretch')
-
-  the test passes
-
-* I refresh the browser
-
-  .. image:: /_static/calculator/streamlit/column_3.png
+  .. image:: /_static/calculator/streamlit/stretch_first_column.png
     :width: 600
     :align: left
-    :alt: Calculator Streamlit Third Column
+    :alt: Calculator Stretched First Column
 
-  one more column to go
+  all the buttons in the first column have the same size
 
-----
-
-* I add a :ref:`for loop<what is a for loop?>` to test the last column in ``test_streamlit_calculator.py``
+* I stretch all the other buttons
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 9-15
+    :lineno-start: 4
+    :emphasize-lines: 10-26
+    :emphasize-text: stretch
 
-            labels = ('AC', '9', '6', '3', '.')
-            for index in range(len(labels)):
-                with self.subTest(labels=labels[index]):
-                    self.assertEqual(
-                        tester.columns[2].button[index].label,
-                        labels[index]
-                    )
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
 
-            labels = ('/', 'X', '-', '+', '=')
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        tester.columns[3].button[index].label,
-                        labels[index]
-                    )
+        column_1.button('<-', key='<-', width='stretch')
+        column_1.button('7', key='7', width='stretch')
+        column_1.button('4', key='4', width='stretch')
+        column_1.button('1', key='1', width='stretch')
+        column_1.button('+/-', key='+/-', width='stretch')
+
+        column_2.button('C', key='C', width='stretch')
+        column_2.button('8', key='8', width='stretch')
+        column_2.button('5', key='5', width='stretch')
+        column_2.button('2', key='2', width='stretch')
+        column_2.button('0', key='0', width='stretch')
+
+        column_3.button('AC', key='AC', width='stretch')
+        column_3.button('9', key='9', width='stretch')
+        column_3.button('6', key='6', width='stretch')
+        column_3.button('3', key='3', width='stretch')
+        column_3.button('.', key='.', width='stretch')
+
+        operations.button('/', key='/', width='stretch')
+        operations.button('X', key='X', width='stretch')
+        operations.button('-', key='-', width='stretch')
+        operations.button('+', key='+', width='stretch')
+        operations.button('=', key='=', width='stretch')
 
 
-    # Exceptions seen
+    def main():
 
-  the terminal_ shows :ref:`IndexError<test_index_error>`
-
-  .. code-block:: python
-
-    IndexError: list index out of range
-
-* I add the buttons to ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 7-11
-
-        column_3.button('AC', type='secondary', width='stretch')
-        column_3.button('9', type='secondary', width='stretch')
-        column_3.button('6', type='secondary', width='stretch')
-        column_3.button('3', type='secondary', width='stretch')
-        column_3.button('.', type='secondary', width='stretch')
-
-        operation.button('/', type='secondary', width='stretch')
-        operation.button('X', type='secondary', width='stretch')
-        operation.button('-', type='secondary', width='stretch')
-        operation.button('+', type='secondary', width='stretch')
-        operation.button('=', type='secondary', width='stretch')
-
-  the test passes
+  green
 
 * I refresh the browser
 
@@ -2040,39 +1751,72 @@ the test passes
     :align: left
     :alt: Calculator Streamlit Fourth Column
 
-  Good! There is a fourth column, it is missing ``-`` and ``+``
+  Good! The buttons all have the same size. I am still missing ``-`` and ``+`` that the tests says are there
 
 * I add ``r`` and ``\`` to escape the characters because they mean something to streamlit_
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 25
     :emphasize-lines:  3-4
 
-        operation.button('/', type='secondary', width='stretch')
-        operation.button('X', type='secondary', width='stretch')
-        operation.button(r'\-', type='secondary', width='stretch')
-        operation.button(r'\+', type='secondary', width='stretch')
-        operation.button('=', type='secondary', width='stretch')
+        operations.button('/', key='/', width='stretch')
+        operations.button('X', key='X', width='stretch')
+        operations.button(r'\-', key='-', width='stretch')
+        operations.button(r'\+', key='+', width='stretch')
+        operations.button('=', key='=', width='stretch')
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    SUBFAILED(label='-') ... - AssertionError: '\\-' != '-'
-    SUBFAILED(label='+') ... - AssertionError: '\\+' != '+'
+    AssertionError: '\\-' != '-'
 
   - ``r`` make this a raw string_ which means the characters are taken as they are, not what they stand for
   - ``\`` escapes the character  so that ``+`` and ``-`` are taken exactly as they are to show on the buttons
 
-* I change the labels in ``test_streamlit_calculator.py``
+* I change the labels in :ref:`test_streamlit_calculator_columns` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 1
+    :lineno-start: 111
+    :emphasize-lines: 7, 11
 
-            labels = ('/', 'X', r'\-', r'\+', '=')
+            self.assertEqual(
+                self.tester.columns[3].button('X').label,
+                'X'
+            )
+            self.assertEqual(
+                self.tester.columns[3].button('-').label,
+                r'\-'
+            )
+            self.assertEqual(
+                self.tester.columns[3].button('+').label,
+                r'+'
+            )
+            self.assertEqual(
+                self.tester.columns[3].button('=').label,
+                '='
+            )
 
-  the test is green again
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '\\+' != '+'
+
+* I change the labels in :ref:`test_streamlit_calculator_buttons`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 2-3
+
+            self.assertEqual(self.tester.button('X').label, 'X')
+            self.assertEqual(self.tester.button(r'\-').label, '-')
+            self.assertEqual(self.tester.button(r'\+').label, '+')
+            self.assertEqual(self.tester.button('=').label, '=')
+
+        def test_streamlit_calculator_columns(self):
+
+  the test passes
 
 * I check the browser
 
@@ -2083,355 +1827,148 @@ the test passes
 
   yes! The calculator shows all the labels
 
-* the 4 :ref:`for loops<what is a for loop?>` in the test look the same
+* I remove :ref:`test_streamlit_calculator_buttons` because :ref:`test_streamlit_calculator_columns` tests the same things, the button labels
 
   .. code-block:: python
+    :lineno-start: 16
 
-    labels = (a, b, c, d, e)
-    for index in range(len(labels)):
-        with self.subTest(label=labels[index]):
+        def test_streamlit_calculator_display(self):
             self.assertEqual(
-                tester.columns[X].button[index].label,
-                labels[index]
+                self.tester.main.children[1].type,
+                'flex_container'
             )
 
-  the parts that change are the labels and the number used to :ref:`index<test_index_returns_first_position_of_item_in_a_list>` the ``tester.columns`` :ref:`list<what is a list?>`
-
-  I add a :ref:`method<what is a function?>` to remove the repetition of the :ref:`for loops<what is a for loop?>` in ``test_streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3-9
-
-    class TestStreamlitCalculator(unittest.TestCase):
-
-        def assert_buttons_in_column(self, labels, column):
-            for index in range(len(labels)):
-                with self.subTest(label=labels[index]):
-                    self.assertEqual(
-                        column.button[index].label,
-                        labels[index]
-                    )
-
-        def test_streamlit_calculator_title(self):
-
-* I use it for the first :ref:`for loop<what is a for loop?>` in :ref:`test_streamlit_calculator_buttons`
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 8-11
-
-        def test_streamlit_calculator_buttons(self):
-            tester = streamlit.testing.v1.AppTest.from_file(
-                'src/streamlit_calculator.py'
+        def test_streamlit_calculator_columns(self):
+            self.assertEqual(len(self.tester.columns), 4)
+            self.assertEqual(
+                self.tester.columns[0].button('<-').label,
+                '<-'
             )
-            tester.run()
-            self.assertEqual(len(tester.columns), 4)
-
-            self.assert_buttons_in_column(
-                labels=('a', 'b', 'c', 'd', 'e'),
-                column=tester.columns[0]
+            self.assertEqual(
+                self.tester.columns[0].button('7').label,
+                '7'
             )
-
-            labels = ('<-', '7', '4', '1', '+/-')
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    SUBFAILED(label='a') ... - AssertionError: '<-' != 'a'
-    SUBFAILED(label='b') ... - AssertionError: '7' != 'b'
-    SUBFAILED(label='c') ... - AssertionError: '4' != 'c'
-    SUBFAILED(label='d') ... - AssertionError: '1' != 'd'
-    SUBFAILED(label='e') ... - AssertionError: '+/-' != 'e'
-
-  it works
-
-* I change the labels
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 2
-
-            self.assert_buttons_in_column(
-                labels=('<-', '7', '4', '1', '+/-'),
-                column=tester.columns[0]
+            self.assertEqual(
+                self.tester.columns[0].button('4').label,
+                '4'
+            )
+            self.assertEqual(
+                self.tester.columns[0].button('1').label,
+                '1'
+            )
+            self.assertEqual(
+                self.tester.columns[0].button('+/-').label,
+                '+/-'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('C').label,
+                'C'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('8').label,
+                '8'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('5').label,
+                '5'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('2').label,
+                '2'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('0').label,
+                '0'
             )
 
-  the test passes
-
-* I add another call to the ``assert_buttons_in_column`` :ref:`method<what is a function?>` for the second column
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 5-8
-
-            self.assert_buttons_in_column(
-                labels=('<-', '7', '4', '1', '+/-'),
-                column=tester.columns[0]
+            self.assertEqual(
+                self.tester.columns[2].button('AC').label,
+                'AC'
             )
-            self.assert_buttons_in_column(
-                labels=('C', '8', '5', '2', '0'),
-                column=tester.columns[0]
+            self.assertEqual(
+                self.tester.columns[2].button('9').label,
+                '9'
             )
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    SUBFAILED(label='C') ... - AssertionError: '<-' != 'C'
-    SUBFAILED(label='8') ... - AssertionError: '7' != '8'
-    SUBFAILED(label='5') ... - AssertionError: '4' != '5'
-    SUBFAILED(label='2') ... - AssertionError: '1' != '2'
-    SUBFAILED(label='0') ... - AssertionError: '+/-' != '0'
-
-* I change the column
-
-  .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 3
-
-            self.assert_buttons_in_column(
-                labels=('C', '8', '5', '2', '0'),
-                column=tester.columns[1]
+            self.assertEqual(
+                self.tester.columns[2].button('6').label,
+                '6'
+            )
+            self.assertEqual(
+                self.tester.columns[2].button('3').label,
+                '3'
+            )
+            self.assertEqual(
+                self.tester.columns[2].button('.').label,
+                '.'
             )
 
-  the test passes
-
-* I add 2 more calls for the other columns
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5-12
-
-            self.assert_buttons_in_column(
-                labels=('C', '8', '5', '2', '0'),
-                column=tester.columns[1]
+            self.assertEqual(
+                self.tester.columns[3].button('/').label,
+                '/'
             )
-            self.assert_buttons_in_column(
-                labels=('AC', '9', '6', '3', '.'),
-                column=tester.columns[2]
+            self.assertEqual(
+                self.tester.columns[3].button('X').label,
+                'X'
             )
-            self.assert_buttons_in_column(
-                labels=('/', 'X', r'\-', r'\+', '='),
-                column=tester.columns[3]
+            self.assertEqual(
+                self.tester.columns[3].button('-').label,
+                r'\-'
             )
-
-            labels = ('<-', '7', '4', '1', '+/-')
-
-  the test is still green
-
-* these 4 calls look the same
-
-  .. code-block:: python
-
-    self.assert_buttons_in_column(
-        labels=(a, b, c, d, e),
-        column=tester.columns[number]
-    )
-
-  the parts that change are the labels and the numbers used to :ref:`index<test_index_returns_first_position_of_item_in_a_list>` the ``tester.columns`` :ref:`list<what is a list?>`.
-
-  I add a :ref:`variable<what is a variable?>` and a :ref:`for loop<what is a for loop?>`
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 3-14
-
-            self.assertEqual(len(tester.columns), 4)
-
-            all_labels = (
-                ('<-', '7', '4', '1', '+/-'),
-                ('C', '8', '5', '2', '0'),
-                ('AC', '9', '6', '3', '.'),
-                ('/', 'X', r'\-', r'\+', '='),
+            self.assertEqual(
+                self.tester.columns[3].button('+').label,
+                r'+'
             )
-            for index in range(len(all_labels)):
-                with self.subTest(index=index):
-                    self.assert_buttons_in_column(
-                        labels=(0, 1, 2, 3, 4),
-                        column=tester.columns[index]
-                    )
-
-            self.assert_buttons_in_column(
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with 20 failed
-
-* I change the labels in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 2
-
-                    self.assert_buttons_in_column(
-                        labels=all_labels[index],
-                        column=tester.columns[index]
-                    )
-
-  the test is still green
-
-* I remove all the other statements
-
-  .. code-block:: python
-    :lineno-start: 15
-
-        def test_streamlit_calculator_title(self):
-            tester = streamlit.testing.v1.AppTest.from_file(
-                'src/streamlit_calculator.py'
+            self.assertEqual(
+                self.tester.columns[3].button('=').label,
+                '='
             )
-            tester.run()
-            self.maxDiff = None
-            self.assertEqual(tester.title[0].value, 'Calculator')
-            self.assertEqual(len(tester.columns), 4)
-
-            all_labels = (
-                ('<-', '7', '4', '1', '+/-'),
-                ('C', '8', '5', '2', '0'),
-                ('AC', '9', '6', '3', '.'),
-                ('/', 'X', r'\-', r'\+', '='),
-            )
-            for index in range(len(all_labels)):
-                with self.subTest(index=index):
-                    self.assert_buttons_in_column(
-                        labels=all_labels[index],
-                        column=tester.columns[index]
-                    )
 
 
     # Exceptions seen
 
-* I add the tester to the `setUp method`_
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3-7
-
-    class TestStreamlitCalculator(unittest.TestCase):
-
-        def setUp(self):
-            self.tester = streamlit.testing.v1.AppTest.from_file(
-                'src/streamlit_calculator.py'
-            )
-            self.tester.run()
-
-        def assert_buttons_in_column(self, labels, column):
-
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_title`
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 7
-
-        def test_streamlit_calculator_title(self):
-            # tester = streamlit.testing.v1.AppTest.from_file(
-            #    'src/streamlit_calculator.py'
-            # )
-            # tester.run()
-            # self.assertEqual(tester.title[0].value, 'Calculator')
-            self.assertEqual(self.tester.title[0].value, 'Calculator')
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 7
-
-        def test_streamlit_calculator_title(self):
-            self.assertEqual(self.tester.title[0].value, 'Calculator')
-
-* I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_buttons`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 2-7, 19-20
-
-        def test_streamlit_calculator_buttons(self):
-            # tester = streamlit.testing.v1.AppTest.from_file(
-            #     'src/streamlit_calculator.py'
-            # )
-            # tester.run()
-            # self.assertEqual(len(tester.columns), 4)
-            self.assertEqual(len(self.tester.columns), 4)
-
-            all_labels = (
-                ('<-', '7', '4', '1', '+/-'),
-                ('C', '8', '5', '2', '0'),
-                ('AC', '9', '6', '3', '.'),
-                ('/', 'X', r'\-', r'\+', '='),
-            )
-            for index in range(len(all_labels)):
-                with self.subTest(index=index):
-                    self.assert_buttons_in_column(
-                        labels=all_labels[index],
-                        # column=tester.columns[index]
-                        column=self.tester.columns[index]
-                    )
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 24
-
-        def test_streamlit_calculator_buttons(self):
-            self.assertEqual(len(self.tester.columns), 4)
-
-            all_labels = (
-                ('<-', '7', '4', '1', '+/-'),
-                ('C', '8', '5', '2', '0'),
-                ('AC', '9', '6', '3', '.'),
-                ('/', 'X', r'\-', r'\+', '='),
-            )
-            for index in range(len(all_labels)):
-                with self.subTest(index=index):
-                    self.assert_buttons_in_column(
-                        labels=all_labels[index],
-                        column=self.tester.columns[index]
-                    )
-
 ----
 
-* I change the type for all the buttons in the fourth column to make their colors different ``streamlit_calculator.py``
+* I use the ``type`` parameter of `streamlit buttons` to change the colors of the buttons in the fourth column, in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 1-5
+    :lineno-start: 23
+    :emphasize-lines: 3-7
     :emphasize-text: primary
 
-        operation.button('/', type='primary', width='stretch')
-        operation.button('X', type='primary', width='stretch')
-        operation.button(r'\-', type='primary', width='stretch')
-        operation.button(r'\+', type='primary', width='stretch')
-        operation.button('=', type='primary', width='stretch')
+        column_3.button('.', key='.', width='stretch')
+
+        operations.button('/', key='/', width='stretch', type='primary')
+        operations.button('X', key='X', width='stretch', type='primary')
+        operations.button(r'\-', key='-', width='stretch', type='primary')
+        operations.button(r'\+', key='+', width='stretch', type='primary')
+        operations.button('=', key='=', width='stretch', type='primary')
+
+
+    def main():
 
 * I change the type for the ``AC`` button
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 1
+    :lineno-start: 17
+    :emphasize-lines: 3
     :emphasize-text: primary
 
-        column_3.button('AC', type='primary', width='stretch')
-        column_3.button('9', type='secondary', width='stretch')
-        column_3.button('6', type='secondary', width='stretch')
-        column_3.button('3', type='secondary', width='stretch')
-        column_3.button('.', type='secondary', width='stretch')
+        column_2.button('0', key='0', width='stretch')
+
+        column_3.button('AC', key='AC', width='stretch', type='primary')
+        column_3.button('9', key='9', width='stretch')
 
 * I change the type for ``C`` button
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 11
     :emphasize-lines: 1
     :emphasize-text: primary
 
-        column_2.button('C', type='primary', width='stretch')
-        column_2.button('8', type='secondary', width='stretch')
-        column_2.button('5', type='secondary', width='stretch')
-        column_2.button('2', type='secondary', width='stretch')
-        column_2.button('0', type='secondary', width='stretch')
+        column_1.button('+/-', key='+/-', width='stretch')
+
+        column_2.button('C', key='C', width='stretch', type='primary')
+        column_2.button('8', key='8', width='stretch')
 
 * I check the browser
 
