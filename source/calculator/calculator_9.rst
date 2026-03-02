@@ -379,7 +379,7 @@ how to view the website
 
   .. image:: /_static/calculator/website/flask_dialog.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Confirm you want to view Flask Development Server
 
   or I use :kbd:`ctrl/option` on the keyboard and click on ``http://127.0.0.1:5000`` with the mouse to open the browser and it shows an empty page. Success!
@@ -452,7 +452,7 @@ how to view the website
 
   .. image:: /_static/calculator/website/calculator_heading.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator Header
 
   Yes! I know how to make a website with Python_!!
@@ -1292,7 +1292,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
   .. image:: /_static/calculator/website/calculator_first_input.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator form with first input
 
 * I use :kbd:`ctrl+s` on the keyboard in ``test_calculator_website.py`` to run the tests, still green
@@ -1312,7 +1312,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
   .. image:: /_static/calculator/website/calculator_second_input.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator form with second input
 
 * I use :kbd:`ctrl+s` on the keyboard in ``test_calculator_website.py`` to run the tests, green
@@ -1335,7 +1335,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
   .. image:: /_static/calculator/website/calculator_first_operation.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator form with first operation
 
 * I use :kbd:`ctrl+s` on the keyboard in ``website.py`` to run the tests, they are still green
@@ -1358,7 +1358,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
   .. image:: /_static/calculator/website/calculator_first_operation_reorder.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator form with first operation redordered
 
 * I use :kbd:`ctrl+s` on the keyboard in ``website.py`` to run the tests. Green
@@ -1405,21 +1405,21 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
   .. image:: /_static/calculator/website/calculator_submit_button.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator form with calculate button
 
 * I enter ``10000`` as the first number and ``20000`` as the second number, with ``*`` as the operation
 
   .. image:: /_static/calculator/website/calculator_first_calculation.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator form first calculation
 
   I click ``calculate`` and the browser shows
 
   .. image:: /_static/calculator/website/calculator_first_result.png
     :width: 600
-    :align: center
+    :align: left
     :alt: Calculator first result
 
 ugly and it works

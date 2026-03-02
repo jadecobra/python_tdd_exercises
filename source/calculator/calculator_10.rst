@@ -1013,6 +1013,94 @@ I want to add buttons for the numbers and operations.
 
   the test passes
 
+* I make a :ref:`function<what is a function?>` to make the buttons
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-23
+
+    import streamlit
+
+
+    def add_buttons():
+        streamlit.button('<-', key='<-')
+        streamlit.button('7', key='7')
+        streamlit.button('4', key='4')
+        streamlit.button('1', key='1')
+        streamlit.button('+/-', key='+/-')
+        streamlit.button('C', key='C')
+        streamlit.button('8', key='8')
+        streamlit.button('5', key='5')
+        streamlit.button('2', key='2')
+        streamlit.button('0', key='0')
+        streamlit.button('AC', key='AC')
+        streamlit.button('9', key='9')
+        streamlit.button('6', key='6')
+        streamlit.button('3', key='3')
+        streamlit.button('/', key='/')
+        streamlit.button('X', key='X')
+        streamlit.button('-', key='-')
+        streamlit.button('+', key='+')
+        streamlit.button('=', key='=')
+
+
+    def main():
+
+* I call the new :ref:`function<what is a function?>` in ``main``
+
+  .. code-block:: python
+    :lineno-start: 26
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+        add_buttons()
+
+        streamlit.button('<-', key='<-')
+
+  the test is still passing
+
+* the second terminal_ (for the streamlit_ application) shows ``streamlit.errors.StreamlitDuplicateElementKey``
+
+  .. code-block:: python
+
+    streamlit.errors.StreamlitDuplicateElementKey: There are multiple elements with the same key='<-'. To fix this, please make sure that the key argument is unique for each element you create.
+
+* I add ``streamlit.errors.StreamlitDuplicateElementKey`` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 7
+    :emphasize-text: streamlit.errors.StreamlitDuplicateElementKey
+
+    # Exceptions seen
+    # NameError
+    # AttributeError
+    # AssertionError
+    # SyntaxError
+    # KeyError
+    # streamlit.errors.StreamlitDuplicateElementKey
+
+* I check the browser and see the :ref:`Exception<errors>` is still there
+
+* I remove the buttons from ``main``
+
+  .. code-block:: python
+    :lineno-start: 26
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+        add_buttons()
+
+
+    if __name__ == '__main__':
+        main()
+
+  the test is still green
+
+* The second terminal_ still shows ``streamlit.errors.StreamlitDuplicateElementKey``
+
 * I check the browser
 
   .. image:: /_static/calculator/streamlit/no_column_all_buttons.png
@@ -1020,7 +1108,7 @@ I want to add buttons for the numbers and operations.
     :align: left
     :alt: Calculator Streamlit All Buttons no column
 
-  I see more buttons, and problems
+  I see all the buttons, and problems
 
   - all the buttons are in one column, simple calculators have 4, 3 for numbers, 1 for operations
   - 2 buttons are missing - addition and subtraction
@@ -1136,8 +1224,358 @@ I want to add buttons for the numbers and operations.
 test_streamlit_calculator_columns
 *********************************************************************************
 
-Buttons on Calculators are arranged in Columns or Rows. I can do the same thing with Streamlit_
+Calculator buttons are arranged in Columns or Rows. I can do the same thing with Streamlit_
 
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a new test to make sure the Calculator has 4 columns
+
+.. code-block:: python
+  :lineno-start: 40
+  :emphasize-lines: 4-5
+
+          self.assertEqual(self.tester.button('+').label, '+')
+          self.assertEqual(self.tester.button('=').label, '=')
+
+      def test_streamlit_calculator_columns(self):
+          self.assertEqual(len(self.tester.columns), 4)
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: 0 != 4
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add columns to ``streamlit_calculator.py``
+
+.. code-block:: python
+  :lineno-start: 26
+  :emphasize-lines: 6
+
+  def main():
+      streamlit.title('Calculator')
+      streamlit.container(border=True)
+      add_buttons()
+
+      streamlit.columns(4)
+
+the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to check what is in the first column, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 3
+
+        def test_streamlit_calculator_columns(self):
+            self.assertEqual(len(self.tester.columns), 4)
+            self.assertEqual(self.tester.columns[0].children, None)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {} != None
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 1
+
+            self.assertEqual(self.tester.columns[0].children, {})
+
+  the test passes
+
+* I give the columns names because so I can put buttons in them, in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 1
+
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+  the test is still green
+
+* I move the columns to the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2
+
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        streamlit.button('<-', key='<-')
+
+  still green
+
+* I add the button for ``<-`` to the first column
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-4
+
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        # streamlit.button('<-', key='<-')
+        column_1.button('<-', key='<-')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {0: Button(key='<-', label='<-')} != {}
+
+  good, the button is in the column and I know how to test the button
+
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_streamlit_calculator_columns`
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2-3
+
+            self.assertEqual(
+                self.tester.columns[0].button('<-').label,
+                ''
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '<-' != ''
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 3
+
+            self.assertEqual(
+                self.tester.columns[0].button('<-').label,
+                '<-'
+            )
+
+  the test passes
+
+* I add :ref:`assertions<what is an assertion?>` for the other buttons in the first column
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 7-22
+
+        def test_streamlit_calculator_columns(self):
+            self.assertEqual(len(self.tester.columns), 4)
+            self.assertEqual(
+                self.tester.columns[0].button('<-').label,
+                '<-'
+            )
+            self.assertEqual(
+                self.tester.columns[0].button('7').label,
+                '7'
+            )
+            self.assertEqual(
+                self.tester.columns[0].button('4').label,
+                '4'
+            )
+            self.assertEqual(
+                self.tester.columns[0].button('1').label,
+                '1'
+            )
+            self.assertEqual(
+                self.tester.columns[0].button('+/-').label,
+                '+/-'
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '7'
+
+* I remove the commented line then move buttons to the first column in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 5-8
+
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button('<-', key='<-')
+        column_1.button('7', key='7')
+        column_1.button('4', key='4')
+        column_1.button('1', key='1')
+        column_1.button('+/-', key='+/-')
+
+        streamlit.button('C', key='C')
+
+  the test passes
+
+* I check the browser and the buttons still look the same
+
+* I add :ref:`assertions<What is an assertion?>` for the buttons in the second column, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 6-21
+
+            self.assertEqual(
+                self.tester.columns[0].button('+/-').label,
+                '+/-'
+            )
+
+            self.assertEqual(
+                self.tester.columns[1].button('C').label,
+                'C'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('8').label,
+                '8'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('5').label,
+                '5'
+            )
+            self.assertEqual(
+                self.tester.columns[1].button('2').label,
+                '2'
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: 'C'
+
+* I move buttons to the second column in ``streamlit_calculator,py``
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3-7
+
+        column_1.button('+/-', key='+/-')
+
+        column_2.button('C', key='C')
+        column_2.button('8', key='8')
+        column_2.button('5', key='5')
+        column_2.button('2', key='2')
+        column_2.button('0', key='0')
+
+        streamlit.button('AC', key='AC')
+
+  the test passes
+
+* I check the browser
+
+  .. image:: /_static/calculator/streamlit/2_columns.png
+    :width: 600
+    :align: left
+    :alt: Calculator 2 Columns
+
+  there is a second column of buttons. Progress! It does not look quite right yet, baby steps.
+
+* I add :ref:`assertions<what is an assertion?>` for the third column, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 6-25
+
+            self.assertEqual(
+                self.tester.columns[1].button('2').label,
+                '2'
+            )
+
+            self.assertEqual(
+                self.tester.columns[2].button('AC').label,
+                'AC'
+            )
+            self.assertEqual(
+                self.tester.columns[2].button('9').label,
+                '9'
+            )
+            self.assertEqual(
+                self.tester.columns[2].button('6').label,
+                '6'
+            )
+            self.assertEqual(
+                self.tester.columns[2].button('3').label,
+                '3'
+            )
+            self.assertEqual(
+                self.tester.columns[2].button('.').label,
+                '.'
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: 'AC'
+
+* I move buttons to the third column in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-7
+
+        column_2.button('0', key='0')
+
+        column_3.button('AC', key='AC')
+        column_3.button('9', key='9')
+        column_3.button('6', key='6')
+        column_3.button('3', key='3')
+        column_3.button('.', key='.')
+
+        streamlit.button('/', key='/')
+
+* I check the browser
+
+  .. code-block:: python
+
+
+
+----
+
+----
+
+----
+
+----
 
 
 * I add a button to the first column in ``streamlit_calculator.py``
