@@ -1790,7 +1790,7 @@ the test passes
             )
             self.assertEqual(
                 self.tester.columns[3].button('+').label,
-                r'+'
+                r'\+'
             )
             self.assertEqual(
                 self.tester.columns[3].button('=').label,
@@ -1801,7 +1801,7 @@ the test passes
 
   .. code-block:: python
 
-    AssertionError: '\\+' != '+'
+    AssertionError: '\\-' != '-'
 
 * I change the labels in :ref:`test_streamlit_calculator_buttons`
 
@@ -1916,7 +1916,7 @@ the test passes
             )
             self.assertEqual(
                 self.tester.columns[3].button('+').label,
-                r'+'
+                r'\+'
             )
             self.assertEqual(
                 self.tester.columns[3].button('=').label,
