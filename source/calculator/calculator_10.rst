@@ -2061,63 +2061,70 @@ I want the calculator to show the number when I click on a button
     :align: left
     :alt: Calculator Streamlit Display 7 on click
 
+  ``7`` shows on the display
+
 * I make the same change for the other numbers
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 7-8, 11-12, 18-19, 22-23, 26-27, 30-31, 36-37, 40-41, 44-45, 48-49
+    :emphasize-lines: 5-12, 16-31, 34-49
     :emphasize-text: on_click args
 
-        column_1.button('<-', type='secondary', width='stretch')
         column_1.button(
-            '7', type='secondary', width='stretch',
-            on_click=show, args=[display, '7'],
+            '7', key='7', width='stretch',
+            on_click=show, args=[display, '7']
         )
         column_1.button(
-            '4', type='secondary', width='stretch',
-            on_click=show, args=[display, '4'],
+            '4', key='4', width='stretch',
+            on_click=show, args=[display, '4']
         )
         column_1.button(
-            '1', type='secondary', width='stretch',
-            on_click=show, args=[display, '1'],
+            '1', key='1', width='stretch',
+            on_click=show, args=[display, '1']
         )
-        column_1.button('+/-', type='secondary', width='stretch')
+        column_1.button('+/-', key='+/-', width='stretch')
 
-        column_2.button('C', type='primary', width='stretch')
+        column_2.button('C', key='C', width='stretch', type='primary')
         column_2.button(
-            '8', type='secondary', width='stretch',
-            on_click=show, args=[display, '8'],
+            '8', key='8', width='stretch',
+            on_click=show, args=[display, '8']
         )
         column_2.button(
-            '5', type='secondary', width='stretch',
-            on_click=show, args=[display, '5'],
+            '5', key='5', width='stretch',
+            on_click=show, args=[display, '5']
         )
         column_2.button(
-            '2', type='secondary', width='stretch',
-            on_click=show, args=[display, '2'],
+            '2', key='2', width='stretch',
+            on_click=show, args=[display, '2']
         )
         column_2.button(
-            '0', type='secondary', width='stretch',
-            on_click=show, args=[display, '0'],
+            '0', key='0', width='stretch',
+            on_click=show, args=[display, '0']
         )
 
-        column_3.button('AC', type='primary', width='stretch')
+        column_3.button('AC', key='AC', width='stretch', type='primary')
         column_3.button(
-            '9', type='secondary', width='stretch',
-            on_click=show, args=[display, '9'],
+            '9', key='9', width='stretch',
+            on_click=show, args=[display, '9']
         )
         column_3.button(
-            '6', type='secondary', width='stretch',
-            on_click=show, args=[display, '6'],
+            '6', key='6', width='stretch',
+            on_click=show, args=[display, '6']
         )
         column_3.button(
-            '3', type='secondary', width='stretch',
-            on_click=show, args=[display, '3'],
+            '3', key='3', width='stretch',
+            on_click=show, args=[display, '3']
         )
         column_3.button(
-            '.', type='secondary', width='stretch',
-            on_click=show, args=[display, '.'],
+            '.', key='.', width='stretch',
+            on_click=show, args=[display, '.']
         )
+
+        operations.button('/', key='/', width='stretch', type='primary')
+        operations.button('X', key='X', width='stretch', type='primary')
+        operations.button(r'\-', key='-', width='stretch', type='primary')
+        operations.button(r'\+', key='+', width='stretch', type='primary')
+        operations.button('=', key='=', width='stretch', type='primary')
 
 * I go to the browser to test the numbers and they show up in the display with one problem - every time I press a button it shows a new number. I want the numbers to stay so that I can make numbers that have more than one digit
 
@@ -2127,9 +2134,7 @@ I want the calculator to show the number when I click on a button
 how to use state
 *********************************************************************************
 
-streamlit_ has a `session state object`_ that I can use to keep values in between button presses.
-
-They work the same as :ref:`class attributes<test_attribute_error_w_class_attributes>`. They are also :ref:`dictionaries<what is a dictionary?>` in that I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+streamlit_ has a `session state object`_ that I can use to keep values in between button presses. They work the same as :ref:`class attributes<test_attribute_error_w_class_attributes>` and they are :ref:`dictionaries<what is a dictionary?>` - I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to them
 
 ----
 
@@ -2139,50 +2144,47 @@ They work the same as :ref:`class attributes<test_attribute_error_w_class_attrib
 
 ----
 
-* I add a test for the `session state object`_ that will hold the number as I click the buttons in ``test_streamlit_calculator.py``
+* I add a test for the `session state object`_ that will hold the number when I click the buttons in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 17-18
+    :lineno-start: 102
+    :emphasize-lines: 6-7
 
-        def test_streamlit_calculator_buttons(self):
-            self.assertEqual(len(self.tester.columns), 4)
-
-            all_labels = (
-                ('<-', '7', '4', '1', '+/-'),
-                ('C', '8', '5', '2', '0'),
-                ('AC', '9', '6', '3', '.'),
-                ('/', 'X', r'\-', r'\+', '='),
+            self.assertEqual(
+                self.tester.columns[3].button('=').label,
+                '='
             )
-            for index in range(len(all_labels)):
-                with self.subTest(index=index):
-                    self.assert_buttons_in_column(
-                        labels=all_labels[index],
-                        column=self.tester.columns[index]
-                    )
 
         def test_streamlit_calculator_state(self):
-            self.assertIsNone(self.tester.session_state.number)
+            self.assertIsNone(self.tester.session_state['number'])
 
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows :ref:`KeyError<test_key_error?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    AttributeError: number not found in session_state.
+    KeyError: 'st.session_state has no key "number". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a :ref:`key<test_keys_of_a_dictionary>` that will hold the numbers to show in the Calculator, in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 70
     :emphasize-lines: 3
 
     def main():
         streamlit.title('Calculator')
         streamlit.session_state.setdefault('number', 0)
-        display = streamlit.container(border=True)
+        add_buttons()
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2193,191 +2195,13 @@ They work the same as :ref:`class attributes<test_attribute_error_w_class_attrib
 * I change the assertIsNone_ to assertEqual_ in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 107
     :emphasize-lines: 2
 
         def test_streamlit_calculator_state(self):
-            self.assertEqual(self.tester.session_state.number, 0)
+            self.assertEqual(self.tester.session_state['number'], '0')
 
   the test passes
-
-----
-
-
-
-----
-
-----
-
-----
-  .. code-block:: python
-
-    import streamlit
-
-
-    def main():
-        streamlit.title('Calculator')
-        streamlit.header('BOOM!!!')
-
-
-    if __name__ == '__main__':
-        main()
-
-
-  .. code-block:: python
-
-    class TestStreamlitCalculator(unittest.TestCase):
-
-        def test_streamlit_calculator_title(self):
-            self.maxDiff = None
-            tester = streamlit.testing.v1.AppTest.from_file('src/streamlit_calculator.py')
-            tester.run()
-            self.assertEqual(
-                dir(tester),
-                [
-                    '__class__',
-                    '__delattr__',
-                    '__dict__',
-                    '__dir__',
-                    '__doc__',
-                    '__eq__',
-                    '__firstlineno__',
-                    '__format__',
-                    '__ge__',
-                    '__getattribute__',
-                    '__getitem__',
-                    '__getstate__',
-                    '__gt__',
-                    '__hash__',
-                    '__init__',
-                    '__init_subclass__',
-                    '__iter__',
-                    '__le__',
-                    '__len__',
-                    '__lt__',
-                    '__module__',
-                    '__ne__',
-                    '__new__',
-                    '__reduce__',
-                    '__reduce_ex__',
-                    '__repr__',
-                    '__setattr__',
-                    '__sizeof__',
-                    '_/_static_attributes__',
-                    '__str__',
-                    '__subclasshook__',
-                    '__weakref__',
-                    '_from_string',
-                    '_page_hash',
-                    '_run',
-                    '_script_path',
-                    '_tree',
-                    'args',
-                    'button',
-                    'button_group',
-                    'caption',
-                    'chat_input',
-                    'chat_message',
-                    'checkbox',
-                    'code',
-                    'color_picker',
-                    'columns',
-                    'dataframe',
-                    'date_input',
-                    'datetime_input',
-                    'default_timeout',
-                    'divider',
-                    'error',
-                    'exception',
-                    'expander',
-                    'from_file',
-                    'from_function',
-                    'from_string',
-                    'get',
-                    'header',
-                    'info',
-                    'json',
-                    'kwargs',
-                    'latex',
-                    'main',
-                    'markdown',
-                    'metric',
-                    'multiselect',
-                    'number_input',
-                    'query_params',
-                    'radio',
-                    'run',
-                    'secrets',
-                    'select_slider',
-                    'selectbox',
-                    'session_state',
-                    'sidebar',
-                    'slider',
-                    'status',
-                    'subheader',
-                    'success',
-                    'switch_page',
-                    'table',
-                    'tabs',
-                    'text',
-                    'text_area',
-                    'text_input',
-                    'time_input',
-                    'title',
-                    'toast',
-                    'toggle',
-                    'warning'
-                ]
-            )
-            self.assertEqual(
-                tester.title[0].value,
-                'Calculator'
-            )
-
-
-
-    .. code-block:: python
-      :lineno-start: 8
-      :emphasize-lines: 5-12
-
-          def test_streamlit_can_be_imported(self):
-              ...
-
-          def test_streamlit_calculator_app(self):
-              from src.streamlit_app import main
-              self.assertTrue(callable(main))
-
-the terminal shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-* I create the file
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch src/streamlit_app.py
-
-* I open it and add the basic app
-
-  .. code-block:: python
-    :linenos:
-
-    import streamlit as st
-    import src.calculator as calc
-
-    def main():
-        st.title("🧮 My TDD Calculator")
-        st.write("Built step-by-step with Test-Driven Development!")
-
-    if __name__ == "__main__":
-        main()
-
-The test passes.
 
 ----
 
@@ -2385,66 +2209,264 @@ The test passes.
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-Now I build the full interactive calculator.
+----
 
-I update the test to also check core behavior (we already know it works from earlier chapters, but it feels good to see it here).
+* I add the `session state object`_ to the ``show`` :ref:`function<what is a function?>` to update it when a button is clicked, then display the number
 
-I expand ``src/streamlit_app.py``:
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2-4
 
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 4-35
+    def show(display, number):
+        # display.write(number)
+        streamlit.session_state['number'] += number
+        display.write(streamlit.session_state['number'])
 
-    def main():
-        st.title("🧮 My TDD Calculator")
-        st.write("Built step-by-step with Test-Driven Development!")
+  the test passes
 
-        col1, col2, col3 = st.columns([3, 1, 3])
+* I remove the commented line
 
-        with col1:
-            first = st.number_input("First number", value=0.0, step=0.1)
+  .. code-block:: python
+    :lineno-start: 4
 
-        with col2:
-            operation = st.selectbox(
-                "Operation",
-                ["+", "-", "×", "÷"]
-            )
+    def show(display, number):
+        streamlit.session_state['number'] += number
+        display.write(streamlit.session_state['number'])
 
-        with col3:
-            second = st.number_input("Second number", value=0.0, step=0.1)
+* I add an :ref:`assertion<what is an assertion?>` to test what happens to the `session state object`_ when I press a button for a number
 
-        if st.button("Calculate", type="primary"):
-            try:
-                ops = {
-                    "+": calc.add,
-                    "-": calc.subtract,
-                    "×": calc.multiply,
-                    "÷": calc.divide
-                }
-                result = ops[operation](first, second)
-                st.success(f"**Result:** {result}")
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 3
 
-            except ZeroDivisionError:
-                st.error("brmph?! I cannot divide by 0. Try again...")
-            except Exception:
-                st.error("brmph?! Numbers only. Try again...")
+        def test_streamlit_calculator_state(self):
+            self.assertEqual(self.tester.session_state['number'], '0')
+            self.tester.button('1').click().run()
+            self.assertEqual(self.tester.session_state['number'], '0')
 
-        # Bonus: show history
-        if "history" not in st.session_state:
-            st.session_state.history = []
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-        if st.button("Clear history"):
-            st.session_state.history = []
+  .. code-block:: python
 
-        if st.session_state.history:
-            st.subheader("Recent calculations")
-            for item in reversed(st.session_state.history[-5:]):
-                st.write(item)
+    AssertionError: '01' != '0'
 
-    if __name__ == "__main__":
-        main()
+  this is a problem
 
-The app now looks and works beautifully.
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 1
+
+            self.assertEqual(self.tester.session_state['number'], '01')
+
+* I try with more
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 2-5
+
+            self.assertEqual(self.tester.session_state['number'], '01')
+            self.tester.button('2').click().run()
+            self.tester.button('3').click().run()
+            self.tester.button('4').click().run()
+            self.assertEqual(self.tester.session_state['number'], '01')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '01234' != '01'
+
+* I change the expectation to match
+
+  .. code-block:: python
+    :lineno-start: 114
+    :emphasize-lines: 1
+
+            self.assertEqual(self.tester.session_state['number'], '01234')
+
+
+
+
+
+----
+
+----
+
+----
+
+----
+
+* I refresh the browser and click on all the numbers
+
+  .. image:: /_static/calculator/streamlit/many_numbers.png
+    :width: 600
+    :align: left
+    :alt: Many Numbers
+
+  the calculator keeps numbers when I press the buttons
+
+* I add a :ref:`condition<if statements>` to the ``show`` :ref:`function<what is a function?>`, I do not want the numbers to start with ``0``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2-5
+
+    def show(display, number):
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+        else:
+            streamlit.session_state['number'] += number
+        display.write(streamlit.session_state['number'])
+
+* I refresh the browser and try all the numbers
+
+  .. image:: /_static/calculator/streamlit/many_numbers_no_zero_first.png
+    :width: 600
+    :align: left
+    :alt: Many Numbers Without 0 first
+
+  the number no longer starts with ``0``
+
+* I try decimal numbers
+
+  .. image:: /_static/calculator/streamlit/many_decimals.png
+    :width: 600
+    :align: left
+    :alt: Many Decimals
+
+  the Calculator allows me add many decimal points, I have to fix that
+
+* I make a :ref:`function<what is a function?>` to update the `session state object`_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-8
+
+    import streamlit
+
+
+    def update_state(number):
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+            return
+        streamlit.session_state['number'] += number
+
+
+    def show(display, number):
+
+* I add :ref:`conditions<if statements>` for decimal numbers
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2-4
+
+    def update_state(number):
+        if number == '.':
+            if streamlit.session_state['number'].count('.') != 0:
+                return
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+            return
+        streamlit.session_state['number'] += number
+
+* I call the new :ref:`function<what is a function?>` in the ``show`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2-6
+
+    def show(display, number):
+        # if streamlit.session_state['number'] == '0':
+        #     streamlit.session_state['number'] = number
+        # else:
+        #     streamlit.session_state['number'] += number
+        update_state(number)
+        display.write(streamlit.session_state['number'])
+
+* I refresh the browser and try many decimals again
+
+  .. image:: /_static/calculator/streamlit/one_decimal.png
+    :width: 600
+    :align: left
+    :alt: One Decimal
+
+  Yes. I can only do one decimal in a number
+
+* I remove the commented lines from the ``show`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+
+    def show(display, number):
+        update_state(number)
+        display.write(streamlit.session_state['number'])
+
+* Nothing happens when I click ``+/-`` in the calculator. I want to be able to change positive numbers to negative numbers or negative numbers to positive numbers by clicking ``+/-``. I add :ref:`conditions<if statements>` to the ``update state`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 8-15
+
+    def update_state(number):
+        if number == '.':
+            if streamlit.session_state['number'].count('.') != 0:
+                return
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+            return
+        if number == '+/-':
+            if streamlit.session_state['number'].startswith('-'):
+                streamlit.session_state['number'] = streamlit.session_state['number'][1:]
+                return
+            else:
+                new_number = '-' + streamlit.session_state['number']
+                streamlit.session_state['number'] = new_number
+                return
+        streamlit.session_state['number'] += number
+
+* I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 38
+
+        column_1.button(
+            '1', key='1', width='stretch',
+            on_click=show, args=[display, '1']
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch',
+            on_click=show, args=[display, '+/-']
+        )
+
+        column_2.button('C', key='C', width='stretch', type='primary')
+
+* I refresh the browser and try to make a negative number
+
+  .. image:: /_static/calculator/streamlit/negative_number.png
+    :width: 600
+    :align: left
+    :alt: Negative Number
+
+  When I click on the ``+/-`` button it turns a positive number negative
+
+* I try the ``+/-`` button again
+
+  .. image:: /_static/calculator/streamlit/positive_number.png
+    :width: 600
+    :align: left
+    :alt: Negative Number
+
+  the ``-`` is removed from the number to make it a positive number. Progress!
+
+----
+
+----
+
+----
+
+----
 
 ----
 
