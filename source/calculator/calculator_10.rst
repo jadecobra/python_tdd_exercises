@@ -1987,23 +1987,22 @@ how to display the numbers when I click on them
 
 I want the calculator to show the number when I click on a button
 
-* I add a :ref:`variable<what is a variable?>` for the container to be able to use it to show the numbers
+* I add a :ref:`variable<what is a variable?>` to name the container so I can use it to show the numbers
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 32
     :emphasize-lines: 3
 
     def main():
         streamlit.title('Calculator')
         display = streamlit.container(border=True)
+        add_buttons()
 
-        column_1, column_2, column_3, operation = streamlit.columns(
-
-* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is clicked. It is also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_functions_w_positional_arguments>` that the :ref:`function<what is a function?>` takes. I add a :ref:`function<what is a function?>` to show the text of the button when it is clicked
+* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is clicked. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_functions_w_positional_arguments>` that the :ref:`function<what is a function?>` takes. I add a :ref:`function<what is a function?>` to show the text of the button when it is clicked
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5
+    :emphasize-lines: 3-4
 
     import streamlit
 
@@ -2012,23 +2011,48 @@ I want the calculator to show the number when I click on a button
         display.write(number)
 
 
-    def main():
+    def add_buttons():
 
-* I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button
+* I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 2-5
+    :lineno-start: 8
+    :emphasize-lines: 5-8
     :emphasize-text: on_click args
 
-        column_1.button('<-', type='secondary', width='stretch')
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button('<-', key='<-', width='stretch')
         column_1.button(
-            '7', type='secondary', width='stretch',
+            '7', key='7', width='stretch',
             on_click=show, args=[display, '7']
         )
-        column_1.button('4', type='secondary', width='stretch')
-        column_1.button('1', type='secondary', width='stretch')
-        column_1.button('+/-', type='secondary', width='stretch')
+        column_1.button('4', key='4', width='stretch')
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '7'
+
+  the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'display' is not defined
+
+* I move the display from ``main`` to the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+  the test passes
 
 * I go to the browser and click on the ``7`` button
 
