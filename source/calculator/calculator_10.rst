@@ -1827,7 +1827,7 @@ the test passes
 
   yes! The calculator shows all the labels
 
-* I remove :ref:`test_streamlit_calculator_buttons` because :ref:`test_streamlit_calculator_columns` tests the same things, the button labels
+* I remove :ref:`test_streamlit_calculator_buttons` because :ref:`test_streamlit_calculator_columns` tests the same things - the button labels
 
   .. code-block:: python
     :lineno-start: 16
@@ -2161,7 +2161,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`KeyError<test_key_error?>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
@@ -2215,12 +2215,14 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-6
 
     def show(display, number):
         # display.write(number)
         streamlit.session_state['number'] += number
-        display.write(streamlit.session_state['number'])
+        display.write(
+            streamlit.session_state['number']
+        )
 
   the test passes
 
@@ -2231,7 +2233,9 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
     def show(display, number):
         streamlit.session_state['number'] += number
-        display.write(streamlit.session_state['number'])
+        display.write(
+            streamlit.session_state['number']
+        )
 
 * I add an :ref:`assertion<what is an assertion?>` to test what happens to the `session state object`_ when I press a button for a number
 
@@ -2243,6 +2247,9 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
             self.assertEqual(self.tester.session_state['number'], '0')
             self.tester.button('1').click().run()
             self.assertEqual(self.tester.session_state['number'], '0')
+
+  - ``.click()`` presses the button
+  - ``.run()`` runs the program - ``streamlit_calculator.py``, same as when a person uses the application
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2260,7 +2267,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
             self.assertEqual(self.tester.session_state['number'], '01')
 
-* I try with more
+* I add more button clicks
 
   .. code-block:: python
     :lineno-start: 110
@@ -2282,21 +2289,13 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
   .. code-block:: python
     :lineno-start: 114
-    :emphasize-lines: 1
+    :emphasize-lines: 1-3
 
-            self.assertEqual(self.tester.session_state['number'], '01234')
+            self.assertEqual(
+                self.tester.session_state['number'], '01234'
+            )
 
-
-
-
-
-----
-
-----
-
-----
-
-----
+  the test passes
 
 * I refresh the browser and click on all the numbers
 
@@ -2305,9 +2304,32 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
     :align: left
     :alt: Many Numbers
 
-  the calculator keeps numbers when I press the buttons
+  the calculator keeps numbers when I press the buttons and the number starts with ``0`` like the test
 
-* I add a :ref:`condition<if statements>` to the ``show`` :ref:`function<what is a function?>`, I do not want the numbers to start with ``0``
+* I want the calculator to remove ``0`` when it is the first number after I click on other numbers. I change the :ref:`assertions<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 4, 8-10
+
+        def test_streamlit_calculator_state(self):
+            self.assertEqual(self.tester.session_state['number'], '0')
+            self.tester.button('1').click().run()
+            self.assertEqual(self.tester.session_state['number'], '1')
+            self.tester.button('2').click().run()
+            self.tester.button('3').click().run()
+            self.tester.button('4').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], '1234'
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '01' != '1'
+
+* I add a :ref:`condition<if statements>` to the ``show`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2318,7 +2340,11 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
             streamlit.session_state['number'] = number
         else:
             streamlit.session_state['number'] += number
-        display.write(streamlit.session_state['number'])
+        display.write(
+            streamlit.session_state['number']
+        )
+
+  the test passes
 
 * I refresh the browser and try all the numbers
 
@@ -2329,61 +2355,287 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
   the number no longer starts with ``0``
 
-* I try decimal numbers
+* I import the `random module`_ to use random numbers for the test, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import random
+    import streamlit.testing.v1
+    import unittest
+
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+* I use it in :ref:`test_streamlit_calculator_state`
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 2, 4-6
+    :emphasize-text: x
+
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            self.assertEqual(self.tester.session_state['number'], '0')
+            # self.tester.button('1').click().run()
+            x = random.choice(numbers)
+            self.tester.button(x).click().run()
+            self.assertEqual(self.tester.session_state['number'], '1')
+
+  - ``numbers = '0123456789'`` makes a string with the ten numbers
+  - ``x = random.choice(numbers)`` selects a random digit from the ten numbers and points ``x`` to it
+
+  the terminal_ shows. :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'X' != '1'
+
+  where ``X`` is the random number
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 114
+    :emphasize-lines: 1
+
+            self.assertEqual(self.tester.session_state['number'], x)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'X234' != '1234'
+
+* I use random numbers for the other button clicks
+
+  .. code-block:: python
+    :lineno-start: 114
+    :emphasize-lines: 2-10
+
+            self.assertEqual(self.tester.session_state['number'], x)
+            # self.tester.button('2').click().run()
+            # self.tester.button('3').click().run()
+            # self.tester.button('4').click().run()
+            y = random.choice(numbers)
+            self.tester.button(y).click().run()
+            z = random.choice(numbers)
+            self.tester.button(z).click().run()
+            a = random.choice(numbers)
+            self.tester.button(a).click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], '1234'
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'XYZA' != '1234'
+
+* I use the random numbers in the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 2
+
+            self.assertEqual(
+                self.tester.session_state['number'], f'{x}{y}{z}{a}'
+            )
+
+  the test passes
+
+* I add a :ref:`for loop<what is a for loop?>` to test with a 10 digit number
+
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 4-18
+
+            self.assertEqual(
+                self.tester.session_state['number'], f'{x}{y}{z}{a}'
+            )
+            expectation = '0'
+            for _ in range(0, 10):
+                number = random.choice(numbers)
+                (
+                    self.tester.button(number)
+                    .click().run()
+                )
+                if expectation == '0':
+                    expectation = number
+                else:
+                    expectation += number
+            self.assertEqual(
+                self.tester.session_state['number'],
+                expectation
+            )
+
+
+    # Exceptions seen
+
+  ``for _ in range(0, 10):`` uses ``_`` as the name of the :ref:`variable<what is a variable?>` in the :ref:`for loop<what is a for loop?>` because it is not used in it
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'XYZABCDEFGHIJK' != 'BCDEFGHIJK'
+
+  the last 10 digits are the same in the two strings_
+
+* I comment out the other lines
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 3, 5-7, 11-19
+
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            # self.assertEqual(self.tester.session_state['number'], '0')
+            # self.tester.button('1').click().run()
+            # x = random.choice(numbers)
+            # self.tester.button(x).click().run()
+            # self.assertEqual(self.tester.session_state['number'], x)
+            # self.tester.button('2').click().run()
+            # self.tester.button('3').click().run()
+            # self.tester.button('4').click().run()
+            # y = random.choice(numbers)
+            # self.tester.button(y).click().run()
+            # z = random.choice(numbers)
+            # self.tester.button(z).click().run()
+            # a = random.choice(numbers)
+            # self.tester.button(a).click().run()
+            # self.assertEqual(
+            #     self.tester.session_state['number'], f'{x}{y}{z}{a}'
+            # )
+            expectation = '0'
+            for _ in range(0, 10):
+
+  I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the test is still green
+
+* I remove the commented lines and ``numbers`` :ref:`variable<what is a variable?>` and use the numbers directly
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 4
+
+        def test_streamlit_calculator_state(self):
+            expectation = '0'
+            for _ in range(0, 10):
+                number = random.choice('0123456789')
+                (
+                    self.tester.button(number)
+                    .click().run()
+                )
+                if expectation == '0':
+                    expectation = number
+                else:
+                    expectation += number
+            self.assertEqual(
+                self.tester.session_state['number'],
+                expectation
+            )
+
+
+    # Exceptions seen
+
+----
+
+*********************************************************************************
+test_streamlit_calculator_w_decimals
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add a test for decimal numbers
+
+  .. code-block:: python
+    :lineno-start: 120
+    :emphasize-lines: 6-24
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                expectation
+            )
+
+        def test_streamlit_calculator_w_decimals(self):
+            self.tester.button('0').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('2').click().run()
+            self.tester.button('3').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('5').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('6').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('7').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('8').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('9').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '.2356789'
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '.23.5.6.7.8.9' != '0.2356789'
+
+* I refresh the browser and do the same thing
 
   .. image:: /_static/calculator/streamlit/many_decimals.png
     :width: 600
     :align: left
     :alt: Many Decimals
 
-  the Calculator allows me add many decimal points, I have to fix that
+  the Calculator allows me add many decimal points
 
-* I make a :ref:`function<what is a function?>` to update the `session state object`_
+----
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-8
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-    import streamlit
+----
 
-
-    def update_state(number):
-        if streamlit.session_state['number'] == '0':
-            streamlit.session_state['number'] = number
-            return
-        streamlit.session_state['number'] += number
-
-
-    def show(display, number):
-
-* I add :ref:`conditions<if statements>` for decimal numbers
+* I add a :ref:`condition<if statements>` to the ``show`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-10
 
-    def update_state(number):
+    def show(display, number):
         if number == '.':
-            if streamlit.session_state['number'].count('.') != 0:
+            if (
+                streamlit.session_state['number']
+                .count('.') != 0
+            ):
+                display.write(
+                    streamlit.session_state['number']
+                )
                 return
         if streamlit.session_state['number'] == '0':
             streamlit.session_state['number'] = number
-            return
-        streamlit.session_state['number'] += number
+        else:
+            streamlit.session_state['number'] += number
+        display.write(
+            streamlit.session_state['number']
+        )
 
-* I call the new :ref:`function<what is a function?>` in the ``show`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2-6
-
-    def show(display, number):
-        # if streamlit.session_state['number'] == '0':
-        #     streamlit.session_state['number'] = number
-        # else:
-        #     streamlit.session_state['number'] += number
-        update_state(number)
-        display.write(streamlit.session_state['number'])
+  the test passes
 
 * I refresh the browser and try many decimals again
 
@@ -2394,43 +2646,192 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
   Yes. I can only do one decimal in a number
 
-* I remove the commented lines from the ``show`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I make a :ref:`function<what is a function?>` to update the `session state object`_
 
   .. code-block:: python
-    :lineno-start: 14
+    :linenos:
+    :emphasize-lines: 4-14
 
-    def show(display, number):
-        update_state(number)
-        display.write(streamlit.session_state['number'])
+    import streamlit
 
-* Nothing happens when I click ``+/-`` in the calculator. I want to be able to change positive numbers to negative numbers or negative numbers to positive numbers by clicking ``+/-``. I add :ref:`conditions<if statements>` to the ``update state`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 8-15
 
     def update_state(number):
         if number == '.':
-            if streamlit.session_state['number'].count('.') != 0:
+            if (
+                streamlit.session_state['number']
+                .count('.') != 0
+            ):
                 return
         if streamlit.session_state['number'] == '0':
             streamlit.session_state['number'] = number
             return
-        if number == '+/-':
-            if streamlit.session_state['number'].startswith('-'):
-                streamlit.session_state['number'] = streamlit.session_state['number'][1:]
-                return
-            else:
-                new_number = '-' + streamlit.session_state['number']
-                streamlit.session_state['number'] = new_number
-                return
         streamlit.session_state['number'] += number
+
+
+    def show(display, number):
+
+* I call the new :ref:`function<what is a function?>` in the ``show`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 2-12
+
+    def show(display, number):
+        # if number == '.':
+        #     if streamlit.session_state['number'].count('.') != 0:
+        #         display.write(
+        #             streamlit.session_state['number']
+        #         )
+        #         return
+        # if streamlit.session_state['number'] == '0':
+        #     streamlit.session_state['number'] = number
+        # else:
+        #     streamlit.session_state['number'] += number
+        update_state(number)
+        display.write(
+            streamlit.session_state['number']
+        )
+
+  the test is still green
+
+* I remove the commented lines from the ``show`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 17
+
+    def show(display, number):
+        update_state(number)
+        display.write(
+            streamlit.session_state['number']
+        )
+
+* I add a :ref:`for loop<what is a for loop?>` to :ref:`test_streamlit_calculator_w_decimals` in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 125
+    :emphasize-lines: 2-6
+
+        def test_streamlit_calculator_w_decimals(self):
+            for button in ('0.23.5.6.7.8.9'):
+                (
+                    self.tester.button(button)
+                    .click().run()
+                )
+            self.tester.button('0').click().run()
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '.235678902356789' != '.2356789'
+
+* I remove the other button clicks
+
+  .. code-block:: python
+    :lineno-start: 125
+
+        def test_streamlit_calculator_w_decimals(self):
+            for button in ('0.23.5.6.7.8.9'):
+                (
+                    self.tester.button(button)
+                    .click().run()
+                )
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '.2356789'
+            )
+
+
+    # Exceptions seen
+
+  the test passes
+
+----
+
+*********************************************************************************
+test_streamlit_calculator_w_plus_minus
+*********************************************************************************
+
+Nothing happens when I click ``+/-`` in the calculator. I want to be able to change positive numbers to negative numbers or negative numbers to positive numbers when I click ``+/-``
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a new test
+
+.. code-block:: python
+  :lineno-start: 131
+  :emphasize-lines: 6-17
+
+          self.assertEqual(
+              self.tester.session_state['number'],
+              '.2356789'
+          )
+
+      def test_streamlit_calculator_w_plus_minus(self):
+          number = '963.0258741'
+          for button in number:
+              (
+                  self.tester.button(button)
+                  .click().run()
+              )
+          self.tester.button('+/-').click().run()
+          self.assertEqual(
+              self.tester.session_state['number'],
+              f'-{number}'
+          )
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: '963.0258741' != '-963.0258741'
+
+nothing happens when I click on the ``+/-`` button in the calculator
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 26
+    :emphasize-lines: 18-21
 
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button('<-', key='<-', width='stretch')
+        column_1.button(
+            '7', key='7', width='stretch',
+            on_click=show, args=[display, '7']
+        )
+        column_1.button(
+            '4', key='4', width='stretch',
+            on_click=show, args=[display, '4']
+        )
         column_1.button(
             '1', key='1', width='stretch',
             on_click=show, args=[display, '1']
@@ -2442,6 +2843,99 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
         column_2.button('C', key='C', width='stretch', type='primary')
 
+* I add :ref:`conditions<if statements>` to the ``update_state`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 11-22
+
+    def update_state(number):
+        if number == '.':
+            if (
+                streamlit.session_state['number']
+                .count('.') != 0
+            ):
+                return
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+            return
+        if number == '+/-':
+            if not (
+                streamlit.session_state['number']
+                .startswith('-')
+            ):
+                negative = (
+                    '-'  +
+                    streamlit.session_state['number']
+                )
+                streamlit.session_state['number'] = \
+                    negative
+                return
+        streamlit.session_state['number'] += number
+
+  I can use ``\`` to break up a long line in two. The test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add another click for ``+/-`` and an :ref:`assertion<what is an assertion?>` to make sure the Calculator will change a negative number to a positive one, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 144
+    :emphasize-lines: 5-9
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                f'-{number}'
+            )
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                number
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '-963.0258741+/-' != '963.0258741'
+
+  it added ``+/-`` at the end of the number
+
+* I add another :ref:`condition<if statements>` to the ``update_state`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 13-16
+
+        if number == '+/-':
+            if not (
+                streamlit.session_state['number']
+                .startswith('-')
+            ):
+                negative = (
+                    '-'  +
+                    streamlit.session_state['number']
+                )
+                streamlit.session_state['number'] = \
+                    negative
+                return
+            else:
+                streamlit.session_state['number'] = \
+                    streamlit.session_state['number'][1:]
+                return
+        streamlit.session_state['number'] += number
+
+  the test passes
+
 * I refresh the browser and try to make a negative number
 
   .. image:: /_static/calculator/streamlit/negative_number.png
@@ -2449,7 +2943,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
     :align: left
     :alt: Negative Number
 
-  When I click on the ``+/-`` button it turns a positive number negative
+  when I click on the ``+/-`` button it turns a positive number negative
 
 * I try the ``+/-`` button again
 
@@ -2459,6 +2953,60 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
     :alt: Negative Number
 
   the ``-`` is removed from the number to make it a positive number. Progress!
+
+----
+
+* I use teh ``Rename Symbol`` feature to change ``number`` to ``value`` in the ``update_state`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 1-2, 9, 11, 27
+    :emphasize-text: value
+
+    def update_state(value):
+        if value == '.':
+            if (
+                streamlit.session_state['number']
+                .count('.') != 0
+            ):
+                return
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = value
+            return
+        if value == '+/-':
+            if not (
+                streamlit.session_state['number']
+                .startswith('-')
+            ):
+                negative = (
+                    '-'  +
+                    streamlit.session_state['number']
+                )
+                streamlit.session_state['number'] = \
+                    negative
+                return
+            else:
+                streamlit.session_state['number'] = \
+                    streamlit.session_state['number'][1:]
+                return
+        streamlit.session_state['number'] += value
+
+  the test is still green
+
+* I do the same thing in the ``show`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 1-2
+    :emphasize-text: value
+
+    def show(display, value):
+        update_state(value)
+        display.write(
+            streamlit.session_state['number']
+        )
+
+  still green
 
 ----
 
