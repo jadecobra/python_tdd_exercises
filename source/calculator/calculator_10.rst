@@ -3117,9 +3117,206 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   the test passes
 
-* I try it in the browser and it clears out any number I type
+----
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``AC`` button in ``test_streamlit
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I refresh the browser, click on number buttons and when I click on ``C`` it clears the numbers I type
+
+* I add an :ref:`assertion<what is an assertion?>` for the ``AC`` button in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 154
+    :emphasize-lines: 15-25
+
+        def test_streamlit_calculator_reset_state(self):
+            numbers = '123456789'
+            number = random.choice(numbers)
+            self.tester.button(number).click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                number
+            )
+            self.tester.button('C').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '0'
+            )
+
+            number = random.choice(numbers)
+            self.tester.button(number).click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                number
+            )
+            self.tester.button('AC').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '0'
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+    AssertionError: X != '0'
+
+* I add the ``on_click`` parameter to the ``AC`` button
+
+  .. code-block:: python
+    :lineno-start: 66
+    :emphasize-lines: 22-25
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+            on_click=reset_state
+        )
+        column_2.button(
+            '8', key='8', width='stretch',
+            on_click=show, args=[display, '8']
+        )
+        column_2.button(
+            '5', key='5', width='stretch',
+            on_click=show, args=[display, '5']
+        )
+        column_2.button(
+            '2', key='2', width='stretch',
+            on_click=show, args=[display, '2']
+        )
+        column_2.button(
+            '0', key='0', width='stretch',
+            on_click=show, args=[display, '0']
+        )
+
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+            on_click=reset_state
+        )
+        column_3.button(
+            '9', key='9', width='stretch',
+            on_click=show, args=[display, '9']
+        )
+
+  the test passes
+
+* I refresh the browser, click on number buttons and when I click on ``AC`` it clears the numbers I type
+
+* I add a call to the ``write`` :ref:`method<what is a function?>` of the ``display`` :ref:`object<what is a class?>` to show ``0`` when I click on the ``C`` or ``AC`` buttons, in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-5
+
+    def reset_state():
+        streamlit.session_state['number'] = '0'
+        display.write(
+            streamlit.session_state['number']
+        )
+
+
+    def update_state(value):
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: 'X'
+
+  and :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'display' is not defined
+
+* I add ``display`` as a :ref:`positional argument<test_functions_w_positional_arguments>` in parentheses
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 1
+
+    def reset_state(display):
+        streamlit.session_state['number'] = '0'
+        display.write(
+            streamlit.session_state['number']
+        )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    AssertionError: 'X' != '0'
+
+  and :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block::
+
+    TypeError: reset_state() missing 1 required positional argument: 'display'
+
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 181
+    :emphasize-lines: 8
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # NameError
+    # AttributeError
+    # AssertionError
+    # SyntaxError
+    # KeyError
+    # streamlit.errors.StreamlitDuplicateElementKey
+    # TypeError
+
+* I add ``display`` to the ``args`` parameter for the ``C`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 3
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+            on_click=reset_state, args=[display]
+        )
+
+  the terminal_ shows the same :ref:`Exceptions<errors>`
+
+* I add ``display`` to the ``args`` parameter for the ``AC`` button
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 3
+
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+            on_click=reset_state, args=[display]
+        )
+
+  the test passes
+
+* I refresh the browser and try the ``C`` and ``AC`` buttons
+
+  .. image:: /_static/calculator/streamlit/reset_state.png
+    :width: 600
+    :align: left
+    :alt: Display 0 after C or AC
+
+Time to do the operations
+
+----
+
+*********************************************************************************
+test_streamlit_calculator_operations
+*********************************************************************************
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
 ----
 
