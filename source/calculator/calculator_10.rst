@@ -2956,7 +2956,7 @@ nothing happens when I click on the ``+/-`` button in the calculator
 
 ----
 
-* I use teh ``Rename Symbol`` feature to change ``number`` to ``value`` in the ``update_state`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
+* I use the ``Rename Symbol`` feature to change ``number`` to ``value`` in the ``update_state`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -3007,6 +3007,119 @@ nothing happens when I click on the ``+/-`` button in the calculator
         )
 
   still green
+
+----
+
+*********************************************************************************
+test_streamlit_calculator_reset_state
+*********************************************************************************
+
+I want the ``C`` and ``AC`` buttons to change the number the Calculator shows back to ``0``
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test
+
+.. code-block:: python
+  :lineno-start: 149
+  :emphasize-lines: 6-18
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                number
+            )
+
+        def test_streamlit_calculator_reset_state(self):
+            numbers = '123456789'
+            number = random.choice(numbers)
+            self.tester.button(number).click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                number
+            )
+            self.tester.button('C').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '0'
+            )
+
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: X != '0'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a :ref:`function<what is a function?>` to ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import streamlit
+
+
+    def reset_state():
+        streamlit.session_state['number'] = '0'
+
+
+    def update_state(value):
+
+* I add the ``on_click`` parameter to the ``C`` button
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 23-26
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button('<-', key='<-', width='stretch')
+        column_1.button(
+            '7', key='7', width='stretch',
+            on_click=show, args=[display, '7']
+        )
+        column_1.button(
+            '4', key='4', width='stretch',
+            on_click=show, args=[display, '4']
+        )
+        column_1.button(
+            '1', key='1', width='stretch',
+            on_click=show, args=[display, '1']
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch',
+            on_click=show, args=[display, '+/-']
+        )
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+            on_click=reset_state
+        )
+        column_2.button(
+            '8', key='8', width='stretch',
+            on_click=show, args=[display, '8']
+        )
+
+  the test passes
+
+* I try it in the browser and it clears out any number I type
+
+* I add an :ref:`assertion<what is an assertion?>` for the ``AC`` button in ``test_streamlit
 
 ----
 

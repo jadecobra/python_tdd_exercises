@@ -23,8 +23,8 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
   - Hyper V (this might not be in the list, you can skip it if it is not)
   - Virtual Machine Platform
-  - Windows Subsystem for Linux
   - Windows Hypervisor Platform
+  - Windows Subsystem for Linux
 
   Click ``OK`` to apply the changes if any
 * Restart the computer when the installation finishes. You can go to the next steps while the above is installing

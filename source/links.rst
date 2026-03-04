@@ -265,8 +265,6 @@
 .. _Python program: `Python package`_
 .. _Python programs: `Python package`_
 .. _Python Extension: https://marketplace.visualstudio.com/items?itemName=ms-python.python
-.. _PyCharm: https://www.jetbrains.com/pycharm/download
-.. _Sublime Text: https://www.sublimetext.com
 .. _Visual Studio Code: https://code.visualstudio.com/download
 .. _Dark Rainbow Theme: https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow
 .. _indent-rainbow: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow

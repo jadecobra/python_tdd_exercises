@@ -77,12 +77,7 @@ requirements
 ********************************************************************************************
 
 * `download and install Python <https://www.python.org/downloads/>`_
-* get an `Integrated Development Environment (IDE)`_. Here are a few options
-
-  - `Visual Studio Code`_
-  - `Sublime Text`_
-  - PyCharm_
-  - `other Integrated Development Environment (IDE) options`_
+* get an `Integrated Development Environment (IDE)`_ - I use  `Visual Studio Code`_ in this book
 
 ----
 
