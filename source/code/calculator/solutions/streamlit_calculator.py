@@ -1,119 +1,142 @@
 import streamlit
-import calculator
+
+
+def show_result(display):
+    streamlit.session_state['second_number'] = \
+        streamlit.session_state['number']
+    streamlit.session_state['number'] = str(
+        float(streamlit.session_state['first_number'])
+      + float(streamlit.session_state['second_number'])
+    )
+    display.write(streamlit.session_state['number'])
+
+
+def make_variable(display):
+    streamlit.session_state['first_number'] = \
+        streamlit.session_state['number']
+    reset_state(display)
+
+
+def reset_state(display):
+    streamlit.session_state['number'] = '0'
+    display.write(streamlit.session_state['number'])
 
 
 def update_state(value):
     if value == '.':
-        if streamlit.session_state.number.count('.') == 0:
-            streamlit.session_state.number += value
-        if streamlit.session_state.number.count('.') != 0:
+        if (
+            streamlit.session_state['number']
+            .count('.') != 0
+        ):
             return
-    if streamlit.session_state.number == '0':
-        streamlit.session_state.number = value
+    if streamlit.session_state['number'] == '0':
+        streamlit.session_state['number'] = value
         return
     if value == '+/-':
-        if streamlit.session_state.number.startswith('-'):
-            streamlit.session_state.number = streamlit.session_state.number[1:]
+        if not (
+            streamlit.session_state['number']
+            .startswith('-')
+        ):
+            negative = (
+                '-'  +
+                streamlit.session_state['number']
+            )
+            streamlit.session_state['number'] = \
+                negative
             return
-        if not streamlit.session_state.number.startswith('-'):
-            new_number = '-' + streamlit.session_state.number
-            streamlit.session_state.number = new_number
+        else:
+            streamlit.session_state['number'] = \
+                streamlit.session_state['number'][1:]
             return
-    streamlit.session_state.number += value
+    streamlit.session_state['number'] += value
 
 
-def reset_state(container, *args):
-    streamlit.session_state.number = '0'
-    container.write(streamlit.session_state.number)
-
-
-def backspace(container, *args):
-    streamlit.session_state.number = streamlit.session_state.number[:-1]
-    container.write(streamlit.session_state.number)
-
-
-def show(container, value):
+def show(display, value):
     update_state(value)
-    container.write(streamlit.session_state.number)
+    display.write(streamlit.session_state['number'])
 
 
-def add_button(
-        value, container=None, type='secondary', on_click=None, display=None
-    ):
-    container.button(
-        value,
-        type=type,
-        width='stretch',
-        on_click=on_click,
-        args=[display, value]
+def add_buttons():
+    display = streamlit.container(border=True)
+    column_1, column_2, column_3, operations = streamlit.columns(4)
+
+    column_1.button('<-', key='<-', width='stretch')
+    column_1.button(
+        '7', key='7', width='stretch',
+        on_click=show, args=[display, '7'],
+    )
+    column_1.button(
+        '4', key='4', width='stretch',
+        on_click=show, args=[display, '4'],
+    )
+    column_1.button(
+        '1', key='1', width='stretch',
+        on_click=show, args=[display, '1'],
+    )
+    column_1.button(
+        '+/-', key='+/-', width='stretch',
+        on_click=show, args=[display, '+/-'],
     )
 
-def make_variables(container, operation):
-    streamlit.session_state.operation = operation
-    first_number = streamlit.session_state.number
-    reset_state(container)
-    if streamlit.session_state.first_number:
-        streamlit.session_state.second_number = streamlit.session_state.number
-    container.write(f'{first_number} {operation} {streamlit.session_state.second_number} = ')
-
-def get_result(operation, first_number, second_number):
-    return {
-        '\+': calculator.add,
-        '\-': calculator.subtract,
-        '/': calculator.divide,
-        '\*': calculator.multiply,
-    }[operation](
-        float(first_number),
-        float(second_number)
+    column_2.button(
+        'C', key='C', width='stretch', type='primary',
+        on_click=reset_state, args=[display],
+    )
+    column_2.button(
+        '8', key='8', width='stretch',
+        on_click=show, args=[display, '8'],
+    )
+    column_2.button(
+        '5', key='5', width='stretch',
+        on_click=show, args=[display, '5'],
+    )
+    column_2.button(
+        '2', key='2', width='stretch',
+        on_click=show, args=[display, '2'],
+    )
+    column_2.button(
+        '0', key='0', width='stretch',
+        on_click=show, args=[display, '0'],
     )
 
-def show_result(container, *args):
-    streamlit.session_state.second_number = streamlit.session_state.number
-    result = get_result(
-        operation=streamlit.session_state.operation,
-        first_number=streamlit.session_state.first_number,
-        second_number=streamlit.session_state.second_number,
+    column_3.button(
+        'AC', key='AC', width='stretch', type='primary',
+        on_click=reset_state, args=[display],
     )
-    container.write(str(result))
-    reset_state(container)
+    column_3.button(
+        '9', key='9', width='stretch',
+        on_click=show, args=[display, '9'],
+    )
+    column_3.button(
+        '6', key='6', width='stretch',
+        on_click=show, args=[display, '6'],
+    )
+    column_3.button(
+        '3', key='3', width='stretch',
+        on_click=show, args=[display, '3'],
+    )
+    column_3.button(
+        '.', key='.', width='stretch',
+        on_click=show, args=[display, '.'],
+    )
+
+    operations.button('/', key='/', width='stretch', type='primary')
+    operations.button('X', key='X', width='stretch', type='primary')
+    operations.button(r'\-', key='-', width='stretch', type='primary')
+    operations.button(
+        r'\+', key='+', width='stretch', type='primary',
+        on_click=make_variable, args=[display],
+    )
+    operations.button(
+        '=', key='=', width='stretch', type='primary',
+        on_click=show_result, args=[display],
+    )
 
 
 def main():
     streamlit.title('Calculator')
     streamlit.session_state.setdefault('number', '0')
-    streamlit.session_state.setdefault('first_number', '0')
-    streamlit.session_state.setdefault('second_number', '0')
-    streamlit.session_state.setdefault('operation', '+')
-
-    display = streamlit.container(border=True)
-
-    column_1, column_2, column_3, operation = streamlit.columns(
-        4, vertical_alignment='bottom'
-    )
-
-    add_button('/', operation, type='primary', on_click=make_variables, display=display)
-    add_button('\*', operation, type='primary', on_click=make_variables, display=display)
-    add_button('\-', operation, type='primary', on_click=make_variables, display=display)
-    add_button('\+', operation, type='primary', on_click=make_variables, display=display)
-    add_button('=', operation, type='primary', on_click=show_result, display=display)
-
-    add_button('AC', column_3, type='primary', on_click=reset_state, display=display)
-    add_button('9', column_3, on_click=show, display=display)
-    add_button('6', column_3, on_click=show, display=display)
-    add_button('3', column_3, on_click=show, display=display)
-    add_button('.', column_3, on_click=show, display=display)
-
-    add_button('C', column_2, type='primary', on_click=reset_state, display=display)
-    add_button('8', column_2, on_click=show, display=display)
-    add_button('5', column_2, on_click=show, display=display)
-    add_button('2', column_2, on_click=show, display=display)
-    add_button('0', column_2, on_click=show, display=display)
-
-    add_button('<-', column_1, on_click=backspace, display=display)
-    add_button('7', column_1, on_click=show, display=display)
-    add_button('4', column_1, on_click=show, display=display)
-    add_button('1', column_1, on_click=show, display=display)
-    add_button('+/-', column_1, on_click=show, display=display)
+    add_buttons()
 
 
 if __name__ == '__main__':
