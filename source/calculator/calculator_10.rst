@@ -192,6 +192,7 @@ test_streamlit_calculator_title
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
+    :emphasize-text: testing
 
     import streamlit.testing
     import unittest
@@ -207,13 +208,14 @@ test_streamlit_calculator_title
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
+    :emphasize-text: v1
 
     import streamlit.testing.v1
     import unittest
 
   the test passes
 
-  ``streamlit.testing.v1.AppTest.from_file`` tests the website made with streamlit_
+  ``streamlit.testing.v1.AppTest.from_file`` tests the website I am making with streamlit_
 
   - AppTest_ is a :ref:`class<what is a class?>` from ``v1`` in ``testing`` in the `streamlit library`_
   - ``.from_file`` uses the `from_file method`_ to run the :ref:`Python module<what is a module?>` that I use to make the application
@@ -313,20 +315,22 @@ test_streamlit_calculator_title
   - when I import a :ref:`module<what is a module?>` nothing happens until I call or use the things in it
   - ``if __name__ == '__main__':`` calls ``main()`` only when ``src/streamlit_calculator.py`` gets called like a script, for example
 
-    .. code-block:: python
+    * in the terminal_
 
-      python3 src/streamlit_calculator.py
+      .. code-block:: python
 
-    or
+        python3 src/streamlit_calculator.py
 
-    .. code-block:: python
+    * or in ``test_streamlit_calculator.py``
 
-      tester = streamlit.testing.v1.AppTest.from_file(
-          'src/streamlit_calculator.py'
-      )
-      tester.run()
+      .. code-block:: python
 
-    not when the :ref:`module<what is a module?>` is imported
+        tester = streamlit.testing.v1.AppTest.from_file(
+            'src/streamlit_calculator.py'
+        )
+        tester.run()
+
+    it does not get called when the :ref:`module<what is a module?>` is imported
 
   - ``ElementList(_list=[Title(tag='h1')])`` has a :ref:`list<what is a list?>` and I know how to work with :ref:`lists<what is a list?>`
 
@@ -434,7 +438,7 @@ I want the :ref:`calculator<how to make a calculator>` to have a place to show r
 
 -----
 
-I add a test to see all the things in the application
+I add a test to see all the :ref:`attributes<test_attribute_error_w_class_attributes>` of the application
 
 .. code-block:: python
   :lineno-start: 7
@@ -475,11 +479,12 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
 -----
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to assertEqual_, then add an expectation
 
   .. code-block:: python
     :lineno-start: 14
     :emphasize-lines: 6
+    :emphasize-text: assertEqual children { }
 
         def test_streamlit_calculator_display(self):
             tester = streamlit.testing.v1.AppTest.from_file(
@@ -499,9 +504,14 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 * I copy the :ref:`dictionary<what is a dictionary?>` from the terminal_ and use it as the expectation
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 1-4
+    :lineno-start: 14
+    :emphasize-lines: 6-9
 
+        def test_streamlit_calculator_display(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
             self.assertEqual(
                 tester.main.children,
                 {0: Title(tag='h1')}
@@ -579,6 +589,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 2, 5
+    :emphasize-text: 1
 
             self.assertEqual(
                 tester.main.children[1],
@@ -639,15 +650,13 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
   .. code-block:: python
     :lineno-start: 20
-    :emphasize-lines: 3-39
+    :emphasize-lines: 3-38
 
             self.assertEqual(
                 tester.main.children[1].__dict__,
                 {
                     'children': {},
-                    'proto': allow_empty: true
-                        flex_container {
-                            border: true
+                    'proto': flex_container {
                         gap_config {
                             gap_size: SMALL
                         }
@@ -696,7 +705,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 60
     :emphasize-lines: 5
     :emphasize-text: SyntaxError
 
@@ -706,32 +715,99 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
     # AssertionError
     # SyntaxError
 
-* I change the :ref:`assertion<what is an assertion?>` to use the ``type`` :ref:`attribute<test_attribute_error_w_class_attributes>`
+* I change the :ref:`assertion<what is an assertion?>` to use the ``proto`` :ref:`attribute<test_attribute_error_w_class_attributes>` since it looks like a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 20
     :emphasize-lines: 2-3
 
-          self.assertEqual(
-              tester.main.children[1].type,
-              ''
-          )
+        self.assertEqual(
+            tester.main.children[1].proto,
+            {}
+        )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'flex_container' != ''
+    E       AssertionError: flex_container {
+    E         gap_config {
+    E           gap_s[155 chars]ue
+    E       }
+    E        != {}
+
+* I use the ``__dict__`` :ref:`attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 2
+
+            self.assertEqual(
+                tester.main.children[1].type,
+                'flex_container'
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: none
+
+    AssertionError: mappingproxy({'Vertical': <class 'streaml[827 chars]one}) != {}
+
+* I use the ``flex_container`` :ref:`attribute<test_attribute_error_w_class_attributes>` instead
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 2
+
+            self.assertEqual(
+                tester.main.children[1].proto.flex_container,
+                {}
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: gap_config {
+    E         gap_size: SMALL
+    E       }
+    E       directio[49 chars]TART
+    E        != {}
+
+* I use the ``gap_size`` :ref:`attribute<test_attribute_error_w_class_attributes>` directly
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 2-6
+
+            self.assertEqual(
+                (
+                    tester.main.children[1].proto
+                          .flex_container
+                          .gap_config.gap_size
+                ),
+                {}
+            )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 1 != {}
 
 * I change the expectation
 
   .. code-block:: python
     :lineno-start: 20
-    :emphasize-lines: 3
+    :emphasize-lines: 7
 
             self.assertEqual(
-                tester.main.children[1].type,
-                'flex_container'
+                (
+                    tester.main.children[1].proto
+                          .flex_container
+                          .gap_config.gap_size
+                ),
+                1
             )
 
   the test passes
@@ -747,12 +823,74 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
             )
             tester.run()
             self.assertEqual(
-                tester.main.children[1].type,
-                'flex_container'
+                (
+                    tester.main.children[1].proto
+                          .flex_container
+                          .gap_config.gap_size
+                ),
+                1
             )
 
 
     # Exceptions seen
+
+* I add a :ref:`variable<what is a variable?>` for the ``flex_container`` :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 7-10
+
+        def test_streamlit_calculator_display(self):
+            tester = streamlit.testing.v1.AppTest.from_file(
+                'src/streamlit_calculator.py'
+            )
+            tester.run()
+
+            display = (
+                tester.main.children[1].proto
+                      .flex_container
+            )
+            self.assertEqual(
+
+* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2-7
+
+            self.assertEqual(
+                # (
+                #     tester.main.children[1].proto
+                #           .flex_container
+                #           .gap_config.gap_size
+                # ),
+                display.gap_config.gap_size, 1
+            )
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 1
+
+            self.assertEqual(display.gap_config.gap_size, 1)
+
+* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 24
+
+            self.assertEqual(display.gap_config.gap_size, 1)
+            self.assertEqual(display.direction, '')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    
+
 
 * I go to the browser and things look the same as before. I need to add a border
 

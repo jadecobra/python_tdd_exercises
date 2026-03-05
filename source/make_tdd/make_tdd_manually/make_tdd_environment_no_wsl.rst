@@ -507,6 +507,8 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
   .. ATTENTION:: Turn on the ``Auto Save`` feature in your `Integrated Development Environment (IDE)`_
 
+    In `Visual Studio Code`_ it is under ``File`` in the menu
+
 * I try the command again to run the tests in the terminal_
 
   .. code-block:: PowerShell

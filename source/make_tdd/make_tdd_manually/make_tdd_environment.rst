@@ -516,6 +516,8 @@ how to make a Python file for the tests in the 'tests' directory
 
   .. ATTENTION:: Turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_
 
+    In `Visual Studio Code`_ it is under ``File`` in the menu
+
 * I try the command again to run the tests in the terminal_
 
   .. code-block:: shell
@@ -789,25 +791,34 @@ I want to make a file_ where I can list all the `Python packages`_ that my proje
   .. code-block:: shell
     :emphasize-lines: 1
 
-    echo "pytest-watcher"
+    echo "pytest"
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    pytest-watcher
+    pytest
 
-* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest-watcher`_ as what is inside it
+* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest_ as what is inside it
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    echo "pytest-watcher" > requirements.txt
+    echo "pytest" > requirements.txt
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
-  - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
   - pytest_ is a `Python package`_ like unittest_, that is used for testing
   - ``requirements.txt`` is the name of a file_ where I can list `Python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
+
+* I add `pytest-watcher`_ to the requirements file_ as well
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    echo "pytest-watcher" >> requirements.txt
+
+  - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it
+  - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
 
 * I run tree_ to see what the project looks like now
 
@@ -851,6 +862,7 @@ the terminal_ shows
 
 .. code-block:: shell
 
+  pytest
   pytest-watcher
 
 life is good!
@@ -1204,7 +1216,7 @@ how to run the tests automatically with uv and pytest-watcher
 
   .. code-block:: python
 
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
   ``.`` is the current working directory_
 
