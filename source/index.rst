@@ -95,7 +95,7 @@ table of contents
   :maxdepth: 2
 
   self
-  hatches
+  hatches/index
   conventions
   setup<setup/index>
   make TDD project 1<make_tdd/make_tdd_manually/index>
