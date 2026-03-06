@@ -1815,7 +1815,7 @@ the test passes
 
   the terminal_ still shows :ref:`KeyError<test_key_error>`
 
-* I remove the commented line in the ``add_buttons`` :ref:`function<what is a function>` then move buttons to the first column in ``streamlit_calculator.py``
+* I remove the commented line in the ``add_buttons`` :ref:`function<what is a function?>` then move buttons to the first column in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 4

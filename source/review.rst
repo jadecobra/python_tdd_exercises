@@ -244,7 +244,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I use the filter function?<test_making_a_list_w_conditions>`
 * :ref:`how can I transform a list?<test_making_a_list_w_processes>`
 * :ref:`how can I transform and filter a list<test_making_a_list_w_processes_and_conditions>`
-* :ref:`how can I make sure class attributes are reset for every test?<how to reset class attributes (variables) for every test>`
+* :ref:`how can I make sure class attributes are reset for every test?<how to use the setUp method to reset class attributes for every test>`
 
 ----
 
