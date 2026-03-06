@@ -759,7 +759,7 @@ how to test if something is None
 * I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 11
     :emphasize-lines: 9
 
         def test_assertion_error_w_none(self):
