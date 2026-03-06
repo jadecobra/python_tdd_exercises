@@ -2460,7 +2460,7 @@ the test passes
         column_3.button('.', key='.', width='stretch')
 
         operations.button(
-            '/', key='/', width='stretch', type='primary'
+            '/', key='/', width='stretch', type='primary',
         )
         operations.button('X', key='X', width='stretch')
 
@@ -2504,8 +2504,11 @@ the test passes
 * I add the ``type`` parameter to the buttons in the ``add_buttons`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 4-15
+    :lineno-start: 23
+    :emphasize-lines: 6-17
+    :emphasize-text: primary
+
+        column_3.button('.', key='.', width='stretch')
 
         operations.button(
             '/', key='/', width='stretch', type='primary',
@@ -2523,12 +2526,11 @@ the test passes
             '=', key='=', width='stretch', type='primary',
         )
 
-
     def main():
 
   the test passes
 
-* I want the ``C`` and ``AC`` buttons to have the same colors as the buttons for the operations. I add them to the tuple_ in :ref:`test_streamlit_calculator_operations_buttons` in ``test_streamlit_calculator.py``
+* I want the ``C`` and ``AC`` buttons to have the same colors as the buttons for the operations. I add them to the tuple_ in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -2613,7 +2615,7 @@ I want the calculator to show the number when I click on a button
         display = streamlit.container(border=True)
         add_buttons()
 
-* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is clicked. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_functions_w_positional_arguments>` that the :ref:`function<what is a function?>` takes. I add a :ref:`function<what is a function?>` to show the text of the button when it is clicked
+* I add a :ref:`function<what is a function?>` to show the text of the button when it is clicked
 
   .. code-block:: python
     :linenos:
@@ -2628,7 +2630,7 @@ I want the calculator to show the number when I click on a button
 
     def add_buttons():
 
-* I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is clicked. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_functions_w_positional_arguments>` that the :ref:`function<what is a function?>` takes. I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 8
@@ -2649,7 +2651,8 @@ I want the calculator to show the number when I click on a button
 
   .. code-block:: python
 
-    KeyError: '7'
+    ================== 26 failed, 12 passed in A.BCs ===================
+
 
   the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -2676,15 +2679,20 @@ I want the calculator to show the number when I click on a button
     :align: left
     :alt: Calculator Streamlit Display 7 on click
 
-  ``7`` shows on the display
+  ``7`` shows on the display. Yes!
 
-* I make the same change for the other numbers
+* I make the same change for the other numbers in the first column
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5-12, 16-31, 34-49
+    :lineno-start: 8
+    :emphasize-lines: 10-17
     :emphasize-text: on_click args
 
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button('<-', key='<-', width='stretch')
         column_1.button(
             '7', key='7', width='stretch',
             on_click=show, args=[display, '7'],
@@ -2699,7 +2707,24 @@ I want the calculator to show the number when I click on a button
         )
         column_1.button('+/-', key='+/-', width='stretch')
 
-        column_2.button('C', key='C', width='stretch', type='primary')
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+
+  the test is still green
+
+* I make the same change for the numbers in the second column
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 6-21
+    :emphasize-text: on_click args
+
+        column_1.button('+/-', key='+/-', width='stretch')
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
         column_2.button(
             '8', key='8', width='stretch',
             on_click=show, args=[display, '8'],
@@ -2717,7 +2742,27 @@ I want the calculator to show the number when I click on a button
             on_click=show, args=[display, '0'],
         )
 
-        column_3.button('AC', key='AC', width='stretch', type='primary')
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+        )
+
+  still green
+
+* I make the same change for the numbers in the third column
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 9-24
+    :emphasize-text: on_click args
+
+        column_2.button(
+            '0', key='0', width='stretch',
+            on_click=show, args=[display, '0'],
+        )
+
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+        )
         column_3.button(
             '9', key='9', width='stretch',
             on_click=show, args=[display, '9'],
@@ -2735,13 +2780,13 @@ I want the calculator to show the number when I click on a button
             on_click=show, args=[display, '.'],
         )
 
-        operations.button('/', key='/', width='stretch', type='primary')
-        operations.button('X', key='X', width='stretch', type='primary')
-        operations.button(r'\-', key='-', width='stretch', type='primary')
-        operations.button(r'\+', key='+', width='stretch', type='primary')
-        operations.button('=', key='=', width='stretch', type='primary')
+        operations.button(
+            '/', key='/', width='stretch', type='primary',
+        )
 
-* I go to the browser to test the numbers and they show up in the display with one problem - every time I press a button it shows a new number. I want the numbers to stay so that I can make numbers that have more than one digit
+  green
+
+* I go to the browser to test the numbers and they show up in the box, with one problem - every time I press a button it shows a new number. I want the numbers to stay so that I can make numbers that have more than one digit
 
 ----
 
@@ -2759,28 +2804,33 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
 ----
 
-* I add a test for the `session state object`_ that will hold the number when I click the buttons in ``test_streamlit_calculator.py``
+I add a test for the `session state object`_, I want it to hold the number when I click the buttons, in ``test_streamlit_calculator.py``
 
-  .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 6-7
+.. code-block:: python
+  :lineno-start: 46
+  :emphasize-lines: 9-10
 
-            self.assertEqual(
-                self.tester.columns[3].button('=').label,
-                '='
-            )
+      def test_streamlit_calculator_operations_buttons(self):
+          for key in ('/', 'X', r'\-', r'\+', '=', 'C', 'AC'):
+              with self.subTest(key=key):
+                  self.assertEqual(
+                      self.tester.button(key).proto.type,
+                      'primary'
+                  )
 
-        def test_streamlit_calculator_state(self):
-            self.assertIsNone(self.tester.session_state['number'])
+      def test_streamlit_calculator_state(self):
+          self.assertIsNone(self.tester.session_state['number'])
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the terminal_ shows :ref:`KeyError<test_key_error>`
+the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    KeyError: 'st.session_state has no key "number". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+  KeyError: 'st.session_state has no key "number".
+  Did you forget to initialize it?
+  More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
 
 ----
 
@@ -2793,13 +2843,17 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 * I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a :ref:`key<test_keys_of_a_dictionary>` that will hold the numbers to show in the Calculator, in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 83
     :emphasize-lines: 3
 
     def main():
         streamlit.title('Calculator')
         streamlit.session_state.setdefault('number', 0)
         add_buttons()
+
+
+    if __name__ == '__main__':
+        main()
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
