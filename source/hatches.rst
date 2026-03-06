@@ -61,7 +61,7 @@ Pick a time that works best for you
             <a href="#morning-marauders-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-morning-marauders" data-cal-namespace="pumping-python-morning-marauders" data-cal-config='{"layout":"month_view"}'>join Morning Marauders</a>
         </div>
 
-        <div class="price-card highlight">
+        <div class="price-card">
             <h3>sunlight soldiers</h3>
             <div class="price">$99.99</div>
             <p class="time-slot">1PM - 3PM CST</p>
@@ -86,7 +86,7 @@ Pick a time that works best for you
             <a href="#happy-hour-heroes-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-happy-hour-heroes" data-cal-namespace="pumping-python-happy-hour-heroes" data-cal-config='{"layout":"month_view"}'>join happy hour heroes</a>
         </div>
 
-        <div class="price-card">
+        <div class="price-card highlight">
             <h3>nighttime ninjas</h3>
             <div class="price">$199.98</div>
             <p class="time-slot">8PM - 10PM CST</p>
