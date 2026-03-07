@@ -1104,7 +1104,7 @@ because this statement can be read as ``assert None is NOT equal to None`` or "C
 
 .. NOTE::
 
-  ``==`` is :kbd:`!+=` on the keyboard and is the symbol for ``is equal``
+  ``==`` is :kbd:`=+=` on the keyboard and is the symbol for ``is equal``
 
 I change the assertion_ to make it :ref:`True<test_what_is_true>`
 
