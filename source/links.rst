@@ -193,6 +193,7 @@
 .. _with statement: https://docs.python.org/3/reference/compound_stmts.html#the-with-statement
 .. _with statements: `with statement`_
 .. _while: https://docs.python.org/3/reference/compound_stmts.html#the-while-statement
+.. _while loop: while_
 .. _while statement: while_
 .. _zero-based indexing: https://grokipedia.com/page/Zero-based_numbering
 .. _zsh: https://zsh.sourceforge.io

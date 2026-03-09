@@ -2848,7 +2848,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
     def main():
         streamlit.title('Calculator')
-        streamlit.session_state.setdefault('number', 0)
+        streamlit.session_state.setdefault('number', '0')
         add_buttons()
 
 
@@ -2880,7 +2880,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
 ----
 
-* I add the `session state object`_ to the ``show`` :ref:`function<what is a function?>` to update it when a button is clicked, then display the number
+* I add the `session state object`_ to the ``show`` :ref:`function<what is a function?>` so that when a button is clicked, it will be added to the `session state object`_ then shown in the disply
 
   .. code-block:: python
     :lineno-start: 4
@@ -2905,7 +2905,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I add an :ref:`assertion<what is an assertion?>` to test what happens to the `session state object`_ when I press a button for a number
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 54
     :emphasize-lines: 3
 
         def test_streamlit_calculator_state(self):
@@ -2914,7 +2914,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
             self.assertEqual(self.tester.session_state['number'], '0')
 
   - ``.click()`` presses the button
-  - ``.run()`` runs the program - ``streamlit_calculator.py``, same as when a person uses the application
+  - ``.run()`` runs the program - ``streamlit_calculator.py``, which is what happens when a person uses the application in the browser
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2927,15 +2927,17 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 57
     :emphasize-lines: 1
 
             self.assertEqual(self.tester.session_state['number'], '01')
 
+  the test passes
+
 * I add more button clicks
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 57
     :emphasize-lines: 2-5
 
             self.assertEqual(self.tester.session_state['number'], '01')
@@ -2953,7 +2955,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 114
+    :lineno-start: 61
     :emphasize-lines: 1-3
 
             self.assertEqual(
@@ -2974,7 +2976,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I want the calculator to remove ``0`` when it is the first number after I click on other numbers. I change the :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 54
     :emphasize-lines: 4, 8-10
 
         def test_streamlit_calculator_state(self):
@@ -3034,7 +3036,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I use it in :ref:`test_streamlit_calculator_state`
 
   .. code-block:: python
-    :lineno-start: 108
+    :lineno-start: 55
     :emphasize-lines: 2, 4-6
     :emphasize-text: x
 
@@ -3046,8 +3048,8 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
             self.tester.button(x).click().run()
             self.assertEqual(self.tester.session_state['number'], '1')
 
-  - ``numbers = '0123456789'`` makes a string with the ten numbers
-  - ``x = random.choice(numbers)`` selects a random digit from the ten numbers and points ``x`` to it
+  - ``numbers = '0123456789'`` makes a string_ with ten numbers
+  - ``x = random.choice(numbers)`` picks a random number from the ten numbers and points ``x`` to it
 
   the terminal_ shows. :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3055,26 +3057,38 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
     AssertionError: 'X' != '1'
 
-  where ``X`` is the random number
+  where ``X`` is a random number
 
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 114
-    :emphasize-lines: 1
+    :lineno-start: 55
+    :emphasize-lines: 7
 
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            self.assertEqual(self.tester.session_state['number'], '0')
+            # self.tester.button('1').click().run()
+            x = random.choice(numbers)
+            self.tester.button(x).click().run()
             self.assertEqual(self.tester.session_state['number'], x)
+            self.tester.button('2').click().run()
+            self.tester.button('3').click().run()
+            self.tester.button('4').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], '1234'
+            )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  when ``x`` is not ``1``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: 'X234' != '1234'
 
-* I use random numbers for the other button clicks
+* I use random numbers for the other button presses
 
   .. code-block:: python
-    :lineno-start: 114
+    :lineno-start: 61
     :emphasize-lines: 2-10
 
             self.assertEqual(self.tester.session_state['number'], x)
@@ -3107,8 +3121,48 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
                 self.tester.session_state['number'], f'{x}{y}{z}{a}'
             )
 
-  the test passes
+  when ``x`` is ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
+  .. code-block:: python
+
+    AssertionError: 'YZA' != '0YZA'
+
+----
+
+*********************************************************************************
+what is a while loop?
+*********************************************************************************
+
+* I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while statement`_ to :ref:`test_streamlit_calculator_state`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6-9
+
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            self.assertEqual(self.tester.session_state['number'], '0')
+            # self.tester.button('1').click().run()
+            x = random.choice(numbers)
+            while x == '0':
+                x = random.choice(numbers)
+            else:
+                self.tester.button(x).click().run()
+            self.tester.button(x).click().run()
+            self.assertEqual(self.tester.session_state['number'], x)
+
+  - ``x = random.choice(numbers)`` points ``x`` to a random number from the ``numbers`` :ref:`variable<what is a variable?>`
+
+    * if ``x`` is not equal to ``'0'`` it goes to the next block ``else: self.tester.button(x).click().run()``
+
+    * if ``x`` is equal to ``'0'`` it goes to ``while x == '0':`` which makes a loop that will continue to run as long as ``x`` is equal to ``'0'``
+
+      - inside the loop ``x = random.choice(numbers)`` points ``x`` to a random number from the ``numbers`` string_ then checks again to see if ``x`` is equal to ``'0'``
+
+      * if ``x`` is equal to ``0`` the loop runs again
+      * if ``x`` is not equal to ``0`` in the loop, it leaves the loop and continues to the next block ``elses: self.tester.button(x).click().run()``
+
+* the first digit
 * I add a :ref:`for loop<what is a for loop?>` to test with a 10 digit number
 
   .. code-block:: python
