@@ -354,7 +354,9 @@ how to see what is in a directory
 
     .../pumping_python/doe
 
-  this directory_ is empty. ls_ has a few options, I try it again with one of them
+  this directory_ is empty
+
+* ls_ has a few options. I try ls_ again with one of them
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -1832,10 +1834,10 @@ how to remove a directory and all its contents
 
       Remove-Item -Path doe -Recurse -Force
 
-
   the terminal_ goes back to the command line
 
   - rm_ is used to remove files_ and folders_
+  - ``rm`` means ``remove``
   - ``-r/-Recurse`` means remove child directories_ and what is in them until there is nothing left, it goes through each child directory_ and removes everything including their children
   - ``-f/-Force`` means do not ask me any questions, just remove the file_ or folder_ and everything inside it until there is nothing left
 

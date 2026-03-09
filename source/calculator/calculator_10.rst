@@ -3159,16 +3159,15 @@ what is a while loop?
 
       - inside the loop ``x = random.choice(numbers)`` points ``x`` to a random number from the ``numbers`` string_ then checks again to see if ``x`` is equal to ``'0'``
 
-      * if ``x`` is equal to ``0`` the loop runs again
-      * if ``x`` is not equal to ``0`` in the loop, it leaves the loop and continues to the next block ``elses: self.tester.button(x).click().run()``
+        * if ``x`` is equal to ``0`` the loop runs again
+        * if ``x`` is not equal to ``0`` in the loop, it leaves the loop and continues to the next block ``else: self.tester.button(x).click().run()``
 
-  I use :kbd:`ctrl+s` on the keyboard a few times and there are not more 
+  I use :kbd:`ctrl+s` on the keyboard a few times and there are no more random failures
 
-* the first digit
 * I add a :ref:`for loop<what is a for loop?>` to test with a 10 digit number
 
   .. code-block:: python
-    :lineno-start: 124
+    :lineno-start: 74
     :emphasize-lines: 4-18
 
             self.assertEqual(
@@ -3176,15 +3175,15 @@ what is a while loop?
             )
             expectation = '0'
             for _ in range(0, 10):
-                number = random.choice(numbers)
+                a_random_number = random.choice(numbers)
                 (
-                    self.tester.button(number)
-                    .click().run()
+                    self.tester.button(a_random_number)
+                        .click().run()
                 )
-                if expectation == '0':
-                    expectation = number
+                if expectation == 0:
+                    expectation = a_random_number
                 else:
-                    expectation += number
+                    expectation += a_random_number
             self.assertEqual(
                 self.tester.session_state['number'],
                 expectation
@@ -3193,7 +3192,7 @@ what is a while loop?
 
     # Exceptions seen
 
-  ``for _ in range(0, 10):`` uses ``_`` as the name of the :ref:`variable<what is a variable?>` in the :ref:`for loop<what is a for loop?>` because it is not used in it
+  ``for _ in range(0, 10):`` uses ``_`` because I do not need the name of a :ref:`variable<what is a variable?>` in the :ref:`for loop<what is a for loop?>` since I never use it
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
