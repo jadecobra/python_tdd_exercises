@@ -226,6 +226,8 @@ I use the `cd program`_ to change directories_
 
   cd pumping_python
 
+* `cd`_ means ``change directory``
+
 the terminal_ shows
 
 .. code-block:: shell
@@ -248,6 +250,8 @@ how to make a directory
     :emphasize-lines: 1
 
     mkdir pumping_python
+
+  - ``mkdir`` means ``make directory``
 
   the terminal_ goes back to the command line
 
