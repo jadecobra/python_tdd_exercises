@@ -203,7 +203,8 @@ the terminal_ shows
 
 because I am in the ``pumping_python`` folder_
 
-pwd_ shows the path/address to the current folder_ I am in at the moment
+* pwd_ shows the path/address to the current folder_ I am in at the moment
+* pwd_ means ``print working directory``, it prints the directory I am in to the terminal_
 
 .. NOTE::
 

@@ -67,7 +67,7 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
     sudo apt full-upgrade --yes
 
-you can continue with :ref:`how to make a Python Test Driven Development environment manually`.
+you can continue with :ref:`Linux/Windows Subsystem for Linux requirements`.
 
 ----
 
@@ -100,7 +100,7 @@ If you cannot install `Windows Subsystem for Linux`_, you can use :ref:`how to m
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to see me make a Python Test Driven Development environment?<how to make a Python Test Driven Development environment manually>`
+:ref:`Would you like to continue with the rest of the requirements?<Linux/Windows Subsystem for Linux requirements>`
 
 ----
 
