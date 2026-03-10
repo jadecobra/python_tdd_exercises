@@ -26,16 +26,22 @@ jobs:
       - name: install uv
         uses: astral-sh/setup-uv@v5
         with:
+          python-version: "3.13"
           enable-cache: true
 
-      - name: setup Python
-        run: uv python install 3.13
-
       - name: install dependencies
-        run: uv sync --no-dev --extra docs
+        run: uv sync --frozen --no-dev --extra docs
+
+      - name: cache sphinx doctrees
+        uses: actions/cache@v4
+        with:
+          path: build/doctrees
+          key: ${{ runner.os }}-sphinx-doctrees-${{ hashFiles('source/**/*.rst', 'source/conf.py') }}
+          restore-keys: |
+            ${{ runner.os }}-sphinx-doctrees-
 
       - name: build sphinx documentation
-        run: uv run sphinx-build ./source ./build/html
+        run: uv run sphinx-build -j auto ./source ./build/html
 
       - name: setup github_pages
         uses: actions/configure-pages@v4
