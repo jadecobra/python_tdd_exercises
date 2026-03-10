@@ -3779,8 +3779,13 @@ Nothing happens when I click ``+/-`` in the calculator. I want it to
 I add a new test for the ``+/-`` button
 
 .. code-block:: python
-  :lineno-start: 131
-  :emphasize-lines: 6-17
+  :lineno-start: 106
+  :emphasize-lines: 6-8, 10-15, 17-26
+
+          self.assertEqual(
+              self.tester.session_state['number'],
+              a_random_number[:-2]
+          )
 
       def test_streamlit_calculator_w_plus_minus(self):
           a_random_number = tests.test_calculator.a_random_number()
@@ -3792,6 +3797,7 @@ I add a new test for the ``+/-`` button
                       .click().run()
               )
           self.tester.button('+/-').click().run()
+
           if a_random_number.startswith('-'):
               self.assertEqual(
                   self.tester.session_state['number'],
@@ -3819,6 +3825,12 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 =================================================================================
 
 ----
+
+* I add a :ref:`function<what is a function?>` for the ``+/-`` button
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4
 
 * I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
