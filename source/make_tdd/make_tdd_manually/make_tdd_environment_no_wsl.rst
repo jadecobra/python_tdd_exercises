@@ -278,7 +278,7 @@ how to make a directory for the source code on Windows without WSL
 ----
 
 =====================================================================================================
-how to make an empty file on Windows without Windows Subsystem for Linux
+how to make an empty file in the src folder on Windows without Windows Subsystem for Linux
 =====================================================================================================
 
 ----

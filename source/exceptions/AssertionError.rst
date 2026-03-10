@@ -22,7 +22,7 @@ I use assertions_ when making a program_ to make sure something is :ref:`True<te
 
 I also use them to test how the program_ behaves, for example when it is given inputs.
 
-Assertions_ can help catch things that break passing tests when I add new lines of code. They also help me answer 2 questions
+Assertions_ can help catch things that make tests that were passing before to start failing when I add new lines of code. They also help me answer 2 questions
 
 * what is the same?
 * what is different?

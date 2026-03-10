@@ -3565,6 +3565,8 @@ I want to be able to remove the last digit of a number
 * I add a :ref:`function<what is a function?>` to ``streamlit_calculator.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-7
 
     import streamlit
 
@@ -3690,10 +3692,10 @@ I want to be able to remove the last digit of a number
     :lineno-start: 101
     :emphasize-lines: 3
 
-            self.assertEqual(
-                self.tester.session_state['number'],
-                a_random_number[:-1]
-            )
+                self.assertEqual(
+                    self.tester.session_state['number'],
+                    a_random_number[:-1]
+                )
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3706,17 +3708,19 @@ I want to be able to remove the last digit of a number
 * I remove the other numbers
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 99
 
-            self.assertEqual(
-                self.tester.session_state['number'],
-                a_random_number[:-1]
-            )
-            self.tester.button('<-').click().run()
-            self.assertEqual(
-                self.tester.session_state['number'],
-                '123'
-            )
+            for number in a_random_number:
+                self.tester.button(number).click().run()
+                self.assertEqual(
+                    self.tester.session_state['number'],
+                    a_random_number[:-1]
+                )
+                self.tester.button('<-').click().run()
+                self.assertEqual(
+                    self.tester.session_state['number'],
+                    '123'
+                )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3754,7 +3758,7 @@ I want to be able to remove the last digit of a number
 
   the test passes
 
-* I go to the browser and type a few numbers, then click on ``<-`` and it remove the last number. Fantastic!
+* I go to the browser and type a few numbers, then click on ``<-`` and it removes the last number. Fantastic!
 
 ----
 
@@ -3812,11 +3816,17 @@ I add a new test for the ``+/-`` button
 
   # Exceptions seen
 
-the terminal_ shows :ref:`KeyError<test_key_error>`
+if ``a_random_number`` is negative, the terminal_ shows :ref:`KeyError<test_key_error>`
 
 .. code-block:: python
 
   KeyError: '-'
+
+if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: 'TUV.WXYZABCDEFGHI' != '-TUV.WXYZABCDEFGHI'
 
 ----
 
@@ -3826,11 +3836,146 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
 ----
 
+* I add an :ref:`if statement<if statements>` to turn ``-`` to ``+/-``
+
+  .. code-block:: python
+    :lineno-start: 115
+    :emphasize-lines: 2-7
+
+            for number in a_random_number:
+                if number == '-':
+                    (
+                        self.tester.button('+/-')
+                            .click().run()
+                    )
+                    continue
+                (
+                    self.tester.button(number)
+                        .click().run()
+                )
+            self.tester.button('+/-').click().run()
+
+  when the number is negative, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+
+  when the number is positive, the terminal_ shows :ref:`AssertionError<>`
+
 * I add a :ref:`function<what is a function?>` for the ``+/-`` button
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4
+    :emphasize-lines: 4-11
+
+    import streamlit
+
+
+    def plus_minus(display):
+        if streamlit.session_state['number'].startswith('-'):
+            streamlit.session_state['number'] = \
+                streamlit.session_state['number'][1:]
+        else:
+            streamlit.session_state['number'] = \
+                '-' + streamlit.session_state['number']
+        display.write(streamlit.session_state['number'])
+
+
+    def backspace(display):
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 5-8
+
+        column_1.button(
+            '1', key='1', width='stretch',
+            on_click=show, args=[display, '1'],
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch',
+            on_click=plus_minus, args=[display]
+        )
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+
+  I use :kbd:`ctrl+s` on the keyboard to run the test a few times and when ``a_random_number`` is negative the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '-'
+
+* I refresh the browser and try to make a negative number
+
+  .. image:: /_static/calculator/streamlit/negative_number.png
+    :width: 600
+    :align: left
+    :alt: Negative Number
+
+  when I click on the ``+/-`` button it turns a positive number negative
+
+* I try the ``+/-`` button again
+
+  .. image:: /_static/calculator/streamlit/positive_number.png
+    :width: 600
+    :align: left
+    :alt: Negative Number
+
+  the ``-`` is removed from the number to make it a positive number. Progress!
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it pass
+=================================================================================
+
+----
+
+* The last 4 :ref:`functions<what is a function?>` - ``plus_minus``, ``backspace``, ``handle_decimals`` and ``show`` are similar
+
+  .. code-block:: python
+
+    def function_name(display):
+        statements
+        display.write(streamlit.session_state['number'])
+
+* I make a new :ref:`function<what is a function?>` to show the state
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 4-5
+
+    import streamlit
+
+
+    def show_state(display):
+        display.write(streamlit.session_state['number'])
+
+
+    def plus_minus(display):
+
+* I use the new :ref:`function<what is a function?>` in the ``plus_minus`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-starrt: 11
+    :emphasize-lines:
+
+
+
+----
+
+----
+
+----
+
+----
+
+----
 
 * I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
@@ -3894,6 +4039,8 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
   I can use ``\`` to break up a long line in two. The test passes
 
+
+
 ----
 
 =================================================================================
@@ -3954,24 +4101,6 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
         streamlit.session_state['number'] += number
 
   the test passes
-
-* I refresh the browser and try to make a negative number
-
-  .. image:: /_static/calculator/streamlit/negative_number.png
-    :width: 600
-    :align: left
-    :alt: Negative Number
-
-  when I click on the ``+/-`` button it turns a positive number negative
-
-* I try the ``+/-`` button again
-
-  .. image:: /_static/calculator/streamlit/positive_number.png
-    :width: 600
-    :align: left
-    :alt: Negative Number
-
-  the ``-`` is removed from the number to make it a positive number. Progress!
 
 ----
 
@@ -4706,8 +4835,6 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                     character = '+/-'
                 self.tester.button(character).click().run()
             self.tester.button('+').click().run()
-
-
 
 * I do the same thing with the second number
 

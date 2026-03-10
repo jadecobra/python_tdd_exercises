@@ -285,7 +285,7 @@ how to make a directory for the source code
 ----
 
 =================================================================================
-how to make an empty file
+how to make an empty file in the src folder
 =================================================================================
 
 ----
