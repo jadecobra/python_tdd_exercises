@@ -726,7 +726,7 @@ you know
 * :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 
-:ref:`Would you like to handle ZeroDivisionError in the Calculator?<how to make a calculator 2>`
+:ref:`Would you like to handle ZeroDivisionError in the Calculator?<how to make a calculator 3>`
 
 -----
 

@@ -1306,7 +1306,7 @@ I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the te
 close the project
 ********************************************************************************************
 
-* I close ``test_magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`
+* I close ``test_magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
 * I click in the terminal and `change directory`_ to the parent of ``magic``
 

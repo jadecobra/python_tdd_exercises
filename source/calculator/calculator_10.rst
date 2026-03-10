@@ -3780,7 +3780,7 @@ Nothing happens when I click ``+/-`` in the calculator. I want it to
 
 ----
 
-I add a new test for the ``+/-`` button
+I add a new test for the ``+/-``
 
 .. code-block:: python
   :lineno-start: 106
@@ -3805,7 +3805,7 @@ I add a new test for the ``+/-`` button
           if a_random_number.startswith('-'):
               self.assertEqual(
                   self.tester.session_state['number'],
-                  a_random_number[-1:]
+                  a_random_number[1:]
               )
           else:
               self.assertEqual(
@@ -3836,42 +3836,7 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
 
 ----
 
-* I add an :ref:`if statement<if statements>` to press the ``+/-`` when the number starts with a ``-``
-
-  .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 2-7
-
-            for number in a_random_number:
-                if number == '-':
-                    (
-                        self.tester.button('+/-')
-                            .click().run()
-                    )
-                    continue
-                (
-                    self.tester.button(number)
-                        .click().run()
-                )
-            self.tester.button('+/-').click().run()
-
-  - ``continue`` in a :ref:`for loop<what is a for loop?>` tells the loop to go to the next run of the loop without going to the rest of the lines in the loop
-
-  - when the number is positive, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-    .. code-block:: python
-      :emphasize-text: -
-
-      AssertionError: 'JKL.MNOPQRSTUVWXY' != '-JKL.MNOPQRSTUVWXY'
-
-  - when the number is negative, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-    .. code-block:: python
-      :emphasize-text: O
-
-      AssertionError: 'ZA.BCDEFGHIJKLMNO' != 'O'
-
-* I add a :ref:`function<what is a function?>` for the ``+/-`` button
+* I add a :ref:`function<what is a function?>` for the ``+/-`` button in ``streamlit_calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -3892,7 +3857,68 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
 
     def backspace(display):
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` or :ref:`KeyError<test_key_error>`
+
+* I add the ``on_click`` parameter for the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 5-8
+    :emphasize-text: plus_minus
+
+        column_1.button(
+            '1', key='1', width='stretch',
+            on_click=show, args=[display, '1'],
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch',
+            on_click=plus_minus, args=[display],
+        )
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+
+  I use :kbd:`ctrl+s` on the keyboard to run the test a few times
+
+  - if ``a_random_number`` is negative, the terminal_ shows :ref:`KeyError<test_key_error>`
+
+    .. code-block:: python
+
+      KeyError: '-'
+
+  - if ``a_random_number`` is positive, the test passes
+
+* I add an :ref:`if statement<if statements>` to the :ref:`for loop<what is a for loop>` to use raw string_ for the ``-`` button in :ref:`test_streamlit_calculator_w_plus_minus`
+
+  .. code-block:: python
+
+
+
+
+  .. code-block:: python
+
+
+  I use :kbd:`ctrl+s` to run the test a few times
+
+  - if ``a_random_number`` is negative, the terminal_ shows :ref:`KeyError<test_key_error>`
+
+    .. code-block:: python
+
+      KeyError: '-'
+
+  - if ``a_random_number`` is positive, the test passes
+
+  I need to add an action for the when the ``-`` button is pressed
+
+* I add an :ref:`if statement<if statements>` for when the random number is negative, to press the ``r\-`` button
+
+  .. code-block:: python
+    :lineno-start:
+
+
+
+
 
 * I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
@@ -3916,7 +3942,7 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
 
   I use :kbd:`ctrl+s` on the keyboard to run the test a few times and the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-* 
+*
 
 
 * I refresh the browser and try to make a negative number
