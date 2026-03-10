@@ -135,8 +135,6 @@ MacOS requirements
 
 .. ATTENTION:: Do this only if you are using a MacOS_ computer. Windows_ users do :ref:`Linux/Windows Subsystem for Linux requirements` or :ref:`Windows without Windows Subsystem Linux requirements`
 
-* `download and install Python`_
-
 * copy and paste this in a terminal_ to install brew_ (The Missing Package Manager for MacOS), if you do not have it already
 
   .. code-block:: shell
@@ -165,15 +163,6 @@ MacOS requirements
     brew install tree
 
   tree_ is a program for showing :ref:`directory structure<BONUS: learn directory structure>` as a tree
-
-* install git_ with `Xcode Command Line Tools`_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    xcode-select --install
-
-  git_ is a program for keeping track of changes I make in a project
 
 :ref:`Click HERE to see how I setup my Integrated Development Environment (IDE)<how I setup my Integrated Development Environment (IDE)>`
 
