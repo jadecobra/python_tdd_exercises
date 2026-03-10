@@ -925,7 +925,7 @@ how to write text to a file on Windows without Windows Subsystem for Linux
 
 I want to make a file_ where I can list all the `Python packages`_ for my project as a way to document it and have pip_ install the programs_ listed in the file_
 
-* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
+* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example, in the terminal_
 
   .. code-block:: PowerShell
     :emphasize-lines: 1

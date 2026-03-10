@@ -786,7 +786,7 @@ how to write text to a file
 
 I want to make a file_ where I can list all the `Python packages`_ that my project needs as a way to document it and have uv_ install the programs_ listed in the file_
 
-* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example
+* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example, in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1

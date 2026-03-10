@@ -3836,7 +3836,7 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
 
 ----
 
-* I add an :ref:`if statement<if statements>` to turn ``-`` to ``+/-``
+* I add an :ref:`if statement<if statements>` to press the ``+/-`` when the number starts with a ``-``
 
   .. code-block:: python
     :lineno-start: 115
@@ -3855,12 +3855,21 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
                 )
             self.tester.button('+/-').click().run()
 
-  when the number is negative, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  - ``continue`` in a :ref:`for loop<what is a for loop?>` tells the loop to go to the next run of the loop without going to the rest of the lines in the loop
 
-  .. code-block:: python
+  - when the number is positive, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
+    .. code-block:: python
+      :emphasize-text: -
 
-  when the number is positive, the terminal_ shows :ref:`AssertionError<>`
+      AssertionError: 'JKL.MNOPQRSTUVWXY' != '-JKL.MNOPQRSTUVWXY'
+
+  - when the number is negative, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+    .. code-block:: python
+      :emphasize-text: O
+
+      AssertionError: 'ZA.BCDEFGHIJKLMNO' != 'O'
 
 * I add a :ref:`function<what is a function?>` for the ``+/-`` button
 
@@ -3890,6 +3899,7 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
   .. code-block:: python
     :lineno-start: 50
     :emphasize-lines: 5-8
+    :emphasize-text: plus_minus
 
         column_1.button(
             '1', key='1', width='stretch',
@@ -3904,11 +3914,10 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
             'C', key='C', width='stretch', type='primary',
         )
 
-  I use :kbd:`ctrl+s` on the keyboard to run the test a few times and when ``a_random_number`` is negative the terminal_ shows :ref:`KeyError<test_key_error>`
+  I use :kbd:`ctrl+s` on the keyboard to run the test a few times and the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+* 
 
-    KeyError: '-'
 
 * I refresh the browser and try to make a negative number
 
