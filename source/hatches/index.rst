@@ -66,7 +66,7 @@ Pick a time that works best for you
             <h3>sunlight soldiers</h3>
             <div class="price"><s>$99.99</s></div>
             <div class="price">FREE.99</div>
-            <p class="time-slot">1PM - 3PM CST</p>
+            <p class="time-slot">2PM - 4PM CST</p>
             <ul>
                 <li>employee appreciation discount</li>
                 <li>monday to friday</li>
