@@ -3782,34 +3782,35 @@ I add a new test for the ``+/-`` button
   :lineno-start: 131
   :emphasize-lines: 6-17
 
-          self.assertEqual(
-              self.tester.session_state['number'],
-              '.2356789'
-          )
-
       def test_streamlit_calculator_w_plus_minus(self):
-          number = '963.0258741'
-          for button in number:
+          a_random_number = tests.test_calculator.a_random_number()
+          a_random_number = str(a_random_number)
+
+          for number in a_random_number:
               (
-                  self.tester.button(button)
-                  .click().run()
+                  self.tester.button(number)
+                      .click().run()
               )
           self.tester.button('+/-').click().run()
-          self.assertEqual(
-              self.tester.session_state['number'],
-              f'-{number}'
-          )
+          if a_random_number.startswith('-'):
+              self.assertEqual(
+                  self.tester.session_state['number'],
+                  a_random_number[-1:]
+              )
+          else:
+              self.assertEqual(
+                  self.tester.session_state['number'],
+                  f'-{a_random_number}'
+              )
 
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ shows :ref:`KeyError<test_key_error>`
 
 .. code-block:: python
 
-  AssertionError: '963.0258741' != '-963.0258741'
-
-nothing happens when I click on the ``+/-`` button in the calculator
+  KeyError: '-'
 
 ----
 

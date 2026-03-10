@@ -903,7 +903,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
     # Exceptions seen
     # AssertionError
-    # ModuleNotFoundError
+    # NameError
     # AttributeError
 
 * I open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
