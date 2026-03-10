@@ -77,7 +77,7 @@ Pick a time that works best for you
         </div>
 
         <div class="price-card">
-            <h3>happy hour heroes</h3>
+            <h3>happy hour heroes</h3> 
             <div class="price"><s>$99.99</s></div>
             <div class="price">FREE.99</div>
             <p class="time-slot">5PM - 7PM CST</p>

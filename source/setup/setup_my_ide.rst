@@ -111,7 +111,7 @@ Here are extensions I use in `Visual Studio Code`_, click on anyone you like to 
 * `Code Spell Checker`_ - to catch spelling mistakes
 * `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance
 * `Python Extension`_ - Python_ language support with Pylance_ and a Python_ debugger
-* `Dark Rainbow Theme`_  - did I mention I like pretty colors?
+* `Dark Rainbow Theme`_ or `Semnatic Rainbow Theme`_ - did I mention I like pretty colors?
 * `Remote Development`_ - This allows me to work with `Windows Subsystem for Linux`_ or Linux_ on any computer
 
 ----

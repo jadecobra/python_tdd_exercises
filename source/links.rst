@@ -268,6 +268,7 @@
 .. _Python Extension: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 .. _Visual Studio Code: https://code.visualstudio.com/download
 .. _Dark Rainbow Theme: https://marketplace.visualstudio.com/items?itemName=DarkRainbow.darkrainbow
+.. _Semantic Rainbow Theme: https://marketplace.visualstudio.com/items?itemName=thertzlor.semantic-rainbow
 .. _indent-rainbow: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
 .. _Black Formatter: https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter
 .. _Code Spell Checker: https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
