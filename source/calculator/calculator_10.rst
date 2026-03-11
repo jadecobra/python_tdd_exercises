@@ -4269,6 +4269,184 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             streamlit.session_state['number'] += number
         show_state(display)
 
+* I add a new :ref:`function<what is a function?>` for adding the number to the `session state object`_
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 7-11
+
+    def handle_decimals(display, number):
+        if streamlit.session_state['number'].count('.') == 0:
+            streamlit.session_state['number'] += number
+        show_state(display)
+
+
+    def add_number_to_state(number):
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+        else:
+            streamlit.session_state['number'] += number
+
+
+    def show(display, number):
+
+* I add a :ref:`function<what is a function?>` to handle all the button clicks
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 9-11
+
+    def show(display, number):
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+        else:
+            streamlit.session_state['number'] += number
+        show_state(display)
+
+
+    def on_click(function, display, value):
+        function(value)
+        show_state(display)
+
+
+    def add_buttons():
+
+* I try the ``on_click`` :ref:`function<what is a function?>` with the ``7`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 10-12
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button(
+            '<-', key='<-', width='stretch',
+            on_click=backspace, args=[display, '<-'],
+        )
+        column_1.button(
+            '7', key='7', width='stretch', on_click=on_click,
+            # on_click=show, args=[display, '7'],
+            args=[add_number_to_state, display, '7'],
+        )
+        column_1.button(
+            '4', key='4', width='stretch',
+            on_click=show, args=[display, '4'],
+        )
+
+  the test is still green! Yes!!
+
+* I remove the commented line and use the ``on_click`` :ref:`function<what is a function?>` with all the other number buttons in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 14-15, 18-19, 30-31, 34-35, 38-39, 42-43, 50-51, 54-55, 58-59
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button(
+            '<-', key='<-', width='stretch',
+            on_click=backspace, args=[display, '<-'],
+        )
+        column_1.button(
+            '7', key='7', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '7'],
+        )
+        column_1.button(
+            '4', key='4', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '4'],
+        )
+        column_1.button(
+            '1', key='1', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '1'],
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch',
+            on_click=plus_minus, args=[display, '+/-'],
+        )
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+        column_2.button(
+            '8', key='8', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '8'],
+        )
+        column_2.button(
+            '5', key='5', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '5'],
+        )
+        column_2.button(
+            '2', key='2', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '2'],
+        )
+        column_2.button(
+            '0', key='0', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '0'],
+        )
+
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+        )
+        column_3.button(
+            '9', key='9', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '9'],
+        )
+        column_3.button(
+            '6', key='6', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '6'],
+        )
+        column_3.button(
+            '3', key='3', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '3'],
+        )
+        column_3.button(
+            '.', key='.', width='stretch',
+            on_click=handle_decimals, args=[display, '.'],
+        )
+
+        operations.button(
+            '/', key='/', width='stretch', type='primary',
+        )
+        operations.button(
+            'X', key='X', width='stretch', type='primary',
+        )
+        operations.button(
+            r'\-', key=r'\-', width='stretch', type='primary',
+        )
+        operations.button(
+            r'\+', key=r'\+', width='stretch', type='primary',
+        )
+        operations.button(
+            '=', key='=', width='stretch', type='primary',
+        )
+
+    def main():
+
+  still green
+
+* I remove the ``show`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+
+    def add_number_to_state(number):
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+        else:
+            streamlit.session_state['number'] += number
+
+
+    def on_click(function, display, number):
+
+* I add a new :ref:`function<what is a function?>` for decimals
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines:
 
 ----
 
