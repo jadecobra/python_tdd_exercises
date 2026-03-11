@@ -1033,7 +1033,7 @@ how to install Python packages with uv
     Resolved 3 packages in GHIms
     ░░░░░░░░░░░░░░░░░░░░ [0/2] Installing wheels...
     ...
-    Installed 2 packages in JKLms
+    Installed 7 packages in JKLms
      + pytest-watcher==A.B.C
      + watchdog==D.E.F
 
@@ -1160,65 +1160,6 @@ how to run the tests automatically with uv and pytest-watcher
     :emphasize-text: .
 
     uv run pytest-watcher . --now
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    command not found: pytest-watcher
-
-  same error
-
-* I use uv_ to run `pytest-watcher`_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv run pytest-watcher
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-text: --now
-
-    usage: pytest_watcher [-h] [--now] [--clear] [--notify-on-failure] [--delay DELAY]
-                          [--runner RUNNER] [--patterns PATTERNS]
-                          [--ignore-patterns IGNORE_PATTERNS] [--version]
-                          path
-    pytest_watcher: error: the following arguments are required: path
-
-  oh boy! I just want my tests to run already. I see a ``--now`` option
-
-* I try to run the tests again with the ``--now`` option
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv run pytest-watcher --now
-
-  ``--now`` is an option that tells `pytest-watcher`_ to run the tests now without asking me for input
-
-  the terminal_ shows
-
-  .. code-block:: python
-    :emphasize-lines: 5
-    :emphasize-text: path
-
-    usage: pytest_watcher [-h] [--now] [--clear] [--notify-on-failure] [--delay DELAY]
-                          [--runner RUNNER] [--patterns PATTERNS]
-                          [--ignore-patterns IGNORE_PATTERNS] [--version]
-                          path
-    pytest_watcher: error: the following arguments are required: path
-
-  I have to tell `pytest-watcher`_ what folder_ has the tests I want it to run
-
-* I try to run the tests again
-
-  .. code-block:: python
-
-    uv run pytest-watcher . --now
-
-  ``.`` is the current working directory_
 
   the terminal_ shows results without going back to the command line
 
