@@ -1271,10 +1271,11 @@ review
 ********************************************************************************************
 
 * I gave the computer some commands to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
-* I made some folders_ and files_
-* I successfully wrote a :ref:`failing test<test_failure>`
+* I made some folders_
+* I made some files_
+* I made a :ref:`failing test<test_failure>`
 * I made the failing test pass
-* I made the tests run automatically with `pytest-watcher`_
+* I made the test run automatically with `pytest-watcher`_
 
 ----
 
