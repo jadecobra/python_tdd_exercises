@@ -51,11 +51,10 @@ Pick a time that works best for you
     <div class="pricing-container">
         <div class="price-card">
             <h3>morning marauders</h3>
-            <div class="price"><s>$99.99</s></div>
-            <div class="price">FREE.99</div>
+            <div class="price">$199.98</div>
             <p class="time-slot">10AM - 12PM CST</p>
             <ul>
-                <li>employee appreciation discount</li>
+                <li>Apr 27 - June 12</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
@@ -64,11 +63,11 @@ Pick a time that works best for you
 
         <div class="price-card">
             <h3>sunlight soldiers</h3>
-            <div class="price"><s>$99.99</s></div>
+            <div class="price">$199.98</div>
             <div class="price">FREE.99</div>
             <p class="time-slot">2PM - 4PM CST</p>
             <ul>
-                <li>employee appreciation discount</li>
+                <li>Apr 27 - June 12</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
@@ -77,12 +76,12 @@ Pick a time that works best for you
         </div>
 
         <div class="price-card">
-            <h3>happy hour heroes</h3> 
+            <h3>happy hour heroes</h3>
             <div class="price"><s>$99.99</s></div>
             <div class="price">FREE.99</div>
             <p class="time-slot">5PM - 7PM CST</p>
             <ul>
-                <li>employee appreciation discount</li>
+                <li>daylight savings and loans discount</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
@@ -94,7 +93,7 @@ Pick a time that works best for you
             <div class="price">$399.96</div>
             <p class="time-slot">8PM - 10PM CST</p>
             <ul>
-                <li>Mar 2 - Apr 24</li>
+                <li>Apr 27 - June 12</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>

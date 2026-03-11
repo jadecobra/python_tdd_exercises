@@ -1328,7 +1328,7 @@ I have not added a definition for ``constant`` in ``functions.py`` in the ``src`
 * I change the `return statement`_ to make them the same
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 18
     :emphasize-lines: 2
 
     def constant():
