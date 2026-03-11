@@ -3784,7 +3784,7 @@ I add a new test for the ``+/-``
 
 .. code-block:: python
   :lineno-start: 106
-  :emphasize-lines: 6-8, 10-15, 17-26
+  :emphasize-lines: 6-10, 12-15
 
           self.assertEqual(
               self.tester.session_state['number'],
@@ -3792,41 +3792,24 @@ I add a new test for the ``+/-``
           )
 
       def test_streamlit_calculator_w_plus_minus(self):
-          a_random_number = tests.test_calculator.a_random_number()
-          a_random_number = str(a_random_number)
+          self.tester.button('1').click().run()
+          self.assertEqual(
+              self.tester.session_state['number'], '1'
+          )
 
-          for number in a_random_number:
-              (
-                  self.tester.button(number)
-                      .click().run()
-              )
           self.tester.button('+/-').click().run()
-
-          if a_random_number.startswith('-'):
-              self.assertEqual(
-                  self.tester.session_state['number'],
-                  a_random_number[1:]
-              )
-          else:
-              self.assertEqual(
-                  self.tester.session_state['number'],
-                  f'-{a_random_number}'
-              )
+          self.assertEqual(
+              self.tester.session_state['number'], '-1'
+          )
 
 
   # Exceptions seen
 
-if ``a_random_number`` is negative, the terminal_ shows :ref:`KeyError<test_key_error>`
+the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  KeyError: '-'
-
-if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  AssertionError: 'TUV.WXYZABCDEFGHI' != '-TUV.WXYZABCDEFGHI'
+  AssertionError: '1' != '-1'
 
 ----
 
@@ -3840,29 +3823,26 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-11
+    :emphasize-lines: 4-8
 
     import streamlit
 
 
     def plus_minus(display):
-        if streamlit.session_state['number'].startswith('-'):
-            streamlit.session_state['number'] = \
-                streamlit.session_state['number'][1:]
-        else:
-            streamlit.session_state['number'] = \
-                '-' + streamlit.session_state['number']
+        if not streamlit.session_state['number'].startswith('-'):
+            number = '-' + streamlit.session_state['number']
+        streamlit.session_state['number'] = number
         display.write(streamlit.session_state['number'])
 
 
     def backspace(display):
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` or :ref:`KeyError<test_key_error>`
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
 * I add the ``on_click`` parameter for the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 50
     :emphasize-lines: 5-8
     :emphasize-text: plus_minus
 
@@ -3878,72 +3858,159 @@ if ``a_random_number`` is positive, the terminal_ shows :ref:`AssertionError<wha
         column_2.button(
             'C', key='C', width='stretch', type='primary',
         )
-
-  I use :kbd:`ctrl+s` on the keyboard to run the test a few times
-
-  - if ``a_random_number`` is negative, the terminal_ shows :ref:`KeyError<test_key_error>`
-
-    .. code-block:: python
-
-      KeyError: '-'
-
-  - if ``a_random_number`` is positive, the test passes
-
-* I add an :ref:`if statement<if statements>` to the :ref:`for loop<what is a for loop>` to use raw string_ for the ``-`` button in :ref:`test_streamlit_calculator_w_plus_minus`
-
-  .. code-block:: python
-
-
-
-
-  .. code-block:: python
-
-
-  I use :kbd:`ctrl+s` to run the test a few times
-
-  - if ``a_random_number`` is negative, the terminal_ shows :ref:`KeyError<test_key_error>`
-
-    .. code-block:: python
-
-      KeyError: '-'
-
-  - if ``a_random_number`` is positive, the test passes
-
-  I need to add an action for the when the ``-`` button is pressed
-
-* I add an :ref:`if statement<if statements>` for when the random number is negative, to press the ``r\-`` button
-
-  .. code-block:: python
-    :lineno-start:
-
-
-
-
-
-* I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 5-8
-    :emphasize-text: plus_minus
-
-        column_1.button(
-            '1', key='1', width='stretch',
-            on_click=show, args=[display, '1'],
-        )
-        column_1.button(
-            '+/-', key='+/-', width='stretch',
-            on_click=plus_minus, args=[display]
-        )
-
         column_2.button(
-            'C', key='C', width='stretch', type='primary',
+            '8', key='8', width='stretch',
+            on_click=show, args=[display, '8'],
         )
 
-  I use :kbd:`ctrl+s` on the keyboard to run the test a few times and the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+  the test passes. I can turn a positive number to a negative one with the ``+/-`` button.
 
-*
+----
 
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add another button press and :ref:`assertion<what is an assertion?>` to make sure I can turn a negative number to a positive one with the ``+/-`` button, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 117
+    :emphasize-lines: 6-9
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], '-1'
+            )
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], '1'
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '-1' != '1'
+
+* I add an :ref:`if statement<if statements>` to the ``plus_minus`` :ref:`function<what is a function?>` in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2-3
+
+    def plus_minus(display):
+        if streamlit.session_state['number'].startswith('-'):
+            number = streamlit.session_state['number'][1:]
+        if not streamlit.session_state['number'].startswith('-'):
+            number = '-' + streamlit.session_state['number']
+        streamlit.session_state['number'] = number
+        display.write(streamlit.session_state['number'])
+
+  the test passes
+
+* I add a :ref:`variable<what is a variable?>` to remove duplication in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 2
+    :emphasize-text: a_number
+
+        def test_streamlit_calculator_w_plus_minus(self):
+            a_number = '1'
+            self.tester.button('1').click().run()
+
+* I use the number in the :ref:`assertions<what is an assertion?>` and button presses
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 3-4, 6-7, 12-13, 18-19
+    :emphasize-text: a_number
+
+        def test_streamlit_calculator_w_plus_minus(self):
+            a_number = '1'
+            # self.tester.button('1').click().run()
+            self.tester.button(a_number).click().run()
+            self.assertEqual(
+                # self.tester.session_state['number'], '1'
+                self.tester.session_state['number'], a_number
+            )
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                # self.tester.session_state['number'], '-1'
+                self.tester.session_state['number'], f'-{a_number}'
+            )
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                # self.tester.session_state['number'], '1'
+                self.tester.session_state['number'], a_number
+            )
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 111
+
+        def test_streamlit_calculator_w_plus_minus(self):
+            a_number = '1'
+            self.tester.button(a_number).click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], a_number
+            )
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], f'-{a_number}'
+            )
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], a_number
+            )
+
+* I try a bigger number
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 2
+
+        def test_streamlit_calculator_w_plus_minus(self):
+            a_number = '12'
+            self.tester.button(a_number).click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], a_number
+            )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '12'
+
+  I need separate button presses for the two numbers
+
+* I add a :ref:`for loop<what is a for loop?>`
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 
+
+        def test_streamlit_calculator_w_plus_minus(self):
+            a_number = '12'
+            for number in a_number:
+                self.tester.button(number).click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], a_number
+            )
 
 * I refresh the browser and try to make a negative number
 

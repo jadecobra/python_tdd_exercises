@@ -522,7 +522,7 @@ For example,
         def test_what_is_an_assertion(self):
             assert 1 + 1 == 2
             assert '1' + '1' == '11'
-            'I am' + ' a programmer' == '11'
+            assert 'I am' + ' a programmer' == 'I am a programmer'
 
         def test_assertion_error_w_none(self):
             assert None is not None
