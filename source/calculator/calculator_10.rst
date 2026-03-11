@@ -2318,7 +2318,7 @@ the test passes
 
     def main():
 
-  the terminal_ shows :ref:`KeyError<test_key_error>` and :ref:`AssertionError<what causes AssertionError>`
+  the terminal_ shows :ref:`KeyError<test_key_error>` and :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2791,7 +2791,7 @@ I want the calculator to show the number when I click on a button
 ----
 
 *********************************************************************************
-how to use state
+test_streamlit_calculator_state
 *********************************************************************************
 
 streamlit_ has a `session state object`_ that I can use to keep values in between button presses. They work the same as :ref:`class attributes<test_attribute_error_w_class_attributes>` and they are :ref:`dictionaries<what is a dictionary?>` - I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to them
@@ -3762,7 +3762,6 @@ I want to be able to remove the last digit of a number
 
 ----
 
-
 *********************************************************************************
 test_streamlit_calculator_w_plus_minus
 *********************************************************************************
@@ -3823,7 +3822,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-8
+    :emphasize-lines: 4-6, 8
 
     import streamlit
 
@@ -3831,6 +3830,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     def plus_minus(display):
         if not streamlit.session_state['number'].startswith('-'):
             number = '-' + streamlit.session_state['number']
+
         streamlit.session_state['number'] = number
         display.write(streamlit.session_state['number'])
 
@@ -3909,6 +3909,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             number = streamlit.session_state['number'][1:]
         if not streamlit.session_state['number'].startswith('-'):
             number = '-' + streamlit.session_state['number']
+
         streamlit.session_state['number'] = number
         display.write(streamlit.session_state['number'])
 
@@ -4002,7 +4003,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :lineno-start: 111
-    :emphasize-lines: 
+    :emphasize-lines: 3-4
 
         def test_streamlit_calculator_w_plus_minus(self):
             a_number = '12'
@@ -4011,6 +4012,19 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             self.assertEqual(
                 self.tester.session_state['number'], a_number
             )
+
+  the test passes
+
+* I try a number with 10 digits
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 2
+
+        def test_streamlit_calculator_w_plus_minus(self):
+            a_number = '1234567890'
+
+  the terminal_ still shows green
 
 * I refresh the browser and try to make a negative number
 
@@ -4032,13 +4046,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
-=================================================================================
-:yellow:`REFACTOR`: make it pass
-=================================================================================
-
-----
-
-* The last 4 :ref:`functions<what is a function?>` - ``plus_minus``, ``backspace``, ``handle_decimals`` and ``show`` are similar
+* The last 4 :ref:`functions<what is a function?>` in ``streamlit_calculator.py`` - ``plus_minus``, ``backspace``, ``handle_decimals`` and ``show`` look the same
 
   .. code-block:: python
 
@@ -4046,7 +4054,99 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
         statements
         display.write(streamlit.session_state['number'])
 
-* I make a new :ref:`function<what is a function?>` to show the state
+  some have ``number`` in the :ref:`function<what is a function?>` signature
+
+* I add ``number`` in the parentheses for the ``plus_minus`` :ref:`function<what is a function?>` to make it have the same signature as the ``show`` and ``handle_decimals`` :ref:`functions<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 1
+
+    def plus_minus(display, number):
+        if streamlit.session_state['number'].startswith('-'):
+            number = streamlit.session_state['number'][1:]
+        if not streamlit.session_state['number'].startswith('-'):
+            number = '-' + streamlit.session_state['number']
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '1234567890' != '-1234567890'
+
+  and :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: plus_minus() missing 1 required positional argument: 'number'
+
+* I add a second argument to the ``args`` parameter for the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 7
+    :emphasize-text: +/-
+
+        column_1.button(
+            '1', key='1', width='stretch',
+            on_click=show, args=[display, '1'],
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch',
+            on_click=plus_minus, args=[display, '+/-'],
+        )
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+
+  the test is green again
+
+* I add ``number`` in the parentheses for the ``backspace`` :ref:`function<what is a function?>` to make it have the same signature as the ``show``, ``handle_decimals`` and ``plus_minus`` :ref:`functions<what is a function?>`
+
+  .. code-block::python
+    :lineno-start: 14
+    :emnphasize-lines: 1
+
+    def backspace(display, number):
+        streamlit.session_state['number'] = \
+            streamlit.session_state['number'][:-1]
+        display.write(streamlit.session_state['number'])
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'RST.UVWXYZABCDEFGH' != 'RST.UVWXYZABCDEFG'
+
+  it also shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: backspace() missing 1 required positional argument: 'number'
+
+* I add a second argument to the ``args`` parameter for the ``<-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines:
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        column_1.button(
+            '<-', key='<-', width='stretch',
+            on_click=backspace, args=[display, '<-'],
+        )
+        column_1.button(
+            '7', key='7', width='stretch',
+            on_click=show, args=[display, '7'],
+        )
+
+  the test is green again
+
+* I add a :ref:`function<what is a function?>` to show the state
 
   .. code-block:: python
     :lineno-start: 4
@@ -4059,14 +4159,115 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
         display.write(streamlit.session_state['number'])
 
 
-    def plus_minus(display):
+    def plus_minus(display, number):
 
 * I use the new :ref:`function<what is a function?>` in the ``plus_minus`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-starrt: 11
-    :emphasize-lines:
+    :lineno-start: 8
+    :emphasize-lines: 8-9
 
+    def plus_minus(display, number):
+        if streamlit.session_state['number'].startswith('-'):
+            number = streamlit.session_state['number'][1:]
+        if not streamlit.session_state['number'].startswith('-'):
+            number = '-' + streamlit.session_state['number']
+
+        streamlit.session_state['number'] = number
+        # display.write(streamlit.session_state['number'])
+        show_state(display)
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 8
+
+    def plus_minus(display, number):
+        if streamlit.session_state['number'].startswith('-'):
+            number = streamlit.session_state['number'][1:]
+        if not streamlit.session_state['number'].startswith('-'):
+            number = '-' + streamlit.session_state['number']
+
+        streamlit.session_state['number'] = number
+        show_state(display)
+
+* I use the new :ref:`function<what is a function?>` in the ``backspace`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 4-5
+
+    def backspace(display, number):
+        streamlit.session_state['number'] = \
+            streamlit.session_state['number'][:-1]
+        # display.write(streamlit.session_state['number'])
+        show_state(display)
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 18
+
+    def backspace(display, number):
+        streamlit.session_state['number'] = \
+            streamlit.session_state['number'][:-1]
+        show_state(display)
+
+* I use the new :ref:`function<what is a function?>` in the ``handle_decimals`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 4-5
+
+    def handle_decimals(display, number):
+        if streamlit.session_state['number'].count('.') == 0:
+            streamlit.session_state['number'] += number
+        # display.write(streamlit.session_state['number'])
+        show_state(display)
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 24
+
+    def handle_decimals(display, number):
+        if streamlit.session_state['number'].count('.') == 0:
+            streamlit.session_state['number'] += number
+        show_state(display)
+
+* I use the new :ref:`function<what is a function?>` in the ``show`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 6-7
+
+    def show(display, number):
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+        else:
+            streamlit.session_state['number'] += number
+        # display.write(streamlit.session_state['number'])
+        show_state(display)
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 30
+
+    def show(display, number):
+        if streamlit.session_state['number'] == '0':
+            streamlit.session_state['number'] = number
+        else:
+            streamlit.session_state['number'] += number
+        show_state(display)
 
 
 ----
