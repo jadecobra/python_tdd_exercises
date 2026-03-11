@@ -172,7 +172,11 @@ continue with :ref:`how to work in directories`
 how to install tree on Mac OS
 ---------------------------------------------------------------------------------
 
+type this in the terminal_
 
+.. code-block:: python
+
+  brew install tree
 
 * continue with :ref:`how to work in directories`
 
