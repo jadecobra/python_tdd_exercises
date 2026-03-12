@@ -957,13 +957,12 @@ test_factory_takes_keyword_arguments
   - ``.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
   - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
-  that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>` and :ref:`AttributeError<what causes AttributeError?>`.
-
+  that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`
 
 * I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` to the `return statement`_ in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
     :emphasize-lines: 9
 
     def factory(

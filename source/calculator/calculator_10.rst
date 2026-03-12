@@ -3791,14 +3791,14 @@ I add a new test for the ``+/-``
           )
 
       def test_streamlit_calculator_w_plus_minus(self):
-          self.tester.button('1').click().run()
+          self.tester.button('9').click().run()
           self.assertEqual(
-              self.tester.session_state['number'], '1'
+              self.tester.session_state['number'], '9'
           )
 
           self.tester.button('+/-').click().run()
           self.assertEqual(
-              self.tester.session_state['number'], '-1'
+              self.tester.session_state['number'], '-9'
           )
 
 
@@ -3808,7 +3808,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  AssertionError: '1' != '-1'
+  AssertionError: '9' != '-9'
 
 ----
 
@@ -3881,12 +3881,12 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
             self.tester.button('+/-').click().run()
             self.assertEqual(
-                self.tester.session_state['number'], '-1'
+                self.tester.session_state['number'], '-9'
             )
 
             self.tester.button('+/-').click().run()
             self.assertEqual(
-                self.tester.session_state['number'], '1'
+                self.tester.session_state['number'], '9'
             )
 
 
@@ -3896,7 +3896,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: '-1' != '1'
+    AssertionError: '-9' != '9'
 
 * I add an :ref:`if statement<if statements>` to the ``plus_minus`` :ref:`function<what is a function?>` in ``test_streamlit_calculator.py``
 
@@ -3915,6 +3915,33 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   the test passes
 
+* I use else_ for the second :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 7-8
+    :emphasize-lines:
+
+        # if not streamlit.session_state['number'].startswith('-'):
+        else:
+            number = '-' + streamlit.session_state['number']
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2-3
+
+    def plus_minus(display):
+        if streamlit.session_state['number'].startswith('-'):
+            number = streamlit.session_state['number'][1:]
+        else:
+            number = '-' + streamlit.session_state['number']
+
+        streamlit.session_state['number'] = number
+        display.write(streamlit.session_state['number'])
+
 * I add a :ref:`variable<what is a variable?>` to remove duplication in ``test_streamlit_calculator.py``
 
   .. code-block:: python
@@ -3923,7 +3950,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :emphasize-text: a_number
 
         def test_streamlit_calculator_w_plus_minus(self):
-            a_number = '1'
+            a_number = '9'
             self.tester.button('1').click().run()
 
 * I use the number in the :ref:`assertions<what is an assertion?>` and button presses
@@ -3934,23 +3961,23 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :emphasize-text: a_number
 
         def test_streamlit_calculator_w_plus_minus(self):
-            a_number = '1'
+            a_number = '9'
             # self.tester.button('1').click().run()
             self.tester.button(a_number).click().run()
             self.assertEqual(
-                # self.tester.session_state['number'], '1'
+                # self.tester.session_state['number'], '9'
                 self.tester.session_state['number'], a_number
             )
 
             self.tester.button('+/-').click().run()
             self.assertEqual(
-                # self.tester.session_state['number'], '-1'
+                # self.tester.session_state['number'], '-9'
                 self.tester.session_state['number'], f'-{a_number}'
             )
 
             self.tester.button('+/-').click().run()
             self.assertEqual(
-                # self.tester.session_state['number'], '1'
+                # self.tester.session_state['number'], '9'
                 self.tester.session_state['number'], a_number
             )
 
@@ -3962,7 +3989,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :lineno-start: 111
 
         def test_streamlit_calculator_w_plus_minus(self):
-            a_number = '1'
+            a_number = '9'
             self.tester.button(a_number).click().run()
             self.assertEqual(
                 self.tester.session_state['number'], a_number
@@ -3985,7 +4012,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :emphasize-lines: 2
 
         def test_streamlit_calculator_w_plus_minus(self):
-            a_number = '12'
+            a_number = '96'
             self.tester.button(a_number).click().run()
             self.assertEqual(
                 self.tester.session_state['number'], a_number
@@ -3995,7 +4022,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    KeyError: '12'
+    KeyError: '96'
 
   I need separate button presses for the two numbers
 
@@ -4006,7 +4033,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :emphasize-lines: 3-4
 
         def test_streamlit_calculator_w_plus_minus(self):
-            a_number = '12'
+            a_number = '96'
             for number in a_number:
                 self.tester.button(number).click().run()
             self.assertEqual(
@@ -4022,7 +4049,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :emphasize-lines: 2
 
         def test_streamlit_calculator_w_plus_minus(self):
-            a_number = '1234567890'
+            a_number = '963.0258741'
 
   the terminal_ still shows green
 
@@ -4065,7 +4092,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     def plus_minus(display, number):
         if streamlit.session_state['number'].startswith('-'):
             number = streamlit.session_state['number'][1:]
-        if not streamlit.session_state['number'].startswith('-'):
+        else:
             number = '-' + streamlit.session_state['number']
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -4170,7 +4197,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     def plus_minus(display, number):
         if streamlit.session_state['number'].startswith('-'):
             number = streamlit.session_state['number'][1:]
-        if not streamlit.session_state['number'].startswith('-'):
+        else:
             number = '-' + streamlit.session_state['number']
 
         streamlit.session_state['number'] = number
@@ -4187,7 +4214,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     def plus_minus(display, number):
         if streamlit.session_state['number'].startswith('-'):
             number = streamlit.session_state['number'][1:]
-        if not streamlit.session_state['number'].startswith('-'):
+        else:
             number = '-' + streamlit.session_state['number']
 
         streamlit.session_state['number'] = number
@@ -4442,85 +4469,283 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     def on_click(function, display, number):
 
+----
+
 * I add a new :ref:`function<what is a function?>` for decimals
 
   .. code-block:: python
     :lineno-start: 24
-    :emphasize-lines:
+    :emphasize-lines: 7-9
 
-----
+    def handle_decimals(display, number):
+        if streamlit.session_state['number'].count('.') == 0:
+            streamlit.session_state['number'] += number
+        show_state(display)
 
-----
 
-----
+    def add_decimal():
+        if streamlit.session_state['number'].count('.') == 0:
+            streamlit.session_state['number'] += '.'
 
-----
 
-----
+    def add_number_to_state(number):
 
-* I add the ``on_click`` parameter to the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* I try the new :ref:`function<what is a function?>` with the ``.`` button in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 18-21
+    :lineno-start: 103
+    :emphasize-lines: 6-8
+
+        column_3.button(
+            '3', key='3', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '3'],
+        )
+        column_3.button(
+            '.', key='.', width='stretch', on_click=on_click,
+            # on_click=handle_decimals, args=[display, '.'],
+            args=[add_decimal, display],
+        )
+
+        operations.button(
+            '/', key='/', width='stretch', type='primary',
+        )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    FAILED test_streamlit_calculator_backspace - KeyError: 'I'
+    FAILED test_streamlit_calculator_w_decimals - KeyError: '2'
+
+  and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: on_click() missing 1 required positional argument: 'value'
+
+* I make the ``value`` parameter a choice in the ``on_click`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 1-2
+
+    def on_click(function, display, *value):
+        function(*value)
+        show_state(display)
+
+  the test passes
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 107
+
+        column_3.button(
+            '.', key='.', width='stretch', on_click=on_click,
+            args=[add_decimal, display],
+        )
+
+* I remove the ``handle_decimals`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+
+    def backspace(display, number):
+        streamlit.session_state['number'] = \
+            streamlit.session_state['number'][:-1]
+        show_state(display)
+
+
+    def add_decimal():
+        if streamlit.session_state['number'].count('.') == 0:
+            streamlit.session_state['number'] += '.'
+
+----
+
+* I change the ``on_click`` and ``args`` parameters for the ``<-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 6-8
 
     def add_buttons():
         display = streamlit.container(border=True)
         column_1, column_2, column_3, operations = streamlit.columns(4)
 
-        column_1.button('<-', key='<-', width='stretch')
         column_1.button(
-            '7', key='7', width='stretch',
-            on_click=show, args=[display, '7'],
+            '<-', key='<-', width='stretch', on_click=on_click,
+            # on_click=backspace, args=[display, '<-'],
+            args=[backspace, display],
         )
         column_1.button(
-            '4', key='4', width='stretch',
-            on_click=show, args=[display, '4'],
-        )
-        column_1.button(
-            '1', key='1', width='stretch',
-            on_click=show, args=[display, '1'],
-        )
-        column_1.button(
-            '+/-', key='+/-', width='stretch',
-            on_click=show, args=[display, '+/-'],
+            '7', key='7', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '7'],
         )
 
-        column_2.button('C', key='C', width='stretch', type='primary')
-
-* I add :ref:`conditions<if statements>` to the ``update_state`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 11-22
 
-    def update_state(number):
-        if number == '.':
-            if (
-                streamlit.session_state['number']
-                .count('.') != 0
-            ):
-                return
-        if streamlit.session_state['number'] == '0':
-            streamlit.session_state['number'] = number
-            return
-        if number == '+/-':
-            if not (
-                streamlit.session_state['number']
-                .startswith('-')
-            ):
-                negative = (
-                    '-'  +
-                    streamlit.session_state['number']
-                )
-                streamlit.session_state['number'] = \
-                    negative
-                return
-        streamlit.session_state['number'] += number
+    AssertionError: 'MN.OPQRSTUVWXYZABC' != 'MN.OPQRSTUVWXYZAB'
 
-  I can use ``\`` to break up a long line in two. The test passes
+  and :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: backspace() missing 2 required positional arguments: 'display' and 'number'
+
+* I change the ``backspace`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 1-2, 5
+
+    # def backspace(display, number):
+    def backspace():
+        streamlit.session_state['number'] = \
+            streamlit.session_state['number'][:-1]
+        # show_state(display)
+
+  the test passes
+
+* I remove the commented lines in the ``backspace`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+
+    def backspace():
+        streamlit.session_state['number'] = \
+            streamlit.session_state['number'][:-1]
 
 
+    def add_decimal():
+
+----
+
+* I change the ``on_click`` and ``args`` parameters for the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 6-8
+
+        column_1.button(
+            '1', key='1', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '1'],
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch', on_click=on_click,
+            # on_click=plus_minus, args=[display, '+/-'],
+            args=[plus_minus, display]
+        )
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-text: -
+
+    AssertionError: '1234567890' != '-1234567890'
+
+  and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: plus_minus() missing 2 required positional arguments: 'display' and 'number'
+
+* I change the ``plus_minus`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 1-2, 9
+
+    # def plus_minus(display, number):
+    def plus_minus():
+        if streamlit.session_state['number'].startswith('-'):
+            number = streamlit.session_state['number'][1:]
+        if not streamlit.session_state['number'].startswith('-'):
+            number = '-' + streamlit.session_state['number']
+
+        streamlit.session_state['number'] = number
+        # show_state(display)
+
+  the test passes
+
+* I remove the commented lines in the ``plus_minus`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 8
+
+    def plus_minus():
+        if streamlit.session_state['number'].startswith('-'):
+            number = streamlit.session_state['number'][1:]
+        if not streamlit.session_state['number'].startswith('-'):
+            number = '-' + streamlit.session_state['number']
+        streamlit.session_state['number'] = number
+
+
+    def backspace():
+
+* I remove the commented line from the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 42
+
+        column_1.button(
+            '<-', key='<-', width='stretch', on_click=on_click,
+            args=[backspace, display],
+        )
+
+----
+
+* That was a lot especially when all the numbers have to change. I add a :ref:`function<what is a function?>` for the buttons in the first column
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 6-26
+
+    def on_click(function, display, *value):
+        function(*value)
+        show_state(display)
+
+
+    def add_buttons_to_column_1(column_1, display):
+        column_1.button(
+            '<-', key='<-', width='stretch', on_click=on_click,
+            args=[backspace, display],
+        )
+        column_1.button(
+            '7', key='7', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '7'],
+        )
+        column_1.button(
+            '4', key='4', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '4'],
+        )
+        column_1.button(
+            '1', key='1', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '1'],
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch', on_click=on_click,
+            args=[plus_minus, display]
+        )
+
+
+    def add_buttons():
+
+* I call the new :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 
+
+----
+
+----
+
+----
 
 ----
 
