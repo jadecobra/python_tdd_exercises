@@ -2172,7 +2172,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 23
 
         def test_factory_takes_keyword_arguments(self):
             a_person = dict(
