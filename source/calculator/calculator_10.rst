@@ -4081,7 +4081,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
         statements
         display.write(streamlit.session_state['number'])
 
-  some have ``number`` in the :ref:`function<what is a function?>` signature
+  some of the :ref:`functions<what is a function?>` have ``number`` in the :ref:`function<what is a function?>` signature
 
 * I add ``number`` in the parentheses for the ``plus_minus`` :ref:`function<what is a function?>` to make it have the same signature as the ``show`` and ``handle_decimals`` :ref:`functions<what is a function?>`
 
@@ -4740,7 +4740,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :lineno-start: 61
-    :emphasize-lines: 5-21
+    :emphasize-lines: 5-25
 
     def add_buttons():
         display = streamlit.container(border=True)
@@ -5014,129 +5014,55 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :lineno-start: 123
+    :emphasize-lines: 8, 10-24
 
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
 
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3, display)
+        add_buttons_to_column_4(operations)
 
+        # operations.button(
+        #     '/', key='/', width='stretch', type='primary',
+        # )
+        # operations.button(
+        #     'X', key='X', width='stretch', type='primary',
+        # )
+        # operations.button(
+        #     r'\-', key=r'\-', width='stretch', type='primary',
+        # )
+        # operations.button(
+        #     r'\+', key=r'\+', width='stretch', type='primary',
+        # )
+        # operations.button(
+        #     '=', key='=', width='stretch', type='primary',
+        # )
 
-----
-
-
-----
-
-----
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add another click for ``+/-`` and an :ref:`assertion<what is an assertion?>` to make sure the Calculator will change a negative number to a positive one, in ``test_streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 144
-    :emphasize-lines: 5-9
-
-            self.assertEqual(
-                self.tester.session_state['number'],
-                f'-{number}'
-            )
-            self.tester.button('+/-').click().run()
-            self.assertEqual(
-                self.tester.session_state['number'],
-                number
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: '-963.0258741+/-' != '963.0258741'
-
-  it added ``+/-`` at the end of the number
-
-* I add another :ref:`condition<if statements>` to the ``update_state`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 13-16
-
-        if number == '+/-':
-            if not (
-                streamlit.session_state['number']
-                .startswith('-')
-            ):
-                negative = (
-                    '-'  +
-                    streamlit.session_state['number']
-                )
-                streamlit.session_state['number'] = \
-                    negative
-                return
-            else:
-                streamlit.session_state['number'] = \
-                    streamlit.session_state['number'][1:]
-                return
-        streamlit.session_state['number'] += number
-
-  the test passes
-
-----
-
-* I use the ``Rename Symbol`` feature to change ``number`` to ``value`` in the ``update_state`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1-2, 9, 11, 27
-    :emphasize-text: value
-
-    def update_state(value):
-        if value == '.':
-            if (
-                streamlit.session_state['number']
-                .count('.') != 0
-            ):
-                return
-        if streamlit.session_state['number'] == '0':
-            streamlit.session_state['number'] = value
-            return
-        if value == '+/-':
-            if not (
-                streamlit.session_state['number']
-                .startswith('-')
-            ):
-                negative = (
-                    '-'  +
-                    streamlit.session_state['number']
-                )
-                streamlit.session_state['number'] = \
-                    negative
-                return
-            else:
-                streamlit.session_state['number'] = \
-                    streamlit.session_state['number'][1:]
-                return
-        streamlit.session_state['number'] += value
-
-  the test is still green
-
-* I do the same thing in the ``show`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 1-2
-    :emphasize-text: value
-
-    def show(display, value):
-        update_state(value)
-        display.write(streamlit.session_state['number'])
+    def main():
 
   still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 123
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3, display)
+        add_buttons_to_column_4(operations)
+
+
+    def main():
+
+  okay! Enough playing, time to do the operations.
 
 ----
 
@@ -5157,33 +5083,57 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 I add a test
 
 .. code-block:: python
-  :lineno-start: 149
-  :emphasize-lines: 6-18
+  :lineno-start: 111
+  :emphasize-lines: 19-20, 22-27, 29-33
 
+        def test_streamlit_calculator_w_plus_minus(self):
+            a_number = '963.0258741'
+            for number in a_number:
+                self.tester.button(number).click().run()
             self.assertEqual(
-                self.tester.session_state['number'],
-                number
+                self.tester.session_state['number'], a_number
+            )
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], f'-{a_number}'
+            )
+
+            self.tester.button('+/-').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'], a_number
             )
 
         def test_streamlit_calculator_reset_state(self):
             numbers = '123456789'
+
             number = random.choice(numbers)
             self.tester.button(number).click().run()
             self.assertEqual(
                 self.tester.session_state['number'],
                 number
             )
+
             self.tester.button('C').click().run()
             self.assertEqual(
                 self.tester.session_state['number'],
                 '0'
             )
 
+
+    # Exceptions seen
+
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
-  AssertionError: X != '0'
+  AssertionError: 'C' != '0'
+
+* ``number = random.choice(numbers)`` picks a random number from ``'123456789'`` (the ``numbers`` :ref:`variable<what is a variable?>`)
+* ``self.tester.button(number).click().run()`` presses the random number
+* ``self.assertEqual(self.tester.session_state['number'], number)`` checks that the value of the ``number`` :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_ is the same as the number that was pressed
+* ``self.tester.button('C').click().run()`` presses the ``C`` button
+* ``self.assertEqual(self.tester.session_state['number'], '0')`` checks that the the ``number`` :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_ is set back to ``0`` after the ``C`` button is pressed
 
 ----
 
@@ -5196,19 +5146,20 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I add a :ref:`function<what is a function?>` to ``streamlit_calculator.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
+    :lineno-start: 4
+    :emphasize-lines: 5-6
 
-    import streamlit
+    def show_state(display):
+        display.write(streamlit.session_state['number'])
 
 
-    def reset_state():
+    def reset():
         streamlit.session_state['number'] = '0'
 
 
-    def update_state(value):
+    def plus_minus():
 
-* I add the ``on_click`` parameter to the ``C`` button
+* I add the ``on_click`` parameter to the ``C`` button in the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 44
