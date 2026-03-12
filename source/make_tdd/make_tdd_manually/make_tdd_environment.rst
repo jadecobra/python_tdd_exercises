@@ -239,7 +239,7 @@ the terminal_ shows
 
   python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-the computer cannot find the program_ because it there is no file_ with that name in the ``src`` folder_, yet.
+the computer cannot find the program_ because there is no file_ with that name in the ``src`` folder_, yet.
 
 ----
 

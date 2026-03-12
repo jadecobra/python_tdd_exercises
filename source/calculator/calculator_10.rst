@@ -4739,9 +4739,287 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I call the new :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 
+    :lineno-start: 61
+    :emphasize-lines: 5-21
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+        # column_1.button(
+        #     '<-', key='<-', width='stretch', on_click=on_click,
+        #     args=[backspace, display],
+        # )
+        # column_1.button(
+        #     '7', key='7', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '7'],
+        # )
+        # column_1.button(
+        #     '4', key='4', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '4'],
+        # )
+        # column_1.button(
+        #     '1', key='1', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '1'],
+        # )
+        # column_1.button(
+        #     '+/-', key='+/-', width='stretch', on_click=on_click,
+        #     args=[plus_minus, display]
+        # )
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+
+  the tests are still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 61
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+
+* I add a :ref:`function<what is a function?>` for adding buttons to the second column
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 24-43
+
+    def add_buttons_to_column_1(column_1, display):
+        column_1.button(
+            '<-', key='<-', width='stretch', on_click=on_click,
+            args=[backspace, display],
+        )
+        column_1.button(
+            '7', key='7', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '7'],
+        )
+        column_1.button(
+            '4', key='4', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '4'],
+        )
+        column_1.button(
+            '1', key='1', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '1'],
+        )
+        column_1.button(
+            '+/-', key='+/-', width='stretch', on_click=on_click,
+            args=[plus_minus, display]
+        )
+
+
+    def add_buttons_to_column_2(column_2, display):
+        column_2.button(
+            'C', key='C', width='stretch', type='primary',
+        )
+        column_2.button(
+            '8', key='8', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '8'],
+        )
+        column_2.button(
+            '5', key='5', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '5'],
+        )
+        column_2.button(
+            '2', key='2', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '2'],
+        )
+        column_2.button(
+            '0', key='0', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '0'],
+        )
+
+
+    def add_buttons():
+
+* I add a call to ``add_buttons_to_column_2`` in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 6, 8-26
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+
+        # column_2.button(
+        #     'C', key='C', width='stretch', type='primary',
+        # )
+        # column_2.button(
+        #     '8', key='8', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '8'],
+        # )
+        # column_2.button(
+        #     '5', key='5', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '5'],
+        # )
+        # column_2.button(
+        #     '2', key='2', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '2'],
+        # )
+        # column_2.button(
+        #     '0', key='0', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '0'],
+        # )
+
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+        )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 83
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+        )
+
+* I add a :ref:`function<what is a function?>` to add buttons to the third column
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 1-20
+
+    def add_buttons_to_column_3(column_3, display):
+        column_3.button(
+            'AC', key='AC', width='stretch', type='primary',
+        )
+        column_3.button(
+            '9', key='9', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '9'],
+        )
+        column_3.button(
+            '6', key='6', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '6'],
+        )
+        column_3.button(
+            '3', key='3', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '3'],
+        )
+        column_3.button(
+            '.', key='.', width='stretch', on_click=on_click,
+            args=[add_decimal, display],
+        )
+
+
+    def add_buttons():
+
+* I use the ``add_buttons_to_column_3`` :ref:`function<what is a function?>` in the ``add_columns`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 7, 9-27
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3, display)
+
+        # column_3.button(
+        #     'AC', key='AC', width='stretch', type='primary',
+        # )
+        # column_3.button(
+        #     '9', key='9', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '9'],
+        # )
+        # column_3.button(
+        #     '6', key='6', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '6'],
+        # )
+        # column_3.button(
+        #     '3', key='3', width='stretch', on_click=on_click,
+        #     args=[add_number_to_state, display, '3'],
+        # )
+        # column_3.button(
+        #     '.', key='.', width='stretch', on_click=on_click,
+        #     args=[add_decimal, display],
+        # )
+
+        operations.button(
+            '/', key='/', width='stretch', type='primary',
+        )
+
+  green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 105
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3, display)
+
+        operations.button(
+            '/', key='/', width='stretch', type='primary',
+        )
+
+* I add a :ref:`function<what is a function?>` for the operations column
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 1-16
+
+    def add_buttons_to_column_4(column_4):
+        column_4.button(
+            '/', key='/', width='stretch', type='primary',
+        )
+        column_4.button(
+            'X', key='X', width='stretch', type='primary',
+        )
+        column_4.button(
+            r'\-', key=r'\-', width='stretch', type='primary',
+        )
+        column_4.button(
+            r'\+', key=r'\+', width='stretch', type='primary',
+        )
+        column_4.button(
+            '=', key='=', width='stretch', type='primary',
+        )
+
+
+    def add_buttons():
+
+* I use the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`functions<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 123
+
+
+
 
 ----
+
 
 ----
 
