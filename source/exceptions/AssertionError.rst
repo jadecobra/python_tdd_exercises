@@ -316,7 +316,7 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
             1 + 1 == 11
 
-  the test is still green.
+  the test is still green. Why?
 
 * I want the test to fail when I write a statement that is not :ref:`True<test_what_is_true>`. I change it to an `assert statement`_
 
@@ -414,7 +414,7 @@ the test passes
     * these 2 statements are not the same
 
       - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
-      - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is any characters inside :ref:`quotes`
+      - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is anything inside :ref:`quotes`
 
 * I add another statement to show the difference between the statements
 

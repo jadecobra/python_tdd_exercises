@@ -539,7 +539,7 @@ the test passes.
 
 This is called `string interpolation`_, I can use it to put values in strings_.
 
-A string_ is any characters inside :ref:`quotes` e.g.
+A string_ is anything inside :ref:`quotes` e.g.
 
 - ``'single quotes'``
 - ``'''triple single quotes'''``

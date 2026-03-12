@@ -5822,7 +5822,76 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     AssertionError: '\\+' != '\\-'
 
-* I use the operation in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+* I use the operation in a :ref:`dictionary<what is a dictionary?>` in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 1-4
+
+    def calculate():
+        arithmetic = {
+            r'\+': calculator.add,
+        }
+        second_number = streamlit.session_state['number']
+        streamlit.session_state['second_number'] = second_number
+        streamlit.session_state['number'] = str(
+            float(streamlit.session_state['first_number'])
+          + float(streamlit.session_state['second_number'])
+        )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: 'st.session_state has no key "second_number".
+    Did you forget to initialize it?
+    More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+  the terminal_ also shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'calculator' is not defined. Did you mean: 'calculate'?
+
+* I add an `import statement`_ for the :ref:`calculator module<how to make a calculator>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import calculator
+    import streamlit
+
+
+    def show_state(display):
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '\\+' != '\\-'
+
+* I add the ``on_click`` and ``args`` parameters to the ``-`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 138
+
+        column_4.button(
+            r'\-', key=r'\-', width='stretch', on_click=on_click,
+            args=[first_number, display, r'\-'], type='primary',
+        )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '5.01' != '-1.0'
+
+* I add the ``operation`` for :ref:`subtraction<test_subtraction>` to the ``calculate`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+
+    
 
 
 * I use the ``a_random_number`` :ref:`function<what is a function?>` from ``test_calculator.py`` to add randomness to :ref:`test_streamlit_calculator_operations`
