@@ -1034,8 +1034,13 @@ how to install Python packages with uv
     ░░░░░░░░░░░░░░░░░░░░ [0/2] Installing wheels...
     ...
     Installed 7 packages in JKLms
-     + pytest-watcher==A.B.C
-     + watchdog==D.E.F
+     + iniconfig==A.B.C
+     + packaging==DE.F
+     + pluggy==G.H.I
+     + pygments==J.K.L
+     + pytest==M.N.O
+     + pytest-watcher==P.Q.R
+     + watchdog==S.T.U
 
 * I run tree_ to see what changed in the project
 
@@ -1084,7 +1089,8 @@ how to install Python packages with uv
     readme = "README.md"
     requires-python = ">=3.XY"
     dependencies = [
-        "pytest-watcher>=A.B.C",
+        "pytest>=M.N.O",
+        "pytest-watcher>=P.Q.R",
     ]
 
   it added `pytest-watcher`_ to the dependencies of the project

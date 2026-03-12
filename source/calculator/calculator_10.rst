@@ -3703,7 +3703,7 @@ I want to be able to remove the last digit of a number
 
     AssertionError: 'RS.TUVWXYZABCDEF123' != '123'
 
-  because I have button presses after the test. I need :ref:`a way to reset the numbers back to 0<test_streamlit_calculator_reset_state>`
+  because I have button presses after the test. I need :ref:`a way to reset the numbers back to 0<test_streamlit_calculator_reset>`
 
 * I remove the other numbers
 
@@ -5067,7 +5067,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 ----
 
 *********************************************************************************
-test_streamlit_calculator_reset_state
+test_streamlit_calculator_reset
 *********************************************************************************
 
 I want the ``C`` and ``AC`` buttons to change the number the Calculator shows back to ``0``
@@ -5104,7 +5104,7 @@ I add a test
                 self.tester.session_state['number'], a_number
             )
 
-        def test_streamlit_calculator_reset_state(self):
+        def test_streamlit_calculator_reset(self):
             numbers = '123456789'
 
             number = random.choice(numbers)
@@ -5159,42 +5159,36 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     def plus_minus():
 
-* I add the ``on_click`` parameter to the ``C`` button in the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
+* I add the ``on_click`` and ``args`` parameters to the ``C`` button in the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 23-26
+    :lineno-start: 65
+    :emphasize-lines: 3-4
 
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        column_1.button('<-', key='<-', width='stretch')
-        column_1.button(
-            '7', key='7', width='stretch',
-            on_click=show, args=[display, '7'],
-        )
-        column_1.button(
-            '4', key='4', width='stretch',
-            on_click=show, args=[display, '4'],
-        )
-        column_1.button(
-            '1', key='1', width='stretch',
-            on_click=show, args=[display, '1'],
-        )
-        column_1.button(
-            '+/-', key='+/-', width='stretch',
-            on_click=show, args=[display, '+/-'],
-        )
-
+    def add_buttons_to_column_2(column_2, display):
         column_2.button(
-            'C', key='C', width='stretch', type='primary',
-            on_click=reset_state
+            'C', key='C', width='stretch', on_click=on_click,
+            args=[reset, display], type='primary',
         )
         column_2.button(
-            '8', key='8', width='stretch',
-            on_click=show, args=[display, '8'],
+            '8', key='8', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '8'],
         )
+        column_2.button(
+            '5', key='5', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '5'],
+        )
+        column_2.button(
+            '2', key='2', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '2'],
+        )
+        column_2.button(
+            '0', key='0', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '0'],
+        )
+
+
+    def add_buttons_to_column_3(column_3, display):
 
   the test passes
 
@@ -5208,20 +5202,22 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 * I refresh the browser, click on number buttons and when I click on ``C`` it clears the numbers I type
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``AC`` button in ``test_streamlit_calculator.py``
+* I add an :ref:`assertion<what is an assertion?>` for the ``AC`` button in :ref:`test_streamlit_calculator_reset`
 
   .. code-block:: python
-    :lineno-start: 154
-    :emphasize-lines: 15-25
+    :lineno-start: 129
+    :emphasize-lines: 17-22, 24-28
 
-        def test_streamlit_calculator_reset_state(self):
+        def test_streamlit_calculator_reset(self):
             numbers = '123456789'
+
             number = random.choice(numbers)
             self.tester.button(number).click().run()
             self.assertEqual(
                 self.tester.session_state['number'],
                 number
             )
+
             self.tester.button('C').click().run()
             self.assertEqual(
                 self.tester.session_state['number'],
@@ -5234,6 +5230,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                 self.tester.session_state['number'],
                 number
             )
+
             self.tester.button('AC').click().run()
             self.assertEqual(
                 self.tester.session_state['number'],
@@ -5245,145 +5242,46 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-    AssertionError: X != '0'
+  .. code-block:: python
 
-* I add the ``on_click`` parameter to the ``AC`` button
+    AssertionError: 'D' != '0'
+
+* I add the ``on_click`` and ``args`` parameters to the ``AC`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 66
-    :emphasize-lines: 22-25
+    :lineno-start: 88
+    :emphasize-lines: 3-4
 
-        column_2.button(
-            'C', key='C', width='stretch', type='primary',
-            on_click=reset_state
-        )
-        column_2.button(
-            '8', key='8', width='stretch',
-            on_click=show, args=[display, '8'],
-        )
-        column_2.button(
-            '5', key='5', width='stretch',
-            on_click=show, args=[display, '5'],
-        )
-        column_2.button(
-            '2', key='2', width='stretch',
-            on_click=show, args=[display, '2'],
-        )
-        column_2.button(
-            '0', key='0', width='stretch',
-            on_click=show, args=[display, '0'],
-        )
-
+    def add_buttons_to_column_3(column_3, display):
         column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
-            on_click=reset_state
+            'AC', key='AC', width='stretch', on_click=on_click,
+            args=[reset, display], type='primary',
         )
         column_3.button(
-            '9', key='9', width='stretch',
-            on_click=show, args=[display, '9'],
+            '9', key='9', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '9'],
         )
+        column_3.button(
+            '6', key='6', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '6'],
+        )
+        column_3.button(
+            '3', key='3', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '3'],
+        )
+        column_3.button(
+            '.', key='.', width='stretch', on_click=on_click,
+            args=[add_decimal, display],
+        )
+
+
+    def add_buttons_to_column_4(column_4):
 
   the test passes
 
-* I refresh the browser, click on number buttons and when I click on ``AC`` it clears the numbers I type
+* I refresh the browser, click on number buttons and when I click on ``AC`` it clears the numbers
 
-* I add a call to the ``write`` :ref:`method<what is a function?>` of the ``display`` :ref:`object<what is a class?>` to show ``0`` when I click on the ``C`` or ``AC`` buttons, in ``streamlit_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-5
-
-    def reset_state():
-        streamlit.session_state['number'] = '0'
-        display.write(streamlit.session_state['number'])
-
-
-    def update_state(value):
-
-  the terminal_ shows :ref:`KeyError<test_key_error>`
-
-  .. code-block:: python
-
-    KeyError: 'X'
-
-  and :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'display' is not defined
-
-* I add ``display`` as a :ref:`positional argument<test_functions_w_positional_arguments>` in parentheses
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1
-
-    def reset_state(display):
-        streamlit.session_state['number'] = '0'
-        display.write(streamlit.session_state['number'])
-
-  the terminal_ shows :ref:`KeyError<test_key_error>`
-
-  .. code-block:: python
-
-    AssertionError: 'X' != '0'
-
-  and :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block::
-
-    TypeError: reset_state() missing 1 required positional argument: 'display'
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 181
-    :emphasize-lines: 8
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # NameError
-    # AttributeError
-    # AssertionError
-    # SyntaxError
-    # KeyError
-    # streamlit.errors.StreamlitDuplicateElementKey
-    # TypeError
-
-* I add ``display`` to the ``args`` parameter for the ``C`` button in the ``add_buttons`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 3
-
-        column_2.button(
-            'C', key='C', width='stretch', type='primary',
-            on_click=reset_state, args=[display]
-        )
-
-  the terminal_ shows the same :ref:`Exceptions<errors>`
-
-* I add ``display`` to the ``args`` parameter for the ``AC`` button
-
-  .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 3
-
-        column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
-            on_click=reset_state, args=[display]
-        )
-
-  the test passes
-
-* I refresh the browser and try the ``C`` and ``AC`` buttons
-
-  .. image:: /_static/calculator/streamlit/reset_state.png
-    :width: 600
-    :align: left
-    :alt: Display 0 after C or AC
-
-Time to do the operations
+On to the arithmetic operations
 
 ----
 
@@ -5399,39 +5297,42 @@ test_streamlit_calculator_operations
 
 ----
 
-I add a test
+I add a test for a calculation in ``test_streamlit_calculator.py``
 
 .. code-block:: python
-  :lineno-start: 175
-  :emphasize-lines: 6-8, 10-13, 15-18
+  :lineno-start: 152
+  :emphasize-lines: 7-9, 11-14, 16-19
 
-            self.assertEqual(
-                self.tester.session_state['number'],
-                '0'
-            )
+          self.tester.button('AC').click().run()
+          self.assertEqual(
+              self.tester.session_state['number'],
+              '0'
+          )
 
-        def test_streamlit_calculator_operations(self):
-            first_number = '1'
-            second_number = '2'
+      def test_streamlit_calculator_operations(self):
+          first_number = '1'
+          second_number = '2'
 
-            self.tester.button(first_number).click().run()
-            self.tester.button('+').click().run()
-            self.tester.button(second_number).click().run()
-            self.tester.button('=').click().run()
+          self.tester.button(first_number).click().run()
+          self.tester.button('+').click().run()
+          self.tester.button(second_number).click().run()
+          self.tester.button('=').click().run()
 
-            self.assertEqual(
-                self.tester.session_state['number'],
-                float(first_number) + float(second_number)
-            )
+          self.assertEqual(
+              self.tester.session_state['number'],
+              float(first_number)+float(second_number)
+          )
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ shows :ref:`KeyError<test_key_error>`
 
 .. code-block:: python
 
-  AssertionError: '12' != 3.0
+  KeyError: '+'
+
+I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for :ref:`addition<test_addition>`
 
 ----
 
@@ -5441,14 +5342,26 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the first number after the ``+`` button is pressed, in :ref:`test_streamlit_calculator_operations`
+* I change the key in the test
 
   .. code-block:: python
-    :lineno-start: 184
+    :lineno-start: 162
+    :emphasize-lines: 2
+    :emphasize-text: \+
+
+            self.tester.button(first_number).click().run()
+            self.tester.button(r'\+').click().run()
+            self.tester.button(second_number).click().run()
+            self.tester.button('=').click().run()
+
+* I add an :ref:`assertion<what is an assertion?>` to check the value of the first number
+
+  .. code-block:: python
+    :lineno-start: 162
     :emphasize-lines: 3-6
 
             self.tester.button(first_number).click().run()
-            self.tester.button('+').click().run()
+            self.tester.button('\+').click().run()
             self.assertEqual(
                 self.tester.session_state['first_number'],
                 first_number
@@ -5463,37 +5376,92 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     KeyError: 'st.session_state has no key "first_number". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
 
-* I make a :ref:`function<what is a function?>` to add the first number to the `session state object`_ when the ``+`` button is pressed, in ``streamlit_calculator.py``
+* I make a :ref:`function<what is a function?>` to add the first number as a :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_ when the ``+`` button is pressed, in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-7
+    :lineno-start: 8
+    :emphasize-lines: 5-8
 
-    import streamlit
-
-
-    def make_variable(display):
-        streamlit.session_state['first_number'] = \
-            streamlit.session_state['number']
-        reset_state(display)
+    def reset():
+        streamlit.session_state['number'] = '0'
 
 
-    def reset_state(display):
+    def first_number():
+        first_number = streamlit.session_state['number']
+        streamlit.session_state['first_number'] = first_number
+        reset()
 
-* I add the ``on_click`` and ``args`` parameters to the ``+`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+
+    def plus_minus():
+
+* I add the ``on_click`` and ``args`` parameters to the ``+`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 4-7
+    :lineno-start: 116
+    :emphasize-lines: 12-13
 
-        operations.button('/', key='/', width='stretch', type='primary')
-        operations.button('X', key='X', width='stretch', type='primary')
-        operations.button(r'\-', key='-', width='stretch', type='primary')
-        operations.button(
-            r'\+', key='+', width='stretch', type='primary',
-            on_click=make_variable, args=[display],
+    def add_buttons_to_column_4(column_4):
+        column_4.button(
+            '/', key='/', width='stretch', type='primary',
         )
-        operations.button('=', key='=', width='stretch', type='primary')
+        column_4.button(
+            'X', key='X', width='stretch', type='primary',
+        )
+        column_4.button(
+            r'\-', key=r'\-', width='stretch', type='primary',
+        )
+        column_4.button(
+            r'\+', key=r'\+', width='stretch', on_click=on_click,
+            args=[first_number], type='primary',
+        )
+        column_4.button(
+            '=', key='=', width='stretch', type='primary',
+        )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` again and :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: on_click() missing 1 required positional argument: 'display'
+
+* I add ``display`` to the ``args`` :ref:`list<what is a list?>`
+
+  .. code-block:: python
+    :lineno-start: 126
+    :emphasize-lines: 3
+    :emphasize-text: display
+
+        column_4.button(
+            r'\+', key=r'\+', width='stretch', on_click=on_click,
+            args=[first_number, display], type='primary',
+        )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+* I add ``display`` as a :ref:`positional argument<test_functions_w_positional_arguments>` of the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 1
+
+    def add_buttons_to_column_4(column_4, display):
+
+  the terminal_ shows :ref:`AssertionError<test_key_error>` for more tests
+
+* I add ``display`` in the call to the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` from the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 8
+
+    def add_buttons():
+        display = streamlit.container(border=True)
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3, display)
+        add_buttons_to_column_4(operations, display)
 
 
     def main():
@@ -5507,8 +5475,19 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I add an :ref:`assertion<what is an assertion?>` for the second number after the ``=`` button is pressed, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 191
-    :emphasize-lines: 3-6
+    :lineno-start: 158
+    :emphasize-lines: 14-17
+
+        def test_streamlit_calculator_operations(self):
+            first_number = '1'
+            second_number = '2'
+
+            self.tester.button(first_number).click().run()
+            self.tester.button('\+').click().run()
+            self.assertEqual(
+                self.tester.session_state['first_number'],
+                first_number
+            )
 
             self.tester.button(second_number).click().run()
             self.tester.button('=').click().run()
@@ -5519,7 +5498,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
             self.assertEqual(
                 self.tester.session_state['number'],
-                float(first_number) + float(second_number)
+                float(first_number)+float(second_number)
             )
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
@@ -5528,64 +5507,70 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     KeyError: 'st.session_state has no key "second_number". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
 
-* I make a new :ref:`function<what is a function?>` for the result, in ``streamlit_calculator.py``
+* I make a new :ref:`function<what is a function?>` for the result of the calculation, in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-6
+    :lineno-start: 12
+    :emphasize-lines: 7-10
 
-    import streamlit
-
-
-    def show_result(display):
-        streamlit.session_state['second_number'] = \
-            streamlit.session_state['number']
-        display.write(streamlit.session_state['number'])
+    def first_number():
+        first_number = streamlit.session_state['number']
+        streamlit.session_state['first_number'] = first_number
+        reset()
 
 
-    def make_variable(display):
-
-  * I add the ``on_click`` and ``args`` parameters to the ``=`` button in the ``add_buttons`` :ref:`function<what is a function?>`
-
-    .. code-block:: python
-      :lineno-start: 122
-      :emphasize-lines: 8-11
-
-          operations.button('/', key='/', width='stretch', type='primary')
-          operations.button('X', key='X', width='stretch', type='primary')
-          operations.button(r'\-', key='-', width='stretch', type='primary')
-          operations.button(
-              r'\+', key='+', width='stretch', type='primary',
-              on_click=make_variable, args=[display],
-          )
-          operations.button(
-              '=', key='=', width='stretch', type='primary',
-              on_click=show_result, args=[display],
-          )
+    def calculate():
+        second_number = streamlit.session_state['number']
+        streamlit.session_state['second_number'] = second_number
+        reset()
 
 
-      def main():
+    def plus_minus():
+
+* I add the ``on_click`` and ``args`` parameters to the ``=`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 121
+    :emphasize-lines: 16-17
+
+    def add_buttons_to_column_4(column_4, display):
+        column_4.button(
+            '/', key='/', width='stretch', type='primary',
+        )
+        column_4.button(
+            'X', key='X', width='stretch', type='primary',
+        )
+        column_4.button(
+            r'\-', key=r'\-', width='stretch', type='primary',
+        )
+        column_4.button(
+            r'\+', key=r'\+', width='stretch', on_click=on_click,
+            args=[first_number, display], type='primary',
+        )
+        column_4.button(
+            '=', key='=', width='stretch', on_click=on_click,
+            args=[calculate, display], type='primary',
+        )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: '2' != 3.0
+    AssertionError: '0' != 3.0
 
-* I add a calculation to the ``show_result`` :ref:`function<what is a function?>`
+* I add a calculation to the ``calculate`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 18
     :emphasize-lines: 4-7
 
-    def show_result(display):
-        streamlit.session_state['second_number'] = \
-            streamlit.session_state['number']
+    def calculate():
+        second_number = streamlit.session_state['number']
+        streamlit.session_state['second_number'] = second_number
         streamlit.session_state['number'] = (
             streamlit.session_state['first_number']
           + streamlit.session_state['second_number']
         )
-        display.write(streamlit.session_state['number'])
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5600,14 +5585,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     :emphasize-lines: 5-6
     :emphasize-text: float
 
-    def show_result(display):
-        streamlit.session_state['second_number'] = \
-            streamlit.session_state['number']
+    def calculate():
+        second_number = streamlit.session_state['number']
+        streamlit.session_state['second_number'] = second_number
         streamlit.session_state['number'] = (
             float(streamlit.session_state['first_number'])
           + float(streamlit.session_state['second_number'])
         )
-        display.write(streamlit.session_state['number'])
 
   the test passes
 
@@ -5641,20 +5625,23 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
-* I want the result to look the same as the other numbers. I change it to a string_ in the ``show_result`` :ref:`function<what is a function?>`
+* I want the result to look the same as the other numbers. I change it to a string_ in the ``calculate`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 4
+    :lineno-start: 1
+    :emphasize-lines:
+    :emphasize-text: str
 
-    def show_result(display):
-        streamlit.session_state['second_number'] = \
-            streamlit.session_state['number']
+    def calculate():
+        second_number = streamlit.session_state['number']
+        streamlit.session_state['second_number'] = second_number
         streamlit.session_state['number'] = str(
             float(streamlit.session_state['first_number'])
           + float(streamlit.session_state['second_number'])
         )
-        display.write(streamlit.session_state['number'])
+
+
+    def plus_minus():
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5665,13 +5652,13 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 * I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_streamlit_calculator_operations` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 198
+    :lineno-start: 176
     :emphasize-lines: 3
     :emphasize-text: str
 
             self.assertEqual(
                 self.tester.session_state['number'],
-                str(float(first_number) + float(second_number))
+                str(float(first_number)+float(second_number))
             )
 
   the test passes
@@ -5685,19 +5672,104 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   I like it, though I do not need the ``.0`` after the ``3``
 
-* I import ``test_calculator.py`` in ``test_streamlit_calculator.py``
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`subtraction<test_subtraction>`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 176
+    :emphasize-lines: 6-13
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                str(float(first_number)+float(second_number))
+            )
+
+            self.tester.button(first_number).click().run()
+            self.tester.button('\-').click().run()
+            self.tester.button(second_number).click().run()
+            self.tester.button('=').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                str(float(first_number)-float(second_number))
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '4.0120000000000005' != '-1.0'
+
+  I need to handle the operations
+
+* I add an :ref:`assertion<what is an assertion?>` for an ``'operation'`` :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 5, 7, 12-15
+
+        def test_streamlit_calculator_operations(self):
+            first_number = '1'
+            second_number = '2'
+
+            operation = '\+'
+            self.tester.button(first_number).click().run()
+            self.tester.button(operation).click().run()
+            self.assertEqual(
+                self.tester.session_state['first_number'],
+                first_number
+            )
+            self.assertEqual(
+                self.tester.session_state['operation'],
+                operation
+            )
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: shell
+
+    KeyError: 'st.session_state has no key "operation".
+    Did you forget to initialize it?
+    More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+* I add a :ref:`key<test_keys_of_a_dictionary>` to the ``first_number`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 1, 4
+    :emphasize-text: operation
+
+    def first_number(operation):
+        first_number = streamlit.session_state['number']
+        streamlit.session_state['first_number'] = first_number
+        streamlit.session_state['operation'] = operation
+        reset()
+
+  the terminal_ still shows :ref:`KeyError<test_key_error>`
+
+* I add the value for ``operation`` to the ``args`` :ref:`list<what is a list?>` for the ``r'\+'`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 137
     :emphasize-lines: 3
 
-    import random
-    import streamlit.testing.v1
-    import tests.test_calculator
-    import unittest
+        column_4.button(
+            r'\+', key=r'\+', width='stretch', on_click=on_click,
+            args=[first_number, display, r'\+'], type='primary',
+        )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '4.0120000000000005' != '-1.0'
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
 
 
-    class TestStreamlitCalculator(unittest.TestCase):
 
 * I use the ``a_random_number`` :ref:`function<what is a function?>` from ``test_calculator.py`` to add randomness to :ref:`test_streamlit_calculator_operations`
 
