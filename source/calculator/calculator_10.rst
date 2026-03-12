@@ -5765,10 +5765,64 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     AssertionError: '4.0120000000000005' != '-1.0'
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for the ``operation`` :ref:`key<test_keys_of_a_dictionary>` after the ``-`` button is pressed, in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 158
+    :emphasize-lines: 29, 31, 34-37
+
+        def test_streamlit_calculator_operations(self):
+            first_number = '1'
+            second_number = '2'
+
+            operation = '\+'
+            self.tester.button(first_number).click().run()
+            self.tester.button(operation).click().run()
+            self.assertEqual(
+                self.tester.session_state['first_number'],
+                first_number
+            )
+            self.assertEqual(
+                self.tester.session_state['operation'],
+                operation
+            )
+
+            self.tester.button(second_number).click().run()
+            self.tester.button('=').click().run()
+            self.assertEqual(
+                self.tester.session_state['second_number'],
+                second_number
+            )
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                str(float(first_number)+float(second_number))
+            )
+
+            operation = r'\-'
+            self.tester.button(first_number).click().run()
+            self.tester.button(operation).click().run()
+            self.tester.button(second_number).click().run()
+            self.tester.button('=').click().run()
+            self.assertEqual(
+                self.tester.session_state['operation'],
+                operation
+            )
+            self.assertEqual(
+                self.tester.session_state['number'],
+                str(float(first_number)-float(second_number))
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    AssertionError: '\\+' != '\\-'
+
+* I use the operation in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
 
 * I use the ``a_random_number`` :ref:`function<what is a function?>` from ``test_calculator.py`` to add randomness to :ref:`test_streamlit_calculator_operations`

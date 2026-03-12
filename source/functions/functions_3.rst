@@ -105,16 +105,16 @@ a better way to test why use a function
 
   .. code-block:: python
 
-    SUBFAILED(y=0) ... - AssertionError: 4 != 104
-    SUBFAILED(y=1) ... - AssertionError: 5 != 104
-    SUBFAILED(y=2) ... - AssertionError: 6 != 104
-    SUBFAILED(y=3) ... - AssertionError: 7 != 104
-    SUBFAILED(y=4) ... - AssertionError: 8 != 104
-    SUBFAILED(y=5) ... - AssertionError: 9 != 104
-    SUBFAILED(y=6) ... - AssertionError: 10 != 104
-    SUBFAILED(y=7) ... - AssertionError: 11 != 104
-    SUBFAILED(y=8) ... - AssertionError: 12 != 104
-    SUBFAILED(y=9) ... - AssertionError: 13 != 104
+    SUBFAILED(y=0) ... - AssertionError: 4 != 8
+    SUBFAILED(y=1) ... - AssertionError: 5 != 8
+    SUBFAILED(y=2) ... - AssertionError: 6 != 8
+    SUBFAILED(y=3) ... - AssertionError: 7 != 8
+    SUBFAILED(y=4) ... - AssertionError: 8 != 8
+    SUBFAILED(y=5) ... - AssertionError: 9 != 8
+    SUBFAILED(y=6) ... - AssertionError: 10 != 8
+    SUBFAILED(y=7) ... - AssertionError: 11 != 8
+    SUBFAILED(y=8) ... - AssertionError: 12 != 8
+    SUBFAILED(y=9) ... - AssertionError: 13 != 8
 
 ----
 
