@@ -1030,7 +1030,7 @@ how to install Python packages with uv
 
     Using CPython 3.XY.Z interpreter at: /usr/local/bin/python3.XY
     Creating virtual environment at: .venv
-    Resolved 3 packages in GHIms
+    Resolved 9 packages in GHIms
     ░░░░░░░░░░░░░░░░░░░░ [0/2] Installing wheels...
     ...
     Installed 7 packages in JKLms
