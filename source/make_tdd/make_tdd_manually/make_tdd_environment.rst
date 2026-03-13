@@ -799,7 +799,7 @@ I want to make a file_ where I can list all the `Python packages`_ that my proje
 
     pytest
 
-* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with `pytest_ as what is inside it
+* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with pytest_ as what is inside it
 
   .. code-block:: shell
     :emphasize-lines: 1
