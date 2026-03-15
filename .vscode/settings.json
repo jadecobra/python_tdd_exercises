@@ -13,6 +13,7 @@
         "pytest",
         "randint",
         "setdefault",
+        "Streamlit",
         "timedelta"
     ],
     "makefile.configureOnOpen": false,

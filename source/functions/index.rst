@@ -265,7 +265,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I install the `Python packages`_ I gave in the requirements file_
+* I install the `Python packages`_ that I wrote in the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
