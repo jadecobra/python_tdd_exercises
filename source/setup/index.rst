@@ -8,7 +8,7 @@
 start here
 #################################################################################
 
-I spend some time to set up my computer to make it easier to write programs_. Do not worry, you only have to do this once. 
+I spend some time to set up my computer to make it easier to write programs_. I only have to do this once on a computer.
 
 ----
 

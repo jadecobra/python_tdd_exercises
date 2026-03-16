@@ -4,7 +4,7 @@
 how to install Windows Subsystem for Linux on Windows
 #################################################################################
 
-This is one way to install `Windows Subsystem for Linux`_ on a Windows computer so you can use Linux_ on your Windows_ computer. It gives you more control, and your programming experience will be the same as mine in this book
+This is one way to install `Windows Subsystem for Linux`_ on a Windows computer so you can use Linux_ on your Windows_ computer. It gives you more control, and your programming experience will be the same as mine in this book, plus you only have to do it once.
 
 ----
 

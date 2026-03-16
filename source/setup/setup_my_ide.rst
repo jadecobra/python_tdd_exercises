@@ -14,7 +14,7 @@ how I setup my Integrated Development Environment (IDE)
 
 ----
 
-As of this writing I use `Visual Studio Code`_, you can download and install it or any `Integrated Development Environment (IDE)`_ of your choice
+As of this writing I use `Visual Studio Code`_, you can download and install it or any `Integrated Development Environment (IDE)`_ you want.
 
 ----
 
