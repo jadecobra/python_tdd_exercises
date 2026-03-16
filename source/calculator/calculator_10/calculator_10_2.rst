@@ -619,7 +619,7 @@ I want to add buttons for the numbers and operations.
 ----
 
 *********************************************************************************
-test_streamlit_calculator_columns
+test_streamlit_calculator_columns_and_buttons
 *********************************************************************************
 
 Calculator buttons are arranged in Columns and Rows. I can use `streamlit columns`_ to arrange the buttons.
@@ -789,7 +789,7 @@ the test passes
 
   good, the button is in the column and I know how to test buttons
 
-* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_streamlit_calculator_columns` in ``test_streamlit_calculator.py``
+* I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator_columns`` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -1094,6 +1094,7 @@ the test passes
 * I add a :ref:`for loop<what is a for loop?>` for the third column in ``test_streamlit_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 47
     :emphasize-lines: 8-13
 
             for key in ('C', '8', '5', '2', '0'):
@@ -1126,32 +1127,39 @@ the test passes
 * I change the column in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 2
+    :lineno-start: 54
+    :emphasize-lines: 4
+    :emphasize-text: 2
 
+            for key in ('AC', '9', '6', '3', '.'):
+                with self.subTest(key=key):
                     self.assertEqual(
                         self.tester.columns[2].button(key).label,
                         key
                     )
 
-  the terminal_ shows :ref:`KeyError<test_key_error>`
+  the terminal_ still shows :ref:`KeyError<test_key_error>`
 
 * I move buttons to the third column in the ``add_buttons`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 3-7
+    :lineno-start: 20
+    :emphasize-lines: 7-11
     :emphasize-text: column_3
 
-        column_2.button('0', key='0')
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
 
-        column_3.button('AC', key='AC')
-        column_3.button('9', key='9')
-        column_3.button('6', key='6')
-        column_3.button('3', key='3')
-        column_3.button('.', key='.')
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
 
-        streamlit.button('/', key='/')
+        column_3.button(label='AC', key='AC')
+        column_3.button(label='9', key='9')
+        column_3.button(label='6', key='6')
+        column_3.button(label='3', key='3')
+        column_3.button(label='.', key='.')
+
+        streamlit.button(label='/', key='/')
 
   the test passes
 
@@ -1164,7 +1172,66 @@ the test passes
 
   3 columns
 
-* On to the next one. I add a :ref:`for loop<what is a for loop?>` with an :ref:`assertion<what is an assertion?>` for the operations in the operations column, in ``test_streamlit_calculator.py``
+* I add a :ref:`function<what is a function?>` for adding buttons to the third column
+
+  .. code-block:: python
+    :lineno-start: 12
+    :emphasize-lines: 9-14
+
+    def add_buttons_to_column_2(column_2):
+        column_2.button(label='C', key='C')
+        column_2.button(label='8', key='8')
+        column_2.button(label='5', key='5')
+        column_2.button(label='2', key='2')
+        column_2.button(label='0', key='0')
+
+
+    def add_buttons_to_column_3(column_3):
+        column_3.button(label='AC', key='AC')
+        column_3.button(label='9', key='9')
+        column_3.button(label='6', key='6')
+        column_3.button(label='3', key='3')
+        column_3.button(label='.', key='.')
+
+
+    def add_buttons():
+
+* I call the new :ref:`function<what is a a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 6
+
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+
+        column_3.button(label='AC', key='AC')
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
+
+* I remove the buttons for column 3 from the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 28
+
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+
+        streamlit.button(label='/', key='/')
+
+  the test is green again. On to the next one.
+
+----
+
+* I add a :ref:`for loop<what is a for loop?>` with an :ref:`assertion<what is an assertion?>` for the operations in the operations column, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 54
@@ -1226,7 +1293,118 @@ the test passes
 
   there are 4 columns
 
-* I remove :ref:`test_streamlit_calculator_buttons` because :ref:`test_streamlit_calculator_columns` tests the same things - the button labels
+* I add a :ref:`function<what is a function?>` to add buttons to the fourth column, in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 9-14
+
+    def add_buttons_to_column_3(column_3):
+        column_3.button(label='AC', key='AC')
+        column_3.button(label='9', key='9')
+        column_3.button(label='6', key='6')
+        column_3.button(label='3', key='3')
+        column_3.button(label='.', key='.')
+
+
+    def add_buttons_to_column_4(column_4):
+        column_4.button(label='/', key='/')
+        column_4.button(label='X', key='X')
+        column_4.button(label='-', key='-')
+        column_4.button(label='+', key='+')
+        column_4.button(label='=', key='=')
+
+
+    def add_buttons():
+
+* I use ``add_buttons_to_column_4`` in the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 7
+
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+        add_buttons_to_column_4(operations)
+
+        operations.button(label='/', key='/')
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
+
+* I remove the buttons for the fourth column from the ``add_buttons`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 36
+
+    def add_buttons():
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+        add_buttons_to_column_4(operations)
+
+
+    def main():
+
+* I write the statements in the ``add_buttons`` :ref:`function<what is a function?>` in the ``main`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 4, 6-10
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+        # add_buttons()
+
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+        add_buttons_to_column_4(operations)
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 365
+
+    def main():
+        streamlit.title('Calculator')
+        streamlit.container(border=True)
+
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+        add_buttons_to_column_4(operations)
+
+
+    if __name__ == '__main__':
+        main()
+
+* I remove the ``add_buttons`` :ref:`function<what is a function?>` because I no longer need it
+
+  .. code-block:: python
+    :lineno-start: 28
+
+    def add_buttons_to_column_4(column_4):
+        column_4.button(label='/', key='/')
+        column_4.button(label='X', key='X')
+        column_4.button(label='-', key='-')
+        column_4.button(label='+', key='+')
+        column_4.button(label='=', key='=')
+
+
+    def main():
+
+* I remove :ref:`test_streamlit_calculator_buttons` because ``test_streamlit_calculator_columns`` tests the same things - the button labels, in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1243,6 +1421,25 @@ the test passes
             self.assertTrue(display.border)
 
         def test_streamlit_calculator_columns(self):
+
+* I change the name of ``test_streamlit_calculator_columns`` to :ref:`test_streamlit_calculator_columns_and_buttons`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 12
+
+        def test_streamlit_calculator_display(self):
+            display = (
+                self.tester.main.children[1].proto
+                    .flex_container
+            )
+            self.assertEqual(display.gap_config.gap_size, 1)
+            self.assertEqual(display.direction, 1)
+            self.assertEqual(display.justify, 1)
+            self.assertEqual(display.align, 1)
+            self.assertTrue(display.border)
+
+        def test_streamlit_calculator_columns_and_buttons(self):
             self.assertEqual(len(self.tester.columns), 4)
 
             for key in ('<-', '7', '4', '1', '+/-'):
@@ -1276,7 +1473,7 @@ the test passes
 
     # Exceptions seen
 
-* All the :ref:`for loops<what is a for loop?>` in :ref:`test_streamlit_calculator_columns` look the same
+* All the :ref:`for loops<what is a for loop?>` in :ref:`test_streamlit_calculator_columns_and_buttons` look like this
 
   .. code-block:: python
     :emphasize-text: index key
@@ -1288,27 +1485,28 @@ the test passes
                 key
             )
 
-  I add 2 new :ref:`for loops<what is a for loop?>` that put all the others together
+  I add 2 new :ref:`for loops<what is a for loop?>` that put all the for loops for testing the buttons together
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 4-18
+    :emphasize-lines: 4-19
 
-        def test_streamlit_calculator_columns(self):
+        def test_streamlit_calculator_columns_and_buttons(self):
             self.assertEqual(len(self.tester.columns), 4)
 
             for column, keys in (
                 (0, ('<-', '7', '4', '1', '+/-')),
                 (1, ('C', '8', '5', '2', '0')),
                 (2, ('AC', '9', '6', '3', '.')),
-                (3, ('/', 'X', '-', '+', '='))
+                (3, ('/', 'X', '-', '+', '=')),
             ):
                 for key in keys:
                     with self.subTest(key=key):
                         self.assertEqual(
                             (
                                 self.tester.columns[column]
-                                    .button(key).label
+                                    .button(key)
+                                    .label
                             ),
                             'BOOM!!!'
                         )
@@ -1325,12 +1523,13 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines: 6
+    :emphasize-lines: 7
 
                         self.assertEqual(
                             (
                                 self.tester.columns[column]
-                                    .button(key).label
+                                    .button(key)
+                                    .label
                             ),
                             key
                         )
@@ -1342,21 +1541,22 @@ the test passes
   .. code-block:: python
     :lineno-start: 27
 
-        def test_streamlit_calculator_columns(self):
+        def test_streamlit_calculator_columns_and_buttons(self):
             self.assertEqual(len(self.tester.columns), 4)
 
             for column, keys in (
                 (0, ('<-', '7', '4', '1', '+/-')),
                 (1, ('C', '8', '5', '2', '0')),
                 (2, ('AC', '9', '6', '3', '.')),
-                (3, ('/', 'X', '-', '+', '='))
+                (3, ('/', 'X', '-', '+', '=')),
             ):
                 for key in keys:
                     with self.subTest(key=key):
                         self.assertEqual(
                             (
                                 self.tester.columns[column]
-                                    .button(key).label
+                                    .button(key)
+                                    .label
                             ),
                             key
                         )
@@ -1366,18 +1566,25 @@ the test passes
 
 ----
 
-* I want all the buttons to be the same size and `streamlit buttons`_ have a ``width`` option. I set it to ``stretch`` for the ``<-`` button in the first column in ``streamlit_calculator.py``
+*********************************************************************************
+how to change the size of streamlit buttons
+*********************************************************************************
+
+I want all the buttons to be the same size.
+
+* `streamlit buttons`_ have a ``width`` option. I set it to ``stretch`` for the ``<-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 4
+    :emphasize-lines: 2
     :emphasize-text: width
 
-    def add_buttons():
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        column_1.button('<-', key='<-', width='stretch')
-        column_1.button('7', key='7')
+    def add_buttons_to_column_1(column_1):
+        column_1.button(label='<-', key='<-', width='stretch')
+        column_1.button(label='7', key='7')
+        column_1.button(label='4', key='4')
+        column_1.button(label='1', key='1')
+        column_1.button(label='+/-', key='+/-')
 
   the test is still green
 
@@ -1394,19 +1601,18 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 5-8
+    :emphasize-lines: 3-6
     :emphasize-text: stretch
 
-    def add_buttons():
-        column_1, column_2, column_3, operations = streamlit.columns(4)
+    def add_buttons_to_column_1(column_1):
+        column_1.button(label='<-', key='<-', width='stretch')
+        column_1.button(label='7', key='7')
+        column_1.button(label='4', key='4')
+        column_1.button(label='1', key='1')
+        column_1.button(label='+/-', key='+/-')
 
-        column_1.button('<-', key='<-', width='stretch')
-        column_1.button('7', key='7', width='stretch')
-        column_1.button('4', key='4', width='stretch')
-        column_1.button('1', key='1', width='stretch')
-        column_1.button('+/-', key='+/-', width='stretch')
 
-        column_2.button('C', key='C')
+    def add_buttons_to_column_2(column_2):
 
   still green
 
@@ -1419,100 +1625,187 @@ the test passes
 
   all the buttons in the first column have the same size
 
-* I stretch all the other buttons
+* I stretch the buttons in the second column
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 10-26
-    :emphasize-text: stretch
+    :lineno-start: 12
+    :emphasize-lines: 2-6
 
-    def add_buttons():
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        column_1.button('<-', key='<-', width='stretch')
-        column_1.button('7', key='7', width='stretch')
-        column_1.button('4', key='4', width='stretch')
-        column_1.button('1', key='1', width='stretch')
-        column_1.button('+/-', key='+/-', width='stretch')
-
-        column_2.button('C', key='C', width='stretch')
-        column_2.button('8', key='8', width='stretch')
-        column_2.button('5', key='5', width='stretch')
-        column_2.button('2', key='2', width='stretch')
-        column_2.button('0', key='0', width='stretch')
-
-        column_3.button('AC', key='AC', width='stretch')
-        column_3.button('9', key='9', width='stretch')
-        column_3.button('6', key='6', width='stretch')
-        column_3.button('3', key='3', width='stretch')
-        column_3.button('.', key='.', width='stretch')
-
-        operations.button('/', key='/', width='stretch')
-        operations.button('X', key='X', width='stretch')
-        operations.button('-', key='-', width='stretch')
-        operations.button('+', key='+', width='stretch')
-        operations.button('=', key='=', width='stretch')
+    def add_buttons_to_column_2(column_2):
+        column_2.button(label='C', key='C', width='stretch')
+        column_2.button(label='8', key='8', width='stretch')
+        column_2.button(label='5', key='5', width='stretch')
+        column_2.button(label='2', key='2', width='stretch')
+        column_2.button(label='0', key='0', width='stretch')
 
 
-    def main():
+    def add_buttons_to_column_3(column_3):
 
   green
 
-* I refresh the browser
-
-  .. image:: /_static/calculator/streamlit/column_4.png
-    :width: 600
-    :align: left
-    :alt: Calculator Streamlit Fourth Column
-
-  Good! The buttons all have the same size. I am still missing ``-`` and ``+`` that the tests says are there
-
-* I add ``r`` and ``\`` to escape the characters because they mean something to streamlit_
+* I stretch the buttons in the third column
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines:  5-6
-    :emphasize-text: \ - +
+    :lineno-start: 20
+    :emphasize-lines: 2-6
 
-        column_3.button('.', key='.', width='stretch')
+    def add_buttons_to_column_3(column_3):
+        column_3.button(label='AC', key='AC', width='stretch')
+        column_3.button(label='9', key='9', width='stretch')
+        column_3.button(label='6', key='6', width='stretch')
+        column_3.button(label='3', key='3', width='stretch')
+        column_3.button(label='.', key='.', width='stretch')
 
-        operations.button('/', key='/', width='stretch')
-        operations.button('X', key='X', width='stretch')
-        operations.button(r'\-', key=r'\-', width='stretch')
-        operations.button(r'\+', key=r'\+', width='stretch')
-        operations.button('=', key='=', width='stretch')
+
+    def add_buttons_to_column_4(column_4):
+
+  still green
+
+* I stretch the buttons in the fourth column
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 2-6
+
+    def add_buttons_to_column_4(column_4):
+        column_4.button(label='/', key='/', width='stretch')
+        column_4.button(label='X', key='X', width='stretch')
+        column_4.button(label='-', key='-', width='stretch')
+        column_4.button(label='+', key='+', width='stretch')
+        column_4.button(label='=', key='=', width='stretch')
+
 
     def main():
 
-  the terminal_ shows :ref:`KeyError<test_key_error>` and :ref:`AssertionError<what causes AssertionError?>`
+  the tests are still green
+
+* I refresh the browser
+
+  .. image:: /_static/calculator/streamlit/stretch_4_columns.png
+    :width: 600
+    :align: left
+    :alt: Calculator Streamlit Stretch 4 Columns
+
+  Good! The buttons all have the same size. I am still missing ``-`` and ``+`` that the tests says are there
+
+----
+
+*********************************************************************************
+how to use raw strings and escape characters
+*********************************************************************************
+
+* I add ``r`` and ``\`` to escape the ``-`` character because it means something to streamlit_, which is why it does not show on the button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 4
+
+    def add_buttons_to_column_4(column_4):
+        column_4.button(label='/', key='/', width='stretch')
+        column_4.button(label='X', key='X', width='stretch')
+        column_4.button(label=r'\-', key=r'\-', width='stretch')
+        column_4.button(label='+', key='+', width='stretch')
+        column_4.button(label='=', key='=', width='stretch')
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
-    SUBFAILED(key='-') ... - KeyError: '-'
-    SUBFAILED(key='+') ... - AssertionError: '\\+' != '+'
+    KeyError: '-'
 
-  - ``r`` makes this a raw string_ which means the characters are taken as they are, not what they stand for
-  - ``\`` escapes the character  so that ``+`` and ``-`` are taken exactly as they are to show the characters on the buttons. ``'+'`` and ``'-'`` mean something different in streamlit_ so they do not show up as labels for the buttons
-
-* I change the keys for ``-`` and ``+`` in :ref:`test_streamlit_calculator_columns` in ``test_streamlit_calculator.py``
+* I change the ``-`` to ``r'\-'`` in :ref:`test_streamlit_calculator_columns_and_buttons` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 8
-    :emphasize-text: \ - +
+    :emphasize-lines: 8-9
 
-        def test_streamlit_calculator_columns(self):
+        def test_streamlit_calculator_columns_and_buttons(self):
             self.assertEqual(len(self.tester.columns), 4)
 
             for column, keys in (
                 (0, ('<-', '7', '4', '1', '+/-')),
                 (1, ('C', '8', '5', '2', '0')),
                 (2, ('AC', '9', '6', '3', '.')),
-                (3, ('/', 'X', r'\-', r'\+', '='))
+                # (3, ('/', 'X', '-', '+', '=')),
+                (3, ('/', 'X', r'\-', '+', '=')),
             ):
                 for key in keys:
 
   the test passes
+
+  - ``r`` makes this a raw string_ which means the characters are taken as they are, not what they stand for
+  - ``\`` escapes the character  so that ``-`` is taken exactly as it is to show the character on the button. ``'-'`` means something different in streamlit_ so it does not show up as a label for the button
+
+* I add ``r`` and ``\`` to escape the ``+`` character because it means something to streamlit_, which is why it does not show on the button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 5
+
+    def add_buttons_to_column_4(column_4):
+        column_4.button(label='/', key='/', width='stretch')
+        column_4.button(label='X', key='X', width='stretch')
+        column_4.button(label=r'\-', key=r'\-', width='stretch')
+        column_4.button(label=r'\+', key=r'\+', width='stretch')
+        column_4.button(label='=', key='=', width='stretch')
+
+  the terminal_ shows :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    KeyError: '+'
+
+* I change the ``+`` to ``r'\+'`` in :ref:`test_streamlit_calculator_columns_and_buttons` in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 9-10
+
+        def test_streamlit_calculator_columns_and_buttons(self):
+            self.assertEqual(len(self.tester.columns), 4)
+
+            for column, keys in (
+                (0, ('<-', '7', '4', '1', '+/-')),
+                (1, ('C', '8', '5', '2', '0')),
+                (2, ('AC', '9', '6', '3', '.')),
+                # (3, ('/', 'X', '-', '+', '=')),
+                # (3, ('/', 'X', r'\-', '+', '=')),
+                (3, ('/', 'X', r'\-', r'\+', '=')),
+            ):
+                for key in keys:
+
+  the test passes
+
+  - ``r`` makes this a raw string_ which means the characters are taken as they are, not what they stand for
+  - ``\`` escapes the character  so that ``+`` is taken exactly as it is to show the character on the button. ``'+'`` means something different in streamlit_ so it does not show up as a label for the button
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 27
+
+        def test_streamlit_calculator_columns_and_buttons(self):
+            self.assertEqual(len(self.tester.columns), 4)
+
+            for column, keys in (
+                (0, ('<-', '7', '4', '1', '+/-')),
+                (1, ('C', '8', '5', '2', '0')),
+                (2, ('AC', '9', '6', '3', '.')),
+                (3, ('/', 'X', r'\-', r'\+', '=')),
+            ):
+                for key in keys:
+                    with self.subTest(key=key):
+                        self.assertEqual(
+                            (
+                                self.tester.columns[column]
+                                    .button(key)
+                                    .label
+                            ),
+                            key
+                        )
+
+
+    # Exceptions seen
 
 * I check the browser
 
@@ -1521,7 +1814,7 @@ the test passes
     :align: left
     :alt: Calculator Streamlit All labels
 
-  yes! The calculator shows all the labels
+  yes! The calculator shows all the labels.
 
 ----
 
@@ -1543,23 +1836,24 @@ I add a test for the ``type`` parameter of `streamlit buttons`_
 
 .. code-block:: python
   :lineno-start: 27
-  :emphasize-lines: 20-21
+  :emphasize-lines: 21-22
 
-        def test_streamlit_calculator_columns(self):
+        def test_streamlit_calculator_columns_and_buttons(self):
             self.assertEqual(len(self.tester.columns), 4)
 
             for column, keys in (
                 (0, ('<-', '7', '4', '1', '+/-')),
                 (1, ('C', '8', '5', '2', '0')),
                 (2, ('AC', '9', '6', '3', '.')),
-                (3, ('/', 'X', r'\-', r'\+', '='))
+                (3, ('/', 'X', r'\-', r'\+', '=')),
             ):
                 for key in keys:
                     with self.subTest(key=key):
                         self.assertEqual(
                             (
                                 self.tester.columns[column]
-                                    .button(key).label
+                                    .button(key)
+                                    .label
                             ),
                             key
                         )
@@ -1588,9 +1882,13 @@ I change the expectation
 
 .. code-block:: python
   :lineno-start: 47
-  :emphasize-lines: 1
+  :emphasize-lines: 2-5
 
-            self.assertEqual(self.tester.button('/').proto.type, 'secondary')
+        def test_streamlit_calculator_operations_buttons(self):
+            self.assertEqual(
+                self.tester.button('/').proto.type,
+                'secondary'
+            )
 
 the test passes
 
@@ -1605,10 +1903,13 @@ the test passes
 * I change the expectation from ``secondary`` to ``primary``
 
   .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 1
+    :lineno-start: 48
+    :emphasize-lines: 3
 
-            self.assertEqual(self.tester.button('/').proto.type, 'primary')
+            self.assertEqual(
+                self.tester.button('/').proto.type,
+                'primary'
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1616,19 +1917,21 @@ the test passes
 
     AssertionError: 'secondary' != 'primary'
 
-* I use the ``type`` parameter of `streamlit buttons`_ to change the colors of the buttons for the ``/`` button in the fourth column, in ``streamlit_calculator.py``
+* I use the ``type`` parameter of `streamlit buttons`_ to change the colors of the buttons for the ``/`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`, in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 3-5
+    :lineno-start: 28
+    :emphasize-lines: 2-4
     :emphasize-text: primary
 
-        column_3.button('.', key='.', width='stretch')
-
-        operations.button(
-            '/', key='/', width='stretch', type='primary',
+    def add_buttons_to_column_4(column_4):
+        column_4.button(
+            label='/', key='/', width='stretch', type='primary'
         )
-        operations.button('X', key='X', width='stretch')
+        column_4.button(label='X', key='X', width='stretch')
+        column_4.button(label=r'\-', key=r'\-', width='stretch')
+        column_4.button(label=r'\+', key=r'\+', width='stretch')
+        column_4.button(label='=', key='=', width='stretch')
 
   the test passes
 
@@ -1655,9 +1958,6 @@ the test passes
                         'primary'
                     )
 
-
-    # Exceptions seen
-
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
@@ -1667,30 +1967,30 @@ the test passes
     SUBFAILED(key='\\+') ... - AssertionError: 'secondary' != 'primary'
     SUBFAILED(key='=') ... - AssertionError: 'secondary' != 'primary'
 
-* I add the ``type`` parameter to the buttons in the ``add_buttons`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+* I add the ``type`` parameter to the buttons in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 6-17
+    :lineno-start: 28
+    :emphasize-lines: 5-16
     :emphasize-text: primary
 
-        column_3.button('.', key='.', width='stretch')
+    def add_buttons_to_column_4(column_4):
+        column_4.button(
+            label='/', key='/', width='stretch', type='primary'
+        )
+        column_4.button(
+            label='X', key='X', width='stretch', type='primary',
+        )
+        column_4.button(
+            label=r'\-', key=r'\-', width='stretch', type='primary',
+        )
+        column_4.button(
+            label=r'\+', key=r'\+', width='stretch', type='primary',
+        )
+        column_4.button(
+            label='=', key='=', width='stretch', type='primary',
+        )
 
-        operations.button(
-            '/', key='/', width='stretch', type='primary',
-        )
-        operations.button(
-            'X', key='X', width='stretch', type='primary',
-        )
-        operations.button(
-            r'\-', key=r'\-', width='stretch', type='primary',
-        )
-        operations.button(
-            r'\+', key=r'\+', width='stretch', type='primary',
-        )
-        operations.button(
-            '=', key='=', width='stretch', type='primary',
-        )
 
     def main():
 
@@ -1699,7 +1999,7 @@ the test passes
 * I want the ``C`` and ``AC`` buttons to have the same colors as the buttons for the operations. I add them to the tuple_ in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 47
     :emphasize-lines: 2
 
         def test_streamlit_calculator_operations_buttons(self):
@@ -1710,6 +2010,9 @@ the test passes
                         'primary'
                     )
 
+
+    # Exceptions seen
+
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
@@ -1717,19 +2020,21 @@ the test passes
     SUBFAILED(key='C') ... - AssertionError: 'secondary' != 'primary'
     SUBFAILED(key='AC') ... - AssertionError: 'secondary' != 'primary'
 
-* I change the type for the ``AC`` button in ``streamlit_calculator.py``
+* I change the type for the ``AC`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 3-5
+    :lineno-start: 20
+    :emphasize-lines: 2-4
     :emphasize-text: primary
 
-        column_2.button('0', key='0', width='stretch')
-
+    def add_buttons_to_column_3(column_3):
         column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
+            label='AC', key='AC', width='stretch', type='primary',
         )
-        column_3.button('9', key='9', width='stretch')
+        column_3.button(label='9', key='9', width='stretch')
+        column_3.button(label='6', key='6', width='stretch')
+        column_3.button(label='3', key='3', width='stretch')
+        column_3.button(label='.', key='.', width='stretch')
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1737,19 +2042,21 @@ the test passes
 
     SUBFAILED(key='C') ... - AssertionError: 'secondary' != 'primary'
 
-* I change the type for the ``C`` button
+* I change the type for the ``C`` button in the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3-5
+    :lineno-start: 12
+    :emphasize-lines: 2-4
     :emphasize-text: primary
 
-        column_1.button('+/-', key='+/-', width='stretch')
-
+    def add_buttons_to_column_2(column_2):
         column_2.button(
-            'C', key='C', width='stretch', type='primary',
+            label='C', key='C', width='stretch', type='primary',
         )
-        column_2.button('8', key='8', width='stretch')
+        column_2.button(label='8', key='8', width='stretch')
+        column_2.button(label='5', key='5', width='stretch')
+        column_2.button(label='2', key='2', width='stretch')
+        column_2.button(label='0', key='0', width='stretch')
 
   the test passes
 
@@ -1765,21 +2072,26 @@ the test passes
 ----
 
 *********************************************************************************
-how to display the numbers when I click on them
+how to show the numbers when I click on them
 *********************************************************************************
 
-I want the calculator to show the number when I click on a button
+I want the calculator to show the number when I press a button
 
 * I add a :ref:`variable<what is a variable?>` to name the container so I can use it to show the numbers
 
   .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 3
+    :lineno-start: 50
+    :emphasize-lines: 2
 
     def main():
         streamlit.title('Calculator')
         display = streamlit.container(border=True)
-        add_buttons()
+
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        add_buttons_to_column_1(column_1)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+        add_buttons_to_column_4(operations)
 
 * I add a :ref:`function<what is a function?>` to show the text of the button when it is clicked
 
@@ -1794,24 +2106,24 @@ I want the calculator to show the number when I click on a button
         display.write(number)
 
 
-    def add_buttons():
+    def add_buttons_to_column_1(column_1):
 
-* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is clicked. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_functions_w_positional_arguments>` that the :ref:`function<what is a function?>` takes. I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is pressed. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_functions_w_positional_arguments>` that the :ref:`function<what is a function?>` I give for the ``on_click`` parameter takes. I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 5-8
+    :emphasize-lines: 3-6
     :emphasize-text: on_click args
 
-    def add_buttons():
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        column_1.button('<-', key='<-', width='stretch')
+    def add_buttons_to_column_1(column_1):
+        column_1.button(label='<-', key='<-', width='stretch')
         column_1.button(
-            '7', key='7', width='stretch',
+            label='7', key='7', width='stretch',
             on_click=show, args=[display, '7'],
         )
-        column_1.button('4', key='4', width='stretch')
+        column_1.button(label='4', key='4', width='stretch')
+        column_1.button(label='1', key='1', width='stretch')
+        column_1.button(label='+/-', key='+/-', width='stretch')
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
@@ -1819,22 +2131,41 @@ I want the calculator to show the number when I click on a button
 
     ================== 26 failed, 12 passed in A.BCs ===================
 
-
   the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
     NameError: name 'display' is not defined
 
-* I move the display from ``main`` to the ``add_buttons`` :ref:`function<what is a function?>`
+* I add a parameter for the ``display`` :ref:`variable<what is a variable?>` in the :ref:`function<what is a function?>` signature for ``add_buttons_to_column_1``
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-    def add_buttons():
+    def add_buttons_to_column_1(column_1, display):
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` for 27 sub tests and the terminal_ for the streamlit_ application shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: add_buttons_to_column_1() missing 1 required positional argument: 'display'
+
+* I add the ``display`` :ref:`variable<what is a variable?>` to the call to ``add_buttons_to_column_1`` in the ``main`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 6
+
+    def main():
+        streamlit.title('Calculator')
         display = streamlit.container(border=True)
+
         column_1, column_2, column_3, operations = streamlit.columns(4)
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2)
+        add_buttons_to_column_3(column_3)
+        add_buttons_to_column_4(operations)
 
   the test passes
 
@@ -1847,72 +2178,95 @@ I want the calculator to show the number when I click on a button
 
   ``7`` shows on the display. Yes!
 
-* I make the same change for the other numbers in the first column
+* I make the same change to the other numbers in the first column
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 10-17
+    :emphasize-lines: 7-18
     :emphasize-text: on_click args
 
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        column_1.button('<-', key='<-', width='stretch')
+    def add_buttons_to_column_1(column_1, display):
+        column_1.button(label='<-', key='<-', width='stretch')
         column_1.button(
-            '7', key='7', width='stretch',
+            label='7', key='7', width='stretch',
             on_click=show, args=[display, '7'],
         )
         column_1.button(
-            '4', key='4', width='stretch',
-            on_click=show, args=[display, '4'],
+            label='4', key='4', width='stretch',
+            on_click=show, args=[display, '4']
         )
         column_1.button(
-            '1', key='1', width='stretch',
-            on_click=show, args=[display, '1'],
+            label='1', key='1', width='stretch',
+            on_click=show, args=[display, '1']
         )
-        column_1.button('+/-', key='+/-', width='stretch')
-
-        column_2.button(
-            'C', key='C', width='stretch', type='primary',
+        column_1.button(
+            label='+/-', key='+/-', width='stretch',
+            on_click=show, args=[display, '+/-']
         )
 
   the test is still green
 
-* I make the same change for the numbers in the second column
+* I do the same thing for the numbers in the second column
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 6-21
+    :lineno-start: 28
+    :emphasize-lines: 5-20
     :emphasize-text: on_click args
 
-        column_1.button('+/-', key='+/-', width='stretch')
-
+    def add_buttons_to_column_2(column_2):
         column_2.button(
-            'C', key='C', width='stretch', type='primary',
+            label='C', key='C', width='stretch', type='primary',
         )
         column_2.button(
-            '8', key='8', width='stretch',
-            on_click=show, args=[display, '8'],
+            label='8', key='8', width='stretch',
+            on_click=show, args=[display, '8']
         )
         column_2.button(
-            '5', key='5', width='stretch',
-            on_click=show, args=[display, '5'],
+            label='5', key='5', width='stretch',
+            on_click=show, args=[display, '5']
         )
         column_2.button(
-            '2', key='2', width='stretch',
-            on_click=show, args=[display, '2'],
+            label='2', key='2', width='stretch',
+            on_click=show, args=[display, '2']
         )
         column_2.button(
-            '0', key='0', width='stretch',
-            on_click=show, args=[display, '0'],
-        )
-
-        column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
+            label='0', key='0', width='stretch',
+            on_click=show, args=[display, '0']
         )
 
-  still green
+  the terminal_ shows :ref:`KeyError<test_key_error>` for 20 sub tests and the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+* I add ``display`` to the :ref:`function<what is a function?>` signature of the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 28
+    :emphasize-lines: 1
+
+    def add_buttons_to_column_2(column_2, display):
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` for 22 sub tests and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: add_buttons_to_column_2() missing 1 required positional argument: 'display'
+
+* I add ``display`` to the call to the ``add_buttons_to_column_2`` :ref:`function<what is a function?>` in the ``main`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 7
+
+    def main():
+        streamlit.title('Calculator')
+        display = streamlit.container(border=True)
+
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3)
+        add_buttons_to_column_4(operations)
+
+  the test passes
 
 * I make the same change for the numbers in the third column
 
@@ -1921,33 +2275,25 @@ I want the calculator to show the number when I click on a button
     :emphasize-lines: 9-24
     :emphasize-text: on_click args
 
-        column_2.button(
-            '0', key='0', width='stretch',
-            on_click=show, args=[display, '0'],
-        )
-
+    def add_buttons_to_column_3(column_3):
         column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
+            label='AC', key='AC', width='stretch', type='primary',
         )
         column_3.button(
-            '9', key='9', width='stretch',
+            label='9', key='9', width='stretch',
             on_click=show, args=[display, '9'],
         )
         column_3.button(
-            '6', key='6', width='stretch',
+            label='6', key='6', width='stretch',
             on_click=show, args=[display, '6'],
         )
         column_3.button(
-            '3', key='3', width='stretch',
+            label='3', key='3', width='stretch',
             on_click=show, args=[display, '3'],
         )
         column_3.button(
-            '.', key='.', width='stretch',
+            label='.', key='.', width='stretch',
             on_click=show, args=[display, '.'],
-        )
-
-        operations.button(
-            '/', key='/', width='stretch', type='primary',
         )
 
   green
