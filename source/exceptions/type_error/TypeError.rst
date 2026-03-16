@@ -1231,7 +1231,7 @@ you know
 * :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
 * :ref:`how to raise TypeError<TypeError>`
 
-:ref:`Would you like to use what you know so far with the Calculator?<how to make a calculator 3>`
+:ref:`Would you like to use what you know so far with the Calculator?<how to make a calculator 4>`
 
 -----
 
