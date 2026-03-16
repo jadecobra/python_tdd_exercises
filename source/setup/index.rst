@@ -5,10 +5,10 @@
 .. _download and install git: https://git-scm.com/install/windows
 
 #################################################################################
-how I setup my computer for development
+start here
 #################################################################################
 
-I spend some time to set up my computer to make it easier to write programs_
+I spend some time to set up my computer to make it easier to write programs_. Do not worry, you only have to do this once. 
 
 ----
 
