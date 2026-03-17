@@ -1599,10 +1599,10 @@ because ...
 
 ----
 
-* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add a test to ``test_functions.py`` to show this
+* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 44
     :emphasize-lines: 6-9
 
         def test_functions_w_positional_arguments(self):
@@ -1627,7 +1627,7 @@ because ...
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 44
     :emphasize-lines: 8
     :emphasize-text: last
 
