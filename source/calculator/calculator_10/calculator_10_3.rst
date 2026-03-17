@@ -654,7 +654,7 @@ test_streamlit_calculator_w_decimals
 * I add a test for decimal numbers
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 78
     :emphasize-lines: 6-23
 
             self.assertEqual(
@@ -688,7 +688,7 @@ test_streamlit_calculator_w_decimals
 
   .. code-block:: python
 
-    AssertionError: '.23.5.6.7.8.9' != '0.2356789'
+    AssertionError: '.23.5.6.7.89' != '0.2356789'
 
 * I refresh the browser and do the same thing
 
@@ -707,7 +707,7 @@ test_streamlit_calculator_w_decimals
 
 ----
 
-* I add a :ref:`function<what is a function?>` for decimals
+* I add a :ref:`function<what is a function?>` for decimals in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 1
@@ -726,33 +726,51 @@ test_streamlit_calculator_w_decimals
 
     def show(display, number):
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I change the ``on_click`` parameter for the ``.`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>` to use the new :ref:`function<what is a function?>`
 
   .. code-block:: python
-
-    AssertionError: '.23.5.6.7.89' != '0.2356789'
-
-* I change the ``on_click`` parameter for the ``.`` button to use the new :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 7
+    :lineno-start: 78
+    :emphasize-lines: 3-4
     :emphasize-text: handle_decimals
 
         column_3.button(
-            '3', key='3', width='stretch',
-            on_click=show, args=[display, '3'],
-        )
-        column_3.button(
-            '.', key='.', width='stretch',
+            label='.', key='.', width='stretch',
+            # on_click=show, args=[display, '.'],
             on_click=handle_decimals, args=[display, '.'],
         )
 
-        operations.button(
-            '/', key='/', width='stretch', type='primary',
+  the test passes
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 62
+
+    def add_buttons_to_column_3(column_3, display):
+        column_3.button(
+            label='AC', key='AC', width='stretch', type='primary',
+        )
+        column_3.button(
+            label='9', key='9', width='stretch',
+            on_click=show, args=[display, '9'],
+        )
+        column_3.button(
+            label='6', key='6', width='stretch',
+            on_click=show, args=[display, '6'],
+        )
+        column_3.button(
+            label='3', key='3', width='stretch',
+            on_click=show, args=[display, '3'],
+        )
+        column_3.button(
+            label='.', key='.', width='stretch',
+            on_click=handle_decimals, args=[display, '.'],
         )
 
-  the test passes
+
+    def add_buttons_to_column_4(column_4):
 
 ----
 
@@ -762,14 +780,14 @@ test_streamlit_calculator_w_decimals
 
 ----
 
-* I add the :ref:`logical negation<test_logical_negation>` of the :ref:`if statement<if statements>` to make it simpler
+* I change the `else clause`_ to an :ref:`if statement<if statements>` to make it simpler
 
   .. code-block:: python
     :lineno-start: 4
     :emphasize-lines: 4-5
 
     def handle_decimals(display, number):
-        if streamlit.session_state['number'].count('.') > 0:
+        if streamlit.session_state['number'].count('.') >= 1:
             return None
         # else:
         if streamlit.session_state['number'].count('.') == 0:
@@ -788,13 +806,16 @@ test_streamlit_calculator_w_decimals
             streamlit.session_state['number'] += number
         display.write(streamlit.session_state['number'])
 
+
+    def show(display, number):
+
   still green
 
   - ``if streamlit.session_state['number'].count('.') == 0:`` checks if ``.`` is in ``session_state['number']``
 
     * ``streamlit.session_state['number'].count('.')`` counts how many times ``.`` shows up in ``session_state['number']``
-    * if ``.`` is NOT in ``session_state['number']``, then ``.`` gets added to ``session_state['number']`` and the program runs the next line ``display.write(streamlit.session_state['number'])``
-    * if ``.`` is in ``session_state['number']``, then the program runs the next line ``display.write(streamlit.session_state['number'])``
+    * if ``.`` is NOT in ``session_state['number']``, then ``.`` gets added to ``session_state['number']`` and the program runs the next line, which is ``display.write(streamlit.session_state['number'])``
+    * if ``.`` is in ``session_state['number']``, then the program runs the next line, which is  ``display.write(streamlit.session_state['number'])``
 
 * I refresh the browser and try many decimals again
 
@@ -808,13 +829,13 @@ test_streamlit_calculator_w_decimals
 * I add a :ref:`for loop<what is a for loop?>` to :ref:`test_streamlit_calculator_w_decimals` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 79
+    :lineno-start: 83
     :emphasize-lines: 2-6
 
         def test_streamlit_calculator_w_decimals(self):
-            for button in ('0.23.5.6.7.8.9'):
+            for key in ('0.23.5.6.7.89'):
                 (
-                    self.tester.button(button)
+                    self.tester.button(key)
                         .click().run()
                 )
 
@@ -822,6 +843,19 @@ test_streamlit_calculator_w_decimals
             self.tester.button('.').click().run()
             self.tester.button('2').click().run()
             self.tester.button('3').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('5').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('6').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('7').click().run()
+            self.tester.button('.').click().run()
+            self.tester.button('8').click().run()
+            self.tester.button('9').click().run()
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '0.2356789'
+            )
 
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -833,12 +867,12 @@ test_streamlit_calculator_w_decimals
 * I remove the other button presses
 
   .. code-block:: python
-    :lineno-start: 79
+    :lineno-start: 83
 
         def test_streamlit_calculator_w_decimals(self):
-            for button in ('0.23.5.6.7.8.9'):
+            for key in ('0.23.5.6.7.89'):
                 (
-                    self.tester.button(button)
+                    self.tester.button(key)
                         .click().run()
                 )
 
@@ -854,11 +888,133 @@ test_streamlit_calculator_w_decimals
 
 ----
 
+* I keep writing ``self.tester.button(key).click().run()``, time to add a :ref:`method<what is a function?>` for button presses
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3-4
+
+    class TestStreamlitCalculator(unittest.TestCase):
+
+        def press_button(self, key):
+            self.tester.button(key).click().run()
+
+        def setUp(self):
+
+* I use the new :ref:`method<what is a function?>` in :ref:`test_streamlit_calculator_state`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 9-10 ,18-22
+    :emphasize-text: press_button
+
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            self.assertEqual(self.tester.session_state['number'], '0')
+
+            expectation = random.choice(numbers)
+            while expectation == '0':
+                expectation = random.choice(numbers)
+            else:
+                # self.tester.button(expectation).click().run()
+                self.press_button(expectation)
+
+            self.assertEqual(
+                self.tester.session_state['number'], expectation
+            )
+
+            for _ in range(0, len(numbers)):
+                a_random_number = random.choice(numbers)
+                # (
+                #     self.tester.button(a_random_number)
+                #         .click().run()
+                # )
+                self.press_button(a_random_number)
+                expectation += a_random_number
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                expectation
+            )
+
+  the tests are still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 59
+
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            self.assertEqual(self.tester.session_state['number'], '0')
+
+            expectation = random.choice(numbers)
+            while expectation == '0':
+                expectation = random.choice(numbers)
+            else:
+                self.press_button(expectation)
+
+            self.assertEqual(
+                self.tester.session_state['number'], expectation
+            )
+
+            for _ in range(0, len(numbers)):
+                a_random_number = random.choice(numbers)
+                self.press_button(a_random_number)
+                expectation += a_random_number
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                expectation
+            )
+
+        def test_streamlit_calculator_w_decimals(self):
+
+* I use the ``press_button`` :ref:`method<what is a function?>` in :ref:`test_streamlit_calculator_w_decimals`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 3-7
+
+        def test_streamlit_calculator_w_decimals(self):
+            for key in ('0.23.5.6.7.89'):
+                # (
+                #     self.tester.button(key)
+                #         .click().run()
+                # )
+                self.press_button(key)
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '0.2356789'
+            )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 83
+
+        def test_streamlit_calculator_w_decimals(self):
+            for key in ('0.23.5.6.7.89'):
+                self.press_button(key)
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '0.2356789'
+            )
+
+
+    # Exceptions seen
+
+----
+
 *********************************************************************************
 test_streamlit_calculator_backspace
 *********************************************************************************
 
-I want to be able to remove the last digit of a number
+I want to be able to remove the last digit of a number with the ``<-`` button
 
 ----
 
@@ -871,27 +1027,27 @@ I want to be able to remove the last digit of a number
 * I add a new test
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 87
     :emphasize-lines: 6-15
 
-              self.assertEqual(
-                  self.tester.session_state['number'],
-                  '0.2356789'
-              )
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '0.2356789'
+            )
 
-          def test_streamlit_calculator_backspace(self):
-              self.tester.button('1').click().run()
-              self.tester.button('2').click().run()
-              self.tester.button('3').click().run()
-              self.tester.button('4').click().run()
-              self.tester.button('<-').click().run()
-              self.assertEqual(
-                  self.tester.session_state['number'],
-                  '123'
-              )
+        def test_streamlit_calculator_backspace(self):
+            self.press_button('1')
+            self.press_button('2')
+            self.press_button('3')
+            self.press_button('4')
+            self.press_button('<-')
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '123'
+            )
 
 
-      # Exceptions seen
+    # Exceptions seen
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -919,8 +1075,8 @@ I want to be able to remove the last digit of a number
 
 
     def backspace(display):
-        streamlit.session_state['number'] = \
-            streamlit.session_state['number'][:-1]
+        number = streamlit.session_state['number'][:-1]
+        streamlit.session_state['number'] = number
         display.write(streamlit.session_state['number'])
 
 
@@ -928,25 +1084,37 @@ I want to be able to remove the last digit of a number
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I add the ``on_click`` parameter to the ``<-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* I add the ``on_click`` parameter to the ``<-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 24
-    :emphasize-lines: 5-8
+    :emphasize-lines: 2-5
     :emphasize-text: backspace
 
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
+    def add_buttons_to_column_1(column_1, display):
         column_1.button(
-            '<-', key='<-', width='stretch',
+            label='<-', key='<-', width='stretch',
             on_click=backspace, args=[display],
         )
         column_1.button(
-            '7', key='7', width='stretch',
+            label='7', key='7', width='stretch',
             on_click=show, args=[display, '7'],
         )
+        column_1.button(
+            label='4', key='4', width='stretch',
+            on_click=show, args=[display, '4'],
+        )
+        column_1.button(
+            label='1', key='1', width='stretch',
+            on_click=show, args=[display, '1'],
+        )
+        column_1.button(
+            label='+/-', key='+/-', width='stretch',
+            on_click=show, args=[display, '+/-'],
+        )
+
+
+    def add_buttons_to_column_2(column_2, display):
 
   the test passes
 
@@ -975,35 +1143,44 @@ I want to be able to remove the last digit of a number
 * I add a :ref:`variable<what is a variable?>` with a :ref:`for loop<what is a for loop?>` for a random number in :ref:`test_streamlit_calculator_backspace`
 
   .. code-block:: python
-    :lineno-start: 92
-    :emphasize-lines: 2-3, 5-11
+    :lineno-start: 93
+    :emphasize-lines: 2-3, 5-7, 9-12
 
         def test_streamlit_calculator_backspace(self):
             a_random_number = tests.test_calculator.a_random_number()
             a_random_number = str(a_random_number)
 
-            for number in a_random_number:
-                self.tester.button(number).click().run()
-            self.tester.button('<-').click().run()
+            for key in a_random_number:
+                self.press_button(key)
+            self.press_button('<-')
+
             self.assertEqual(
                 self.tester.session_state['number'],
                 a_random_number
             )
 
-            self.tester.button('1').click().run()
-            self.tester.button('2').click().run()
-            self.tester.button('3').click().run()
+            self.press_button('1')
+            self.press_button('2')
+            self.press_button('3')
+            self.press_button('4')
+            self.press_button('<-')
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '123'
+            )
 
-  - ``a_random_number = tests.test_calculator.a_random_number()`` uses the ``a_random_number`` :ref:`function<what is a function?>` ``test_calculator.py`` that I made in :ref:`how to use random numbers`
-  - ``a_random_number = str(a_random_number)`` changes the random number to a string_ since all the operations of the calculator have been with strings_ so far
+  - ``a_random_number = tests.test_calculator.a_random_number()`` uses the ``a_random_number`` :ref:`function<what is a function?>` from ``test_calculator.py`` that I made in :ref:`how to use random numbers`
+  - ``a_random_number = str(a_random_number)`` changes the random number to a string_ since all the tests of the calculator have been done with strings_ so far
 
-  I use :kbd:`ctrl+s` on the keyboard to run the test a few times because I am using random numbers and the terminal_ sometimes shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl+s` on the keyboard to run the test a few times because I am using random numbers. If the number is positive, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: 'LMN.OPQRSTUVWXYZ' != 'LMN.OPQRSTUVWXYZA'
 
-  the last number was not removed. When the random number is a negative number, the terminal_ shows :ref:`KeyError<test_key_error>`
+  the last number was not removed
+
+  If the random number is negative, the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1014,7 +1191,7 @@ I want to be able to remove the last digit of a number
 * I add a :ref:`while loop<what is a while loop?>` to make sure ``a_random_number`` is never negative
 
   .. code-block:: python
-    :lineno-start: 92
+    :lineno-start: 93
     :emphasize-lines: 3-4
 
         def test_streamlit_calculator_backspace(self):
@@ -1023,7 +1200,7 @@ I want to be able to remove the last digit of a number
                 a_random_number = tests.test_calculator.a_random_number()
             a_random_number = str(a_random_number)
 
-            for number in a_random_number:
+            for key in a_random_number:
 
   I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1031,18 +1208,18 @@ I want to be able to remove the last digit of a number
 
     AssertionError: 'BCD.EFGHIJKLMNOP' != 'BCD.EFGHIJKLMNOPQ'
 
-  I remove the :ref:`while statement<what is a while loop?>` when :ref:`I test the '+/-' button<test_streamlit_calculator_w_plus_minus>`
+  I remove this :ref:`while statement<what is a while loop?>` when :ref:`I test the '+/-' button<test_streamlit_calculator_w_plus_minus>`
 
 * I change the expectation to remove the last digit from the random number
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 103
     :emphasize-lines: 3
 
-                self.assertEqual(
-                    self.tester.session_state['number'],
-                    a_random_number[:-1]
-                )
+            self.assertEqual(
+                self.tester.session_state['number'],
+                a_random_number[:-1]
+            )
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1052,22 +1229,36 @@ I want to be able to remove the last digit of a number
 
   because I have button presses after the test. I need :ref:`a way to reset the numbers back to 0<test_streamlit_calculator_reset>`
 
-* I remove the other numbers
+* I comment out the other button presses
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 93
+    :emphasize-lines: 16-19
 
-            for number in a_random_number:
-                self.tester.button(number).click().run()
-                self.assertEqual(
-                    self.tester.session_state['number'],
-                    a_random_number[:-1]
-                )
-                self.tester.button('<-').click().run()
-                self.assertEqual(
-                    self.tester.session_state['number'],
-                    '123'
-                )
+        def test_streamlit_calculator_backspace(self):
+            a_random_number = tests.test_calculator.a_random_number()
+            while a_random_number < 0:
+                a_random_number = tests.test_calculator.a_random_number()
+            a_random_number = str(a_random_number)
+
+            for key in a_random_number:
+                self.press_button(key)
+            self.press_button('<-')
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                a_random_number[:-1]
+            )
+
+            # self.press_button('1')
+            # self.press_button('2')
+            # self.press_button('3')
+            # self.press_button('4')
+            self.press_button('<-')
+            self.assertEqual(
+                self.tester.session_state['number'],
+                '123'
+            )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1078,8 +1269,8 @@ I want to be able to remove the last digit of a number
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 92
-    :emphasize-lines: 17
+    :lineno-start: 93
+    :emphasize-lines: 23-24
 
         def test_streamlit_calculator_backspace(self):
             a_random_number = tests.test_calculator.a_random_number()
@@ -1087,14 +1278,49 @@ I want to be able to remove the last digit of a number
                 a_random_number = tests.test_calculator.a_random_number()
             a_random_number = str(a_random_number)
 
-            for number in a_random_number:
-                self.tester.button(number).click().run()
-            self.tester.button('<-').click().run()
+            for key in a_random_number:
+                self.press_button(key)
+            self.press_button('<-')
+
             self.assertEqual(
                 self.tester.session_state['number'],
                 a_random_number[:-1]
             )
-            self.tester.button('<-').click().run()
+
+            # self.press_button('1')
+            # self.press_button('2')
+            # self.press_button('3')
+            # self.press_button('4')
+            self.press_button('<-')
+            self.assertEqual(
+                self.tester.session_state['number'],
+                # '123'
+                a_random_number[:-2]
+            )
+
+  the test passes
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 93
+
+        def test_streamlit_calculator_backspace(self):
+            a_random_number = tests.test_calculator.a_random_number()
+            while a_random_number < 0:
+                a_random_number = tests.test_calculator.a_random_number()
+            a_random_number = str(a_random_number)
+
+            for key in a_random_number:
+                self.press_button(key)
+            self.press_button('<-')
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                a_random_number[:-1]
+            )
+
+            self.press_button('<-')
             self.assertEqual(
                 self.tester.session_state['number'],
                 a_random_number[:-2]
@@ -1103,9 +1329,7 @@ I want to be able to remove the last digit of a number
 
     # Exceptions seen
 
-  the test passes
-
-* I go to the browser and type a few numbers, then click on ``<-`` and it removes the last number. Fantastic!
+* I go to the browser and click on a few numbers, then click on ``<-`` and it removes the last number. Fantastic!
 
 ----
 
@@ -1126,30 +1350,31 @@ Nothing happens when I click ``+/-`` in the calculator. I want it to
 
 ----
 
-I add a new test for the ``+/-``
+I add a new test for the ``+/-`` button
 
 .. code-block:: python
-  :lineno-start: 106
+  :lineno-start: 108
   :emphasize-lines: 6-10, 12-15
 
-          self.assertEqual(
-              self.tester.session_state['number'],
-              a_random_number[:-2]
-          )
+            self.press_button('<-')
+            self.assertEqual(
+                self.tester.session_state['number'],
+                a_random_number[:-2]
+            )
 
-      def test_streamlit_calculator_w_plus_minus(self):
-          self.tester.button('9').click().run()
-          self.assertEqual(
-              self.tester.session_state['number'], '9'
-          )
+        def test_streamlit_calculator_w_plus_minus(self):
+            self.press_button('9')
+            self.assertEqual(
+                self.tester.session_state['number'], '9'
+            )
 
-          self.tester.button('+/-').click().run()
-          self.assertEqual(
-              self.tester.session_state['number'], '-9'
-          )
+            self.press_button('+/-')
+            self.assertEqual(
+                self.tester.session_state['number'], '-9'
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
 the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
