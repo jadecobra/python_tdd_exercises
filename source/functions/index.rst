@@ -1602,7 +1602,7 @@ because ...
 * The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add a test to ``test_functions.py`` to show this
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 26
     :emphasize-lines: 6-9
 
         def test_functions_w_positional_arguments(self):

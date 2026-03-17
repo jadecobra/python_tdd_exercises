@@ -19,31 +19,6 @@ open the project
 
     cd calculator
 
-* I make a new test file_ for the Streamlit_ website
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    touch tests/test_streamlit_calculator.py
-
-* I add streamlit_ to the ``requirements.txt`` file_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    echo "streamlit" >> requirements.txt
-
-  Streamlit_ is a Python_ library that is used for making websites, it is not part of `The Python Standard Library`_
-
-* I install the `Python packages`_ that I wrote in the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal shows it installed the `Python packages`_
-
 * I use ``pytest-watcher`` to run the tests
 
   .. code-block:: shell
@@ -58,12 +33,41 @@ open the project
 
     rootdir: .../pumping_python/calculator
     configfile: pyproject.toml
-    collected 8 items
+    collected 12 items
 
-    tests/test_calculator.py .....                                [ 62%]
-    tests/test_calculator_website.py ...                          [100%]
+    tests/test_calculator.py .....                                [ 41%]
+    tests/test_calculator_website.py ...                          [ 66%]
+    tests/test_streamlit_calculator.py ....                       [100%]
 
-    ======================== 5 passed in X.YZs =========================
+    ======================== 12 passed in X.YZs =========================
+
+* I open another terminal_ then use uv_ in the ``calculator`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv run streamlit run src/streamlit_calculator.py
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    Collecting usage statistics.
+    To deactivate, set browser.gatherUsageStats to false.
+
+
+      You can now view your Streamlit app in your browser.
+
+      Local URL: http://localhost:8501
+      Network URL: http://ABC.DEF.GHI.JKL:8501
+      External URL: http://MNO.PQR.STU.VWX:8501
+
+  I use :kbd:`ctrl/option` on the keyboard and click on ``http://localhost:8501`` with the mouse to open the browser and it shows
+
+  .. image:: /_static/calculator/streamlit/primary_buttons.png
+    :width: 600
+    :align: left
+    :alt: Calculator Streamlit Primary Buttons
 
 ----
 
@@ -84,7 +88,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 I add a test for the `session state object`_, I want it to hold the number when I click the buttons, in ``test_streamlit_calculator.py``
 
 .. code-block:: python
-  :lineno-start: 46
+  :lineno-start: 47
   :emphasize-lines: 9-10
 
       def test_streamlit_calculator_operations_buttons(self):
@@ -120,17 +124,19 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I use the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>` to add a :ref:`key<test_keys_of_a_dictionary>` that will hold the numbers to show in the Calculator, in ``streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 90
     :emphasize-lines: 3
 
     def main():
         streamlit.title('Calculator')
         streamlit.session_state.setdefault('number', '0')
-        add_buttons()
+        display = streamlit.container(border=True)
 
-
-    if __name__ == '__main__':
-        main()
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3, display)
+        add_buttons_to_column_4(operations)
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -138,13 +144,27 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
     AssertionError: 0 is not None
 
-* I change the assertIsNone_ to assertEqual_ in ``test_streamlit_calculator.py``
+* I add ``0`` as the expectation in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 55
     :emphasize-lines: 2
 
         def test_streamlit_calculator_state(self):
+            self.assertIsNone(self.tester.session_state['number'], '0')
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '0' is not None : 0
+
+* I change the assertIsNone_ to assertEqual_
+
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 1
+
             self.assertEqual(self.tester.session_state['number'], '0')
 
   the test passes
@@ -161,12 +181,15 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2-4
 
     def show(display, number):
         # display.write(number)
         streamlit.session_state['number'] += number
         display.write(streamlit.session_state['number'])
+
+
+    def add_buttons_to_column_1(column_1, display):
 
   the test passes
 
@@ -182,8 +205,8 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I add an :ref:`assertion<what is an assertion?>` to test what happens to the `session state object`_ when I press a button for a number
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 3
+    :lineno-start: 55
+    :emphasize-lines: 3-4
 
         def test_streamlit_calculator_state(self):
             self.assertEqual(self.tester.session_state['number'], '0')
@@ -204,19 +227,22 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 58
     :emphasize-lines: 1
 
             self.assertEqual(self.tester.session_state['number'], '01')
 
   the test passes
 
-* I add more button clicks
+* I add more button presses and another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 2-5
+    :lineno-start: 55
+    :emphasize-lines: 5-8
 
+        def test_streamlit_calculator_state(self):
+            self.assertEqual(self.tester.session_state['number'], '0')
+            self.tester.button('1').click().run()
             self.assertEqual(self.tester.session_state['number'], '01')
             self.tester.button('2').click().run()
             self.tester.button('3').click().run()
@@ -232,7 +258,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 62
     :emphasize-lines: 1-3
 
             self.assertEqual(
@@ -253,7 +279,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I want the calculator to remove ``0`` when it is the first number after I click on other numbers. I change the :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 55
     :emphasize-lines: 4, 8-10
 
         def test_streamlit_calculator_state(self):

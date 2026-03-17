@@ -2390,11 +2390,7 @@ close the project
 review
 *********************************************************************************
 
-I made a website using Streamlit_ with a
-
-* :ref:`title<test_streamlit_calculator_title>`
-* :ref:`display<test_streamlit_calculator_display>` and
-* :ref:`buttons<test_streamlit_calculator_columns_and_buttons>`
+I made a website using Streamlit_ with a :ref:`title<test_streamlit_calculator_title>`, :ref:`display<test_streamlit_calculator_display>` and :ref:`buttons<test_streamlit_calculator_columns_and_buttons>`
 
 *************************************************************************************
 code from the chapter
