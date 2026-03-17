@@ -1627,7 +1627,7 @@ because ...
 * I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 26
     :emphasize-lines: 8
     :emphasize-text: last
 

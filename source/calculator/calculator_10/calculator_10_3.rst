@@ -339,7 +339,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I use it in :ref:`test_streamlit_calculator_state`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 5
     :emphasize-lines: 2, 4-6
     :emphasize-text: x
 
