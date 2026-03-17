@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-functions 2
+function 2: use variables
 #################################################################################
 
 Since I know how to use :ref:`variables<what is a variable?>`, I can do better with the results of :ref:`test_why_use_a_function`

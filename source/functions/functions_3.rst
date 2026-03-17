@@ -6,10 +6,8 @@
 .. _product: https://docs.python.org/3/library/itertools.html#itertools.product
 .. _product method: product_
 
-
-
 #################################################################################
-functions 3
+functions 3: use for loops
 #################################################################################
 
 Since I know how to use :ref:`for loops<what is a for loop?>`, I can do better with the :ref:`assertions<what is an assertion?>` of :ref:`test_why_use_a_function`
