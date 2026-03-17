@@ -356,7 +356,7 @@ test_streamlit_calculator_title
 ----
 
 *********************************************************************************
-how to view the streamlit calculator website
+how to see the streamlit calculator website
 *********************************************************************************
 
 * I open another terminal_ then use uv_ in the ``calculator`` folder_
@@ -1077,6 +1077,10 @@ review
 *********************************************************************************
 
 I made a website using Streamlit_ with a :ref:`title<test_streamlit_calculator_title>` and a :ref:`display<test_streamlit_calculator_display>`
+
+* :ref:`How to add a title to a Streamlit Application<test_streamlit_calculator_title>`
+* :ref:`How to see the Streamlit Calculator Website<how to see the streamlit calculator website>`
+* :ref:`How to make a display for the application<test_streamlit_calculator_display>`
 
 ----
 

@@ -2193,15 +2193,15 @@ I want the calculator to show the number when I press a button
         )
         column_1.button(
             label='4', key='4', width='stretch',
-            on_click=show, args=[display, '4']
+            on_click=show, args=[display, '4'],
         )
         column_1.button(
             label='1', key='1', width='stretch',
-            on_click=show, args=[display, '1']
+            on_click=show, args=[display, '1'],
         )
         column_1.button(
             label='+/-', key='+/-', width='stretch',
-            on_click=show, args=[display, '+/-']
+            on_click=show, args=[display, '+/-'],
         )
 
   the test is still green
@@ -2219,19 +2219,19 @@ I want the calculator to show the number when I press a button
         )
         column_2.button(
             label='8', key='8', width='stretch',
-            on_click=show, args=[display, '8']
+            on_click=show, args=[display, '8'],
         )
         column_2.button(
             label='5', key='5', width='stretch',
-            on_click=show, args=[display, '5']
+            on_click=show, args=[display, '5'],
         )
         column_2.button(
             label='2', key='2', width='stretch',
-            on_click=show, args=[display, '2']
+            on_click=show, args=[display, '2'],
         )
         column_2.button(
             label='0', key='0', width='stretch',
-            on_click=show, args=[display, '0']
+            on_click=show, args=[display, '0'],
         )
 
   the terminal_ shows :ref:`KeyError<test_key_error>` for 20 sub tests and the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -2272,7 +2272,7 @@ I want the calculator to show the number when I press a button
 
   .. code-block:: python
     :lineno-start: 47
-    :emphasize-lines: 9-24
+    :emphasize-lines: 5-24
     :emphasize-text: on_click args
 
     def add_buttons_to_column_3(column_3):
@@ -2296,10 +2296,52 @@ I want the calculator to show the number when I press a button
             on_click=show, args=[display, '.'],
         )
 
-  green
+  the terminal_ shows :ref:`KeyError<test_key_error>` for 14 sub tests
 
-* I go to the browser to test the numbers and they show up in the box, with one problem - every time I press a button it shows a new number. I want the numbers to stay so that I can make numbers that have more than one digit
+  .. code-block:: python
 
+    ================== 14 failed, 12 passed in X.YZs ===================
+
+
+  and the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'display' is not defined
+
+* I add ``display`` to the signature of the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 1
+
+    def add_buttons_to_column_3(column_3, display):
+
+  the terminal_ shows :ref:`KeyError<test_key_error>` and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: add_buttons_to_column_3() missing 1 required positional argument: 'display'
+
+* I add ``display`` to the call to the ``add_buttons_to_column_3`` in the ``main`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 8
+
+    def main():
+        streamlit.title('Calculator')
+        display = streamlit.container(border=True)
+
+        column_1, column_2, column_3, operations = streamlit.columns(4)
+        add_buttons_to_column_1(column_1, display)
+        add_buttons_to_column_2(column_2, display)
+        add_buttons_to_column_3(column_3, display)
+        add_buttons_to_column_4(operations)
+
+  the test passes.
+
+* I go to the browser to test the numbers and they show up in the box, with one problem - every time I press a button it shows a new number.
 
 ----
 
@@ -2307,14 +2349,40 @@ I want the calculator to show the number when I press a button
 close the project
 *********************************************************************************
 
-* I close all files
-* I click in the terminal_, then use :kbd:`q` to leave the tests
-* I `change directory`_ to the parent
+* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
-  .. code-block:: shell
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 
@@ -2322,14 +2390,11 @@ close the project
 review
 *********************************************************************************
 
-I now have **three** different versions of the same calculator:
+I made a website using Streamlit_ with a
 
-* Pure Python (chapters 1–8)
-* Flask website (chapter 9)
-* **Streamlit web app** (chapter 10) — the fastest and most beautiful version
-
-The core calculator code never changed. All my tests still protect it.
-This is the real power of Test-Driven Development.
+* :ref:`title<test_streamlit_calculator_title>`
+* :ref:`display<test_streamlit_calculator_display>` and
+* :ref:`buttons<test_streamlit_calculator_columns_and_buttons>`
 
 *************************************************************************************
 code from the chapter
@@ -2343,13 +2408,17 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-You have completed an amazing journey from pure functions to real web applications!
-
 You now know how to:
 
-* Build programs with Test-Driven Development
-* Turn them into Flask websites
-* Turn them into beautiful Streamlit apps
+* Build a website with streamlit_
+* How to test the parts of the website
+* :ref:`How to add a title to the streamlit website<test_streamlit_calculator_title>`
+* :ref:`How to add a display to the streamlit website<test_streamlit_calculator_display>`
+* :ref:`How to add buttons to the streamlit website<test_streamlit_calculator_columns_and_buttons>`
+* :ref:`How to change the colors of the buttons<test_streamlit_calculator_operations_buttons>`
+* :ref:`How to show the numbers when a button is pressed<how to show the numbers when I click on them>`
+
+:ref:`Would you like to continue with adding buttons to the calculator?<how to make a calculator 10: part 3>`
 
 -----
 

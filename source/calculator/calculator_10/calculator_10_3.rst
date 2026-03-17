@@ -4,6 +4,7 @@
 how to make a calculator 10: part 3
 #################################################################################
 
+I want the numbers to stay when I press a button so that I can make numbers that have more than one digit.
 
 ----
 
