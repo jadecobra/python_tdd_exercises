@@ -339,7 +339,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I use it in :ref:`test_streamlit_calculator_state`
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 56
     :emphasize-lines: 2, 4-6
     :emphasize-text: x
 
@@ -365,7 +365,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 56
     :emphasize-lines: 7
 
         def test_streamlit_calculator_state(self):
@@ -391,7 +391,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I use random numbers for the other button presses
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 62
     :emphasize-lines: 2-10
 
             self.assertEqual(self.tester.session_state['number'], x)
@@ -417,7 +417,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 * I use the random numbers in the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 124
+    :lineno-start: 72
     :emphasize-lines: 2
 
             self.assertEqual(
@@ -436,10 +436,10 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 what is a while loop?
 *********************************************************************************
 
-* I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while statement`_ to :ref:`test_streamlit_calculator_state`
+* I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while loop`_ to :ref:`test_streamlit_calculator_state`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 56
     :emphasize-lines: 6-9
 
         def test_streamlit_calculator_state(self):
@@ -451,38 +451,61 @@ what is a while loop?
                 x = random.choice(numbers)
             else:
                 self.tester.button(x).click().run()
-            self.tester.button(x).click().run()
+
             self.assertEqual(self.tester.session_state['number'], x)
+            # self.tester.button('2').click().run()
 
   - ``x = random.choice(numbers)`` points ``x`` to a random number from the ``numbers`` :ref:`variable<what is a variable?>`
 
-    * if ``x`` is not equal to ``'0'`` it goes to the next block ``else: self.tester.button(x).click().run()``
+    * if ``x`` is not equal to ``'0'`` it goes to the next block which is ``else: self.tester.button(x).click().run()``
 
     * if ``x`` is equal to ``'0'`` it goes to ``while x == '0':`` which makes a loop that will continue to run as long as ``x`` is equal to ``'0'``
 
       - inside the loop ``x = random.choice(numbers)`` points ``x`` to a random number from the ``numbers`` string_ then checks again to see if ``x`` is equal to ``'0'``
 
         * if ``x`` is equal to ``0`` the loop runs again
-        * if ``x`` is not equal to ``0`` in the loop, it leaves the loop and continues to the next block ``else: self.tester.button(x).click().run()``
+        * if ``x`` is not equal to ``0`` in the loop, it leaves the loop and goes to the next block which is ``else: self.tester.button(x).click().run()``
 
   I use :kbd:`ctrl+s` on the keyboard a few times and there are no more random failures
 
 * I add a :ref:`for loop<what is a for loop?>` to test with a 10 digit number
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 4-14
+    :lineno-start: 56
+    :emphasize-lines: 25-31, 33-36
 
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            self.assertEqual(self.tester.session_state['number'], '0')
+            # self.tester.button('1').click().run()
+            x = random.choice(numbers)
+            while x == '0':
+                x = random.choice(numbers)
+            else:
+                self.tester.button(x).click().run()
+
+            self.assertEqual(self.tester.session_state['number'], x)
+            # self.tester.button('2').click().run()
+            # self.tester.button('3').click().run()
+            # self.tester.button('4').click().run()
+            y = random.choice(numbers)
+            self.tester.button(y).click().run()
+            z = random.choice(numbers)
+            self.tester.button(z).click().run()
+            a = random.choice(numbers)
+            self.tester.button(a).click().run()
             self.assertEqual(
                 self.tester.session_state['number'], f'{x}{y}{z}{a}'
             )
-            for _ in range(0, 10):
+
+            for _ in range(0, len(numbers)):
                 a_random_number = random.choice(numbers)
                 (
                     self.tester.button(a_random_number)
                         .click().run()
                 )
                 x += a_random_number
+
             self.assertEqual(
                 self.tester.session_state['number'],
                 x
@@ -504,18 +527,19 @@ what is a while loop?
 * I comment out the other lines
 
   .. code-block:: python
-    :lineno-start: 108
-    :emphasize-lines: 4, 14-22
+    :lineno-start: 56
+    :emphasize-lines: 15-23
 
         def test_streamlit_calculator_state(self):
             numbers = '0123456789'
-            # self.assertEqual(self.tester.session_state['number'], '0')
+            self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
             x = random.choice(numbers)
             while x == '0':
                 x = random.choice(numbers)
             else:
                 self.tester.button(x).click().run()
+
             self.assertEqual(self.tester.session_state['number'], x)
             # self.tester.button('2').click().run()
             # self.tester.button('3').click().run()
@@ -529,62 +553,82 @@ what is a while loop?
             # self.assertEqual(
             #     self.tester.session_state['number'], f'{x}{y}{z}{a}'
             # )
-            for _ in range(0, 10):
 
-  I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 55
-
-        def test_streamlit_calculator_state(self):
-            numbers = '0123456789'
-            self.assertEqual(self.tester.session_state['number'], '0')
-            x = random.choice(numbers)
-            while x == '0':
-                x = random.choice(numbers)
-            else:
-                self.tester.button(x).click().run()
-            self.assertEqual(self.tester.session_state['number'], x)
-            for _ in range(0, 10):
+            for _ in range(0, len(numbers)):
                 a_random_number = random.choice(numbers)
                 (
                     self.tester.button(a_random_number)
                         .click().run()
                 )
                 x += a_random_number
+
             self.assertEqual(
                 self.tester.session_state['number'],
                 x
             )
 
-* I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change ``x`` to ``expectation``
+
+  I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 56
+
+        def test_streamlit_calculator_state(self):
+            numbers = '0123456789'
+            self.assertEqual(self.tester.session_state['number'], '0')
+
+            x = random.choice(numbers)
+            while x == '0':
+                x = random.choice(numbers)
+            else:
+                self.tester.button(x).click().run()
+
+            self.assertEqual(self.tester.session_state['number'], x)
+
+            for _ in range(0, len(numbers)):
+                a_random_number = random.choice(numbers)
+                (
+                    self.tester.button(a_random_number)
+                        .click().run()
+                )
+                x += a_random_number
+
+            self.assertEqual(
+                self.tester.session_state['number'],
+                x
+            )
+
+* I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change ``x`` to ``expectation`` because I like the name better
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 4-6, 8, 9-12, 19, 22
+    :emphasize-lines: 5-7, 9, 11-13, 21, 25
     :emphasize-text: expectation
 
         def test_streamlit_calculator_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
+
             expectation = random.choice(numbers)
             while expectation == '0':
                 expectation = random.choice(numbers)
             else:
                 self.tester.button(expectation).click().run()
+
             self.assertEqual(
-                self.tester.session_state['number'],
-                expectation
+                self.tester.session_state['number'], expectation
             )
-            for _ in range(0, 10):
+
+            for _ in range(0, len(numbers)):
                 a_random_number = random.choice(numbers)
                 (
                     self.tester.button(a_random_number)
                         .click().run()
                 )
                 expectation += a_random_number
+
             self.assertEqual(
                 self.tester.session_state['number'],
                 expectation
