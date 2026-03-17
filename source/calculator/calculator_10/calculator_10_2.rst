@@ -2199,10 +2199,7 @@ I want the calculator to show the number when I press a button
             label='1', key='1', width='stretch',
             on_click=show, args=[display, '1'],
         )
-        column_1.button(
-            label='+/-', key='+/-', width='stretch',
-            on_click=show, args=[display, '+/-'],
-        )
+        column_1.button(label='+/-', key='+/-', width='stretch')
 
   the test is still green
 

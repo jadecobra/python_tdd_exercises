@@ -1354,7 +1354,7 @@ I add a new test for the ``+/-`` button
 
 .. code-block:: python
   :lineno-start: 108
-  :emphasize-lines: 6-10, 12-15
+  :emphasize-lines: 7-11, 13-16
 
             self.press_button('<-')
             self.assertEqual(
