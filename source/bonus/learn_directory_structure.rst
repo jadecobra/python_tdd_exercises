@@ -1887,7 +1887,8 @@ code from the chapter
 what is next?
 *****************************************************************************************
 
-:ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a test driven development environment>`
+* Homework - use what you have learned - mkdir_, cd_, ls_, tree_ and touch_ to make your family tree. Send me the final thing when you are done.
+* :ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a test driven development environment>`
 
 ----
 
