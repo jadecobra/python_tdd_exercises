@@ -1438,7 +1438,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to write more tests with bool?<booleans 2>`
+:ref:`Would you like to write more tests with bool?<booleans 2: test with bool>`
 
 ----
 

@@ -277,7 +277,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     SUBFAILED(data_type=False) ...  - AssertionError: MNO.PQRSTUVWXYZABCD != 'brmph?! Numbers only. Try again...'
     =========== 2 failed, 7 passed in X.YZs ============
 
-  the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data_type`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. :ref:`Is a boolean a number?<booleans 3>`
+  the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data_type`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. :ref:`Is a boolean a number?<booleans 3: values of True and False>`
 
 * I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
@@ -689,7 +689,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def multiply(first_input, second_input):
 
-  the test passes. :ref:`it looks like booleans are numbers<booleans 3>`
+  the test passes. :ref:`it looks like booleans are numbers<booleans 3: values of True and False>`
 
 ----
 
@@ -1207,7 +1207,7 @@ you know
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 
-:ref:`Would you like to test if a boolean is an integer or a float?<booleans 2>`
+:ref:`Would you like to test if a boolean is an integer or a float?<booleans 2: test with bool>`
 
 -----
 

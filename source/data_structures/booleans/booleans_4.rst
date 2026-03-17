@@ -1,7 +1,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-booleans 4
+booleans 4: inheritance
 #################################################################################
 
 :ref:`Inheritance<family ties>` showed that a :ref:`class<what is a class?>` can have more than one parent, and the parents are not the same.

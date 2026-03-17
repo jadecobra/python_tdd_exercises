@@ -42,7 +42,7 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calcu
 booleans 3: tests
 *********************************************************************************
 
-the tests in ``booleans/tests/test_booleans.py`` from :ref:`booleans 3`
+the tests in ``booleans/tests/test_booleans.py`` from :ref:`booleans 3: values of True and False`
 
 .. literalinclude:: booleans/test_booleans_list_comprehensions.py
   :language: python

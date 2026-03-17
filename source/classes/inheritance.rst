@@ -1181,7 +1181,7 @@ you have gone through a lot of things and know
 * :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`what you can do with classes<what is a class?>`
 
-:ref:`Would you like to test if bool_ is an int_?<booleans 3>`
+:ref:`Would you like to test if bool_ is an int_?<booleans 3: values of True and False>`
 
 ----
 

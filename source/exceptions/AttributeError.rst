@@ -1160,7 +1160,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 * I add the :ref:`method<what is a function?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 23
     :emphasize-lines: 17-18
 
     class AClass():
