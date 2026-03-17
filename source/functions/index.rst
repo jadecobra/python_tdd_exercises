@@ -608,7 +608,7 @@ the test passes
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 16
     :emphasize-lines: 1
 
             self.assertEqual(1+8, 9)
