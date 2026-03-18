@@ -7,7 +7,7 @@ Tree: tests and solutions
 tests
 *********************************************************************************
 
-the code in ``tests/test_tree.py``
+the code from ``tests/test_tree.py``
 
 .. literalinclude:: tests/test_tree.py
   :language: python

@@ -7,7 +7,7 @@ TypeError: tests and solution
 TypeError tests
 *********************************************************************************
 
-the code in ``type_error/tests/test_type_error.py`` from :ref:`TypeError`
+the code from ``type_error/tests/test_type_error.py`` from :ref:`TypeError`
 
 .. literalinclude:: tests/test_type_error.py
   :language: python
@@ -29,7 +29,7 @@ the solution in ``type_error/src/type_error.py`` from :ref:`TypeError`
 TypeError with the Calculator tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`TypeError`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`TypeError`
 
 .. literalinclude:: calculator/tests/test_calculator_4.py
   :language: python

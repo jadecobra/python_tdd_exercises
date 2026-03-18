@@ -6,7 +6,7 @@ lists: tests and solutions
 lists tests
 *********************************************************************************
 
-the code in ``lists/tests/test_lists.py`` from :ref:`lists`
+the code from ``lists/tests/test_lists.py`` from :ref:`lists`
 
 .. literalinclude:: tests/test_lists.py
   :language: python
@@ -18,7 +18,7 @@ the code in ``lists/tests/test_lists.py`` from :ref:`lists`
 lists with the Calculator tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`lists`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`lists`
 
 .. literalinclude:: calculator/tests/test_calculator_5.py
   :language: python

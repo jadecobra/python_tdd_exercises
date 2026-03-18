@@ -8,7 +8,7 @@ how to make a calculator: tests and solutions
 how to make a calculator 1: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator`
 
 .. literalinclude:: calculator/tests/test_calculator_1.py
   :language: python
@@ -30,7 +30,7 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calcu
 how to make a calculator 2: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 2`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 2`
 
 .. literalinclude:: calculator/tests/test_calculator_2.py
   :language: python
@@ -42,7 +42,7 @@ the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a cal
 how to make a calculator 3: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 3`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 3`
 
 .. literalinclude:: calculator/tests/test_calculator_3.py
   :language: python
@@ -64,7 +64,7 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calcu
 how to make a calculator 4: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 4`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 4`
 
 .. literalinclude:: calculator/tests/test_calculator_4.py
   :language: python
@@ -87,7 +87,7 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calcu
 how to make a calculator 5: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 5`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 5`
 
 .. literalinclude:: calculator/tests/test_calculator_5.py
   :language: python
@@ -109,7 +109,7 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calcu
 how to make a calculator 6: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 6`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 6`
 
 .. literalinclude:: calculator/tests/test_calculator_6.py
   :language: python
@@ -131,7 +131,7 @@ the solutions in ``calculator/src/calculator.py`` from :ref:`how to make a calcu
 how to make a calculator 7: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 7`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 7`
 
 .. literalinclude:: calculator/tests/test_calculator_7.py
   :language: python
@@ -143,7 +143,7 @@ the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a cal
 how to make a calculator 8: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 8`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 8`
 
 .. literalinclude:: calculator/tests/test_calculator_8.py
   :language: python
@@ -155,13 +155,13 @@ the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a cal
 how to make a calculator 9: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator_website.py`` from :ref:`how to make a calculator 9`
+the code from ``calculator/tests/test_calculator_website.py`` from :ref:`how to make a calculator 9`
 
 .. literalinclude:: calculator/tests/test_calculator_website.py
   :language: python
   :linenos:
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 9`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 9`
 
 .. literalinclude:: calculator/tests/test_calculator_9.py
   :language: python
@@ -171,14 +171,14 @@ the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a cal
 how to make a calculator 9: solutions
 *********************************************************************************
 
-the code in ``calculator/src/calculator.py`` from :ref:`how to make a calculator 9`
+the code from ``calculator/src/calculator.py`` from :ref:`how to make a calculator 9`
 
 .. literalinclude:: calculator/solutions/calculator_9.py
   :language: python
   :linenos:
 
 
-the code in ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
+the code from ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
 
 .. literalinclude:: calculator/solutions/website.py
   :language: python
@@ -187,21 +187,88 @@ the code in ``calculator/src/website.py`` from :ref:`how to make a calculator 9`
 ----
 
 *********************************************************************************
-how to make a calculator 10: tests
+how to make a calculator 10: part 1: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_streamlit_calculator.py`` from :ref:`how to make a calculator 10`
+the code from ``calculator/tests/test_streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 1`
 
-.. literalinclude:: calculator/tests/test_streamlit_calculator.py
+.. literalinclude:: calculator/tests/test_streamlit_calculator_1.py
   :language: python
   :linenos:
 
 *********************************************************************************
-how to make a calculator 10: solutions
+how to make a calculator 10: part 1: solutions
 *********************************************************************************
 
-the code in ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10`
+the code from ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 1`
 
-.. literalinclude:: calculator/solutions/streamlit_calculator.py
+.. literalinclude:: calculator/solutions/streamlit_calculator_1.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+how to make a calculator 10: part 2: tests and solutions
+*********************************************************************************
+
+the code from ``calculator/tests/test_streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 2`
+
+.. literalinclude:: calculator/tests/test_streamlit_calculator_2.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
+how to make a calculator 10: part 2: solutions
+*********************************************************************************
+
+the code from ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 2`
+
+.. literalinclude:: calculator/solutions/streamlit_calculator_2.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+how to make a calculator 10: part 3: tests
+*********************************************************************************
+
+the code from ``calculator/tests/test_streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 3`
+
+.. literalinclude:: calculator/tests/test_streamlit_calculator_3.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
+how to make a calculator 10: part 3: solutions
+*********************************************************************************
+
+the code from ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 3`
+
+.. literalinclude:: calculator/solutions/streamlit_calculator_3.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+how to make a calculator 10: part 4: tests
+*********************************************************************************
+
+the code from ``calculator/tests/test_streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 4`
+
+.. literalinclude:: calculator/tests/test_streamlit_calculator_4.py
+  :language: python
+  :linenos:
+
+*********************************************************************************
+how to make a calculator 10: part 4: solutions
+*********************************************************************************
+
+the code from ``calculator/src/streamlit_calculator.py`` from :ref:`how to make a calculator 10: part 4`
+
+.. literalinclude:: calculator/solutions/streamlit_calculator_4.py
+  :language: python
+  :linenos:
+

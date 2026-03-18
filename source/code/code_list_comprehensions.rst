@@ -8,7 +8,7 @@ data structures: list comprehensions: tests and solutions
 list comprehensions tests
 *********************************************************************************
 
-the code in ``list_comprehensions/tests/test_list_comprehensions.py`` from :ref:`list comprehensions`
+the code from ``list_comprehensions/tests/test_list_comprehensions.py`` from :ref:`list comprehensions`
 
 .. literalinclude:: tests/test_list_comprehensions.py
   :language: python
@@ -20,7 +20,7 @@ the code in ``list_comprehensions/tests/test_list_comprehensions.py`` from :ref:
 how to make a calculator 6: tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 6`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to make a calculator 6`
 
 .. literalinclude:: calculator/tests/test_calculator_6.py
   :language: python

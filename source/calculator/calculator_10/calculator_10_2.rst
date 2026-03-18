@@ -4,6 +4,17 @@
 how to make a calculator 10: part 2
 #################################################################################
 
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_2.py
+  :language: python
+  :linenos:
 
 ----
 
@@ -2392,7 +2403,7 @@ I made a website using Streamlit_ with a :ref:`title<test_streamlit_calculator_t
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: part 2: tests>`
 
 ----
 
@@ -2404,11 +2415,11 @@ You now know how to:
 
 * Build a website with streamlit_
 * How to test the parts of the website
-* :ref:`How to add a title to the streamlit website<test_streamlit_calculator_title>`
-* :ref:`How to add a display to the streamlit website<test_streamlit_calculator_display>`
-* :ref:`How to add buttons to the streamlit website<test_streamlit_calculator_columns_and_buttons>`
-* :ref:`How to change the colors of the buttons<test_streamlit_calculator_operations_buttons>`
-* :ref:`How to show the numbers when a button is pressed<how to show the numbers when I click on them>`
+* :ref:`how to add a title to the streamlit website<test_streamlit_calculator_title>`
+* :ref:`how to add a display to the streamlit website<test_streamlit_calculator_display>`
+* :ref:`how to add buttons to the streamlit website<test_streamlit_calculator_columns_and_buttons>`
+* :ref:`how to change the colors of the buttons<test_streamlit_calculator_operations_buttons>`
+* :ref:`how to show something when a button is pressed<how to show the numbers when I click on them>`
 
 :ref:`Would you like to continue with adding buttons to the calculator?<how to make a calculator 10: part 3>`
 

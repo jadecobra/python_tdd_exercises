@@ -7,6 +7,18 @@ how to make a calculator 10: part 1
 ----
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_1.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 open the project
 *********************************************************************************
 
@@ -1081,6 +1093,14 @@ I made a website using Streamlit_ with a :ref:`title<test_streamlit_calculator_t
 * :ref:`How to add a title to a Streamlit Application<test_streamlit_calculator_title>`
 * :ref:`How to see the Streamlit Calculator Website<how to see the streamlit calculator website>`
 * :ref:`How to make a display for the application<test_streamlit_calculator_display>`
+
+----
+
+*************************************************************************************
+code from the chapter
+*************************************************************************************
+
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: part 1: tests>`
 
 ----
 

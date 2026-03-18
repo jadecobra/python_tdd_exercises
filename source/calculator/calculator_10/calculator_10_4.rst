@@ -4,6 +4,17 @@
 how to make a calculator 10: part 4
 #################################################################################
 
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_4.py
+  :language: python
+  :linenos:
 
 ----
 

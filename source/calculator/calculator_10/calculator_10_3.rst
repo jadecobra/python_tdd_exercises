@@ -9,6 +9,18 @@ I want the numbers to stay when I press a button so that I can make numbers that
 ----
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+These are the tests I have by the end of the chapter
+
+.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_3.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 open the project
 *********************************************************************************
 
@@ -72,7 +84,7 @@ open the project
 ----
 
 *********************************************************************************
-test_streamlit_calculator_state
+test_streamlit_session_state
 *********************************************************************************
 
 streamlit_ has a `session state object`_ that I can use to keep values in between button presses. They work the same as :ref:`class attributes<test_attribute_error_w_class_attributes>` and they are :ref:`dictionaries<what is a dictionary?>` - I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to them
@@ -99,7 +111,7 @@ I add a test for the `session state object`_, I want it to hold the number when 
                       'primary'
                   )
 
-      def test_streamlit_calculator_state(self):
+      def test_streamlit_session_state(self):
           self.assertIsNone(self.tester.session_state['number'])
 
 
@@ -150,7 +162,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 55
     :emphasize-lines: 2
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             self.assertIsNone(self.tester.session_state['number'], '0')
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -208,7 +220,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 55
     :emphasize-lines: 3-4
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             self.assertEqual(self.tester.session_state['number'], '0')
             self.tester.button('1').click().run()
             self.assertEqual(self.tester.session_state['number'], '0')
@@ -240,7 +252,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 55
     :emphasize-lines: 5-8
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             self.assertEqual(self.tester.session_state['number'], '0')
             self.tester.button('1').click().run()
             self.assertEqual(self.tester.session_state['number'], '01')
@@ -282,7 +294,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 55
     :emphasize-lines: 4, 8-10
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             self.assertEqual(self.tester.session_state['number'], '0')
             self.tester.button('1').click().run()
             self.assertEqual(self.tester.session_state['number'], '1')
@@ -336,14 +348,14 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
     class TestStreamlitCalculator(unittest.TestCase):
 
-* I use it in :ref:`test_streamlit_calculator_state`
+* I use it in :ref:`test_streamlit_session_state`
 
   .. code-block:: python
     :lineno-start: 56
     :emphasize-lines: 2, 4-6
     :emphasize-text: x
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -368,7 +380,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 56
     :emphasize-lines: 7
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -436,13 +448,13 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 what is a while loop?
 *********************************************************************************
 
-* I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while loop`_ to :ref:`test_streamlit_calculator_state`
+* I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while loop`_ to :ref:`test_streamlit_session_state`
 
   .. code-block:: python
     :lineno-start: 56
     :emphasize-lines: 6-9
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -474,7 +486,7 @@ what is a while loop?
     :lineno-start: 56
     :emphasize-lines: 25-31, 33-36
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -530,7 +542,7 @@ what is a while loop?
     :lineno-start: 56
     :emphasize-lines: 15-23
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -575,7 +587,7 @@ what is a while loop?
   .. code-block:: python
     :lineno-start: 56
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
 
@@ -607,7 +619,7 @@ what is a while loop?
     :emphasize-lines: 5-7, 9, 11-13, 21, 25
     :emphasize-text: expectation
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
 
@@ -901,14 +913,14 @@ test_streamlit_calculator_w_decimals
 
         def setUp(self):
 
-* I use the new :ref:`method<what is a function?>` in :ref:`test_streamlit_calculator_state`
+* I use the new :ref:`method<what is a function?>` in :ref:`test_streamlit_session_state`
 
   .. code-block:: python
     :lineno-start: 59
     :emphasize-lines: 9-10 ,18-22
     :emphasize-text: press_button
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
 
@@ -944,7 +956,7 @@ test_streamlit_calculator_w_decimals
   .. code-block:: python
     :lineno-start: 59
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
 
@@ -2509,7 +2521,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     def add_buttons_to_column_2(column_2, display):
 
-That was a lot! I am going to take a nap. I will work on the operations after the nap.
+That was a lot! I am going to take a nap. I will work on the operations after that.
 
 ----
 
@@ -2558,20 +2570,24 @@ close the project
 review
 *********************************************************************************
 
-I now have **three** different versions of the same calculator:
+I made a website using Streamlit_ with a
 
-* Pure Python (chapters 1–8)
-* Flask website (chapter 9)
-* **Streamlit web app** (chapter 10) — the fastest and most beautiful version
+* :ref:`title<test_streamlit_calculator_title>`
+* :ref:`display<test_streamlit_calculator_display>`
+* :ref:`buttons<test_streamlit_calculator_columns_and_buttons>`
 
-The core calculator code never changed. All my tests still protect it.
-This is the real power of Test-Driven Development.
+I used :ref:`while loops<what is a while loop?>` and added tests for
+
+* :ref:`the session state object<test_streamlit_session_state>`
+* :ref:`decimals<test_streamlit_calculator_w_decimals>`
+* :ref:`backspace<test_streamlit_calculator_w_backspace>`
+* :ref:`+/-<test_streamlit_calculator_w_plus_minus>`
 
 *************************************************************************************
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: part 3: tests>`
 
 ----
 
@@ -2579,13 +2595,19 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-You have completed an amazing journey from pure functions to real web applications!
-
 You now know how to:
 
-* Build programs with Test-Driven Development
-* Turn them into Flask websites
-* Turn them into beautiful Streamlit apps
+* Build a website with streamlit_
+* How to test the parts of the website
+* :ref:`how to add a title to the streamlit website<test_streamlit_calculator_title>`
+* :ref:`how to add a display to the streamlit website<test_streamlit_calculator_display>`
+* :ref:`how to add buttons to the streamlit website<test_streamlit_calculator_columns_and_buttons>`
+* :ref:`how to change the colors of the buttons<test_streamlit_calculator_operations_buttons>`
+* :ref:`how to show something when a button is pressed<how to show the numbers when I click on them>`
+* :ref:`how to use the session state object<test_streamlit_>`
+*
+
+:ref:`Would you like to continue with adding buttons to the calculator?<how to make a calculator 10: part 3>`
 
 -----
 

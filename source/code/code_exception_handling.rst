@@ -7,7 +7,7 @@ how to handle Exceptions (Errors): tests and solutions
 Exception Handling tests
 *********************************************************************************
 
-the code in ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+the code from ``exceptions/tests/test_exceptions.py`` from :ref:`how to handle Exceptions (Errors) in programs`
 
 .. literalinclude:: tests/test_exceptions.py
   :language: python
@@ -29,7 +29,7 @@ the solutions in ``exceptions/src/exceptions.py`` from :ref:`how to handle Excep
 Exception Handling with the Calculator tests
 *********************************************************************************
 
-the code in ``calculator/tests/test_calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
+the code from ``calculator/tests/test_calculator.py`` from :ref:`how to handle Exceptions (Errors) in programs`
 
 .. literalinclude:: calculator/tests/test_calculator_3.py
   :language: python

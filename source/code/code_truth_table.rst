@@ -7,7 +7,7 @@ truth table: tests and solutions
 Nullary and Unary Operations tests
 *********************************************************************************
 
-the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Nullary and Unary Operations`
+the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Nullary and Unary Operations`
 
 .. literalinclude:: truth_table/tests/test_nullary_unary.py
   :language: python
@@ -19,7 +19,7 @@ the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table: Nullary
 Binary Operations tests
 *********************************************************************************
 
-the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table`
+the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table`
 
 .. literalinclude:: truth_table/tests/test_binary.py
   :language: python
@@ -31,7 +31,7 @@ the code in ``truth_table/tests/test_binary.py`` from :ref:`truth table`
 Booleans 2 tests
 *********************************************************************************
 
-the code in ``booleans/tests/test_booleans.py`` from :ref:`booleans 2: test with bool`
+the code from ``booleans/tests/test_booleans.py`` from :ref:`booleans 2: test with bool`
 
 .. literalinclude:: booleans/test_booleans_truth_table.py
   :language: python

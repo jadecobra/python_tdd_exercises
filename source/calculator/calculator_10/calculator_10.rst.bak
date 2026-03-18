@@ -2721,7 +2721,7 @@ I want the calculator to show the number when I click on a button
 ----
 
 *********************************************************************************
-test_streamlit_calculator_state
+test_streamlit_session_state
 *********************************************************************************
 
 streamlit_ has a `session state object`_ that I can use to keep values in between button presses. They work the same as :ref:`class attributes<test_attribute_error_w_class_attributes>` and they are :ref:`dictionaries<what is a dictionary?>` - I can add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` to them
@@ -2748,7 +2748,7 @@ I add a test for the `session state object`_, I want it to hold the number when 
                       'primary'
                   )
 
-      def test_streamlit_calculator_state(self):
+      def test_streamlit_session_state(self):
           self.assertIsNone(self.tester.session_state['number'])
 
 
@@ -2797,7 +2797,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 107
     :emphasize-lines: 2
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             self.assertEqual(self.tester.session_state['number'], '0')
 
   the test passes
@@ -2838,7 +2838,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 54
     :emphasize-lines: 3
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             self.assertEqual(self.tester.session_state['number'], '0')
             self.tester.button('1').click().run()
             self.assertEqual(self.tester.session_state['number'], '0')
@@ -2909,7 +2909,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 54
     :emphasize-lines: 4, 8-10
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             self.assertEqual(self.tester.session_state['number'], '0')
             self.tester.button('1').click().run()
             self.assertEqual(self.tester.session_state['number'], '1')
@@ -2963,14 +2963,14 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 
     class TestStreamlitCalculator(unittest.TestCase):
 
-* I use it in :ref:`test_streamlit_calculator_state`
+* I use it in :ref:`test_streamlit_session_state`
 
   .. code-block:: python
     :lineno-start: 55
     :emphasize-lines: 2, 4-6
     :emphasize-text: x
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -2995,7 +2995,7 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
     :lineno-start: 55
     :emphasize-lines: 7
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -3063,13 +3063,13 @@ the terminal_ shows :ref:`KeyError<test_key_error>`
 what is a while loop?
 *********************************************************************************
 
-* I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while statement`_ to :ref:`test_streamlit_calculator_state`
+* I can use a `while loop`_ to make sure that ``x`` is never ``0``, since the ``session_state['number']`` is always ``0`` at the beginning. I add a `while statement`_ to :ref:`test_streamlit_session_state`
 
   .. code-block:: python
     :lineno-start: 55
     :emphasize-lines: 6-9
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -3134,7 +3134,7 @@ what is a while loop?
     :lineno-start: 108
     :emphasize-lines: 4, 14-22
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             # self.assertEqual(self.tester.session_state['number'], '0')
             # self.tester.button('1').click().run()
@@ -3165,7 +3165,7 @@ what is a while loop?
   .. code-block:: python
     :lineno-start: 55
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             x = random.choice(numbers)
@@ -3193,7 +3193,7 @@ what is a while loop?
     :emphasize-lines: 4-6, 8, 9-12, 19, 22
     :emphasize-text: expectation
 
-        def test_streamlit_calculator_state(self):
+        def test_streamlit_session_state(self):
             numbers = '0123456789'
             self.assertEqual(self.tester.session_state['number'], '0')
             expectation = random.choice(numbers)
