@@ -71,20 +71,22 @@ you can continue with :ref:`Linux/Windows Subsystem for Linux requirements`.
 
 ----
 
-.. NOTE::
+*********************************************************************************
+how to enable virtualization from the BIOS
+*********************************************************************************
 
-  In some cases your `Windows Subsystem for Linux`_ installation might succeed and you will have errors with Debian_, you might have to enable virtualization from your BIOS, here is how to do that
+In some cases your `Windows Subsystem for Linux`_ installation might succeed and you will have errors with Debian_, you might have to enable virtualization from your BIOS, here is how to do that
 
-  * restart your computer
-  * as soon as it restarts, press the key to enter setup mode, this varies by manufacturer but is one of these options
+* restart your computer
+* as soon as it restarts, press the key to enter setup mode, this varies by manufacturer but is one of these options
 
-    - Esc
-    - F2
-    - F10
-    - F12
-    - Alternately you can hold ``shift`` when your computer is restarting to enter ``Windows Recovery Mode`` then select ``UEFI Firmware Settings``
+  - Esc
+  - F2
+  - F10
+  - F12
+  - Alternately you can hold ``shift`` when your computer is restarting to enter ``Windows Recovery Mode`` then select ``UEFI Firmware Settings``
 
-  * In BIOS mode select any variation of ``System Configuration`` and Enable ``Virtualization``
+* In BIOS mode select any variation of ``System Configuration`` and Enable ``Virtualization``
 
 ----
 

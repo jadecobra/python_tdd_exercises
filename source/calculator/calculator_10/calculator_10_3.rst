@@ -2230,7 +2230,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
-* I add a new :ref:`function<what is a function?>` for decimals
+* I add a new :ref:`function<what is a function?>` to make decimal numbers
 
   .. code-block:: python
     :lineno-start: 24
@@ -2239,7 +2239,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     def handle_decimals(display, number):
         if streamlit.session_state['number'].count('.') == 0:
             streamlit.session_state['number'] += number
-        show_state(display)
+        show_number(display)
 
 
     def add_decimal():
@@ -2249,34 +2249,43 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     def add_number_to_state(number):
 
-* I try the new :ref:`function<what is a function?>` with the ``.`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* I use the new :ref:`function<what is a function?>` with the ``.`` button in the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 6-8
+    :lineno-start: 92
+    :emphasize-lines: 18-20
 
+    def add_buttons_to_column_3(column_3, display):
         column_3.button(
-            '3', key='3', width='stretch', on_click=on_click,
+            label='AC', key='AC', width='stretch', type='primary',
+        )
+        column_3.button(
+            label='9', key='9', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '9'],
+        )
+        column_3.button(
+            label='6', key='6', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '6'],
+        )
+        column_3.button(
+            label='3', key='3', width='stretch', on_click=on_click,
             args=[add_number_to_state, display, '3'],
         )
         column_3.button(
-            '.', key='.', width='stretch', on_click=on_click,
+            label='.', key='.', width='stretch', on_click=on_click,
             # on_click=handle_decimals, args=[display, '.'],
-            args=[add_decimal, display],
-        )
-
-        operations.button(
-            '/', key='/', width='stretch', type='primary',
+            args=[add_decimal, display]
         )
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
-    FAILED test_streamlit_calculator_backspace - KeyError: 'I'
-    FAILED test_streamlit_calculator_w_decimals - KeyError: '2'
+    FAILED ... - KeyError: 'I'
+    FAILED ... - KeyError: '2'
+    FAILED ... - KeyError: '0'
 
-  and shows :ref:`TypeError<what causes TypeError?>`
+  and :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2290,62 +2299,75 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     def on_click(function, display, *value):
         function(*value)
-        show_state(display)
+        show_number(display)
+
+
+    def add_buttons_to_column_1(column_1, display):
 
   the test passes
 
-* I remove the commented line
+* I remove the commented line from the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 92
 
+    def add_buttons_to_column_3(column_3, display):
         column_3.button(
-            '.', key='.', width='stretch', on_click=on_click,
-            args=[add_decimal, display],
+            label='AC', key='AC', width='stretch', type='primary',
+        )
+        column_3.button(
+            label='9', key='9', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '9'],
+        )
+        column_3.button(
+            label='6', key='6', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '6'],
+        )
+        column_3.button(
+            label='3', key='3', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '3'],
+        )
+        column_3.button(
+            label='.', key='.', width='stretch', on_click=on_click,
+            args=[add_decimal, display]
         )
 
-* I remove the ``handle_decimals`` :ref:`function<what is a function?>`
+
+    def add_buttons_to_column_4(column_4):
+
+* I remove the ``handle_decimals`` :ref:`function<what is a function?>` because it is no longer used
 
   .. code-block:: python
     :lineno-start: 18
 
     def backspace(display, number):
-        streamlit.session_state['number'] = \
-            streamlit.session_state['number'][:-1]
-        show_state(display)
+        number = streamlit.session_state['number'][:-1]
+        streamlit.session_state['number'] = number
+        show_number(display)
 
 
     def add_decimal():
-        if streamlit.session_state['number'].count('.') == 0:
-            streamlit.session_state['number'] += '.'
 
 ----
 
-* I change the ``on_click`` and ``args`` parameters for the ``<-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* I change the ``on_click`` and ``args`` parameters for the ``<-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 41
-    :emphasize-lines: 6-8
+    :emphasize-lines: 3-5
 
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
+    def add_buttons_to_column_1(column_1, display):
         column_1.button(
-            '<-', key='<-', width='stretch', on_click=on_click,
+            label='<-', key='<-', width='stretch', on_click=on_click,
             # on_click=backspace, args=[display, '<-'],
             args=[backspace, display],
-        )
-        column_1.button(
-            '7', key='7', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '7'],
         )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'MN.OPQRSTUVWXYZABC' != 'MN.OPQRSTUVWXYZAB'
+    AssertionError: 'MNO.PQRSTUVWXYZABCD' != 'MNO.PQRSTUVWXYZABC'
 
   and :ref:`TypeError<what causes TypeError?>`
 
@@ -2361,20 +2383,20 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     # def backspace(display, number):
     def backspace():
-        streamlit.session_state['number'] = \
-            streamlit.session_state['number'][:-1]
-        # show_state(display)
+        number = streamlit.session_state['number'][:-1]
+        streamlit.session_state['number'] = number
+        # show_number(display)
 
   the test passes
 
-* I remove the commented lines in the ``backspace`` :ref:`function<what is a function?>`
+* I remove the commented lines from the ``backspace`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 18
 
     def backspace():
-        streamlit.session_state['number'] = \
-            streamlit.session_state['number'][:-1]
+        number = streamlit.session_state['number'][:-1]
+        streamlit.session_state['number'] = number
 
 
     def add_decimal():
