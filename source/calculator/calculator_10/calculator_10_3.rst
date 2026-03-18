@@ -2214,7 +2214,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     def add_buttons_to_column_4(column_4):
 
-* I remove the ``show`` :ref:`function<what is a function?>` because I do not use it anymore
+* I remove the ``show`` :ref:`function<what is a function?>` because it is no longer used
 
   .. code-block:: python
     :lineno-start: 30
@@ -2403,24 +2403,34 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
 ----
 
-* I change the ``on_click`` and ``args`` parameters for the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* I change the ``on_click`` and ``args`` parameters for the ``+/-`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 6-8
+    :lineno-start: 40
+    :emphasize-lines: 20-22
 
+    def add_buttons_to_column_1(column_1, display):
         column_1.button(
-            '1', key='1', width='stretch', on_click=on_click,
+            label='<-', key='<-', width='stretch', on_click=on_click,
+            # on_click=backspace, args=[display, '<-'],
+            args=[backspace, display],
+        )
+        column_1.button(
+            label='7', key='7', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '7'],
+        )
+        column_1.button(
+            label='4', key='4', width='stretch', on_click=on_click,
+            args=[add_number_to_state, display, '4'],
+        )
+        column_1.button(
+            label='1', key='1', width='stretch', on_click=on_click,
             args=[add_number_to_state, display, '1'],
         )
         column_1.button(
-            '+/-', key='+/-', width='stretch', on_click=on_click,
+            label='+/-', key='+/-', width='stretch', on_click=on_click,
             # on_click=plus_minus, args=[display, '+/-'],
-            args=[plus_minus, display]
-        )
-
-        column_2.button(
-            'C', key='C', width='stretch', type='primary',
+            args=[plus_minus, display],
         )
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2428,9 +2438,9 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
   .. code-block:: python
     :emphasize-text: -
 
-    AssertionError: '1234567890' != '-1234567890'
+    AssertionError: '963.0258741' != '-963.0258741'
 
-  and shows :ref:`TypeError<what causes TypeError?>`
+  and :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2446,15 +2456,15 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     def plus_minus():
         if streamlit.session_state['number'].startswith('-'):
             number = streamlit.session_state['number'][1:]
-        if not streamlit.session_state['number'].startswith('-'):
+        else:
             number = '-' + streamlit.session_state['number']
-
         streamlit.session_state['number'] = number
-        # show_state(display)
+
+        # show_number(display)
 
   the test passes
 
-* I remove the commented lines in the ``plus_minus`` :ref:`function<what is a function?>`
+* I remove the commented lines from the ``plus_minus`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 8
@@ -2462,388 +2472,44 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
     def plus_minus():
         if streamlit.session_state['number'].startswith('-'):
             number = streamlit.session_state['number'][1:]
-        if not streamlit.session_state['number'].startswith('-'):
+        else:
             number = '-' + streamlit.session_state['number']
         streamlit.session_state['number'] = number
 
 
     def backspace():
 
-* I remove the commented line from the ``+/-`` button in the ``add_buttons`` :ref:`function<what is a function?>`
+* I remove the commented lines from the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 42
 
-        column_1.button(
-            '<-', key='<-', width='stretch', on_click=on_click,
-            args=[backspace, display],
-        )
-
-----
-
-* That was a lot especially when all the numbers have to change. I add a :ref:`function<what is a function?>` for the buttons in the first column
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 6-26
-
-    def on_click(function, display, *value):
-        function(*value)
-        show_state(display)
-
-
     def add_buttons_to_column_1(column_1, display):
         column_1.button(
-            '<-', key='<-', width='stretch', on_click=on_click,
+            label='<-', key='<-', width='stretch', on_click=on_click,
             args=[backspace, display],
         )
         column_1.button(
-            '7', key='7', width='stretch', on_click=on_click,
+            label='7', key='7', width='stretch', on_click=on_click,
             args=[add_number_to_state, display, '7'],
         )
         column_1.button(
-            '4', key='4', width='stretch', on_click=on_click,
+            label='4', key='4', width='stretch', on_click=on_click,
             args=[add_number_to_state, display, '4'],
         )
         column_1.button(
-            '1', key='1', width='stretch', on_click=on_click,
+            label='1', key='1', width='stretch', on_click=on_click,
             args=[add_number_to_state, display, '1'],
         )
         column_1.button(
-            '+/-', key='+/-', width='stretch', on_click=on_click,
-            args=[plus_minus, display]
-        )
-
-
-    def add_buttons():
-
-* I call the new :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 5-25
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-        # column_1.button(
-        #     '<-', key='<-', width='stretch', on_click=on_click,
-        #     args=[backspace, display],
-        # )
-        # column_1.button(
-        #     '7', key='7', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '7'],
-        # )
-        # column_1.button(
-        #     '4', key='4', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '4'],
-        # )
-        # column_1.button(
-        #     '1', key='1', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '1'],
-        # )
-        # column_1.button(
-        #     '+/-', key='+/-', width='stretch', on_click=on_click,
-        #     args=[plus_minus, display]
-        # )
-
-        column_2.button(
-            'C', key='C', width='stretch', type='primary',
-        )
-
-  the tests are still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 61
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-
-        column_2.button(
-            'C', key='C', width='stretch', type='primary',
-        )
-
-* I add a :ref:`function<what is a function?>` for adding buttons to the second column
-
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 24-43
-
-    def add_buttons_to_column_1(column_1, display):
-        column_1.button(
-            '<-', key='<-', width='stretch', on_click=on_click,
-            args=[backspace, display],
-        )
-        column_1.button(
-            '7', key='7', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '7'],
-        )
-        column_1.button(
-            '4', key='4', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '4'],
-        )
-        column_1.button(
-            '1', key='1', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '1'],
-        )
-        column_1.button(
-            '+/-', key='+/-', width='stretch', on_click=on_click,
-            args=[plus_minus, display]
+            label='+/-', key='+/-', width='stretch', on_click=on_click,
+            args=[plus_minus, display],
         )
 
 
     def add_buttons_to_column_2(column_2, display):
-        column_2.button(
-            'C', key='C', width='stretch', type='primary',
-        )
-        column_2.button(
-            '8', key='8', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '8'],
-        )
-        column_2.button(
-            '5', key='5', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '5'],
-        )
-        column_2.button(
-            '2', key='2', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '2'],
-        )
-        column_2.button(
-            '0', key='0', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '0'],
-        )
 
-
-    def add_buttons():
-
-* I add a call to ``add_buttons_to_column_2`` in the ``add_buttons`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 6, 8-26
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-        add_buttons_to_column_2(column_2, display)
-
-        # column_2.button(
-        #     'C', key='C', width='stretch', type='primary',
-        # )
-        # column_2.button(
-        #     '8', key='8', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '8'],
-        # )
-        # column_2.button(
-        #     '5', key='5', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '5'],
-        # )
-        # column_2.button(
-        #     '2', key='2', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '2'],
-        # )
-        # column_2.button(
-        #     '0', key='0', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '0'],
-        # )
-
-        column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
-        )
-
-  still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 83
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-        add_buttons_to_column_2(column_2, display)
-
-        column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
-        )
-
-* I add a :ref:`function<what is a function?>` to add buttons to the third column
-
-  .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 1-20
-
-    def add_buttons_to_column_3(column_3, display):
-        column_3.button(
-            'AC', key='AC', width='stretch', type='primary',
-        )
-        column_3.button(
-            '9', key='9', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '9'],
-        )
-        column_3.button(
-            '6', key='6', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '6'],
-        )
-        column_3.button(
-            '3', key='3', width='stretch', on_click=on_click,
-            args=[add_number_to_state, display, '3'],
-        )
-        column_3.button(
-            '.', key='.', width='stretch', on_click=on_click,
-            args=[add_decimal, display],
-        )
-
-
-    def add_buttons():
-
-* I use the ``add_buttons_to_column_3`` :ref:`function<what is a function?>` in the ``add_columns`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 7, 9-27
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-        add_buttons_to_column_2(column_2, display)
-        add_buttons_to_column_3(column_3, display)
-
-        # column_3.button(
-        #     'AC', key='AC', width='stretch', type='primary',
-        # )
-        # column_3.button(
-        #     '9', key='9', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '9'],
-        # )
-        # column_3.button(
-        #     '6', key='6', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '6'],
-        # )
-        # column_3.button(
-        #     '3', key='3', width='stretch', on_click=on_click,
-        #     args=[add_number_to_state, display, '3'],
-        # )
-        # column_3.button(
-        #     '.', key='.', width='stretch', on_click=on_click,
-        #     args=[add_decimal, display],
-        # )
-
-        operations.button(
-            '/', key='/', width='stretch', type='primary',
-        )
-
-  green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 105
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-        add_buttons_to_column_2(column_2, display)
-        add_buttons_to_column_3(column_3, display)
-
-        operations.button(
-            '/', key='/', width='stretch', type='primary',
-        )
-
-* I add a :ref:`function<what is a function?>` for the operations column
-
-  .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 1-16
-
-    def add_buttons_to_column_4(column_4):
-        column_4.button(
-            '/', key='/', width='stretch', type='primary',
-        )
-        column_4.button(
-            'X', key='X', width='stretch', type='primary',
-        )
-        column_4.button(
-            r'\-', key=r'\-', width='stretch', type='primary',
-        )
-        column_4.button(
-            r'\+', key=r'\+', width='stretch', type='primary',
-        )
-        column_4.button(
-            '=', key='=', width='stretch', type='primary',
-        )
-
-
-    def add_buttons():
-
-* I use the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`functions<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 123
-    :emphasize-lines: 8, 10-24
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-        add_buttons_to_column_2(column_2, display)
-        add_buttons_to_column_3(column_3, display)
-        add_buttons_to_column_4(operations)
-
-        # operations.button(
-        #     '/', key='/', width='stretch', type='primary',
-        # )
-        # operations.button(
-        #     'X', key='X', width='stretch', type='primary',
-        # )
-        # operations.button(
-        #     r'\-', key=r'\-', width='stretch', type='primary',
-        # )
-        # operations.button(
-        #     r'\+', key=r'\+', width='stretch', type='primary',
-        # )
-        # operations.button(
-        #     '=', key='=', width='stretch', type='primary',
-        # )
-
-    def main():
-
-  still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 123
-
-    def add_buttons():
-        display = streamlit.container(border=True)
-        column_1, column_2, column_3, operations = streamlit.columns(4)
-
-        add_buttons_to_column_1(column_1, display)
-        add_buttons_to_column_2(column_2, display)
-        add_buttons_to_column_3(column_3, display)
-        add_buttons_to_column_4(operations)
-
-
-    def main():
-
-  okay! Enough playing, time to do the operations.
+That was a lot! I am going to take a nap. I will work on the operations after the nap.
 
 ----
 
@@ -2851,14 +2517,40 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 close the project
 *********************************************************************************
 
-* I close all files
-* I click in the terminal_, then use :kbd:`q` to leave the tests
-* I `change directory`_ to the parent
+* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
-  .. code-block:: shell
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 
