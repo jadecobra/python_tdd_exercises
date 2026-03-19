@@ -1442,18 +1442,60 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
   this test is long and will get longer when I add the other two operations
 
-* I change the parent of ``TestStreamlitCalculator`` so I can use the ``calculator_tests`` :ref:`dictionary<what is a dictionary?>`
+* I make a :ref:`dictionary<what is a dictionary?>` for the operations in :ref:`test_streamlit_calculator_operations`
 
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 2-7
 
+    def test_streamlit_calculator_operations(self):
+        arithmetic_operations = {
+            r'\+': 'add',
+            r'\-': 'subtract',
+            'X': 'multiply',
+            '/': 'divide'
+        }
 
+        first_number = '1'
+        second_number = '2'
 
+* I use a :ref:`for loop<what is a for loop?>` with the :ref:`dictionary<what is a dictionary?>`
 
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 12-19
 
+        def test_streamlit_calculator_operations(self):
+            arithmetic_operations = {
+                r'\+': 'add',
+                r'\-': 'subtract',
+                'X': 'multiply',
+                '/': 'divide'
+            }
 
+            first_number = '1'
+            second_number = '2'
 
+            for operation in arithmetic_operations:
+                with self.subTest(operation=operation):
+                    self.press_button(first_number)
+                    self.press_button(operation)
+                    self.assertEqual(
+                        self.tester.session_state['first_number'],
+                        'BOOM!!!'
+                    )
 
+            operation = r'\+'
 
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
+    SUBFAILED(operation='\\+') ... - AssertionError: '1' != 'BOOM!!!'
+    SUBFAILED(operation='\\-') ... - AssertionError: '1' != 'BOOM!!!'
+    SUBFAILED(operation='X') ... - AssertionError: '1' != 'BOOM!!!'
+    SUBFAILED(operation='/') ... - AssertionError: '1' != 'BOOM!!!'
+    FAILED ... - AssertionError: '111' != '1'
+
+* I change the expectation
 
 
   the terminal_ shows :ref:`KeyError<test_key_error>`

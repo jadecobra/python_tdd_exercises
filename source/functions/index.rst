@@ -2645,7 +2645,7 @@ I add another :ref:`assertion<what is an assertion?>` to see what happens when I
 
           self.assertEqual(
               src.functions.w_unknown_arguments(0, 1, 2, 3),
-              ((0, 1, 2, 3))
+              ((0, 1, 2, 3), {})
           )
           self.assertEqual(
               src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
