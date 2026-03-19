@@ -1939,7 +1939,7 @@ the test passes
 
     def add_buttons_to_column_4(column_4):
         column_4.button(
-            label='/', key='/', width='stretch', type='primary'
+            label='/', key='/', width='stretch', type='primary',
         )
         column_4.button(label='X', key='X', width='stretch')
         column_4.button(label=r'\-', key=r'\-', width='stretch')
@@ -1989,7 +1989,7 @@ the test passes
 
     def add_buttons_to_column_4(column_4):
         column_4.button(
-            label='/', key='/', width='stretch', type='primary'
+            label='/', key='/', width='stretch', type='primary',
         )
         column_4.button(
             label='X', key='X', width='stretch', type='primary',

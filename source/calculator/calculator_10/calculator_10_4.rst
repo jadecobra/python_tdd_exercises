@@ -555,7 +555,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def add_buttons_to_column_4(column_4):
         column_4.button(
-            label='/', key='/', width='stretch', type='primary'
+            label='/', key='/', width='stretch', type='primary',
         )
         column_4.button(
             label='X', key='X', width='stretch', type='primary',
@@ -1008,7 +1008,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def add_buttons_to_column_4(column_4, display):
         column_4.button(
-            label='/', key='/', width='stretch', type='primary'
+            label='/', key='/', width='stretch', type='primary',
         )
         column_4.button(
             label='X', key='X', width='stretch', type='primary',
@@ -1103,7 +1103,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def add_buttons_to_column_4(column_4, display):
         column_4.button(
-            label='/', key='/', width='stretch', type='primary'
+            label='/', key='/', width='stretch', type='primary',
         )
         column_4.button(
             label='X', key='X', width='stretch', type='primary',
@@ -1463,7 +1463,208 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
   .. code-block:: python
     :lineno-start: 151
-    :emphasize-lines: 12-19
+    :emphasize-lines: 12-15, 17-20
+
+        def test_streamlit_calculator_operations(self):
+            arithmetic_operations = {
+                r'\+': 'add',
+                r'\-': 'subtract',
+                'X': 'multiply',
+                '/': 'divide'
+            }
+
+            first_number = '1'
+            second_number = '2'
+
+            for operation in arithmetic_operations:
+                with self.subTest(operation=operation):
+                    self.press_button(first_number)
+                    self.press_button(operation)
+
+                    self.assertEqual(
+                        self.tester.session_state['first_number'],
+                        'BOOM!!!'
+                    )
+
+            operation = r'\+'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='\\+') ... - AssertionError: '1' != 'BOOM!!!'
+    SUBFAILED(operation='\\-') ... - AssertionError: '1' != 'BOOM!!!'
+    SUBFAILED(operation='X') ... - AssertionError: '1' != 'BOOM!!!'
+    SUBFAILED(operation='/') ... - AssertionError: '1' != 'BOOM!!!'
+    FAILED ... - AssertionError: '111' != '1'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 166
+    :emphasize-lines: 3
+
+                    self.assertEqual(
+                        self.tester.session_state['first_number'],
+                        first_number
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: '111' != '1'
+
+* I reset the calculator with the ``AC`` button
+
+  .. code-block:: python
+    :lineno-start: 167
+    :emphasize-lines: 6
+
+                    self.assertEqual(
+                        self.tester.session_state['first_number'],
+                        first_number
+                    )
+
+                    self.press_button('AC')
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for the operation
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 22-25
+
+        def test_streamlit_calculator_operations(self):
+            arithmetic_operations = {
+                r'\+': 'add',
+                r'\-': 'subtract',
+                'X': 'multiply',
+                '/': 'divide'
+            }
+
+            first_number = '1'
+            second_number = '2'
+
+            for operation in arithmetic_operations:
+                with self.subTest(operation=operation):
+                    self.press_button(first_number)
+                    self.press_button(operation)
+
+                    self.assertEqual(
+                        self.tester.session_state['first_number'],
+                        first_number
+                    )
+
+                    self.assertEqual(
+                        self.tester.session_state['operation'],
+                        'BOOM!!!'
+                    )
+
+                    self.press_button('AC')
+
+            operation = r'\+'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='\\+') ... - AssertionError: '\\+' != 'BOOM!!!'
+    SUBFAILED(operation='\\-') ... - AssertionError: '\\-' != 'BOOM!!!'
+    SUBFAILED(operation='X') ... - AssertionError: '\\-' != 'BOOM!!!'
+    SUBFAILED(operation='/') ... - AssertionError: '\\-' != 'BOOM!!!'
+    FAILED ... - AssertionError: '111' != '1'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 171
+    :emphasize-lines: 3
+
+                    self.assertEqual(
+                        self.tester.session_state['operation'],
+                        operation
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='X') ... - AssertionError: '\\-' != 'X'
+    SUBFAILED(operation='/') ... - AssertionError: '\\-' != '/'
+    FAILED ... - AssertionError: '111' != '1'
+
+* I add values for the ``on_click`` and ``args`` parameters to the ``X`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 140
+    :emphasize-lines: 7
+
+    def add_buttons_to_column_4(column_4, display):
+        column_4.button(
+            label='/', key='/', width='stretch', type='primary',
+        )
+        column_4.button(
+            label='X', key='X', width='stretch', type='primary',
+            on_click=on_click, args=[first_number, display, 'X'],
+        )
+        column_4.button(
+            label=r'\-', key=r'\-', width='stretch', type='primary',
+            on_click=on_click, args=[first_number, display, r'\-'],
+        )
+        column_4.button(
+            label=r'\+', key=r'\+', width='stretch', type='primary',
+            on_click=on_click, args=[first_number, display, r'\+'],
+        )
+        column_4.button(
+            label='=', key='=', width='stretch', type='primary',
+            on_click=on_click, args=[calculate, display],
+        )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='/') ... - AssertionError: 'X' != '/'
+    FAILED ... - AssertionError: '11' != '1'
+
+* I add values for the ``on_click`` and ``args`` parameters to the ``/`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+
+    def add_buttons_to_column_4(column_4, display):
+        column_4.button(
+            label='/', key='/', width='stretch', type='primary',
+            on_click=on_click, args=[first_number, display, '/'],
+        )
+        column_4.button(
+            label='X', key='X', width='stretch', type='primary',
+            on_click=on_click, args=[first_number, display, 'X'],
+        )
+        column_4.button(
+            label=r'\-', key=r'\-', width='stretch', type='primary',
+            on_click=on_click, args=[first_number, display, r'\-'],
+        )
+        column_4.button(
+            label=r'\+', key=r'\+', width='stretch', type='primary',
+            on_click=on_click, args=[first_number, display, r'\+'],
+        )
+        column_4.button(
+            label='=', key='=', width='stretch', type='primary',
+            on_click=on_click, args=[calculate, display],
+        )
+
+
+    def main():
+
+  the test passes
+
+* I add a button press for the second number and ``=``, then an :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 29-32
 
         def test_streamlit_calculator_operations(self):
             arithmetic_operations = {
@@ -1482,160 +1683,170 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                     self.press_button(operation)
                     self.assertEqual(
                         self.tester.session_state['first_number'],
+                        first_number
+                    )
+
+                    self.assertEqual(
+                        self.tester.session_state['operation'],
+                        operation
+                    )
+
+                    self.press_button(second_number)
+                    self.press_button('=')
+
+                    self.assertEqual(
+                        self.tester.session_state['second_number'],
                         'BOOM!!!'
                     )
 
-            operation = r'\+'
+                    self.press_button('AC')
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
-    SUBFAILED(operation='\\+') ... - AssertionError: '1' != 'BOOM!!!'
-    SUBFAILED(operation='\\-') ... - AssertionError: '1' != 'BOOM!!!'
-    SUBFAILED(operation='X') ... - AssertionError: '1' != 'BOOM!!!'
-    SUBFAILED(operation='/') ... - AssertionError: '1' != 'BOOM!!!'
-    FAILED ... - AssertionError: '111' != '1'
+  .. code-block:: python
+
+    SUBFAILED(operation='\\+') ... - AssertionError: '2' != 'BOOM!!!'
+    SUBFAILED(operation='\\-') ... - AssertionError: '3.01' != '1'
+    SUBFAILED(operation='X') ... - AssertionError: '2' != 'BOOM!!!'
+
+  and :ref:`KeyError<test_key_error>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='/') t... - KeyError: '1'
+    FAILED ... - KeyError: '1'
 
 * I change the expectation
 
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 3
+
+                    self.assertEqual(
+                        self.tester.session_state['second_number'],
+                        second_number
+                    )
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>` and :ref:`KeyError<test_key_error>`
+
+* I add ``X`` to the ``arithmetic`` :ref:`dictionary<what is a dictionary?>` in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 5
+
+    def calculate():
+        arithmetic = {
+            r'\+': 'add',
+            r'\-': 'subtract',
+            'X': 'multiply',
+        }
 
   the terminal_ shows :ref:`KeyError<test_key_error>`
 
-  .. code-block:: shell
-
-    KeyError: 'st.session_state has no key "second_number".
-    Did you forget to initialize it?
-    More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
-
-  the terminal_ also shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: shell
-
-    NameError: name 'calculator' is not defined. Did you mean: 'calculate'?
-
-* I add an `import statement`_ for the :ref:`calculator module<how to make a calculator>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import calculator
-    import streamlit
-
-
-    def show_state(display):
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
   .. code-block:: python
 
-    AssertionError: '\\+' != '\\-'
+    SUBFAILED(operation='/') ... - KeyError: 'AC'
+    FAILED ... - KeyError: '1'
 
-* I add the ``on_click`` and ``args`` parameters to the ``-`` button in the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 138
-    :emphasize-lines: 2-3
-
-        column_4.button(
-            r'\-', key=r'\-', width='stretch', on_click=on_click,
-            args=[first_number, display, r'\-'], type='primary',
-        )
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: '5.01' != '-1.0'
-
-* I add the ``operation`` for :ref:`subtraction<test_subtraction>` to the ``calculate`` :ref:`function<what is a function?>`
+* I add ``/`` to the ``arithmetic`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 20
+    :emphasize-lines: 6
 
     def calculate():
         arithmetic = {
-            r'\+': calculator.add,
-            r'\-': calculator.subtract,
+            r'\+': 'add',
+            r'\-': 'subtract',
+            'X': 'multiply',
+            '/': 'divide',
         }
 
-* I use the operation for the calculation
-
-  .. code-block:: python
-    :lineno-start: 20
-
-    def calculate():
-        arithmetic = {
-            r'\+': calculator.add,
-            r'\-': calculator.subtract,
-        }
         second_number = streamlit.session_state['number']
         streamlit.session_state['second_number'] = second_number
-
         # streamlit.session_state['number'] = str(
         #     float(streamlit.session_state['first_number'])
         #   + float(streamlit.session_state['second_number'])
         # )
-        operation = streamlit.session_state['operation']
-        result = arithmetic[operation](
-            float(streamlit.session_state['first_number']),
-            float(streamlit.session_state['second_number'])
-        )
-        streamlit.session_state['number'] = str(result)
-
-  the test passes
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 20
-
-    def calculate():
-        arithmetic = {
-            r'\+': calculator.add,
-            r'\-': calculator.subtract,
-        }
-        second_number = streamlit.session_state['number']
-        streamlit.session_state['second_number'] = second_number
-
-        operation = streamlit.session_state['operation']
-        result = arithmetic[operation](
-            float(streamlit.session_state['first_number']),
-            float(streamlit.session_state['second_number'])
+        operation = arithmetic[streamlit.session_state['operation']]
+        first_number = float(streamlit.session_state['first_number'])
+        second_number = float(streamlit.session_state['second_number'])
+        result = calculator.__getattribute__(operation)(
+            first_number, second_number
         )
         streamlit.session_state['number'] = str(result)
 
 
     def plus_minus():
 
-----
+  the test passes
 
-* I add a dictionary for operations to :ref:`test_streamlit_calculator_operations` in ``test_streamlit_calculator.py``
+* I add an :ref:`assertion<what is an assertion?>` for the calculation in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 158
-    :emphasize-lines: 2-7
+    :lineno-start: 151
+    :emphasize-lines: 34-40
 
         def test_streamlit_calculator_operations(self):
-            arithmetic = {
-                r'\+': src.calculator.add,
-                r'\-': src.calculator.subtract,
-                '/': src.calculator.divide,
-                'X': src.calculator.multiply,
+            arithmetic_operations = {
+                r'\+': 'add',
+                r'\-': 'subtract',
+                'X': 'multiply',
+                '/': 'divide'
             }
+
             first_number = '1'
             second_number = '2'
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+            for operation in arithmetic_operations:
+                with self.subTest(operation=operation):
+                    self.press_button(first_number)
+                    self.press_button(operation)
+                    self.assertEqual(
+                        self.tester.session_state['first_number'],
+                        first_number
+                    )
+
+                    self.assertEqual(
+                        self.tester.session_state['operation'],
+                        operation
+                    )
+
+                    self.press_button(second_number)
+                    self.press_button('=')
+
+                    self.assertEqual(
+                        self.tester.session_state['second_number'],
+                        second_number
+                    )
+
+                    function = arithmetic_operations[operation]
+                    self.assertEqual(
+                        self.tester.session_state['number'],
+                        src.calculator.__getattribute__(function)(
+                            first_number, second_number
+                        )
+                    )
+
+                    self.press_button('AC')
+
+
+  the terminal_ shows :ref:`Exceptions<errors>`
 
   .. code-block:: python
+    :emphasize-lines: NameError
 
-    NameError: name 'src' is not defined
+    SUBFAILED(operation='\\+') ... - NameError: name 'src' is not defined
+    SUBFAILED(operation='\\-') ... - AssertionError: '3.01' != '1'
+    SUBFAILED(operation='X') ... - NameError: name 'src' is not defined
+    SUBFAILED(operation='/') ... - AssertionError: '2.01' != '1'
 
-* I add an `import statement`_ at the top of the file_
+* I add an `import statement`_ at the top of ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :empasize-lines: 2
 
     import random
     import src.calculator
@@ -1646,107 +1857,158 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     class TestStreamlitCalculator(unittest.TestCase):
 
-  the test is green again
-
-* I use the :ref:`dictionary<what is a dictionary?>` in a new :ref:`assertion<what is an assertion?>`
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    SUBFAILED(operation='\\+') ... - AssertionError: '3.0' != 'brmph?! Numbers only. Try again...'
+    SUBFAILED(operation='\\-') ... - AssertionError: '3.01' != '1'
+    SUBFAILED(operation='X') ... - AssertionError: '2.0' != 'brmph?! Numbers only. Try again...'
+    SUBFAILED(operation='/') ... - AssertionError: '2.01' != '1'
 
-
-
-* I use the ``a_random_number`` :ref:`function<what is a function?>` from ``test_calculator.py`` to add randomness to :ref:`test_streamlit_calculator_operations`
+* I change ``first_number`` and ``second_number`` to floats_ in the calculation in ``test_streamlit_calculator.py``
 
   .. code-block:: python
-    :lineno-start: 181
-    :emphasize-lines: 2-3
+    :lineno-start: 185
+    :emphasize-lines: 5-6
+
+                    function = arithmetic_operations[operation]
+                    self.assertEqual(
+                        self.tester.session_state['number'],
+                        src.calculator.__getattribute__(function)(
+                            float(first_number),
+                            float(second_number)
+                        )
+                    )
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    SUBFAILED(operation='\\+') ... - AssertionError: '3.0' != 3.0
+    SUBFAILED(operation='\\-') ... - AssertionError: '3.01' != '1'
+    SUBFAILED(operation='X') ... - AssertionError: '2.0' != 2.0
+    SUBFAILED(operation='/') ... - AssertionError: '2.01' != '1'
+
+* I change the expectation to a string_
+
+  .. code-block:: python
+    :emphasize-lines: 4-9
+
+                    function = arithmetic_operations[operation]
+                    self.assertEqual(
+                        self.tester.session_state['number'],
+                        str(
+                            src.calculator.__getattribute__(function)(
+                                float(first_number),
+                                float(second_number)
+                            )
+                        )
+                    )
+
+  the test passes
+
+* I remove the other statements from :ref:`test_streamlit_calculator_operations`
+
+  .. code-block:: python
+    :lineno-start: 151
 
         def test_streamlit_calculator_operations(self):
-            # first_number = '1'
-            first_number = tests.test_calculator.a_random_number()
+            arithmetic_operations = {
+                r'\+': 'add',
+                r'\-': 'subtract',
+                'X': 'multiply',
+                '/': 'divide'
+            }
+
+            first_number = '1'
             second_number = '2'
 
-            self.tester.button(first_number).click().run()
+            for operation in arithmetic_operations:
+                with self.subTest(operation=operation):
+                    self.press_button(first_number)
+                    self.press_button(operation)
 
-  the terminal_ shows :ref:`KeyError<test_key_error>`
+                    self.assertEqual(
+                        self.tester.session_state['first_number'],
+                        first_number
+                    )
 
-  .. code-block:: python
+                    self.assertEqual(
+                        self.tester.session_state['operation'],
+                        operation
+                    )
 
-    KeyError: ABC.DEFGHIJKLMNOP
+                    self.press_button(second_number)
+                    self.press_button('=')
 
-* I have to change the number to button presses. I change the number to a string_
+                    self.assertEqual(
+                        self.tester.session_state['second_number'],
+                        second_number
+                    )
 
-  .. code-block:: python
-    :lineno-start: 181
-    :emphasize-lines: 4
+                    function = arithmetic_operations[operation]
+                    self.assertEqual(
+                        self.tester.session_state['number'],
+                        str(
+                            src.calculator.__getattribute__(function)(
+                                float(first_number),
+                                float(second_number)
+                            )
+                        )
+                    )
 
-        def test_streamlit_calculator_operations(self):
-            # first_number = '1'
-            first_number = tests.test_calculator.a_random_number()
-            first_number = str(first_number)
-            second_number = '2'
+                    self.press_button('AC')
 
-  the terminal_ shows :ref:`KeyError<test_key_error>`
 
-    KeyError: 'QRS.TUVWXYZABCDEF'
+    # Exceptions seen
 
-* I add a :ref:`for loop<what is a for loop?>` for the button presses
-
-  .. code-block:: python
-    :lineno-start: 181
-    :emphasize-lines: 7-9
-
-        def test_streamlit_calculator_operations(self):
-            # first_number = '1'
-            first_number = tests.test_calculator.a_random_number()
-            first_number = str(first_number)
-            second_number = '2'
-
-            for character in first_number:
-                self.tester.button(character).click().run()
-            # self.tester.button(first_number).click().run()
-            self.tester.button('+').click().run()
-
-  I use :kbd:`ctrl+s` on the keyboard to run the test a few times, sometimes it passes and sometimes it shows :ref:`AssertionError<what causes AssertionError?>`
+* I remove the commented lines from the ``calculate`` :ref:`function<what is a function>` in ``streamlit_calculator.py``
 
   .. code-block:: python
+    :lineno-start: 20
 
-    AssertionError: 'GH.IJKLMNOPQRSTUVW' != '-GH.IJKLMNOPQRSTUVW'
+    def calculate():
+        arithmetic = {
+            r'\+': 'add',
+            r'\-': 'subtract',
+            'X': 'multiply',
+            '/': 'divide',
+        }
 
-  there is no button for ``-`` it is ``+/-``
+        second_number = streamlit.session_state['number']
+        streamlit.session_state['second_number'] = second_number
 
-* I add a :ref:`condition<if statements>` to the :ref:`for loop<what is a for loop?>`
+        operation = arithmetic[streamlit.session_state['operation']]
+        first_number = float(streamlit.session_state['first_number'])
+        second_number = float(streamlit.session_state['second_number'])
 
-  .. code-block:: python
-    :lineno-start: 187
-    :emphasize-lines: 2-3
+        result = calculator.__getattribute__(operation)(
+            first_number, second_number
+        )
 
-            for character in first_number:
-                if character == '-':
-                    character = '+/-'
-                self.tester.button(character).click().run()
-            self.tester.button('+').click().run()
+        streamlit.session_state['number'] = str(result)
 
-* I do the same thing with the second number
 
-  .. code-block:: python
-    :lineno-start: 181
-    :emphasize-lines: 6-8
+    def plus_minus():
 
-        def test_streamlit_calculator_operations(self):
-            # first_number = '1'
-            first_number = tests.test_calculator.a_random_number()
-            first_number = str(first_number)
+----
 
-            # second_number = '2'
-            second_number = tests.test_calculator.a_random_number()
-            second_number = str(second_number)
+All tests are green and when I try calculations, they work. But ... there is a problem - When I press a new number after I get the result, If I do not press ``C`` or ``AC`` to reset the number, it adds the number to the end of the result instead of replacing it
 
-            for character in first_number:
+* I add an :ref:`assertion<what is an assertion?>` to ``test_streamlit_calculator.py`` to show it
 
-  the terminal_ shows :ref:`KeyError<test_key_error>`
+----
 
-  .. code-block:: python
+how can I prevent adding to number after pressing result?
+
+----
+
+----
+
+----
+
+
 
 ----
 
