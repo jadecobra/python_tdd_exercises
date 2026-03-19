@@ -14,7 +14,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_3.py
+.. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_3.py
   :language: python
   :linenos:
 
@@ -97,33 +97,35 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
 ----
 
-I add a test for the `session state object`_, I want it to hold the number when I click the buttons, in ``test_streamlit_calculator.py``
+* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it in the :ref:`editor<2 editors>`
 
-.. code-block:: python
-  :lineno-start: 47
-  :emphasize-lines: 9-10
+* I add a test for the `session state object`_, I want it to hold the number when I click the buttons, in ``test_streamlit_calculator.py``
 
-      def test_streamlit_calculator_operations_buttons(self):
-          for key in ('/', 'X', r'\-', r'\+', '=', 'C', 'AC'):
-              with self.subTest(key=key):
-                  self.assertEqual(
-                      self.tester.button(key).proto.type,
-                      'primary'
-                  )
+    .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 9-10
 
-      def test_streamlit_session_state(self):
-          self.assertIsNone(self.tester.session_state['number'])
+        def test_streamlit_calculator_operations_buttons(self):
+            for key in ('/', 'X', r'\-', r'\+', '=', 'C', 'AC'):
+                with self.subTest(key=key):
+                    self.assertEqual(
+                        self.tester.button(key).proto.type,
+                        'primary'
+                    )
+
+        def test_streamlit_session_state(self):
+            self.assertIsNone(self.tester.session_state['number'])
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ shows :ref:`KeyError<test_key_error>`
+    the terminal_ shows :ref:`KeyError<test_key_error>`
 
-.. code-block:: shell
+    .. code-block:: shell
 
-  KeyError: 'st.session_state has no key "number".
-  Did you forget to initialize it?
-  More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+    KeyError: 'st.session_state has no key "number".
+    Did you forget to initialize it?
+    More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
 
 ----
 
@@ -2597,17 +2599,21 @@ what is next?
 
 You now know how to:
 
-* Build a website with streamlit_
-* How to test the parts of the website
+* build a website with streamlit_
+* how to test the parts of the website
 * :ref:`how to add a title to the streamlit website<test_streamlit_calculator_title>`
 * :ref:`how to add a display to the streamlit website<test_streamlit_calculator_display>`
 * :ref:`how to add buttons to the streamlit website<test_streamlit_calculator_columns_and_buttons>`
 * :ref:`how to change the colors of the buttons<test_streamlit_calculator_operations_buttons>`
 * :ref:`how to show something when a button is pressed<how to show the numbers when I click on them>`
-* :ref:`how to use the session state object<test_streamlit_>`
-*
+* :ref:`how to use the session state object<test_streamlit_session_state>`
+* how to add :ref:`functions<what is a function?>` to `streamlit buttons`_ to make them do things from
 
-:ref:`Would you like to continue with adding buttons to the calculator?<how to make a calculator 10: part 3>`
+  - :ref:`test_streamlit_calculator_w_decimals`
+  - :ref:`test_streamlit_calculator_w_backspace`
+  - :ref:`test_streamlit_calculator_w_plus_minus`
+
+:ref:`Would you like to continue with the operation buttons of the calculator?<how to make a calculator 10: part 4>`
 
 -----
 

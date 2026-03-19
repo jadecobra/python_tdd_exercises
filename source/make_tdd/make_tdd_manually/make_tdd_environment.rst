@@ -888,12 +888,6 @@ how to setup a project with uv
 
     Initialized project `magic`
 
-  and the command line has ```` on the right side of the project name
-
-  .. code-block:: python
-
-    .../pumping_python/magic
-
 * I run tree_ to see what uv_ did to the folder_
 
   .. code-block:: python
@@ -1028,8 +1022,6 @@ how to install Python packages with uv
 
   .. code-block:: shell
 
-    Using CPython 3.XY.Z interpreter at: /usr/local/bin/python3.XY
-    Creating virtual environment at: .venv
     Resolved 9 packages in GHIms
     ░░░░░░░░░░░░░░░░░░░░ [0/2] Installing wheels...
     ...

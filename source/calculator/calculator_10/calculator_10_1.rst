@@ -12,7 +12,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_1.py
+.. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_1.py
   :language: python
   :linenos:
 
@@ -1110,8 +1110,8 @@ what is next?
 
 You now know how to:
 
-* Build a website with streamlit_
-* How to test the parts of the website
+* build a website with streamlit_
+* how to test the parts of the website
 * :ref:`How to add a title to the streamlit website<test_streamlit_calculator_title>`
 * :ref:`How to add a display to the streamlit website<test_streamlit_calculator_display>`
 

@@ -12,7 +12,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_2.py
+.. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_2.py
   :language: python
   :linenos:
 
@@ -94,6 +94,8 @@ I want to add buttons for the numbers and operations.
 =================================================================================
 
 -----
+
+* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it in the :ref:`editor<2 editors>`
 
 * I add a new test with an :ref:`assertion<what is an assertion?>` for the first button, in ``test_streamlit_calculator.py``
 
@@ -2413,8 +2415,8 @@ what is next?
 
 You now know how to:
 
-* Build a website with streamlit_
-* How to test the parts of the website
+* build a website with streamlit_
+* how to test the parts of the website
 * :ref:`how to add a title to the streamlit website<test_streamlit_calculator_title>`
 * :ref:`how to add a display to the streamlit website<test_streamlit_calculator_display>`
 * :ref:`how to add buttons to the streamlit website<test_streamlit_calculator_columns_and_buttons>`
