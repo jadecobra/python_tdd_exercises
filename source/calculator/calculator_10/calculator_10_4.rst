@@ -1996,74 +1996,46 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
 All tests are green and when I try calculations, they work. But ... there is a problem - When I press a new number after I get the result, If I do not press ``C`` or ``AC`` to reset the number, it adds the number to the end of the result instead of replacing it
 
-* I add an :ref:`assertion<what is an assertion?>` to ``test_streamlit_calculator.py`` to show it
-
-----
-
-how can I prevent adding to number after pressing result?
-
-----
-
-----
-
-----
-
-
-
-----
-
-----
-
-*********************************************************************************
-test_error_messages_in_streamlit
-*********************************************************************************
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-I add
-
-.. code-block:: python
-  :lineno-start: 20
-
-      def test_error_messages_in_streamlit(self):
-          self.assertEqual(
-              src.calculator.divide(10, 0),
-              'brmph?! I cannot divide by 0. Try again...'
-          )
-
-the test already passes (thanks to chapters 3–4).
-
-----
-
-*********************************************************************************
-how to run the app
-*********************************************************************************
-
-In the terminal I type:
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  uv run streamlit run src/streamlit_app.py
-
-A browser window opens automatically with my beautiful calculator!
-
 ----
 
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close all files
-* I click in the terminal_, then use :kbd:`q` to leave the tests
-* I `change directory`_ to the parent
+* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
-  .. code-block:: shell
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
+
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+
+* I `change directory`_ to the parent of ``calculator``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 
@@ -2071,20 +2043,26 @@ close the project
 review
 *********************************************************************************
 
-I now have **three** different versions of the same calculator:
+I made a website using Streamlit_ with a
 
-* Pure Python (chapters 1–8)
-* Flask website (chapter 9)
-* **Streamlit web app** (chapter 10) — the fastest and most beautiful version
+* :ref:`title<test_streamlit_calculator_title>`
+* :ref:`display<test_streamlit_calculator_display>`
+* :ref:`buttons<test_streamlit_calculator_columns_and_buttons>`
 
-The core calculator code never changed. All my tests still protect it.
-This is the real power of Test-Driven Development.
+I used :ref:`while loops<what is a while loop?>` and added tests for
+
+* :ref:`the session state object<test_streamlit_session_state>`
+* :ref:`decimals<test_streamlit_calculator_w_decimals>`
+* :ref:`backspace<test_streamlit_calculator_w_backspace>`
+* :ref:`+/-<test_streamlit_calculator_w_plus_minus>`
+* :ref:`resetting with 'C' and 'AC'<test_streamlit_calculator_reset>`
+* :ref:`calculator operatiosn<test_streamlit_calculator_operations>`
 
 *************************************************************************************
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: part 4: tests>`
 
 ----
 
@@ -2092,13 +2070,15 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-You have completed an amazing journey from pure functions to real web applications!
+You have completed an amazing journey from pure functions to a real web application! Celebrate it
 
 You now know how to:
 
-* Build programs with Test-Driven Development
-* Turn them into Flask websites
-* Turn them into beautiful Streamlit apps
+* Build a program with Test-Driven Development
+* Turn it into a Flask_ website
+* Turn it into a Streamlit_ app
+
+:ref:`Would you like to see how to make a Calculator with a Large Language Model?<calculator 11>`
 
 -----
 

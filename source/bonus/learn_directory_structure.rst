@@ -73,7 +73,7 @@ Here are questions you can answer after going through this chapter
 what is a folder?
 *********************************************************************************
 
-A `folder (directory)`_ is a container for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
+A `folder (directory)`_ is a box for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
 
 I keep every project I work on in its own `folder (directory)`_. All the code from this book is kept in a folder_ named ``pumping_python``
 
@@ -81,7 +81,7 @@ I keep every project I work on in its own `folder (directory)`_. All the code fr
 what is a file?
 *********************************************************************************
 
-A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (optionally) to show the type of file_. For example
+A file_ is a collection or box for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (optionally) to show the type of file_. For example
 
 * ``.txt`` for a `plain text`_ file_
 * ``.sh`` for a bash_ file_
