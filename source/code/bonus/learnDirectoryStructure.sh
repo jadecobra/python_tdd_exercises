@@ -1,12 +1,15 @@
 #!bin/bash
 # Learn Directory Structure
+tree
+pwd
+mkdir pumping_python
+cd pumping_python
 cd doe
 mkdir doe
 cd doe
 pwd
 ls
 ls --all
-ls -a
 cd .
 cd ..
 cd doe
@@ -97,15 +100,17 @@ ls -a doe/john/lil
 cd doe/jane/baby
 ls -a ../../john/lil
 touch ../../john/lil/aka_cousin_of_baby
+mv aka_child_of_janes_sibling ../../john/lil/aka_child_of_janes_sibling
 tree ../../john/lil
 touch ../../aka_grandparent_of_baby
-touch ../../john/aka_uncle_of_baby
+touch ../../jane/aka_uncle_of_baby
 cd ../../john/lil
 ls -a ../../jane/baby
 touch ../../jane/baby/aka_cousin_of_lil
+mv aka_child_of_janes_sibling ../../jane/baby/aka_child_of_janes_sibling
 tree ../../jane/baby
 touch ../../aka_grandparent_of_lil
-touch ../../jane/aka_aunt_of_lil
+touch ../../john/aka_aunt_of_lil
 tree ../../../doe
 cd ../../..
 rm -r doe
