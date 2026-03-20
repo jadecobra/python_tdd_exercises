@@ -1802,7 +1802,7 @@ how to use directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1, 4-5
 
     ../../john/lil
@@ -1907,7 +1907,7 @@ how to use directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1, 4-5
 
     ../../jane/baby
