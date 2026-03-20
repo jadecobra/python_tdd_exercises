@@ -2,8 +2,6 @@
 # Learn Directory Structure
 tree
 pwd
-mkdir pumping_python
-cd pumping_python
 cd doe
 mkdir doe
 cd doe
@@ -73,10 +71,12 @@ cd john/lil
 cd ../..
 cd jane/baby
 touch aka_child_of_jane
+touch aka_child_of_janes_sibling
 ls -a
 cd ../..
 cd john/lil
 touch aka_child_of_john
+touch aka_child_of_johns_sibling
 ls -a
 cd ../..
 touch aka_parent_of_jane
@@ -113,5 +113,9 @@ touch ../../aka_grandparent_of_lil
 touch ../../john/aka_aunt_of_lil
 tree ../../../doe
 cd ../../..
-rm -r doe
+mv doe/jane/aka_uncle_of_baby doe/john/aka_uncle_of_baby
+mv doe/john/aka_aunt_of_lil doe/jane/aka_aunt_of_lil
+tree doe
+rm doe
+rm --recursive doe
 cd doe

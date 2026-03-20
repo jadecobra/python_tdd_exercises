@@ -45,6 +45,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I see directory relationships?<how to look at directory structure>`
 * :ref:`how can I see what is in a directory?<how to see what is in a directory>`
 * :ref:`how can I make an empty file?<how to make an empty file>`
+* :ref:`how can I rename a file or directory?<how to rename a file or directory>`
 * :ref:`how can I use directory relationships?<how to use directory relationships>`
 * :ref:`how can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
 
@@ -216,7 +217,7 @@ because I am in the ``pumping_python`` folder_
   - If you see the same name, skip to the part where I create ``doe``
   - If you see a different name, continue to the next step :ref:`how to change directory`
 
-If I know where I am, it is easier to know how to get to where I want to go.
+If I know where I am, it is easier to get to where I want to go.
 
 ----
 
@@ -340,7 +341,7 @@ how to make a directory
 
     .../pumping_python/doe
 
-If I know where I am, it is easier to know how to get to where I want to go. :ref:`I know how to make a directory<how to make a directory>`
+If I know where I am, it is easier to get to where I want to go. :ref:`I know how to make a directory<how to make a directory>`
 
 ----
 
@@ -1343,7 +1344,7 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-  I can only go directly to folders_ that are where I am or use the path to the folder_ I want to go to. If I know where I am, it is easier to know how to get to where I want to go.
+  I can only go directly to folders_ that are where I am or use the path to the folder_ I want to go to. If I know where I am, it is easier to get to where I want to go.
 
 * I go from ``doe`` to ``baby`` in 1 step with its parent
 
@@ -2001,6 +2002,14 @@ how to use directory relationships
 
   I am back in ``pumping_python``
 
+----
+
+=================================================================================
+how to rename a file or directory
+=================================================================================
+
+----
+
 * I use mv_ to move ``aka_uncle_of_baby`` to ``john``
 
   .. code-block:: python
@@ -2010,7 +2019,7 @@ how to use directory relationships
 
   the terminal_ goes back to the command line
 
-* I use move ``aka_aunt_of_lil`` to ``jane``
+* I move ``aka_aunt_of_lil`` to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2076,7 +2085,7 @@ how to remove a directory and all its contents
   - rm_ is used to remove files_ and folders_
   - ``rm`` means ``remove``
   - ``-r/--recursive/-Recurse`` means remove child directories_ and what is in them until there is nothing left, it goes through each child directory_ and removes everything including their children
-  - ``-Force`` means do not ask me any questions, just remove the file_ or folder_ and everything inside it until there is nothing left
+  - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
 
 * I try to go back to ``doe``
 
@@ -2102,6 +2111,7 @@ I ran these commands to play with `folder (directory)`_ structure
 * ls_
 * tree_
 * touch_
+* mv_
 * rm_
 
 :ref:`How many questions can you answer after going through this chapter?<questions about Directory Structure>`
@@ -2120,8 +2130,9 @@ code from the chapter
 what is next?
 *****************************************************************************************
 
-* Homework - use what you have learned - mkdir_, cd_, ls_, tree_ and touch_ to make your family tree. Send me the final thing when you are done.
-* :ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a test driven development environment>`
+Homework: use what you have learned - mkdir_, cd_, ls_, tree_ and touch_ to make your family tree. Send me the final thing when you are done.
+
+:ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a test driven development environment>`
 
 ----
 
