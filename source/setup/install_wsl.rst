@@ -12,19 +12,21 @@ This is one way to install `Windows Subsystem for Linux`_ on a Windows computer 
 install Windows Subsystem for Linux
 *********************************************************************************
 
-Make sure your computer runs `Windows 11`_. If you cannot upgrade to `Windows 11`_, still try the steps below, if they do not work skip to :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
+.. NOTE::
 
-As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/Windows/end-of-support?r=1>`_
+  `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/Windows/end-of-support?r=1>`_ on October 14th, 2025
+
+Make sure your computer runs `Windows 11`_. If you cannot upgrade to `Windows 11`_, still try the steps below, if they do not work, skip to :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
 
 * click ``Search`` at the bottom of your screen
 * search for ``Turn on Windows features``
 * click ``Turn on or off Windows Features`` from the results
 * Make sure there are check marks to the left of the features in the dialog box that opens up
 
-  - Hyper V (this might not be in the list, you can skip it if it is not)
-  - Virtual Machine Platform
-  - Windows Hypervisor Platform
-  - Windows Subsystem for Linux
+  - ``Hyper V`` (this might not be in the list, you can skip it if it is not)
+  - ``Virtual Machine Platform``
+  - ``Windows Hypervisor Platform``
+  - ``Windows Subsystem for Linux``
 
   Click ``OK`` to apply the changes if any
 * Restart the computer when the installation finishes. You can go to the next steps while the above is installing
@@ -51,8 +53,10 @@ As of October 14th, 2025, `Microsoft stopped supporting Windows 10, Windows 8.1 
 
   .. attention:: the terminal_ does not show any text while you type your password, use :kbd:`enter/return` on the keyboard when done and it asks you to type the password again to confirm it
 
-* after installing `Windows Subsystem for Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_
+* after installing `Windows Subsystem for Linux`_ open `Visual Studio Code`_ and install the `WSL extension <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`_)
+
 * Press ``F1`` on the keyboard in `Visual Studio Code`_ and select ``WSL:Connect to WSL`` to open a terminal_ in `Windows Subsystem for Linux`_
+
 * then type this in the terminal_ to update the Linux_ `package manager <https://manpages.debian.org/trixie/apt/apt.8.en.html>`_
 
   .. code-block:: shell
@@ -102,14 +106,4 @@ If you cannot install `Windows Subsystem for Linux`_, you can use :ref:`how to m
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to continue with the rest of the requirements?<Linux/Windows Subsystem for Linux requirements>`
-
-----
-
-.. raw:: html
-
-  <!-- TrustBox widget - Review Collector -->
-  <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="69141d0f0902d6a2a1b2436b" data-style-height="52px" data-style-width="100%" data-token="5db17dde-bcdc-460f-81f3-d8ab689b6e4d">
-    <a href="https://www.trustpilot.com/review/pumpingpython.com" target="_blank" rel="noopener">CLICK HERE to leave a 5 star review of pumping python, if this has been a 7 star experience for you</a>
-  </div>
-  <!-- End TrustBox widget -->
+:ref:`Go to the Linux/Windows Subsystem for Linux Requirements <Linux/Windows Subsystem for Linux requirements>`
