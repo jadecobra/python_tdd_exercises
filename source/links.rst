@@ -27,6 +27,7 @@
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _assertRaisesRegex method: assertRaisesRegex_
 .. _bash: https://www.gnu.org/software/bash/
+.. _bash file: bash_
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _bool class: bool_
 .. _brew: https://brew.sh
@@ -40,6 +41,7 @@
 .. _cd program: cd_
 .. _change directory: cd_
 .. _changing directory: cd_
+.. _changing directories: cd_
 .. _chmod: https://grokipedia.com/page/Chmod
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _computer program: https://grokipedia.com/page/Computer_program
@@ -107,6 +109,7 @@
 .. _pathlib: https://docs.python.org/3/library/pathlib.html#module-pathlib
 .. _pathlib module: pathlib_
 .. _plain text: https://grokipedia.com/page/Plain_text
+.. _plain text file: `plain text`_
 .. _pip: https://packaging.python.org/en/latest/key_projects/#pip
 .. _program: `computer program`_
 .. _programs: `computer program`_
@@ -159,6 +162,7 @@
 .. _terminal: https://grokipedia.com/page/Terminal_emulator#terminal-emulator
 .. _the greatest programmer in the world: https://www.reddit.com/r/ProgrammerHumor/comments/f8duna/the_two_states_of_every_programmer/
 .. _touch: https://en.wikipedia.org/wiki/Touch_(command)
+.. _touch program: touch_
 .. _tree: https://grokipedia.com/page/Tree_(command)
 .. _tree program: tree_
 .. _try statement: https://docs.python.org/3/reference/compound_stmts.html#the-try-statement
@@ -206,6 +210,7 @@
 .. _SyntaxError: https://docs.python.org/3/library/exceptions.html#SyntaxError
 .. _OverflowError: https://docs.python.org/3/library/exceptions.html#OverflowError
 .. _PowerShell: https://learn.microsoft.com/en-us/powershell/
+.. _PowerShell file: PowerShell_
 .. _TestCase: https://docs.python.org/3/library/unittest.html#unittest.TestCase
 .. _ValueError: https://docs.python.org/3/library/exceptions.html#ValueError
 
