@@ -85,13 +85,13 @@ I open a terminal_ to make sure the `tree program`_ is installed by typing this
 
   tree
 
-when it is not installed on the computer, the terminal_ shows
+if it is not installed on the computer, the terminal_ shows
 
 .. code-block:: python
 
     tree: command not found
 
-when it is installed, the terminal_ shows
+if it is installed, the terminal_ shows
 
 .. code-block:: python
 
@@ -515,7 +515,7 @@ how to look at directory structure
 
     cd: no such file or directory: jane
 
-  ``jane`` does not exist in ``doe``, yet
+  ``jane`` is not a child of ``doe``, yet
 
 * I make the folder_
 
@@ -608,7 +608,7 @@ how to look at directory structure
 
     cd: no such file or directory: john
 
-  the directory_ does not exist, yet
+  ``john`` is not a child of ``doe``, yet
 
 * I make a new folder_
 
@@ -693,7 +693,7 @@ how to look at directory structure
 
     cd: no such file or directory: .a_hidden_folder_in_doe
 
-  the directory_ does not exist, yet
+  ``.a_hidden_folder`` is not in ``doe``, yet
 
 * I make a hidden folder_
 
@@ -716,6 +716,8 @@ how to look at directory structure
   .. code-block:: python
 
     jane  john
+
+  ``.a_hidden_folder_in_doe`` is hidden
 
 * I use ls_ with the ``-a`` option to see everything that is in ``doe``
 
@@ -904,7 +906,59 @@ how to look at directory structure
 
   I am back in ``jane``
 
-* I go up another level to the parent of ``jane``
+* I `change directory`_ to a hidden folder_ in ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd .a_hidden_folder_in_jane
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: .a_hidden_folder_in_jane
+
+  there is no folder_ named ``.a_hidden_folder_in_jane`` in ``jane``
+
+* I `make the directory`_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_jane
+
+  the terminal_ goes back to the command line
+
+* I try to go to ``.a_hidden_folder_in_jane`` again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd .a_hidden_folder_in_jane
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../doe/jane/.a_hidden_folder_in_jane
+
+* I go up a level to the parent of ``.a_hidden_folder_in_jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../doe/jane
+
+  I am back in ``jane``
+
+* I go up a level to the parent of ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -975,7 +1029,7 @@ how to look at directory structure
 
   ``john`` has no children
 
-* I `change directory`_ to a child of this folder_
+* I `change directory`_ to a child of ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1017,6 +1071,58 @@ how to look at directory structure
   - ``john`` is a child of ``doe``
 
 * I go up a level to the parent of ``lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../doe/john
+
+  I am back in ``john``
+
+* I `change directory`_ to a hidden folder_ in ``john``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd .a_hidden_folder_in_john
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: .a_hidden_folder_in_john
+
+  there is no folder_ named ``.a_hidden_folder_in_john`` in ``john``
+
+* I `make the directory`_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_john
+
+  the terminal_ goes back to the command line
+
+* I try to go to ``.a_hidden_folder_in_john`` again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd .a_hidden_folder_in_john
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../doe/john/.a_hidden_folder_in_john
+
+* I go up a level to the parent of ``.a_hidden_folder_in_john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1080,16 +1186,18 @@ how to look at directory structure
 * I use the ``-a`` option with tree_
 
   .. code-block:: shell
-    :emphasize-lines: 2
+    :emphasize-lines: 2, 4, 7
 
     .
     ├── .a_hidden_folder_in_doe
     ├── jane
+    │   ├── .a_hidden_folder_in_jane
     │   └── baby
     └── john
+        ├── .a_hidden_folder_in_john
         └── lil
 
-    6 directories, 0 files
+    8 directories, 0 files
 
 :ref:`I know how to look at directory structure<how to look at directory structure>`
 
@@ -1103,7 +1211,7 @@ how to make an empty file
 
 I can make empty files_ in a folder_ with the `touch program`_
 
-* I add an empty file_ in ``doe``
+* I add an empty file_ to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1121,7 +1229,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
       New-Item an_empty_file_in_doe
 
-* I make an empty hidden file_ in doe
+* I make an empty hidden file_ in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1132,6 +1240,12 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
     :emphasize-lines: 1
+
+    ls
+
+  the terminal_ shows
+
+  .. code-block:: python
 
     an_empty_file_in_doe  jane  john
 
@@ -1147,7 +1261,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   .. code-block:: python
 
     .  .a_hidden_file_in_doe  .a_hidden_folder_in_doe
-    .. an_empty_file_in_doe  jane  john
+    .. an_empty_file_in_doe   jane  john
 
   .. NOTE::
 
@@ -1158,9 +1272,9 @@ I can make empty files_ in a folder_ with the `touch program`_
 
       dir /ah
 
-    the terminal_ does not show ``.`` and ``..``
+    the terminal_ does not show ``.`` and ``..`` and always shows hidden folder_ and files_
 
-* I `change directory`_ to one of the children of ``doe``
+* I `change directory`_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1202,8 +1316,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_jane  an_empty_file_in_jane
-    .. baby
+    .  .a_hidden_file_in_jane  .a_hidden_folder_in_jane
+    .. an_empty_file_in_jane   baby
 
 * I `change directory`_ to the parent of ``jane``
 
@@ -1260,8 +1374,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_john  an_empty_file_in_john
-    .. lil
+    .  .a_hidden_file_in_john  .a_hidden_folder_in_john
+    .. an_empty_file_in_john   lil
 
 * I `change directory`_ to the parent of ``john``
 
@@ -1313,7 +1427,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 6, 10
+    :emphasize-lines: 2, 4, 6, 8, 11, 13
 
     .
     ├── .a_hidden_file_in_doe
@@ -1321,14 +1435,16 @@ I can make empty files_ in a folder_ with the `touch program`_
     ├── an_empty_file_in_doe
     ├── jane
     │   ├── .a_hidden_file_in_jane
+    │   ├── .a_hidden_folder_in_jane
     │   ├── an_empty_file_in_jane
     │   └── baby
     └── john
         ├── .a_hidden_file_in_john
+        ├── .a_hidden_folder_in_john
         ├── an_empty_file_in_john
         └── lil
 
-    6 directories, 6 files
+    8 directories, 6 files
 
 * I want to make a file_ in ``baby``. I use cd_ to go to its parent first
 
@@ -1378,6 +1494,15 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   the terminal_ goes back to the command line
 
+* I make a hidden folder_ in ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_baby
+
+  the terminal_ goes back to the command line
+
 * I use ls_ to show what is in the folder_
 
   .. code-block:: python
@@ -1389,7 +1514,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  ..  .a_hidden_file_in_baby  an_empty_file_in_baby
+    .  .a_hidden_file_in_baby  .a_hidden_folder_in_baby
+    .. an_empty_file_in_baby
 
 * I go back to the parent of ``baby``
 
@@ -1469,6 +1595,15 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   the terminal_ goes back to the command line
 
+* I make a hidden folder_ in ``lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_lil
+
+  the terminal_ goes back to the command line
+
 * I use ls_ to show what is in the folder_
 
   .. code-block:: python
@@ -1480,7 +1615,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  ..  .a_hidden_file_in_lil  an_empty_file_in_lil
+    .  .a_hidden_file_in_lil  .a_hidden_folder_in_lil
+    .. an_empty_file_in_lil
 
 * I go back to the parent of ``lil``
 
@@ -1540,7 +1676,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 * I use tree_ with the ``-a`` option
 
   .. code-block:: shell
-    :emphasize-lines: 9, 15
+    :emphasize-lines: 10-12, 18-20
 
     .
     ├── .a_hidden_file_in_doe
@@ -1548,18 +1684,22 @@ I can make empty files_ in a folder_ with the `touch program`_
     ├── an_empty_file_in_doe
     ├── jane
     │   ├── .a_hidden_file_in_jane
+    │   ├── .a_hidden_folder_in_jane
     │   ├── an_empty_file_in_jane
     │   └── baby
     │       ├── .a_hidden_file_in_baby
+    │       ├── .a_hidden_folder_in_baby
     │       └── an_empty_file_in_baby
     └── john
         ├── .a_hidden_file_in_john
+        ├── .a_hidden_folder_in_john
         ├── an_empty_file_in_john
         └── lil
             ├── .a_hidden_file_in_lil
+            ├── .a_hidden_folder_in_lil
             └── an_empty_file_in_lil
 
-    6 directories, 10 files
+    10 directories, 10 files
 
 :ref:`I know how to add empty files to folders<how to make an empty file>`
 
@@ -1708,8 +1848,9 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_baby  aka_child_of_jane
-    .. aka_child_of_janes_sibling  an_empty_file_in_baby
+    .  .a_hidden_file_in_baby  .a_hidden_folder_in_baby
+    .. aka_child_of_jane       aka_child_of_janes_sibling
+       an_empty_file_in_baby
 
 * I go back to ``doe``
 
@@ -1766,8 +1907,9 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_lil  aka_child_of_john
-    .. aka_child_of_johns_sibling  an_empty_file_in_lil
+    .  .a_hidden_file_in_lil  .a_hidden_folder_in_lil
+    .. aka_child_of_john      aka_child_of_johns_sibling
+       an_empty_file_in_lil
 
 * I go back to ``doe``
 
@@ -1958,7 +2100,7 @@ how to use directory relationships
 
     5 directories, 17 files
 
-* I type pwd_ to show where I am
+* I type pwd_ to see where I am
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2000,8 +2142,8 @@ how to use directory relationships
   .. code-block:: python
 
     .  .a_hidden_file_in_doe  .a_hidden_folder_in_doe
-    .. aka_parent_of_jane  aka_parent_of_john
-    an_empty_file_in_doe  jane  john
+    .. aka_parent_of_jane     aka_parent_of_john
+       an_empty_file_in_doe   jane  john
 
 * I show what is in ``jane``
 
@@ -2014,8 +2156,9 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_child_of_doe  .a_hidden_file_in_jane  aka_sibling_of_john
-    .. an_empty_file_in_jane  baby
+    .  a_child_of_doe  .a_hidden_file_in_jane
+    .. .a_hidden_folder_in_jane  aka_sibling_of_john
+       an_empty_file_in_jane     baby
 
 * I show what is in ``baby``
 
@@ -2028,8 +2171,9 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_baby  aka_child_of_jane
-    .. aka_child_of_janes_sibling  an_empty_file_in_baby
+    .  a_grandchild_of_doe  .a_hidden_file_in_baby
+    .. .a_hidden_folder_in_baby    aka_child_of_jane
+       aka_child_of_janes_sibling  an_empty_file_in_baby
 
 * I show what is in ``john``
 
@@ -2042,8 +2186,9 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  ..  a_child_of_doe  .a_hidden_file_in_john
-    .. aka_sibling_of_jane  an_empty_file_in_john  lil
+    .  a_child_of_doe  .a_hidden_file_in_john
+    .. .a_hidden_folder_in_john  aka_sibling_of_jane
+       an_empty_file_in_john  lil
 
 * I show what is in ``lil``
 
@@ -2056,8 +2201,9 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_lil  aka_child_of_john
-    .. aka_child_of_johns_sibling  an_empty_file_in_lil
+    .  a_grandchild_of_doe  .a_hidden_file_in_lil
+    .. .a_hidden_folder_in_lil     aka_child_of_john
+       aka_child_of_johns_sibling  an_empty_file_in_lil
 
 ----
 
@@ -2089,8 +2235,9 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_lil  aka_child_of_john
-    .. aka_child_of_johns_sibling  an_empty_file_in_lil
+    .  a_grandchild_of_doe  .a_hidden_file_in_lil
+    .. .a_hidden_folder_in_lil     aka_child_of_john
+        aka_child_of_johns_sibling  an_empty_file_in_lil
 
 * I add an empty file_ to ``lil`` from inside ``baby``
 
@@ -2200,8 +2347,9 @@ how to rename a file or directory
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_baby  aka_child_of_jane
-    .. aka_child_of_johns_sibling  an_empty_file_in_baby
+    .  a_grandchild_of_doe  .a_hidden_file_in_baby
+    .. .a_hidden_folder_in_baby    aka_child_of_jane
+       aka_child_of_johns_sibling  an_empty_file_in_baby
 
   - ``..`` from ``lil`` is ``john``
   - ``..`` from ``john`` is ``doe``
@@ -2329,7 +2477,7 @@ how to rename a file or directory
 
   I am back in ``pumping_python``
 
-* I use move ``aka_uncle_of_baby`` to ``john``
+* I move ``aka_uncle_of_baby`` to ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2355,7 +2503,7 @@ how to rename a file or directory
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 9, 21
+    :emphasize-lines: 1, 9, 21
 
     doe
     ├── aka_grandparent_of_baby
@@ -2432,12 +2580,14 @@ how to remove a directory and all its contents
 
 * I remove ``doe`` and all its children and their children with the ``-r/--recursive`` option
 
-  .. DANGER:: This is a desctructive operation that CANNOT be undone on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
+  .. DANGER:: This is a destructive operation takes a lot of effort and time to undo on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
 
   .. code-block:: python
     :emphasize-lines: 1
 
     rm --recursive doe
+
+  the terminal_ goes back to the command line
 
   .. NOTE::
 
@@ -2448,7 +2598,6 @@ how to remove a directory and all its contents
 
       Remove-Item -Path doe -Recurse -Force
 
-  the terminal_ goes back to the command line
 
   - rm_ is used to remove files_ and folders_
   - ``rm`` means ``remove``
@@ -2468,21 +2617,23 @@ how to remove a directory and all its contents
 
     cd: no such file or directory: doe
 
+  the ``doe`` family is gone!
+
 *************************************************************************************
 review
 *************************************************************************************
 
 I ran these commands to play with `folder (directory)`_ structure
 
-* mkdir_
-* cd_
-* ls_
-* tree_
-* touch_
-* mv_
-* rm_
+* mkdir_ to make directories_
+* cd_ to change directories_
+* ls_ to show what is in a directory_
+* tree_ to show a directory_ and its sub directories_ as a tree
+* touch_ to make empty files_
+* mv_ to rename a file_ and to move a file_
+* rm_ to remove directories_
 
-:ref:`How many questions can you answer after going through this chapter?<questions about Directory Structure>`
+:ref:`How many questions do you think you can answer after going through this chapter?<questions about Directory Structure>`
 
 ----
 

@@ -41,7 +41,7 @@
 .. _cd program: cd_
 .. _change directory: cd_
 .. _changing directory: cd_
-.. _changing directories: cd_
+.. _change directories: cd_
 .. _chmod: https://grokipedia.com/page/Chmod
 .. _comparisons: https://docs.python.org/3/reference/expressions.html?highlight=ternary%20conditional#comparisons
 .. _computer program: https://grokipedia.com/page/Computer_program

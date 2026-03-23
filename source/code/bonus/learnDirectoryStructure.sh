@@ -39,26 +39,26 @@ cd lil
 cd ..
 cd ..
 tree
-touch an_empty_file_in_doe
+touch an_empty_file
 ls -a
 cd jane
-touch an_empty_file_in_jane
+touch an_empty_file
 ls -a
 cd ..
 cd john
-touch an_empty_file_in_john
+touch an_empty_file
 ls -a
 cd ..
 tree
 cd jane
 cd baby
-touch an_empty_file_in_baby
+touch an_empty_file
 ls -a
 cd ..
 cd ..
 cd john
 cd lil
-touch an_empty_file_in_lil
+touch an_empty_file
 ls -a
 cd ..
 cd ..

@@ -4,6 +4,8 @@
 
 .. include:: ../links.rst
 
+.. _VS Browser: https://marketplace.visualstudio.com/items?itemName=Phu1237.vs-browser
+
 #################################################################################
 how I setup my Integrated Development Environment (IDE)
 #################################################################################
@@ -112,6 +114,7 @@ Here are extensions I use in `Visual Studio Code`_, click on anyone you like to 
 * `indent-rainbow`_ - I like pretty colors and this makes indentation easier to see from a distance
 * `Python Extension`_ - Python_ language support with Pylance_ and a Python_ debugger
 * `Dark Rainbow Theme`_ or `Semantic Rainbow Theme`_ - did I mention I like pretty colors?
+* `VS Browser`_ - a Browser in `Visual Studio Code`_
 * `Remote Development`_ - This allows me to work with `Windows Subsystem for Linux`_ or Linux_ on any computer
 
 ----
