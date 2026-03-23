@@ -570,6 +570,7 @@ how to look at directory structure
 * I `change directory`_ to ``jane``
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     cd jane
 
@@ -654,7 +655,8 @@ how to look at directory structure
 
 * I `change directory`_ to ``john``
 
-  .. code-block:: python
+  .. code-block::
+    :emphasize-lines: 1
 
     cd john
 

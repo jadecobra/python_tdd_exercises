@@ -14,12 +14,24 @@ cd doe
 tree
 cd jane
 mkdir jane
-ls -a
+ls
 tree
+cd jane
+cd ..
 cd john
 mkdir john
+ls
+tree
+cd john
+cd ..
+cd .a_hidden_folder_in_doe
+mkdir .a_hidden_folder_in_doe
+ls
 ls -a
 tree
+tree -a
+cd .a_hidden_folder_in_doe
+cd ..
 cd jane
 ls
 ls -a
@@ -27,6 +39,10 @@ tree
 cd baby
 mkdir baby
 cd baby
+cd ..
+cd .a_hidden_folder_in_jane
+mkdir .a_hidden_folder_in_jane
+cd .a_hidden_folder_in_jane
 cd ..
 cd ..
 cd john
@@ -37,32 +53,47 @@ cd lil
 mkdir lil
 cd lil
 cd ..
+cd .a_hidden_folder_in_john
+mkdir .a_hidden_folder_in_john
+cd .a_hidden_folder_in_john
+cd ..
 cd ..
 tree
-touch an_empty_file
+tree -a
+touch an_empty_file_in_doe
+touch .a_hidden_file_in_doe
+ls
 ls -a
 cd jane
-touch an_empty_file
+touch an_empty_file_in_jane
+touch .a_hidden_file_in_jane
 ls -a
 cd ..
 cd john
-touch an_empty_file
+touch an_empty_file_in_john
+touch .a_hidden_file_in_john
 ls -a
 cd ..
 tree
+tree -a
 cd jane
 cd baby
-touch an_empty_file
+touch an_empty_file_in_baby
+touch .a_hidden_file_in_baby
+mkdir .a_hidden_folder_in_baby
 ls -a
 cd ..
 cd ..
 cd john
 cd lil
-touch an_empty_file
+touch an_empty_file_in_lil
+touch .a_hidden_file_in_lil
+mkdir .a_hidden_folder_in_lil
 ls -a
 cd ..
 cd ..
 tree
+tree -a
 cd baby
 cd jane/baby
 cd ../..
@@ -84,10 +115,10 @@ touch aka_parent_of_john
 tree
 touch jane/a_child_of_doe
 touch jane/aka_sibling_of_john
-touch john/another_child_of_doe
+touch john/a_child_of_doe
 touch john/aka_sibling_of_jane
 touch jane/baby/a_grandchild_of_doe
-touch john/lil/another_grandchild_of_doe
+touch john/lil/a_grandchild_of_doe
 cd ..
 tree doe
 pwd
@@ -100,14 +131,14 @@ ls -a doe/john/lil
 cd doe/jane/baby
 ls -a ../../john/lil
 touch ../../john/lil/aka_cousin_of_baby
-mv aka_child_of_janes_sibling ../../john/lil/aka_child_of_janes_sibling
+mv aka_child_of_janes_sibling aka_child_of_johns_sibling
 tree ../../john/lil
 touch ../../aka_grandparent_of_baby
 touch ../../jane/aka_uncle_of_baby
 cd ../../john/lil
 ls -a ../../jane/baby
 touch ../../jane/baby/aka_cousin_of_lil
-mv aka_child_of_janes_sibling ../../jane/baby/aka_child_of_janes_sibling
+mv aka_child_of_johns_sibling aka_child_of_janes_sibling
 tree ../../jane/baby
 touch ../../aka_grandparent_of_lil
 touch ../../john/aka_aunt_of_lil
@@ -116,6 +147,7 @@ cd ../../..
 mv doe/jane/aka_uncle_of_baby doe/john/aka_uncle_of_baby
 mv doe/john/aka_aunt_of_lil doe/jane/aka_aunt_of_lil
 tree doe
+tree -a doe
 rm doe
 rm --recursive doe
 cd doe
