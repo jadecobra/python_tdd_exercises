@@ -1992,8 +1992,80 @@ how to use directory relationships with touch
 
 * I `change directory`_ to ``jane``
 
-  .. code-blokc
+  .. code-block:: python
+    :emphasize-lines: 1
 
+    cd jane
+
+* I add an empty file_ to ``baby`` from ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch baby/aka_child_of_jane
+
+* I add an empty file_ to ``doe`` from ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../aka_parent_of_jane
+
+* I add an empty file_ to ``john`` from ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../john/aka_sibling_of_jane
+
+* I add an empty file_ to ``lil`` from ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../john/lil/aka_child_of_johns_sibling
+
+* I go back to the parent of ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ..
+
+* I show the ``doe`` family tree
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 2, 9, 13, 17
+
+    .
+    ├── aka_parent_of_jane
+    ├── an_empty_file_in_doe
+    ├── jane
+    │   ├── a_child_of_doe
+    │   ├── an_empty_file_in_jane
+    │   └── baby
+    │       ├── a_grandchild_of_doe
+    │       ├── aka_child_of_jane
+    │       └── an_empty_file_in_baby
+    └── john
+        ├── a_child_of_doe
+        ├── aka_sibling_of_jane
+        ├── an_empty_file_in_john
+        └── lil
+            ├── a_grandchild_of_doe
+            ├── aka_child_of_johns_sibling
+            └── an_empty_file_in_lil
+
+    5 directories, 13 files
+
+----
 
 * I go from ``doe`` to ``baby`` in 1 step with its parent
 
