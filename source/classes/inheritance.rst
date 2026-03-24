@@ -1052,7 +1052,7 @@ I change the expectation
 * I add another parent to show that ``lil`` is a child of ``Doe`` and ``Smith`` in ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 36
     :emphasize-lines: 1
 
     class Lil(Doe, Smith): pass
