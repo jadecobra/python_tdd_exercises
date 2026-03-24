@@ -1782,6 +1782,13 @@ I can make empty files_ in a folder_ with the `touch program`_
 
 * I use tree_ with the ``-a`` option
 
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -a
+
+  the terminal_ shows
+
   .. code-block:: shell
     :emphasize-lines: 10-11, 18-19
 
@@ -2741,7 +2748,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
 * I go to the parent of ``doe``
 
-  .. code-block::python
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ../../..

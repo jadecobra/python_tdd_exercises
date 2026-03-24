@@ -1,0 +1,42 @@
+doe
+├── .a_hidden_file_in_doe
+├── .a_hidden_folder_in_doe
+├── aka_grandparent_of_baby
+├── aka_grandparent_of_lil
+├── aka_parent_of_jane
+├── aka_parent_of_john
+├── an_empty_file_in_doe
+├── jane
+│   ├── a_child_of_doe
+│   ├── .a_hidden_file_in_jane
+│   ├── .a_hidden_folder_in_jane
+│   ├── aka_aunt_of_lil
+│   ├── aka_parent_of_baby
+│   ├── aka_sibling_of_john
+│   ├── an_empty_file_in_jane
+│   └── baby
+│       ├── a_grandchild_of_doe
+│       ├── .a_hidden_file_in_baby
+│       ├── .a_hidden_folder_in_baby
+│       ├── aka_child_of_jane
+│       ├── aka_child_of_johns_sibling
+│       ├── aka_cousin_of_lil
+│       └── an_empty_file_in_baby
+└── john
+    ├── a_child_of_doe
+    ├── .a_hidden_file_in_john
+    ├── .a_hidden_folder_in_john
+    ├── aka_parent_of_lil
+    ├── aka_sibling_of_jane
+    ├── aka_uncle_of_baby
+    ├── an_empty_file_in_john
+    └── lil
+        ├── a_grandchild_of_doe
+        ├── .a_hidden_file_in_lil
+        ├── .a_hidden_folder_in_lil
+        ├── aka_child_of_janes_sibling
+        ├── aka_child_of_john
+        ├── aka_cousin_of_baby
+        └── an_empty_file_in_lil
+
+10 directories, 30 files
