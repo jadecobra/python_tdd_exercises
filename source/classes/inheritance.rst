@@ -263,7 +263,7 @@ test_making_a_class_w_object
 I add another test to ``TestClasses`` in ``test_classes.py``
 
 .. code-block:: python
-  :lineno-start: 7
+  :lineno-start: 10
   :emphasize-lines: 4-5
 
       def test_making_a_class_w_parentheses(self):

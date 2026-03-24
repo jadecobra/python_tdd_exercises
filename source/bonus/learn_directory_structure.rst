@@ -57,7 +57,7 @@ what is a folder?
 
 A `folder (directory)`_ is a box for files_. It helps organize things, just like a folder in a file cabinet is used to put files that belong together in one place.
 
-I keep every project I work on in its own `folder (directory)`_. All the code from this book is kept in a folder_ named ``pumping_python``
+I keep every project I work on in its own `folder (directory)`_. All the code in this book is done in a folder_ named ``pumping_python``.
 
 ----
 
@@ -65,7 +65,7 @@ I keep every project I work on in its own `folder (directory)`_. All the code fr
 what is a file?
 *********************************************************************************
 
-A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names usually end with an extension (not always) to show the type of file_. For example
+A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names can end with an extension (not always) to show the type of file_. For example
 
 * ``.txt`` for a `plain text file`_
 * ``.sh`` for a `bash file`_
@@ -99,9 +99,11 @@ if it is installed, the terminal_ shows
 
   0 directories, 0 files
 
-if there is nothing in the directory_, if there is something in the directory_ it shows a structure of the relationships.
+if there is nothing in the directory_. If there is something in the directory_ it shows a structure of the relationships.
 
-The `tree program`_ shows how files_ and folders_ on a computer are related.
+The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to get from one folder_ to another, because it shows the paths I can take.
+
+If I know where I am, it is easier to get to where I want to go.
 
 ----
 
@@ -202,7 +204,7 @@ how to see what directory I am in
 
 ----
 
-I start by checking where I am in the terminal_. I can do this with the pwd_ program
+I start by checking where I am in the terminal_ because If I know where I am, it is easier to get to where I want to go. I can do this with the pwd_ program
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -217,8 +219,10 @@ the terminal_ shows
 
 because I am in the ``pumping_python`` folder_
 
-* pwd_ shows the path/address to the current folder_ I am in at the moment
+* pwd_ shows the path/address of the current folder_ I am in at the moment
 * pwd_ means ``print working directory``, it prints the directory I am in, to the terminal_
+* each ``/`` shows a parent-child relationship
+* the first ``/`` is for ``root`` which is the starting ancestor of all the folders_ on the computer, it is at the highest level
 
 If I know where I am, it is easier to get to where I want to go.
 
@@ -719,7 +723,8 @@ how to look at directory structure
 
     jane  john
 
-  ``.a_hidden_folder_in_doe`` is hidden
+  - ``.a_hidden_folder_in_doe`` is hidden
+  - I can hide a file_ or directory_ by putting ``.`` before its name
 
 * I use ls_ with the ``-a`` option to see everything that is in ``doe``
 
@@ -787,6 +792,7 @@ how to look at directory structure
 * I `change directory`_ back to ``doe``
 
   .. code-block:: python
+    :emphasize-lines: 1
 
     cd ..
 
@@ -1187,6 +1193,13 @@ how to look at directory structure
 
 * I use the ``-a`` option with tree_
 
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree
+
+  the terminal_ shows
+
   .. code-block:: shell
     :emphasize-lines: 2, 4, 7
 
@@ -1262,8 +1275,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_doe  .a_hidden_folder_in_doe
-    .. an_empty_file_in_doe   jane  john
+    .   .a_hidden_file_in_doe    an_empty_file_in_doe  john
+    ..  .a_hidden_folder_in_doe  jane
 
   .. NOTE::
 
@@ -1318,8 +1331,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_jane  .a_hidden_folder_in_jane
-    .. an_empty_file_in_jane   baby
+    .   .a_hidden_file_in_jane    an_empty_file_in_jane
+    ..  .a_hidden_folder_in_jane  baby
 
 * I `change directory`_ to the parent of ``jane``
 
@@ -1376,8 +1389,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_john  .a_hidden_folder_in_john
-    .. an_empty_file_in_john   lil
+    .   .a_hidden_file_in_john    an_empty_file_in_john
+    ..  .a_hidden_folder_in_john  lil
 
 * I `change directory`_ to the parent of ``john``
 
@@ -1429,7 +1442,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 2, 4, 6, 8, 11, 13
+    :emphasize-lines: 2, 6, 11
 
     .
     ├── .a_hidden_file_in_doe
@@ -1447,6 +1460,8 @@ I can make empty files_ in a folder_ with the `touch program`_
         └── lil
 
     8 directories, 6 files
+
+----
 
 * I want to make a file_ in ``baby``. I use cd_ to go to its parent first
 
@@ -1516,8 +1531,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_baby  .a_hidden_folder_in_baby
-    .. an_empty_file_in_baby
+    .   .a_hidden_file_in_baby    an_empty_file_in_baby
+    ..  .a_hidden_folder_in_baby
 
 * I go back to the parent of ``baby``
 
@@ -1617,8 +1632,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_lil  .a_hidden_folder_in_lil
-    .. an_empty_file_in_lil
+    .   .a_hidden_file_in_lil    an_empty_file_in_lil
+    ..  .a_hidden_folder_in_lil
 
 * I go back to the parent of ``lil``
 
@@ -1850,9 +1865,10 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_baby  .a_hidden_folder_in_baby
-    .. aka_child_of_jane       aka_child_of_janes_sibling
-       an_empty_file_in_baby
+    .                         aka_child_of_jane
+    ..                        aka_child_of_janes_sibling
+    .a_hidden_file_in_baby    an_empty_file_in_baby
+    .a_hidden_folder_in_baby
 
 * I go back to ``doe``
 
@@ -1909,9 +1925,10 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_lil  .a_hidden_folder_in_lil
-    .. aka_child_of_john      aka_child_of_johns_sibling
-       an_empty_file_in_lil
+    .                        aka_child_of_john
+    ..                       aka_child_of_johns_sibling
+    .a_hidden_file_in_lil    an_empty_file_in_lil
+    .a_hidden_folder_in_lil
 
 * I go back to ``doe``
 
@@ -1985,6 +2002,38 @@ how to use directory relationships
       tree /F
 
   wait a minute! How is ``lil`` a child of ``john`` and a child of ``john's sibling``, and how is ``baby`` a child of ``jane`` and a child of ``jane's`` sibling? I made a mistake.
+
+----
+
+=================================================================================
+how to rename a file or directory
+=================================================================================
+
+----
+
+* I use the `mv program`_ to change ``aka_child_of_janes_sibling`` to ``aka_child_of_johns_sibling``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mv aka_child_of_janes_sibling aka_child_of_johns_sibling
+
+  - the terminal_ goes back to the command line
+  - mv_ means move, it takes two arguments
+
+    * the original file_ or folder_
+    * the file_ or folder_ I want the original to be moved to
+
+* I use the `mv program`_ to change ``aka_child_of_johns_sibling`` to ``aka_child_of_janes_sibling``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mv aka_child_of_johns_sibling aka_child_of_janes_sibling
+
+  the terminal_ goes back to the command line
+
+----
 
 * I add an empty file_ to ``jane`` from inside ``doe``
 
@@ -2143,9 +2192,11 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  .a_hidden_file_in_doe  .a_hidden_folder_in_doe
-    .. aka_parent_of_jane     aka_parent_of_john
-       an_empty_file_in_doe   jane  john
+    .                        aka_parent_of_john
+    ..                       an_empty_file_in_doe
+    .a_hidden_file_in_doe    jane
+    .a_hidden_folder_in_doe  john
+    aka_parent_of_jane
 
 * I show what is in ``jane``
 
@@ -2158,9 +2209,10 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_child_of_doe  .a_hidden_file_in_jane
-    .. .a_hidden_folder_in_jane  aka_sibling_of_john
-       an_empty_file_in_jane     baby
+    .                       .a_hidden_folder_in_jane
+    ..                      aka_sibling_of_john
+    a_child_of_doe          an_empty_file_in_jane
+    .a_hidden_file_in_jane  baby
 
 * I show what is in ``baby``
 
@@ -2173,9 +2225,10 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_baby
-    .. .a_hidden_folder_in_baby    aka_child_of_jane
-       aka_child_of_janes_sibling  an_empty_file_in_baby
+    .                       .a_hidden_folder_in_baby
+    ..                      aka_child_of_jane
+    a_grandchild_of_doe     aka_child_of_janes_sibling
+    .a_hidden_file_in_baby  an_empty_file_in_baby
 
 * I show what is in ``john``
 
@@ -2188,9 +2241,10 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_child_of_doe  .a_hidden_file_in_john
-    .. .a_hidden_folder_in_john  aka_sibling_of_jane
-       an_empty_file_in_john  lil
+    .                       .a_hidden_folder_in_john
+    ..                      aka_sibling_of_jane
+    a_child_of_doe          an_empty_file_in_john
+    .a_hidden_file_in_john  lil
 
 * I show what is in ``lil``
 
@@ -2203,9 +2257,10 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_lil
-    .. .a_hidden_folder_in_lil     aka_child_of_john
-       aka_child_of_johns_sibling  an_empty_file_in_lil
+    .                      .a_hidden_folder_in_lil
+    ..                     aka_child_of_john
+    a_grandchild_of_doe    aka_child_of_johns_sibling
+    .a_hidden_file_in_lil  an_empty_file_in_lil
 
 ----
 
@@ -2237,9 +2292,10 @@ how to use directory relationships
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_lil
-    .. .a_hidden_folder_in_lil     aka_child_of_john
-        aka_child_of_johns_sibling  an_empty_file_in_lil
+    .                      .a_hidden_folder_in_lil
+    ..                     aka_child_of_john
+    a_grandchild_of_doe    aka_child_of_johns_sibling
+    .a_hidden_file_in_lil  an_empty_file_in_lil
 
 * I add an empty file_ to ``lil`` from inside ``baby``
 
@@ -2249,27 +2305,6 @@ how to use directory relationships
     touch ../../john/lil/aka_cousin_of_baby
 
   the terminal_ goes back to the command line
-
-----
-
-=================================================================================
-how to rename a file or directory
-=================================================================================
-
-----
-
-* I use the `mv program`_ to change ``aka_child_of_janes_sibling`` to ``aka_child_of_johns_sibling``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mv aka_child_of_janes_sibling aka_child_of_johns_sibling
-
-  - the terminal_ goes back to the command line
-  - mv_ means move, it takes two arguments
-
-    * the original file_ or folder_
-    * the file_ or folder_ I want the original to be moved to
 
 * I use tree_ to show what is in ``lil``
 
@@ -2292,14 +2327,16 @@ how to rename a file or directory
 
     1 directory, 5 files
 
-* I add an empty file_ to ``doe`` from inside ``baby``
+* I add an empty file_ to ``jane`` from inside ``baby``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../aka_grandparent_of_baby
+    touch ../aka_parent_of_baby
 
   the terminal_ goes back to the command line
+
+  ``..`` from ``baby`` is ``jane``
 
 * I add an empty file_ to ``john`` from inside ``baby``
 
@@ -2315,6 +2352,24 @@ how to rename a file or directory
   - ``john`` is a child of ``doe``
 
   I made a mistake. ``john`` is the uncle of ``baby`` not ``jane``
+
+* I move ``aka_uncle_of_baby`` from ``jane`` to ``john``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mv ../aka_uncle_of_baby ../../john/aka_uncle_of_baby
+
+  the terminal_ goes back to the command line
+
+* I add an empty file_ to ``doe`` from inside ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../aka_grandparent_of_baby
+
+  the terminal_ goes back to the command line
 
 ----
 
@@ -2349,9 +2404,10 @@ how to rename a file or directory
 
   .. code-block:: python
 
-    .  a_grandchild_of_doe  .a_hidden_file_in_baby
-    .. .a_hidden_folder_in_baby    aka_child_of_jane
-       aka_child_of_johns_sibling  an_empty_file_in_baby
+    .                       .a_hidden_folder_in_baby
+    ..                      aka_child_of_jane
+    a_grandchild_of_doe     aka_child_of_johns_sibling
+    .a_hidden_file_in_baby  an_empty_file_in_baby
 
   - ``..`` from ``lil`` is ``john``
   - ``..`` from ``john`` is ``doe``
@@ -2364,15 +2420,6 @@ how to rename a file or directory
     :emphasize-lines: 1
 
     touch ../../jane/baby/aka_cousin_of_lil
-
-  the terminal_ goes back to the command line
-
-* I use the `mv program`_ to change ``aka_child_of_johns_sibling`` to ``aka_child_of_janes_sibling``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mv aka_child_of_johns_sibling aka_child_of_janes_sibling
 
   the terminal_ goes back to the command line
 
@@ -2397,12 +2444,12 @@ how to rename a file or directory
 
     1 directory, 5 files
 
-* I add an empty file_ to ``doe`` from inside ``lil``
+* I add an empty file_ to ``john`` from inside ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../aka_grandparent_of_lil
+    touch ../aka_parent_of_lil
 
   the terminal_ goes back to the command line
 
@@ -2420,6 +2467,24 @@ how to rename a file or directory
   - ``jane`` is a child of ``doe``
 
   I made a mistake. ``jane`` is the aunt of ``lil`` not ``john``
+
+* I move ``aka_aunt_of_lil`` from ``john`` to ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mv ../aka_aunt_of_lil ../../jane/aka_aunt_of_lil
+
+  the terminal_ goes back to the command line
+
+* I add an empty file_ to ``doe`` from inside ``lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../aka_grandparent_of_lil
+
+  the terminal_ goes back to the command line
 
 * I look at the family tree of ``doe`` again, this time from inside ``lil``
 
@@ -2478,22 +2543,6 @@ how to rename a file or directory
     .../pumping_python
 
   I am back in ``pumping_python``
-
-* I move ``aka_uncle_of_baby`` to ``john``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mv doe/jane/aka_uncle_of_baby doe/john/aka_uncle_of_baby
-
-  the terminal_ goes back to the command line
-
-* I move ``aka_aunt_of_lil`` to ``jane``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mv doe/john/aka_aunt_of_lil doe/jane/aka_aunt_of_lil
 
 * I show the ``doe`` family tree again
 
