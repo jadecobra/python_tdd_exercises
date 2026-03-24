@@ -2254,7 +2254,7 @@ mv_ means move, it takes two arguments
 
 ----
 
-* I `change directory`_ to ``baby``
+* I `change directory`_ to ``baby`` from ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2281,6 +2281,8 @@ mv_ means move, it takes two arguments
     :emphasize-lines: 1
 
     touch ../../john/aka_aunt_of_baby
+
+  I made a mistake - ``john`` is not the aunt of ``baby`` he is the uncle
 
 * I add an empty file_ to ``lil`` from ``baby``
 
@@ -2332,72 +2334,12 @@ mv_ means move, it takes two arguments
 
 ----
 
-* I go from ``doe`` to ``baby``
+* I `change directory`_ to ``lil`` from ``baby``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane/baby
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../doe/jane/baby
-
-  I am in ``baby``
-
-* I make an empty file_ in ``baby``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch aka_child_of_jane
-
-  the terminal_ goes back to the command line
-
-* I make another empty file_ in ``baby``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch aka_child_of_janes_sibling
-
-* I use ls_ to show what is in the folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .                         aka_child_of_jane
-    ..                        aka_child_of_janes_sibling
-    .a_hidden_file_in_baby    an_empty_file_in_baby
-    .a_hidden_folder_in_baby
-
-* I go back to ``doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd ../..
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../pumping_python/doe
-
-* I go from ``doe`` to ``lil`` in 1 step with its parent
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd john/lil
+    cd ../../john/lil
 
   the terminal_ shows
 
@@ -2405,65 +2347,108 @@ mv_ means move, it takes two arguments
 
     .../doe/john/lil
 
-  I am in ``lil``
-
-* I make an empty file_ in ``lil``
+* I add an empty file_ to ``john`` from ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch aka_child_of_john
+    touch ../aka_parent_of_lil
 
-  the terminal_ goes back to the command line
-
-* I use ls_ to show what is in the folder_
+* I add an empty file_ to ``doe`` from ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    ls -a
+    touch ../../aka_grandparent_of_lil
+
+* I add an empty file_ to ``jane`` from ``lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../jane/aka_uncle_of_lil
+
+  I made a mistake - ``jane`` is not the uncle of ``baby`` she is the aunt
+
+* I add an empty file_ to ``baby`` from ``lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../jane/baby/aka_cousin_of_lil
+
+* I look at the ``doe`` family tree from ``lil`` through the parent of ``doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree ../../../doe
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
+    :emphasize-lines: 1, 3, 11, 17, 22
 
-    .                        aka_child_of_john
-    ..                       aka_child_of_johns_sibling
-    .a_hidden_file_in_lil    an_empty_file_in_lil
-    .a_hidden_folder_in_lil
+    ../../../doe
+    ├── aka_grandparent_of_baby
+    ├── aka_grandparent_of_lil
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── an_empty_file_in_doe
+    ├── jane
+    │   ├── a_child_of_doe
+    │   ├── aka_parent_of_baby
+    │   ├── aka_sibling_of_john
+    │   ├── aka_uncle_of_lil
+    │   ├── an_empty_file_in_jane
+    │   └── baby
+    │       ├── a_grandchild_of_doe
+    │       ├── aka_child_of_jane
+    │       ├── aka_child_of_johns_sibling
+    │       ├── aka_cousin_of_lil
+    │       └── an_empty_file_in_baby
+    └── john
+        ├── a_child_of_doe
+        ├── aka_aunt_of_baby
+        ├── aka_parent_of_lil
+        ├── aka_sibling_of_jane
+        ├── an_empty_file_in_john
+        └── lil
+            ├── a_grandchild_of_doe
+            ├── aka_child_of_janes_sibling
+            ├── aka_child_of_john
+            ├── aka_cousin_of_baby
+            └── an_empty_file_in_lil
+
+    5 directories, 25 files
+
+I can add a file_ to any folder_ when I know its path or relation to where I am, and I have permission to write to the folder_. It is easier to get to where I want to go if I know where I am.
+
+----
+
+* I change ``aka_uncle_of_lil`` to ``aka_aunt_of_lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mv ../../jane/aka_uncle_of_lil ../../jane/aka_aunt_of_lil
+
+* I change ``aka_aunt_of_baby`` to ``aka_uncle_of_baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mv ../aka_aunt_of_baby ../aka_uncle_of_baby
+
+  the terminal_ goes back to the command line
 
 * I go back to ``doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
 
     cd ../..
 
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../pumping_python/doe
-
-  I am back in ``doe``
-
-* I add 2 empty files_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch aka_parent_of_jane
-
-  the terminal_ goes back to the command line
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch aka_parent_of_john
-
-  the terminal_ goes back to the command line
-
-* I use tree_ to show the ``doe`` family tree
+* I use tree_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2473,74 +2458,54 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 2-3, 8-9, 14-15
+    :emphasize-lines: 9, 23
 
     .
+    ├── aka_grandparent_of_baby
+    ├── aka_grandparent_of_lil
     ├── aka_parent_of_jane
     ├── aka_parent_of_john
     ├── an_empty_file_in_doe
     ├── jane
+    │   ├── a_child_of_doe
+    │   ├── aka_aunt_of_lil
+    │   ├── aka_parent_of_baby
+    │   ├── aka_sibling_of_john
     │   ├── an_empty_file_in_jane
     │   └── baby
+    │       ├── a_grandchild_of_doe
     │       ├── aka_child_of_jane
-    │       ├── aka_child_of_janes_sibling
+    │       ├── aka_child_of_johns_sibling
+    │       ├── aka_cousin_of_lil
     │       └── an_empty_file_in_baby
     └── john
+        ├── a_child_of_doe
+        ├── aka_parent_of_lil
+        ├── aka_sibling_of_jane
+        ├── aka_uncle_of_baby
         ├── an_empty_file_in_john
         └── lil
+            ├── a_grandchild_of_doe
+            ├── aka_child_of_janes_sibling
             ├── aka_child_of_john
-            ├── aka_child_of_johns_sibling
+            ├── aka_cousin_of_baby
             └── an_empty_file_in_lil
 
-    5 directories, 11 files
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      tree /F
-
-
+    5 directories, 25 files
 
 ----
 
-I can add a file_ to any folder_ when I know its path or relation to where I am, and I have permission to write to the folder_. It is easier to get to where I want to go if I know where I am
+=================================================================================
+how to use directory relationships with ls
+=================================================================================
 
-* I add an empty file_ to ``jane`` from inside ``doe``
+----
 
-  .. code-block:: python
-    :emphasize-lines: 1
+I can see what is in any folder_ when I know its path or relation to where I am. It is easier to get to where I want to go if I know where I am
 
-    touch jane/a_child_of_doe
-
-* I add an empty file_ to ``john`` from inside ``doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch john/a_child_of_doe
-
-* I add an empty file_ to ``baby`` from inside ``doe``
+* I go to the parent of ``doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
-
-    touch jane/baby/a_grandchild_of_doe
-
-* I add an empty file_ to ``lil`` from inside ``doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch john/lil/a_grandchild_of_doe
-
-* I `change directory`_ to the parent of ``doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
 
     cd ..
 
@@ -2550,256 +2515,7 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
     .../pumping_python
 
-  I am in the ``pumping_python`` folder_
-
-* I use tree_ to show the ``doe`` family tree (what is in ``doe``)
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree doe
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1, 6, 9, 14, 17
-
-    doe
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── an_empty_file_in_doe
-    ├── jane
-    │   ├── a_child_of_doe
-    │   ├── an_empty_file_in_jane
-    │   └── baby
-    │       ├── a_grandchild_of_doe
-    │       ├── aka_child_of_jane
-    │       ├── aka_child_of_johns_sibling
-    │       └── an_empty_file_in_baby
-    └── john
-        ├── a_child_of_doe
-        ├── an_empty_file_in_john
-        └── lil
-            ├── a_grandchild_of_doe
-            ├── aka_child_of_janes_sibling
-            ├── aka_child_of_john
-            └── an_empty_file_in_lil
-
-    5 directories, 15 files
-
-* I type pwd_ to see where I am
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../pumping_python
-
-  I am in the ``pumping_python`` folder_
-
-----
-
-* I go to ``john``
-
-  .. code-block:: python
-
-    cd doe/john
-
-* I add an empty file_ to ``lil`` from inside ``john``
-
-  .. code-block:: python
-
-    touch lil/a_child_of_john
-
-* I add an empty file_ to ``doe`` from inside ``john``
-
-  .. code-block:: python
-
-    touch ../aka_parent_of_john
-
-* I add an empty file_ to ``jane`` from inside ``john``
-
-  .. code-block:: python
-
-    touch ../jane/aka_sibling_of_john
-
-* I add an empty file_ to ``baby`` from inside ``john``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../jane/aka_child_of_janes_sibling
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1-2
-
-      New-Item jane/aka_sibling_of_john
-
-* I use tree_ to show the ``doe`` family tree (what is in ``doe``)
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree ../doe
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1, 6, 9, 14, 17
-
-    ../doe
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── an_empty_file_in_doe
-    ├── jane
-    │   ├── a_child_of_doe
-    │   ├── an_empty_file_in_jane
-    │   └── baby
-    │       ├── a_grandchild_of_doe
-    │       ├── aka_child_of_jane
-    │       ├── aka_child_of_johns_sibling
-    │       └── an_empty_file_in_baby
-    └── john
-        ├── a_child_of_doe
-        ├── an_empty_file_in_john
-        └── lil
-            ├── a_grandchild_of_doe
-            ├── aka_child_of_janes_sibling
-            ├── aka_child_of_john
-            └── an_empty_file_in_lil
-
-    5 directories, 15 files
-
-* I type pwd_ to see where I am
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../pumping_python
-
-  I am in the ``pumping_python`` folder_
-
-----
-
-* I go to ``jane``
-
-  .. code-block:: python
-
-    cd ../jane
-
-* I add an empty file_ to ``baby`` from inside ``jane``
-
-  .. code-block:: python
-
-    touch baby/a_child_of_jane
-
-* I add an empty file_ to ``doe`` from inside ``jane``
-
-  .. code-block:: python
-
-    touch ../aka_parent_of_jane
-
-* I add an empty file_ to ``john`` from inside ``jane``
-
-  .. code-block:: python
-
-    touch ../jane/aka_sibling_of_john
-
-* I add an empty file_ to ``baby`` from inside ``john``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../john/baby/aka_child_of_johns_sibling
-
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1-2
-
-      touch ../john/baby/aka_child_of_johns_sibling
-
-* I use tree_ to show the ``doe`` family tree (what is in ``doe``)
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree ../doe
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1, 6, 9, 14, 17
-
-    doe
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── an_empty_file_in_doe
-    ├── jane
-    │   ├── a_child_of_doe
-    │   ├── an_empty_file_in_jane
-    │   └── baby
-    │       ├── a_grandchild_of_doe
-    │       ├── aka_child_of_jane
-    │       ├── aka_child_of_johns_sibling
-    │       └── an_empty_file_in_baby
-    └── john
-        ├── a_child_of_doe
-        ├── an_empty_file_in_john
-        └── lil
-            ├── a_grandchild_of_doe
-            ├── aka_child_of_janes_sibling
-            ├── aka_child_of_john
-            └── an_empty_file_in_lil
-
-    5 directories, 15 files
-
-* I type pwd_ to see where I am
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    pwd
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../pumping_python
-
-  I am in the ``pumping_python`` folder_
-
-----
-
-* I can see what is in any folder_ when I know its path or relation to where I am. It is easier to get to where I want to go if I know where I am
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .  ..  doe
+  I am in ``pumping_python``
 
 * I show what is in ``doe``
 
@@ -2812,11 +2528,12 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
   .. code-block:: python
 
-    .                        aka_parent_of_john
-    ..                       an_empty_file_in_doe
-    .a_hidden_file_in_doe    jane
-    .a_hidden_folder_in_doe  john
-    aka_parent_of_jane
+    .                        aka_parent_of_jane
+    ..                       aka_parent_of_john
+    .a_hidden_file_in_doe    an_empty_file_in_doe
+    .a_hidden_folder_in_doe  jane
+    aka_grandparent_of_baby  john
+    aka_grandparent_of_lil
 
 * I show what is in ``jane``
 
@@ -2829,10 +2546,11 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
   .. code-block:: python
 
-    .                       .a_hidden_folder_in_jane
-    ..                      aka_sibling_of_john
-    a_child_of_doe          an_empty_file_in_jane
-    .a_hidden_file_in_jane  baby
+    .                         aka_aunt_of_lil
+    ..                        aka_parent_of_baby
+    a_child_of_doe            aka_sibling_of_john
+    .a_hidden_file_in_jane    an_empty_file_in_jane
+    .a_hidden_folder_in_jane  baby
 
 * I show what is in ``baby``
 
@@ -2845,86 +2563,53 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
   .. code-block:: python
 
-    .                       .a_hidden_folder_in_baby
-    ..                      aka_child_of_jane
-    a_grandchild_of_doe     aka_child_of_janes_sibling
-    .a_hidden_file_in_baby  an_empty_file_in_baby
+    .                         aka_child_of_jane
+    ..                        aka_child_of_johns_sibling
+    a_grandchild_of_doe       aka_cousin_of_lil
+    .a_hidden_file_in_baby    an_empty_file_in_baby
+    .a_hidden_folder_in_baby
 
-* I show what is in ``john``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ls -a doe/john
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .                       .a_hidden_folder_in_john
-    ..                      aka_sibling_of_jane
-    a_child_of_doe          an_empty_file_in_john
-    .a_hidden_file_in_john  lil
-
-* I show what is in ``lil``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ls -a doe/john/lil
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .                      .a_hidden_folder_in_lil
-    ..                     aka_child_of_john
-    a_grandchild_of_doe    aka_child_of_johns_sibling
-    .a_hidden_file_in_lil  an_empty_file_in_lil
-
-----
-
-* I `change directory`_ from ``pumping_python`` to ``baby``
+* I `change directory`_ to ``baby``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     cd doe/jane/baby
 
-  - I am in ``baby``
-  - ``baby`` is a child of ``jane``
-  - ``jane`` is a child of ``doe``
-  - ``doe`` is a child of ``pumping_python``
+* I show what is in ``john`` from ``baby``
 
-* I want to see what is in ``lil`` from inside ``baby`` in 1 step. ``../..`` is ``doe`` and I can go from ``doe`` to ``lil``. I use this relationship with ls_
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    ls -a ../../john
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .                         aka_parent_of_lil
+    ..                        aka_sibling_of_jane
+    a_child_of_doe            aka_uncle_of_baby
+    .a_hidden_file_in_john    an_empty_file_in_john
+    .a_hidden_folder_in_john  lil
+
+* I show what is in ``lil`` from ``baby``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     ls -a ../../john/lil
 
-  - ``..`` from ``baby`` is ``jane``
-  - ``..`` from ``jane`` is ``doe``
-  - ``john`` is a child of ``doe``
-  - ``lil`` is a child of ``john``
-
   the terminal_ shows
 
   .. code-block:: python
 
-    .                      .a_hidden_folder_in_lil
-    ..                     aka_child_of_john
-    a_grandchild_of_doe    aka_child_of_johns_sibling
-    .a_hidden_file_in_lil  an_empty_file_in_lil
-
-* I add an empty file_ to ``lil`` from inside ``baby``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../../john/lil/aka_cousin_of_baby
-
-  the terminal_ goes back to the command line
+    lil
+    .                        aka_child_of_janes_sibling
+    ..                       aka_child_of_john
+    a_grandchild_of_doe      aka_cousin_of_baby
+    .a_hidden_file_in_lil    an_empty_file_in_lil
+    .a_hidden_folder_in_lil
 
 * I use tree_ to show what is in ``lil``
 
@@ -2936,64 +2621,45 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 5
+    :emphasize-lines: 1
 
     ../../john/lil
     ├── a_grandchild_of_doe
+    ├── aka_child_of_janes_sibling
     ├── aka_child_of_john
-    ├── aka_child_of_johns_sibling
     ├── aka_cousin_of_baby
     └── an_empty_file_in_lil
 
     1 directory, 5 files
 
-* I add an empty file_ to ``jane`` from inside ``baby``
+* I use tree_ to show what is in ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../aka_parent_of_baby
+    tree ../../john
 
-  the terminal_ goes back to the command line
+  the terminal_ shows
 
-  ``..`` from ``baby`` is ``jane``
-
-* I add an empty file_ to ``john`` from inside ``baby``
-
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
-    touch ../../jane/aka_uncle_of_baby
+    ../../john
+    ├── a_child_of_doe
+    ├── aka_parent_of_lil
+    ├── aka_sibling_of_jane
+    ├── aka_uncle_of_baby
+    ├── an_empty_file_in_john
+    └── lil
+        ├── a_grandchild_of_doe
+        ├── aka_child_of_janes_sibling
+        ├── aka_child_of_john
+        ├── aka_cousin_of_baby
+        └── an_empty_file_in_lil
 
-  the terminal_ goes back to the command line
+    2 directories, 10 files
 
-  - ``..`` from ``baby`` is ``jane``
-  - ``..`` from ``jane`` is ``doe``
-  - ``john`` is a child of ``doe``
-
-  I made a mistake. ``john`` is the uncle of ``baby`` not ``jane``
-
-* I move ``aka_uncle_of_baby`` from ``jane`` to ``john``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mv ../aka_uncle_of_baby ../../john/aka_uncle_of_baby
-
-  the terminal_ goes back to the command line
-
-* I add an empty file_ to ``doe`` from inside ``baby``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../../aka_grandparent_of_baby
-
-  the terminal_ goes back to the command line
-
-----
-
-* I can use the relationships to `change directories`_ from ``baby`` to ``lil``
+* I `change directories`_ from ``baby`` to ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -3008,12 +2674,7 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
   I am in ``lil``
 
-  - ``..`` from ``baby`` is ``jane``
-  - ``..`` from ``jane`` is ``doe``
-  - ``john`` is a child of ``doe``
-  - ``lil`` is a child of ``john``
-
-* I want to see what is in ``baby`` from inside ``lil`` in 1 step. I use their relationship with ls_
+* I look what is in ``baby`` from inside ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -3024,24 +2685,11 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
   .. code-block:: python
 
-    .                       .a_hidden_folder_in_baby
-    ..                      aka_child_of_jane
-    a_grandchild_of_doe     aka_child_of_johns_sibling
-    .a_hidden_file_in_baby  an_empty_file_in_baby
-
-  - ``..`` from ``lil`` is ``john``
-  - ``..`` from ``john`` is ``doe``
-  - ``jane`` is a child of ``doe``
-  - ``baby`` is a child of ``jane``
-
-* I add an empty file_ to ``baby`` from inside ``lil``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../../jane/baby/aka_cousin_of_lil
-
-  the terminal_ goes back to the command line
+    .                         aka_child_of_jane
+    ..                        aka_child_of_johns_sibling
+    a_grandchild_of_doe       aka_cousin_of_lil
+    .a_hidden_file_in_baby    an_empty_file_in_baby
+    .a_hidden_folder_in_baby
 
 * I use tree_ to show what is in ``baby``
 
@@ -3053,7 +2701,7 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 4-5
+    :emphasize-lines: 1
 
     ../../jane/baby
     ├── a_grandchild_of_doe
@@ -3064,94 +2712,36 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
     1 directory, 5 files
 
-* I add an empty file_ to ``john`` from inside ``lil``
+* I use tree_ to show what is in ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../aka_parent_of_lil
-
-  the terminal_ goes back to the command line
-
-* I add an empty file_ to ``jane`` from inside ``lil``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../../john/aka_aunt_of_lil
-
-  the terminal_ goes back to the command line
-
-  - ``..`` from ``lil`` is ``john``
-  - ``..`` from ``john`` is ``doe``
-  - ``jane`` is a child of ``doe``
-
-  I made a mistake. ``jane`` is the aunt of ``lil`` not ``john``
-
-* I move ``aka_aunt_of_lil`` from ``john`` to ``jane``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mv ../aka_aunt_of_lil ../../jane/aka_aunt_of_lil
-
-  the terminal_ goes back to the command line
-
-* I add an empty file_ to ``doe`` from inside ``lil``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../../aka_grandparent_of_lil
-
-  the terminal_ goes back to the command line
-
-* I look at the family tree of ``doe`` again, this time from inside ``lil``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree ../../../doe
+    tree ../../jane
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 2-3, 10, 15-16, 20, 25, 27
+    :emphasize-lines: 1
 
-    ../../../doe
-    ├── aka_grandparent_of_baby
-    ├── aka_grandparent_of_lil
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── an_empty_file_in_doe
-    ├── jane
-    │   ├── a_child_of_doe
-    │   ├── aka_sibling_of_john
-    │   ├── aka_uncle_of_baby
-    │   ├── an_empty_file_in_jane
-    │   └── baby
-    │       ├── a_grandchild_of_doe
-    │       ├── aka_child_of_jane
-    │       ├── aka_child_of_johns_sibling
-    │       ├── aka_cousin_of_lil
-    │       └── an_empty_file_in_baby
-    └── john
-        ├── a_child_of_doe
-        ├── aka_aunt_of_lil
-        ├── aka_sibling_of_jane
-        ├── an_empty_file_in_john
-        └── lil
-            ├── a_grandchild_of_doe
-            ├── aka_child_of_janes_sibling
-            ├── aka_child_of_john
-            ├── aka_cousin_of_baby
-            └── an_empty_file_in_lil
+    ../../jane
+    ├── a_child_of_doe
+    ├── aka_aunt_of_lil
+    ├── aka_parent_of_baby
+    ├── aka_sibling_of_john
+    ├── an_empty_file_in_jane
+    └── baby
+        ├── a_grandchild_of_doe
+        ├── aka_child_of_jane
+        ├── aka_child_of_johns_sibling
+        ├── aka_cousin_of_lil
+        └── an_empty_file_in_baby
 
-    5 directories, 23 files
+    2 directories, 10 files
 
-* I `change directory`_ to the parent of ``doe``
+* I go to the parent of ``doe``
 
-  .. code-block:: python
+  .. code-block::python
     :emphasize-lines: 1
 
     cd ../../..
@@ -3161,51 +2751,6 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
   .. code-block:: python
 
     .../pumping_python
-
-  I am back in ``pumping_python``
-
-* I show the ``doe`` family tree again
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree doe
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1, 9, 21
-
-    doe
-    ├── aka_grandparent_of_baby
-    ├── aka_grandparent_of_lil
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── an_empty_file_in_doe
-    ├── jane
-    │   ├── a_child_of_doe
-    │   ├── aka_aunt_of_lil
-    │   ├── aka_sibling_of_john
-    │   ├── an_empty_file_in_jane
-    │   └── baby
-    │       ├── a_grandchild_of_doe
-    │       ├── aka_child_of_jane
-    │       ├── aka_child_of_johns_sibling
-    │       ├── aka_cousin_of_lil
-    │       └── an_empty_file_in_baby
-    └── john
-        ├── a_child_of_doe
-        ├── aka_sibling_of_jane
-        ├── aka_uncle_of_baby
-        ├── an_empty_file_in_john
-        └── lil
-            ├── a_grandchild_of_doe
-            ├── aka_child_of_janes_sibling
-            ├── aka_child_of_john
-            ├── aka_cousin_of_baby
-            └── an_empty_file_in_lil
-
-    5 directories, 23 files
 
 * I show the ``doe`` family tree and all its hidden secrets
 
@@ -3272,7 +2817,7 @@ how to remove a directory and all its contents
 
   - rm_ is used to remove files_ and folders_
   - ``rm`` means ``remove``
-  - ``-r/--recursive/-Recurse`` means remove child directories_ and what is in them until there is nothing left, it goes through each child directory_ and removes everything including their children
+  - ``-r/--recursive/-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through each child directory_ and removes everything including their children
   - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
 
 * I try to go back to ``doe``
@@ -3301,8 +2846,8 @@ I ran these commands to play with `folder (directory)`_ structure
 * ls_ to show what is in a directory_
 * tree_ to show a directory_ and its sub directories_ as a tree
 * touch_ to make empty files_
-* mv_ to rename a file_ and to move a file_
-* rm_ to remove directories_
+* mv_ to rename or move a file_ or directory_
+* rm_ to remove files_ or directories_
 
 :ref:`How many questions do you think you can answer after going through this chapter?<questions about Directory Structure>`
 
