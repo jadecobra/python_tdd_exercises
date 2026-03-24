@@ -928,7 +928,7 @@ I change the expectation
 * I use the `super built-in function`_
 
   .. code-block:: python
-    :lineno-start: 28
+    :lineno-start: 26
 
     class Blow(src.person.Person):
 
@@ -957,7 +957,7 @@ I change the expectation
 * I add a :ref:`class<what is a class?>` for ``baby`` in ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 26
     :emphasize-lines: 7
 
     class Blow(src.person.Person):

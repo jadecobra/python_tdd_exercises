@@ -103,7 +103,7 @@ if there is nothing in the directory_. If there is something in the directory_ i
 
 The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to get from one folder_ to another, because it shows the paths I can take.
 
-If I know where I am, it is easier to get to where I want to go.
+It is easier to get to where I want to go if I know where I am.
 
 ----
 
@@ -204,7 +204,7 @@ how to see what directory I am in
 
 ----
 
-I start by checking where I am in the terminal_ because If I know where I am, it is easier to get to where I want to go. I can do this with the pwd_ program
+I start by checking where I am in the terminal_ because it is easier to get to where I want to go if I know where I am. I can do this with the pwd_ program
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -224,7 +224,7 @@ because I am in the ``pumping_python`` folder_
 * each ``/`` shows a parent-child relationship
 * the first ``/`` is for ``root`` which is the starting ancestor of all the folders_ on the computer, it is at the highest level
 
-If I know where I am, it is easier to get to where I want to go.
+It is easier to get to where I want to go if I know where I am.
 
 .. NOTE::
 
@@ -353,7 +353,7 @@ how to make a directory
 
     .../pumping_python/doe
 
-If I know where I am, it is easier to get to where I want to go. :ref:`I know how to make a directory<how to make a directory>`
+It is easier to get to where I want to go if I know where I am. :ref:`I know how to make a directory<how to make a directory>`
 
 ----
 
@@ -1693,7 +1693,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 * I use tree_ with the ``-a`` option
 
   .. code-block:: shell
-    :emphasize-lines: 10-12, 18-20
+    :emphasize-lines: 10-11, 18-19
 
     .
     ├── .a_hidden_file_in_doe
@@ -1821,7 +1821,7 @@ how to use directory relationships
     .../pumping_python/doe
 
   - I can only go directly to folders_ that are where I am or
-  - I can use the path to the folder_ I want to go to. If I know where I am, it is easier to get to where I want to go.
+  - I can use the path to the folder_ I want to go to. It is easier to get to where I want to go if I know where I am.
 
 * I go from ``doe`` to ``baby`` in 1 step with its parent
 
@@ -2001,7 +2001,7 @@ how to use directory relationships
 
       tree /F
 
-  wait a minute! How is ``lil`` a child of ``john`` and a child of ``john's sibling``, and how is ``baby`` a child of ``jane`` and a child of ``jane's`` sibling? I made a mistake.
+  wait a minute! How is ``lil`` a child of ``john`` and a child of ``john's sibling``, and how is ``baby`` a child of ``jane`` and a child of ``jane's`` sibling? I made mistakes.
 
 ----
 
@@ -2011,6 +2011,13 @@ how to rename a file or directory
 
 ----
 
+* I go to ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd jane
+
 * I use the `mv program`_ to change ``aka_child_of_janes_sibling`` to ``aka_child_of_johns_sibling``
 
   .. code-block:: python
@@ -2018,11 +2025,10 @@ how to rename a file or directory
 
     mv aka_child_of_janes_sibling aka_child_of_johns_sibling
 
-  - the terminal_ goes back to the command line
-  - mv_ means move, it takes two arguments
+  mv_ means move, it takes two arguments
 
-    * the original file_ or folder_
-    * the file_ or folder_ I want the original to be moved to
+  - the original file_ or folder_
+  - the file_ or folder_ I want the original to be moved to
 
 * I use the `mv program`_ to change ``aka_child_of_johns_sibling`` to ``aka_child_of_janes_sibling``
 
@@ -2168,7 +2174,7 @@ how to rename a file or directory
 
 ----
 
-* I can see what is in any folder_ when I know its path or relation to where I am. If I know where I am, it is easier to get to where I want to go.
+* I can see what is in any folder_ when I know its path or relation to where I am. It is easier to get to where I want to go if I know where I am.
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2605,7 +2611,7 @@ I can do things with files_ and directories_ in 1 step as long as
 - I know their relation to where I am and
 - I can :ref:`write to the folder<how to view the permissions of a file>`
 
-If I know where I am, it is easier to get to where I want to go. :ref:`I know how to use directory relationships<how to use directory relationships>`
+It is easier to get to where I want to go if I know where I am. :ref:`I know how to use directory relationships<how to use directory relationships>`
 
 ----
 
