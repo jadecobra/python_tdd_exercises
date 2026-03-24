@@ -2146,7 +2146,12 @@ how to use directory relationships with touch
 
     5 directories, 17 files
 
-  wait a minute! How is ``lil`` a child of ``john`` and a child of ``john's sibling``, and how is ``baby`` a child of ``jane`` and a child of ``jane's`` sibling? I made mistakes.
+wait a minute!
+
+* How is ``lil`` a child of ``john`` and a child of ``john's`` sibling?
+* How is ``baby`` a child of ``jane`` and a child of ``jane's`` sibling?
+
+I made mistakes
 
 ----
 
@@ -2156,7 +2161,7 @@ how to rename a file or directory
 
 ----
 
-* I go back to ``baby``
+* I go to ``baby``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2169,11 +2174,6 @@ how to rename a file or directory
     :emphasize-lines: 1
 
     mv aka_child_of_janes_sibling aka_child_of_johns_sibling
-
-  mv_ means move, it takes two arguments
-
-  - the original file_ or folder_
-  - the file_ or folder_ I want the original to be moved to
 
 * I go back to ``doe``
 
@@ -2215,30 +2215,124 @@ how to rename a file or directory
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 9, 14
+    :emphasize-lines: 12, 20
 
     .
     ├── aka_parent_of_jane
     ├── aka_parent_of_john
     ├── an_empty_file_in_doe
     ├── jane
+    │   ├── a_child_of_doe
+    │   ├── aka_sibling_of_john
     │   ├── an_empty_file_in_jane
     │   └── baby
+    │       ├── a_grandchild_of_doe
     │       ├── aka_child_of_jane
     │       ├── aka_child_of_johns_sibling
     │       └── an_empty_file_in_baby
     └── john
+        ├── a_child_of_doe
+        ├── aka_sibling_of_jane
         ├── an_empty_file_in_john
         └── lil
+            ├── a_grandchild_of_doe
             ├── aka_child_of_janes_sibling
             ├── aka_child_of_john
             └── an_empty_file_in_lil
 
-    5 directories, 11 files
+    5 directories, 17 files
+
+mv_ means move, it takes two arguments
+
+* the path/address to the original file_ or folder_
+* the path/address where I want to move the original file_ or folder_ to
+* in other words
+
+  .. code-block:: python
+
+    mv source target
 
 ----
 
-* I go from ``doe`` to ``baby`` in 1 step with its parent
+* I `change directory`_ to ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd jane/baby
+
+* I add an empty file_ to ``jane`` from ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../aka_parent_of_baby
+
+* I add an empty file_ to ``doe`` from ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../aka_grandparent_of_baby
+
+* I add an empty file_ to ``john`` from ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../john/aka_aunt_of_baby
+
+* I add an empty file_ to ``lil`` from ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../john/lil/aka_cousin_of_baby
+
+* I look at the ``doe`` family tree from ``baby``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree ../..
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 1, 2, 8, 18, 25
+
+    ../..
+    ├── aka_grandparent_of_baby
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── an_empty_file_in_doe
+    ├── jane
+    │   ├── a_child_of_doe
+    │   ├── aka_parent_of_baby
+    │   ├── aka_sibling_of_john
+    │   ├── an_empty_file_in_jane
+    │   └── baby
+    │       ├── a_grandchild_of_doe
+    │       ├── aka_child_of_jane
+    │       ├── aka_child_of_johns_sibling
+    │       └── an_empty_file_in_baby
+    └── john
+        ├── a_child_of_doe
+        ├── aka_aunt_of_baby
+        ├── aka_sibling_of_jane
+        ├── an_empty_file_in_john
+        └── lil
+            ├── a_grandchild_of_doe
+            ├── aka_child_of_janes_sibling
+            ├── aka_child_of_john
+            ├── aka_cousin_of_baby
+            └── an_empty_file_in_lil
+
+    5 directories, 21 files
+
+----
+
+* I go from ``doe`` to ``baby``
 
   .. code-block:: python
     :emphasize-lines: 1
