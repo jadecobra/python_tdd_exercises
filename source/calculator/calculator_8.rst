@@ -252,7 +252,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 184
+    :lineno-start: 179
 
         def test_calculator_w_getattribute(self):
             x = self.random_first_number

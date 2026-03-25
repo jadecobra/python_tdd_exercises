@@ -2473,7 +2473,7 @@ mv_ means move, it takes two arguments
 
     5 directories, 25 files
 
-I can add a file_ to any folder_ when I know its path or relation to where I am, and I have permission to write to the folder_. It is easier to get to where I want to go if I know where I am.
+I can add a file_ to any folder_ when I know its path or relation to where I am, if I have :ref:`permission to write to the folder<how to view the permissions of a file>`. It is easier to get to where I want to go if I know where I am.
 
 ----
 
@@ -2493,25 +2493,19 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
   the terminal_ goes back to the command line
 
-* I go back to ``doe``
-
-  .. code-block:: python
-
-    cd ../..
-
-* I use tree_
+* I use tree_ to show what is in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    tree
+    tree ../..
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 9, 23
+    :emphasize-lines: 1, 9, 23
 
-    .
+    ../..
     ├── aka_grandparent_of_baby
     ├── aka_grandparent_of_lil
     ├── aka_parent_of_jane
