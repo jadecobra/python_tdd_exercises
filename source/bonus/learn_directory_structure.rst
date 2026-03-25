@@ -2552,7 +2552,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    cd ..
+    cd ../..
 
   the terminal_ shows
 

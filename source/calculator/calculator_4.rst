@@ -1475,7 +1475,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I add a :ref:`variable<what is a variable?>` to :ref:`test_calculator_raises_type_error_w_strings`
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 78
     :emphasize-lines: 1
 
         def test_calculator_raises_type_error_w_strings(self):
