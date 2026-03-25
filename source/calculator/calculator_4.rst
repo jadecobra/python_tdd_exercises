@@ -1329,7 +1329,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 31
 
     @numbers_only
     def subtract(first_input, second_input):
