@@ -2809,9 +2809,9 @@ I can see what is in any folder_ when I know its path or relation to where I am.
   .. literalinclude:: ../code/bonus/learnDirectoryStructureTree
     :language: shell
 
-I can do things with files_ and directories_ in 1 step as long as
+I can do things with files_ and folders_ in 1 step as long as
 
-- I know their path (address)
+- I know their path/address
 - I know their relation to where I am and
 - I can :ref:`write to the folder<how to view the permissions of a file>`
 
@@ -2929,6 +2929,8 @@ rate pumping python
 *********************************************************************************
 
 If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too
+
+----
 
 .. raw:: html
 
