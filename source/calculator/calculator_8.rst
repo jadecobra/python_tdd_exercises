@@ -409,7 +409,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 201
+    :lineno-start: 179
     :emphasize-lines: 25
 
         def test_calculator_w_getattribute(self):

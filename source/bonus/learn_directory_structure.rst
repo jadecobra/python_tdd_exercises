@@ -2552,7 +2552,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    cd ../..
+    cd ../../..
 
   the terminal_ shows
 
@@ -2719,7 +2719,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   I am in ``lil``
 
-* I look what is in ``baby`` from inside ``lil``
+* I look at what is in ``baby`` from inside ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
