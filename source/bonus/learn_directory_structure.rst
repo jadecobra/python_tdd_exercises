@@ -2,6 +2,9 @@
 
 .. include:: ../links.rst
 
+.. _Excel Spreadsheet: https://grokipedia.com/page/Microsoft_Excel
+.. _Word Document: https://grokipedia.com/page/Microsoft_Word
+
 #################################################################################
 BONUS: learn directory structure
 #################################################################################
@@ -65,12 +68,14 @@ I keep every project I work on in its own `folder (directory)`_. All the code in
 what is a file?
 *********************************************************************************
 
-A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names can end with an extension (not always) to show the type of file_. For example
+A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names can end with an extension to show what type of file_ it is. For example
 
+* ``.py`` for a :ref:`Python module<what is a module?>`
 * ``.txt`` for a `plain text file`_
 * ``.sh`` for a `bash file`_
 * ``.ps1`` for a `PowerShell file`_
-* ``.py`` for a :ref:`Python module<what is a module?>`
+* ``.doc`` for a `Word Document`_
+* ``.xls`` for an `Excel Spreadsheet`_
 
 ----
 
@@ -78,7 +83,7 @@ A file_ is a collection or container for text, like paper we write or print on a
 requirements
 *********************************************************************************
 
-I open a terminal_ to make sure the `tree program`_ is installed by typing this
+I type this in a terminal_ to make sure the `tree program`_ is installed
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -99,7 +104,9 @@ if it is installed, the terminal_ shows
 
   0 directories, 0 files
 
-if there is nothing in the directory_. If there is something in the directory_ it shows a structure of the relationships.
+if there is nothing in the directory_.
+
+If there is something in the directory_ it shows a structure of the relationships.
 
 The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to get from one folder_ to another, because it shows the paths I can take.
 
@@ -107,11 +114,9 @@ It is easier to get to where I want to go if I know where I am.
 
 ----
 
-=================================================================================
+********************************************************************************************
 how to install tree
-=================================================================================
-
-----
+********************************************************************************************
 
 * :ref:`how to install tree on Linux/Windows Subsystem for Linux`
 * :ref:`how to install tree on Mac OS`
@@ -130,7 +135,7 @@ how to install tree on Linux/Windows Subsystem for Linux
 
   sudo apt update
 
-you can do a full upgrade if you want, I always do
+I always do a full upgrade, you do not have to
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -144,7 +149,7 @@ type this in the terminal_ to install tree_
 
   sudo apt install tree
 
-continue in :ref:`how to work in directories`
+continue with :ref:`how to see what directory I am in`
 
 ----
 
@@ -154,25 +159,28 @@ how to install tree on Windows without Windows Subsystem for Linux
 
 ----
 
-You do not have to do anything because tree_ comes with Windows_ . These are things you would type in place of what I have in the chapter
+tree_ comes with Windows_, no need to install anything.
 
-* `New-Item`_ instead of touch_
-* ``tree /F`` instead of tree_
-* ``dir`` instead of ``ls --all/-a``
+You are going to use the commands below for the ones I have in the chapter
 
-The path shown when you call pwd_ or tree_ shows ``\`` instead of ``/``, for example
+* `New-Item`_ for touch_
+* ``tree /F`` for tree_
+* ``dir`` for ``ls --all/-a``
+* `Remove-Item`_ for rm_
+
+when you call pwd_ or tree_ it shows ``\`` as the separator, not ``/``. For example
 
 .. code-block:: PowerShell
 
-  ...\pumping_python
+  ...\pumping_python\doe
 
-instead of
+not
 
 .. code-block:: python
 
-  .../pumping_python
+  .../pumping_python/doe
 
-Your tree will also look different because of different ways of drawing and sorting. Continue with :ref:`how to work in directories`
+Your tree will also look different because of different ways of drawing and sorting. Continue with :ref:`how to see what directory I am in`
 
 ----
 
@@ -188,21 +196,13 @@ type this in the terminal_
 
   brew install tree
 
-continue with :ref:`how to work in directories`
+continue with :ref:`how to see what directory I am in`
 
 ----
 
 ********************************************************************************************
-how to work in directories
-********************************************************************************************
-
-----
-
-=================================================================================
 how to see what directory I am in
-=================================================================================
-
-----
+********************************************************************************************
 
 I start by checking where I am in the terminal_ because it is easier to get to where I want to go if I know where I am. I can do this with the pwd_ program
 
@@ -219,26 +219,34 @@ the terminal_ shows
 
 because I am in the ``pumping_python`` folder_
 
-* pwd_ shows the path/address folder_ I am in
-* pwd_ means ``print working directory``, it prints the directory I am in, to the terminal_
+* pwd_ shows the path/address of the folder_ I am in
+* pwd_ means ``print working directory``, it prints the directory_ I am in, to the terminal_
 * each ``/`` shows a parent-child relationship
-* the first ``/`` is for ``root`` which is the starting ancestor of all the folders_ on the computer, it is at the highest level
+* the first ``/`` is for ``root`` which is the starting ancestor of all the folders_ on the computer
+* the first ``/`` is at the highest level
 
-It is easier to get to where I want to go if I know where I am.
+  .. CAUTION::
+
+    if you run this command it will show you every file_ and folder_ on your computer as a tree
+
+    .. code-block:: python
+
+      tree /
+
+    this runs for a while depending on how many files_ and folders_ are on your computer.
+
+    You can stop it from running with :kbd:`ctrl+c` on the keyboard.
 
 .. NOTE::
 
-  - If you see the same name, skip to the part where I create ``doe``
+  - If you see ``pumping_python`` when you type ``pwd``, skip to the part where I create ``doe``
   - If you see a different name, continue to the next step - :ref:`how to change directory`
 
-
 ----
 
-=================================================================================
+********************************************************************************************
 how to change directory
-=================================================================================
-
-----
+********************************************************************************************
 
 I use the `cd program`_ to change directories_
 
@@ -259,11 +267,9 @@ this means the folder_ I want to go to is not in the folder_ where I am
 
 ----
 
-=================================================================================
+********************************************************************************************
 how to make a directory
-=================================================================================
-
-----
+********************************************************************************************
 
 * I use the `mkdir program`_ to make a `folder (directory)`_
 
@@ -325,7 +331,7 @@ how to make a directory
 
     .../pumping_python
 
-* I `change directory`_ to ``doe`` to do some work in it
+* I `change directory`_ to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -353,15 +359,16 @@ how to make a directory
 
     .../pumping_python/doe
 
-It is easier to get to where I want to go if I know where I am. :ref:`I know how to make a directory<how to make a directory>`
+It is easier to get to where I want to go if I know where I am.
+
+* :ref:`I know how to change directory<how to change directory>`
+* :ref:`I know how to make a directory<how to make a directory>`
 
 ----
 
-=================================================================================
+********************************************************************************************
 how to see what is in a directory
-=================================================================================
-
-----
+********************************************************************************************
 
 * I can use ls_ to show what is in a directory_ and see information about the files_ in it
 
@@ -437,7 +444,7 @@ how to see what is in a directory
   - I am still in the same directory_
   - ``.`` is for the directory_ I am in
   - ``.`` is ``doe`` when I am in ``doe``
-  - ``.`` is the current working directory
+  - ``.`` is the working directory_
 
 * I try cd_ with ``..`` to see what happens
 
@@ -474,11 +481,9 @@ how to see what is in a directory
 
 ----
 
-=================================================================================
+********************************************************************************************
 how to look at directory structure
-=================================================================================
-
-----
+********************************************************************************************
 
 * I can use the `tree program`_ to see the files_ and folders_ in a directory_ and how they are related. I type it in the terminal_ to see what is in the ``doe`` directory_
 
@@ -506,7 +511,7 @@ how to look at directory structure
 
       tree /F
 
-* I try to `change directory`_ to ``jane``
+* I try to `change directory`_ to ``jane``, a child of ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -521,7 +526,7 @@ how to look at directory structure
 
   ``jane`` is not a child of ``doe``, yet
 
-* I make the folder_
+* I make ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -570,7 +575,8 @@ how to look at directory structure
     2 directories, 0 files
 
   - ``jane`` is a child of ``doe``
-  - the line shows I can go directly from ``doe`` to ``jane``
+  - ``.`` is the working directory_, which is ``doe`` in this case
+  - the line in the tree that goes from ``.`` to ``jane`` shows I can go right from ``doe`` to ``jane``
 
 * I `change directory`_ to ``jane``
 
@@ -587,7 +593,22 @@ how to look at directory structure
 
   I am in ``jane``
 
-* I `change directory`_ back to ``doe`` (the parent of ``jane``)
+* I `change directory`_ to ``doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: doe
+
+  ``doe`` is not a child of ``jane``
+
+* I `change directory`_ back to the parent of ``jane`` (``doe``)
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -600,7 +621,9 @@ how to look at directory structure
 
     .../pumping_python/doe
 
-  I am back in ``doe``
+  - I am back in ``doe``
+  - ``..`` is for the parent of the directory_ I am in
+  - ``..`` is ``doe`` when I am in ``jane``
 
 * I try to `change directory`_ to ``john``
 
@@ -617,7 +640,7 @@ how to look at directory structure
 
   ``john`` is not a child of ``doe``, yet
 
-* I make a new folder_
+* I make ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -657,8 +680,9 @@ how to look at directory structure
 
     3 directories, 0 files
 
-  - ``jane`` and ``john`` are children of ``doe``
-  - the lines shows I can go directly from ``doe`` to ``jane`` and ``john``
+  - ``john`` is a child of ``doe``
+  - ``.`` is the working directory_, which is ``doe`` in this case
+  - the line in the tree that goes from ``.`` to ``john`` shows I can go right from ``doe`` to ``john``
 
 * I `change directory`_ to ``john``
 
@@ -675,7 +699,22 @@ how to look at directory structure
 
   I am in ``john``
 
-* I `change directory`_ back to ``doe`` (the parent of ``john``)
+* I `change directory`_ to ``doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: doe
+
+  ``doe`` is not a child of ``john``
+
+* I `change directory`_ back to the parent of ``john`` (``doe``)
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -688,7 +727,9 @@ how to look at directory structure
 
     .../pumping_python/doe
 
-  I am back in ``doe``
+  - I am back in ``doe``
+  - ``..`` is for the parent of the directory_ I am in
+  - ``..`` is ``doe`` when I am in ``john``
 
 * I try to `change directory`_ to ``.a_hidden_folder_in_doe``
 
@@ -763,7 +804,7 @@ how to look at directory structure
   - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or directory_ if I put ``.`` before its name
 
-* I use tree_ with the ``-a`` option
+* I can also use tree_ with the ``-a`` option
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -782,8 +823,8 @@ how to look at directory structure
 
     4 directories, 0 files
 
-  - ``.a_hidden_folder_in_doe``, ``jane`` and ``john`` are inside ``doe``
-  - the lines show I can go directly from ``doe`` which is ``.`` to all 3 of them
+  - ``.`` is the working directory_, which is ``doe`` in this case
+  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_doe`` shows I can go right from ``doe`` to ``.a_hidden_folder_in_doe``
 
 * I `change directory`_ to ``.a_hidden_folder_in_doe``
 
@@ -800,7 +841,22 @@ how to look at directory structure
 
   I am in ``.a_hidden_folder_in_doe``
 
-* I `change directory`_ back to ``doe`` (the parent of ``.a_hidden_folder_in_doe``)
+* I `change directory`_ to ``doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: doe
+
+  ``doe`` is not a child of ``.a_hidden_folder_in_doe``
+
+* I `change directory`_ back to the parent of ``.a_hidden_folder_in_doe`` (``doe``)
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -813,7 +869,9 @@ how to look at directory structure
 
     .../pumping_python/doe
 
-  I am back in ``doe``
+  - I am back in ``doe``
+  - ``..`` is for the parent of the directory_ I am in
+  - ``..`` is ``doe`` when I am in ``.a_hidden_folder_in_doe``
 
 ----
 
@@ -912,7 +970,7 @@ how to look at directory structure
   - ``baby`` is a child of ``jane``
   - ``jane`` is a child of ``doe``
 
-* I go up a level to the parent of ``baby`` - ``jane``
+* I go up a level to the parent of ``baby`` (``jane``)
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1014,9 +1072,9 @@ how to look at directory structure
 
     3 directories, 0 files
 
-  the lines show I can `change directories`_ directly from ``jane`` to ``.a_hidden_folder_in_jane`` and ``baby``
+  the lines show I can `change directories`_ right from ``jane`` to ``.a_hidden_folder_in_jane`` and ``baby``
 
-* I go up a level to the parent of ``jane`` - ``doe``
+* I go up a level to the parent of ``jane`` (``doe``)
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1030,6 +1088,8 @@ how to look at directory structure
     .../pumping_python/doe
 
   I am back in ``doe``
+
+----
 
 * I change directory_ to ``john``
 
@@ -1102,7 +1162,7 @@ how to look at directory structure
 
   ``john`` has no children
 
-* I `make the directory`_
+* I make ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1128,7 +1188,7 @@ how to look at directory structure
   - ``lil`` is a child of ``john``
   - ``john`` is a child of ``doe``
 
-* I go up a level to the parent of ``lil`` - ``john``
+* I go up a level to the parent of ``lil`` (``john``)
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1230,9 +1290,9 @@ how to look at directory structure
 
     3 directories, 0 files
 
-  the lines show I can `change directories`_ directly from ``john`` to ``.a_hidden_folder_in_john`` and ``lil``
+  the lines show I can `change directories`_ right from ``john`` to ``.a_hidden_folder_in_john`` and ``lil``
 
-* I go up a level to the parent of ``john`` - ``doe``
+* I go up a level to the parent of ``john`` (``doe``)
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1302,23 +1362,21 @@ how to look at directory structure
   the lines show that
 
   - ``baby`` and ``lil`` are grandchildren of ``doe``
-  - I can go from ``doe`` to ``.a_hidden_folder_in_doe``
-  - I can go from ``doe`` to ``jane``
-  - I can go from ``doe`` to ``john``
-  - I can go from ``jane`` to ``.a_hidden_folder_in_jane``
-  - I can go from ``jane`` to ``baby``
-  - I can go from ``john`` to ``.a_hidden_folder_in_john``
-  - I can go from ``john`` to ``lil``
+  - I can go right from ``doe`` to ``.a_hidden_folder_in_doe``
+  - I can go right from ``doe`` to ``jane``
+  - I can go right from ``doe`` to ``john``
+  - I can go right from ``jane`` to ``.a_hidden_folder_in_jane``
+  - I can go right from ``jane`` to ``baby``
+  - I can go right from ``john`` to ``.a_hidden_folder_in_john``
+  - I can go right from ``john`` to ``lil``
 
 :ref:`I know how to look at directory structure<how to look at directory structure>`
 
 ----
 
-=================================================================================
+********************************************************************************************
 how to make an empty file
-=================================================================================
-
-----
+********************************************************************************************
 
 I can make empty files_ in a folder_ with the `touch program`_
 
@@ -1556,6 +1614,9 @@ I can make empty files_ in a folder_ with the `touch program`_
         └── lil
 
     8 directories, 6 files
+
+----
+
 * I want to make a file_ in ``baby``. I use cd_ to go to its parent first
 
   .. code-block:: python
@@ -1656,6 +1717,8 @@ I can make empty files_ in a folder_ with the `touch program`_
     ...pumping_python/doe
 
   I am back in ``doe``
+
+----
 
 * I want to make a file_ in ``lil``. I use cd_ to go to its parent first
 
@@ -1818,15 +1881,13 @@ I can make empty files_ in a folder_ with the `touch program`_
 
     10 directories, 10 files
 
-:ref:`I know how to add empty files to folders<how to make an empty file>`
+:ref:`I know how to make an empty file<how to make an empty file>`
 
 ----
 
-=================================================================================
+********************************************************************************************
 how to use directory relationships
-=================================================================================
-
-----
+********************************************************************************************
 
 * I try to go from ``doe`` to ``baby`` in 1 step
 
@@ -1841,13 +1902,32 @@ how to use directory relationships
 
     cd: no such file or directory: baby
 
-  - ``baby`` is not a child of ``doe``
-  - there is no line from ``doe`` to ``baby``
-  - there is a line from ``jane`` to ``baby``
-  - there is a line from ``doe`` to ``jane``
+* I use tree_ with the ``-d`` option to show only the directories_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -d
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-text: jane baby
+
+    .
+    ├── jane
+    │   └── baby
+    └── john
+        └── lil
+
+    5 directories
+
+  - there is no line from ``doe`` to ``baby`` because ``baby`` is not a child of ``doe``
+  - there is a line from ``jane`` to ``baby`` because ``baby`` is a child of ``jane``
+  - there is a line from ``doe`` to ``jane`` because ``jane`` is a child of ``doe``
   - I can go from ``doe`` to ``jane`` to ``baby``
 
-* I try to go from ``doe`` to ``baby`` in 1 step with its parent
+* I go from ``doe`` to ``baby`` in 1 step with its parent
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1860,7 +1940,7 @@ how to use directory relationships
 
     .../doe/jane/baby
 
-  I cannot get to ``baby`` without its parent
+  I cannot go to ``baby`` without its parent
 
 * I can go from ``baby`` back to ``doe`` in 1 step with ``..``
 
@@ -1877,8 +1957,7 @@ how to use directory relationships
 
   I am back in ``doe``.
 
-  Since ``..`` is for the parent of a directory_
-
+  - ``..`` is for the parent of a directory_
   - ``../..`` is for the parent of the parent, that is a grandparent. I can use as many as I need for each parent, for example ``../../../..`` is the great great grand parent
   - ``..`` from ``baby`` is ``jane``
   - ``..`` from ``jane`` is ``doe``
@@ -1896,13 +1975,32 @@ how to use directory relationships
 
     cd: no such file or directory: lil
 
-  - ``lil`` is not a child of ``doe``
-  - there is no line from ``doe`` to ``lil``
-  - there is a line from ``john`` to ``lil``
-  - there is a line from ``doe`` to ``john``
+* I use tree_ with the ``-d`` option to show only the directories_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -d
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-text: john lil
+
+    .
+    ├── jane
+    │   └── baby
+    └── john
+        └── lil
+
+    5 directories
+
+  - there is no line from ``doe`` to ``lil`` because ``lil`` is not a child of ``doe``
+  - there is a line from ``john`` to ``lil`` because ``lil`` is a child of ``john``
+  - there is a line from ``doe`` to ``john`` because ``john`` is a child of ``doe``
   - I can go from ``doe`` to ``john`` to ``lil``
 
-* I try to go from ``doe`` to ``lil`` in 1 step with its parent
+* I go from ``doe`` to ``lil`` in 1 step with its parent
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1915,9 +2013,9 @@ how to use directory relationships
 
     .../doe/john/lil
 
-  I cannot get to ``lil`` without its parent
+  I cannot go to ``lil`` without its parent
 
-* I go back to ``doe`` in 1 step with ``..``
+* I can go from ``lil`` back to ``doe`` in 1 step with ``..``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1930,16 +2028,26 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-  - I can only go directly to folders_ that are where I am (children)
-  - I can use the path to the folder_ I want to go to. It is easier to get to where I want to go if I know where I am.
+  I am back in ``doe``.
+
+  - ``..`` is for the parent of a directory_
+  - ``../..`` is for the parent of the parent
+  - ``..`` from ``lil`` is ``john``
+  - ``..`` from ``john`` is ``doe``
+
+.. NOTE::
+
+  * I can only go right to folders_ that are where I am (children)
+  * I can use the path/address of a folder_ to go to it
+  * It is easier to get to where I want to go if I know where I am.
+
+:ref:`I know how to use directory relationships<how to use directory relationships>`
 
 ----
 
-=================================================================================
-how to use directory relationships with touch
-=================================================================================
-
-----
+********************************************************************************************
+how to use touch with directory relationships
+********************************************************************************************
 
 * I show the ``doe`` family tree
 
@@ -2201,13 +2309,13 @@ wait a minute!
 
 I made mistakes
 
+:ref:`I know how to use touch with directory relationships<how to use touch with directory relationships>`
+
 ----
 
-=================================================================================
+********************************************************************************************
 how to rename a file or directory
-=================================================================================
-
-----
+********************************************************************************************
 
 * I go to ``baby``
 
@@ -2288,15 +2396,23 @@ how to rename a file or directory
 
     5 directories, 17 files
 
+  better.
+
 mv_ means move, it takes two arguments
 
-* the path/address to the original file_ or folder_
-* the path/address where I want to move the original file_ or folder_ to
-* in other words
+.. code-block:: python
 
-  .. code-block:: python
+  mv source target
 
-    mv source target
+* ``source`` is the path/address I want to move the original file_ or folder_ from
+* ``target`` is the path/address I want to move the original file_ or folder_ to
+* this allows me to rename a file_ or folder_ in one step, the other way would be to
+
+  - copy the original file_ or folder_
+  - paste the copy file_ or folder_ in the target
+  - delete the original file_ or folder_
+
+:ref:`I know how to rename a file<how to rename a file or directory>`
 
 ----
 
@@ -2414,7 +2530,7 @@ mv_ means move, it takes two arguments
 
     touch ../../jane/aka_uncle_of_lil
 
-  I made a mistake - ``jane`` is not the uncle of ``baby`` she is the aunt
+  I made another mistake - ``jane`` is not the uncle of ``baby`` she is the aunt
 
 * I add an empty file_ to ``baby`` from ``lil``
 
@@ -2477,12 +2593,16 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
 ----
 
+Time to fix my mistakes
+
 * I change ``aka_uncle_of_lil`` to ``aka_aunt_of_lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     mv ../../jane/aka_uncle_of_lil ../../jane/aka_aunt_of_lil
+
+  why does that work?
 
 * I change ``aka_aunt_of_baby`` to ``aka_uncle_of_baby``
 
@@ -2538,13 +2658,13 @@ I can add a file_ to any folder_ when I know its path or relation to where I am,
 
     5 directories, 25 files
 
-----
-
-=================================================================================
-how to use directory relationships with ls
-=================================================================================
+  all is well
 
 ----
+
+********************************************************************************************
+how to use ls with directory relationships
+********************************************************************************************
 
 I can see what is in any folder_ when I know its path or relation to where I am. It is easier to get to where I want to go if I know where I am
 
@@ -2649,7 +2769,6 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    lil
     .                        aka_child_of_janes_sibling
     ..                       aka_child_of_john
     a_grandchild_of_doe      aka_cousin_of_baby
@@ -2819,11 +2938,9 @@ It is easier to get to where I want to go if I know where I am. :ref:`I know how
 
 ----
 
-=================================================================================
+********************************************************************************************
 how to remove a directory and all its contents
-=================================================================================
-
-----
+********************************************************************************************
 
 * I try to remove ``doe`` and all its children and their children
 
@@ -2917,8 +3034,11 @@ You know
 * :ref:`how to look at directory structure`
 * :ref:`how to make an empty file`
 * :ref:`how to use directory relationships`
+* :ref:`how to use touch with directory relationships`
+* :ref:`how to use ls with directory relationships`
+* :ref:`how to rename a file or directory`
 
-Homework: use what you have learned - mkdir_, cd_, ls_, tree_ and touch_ to make your family tree. Send me the final thing when you are done.
+Homework: use what you have learned - mkdir_, cd_, ls_, tree_ and touch_ to make your family tree. Send it to me when you are done.
 
 :ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a test driven development environment>`
 

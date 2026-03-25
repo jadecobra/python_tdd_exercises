@@ -24,19 +24,17 @@ I walk through making the `folders (directories)`_ and files_ for the environmen
 
 By the end of the chapter you will know these commands better
 
-.. code-block:: PowerShell
-
-  mkdir
-  cd
-  touch
-  echo
-  cat
-  mv
-  Remove-Item
-  uv run pytest-watcher
-  source .venv/bin/activate
-  deactivate
-  history
+* mkdir_
+* cd_
+* touch_
+* echo_
+* cat_
+* mv_
+* Remove-Item_
+* ``uv run pytest-watcher``
+* ``source .venv/bin/activate``
+* ``deactivate``
+* ``history``
 
 ----
 

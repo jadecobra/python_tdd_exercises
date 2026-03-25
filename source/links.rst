@@ -218,6 +218,7 @@
 
 .. _Move-Item: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/move-item
 .. _New-Item: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item
+.. _Remove-Item: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item
 .. _Out-File: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file
 .. _Set-ExecutionPolicy: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy
 .. _Write-Output: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output
