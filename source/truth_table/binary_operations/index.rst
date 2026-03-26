@@ -35,16 +35,16 @@ These combinations give 16 binary operations, each operations returns :ref:`True
 operation                                                         return
 ================================================================ =====================================================
 :ref:`contradiction<test_contradiction>`                          False
-:ref:`converse_implication<test_converse_implication>`            first or not second
-:ref:`converse_non_implication<test_converse_non_implication>`    not first and second
+:ref:`converse_implication<test_converse_implication>`            first or (not second)
+:ref:`converse_non_implication<test_converse_non_implication>`    (not first) and second
 :ref:`exclusive_disjunction<test_exclusive_disjunction>`          (not (first and second)) and (first or second)
 :ref:`logical_conjunction<test_logical_conjunction>`              first and second
 :ref:`logical_disjunction<test_logical_disjunction>`              first or second
 :ref:`logical_equality<test_logical_equality>`                    (not first or second) and (first or not second)
 :ref:`logical_nand<test_logical_nand>`                            not (first and second)
 :ref:`logical_nor<test_logical_nor>`                              not (first or second)
-:ref:`material_implication<test_material_implication>`            not first or second
-:ref:`material_non_implication<test_material_non_implication>`    first and not second
+:ref:`material_implication<test_material_implication>`            (not first) or second
+:ref:`material_non_implication<test_material_non_implication>`    first and (not second)
 :ref:`negate_first<test_negate_first>`                            not first
 :ref:`negate_second<test_negate_second>`                          not second
 :ref:`project_first<test_project_first>`                          first

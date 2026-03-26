@@ -3033,7 +3033,7 @@ I ran these commands to play with `folders (directories)`_
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<learnDirectoryStructure.sh>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<learnDirectoryRelationships.sh>`
 
 ----
 
