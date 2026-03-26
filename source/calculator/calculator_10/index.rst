@@ -24,19 +24,19 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_1.py
+.. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_1.py
   :language: python
   :linenos:
 
-.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_2.py
+.. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_2.py
   :language: python
   :linenos:
 
-.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_3.py
+.. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_3.py
   :language: python
   :linenos:
 
-.. literalinclude:: ../code/calculator/tests/test_streamlit_calculator_4.py
+.. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_4.py
   :language: python
   :linenos:
 
