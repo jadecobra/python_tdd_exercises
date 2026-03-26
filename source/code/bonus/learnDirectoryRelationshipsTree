@@ -5,7 +5,7 @@ doe
 ├── grandparent_of_lil_john_doe
 ├── parent_of_jane_doe
 ├── parent_of_john_doe
-├── empty_file_in_doe
+├── file_in_doe
 ├── jane_doe
 │   ├── child_of_doe
 │   ├── .hidden_file_in_jane_doe
@@ -13,7 +13,7 @@ doe
 │   ├── aunt_of_lil_john_doe
 │   ├── parent_of_mary_jane_doe
 │   ├── sibling_of_john_doe
-│   ├── empty_file_in_jane_doe
+│   ├── file_in_jane_doe
 │   └── mary_jane_doe
 │       ├── grandchild_of_doe
 │       ├── .hidden_file_in_mary_jane_doe
@@ -21,7 +21,7 @@ doe
 │       ├── child_of_jane_doe
 │       ├── child_of_sibling_of_john_doe
 │       ├── cousin_of_lil_john_doe
-│       └── empty_file_in_mary_jane_doe
+│       └── file_in_mary_jane_doe
 └── john_doe
     ├── child_of_doe
     ├── .hidden_file_in_john_doe
@@ -29,7 +29,7 @@ doe
     ├── parent_of_lil_john_doe
     ├── sibling_of_jane_doe
     ├── uncle_of_mary_jane_doe
-    ├── empty_file_in_john_doe
+    ├── file_in_john_doe
     └── lil_john_doe
         ├── grandchild_of_doe
         ├── .hidden_file_in_lil_john_doe
@@ -37,6 +37,6 @@ doe
         ├── child_of_sibling_of_jane_doe
         ├── child_of_john_doe
         ├── cousin_of_mary_jane_doe
-        └── empty_file_in_lil_john_doe
+        └── file_in_lil_john_doe
 
 10 directories, 30 files

@@ -65,17 +65,17 @@ cd ..
 cd ..
 tree
 tree -a
-touch an_empty_file_in_doe
+touch an_file_in_doe
 touch .a_hidden_file_in_doe
 ls
 ls -a
 cd jane
-touch an_empty_file_in_jane
+touch an_file_in_jane
 touch .a_hidden_file_in_jane
 ls -a
 cd ..
 cd john
-touch an_empty_file_in_john
+touch an_file_in_john
 touch .a_hidden_file_in_john
 ls -a
 cd ..
@@ -85,19 +85,19 @@ cd ..
 tree
 tree -a
 
-touch an_empty_file_in_doe
+touch an_file_in_doe
 touch .a_hidden_file_in_doe
 ls
 ls -a
 
 cd jane
-touch an_empty_file_in_jane
+touch an_file_in_jane
 touch .a_hidden_file_in_jane
 ls -a
 cd ..
 
 cd john
-touch an_empty_file_in_john
+touch an_file_in_john
 touch .a_hidden_file_in_john
 ls -a
 cd ..
@@ -106,7 +106,7 @@ tree -a
 
 cd jane
 cd baby
-touch an_empty_file_in_baby
+touch an_file_in_baby
 touch .a_hidden_file_in_baby
 mkdir .a_hidden_folder_in_baby
 ls -a
@@ -115,7 +115,7 @@ cd ..
 
 cd john
 cd lil
-touch an_empty_file_in_lil
+touch an_file_in_lil
 touch .a_hidden_file_in_lil
 mkdir .a_hidden_folder_in_lil
 ls -a

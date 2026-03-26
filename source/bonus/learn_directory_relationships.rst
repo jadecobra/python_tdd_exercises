@@ -17,7 +17,7 @@ This is an exercise in how your computer is setup as directories_ (folders_) and
 preview
 *************************************************************************************
 
-I build the relationships below step by step to see how files_ and folders_ are related like a family tree, and at the end know how to move around in them because I understand those relationships.
+I build the relationships below step by step to see how files_ and folders_ are related like a family tree, and at the end know how to move around them because I understand the relationships.
 
 .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
   :language: shell
@@ -105,13 +105,9 @@ if it is installed, the terminal_ shows
 
   0 directories, 0 files
 
-if there is nothing in the directory_.
+if there is nothing in the directory_ or it shows the relationships, if there is something in the directory_.
 
-If there is something in the directory_, it shows the relationships.
-
-The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to get from one folder_ to another, because it shows the way I can go.
-
-It is easier to go where I want if I know where I am.
+The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to get from one folder_ to another, because it shows the way I can go. If I know where I am it is easier to go where I want.
 
 ----
 
@@ -234,7 +230,7 @@ because I am in the ``pumping_python`` folder_
 
       tree /
 
-    it runs for a while when you have many files_ and folders_ on your computer.
+    it runs for a while because there are many files_ and folders_ on your computer.
 
     use :kbd:`ctrl+c` on the keyboard if you want to stop it from running.
 
@@ -732,27 +728,27 @@ how to look at directory relationships
   - ``..`` is for the parent of the directory_ I am in
   - ``..`` is ``doe`` when I am in ``john_doe``
 
-* I try to `change directory`_ to ``.hidden_folder_in_doe``
+* I `change directory`_ to a hidden folder_ in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .hidden_folder_in_doe
+    cd .a_hidden_folder_in_doe
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: .hidden_folder_in_doe
+    cd: no such file or directory: .a_hidden_folder_in_doe
 
   ``.hidden_folder`` is not in ``doe``, yet
 
-* I make a hidden folder_
+* I make ``.a_hidden_folder_in_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir .hidden_folder_in_doe
+    mkdir .a_hidden_folder_in_doe
 
   the terminal_ goes back to the command line
 
@@ -769,7 +765,7 @@ how to look at directory relationships
 
     jane_doe  john_doe
 
-  - ``.hidden_folder_in_doe`` is hidden
+  - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or directory_ if I put ``.`` before its name
 
 * I use ls_ with the ``-a`` option to see everything that is in ``doe``
@@ -783,7 +779,7 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    .  ..  .hidden_folder_in_doe  jane_doe  john_doe
+    .  ..  .a_hidden_folder_in_doe  jane_doe  john_doe
 
 * I use tree_ to show the ``doe`` family tree
 
@@ -802,7 +798,7 @@ how to look at directory relationships
 
     3 directories, 0 files
 
-  - ``.hidden_folder_in_doe`` is hidden
+  - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or directory_ if I put ``.`` before its name
 
 * I can also use tree_ with the ``-a`` option
@@ -818,29 +814,29 @@ how to look at directory relationships
     :emphasize-lines: 2
 
     .
-    ├── .hidden_folder_in_doe
+    ├── .a_hidden_folder_in_doe
     ├── jane_doe
     └── john_doe
 
     4 directories, 0 files
 
   - ``.`` is the working directory_, which is ``doe`` in this case
-  - the line in the tree that goes from ``.`` to ``.hidden_folder_in_doe`` shows I can go from ``doe`` right to ``.hidden_folder_in_doe``
+  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_doe`` shows I can go from ``doe`` right to ``.a_hidden_folder_in_doe``
 
-* I `change directory`_ to ``.hidden_folder_in_doe``
+* I `change directory`_ to ``.a_hidden_folder_in_doe``
 
   .. code-block::
     :emphasize-lines: 1
 
-    cd .hidden_folder_in_doe
+    cd .a_hidden_folder_in_doe
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/doe/.hidden_folder_in_doe
+    .../pumping_python/doe/.a_hidden_folder_in_doe
 
-  I am in ``.hidden_folder_in_doe``
+  I am in ``.a_hidden_folder_in_doe``
 
 * I `change directory`_ to ``doe``
 
@@ -855,9 +851,9 @@ how to look at directory relationships
 
     cd: no such file or directory: doe
 
-  ``doe`` is not a child of ``.hidden_folder_in_doe``
+  ``doe`` is not a child of ``.a_hidden_folder_in_doe``
 
-* I `change directory`_ back to the parent of ``.hidden_folder_in_doe``
+* I `change directory`_ back to the parent of ``.a_hidden_folder_in_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -872,7 +868,7 @@ how to look at directory relationships
 
   - I am back in ``doe``
   - ``..`` is for the parent of the directory_ I am in
-  - ``..`` is ``doe`` when I am in ``.hidden_folder_in_doe``
+  - ``..`` is ``doe`` when I am in ``.a_hidden_folder_in_doe``
 
 ----
 
@@ -991,39 +987,39 @@ how to look at directory relationships
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .hidden_folder_in_jane_doe
+    cd .a_hidden_folder_in_jane_doe
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: .hidden_folder_in_jane_doe
+    cd: no such file or directory: .a_hidden_folder_in_jane_doe
 
-  there is no folder_ named ``.hidden_folder_in_jane_doe`` in ``jane_doe``
+  there is no folder_ named ``.a_hidden_folder_in_jane_doe`` in ``jane_doe``
 
-* I make a ``.hidden_folder_in_jane_doe``
+* I make a ``.a_hidden_folder_in_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir .hidden_folder_in_jane_doe
+    mkdir .a_hidden_folder_in_jane_doe
 
   the terminal_ goes back to the command line
 
-* I try to go to ``.hidden_folder_in_jane_doe`` again
+* I try to go to ``.a_hidden_folder_in_jane_doe`` again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .hidden_folder_in_jane_doe
+    cd .a_hidden_folder_in_jane_doe
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/jane_doe/.hidden_folder_in_jane_doe
+    .../doe/jane_doe/.a_hidden_folder_in_jane_doe
 
-* I go up a level to the parent of ``.hidden_folder_in_jane_doe``
+* I go up a level to the parent of ``.a_hidden_folder_in_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1068,14 +1064,14 @@ how to look at directory relationships
     :emphasize-lines: 2
 
     .
-    ├── .hidden_folder_in_jane_doe
+    ├── .a_hidden_folder_in_jane_doe
     └── mary_jane_doe
 
     3 directories, 0 files
 
   - ``.`` is ``jane_doe`` when I am in ``jane_doe``
   - the line in the tree that goes from ``.`` to ``mary_jane_doe`` shows I can go from ``jane_doe`` right to ``mary_jane_doe``
-  - the line in the tree that goes from ``.`` to ``.hidden_folder_in_jane_doe`` shows I can go from ``jane_doe`` right to ``.hidden_folder_in_jane_doe``
+  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_jane_doe`` shows I can go from ``jane_doe`` right to ``.a_hidden_folder_in_jane_doe``
 
 * I go up a level to the parent of ``jane_doe``
 
@@ -1211,39 +1207,39 @@ how to look at directory relationships
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .hidden_folder_in_john_doe
+    cd .a_hidden_folder_in_john_doe
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: .hidden_folder_in_john_doe
+    cd: no such file or directory: .a_hidden_folder_in_john_doe
 
-  there is no folder_ named ``.hidden_folder_in_john_doe`` in ``john_doe``
+  there is no folder_ named ``.a_hidden_folder_in_john_doe`` in ``john_doe``
 
-* I make ``.hidden_folder_in_john_doe``
+* I make ``.a_hidden_folder_in_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir .hidden_folder_in_john_doe
+    mkdir .a_hidden_folder_in_john_doe
 
   the terminal_ goes back to the command line
 
-* I try to go to ``.hidden_folder_in_john_doe`` again
+* I try to go to ``.a_hidden_folder_in_john_doe`` again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .hidden_folder_in_john_doe
+    cd .a_hidden_folder_in_john_doe
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/john_doe/.hidden_folder_in_john_doe
+    .../doe/john_doe/.a_hidden_folder_in_john_doe
 
-* I go up a level to the parent of ``.hidden_folder_in_john_doe``
+* I go up a level to the parent of ``.a_hidden_folder_in_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1288,14 +1284,14 @@ how to look at directory relationships
     :emphasize-lines: 2
 
     .
-    ├── .hidden_folder_in_john_doe
+    ├── .a_hidden_folder_in_john_doe
     └── lil_john_doe
 
     3 directories, 0 files
 
   - ``.`` is ``john_doe`` when I am in ``john_doe``
   - the line in the tree that goes from ``.`` to ``lil_john_doe`` shows I can go from ``john_doe`` right to ``lil_john_doe``
-  - the line in the tree that goes from ``.`` to ``.hidden_folder_in_john_doe`` shows I can go from ``john_doe`` right to ``.hidden_folder_in_john_doe``
+  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_john_doe`` shows I can go from ``john_doe`` right to ``.a_hidden_folder_in_john_doe``
 
 * I go up a level to the parent of ``john_doe``
 
@@ -1354,26 +1350,27 @@ how to look at directory relationships
     :emphasize-lines: 2, 4, 7
 
     .
-    ├── .hidden_folder_in_doe
+    ├── .a_hidden_folder_in_doe
     ├── jane_doe
-    │   ├── .hidden_folder_in_jane_doe
+    │   ├── .a_hidden_folder_in_jane_doe
     │   └── mary_jane_doe
     └── john_doe
-        ├── .hidden_folder_in_john_doe
+        ├── .a_hidden_folder_in_john_doe
         └── lil_john_doe
 
     8 directories, 0 files
 
   the lines show that
 
-  - ``mary_jane_doe`` and ``lil_john_doe`` are grandchildren of ``doe``
-  - I can go from ``doe`` right to ``.hidden_folder_in_doe``
+  - I can go from ``doe`` right to ``.a_hidden_folder_in_doe``
   - I can go from ``doe`` right to ``jane_doe``
   - I can go from ``doe`` right to ``john_doe``
-  - I can go from ``jane_doe`` right to ``.hidden_folder_in_jane_doe``
+  - I can go from ``jane_doe`` right to ``.a_hidden_folder_in_jane_doe``
   - I can go from ``jane_doe`` right to ``mary_jane_doe``
-  - I can go from ``john_doe`` right to ``.hidden_folder_in_john_doe``
+  - I can go from ``john_doe`` right to ``.a_hidden_folder_in_john_doe``
   - I can go from ``john_doe`` right to ``lil_john_doe``
+  - ``mary_jane_doe`` is a grandchild of ``doe``
+  - ``lil_john_doe`` is a grandchild of ``doe``
 
 :ref:`I know how to look at directory relationships<how to look at directory relationships>`
 
@@ -1390,7 +1387,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch empty_file_in_doe
+    touch a_file_in_doe
 
   the terminal_ goes back to the command line
 
@@ -1401,14 +1398,14 @@ I can make empty files_ in a folder_ with the `touch program`_
     .. code-block:: PowerShell
       :emphasize-lines: 1
 
-      New-Item empty_file_in_doe
+      New-Item a_file_in_doe
 
 * I make an empty hidden file_ in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch .hidden_file_in_doe
+    touch .a_hidden_file_in_doe
 
 * I use ls_ to see what is in the folder_
 
@@ -1421,7 +1418,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    empty_file_in_doe  jane_doe  john_doe
+    a_file_in_doe  jane_doe  john_doe
 
 * I use ls_ with the ``-a`` option
 
@@ -1434,9 +1431,9 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .                      .hidden_folder_in_doe  john_doe
-    ..                     empty_file_in_doe
-    .hidden_file_in_doe  jane_doe
+    .              .a_hidden_file_in_doe    john_doe
+    ..             .a_hidden_folder_in_doe
+    a_file_in_doe  jane_doe
 
   .. NOTE::
 
@@ -1467,7 +1464,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch empty_file_in_jane_doe
+    touch a_file_in_jane_doe
 
   the terminal_ goes back to the command line
 
@@ -1476,7 +1473,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch .hidden_file_in_jane_doe
+    touch .a_hidden_file_in_jane_doe
 
   the terminal_ goes back to the command line
 
@@ -1491,9 +1488,9 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .                           .hidden_folder_in_jane_doe
-    ..                          empty_file_in_jane_doe
-    .hidden_file_in_jane_doe  mary_jane_doe
+    .                   .a_hidden_file_in_jane_doe
+    ..                  .a_hidden_folder_in_jane_doe
+    a_file_in_jane_doe  mary_jane_doe
 
 * I `change directory`_ to the parent of ``jane_doe``
 
@@ -1507,6 +1504,8 @@ I can make empty files_ in a folder_ with the `touch program`_
   .. code-block:: python
 
     .../pumping_python/doe
+
+----
 
 * I `change directory`_ to ``john_doe``
 
@@ -1526,7 +1525,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch empty_file_in_john_doe
+    touch a_file_in_john_doe
 
   the terminal_ goes back to the command line
 
@@ -1535,7 +1534,7 @@ I can make empty files_ in a folder_ with the `touch program`_
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch .hidden_file_in_john_doe
+    touch .a_hidden_file_in_john_doe
 
   the terminal_ goes back to the command line
 
@@ -1550,9 +1549,9 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .                           .hidden_folder_in_john_doe
-    ..                          empty_file_in_john_doe
-    .hidden_file_in_john_doe  lil_john_doe
+    .                   .a_hidden_file_in_john_doe
+    ..                  .a_hidden_folder_in_john_doe
+    a_file_in_john_doe  lil_john_doe
 
 * I `change directory`_ to the parent of ``john_doe``
 
@@ -1582,12 +1581,12 @@ I can make empty files_ in a folder_ with the `touch program`_
     :emphasize-lines: 2, 4, 7
 
     .
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     └── john_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
 
     5 directories, 3 files
@@ -1604,296 +1603,24 @@ I can make empty files_ in a folder_ with the `touch program`_
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 2, 6, 11
+    :emphasize-lines: 3, 7, 12
 
     .
-    ├── .hidden_file_in_doe
-    ├── .hidden_folder_in_doe
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
+    ├── .a_hidden_file_in_doe
+    ├── .a_hidden_folder_in_doe
     ├── jane_doe
-    │   ├── .hidden_file_in_jane_doe
-    │   ├── .hidden_folder_in_jane_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
+    │   ├── .a_hidden_file_in_jane_doe
+    │   ├── .a_hidden_folder_in_jane_doe
     │   └── mary_jane_doe
     └── john_doe
-        ├── .hidden_file_in_john_doe
-        ├── .hidden_folder_in_john_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
+        ├── .a_hidden_file_in_john_doe
+        ├── .a_hidden_folder_in_john_doe
         └── lil_john_doe
 
     8 directories, 6 files
-
-----
-
-* I want to make a file_ in ``mary_jane_doe``. I use cd_ to go to its parent first
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd jane_doe
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    /pumping_python/doe/jane_doe
-
-  I am in ``jane_doe``
-
-* I `change directory`_ to ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd mary_jane_doe
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../doe/jane_doe/mary_jane_doe
-
-  I am in ``mary_jane_doe``
-
-* I make an empty file_ in ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch empty_file_in_mary_jane_doe
-
-  the terminal_ goes back to the command line
-
-* I make an empty hidden file_ in ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch .hidden_file_in_mary_jane_doe
-
-  the terminal_ goes back to the command line
-
-* I make a hidden folder_ in ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir .hidden_folder_in_mary_jane_doe
-
-  the terminal_ goes back to the command line
-
-* I use ls_ to show what is in the folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .
-    ..
-    .hidden_file_in_mary_jane_doe
-    .hidden_folder_in_mary_jane_doe
-    empty_file_in_mary_jane_doe
-
-* I go back to the parent of ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../doe/jane_doe/
-
-  I am in ``jane_doe``
-
-* I go back to the parent of ``jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    ...pumping_python/doe
-
-  I am back in ``doe``
-
-----
-
-* I want to make a file_ in ``lil_john_doe``. I use cd_ to go to its parent first
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd john_doe
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    /pumping_python/doe/john_doe
-
-  I am in ``john_doe``
-
-* I `change directory`_ to ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd lil_john_doe
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../doe/john_doe/lil_john_doe
-
-  I am in ``lil_john_doe``
-
-* I make an empty file_ in ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch empty_file_in_lil_john_doe
-
-  the terminal_ goes back to the command line
-
-* I make an empty hidden file_ in ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch .hidden_file_in_lil_john_doe
-
-  the terminal_ goes back to the command line
-
-* I make a hidden folder_ in ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir .hidden_folder_in_lil_john_doe
-
-  the terminal_ goes back to the command line
-
-* I use ls_ to show what is in the folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .
-    ..
-    .hidden_file_in_lil_john_doe
-    .hidden_folder_in_lil_john_doe
-    empty_file_in_lil_john_doe
-
-* I go back to the parent of ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .../doe/john_doe/
-
-  I am in ``john_doe``
-
-* I go back to the parent of ``john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd ..
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    ...pumping_python/doe
-
-  I am back in ``doe``
-
-* I use tree_ to see what I have so far
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 6, 10
-
-    .
-    ├── empty_file_in_doe
-    ├── jane_doe
-    │   ├── empty_file_in_jane_doe
-    │   └── mary_jane_doe
-    │       └── empty_file_in_mary_jane_doe
-    └── john_doe
-        ├── empty_file_in_john_doe
-        └── lil_john_doe
-            └── empty_file_in_lil_john_doe
-
-    5 directories, 5 files
-
-* I use tree_ with the ``-a`` option
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree -a
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 10-11, 18-19
-
-    .
-    ├── .hidden_file_in_doe
-    ├── .hidden_folder_in_doe
-    ├── empty_file_in_doe
-    ├── jane_doe
-    │   ├── .hidden_file_in_jane_doe
-    │   ├── .hidden_folder_in_jane_doe
-    │   ├── empty_file_in_jane_doe
-    │   └── mary_jane_doe
-    │       ├── .hidden_file_in_mary_jane_doe
-    │       ├── .hidden_folder_in_mary_jane_doe
-    │       └── empty_file_in_mary_jane_doe
-    └── john_doe
-        ├── .hidden_file_in_john_doe
-        ├── .hidden_folder_in_john_doe
-        ├── empty_file_in_john_doe
-        └── lil_john_doe
-            ├── .hidden_file_in_lil_john_doe
-            ├── .hidden_folder_in_lil_john_doe
-            └── empty_file_in_lil_john_doe
-
-    10 directories, 10 files
 
 :ref:`I know how to make an empty file<how to make an empty file>`
 
@@ -1939,9 +1666,8 @@ how to use directory relationships
   - there is no line from ``doe`` to ``mary_jane_doe`` because ``mary_jane_doe`` is not a child of ``doe``
   - there is a line from ``jane_doe`` to ``mary_jane_doe`` because ``mary_jane_doe`` is a child of ``jane_doe``
   - there is a line from ``doe`` to ``jane_doe`` because ``jane_doe`` is a child of ``doe``
-  - I can go from ``doe`` to ``jane_doe`` to ``mary_jane_doe``
 
-* I go from ``doe`` to ``mary_jane_doe`` in 1 step with its parent
+* I can go from ``doe`` to ``jane_doe`` to ``mary_jane_doe`` in 1 step with
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2012,9 +1738,8 @@ how to use directory relationships
   - there is no line from ``doe`` to ``lil_john_doe`` because ``lil_john_doe`` is not a child of ``doe``
   - there is a line from ``john_doe`` to ``lil_john_doe`` because ``lil_john_doe`` is a child of ``john_doe``
   - there is a line from ``doe`` to ``john_doe`` because ``john_doe`` is a child of ``doe``
-  - I can go from ``doe`` to ``john_doe`` to ``lil_john_doe``
 
-* I go from ``doe`` to ``lil_john_doe`` in 1 step with its parent
+* I can go from ``doe`` to ``john_doe`` to ``lil_john_doe`` in 1 step with
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2075,17 +1800,225 @@ how to use touch with directory relationships
   .. code-block:: shell
 
     .
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
-    │       └── empty_file_in_mary_jane_doe
     └── john_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
-            └── empty_file_in_lil_john_doe
+
+    5 directories, 3 files
+
+* I want to make a file_ in ``mary_jane_doe``. I `change directory`_ to ``mary_jane_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd jane_doe/mary_jane_doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../doe/jane_doe/mary_jane_doe
+
+  I am in ``mary_jane_doe``
+
+* I make an empty file_ in ``mary_jane_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch a_file_in_mary_jane_doe
+
+  the terminal_ goes back to the command line
+
+* I make an empty hidden file_ in ``mary_jane_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch .a_hidden_file_in_mary_jane_doe
+
+  the terminal_ goes back to the command line
+
+* I make a hidden folder_ in ``mary_jane_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_mary_jane_doe
+
+  the terminal_ goes back to the command line
+
+* I use ls_ to show what is in the folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    ls -a
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .
+    ..
+    a_file_in_mary_jane_doe
+    .a_hidden_file_in_mary_jane_doe
+    .a_hidden_folder_in_mary_jane_doe
+
+* I go back to the grandparent of ``mary_jane_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    ...pumping_python/doe
+
+  I am back in ``doe``
+
+----
+
+* I want to make a file_ in ``lil_john_doe``. I `change directory`_ to ``lil_john_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd john_doe/lil_john_doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .../doe/john_doe/lil_john_doe
+
+  I am in ``lil_john_doe``
+
+* I make an empty file_ in ``lil_john_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch a_file_in_lil_john_doe
+
+  the terminal_ goes back to the command line
+
+* I make an empty hidden file_ in ``lil_john_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch .a_hidden_file_in_lil_john_doe
+
+  the terminal_ goes back to the command line
+
+* I make a hidden folder_ in ``lil_john_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_lil_john_doe
+
+  the terminal_ goes back to the command line
+
+* I use ls_ to show what is in the folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    ls -a
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    .                       .a_hidden_file_in_lil_john_doe
+    ..                      .a_hidden_folder_in_lil_john_doe
+    a_file_in_lil_john_doe
+
+* I go back to the grandparent of ``lil_john_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ../..
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    ...pumping_python/doe
+
+  I am back in ``doe``
+
+* I use tree_ to see what I have so far
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 6, 10
+
+    .
+    ├── a_file_in_doe
+    ├── jane_doe
+    │   ├── a_file_in_jane_doe
+    │   └── mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
+    └── john_doe
+        ├── a_file_in_john_doe
+        └── lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 5 files
+
+* I use tree_ with the ``-a`` option
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -a
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 11-12, 19-20
+
+    .
+    ├── a_file_in_doe
+    ├── .a_hidden_file_in_doe
+    ├── .a_hidden_folder_in_doe
+    ├── jane_doe
+    │   ├── a_file_in_jane_doe
+    │   ├── .a_hidden_file_in_jane_doe
+    │   ├── .a_hidden_folder_in_jane_doe
+    │   └── mary_jane_doe
+    │       ├── a_file_in_mary_jane_doe
+    │       ├── .a_hidden_file_in_mary_jane_doe
+    │       └── .a_hidden_folder_in_mary_jane_doe
+    └── john_doe
+        ├── a_file_in_john_doe
+        ├── .a_hidden_file_in_john_doe
+        ├── .a_hidden_folder_in_john_doe
+        └── lil_john_doe
+            ├── a_file_in_lil_john_doe
+            ├── .a_hidden_file_in_lil_john_doe
+            └── .a_hidden_folder_in_lil_john_doe
+
+    10 directories, 10 files
+
+----
 
 * I make an empty file_ in ``jane_doe`` from inside ``doe``
 
@@ -2128,19 +2061,19 @@ how to use touch with directory relationships
     :emphasize-lines: 4, 7, 10, 13
 
     .
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
     │   ├── child_of_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     │       ├── grandchild_of_doe
-    │       └── empty_file_in_mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
     └── john_doe
         ├── child_of_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
             ├── grandchild_of_doe
-            └── empty_file_in_lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 9 files
 
@@ -2209,22 +2142,22 @@ how to use touch with directory relationships
 
     .
     ├── parent_of_jane_doe
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
     │   ├── child_of_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     │       ├── grandchild_of_doe
     │       ├── child_of_jane_doe
-    │       └── empty_file_in_mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
     └── john_doe
         ├── child_of_doe
         ├── sibling_of_jane_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
             ├── grandchild_of_doe
             ├── child_of_sibling_of_john_doe
-            └── empty_file_in_lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 13 files
 
@@ -2294,25 +2227,25 @@ how to use touch with directory relationships
     .
     ├── parent_of_jane_doe
     ├── parent_of_john_doe
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
     │   ├── child_of_doe
     │   ├── sibling_of_john_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     │       ├── grandchild_of_doe
     │       ├── child_of_jane_doe
     │       ├── child_of_sibling_of_jane_doe
-    │       └── empty_file_in_mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
     └── john_doe
         ├── child_of_doe
         ├── sibling_of_jane_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
             ├── grandchild_of_doe
             ├── child_of_john_doe
             ├── child_of_sibling_of_john_doe
-            └── empty_file_in_lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 17 files
 
@@ -2388,25 +2321,25 @@ how to rename a file or directory
     .
     ├── parent_of_jane_doe
     ├── parent_of_john_doe
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
     │   ├── child_of_doe
     │   ├── sibling_of_john_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     │       ├── grandchild_of_doe
     │       ├── child_of_jane_doe
     │       ├── child_of_sibling_of_john_doe
-    │       └── empty_file_in_mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
     └── john_doe
         ├── child_of_doe
         ├── sibling_of_jane_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
             ├── grandchild_of_doe
             ├── child_of_sibling_of_jane_doe
             ├── child_of_john_doe
-            └── empty_file_in_lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 17 files
 
@@ -2483,28 +2416,28 @@ mv_ means move, it takes two arguments
     ├── grandparent_of_mary_jane_doe
     ├── parent_of_jane_doe
     ├── parent_of_john_doe
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
     │   ├── child_of_doe
     │   ├── parent_of_mary_jane_doe
     │   ├── sibling_of_john_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     │       ├── grandchild_of_doe
     │       ├── child_of_jane_doe
     │       ├── child_of_sibling_of_john_doe
-    │       └── empty_file_in_mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
     └── john_doe
         ├── child_of_doe
         ├── aunt_of_mary_jane_doe
         ├── sibling_of_jane_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
             ├── grandchild_of_doe
             ├── child_of_sibling_of_jane_doe
             ├── child_of_john_doe
             ├── cousin_of_mary_jane_doe
-            └── empty_file_in_lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 21 files
 
@@ -2575,31 +2508,31 @@ mv_ means move, it takes two arguments
     ├── grandparent_of_lil_john_doe
     ├── parent_of_jane_doe
     ├── parent_of_john_doe
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
     │   ├── child_of_doe
     │   ├── parent_of_mary_jane_doe
     │   ├── sibling_of_john_doe
     │   ├── uncle_of_lil_john_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     │       ├── grandchild_of_doe
     │       ├── child_of_jane_doe
     │       ├── child_of_sibling_of_john_doe
     │       ├── cousin_of_lil_john_doe
-    │       └── empty_file_in_mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
     └── john_doe
         ├── child_of_doe
         ├── aunt_of_mary_jane_doe
         ├── parent_of_lil_john_doe
         ├── sibling_of_jane_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
             ├── grandchild_of_doe
             ├── child_of_sibling_of_jane_doe
             ├── child_of_john_doe
             ├── cousin_of_mary_jane_doe
-            └── empty_file_in_lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 25 files
 
@@ -2644,31 +2577,31 @@ Time to fix my mistakes
     ├── grandparent_of_lil_john_doe
     ├── parent_of_jane_doe
     ├── parent_of_john_doe
-    ├── empty_file_in_doe
+    ├── a_file_in_doe
     ├── jane_doe
     │   ├── child_of_doe
     │   ├── aunt_of_lil_john_doe
     │   ├── parent_of_mary_jane_doe
     │   ├── sibling_of_john_doe
-    │   ├── empty_file_in_jane_doe
+    │   ├── a_file_in_jane_doe
     │   └── mary_jane_doe
     │       ├── grandchild_of_doe
     │       ├── child_of_jane_doe
     │       ├── child_of_sibling_of_john_doe
     │       ├── cousin_of_lil_john_doe
-    │       └── empty_file_in_mary_jane_doe
+    │       └── a_file_in_mary_jane_doe
     └── john_doe
         ├── child_of_doe
         ├── parent_of_lil_john_doe
         ├── sibling_of_jane_doe
         ├── uncle_of_mary_jane_doe
-        ├── empty_file_in_john_doe
+        ├── a_file_in_john_doe
         └── lil_john_doe
             ├── grandchild_of_doe
             ├── child_of_sibling_of_jane_doe
             ├── child_of_john_doe
             ├── cousin_of_mary_jane_doe
-            └── empty_file_in_lil_john_doe
+            └── a_file_in_lil_john_doe
 
     5 directories, 25 files
 
@@ -2709,8 +2642,8 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     .                        parent_of_jane_doe
     ..                       parent_of_john_doe
-    .hidden_file_in_doe    empty_file_in_doe
-    .hidden_folder_in_doe  jane_doe
+    .a_hidden_file_in_doe    a_file_in_doe
+    .a_hidden_folder_in_doe  jane_doe
     grandparent_of_mary_jane_doe  john_doe
     grandparent_of_lil_john_doe
 
@@ -2728,8 +2661,8 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     .                         aunt_of_lil_john_doe
     ..                        parent_of_mary_jane_doe
     child_of_doe            sibling_of_john_doe
-    .hidden_file_in_jane_doe    empty_file_in_jane_doe
-    .hidden_folder_in_jane_doe  mary_jane_doe
+    .a_hidden_file_in_jane_doe    a_file_in_jane_doe
+    .a_hidden_folder_in_jane_doe  mary_jane_doe
 
 * I show what is in ``mary_jane_doe``
 
@@ -2745,8 +2678,8 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     .                         child_of_jane_doe
     ..                        child_of_sibling_of_john_doe
     grandchild_of_doe       cousin_of_lil_john_doe
-    .hidden_file_in_mary_jane_doe    empty_file_in_mary_jane_doe
-    .hidden_folder_in_mary_jane_doe
+    .a_hidden_file_in_mary_jane_doe    a_file_in_mary_jane_doe
+    .a_hidden_folder_in_mary_jane_doe
 
 * I `change directory`_ to ``mary_jane_doe``
 
@@ -2769,8 +2702,8 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     .                         parent_of_lil_john_doe
     ..                        sibling_of_jane_doe
     child_of_doe            uncle_of_mary_jane_doe
-    .hidden_file_in_john_doe    empty_file_in_john_doe
-    .hidden_folder_in_john_doe  lil_john_doe
+    .a_hidden_file_in_john_doe    a_file_in_john_doe
+    .a_hidden_folder_in_john_doe  lil_john_doe
 
 * I show what is in ``lil_john_doe`` from ``mary_jane_doe``
 
@@ -2786,8 +2719,8 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     .                        child_of_sibling_of_jane_doe
     ..                       child_of_john_doe
     grandchild_of_doe      cousin_of_mary_jane_doe
-    .hidden_file_in_lil_john_doe    empty_file_in_lil_john_doe
-    .hidden_folder_in_lil_john_doe
+    .a_hidden_file_in_lil_john_doe    a_file_in_lil_john_doe
+    .a_hidden_folder_in_lil_john_doe
 
 * I use tree_ to show what is in ``lil_john_doe``
 
@@ -2806,7 +2739,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     ├── child_of_sibling_of_jane_doe
     ├── child_of_john_doe
     ├── cousin_of_mary_jane_doe
-    └── empty_file_in_lil_john_doe
+    └── a_file_in_lil_john_doe
 
     1 directory, 5 files
 
@@ -2827,13 +2760,13 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     ├── parent_of_lil_john_doe
     ├── sibling_of_jane_doe
     ├── uncle_of_mary_jane_doe
-    ├── empty_file_in_john_doe
+    ├── a_file_in_john_doe
     └── lil_john_doe
         ├── grandchild_of_doe
         ├── child_of_sibling_of_jane_doe
         ├── child_of_john_doe
         ├── cousin_of_mary_jane_doe
-        └── empty_file_in_lil_john_doe
+        └── a_file_in_lil_john_doe
 
     2 directories, 10 files
 
@@ -2866,8 +2799,8 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     .                         child_of_jane_doe
     ..                        child_of_sibling_of_john_doe
     grandchild_of_doe       cousin_of_lil_john_doe
-    .hidden_file_in_mary_jane_doe    empty_file_in_mary_jane_doe
-    .hidden_folder_in_mary_jane_doe
+    .a_hidden_file_in_mary_jane_doe    a_file_in_mary_jane_doe
+    .a_hidden_folder_in_mary_jane_doe
 
 * I use tree_ to show what is in ``mary_jane_doe``
 
@@ -2886,7 +2819,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     ├── child_of_jane_doe
     ├── child_of_sibling_of_john_doe
     ├── cousin_of_lil_john_doe
-    └── empty_file_in_mary_jane_doe
+    └── a_file_in_mary_jane_doe
 
     1 directory, 5 files
 
@@ -2907,13 +2840,13 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     ├── aunt_of_lil_john_doe
     ├── parent_of_mary_jane_doe
     ├── sibling_of_john_doe
-    ├── empty_file_in_jane_doe
+    ├── a_file_in_jane_doe
     └── mary_jane_doe
         ├── grandchild_of_doe
         ├── child_of_jane_doe
         ├── child_of_sibling_of_john_doe
         ├── cousin_of_lil_john_doe
-        └── empty_file_in_mary_jane_doe
+        └── a_file_in_mary_jane_doe
 
     2 directories, 10 files
 
