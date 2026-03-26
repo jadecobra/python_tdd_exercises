@@ -124,7 +124,7 @@ BONUS!!!
 *********************************************************************************
 
 
-I have a :ref:`GIFT<BONUS: learn directory structure>` for you, since you made it this far. It makes moving around on your computer in the terminal_ and :ref:`the next chapter<how to make a test driven development environment>` easier. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory structure>`
+I have a :ref:`GIFT<BONUS: learn directory relationships>` for you, since you made it this far. It makes moving around on your computer in the terminal_ and :ref:`the next chapter<how to make a test driven development environment>` easier. This is how your computer is organized. :ref:`Click HERE for the BONUS!<BONUS: learn directory relationships>`
 
 ----
 

@@ -35,7 +35,7 @@ MacOS requirements
 
     brew install tree
 
-  tree_ is a program for showing :ref:`directory structure<BONUS: learn directory structure>` as a tree
+  tree_ is a program for showing :ref:`directory structure<BONUS: learn directory relationships>` as a tree
 
 ----
 

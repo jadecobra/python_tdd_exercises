@@ -18,7 +18,7 @@ what is None?
 
 None_ is used when there is no value. In Mathematics_ we use ``0`` to represent no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we use None_, It is the simplest :ref:`data structure<data structures>`.
 
-In :ref:`AssertionError<what causes AssertionError?>`, I used assertIsNone_ and assertIsNotNone_ in :ref:`test_assertion_error_w_none`, where I saw that
+I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none` in :ref:`AssertionError<what causes AssertionError?>`, where I saw that
 
 * :ref:`True<test_what_is_true>` is NOT None_ and NOT equal to None_
 * :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_

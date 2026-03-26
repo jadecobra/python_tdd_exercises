@@ -51,7 +51,7 @@ Linux/Windows Subsystem for Linux requirements
 
     sudo apt install tree --yes
 
-  tree_ is a program for showing :ref:`directory structure<BONUS: learn directory structure>` as a tree
+  tree_ is a program for showing :ref:`directory structure<BONUS: learn directory relationships>` as a tree
 
 * use apt_ to install git_
 

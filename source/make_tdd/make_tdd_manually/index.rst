@@ -112,7 +112,7 @@ on Linux, MacOS and Windows with Window Subsystem for Linux computers
 * :ref:`how to make a Python Test Driven Development environment manually`
 * :ref:`how to change directory`
 * :ref:`how to make a directory`
-* :ref:`how to look at directory structure`
+* :ref:`how to look at directory relationships`
 * :ref:`how to make an empty file`
 * :ref:`how to write text to a file`
 * :ref:`how to see what is inside a file`

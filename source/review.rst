@@ -8,6 +8,27 @@ pumping python review
 
 You have made it to the end of the book, Here are questions you can answer from each chapter
 
+----
+
+************************************************************************************************************
+BONUS: learn directory relationships review
+************************************************************************************************************
+
+* :ref:`what is a folder (directory)?<what is a folder?>`
+* :ref:`what is a file?<what is a file?>`
+* :ref:`how can I tell what directory I am in?<how to see what directory I am in>`
+* :ref:`how can I change directories?<how to change directory>`
+* :ref:`how can I make a directory?<how to make a directory>`
+* :ref:`how can I see directory relationships?<how to look at directory relationships>`
+* :ref:`how can I see what is in a directory?<how to see what is in a directory>`
+* :ref:`how can I make an empty file?<how to make an empty file>`
+* :ref:`how can I rename a file or directory?<how to rename a file or directory>`
+* :ref:`how can I move a file or directory?<how to rename a file or directory>`
+* :ref:`how can I use directory relationships?<how to use directory relationships>`
+* :ref:`how can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+
+----
+
 ************************************************************************************************************
 how to make a python test driven development environment review
 ************************************************************************************************************
@@ -16,7 +37,7 @@ how to make a python test driven development environment review
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
 * :ref:`how can I change directories?<how to change directory>`
 * :ref:`how can I make a directory?<how to make a directory>`
-* :ref:`how can I see directory structure?<how to look at directory structure>`
+* :ref:`how can I see directory structure?<how to look at directory relationships>`
 * :ref:`how can I make an empty file?<how to make an empty file>`
 * :ref:`how can I write text to a file?<how to write text to a file>`
 * :ref:`how can I see what is inside a file?<how to see what is inside a file>`
@@ -46,7 +67,7 @@ how to make a python test driven development environment on Windows without Wind
 * :ref:`how can I make a Python Test Driven Development Environment automatically?<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
 * :ref:`how can I change directories?<how to change directory>`
 * :ref:`how can I make a directory?<how to make a directory>`
-* :ref:`how can I see directory structure?<how to look at directory structure>`
+* :ref:`how can I see directory structure?<how to look at directory relationships>`
 * :ref:`how can I make an empty file?<how to make an empty file on Windows without Windows Subsystem for Linux>`
 * :ref:`how can I write text to a file?<how to write text to a file on Windows without Windows Subsystem for Linux>`
 * :ref:`how can I change the name of a file?<how to change the name of a file on Windows without WSL>`

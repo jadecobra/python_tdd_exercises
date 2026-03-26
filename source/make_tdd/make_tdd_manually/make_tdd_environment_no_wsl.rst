@@ -48,7 +48,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually on Windows without Windows Subsystem for Linux>`
 * :ref:`how can I change directories?<how to change directory>`
 * :ref:`how can I make a directory?<how to make a directory>`
-* :ref:`how can I see directory structure?<how to look at directory structure>`
+* :ref:`how can I see directory structure?<how to look at directory relationships>`
 * :ref:`how can I make an empty file?<how to make an empty file on Windows without Windows Subsystem for Linux>`
 * :ref:`how can I write text to a file?<how to write text to a file on Windows without Windows Subsystem for Linux>`
 * :ref:`how can I change the name of a file?<how to change the name of a file on Windows without WSL>`
