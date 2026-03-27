@@ -87,7 +87,7 @@ A file_ is a collection or container for text, like paper we write or print on a
 requirements
 *********************************************************************************
 
-.. NOTE:: The code you can type is highlighted and usually follows something like ``I type this in the terminal_``
+.. NOTE:: The code you can type is highlighted and usually follows something like ``I type this in the terminal``
 
 I type this in a terminal_ to make sure the `tree program`_ is installed
 
@@ -110,7 +110,7 @@ if it is installed, the terminal_ shows
 
   0 directories, 0 files
 
-if there is nothing in the directory_ or it shows the relationships, if there is something in the directory_.
+if there is nothing in the directory_ or if there is something in the directory_, it shows the relationships.
 
 The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to get from one folder_ to another, because it shows the way I can go. If I know where I am it is easier to go where I want.
 
@@ -206,7 +206,7 @@ continue with :ref:`how to see what directory I am in`
 how to see what directory I am in
 ********************************************************************************************
 
-I start by checking where I am in the terminal_ because It is easier to go where I want if I know where I am. I can do this with the pwd_ program
+I start by checking where I am in the terminal_ because It is easier to go where I want, if I know where I am. I can do this with the pwd_ program
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -235,9 +235,9 @@ because I am in the ``pumping_python`` folder_
 
       tree /
 
-    it runs for a while because there are many files_ and folders_ on your computer.
+    it runs for a while because there are many files_ and folders_.
 
-    Use :kbd:`ctrl+c` on the keyboard if you want to stop it from running.
+    Use :kbd:`ctrl+c` on the keyboard if you want to stop it when it is running.
 
 .. NOTE::
 
@@ -361,7 +361,7 @@ how to make a directory
 
     .../pumping_python/doe
 
-It is easier to go where I want if I know where I am.
+It is easier to go where I want, if I know where I am.
 
 * :ref:`I know how to change directory<how to change directory>`
 * :ref:`I know how to make a directory<how to make a directory>`
@@ -1784,7 +1784,7 @@ how to use directory relationships
 
   * I can only go right to folders_ that are where I am (children)
   * I can use the path/address of a folder_ to go to it
-  * It is easier to go where I want if I know where I am
+  * It is easier to go where I want, if I know where I am
 
 :ref:`I know how to use directory relationships<how to use directory relationships>`
 
@@ -2127,7 +2127,7 @@ how to use touch with directory relationships
   - ``john_doe`` is a child of ``doe``
   - ``lil_john_doe`` is a child of ``john_doe``
 
-  I made a mistake - ``lil_john_doe`` is a child of sibling of ``jane_doe`` not a child of sibling of ``john_doe`` who is already the parent
+  I made a mistake - ``child_of_sibling_of_john_doe`` should be ``child_of_sibling_of_jane_doe``
 
 ----
 
@@ -2153,7 +2153,7 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 
   .. TIP::
 
-    I can also do the whole thing in one line without cd_ (it is a long line)
+    I can also do it with one line without cd_ (it is a long line)
 
     .. code-block:: python
 
@@ -2266,7 +2266,7 @@ mv_ means move, it takes two arguments
   - ``jane_doe`` is a child of ``doe``
   - ``mary_jane_doe`` is a child of ``jane_doe``
 
-  I made a mistake again ``mary_jane_doe`` is a child of sibling of ``john_doe`` not a child of sibling of ``jane_doe`` who is already the parent
+  I made a mistake again ``child_of_sibling_of_jane_doe`` should be ``child_of_sibling_of_john_doe``
 
 * I `change directory`_ to ``mary_john_doe``
 
@@ -2284,7 +2284,7 @@ mv_ means move, it takes two arguments
 
   .. TIP::
 
-    I can also do the whole thing in one line without cd_ (it is a long line)
+    I can also do it with one line without cd_ (it is a long line)
 
     .. code-block:: python
 
@@ -2879,7 +2879,7 @@ I can do things with files_ and folders_ in 1 step as long as
 - I know their relation to where I am and
 - I can :ref:`write to the folder<how to view the permissions of a file>`
 
-It is easier to go where I want if I know where I am. :ref:`I know how to use directory relationships<how to use directory relationships>`
+It is easier to go where I want, if I know where I am. :ref:`I know how to use directory relationships<how to use directory relationships>`
 
 ----
 
