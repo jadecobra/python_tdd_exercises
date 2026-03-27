@@ -25,7 +25,7 @@ BONUS: learn directory relationships review
 * :ref:`how can I rename a file or directory?<how to rename a file or directory>`
 * :ref:`how can I move a file or directory?<how to rename a file or directory>`
 * :ref:`how can I use directory relationships?<how to use directory relationships>`
-* :ref:`how can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+* :ref:`how can I remove a directory and everything inside it?<how to remove a directory and all the things in it>`
 
 ----
 

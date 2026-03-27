@@ -54,7 +54,7 @@ Here are questions you can answer after going through this chapter
 * :ref:`how can I rename a file or directory?<how to rename a file or directory>`
 * :ref:`how can I move a file or directory?<how to rename a file or directory>`
 * :ref:`how can I use directory relationships?<how to use directory relationships>`
-* :ref:`how can I remove a directory and everything inside it?<how to remove a directory and all its contents>`
+* :ref:`how can I remove a directory and everything inside it?<how to remove a directory and all the things in it>`
 
 ----
 
@@ -62,9 +62,9 @@ Here are questions you can answer after going through this chapter
 what is a folder?
 *********************************************************************************
 
-A `folder (directory)`_ is a box for files_. It helps organize things, just like a folder in a file cabinet is used to keep files that should be together in one place.
+A `folder (directory)`_ is a box for files_, it can also have other `folders (directories)`_. It helps keep things that should be together, in one place, the same way a folder in a file cabinet is used to keep files that should be together in one place.
 
-I keep every project I work on in its own `folder (directory)`_. All the code in this book is kept in a folder_ named ``pumping_python``.
+I keep every project I work on in its own directory_. All the code in this book is kept in a folder_ named ``pumping_python``.
 
 ----
 
@@ -137,7 +137,7 @@ how to install tree on Linux/Windows Subsystem for Linux
 
   sudo apt update
 
-I always do a full upgrade, you do not have to
+I always do a full upgrade (you do not have to)
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -167,7 +167,7 @@ You are going to use the commands below for the ones I have in the chapter
 
 * `New-Item`_ for touch_
 * ``tree /F`` for tree_
-* ``dir`` for ``ls --all/-a``
+* dir_ for ``ls --all/-a``
 * `Remove-Item`_ for rm_
 
 when you call pwd_ or tree_ it shows ``\`` as the separator, not ``/``. For example
@@ -2173,10 +2173,10 @@ mv_ means move, it takes two arguments
 * this allows me to rename a file_ or folder_ in one step, the other way would be to
 
   - copy the original file_ or folder_
-  - paste the copy file_ or folder_ at the target
+  - paste the copied file_ or folder_ at the target
   - delete the original file_ or folder_
 
-  too many steps, give me one step.
+  that is two steps too many, give me one step.
 
 :ref:`I know how to rename a file<how to rename a file or directory>`
 
@@ -2884,7 +2884,7 @@ It is easier to go where I want if I know where I am. :ref:`I know how to use di
 ----
 
 ********************************************************************************************
-how to remove a directory and all its contents
+how to remove a directory and all the things in it
 ********************************************************************************************
 
 * I try to remove ``doe`` and all its children and their children
@@ -2922,9 +2922,9 @@ how to remove a directory and all its contents
       Remove-Item -Path doe -Recurse -Force
 
 
-  - rm_ is used to remove files_ and folders_
+  - rm_/`Remove-Item`_ are used to remove files_ and folders_
   - ``rm`` means ``remove``
-  - ``--recursive`` or ``-r`` or ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through each child directory_ and removes everything including their children
+  - ``--recursive`` or ``-r`` or ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through every child directory_ and removes everything including their children
   - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
 
 * I try to go back to ``doe``

@@ -15,7 +15,11 @@ Linux/Windows Subsystem for Linux requirements
 
     sudo apt update
 
-  .. TIP:: you can do a full upgrade if you want
+  - ``sudo`` means ``superuser do``
+  - ``superuser`` is an account on the computer that has higher permissions to do things like change system files
+  - apt_ is the `Linux package manager`_, it is used to install Linux_ software packages on Debian_ based systems
+
+* I always do a full upgrade (you do not have to)
 
   .. code-block:: shell
 
