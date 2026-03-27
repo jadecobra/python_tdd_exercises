@@ -4,6 +4,9 @@
 
 .. _Excel Spreadsheet: https://grokipedia.com/page/Microsoft_Excel
 .. _Word Document: https://grokipedia.com/page/Microsoft_Word
+.. _make directories: mkdir_
+.. _change directories: cd_
+
 
 #################################################################################
 BONUS: learn directory relationships
@@ -24,13 +27,13 @@ I build the relationships below step by step to see how files_ and folders_ are 
 
 These are all the commands used in this chapter
 
-* mkdir_ - to make directories_
-* cd_ - to change directories_
-* ls_ - to show what is in directories_
-* tree_ - to show the relationships between directories_
-* touch_ - to make empty files_
-* mv_ - to rename or move files_
-* rm_ - to remove directories_
+* mkdir_ to `make directories`_
+* cd_ to `change directories`_
+* ls_ to show what is in directories_
+* tree_ to show the relationships between directories_
+* touch_ to make empty files_
+* mv_ to rename or move files_
+* rm_ to remove directories_
 
 ----
 
@@ -61,7 +64,7 @@ what is a folder?
 
 A `folder (directory)`_ is a box for files_. It helps organize things, just like a folder in a file cabinet is used to keep files that should be together in one place.
 
-I keep every project I work on in its own `folder (directory)`_. All the code in this book is done in a folder_ named ``pumping_python``.
+I keep every project I work on in its own `folder (directory)`_. All the code in this book is kept in a folder_ named ``pumping_python``.
 
 ----
 
@@ -69,7 +72,7 @@ I keep every project I work on in its own `folder (directory)`_. All the code in
 what is a file?
 *********************************************************************************
 
-A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Their names can end with an extension to show what type of file_ it is. For example
+A file_ is a collection or container for text, like paper we write or print on and keep in a folder. The name of a file can end with an extension to show what type of file_ it is. For example
 
 * ``.py`` for a :ref:`Python module<what is a module?>`
 * ``.txt`` for a `plain text file`_
@@ -422,8 +425,8 @@ how to see what is in a directory
     the terminal_ does not show ``.`` and ``..`` on Windows_ without `Windows Subsystem for Linux`_
 
 
-  - ``--all/-a`` tells ls_ to show all the things in the directory_ even those that start with ``.`` ( they are hidden by default)
-  - I can hide a file_ or directory_ if I put ``.`` before its name, for example ``.hidden``
+  - ``--all`` or ``-a`` tells ls_ to show all the things in the directory_ even those that start with ``.`` ( they are hidden by default)
+  - I can hide a file_ or folder_ if I put ``.`` before its name, for example ``.hidden``
 
 * I try to `change directory`_ to the ``.``
 
@@ -741,7 +744,7 @@ how to look at directory relationships
 
     cd: no such file or directory: .a_hidden_folder_in_doe
 
-  ``.hidden_folder`` is not in ``doe``, yet
+  ``.a_hidden_folder_in_doe`` is not in ``doe``, yet
 
 * I make ``.a_hidden_folder_in_doe``
 
@@ -766,7 +769,7 @@ how to look at directory relationships
     jane_doe  john_doe
 
   - ``.a_hidden_folder_in_doe`` is hidden
-  - I can hide a file_ or directory_ if I put ``.`` before its name
+  - I can hide a file_ or folder_ if I put ``.`` before its name
 
 * I use ls_ with the ``-a`` option to see everything that is in ``doe``
 
@@ -799,7 +802,7 @@ how to look at directory relationships
     3 directories, 0 files
 
   - ``.a_hidden_folder_in_doe`` is hidden
-  - I can hide a file_ or directory_ if I put ``.`` before its name
+  - I can hide a file_ or folder_ if I put ``.`` before its name
 
 * I can also use tree_ with the ``-a`` option
 
@@ -2121,7 +2124,7 @@ how to use touch with directory relationships
   - ``john_doe`` is a child of ``doe``
   - ``lil_john_doe`` is a child of ``john_doe``
 
-  I made a mistake - ``lil_john_doe`` cannot be a child of sibling of ``john_doe`` and a ``child_of_john_doe``
+  I made a mistake - ``lil_john_doe`` is a child of sibling of ``jane_doe``
 
 ----
 
@@ -2147,7 +2150,7 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 
   .. TIP::
 
-    I can also do the whole thing in one line without cd_ but it is a long line
+    I can also do the whole thing in one line without cd_ (it is a long line)
 
     .. code-block:: python
 
@@ -2167,7 +2170,7 @@ mv_ means move, it takes two arguments
 * this allows me to rename a file_ or folder_ in one step, the other way would be to
 
   - copy the original file_ or folder_
-  - paste the copy file_ or folder_ in the target
+  - paste the copy file_ or folder_ at the target
   - delete the original file_ or folder_
 
 :ref:`I know how to rename a file<how to rename a file or directory>`
@@ -2258,7 +2261,7 @@ mv_ means move, it takes two arguments
   - ``jane_doe`` is a child of ``doe``
   - ``mary_jane_doe`` is a child of ``jane_doe``
 
-  I made a mistake - ``mary_jane_doe`` cannot be a child of sibling of ``jane_doe`` and a ``child_of_jane_doe``
+  I made a mistake - ``mary_jane_doe`` is a child of sibling of ``jane_doe``
 
 * I `change directory`_ to ``mary_john_doe``
 
@@ -2276,7 +2279,7 @@ mv_ means move, it takes two arguments
 
   .. TIP::
 
-    I can also do the whole thing in one line without cd_ but it is a long line
+    I can also do the whole thing in one line without cd_ (it is a long line)
 
     .. code-block:: python
 
@@ -2889,7 +2892,7 @@ how to remove a directory and all its contents
 
 * I remove ``doe`` and all its children and their children with the ``-r/--recursive`` option
 
-  .. DANGER:: This is a destructive operation takes a lot of effort and time to undo on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
+  .. DANGER:: This is a destructive operation that takes a lot of work and time to undo on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2910,7 +2913,7 @@ how to remove a directory and all its contents
 
   - rm_ is used to remove files_ and folders_
   - ``rm`` means ``remove``
-  - ``-r/--recursive/-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through each child directory_ and removes everything including their children
+  - ``--recursive`` or ``-r`` or ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through each child directory_ and removes everything including their children
   - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
 
 * I try to go back to ``doe``
@@ -2934,13 +2937,13 @@ review
 
 I ran these commands to play with `folders (directories)`_
 
-* mkdir_ to make directories_
-* cd_ to change directories_
-* ls_ to show what is in a directory_
-* tree_ to show a directory_ and its sub directories_ as a tree
+* mkdir_ to `make directories`_
+* cd_ to `change directories`_
+* ls_ to show what is in directories_
+* tree_ to show the relationships between directories_
 * touch_ to make empty files_
-* mv_ to rename or move a file_ or directory_
-* rm_ to remove files_ or directories_
+* mv_ to rename or move files_
+* rm_ to remove directories_
 
 :ref:`How many questions do you think you can answer after going through this chapter?<questions about directory relationships>`
 
