@@ -87,6 +87,8 @@ A file_ is a collection or container for text, like paper we write or print on a
 requirements
 *********************************************************************************
 
+.. NOTE:: The code you can type is highlighted and usually follows something like ``I type this in the terminal_``
+
 I type this in a terminal_ to make sure the `tree program`_ is installed
 
 .. code-block:: python
@@ -222,12 +224,12 @@ because I am in the ``pumping_python`` folder_
 * pwd_ shows the path/address of the folder_ I am in
 * pwd_ means ``print working directory``, it prints the directory_ I am in, to the terminal_
 * each ``/`` shows a parent-child relationship
-* the first ``/`` is for ``root`` which is the starting ancestor of all the folders_ on the computer
-* the first ``/`` is at the highest level
+* the first ``/`` is for ``root`` which is the first folder_ on the computer
+* the first ``/`` is the highest level
 
   .. CAUTION::
 
-    if you type this in the terminal_ it will show you every file_ and folder_ on your computer as a tree
+    do you want to see every file_ and folder_ on your computer as a tree? Type this in the terminal_
 
     .. code-block:: python
 
@@ -235,7 +237,7 @@ because I am in the ``pumping_python`` folder_
 
     it runs for a while because there are many files_ and folders_ on your computer.
 
-    use :kbd:`ctrl+c` on the keyboard if you want to stop it from running.
+    Use :kbd:`ctrl+c` on the keyboard if you want to stop it from running.
 
 .. NOTE::
 
@@ -727,7 +729,8 @@ how to look at directory relationships
 
     .../pumping_python/doe
 
-  - I am back in ``doe``
+  I am back in ``doe``
+
   - ``..`` is for the parent of the directory_ I am in
   - ``..`` is ``doe`` when I am in ``john_doe``
 
@@ -1698,7 +1701,7 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-  I am back in ``doe``.
+  I am back in ``doe``
 
   - ``..`` is for the parent of a directory_
   - ``../..`` is for the parent of the parent, that is a grandparent. I can use as many as I need for each parent, for example ``../../../..`` is the great great grand parent
@@ -1770,7 +1773,7 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-  I am back in ``doe``.
+  I am back in ``doe``
 
   - ``..`` is for the parent of a directory_
   - ``../..`` is for the parent of the parent
@@ -1781,7 +1784,7 @@ how to use directory relationships
 
   * I can only go right to folders_ that are where I am (children)
   * I can use the path/address of a folder_ to go to it
-  * It is easier to go where I want if I know where I am.
+  * It is easier to go where I want if I know where I am
 
 :ref:`I know how to use directory relationships<how to use directory relationships>`
 
@@ -2124,7 +2127,7 @@ how to use touch with directory relationships
   - ``john_doe`` is a child of ``doe``
   - ``lil_john_doe`` is a child of ``john_doe``
 
-  I made a mistake - ``lil_john_doe`` is a child of sibling of ``jane_doe``
+  I made a mistake - ``lil_john_doe`` is a child of sibling of ``jane_doe`` not a child of sibling of ``john_doe`` who is already the parent
 
 ----
 
@@ -2172,6 +2175,8 @@ mv_ means move, it takes two arguments
   - copy the original file_ or folder_
   - paste the copy file_ or folder_ at the target
   - delete the original file_ or folder_
+
+  too many steps, give me one step.
 
 :ref:`I know how to rename a file<how to rename a file or directory>`
 
@@ -2261,7 +2266,7 @@ mv_ means move, it takes two arguments
   - ``jane_doe`` is a child of ``doe``
   - ``mary_jane_doe`` is a child of ``jane_doe``
 
-  I made a mistake - ``mary_jane_doe`` is a child of sibling of ``jane_doe``
+  I made a mistake again ``mary_jane_doe`` is a child of sibling of ``john_doe`` not a child of sibling of ``jane_doe`` who is already the parent
 
 * I `change directory`_ to ``mary_john_doe``
 
@@ -2681,6 +2686,12 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     cousin_of_mary_jane_doe
     grandchild_of_doe
 
+----
+
+********************************************************************************************
+how to use tree with directory relationships
+********************************************************************************************
+
 * I use tree_ to show what is in ``lil_john_doe``
 
   .. code-block:: python
@@ -2970,9 +2981,12 @@ You know
 * :ref:`how to use directory relationships`
 * :ref:`how to use touch with directory relationships`
 * :ref:`how to use ls with directory relationships`
+* :ref:`how to use tree with directory relationships`
 * :ref:`how to rename a file or directory`
 
-Homework: use what you have learned - mkdir_, cd_, ls_, tree_ and touch_ to make your family tree. Send it to me when you are done.
+.. admonition:: Homework
+
+  use these commands - mkdir_, cd_, ls_, tree_ and touch_ - to make your family tree. Send it to me when you are done.
 
 :ref:`Click Here to see me make a Python Test Driven Development Environment<how to make a test driven development environment>`
 
