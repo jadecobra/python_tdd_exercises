@@ -474,6 +474,14 @@ how to see what is in a directory
   - ``..`` is ``pumping_python`` when I am in ``doe``
   - ``pumping_python`` is the parent of ``doe``
 
+:ref:`I know how to see what is in a directory<how to see what is in a directory>`
+
+----
+
+********************************************************************************************
+how to look at directory relationships
+********************************************************************************************
+
 * I go back to ``doe``
 
   .. code-block:: python
@@ -486,14 +494,6 @@ how to see what is in a directory
   .. code-block:: python
 
     .../pumping_python/doe
-
-:ref:`I know how to see what is in a directory<how to see what is in a directory>`
-
-----
-
-********************************************************************************************
-how to look at directory relationships
-********************************************************************************************
 
 * I can use the `tree program`_ to see the files_ and folders_ in a directory_ and how they are related. I type it in the terminal_ to see what is in the ``doe`` directory_
 
