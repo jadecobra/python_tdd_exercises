@@ -19,7 +19,7 @@ what is covered?
 .. toctree::
   :titlesonly:
 
-  learn_directory_structure
+  learn_directory_relationships
   sleep_duration/index
 
 ----

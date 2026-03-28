@@ -196,7 +196,7 @@ how to install tree on Mac OS
 
 ----
 
-.. ATTENTION:: Do this only if you are using a MacOS_ computer. Windows_ users do :ref:`how to install tree on Linux/Windows Subsystem for Linux` or :ref:`how to install tree on Windows without Windows Subsystem for Linux`
+.. ATTENTION:: Do this only if you are using a MacOS_ computer. If you have Windows_, do :ref:`how to install tree on Linux/Windows Subsystem for Linux` or :ref:`how to install tree on Windows without Windows Subsystem for Linux`
 
 type this in the terminal_
 
@@ -247,8 +247,8 @@ because I am in the ``pumping_python`` folder_
 
 .. NOTE::
 
-  - If you see ``pumping_python`` when you type ``pwd``, skip to the part where I create ``doe``
-  - If you see a different name, continue to the next step - :ref:`how to change directory`
+  - If you see ``pumping_python`` when you type ``pwd``, go to :ref:`the part where I make 'doe'<the part where I make doe>`
+  - If you see a different name, go to the next step - :ref:`how to change directory`
 
 ----
 
@@ -310,6 +310,8 @@ how to make a directory
       code .
 
     a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
+
+.. _the part where I make doe:
 
 * I want to work in a directory_ named ``doe``, I try to `change directory`_ to ``doe``
 
@@ -2924,9 +2926,9 @@ how to remove a directory and all the things in it
       Remove-Item -Path doe -Recurse -Force
 
 
-  - rm_/`Remove-Item`_ are used to remove files_ and folders_
+  - rm_ or `Remove-Item`_ is used to remove files_ and folders_
   - ``rm`` means ``remove``
-  - ``--recursive`` or ``-r`` or ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through every child directory_ and removes everything including their children
+  - ``--recursive`` or ``-r`` or ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through every directory_ in the tree and removes everything
   - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
 
 * I try to go back to ``doe``
@@ -2942,7 +2944,7 @@ how to remove a directory and all the things in it
 
     cd: no such file or directory: doe
 
-  the ``doe`` family is gone!
+  ``doe`` is gone!
 
 *************************************************************************************
 review
