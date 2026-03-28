@@ -87,7 +87,7 @@ A file_ is a collection or container for text, like paper we write or print on a
 requirements
 *********************************************************************************
 
-.. NOTE:: The code you can type is highlighted and usually follows something like ``I type this in the terminal``
+.. NOTE:: The code you type is highlighted and usually follows something like ``I type this in the terminal``
 
 I type this in a terminal_ to make sure the `tree program`_ is installed
 
@@ -112,7 +112,7 @@ if it is installed, the terminal_ shows
 
 if there is nothing in the directory_ or if there is something in the directory_, it shows the relationships.
 
-The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to get from one folder_ to another, because it shows the way I can go. If I know where I am it is easier to go where I want.
+The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to go from one folder_ to another, because it shows the way I can go. If I know where I am it is easier to go where I want.
 
 ----
 
@@ -131,6 +131,8 @@ how to install tree on Linux/Windows Subsystem for Linux
 ---------------------------------------------------------------------------------
 
 ----
+
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. :ref:`MacOS users go here instead<how to install tree on Mac OS>`
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -160,6 +162,8 @@ how to install tree on Windows without Windows Subsystem for Linux
 ---------------------------------------------------------------------------------
 
 ----
+
+.. ATTENTION:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
 
 tree_ comes with Windows_, no need to install anything.
 
@@ -191,6 +195,8 @@ how to install tree on Mac OS
 ---------------------------------------------------------------------------------
 
 ----
+
+.. ATTENTION:: Do this only if you are using a MacOS_ computer. Windows_ users do :ref:`how to install tree on Linux/Windows Subsystem for Linux` or :ref:`how to install tree on Windows without Windows Subsystem for Linux`
 
 type this in the terminal_
 
@@ -2031,28 +2037,28 @@ how to use touch with directory relationships
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch jane_doe/child_of_doe
+    touch jane_doe/a_child_of_doe
 
 * I make an empty file_ in ``mary_jane_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch jane_doe/mary_jane_doe/grandchild_of_doe
+    touch jane_doe/mary_jane_doe/a_grandchild_of_doe
 
 * I make an empty file_ in ``john_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch john_doe/child_of_doe
+    touch john_doe/a_child_of_doe
 
 * I make an empty file_ in ``lil_john_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch john_doe/lil_john_doe/grandchild_of_doe
+    touch john_doe/lil_john_doe/a_grandchild_of_doe
 
 * I show the ``doe`` family tree
 
@@ -2064,22 +2070,22 @@ how to use touch with directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 5, 8, 11, 14
+    :emphasize-lines: 4, 8, 10, 13
 
     .
     ├── a_file_in_doe
     ├── jane_doe
+    │   ├── a_child_of_doe
     │   ├── a_file_in_jane_doe
-    │   ├── child_of_doe
     │   └── mary_jane_doe
     │       ├── a_file_in_mary_jane_doe
-    │       └── grandchild_of_doe
+    │       └── a_grandchild_of_doe
     └── john_doe
+        ├── a_child_of_doe
         ├── a_file_in_john_doe
-        ├── child_of_doe
         └── lil_john_doe
             ├── a_file_in_lil_john_doe
-            └── grandchild_of_doe
+            └── a_grandchild_of_doe
 
     5 directories, 9 files
 
@@ -2097,21 +2103,21 @@ how to use touch with directory relationships
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch mary_jane_doe/child_of_jane_doe
+    touch mary_jane_doe/a_child_of_jane_doe
 
 * I make an empty file_ in ``doe`` from inside ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../parent_of_jane_doe
+    touch ../aka_parent_of_jane_doe
 
 * I make an empty file_ in ``john_doe`` from inside ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../john_doe/sibling_of_jane_doe
+    touch ../john_doe/aka_sibling_of_jane_doe
 
   - ``..`` is the parent of ``jane_doe`` which is ``doe``
   - ``john_doe`` is a child of ``doe``
@@ -2199,26 +2205,26 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 8, 15, 17, 18
+    :emphasize-lines: 3, 8, 14, 16
 
     .
     ├── a_file_in_doe
+    ├── aka_parent_of_jane_doe
     ├── jane_doe
+    │   ├── a_child_of_doe
     │   ├── a_file_in_jane_doe
-    │   ├── child_of_doe
     │   └── mary_jane_doe
+    │       ├── a_child_of_jane_doe
     │       ├── a_file_in_mary_jane_doe
-    │       ├── child_of_jane_doe
-    │       └── grandchild_of_doe
-    ├── john_doe
-    │   ├── a_file_in_john_doe
-    │   ├── child_of_doe
-    │   ├── lil_john_doe
-    │   │   ├── a_file_in_lil_john_doe
-    │   │   ├── child_of_sibling_of_jane_doe
-    │   │   └── grandchild_of_doe
-    │   └── sibling_of_jane_doe
-    └── parent_of_jane_doe
+    │       └── a_grandchild_of_doe
+    └── john_doe
+        ├── a_child_of_doe
+        ├── a_file_in_john_doe
+        ├── aka_sibling_of_jane_doe
+        └── lil_john_doe
+            ├── a_grandchild_of_doe
+            ├── a_file_in_lil_john_doe
+            └── child_of_sibling_of_jane_doe
 
     5 directories, 13 files
 
@@ -2236,21 +2242,21 @@ mv_ means move, it takes two arguments
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch lil_john_doe/child_of_john_doe
+    touch lil_john_doe/a_child_of_john_doe
 
 * I make an empty file_ in ``doe`` from inside ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../parent_of_john_doe
+    touch ../aka_parent_of_john_doe
 
 * I make an empty file_ in ``jane_doe`` from inside ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../jane_doe/sibling_of_john_doe
+    touch ../jane_doe/aka_sibling_of_john_doe
 
   - ``..`` is the parent of ``john_doe`` which is ``doe``
   - ``jane_doe`` is a child of ``doe``
@@ -2310,30 +2316,30 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 9, 11, 17, 22
+    :emphasize-lines: 4, 8, 13, 19
 
     .
     ├── a_file_in_doe
+    ├── aka_parent_of_jane_doe
+    ├── aka_parent_of_john_doe
     ├── jane_doe
+    │   ├── a_child_of_doe
     │   ├── a_file_in_jane_doe
-    │   ├── child_of_doe
-    │   ├── mary_jane_doe
-    │   │   ├── a_file_in_mary_jane_doe
-    │   │   ├── child_of_jane_doe
-    │   │   ├── child_of_sibling_of_john_doe
-    │   │   └── grandchild_of_doe
-    │   └── sibling_of_john_doe
-    ├── john_doe
-    │   ├── a_file_in_john_doe
-    │   ├── child_of_doe
-    │   ├── lil_john_doe
-    │   │   ├── a_file_in_lil_john_doe
-    │   │   ├── child_of_john_doe
-    │   │   ├── child_of_sibling_of_jane_doe
-    │   │   └── grandchild_of_doe
-    │   └── sibling_of_jane_doe
-    ├── parent_of_jane_doe
-    └── parent_of_john_doe
+    │   ├── aka_sibling_of_john_doe
+    │   └── mary_jane_doe
+    │       ├── a_child_of_jane_doe
+    │       ├── a_file_in_mary_jane_doe
+    │       ├── a_grandchild_of_doe
+    │       └── child_of_sibling_of_john_doe
+    └── john_doe
+        ├── a_child_of_doe
+        ├── a_file_in_john_doe
+        ├── aka_sibling_of_jane_doe
+        └── lil_john_doe
+            ├── a_child_of_john_doe
+            ├── a_file_in_lil_john_doe
+            ├── a_grandchild_of_doe
+            └── child_of_sibling_of_jane_doe
 
     5 directories, 17 files
 
@@ -2351,21 +2357,21 @@ mv_ means move, it takes two arguments
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../parent_of_mary_jane_doe
+    touch ../aka_parent_of_mary_jane_doe
 
 * I make an empty file_ in ``doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../grandparent_of_mary_jane_doe
+    touch ../../aka_grandparent_of_mary_jane_doe
 
 * I make an empty file_ in ``john_doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../john_doe/aunt_of_mary_jane_doe
+    touch ../../john_doe/aka_aunt_of_mary_jane_doe
 
   I made a mistake - ``john_doe`` is not the aunt of ``mary_jane_doe`` he is the uncle
 
@@ -2376,12 +2382,12 @@ mv_ means move, it takes two arguments
 
     cd ../../john_doe
 
-* I change ``aunt_of_mary_jane_doe`` to ``uncle_of_mary_jane_doe``
+* I change ``aka_aunt_of_mary_jane_doe`` to ``aka_uncle_of_mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mv aunt_of_mary_jane_doe uncle_of_mary_jane_doe
+    mv aka_aunt_of_mary_jane_doe aka_uncle_of_mary_jane_doe
 
 * I `change directory`_ back to ``mary_jane_doe``
 
@@ -2407,34 +2413,34 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 3, 12, 21, 24
+    :emphasize-lines: 1, 3, 9, 20, 26
 
     ../..
     ├── a_file_in_doe
-    ├── grandparent_of_mary_jane_doe
+    ├── aka_grandparent_of_mary_jane_doe
+    ├── aka_parent_of_jane_doe
+    ├── aka_parent_of_john_doe
     ├── jane_doe
+    │   ├── a_child_of_doe
     │   ├── a_file_in_jane_doe
-    │   ├── child_of_doe
-    │   ├── mary_jane_doe
-    │   │   ├── a_file_in_mary_jane_doe
-    │   │   ├── child_of_jane_doe
-    │   │   ├── child_of_sibling_of_john_doe
-    │   │   └── grandchild_of_doe
-    │   ├── parent_of_mary_jane_doe
-    │   └── sibling_of_john_doe
-    ├── john_doe
-    │   ├── a_file_in_john_doe
-    │   ├── child_of_doe
-    │   ├── lil_john_doe
-    │   │   ├── a_file_in_lil_john_doe
-    │   │   ├── child_of_john_doe
-    │   │   ├── child_of_sibling_of_jane_doe
-    │   │   ├── cousin_of_mary_jane_doe
-    │   │   └── grandchild_of_doe
-    │   ├── sibling_of_jane_doe
-    │   └── uncle_of_mary_jane_doe
-    ├── parent_of_jane_doe
-    └── parent_of_john_doe
+    │   ├── aka_parent_of_mary_jane_doe
+    │   ├── aka_sibling_of_john_doe
+    │   └── mary_jane_doe
+    │       ├── a_child_of_jane_doe
+    │       ├── a_file_in_mary_jane_doe
+    │       ├── a_grandchild_of_doe
+    │       └── child_of_sibling_of_john_doe
+    └── john_doe
+        ├── a_child_of_doe
+        ├── a_file_in_john_doe
+        ├── aka_sibling_of_jane_doe
+        ├── aka_uncle_of_mary_jane_doe
+        └── lil_john_doe
+            ├── a_child_of_john_doe
+            ├── a_file_in_lil_john_doe
+            ├── a_grandchild_of_doe
+            ├── child_of_sibling_of_jane_doe
+            └── cousin_of_mary_jane_doe
 
     5 directories, 21 files
 
@@ -2458,21 +2464,21 @@ mv_ means move, it takes two arguments
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../parent_of_lil_john_doe
+    touch ../aka_parent_of_lil_john_doe
 
 * I make an empty file_ in ``doe`` from inside ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../grandparent_of_lil_john_doe
+    touch ../../aka_grandparent_of_lil_john_doe
 
 * I make an empty file_ in ``jane_doe`` from inside ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../jane_doe/uncle_of_lil_john_doe
+    touch ../../jane_doe/aka_uncle_of_lil_john_doe
 
   I made another mistake - ``jane_doe`` is not the uncle of ``mary_jane_doe`` she is the aunt
 
@@ -2483,12 +2489,12 @@ mv_ means move, it takes two arguments
 
     cd ../../jane_doe
 
-* I change ``uncle_of_lil_john_doe`` to ``aunt_of_lil_john_doe``
+* I change ``aka_uncle_of_lil_john_doe`` to ``aka_aunt_of_lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mv uncle_of_lil_john_doe aunt_of_lil_john_doe
+    mv aka_uncle_of_lil_john_doe aka_aunt_of_lil_john_doe
 
 * I `change directory`_ back to ``lil_jane_doe``
 
@@ -2519,38 +2525,38 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 3, 7, 13, 26
+    :emphasize-lines: 1, 3, 10, 18, 22
 
     ../../../doe
     ├── a_file_in_doe
-    ├── grandparent_of_lil_john_doe
-    ├── grandparent_of_mary_jane_doe
+    ├── aka_grandparent_of_lil_john_doe
+    ├── aka_grandparent_of_mary_jane_doe
+    ├── aka_parent_of_jane_doe
+    ├── aka_parent_of_john_doe
     ├── jane_doe
+    │   ├── a_child_of_doe
     │   ├── a_file_in_jane_doe
-    │   ├── aunt_of_lil_john_doe
-    │   ├── child_of_doe
-    │   ├── mary_jane_doe
-    │   │   ├── a_file_in_mary_jane_doe
-    │   │   ├── child_of_jane_doe
-    │   │   ├── child_of_sibling_of_john_doe
-    │   │   ├── cousin_of_lil_john_doe
-    │   │   └── grandchild_of_doe
-    │   ├── parent_of_mary_jane_doe
-    │   └── sibling_of_john_doe
-    ├── john_doe
-    │   ├── a_file_in_john_doe
-    │   ├── child_of_doe
-    │   ├── lil_john_doe
-    │   │   ├── a_file_in_lil_john_doe
-    │   │   ├── child_of_john_doe
-    │   │   ├── child_of_sibling_of_jane_doe
-    │   │   ├── cousin_of_mary_jane_doe
-    │   │   └── grandchild_of_doe
-    │   ├── parent_of_lil_john_doe
-    │   ├── sibling_of_jane_doe
-    │   └── uncle_of_mary_jane_doe
-    ├── parent_of_jane_doe
-    └── parent_of_john_doe
+    │   ├── aka_aunt_of_lil_john_doe
+    │   ├── aka_parent_of_mary_jane_doe
+    │   ├── aka_sibling_of_john_doe
+    │   └── mary_jane_doe
+    │       ├── a_child_of_jane_doe
+    │       ├── a_file_in_mary_jane_doe
+    │       ├── a_grandchild_of_doe
+    │       ├── child_of_sibling_of_john_doe
+    │       └── cousin_of_lil_john_doe
+    └── john_doe
+        ├── a_child_of_doe
+        ├── a_file_in_john_doe
+        ├── aka_parent_of_lil_john_doe
+        ├── aka_sibling_of_jane_doe
+        ├── aka_uncle_of_mary_jane_doe
+        └── lil_john_doe
+            ├── a_child_of_john_doe
+            ├── a_file_in_lil_john_doe
+            ├── a_grandchild_of_doe
+            ├── child_of_sibling_of_jane_doe
+            └── cousin_of_mary_jane_doe
 
     5 directories, 25 files
 
@@ -2596,12 +2602,12 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     a_file_in_doe
     .a_hidden_file_in_doe
     .a_hidden_folder_in_doe
-    grandparent_of_lil_john_doe
-    grandparent_of_mary_jane_doe
+    aka_grandparent_of_lil_john_doe
+    aka_grandparent_of_mary_jane_doe
+    aka_parent_of_jane_doe
+    aka_parent_of_john_doe
     jane_doe
     john_doe
-    parent_of_jane_doe
-    parent_of_john_doe
 
 * I show what is in ``jane_doe``
 
@@ -2614,11 +2620,11 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    .                             aunt_of_lil_john_doe
-    ..                            child_of_doe
-    a_file_in_jane_doe            mary_jane_doe
-    .a_hidden_file_in_jane_doe    parent_of_mary_jane_doe
-    .a_hidden_folder_in_jane_doe  sibling_of_john_doe
+    .                           .a_hidden_folder_in_jane_doe
+    ..                          aka_aunt_of_lil_john_doe
+    a_child_of_doe              aka_parent_of_mary_jane_doe
+    a_file_in_jane_doe          aka_sibling_of_john_doe
+    .a_hidden_file_in_jane_doe  mary_jane_doe
 
 * I show what is in ``mary_jane_doe``
 
@@ -2633,13 +2639,13 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     .
     ..
+    a_child_of_jane_doe
     a_file_in_mary_jane_doe
+    a_grandchild_of_doe
     .a_hidden_file_in_mary_jane_doe
     .a_hidden_folder_in_mary_jane_doe
-    child_of_jane_doe
     child_of_sibling_of_john_doe
     cousin_of_lil_john_doe
-    grandchild_of_doe
 
 * I `change directory`_ to ``mary_jane_doe``
 
@@ -2659,11 +2665,11 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    .                             child_of_doe
-    ..                            lil_john_doe
-    a_file_in_john_doe            parent_of_lil_john_doe
-    .a_hidden_file_in_john_doe    sibling_of_jane_doe
-    .a_hidden_folder_in_john_doe  uncle_of_mary_jane_doe
+    .                           .a_hidden_folder_in_john_doe
+    ..                          aka_parent_of_lil_john_doe
+    a_child_of_doe              aka_sibling_of_jane_doe
+    a_file_in_john_doe          aka_uncle_of_mary_jane_doe
+    .a_hidden_file_in_john_doe  lil_john_doe
 
 * I show what is in ``lil_john_doe`` from inside ``mary_jane_doe``
 
@@ -2676,15 +2682,11 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    .
-    ..
-    a_file_in_lil_john_doe
-    .a_hidden_file_in_lil_john_doe
-    .a_hidden_folder_in_lil_john_doe
-    child_of_john_doe
-    child_of_sibling_of_jane_doe
-    cousin_of_mary_jane_doe
-    grandchild_of_doe
+    .                       .a_hidden_file_in_lil_john_doe
+    ..                      .a_hidden_folder_in_lil_john_doe
+    a_child_of_john_doe     child_of_sibling_of_jane_doe
+    a_file_in_lil_john_doe  cousin_of_mary_jane_doe
+    a_grandchild_of_doe
 
 ----
 
@@ -2705,11 +2707,11 @@ how to use tree with directory relationships
     :emphasize-lines: 1
 
     ../../john_doe/lil_john_doe
+    ├── a_child_of_john_doe
     ├── a_file_in_lil_john_doe
-    ├── child_of_john_doe
+    ├── a_grandchild_of_doe
     ├── child_of_sibling_of_jane_doe
-    ├── cousin_of_mary_jane_doe
-    └── grandchild_of_doe
+    └── cousin_of_mary_jane_doe
 
     1 directory, 5 files
 
@@ -2726,17 +2728,17 @@ how to use tree with directory relationships
     :emphasize-lines: 1
 
     ../../john_doe
+    ├── a_child_of_doe
     ├── a_file_in_john_doe
-    ├── child_of_doe
-    ├── lil_john_doe
-    │   ├── a_file_in_lil_john_doe
-    │   ├── child_of_john_doe
-    │   ├── child_of_sibling_of_jane_doe
-    │   ├── cousin_of_mary_jane_doe
-    │   └── grandchild_of_doe
-    ├── parent_of_lil_john_doe
-    ├── sibling_of_jane_doe
-    └── uncle_of_mary_jane_doe
+    ├── aka_parent_of_lil_john_doe
+    ├── aka_sibling_of_jane_doe
+    ├── aka_uncle_of_mary_jane_doe
+    └── lil_john_doe
+        ├── a_child_of_john_doe
+        ├── a_file_in_lil_john_doe
+        ├── a_grandchild_of_doe
+        ├── child_of_sibling_of_jane_doe
+        └── cousin_of_mary_jane_doe
 
     2 directories, 10 files
 
@@ -2768,13 +2770,13 @@ how to use tree with directory relationships
 
     .
     ..
+    a_child_of_jane_doe
     a_file_in_mary_jane_doe
+    a_grandchild_of_doe
     .a_hidden_file_in_mary_jane_doe
     .a_hidden_folder_in_mary_jane_doe
-    child_of_jane_doe
     child_of_sibling_of_john_doe
     cousin_of_lil_john_doe
-    grandchild_of_doe
 
 * I use tree_ to show what is in ``mary_jane_doe``
 
@@ -2789,11 +2791,11 @@ how to use tree with directory relationships
     :emphasize-lines: 1
 
     ../../jane_doe/mary_jane_doe
+    ├── a_child_of_jane_doe
     ├── a_file_in_mary_jane_doe
-    ├── child_of_jane_doe
+    ├── a_grandchild_of_doe
     ├── child_of_sibling_of_john_doe
-    ├── cousin_of_lil_john_doe
-    └── grandchild_of_doe
+    └── cousin_of_lil_john_doe
 
     1 directory, 5 files
 
@@ -2810,17 +2812,17 @@ how to use tree with directory relationships
     :emphasize-lines: 1
 
     ../../jane_doe
+    ├── a_child_of_doe
     ├── a_file_in_jane_doe
-    ├── aunt_of_lil_john_doe
-    ├── child_of_doe
-    ├── mary_jane_doe
-    │   ├── a_file_in_mary_jane_doe
-    │   ├── child_of_jane_doe
-    │   ├── child_of_sibling_of_john_doe
-    │   ├── cousin_of_lil_john_doe
-    │   └── grandchild_of_doe
-    ├── parent_of_mary_jane_doe
-    └── sibling_of_john_doe
+    ├── aka_aunt_of_lil_john_doe
+    ├── aka_parent_of_mary_jane_doe
+    ├── aka_sibling_of_john_doe
+    └── mary_jane_doe
+        ├── a_child_of_jane_doe
+        ├── a_file_in_mary_jane_doe
+        ├── a_grandchild_of_doe
+        ├── child_of_sibling_of_john_doe
+        └── cousin_of_lil_john_doe
 
     2 directories, 10 files
 
@@ -2875,9 +2877,9 @@ how to use tree with directory relationships
 
 I can do things with files_ and folders_ in 1 step as long as
 
-- I know their path/address
+- I know their paths/addresses
 - I know their relation to where I am and
-- I can :ref:`write to the folder<how to view the permissions of a file>`
+- I can :ref:`write to them<how to view the permissions of a file>`
 
 It is easier to go where I want, if I know where I am. :ref:`I know how to use directory relationships<how to use directory relationships>`
 
