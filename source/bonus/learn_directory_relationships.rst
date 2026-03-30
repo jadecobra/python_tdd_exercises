@@ -782,7 +782,7 @@ how to look at directory relationships
   - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or folder_ if I put ``.`` before its name
 
-* I use ls_ with the ``-a`` option to see everything that is in ``doe``
+* I use ls_ with the ``-a`` option to see everything that is in ``doe`` even things that are hidden
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -815,7 +815,7 @@ how to look at directory relationships
   - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or folder_ if I put ``.`` before its name
 
-* I can also use tree_ with the ``-a`` option
+* I can also use tree_ with the ``-a`` option to show things that are hidden
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1445,9 +1445,10 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .              .a_hidden_file_in_doe    john_doe
-    ..             .a_hidden_folder_in_doe
-    a_file_in_doe  jane_doe
+    .                      .a_hidden_folder_in_doe
+    ..                     jane_doe
+    a_file_in_doe          john_doe
+    .a_hidden_file_in_doe
 
   .. NOTE::
 
@@ -1502,9 +1503,12 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .                   .a_hidden_file_in_jane_doe
-    ..                  .a_hidden_folder_in_jane_doe
-    a_file_in_jane_doe  mary_jane_doe
+    .
+    ..
+    a_file_in_jane_doe
+    .a_hidden_file_in_jane_doe
+    .a_hidden_folder_in_jane_doe
+    mary_jane_doe
 
 * I `change directory`_ to the parent of ``jane_doe``
 
@@ -1563,9 +1567,12 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   .. code-block:: python
 
-    .                   .a_hidden_file_in_john_doe
-    ..                  .a_hidden_folder_in_john_doe
-    a_file_in_john_doe  lil_john_doe
+    .
+    ..
+    a_file_in_john_doe
+    .a_hidden_file_in_john_doe
+    .a_hidden_folder_in_john_doe
+    lil_john_doe
 
 * I `change directory`_ to the parent of ``john_doe``
 
@@ -2134,7 +2141,7 @@ how to use touch with directory relationships
     touch ../john_doe/lil_john_doe/\
     child_of_sibling_of_john_doe
 
-  - ``\`` is a symbol that tells the computer I am breaking up one line after I hit the :kbd:`enter/return` key on the keyboard
+  - ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
   - ``..`` is the parent of ``jane_doe`` which is ``doe``
   - ``john_doe`` is a child of ``doe``
   - ``lil_john_doe`` is a child of ``john_doe``
@@ -2231,8 +2238,8 @@ mv_ means move, it takes two arguments
         ├── a_file_in_john_doe
         ├── aka_sibling_of_jane_doe
         └── lil_john_doe
-            ├── a_grandchild_of_doe
             ├── a_file_in_lil_john_doe
+            ├── a_grandchild_of_doe
             └── child_of_sibling_of_jane_doe
 
     5 directories, 13 files
@@ -2312,7 +2319,7 @@ mv_ means move, it takes two arguments
       ../jane_doe/mary_jane_doe/\
       child_of_sibling_of_john_doe
 
-      ``\`` is a symbol that tells the computer I am breaking up one line after I hit the :kbd:`enter/return` key on the keyboard
+    ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
 
 * I go back to the grandparent of ``lil_john_doe``
 
@@ -2405,7 +2412,7 @@ mv_ means move, it takes two arguments
     mv aka_aunt_of_mary_jane_doe \
     aka_uncle_of_mary_jane_doe
 
-  ``\`` is a symbol that tells the computer I am breaking up one line after I hit the :kbd:`enter/return` key on the keyboard
+  ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
 
 * I `change directory`_ back to ``mary_jane_doe``
 
