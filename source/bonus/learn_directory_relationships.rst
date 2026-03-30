@@ -12,7 +12,7 @@
 BONUS: learn directory relationships
 #################################################################################
 
-This is an exercise in how your computer is setup as directories_ (folders_) and files_. Everything that happens on the computer ends up in a file_ in a directory_.
+This is an exercise in how your computer is made up of directories_ (folders_) and files_. Everything that happens on the computer ends up in a file_ in a directory_.
 
 ----
 
