@@ -1953,9 +1953,11 @@ how to use touch with directory relationships
 
   .. code-block:: python
 
-    .                       .a_hidden_file_in_lil_john_doe
-    ..                      .a_hidden_folder_in_lil_john_doe
+    .
+    ..
     a_file_in_lil_john_doe
+    .a_hidden_file_in_lil_john_doe
+    .a_hidden_folder_in_lil_john_doe
 
 * I go back to the grandparent of ``lil_john_doe``
 
@@ -2127,10 +2129,12 @@ how to use touch with directory relationships
 * I make an empty file_ in ``lil_john_doe`` from inside ``jane_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    touch ../john_doe/lil_john_doe/child_of_sibling_of_john_doe
+    touch ../john_doe/lil_john_doe/\
+    child_of_sibling_of_john_doe
 
+  - ``\`` is a symbol that tells the computer I am breaking up one line after I hit the :kbd:`enter/return` key on the keyboard
   - ``..`` is the parent of ``jane_doe`` which is ``doe``
   - ``john_doe`` is a child of ``doe``
   - ``lil_john_doe`` is a child of ``john_doe``
@@ -2155,9 +2159,12 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 * I change ``child_of_sibling_of_john_doe`` to ``child_of_sibling_of_jane_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    mv child_of_sibling_of_john_doe child_of_sibling_of_jane_doe
+    mv child_of_sibling_of_john_doe \
+    child_of_sibling_of_jane_doe
+
+  the terminal_ goes back to the command line
 
   .. TIP::
 
@@ -2165,10 +2172,10 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 
     .. code-block:: python
 
-      mv ../john_doe/lil_john_doe/child_of_sibling_of_john_doe \
-         ../john_doe/lil_john_doe/child_of_sibling_of_jane_doe
-
-  the terminal_ goes back to the command line
+      mv ../john_doe/lil_john_doe/\
+      child_of_sibling_of_john_doe \
+      ../john_doe/lil_john_doe/\
+      child_of_sibling_of_jane_doe
 
 mv_ means move, it takes two arguments
 
@@ -2266,9 +2273,10 @@ mv_ means move, it takes two arguments
 * I make an empty file_ in ``mary_jane_doe`` from inside ``john_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    touch ../jane_doe/mary_jane_doe/child_of_sibling_of_jane_doe
+    touch ../jane_doe/mary_jane_doe/\
+    child_of_sibling_of_jane_doe
 
   - ``..`` is the parent of ``john_doe`` which is ``doe``
   - ``jane_doe`` is a child of ``doe``
@@ -2286,9 +2294,12 @@ mv_ means move, it takes two arguments
 * I change ``child_of_sibling_of_jane_doe`` to ``child_of_sibling_of_john_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    mv child_of_sibling_of_jane_doe child_of_sibling_of_john_doe
+    mv child_of_sibling_of_jane_doe \
+    child_of_sibling_of_john_doe
+
+  the terminal_ goes back to the command line
 
   .. TIP::
 
@@ -2296,10 +2307,12 @@ mv_ means move, it takes two arguments
 
     .. code-block:: python
 
-      mv ../jane_doe/mary_jane_doe/child_of_sibling_of_jane_doe \
-         ../jane_doe/mary_jane_doe/child_of_sibling_of_john_doe
+      mv ../jane_doe/mary_jane_doe/\
+      child_of_sibling_of_jane_doe \
+      ../jane_doe/mary_jane_doe/\
+      child_of_sibling_of_john_doe
 
-  the terminal_ goes back to the command line
+      ``\`` is a symbol that tells the computer I am breaking up one line after I hit the :kbd:`enter/return` key on the keyboard
 
 * I go back to the grandparent of ``lil_john_doe``
 
@@ -2387,9 +2400,12 @@ mv_ means move, it takes two arguments
 * I change ``aka_aunt_of_mary_jane_doe`` to ``aka_uncle_of_mary_jane_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    mv aka_aunt_of_mary_jane_doe aka_uncle_of_mary_jane_doe
+    mv aka_aunt_of_mary_jane_doe \
+    aka_uncle_of_mary_jane_doe
+
+  ``\`` is a symbol that tells the computer I am breaking up one line after I hit the :kbd:`enter/return` key on the keyboard
 
 * I `change directory`_ back to ``mary_jane_doe``
 
@@ -2401,9 +2417,10 @@ mv_ means move, it takes two arguments
 * I make an empty file_ in ``lil_john_doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    touch ../../john_doe/lil_john_doe/cousin_of_mary_jane_doe
+    touch ../../john_doe/lil_john_doe/\
+    cousin_of_mary_jane_doe
 
 * I look at the ``doe`` family tree from inside ``mary_jane_doe``
 
@@ -2494,9 +2511,10 @@ mv_ means move, it takes two arguments
 * I change ``aka_uncle_of_lil_john_doe`` to ``aka_aunt_of_lil_john_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    mv aka_uncle_of_lil_john_doe aka_aunt_of_lil_john_doe
+    mv aka_uncle_of_lil_john_doe \
+    aka_aunt_of_lil_john_doe
 
 * I `change directory`_ back to ``lil_jane_doe``
 
@@ -2508,9 +2526,10 @@ mv_ means move, it takes two arguments
 * I make an empty file_ in ``mary_jane_doe`` from inside ``lil_john_doe``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    touch ../../jane_doe/mary_jane_doe/cousin_of_lil_john_doe
+    touch ../../jane_doe/mary_jane_doe/\
+    cousin_of_lil_john_doe
 
 * I look at the ``doe`` family tree from inside ``lil_john_doe`` through the parent of ``doe``
 
@@ -2622,11 +2641,16 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    .                           .a_hidden_folder_in_jane_doe
-    ..                          aka_aunt_of_lil_john_doe
-    a_child_of_doe              aka_parent_of_mary_jane_doe
-    a_file_in_jane_doe          aka_sibling_of_john_doe
-    .a_hidden_file_in_jane_doe  mary_jane_doe
+    .
+    ..
+    a_child_of_doe
+    a_file_in_jane_doe
+    .a_hidden_file_in_jane_doe
+    .a_hidden_folder_in_jane_doe
+    aka_aunt_of_lil_john_doe
+    aka_parent_of_mary_jane_doe
+    aka_sibling_of_john_doe
+    mary_jane_doe
 
 * I show what is in ``mary_jane_doe``
 
@@ -2646,7 +2670,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     a_grandchild_of_doe
     .a_hidden_file_in_mary_jane_doe
     .a_hidden_folder_in_mary_jane_doe
-    child_of_sibling_of_john_doe
+    child_of_sibling_of_jane_doe
     cousin_of_lil_john_doe
 
 * I `change directory`_ to ``mary_jane_doe``
@@ -2667,11 +2691,16 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    .                           .a_hidden_folder_in_john_doe
-    ..                          aka_parent_of_lil_john_doe
-    a_child_of_doe              aka_sibling_of_jane_doe
-    a_file_in_john_doe          aka_uncle_of_mary_jane_doe
-    .a_hidden_file_in_john_doe  lil_john_doe
+    .
+    ..
+    a_child_of_doe
+    a_file_in_john_doe
+    .a_hidden_file_in_john_doe
+    .a_hidden_folder_in_john_doe
+    aka_parent_of_lil_john_doe
+    aka_sibling_of_jane_doe
+    aka_uncle_of_mary_jane_doe
+    lil_john_doe
 
 * I show what is in ``lil_john_doe`` from inside ``mary_jane_doe``
 
@@ -2684,11 +2713,15 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
-    .                       .a_hidden_file_in_lil_john_doe
-    ..                      .a_hidden_folder_in_lil_john_doe
-    a_child_of_john_doe     child_of_sibling_of_jane_doe
-    a_file_in_lil_john_doe  cousin_of_mary_jane_doe
+    .
+    ..
+    a_child_of_john_doe
+    a_file_in_lil_john_doe
     a_grandchild_of_doe
+    .a_hidden_file_in_lil_john_doe
+    .a_hidden_folder_in_lil_john_doe
+    child_of_sibling_of_jane_doe
+    cousin_of_mary_jane_doe
 
 ----
 

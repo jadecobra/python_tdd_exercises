@@ -15,6 +15,18 @@ I want to practice using bool_ in :ref:`test_what_is_true` and :ref:`test_what_i
 ----
 
 *********************************************************************************
+preview
+*********************************************************************************
+
+Here are the tests I have at the end of this chapter
+
+.. literalinclude:: ../../code/booleans/test_booleans_list_comprehensions.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
 open the project
 *********************************************************************************
 
