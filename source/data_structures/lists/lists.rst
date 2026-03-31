@@ -3142,22 +3142,22 @@ close the project
 *********************************************************************************
 
 * I close ``test_lists.py`` in the :ref:`editor<2 editors>`
-I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
-  * I `change directory`_ to the parent of ``lists``
+* I `change directory`_ to the parent of ``lists``
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+  .. code-block:: shell
+    :emphasize-lines: 1
 
-      cd ..
+    cd ..
 
-    the terminal_ shows
+  the terminal_ shows
 
-    .. code-block:: PowerShell
+  .. code-block:: PowerShell
 
-      ...\pumping_python
+    ...\pumping_python
 
-    I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_
 
 ----
 
