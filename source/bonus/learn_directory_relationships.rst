@@ -12,7 +12,7 @@
 BONUS: learn directory relationships
 #################################################################################
 
-This is an exercise in how your computer is made up of directories_ (folders_) and files_. Everything that happens on the computer ends up in a file_ in a directory_.
+This exercise shows how the computer has directories_ (folders_) and files_ and how they are related. Everything that happens on the computer ends up in a file_ in a directory_.
 
 ----
 
@@ -132,7 +132,7 @@ how to install tree on Linux/Windows Subsystem for Linux
 
 ----
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. :ref:`MacOS users go here instead<how to install tree on Mac OS>`
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -196,11 +196,12 @@ how to install tree on Mac OS
 
 ----
 
-.. ATTENTION:: Do this only if you are using a MacOS_ computer. If you have Windows_, do :ref:`how to install tree on Linux/Windows Subsystem for Linux` or :ref:`how to install tree on Windows without Windows Subsystem for Linux`
+.. ATTENTION:: Do this only if you have MacOS_. If you have Windows_, :ref:`click here for how to install tree on Linux/Windows SubSystem for Linux<how to install tree on Linux/Windows Subsystem for Linux>` or :ref:`click here for how to install tree on Windows without Windows SubSystem Linux<how to install tree on Windows without Windows Subsystem for Linux>`
 
 type this in the terminal_
 
 .. code-block:: python
+  :emphasize-lines: 1
 
   brew install tree
 
@@ -225,7 +226,7 @@ the terminal_ shows
 
   .../pumping_python
 
-because I am in the ``pumping_python`` folder_
+if I am in the ``pumping_python`` folder_
 
 * pwd_ shows the path/address of the folder_ I am in
 * pwd_ means ``print working directory``, it prints the directory_ I am in, to the terminal_
@@ -243,7 +244,7 @@ because I am in the ``pumping_python`` folder_
 
     it runs for a while because there are many files_ and folders_.
 
-    Use :kbd:`ctrl+c` on the keyboard if you want to stop it when it is running.
+    Use :kbd:`ctrl+c` on the keyboard to stop it from running.
 
 .. NOTE::
 
@@ -416,7 +417,7 @@ how to see what is in a directory
 
       ls: unrecognized option '--all'
 
-    ``--all`` is the long form of the option, and there is usually a short form, use ``-a`` instead
+    ``--all`` is the long form of the option, there is a short form, use ``-a`` instead
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -2221,7 +2222,7 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 3, 8, 14, 16
+    :emphasize-lines: 3, 8, 14, 18
 
     .
     ├── a_file_in_doe

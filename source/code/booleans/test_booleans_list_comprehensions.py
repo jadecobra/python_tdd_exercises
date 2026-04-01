@@ -6,6 +6,7 @@ class TestBooleans(unittest.TestCase):
     def test_what_is_false(self):
         self.assertIsInstance(False, (bool, int))
         self.assertNotIsInstance(False, float)
+
         for false_item in (
             False,
             None, bool(None),
