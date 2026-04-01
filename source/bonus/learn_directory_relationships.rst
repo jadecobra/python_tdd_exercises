@@ -20,12 +20,12 @@ This exercise shows how the computer has directories_ (folders_) and files_ and 
 preview
 *************************************************************************************
 
-I build the relationships below step by step to see how files_ and folders_ are related like a family tree, and at the end know how to move around them because I understand the relationships.
+This is the tree I have at the end after I build each part step by step to see how files_ and folders_ are related. I also know how to move around in the tree because I understand the relationships.
 
 .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
   :language: shell
 
-These are all the commands used in this chapter
+These are all the commands I use in this chapter
 
 * mkdir_ to `make directories`_
 * cd_ to `change directories`_
@@ -62,7 +62,7 @@ Here are questions you can answer after going through this chapter
 what is a folder?
 *********************************************************************************
 
-A `folder (directory)`_ is a box for files_, it can also have other `folders (directories)`_. It helps keep things that should be together, in one place, the same way a folder in a file cabinet is used to keep files that should be together in one place.
+A `folder (directory)`_ is a box for files_, it can also have other `folders (directories)`_. It helps keep things that should be together, in one place, the same way a folder in a file cabinet keeps files that should be together in one place.
 
 I keep every project I work on in its own directory_. All the code in this book is kept in a folder_ named ``pumping_python``.
 
@@ -72,7 +72,7 @@ I keep every project I work on in its own directory_. All the code in this book 
 what is a file?
 *********************************************************************************
 
-A file_ is a collection or container for text, like paper we write or print on and keep in a folder. The name of a file can end with an extension to show what type of file_ it is. For example
+A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Everything that happens on the computer ends up in files_. The name of a file can end with an extension to show what type of file_ it is. For example
 
 * ``.py`` for a :ref:`Python module<what is a module?>`
 * ``.txt`` for a `plain text file`_
@@ -87,7 +87,16 @@ A file_ is a collection or container for text, like paper we write or print on a
 requirements
 *********************************************************************************
 
-.. NOTE:: The code you type is highlighted and usually follows something like ``I type this in the terminal``
+.. NOTE::
+
+  * The code I type is highlighted and usually follows something like ``I type this in a terminal``
+  * The output (result) of the code I type usually follows something like ``the terminal shows``
+  * if you get a different result from what I promise then one of two things happened
+
+    - I made a mistake or
+    - You made a mistake
+
+    To make sure it is my mistake check that you typed exactly what I typed. If you still have a different result after that, email me at jacobitegboje@gmail.com
 
 I type this in a terminal_ to make sure the `tree program`_ is installed
 
@@ -130,7 +139,7 @@ how to install tree on Linux/Windows Subsystem for Linux
 
 ----
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_ and tree_ is not installed. :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -196,7 +205,7 @@ how to install tree on Mac OS
 
 ----
 
-.. ATTENTION:: Do this only if you have MacOS_. If you have Windows_, :ref:`click here for how to install tree on Linux/Windows SubSystem for Linux<how to install tree on Linux/Windows Subsystem for Linux>` or :ref:`click here for how to install tree on Windows without Windows SubSystem Linux<how to install tree on Windows without Windows Subsystem for Linux>`
+.. ATTENTION:: Do this only if you have MacOS_ and tree_ is not installed. If you have Windows_, :ref:`click here for how to install tree on Linux/Windows SubSystem for Linux<how to install tree on Linux/Windows Subsystem for Linux>` or :ref:`click here for how to install tree on Windows without Windows SubSystem Linux<how to install tree on Windows without Windows Subsystem for Linux>`
 
 type this in the terminal_
 
@@ -229,12 +238,12 @@ the terminal_ shows
 if I am in the ``pumping_python`` folder_
 
 * pwd_ shows the path/address of the folder_ I am in
-* pwd_ means ``print working directory``, it prints the directory_ I am in, to the terminal_
+* pwd_ means ``print working directory``, it prints the path/address of the directory_ I am in, to the terminal_
 * each ``/`` shows a parent-child relationship
 * the first ``/`` is for ``root`` which is the first folder_ on the computer
 * the first ``/`` is the highest level
 
-  .. CAUTION::
+  .. ATTENTION::
 
     do you want to see every file_ and folder_ on your computer as a tree? Type this in the terminal_
 
@@ -244,7 +253,7 @@ if I am in the ``pumping_python`` folder_
 
     it runs for a while because there are many files_ and folders_.
 
-    Use :kbd:`ctrl+c` on the keyboard to stop it from running.
+    Use :kbd:`ctrl+c` on the keyboard to stop it.
 
 .. NOTE::
 
@@ -989,6 +998,22 @@ how to look at directory relationships
   - ``mary_jane_doe`` is a child of ``jane_doe``
   - ``jane_doe`` is a child of ``doe``
 
+* I `change directory`_ to ``jane_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd jane_doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: jane_doe
+
+  - ``jane_doe`` is not a child of ``mary_jane_doe``
+  - I cannot go from ``mary_jane_doe`` to ``jane_doe`` this way
+
 * I go up a level to the parent of ``mary_jane_doe``
 
   .. code-block:: python
@@ -1041,6 +1066,22 @@ how to look at directory relationships
   .. code-block:: python
 
     .../doe/jane_doe/.a_hidden_folder_in_jane_doe
+
+* I `change directory`_ to ``jane_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd jane_doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: jane_doe
+
+  - ``jane_doe`` is not a child of ``.a_hidden_folder_in_jane_doe``
+  - I cannot go from ``.a_hidden_folder_in_jane_doe`` to ``jane_doe`` this way
 
 * I go up a level to the parent of ``.a_hidden_folder_in_jane_doe``
 
@@ -1210,6 +1251,22 @@ how to look at directory relationships
   - ``lil_john_doe`` is a child of ``john_doe``
   - ``john_doe`` is a child of ``doe``
 
+* I `change directory`_ to ``john_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd john_doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: john_doe
+
+  - ``john_doe`` is not a child of ``lil_john_doe``
+  - I cannot go from ``lil_john_doe`` to ``john_doe`` this way
+
 * I go up a level to the parent of ``lil_john_doe``
 
   .. code-block:: python
@@ -1262,6 +1319,22 @@ how to look at directory relationships
   .. code-block:: python
 
     .../doe/john_doe/.a_hidden_folder_in_john_doe
+
+* I `change directory`_ to ``john_doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd john_doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: john_doe
+
+  - ``john_doe`` is not a child of ``.a_hidden_folder_in_john_doe``
+  - I cannot go from ``.a_hidden_folder_in_john_doe`` to ``john_doe`` this way
 
 * I go up a level to the parent of ``.a_hidden_folder_in_john_doe``
 
@@ -2096,14 +2169,14 @@ how to use touch with directory relationships
     .
     ├── a_file_in_doe
     ├── jane_doe
-    │   ├── child_of_doe
     │   ├── a_file_in_jane_doe
+    │   ├── child_of_doe
     │   └── mary_jane_doe
     │       ├── a_file_in_mary_jane_doe
     │       └── grandchild_of_doe
     └── john_doe
-        ├── child_of_doe
         ├── a_file_in_john_doe
+        ├── child_of_doe
         └── lil_john_doe
             ├── a_file_in_lil_john_doe
             └── grandchild_of_doe
@@ -2231,26 +2304,26 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 3, 8, 14, 18
+    :emphasize-lines: 3, 9, 13, 17
 
     .
     ├── a_file_in_doe
     ├── aka_parent_of_jane_doe
     ├── jane_doe
-    │   ├── child_of_doe
     │   ├── a_file_in_jane_doe
+    │   ├── child_of_doe
     │   └── mary_jane_doe
-    │       ├── child_of_jane_doe
     │       ├── a_file_in_mary_jane_doe
+    │       ├── child_of_jane_doe
     │       └── grandchild_of_doe
     └── john_doe
-        ├── child_of_doe
         ├── a_file_in_john_doe
         ├── aka_sibling_of_jane_doe
+        ├── child_of_doe
         └── lil_john_doe
             ├── a_file_in_lil_john_doe
-            ├── grandchild_of_doe
-            └── child_of_sibling_of_jane_doe
+            ├── child_of_sibling_of_jane_doe
+            └── grandchild_of_doe
 
     5 directories, 13 files
 
@@ -2348,30 +2421,30 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 4, 8, 13, 19
+    :emphasize-lines: 4, 7, 12, 20
 
     .
     ├── a_file_in_doe
     ├── aka_parent_of_jane_doe
     ├── aka_parent_of_john_doe
     ├── jane_doe
-    │   ├── child_of_doe
     │   ├── a_file_in_jane_doe
     │   ├── aka_sibling_of_john_doe
+    │   ├── child_of_doe
     │   └── mary_jane_doe
-    │       ├── child_of_jane_doe
     │       ├── a_file_in_mary_jane_doe
-    │       ├── grandchild_of_doe
-    │       └── child_of_sibling_of_john_doe
+    │       ├── child_of_jane_doe
+    │       ├── child_of_sibling_of_john_doe
+    │       └── grandchild_of_doe
     └── john_doe
-        ├── child_of_doe
         ├── a_file_in_john_doe
         ├── aka_sibling_of_jane_doe
+        ├── child_of_doe
         └── lil_john_doe
-            ├── child_of_john_doe
             ├── a_file_in_lil_john_doe
-            ├── grandchild_of_doe
-            └── child_of_sibling_of_jane_doe
+            ├── child_of_john_doe
+            ├── child_of_sibling_of_jane_doe
+            └── grandchild_of_doe
 
     5 directories, 17 files
 
@@ -2449,7 +2522,7 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 3, 9, 20, 26
+    :emphasize-lines: 1, 3, 8, 19, 25
 
     ../..
     ├── a_file_in_doe
@@ -2457,26 +2530,26 @@ mv_ means move, it takes two arguments
     ├── aka_parent_of_jane_doe
     ├── aka_parent_of_john_doe
     ├── jane_doe
-    │   ├── child_of_doe
     │   ├── a_file_in_jane_doe
     │   ├── aka_parent_of_mary_jane_doe
     │   ├── aka_sibling_of_john_doe
+    │   ├── child_of_doe
     │   └── mary_jane_doe
-    │       ├── child_of_jane_doe
     │       ├── a_file_in_mary_jane_doe
-    │       ├── grandchild_of_doe
-    │       └── child_of_sibling_of_john_doe
+    │       ├── child_of_jane_doe
+    │       ├── child_of_sibling_of_john_doe
+    │       └── grandchild_of_doe
     └── john_doe
-        ├── child_of_doe
         ├── a_file_in_john_doe
         ├── aka_sibling_of_jane_doe
         ├── aka_uncle_of_mary_jane_doe
+        ├── child_of_doe
         └── lil_john_doe
-            ├── child_of_john_doe
             ├── a_file_in_lil_john_doe
-            ├── grandchild_of_doe
+            ├── child_of_john_doe
             ├── child_of_sibling_of_jane_doe
-            └── cousin_of_mary_jane_doe
+            ├── cousin_of_mary_jane_doe
+            └── grandchild_of_doe
 
     5 directories, 21 files
 
@@ -2563,7 +2636,7 @@ mv_ means move, it takes two arguments
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 3, 10, 18, 22
+    :emphasize-lines: 1, 3, 9, 17, 21
 
     ../../../doe
     ├── a_file_in_doe
@@ -2572,29 +2645,29 @@ mv_ means move, it takes two arguments
     ├── aka_parent_of_jane_doe
     ├── aka_parent_of_john_doe
     ├── jane_doe
-    │   ├── child_of_doe
     │   ├── a_file_in_jane_doe
     │   ├── aka_aunt_of_lil_john_doe
     │   ├── aka_parent_of_mary_jane_doe
     │   ├── aka_sibling_of_john_doe
+    │   ├── child_of_doe
     │   └── mary_jane_doe
-    │       ├── child_of_jane_doe
     │       ├── a_file_in_mary_jane_doe
-    │       ├── grandchild_of_doe
+    │       ├── child_of_jane_doe
     │       ├── child_of_sibling_of_john_doe
-    │       └── cousin_of_lil_john_doe
+    │       ├── cousin_of_lil_john_doe
+    │       └── grandchild_of_doe
     └── john_doe
-        ├── child_of_doe
         ├── a_file_in_john_doe
         ├── aka_parent_of_lil_john_doe
         ├── aka_sibling_of_jane_doe
         ├── aka_uncle_of_mary_jane_doe
+        ├── child_of_doe
         └── lil_john_doe
-            ├── child_of_john_doe
             ├── a_file_in_lil_john_doe
-            ├── grandchild_of_doe
+            ├── child_of_john_doe
             ├── child_of_sibling_of_jane_doe
-            └── cousin_of_mary_jane_doe
+            ├── cousin_of_mary_jane_doe
+            └── grandchild_of_doe
 
     5 directories, 25 files
 
@@ -2683,10 +2756,10 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     a_file_in_mary_jane_doe
     .a_hidden_file_in_mary_jane_doe
     .a_hidden_folder_in_mary_jane_doe
-    grandchild_of_doe
     child_of_jane_doe
     child_of_sibling_of_john_doe
     cousin_of_lil_john_doe
+    grandchild_of_doe
 
 * I `change directory`_ to ``mary_jane_doe``
 
@@ -2733,10 +2806,10 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     a_file_in_lil_john_doe
     .a_hidden_file_in_lil_john_doe
     .a_hidden_folder_in_lil_john_doe
-    grandchild_of_doe
     child_of_john_doe
     child_of_sibling_of_jane_doe
     cousin_of_mary_jane_doe
+    grandchild_of_doe
 
 ----
 
@@ -2758,10 +2831,10 @@ how to use tree with directory relationships
 
     ../../john_doe/lil_john_doe
     ├── a_file_in_lil_john_doe
-    ├── grandchild_of_doe
     ├── child_of_john_doe
     ├── child_of_sibling_of_jane_doe
-    └── cousin_of_mary_jane_doe
+    ├── cousin_of_mary_jane_doe
+    └── grandchild_of_doe
 
     1 directory, 5 files
 
@@ -2785,10 +2858,10 @@ how to use tree with directory relationships
     ├── child_of_doe
     └── lil_john_doe
         ├── a_file_in_lil_john_doe
-        ├── grandchild_of_doe
         ├── child_of_john_doe
         ├── child_of_sibling_of_jane_doe
-        └── cousin_of_mary_jane_doe
+        ├── cousin_of_mary_jane_doe
+        └── grandchild_of_doe
 
     2 directories, 10 files
 
@@ -2823,10 +2896,10 @@ how to use tree with directory relationships
     a_file_in_mary_jane_doe
     .a_hidden_file_in_mary_jane_doe
     .a_hidden_folder_in_mary_jane_doe
-    grandchild_of_doe
     child_of_jane_doe
     child_of_sibling_of_john_doe
     cousin_of_lil_john_doe
+    grandchild_of_doe
 
 * I use tree_ to show what is in ``mary_jane_doe``
 
