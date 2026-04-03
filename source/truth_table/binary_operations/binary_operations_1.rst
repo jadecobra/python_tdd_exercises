@@ -1138,11 +1138,11 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns :ref:`False<test_what_is_false>`
+  the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns
 
-  - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_converse_non_implication` in ``test_binary.py``
 
