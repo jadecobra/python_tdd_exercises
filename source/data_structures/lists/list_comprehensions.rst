@@ -47,7 +47,7 @@ These are the tests I have by the end of the chapter
 questions about list comprehensions
 *********************************************************************************
 
-Here are questions you can answer after going through this chapter
+Here are questions that are answered in this chapter
 
 * :ref:`what is a list comprehension?`
 * :ref:`what is a for loop?`

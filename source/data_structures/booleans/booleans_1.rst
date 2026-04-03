@@ -32,7 +32,7 @@ These are the tests I have by the end of the chapter
 questions about Booleans
 *********************************************************************************
 
-Here are questions you can answer after going through this chapter
+Here are questions that are answered in this chapter
 
 * :ref:`what is False?<test_what_is_false>`
 * :ref:`what is True?<test_what_is_true>`

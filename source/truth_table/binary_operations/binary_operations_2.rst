@@ -574,7 +574,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
         if first_input and second_input:
                 return False
         else:
-            return
+            return True
 
   the test is still green
 

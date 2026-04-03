@@ -45,7 +45,7 @@ These are the tests I have by the end of the chapter
 questions about AssertionError
 *********************************************************************************
 
-Here are questions you can answer after going through this chapter
+Here are questions that are answered in this chapter
 
 * :ref:`what is an assertion?<what is an assertion?>`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`

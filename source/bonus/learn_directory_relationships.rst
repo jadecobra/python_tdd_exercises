@@ -12,7 +12,7 @@
 BONUS: learn directory relationships
 #################################################################################
 
-This exercise shows how the computer has directories_ (folders_) and files_ and how they are related. Everything that happens on the computer ends up in a file_ in a directory_.
+This exercise shows directories_ (folders_) and files_ on my computer and how they are related. Everything that happens on the computer ends up in a file_ in a directory_.
 
 ----
 
@@ -20,7 +20,7 @@ This exercise shows how the computer has directories_ (folders_) and files_ and 
 preview
 *************************************************************************************
 
-This is the tree I have at the end after I build each part step by step to see how files_ and folders_ are related. I also know how to move around in the tree because I understand the relationships.
+The tree below is what I have at the end of the chapter, after I build each part step by step to see how files_ and folders_ are related.
 
 .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
   :language: shell
@@ -30,7 +30,7 @@ These are all the commands I use in this chapter
 * mkdir_ to `make directories`_
 * cd_ to `change directories`_
 * ls_ to show what is in directories_
-* tree_ to show the relationships between directories_
+* tree_ to show the relationships between directories_ and files_
 * touch_ to make empty files_
 * mv_ to rename or move files_
 * rm_ to remove directories_
@@ -41,7 +41,7 @@ These are all the commands I use in this chapter
 questions about directory relationships
 *********************************************************************************
 
-Here are questions you can answer after going through this chapter
+Here are questions that are answered in this chapter
 
 * :ref:`what is a folder (directory)?<what is a folder?>`
 * :ref:`what is a file?<what is a file?>`
@@ -89,14 +89,14 @@ requirements
 
 .. NOTE::
 
-  * The code I type is highlighted and usually follows something like ``I type this in a terminal``
-  * The output (result) of the code I type usually follows something like ``the terminal shows``
+  * The code I type is highlighted and usually follows something like - ``I type this in a terminal``
+  * The output (result) of the code I type usually follows something like - ``the terminal shows ...``
   * if you get a different result from what I promise then one of two things happened
 
     - I made a mistake or
     - You made a mistake
 
-    To make sure it is my mistake check that you typed exactly what I typed. If you still have a different result after that, email me at jacobitegboje@gmail.com
+    To make sure it is my mistake check that you typed the same thing I typed. If you still have a different result after that, email jacobitegboje@gmail.com or text or call 1-469-751-7595
 
 I type this in a terminal_ to make sure the `tree program`_ is installed
 
@@ -105,21 +105,25 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
 
   tree
 
-if it is not installed on the computer, the terminal_ shows
+* If it is not installed on the computer, the terminal_ shows
 
-.. code-block:: python
+  .. code-block:: python
 
-    tree: command not found
+      tree: command not found
 
-if it is installed and there is something in the directory_, the terminal_ shows the relationships. If there is nothing in the directory_, the terminal_ shows
+* If it is installed and there is something in the directory_, the terminal_ shows the relationships.
 
-.. code-block:: python
+* If it is installed and there is nothing in the directory_, the terminal_ shows
 
-  .
+  .. code-block:: python
 
-  0 directories, 0 files
+    .
 
-The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to go from one folder_ to another, because it shows the way I can go. If I know where I am it is easier to go where I want.
+    0 directories, 0 files
+
+The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to go from one folder_ to another, because it shows the way I can go.
+
+If I know where I am it is easier to go where I want.
 
 ----
 
@@ -139,7 +143,9 @@ how to install tree on Linux/Windows Subsystem for Linux
 
 ----
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_ and tree_ is not installed. :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
+.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_ and tree_ is not installed.
+
+  :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -160,7 +166,7 @@ type this in the terminal_ to install tree_
 
   sudo apt install tree
 
-continue with :ref:`how to see what directory I am in`
+Continue with :ref:`how to see what directory I am in`
 
 ----
 
@@ -174,7 +180,7 @@ how to install tree on Windows without Windows Subsystem for Linux
 
 tree_ comes with Windows_, no need to install anything.
 
-You are going to use the commands below for the ones I have in the chapter
+Use the commands below for the ones I have in the chapter
 
 * `New-Item`_ for touch_
 * ``tree /F`` for tree_
@@ -195,7 +201,7 @@ not
 
 Your tree will also look different because of different ways of drawing and sorting.
 
-Continue with :ref:`how to change directory`
+Continue with :ref:`how to see what directory I am in`
 
 ----
 
@@ -205,7 +211,12 @@ how to install tree on Mac OS
 
 ----
 
-.. ATTENTION:: Do this only if you have MacOS_ and tree_ is not installed. If you have Windows_, :ref:`click here for how to install tree on Linux/Windows SubSystem for Linux<how to install tree on Linux/Windows Subsystem for Linux>` or :ref:`click here for how to install tree on Windows without Windows SubSystem Linux<how to install tree on Windows without Windows Subsystem for Linux>`
+.. ATTENTION:: Do this only if you have MacOS_ and tree_ is not installed.
+
+  If you have Windows_
+
+  * :ref:`click here for how to install tree on Linux/Windows SubSystem for Linux<how to install tree on Linux/Windows Subsystem for Linux>` or
+  * :ref:`click here for how to install tree on Windows without Windows SubSystem Linux<how to install tree on Windows without Windows Subsystem for Linux>`
 
 type this in the terminal_
 
@@ -214,7 +225,7 @@ type this in the terminal_
 
   brew install tree
 
-Continue with :ref:`how to change directory`
+Continue with :ref:`how to see what directory I am in`
 
 ----
 
@@ -915,7 +926,7 @@ how to look at directory relationships
 
     .../pumping_python/doe/jane_doe
 
-* I show what is in the folder_
+* I use ls_ to show what is in the folder_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -981,7 +992,7 @@ how to look at directory relationships
 
   the terminal_ goes back to the command line
 
-* I try to go to ``mary_jane_doe`` again
+* I try to `change directory`_ to ``mary_jane_doe`` again
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1054,7 +1065,7 @@ how to look at directory relationships
 
   the terminal_ goes back to the command line
 
-* I try to go to ``.a_hidden_folder_in_jane_doe`` again
+* I try to `change directory`_ to ``.a_hidden_folder_in_jane_doe`` again
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1169,7 +1180,7 @@ how to look at directory relationships
 
   ``john_doe`` is a child of ``doe``
 
-* I show what is in the folder_
+* I use ls_ to show what is in the folder_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1234,7 +1245,7 @@ how to look at directory relationships
 
   the terminal_ goes back to the command line
 
-* I try to go to ``lil_john_doe`` again
+* I try to `change directory`_ to ``lil_john_doe`` again
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1307,7 +1318,7 @@ how to look at directory relationships
 
   the terminal_ goes back to the command line
 
-* I try to go to ``.a_hidden_folder_in_john_doe`` again
+* I try to `change directory`_ to ``.a_hidden_folder_in_john_doe`` again
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1477,9 +1488,9 @@ how to look at directory relationships
 how to make an empty file
 ********************************************************************************************
 
-I can make empty files_ in a folder_ with the `touch program`_
+I can use the touch_ program to make empty files_ in a folder_
 
-* I make an empty file_ in ``doe``
+* I use touch_ to make an empty file_ in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1497,7 +1508,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
       New-Item a_file_in_doe
 
-* I make an empty hidden file_ in ``doe``
+* I use touch_ to make an empty hidden file_ in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1557,7 +1568,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
     .../pumping_python/doe/jane_doe
 
-* I make an empty file_ with touch_
+* I use touch_ to make an empty file_ in ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1566,7 +1577,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   the terminal_ goes back to the command line
 
-* I make an empty hidden file_ with touch_
+* I use touch_ to make an empty hidden file_ in ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1575,7 +1586,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   the terminal_ goes back to the command line
 
-* I show what is in the folder_
+* I use ls_ to show what is in ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1606,6 +1617,8 @@ I can make empty files_ in a folder_ with the `touch program`_
 
     .../pumping_python/doe
 
+  I am back in ``doe``
+
 ----
 
 * I `change directory`_ to ``john_doe``
@@ -1621,7 +1634,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
     .../pumping_python/doe/john_doe
 
-* I make an empty file_ with touch_
+* I use touch_ to make an empty file_ in ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1630,7 +1643,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   the terminal_ goes back to the command line
 
-* I make an empty hidden file_ with touch_
+* I use touch_ to make an empty hidden file_ in ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1639,7 +1652,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 
   the terminal_ goes back to the command line
 
-* I show what is in the folder_
+* I use ls_ to show what is in ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1734,7 +1747,7 @@ I can make empty files_ in a folder_ with the `touch program`_
 how to use directory relationships
 ********************************************************************************************
 
-* I try to go from ``doe`` to ``mary_jane_doe`` in 1 step
+* I try to `change directory`_  from ``doe`` to ``mary_jane_doe`` in 1 step
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1806,7 +1819,7 @@ how to use directory relationships
   - ``..`` from ``mary_jane_doe`` is ``jane_doe``
   - ``..`` from ``jane_doe`` is ``doe``
 
-* I try to go from ``doe`` to ``lil_john_doe`` in 1 step
+* I try to `change directory`_  from ``doe`` to ``lil_john_doe`` in 1 step
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1929,7 +1942,7 @@ how to use touch with directory relationships
 
   I am in ``mary_jane_doe``
 
-* I make an empty file_ in ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1938,7 +1951,7 @@ how to use touch with directory relationships
 
   the terminal_ goes back to the command line
 
-* I make an empty hidden file_ in ``mary_jane_doe``
+* I use touch_ to make an empty hidden file_ in ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2005,7 +2018,7 @@ how to use touch with directory relationships
 
   I am in ``lil_john_doe``
 
-* I make an empty file_ in ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2014,7 +2027,7 @@ how to use touch with directory relationships
 
   the terminal_ goes back to the command line
 
-* I make an empty hidden file_ in ``lil_john_doe``
+* I use touch_ to make an empty hidden file_ in ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2126,28 +2139,28 @@ how to use touch with directory relationships
 
 ----
 
-* I make an empty file_ in ``jane_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch jane_doe/child_of_doe
 
-* I make an empty file_ in ``mary_jane_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch jane_doe/mary_jane_doe/grandchild_of_doe
 
-* I make an empty file_ in ``john_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``john_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch john_doe/child_of_doe
 
-* I make an empty file_ in ``lil_john_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2192,21 +2205,21 @@ how to use touch with directory relationships
 
     cd jane_doe
 
-* I make an empty file_ in ``mary_jane_doe`` from inside ``jane_doe``
+* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch mary_jane_doe/child_of_jane_doe
 
-* I make an empty file_ in ``doe`` from inside ``jane_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch ../aka_parent_of_jane_doe
 
-* I make an empty file_ in ``john_doe`` from inside ``jane_doe``
+* I use touch_ to make an empty file_ in ``john_doe`` from inside ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2216,7 +2229,7 @@ how to use touch with directory relationships
   - ``..`` is the parent of ``jane_doe`` which is ``doe``
   - ``john_doe`` is a child of ``doe``
 
-* I make an empty file_ in ``lil_john_doe`` from inside ``jane_doe``
+* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2336,21 +2349,21 @@ mv_ means move, it takes two arguments
 
     cd john_doe
 
-* I make an empty file_ in ``lil_john_doe`` from inside ``john_doe``
+* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch lil_john_doe/child_of_john_doe
 
-* I make an empty file_ in ``doe`` from inside ``john_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch ../aka_parent_of_john_doe
 
-* I make an empty file_ in ``jane_doe`` from inside ``john_doe``
+* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2360,7 +2373,7 @@ mv_ means move, it takes two arguments
   - ``..`` is the parent of ``john_doe`` which is ``doe``
   - ``jane_doe`` is a child of ``doe``
 
-* I make an empty file_ in ``mary_jane_doe`` from inside ``john_doe``
+* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2457,21 +2470,21 @@ mv_ means move, it takes two arguments
 
     cd jane_doe/mary_jane_doe
 
-* I make an empty file_ in ``jane_doe`` from inside ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch ../aka_parent_of_mary_jane_doe
 
-* I make an empty file_ in ``doe`` from inside ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch ../../aka_grandparent_of_mary_jane_doe
 
-* I make an empty file_ in ``john_doe`` from inside ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``john_doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2504,7 +2517,7 @@ mv_ means move, it takes two arguments
 
     cd ../jane_doe/mary_jane_doe
 
-* I make an empty file_ in ``lil_john_doe`` from inside ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2568,21 +2581,21 @@ mv_ means move, it takes two arguments
 
     .../doe/john_doe/lil_john_doe
 
-* I make an empty file_ in ``john_doe`` from inside ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``john_doe`` from inside ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch ../aka_parent_of_lil_john_doe
 
-* I make an empty file_ in ``doe`` from inside ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch ../../aka_grandparent_of_lil_john_doe
 
-* I make an empty file_ in ``jane_doe`` from inside ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2613,7 +2626,7 @@ mv_ means move, it takes two arguments
 
     cd ../john_doe/lil_john_doe
 
-* I make an empty file_ in ``mary_jane_doe`` from inside ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2697,7 +2710,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   I am in ``pumping_python``
 
-* I show what is in ``doe``
+* I use ls_ to show what is in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2718,7 +2731,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     jane_doe
     john_doe
 
-* I show what is in ``jane_doe``
+* I use ls_ to show what is in ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2740,7 +2753,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     child_of_doe
     mary_jane_doe
 
-* I show what is in ``mary_jane_doe``
+* I use ls_ to show what is in ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2768,7 +2781,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     cd doe/jane_doe/mary_jane_doe
 
-* I show what is in ``john_doe`` from inside ``mary_jane_doe``
+* I use ls_ to show what is in ``john_doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2790,7 +2803,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     child_of_doe
     lil_john_doe
 
-* I show what is in ``lil_john_doe`` from inside ``mary_jane_doe``
+* I use ls_ to show what is in ``lil_john_doe`` from inside ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -3054,7 +3067,7 @@ how to remove a directory and all the things in it
   - ``--recursive`` or ``-r`` or ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through every directory_ in the tree and removes everything
   - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
 
-* I try to go back to ``doe``
+* I try to `change directory`_  back to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
