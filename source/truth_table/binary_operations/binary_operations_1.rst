@@ -576,7 +576,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   - ``if second_input == True:`` checks if ``second_input`` is equal to :ref:`True<test_what_is_true>`
 
-    * if ``second_input`` is equal to :ref:`True<test_what_is_true>`, it goes to the next line ``return True``, it returns :ref:`False<test_what_is_false>` and leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+    * if ``second_input`` is equal to :ref:`True<test_what_is_true>`, it goes to the next line ``return True``, it returns :ref:`True<test_what_is_true>` and leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
     * if ``second_input`` is NOT equal to :ref:`True<test_what_is_true>`, it leaves this `if statement`_ and continues to ``if first_input == False:``
 
   Since there is only one case where the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`, I do not need any other statements

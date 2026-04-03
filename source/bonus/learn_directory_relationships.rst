@@ -351,7 +351,7 @@ how to make a directory
 
   ``doe`` is not in the ``pumping_python`` directory_, yet
 
-* I make ``doe``
+* I use mkdir_ to make ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -505,7 +505,7 @@ how to see what is in a directory
 how to look at directory relationships
 ********************************************************************************************
 
-* I go back to ``doe``
+* I use cd_ to go back to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -559,7 +559,7 @@ how to look at directory relationships
 
   ``jane_doe`` is not a child of ``doe``, yet
 
-* I make ``jane_doe``
+* I use mkdir_ to make ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -674,7 +674,7 @@ how to look at directory relationships
 
   ``john_doe`` is not a child of ``doe``, yet
 
-* I make ``john_doe``
+* I use mkdir_ to make ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -783,7 +783,7 @@ how to look at directory relationships
 
   ``.a_hidden_folder_in_doe`` is not in ``doe``, yet
 
-* I make ``.a_hidden_folder_in_doe``
+* I use mkdir_ to make ``.a_hidden_folder_in_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -926,7 +926,7 @@ how to look at directory relationships
 
     .../pumping_python/doe/jane_doe
 
-* I use ls_ to show what is in the folder_
+* I use ls_ to show what is in the ``jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -983,7 +983,7 @@ how to look at directory relationships
 
   ``jane_doe`` has no children, yet
 
-* I make ``mary_jane_doe``
+* I use mkdir_ to make ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1180,7 +1180,7 @@ how to look at directory relationships
 
   ``john_doe`` is a child of ``doe``
 
-* I use ls_ to show what is in the folder_
+* I use ls_ to show what is in the ``john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1236,7 +1236,7 @@ how to look at directory relationships
 
   ``john_doe`` has no children
 
-* I make ``lil_john_doe``
+* I use mkdir_ to make ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1309,7 +1309,7 @@ how to look at directory relationships
 
   there is no folder_ named ``.a_hidden_folder_in_john_doe`` in ``john_doe``
 
-* I make ``.a_hidden_folder_in_john_doe``
+* I use mkdir_ to make ``.a_hidden_folder_in_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1797,7 +1797,23 @@ how to use directory relationships
 
     .../doe/jane_doe/mary_jane_doe
 
-  I cannot go to ``mary_jane_doe`` without its parent
+  I cannot go to ``mary_jane_doe`` without its parent. How do I get back to ``doe``?
+
+* I `change directory`_ to ``doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: doe
+
+  - ``doe`` is not a child of ``mary_jane_doe``
+  - I cannot go from ``mary_jane_doe`` to ``doe`` this way
 
 * I can go from ``mary_jane_doe`` back to ``doe`` in 1 step with ``..``
 
@@ -1869,7 +1885,23 @@ how to use directory relationships
 
     .../doe/john_doe/lil_john_doe
 
-  I cannot go to ``lil_john_doe`` without its parent
+  I cannot go to ``lil_john_doe`` without its parent. How do I get back to ``doe``?
+
+* I `change directory`_ to ``doe``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd doe
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    cd: no such file or directory: doe
+
+  - ``doe`` is not a child of ``lil_john_doe``
+  - I cannot go from ``lil_john_doe`` to ``doe`` this way
 
 * I can go from ``lil_john_doe`` back to ``doe`` in 1 step with ``..``
 
@@ -1927,7 +1959,7 @@ how to use touch with directory relationships
 
     5 directories, 3 files
 
-* I want to make a file_ in ``mary_jane_doe``. I `change directory`_ to ``mary_jane_doe``
+* I `change directory`_ to ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1960,7 +1992,7 @@ how to use touch with directory relationships
 
   the terminal_ goes back to the command line
 
-* I make a hidden folder_ in ``mary_jane_doe``
+* I use mkdir_ to make a hidden directory_ in ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1969,7 +2001,7 @@ how to use touch with directory relationships
 
   the terminal_ goes back to the command line
 
-* I use ls_ to show what is in the folder_
+* I use ls_ to show what is in ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1986,7 +2018,7 @@ how to use touch with directory relationships
     .a_hidden_file_in_mary_jane_doe
     .a_hidden_folder_in_mary_jane_doe
 
-* I go back to the grandparent of ``mary_jane_doe``
+* I use cd_ to go back to the grandparent of ``mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2003,7 +2035,7 @@ how to use touch with directory relationships
 
 ----
 
-* I want to make a file_ in ``lil_john_doe``. I `change directory`_ to ``lil_john_doe``
+* I `change directory`_ to ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2025,8 +2057,6 @@ how to use touch with directory relationships
 
     touch a_file_in_lil_john_doe
 
-  the terminal_ goes back to the command line
-
 * I use touch_ to make an empty hidden file_ in ``lil_john_doe``
 
   .. code-block:: python
@@ -2034,18 +2064,14 @@ how to use touch with directory relationships
 
     touch .a_hidden_file_in_lil_john_doe
 
-  the terminal_ goes back to the command line
-
-* I make a hidden folder_ in ``lil_john_doe``
+* I use mkdir_ to make a hidden directory_ in ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     mkdir .a_hidden_folder_in_lil_john_doe
 
-  the terminal_ goes back to the command line
-
-* I use ls_ to show what is in the folder_
+* I use ls_ to show what is in ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2062,7 +2088,7 @@ how to use touch with directory relationships
     .a_hidden_file_in_lil_john_doe
     .a_hidden_folder_in_lil_john_doe
 
-* I go back to the grandparent of ``lil_john_doe``
+* I use cd_ to go back to the grandparent of ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2146,12 +2172,16 @@ how to use touch with directory relationships
 
     touch jane_doe/child_of_doe
 
+  the terminal_ goes back to the command line
+
 * I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch jane_doe/mary_jane_doe/grandchild_of_doe
+
+  the terminal_ goes back to the command line
 
 * I use touch_ to make an empty file_ in ``john_doe`` from inside ``doe``
 
@@ -2160,12 +2190,16 @@ how to use touch with directory relationships
 
     touch john_doe/child_of_doe
 
+  the terminal_ goes back to the command line
+
 * I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     touch john_doe/lil_john_doe/grandchild_of_doe
+
+  the terminal_ goes back to the command line
 
 * I show the ``doe`` family tree
 
@@ -2259,7 +2293,7 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 
     cd ../john_doe/lil_john_doe
 
-* I change ``child_of_sibling_of_john_doe`` to ``child_of_sibling_of_jane_doe``
+* I use mv_ to change ``child_of_sibling_of_john_doe`` to ``child_of_sibling_of_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2300,7 +2334,7 @@ mv_ means move, it takes two arguments
 
 ----
 
-* I go back to the grandparent of ``lil_john_doe``
+* I use cd_ to go back to the grandparent of ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2394,7 +2428,7 @@ mv_ means move, it takes two arguments
 
     cd ../jane_doe/mary_jane_doe
 
-* I change ``child_of_sibling_of_jane_doe`` to ``child_of_sibling_of_john_doe``
+* I use mv_ to change ``child_of_sibling_of_jane_doe`` to ``child_of_sibling_of_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2417,7 +2451,7 @@ mv_ means move, it takes two arguments
 
     ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
 
-* I go back to the grandparent of ``lil_john_doe``
+* I use cd_ to go back to the grandparent of ``lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2500,7 +2534,7 @@ mv_ means move, it takes two arguments
 
     cd ../../john_doe
 
-* I change ``aka_aunt_of_mary_jane_doe`` to ``aka_uncle_of_mary_jane_doe``
+* I use mv_ to change ``aka_aunt_of_mary_jane_doe`` to ``aka_uncle_of_mary_jane_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -2611,7 +2645,7 @@ mv_ means move, it takes two arguments
 
     cd ../../jane_doe
 
-* I change ``aka_uncle_of_lil_john_doe`` to ``aka_aunt_of_lil_john_doe``
+* I use mv_ to change ``aka_uncle_of_lil_john_doe`` to ``aka_aunt_of_lil_john_doe``
 
   .. code-block:: python
     :emphasize-lines: 1-2
