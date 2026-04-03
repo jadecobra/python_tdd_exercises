@@ -944,10 +944,10 @@ the test passes. :ref:`project_second<test_project_second>` returns :ref:`True<t
     def project_second(first_input, second_input):
         return second_input
 
-  the test passes. :ref:`project_second<test_project_second>` returns :ref:`True<test_what_is_true>`
+  the test passes. :ref:`project_second<test_project_second>` returns
 
-  - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>` if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`False<test_what_is_false>` if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - the second input in both cases
 
 * I add the next case, which is when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` for :ref:`test_project_second` in ``test_binary.py``
