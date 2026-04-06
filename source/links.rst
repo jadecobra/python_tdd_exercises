@@ -236,11 +236,13 @@
 .. _remove duplication: https://grokipedia.com/page/Don%27t_repeat_yourself
 .. _removing duplication: `remove duplication`_
 .. _HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+.. _HyperText Markup Language file: HTML_
 .. _I do not repeat myself: `remove duplication`_
 .. _Indentation: https://peps.python.org/pep-0008/#indentation
 .. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)
 .. _Integrated Development Environment (IDE): https://grokipedia.com/page/Integrated_development_environment
 .. _JSON: https://grokipedia.com/page/JSON
+.. _JavaScript Object Notation file: JSON_
 .. _Kent Beck: https://grokipedia.com/page/Kent_Beck
 .. _Artificial Intelligence: https://grokipedia.com/page/Large_language_model
 .. _Linux: https://www.kernel.org/category/about.html
@@ -250,6 +252,7 @@
 .. _Logical NAND: https://grokipedia.com/page/Nand
 .. _MacOS: https://www.apple.com/macos
 .. _Martin Fowler: https://grokipedia.com/page/Martin_Fowler_(software_engineer)
+.. _Markdown file: https://grokipedia.com/page/Markdown
 .. _Pumping Python: https://www.pumpingpython.com
 .. _Microsoft Store: https://apps.microsoft.com/home
 .. _Programming Languages: https://grokipedia.com/page/List_of_programming_languages

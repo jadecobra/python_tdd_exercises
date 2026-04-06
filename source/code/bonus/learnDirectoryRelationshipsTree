@@ -2,41 +2,41 @@ doe
 ├── a_file_in_doe
 ├── .a_hidden_file_in_doe
 ├── .a_hidden_folder_in_doe
-├── aka_grandparent_of_lil_john_doe
-├── aka_grandparent_of_mary_jane_doe
-├── aka_parent_of_jane_doe
-├── aka_parent_of_john_doe
-├── jane_doe
-│   ├── a_file_in_jane_doe
-│   ├── .a_hidden_file_in_jane_doe
-│   ├── .a_hidden_folder_in_jane_doe
-│   ├── aka_aunt_of_lil_john_doe
-│   ├── aka_parent_of_mary_jane_doe
-│   ├── aka_sibling_of_john_doe
+├── aka_grandparent_of_lil
+├── aka_grandparent_of_mary
+├── aka_parent_of_jane
+├── aka_parent_of_john
+├── jane
+│   ├── .a_hidden_file_in_doe
+│   ├── .a_hidden_folder_in_jane
+│   ├── aka_aunt_of_lil
+│   ├── aka_jane_doe
+│   ├── aka_parent_of_mary
+│   ├── aka_sibling_of_john
 │   ├── child_of_doe
-│   └── mary_jane_doe
-│       ├── a_file_in_mary_jane_doe
-│       ├── .a_hidden_file_in_mary_jane_doe
-│       ├── .a_hidden_folder_in_mary_jane_doe
-│       ├── child_of_jane_doe
-│       ├── child_of_sibling_of_john_doe
-│       ├── cousin_of_lil_john_doe
+│   └── mary
+│       ├── .a_hidden_file_in_mary
+│       ├── .a_hidden_folder_in_mary
+│       ├── aka_mary_jane_doe
+│       ├── child_of_jane
+│       ├── child_of_sibling_of_john
+│       ├── cousin_of_lil
 │       └── grandchild_of_doe
-└── john_doe
-    ├── a_file_in_john_doe
-    ├── .a_hidden_file_in_john_doe
-    ├── .a_hidden_folder_in_john_doe
-    ├── aka_parent_of_lil_john_doe
-    ├── aka_sibling_of_jane_doe
-    ├── aka_uncle_of_mary_jane_doe
+└── john
+    ├── .a_hidden_file_in_john
+    ├── .a_hidden_folder_in_john
+    ├── aka_john_doe
+    ├── aka_parent_of_lil
+    ├── aka_sibling_of_jane
+    ├── aka_uncle_of_mary
     ├── child_of_doe
-    └── lil_john_doe
-        ├── a_file_in_lil_john_doe
-        ├── .a_hidden_file_in_lil_john_doe
-        ├── .a_hidden_folder_in_lil_john_doe
-        ├── child_of_john_doe
-        ├── child_of_sibling_of_jane_doe
-        ├── cousin_of_mary_jane_doe
+    └── lil
+        ├── .a_hidden_file_in_lil
+        ├── .a_hidden_folder_in_lil
+        ├── aka_lil_john_doe
+        ├── child_of_john
+        ├── child_of_sibling_of_jane
+        ├── cousin_of_mary
         └── grandchild_of_doe
 
 10 directories, 30 files

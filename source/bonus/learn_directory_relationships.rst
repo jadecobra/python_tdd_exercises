@@ -30,7 +30,7 @@ These are all the commands I use in this chapter
 * mkdir_ to `make directories`_
 * cd_ to `change directories`_
 * ls_ to show what is in directories_
-* tree_ to show the relationships between directories_ and files_
+* tree_ to show the relationships between directories_
 * touch_ to make empty files_
 * mv_ to rename or move files_
 * rm_ to remove directories_
@@ -72,7 +72,7 @@ I keep every project I work on in its own directory_. All the code in this book 
 what is a file?
 *********************************************************************************
 
-A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Everything that happens on the computer ends up in files_. The name of a file can end with an extension to show what type of file_ it is. For example
+A file_ is a collection or container for text, like paper we write or print on and keep in a folder. Everything that happens on the computer ends up in files_. The name of a file_ can end with an extension to show what type of file_ it is. For example
 
 * ``.py`` for a :ref:`Python module<what is a module?>`
 * ``.txt`` for a `plain text file`_
@@ -80,23 +80,41 @@ A file_ is a collection or container for text, like paper we write or print on a
 * ``.ps1`` for a `PowerShell file`_
 * ``.doc`` for a `Word Document`_
 * ``.xls`` for an `Excel Spreadsheet`_
+* ``.html`` for an `HyperText Markup Language File`_
+* ``.json`` for a `JavaScript Object Notation File`_
+* ``.md`` for a `Markdown File`_
+
+----
+
+*********************************************************************************
+note
+*********************************************************************************
+
+* The code I type is highlighted and comes after something like ``I type this in a terminal``
+* The output (result) of the code I type after I press :kbd:`enter/return` on the keyboard comes after ``the terminal shows ...``
+* if you get a different result from what I promise then one of two things happened
+
+  - I made a mistake or
+  - You made a mistake
+
+  To make sure it is my mistake check that you typed the same thing I typed. If you still have a different result after that, email jacobitegboje@gmail.com or text or call 1-469-751-7595
+
+* commands are given to the computer with space between arguments or options, for example
+
+  .. code-block:: python
+
+    command argument
+    command --option
+    command argument_1 argument_2 ... argument_N
+    command --option_1 --option_2 ... --option_N
+    command argument --option
+    command --option argument
 
 ----
 
 *********************************************************************************
 requirements
 *********************************************************************************
-
-.. NOTE::
-
-  * The code I type is highlighted and usually follows something like - ``I type this in a terminal``
-  * The output (result) of the code I type usually follows something like - ``the terminal shows ...``
-  * if you get a different result from what I promise then one of two things happened
-
-    - I made a mistake or
-    - You made a mistake
-
-    To make sure it is my mistake check that you typed the same thing I typed. If you still have a different result after that, email jacobitegboje@gmail.com or text or call 1-469-751-7595
 
 I type this in a terminal_ to make sure the `tree program`_ is installed
 
@@ -177,6 +195,8 @@ how to install tree on Windows without Windows Subsystem for Linux
 ----
 
 .. ATTENTION:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
+
+  :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
 
 tree_ comes with Windows_, no need to install anything.
 
@@ -544,27 +564,27 @@ how to look at directory relationships
 
       tree /F
 
-* I try to `change directory`_ to ``jane_doe``, a child of ``doe``
+* I try to `change directory`_ to ``jane``, a child of ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe
+    cd jane
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: jane_doe
+    cd: no such file or directory: jane
 
-  ``jane_doe`` is not a child of ``doe``, yet
+  ``jane`` is not a child of ``doe``, yet
 
-* I use mkdir_ to make ``jane_doe``
+* I use mkdir_ to make ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir jane_doe
+    mkdir jane
 
   the terminal_ goes back to the command line
 
@@ -579,7 +599,7 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    jane_doe
+    jane
 
   .. NOTE::
 
@@ -590,7 +610,7 @@ how to look at directory relationships
 
       dir /ah
 
-* I use tree_ to show the ``doe`` family tree
+* I use tree_ to show what is in ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -603,28 +623,28 @@ how to look at directory relationships
     :emphasize-lines: 1-2
 
     .
-    └── jane_doe
+    └── jane
 
     2 directories, 0 files
 
-  - ``jane_doe`` is a child of ``doe``
+  - ``jane`` is a child of ``doe``
   - ``.`` is the working directory_, which is ``doe`` in this case
-  - the line in the tree that goes from ``.`` to ``jane_doe`` shows I can go from ``doe`` right to ``jane_doe``
+  - the line in the tree that goes from ``.`` to ``jane`` shows I can go from ``doe`` right to ``jane``
 
-* I `change directory`_ to ``jane_doe``
+* I `change directory`_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe
+    cd jane
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/doe/jane_doe
+    .../pumping_python/doe/jane
 
-  I am in ``jane_doe``
+  I am in ``jane``
 
 * I `change directory`_ to ``doe``
 
@@ -639,10 +659,10 @@ how to look at directory relationships
 
     cd: no such file or directory: doe
 
-  - ``doe`` is not a child of ``jane_doe``
-  - I cannot go from ``jane_doe`` to ``doe`` this way
+  - ``doe`` is not a child of ``jane``
+  - I cannot go from ``jane`` to ``doe`` this way
 
-* I `change directory`_ back to the parent of ``jane_doe``
+* I `change directory`_ back to the parent of ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -657,29 +677,29 @@ how to look at directory relationships
 
   - I am back in ``doe``
   - ``..`` is for the parent of the directory_ I am in
-  - ``..`` is ``doe`` when I am in ``jane_doe``
+  - ``..`` is ``doe`` when I am in ``jane``
 
-* I try to `change directory`_ to ``john_doe``
+* I try to `change directory`_ to ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe
+    cd john
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: john_doe
+    cd: no such file or directory: john
 
-  ``john_doe`` is not a child of ``doe``, yet
+  ``john`` is not a child of ``doe``, yet
 
-* I use mkdir_ to make ``john_doe``
+* I use mkdir_ to make ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir john_doe
+    mkdir john
 
   the terminal_ goes back to the command line
 
@@ -694,9 +714,9 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    jane_doe  john_doe
+    jane  john
 
-* I use tree_ to show the ``doe`` family tree
+* I use tree_ to show the folders_ inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -709,29 +729,29 @@ how to look at directory relationships
     :emphasize-lines: 1, 3
 
     .
-    ├── jane_doe
-    └── john_doe
+    ├── jane
+    └── john
 
     3 directories, 0 files
 
-  - ``john_doe`` is a child of ``doe``
+  - ``john`` is a child of ``doe``
   - ``.`` is the working directory_, which is ``doe`` in this case
-  - the line in the tree that goes from ``.`` to ``john_doe`` shows I can go from ``doe`` right to ``john_doe``
+  - the line in the tree that goes from ``.`` to ``john`` shows I can go from ``doe`` right to ``john``
 
-* I `change directory`_ to ``john_doe``
+* I `change directory`_ to ``john``
 
   .. code-block::
     :emphasize-lines: 1
 
-    cd john_doe
+    cd john
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/doe/john_doe
+    .../pumping_python/doe/john
 
-  I am in ``john_doe``
+  I am in ``john``
 
 * I `change directory`_ to ``doe``
 
@@ -746,10 +766,10 @@ how to look at directory relationships
 
     cd: no such file or directory: doe
 
-  - ``doe`` is not a child of ``john_doe``
-  - I cannot go from ``john_doe`` to ``doe`` this way
+  - ``doe`` is not a child of ``john``
+  - I cannot go from ``john`` to ``doe`` this way
 
-* I `change directory`_ back to the parent of ``john_doe``
+* I `change directory`_ back to the parent of ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -765,7 +785,7 @@ how to look at directory relationships
   I am back in ``doe``
 
   - ``..`` is for the parent of the directory_ I am in
-  - ``..`` is ``doe`` when I am in ``john_doe``
+  - ``..`` is ``doe`` when I am in ``john``
 
 * I `change directory`_ to a hidden folder_ in ``doe``
 
@@ -803,7 +823,7 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    jane_doe  john_doe
+    jane  john
 
   - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or folder_ if I put ``.`` before its name
@@ -819,9 +839,9 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    .  ..  .a_hidden_folder_in_doe  jane_doe  john_doe
+    .  ..  .a_hidden_folder_in_doe  jane  john
 
-* I use tree_ to show the ``doe`` family tree
+* I use tree_ to show the folders_ inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -833,8 +853,8 @@ how to look at directory relationships
   .. code-block:: shell
 
     .
-    ├── jane_doe
-    └── john_doe
+    ├── jane
+    └── john
 
     3 directories, 0 files
 
@@ -855,8 +875,8 @@ how to look at directory relationships
 
     .
     ├── .a_hidden_folder_in_doe
-    ├── jane_doe
-    └── john_doe
+    ├── jane
+    └── john
 
     4 directories, 0 files
 
@@ -913,20 +933,20 @@ how to look at directory relationships
 
 ----
 
-* I change directory_ to ``jane_doe``
+* I change directory_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe
+    cd jane
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/doe/jane_doe
+    .../pumping_python/doe/jane
 
-* I use ls_ to show what is in the ``jane_doe``
+* I use ls_ to show what is in ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -948,7 +968,7 @@ how to look at directory relationships
 
     .  ..
 
-  ``jane_doe`` has no children
+  ``jane`` has no children
 
 * I use tree_
 
@@ -965,67 +985,66 @@ how to look at directory relationships
 
     0 directories, 0 files
 
-  ``jane_doe`` has no children
+  ``jane`` has no children
 
-* I `change directory`_ to a child of ``jane_doe``
+* I `change directory`_ to a child of ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd mary_jane_doe
+    cd mary
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory:
-        mary_jane_doe
+    cd: no such file or directory: mary
 
-  ``jane_doe`` has no children, yet
+  ``jane`` has no children, yet
 
-* I use mkdir_ to make ``mary_jane_doe``
+* I use mkdir_ to make ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir mary_jane_doe
+    mkdir mary
 
   the terminal_ goes back to the command line
 
-* I try to `change directory`_ to ``mary_jane_doe`` again
+* I try to `change directory`_ to ``mary`` again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd mary_jane_doe
+    cd mary
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/jane_doe/mary_jane_doe
+    .../doe/jane/mary
 
-  - I am in the ``mary_jane_doe`` folder_
-  - ``mary_jane_doe`` is a child of ``jane_doe``
-  - ``jane_doe`` is a child of ``doe``
+  - I am in the ``mary`` folder_
+  - ``mary`` is a child of ``jane``
+  - ``jane`` is a child of ``doe``
 
-* I `change directory`_ to ``jane_doe``
+* I `change directory`_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe
+    cd jane
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: jane_doe
+    cd: no such file or directory: jane
 
-  - ``jane_doe`` is not a child of ``mary_jane_doe``
-  - I cannot go from ``mary_jane_doe`` to ``jane_doe`` this way
+  - ``jane`` is not a child of ``mary``
+  - I cannot go from ``mary`` to ``jane`` this way
 
-* I go up a level to the parent of ``mary_jane_doe``
+* I go up a level to the parent of ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1036,65 +1055,65 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    .../doe/jane_doe
+    .../doe/jane
 
-  I am back in ``jane_doe``
+  I am back in ``jane``
 
-* I `change directory`_ to a hidden folder_ in ``jane_doe``
+* I `change directory`_ to a hidden folder_ in ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .a_hidden_folder_in_jane_doe
+    cd .a_hidden_folder_in_jane
 
   the terminal_ shows
 
   .. code-block:: python
 
     cd: no such file or directory:
-        .a_hidden_folder_in_jane_doe
+        .a_hidden_folder_in_jane
 
-  there is no folder_ named ``.a_hidden_folder_in_jane_doe`` in ``jane_doe``
+  there is no folder_ named ``.a_hidden_folder_in_jane`` in ``jane``
 
-* I make a ``.a_hidden_folder_in_jane_doe``
+* I make a ``.a_hidden_folder_in_jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir .a_hidden_folder_in_jane_doe
+    mkdir .a_hidden_folder_in_jane
 
   the terminal_ goes back to the command line
 
-* I try to `change directory`_ to ``.a_hidden_folder_in_jane_doe`` again
+* I try to `change directory`_ to ``.a_hidden_folder_in_jane`` again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .a_hidden_folder_in_jane_doe
+    cd .a_hidden_folder_in_jane
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/jane_doe/.a_hidden_folder_in_jane_doe
+    .../doe/jane/.a_hidden_folder_in_jane
 
-* I `change directory`_ to ``jane_doe``
+* I `change directory`_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe
+    cd jane
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: jane_doe
+    cd: no such file or directory: jane
 
-  - ``jane_doe`` is not a child of ``.a_hidden_folder_in_jane_doe``
-  - I cannot go from ``.a_hidden_folder_in_jane_doe`` to ``jane_doe`` this way
+  - ``jane`` is not a child of ``.a_hidden_folder_in_jane``
+  - I cannot go from ``.a_hidden_folder_in_jane`` to ``jane`` this way
 
-* I go up a level to the parent of ``.a_hidden_folder_in_jane_doe``
+* I go up a level to the parent of ``.a_hidden_folder_in_jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1105,9 +1124,9 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    .../doe/jane_doe
+    .../doe/jane
 
-  I am back in ``jane_doe``
+  I am back in ``jane``
 
 * I use tree_
 
@@ -1122,7 +1141,7 @@ how to look at directory relationships
     :emphasize-lines: 2
 
     .
-    └── mary_jane_doe
+    └── mary
 
     2 directories, 0 files
 
@@ -1139,16 +1158,16 @@ how to look at directory relationships
     :emphasize-lines: 2
 
     .
-    ├── .a_hidden_folder_in_jane_doe
-    └── mary_jane_doe
+    ├── .a_hidden_folder_in_jane
+    └── mary
 
     3 directories, 0 files
 
-  - ``.`` is ``jane_doe`` when I am in ``jane_doe``
-  - the line in the tree that goes from ``.`` to ``mary_jane_doe`` shows I can go from ``jane_doe`` right to ``mary_jane_doe``
-  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_jane_doe`` shows I can go from ``jane_doe`` right to ``.a_hidden_folder_in_jane_doe``
+  - ``.`` is ``jane`` when I am in ``jane``
+  - the line in the tree that goes from ``.`` to ``mary`` shows I can go from ``jane`` right to ``mary``
+  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_jane`` shows I can go from ``jane`` right to ``.a_hidden_folder_in_jane``
 
-* I go up a level to the parent of ``jane_doe``
+* I go up a level to the parent of ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1165,22 +1184,22 @@ how to look at directory relationships
 
 ----
 
-* I change directory_ to ``john_doe``
+* I change directory_ to ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe
+    cd john
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/doe/john_doe
+    .../pumping_python/doe/john
 
-  ``john_doe`` is a child of ``doe``
+  ``john`` is a child of ``doe``
 
-* I use ls_ to show what is in the ``john_doe``
+* I use ls_ to show what is in ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1202,7 +1221,7 @@ how to look at directory relationships
 
     .  ..
 
-  ``john_doe`` has no children
+  ``john`` has no children
 
 * I use tree_
 
@@ -1219,66 +1238,66 @@ how to look at directory relationships
 
     0 directories, 0 files
 
-  ``john_doe`` has no children, yet
+  ``john`` has no children, yet
 
-* I `change directory`_ to a child of ``john_doe``
+* I `change directory`_ to a child of ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd lil_john_doe
+    cd lil
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: lil_john_doe
+    cd: no such file or directory: lil
 
-  ``john_doe`` has no children
+  ``john`` has no children
 
-* I use mkdir_ to make ``lil_john_doe``
+* I use mkdir_ to make ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir lil_john_doe
+    mkdir lil
 
   the terminal_ goes back to the command line
 
-* I try to `change directory`_ to ``lil_john_doe`` again
+* I try to `change directory`_ to ``lil`` again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd lil_john_doe
+    cd lil
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/john_doe/lil_john_doe
+    .../doe/john/lil
 
-  - I am in the ``lil_john_doe`` folder_
-  - ``lil_john_doe`` is a child of ``john_doe``
-  - ``john_doe`` is a child of ``doe``
+  - I am in the ``lil`` folder_
+  - ``lil`` is a child of ``john``
+  - ``john`` is a child of ``doe``
 
-* I `change directory`_ to ``john_doe``
+* I `change directory`_ to ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe
+    cd john
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: john_doe
+    cd: no such file or directory: john
 
-  - ``john_doe`` is not a child of ``lil_john_doe``
-  - I cannot go from ``lil_john_doe`` to ``john_doe`` this way
+  - ``john`` is not a child of ``lil``
+  - I cannot go from ``lil`` to ``john`` this way
 
-* I go up a level to the parent of ``lil_john_doe``
+* I go up a level to the parent of ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1289,65 +1308,65 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    .../doe/john_doe
+    .../doe/john
 
-  I am back in ``john_doe``
+  I am back in ``john``
 
-* I `change directory`_ to a hidden folder_ in ``john_doe``
+* I `change directory`_ to a hidden folder_ in ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .a_hidden_folder_in_john_doe
+    cd .a_hidden_folder_in_john
 
   the terminal_ shows
 
   .. code-block:: python
 
     cd: no such file or directory:
-        .a_hidden_folder_in_john_doe
+        .a_hidden_folder_in_john
 
-  there is no folder_ named ``.a_hidden_folder_in_john_doe`` in ``john_doe``
+  there is no folder_ named ``.a_hidden_folder_in_john`` in ``john``
 
-* I use mkdir_ to make ``.a_hidden_folder_in_john_doe``
+* I use mkdir_ to make ``.a_hidden_folder_in_john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir .a_hidden_folder_in_john_doe
+    mkdir .a_hidden_folder_in_john
 
   the terminal_ goes back to the command line
 
-* I try to `change directory`_ to ``.a_hidden_folder_in_john_doe`` again
+* I try to `change directory`_ to ``.a_hidden_folder_in_john`` again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd .a_hidden_folder_in_john_doe
+    cd .a_hidden_folder_in_john
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/john_doe/.a_hidden_folder_in_john_doe
+    .../doe/john/.a_hidden_folder_in_john
 
-* I `change directory`_ to ``john_doe``
+* I `change directory`_ to ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe
+    cd john
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: john_doe
+    cd: no such file or directory: john
 
-  - ``john_doe`` is not a child of ``.a_hidden_folder_in_john_doe``
-  - I cannot go from ``.a_hidden_folder_in_john_doe`` to ``john_doe`` this way
+  - ``john`` is not a child of ``.a_hidden_folder_in_john``
+  - I cannot go from ``.a_hidden_folder_in_john`` to ``john`` this way
 
-* I go up a level to the parent of ``.a_hidden_folder_in_john_doe``
+* I go up a level to the parent of ``.a_hidden_folder_in_john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1358,9 +1377,9 @@ how to look at directory relationships
 
   .. code-block:: python
 
-    .../doe/john_doe
+    .../doe/john
 
-  I am back in ``john_doe``
+  I am back in ``john``
 
 * I use tree_
 
@@ -1375,7 +1394,7 @@ how to look at directory relationships
     :emphasize-lines: 2
 
     .
-    └── lil_john_doe
+    └── lil
 
     2 directories, 0 files
 
@@ -1392,16 +1411,16 @@ how to look at directory relationships
     :emphasize-lines: 2
 
     .
-    ├── .a_hidden_folder_in_john_doe
-    └── lil_john_doe
+    ├── .a_hidden_folder_in_john
+    └── lil
 
     3 directories, 0 files
 
-  - ``.`` is ``john_doe`` when I am in ``john_doe``
-  - the line in the tree that goes from ``.`` to ``lil_john_doe`` shows I can go from ``john_doe`` right to ``lil_john_doe``
-  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_john_doe`` shows I can go from ``john_doe`` right to ``.a_hidden_folder_in_john_doe``
+  - ``.`` is ``john`` when I am in ``john``
+  - the line in the tree that goes from ``.`` to ``lil`` shows I can go from ``john`` right to ``lil``
+  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_john`` shows I can go from ``john`` right to ``.a_hidden_folder_in_john``
 
-* I go up a level to the parent of ``john_doe``
+* I go up a level to the parent of ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1416,7 +1435,7 @@ how to look at directory relationships
 
   I am back in ``doe``
 
-* I show the ``doe`` family tree
+* I use tree_ to show the files_ and folders_ related to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1429,10 +1448,10 @@ how to look at directory relationships
     :emphasize-lines: 3, 5
 
     .
-    ├── jane_doe
-    │   └── mary_jane_doe
-    └── john_doe
-        └── lil_john_doe
+    ├── jane
+    │   └── mary
+    └── john
+        └── lil
 
     5 directories, 0 files
 
@@ -1459,26 +1478,24 @@ how to look at directory relationships
 
     .
     ├── .a_hidden_folder_in_doe
-    ├── jane_doe
-    │   ├── .a_hidden_folder_in_jane_doe
-    │   └── mary_jane_doe
-    └── john_doe
-        ├── .a_hidden_folder_in_john_doe
-        └── lil_john_doe
+    ├── jane
+    │   ├── .a_hidden_folder_in_jane
+    │   └── mary
+    └── john
+        ├── .a_hidden_folder_in_john
+        └── lil
 
     8 directories, 0 files
 
   the lines show that
 
   - I can go from ``doe`` right to ``.a_hidden_folder_in_doe``
-  - I can go from ``doe`` right to ``jane_doe``
-  - I can go from ``doe`` right to ``john_doe``
-  - I can go from ``jane_doe`` right to ``.a_hidden_folder_in_jane_doe``
-  - I can go from ``jane_doe`` right to ``mary_jane_doe``
-  - I can go from ``john_doe`` right to ``.a_hidden_folder_in_john_doe``
-  - I can go from ``john_doe`` right to ``lil_john_doe``
-  - ``mary_jane_doe`` is a grandchild of ``doe``
-  - ``lil_john_doe`` is a grandchild of ``doe``
+  - I can go from ``doe`` right to ``jane``
+  - I can go from ``doe`` right to ``john``
+  - I can go from ``jane`` right to ``.a_hidden_folder_in_jane``
+  - I can go from ``jane`` right to ``mary``
+  - I can go from ``john`` right to ``.a_hidden_folder_in_john``
+  - I can go from ``john`` right to ``lil``
 
 :ref:`I know how to look at directory relationships<how to look at directory relationships>`
 
@@ -1526,7 +1543,7 @@ I can use the touch_ program to make empty files_ in a folder_
 
   .. code-block:: python
 
-    a_file_in_doe  jane_doe  john_doe
+    a_file_in_doe  jane  john
 
 * I use ls_ with the ``-a`` option
 
@@ -1539,10 +1556,13 @@ I can use the touch_ program to make empty files_ in a folder_
 
   .. code-block:: python
 
-    .                      .a_hidden_folder_in_doe
-    ..                     jane_doe
-    a_file_in_doe          john_doe
+    .
+    ..
+    a_file_in_doe
     .a_hidden_file_in_doe
+    .a_hidden_folder_in_doe
+    jane
+    john
 
   .. NOTE::
 
@@ -1555,38 +1575,38 @@ I can use the touch_ program to make empty files_ in a folder_
 
     the terminal_ does not show ``.`` and ``..`` and always shows hidden folder_ and files_
 
-* I `change directory`_ to ``jane_doe``
+* I `change directory`_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe
+    cd jane
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/doe/jane_doe
+    .../pumping_python/doe/jane
 
-* I use touch_ to make an empty file_ in ``jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch a_file_in_jane_doe
-
-  the terminal_ goes back to the command line
-
-* I use touch_ to make an empty hidden file_ in ``jane_doe``
+* I use touch_ to make an empty file_ in ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch .a_hidden_file_in_jane_doe
+    touch aka_jane_doe
 
   the terminal_ goes back to the command line
 
-* I use ls_ to show what is in ``jane_doe``
+* I use touch_ to make an empty hidden file_ in ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch .a_hidden_file_in_jane
+
+  the terminal_ goes back to the command line
+
+* I use ls_ to show what is in ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1599,12 +1619,12 @@ I can use the touch_ program to make empty files_ in a folder_
 
     .
     ..
-    a_file_in_jane_doe
-    .a_hidden_file_in_jane_doe
-    .a_hidden_folder_in_jane_doe
-    mary_jane_doe
+    .a_hidden_file_in_jane
+    .a_hidden_folder_in_jane
+    aka_jane_doe
+    mary
 
-* I `change directory`_ to the parent of ``jane_doe``
+* I `change directory`_ to the parent of ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1621,38 +1641,38 @@ I can use the touch_ program to make empty files_ in a folder_
 
 ----
 
-* I `change directory`_ to ``john_doe``
+* I `change directory`_ to ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe
+    cd john
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/doe/john_doe
+    .../pumping_python/doe/john
 
-* I use touch_ to make an empty file_ in ``john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch a_file_in_john_doe
-
-  the terminal_ goes back to the command line
-
-* I use touch_ to make an empty hidden file_ in ``john_doe``
+* I use touch_ to make an empty file_ in ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch .a_hidden_file_in_john_doe
+    touch aka_john_doe
 
   the terminal_ goes back to the command line
 
-* I use ls_ to show what is in ``john_doe``
+* I use touch_ to make an empty hidden file_ in ``john``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch .a_hidden_file_in_john
+
+  the terminal_ goes back to the command line
+
+* I use ls_ to show what is in ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1665,12 +1685,12 @@ I can use the touch_ program to make empty files_ in a folder_
 
     .
     ..
-    a_file_in_john_doe
-    .a_hidden_file_in_john_doe
-    .a_hidden_folder_in_john_doe
-    lil_john_doe
+    .a_hidden_file_in_john
+    .a_hidden_folder_in_john
+    aka_john_doe
+    lil
 
-* I `change directory`_ to the parent of ``john_doe``
+* I `change directory`_ to the parent of ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1685,7 +1705,7 @@ I can use the touch_ program to make empty files_ in a folder_
 
   I am back in ``doe``
 
-* I use tree_ to show the ``doe`` family tree
+* I use tree_ to show the folders_ related to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1699,12 +1719,12 @@ I can use the touch_ program to make empty files_ in a folder_
 
     .
     ├── a_file_in_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   └── mary_jane_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        └── lil_john_doe
+    ├── jane
+    │   ├── aka_jane_doe
+    │   └── mary
+    └── john
+        ├── aka_john_doe
+        └── lil
 
     5 directories, 3 files
 
@@ -1720,22 +1740,22 @@ I can use the touch_ program to make empty files_ in a folder_
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 3, 7, 12
+    :emphasize-lines: 3, 6, 11
 
     .
     ├── a_file_in_doe
     ├── .a_hidden_file_in_doe
     ├── .a_hidden_folder_in_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   ├── .a_hidden_file_in_jane_doe
-    │   ├── .a_hidden_folder_in_jane_doe
-    │   └── mary_jane_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        ├── .a_hidden_file_in_john_doe
-        ├── .a_hidden_folder_in_john_doe
-        └── lil_john_doe
+    ├── jane
+    │   ├── .a_hidden_file_in_doe
+    │   ├── .a_hidden_folder_in_jane
+    │   ├── aka_jane_doe
+    │   └── mary
+    └── john
+      ├── .a_hidden_file_in_john
+      ├── .a_hidden_folder_in_john
+      ├── aka_john_doe
+      └── lil
 
     8 directories, 6 files
 
@@ -1747,18 +1767,18 @@ I can use the touch_ program to make empty files_ in a folder_
 how to use directory relationships
 ********************************************************************************************
 
-* I try to `change directory`_  from ``doe`` to ``mary_jane_doe`` in 1 step
+* I try to `change directory`_  from ``doe`` to ``mary`` in 1 step
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd mary_jane_doe
+    cd mary
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: mary_jane_doe
+    cd: no such file or directory: mary
 
 * I use tree_ with the ``-d`` option to show only the directories_
 
@@ -1770,34 +1790,34 @@ how to use directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-text: jane_doe mary_jane_doe
+    :emphasize-text: jane mary
 
     .
-    ├── jane_doe
-    │   └── mary_jane_doe
-    └── john_doe
-        └── lil_john_doe
+    ├── jane
+    │   └── mary
+    └── john
+        └── lil
 
     5 directories
 
-  - there is no line from ``doe`` to ``mary_jane_doe`` because ``mary_jane_doe`` is not a child of ``doe``
-  - there is a line from ``jane_doe`` to ``mary_jane_doe`` because ``mary_jane_doe`` is a child of ``jane_doe``
-  - there is a line from ``doe`` to ``jane_doe`` because ``jane_doe`` is a child of ``doe``
+  - there is no line from ``doe`` to ``mary`` because ``mary`` is not a child of ``doe``
+  - there is a line from ``jane`` to ``mary`` because ``mary`` is a child of ``jane``
+  - there is a line from ``doe`` to ``jane`` because ``jane`` is a child of ``doe``
 
-* I can go from ``doe`` to ``jane_doe`` to ``mary_jane_doe`` in 1 step with
+* I can go from ``doe`` to ``jane`` to ``mary`` in 1 step with
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe/mary_jane_doe
+    cd jane/mary
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/jane_doe/mary_jane_doe
+    .../doe/jane/mary
 
-  I cannot go to ``mary_jane_doe`` without its parent. How do I get back to ``doe``?
+  I cannot go to ``mary`` without its parent. How do I get back to ``doe``?
 
 * I `change directory`_ to ``doe``
 
@@ -1812,10 +1832,10 @@ how to use directory relationships
 
     cd: no such file or directory: doe
 
-  - ``doe`` is not a child of ``mary_jane_doe``
-  - I cannot go from ``mary_jane_doe`` to ``doe`` this way
+  - ``doe`` is not a child of ``mary``
+  - I cannot go from ``mary`` to ``doe`` this way
 
-* I can go from ``mary_jane_doe`` back to ``doe`` in 1 step with ``..``
+* I can go from ``mary`` back to ``doe`` in 1 step with ``..``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1832,21 +1852,21 @@ how to use directory relationships
 
   - ``..`` is for the parent of a directory_
   - ``../..`` is for the parent of the parent, that is a grandparent. I can use as many as I need for each parent, for example ``../../../..`` is the great great grand parent
-  - ``..`` from ``mary_jane_doe`` is ``jane_doe``
-  - ``..`` from ``jane_doe`` is ``doe``
+  - ``..`` from ``mary`` is ``jane``
+  - ``..`` from ``jane`` is ``doe``
 
-* I try to `change directory`_  from ``doe`` to ``lil_john_doe`` in 1 step
+* I try to `change directory`_  from ``doe`` to ``lil`` in 1 step
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd lil_john_doe
+    cd lil
 
   the terminal_ shows
 
   .. code-block:: python
 
-    cd: no such file or directory: lil_john_doe
+    cd: no such file or directory: lil
 
 * I use tree_ with the ``-d`` option to show only the directories_
 
@@ -1858,34 +1878,34 @@ how to use directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-text: john_doe lil_john_doe
+    :emphasize-text: john lil
 
     .
-    ├── jane_doe
-    │   └── mary_jane_doe
-    └── john_doe
-        └── lil_john_doe
+    ├── jane
+    │   └── mary
+    └── john
+        └── lil
 
     5 directories
 
-  - there is no line from ``doe`` to ``lil_john_doe`` because ``lil_john_doe`` is not a child of ``doe``
-  - there is a line from ``john_doe`` to ``lil_john_doe`` because ``lil_john_doe`` is a child of ``john_doe``
-  - there is a line from ``doe`` to ``john_doe`` because ``john_doe`` is a child of ``doe``
+  - there is no line from ``doe`` to ``lil`` because ``lil`` is not a child of ``doe``
+  - there is a line from ``john`` to ``lil`` because ``lil`` is a child of ``john``
+  - there is a line from ``doe`` to ``john`` because ``john`` is a child of ``doe``
 
-* I can go from ``doe`` to ``john_doe`` to ``lil_john_doe`` in 1 step with
+* I can go from ``doe`` to ``john`` to ``lil`` in 1 step with
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe/lil_john_doe
+    cd john/lil
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/john_doe/lil_john_doe
+    .../doe/john/lil
 
-  I cannot go to ``lil_john_doe`` without its parent. How do I get back to ``doe``?
+  I cannot go to ``lil`` without its parent. How do I get back to ``doe``?
 
 * I `change directory`_ to ``doe``
 
@@ -1900,10 +1920,10 @@ how to use directory relationships
 
     cd: no such file or directory: doe
 
-  - ``doe`` is not a child of ``lil_john_doe``
-  - I cannot go from ``lil_john_doe`` to ``doe`` this way
+  - ``doe`` is not a child of ``lil``
+  - I cannot go from ``lil`` to ``doe`` this way
 
-* I can go from ``lil_john_doe`` back to ``doe`` in 1 step with ``..``
+* I can go from ``lil`` back to ``doe`` in 1 step with ``..``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1920,8 +1940,8 @@ how to use directory relationships
 
   - ``..`` is for the parent of a directory_
   - ``../..`` is for the parent of the parent
-  - ``..`` from ``lil_john_doe`` is ``john_doe``
-  - ``..`` from ``john_doe`` is ``doe``
+  - ``..`` from ``lil`` is ``john``
+  - ``..`` from ``john`` is ``doe``
 
 .. NOTE::
 
@@ -1937,7 +1957,7 @@ how to use directory relationships
 how to use touch with directory relationships
 ********************************************************************************************
 
-* I show the ``doe`` family tree
+* I use tree_ to show the files_ and folders_ related to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1950,58 +1970,58 @@ how to use touch with directory relationships
 
     .
     ├── a_file_in_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   └── mary_jane_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        └── lil_john_doe
+    ├── jane
+    │   ├── aka_jane_doe
+    │   └── mary
+    └── john
+        ├── aka_john_doe
+        └── lil
 
     5 directories, 3 files
 
-* I `change directory`_ to ``mary_jane_doe``
+* I `change directory`_ to ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe/mary_jane_doe
+    cd jane/mary
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/jane_doe/mary_jane_doe
+    .../doe/jane/mary
 
-  I am in ``mary_jane_doe``
+  I am in ``mary``
 
-* I use touch_ to make an empty file_ in ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch a_file_in_mary_jane_doe
-
-  the terminal_ goes back to the command line
-
-* I use touch_ to make an empty hidden file_ in ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch .a_hidden_file_in_mary_jane_doe
+    touch aka_mary_jane_doe
 
   the terminal_ goes back to the command line
 
-* I use mkdir_ to make a hidden directory_ in ``mary_jane_doe``
+* I use touch_ to make an empty hidden file_ in ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir .a_hidden_folder_in_mary_jane_doe
+    touch .a_hidden_file_in_mary
 
   the terminal_ goes back to the command line
 
-* I use ls_ to show what is in ``mary_jane_doe``
+* I use mkdir_ to make a hidden directory_ in ``mary``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_mary
+
+  the terminal_ goes back to the command line
+
+* I use ls_ to show what is in ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2014,11 +2034,11 @@ how to use touch with directory relationships
 
     .
     ..
-    a_file_in_mary_jane_doe
-    .a_hidden_file_in_mary_jane_doe
-    .a_hidden_folder_in_mary_jane_doe
+    .a_hidden_file_in_mary
+    .a_hidden_folder_in_mary
+    aka_mary_jane_doe
 
-* I use cd_ to go back to the grandparent of ``mary_jane_doe``
+* I use cd_ to go back to the grandparent of ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2035,43 +2055,43 @@ how to use touch with directory relationships
 
 ----
 
-* I `change directory`_ to ``lil_john_doe``
+* I `change directory`_ to ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe/lil_john_doe
+    cd john/lil
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/john_doe/lil_john_doe
+    .../doe/john/lil
 
-  I am in ``lil_john_doe``
+  I am in ``lil``
 
-* I use touch_ to make an empty file_ in ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch a_file_in_lil_john_doe
-
-* I use touch_ to make an empty hidden file_ in ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch .a_hidden_file_in_lil_john_doe
+    touch aka_lil_john_doe
 
-* I use mkdir_ to make a hidden directory_ in ``lil_john_doe``
+* I use touch_ to make an empty hidden file_ in ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir .a_hidden_folder_in_lil_john_doe
+    touch .a_hidden_file_in_lil
 
-* I use ls_ to show what is in ``lil_john_doe``
+* I use mkdir_ to make a hidden directory_ in ``lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    mkdir .a_hidden_folder_in_lil
+
+* I use ls_ to show what is in ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2084,11 +2104,11 @@ how to use touch with directory relationships
 
     .
     ..
-    a_file_in_lil_john_doe
-    .a_hidden_file_in_lil_john_doe
-    .a_hidden_folder_in_lil_john_doe
+    .a_hidden_file_in_lil
+    .a_hidden_folder_in_lil
+    aka_lil_john_doe
 
-* I use cd_ to go back to the grandparent of ``lil_john_doe``
+* I use cd_ to go back to the grandparent of ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2117,14 +2137,14 @@ how to use touch with directory relationships
 
     .
     ├── a_file_in_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   └── mary_jane_doe
-    │       └── a_file_in_mary_jane_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        └── lil_john_doe
-            └── a_file_in_lil_john_doe
+    ├── jane
+    │   ├── aka_jane_doe
+    │   └── mary
+    │       └── aka_mary_jane_doe
+    └── john
+        ├── aka_john_doe
+        └── lil
+            └── aka_lil_john_doe
 
     5 directories, 5 files
 
@@ -2138,70 +2158,70 @@ how to use touch with directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 11-12, 19-20
+    :emphasize-lines: 10-11, 18-19
 
     .
     ├── a_file_in_doe
     ├── .a_hidden_file_in_doe
     ├── .a_hidden_folder_in_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   ├── .a_hidden_file_in_jane_doe
-    │   ├── .a_hidden_folder_in_jane_doe
-    │   └── mary_jane_doe
-    │       ├── a_file_in_mary_jane_doe
-    │       ├── .a_hidden_file_in_mary_jane_doe
-    │       └── .a_hidden_folder_in_mary_jane_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        ├── .a_hidden_file_in_john_doe
-        ├── .a_hidden_folder_in_john_doe
-        └── lil_john_doe
-            ├── a_file_in_lil_john_doe
-            ├── .a_hidden_file_in_lil_john_doe
-            └── .a_hidden_folder_in_lil_john_doe
+    ├── jane
+    │   ├── .a_hidden_file_in_doe
+    │   ├── .a_hidden_folder_in_jane
+    │   ├── aka_jane_doe
+    │   └── mary
+    │       ├── .a_hidden_file_in_mary
+    │       ├── .a_hidden_folder_in_mary
+    │       └── aka_mary_jane_doe
+    └── john
+        ├── .a_hidden_file_in_john
+        ├── .a_hidden_folder_in_john
+        ├── aka_john_doe
+        └── lil
+            ├── .a_hidden_file_in_lil
+            ├── .a_hidden_folder_in_lil
+            └── aka_lil_john_doe
 
     10 directories, 10 files
 
 ----
 
-* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``jane`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch jane_doe/child_of_doe
+    touch jane/child_of_doe
 
   the terminal_ goes back to the command line
 
-* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``mary`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch jane_doe/mary_jane_doe/grandchild_of_doe
+    touch jane/mary/grandchild_of_doe
 
   the terminal_ goes back to the command line
 
-* I use touch_ to make an empty file_ in ``john_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``john`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch john_doe/child_of_doe
+    touch john/child_of_doe
 
   the terminal_ goes back to the command line
 
-* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``doe``
+* I use touch_ to make an empty file_ in ``lil`` from inside ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch john_doe/lil_john_doe/grandchild_of_doe
+    touch john/lil/grandchild_of_doe
 
   the terminal_ goes back to the command line
 
-* I show the ``doe`` family tree
+* I use tree_ to show the files_ and folders_ related to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2211,72 +2231,70 @@ how to use touch with directory relationships
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 4, 8, 10, 14
+    :emphasize-lines: 5, 8, 11, 14
 
     .
     ├── a_file_in_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
+    ├── jane
+    │   ├── aka_jane_doe
     │   ├── child_of_doe
-    │   └── mary_jane_doe
-    │       ├── a_file_in_mary_jane_doe
+    │   └── mary
+    │       ├── aka_mary_jane_doe
     │       └── grandchild_of_doe
-    └── john_doe
-        ├── a_file_in_john_doe
+    └── john
+        ├── aka_john_doe
         ├── child_of_doe
-        └── lil_john_doe
-            ├── a_file_in_lil_john_doe
+        └── lil
+            ├── aka_lil_john_doe
             └── grandchild_of_doe
 
     5 directories, 9 files
 
 ----
 
-* I `change directory`_ to ``jane_doe``
+* I `change directory`_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe
+    cd jane
 
-* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch mary_jane_doe/child_of_jane_doe
-
-* I use touch_ to make an empty file_ in ``doe`` from inside ``jane_doe``
+* I use touch_ to make an empty file_ in ``mary`` from inside ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../aka_parent_of_jane_doe
+    touch mary/child_of_jane
 
-* I use touch_ to make an empty file_ in ``john_doe`` from inside ``jane_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../john_doe/aka_sibling_of_jane_doe
+    touch ../aka_parent_of_jane
 
-  - ``..`` is the parent of ``jane_doe`` which is ``doe``
-  - ``john_doe`` is a child of ``doe``
+* I use touch_ to make an empty file_ in ``john`` from inside ``jane``
 
-* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``jane_doe``
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../john/aka_sibling_of_jane
+
+  - ``..`` is the parent of ``jane`` which is ``doe``
+  - ``john`` is a child of ``doe``
+
+* I use touch_ to make an empty file_ in ``lil`` from inside ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    touch ../john_doe/lil_john_doe/\
-    child_of_sibling_of_john_doe
+    touch ../john/lil/child_of_sibling_of_john
 
-  - ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
-  - ``..`` is the parent of ``jane_doe`` which is ``doe``
-  - ``john_doe`` is a child of ``doe``
-  - ``lil_john_doe`` is a child of ``john_doe``
+  - ``..`` is the parent of ``jane`` which is ``doe``
+  - ``john`` is a child of ``doe``
+  - ``lil`` is a child of ``john``
 
-  I made a mistake - ``child_of_sibling_of_john_doe`` should be ``child_of_sibling_of_jane_doe``
+  I made a mistake - ``child_of_sibling_of_john`` should be ``child_of_sibling_of_jane``
 
 ----
 
@@ -2286,33 +2304,35 @@ how to rename a file or directory
 
 I can use the `mv program`_ to move a file_ and rename it at the same time.
 
-* I `change directory`_ to ``lil_john_doe``
+* I `change directory`_ to ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../john_doe/lil_john_doe
+    cd ../john/lil
 
-* I use mv_ to change ``child_of_sibling_of_john_doe`` to ``child_of_sibling_of_jane_doe``
+* I use mv_ to change ``child_of_sibling_of_john`` to ``child_of_sibling_of_jane``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    mv child_of_sibling_of_john_doe \
-    child_of_sibling_of_jane_doe
+    mv child_of_sibling_of_john \
+    child_of_sibling_of_jane
 
   the terminal_ goes back to the command line
 
   .. TIP::
 
-    I can also do it with one line from inside ``jane_doe`` without cd_ (it is a long line)
+    I can also do it with one line from inside ``jane`` without cd_ (it is a long line)
 
     .. code-block:: python
 
-      mv ../john_doe/lil_john_doe/\
-      child_of_sibling_of_john_doe \
-      ../john_doe/lil_john_doe/\
-      child_of_sibling_of_jane_doe
+      mv ../john/lil/\
+      child_of_sibling_of_john \
+      ../john/lil/\
+      child_of_sibling_of_jane
+
+  ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
 
 mv_ means move, it takes two arguments
 
@@ -2324,7 +2344,7 @@ mv_ means move, it takes two arguments
 * ``target`` is the path/address I want to move the original file_ or folder_ to
 * this allows me to rename a file_ or folder_ in one step, the other way would be to
 
-  - copy the original file_ or folder_
+  - copy the original file_ or folder_ from the source
   - paste the copied file_ or folder_ at the target
   - delete the original file_ or folder_
 
@@ -2334,14 +2354,14 @@ mv_ means move, it takes two arguments
 
 ----
 
-* I use cd_ to go back to the grandparent of ``lil_john_doe``
+* I use cd_ to go back to the grandparent of ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     cd ../..
 
-* I show the ``doe`` family tree
+* I use tree_ to show the files_ and folders_ related to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2355,110 +2375,109 @@ mv_ means move, it takes two arguments
 
     .
     ├── a_file_in_doe
-    ├── aka_parent_of_jane_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
+    ├── aka_parent_of_jane
+    ├── jane
+    │   ├── aka_jane_doe
     │   ├── child_of_doe
-    │   └── mary_jane_doe
-    │       ├── a_file_in_mary_jane_doe
-    │       ├── child_of_jane_doe
+    │   └── mary
+    │       ├── aka_mary_jane_doe
+    │       ├── child_of_jane
     │       └── grandchild_of_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        ├── aka_sibling_of_jane_doe
+    └── john
+        ├── aka_john_doe
+        ├── aka_sibling_of_jane
         ├── child_of_doe
-        └── lil_john_doe
-            ├── a_file_in_lil_john_doe
-            ├── child_of_sibling_of_jane_doe
+        └── lil
+            ├── aka_lil_john_doe
+            ├── child_of_sibling_of_jane
             └── grandchild_of_doe
 
     5 directories, 13 files
 
 ----
 
-* I `change directory`_ to ``john_doe``
+* I `change directory`_ to ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd john_doe
+    cd john
 
-* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch lil_john_doe/child_of_john_doe
-
-* I use touch_ to make an empty file_ in ``doe`` from inside ``john_doe``
+* I use touch_ to make an empty file_ in ``lil`` from inside ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../aka_parent_of_john_doe
+    touch lil/child_of_john
 
-* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``john_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../jane_doe/aka_sibling_of_john_doe
+    touch ../aka_parent_of_john
 
-  - ``..`` is the parent of ``john_doe`` which is ``doe``
-  - ``jane_doe`` is a child of ``doe``
+* I use touch_ to make an empty file_ in ``jane`` from inside ``john``
 
-* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``john_doe``
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../jane/aka_sibling_of_john
+
+  - ``..`` is the parent of ``john`` which is ``doe``
+  - ``jane`` is a child of ``doe``
+
+* I use touch_ to make an empty file_ in ``mary`` from inside ``john``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    touch ../jane_doe/mary_jane_doe/\
-    child_of_sibling_of_jane_doe
+    touch ../jane/mary/child_of_sibling_of_jane
 
-  - ``..`` is the parent of ``john_doe`` which is ``doe``
-  - ``jane_doe`` is a child of ``doe``
-  - ``mary_jane_doe`` is a child of ``jane_doe``
+  - ``..`` is the parent of ``john`` which is ``doe``
+  - ``jane`` is a child of ``doe``
+  - ``mary`` is a child of ``jane``
 
-  I made a mistake again ``child_of_sibling_of_jane_doe`` should be ``child_of_sibling_of_john_doe``
+  I made a mistake again ``child_of_sibling_of_jane`` should be ``child_of_sibling_of_john``
 
-* I `change directory`_ to ``mary_john_doe``
+* I `change directory`_ to ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../jane_doe/mary_jane_doe
+    cd ../jane/mary
 
-* I use mv_ to change ``child_of_sibling_of_jane_doe`` to ``child_of_sibling_of_john_doe``
+* I use mv_ to change ``child_of_sibling_of_jane`` to ``child_of_sibling_of_john``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    mv child_of_sibling_of_jane_doe \
-    child_of_sibling_of_john_doe
+    mv child_of_sibling_of_jane \
+    child_of_sibling_of_john
 
   the terminal_ goes back to the command line
 
   .. TIP::
 
-    I can also do it with one line from inside ``john_doe`` without cd_ (it is a long line)
+    I can also do it with one line from inside ``john`` without cd_ (it is a long line)
 
     .. code-block:: python
 
-      mv ../jane_doe/mary_jane_doe/\
-      child_of_sibling_of_jane_doe \
-      ../jane_doe/mary_jane_doe/\
-      child_of_sibling_of_john_doe
+      mv ../jane/mary/\
+      child_of_sibling_of_jane \
+      ../jane/mary/\
+      child_of_sibling_of_john
 
     ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
 
-* I use cd_ to go back to the grandparent of ``lil_john_doe``
+* I use cd_ to go back to the grandparent of ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     cd ../..
 
-* I show the ``doe`` family tree
+* I use tree_ to show the files_ and folders_ related to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2472,94 +2491,90 @@ mv_ means move, it takes two arguments
 
     .
     ├── a_file_in_doe
-    ├── aka_parent_of_jane_doe
-    ├── aka_parent_of_john_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   ├── aka_sibling_of_john_doe
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── jane
+    │   ├── aka_jane_doe
+    │   ├── aka_sibling_of_john
     │   ├── child_of_doe
-    │   └── mary_jane_doe
-    │       ├── a_file_in_mary_jane_doe
-    │       ├── child_of_jane_doe
-    │       ├── child_of_sibling_of_john_doe
+    │   └── mary
+    │       ├── aka_mary_jane_doe
+    │       ├── child_of_jane
+    │       ├── child_of_sibling_of_john
     │       └── grandchild_of_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        ├── aka_sibling_of_jane_doe
+    └── john
+        ├── aka_john_doe
+        ├── aka_sibling_of_jane
         ├── child_of_doe
-        └── lil_john_doe
-            ├── a_file_in_lil_john_doe
-            ├── child_of_john_doe
-            ├── child_of_sibling_of_jane_doe
+        └── lil
+            ├── aka_lil_john_doe
+            ├── child_of_john
+            ├── child_of_sibling_of_jane
             └── grandchild_of_doe
 
     5 directories, 17 files
 
 ----
 
-* I `change directory`_ to ``mary_jane_doe``
+* I `change directory`_ to ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd jane_doe/mary_jane_doe
+    cd jane/mary
 
-* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../aka_parent_of_mary_jane_doe
-
-* I use touch_ to make an empty file_ in ``doe`` from inside ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``jane`` from inside ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../aka_grandparent_of_mary_jane_doe
+    touch ../aka_parent_of_mary
 
-* I use touch_ to make an empty file_ in ``john_doe`` from inside ``mary_jane_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../../john_doe/aka_aunt_of_mary_jane_doe
-
-  I made a mistake - ``john_doe`` is not the aunt of ``mary_jane_doe`` he is the uncle
-
-* I `change directory`_ to ``john_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../../john_doe
+    touch ../../aka_grandparent_of_mary
 
-* I use mv_ to change ``aka_aunt_of_mary_jane_doe`` to ``aka_uncle_of_mary_jane_doe``
+* I use touch_ to make an empty file_ in ``john`` from inside ``mary``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../john/aka_aunt_of_mary
+
+  I made a mistake - ``john`` is not the aunt of ``mary`` he is the uncle
+
+* I `change directory`_ to ``john``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ../../john
+
+* I use mv_ to change ``aka_aunt_of_mary`` to ``aka_uncle_of_mary``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    mv aka_aunt_of_mary_jane_doe \
-    aka_uncle_of_mary_jane_doe
+    mv aka_aunt_of_mary aka_uncle_of_mary
 
-  ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
-
-* I `change directory`_ back to ``mary_jane_doe``
+* I `change directory`_ back to ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../jane_doe/mary_jane_doe
+    cd ../jane/mary
 
-* I use touch_ to make an empty file_ in ``lil_john_doe`` from inside ``mary_jane_doe``
+* I use touch_ to make an empty file_ in ``lil`` from inside ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    touch ../../john_doe/lil_john_doe/\
-    cousin_of_mary_jane_doe
+    touch ../../john/lil/cousin_of_mary
 
-* I look at the ``doe`` family tree from inside ``mary_jane_doe``
+* I use tree_ to show the files_ and folders_ related to ``doe`` from inside ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2573,150 +2588,147 @@ mv_ means move, it takes two arguments
 
     ../..
     ├── a_file_in_doe
-    ├── aka_grandparent_of_mary_jane_doe
-    ├── aka_parent_of_jane_doe
-    ├── aka_parent_of_john_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   ├── aka_parent_of_mary_jane_doe
-    │   ├── aka_sibling_of_john_doe
+    ├── aka_grandparent_of_mary
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── jane
+    │   ├── aka_jane_doe
+    │   ├── aka_parent_of_mary
+    │   ├── aka_sibling_of_john
     │   ├── child_of_doe
-    │   └── mary_jane_doe
-    │       ├── a_file_in_mary_jane_doe
-    │       ├── child_of_jane_doe
-    │       ├── child_of_sibling_of_john_doe
+    │   └── mary
+    │       ├── aka_mary_jane_doe
+    │       ├── child_of_jane
+    │       ├── child_of_sibling_of_john
     │       └── grandchild_of_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        ├── aka_sibling_of_jane_doe
-        ├── aka_uncle_of_mary_jane_doe
+    └── john
+        ├── aka_john_doe
+        ├── aka_sibling_of_jane
+        ├── aka_uncle_of_mary
         ├── child_of_doe
-        └── lil_john_doe
-            ├── a_file_in_lil_john_doe
-            ├── child_of_john_doe
-            ├── child_of_sibling_of_jane_doe
-            ├── cousin_of_mary_jane_doe
+        └── lil
+            ├── aka_lil_john_doe
+            ├── child_of_john
+            ├── child_of_sibling_of_jane
+            ├── cousin_of_mary
             └── grandchild_of_doe
 
     5 directories, 21 files
 
 ----
 
-* I `change directory`_ to ``lil_john_doe`` from ``mary_jane_doe``
+* I `change directory`_ to ``lil`` from ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../../john_doe/lil_john_doe
+    cd ../../john/lil
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/john_doe/lil_john_doe
+    .../doe/john/lil
 
-* I use touch_ to make an empty file_ in ``john_doe`` from inside ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../aka_parent_of_lil_john_doe
-
-* I use touch_ to make an empty file_ in ``doe`` from inside ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``john`` from inside ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch ../../aka_grandparent_of_lil_john_doe
+    touch ../aka_parent_of_lil
 
-* I use touch_ to make an empty file_ in ``jane_doe`` from inside ``lil_john_doe``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    touch ../../jane_doe/aka_uncle_of_lil_john_doe
-
-  I made another mistake - ``jane_doe`` is not the uncle of ``mary_jane_doe`` she is the aunt
-
-* I `change directory`_ to ``jane_doe``
+* I use touch_ to make an empty file_ in ``doe`` from inside ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../../jane_doe
+    touch ../../aka_grandparent_of_lil
 
-* I use mv_ to change ``aka_uncle_of_lil_john_doe`` to ``aka_aunt_of_lil_john_doe``
+* I use touch_ to make an empty file_ in ``jane`` from inside ``lil``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch ../../jane/aka_uncle_of_lil
+
+  I made another mistake - ``jane`` is not the uncle of ``mary`` she is the aunt
+
+* I `change directory`_ to ``jane``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd ../../jane
+
+* I use mv_ to change ``aka_uncle_of_lil`` to ``aka_aunt_of_lil``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    mv aka_uncle_of_lil_john_doe \
-    aka_aunt_of_lil_john_doe
+    mv aka_uncle_of_lil aka_aunt_of_lil
 
-* I `change directory`_ back to ``lil_jane_doe``
+* I `change directory`_ back to ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../john_doe/lil_john_doe
+    cd ../john/lil
 
-* I use touch_ to make an empty file_ in ``mary_jane_doe`` from inside ``lil_john_doe``
+* I use touch_ to make an empty file_ in ``mary`` from inside ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    touch ../../jane_doe/mary_jane_doe/\
-    cousin_of_lil_john_doe
+    touch ../../jane/mary/cousin_of_lil
 
-* I look at the ``doe`` family tree from inside ``lil_john_doe`` through the parent of ``doe``
+* I use tree_ to show the files_ and folders_ related to ``doe`` from inside ``lil`` through the parent of ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
 
     tree ../../../doe
 
-  - ``..`` is for the parent of ``lil_john_doe`` which is ``john_doe``
-  - ``../..`` is for the parent of the parent of ``lil_john_doe`` which is ``doe``
-  - ``../../..`` is for the parent of the parent of the parent of ``lil_john_doe`` which is ``pumping_python``
+  - ``..`` is for the parent of ``lil`` which is ``john``
+  - ``../..`` is for the parent of the parent of ``lil`` which is ``doe``
+  - ``../../..`` is for the parent of the parent of the parent of ``lil`` which is ``pumping_python``
   - ``doe`` is a child of ``pumping_python``
 
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1, 3, 9, 17, 21
+    :emphasize-lines: 1, 3, 8, 17, 21
 
     ../../../doe
     ├── a_file_in_doe
-    ├── aka_grandparent_of_lil_john_doe
-    ├── aka_grandparent_of_mary_jane_doe
-    ├── aka_parent_of_jane_doe
-    ├── aka_parent_of_john_doe
-    ├── jane_doe
-    │   ├── a_file_in_jane_doe
-    │   ├── aka_aunt_of_lil_john_doe
-    │   ├── aka_parent_of_mary_jane_doe
-    │   ├── aka_sibling_of_john_doe
+    ├── aka_grandparent_of_lil
+    ├── aka_grandparent_of_mary
+    ├── aka_parent_of_jane
+    ├── aka_parent_of_john
+    ├── jane
+    │   ├── aka_aunt_of_lil
+    │   ├── aka_jane_doe
+    │   ├── aka_parent_of_mary
+    │   ├── aka_sibling_of_john
     │   ├── child_of_doe
-    │   └── mary_jane_doe
-    │       ├── a_file_in_mary_jane_doe
-    │       ├── child_of_jane_doe
-    │       ├── child_of_sibling_of_john_doe
-    │       ├── cousin_of_lil_john_doe
+    │   └── mary
+    │       ├── aka_mary_jane_doe
+    │       ├── child_of_jane
+    │       ├── child_of_sibling_of_john
+    │       ├── cousin_of_lil
     │       └── grandchild_of_doe
-    └── john_doe
-        ├── a_file_in_john_doe
-        ├── aka_parent_of_lil_john_doe
-        ├── aka_sibling_of_jane_doe
-        ├── aka_uncle_of_mary_jane_doe
+    └── john
+        ├── aka_john_doe
+        ├── aka_parent_of_lil
+        ├── aka_sibling_of_jane
+        ├── aka_uncle_of_mary
         ├── child_of_doe
-        └── lil_john_doe
-            ├── a_file_in_lil_john_doe
-            ├── child_of_john_doe
-            ├── child_of_sibling_of_jane_doe
-            ├── cousin_of_mary_jane_doe
+        └── lil
+            ├── aka_lil_john_doe
+            ├── child_of_john
+            ├── child_of_sibling_of_jane
+            ├── cousin_of_mary
             └── grandchild_of_doe
 
-    5 directories, 25 files
 
 I can add a file_ to any folder_ when I know its path or relation to where I am, if I have :ref:`permission to write to the folder<how to view the permissions of a file>`.
 
@@ -2758,19 +2770,19 @@ I can see what is in any folder_ when I know its path or relation to where I am.
     a_file_in_doe
     .a_hidden_file_in_doe
     .a_hidden_folder_in_doe
-    aka_grandparent_of_lil_john_doe
-    aka_grandparent_of_mary_jane_doe
-    aka_parent_of_jane_doe
-    aka_parent_of_john_doe
-    jane_doe
-    john_doe
+    aka_grandparent_of_lil
+    aka_grandparent_of_mary
+    aka_parent_of_jane
+    aka_parent_of_john
+    jane
+    john
 
-* I use ls_ to show what is in ``jane_doe``
+* I use ls_ to show what is in ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    ls -a doe/jane_doe
+    ls -a doe/jane
 
   the terminal_ shows
 
@@ -2778,21 +2790,21 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     .
     ..
-    a_file_in_jane_doe
-    .a_hidden_file_in_jane_doe
-    .a_hidden_folder_in_jane_doe
-    aka_aunt_of_lil_john_doe
-    aka_parent_of_mary_jane_doe
-    aka_sibling_of_john_doe
+    .a_hidden_file_in_jane
+    .a_hidden_folder_in_jane
+    aka_aunt_of_lil
+    aka_jane_doe
+    aka_parent_of_mary
+    aka_sibling_of_john
     child_of_doe
-    mary_jane_doe
+    mary
 
-* I use ls_ to show what is in ``mary_jane_doe``
+* I use ls_ to show what is in ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    ls -a doe/jane_doe/mary_jane_doe
+    ls -a doe/jane/mary
 
   the terminal_ shows
 
@@ -2800,27 +2812,27 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     .
     ..
-    a_file_in_mary_jane_doe
-    .a_hidden_file_in_mary_jane_doe
-    .a_hidden_folder_in_mary_jane_doe
-    child_of_jane_doe
-    child_of_sibling_of_john_doe
-    cousin_of_lil_john_doe
+    .a_hidden_file_in_mary
+    .a_hidden_folder_in_mary
+    aka_mary_jane_doe
+    child_of_jane
+    child_of_sibling_of_john
+    cousin_of_lil
     grandchild_of_doe
 
-* I `change directory`_ to ``mary_jane_doe``
+* I `change directory`_ to ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd doe/jane_doe/mary_jane_doe
+    cd doe/jane/mary
 
-* I use ls_ to show what is in ``john_doe`` from inside ``mary_jane_doe``
+* I use ls_ to show what is in ``john`` from inside ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    ls -a ../../john_doe
+    ls -a ../../john
 
   the terminal_ shows
 
@@ -2828,21 +2840,21 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     .
     ..
-    a_file_in_john_doe
-    .a_hidden_file_in_john_doe
-    .a_hidden_folder_in_john_doe
-    aka_parent_of_lil_john_doe
-    aka_sibling_of_jane_doe
-    aka_uncle_of_mary_jane_doe
+    .a_hidden_file_in_john
+    .a_hidden_folder_in_john
+    aka_john_doe
+    aka_parent_of_lil
+    aka_sibling_of_jane
+    aka_uncle_of_mary
     child_of_doe
-    lil_john_doe
+    lil
 
-* I use ls_ to show what is in ``lil_john_doe`` from inside ``mary_jane_doe``
+* I use ls_ to show what is in ``lil`` from inside ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    ls -a ../../john_doe/lil_john_doe
+    ls -a ../../john/lil
 
   the terminal_ shows
 
@@ -2850,13 +2862,15 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     .
     ..
-    a_file_in_lil_john_doe
-    .a_hidden_file_in_lil_john_doe
-    .a_hidden_folder_in_lil_john_doe
-    child_of_john_doe
-    child_of_sibling_of_jane_doe
-    cousin_of_mary_jane_doe
+    .a_hidden_file_in_lil
+    .a_hidden_folder_in_lil
+    aka_lil_john_doe
+    child_of_john
+    child_of_sibling_of_jane
+    cousin_of_mary
     grandchild_of_doe
+
+:ref:`I know how to use ls with directory relations<how to use ls with directory relationships>`
 
 ----
 
@@ -2864,75 +2878,75 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 how to use tree with directory relationships
 ********************************************************************************************
 
-* I use tree_ to show what is in ``lil_john_doe``
+* I use tree_ to show what is in ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    tree ../../john_doe/lil_john_doe
+    tree ../../john/lil
 
   the terminal_ shows
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ../../john_doe/lil_john_doe
-    ├── a_file_in_lil_john_doe
-    ├── child_of_john_doe
-    ├── child_of_sibling_of_jane_doe
-    ├── cousin_of_mary_jane_doe
+    ../../john/lil
+    ├── aka_lil_john_doe
+    ├── child_of_john
+    ├── child_of_sibling_of_jane
+    ├── cousin_of_mary
     └── grandchild_of_doe
 
     1 directory, 5 files
 
-* I use tree_ to show what is in ``john_doe``
+* I use tree_ to show what is in ``john``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    tree ../../john_doe
+    tree ../../john
 
   the terminal_ shows
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ../../john_doe
-    ├── a_file_in_john_doe
-    ├── aka_parent_of_lil_john_doe
-    ├── aka_sibling_of_jane_doe
-    ├── aka_uncle_of_mary_jane_doe
+    ../../john
+    ├── aka_john_doe
+    ├── aka_parent_of_lil
+    ├── aka_sibling_of_jane
+    ├── aka_uncle_of_mary
     ├── child_of_doe
-    └── lil_john_doe
-        ├── a_file_in_lil_john_doe
-        ├── child_of_john_doe
-        ├── child_of_sibling_of_jane_doe
-        ├── cousin_of_mary_jane_doe
+    └── lil
+        ├── aka_lil_john_doe
+        ├── child_of_john
+        ├── child_of_sibling_of_jane
+        ├── cousin_of_mary
         └── grandchild_of_doe
 
     2 directories, 10 files
 
-* I `change directories`_ from ``mary_jane_doe`` to ``lil_john_doe``
+* I `change directories`_ from ``mary`` to ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd ../../john_doe/lil_john_doe
+    cd ../../john/lil
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../doe/john_doe/lil_john_doe
+    .../doe/john/lil
 
-  I am in ``lil_john_doe``
+  I am in ``lil``
 
-* I look at what is in ``mary_jane_doe`` from inside ``lil_john_doe``
+* I look at what is in ``mary`` from inside ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    ls -a ../../jane_doe/mary_jane_doe
+    ls -a ../../jane/mary
 
   the terminal_ shows
 
@@ -2940,58 +2954,58 @@ how to use tree with directory relationships
 
     .
     ..
-    a_file_in_mary_jane_doe
-    .a_hidden_file_in_mary_jane_doe
-    .a_hidden_folder_in_mary_jane_doe
-    child_of_jane_doe
-    child_of_sibling_of_john_doe
-    cousin_of_lil_john_doe
+    .a_hidden_file_in_mary
+    .a_hidden_folder_in_mary
+    aka_mary_jane_doe
+    child_of_jane
+    child_of_sibling_of_john
+    cousin_of_lil
     grandchild_of_doe
 
-* I use tree_ to show what is in ``mary_jane_doe``
+* I use tree_ to show what is in ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    tree ../../jane_doe/mary_jane_doe
+    tree ../../jane/mary
 
   the terminal_ shows
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ../../jane_doe/mary_jane_doe
-    ├── a_file_in_mary_jane_doe
-    ├── child_of_jane_doe
-    ├── child_of_sibling_of_john_doe
-    ├── cousin_of_lil_john_doe
+    ../../jane/mary
+    ├── aka_mary_jane_doe
+    ├── child_of_jane
+    ├── child_of_sibling_of_john
+    ├── cousin_of_lil
     └── grandchild_of_doe
 
     1 directory, 5 files
 
-* I use tree_ to show what is in ``jane_doe``
+* I use tree_ to show what is in ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    tree ../../jane_doe
+    tree ../../jane
 
   the terminal_ shows
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    ../../jane_doe
-    ├── a_file_in_jane_doe
-    ├── aka_aunt_of_lil_john_doe
-    ├── aka_parent_of_mary_jane_doe
-    ├── aka_sibling_of_john_doe
+    ../../jane
+    ├── aka_aunt_of_lil
+    ├── aka_jane_doe
+    ├── aka_parent_of_mary
+    ├── aka_sibling_of_john
     ├── child_of_doe
-    └── mary_jane_doe
-        ├── a_file_in_mary_jane_doe
-        ├── child_of_jane_doe
-        ├── child_of_sibling_of_john_doe
-        ├── cousin_of_lil_john_doe
+    └── mary
+        ├── aka_mary_jane_doe
+        ├── child_of_jane
+        ├── child_of_sibling_of_john
+        ├── cousin_of_lil
         └── grandchild_of_doe
 
     2 directories, 10 files
@@ -3022,14 +3036,14 @@ how to use tree with directory relationships
 
     doe
     ├── .a_hidden_folder_in_doe
-    ├── jane_doe
-    │   ├── .a_hidden_folder_in_jane_doe
-    │   └── mary_jane_doe
-    │       └── .a_hidden_folder_in_mary_jane_doe
-    └── john_doe
-        ├── .a_hidden_folder_in_john_doe
-        └── lil_john_doe
-            └── .a_hidden_folder_in_lil_john_doe
+    ├── jane
+    │   ├── .a_hidden_folder_in_jane
+    │   └── mary
+    │       └── .a_hidden_folder_in_mary
+    └── john
+        ├── .a_hidden_folder_in_john
+        └── lil
+            └── .a_hidden_folder_in_lil
 
     10 directories
 
