@@ -25,7 +25,7 @@ The tree below is what I have at the end of the chapter, after I build each part
 .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
   :language: shell
 
-These are all the commands I use in this chapter
+I use these commands in the chapter
 
 * mkdir_ to `make directories`_
 * cd_ to `change directories`_
@@ -41,7 +41,7 @@ These are all the commands I use in this chapter
 questions about directory relationships
 *********************************************************************************
 
-Here are questions that are answered in this chapter
+There are answers to these questions in this chapter
 
 * :ref:`what is a folder (directory)?<what is a folder?>`
 * :ref:`what is a file?<what is a file?>`
@@ -80,9 +80,9 @@ A file_ is a collection or container for text, like paper we write or print on a
 * ``.ps1`` for a `PowerShell file`_
 * ``.doc`` for a `Word Document`_
 * ``.xls`` for an `Excel Spreadsheet`_
-* ``.html`` for an `HyperText Markup Language File`_
-* ``.json`` for a `JavaScript Object Notation File`_
-* ``.md`` for a `Markdown File`_
+* ``.html`` for a `HyperText Markup Language file`_
+* ``.json`` for a `JavaScript Object Notation file`_
+* ``.md`` for a `Markdown file`_
 
 ----
 
@@ -90,7 +90,7 @@ A file_ is a collection or container for text, like paper we write or print on a
 note
 *********************************************************************************
 
-* The code I type is highlighted and comes after something like ``I type this in a terminal``
+* The code I type is highlighted and comes after something like ``I type this in the terminal``
 * The output (result) of the code I type after I press :kbd:`enter/return` on the keyboard comes after ``the terminal shows ...``
 * if you get a different result from what I promise then one of two things happened
 
@@ -129,7 +129,9 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
 
       tree: command not found
 
-* If it is installed and there is something in the directory_, the terminal_ shows the relationships.
+  see :ref:`how to install tree` to install tree_
+
+* If it is installed and there is something in the directory_, the terminal_ shows how they are related.
 
 * If it is installed and there is nothing in the directory_, the terminal_ shows
 
@@ -142,6 +144,8 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
 The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to go from one folder_ to another, because it shows the way I can go.
 
 If I know where I am it is easier to go where I want.
+
+:ref:`Click here to see what directory I am in<how to see what directory I am in>`
 
 ----
 
@@ -184,7 +188,7 @@ type this in the terminal_ to install tree_
 
   sudo apt install tree
 
-Continue with :ref:`how to see what directory I am in`
+:ref:`Click here to see what directory I am in<how to see what directory I am in>`
 
 ----
 
@@ -207,7 +211,7 @@ Use the commands below for the ones I have in the chapter
 * dir_ for ``ls --all/-a``
 * `Remove-Item`_ for rm_
 
-when you call pwd_ or tree_ it shows ``\`` as the separator, not ``/``. For example
+when you type pwd_ or tree_ the terminal_ shows ``\`` between folder_ names, not ``/``. For example
 
 .. code-block:: PowerShell
 
@@ -221,7 +225,7 @@ not
 
 Your tree will also look different because of different ways of drawing and sorting.
 
-Continue with :ref:`how to see what directory I am in`
+:ref:`Click here to see what directory I am in<how to see what directory I am in>`
 
 ----
 
@@ -238,14 +242,14 @@ how to install tree on Mac OS
   * :ref:`click here for how to install tree on Linux/Windows SubSystem for Linux<how to install tree on Linux/Windows Subsystem for Linux>` or
   * :ref:`click here for how to install tree on Windows without Windows SubSystem Linux<how to install tree on Windows without Windows Subsystem for Linux>`
 
-type this in the terminal_
+type this in the terminal_ to install tree_
 
 .. code-block:: python
   :emphasize-lines: 1
 
   brew install tree
 
-Continue with :ref:`how to see what directory I am in`
+:ref:`Click here to see what directory I am in<how to see what directory I am in>`
 
 ----
 
@@ -288,10 +292,8 @@ if I am in the ``pumping_python`` folder_
 
 .. NOTE::
 
-  - If you see ``pumping_python`` when you type ``pwd``, go to :ref:`the part where I make 'doe'<the part where I make doe>`
+  - If you see ``pumping_python`` when you type ``pwd``, :ref:`click here to make 'doe'<the part where I make doe>`
   - If you see a different name, go to the next step - :ref:`how to change directory`
-
-Continue with :ref:`how to change directory`
 
 ----
 
@@ -345,7 +347,7 @@ how to make a directory
 
     .../pumping_python
 
-  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open it. Here is how to do that with `Visual Studio Code`_
+  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open it. Here is how to do that with `Visual Studio Code`_ from the terminal_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -423,7 +425,7 @@ It is easier to go where I want, if I know where I am.
 how to see what is in a directory
 ********************************************************************************************
 
-* I can use ls_ to show what is in a directory_ and see information about the files_ in it
+* I can use ls_ to see what is in a directory_ and see more information about the files_ and folders_ in it
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -516,6 +518,7 @@ how to see what is in a directory
   - ``..`` is for the parent of the directory_ I am in
   - ``..`` is ``pumping_python`` when I am in ``doe``
   - ``pumping_python`` is the parent of ``doe``
+  - I can `change directory`_ from the directory_ I am in to its parent with ``cd ..``
 
 :ref:`I know how to see what is in a directory<how to see what is in a directory>`
 
@@ -564,7 +567,7 @@ how to look at directory relationships
 
       tree /F
 
-* I try to `change directory`_ to ``jane``, a child of ``doe``
+* I try to `change directory`_ to ``jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -677,6 +680,7 @@ how to look at directory relationships
 
   - I am back in ``doe``
   - ``..`` is for the parent of the directory_ I am in
+  - I can `change directory`_ from the directory_ I am in to its parent with ``cd ..``
   - ``..`` is ``doe`` when I am in ``jane``
 
 * I try to `change directory`_ to ``john``
@@ -784,7 +788,9 @@ how to look at directory relationships
 
   I am back in ``doe``
 
+  - I am back in ``doe``
   - ``..`` is for the parent of the directory_ I am in
+  - I can `change directory`_ from the directory_ I am in to its parent with ``cd ..``
   - ``..`` is ``doe`` when I am in ``john``
 
 * I `change directory`_ to a hidden folder_ in ``doe``
@@ -929,6 +935,7 @@ how to look at directory relationships
 
   - I am back in ``doe``
   - ``..`` is for the parent of the directory_ I am in
+  - I can `change directory`_ from the directory_ I am in to its parent with ``cd ..``
   - ``..`` is ``doe`` when I am in ``.a_hidden_folder_in_doe``
 
 ----
@@ -987,7 +994,7 @@ how to look at directory relationships
 
   ``jane`` has no children
 
-* I `change directory`_ to a child of ``jane``
+* I `change directory`_ to ``mary``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1240,7 +1247,7 @@ how to look at directory relationships
 
   ``john`` has no children, yet
 
-* I `change directory`_ to a child of ``john``
+* I `change directory`_ to ``lil``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1573,7 +1580,7 @@ I can use the touch_ program to make empty files_ in a folder_
 
       dir /ah
 
-    the terminal_ does not show ``.`` and ``..`` and always shows hidden folder_ and files_
+    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_
 
 * I `change directory`_ to ``jane``
 
@@ -1705,7 +1712,7 @@ I can use the touch_ program to make empty files_ in a folder_
 
   I am back in ``doe``
 
-* I use tree_ to show the folders_ related to ``doe``
+* I use tree_ to show the folders_ and files_ related to ``doe``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1747,15 +1754,15 @@ I can use the touch_ program to make empty files_ in a folder_
     ├── .a_hidden_file_in_doe
     ├── .a_hidden_folder_in_doe
     ├── jane
-    │   ├── .a_hidden_file_in_doe
+    │   ├── .a_hidden_file_in_jane
     │   ├── .a_hidden_folder_in_jane
     │   ├── aka_jane_doe
     │   └── mary
     └── john
-      ├── .a_hidden_file_in_john
-      ├── .a_hidden_folder_in_john
-      ├── aka_john_doe
-      └── lil
+        ├── .a_hidden_file_in_john
+        ├── .a_hidden_folder_in_john
+        ├── aka_john_doe
+        └── lil
 
     8 directories, 6 files
 
@@ -1855,6 +1862,8 @@ how to use directory relationships
   - ``..`` from ``mary`` is ``jane``
   - ``..`` from ``jane`` is ``doe``
 
+----
+
 * I try to `change directory`_  from ``doe`` to ``lil`` in 1 step
 
   .. code-block:: python
@@ -1936,7 +1945,7 @@ how to use directory relationships
 
     .../pumping_python/doe
 
-  I am back in ``doe``
+  🎶 that will bring us back to .../``doe`` a deer, a female deer...🎶
 
   - ``..`` is for the parent of a directory_
   - ``../..`` is for the parent of the parent
@@ -1945,7 +1954,7 @@ how to use directory relationships
 
 .. NOTE::
 
-  * I can only go right to folders_ that are where I am (children)
+  * I can only go right to folders_ that are where I am (parent to child)
   * I can use the path/address of a folder_ to go to it
   * It is easier to go where I want, if I know where I am
 
@@ -2165,7 +2174,7 @@ how to use touch with directory relationships
     ├── .a_hidden_file_in_doe
     ├── .a_hidden_folder_in_doe
     ├── jane
-    │   ├── .a_hidden_file_in_doe
+    │   ├── .a_hidden_file_in_jane
     │   ├── .a_hidden_folder_in_jane
     │   ├── aka_jane_doe
     │   └── mary
@@ -2544,7 +2553,7 @@ mv_ means move, it takes two arguments
 
     touch ../../john/aka_aunt_of_mary
 
-  I made a mistake - ``john`` is not the aunt of ``mary`` he is the uncle
+  I made a mistake - ``john`` is not the aunt of ``mary``, he is the uncle
 
 * I `change directory`_ to ``john``
 
@@ -2651,7 +2660,7 @@ mv_ means move, it takes two arguments
 
     touch ../../jane/aka_uncle_of_lil
 
-  I made another mistake - ``jane`` is not the uncle of ``mary`` she is the aunt
+  I made another mistake - ``jane`` is not the uncle of ``mary``, she is the aunt
 
 * I `change directory`_ to ``jane``
 
@@ -2767,6 +2776,8 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
   .. code-block:: python
 
+    .
+    ..
     a_file_in_doe
     .a_hidden_file_in_doe
     .a_hidden_folder_in_doe
@@ -3058,6 +3069,60 @@ how to use tree with directory relationships
 
   .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
     :language: shell
+
+* I show the path for each file_ and folder_ in ``doe``
+
+  .. code-block:: python
+
+    tree -af doe
+
+  the terminal_ shows
+
+
+  .. code-block:: shell
+
+    doe
+    ├── doe/a_file_in_doe
+    ├── doe/.a_hidden_file_in_doe
+    ├── doe/.a_hidden_folder_in_doe
+    ├── doe/aka_grandparent_of_lil
+    ├── doe/aka_grandparent_of_mary
+    ├── doe/aka_parent_of_jane
+    ├── doe/aka_parent_of_john
+    ├── doe/jane
+    │   ├── doe/jane/.a_hidden_file_in_jane
+    │   ├── doe/jane/.a_hidden_folder_in_jane
+    │   ├── doe/jane/aka_aunt_of_lil
+    │   ├── doe/jane/aka_jane_doe
+    │   ├── doe/jane/aka_parent_of_mary
+    │   ├── doe/jane/aka_sibling_of_john
+    │   ├── doe/jane/child_of_doe
+    │   └── doe/jane/mary
+    │       ├── doe/jane/mary/.a_hidden_file_in_mary
+    │       ├── doe/jane/mary/.a_hidden_folder_in_mary
+    │       ├── doe/jane/mary/aka_mary_jane_Doe
+    │       ├── doe/jane/mary/child_Of_jane
+    │       ├── doe/jane/mary/child_of_sibling_of_john
+    │       ├── doe/jane/mary/cousin_of_lil
+    │       └── doe/jane/mary/grandchild_of_doe
+    └── doe/john
+        ├── doe/john/.a_hidden_file_in_john
+        ├── doe/john/.a_hidden_folder_in_john
+        ├── doe/john/aka_john_doe
+        ├── doe/john/aka_parent_of_lil
+        ├── doe/john/aka_sibling_of_jane
+        ├── doe/john/aka_uncle_of_mary
+        ├── doe/john/child_of_doe
+        └── doe/john/lil
+            ├── doe/john/lil/.a_hidden_file_in_lil
+            ├── doe/john/lil/.a_hidden_folder_in_lil
+            ├── doe/john/lil/aka_lil_john_doe
+            ├── doe/john/lil/child_of_john
+            ├── doe/john/lil/child_of_sibling_of_jane
+            ├── doe/john/lil/cousin_of_mary
+            └── doe/john/lil/grandchild_of_doe
+
+    10 directories, 30 files
 
 I can do things with files_ and folders_ in 1 step as long as
 

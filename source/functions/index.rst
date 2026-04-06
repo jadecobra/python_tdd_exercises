@@ -65,7 +65,7 @@ These are the tests I have by the end of the chapter
 questions about functions
 *********************************************************************************
 
-Here are questions that are answered in this chapter
+There are answers to these questions in this chapter
 
 * :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`

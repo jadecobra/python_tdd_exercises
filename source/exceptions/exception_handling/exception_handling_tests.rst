@@ -38,7 +38,7 @@ These are the tests I have by the end of the chapter
 questions about testing Exceptions
 *********************************************************************************
 
-Here are questions that are answered in this chapter
+There are answers to these questions in this chapter
 
 * :ref:`how can I make sure an Exception is raised?<how to test that an Exception is raised>`
 * :ref:`what causes ModuleNotFoundError?<test_catching_module_not_found_error_in_tests>`

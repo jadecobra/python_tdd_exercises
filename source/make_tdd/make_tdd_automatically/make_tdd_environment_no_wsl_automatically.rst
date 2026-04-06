@@ -28,7 +28,7 @@ Here is the program_ I have by the end of the chapter to :ref:`automatically mak
 questions about making a Python Test Driven Development Environment automatically on Windows without Windows Subsystem for Linux
 *************************************************************************************************************************************
 
-Here are questions that are answered in this chapter
+There are answers to these questions in this chapter
 
 * :ref:`how can I make a PowerShell script?<how to make a PowerShell script>`
 * :ref:`how can I run a PowerShell script?<how to run a PowerShell script>`

@@ -42,7 +42,7 @@ By the end of the chapter you will know these commands better
 questions about making a Python Test Driven Development Environment on Windows without Windows Subsystem for Linux
 *************************************************************************************************************************
 
-Here are questions that are answered in this chapter
+There are answers to these questions in this chapter
 
 * :ref:`what is a Test Driven Development Environment?`
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually on Windows without Windows Subsystem for Linux>`

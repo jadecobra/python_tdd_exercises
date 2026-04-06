@@ -42,7 +42,7 @@ These are the tests I have by the end of the chapter
 questions about None
 *********************************************************************************
 
-Here are questions that are answered in this chapter
+There are answers to these questions in this chapter
 
 * :ref:`what is None?<test_what_is_none>`
 * :ref:`Is None a boolean?<test_is_none_a_boolean>`

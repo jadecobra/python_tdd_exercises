@@ -7,7 +7,7 @@ doe
 ├── aka_parent_of_jane
 ├── aka_parent_of_john
 ├── jane
-│   ├── .a_hidden_file_in_doe
+│   ├── .a_hidden_file_in_jane
 │   ├── .a_hidden_folder_in_jane
 │   ├── aka_aunt_of_lil
 │   ├── aka_jane_doe
@@ -17,8 +17,8 @@ doe
 │   └── mary
 │       ├── .a_hidden_file_in_mary
 │       ├── .a_hidden_folder_in_mary
-│       ├── aka_mary_jane_doe
-│       ├── child_of_jane
+│       ├── aka_mary_jane_Doe
+│       ├── child_Of_jane
 │       ├── child_of_sibling_of_john
 │       ├── cousin_of_lil
 │       └── grandchild_of_doe
