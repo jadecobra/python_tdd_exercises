@@ -20,12 +20,7 @@ This exercise shows directories_ (folders_) and files_ on my computer and how th
 preview
 *************************************************************************************
 
-The tree below is what I have at the end of the chapter, after I build each part step by step to see how files_ and folders_ are related.
-
-.. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
-  :language: shell
-
-I use these commands in the chapter
+I use these commands in the chapter to build each part of the tree below step by step to see how files_ and folders_ are related.
 
 * mkdir_ to `make directories`_
 * cd_ to `change directories`_
@@ -34,6 +29,10 @@ I use these commands in the chapter
 * touch_ to make empty files_
 * mv_ to rename or move files_
 * rm_ to remove directories_
+
+.. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
+  :language: shell
+
 
 ----
 
@@ -97,7 +96,7 @@ note
   - I made a mistake or
   - You made a mistake
 
-  To make sure it is my mistake check that you typed the same thing I typed. If you still have a different result after that, email jacobitegboje@gmail.com or text or call 1-469-751-7595
+  To make sure it is my mistake check that you typed the same thing I typed. If you still have a different result after you check, email jacobitegboje@gmail.com or text or call 1-469-751-7595
 
 * commands are given to the computer with space between arguments or options, for example
 
@@ -109,6 +108,14 @@ note
     command --option_1 --option_2 ... --option_N
     command argument --option
     command --option argument
+
+  options for commands sometimes have a long and short option, for example ``--long_option`` could have ``-l`` as the short option, this allows putting many short options together like this
+
+  .. code-block:: python
+
+    command -abcd
+
+  where ``a``, ``b``, ``c`` and ``d`` are separate options
 
 ----
 
@@ -257,7 +264,7 @@ type this in the terminal_ to install tree_
 how to see what directory I am in
 ********************************************************************************************
 
-I start by checking where I am in the terminal_ because It is easier to go where I want, if I know where I am. I can do this with the pwd_ program
+I start with a check of where I am in the terminal_ because It is easier to go where I want, if I know where I am. I can do this with the pwd_ program
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -347,7 +354,7 @@ how to make a directory
 
     .../pumping_python
 
-  .. TIP:: to make sure I can see the ``pumping_python`` folder_ in my `Integrated Development Environment (IDE)`_ I have to open it. Here is how to do that with `Visual Studio Code`_ from the terminal_
+  .. TIP:: I have to open the ``pumping_python`` folder_ to make sure I can see it in my `Integrated Development Environment (IDE)`_. Here is how to do that with `Visual Studio Code`_ from the terminal_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -683,6 +690,8 @@ how to look at directory relationships
   - I can `change directory`_ from the directory_ I am in to its parent with ``cd ..``
   - ``..`` is ``doe`` when I am in ``jane``
 
+----
+
 * I try to `change directory`_ to ``john``
 
   .. code-block:: python
@@ -785,8 +794,6 @@ how to look at directory relationships
   .. code-block:: python
 
     .../pumping_python/doe
-
-  I am back in ``doe``
 
   - I am back in ``doe``
   - ``..`` is for the parent of the directory_ I am in
@@ -1152,7 +1159,7 @@ how to look at directory relationships
 
     2 directories, 0 files
 
-* I use ``tree -a``
+* I use tree_ with the ``-a`` option
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1405,7 +1412,7 @@ how to look at directory relationships
 
     2 directories, 0 files
 
-* I use ``tree -a``
+* I use tree_ with the ``-a`` option
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1954,7 +1961,8 @@ how to use directory relationships
 
 .. NOTE::
 
-  * I can only go right to folders_ that are where I am (parent to child)
+  * I can go right to folders_ that are where I am
+  * I can go right from parent to child
   * I can use the path/address of a folder_ to go to it
   * It is easier to go where I want, if I know where I am
 
@@ -2447,7 +2455,7 @@ mv_ means move, it takes two arguments
   - ``jane`` is a child of ``doe``
   - ``mary`` is a child of ``jane``
 
-  I made a mistake again ``child_of_sibling_of_jane`` should be ``child_of_sibling_of_john``
+  I made a mistake again - ``child_of_sibling_of_jane`` should be ``child_of_sibling_of_john``
 
 * I `change directory`_ to ``mary``
 
@@ -2477,7 +2485,7 @@ mv_ means move, it takes two arguments
       ../jane/mary/\
       child_of_sibling_of_john
 
-    ``\`` is a symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
+  ``\`` is cd  symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
 
 * I use cd_ to go back to the grandparent of ``lil``
 
@@ -2553,7 +2561,7 @@ mv_ means move, it takes two arguments
 
     touch ../../john/aka_aunt_of_mary
 
-  I made a mistake - ``john`` is not the aunt of ``mary``, he is the uncle
+  I made a mistake - ``aka_aunt_of_mary`` should be ``aka_uncle_of_mary``
 
 * I `change directory`_ to ``john``
 
@@ -2660,7 +2668,7 @@ mv_ means move, it takes two arguments
 
     touch ../../jane/aka_uncle_of_lil
 
-  I made another mistake - ``jane`` is not the uncle of ``mary``, she is the aunt
+  I made another mistake - ``aka_uncle_of_lil`` should be ``aka_aunt_of_lil``
 
 * I `change directory`_ to ``jane``
 
@@ -3070,7 +3078,7 @@ how to use tree with directory relationships
   .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
     :language: shell
 
-* I show the path for each file_ and folder_ in ``doe``
+* I show the path for each file_ and folder_ in ``doe`` with the ``-a`` and ``-f`` options
 
   .. code-block:: python
 
