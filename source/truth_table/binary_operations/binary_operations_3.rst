@@ -240,7 +240,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` to :ref:`test_exclusive_disjunction`, in ``test_binary.py``
+* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>` to :ref:`test_exclusive_disjunction`, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 95

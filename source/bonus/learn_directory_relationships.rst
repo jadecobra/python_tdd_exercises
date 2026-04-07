@@ -90,13 +90,13 @@ note
 *********************************************************************************
 
 * The code I type is highlighted and comes after something like ``I type this in the terminal``
-* The output (result) of the code I type after I press :kbd:`enter/return` on the keyboard comes after ``the terminal shows ...``
+* The output (result) of the code I type after I press :kbd:`enter/return` on the keyboard usually comes after ``the terminal shows ...``
 * if you get a different result from what I promise then one of two things happened
 
   - I made a mistake or
   - You made a mistake
 
-  To make sure it is my mistake check that you typed the same thing I typed. If you still have a different result after you check, email jacobitegboje@gmail.com or text or call 1-469-751-7595
+  To make sure it is my mistake check that you typed the same thing I typed. If you still have a different result after you check, email jacobitegboje@gmail.com or text 1-469-751-7595 with the error
 
 * commands are given to the computer with space between arguments or options, for example
 
@@ -109,7 +109,7 @@ note
     command argument --option
     command --option argument
 
-  options for commands sometimes have a long and short option, for example ``--long_option`` could have ``-l`` as the short option, this allows putting many short options together like this
+  options for commands sometimes have a long and short form, for example ``--long_option`` could have ``-l`` as the short option, this allows putting many short options together like this
 
   .. code-block:: python
 
@@ -220,7 +220,7 @@ Use the commands below for the ones I have in the chapter
 
 when you type pwd_ or tree_ the terminal_ shows ``\`` between folder_ names, not ``/``. For example
 
-.. code-block:: PowerShell
+.. code-block:: python
 
   ...\pumping_python\doe
 
@@ -277,21 +277,36 @@ the terminal_ shows
 
   .../pumping_python
 
+on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+.. code-block:: python
+
+  Path
+  ----
+  C:\...\pumping_python
+
 if I am in the ``pumping_python`` folder_
 
 * pwd_ shows the path/address of the folder_ I am in
 * pwd_ means ``print working directory``, it prints the path/address of the directory_ I am in, to the terminal_
 * each ``/`` shows a parent-child relationship
-* the first ``/`` is for ``root`` which is the first folder_ on the computer
-* the first ``/`` is the highest level
+* the first ``/`` or ``C:\`` is for ``root`` which is the first folder_ on the computer
+* the first ``/`` or ``C:\`` is the highest level
 
-  .. ATTENTION::
+  .. ADMONITION:: do you want to see every file_ and folder_ on your computer as a tree?
 
-    do you want to see every file_ and folder_ on your computer as a tree? Type this in the terminal_
+    Type this in the terminal_
 
     .. code-block:: python
 
       tree /
+
+    on Windows_ without `Windows Subsystem for Linux`_ type
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      tree C:/
 
     it runs for a while because there are many files_ and folders_.
 
@@ -323,6 +338,14 @@ the terminal_ shows
 
   cd: no such file or directory: pumping_python
 
+on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+.. code-block:: python
+
+  Set-Location: Cannot find path
+                'C:\...\pumping_python'
+                because it does not exist
+
 this means the folder_ I want to go to is not in the folder_ where I am.
 
 ----
@@ -338,8 +361,18 @@ how to make a directory
 
     mkdir pumping_python
 
-  - the terminal_ goes back to the command line
   - ``mkdir`` means ``make directory``
+  - the terminal_ goes back to the command line
+  - on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+    .. code-block:: python
+
+          Directory: C:\...
+
+      Mode            LastWriteTime         Length  Name
+      ----            -------------         ------  ----
+      d-----    MM/DD/YYYY HH:MM A/PM               pumping_python
+
 
 * I use cd_ to `change directory`_ again
 
@@ -361,7 +394,9 @@ how to make a directory
 
       code .
 
-    a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
+    a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_. I can close the window before the new window to work only in the new window.
+
+    I open another terminal_ to continue
 
 .. _the part where I make doe:
 

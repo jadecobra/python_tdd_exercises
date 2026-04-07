@@ -11,7 +11,7 @@ Windows without Windows Subsystem Linux requirements
 
 * `download and install Python`_
 
-* `download and install git`_, git_ is a program_ for keeping track of changes I make in a project
+* `download and install git`_, a program_ for keeping track of changes I make in a project
 
 * open PowerShell_ then copy and paste the text below to install the `uv Python package manager`_
 
