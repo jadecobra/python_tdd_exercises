@@ -6,6 +6,7 @@
 .. _Word Document: https://grokipedia.com/page/Microsoft_Word
 .. _make directories: mkdir_
 .. _change directories: cd_
+.. _Get-ChildItem: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.6
 
 
 #################################################################################
@@ -214,8 +215,9 @@ tree_ comes with Windows_, no need to install anything.
 Use the commands below for the ones I have in the chapter
 
 * `New-Item`_ for touch_
-* ``tree /F`` for tree_
-* dir_ for ``ls --all/-a``
+* ``tree /F`` for tree_ to show files_ and folders_
+* ``tree`` for ``tree -d`` to show only directories_
+* ``dir`` or `Get-ChildItem`_ or ``ls`` for ``ls --all/-a``
 * `Remove-Item`_ for rm_
 
 when you type pwd_ or tree_ the terminal_ shows ``\`` between folder_ names, not ``/``. For example
@@ -338,13 +340,13 @@ the terminal_ shows
 
   cd: no such file or directory: pumping_python
 
-on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+.. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
 
-.. code-block:: python
+  .. code-block:: python
 
-  Set-Location: Cannot find path
-                'C:\...\pumping_python'
-                because it does not exist
+    Set-Location: Cannot find path
+                  'C:\...\pumping_python'
+                  because it does not exist
 
 this means the folder_ I want to go to is not in the folder_ where I am.
 
@@ -363,7 +365,8 @@ how to make a directory
 
   - ``mkdir`` means ``make directory``
   - the terminal_ goes back to the command line
-  - on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
 
     .. code-block:: python
 
@@ -374,7 +377,7 @@ how to make a directory
       d-----    MM/DD/YYYY HH:MM A/PM               pumping_python
 
 
-* I use cd_ to `change directory`_ again
+* I use cd_ to `change directory`_ to ``pumping_python``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -482,6 +485,15 @@ how to see what is in a directory
 
   this directory_ is empty
 
+  .. ADMONITION::
+
+    on Windows_ without `Windows Subsystem for Linux`_ use ``dir`` or ``ls``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      dir
+
 * ls_ has a few options. I try ls_ again with one of them
 
   .. code-block:: python
@@ -497,30 +509,27 @@ how to see what is in a directory
 
   .. attention::
 
-    on MacOS_ you may get this error
+    * on MacOS_ the terminal_ shows
 
-    .. code-block:: python
+      .. code-block:: none
 
-      ls: unrecognized option '--all'
+        ls: unrecognized option `--all'
 
-    ``--all`` is the long form of the option, there is a short form, use ``-a`` instead
+      ``--all`` is the long form of the option, use ``-a`` which is the short form of the option
 
-    .. code-block:: python
-      :emphasize-lines: 1
+      .. code-block:: python
+        :emphasize-lines: 1
 
-      ls -a
+        ls -a
 
-  .. NOTE::
+    .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ use ``dir`` or ``ls`` for ls --all`` or ``ls -a``
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+      .. code-block:: PowerShell
+        :emphasize-lines: 1
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+        dir
 
-      dir /ah
-
-    the terminal_ does not show ``.`` and ``..`` on Windows_ without `Windows Subsystem for Linux`_
-
+      it does not show the ``.`` or ``..``
 
   - ``--all`` or ``-a`` tells ls_ to show all the things in the directory_ even those that start with ``.`` ( they are hidden by default)
   - I can hide a file_ or folder_ if I put ``.`` before its name, for example ``.hidden``
@@ -600,14 +609,14 @@ how to look at directory relationships
 
   there is nothing in ``doe``, it is empty
 
-  .. NOTE::
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+    .. code-block:: python
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      tree /F
+      Folder PATH listing
+      Volume serial number is ABCD:EFGH
+      C:.
+      No subfolders exist
 
 * I try to `change directory`_ to ``jane``
 
@@ -646,15 +655,6 @@ how to look at directory relationships
 
     jane
 
-  .. NOTE::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      dir /ah
-
 * I use tree_ to show what is in ``doe``
 
   .. code-block:: python
@@ -671,6 +671,14 @@ how to look at directory relationships
     └── jane
 
     2 directories, 0 files
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 1-2
+
+        C:.
+        └── jane
 
   - ``jane`` is a child of ``doe``
   - ``.`` is the working directory_, which is ``doe`` in this case
@@ -876,6 +884,18 @@ how to look at directory relationships
   - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or folder_ if I put ``.`` before its name
 
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+    .. code-block:: python
+
+      Mode            LastWriteTime         Length  Name
+      ----            -------------         ------  ----
+      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_doe
+      d-----    MM/DD/YYYY HH:MM A/PM               jane
+      d-----    MM/DD/YYYY HH:MM A/PM               john
+
+    ``.a_hidden_folder_in_doe`` is not hidden on Windows_ without `Windows Subsystem for Linux`_
+
 * I use ls_ with the ``-a`` option to see everything that is in ``doe`` even things that are hidden
 
   .. code-block:: python
@@ -908,6 +928,16 @@ how to look at directory relationships
 
   - ``.a_hidden_folder_in_doe`` is hidden
   - I can hide a file_ or folder_ if I put ``.`` before its name
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+    .. code-block:: shell
+      :emphasize-lines: 2
+
+      C:.
+      ├── .a_hidden_folder_in_doe
+      ├── jane
+      └── john
 
 * I can also use tree_ with the ``-a`` option to show things that are hidden
 
@@ -1194,6 +1224,15 @@ how to look at directory relationships
 
     2 directories, 0 files
 
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+    .. code-block:: shell
+      :emphasize-lines: 2
+
+      C:.
+      ├── .a_hidden_folder_in_jane
+      └── mary
+
 * I use tree_ with the ``-a`` option
 
   .. code-block:: python
@@ -1211,6 +1250,7 @@ how to look at directory relationships
     └── mary
 
     3 directories, 0 files
+
 
   - ``.`` is ``jane`` when I am in ``jane``
   - the line in the tree that goes from ``.`` to ``mary`` shows I can go from ``jane`` right to ``mary``
@@ -1447,6 +1487,15 @@ how to look at directory relationships
 
     2 directories, 0 files
 
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+    .. code-block:: shell
+      :emphasize-lines: 2
+
+      C:.
+      ├── .a_hidden_folder_in_john
+      └── lil
+
 * I use tree_ with the ``-a`` option
 
   .. code-block:: python
@@ -1504,14 +1553,19 @@ how to look at directory relationships
 
     5 directories, 0 files
 
-  .. NOTE::
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` instead of ``tree``
+    .. code-block:: shell
+      :emphasize-lines: 2, 4, 7
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      tree /F
+      C:.
+      ├── .a_hidden_folder_in_doe
+      ├── jane
+      │   ├── .a_hidden_folder_in_jane
+      │   └── mary
+      └── john
+          ├── .a_hidden_folder_in_john
+          └── lil
 
 * I use the ``-a`` option with tree_
 
@@ -1565,9 +1619,9 @@ I can use the touch_ program to make empty files_ in a folder_
 
   the terminal_ goes back to the command line
 
-  .. NOTE::
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
 
-    on Windows_ without `Windows Subsystem for Linux`_ use `New-Item`_ instead of ``touch``
+    use `New-Item`_ in place of ``touch``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
@@ -1613,16 +1667,19 @@ I can use the touch_ program to make empty files_ in a folder_
     jane
     john
 
-  .. NOTE::
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``dir /ah`` instead of ``ls -a``
+    .. code-block:: python
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      Mode            LastWriteTime         Length  Name
+      ----            -------------         ------  ----
+      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_doe
+      d-----    MM/DD/YYYY HH:MM A/PM               jane
+      d-----    MM/DD/YYYY HH:MM A/PM               john
+      -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_doe
+      -a----    MM/DD/YYYY HH:MM A/PM            0  a_file_in_doe
 
-      dir /ah
-
-    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_
+    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
 
 * I `change directory`_ to ``jane``
 
@@ -1645,6 +1702,15 @@ I can use the touch_ program to make empty files_ in a folder_
     touch aka_jane_doe
 
   the terminal_ goes back to the command line
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use `New-Item`_ in place of ``touch``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      New-Item aka_jane_doe
 
 * I use touch_ to make an empty hidden file_ in ``jane``
 
@@ -1672,6 +1738,19 @@ I can use the touch_ program to make empty files_ in a folder_
     .a_hidden_folder_in_jane
     aka_jane_doe
     mary
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+    .. code-block:: python
+
+      Mode            LastWriteTime         Length  Name
+      ----            -------------         ------  ----
+      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_jane
+      d-----    MM/DD/YYYY HH:MM A/PM               mary
+      -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_jane
+      -a----    MM/DD/YYYY HH:MM A/PM            0  aka_jane_doe
+
+    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
 
 * I `change directory`_ to the parent of ``jane``
 
@@ -1712,6 +1791,15 @@ I can use the touch_ program to make empty files_ in a folder_
 
   the terminal_ goes back to the command line
 
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use `New-Item`_ in place of ``touch``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      New-Item aka_john_doe
+
 * I use touch_ to make an empty hidden file_ in ``john``
 
   .. code-block:: python
@@ -1739,6 +1827,20 @@ I can use the touch_ program to make empty files_ in a folder_
     aka_john_doe
     lil
 
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+
+    .. code-block:: python
+
+      Mode            LastWriteTime         Length  Name
+      ----            -------------         ------  ----
+      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_john
+      d-----    MM/DD/YYYY HH:MM A/PM               lil
+      -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_john
+      -a----    MM/DD/YYYY HH:MM A/PM            0  aka_john_doe
+
+    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
+
 * I `change directory`_ to the parent of ``john``
 
   .. code-block:: python
@@ -1761,6 +1863,8 @@ I can use the touch_ program to make empty files_ in a folder_
 
     tree
 
+  .. TIP:: Your terminal_ may use colors to show the difference between directories_ and files_
+
   the terminal_ shows
 
   .. code-block:: shell
@@ -1777,7 +1881,12 @@ I can use the touch_ program to make empty files_ in a folder_
 
     5 directories, 3 files
 
-  .. TIP:: Your terminal_ may use colors to show the difference between directories_ and files_
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ use ``tree /F`` in place of ``tree`` to see the files_ in the tree
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      tree /F
 
 * I use tree_ with the ``-a`` option
 
@@ -1830,6 +1939,10 @@ how to use directory relationships
     cd: no such file or directory: mary
 
 * I use tree_ with the ``-d`` option to show only the directories_
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use ``tree`` in place of ``tree -d`` to see the folders_ in the tree
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1926,6 +2039,10 @@ how to use directory relationships
 
     tree -d
 
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use ``tree`` in place of ``tree -d`` to see the folders_ in the tree
+
   the terminal_ shows
 
   .. code-block:: shell
@@ -1999,7 +2116,6 @@ how to use directory relationships
   * I can go right to folders_ that are where I am
   * I can go right from parent to child
   * I can use the path/address of a folder_ to go to it
-  * It is easier to go where I want, if I know where I am
 
 :ref:`I know how to use directory relationships<how to use directory relationships>`
 
@@ -2015,6 +2131,10 @@ how to use touch with directory relationships
     :emphasize-lines: 1
 
     tree
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use ``tree /F`` in place of ``tree``, to see the files_ and folders_ related to ``doe``
 
   the terminal_ shows
 
@@ -2054,6 +2174,15 @@ how to use touch with directory relationships
     touch aka_mary_jane_doe
 
   the terminal_ goes back to the command line
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use `New-Item`_ in place of ``touch``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      New-Item aka_mary_jane_doe
 
 * I use touch_ to make an empty hidden file_ in ``mary``
 
@@ -2129,6 +2258,15 @@ how to use touch with directory relationships
 
     touch aka_lil_john_doe
 
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use `New-Item`_ in place of ``touch``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      New-Item aka_lil_john_doe
+
 * I use touch_ to make an empty hidden file_ in ``lil``
 
   .. code-block:: python
@@ -2201,6 +2339,10 @@ how to use touch with directory relationships
     5 directories, 5 files
 
 * I use tree_ with the ``-a`` option
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use ``tree /F`` in place of ``tree -a`` to see only the files_ and folders_ in the tree
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -3208,9 +3350,9 @@ how to remove a directory and all the things in it
 
   the terminal_ goes back to the command line
 
-  .. NOTE::
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``Remove-Item -Recurse -Force`` instead of ``rm --recursive``
+    use `Remove-Item`_ in place of ``rm``
 
     .. code-block:: PowerShell
       :emphasize-lines: 1
