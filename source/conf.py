@@ -25,6 +25,7 @@ exclude_patterns = [
 
 extensions = [
     'sphinx_sitemap',
+    'sphinx_design',
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.intersphinx',
     'sphinx.ext.githubpages',

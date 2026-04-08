@@ -1,5 +1,6 @@
 sphinx
+sphinxawesome-theme==5.3.2 # 6.0 breaks light mode
 sphinx-autobuild
+sphinx-design
 sphinx-sitemap
 sphinx-notfound-page
-sphinxawesome-theme==5.3.2 # 6.0 breaks light mode

@@ -143,11 +143,25 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
 
 * If it is installed and there is nothing in the directory_, the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    .
+    .. tab-item:: Linux/Mac/WSL
 
-    0 directories, 0 files
+      .. code-block:: python
+
+        .
+
+        0 directories, 0 files
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+        Folder PATH listing
+        Volume serial number is ABCD:EFGH
+        C:.
+        No subfolders exist
 
 The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to go from one folder_ to another, because it shows the way I can go.
 
@@ -212,7 +226,7 @@ how to install tree on Windows without Windows Subsystem for Linux
 
 tree_ comes with Windows_, no need to install anything.
 
-Use the commands below for the ones I have in the chapter
+Click on the tab that says ``no WSL`` to see the commands or results
 
 * `New-Item`_ for touch_
 * ``tree /F`` for tree_ to show files_ and folders_
@@ -222,15 +236,22 @@ Use the commands below for the ones I have in the chapter
 
 when you type pwd_ or tree_ the terminal_ shows ``\`` between folder_ names, not ``/``. For example
 
-.. code-block:: python
+.. tab-set::
+  :sync-group: os
 
-  ...\pumping_python\doe
+  .. tab-item:: Linux/Mac/WSL
 
-not
+    .. code-block:: python
 
-.. code-block:: python
+      .../pumping_python/doe
 
-  .../pumping_python/doe
+  .. tab-item:: no WSL
+
+    .. code-block:: python
+
+      Path
+      ----
+      C:\...\pumping_python\doe
 
 Your tree will also look different because of different ways of drawing and sorting.
 
@@ -275,17 +296,22 @@ I start with a check of where I am in the terminal_ because It is easier to go w
 
 the terminal_ shows
 
-.. code-block:: python
+.. tab-set::
+  :sync-group: os
 
-  .../pumping_python
+  .. tab-item:: Linux/Mac/WSL
 
-on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+    .. code-block:: python
 
-.. code-block:: python
+      .../pumping_python
 
-  Path
-  ----
-  C:\...\pumping_python
+  .. tab-item:: no WSL
+
+    .. code-block:: python
+
+      Path
+      ----
+      C:\...\pumping_python
 
 if I am in the ``pumping_python`` folder_
 
@@ -299,16 +325,20 @@ if I am in the ``pumping_python`` folder_
 
     Type this in the terminal_
 
-    .. code-block:: python
+    .. tab-set::
+      :sync-group: os
 
-      tree /
+      .. tab-item:: Linux/Mac/WSL
 
-    on Windows_ without `Windows Subsystem for Linux`_ type
+        .. code-block:: python
 
-    .. code-block:: python
-      :emphasize-lines: 1
+          tree /
 
-      tree C:/
+      .. tab-item:: no WSL
+
+        .. code-block:: python
+
+          tree C:/
 
     it runs for a while because there are many files_ and folders_.
 
@@ -336,17 +366,22 @@ I use the `cd program`_ to change directories_
 
 the terminal_ shows
 
-.. code-block:: python
+.. tab-set::
+  :sync-group: os
 
-  cd: no such file or directory: pumping_python
+  .. tab-item:: Linux/Mac/WSL
 
-.. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+    .. code-block:: python
 
-  .. code-block:: python
+      cd: no such file or directory: pumping_python
 
-    Set-Location: Cannot find path
-                  'C:\...\pumping_python'
-                  because it does not exist
+  .. tab-item:: no WSL
+
+    .. code-block:: python
+
+      Set-Location: Cannot find path
+                    'C:\...\pumping_python'
+                    because it does not exist
 
 this means the folder_ I want to go to is not in the folder_ where I am.
 
@@ -364,18 +399,26 @@ how to make a directory
     mkdir pumping_python
 
   - ``mkdir`` means ``make directory``
-  - the terminal_ goes back to the command line
+  - the terminal_ shows
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+    .. tab-set::
+      :sync-group: os
 
-    .. code-block:: python
+      .. tab-item:: Linux/Mac/WSL
 
-          Directory: C:\...
+        .. code-block:: python
 
-      Mode            LastWriteTime         Length  Name
-      ----            -------------         ------  ----
-      d-----    MM/DD/YYYY HH:MM A/PM               pumping_python
+          .../pumping_python
 
+      .. tab-item:: no WSL
+
+        .. code-block:: python
+
+              Directory: C:\...
+
+          Mode            LastWriteTime         Length  Name
+          ----            -------------         ------  ----
+          d-----    MM/DD/YYYY HH:MM A/PM               pumping_python
 
 * I use cd_ to `change directory`_ to ``pumping_python``
 
@@ -386,9 +429,22 @@ how to make a directory
 
   the terminal_ shows I am in the ``pumping_python`` `folder (directory)`_
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    .../pumping_python
+    .. tab-item:: Linux/Mac/WSL
+
+      .. code-block:: python
+
+        .../pumping_python
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+        Path
+        ----
+        C:\...\pumping_python
 
   .. TIP:: I have to open the ``pumping_python`` folder_ to make sure I can see it in my `Integrated Development Environment (IDE)`_. Here is how to do that with `Visual Studio Code`_ from the terminal_
 
@@ -397,7 +453,7 @@ how to make a directory
 
       code .
 
-    a new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_. I can close the window before the new window to work only in the new window.
+    A new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_. I can close the window I had before the new window to work only in the new window.
 
     I open another terminal_ to continue
 
@@ -412,9 +468,22 @@ how to make a directory
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    cd: no such file or directory: doe
+    .. tab-item:: Linux/Mac/WSL
+
+      .. code-block:: python
+
+        cd: no such file or directory: doe
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+        Set-Location: Cannot find path
+                      'C:\...\pumping_python\doe'
+                      because it does not exist
 
   ``doe`` is not in the ``pumping_python`` directory_, yet
 
@@ -485,27 +554,43 @@ how to see what is in a directory
 
   this directory_ is empty
 
-  .. ADMONITION::
-
-    on Windows_ without `Windows Subsystem for Linux`_ use ``dir`` or ``ls``
-
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
-
-      dir
-
 * ls_ has a few options. I try ls_ again with one of them
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls --all
+    .. tab-item:: Linux/Mac/WSL
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls --all
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    .  ..
+    .. tab-item:: Linux/Mac/WSL
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        .  ..
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        C:\...\pumping_python\doe
 
   .. attention::
 
@@ -521,15 +606,6 @@ how to see what is in a directory
         :emphasize-lines: 1
 
         ls -a
-
-    .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ use ``dir`` or ``ls`` for ls --all`` or ``ls -a``
-
-      .. code-block:: PowerShell
-        :emphasize-lines: 1
-
-        dir
-
-      it does not show the ``.`` or ``..``
 
   - ``--all`` or ``-a`` tells ls_ to show all the things in the directory_ even those that start with ``.`` ( they are hidden by default)
   - I can hide a file_ or folder_ if I put ``.`` before its name, for example ``.hidden``
@@ -601,22 +677,27 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    .
+    .. tab-item:: Linux/Mac/WSL
 
-    0 directories, 0 files
+      .. code-block:: python
+
+        .
+
+        0 directories, 0 files
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+        Folder PATH listing
+        Volume serial number is ABCD:EFGH
+        C:.
+        No subfolders exist
 
   there is nothing in ``doe``, it is empty
-
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
-
-    .. code-block:: python
-
-      Folder PATH listing
-      Volume serial number is ABCD:EFGH
-      C:.
-      No subfolders exist
 
 * I try to `change directory`_ to ``jane``
 
@@ -664,15 +745,20 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 1-2
+  .. tab-set::
+    :sync-group: os
 
-    .
-    └── jane
+    .. tab-item:: Linux/Mac/WSL
 
-    2 directories, 0 files
+      .. code-block:: shell
+        :emphasize-lines: 1-2
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+        .
+        └── jane
+
+        2 directories, 0 files
+
+    .. tab-item:: no WSL
 
       .. code-block:: shell
         :emphasize-lines: 1-2
@@ -877,24 +963,29 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    jane  john
+    .. tab-item:: Linux/Mac/WSL
 
-  - ``.a_hidden_folder_in_doe`` is hidden
-  - I can hide a file_ or folder_ if I put ``.`` before its name
+      .. code-block:: python
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+        jane  john
 
-    .. code-block:: python
+      - ``.a_hidden_folder_in_doe`` is hidden
+      - I can hide a file_ or folder_ if I put ``.`` before its name
 
-      Mode            LastWriteTime         Length  Name
-      ----            -------------         ------  ----
-      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_doe
-      d-----    MM/DD/YYYY HH:MM A/PM               jane
-      d-----    MM/DD/YYYY HH:MM A/PM               john
+    .. tab-item:: no WSL
 
-    ``.a_hidden_folder_in_doe`` is not hidden on Windows_ without `Windows Subsystem for Linux`_
+      .. code-block:: python
+
+        Mode            LastWriteTime         Length  Name
+        ----            -------------         ------  ----
+        d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_doe
+        d-----    MM/DD/YYYY HH:MM A/PM               jane
+        d-----    MM/DD/YYYY HH:MM A/PM               john
+
+      ``.a_hidden_folder_in_doe`` is not hidden on Windows_ without `Windows Subsystem for Linux`_
 
 * I use ls_ with the ``-a`` option to see everything that is in ``doe`` even things that are hidden
 
@@ -918,48 +1009,55 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. tab-set::
+    :sync-group: os
 
-    .
-    ├── jane
-    └── john
+    .. tab-item:: Linux/Mac/WSL
 
-    3 directories, 0 files
+      .. code-block:: shell
 
-  - ``.a_hidden_folder_in_doe`` is hidden
-  - I can hide a file_ or folder_ if I put ``.`` before its name
+        .
+        ├── jane
+        └── john
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+        3 directories, 0 files
 
-    .. code-block:: shell
-      :emphasize-lines: 2
+      - ``.a_hidden_folder_in_doe`` is hidden
+      - I can hide a file_ or folder_ if I put ``.`` before its name
 
-      C:.
-      ├── .a_hidden_folder_in_doe
-      ├── jane
-      └── john
+      * I can also use tree_ with the ``-a`` option to show things that are hidden
 
-* I can also use tree_ with the ``-a`` option to show things that are hidden
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          tree -a
 
-    tree -a
+        the terminal_ shows
 
-  the terminal_ shows
+        .. code-block:: shell
+          :emphasize-lines: 2
 
-  .. code-block:: shell
-    :emphasize-lines: 2
+          .
+          ├── .a_hidden_folder_in_doe
+          ├── jane
+          └── john
 
-    .
-    ├── .a_hidden_folder_in_doe
-    ├── jane
-    └── john
+          4 directories, 0 files
 
-    4 directories, 0 files
+        - ``.`` is the working directory_, which is ``doe`` in this case
+        - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_doe`` shows I can go from ``doe`` right to ``.a_hidden_folder_in_doe``
 
-  - ``.`` is the working directory_, which is ``doe`` in this case
-  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_doe`` shows I can go from ``doe`` right to ``.a_hidden_folder_in_doe``
+    .. tab-item:: no WSL
+
+      .. code-block:: shell
+        :emphasize-lines: 2
+
+        C:.
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        └── john
+
+      ``.a_hidden_folder_in_doe`` is not hidden on Windows_ without `Windows Subsystem for Linux`_
 
 * I `change directory`_ to ``.a_hidden_folder_in_doe``
 
@@ -985,9 +1083,22 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    cd: no such file or directory: doe
+    .. tab-item:: Linux/Mac/WSL
+
+      .. code-block:: python
+
+        cd: no such file or directory: doe
+
+    .. tab-item:: no WSL
+
+      .. code-block:: Powershell
+
+        Set-Location: Cannot find path
+                      `C:\...\pumping_python\doe\john\lil\doe`
+                      because it does not exist
 
   - ``doe`` is not a child of ``.a_hidden_folder_in_doe``
   - I cannot go from ``.a_hidden_folder_in_doe`` to ``doe`` this way
@@ -2209,6 +2320,15 @@ how to use touch with directory relationships
 
     ls -a
 
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use ``dir`` or ``ls`` for ls --all`` or ``ls -a``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      dir
+
   the terminal_ shows
 
   .. code-block:: python
@@ -2287,6 +2407,15 @@ how to use touch with directory relationships
     :emphasize-lines: 1
 
     ls -a
+
+  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+
+    use ``dir`` or ``ls`` for ls --all`` or ``ls -a``
+
+    .. code-block:: PowerShell
+      :emphasize-lines: 1
+
+      dir
 
   the terminal_ shows
 
