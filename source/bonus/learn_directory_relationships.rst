@@ -619,7 +619,6 @@ how to see what is in a directory
       - ``--all`` or ``-a`` tells ls_ to show all the things in the directory_ even those that start with ``.`` ( they are hidden by default)
       - I can hide a file_ or folder_ if I put ``.`` before its name, for example ``.hidden``
 
-
     .. tab-item:: no WSL
 
       .. code-block:: python
@@ -724,9 +723,22 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    cd: no such file or directory: jane
+    .. tab-item:: WSL/Linux/Mac
+
+      .. code-block:: python
+
+        cd: no such file or directory: jane
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+        Set-Location: Cannot find path
+                      'C:\...\pumping_python\doe\jane'
+                      because it does not exist
 
   ``jane`` is not a child of ``doe``, yet
 
@@ -846,9 +858,22 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    cd: no such file or directory: john
+    .. tab-item:: WSL/Linux/Mac
+
+      .. code-block:: python
+
+        cd: no such file or directory: john
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+        Set-Location: Cannot find path
+                      'C:\...\pumping_python\doe\john'
+                      because it does not exist
 
   ``john`` is not a child of ``doe``, yet
 
@@ -990,6 +1015,18 @@ how to look at directory relationships
 
       - ``.a_hidden_folder_in_doe`` is hidden
       - I can hide a file_ or folder_ if I put ``.`` before its name
+      - I use ls_ with the ``-a`` option to see everything that is in ``doe`` even things that are hidden
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ls -a
+
+        the terminal_ shows
+
+        .. code-block:: python
+
+          .  ..  .a_hidden_folder_in_doe  jane  john
 
     .. tab-item:: no WSL
 
@@ -1002,19 +1039,6 @@ how to look at directory relationships
         d-----    MM/DD/YYYY HH:MM A/PM               john
 
       ``.a_hidden_folder_in_doe`` is not hidden on Windows_ without `Windows Subsystem for Linux`_
-
-* I use ls_ with the ``-a`` option to see everything that is in ``doe`` even things that are hidden
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    ls -a
-
-  the terminal_ shows
-
-  .. code-block:: python
-
-    .  ..  .a_hidden_folder_in_doe  jane  john
 
 * I use tree_ to show the folders_ inside ``doe``
 
@@ -1159,20 +1183,29 @@ how to look at directory relationships
 
     ls
 
-  the terminal_ goes back to the command line
+  .. tab-set::
+    :sync-group: os
 
-* I use ls_ with the short form of the ``--all`` option
+    .. tab-item:: WSL/Linux/Mac
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      the terminal_ goes back to the command line
 
-    ls -a
+      - I use ls_ with the short form of the ``--all`` option
 
-  the terminal_ shows
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
+          ls -a
 
-    .  ..
+        the terminal_ shows
+
+        .. code-block:: python
+
+          .  ..
+
+    .. tab-item:: no WSL
+
+      the terminal_ goes back to the command line
 
   ``jane`` has no children
 
@@ -1281,7 +1314,7 @@ how to look at directory relationships
 
   there is no folder_ named ``.a_hidden_folder_in_jane`` in ``jane``
 
-* I make a ``.a_hidden_folder_in_jane``
+* I make ``.a_hidden_folder_in_jane``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1427,20 +1460,29 @@ how to look at directory relationships
 
     ls
 
-  the terminal_ goes back to the command line
+  .. tab-set::
+    :sync-group: os
 
-* I use ls_ with the short form of the ``--all`` option
+    .. tab-item:: WSL/Linux/Mac
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      the terminal_ goes back to the command line
 
-    ls -a
+      - I use ls_ with the short form of the ``--all`` option
 
-  the terminal_ shows
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
+          ls -a
 
-    .  ..
+        the terminal_ shows
+
+        .. code-block:: python
+
+          .  ..
+
+    .. tab-item:: no WSL
+
+      the terminal_ goes back to the command line
 
   ``john`` has no children
 
@@ -1611,44 +1653,50 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 2
+  .. tab-set::
+    :sync-group: os
 
-    .
-    └── lil
+    .. tab-item:: WSL/Linux/Mac
 
-    2 directories, 0 files
+      .. code-block:: shell
+        :emphasize-lines: 2
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+        .
+        └── lil
 
-    .. code-block:: shell
-      :emphasize-lines: 2
+        2 directories, 0 files
 
-      C:.
-      ├── .a_hidden_folder_in_john
-      └── lil
+      * I use tree_ with the ``-a`` option
 
-* I use tree_ with the ``-a`` option
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          tree -a
 
-    tree -a
+        the terminal_ shows
 
-  the terminal_ shows
+        .. code-block:: shell
+          :emphasize-lines: 2
 
-  .. code-block:: shell
-    :emphasize-lines: 2
+          .
+          ├── .a_hidden_folder_in_john
+          └── lil
 
-    .
-    ├── .a_hidden_folder_in_john
-    └── lil
+          3 directories, 0 files
 
-    3 directories, 0 files
 
-  - ``.`` is ``john`` when I am in ``john``
-  - the line in the tree that goes from ``.`` to ``lil`` shows I can go from ``john`` right to ``lil``
-  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_john`` shows I can go from ``john`` right to ``.a_hidden_folder_in_john``
+        - ``.`` is ``john`` when I am in ``john``
+        - the line in the tree that goes from ``.`` to ``lil`` shows I can go from ``john`` right to ``lil``
+        - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_john`` shows I can go from ``john`` right to ``.a_hidden_folder_in_john``
+
+    .. tab-item:: no WSL
+
+      .. code-block:: shell
+        :emphasize-lines: 2
+
+        C:.
+        ├── .a_hidden_folder_in_john
+        └── lil
 
 * I go up a level to the parent of ``john``
 
@@ -1674,53 +1722,58 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 3, 5
+  .. tab-set::
+    :sync-group: os
 
-    .
-    ├── jane
-    │   └── mary
-    └── john
-        └── lil
+    .. tab-item:: WSL/Linux/Mac
 
-    5 directories, 0 files
+      .. code-block:: shell
+        :emphasize-lines: 3, 5
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+        .
+        ├── jane
+        │   └── mary
+        └── john
+            └── lil
 
-    .. code-block:: shell
-      :emphasize-lines: 2, 4, 7
+        5 directories, 0 files
 
-      C:.
-      ├── .a_hidden_folder_in_doe
-      ├── jane
-      │   ├── .a_hidden_folder_in_jane
-      │   └── mary
-      └── john
-          ├── .a_hidden_folder_in_john
-          └── lil
+      * I use the ``-a`` option with tree_
 
-* I use the ``-a`` option with tree_
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          tree -a
 
-    tree -a
+        the terminal_ shows
 
-  the terminal_ shows
+        .. code-block:: shell
+          :emphasize-lines: 2, 4, 7
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 4, 7
+          .
+          ├── .a_hidden_folder_in_doe
+          ├── jane
+          │   ├── .a_hidden_folder_in_jane
+          │   └── mary
+          └── john
+              ├── .a_hidden_folder_in_john
+              └── lil
 
-    .
-    ├── .a_hidden_folder_in_doe
-    ├── jane
-    │   ├── .a_hidden_folder_in_jane
-    │   └── mary
-    └── john
-        ├── .a_hidden_folder_in_john
-        └── lil
+          8 directories, 0 files
 
-    8 directories, 0 files
+    .. tab-item:: no WSL
+
+      .. code-block:: shell
+        :emphasize-lines: 2, 4, 7
+
+        C:.
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        └── john
+            ├── .a_hidden_folder_in_john
+            └── lil
 
   the lines show that
 
