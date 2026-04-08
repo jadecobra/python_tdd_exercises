@@ -90,8 +90,8 @@ A file_ is a collection or container for text, like paper we write or print on a
 note
 *********************************************************************************
 
-* The code I type is highlighted and comes after something like ``I type this in the terminal``
-* The output (result) of the code I type after I press :kbd:`enter/return` on the keyboard usually comes after ``the terminal shows ...``
+* The code I type is ``highlighted`` and comes after something like ``I type this in the terminal``
+* The result of the code I type after I press :kbd:`enter/return` on the keyboard comes after something like ``the terminal shows ...``
 * if you get a different result from what I promise then one of two things happened
 
   - I made a mistake or
@@ -110,13 +110,13 @@ note
     command argument --option
     command --option argument
 
-  options for commands sometimes have a long and short form, for example ``--long_option`` could have ``-l`` as the short option, this allows putting many short options together like this
+  options for commands sometimes have a long and short form, for example ``--long_option`` could have ``-l`` as the short option, which means I can put many short options together like this
 
   .. code-block:: python
 
     command -abcd
 
-  where ``a``, ``b``, ``c`` and ``d`` are separate options
+  where ``a``, ``b``, ``c`` and ``d`` are different options
 
 ----
 
@@ -146,7 +146,7 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: python
 
@@ -224,9 +224,9 @@ how to install tree on Windows without Windows Subsystem for Linux
 
   :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
 
-tree_ comes with Windows_, no need to install anything.
+no need to install tree_ because it comes with Windows_.
 
-Click on the tab that says ``no WSL`` to see the commands or results
+Click on the tab that says ``no WSL`` to see the commands or results if you have Windows_ without `Windows Subsystem for Linux`_. These are the commands I use
 
 * `New-Item`_ for touch_
 * ``tree /F`` for tree_ to show files_ and folders_
@@ -234,12 +234,12 @@ Click on the tab that says ``no WSL`` to see the commands or results
 * ``dir`` or `Get-ChildItem`_ or ``ls`` for ``ls --all/-a``
 * `Remove-Item`_ for rm_
 
-when you type pwd_ or tree_ the terminal_ shows ``\`` between folder_ names, not ``/``. For example
+when you type pwd_ or tree_, the terminal_ shows ``\`` between folder_ names, not ``/``. Click the ``no WSL`` tab for an example
 
 .. tab-set::
   :sync-group: os
 
-  .. tab-item:: Linux/Mac/WSL
+  .. tab-item:: WSL/Linux/Mac
 
     .. code-block:: python
 
@@ -299,7 +299,7 @@ the terminal_ shows
 .. tab-set::
   :sync-group: os
 
-  .. tab-item:: Linux/Mac/WSL
+  .. tab-item:: WSL/Linux/Mac
 
     .. code-block:: python
 
@@ -328,7 +328,7 @@ if I am in the ``pumping_python`` folder_
     .. tab-set::
       :sync-group: os
 
-      .. tab-item:: Linux/Mac/WSL
+      .. tab-item:: WSL/Linux/Mac
 
         .. code-block:: python
 
@@ -369,7 +369,7 @@ the terminal_ shows
 .. tab-set::
   :sync-group: os
 
-  .. tab-item:: Linux/Mac/WSL
+  .. tab-item:: WSL/Linux/Mac
 
     .. code-block:: python
 
@@ -404,7 +404,7 @@ how to make a directory
     .. tab-set::
       :sync-group: os
 
-      .. tab-item:: Linux/Mac/WSL
+      .. tab-item:: WSL/Linux/Mac
 
         .. code-block:: python
 
@@ -432,7 +432,7 @@ how to make a directory
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: python
 
@@ -446,7 +446,7 @@ how to make a directory
         ----
         C:\...\pumping_python
 
-  .. TIP:: I have to open the ``pumping_python`` folder_ to make sure I can see it in my `Integrated Development Environment (IDE)`_. Here is how to do that with `Visual Studio Code`_ from the terminal_
+  .. TIP:: I open the ``pumping_python`` folder_ to make sure I can see it in my `Integrated Development Environment (IDE)`_. Here is how to do that with `Visual Studio Code`_ from the terminal_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -471,7 +471,7 @@ how to make a directory
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: python
 
@@ -496,9 +496,24 @@ how to make a directory
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    .../pumping_python
+    .. tab-item:: WSL/Linux/Mac
+
+      .. code-block:: python
+
+        .../pumping_python
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+            Directory: C:\...
+
+        Mode            LastWriteTime         Length  Name
+        ----            -------------         ------  ----
+        d-----    MM/DD/YYYY HH:MM A/PM
 
 * I `change directory`_ to ``doe``
 
@@ -524,9 +539,22 @@ how to make a directory
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    .../pumping_python/doe
+    .. tab-item:: WSL/Linux/Mac
+
+      .. code-block:: python
+
+        .../pumping_python/doe
+
+    .. tab-item:: no WSL
+
+      .. code-block:: python
+
+        Path
+        ----
+        C:\...\pumping_python\doe
 
 It is easier to go where I want, if I know where I am.
 
@@ -546,69 +574,57 @@ how to see what is in a directory
 
     ls
 
-  the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/doe
-
-  this directory_ is empty
-
-* ls_ has a few options. I try ls_ again with one of them
-
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
+
+      the terminal_ shows
 
       .. code-block:: python
-        :emphasize-lines: 1
 
-        ls --all
+        .../pumping_python/doe
+
+      this directory_ is empty
+
+      * ls_ has a few options. I try ls_ again with one of them
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ls --all
+
+        the terminal_ shows
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          .  ..
+
+      .. attention::
+
+        * on MacOS_ the terminal_ shows
+
+          .. code-block:: none
+
+            ls: unrecognized option `--all'
+
+          ``--all`` is the long form of the option, use ``-a`` which is the short form of the option
+
+          .. code-block:: python
+            :emphasize-lines: 1
+
+            ls -a
+
+      - ``--all`` or ``-a`` tells ls_ to show all the things in the directory_ even those that start with ``.`` ( they are hidden by default)
+      - I can hide a file_ or folder_ if I put ``.`` before its name, for example ``.hidden``
+
 
     .. tab-item:: no WSL
 
       .. code-block:: python
-        :emphasize-lines: 1
-
-        ls
-
-  the terminal_ shows
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: Linux/Mac/WSL
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        .  ..
-
-    .. tab-item:: no WSL
-
-      .. code-block:: python
-        :emphasize-lines: 1
 
         C:\...\pumping_python\doe
-
-  .. attention::
-
-    * on MacOS_ the terminal_ shows
-
-      .. code-block:: none
-
-        ls: unrecognized option `--all'
-
-      ``--all`` is the long form of the option, use ``-a`` which is the short form of the option
-
-      .. code-block:: python
-        :emphasize-lines: 1
-
-        ls -a
-
-  - ``--all`` or ``-a`` tells ls_ to show all the things in the directory_ even those that start with ``.`` ( they are hidden by default)
-  - I can hide a file_ or folder_ if I put ``.`` before its name, for example ``.hidden``
 
 * I try to `change directory`_ to the ``.``
 
@@ -680,7 +696,7 @@ how to look at directory relationships
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: python
 
@@ -748,7 +764,7 @@ how to look at directory relationships
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: shell
         :emphasize-lines: 1-2
@@ -966,7 +982,7 @@ how to look at directory relationships
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: python
 
@@ -1012,7 +1028,7 @@ how to look at directory relationships
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: shell
 
@@ -1086,7 +1102,7 @@ how to look at directory relationships
   .. tab-set::
     :sync-group: os
 
-    .. tab-item:: Linux/Mac/WSL
+    .. tab-item:: WSL/Linux/Mac
 
       .. code-block:: python
 
@@ -1327,45 +1343,50 @@ how to look at directory relationships
 
   the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 2
+  .. tab-set::
+    :sync-group: os
 
-    .
-    └── mary
+    .. tab-item:: WSL/Linux/Mac
 
-    2 directories, 0 files
+      .. code-block:: shell
+        :emphasize-lines: 2
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+        .
+        └── mary
 
-    .. code-block:: shell
-      :emphasize-lines: 2
+        2 directories, 0 files
 
-      C:.
-      ├── .a_hidden_folder_in_jane
-      └── mary
+      * I use tree_ with the ``-a`` option
 
-* I use tree_ with the ``-a`` option
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          tree -a
 
-    tree -a
+        the terminal_ shows
 
-  the terminal_ shows
+        .. code-block:: shell
+          :emphasize-lines: 2
 
-  .. code-block:: shell
-    :emphasize-lines: 2
+          .
+          ├── .a_hidden_folder_in_jane
+          └── mary
 
-    .
-    ├── .a_hidden_folder_in_jane
-    └── mary
-
-    3 directories, 0 files
+          3 directories, 0 files
 
 
-  - ``.`` is ``jane`` when I am in ``jane``
-  - the line in the tree that goes from ``.`` to ``mary`` shows I can go from ``jane`` right to ``mary``
-  - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_jane`` shows I can go from ``jane`` right to ``.a_hidden_folder_in_jane``
+        - ``.`` is ``jane`` when I am in ``jane``
+        - the line in the tree that goes from ``.`` to ``mary`` shows I can go from ``jane`` right to ``mary``
+        - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_jane`` shows I can go from ``jane`` right to ``.a_hidden_folder_in_jane``
+
+    .. tab-item:: no WSL
+
+      .. code-block:: shell
+        :emphasize-lines: 2
+
+        C:.
+        ├── .a_hidden_folder_in_jane
+        └── mary
 
 * I go up a level to the parent of ``jane``
 
