@@ -147,6 +147,7 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
@@ -155,6 +156,7 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
         0 directories, 0 files
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -329,12 +331,14 @@ if I am in the ``pumping_python`` folder_
       :sync-group: os
 
       .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
         .. code-block:: python
 
           tree /
 
       .. tab-item:: no WSL
+      :sync: no_wsl
 
         .. code-block:: python
 
@@ -405,12 +409,14 @@ how to make a directory
       :sync-group: os
 
       .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
         .. code-block:: python
 
           .../pumping_python
 
       .. tab-item:: no WSL
+      :sync: no_wsl
 
         .. code-block:: python
 
@@ -433,12 +439,14 @@ how to make a directory
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
         .../pumping_python
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -472,12 +480,14 @@ how to make a directory
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
         cd: no such file or directory: doe
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -500,12 +510,14 @@ how to make a directory
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
         .../pumping_python
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -543,12 +555,14 @@ how to make a directory
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
         .../pumping_python/doe
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -578,6 +592,7 @@ how to see what is in a directory
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       the terminal_ shows
 
@@ -620,6 +635,7 @@ how to see what is in a directory
       - I can hide a file_ or folder_ if I put ``.`` before its name, for example ``.hidden``
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -696,6 +712,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
@@ -704,6 +721,7 @@ how to look at directory relationships
         0 directories, 0 files
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -727,12 +745,14 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
         cd: no such file or directory: jane
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -777,6 +797,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: shell
         :emphasize-lines: 1-2
@@ -787,6 +808,7 @@ how to look at directory relationships
         2 directories, 0 files
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: shell
         :emphasize-lines: 1-2
@@ -862,12 +884,14 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
         cd: no such file or directory: john
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -1008,6 +1032,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
@@ -1029,6 +1054,7 @@ how to look at directory relationships
           .  ..  .a_hidden_folder_in_doe  jane  john
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: python
 
@@ -1053,6 +1079,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: shell
 
@@ -1088,6 +1115,7 @@ how to look at directory relationships
         - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_doe`` shows I can go from ``doe`` right to ``.a_hidden_folder_in_doe``
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: shell
         :emphasize-lines: 2
@@ -1127,12 +1155,14 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
 
         cd: no such file or directory: doe
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: Powershell
 
@@ -1187,6 +1217,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       the terminal_ goes back to the command line
 
@@ -1204,6 +1235,7 @@ how to look at directory relationships
           .  ..
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       the terminal_ goes back to the command line
 
@@ -1380,6 +1412,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: shell
         :emphasize-lines: 2
@@ -1413,6 +1446,7 @@ how to look at directory relationships
         - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_jane`` shows I can go from ``jane`` right to ``.a_hidden_folder_in_jane``
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: shell
         :emphasize-lines: 2
@@ -1464,6 +1498,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       the terminal_ goes back to the command line
 
@@ -1481,6 +1516,7 @@ how to look at directory relationships
           .  ..
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       the terminal_ goes back to the command line
 
@@ -1657,6 +1693,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: shell
         :emphasize-lines: 2
@@ -1690,6 +1727,7 @@ how to look at directory relationships
         - the line in the tree that goes from ``.`` to ``.a_hidden_folder_in_john`` shows I can go from ``john`` right to ``.a_hidden_folder_in_john``
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: shell
         :emphasize-lines: 2
@@ -1726,6 +1764,7 @@ how to look at directory relationships
     :sync-group: os
 
     .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: shell
         :emphasize-lines: 3, 5
@@ -1762,6 +1801,7 @@ how to look at directory relationships
           8 directories, 0 files
 
     .. tab-item:: no WSL
+      :sync: no_wsl
 
       .. code-block:: shell
         :emphasize-lines: 2, 4, 7
@@ -1793,78 +1833,108 @@ how to look at directory relationships
 how to make an empty file
 ********************************************************************************************
 
-I can use the touch_ program to make empty files_ in a folder_
+I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
-* I use touch_ to make an empty file_ in ``doe``
+.. tab-set::
+  :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-item:: WSL/Linux/Mac
 
-    touch a_file_in_doe
+    * I use touch_ to make an empty file_ in ``doe``
 
-  the terminal_ goes back to the command line
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+        touch a_file_in_doe
 
-    use `New-Item`_ in place of ``touch``
+      the terminal_ goes back to the command line
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
 
-      New-Item a_file_in_doe
+        use `New-Item`_ in place of ``touch``
 
-* I use touch_ to make an empty hidden file_ in ``doe``
+        .. code-block:: PowerShell
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          New-Item a_file_in_doe
 
-    touch .a_hidden_file_in_doe
+    * I use touch_ to make an empty hidden file_ in ``doe``
 
-* I use ls_ to see what is in the folder_
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        touch .a_hidden_file_in_doe
 
-    ls
+    * I use ls_ to see what is in the folder_
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: python
+        ls
 
-    a_file_in_doe  jane  john
+      the terminal_ shows
 
-* I use ls_ with the ``-a`` option
+      .. code-block:: python
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        a_file_in_doe  jane  john
 
-    ls -a
+    * I use ls_ with the ``-a`` option
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: python
+        ls -a
 
-    .
-    ..
-    a_file_in_doe
-    .a_hidden_file_in_doe
-    .a_hidden_folder_in_doe
-    jane
-    john
+      the terminal_ shows
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+      .. code-block:: python
 
-    .. code-block:: python
+        .
+        ..
+        a_file_in_doe
+        .a_hidden_file_in_doe
+        .a_hidden_folder_in_doe
+        jane
+        john
 
-      Mode            LastWriteTime         Length  Name
-      ----            -------------         ------  ----
-      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_doe
-      d-----    MM/DD/YYYY HH:MM A/PM               jane
-      d-----    MM/DD/YYYY HH:MM A/PM               john
-      -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_doe
-      -a----    MM/DD/YYYY HH:MM A/PM            0  a_file_in_doe
+  .. tab-item:: no WSL
 
-    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
+    * I use `New-Item`_ to make an empty file_ in ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        New-Item a_file_in_doe
+
+      the terminal_ goes back to the command line
+
+    * I use `New-Item`_ to make an empty hidden file_ in ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        New-Item .a_hidden_file_in_doe
+
+    * I use ls_ to show what is in ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls
+
+      the terminal_ shows
+
+      .. code-block:: python
+
+        Mode            LastWriteTime         Length  Name
+        ----            -------------         ------  ----
+        d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_doe
+        d-----    MM/DD/YYYY HH:MM A/PM               jane
+        d-----    MM/DD/YYYY HH:MM A/PM               john
+        -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_doe
+        -a----    MM/DD/YYYY HH:MM A/PM            0  a_file_in_doe
+
+      the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
 
 * I `change directory`_ to ``jane``
 
@@ -1879,63 +1949,88 @@ I can use the touch_ program to make empty files_ in a folder_
 
     .../pumping_python/doe/jane
 
-* I use touch_ to make an empty file_ in ``jane``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch aka_jane_doe
+      * I use touch_ to make an empty file_ in ``jane``
 
-  the terminal_ goes back to the command line
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+          touch aka_jane_doe
 
-    use `New-Item`_ in place of ``touch``
+        the terminal_ goes back to the command line
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      * I use touch_ to make an empty hidden file_ in ``jane``
 
-      New-Item aka_jane_doe
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use touch_ to make an empty hidden file_ in ``jane``
+          touch .a_hidden_file_in_jane
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        the terminal_ goes back to the command line
 
-    touch .a_hidden_file_in_jane
+      * I use ls_ to show what is in ``jane``
 
-  the terminal_ goes back to the command line
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use ls_ to show what is in ``jane``
+          ls -a
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        the terminal_ shows
 
-    ls -a
+        .. code-block:: python
 
-  the terminal_ shows
+          .
+          ..
+          .a_hidden_file_in_jane
+          .a_hidden_folder_in_jane
+          aka_jane_doe
+          mary
 
-  .. code-block:: python
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-    .
-    ..
-    .a_hidden_file_in_jane
-    .a_hidden_folder_in_jane
-    aka_jane_doe
-    mary
+      * I use `New-Item`_ to make an empty file_ in ``jane``
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+        .. code-block:: python
+          :emphasize-lines: 1
 
-    .. code-block:: python
+          New-Item aka_jane_doe
 
-      Mode            LastWriteTime         Length  Name
-      ----            -------------         ------  ----
-      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_jane
-      d-----    MM/DD/YYYY HH:MM A/PM               mary
-      -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_jane
-      -a----    MM/DD/YYYY HH:MM A/PM            0  aka_jane_doe
+        the terminal_ goes back to the command line
 
-    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
+      * I use `New-Item`_ to make an empty hidden file_ in ``jane``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item .a_hidden_file_in_jane
+
+        the terminal_ goes back to the command line
+
+      * I use ls_ to show what is in ``jane``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ls
+
+        the terminal_ shows
+
+        .. code-block:: python
+
+          Mode            LastWriteTime         Length  Name
+          ----            -------------         ------  ----
+          d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_jane
+          d-----    MM/DD/YYYY HH:MM A/PM               mary
+          -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_jane
+          -a----    MM/DD/YYYY HH:MM A/PM            0  aka_jane_doe
+
+        the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
 
 * I `change directory`_ to the parent of ``jane``
 
@@ -1967,64 +2062,88 @@ I can use the touch_ program to make empty files_ in a folder_
 
     .../pumping_python/doe/john
 
-* I use touch_ to make an empty file_ in ``john``
+.. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch aka_john_doe
+      * I use touch_ to make an empty file_ in ``john``
 
-  the terminal_ goes back to the command line
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+          touch aka_john_doe
 
-    use `New-Item`_ in place of ``touch``
+        the terminal_ goes back to the command line
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      * I use touch_ to make an empty hidden file_ in ``john``
 
-      New-Item aka_john_doe
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use touch_ to make an empty hidden file_ in ``john``
+          touch .a_hidden_file_in_john
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        the terminal_ goes back to the command line
 
-    touch .a_hidden_file_in_john
+      * I use ls_ to show what is in ``john``
 
-  the terminal_ goes back to the command line
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use ls_ to show what is in ``john``
+          ls -a
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        the terminal_ shows
 
-    ls -a
+        .. code-block:: python
 
-  the terminal_ shows
+          .
+          ..
+          .a_hidden_file_in_john
+          .a_hidden_folder_in_john
+          aka_john_doe
+          lil
 
-  .. code-block:: python
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-    .
-    ..
-    .a_hidden_file_in_john
-    .a_hidden_folder_in_john
-    aka_john_doe
-    lil
+      * I use `New-Item`_ to make an empty file_ in ``john``
 
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_ the terminal_ shows
+          New-Item aka_john_doe
 
-    .. code-block:: python
+        the terminal_ goes back to the command line
 
-      Mode            LastWriteTime         Length  Name
-      ----            -------------         ------  ----
-      d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_john
-      d-----    MM/DD/YYYY HH:MM A/PM               lil
-      -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_john
-      -a----    MM/DD/YYYY HH:MM A/PM            0  aka_john_doe
+      * I use `New-Item`_ to make an empty hidden file_ in ``john``
 
-    the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item .a_hidden_file_in_john
+
+        the terminal_ goes back to the command line
+
+      * I use ls_ to show what is in ``john``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          ls
+
+        the terminal_ shows
+
+        .. code-block:: python
+
+          Mode            LastWriteTime         Length  Name
+          ----            -------------         ------  ----
+          d-----    MM/DD/YYYY HH:MM A/PM               .a_hidden_folder_in_john
+          d-----    MM/DD/YYYY HH:MM A/PM               lil
+          -a----    MM/DD/YYYY HH:MM A/PM            0  .a_hidden_file_in_john
+          -a----    MM/DD/YYYY HH:MM A/PM            0  aka_john_doe
+
+        the terminal_ does not show ``.`` and ``..`` and always shows hidden folders_ and files_ on Windows_ without `Windows Subsystem for Linux`_
 
 * I `change directory`_ to the parent of ``john``
 
