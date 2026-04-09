@@ -2287,7 +2287,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 how to use directory relationships
 ********************************************************************************************
 
-* I try to `change directory`_  from ``doe`` to ``mary`` in 1 step
+* I try to `change directory`_  from ``doe`` to ``mary`` in one step
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2296,39 +2296,70 @@ how to use directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    cd: no such file or directory: mary
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-* I use tree_ with the ``-d`` option to show only the directories_
+      .. code-block:: python
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+        cd: no such file or directory: mary
 
-    use ``tree`` in place of ``tree -d`` to see the folders_ in the tree
+      * I use tree_ with the ``-d`` option to show only the directories_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        .. code-block:: python
+          :emphasize-lines: 1
 
-    tree -d
+          tree -d
 
-  the terminal_ shows
+        the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-text: jane mary
+        .. code-block:: shell
+          :emphasize-text: jane mary
 
-    .
-    ├── jane
-    │   └── mary
-    └── john
-        └── lil
+          .
+          ├── jane
+          │   └── mary
+          └── john
+              └── lil
 
-    5 directories
+          5 directories
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+
+        Set-Location: Cannot find path
+                      'C:\...\pumping_python\doe\mary'
+                      because it does not exist
+
+      * I use tree_ to show only the directories_
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          tree
+
+        the terminal_ shows
+
+        .. code-block:: shell
+
+          C:.
+          ├── .a_hidden_folder_in_doe
+          ├── jane
+          │   ├── .a_hidden_folder_in_jane
+          │   └── mary
+          └── john
+              ├── .a_hidden_folder_in_john
+              └── lil
 
   - there is no line from ``doe`` to ``mary`` because ``mary`` is not a child of ``doe``
   - there is a line from ``jane`` to ``mary`` because ``mary`` is a child of ``jane``
   - there is a line from ``doe`` to ``jane`` because ``jane`` is a child of ``doe``
 
-* I can go from ``doe`` to ``jane`` to ``mary`` in 1 step with
+* I can go from ``doe`` to ``jane`` to ``mary`` in one step with
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2359,7 +2390,7 @@ how to use directory relationships
   - ``doe`` is not a child of ``mary``
   - I cannot go from ``mary`` to ``doe`` this way
 
-* I can go from ``mary`` back to ``doe`` in 1 step with ``..``
+* I can go from ``mary`` back to ``doe`` in one step with ``..``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2381,7 +2412,7 @@ how to use directory relationships
 
 ----
 
-* I try to `change directory`_  from ``doe`` to ``lil`` in 1 step
+* I try to `change directory`_  from ``doe`` to ``lil`` in one step
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2390,39 +2421,70 @@ how to use directory relationships
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    cd: no such file or directory: lil
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-* I use tree_ with the ``-d`` option to show only the directories_
+      .. code-block:: python
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        cd: no such file or directory: lil
 
-    tree -d
+      * I use tree_ with the ``-d`` option to show only the directories_
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+        .. code-block:: python
+          :emphasize-lines: 1
 
-    use ``tree`` in place of ``tree -d`` to see the folders_ in the tree
+          tree -d
 
-  the terminal_ shows
+        the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-text: john lil
+        .. code-block:: shell
+          :emphasize-text: john lil
 
-    .
-    ├── jane
-    │   └── mary
-    └── john
-        └── lil
+          .
+          ├── jane
+          │   └── mary
+          └── john
+              └── lil
 
-    5 directories
+          5 directories
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+
+        Set-Location: Cannot find path
+                      'C:\...\pumping_python\doe\lil'
+                      because it does not exist
+
+      * I use tree_ to show only the directories_
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          tree
+
+        the terminal_ shows
+
+        .. code-block:: shell
+
+          C:.
+          ├── .a_hidden_folder_in_doe
+          ├── jane
+          │   ├── .a_hidden_folder_in_jane
+          │   └── mary
+          └── john
+              ├── .a_hidden_folder_in_john
+              └── lil
 
   - there is no line from ``doe`` to ``lil`` because ``lil`` is not a child of ``doe``
   - there is a line from ``john`` to ``lil`` because ``lil`` is a child of ``john``
   - there is a line from ``doe`` to ``john`` because ``john`` is a child of ``doe``
 
-* I can go from ``doe`` to ``john`` to ``lil`` in 1 step with
+* I can go from ``doe`` to ``john`` to ``lil`` in one step with
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2453,7 +2515,7 @@ how to use directory relationships
   - ``doe`` is not a child of ``lil``
   - I cannot go from ``lil`` to ``doe`` this way
 
-* I can go from ``lil`` back to ``doe`` in 1 step with ``..``
+* I can go from ``lil`` back to ``doe`` in one step with ``..``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2489,29 +2551,60 @@ how to use touch with directory relationships
 
 * I use tree_ to show the files_ and folders_ related to ``doe``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    use ``tree /F`` in place of ``tree``, to see the files_ and folders_ related to ``doe``
+        tree
 
-  the terminal_ shows
+      the terminal_ shows
 
-  .. code-block:: shell
+      .. code-block:: shell
 
-    .
-    ├── a_file_in_doe
-    ├── jane
-    │   ├── aka_jane_doe
-    │   └── mary
-    └── john
-        ├── aka_john_doe
-        └── lil
+        .
+        ├── a_file_in_doe
+        ├── jane
+        │   ├── aka_jane_doe
+        │   └── mary
+        └── john
+            ├── aka_john_doe
+            └── lil
 
-    5 directories, 3 files
+        5 directories, 3 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+
+        tree /F
+
+      the terminal_ shows
+
+      .. code-block:: shell
+
+        C:.
+        │   .a_hidden_file_in_doe
+        │   a_file_in_doe
+        │
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   │   .a_hidden_file_in_jane
+        │   │   aka_jane_doe
+        │   │
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        └── john
+            │   .a_hidden_file_in_john
+            │   aka_john_doe
+            │
+            ├── .a_hidden_folder_in_john
+            └── lil
 
 * I `change directory`_ to ``mary``
 
@@ -2528,32 +2621,50 @@ how to use touch with directory relationships
 
   I am in ``mary``
 
-* I use touch_ to make an empty file_ in ``mary``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch aka_mary_jane_doe
+      * I use touch_ to make an empty file_ in ``mary``
 
-  the terminal_ goes back to the command line
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+          touch aka_mary_jane_doe
 
-    use `New-Item`_ in place of ``touch``
+        the terminal_ goes back to the command line
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      * I use touch_ to make an empty hidden file_ in ``mary``
 
-      New-Item aka_mary_jane_doe
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use touch_ to make an empty hidden file_ in ``mary``
+          touch .a_hidden_file_in_mary
 
-  .. code-block:: python
-    :emphasize-lines: 1
+        the terminal_ goes back to the command line
 
-    touch .a_hidden_file_in_mary
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-  the terminal_ goes back to the command line
+      * I use `New-Item`_ to make an empty file_ in ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item aka_mary_jane_doe
+
+        the terminal_ goes back to the command line
+
+      * I use `New-Item`_ to make an empty hidden file_ in ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item .a_hidden_file_in_mary
+
+        the terminal_ goes back to the command line
 
 * I use mkdir_ to make a hidden directory_ in ``mary``
 
@@ -2566,29 +2677,46 @@ how to use touch with directory relationships
 
 * I use ls_ to show what is in ``mary``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls -a
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    use ``dir`` or ``ls`` for ls --all`` or ``ls -a``
+        ls -a
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      the terminal_ shows
 
-      dir
+      .. code-block:: python
 
-  the terminal_ shows
+        .
+        ..
+        .a_hidden_file_in_mary
+        .a_hidden_folder_in_mary
+        aka_mary_jane_doe
 
-  .. code-block:: python
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-    .
-    ..
-    .a_hidden_file_in_mary
-    .a_hidden_folder_in_mary
-    aka_mary_jane_doe
+      .. code-block:: PowerShell
+        :emphasize-lines: 1
+
+        ls
+
+      .. TIP:: I can also use ``dir``
+
+      the terminal_ shows
+
+      .. code-block:: python
+
+        Mode            LastWriteTime   Length  Name
+        ----            -------------   ------  ----
+        d-----    MM/DD/YYYY HH:MM A/PM         .a_hidden_folder_in_mary
+        -a----    MM/DD/YYYY HH:MM A/PM      0  .a_hidden_file_in_mary
+        -a----    MM/DD/YYYY HH:MM A/PM      0  aka_mary_jane_doe
 
 * I use cd_ to go back to the grandparent of ``mary``
 
@@ -2622,28 +2750,42 @@ how to use touch with directory relationships
 
   I am in ``lil``
 
-* I use touch_ to make an empty file_ in ``lil``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch aka_lil_john_doe
+      * I use touch_ to make an empty file_ in ``lil``
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+        .. code-block:: python
+          :emphasize-lines: 1
 
-    use `New-Item`_ in place of ``touch``
+          touch aka_lil_john_doe
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      * I use touch_ to make an empty hidden file_ in ``lil``
 
-      New-Item aka_lil_john_doe
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use touch_ to make an empty hidden file_ in ``lil``
+          touch .a_hidden_file_in_lil
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-    touch .a_hidden_file_in_lil
+      * I use `New-Item`_ to make an empty file_ in ``lil``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item aka_lil_john_doe
+
+      * I use `New-Item`_ to make an empty hidden file_ in ``lil``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item .a_hidden_file_in_lil
 
 * I use mkdir_ to make a hidden directory_ in ``lil``
 
@@ -2654,29 +2796,46 @@ how to use touch with directory relationships
 
 * I use ls_ to show what is in ``lil``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls -a
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    use ``dir`` or ``ls`` for ls --all`` or ``ls -a``
+        ls -a
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+      the terminal_ shows
 
-      dir
+      .. code-block:: python
 
-  the terminal_ shows
+        .
+        ..
+        .a_hidden_file_in_lil
+        .a_hidden_folder_in_lil
+        aka_lil_john_doe
 
-  .. code-block:: python
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-    .
-    ..
-    .a_hidden_file_in_lil
-    .a_hidden_folder_in_lil
-    aka_lil_john_doe
+      .. code-block:: PowerShell
+        :emphasize-lines: 1
+
+        ls
+
+      .. TIP:: I can also use ``dir``
+
+      the terminal_ shows
+
+      .. code-block:: python
+
+        Mode            LastWriteTime   Length  Name
+        ----            -------------   ------  ----
+        d-----    MM/DD/YYYY HH:MM A/PM         .a_hidden_folder_in_lil
+        -a----    MM/DD/YYYY HH:MM A/PM      0  .a_hidden_file_in_lil
+        -a----    MM/DD/YYYY HH:MM A/PM      0  aka_lil_john_doe
 
 * I use cd_ to go back to the grandparent of ``lil``
 
@@ -2695,28 +2854,67 @@ how to use touch with directory relationships
 
 * I use tree_ to see what I have so far
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 6, 10
+        tree
 
-    .
-    ├── a_file_in_doe
-    ├── jane
-    │   ├── aka_jane_doe
-    │   └── mary
-    │       └── aka_mary_jane_doe
-    └── john
-        ├── aka_john_doe
-        └── lil
-            └── aka_lil_john_doe
+      the terminal_ shows
 
-    5 directories, 5 files
+      .. code-block:: shell
+        :emphasize-lines: 6, 10
+
+        .
+        ├── a_file_in_doe
+        ├── jane
+        │   ├── aka_jane_doe
+        │   └── mary
+        │       └── aka_mary_jane_doe
+        └── john
+            ├── aka_john_doe
+            └── lil
+                └── aka_lil_john_doe
+
+        5 directories, 5 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree /F
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 6, 10
+
+        C:.
+        │   .a_hidden_file_in_doe
+        │   a_file_in_doe
+        │
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   │   .a_hidden_file_in_jane
+        │   │   aka_jane_doe
+        │   │
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        └── john
+            │   .a_hidden_file_in_john
+            │   aka_john_doe
+            │
+            ├── .a_hidden_folder_in_john
+            └── lil
+
+
 
 * I use tree_ with the ``-a`` option
 
@@ -3689,7 +3887,7 @@ how to use tree with directory relationships
 
     10 directories, 30 files
 
-I can do things with files_ and folders_ in 1 step as long as
+I can do things with files_ and folders_ in one step as long as
 
 - I know their paths/addresses
 - I know their relation to where I am and
