@@ -4230,51 +4230,118 @@ how to use tree with directory relationships
 
 * I use tree_ to show what is in ``lil``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree ../../john/lil
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+        tree ../../john/lil
 
-    ../../john/lil
-    ├── aka_lil_john_doe
-    ├── child_of_john
-    ├── child_of_sibling_of_jane
-    ├── cousin_of_mary
-    └── grandchild_of_doe
+      the terminal_ shows
 
-    1 directory, 5 files
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-* I use tree_ to show what is in ``john``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree ../../john
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ../../john
-    ├── aka_john_doe
-    ├── aka_parent_of_lil
-    ├── aka_sibling_of_jane
-    ├── aka_uncle_of_mary
-    ├── child_of_doe
-    └── lil
+        ../../john/lil
         ├── aka_lil_john_doe
         ├── child_of_john
         ├── child_of_sibling_of_jane
         ├── cousin_of_mary
         └── grandchild_of_doe
 
-    2 directories, 10 files
+        1 directory, 5 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree ../../john/lil /F
+
+      the terminal_ shows
+
+      .. code-block:: none
+        :emphasize-lines: 1
+
+        C:\...\PUMPING_PYTHON\DOE\JOHN\LIL
+        │   .a_hidden_file_in_lil
+        │   .aka_lil_john_doe
+        │   child_of_john
+        │   child_of_sibling_of_jane
+        │   cousin_of_mary
+        │   grandchild_of_doe
+        │
+        └── .a_hidden_folder_in_lil
+
+* I use tree_ to show what is in ``john``
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree ../../john
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        ../../john
+        ├── aka_john_doe
+        ├── aka_parent_of_lil
+        ├── aka_sibling_of_jane
+        ├── aka_uncle_of_mary
+        ├── child_of_doe
+        └── lil
+            ├── aka_lil_john_doe
+            ├── child_of_john
+            ├── child_of_sibling_of_jane
+            ├── cousin_of_mary
+            └── grandchild_of_doe
+
+        2 directories, 10 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree /F ../../john
+
+      the terminal_ shows
+
+      .. code-block:: none
+        :emphasize-lines: 1
+
+        C:\...\PUMPING_PYTHON\DOE\JOHN
+        │   .a_hidden_file_in_john
+        │   aka_john_doe
+        │   aka_parent_of_lil
+        │   aka_sibling_of_jane
+        │   aka_uncle_of_mary
+        │   child_of_doe
+        │
+        ├── .a_hidden_folder_in_john
+        └── lil
+            │   .a_hidden_file_in_lil
+            │   .aka_lil_john_doe
+            │   child_of_john
+            │   child_of_sibling_of_jane
+            │   cousin_of_mary
+            │   grandchild_of_doe
+            │
+            └── .a_hidden_folder_in_lil
 
 * I `change directories`_ from ``mary`` to ``lil``
 
@@ -4314,51 +4381,118 @@ how to use tree with directory relationships
 
 * I use tree_ to show what is in ``mary``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree ../../jane/mary
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+        tree ../../jane/mary
 
-    ../../jane/mary
-    ├── aka_mary_jane_doe
-    ├── child_of_jane
-    ├── child_of_sibling_of_john
-    ├── cousin_of_lil
-    └── grandchild_of_doe
+      the terminal_ shows
 
-    1 directory, 5 files
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-* I use tree_ to show what is in ``jane``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree ../../jane
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    ../../jane
-    ├── aka_aunt_of_lil
-    ├── aka_jane_doe
-    ├── aka_parent_of_mary
-    ├── aka_sibling_of_john
-    ├── child_of_doe
-    └── mary
+        ../../jane/mary
         ├── aka_mary_jane_doe
         ├── child_of_jane
         ├── child_of_sibling_of_john
         ├── cousin_of_lil
         └── grandchild_of_doe
 
-    2 directories, 10 files
+        1 directory, 5 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree ../../jane/mary /F
+
+      the terminal_ shows
+
+      .. code-block:: none
+        :emphasize-lines: 1
+
+        C:\...\PUMPING_PYTHON\DOE\JANE\MARY
+          │   .a_hidden_file_in_mary
+          │   .aka_mary_jane_doe
+          │   child_of_jane
+          │   child_of_sibling_of_john
+          │   cousin_of_lil
+          │   grandchild_of_doe
+          │
+          └── .a_hidden_folder_in_mary
+
+* I use tree_ to show what is in ``jane``
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree ../../jane
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        ../../jane
+        ├── aka_aunt_of_lil
+        ├── aka_jane_doe
+        ├── aka_parent_of_mary
+        ├── aka_sibling_of_john
+        ├── child_of_doe
+        └── mary
+            ├── aka_mary_jane_doe
+            ├── child_of_jane
+            ├── child_of_sibling_of_john
+            ├── cousin_of_lil
+            └── grandchild_of_doe
+
+        2 directories, 10 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree /F ../../jane
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        ─ jane
+          │   .a_hidden_file_in_jane
+          │   aka_jane_doe
+          │   aka_aunt_of_lil
+          │   aka_parent_of_mary
+          │   aka_sibling_of_john
+          │   child_of_doe
+          │
+          ├── .a_hidden_folder_in_jane
+          └── mary
+              │   .a_hidden_file_in_mary
+              │   .aka_mary_jane_doe
+              │   child_of_jane
+              │   child_of_sibling_of_john
+              │   cousin_of_lil
+              │   grandchild_of_doe
+              │
+              └── .a_hidden_folder_in_mary
 
 * I go to the parent of ``doe``
 
