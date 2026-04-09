@@ -3530,17 +3530,19 @@ mv_ means move, it takes two arguments
       the terminal_ shows
 
       .. code-block:: shell
-        :emphasize-lines: 3, 16, 23, 30
+        :emphasize-lines: 4, 11, 19, 33
 
         C:.
         │   .a_hidden_file_in_doe
         │   aka_parent_of_jane
+        │   aka_parent_of_john
         │   a_file_in_doe
         │
         ├── .a_hidden_folder_in_doe
         ├── jane
         │   │   .a_hidden_file_in_jane
         │   │   aka_jane_doe
+        │   │   aka_sibling_of_john
         │   │   child_of_doe
         │   │
         │   ├── .a_hidden_folder_in_jane
@@ -3548,6 +3550,7 @@ mv_ means move, it takes two arguments
         │       │   .a_hidden_file_in_mary
         │       │   .aka_mary_jane_doe
         │       │   child_of_jane
+        │       │   child_of_sibling_of_john
         │       │   grandchild_of_doe
         │       │
         │       └── .a_hidden_folder_in_mary
@@ -3561,12 +3564,11 @@ mv_ means move, it takes two arguments
             └── lil
                 │   .a_hidden_file_in_lil
                 │   .aka_lil_john_doe
+                │   child_of_john
                 │   child_of_sibling_of_jane
                 │   grandchild_of_doe
                 │
                 └── .a_hidden_folder_in_lil
-
-----
 
 * I `change directory`_ to ``mary``
 
