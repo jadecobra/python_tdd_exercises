@@ -2883,6 +2883,41 @@ how to use touch with directory relationships
 
         5 directories, 5 files
 
+      I use tree_ with the ``-a`` option
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree -a
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 10-11, 18-19
+
+        .
+        ├── a_file_in_doe
+        ├── .a_hidden_file_in_doe
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   ├── .a_hidden_file_in_jane
+        │   ├── .a_hidden_folder_in_jane
+        │   ├── aka_jane_doe
+        │   └── mary
+        │       ├── .a_hidden_file_in_mary
+        │       ├── .a_hidden_folder_in_mary
+        │       └── aka_mary_jane_doe
+        └── john
+            ├── .a_hidden_file_in_john
+            ├── .a_hidden_folder_in_john
+            ├── aka_john_doe
+            └── lil
+                ├── .a_hidden_file_in_lil
+                ├── .a_hidden_folder_in_lil
+                └── aka_lil_john_doe
+
+        10 directories, 10 files
+
     .. tab-item:: no WSL
       :sync: no_wsl
 
@@ -2894,7 +2929,7 @@ how to use touch with directory relationships
       the terminal_ shows
 
       .. code-block:: shell
-        :emphasize-lines: 6, 10
+        :emphasize-lines: 13, 23
 
         C:.
         │   .a_hidden_file_in_doe
@@ -2921,45 +2956,6 @@ how to use touch with directory relationships
                 │   .aka_lil_john_doe
                 │
                 └── .a_hidden_folder_in_lil
-
-* I use tree_ with the ``-a`` option
-
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
-
-    use ``tree /F`` in place of ``tree -a`` to see only the files_ and folders_ in the tree
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree -a
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 10-11, 18-19
-
-    .
-    ├── a_file_in_doe
-    ├── .a_hidden_file_in_doe
-    ├── .a_hidden_folder_in_doe
-    ├── jane
-    │   ├── .a_hidden_file_in_jane
-    │   ├── .a_hidden_folder_in_jane
-    │   ├── aka_jane_doe
-    │   └── mary
-    │       ├── .a_hidden_file_in_mary
-    │       ├── .a_hidden_folder_in_mary
-    │       └── aka_mary_jane_doe
-    └── john
-        ├── .a_hidden_file_in_john
-        ├── .a_hidden_folder_in_john
-        ├── aka_john_doe
-        └── lil
-            ├── .a_hidden_file_in_lil
-            ├── .a_hidden_folder_in_lil
-            └── aka_lil_john_doe
-
-    10 directories, 10 files
 
 ----
 

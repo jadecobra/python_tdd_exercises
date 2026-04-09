@@ -1657,7 +1657,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
   green
 
-* I write everything in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line
+* I write everything in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line, I might as well make it three
 
   .. code-block:: python
     :lineno-start: 83
