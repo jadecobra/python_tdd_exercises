@@ -3676,46 +3676,105 @@ mv_ means move, it takes two arguments
 
 * I use tree_ to show the files_ and folders_ related to ``doe`` from inside ``mary``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree ../..
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 1, 3, 8, 19, 25
+        tree ../..
 
-    ../..
-    ├── a_file_in_doe
-    ├── aka_grandparent_of_mary
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── jane
-    │   ├── aka_jane_doe
-    │   ├── aka_parent_of_mary
-    │   ├── aka_sibling_of_john
-    │   ├── child_of_doe
-    │   └── mary
-    │       ├── aka_mary_jane_doe
-    │       ├── child_of_jane
-    │       ├── child_of_sibling_of_john
-    │       └── grandchild_of_doe
-    └── john
-        ├── aka_john_doe
-        ├── aka_sibling_of_jane
-        ├── aka_uncle_of_mary
-        ├── child_of_doe
-        └── lil
-            ├── aka_lil_john_doe
-            ├── child_of_john
-            ├── child_of_sibling_of_jane
-            ├── cousin_of_mary
-            └── grandchild_of_doe
+      the terminal_ shows
 
-    5 directories, 21 files
+      .. code-block:: shell
+        :emphasize-lines: 1, 3, 8, 19, 25
 
-----
+        ../..
+        ├── a_file_in_doe
+        ├── aka_grandparent_of_mary
+        ├── aka_parent_of_jane
+        ├── aka_parent_of_john
+        ├── jane
+        │   ├── aka_jane_doe
+        │   ├── aka_parent_of_mary
+        │   ├── aka_sibling_of_john
+        │   ├── child_of_doe
+        │   └── mary
+        │       ├── aka_mary_jane_doe
+        │       ├── child_of_jane
+        │       ├── child_of_sibling_of_john
+        │       └── grandchild_of_doe
+        └── john
+            ├── aka_john_doe
+            ├── aka_sibling_of_jane
+            ├── aka_uncle_of_mary
+            ├── child_of_doe
+            └── lil
+                ├── aka_lil_john_doe
+                ├── child_of_john
+                ├── child_of_sibling_of_jane
+                ├── cousin_of_mary
+                └── grandchild_of_doe
+
+        5 directories, 21 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree ../.. /F
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 3, 12, 29, 38
+
+        C:.\...\PUMPING_PYTHON\DOE
+        │   .a_hidden_file_in_doe
+        │   aka_grandparent_of_mary
+        │   aka_parent_of_jane
+        │   aka_parent_of_john
+        │   a_file_in_doe
+        │
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   │   .a_hidden_file_in_jane
+        │   │   aka_jane_doe
+        │   │   aka_parent_of_mary
+        │   │   aka_sibling_of_john
+        │   │   child_of_doe
+        │   │
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        │       │   .a_hidden_file_in_mary
+        │       │   .aka_mary_jane_doe
+        │       │   child_of_jane
+        │       │   child_of_sibling_of_john
+        │       │   grandchild_of_doe
+        │       │
+        │       └── .a_hidden_folder_in_mary
+        └── john
+            │   .a_hidden_file_in_john
+            │   aka_john_doe
+            │   aka_sibling_of_jane
+            │   aka_uncle_of_mary
+            │   child_of_doe
+            │
+            ├── .a_hidden_folder_in_john
+            └── lil
+                │   .a_hidden_file_in_lil
+                │   .aka_lil_john_doe
+                │   child_of_john
+                │   child_of_sibling_of_jane
+                │   cousin_of_mary
+                │   grandchild_of_doe
+                │
+                └── .a_hidden_folder_in_lil
 
 * I `change directory`_ to ``lil`` from ``mary``
 
@@ -3730,28 +3789,60 @@ mv_ means move, it takes two arguments
 
     .../doe/john/lil
 
-* I use touch_ to make an empty file_ in ``john`` from inside ``lil``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch ../aka_parent_of_lil
+      * I use touch_ to make an empty file_ in ``john`` from inside ``lil``
 
-* I use touch_ to make an empty file_ in ``doe`` from inside ``lil``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch ../aka_parent_of_lil
 
-    touch ../../aka_grandparent_of_lil
+      * I use touch_ to make an empty file_ in ``doe`` from inside ``lil``
 
-* I use touch_ to make an empty file_ in ``jane`` from inside ``lil``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch ../../aka_grandparent_of_lil
 
-    touch ../../jane/aka_uncle_of_lil
+      * I use touch_ to make an empty file_ in ``jane`` from inside ``lil``
 
-  I made another mistake - ``aka_uncle_of_lil`` should be ``aka_aunt_of_lil``
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          touch ../../jane/aka_uncle_of_lil
+
+        I made another mistake - ``aka_uncle_of_lil`` should be ``aka_aunt_of_lil``
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I use `New-Item`_ to make an empty file_ in ``john`` from inside ``lil``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../aka_parent_of_lil
+
+      * I use `New-Item`_ to make an empty file_ in ``doe`` from inside ``lil``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../../aka_grandparent_of_lil
+
+      * I use `New-Item`_ to make an empty file_ in ``jane`` from inside ``lil``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../../jane/aka_uncle_of_lil
+
+        I made another mistake - ``aka_uncle_of_lil`` should be ``aka_aunt_of_lil``
 
 * I `change directory`_ to ``jane``
 
@@ -3774,61 +3865,141 @@ mv_ means move, it takes two arguments
 
     cd ../john/lil
 
-* I use touch_ to make an empty file_ in ``mary`` from inside ``lil``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1-2
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch ../../jane/mary/cousin_of_lil
+      * I use touch_ to make an empty file_ in ``mary`` from inside ``lil``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          touch ../../jane/mary/cousin_of_lil
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I use `New-Item`_ to make an empty file_ in ``mary`` from inside ``lil``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          New-Item ../../jane/mary/cousin_of_lil
 
 * I use tree_ to show the files_ and folders_ related to ``doe`` from inside ``lil`` through the parent of ``doe``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree ../../../doe
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree ../../../doe
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 1, 3, 8, 17, 21
+
+        ../../../doe
+        ├── a_file_in_doe
+        ├── aka_grandparent_of_lil
+        ├── aka_grandparent_of_mary
+        ├── aka_parent_of_jane
+        ├── aka_parent_of_john
+        ├── jane
+        │   ├── aka_aunt_of_lil
+        │   ├── aka_jane_doe
+        │   ├── aka_parent_of_mary
+        │   ├── aka_sibling_of_john
+        │   ├── child_of_doe
+        │   └── mary
+        │       ├── aka_mary_jane_doe
+        │       ├── child_of_jane
+        │       ├── child_of_sibling_of_john
+        │       ├── cousin_of_lil
+        │       └── grandchild_of_doe
+        └── john
+            ├── aka_john_doe
+            ├── aka_parent_of_lil
+            ├── aka_sibling_of_jane
+            ├── aka_uncle_of_mary
+            ├── child_of_doe
+            └── lil
+                ├── aka_lil_john_doe
+                ├── child_of_john
+                ├── child_of_sibling_of_jane
+                ├── cousin_of_mary
+                └── grandchild_of_doe
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree ../../../doe /F
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 3, 13, 24, 31
+
+        C:.\...\PUMPING_PYTHON\DOE
+        │   .a_hidden_file_in_doe
+        │   aka_grandparent_of_lil
+        │   aka_grandparent_of_mary
+        │   aka_parent_of_jane
+        │   aka_parent_of_john
+        │   a_file_in_doe
+        │
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   │   .a_hidden_file_in_jane
+        │   │   aka_jane_doe
+        │   │   aka_aunt_of_lil
+        │   │   aka_parent_of_mary
+        │   │   aka_sibling_of_john
+        │   │   child_of_doe
+        │   │
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        │       │   .a_hidden_file_in_mary
+        │       │   .aka_mary_jane_doe
+        │       │   child_of_jane
+        │       │   child_of_sibling_of_john
+        │       │   cousin_of_lil
+        │       │   grandchild_of_doe
+        │       │
+        │       └── .a_hidden_folder_in_mary
+        └── john
+            │   .a_hidden_file_in_john
+            │   aka_john_doe
+            │   aka_parent_of_lil
+            │   aka_sibling_of_jane
+            │   aka_uncle_of_mary
+            │   child_of_doe
+            │
+            ├── .a_hidden_folder_in_john
+            └── lil
+                │   .a_hidden_file_in_lil
+                │   .aka_lil_john_doe
+                │   child_of_john
+                │   child_of_sibling_of_jane
+                │   cousin_of_mary
+                │   grandchild_of_doe
+                │
+                └── .a_hidden_folder_in_lil
 
   - ``..`` is for the parent of ``lil`` which is ``john``
   - ``../..`` is for the parent of the parent of ``lil`` which is ``doe``
   - ``../../..`` is for the parent of the parent of the parent of ``lil`` which is ``pumping_python``
   - ``doe`` is a child of ``pumping_python``
-
-  the terminal_ shows
-
-  .. code-block:: shell
-    :emphasize-lines: 1, 3, 8, 17, 21
-
-    ../../../doe
-    ├── a_file_in_doe
-    ├── aka_grandparent_of_lil
-    ├── aka_grandparent_of_mary
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── jane
-    │   ├── aka_aunt_of_lil
-    │   ├── aka_jane_doe
-    │   ├── aka_parent_of_mary
-    │   ├── aka_sibling_of_john
-    │   ├── child_of_doe
-    │   └── mary
-    │       ├── aka_mary_jane_doe
-    │       ├── child_of_jane
-    │       ├── child_of_sibling_of_john
-    │       ├── cousin_of_lil
-    │       └── grandchild_of_doe
-    └── john
-        ├── aka_john_doe
-        ├── aka_parent_of_lil
-        ├── aka_sibling_of_jane
-        ├── aka_uncle_of_mary
-        ├── child_of_doe
-        └── lil
-            ├── aka_lil_john_doe
-            ├── child_of_john
-            ├── child_of_sibling_of_jane
-            ├── cousin_of_mary
-            └── grandchild_of_doe
-
 
 I can add a file_ to any folder_ when I know its path or relation to where I am, if I have :ref:`permission to write to the folder<how to view the permissions of a file>`.
 
@@ -3858,10 +4029,24 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
 * I use ls_ to show what is in ``doe``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls -a doe
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls -a doe
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls doe
 
   the terminal_ shows
 
@@ -3881,10 +4066,24 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
 * I use ls_ to show what is in ``jane``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls -a doe/jane
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls -a doe/jane
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls doe/jane
 
   the terminal_ shows
 
