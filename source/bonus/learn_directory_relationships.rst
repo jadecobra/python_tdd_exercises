@@ -3040,12 +3040,18 @@ how to use touch with directory relationships
 
       the terminal_ goes back to the command line
 
-    * I use tree_ with the ``/F`` option to show the files_ and folders_ related to ``doe``
+* I use tree_ to show the files_ and folders_ related to ``doe``
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
       .. code-block:: python
         :emphasize-lines: 1
 
-        tree /F
+        tree
 
       the terminal_ shows
 
@@ -3069,35 +3075,48 @@ how to use touch with directory relationships
 
         5 directories, 9 files
 
-* I use tree_ to show the files_ and folders_ related to ``doe``
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      .. code-block:: python
+        :emphasize-lines: 1
 
-    tree
+        tree /F
 
-  the terminal_ shows
+      the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 5, 8, 11, 14
+      .. code-block:: shell
+        :emphasize-lines: 9, 15, 21, 27
 
-    .
-    ├── a_file_in_doe
-    ├── jane
-    │   ├── aka_jane_doe
-    │   ├── child_of_doe
-    │   └── mary
-    │       ├── aka_mary_jane_doe
-    │       └── grandchild_of_doe
-    └── john
-        ├── aka_john_doe
-        ├── child_of_doe
-        └── lil
-            ├── aka_lil_john_doe
-            └── grandchild_of_doe
-
-    5 directories, 9 files
-
+        C:.
+        │   .a_hidden_file_in_doe
+        │   a_file_in_doe
+        │
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   │   .a_hidden_file_in_jane
+        │   │   aka_jane_doe
+        │   │   child_of_doe
+        │   │
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        │       │   .a_hidden_file_in_mary
+        │       │   .aka_mary_jane_doe
+        │       │   grandchild_of_doe
+        │       │
+        │       └── .a_hidden_folder_in_mary
+        └── john
+            │   .a_hidden_file_in_john
+            │   aka_john_doe
+            │   child_of_doe
+            │
+            ├── .a_hidden_folder_in_john
+            └── lil
+                │   .a_hidden_file_in_lil
+                │   .aka_lil_john_doe
+                │   grandchild_of_doe
+                │
+                └── .a_hidden_folder_in_lil
 
 * I `change directory`_ to ``jane``
 
@@ -3106,36 +3125,76 @@ how to use touch with directory relationships
 
     cd jane
 
-* I use touch_ to make an empty file_ in ``mary`` from inside ``jane``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch mary/child_of_jane
+      * I use touch_ to make an empty file_ in ``mary`` from inside ``jane``
 
-* I use touch_ to make an empty file_ in ``doe`` from inside ``jane``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch mary/child_of_jane
 
-    touch ../aka_parent_of_jane
+      * I use touch_ to make an empty file_ in ``doe`` from inside ``jane``
 
-* I use touch_ to make an empty file_ in ``john`` from inside ``jane``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch ../aka_parent_of_jane
 
-    touch ../john/aka_sibling_of_jane
+      * I use touch_ to make an empty file_ in ``john`` from inside ``jane``
 
-  - ``..`` is the parent of ``jane`` which is ``doe``
-  - ``john`` is a child of ``doe``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use touch_ to make an empty file_ in ``lil`` from inside ``jane``
+          touch ../john/aka_sibling_of_jane
 
-  .. code-block:: python
-    :emphasize-lines: 1-2
+        - ``..`` is the parent of ``jane`` which is ``doe``
+        - ``john`` is a child of ``doe``
 
-    touch ../john/lil/child_of_sibling_of_john
+      * I use touch_ to make an empty file_ in ``lil`` from inside ``jane``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          touch ../john/lil/child_of_sibling_of_john
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I use `New-Item`_ to make an empty file_ in ``mary`` from inside ``jane``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item mary/child_of_jane
+
+      * I use `New-Item`_ to make an empty file_ in ``doe`` from inside ``jane``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../aka_parent_of_jane
+
+      * I use `New-Item`_ to make an empty file_ in ``john`` from inside ``jane``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../john/aka_sibling_of_jane
+
+        - ``..`` is the parent of ``jane`` which is ``doe``
+        - ``john`` is a child of ``doe``
+
+      * I use `New-Item`_ to make an empty file_ in ``lil`` from inside ``jane``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          New-Item ../john/lil/child_of_sibling_of_john
 
   - ``..`` is the parent of ``jane`` which is ``doe``
   - ``john`` is a child of ``doe``
@@ -3195,7 +3254,7 @@ mv_ means move, it takes two arguments
   - paste the copied file_ or folder_ at the target
   - delete the original file_ or folder_
 
-  that is two steps too many, give me one step.
+  that is two steps too many, I leave that to the dancers, give me one step.
 
 :ref:`I know how to rename a file<how to rename a file or directory>`
 
