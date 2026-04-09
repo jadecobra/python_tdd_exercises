@@ -3269,36 +3269,89 @@ mv_ means move, it takes two arguments
 
 * I use tree_ to show the files_ and folders_ related to ``doe``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 3, 9, 13, 17
+        tree
 
-    .
-    ├── a_file_in_doe
-    ├── aka_parent_of_jane
-    ├── jane
-    │   ├── aka_jane_doe
-    │   ├── child_of_doe
-    │   └── mary
-    │       ├── aka_mary_jane_doe
-    │       ├── child_of_jane
-    │       └── grandchild_of_doe
-    └── john
-        ├── aka_john_doe
-        ├── aka_sibling_of_jane
-        ├── child_of_doe
-        └── lil
-            ├── aka_lil_john_doe
-            ├── child_of_sibling_of_jane
-            └── grandchild_of_doe
+      the terminal_ shows
 
-    5 directories, 13 files
+      .. code-block:: shell
+        :emphasize-lines: 3, 9, 13, 17
+
+        .
+        ├── a_file_in_doe
+        ├── aka_parent_of_jane
+        ├── jane
+        │   ├── aka_jane_doe
+        │   ├── child_of_doe
+        │   └── mary
+        │       ├── aka_mary_jane_doe
+        │       ├── child_of_jane
+        │       └── grandchild_of_doe
+        └── john
+            ├── aka_john_doe
+            ├── aka_sibling_of_jane
+            ├── child_of_doe
+            └── lil
+                ├── aka_lil_john_doe
+                ├── child_of_sibling_of_jane
+                └── grandchild_of_doe
+
+        5 directories, 13 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree /F
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 3, 16, 23, 30
+
+        C:.
+        │   .a_hidden_file_in_doe
+        │   aka_parent_of_jane
+        │   a_file_in_doe
+        │
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   │   .a_hidden_file_in_jane
+        │   │   aka_jane_doe
+        │   │   child_of_doe
+        │   │
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        │       │   .a_hidden_file_in_mary
+        │       │   .aka_mary_jane_doe
+        │       │   child_of_jane
+        │       │   grandchild_of_doe
+        │       │
+        │       └── .a_hidden_folder_in_mary
+        └── john
+            │   .a_hidden_file_in_john
+            │   aka_john_doe
+            │   aka_sibling_of_jane
+            │   child_of_doe
+            │
+            ├── .a_hidden_folder_in_john
+            └── lil
+                │   .a_hidden_file_in_lil
+                │   .aka_lil_john_doe
+                │   child_of_sibling_of_jane
+                │   grandchild_of_doe
+                │
+                └── .a_hidden_folder_in_lil
 
 ----
 
