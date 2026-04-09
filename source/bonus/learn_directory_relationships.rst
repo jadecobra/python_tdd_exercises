@@ -4048,6 +4048,13 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
         ls doe
 
+      .. TIP:: I can also use ``dir``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          dir doe
+
   the terminal_ shows
 
   .. code-block:: python
@@ -4102,10 +4109,24 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
 * I use ls_ to show what is in ``mary``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls -a doe/jane/mary
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls -a doe/jane/mary
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls doe/jane/mary
 
   the terminal_ shows
 
@@ -4130,10 +4151,24 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
 * I use ls_ to show what is in ``john`` from inside ``mary``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls -a ../../john
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls -a ../../john
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls ../../john
 
   the terminal_ shows
 
@@ -4152,10 +4187,24 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
 * I use ls_ to show what is in ``lil`` from inside ``mary``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    ls -a ../../john/lil
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls -a ../../john/lil
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls ../../john/lil
 
   the terminal_ shows
 
