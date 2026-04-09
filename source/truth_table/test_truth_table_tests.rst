@@ -1920,7 +1920,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 
     def logical_disjunction(first, second):
         # if not first and not second:
-        if (not first) (not and) (not second):
+        if (not first) (not or) (not second):
             return False
         return first, second
 

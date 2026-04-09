@@ -2907,14 +2907,20 @@ how to use touch with directory relationships
         │   │
         │   ├── .a_hidden_folder_in_jane
         │   └── mary
+        │       │   .a_hidden_file_in_mary
+        │       │   .aka_mary_jane_doe
+        │       │
+        │       └── .a_hidden_folder_in_mary
         └── john
             │   .a_hidden_file_in_john
             │   aka_john_doe
             │
             ├── .a_hidden_folder_in_john
             └── lil
-
-
+                │   .a_hidden_file_in_lil
+                │   .aka_lil_john_doe
+                │
+                └── .a_hidden_folder_in_lil
 
 * I use tree_ with the ``-a`` option
 
