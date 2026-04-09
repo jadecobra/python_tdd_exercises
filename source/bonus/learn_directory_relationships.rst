@@ -3577,26 +3577,56 @@ mv_ means move, it takes two arguments
 
     cd jane/mary
 
-* I use touch_ to make an empty file_ in ``jane`` from inside ``mary``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch ../aka_parent_of_mary
+      * I use touch_ to make an empty file_ in ``jane`` from inside ``mary``
 
-* I use touch_ to make an empty file_ in ``doe`` from inside ``mary``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch ../aka_parent_of_mary
 
-    touch ../../aka_grandparent_of_mary
+      * I use touch_ to make an empty file_ in ``doe`` from inside ``mary``
 
-* I use touch_ to make an empty file_ in ``john`` from inside ``mary``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch ../../aka_grandparent_of_mary
 
-    touch ../../john/aka_aunt_of_mary
+      * I use touch_ to make an empty file_ in ``john`` from inside ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          touch ../../john/aka_aunt_of_mary
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I use `New-Item`_ to make an empty file_ in ``jane`` from inside ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../aka_parent_of_mary
+
+      * I use `New-Item`_ to make an empty file_ in ``doe`` from inside ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../../aka_grandparent_of_mary
+
+      * I use `New-Item`_ to make an empty file_ in ``john`` from inside ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../../john/aka_aunt_of_mary
 
   I made a mistake - ``aka_aunt_of_mary`` should be ``aka_uncle_of_mary``
 
@@ -3621,12 +3651,28 @@ mv_ means move, it takes two arguments
 
     cd ../jane/mary
 
-* I use touch_ to make an empty file_ in ``lil`` from inside ``mary``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1-2
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch ../../john/lil/cousin_of_mary
+      * I use touch_ to make an empty file_ in ``lil`` from inside ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          touch ../../john/lil/cousin_of_mary
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I use `New-Item`_ to make an empty file_ in ``lil`` from inside ``mary``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          New-Item ../../john/lil/cousin_of_mary
 
 * I use tree_ to show the files_ and folders_ related to ``doe`` from inside ``mary``
 
