@@ -3362,36 +3362,76 @@ mv_ means move, it takes two arguments
 
     cd john
 
-* I use touch_ to make an empty file_ in ``lil`` from inside ``john``
+  .. tab-set::
+    :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-    touch lil/child_of_john
+      * I use touch_ to make an empty file_ in ``lil`` from inside ``john``
 
-* I use touch_ to make an empty file_ in ``doe`` from inside ``john``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch lil/child_of_john
 
-    touch ../aka_parent_of_john
+      * I use touch_ to make an empty file_ in ``doe`` from inside ``john``
 
-* I use touch_ to make an empty file_ in ``jane`` from inside ``john``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. code-block:: python
-    :emphasize-lines: 1
+          touch ../aka_parent_of_john
 
-    touch ../jane/aka_sibling_of_john
+      * I use touch_ to make an empty file_ in ``jane`` from inside ``john``
 
-  - ``..`` is the parent of ``john`` which is ``doe``
-  - ``jane`` is a child of ``doe``
+        .. code-block:: python
+          :emphasize-lines: 1
 
-* I use touch_ to make an empty file_ in ``mary`` from inside ``john``
+          touch ../jane/aka_sibling_of_john
 
-  .. code-block:: python
-    :emphasize-lines: 1-2
+        - ``..`` is the parent of ``john`` which is ``doe``
+        - ``jane`` is a child of ``doe``
 
-    touch ../jane/mary/child_of_sibling_of_jane
+      * I use touch_ to make an empty file_ in ``mary`` from inside ``john``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          touch ../jane/mary/child_of_sibling_of_jane
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * I use `New-Item`_ to make an empty file_ in ``lil`` from inside ``john``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item lil/child_of_john
+
+      * I use `New-Item`_ to make an empty file_ in ``doe`` from inside ``john``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../aka_parent_of_john
+
+      * I use `New-Item`_ to make an empty file_ in ``jane`` from inside ``john``
+
+        .. code-block:: python
+          :emphasize-lines: 1
+
+          New-Item ../jane/aka_sibling_of_john
+
+        - ``..`` is the parent of ``john`` which is ``doe``
+        - ``jane`` is a child of ``doe``
+
+      * I use `New-Item`_ to make an empty file_ in ``mary`` from inside ``john``
+
+        .. code-block:: python
+          :emphasize-lines: 1-2
+
+          New-Item ../jane/mary/child_of_sibling_of_jane
 
   - ``..`` is the parent of ``john`` which is ``doe``
   - ``jane`` is a child of ``doe``
@@ -3427,7 +3467,7 @@ mv_ means move, it takes two arguments
       ../jane/mary/\
       child_of_sibling_of_john
 
-  ``\`` is cd  symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
+  ``\`` is the symbol that tells the computer I want to break up the line after I hit the :kbd:`enter/return` key on the keyboard
 
 * I use cd_ to go back to the grandparent of ``lil``
 
@@ -3438,40 +3478,93 @@ mv_ means move, it takes two arguments
 
 * I use tree_ to show the files_ and folders_ related to ``doe``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
-    :emphasize-lines: 4, 7, 12, 20
+        tree
 
-    .
-    ├── a_file_in_doe
-    ├── aka_parent_of_jane
-    ├── aka_parent_of_john
-    ├── jane
-    │   ├── aka_jane_doe
-    │   ├── aka_sibling_of_john
-    │   ├── child_of_doe
-    │   └── mary
-    │       ├── aka_mary_jane_doe
-    │       ├── child_of_jane
-    │       ├── child_of_sibling_of_john
-    │       └── grandchild_of_doe
-    └── john
-        ├── aka_john_doe
-        ├── aka_sibling_of_jane
-        ├── child_of_doe
-        └── lil
-            ├── aka_lil_john_doe
-            ├── child_of_john
-            ├── child_of_sibling_of_jane
-            └── grandchild_of_doe
+      the terminal_ shows
 
-    5 directories, 17 files
+      .. code-block:: shell
+        :emphasize-lines: 4, 7, 12, 20
+
+        .
+        ├── a_file_in_doe
+        ├── aka_parent_of_jane
+        ├── aka_parent_of_john
+        ├── jane
+        │   ├── aka_jane_doe
+        │   ├── aka_sibling_of_john
+        │   ├── child_of_doe
+        │   └── mary
+        │       ├── aka_mary_jane_doe
+        │       ├── child_of_jane
+        │       ├── child_of_sibling_of_john
+        │       └── grandchild_of_doe
+        └── john
+            ├── aka_john_doe
+            ├── aka_sibling_of_jane
+            ├── child_of_doe
+            └── lil
+                ├── aka_lil_john_doe
+                ├── child_of_john
+                ├── child_of_sibling_of_jane
+                └── grandchild_of_doe
+
+        5 directories, 17 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree /F
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 3, 16, 23, 30
+
+        C:.
+        │   .a_hidden_file_in_doe
+        │   aka_parent_of_jane
+        │   a_file_in_doe
+        │
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   │   .a_hidden_file_in_jane
+        │   │   aka_jane_doe
+        │   │   child_of_doe
+        │   │
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        │       │   .a_hidden_file_in_mary
+        │       │   .aka_mary_jane_doe
+        │       │   child_of_jane
+        │       │   grandchild_of_doe
+        │       │
+        │       └── .a_hidden_folder_in_mary
+        └── john
+            │   .a_hidden_file_in_john
+            │   aka_john_doe
+            │   aka_sibling_of_jane
+            │   child_of_doe
+            │
+            ├── .a_hidden_folder_in_john
+            └── lil
+                │   .a_hidden_file_in_lil
+                │   .aka_lil_john_doe
+                │   child_of_sibling_of_jane
+                │   grandchild_of_doe
+                │
+                └── .a_hidden_folder_in_lil
 
 ----
 
