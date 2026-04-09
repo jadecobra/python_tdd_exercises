@@ -2959,41 +2959,115 @@ how to use touch with directory relationships
 
 ----
 
-* I use touch_ to make an empty file_ in ``jane`` from inside ``doe``
+.. tab-set::
+  :sync-group: os
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-    touch jane/child_of_doe
+    * I use touch_ to make an empty file_ in ``jane`` from inside ``doe``
 
-  the terminal_ goes back to the command line
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I use touch_ to make an empty file_ in ``mary`` from inside ``doe``
+        touch jane/child_of_doe
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      the terminal_ goes back to the command line
 
-    touch jane/mary/grandchild_of_doe
+    * I use touch_ to make an empty file_ in ``mary`` from inside ``doe``
 
-  the terminal_ goes back to the command line
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I use touch_ to make an empty file_ in ``john`` from inside ``doe``
+        touch jane/mary/grandchild_of_doe
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      the terminal_ goes back to the command line
 
-    touch john/child_of_doe
+    * I use touch_ to make an empty file_ in ``john`` from inside ``doe``
 
-  the terminal_ goes back to the command line
+      .. code-block:: python
+        :emphasize-lines: 1
 
-* I use touch_ to make an empty file_ in ``lil`` from inside ``doe``
+        touch john/child_of_doe
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      the terminal_ goes back to the command line
 
-    touch john/lil/grandchild_of_doe
+    * I use touch_ to make an empty file_ in ``lil`` from inside ``doe``
 
-  the terminal_ goes back to the command line
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        touch john/lil/grandchild_of_doe
+
+      the terminal_ goes back to the command line
+
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * I use `New-Item`_ to make an empty file_ in ``jane`` from inside ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        New-Item jane/child_of_doe
+
+      the terminal_ goes back to the command line
+
+    * I use `New-Item`_ to make an empty file_ in ``mary`` from inside ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        New-Item jane/mary/grandchild_of_doe
+
+      the terminal_ goes back to the command line
+
+    * I use `New-Item`_ to make an empty file_ in ``john`` from inside ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        New-Item john/child_of_doe
+
+      the terminal_ goes back to the command line
+
+    * I use `New-Item`_ to make an empty file_ in ``lil`` from inside ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        New-Item john/lil/grandchild_of_doe
+
+      the terminal_ goes back to the command line
+
+    * I use tree_ with the ``/F`` option to show the files_ and folders_ related to ``doe``
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree /F
+
+      the terminal_ shows
+
+      .. code-block:: shell
+        :emphasize-lines: 5, 8, 11, 14
+
+        .
+        ├── a_file_in_doe
+        ├── jane
+        │   ├── aka_jane_doe
+        │   ├── child_of_doe
+        │   └── mary
+        │       ├── aka_mary_jane_doe
+        │       └── grandchild_of_doe
+        └── john
+            ├── aka_john_doe
+            ├── child_of_doe
+            └── lil
+                ├── aka_lil_john_doe
+                └── grandchild_of_doe
+
+        5 directories, 9 files
 
 * I use tree_ to show the files_ and folders_ related to ``doe``
 
@@ -3024,7 +3098,6 @@ how to use touch with directory relationships
 
     5 directories, 9 files
 
-----
 
 * I `change directory`_ to ``jane``
 
