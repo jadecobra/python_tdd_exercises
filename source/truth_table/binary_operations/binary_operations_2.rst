@@ -1278,10 +1278,10 @@ first input     second input   return
       .. code-block:: python
         :emphasize-lines: 5
 
-        not ((not first_input) and (not second_input))
-        not ((not True)        and (not True))
-        not (False             and False)
-        not False
+        not ((not first) and (not second))
+        not ((not True)  and (not True)  )
+        not (False       and False       )
+        not False        # not logical_conjunction(False, False)
         True
 
     - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
@@ -1289,10 +1289,10 @@ first input     second input   return
       .. code-block:: python
         :emphasize-lines: 5
 
-        not ((not first_input) and (not second_input))
-        not ((not True)        and (not False))
-        not (False             and True)
-        not False
+        not ((not first) and (not second))
+        not ((not True)  and (not False) )
+        not (False       and True        )
+        not False        # not logical_conjunction(False, True)
         True
 
     - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
@@ -1300,10 +1300,10 @@ first input     second input   return
       .. code-block:: python
         :emphasize-lines: 5
 
-        not ((not first_input) and (not second_input))
-        not ((not False)       and (not True))
-        not (True              and False)
-        not False
+        not ((not first) and (not second))
+        not ((not False) and (not True)  )
+        not (True        and False       )
+        not False        # not logical_conjunction(True, False)
         True
 
     - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_disjunction<test_logical_disjunction>` returns
@@ -1311,14 +1311,14 @@ first input     second input   return
       .. code-block:: python
         :emphasize-lines: 5
 
-        not ((not first_input) and (not second_input))
-        not ((not False)       and (not False))
-        not (True              and True)
-        not True
+        not ((not first) and (not second))
+        not ((not False) and (not False) )
+        not (True        and True        )
+        not True         # not logical_conjunction(True, True)
         False
 
     ==============  =============== ===============  ================ ==================  ====================
-    first input     second input    not first input  not second input (not first input)   not ((not first_input) and (not second_input))
+    first input     second input    not first input  not second input (not first input)   not ((not first) and (not second))
                                                                       and
                                                                       (not second input)
     ==============  =============== ===============  ================ ==================  ====================
