@@ -16,6 +16,11 @@ truth table: Binary Operations
 
 ----
 
+.. WARNING:: Welcome to the wonderful world of Boolean Logic. If this is new to you, then prepare for headaches and moving closer to the edge of insanity. This is part of the process as you stretch yourself and learn new things that will help you solve problems.
+
+  Do you still want to continue?
+
+
 The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input, and :ref:`Unary Operations` which take 1 input.
 
 We know that there are two :ref:`booleans<what are booleans?>`
@@ -36,25 +41,25 @@ first input                         second input
 These combinations give 16 binary operations or outcomes when 2 :ref:`booleans<what are booleans?>` interact, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input. Here are the 16 operations that are covered in these chapters and what they return
 
 =============================================== ======  ======  ======  ======  ==============================================================
-                                                True,   True,   False,  False,
-return                                          True    False   True    False   name of the operation
+return                                          True,   True,   False,  False,  name of the operation
+                                                True    False   True    False
 =============================================== ======  ======  ======  ======  ==============================================================
 False                                           False   False   False   False   :ref:`contradiction<test_contradiction>`
-first or (not second)                           True    True    False   True    :ref:`converse_implication<test_converse_implication>`
-(not first) and second                          False   False   True    False   :ref:`converse_non_implication<test_converse_non_implication>`
-(not (first and second)) and (first or second)  False   True    True    False   :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 first and second                                True    False   False   False   :ref:`logical_conjunction<test_logical_conjunction>`
-first or second                                 False   False   False   True    :ref:`logical_disjunction<test_logical_disjunction>`
-(not first or second) and (first or not second) True    False   False   True    :ref:`logical_equality<test_logical_equality>`
-not (first and second)                          False   True    True    True    :ref:`logical_nand<test_logical_nand>`
-not (first or second)                           True    True    True    False   :ref:`logical_nor<test_logical_nor>`
-(not first) or second                           True    False   True    True    :ref:`material_implication<test_material_implication>`
-first and (not second)                          False   True    False   False   :ref:`material_non_implication<test_material_non_implication>`
-not first                                       False   False   True    True    :ref:`negate_first<test_negate_first>`
-not second                                      False   True    False   True    :ref:`negate_second<test_negate_second>`
-first                                           True    True    False   False   :ref:`project_first<test_project_first>`
 second                                          True    False   True    False   :ref:`project_second<test_project_second>`
+(not first) and second                          False   False   True    False   :ref:`converse_non_implication<test_converse_non_implication>`
+not first                                       False   False   True    True    :ref:`negate_first<test_negate_first>`
+not (first and second)                          False   True    True    True    :ref:`logical_nand<test_logical_nand>`
 True                                            True    True    True    True    :ref:`tautology<test_tautology>`
+first or second                                 False   False   False   True    :ref:`logical_disjunction<test_logical_disjunction>`
+(not (first and second)) and (first or second)  False   True    True    False   :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+first and (not second)                          False   True    False   False   :ref:`material_non_implication<test_material_non_implication>`
+first                                           True    True    False   False   :ref:`project_first<test_project_first>`
+first or (not second)                           True    True    False   True    :ref:`converse_implication<test_converse_implication>`
+not second                                      False   True    False   True    :ref:`negate_second<test_negate_second>`
+not (first or second)                           True    True    True    False   :ref:`logical_nor<test_logical_nor>`
+(not first or second) and (first or not second) True    False   False   True    :ref:`logical_equality<test_logical_equality>`
+(not first) or second                           True    False   True    True    :ref:`material_implication<test_material_implication>`
 =============================================== ======  ======  ======  ======  ==============================================================
 
 ----
