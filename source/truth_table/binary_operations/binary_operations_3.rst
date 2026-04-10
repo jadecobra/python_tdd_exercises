@@ -642,6 +642,12 @@ I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_
 
 the test passes. :ref:`material_non_implication<test_material_non_implication>` returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -687,6 +693,13 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
 * I add the third case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` in ``test_binary.py``
 
   .. code-block:: python
@@ -709,6 +722,14 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :red:`False`
+  ==============  ============== ==============
 
 * I add the fourth case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
@@ -740,7 +761,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` - this is the only case where it returns :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* I change the two :ref:`if statements` to one in ``truth_table.py``
+* I change the two :ref:`if statements` to one, in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 61
@@ -845,11 +866,20 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
     def material_non_implication(first_input, second_input):
         return first_input and not second_input
 
-:ref:`Material NonImplication<test_material_non_implication>` returns
+:ref:`Material NonImplication<test_material_non_implication>`
 
-* ``first_input and not second_input`` which is the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
-* :ref:`True<test_what_is_true>`, only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-* it is the :ref:`Logical Negation<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* returns ``first_input and not second_input`` which is the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
+* returns :ref:`True<test_what_is_true>`, only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* is the :ref:`Logical Negation<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :red:`False`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
 
 .. NOTE::
 
@@ -894,6 +924,17 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
       False       and not False
       False       and True              # logical_conjunction(False, True)
       False                             # logical_conjunction(False, True)
+
+    ==============  =============== ================= ================
+    first input     second input    not second input  first input
+                                                      and
+                                                      not second_input
+    ==============  =============== ================= ================
+    :green:`True`   :green:`True`   :red:`False`      :red:`False`
+    :green:`True`   :red:`False`    :green:`True`     :green:`True`
+    :red:`False`    :green:`True`   :red:`False`      :red:`False`
+    :red:`False`    :red:`False`    :green:`True`     :red:`False`
+    ==============  =============== ================= ================
 
 ----
 
@@ -964,6 +1005,12 @@ I add a :ref:`function<what is a function?>` for :ref:`project_first<test_projec
 
 the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -987,6 +1034,13 @@ the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<tes
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
 
 * on to the next case
 
@@ -1021,6 +1075,14 @@ the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<tes
 
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :red:`False`
+  ==============  ============== ==============
 
 * I add the last case to :ref:`test_project_first` in ``test_binary.py``
 
@@ -1092,6 +1154,15 @@ the test passes. :ref:`project_first<test_project_first>` returns :ref:`True<tes
 
 :ref:`Project First always returns the first input<test_project_first>`, like :ref:`Project Second which always returns the second input<test_project_second>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :red:`False`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
+
 ----
 
 *********************************************************************************
@@ -1153,6 +1224,12 @@ I add a :ref:`function<what is a function?>` for :ref:`converse_implication<test
 
 the test passes. :ref:`converse_implication<test_converse_implication>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -1211,6 +1288,13 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
 * I add the last case to :ref:`test_converse_implication` in ``test_binary.py``
 
   .. code-block:: python
@@ -1228,9 +1312,17 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   the test is still green. :ref:`converse_implication<test_converse_implication>` returns
 
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<tesT_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>` - this is the only case where it returns :ref:`False<test_what_is_false>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :red:`False`
+  ==============  ============== ==============
 
 * I change the two :ref:`if statements` to one in ``truth_table.py``
 
@@ -1413,6 +1505,15 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 - the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 - It is the opposite of :ref:`Converse NonImplication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`True<test_what_is_true>`, only if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :red:`False`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
+
 ----
 
 *********************************************************************************
@@ -1492,6 +1593,17 @@ This means that in the 4 cases
      False                             or  False
      False                             # logical_disjunction(False, False)
 
+==============  =============== =============== ================  ================  ================= ======================
+first           second          not first       not second        (not first        (first            (not first and second)
+                                                                  and               and               or
+                                                                  second)           not second)       (first and not second)
+==============  =============== =============== ================  ================  ================= ======================
+:green:`True`   :green:`True`   :red:`False`    :red:`False`      :red:`False`      :red:`False`      :red:`False`
+:green:`True`   :red:`False`    :red:`False`    :green:`True`     :red:`False`      :green:`True`     :green:`True`
+:red:`False`    :green:`True`   :green:`True`   :red:`False`      :green:`True`     :red:`False`      :green:`True`
+:red:`False`    :red:`False`    :green:`True`   :green:`True`     :red:`False`      :red:`False`      :red:`False`
+==============  =============== =============== ================  ================  ================= ======================
+
 ----
 
 *********************************************************************************
@@ -1530,11 +1642,29 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   - returns :ref:`False<test_what_is_false>` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse NonImplication<test_converse_non_implication>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :red:`False`
+  :red:`False`    :red:`False`   :green:`True`
+  ==============  ============== ==============
+
 * :ref:`Project First<test_project_first>`
 
   - always returns ``first_input``
   - returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`True<test_what_is_true>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_false>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :red:`False`
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
 
 * :ref:`Material NonImplication<test_material_non_implication>`
 
@@ -1542,11 +1672,29 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   - returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :red:`False`
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
+
 * :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
 
   - returns ``first_input != second_input``
   - returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are NOT equal
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` and ``second_input`` are equal
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
 
 * :ref:`Logical Disjunction<test_logical_disjunction>`
 

@@ -1460,9 +1460,9 @@ first input     second input   return
         False                             # logical_conjunction(True, False)
 
     ==============  =============== =============== ================
-    first input     not first input second input    not first_input
+    first input     not first input second input    not first input
                                                     and
-                                                    second_input
+                                                    second input
     ==============  =============== =============== ================
     :green:`True`   :red:`False`    :green:`True`   :red:`False`
     :green:`True`   :red:`False`    :red:`False`    :red:`False`
