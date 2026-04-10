@@ -1318,9 +1318,9 @@ first input     second input   return
         False
 
     ==============  =============== ===============  ================ ==================  ====================
-    first input     second input    not first input  not second input (not first input)   not ((not first) and (not second))
-                                                                      and
-                                                                      (not second input)
+    first           second          not first        not second       ((not first)        not ((not first)
+                                                                      and                 and
+                                                                      (not second))       (not second))
     ==============  =============== ===============  ================ ==================  ====================
     :green:`True`   :green:`True`   :red:`False`     :red:`False`     :red:`False`        :green:`True`
     :green:`True`   :red:`False`    :red:`False`     :green:`True`    :red:`False`        :green:`True`

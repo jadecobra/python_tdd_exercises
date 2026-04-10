@@ -928,7 +928,7 @@ first input     second input   return
     ==============  =============== ================= ================
     first           second          not second        first
                                                       and
-                                                      not second
+                                                      (not second)
     ==============  =============== ================= ================
     :green:`True`   :green:`True`   :red:`False`      :red:`False`
     :green:`True`   :red:`False`    :green:`True`     :green:`True`
@@ -1522,15 +1522,6 @@ more about Exclusive Disjunction
 
 ----
 
-``return (not first_input and second_input) or (first_input and not second_input)`` can be thought of as
-
-.. code-block:: python
-
-  return x or y
-
-* if ``x`` is ``not first_input and second_input``
-* if ``y`` is ``first_input and not second_input``
-
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` can also be thought of as
 
 .. code-block:: python
@@ -1545,6 +1536,15 @@ because
 
 * :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
 * :ref:`material_non_implication<test_material_non_implication>` returns ``first_input and not second_input``
+
+``return (not first_input and second_input) or (first_input and not second_input)`` can be thought of as the :ref:`logical_disjunction<test_logical_disjunction>` of :ref:`converse_non_implication<test_converse_non_implication>` and :ref:`material_non_implication<test_material_non_implication>`
+
+.. code-block:: python
+
+  logical_disjunction(
+      converse_non_implication(first_input, second_input),
+      material_non_implication(first_input, second_input)
+  )
 
 This means that in the 4 cases
 
