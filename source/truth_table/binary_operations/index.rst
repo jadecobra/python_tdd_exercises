@@ -29,14 +29,14 @@ We know that there are two :ref:`booleans<what are booleans?>`
 
 There are also Binary Operations, these take 2 inputs. Each of the inputs in this exercise will be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<what is a function?>`
 
-=================================   =================================
-first input                         second input
-=================================   =================================
-:ref:`True <test_what_is_true>`     :ref:`True <test_what_is_true>`
-:ref:`True <test_what_is_true>`     :ref:`False <test_what_is_false>`
-:ref:`False <test_what_is_false>`   :ref:`True <test_what_is_true>`
-:ref:`False <test_what_is_false>`   :ref:`False <test_what_is_false>`
-=================================   =================================
+==============  ==============
+first input     second input
+==============  ==============
+:green:`True`   :green:`True`
+:green:`True`   :red:`False`
+:red:`False`    :green:`True`
+:red:`False`    :red:`False`
+==============  ==============
 
 These combinations give 16 binary operations or outcomes when 2 :ref:`booleans<what are booleans?>` interact, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input. Here are the 16 operations that are covered in these chapters and what they return
 
