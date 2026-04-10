@@ -366,6 +366,12 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_what_is_false>`, if the first and second inputs are both :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -390,6 +396,13 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :red:`False`
+  ==============  ============== ==============
+
 * on to the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -405,6 +418,14 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :red:`False`
+  :red:`False`    :green:`True`  :red:`False`
+  ==============  ============== ==============
 
 * I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
@@ -515,6 +536,15 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :ref:`False<test_w
 * :ref:`True<test_what_is_true>` if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 * the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Disjunction (or)<test_logical_disjunction>` of the first input and second input
 * :ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>` of the first input and second input
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :red:`False`
+:red:`False`    :green:`True`  :red:`False`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
 
 ----
 
@@ -1223,6 +1253,15 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   - returns ``not (first_input or second_input)``
   - returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`False<test_what_is_false>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :red:`False`
+  :red:`False`    :green:`True`  :red:`False`
+  :red:`False`    :red:`False`   :green:`True`
+  ==============  ============== ==============
 
 * :ref:`Negate Second<test_negate_second>`
 
