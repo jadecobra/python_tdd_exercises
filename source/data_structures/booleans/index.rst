@@ -16,9 +16,9 @@ what are booleans?
 
 ----
 
-There are only 2 booleans_ - True_ and False_.
+Imagine we have to divide everything into 2 and there are only two options - things that are True_ and things that are False_, these are the booleans_ - True_ and False_.
 
-These chapters test booleans_
+I test booleans_ in the chapters below
 
 .. toctree::
   :titlesonly:
@@ -36,4 +36,4 @@ These chapters test booleans_
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test booleans?<booleans 1>`
+:ref:`Test booleans<booleans 1>`

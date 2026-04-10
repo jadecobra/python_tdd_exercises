@@ -4,13 +4,16 @@
 
 .. include:: ../../links.rst
 
+.. _bool function: bool_
+
 #################################################################################
 booleans 2: test with bool
 #################################################################################
 
 I used bool_ the way I used the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true` while I was refactoring :ref:`if statements` in :ref:`Truth Table: Binary Operations 1<binary_operations_1>`.
 
-I want to practice using bool_ in :ref:`test_what_is_true` and :ref:`test_what_is_false`.
+
+The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. I use it in :ref:`test_what_is_true` and :ref:`test_what_is_false`.
 
 ----
 
@@ -756,7 +759,9 @@ review
 *********************************************************************************
 
 * ``bool(anything)`` returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+* ``assertFalse(anything) == assertFalse(bool(anything))``
 * ``assertFalse(anything)`` checks if the result of ``bool(anything)`` is :ref:`False<test_what_is_false>`, it raises :ref:`AssertionError<what causes AssertionError?>` if it is not
+* ``assertTrue(anything) == assertTrue(bool(anything))``
 * ``assertTrue(anything)`` checks if the result of ``bool(anything)`` is :ref:`True<test_what_is_true>`, it raises :ref:`AssertionError<what causes AssertionError?>` if it is not
 
 ----
