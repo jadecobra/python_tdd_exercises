@@ -752,7 +752,7 @@ first input     second input   return
     else:
         return True
 
-  I can change it with its :ref:`logical negation (not)<test_logical_negation>`
+  I can use its :ref:`logical negation (not)<test_logical_negation>` to return :ref:`True<test_what_is_true>`
 
   .. code-block:: python
 
@@ -842,6 +842,12 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. :ref:`tautology<test_tautology>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -866,6 +872,13 @@ the test passes. :ref:`tautology<test_tautology>` returns :ref:`True<test_what_i
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -881,6 +894,14 @@ the test passes. :ref:`tautology<test_tautology>` returns :ref:`True<test_what_i
 
   - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - if the first input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
+  ==============  ============== ==============
 
 * I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
@@ -900,6 +921,15 @@ the test passes. :ref:`tautology<test_tautology>` returns :ref:`True<test_what_i
   still green, there is only one result for this operation.
 
 :ref:`Tautology<test_tautology>` always returns :ref:`True<test_what_is_true>`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :ref:`False<test_what_is_false>`
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
 
 ----
 
@@ -1378,6 +1408,15 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   - always returns :ref:`True<test_what_is_true>`
   - never returns :ref:`False<test_what_is_false>`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :ref:`False<test_what_is_false>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :green:`True`
+  ==============  ============== ==============
 
 * :ref:`Logical NAND<test_logical_nand>`
 
