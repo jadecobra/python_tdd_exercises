@@ -1593,16 +1593,16 @@ This means that in the 4 cases
      False                 or  False
      False                 # logical_disjunction(False, False)
 
-==============  =============== =============== ================  ================  ================= ======================
-first           second          not first       not second        (not first        (first            (not first and second)
+==============  =============== =============== ================  ================  ================= ========================
+first           second          not first       not second        ((not first)      (first            ((not first) and second)
                                                                   and               and               or
-                                                                  second)           not second)       (first and not second)
-==============  =============== =============== ================  ================  ================= ======================
+                                                                  second)           (not second))     (first and (not second))
+==============  =============== =============== ================  ================  ================= ========================
 :green:`True`   :green:`True`   :red:`False`    :red:`False`      :red:`False`      :red:`False`      :red:`False`
 :green:`True`   :red:`False`    :red:`False`    :green:`True`     :red:`False`      :green:`True`     :green:`True`
 :red:`False`    :green:`True`   :green:`True`   :red:`False`      :green:`True`     :red:`False`      :green:`True`
 :red:`False`    :red:`False`    :green:`True`   :green:`True`     :red:`False`      :red:`False`      :red:`False`
-==============  =============== =============== ================  ================  ================= ======================
+==============  =============== =============== ================  ================  ================= ========================
 
 ----
 
