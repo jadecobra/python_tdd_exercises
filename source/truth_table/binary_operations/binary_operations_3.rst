@@ -1553,11 +1553,11 @@ This means that in the 4 cases
   .. code-block:: python
     :emphasize-lines: 5
 
-    (not first_input and second_input) or (first_input and not second_input)
-    (not True        and True        ) or (True        and not True        )
-    (False           and True        ) or (True        and False           )
-      False                            or  False
-      False                            # logical_disjunction(False, False)
+    (not first and second) or (first and not second)
+    (not True  and True  ) or (True  and not True  )
+    (False     and True  ) or (True  and False     )
+     False                 or  False
+     False                 # logical_disjunction(False, False)
 
 * if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
@@ -1565,33 +1565,33 @@ This means that in the 4 cases
     :emphasize-lines: 5
     :force:
 
-    (not first_input and second_input) or (first_input and not second_input)
-    (not True        and False       ) or (True        and not False       )
-    (False           and False       ) or (True        and True            )
-     False                             or  True
-     True                              # logical_disjunction(False, True)
+    (not first and second) or (first and not second)
+    (not True  and False ) or (True  and not False )
+    (False     and False ) or (True  and True      )
+     False                 or  True
+     True                  # logical_disjunction(False, True)
 
 * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
 
-    (not first_input and second_input) or (first_input and not second_input)
-    (not False       and True        ) or (False       and not True        )
-    (True            and True        ) or (False       and False           )
-     True                              or  False
-     True                              # logical_disjunction(True, False)
+    (not first and second) or (first and not second)
+    (not False and True  ) or (False and not True  )
+    (True      and True  ) or (False and False     )
+     True                  or  False
+     True                  # logical_disjunction(True, False)
 
 * if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
 
-    (not first_input and second_input) or (first_input and not second_input)
-    (not False       and False       ) or (False       and not False       )
-    (True            and False       ) or (False       and True            )
-     False                             or  False
-     False                             # logical_disjunction(False, False)
+    (not first and second) or (first and not second)
+    (not False and False ) or (False and not False )
+    (True      and False ) or (False and True      )
+     False                 or  False
+     False                 # logical_disjunction(False, False)
 
 ==============  =============== =============== ================  ================  ================= ======================
 first           second          not first       not second        (not first        (first            (not first and second)
