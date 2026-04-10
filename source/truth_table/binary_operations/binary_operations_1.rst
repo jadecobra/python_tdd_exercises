@@ -1424,45 +1424,45 @@ first input     second input   return
       .. code-block:: python
         :emphasize-lines: 4
 
-        not first_input and second_input
-        not True        and True
-        False           and True          # logical_conjunction(False, True)
-        False                             # logical_conjunction(False, True)
+        (not first) and second
+        (not True ) and True
+        False       and True  # logical_conjunction(False, True)
+        False                 # logical_conjunction(False, True)
 
     - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
       .. code-block:: python
         :emphasize-lines: 4
 
-        not first_input and second_input
-        not True        and False
-        False           and False         # logical_conjunction(False, False)
-        False                             # logical_conjunction(False, False)
+        (not first) and second
+        (not True ) and False
+        False       and False # logical_conjunction(False, False)
+        False                 # logical_conjunction(False, False)
 
     - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
       .. code-block:: python
         :emphasize-lines: 4
 
-        not first_input and second_input
-        not False       and True
-        True            and True          # logical_conjunction(True, True)
-        True                              # logical_conjunction(True, True)
+        (not first) and second
+        (not False) and True
+        True        and True  # logical_conjunction(True, True)
+        True                  # logical_conjunction(True, True)
 
     - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
       .. code-block:: python
         :emphasize-lines: 4
 
-        not first_input and second_input
-        not False       and False
-        True            and False         # logical_conjunction(True, False)
-        False                             # logical_conjunction(True, False)
+        (not first) and second
+        (not False) and False
+        True        and False # logical_conjunction(True, False)
+        False                 # logical_conjunction(True, False)
 
     ==============  =============== =============== ================
-    first input     not first input second input    not first input
+    first           not first       second          (not first)
                                                     and
-                                                    second input
+                                                    second
     ==============  =============== =============== ================
     :green:`True`   :red:`False`    :green:`True`   :red:`False`
     :green:`True`   :red:`False`    :red:`False`    :red:`False`
