@@ -996,6 +996,12 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -1026,6 +1032,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   so far this is the same as :ref:`Tautology<test_tautology>`
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
 * I add the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -1047,6 +1060,14 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
+  ==============  ============== ==============
 
 * I add the fourth case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
@@ -1296,6 +1317,18 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
         not True
         False
 
+    ==============  =============== ===============  ================ ==================  ====================
+    first input     second input    not first input  not second input (not first input)   not ((not first_input) and (not second_input))
+                                                                      and
+                                                                      (not second input)
+    ==============  =============== ===============  ================ ==================  ====================
+    :green:`True`   :green:`True`   :red:`False`     :red:`False`     :red:`False`        :green:`True`
+    :green:`True`   :red:`False`    :red:`False`     :green:`True`    :red:`False`        :green:`True`
+    :red:`False`    :green:`True`   :green:`True`    :red:`False`     :red:`False`        :green:`True`
+    :red:`False`    :red:`False`    :green:`True`    :green:`True`    :green:`True`       :red:`False`
+    ==============  =============== ===============  ================ ==================  ====================
+
+
 * ":ref:`not<test_logical_negation>`" appears 3 times in this statement, I want to change that. I "multiply" it by each thing inside the parentheses to try to make the statement simpler
 
   .. code-block:: python
@@ -1365,6 +1398,15 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :r
 * ``first_input or second_input``
 * :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
+
 ----
 
 *********************************************************************************
@@ -1402,6 +1444,15 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   - returns ``first_input or second_input``
   - returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`False<test_what_is_false>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
 
 * :ref:`Tautology<test_tautology>`
 
