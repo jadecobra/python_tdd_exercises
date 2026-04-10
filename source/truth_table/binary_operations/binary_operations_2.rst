@@ -398,6 +398,12 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -440,6 +446,13 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
   - the :ref:`logical negation<test_logical_negation>` of the second input so far
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
 * I add another case, where the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   .. code-block:: python
@@ -477,6 +490,14 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
+  ==============  ============== ==============
 
 * I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_logical_nand` in ``test_binary.py``
 
@@ -708,6 +729,15 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test
 * is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and second input is :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
 * is :ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
 
 ----
 
@@ -1354,6 +1384,15 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   - returns ``not (first_input and second_input)``
   - returns :ref:`False<test_what_is_false>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - is the :ref:`opposite (Logical Negation) (not)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :ref:`True<test_what_is_true>` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :green:`True`
+  ==============  ============== ==============
 
 * :ref:`Negate First<test_negate_first>`
 
