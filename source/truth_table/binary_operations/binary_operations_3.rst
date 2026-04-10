@@ -890,45 +890,45 @@ first input     second input   return
     .. code-block:: python
       :emphasize-lines: 4
 
-      first_input and not second_input
-      True        and not True
-      True        and False             # logical_conjunction(True, False)
-      False                             # logical_conjunction(True, False)
+      first and not second
+      True  and not True
+      True  and False     # logical_conjunction(True, False)
+      False               # logical_conjunction(True, False)
 
   - if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`material_non_implication<test_material_non_implication>` returns
 
     .. code-block:: python
       :emphasize-lines: 4
 
-      first_input and not second_input
-      True        and not False
-      True        and True              # logical_conjunction(True, True)
-      True                              # logical_conjunction(True, True)
+      first and not second
+      True  and not False
+      True  and True      # logical_conjunction(True, True)
+      True                # logical_conjunction(True, True)
 
   - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`material_non_implication<test_material_non_implication>` returns
 
     .. code-block:: python
       :emphasize-lines: 4
 
-      first_input and not second_input
-      False       and not True
-      False       and False             # logical_conjunction(False, False)
-      False                             # logical_conjunction(False, False)
+      first and not second
+      False and not True
+      False and False     # logical_conjunction(False, False)
+      False               # logical_conjunction(False, False)
 
   - if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`material_non_implication<test_material_non_implication>` returns
 
     .. code-block:: python
       :emphasize-lines: 4
 
-      first_input and not second_input
-      False       and not False
-      False       and True              # logical_conjunction(False, True)
-      False                             # logical_conjunction(False, True)
+      first and not second
+      False and not False
+      False and True      # logical_conjunction(False, True)
+      False               # logical_conjunction(False, True)
 
     ==============  =============== ================= ================
-    first input     second input    not second input  first input
+    first           second          not second        first
                                                       and
-                                                      not second_input
+                                                      not second
     ==============  =============== ================= ================
     :green:`True`   :green:`True`   :red:`False`      :red:`False`
     :green:`True`   :red:`False`    :green:`True`     :green:`True`
