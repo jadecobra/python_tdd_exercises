@@ -51,7 +51,7 @@ second                                          True    False   True    False   
 not first                                       False   False   True    True    :ref:`negate_first<test_negate_first>`
 not (first and second)                          False   True    True    True    :ref:`logical_nand<test_logical_nand>`
 True                                            True    True    True    True    :ref:`tautology<test_tautology>`
-first or second                                 False   False   False   True    :ref:`logical_disjunction<test_logical_disjunction>`
+first or second                                 True    True    True    False   :ref:`logical_disjunction<test_logical_disjunction>`
 (not (first and second)) and (first or second)  False   True    True    False   :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 first and (not second)                          False   True    False   False   :ref:`material_non_implication<test_material_non_implication>`
 first                                           True    True    False   False   :ref:`project_first<test_project_first>`

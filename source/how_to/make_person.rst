@@ -486,6 +486,10 @@ test_factory_takes_keyword_arguments
                     sex='M',
                     year_of_birth=this_year(),
                 ),
+                dict(
+                    first_name='first_name',
+                )
+            )
 
   the test is still green
 
