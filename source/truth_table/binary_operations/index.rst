@@ -40,27 +40,27 @@ first input                         second input
 
 These combinations give 16 binary operations or outcomes when 2 :ref:`booleans<what are booleans?>` interact, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input. Here are the 16 operations that are covered in these chapters and what they return
 
-=============================================== ======  ======  ======  ======  ==============================================================
-return                                          True,   True,   False,  False,  name of the operation
-                                                True    False   True    False
-=============================================== ======  ======  ======  ======  ==============================================================
-False                                           False   False   False   False   :ref:`contradiction<test_contradiction>`
-first and second                                True    False   False   False   :ref:`logical_conjunction<test_logical_conjunction>`
-second                                          True    False   True    False   :ref:`project_second<test_project_second>`
-(not first) and second                          False   False   True    False   :ref:`converse_non_implication<test_converse_non_implication>`
-not first                                       False   False   True    True    :ref:`negate_first<test_negate_first>`
-not (first and second)                          False   True    True    True    :ref:`logical_nand<test_logical_nand>`
-True                                            True    True    True    True    :ref:`tautology<test_tautology>`
-first or second                                 True    True    True    False   :ref:`logical_disjunction<test_logical_disjunction>`
-(not (first and second)) and (first or second)  False   True    True    False   :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-first and (not second)                          False   True    False   False   :ref:`material_non_implication<test_material_non_implication>`
-first                                           True    True    False   False   :ref:`project_first<test_project_first>`
-first or (not second)                           True    True    False   True    :ref:`converse_implication<test_converse_implication>`
-not second                                      False   True    False   True    :ref:`negate_second<test_negate_second>`
-not (first or second)                           True    True    True    False   :ref:`logical_nor<test_logical_nor>`
-(not first or second) and (first or not second) True    False   False   True    :ref:`logical_equality<test_logical_equality>`
-(not first) or second                           True    False   True    True    :ref:`material_implication<test_material_implication>`
-=============================================== ======  ======  ======  ======  ==============================================================
+=============================================== =============  ============= ============= ============= ==============================================================
+return                                          True,          True,         False,        False,        name of operation
+                                                True           False         True          False
+=============================================== =============  ============= ============= ============= ==============================================================
+False                                           :red:`False`   :red:`False`  :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
+first and second                                :green:`True`  :red:`False`  :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
+second                                          :green:`True`  :red:`False`  :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
+(not first) and second                          :red:`False`   :red:`False`  :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
+not first                                       :red:`False`   :red:`False`  :green:`True` :green:`True` :ref:`negate_first<test_negate_first>`
+not (first and second)                          :red:`False`   :green:`True` :green:`True` :green:`True` :ref:`logical_nand<test_logical_nand>`
+True                                            :green:`True`  :green:`True` :green:`True` :green:`True` :ref:`tautology<test_tautology>`
+first or second                                 :green:`True`  :green:`True` :green:`True` :red:`False`  :ref:`logical_disjunction<test_logical_disjunction>`
+(not (first and second)) and (first or second)  :red:`False`   :green:`True` :green:`True` :red:`False`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+first and (not second)                          :red:`False`   :green:`True` :red:`False`  :red:`False`  :ref:`material_non_implication<test_material_non_implication>`
+first                                           :green:`True`  :green:`True` :red:`False`  :red:`False`  :ref:`project_first<test_project_first>`
+first or (not second)                           :green:`True`  :green:`True` :red:`False`  :green:`True` :ref:`converse_implication<test_converse_implication>`
+not second                                      :red:`False`   :green:`True` :red:`False`  :green:`True` :ref:`negate_second<test_negate_second>`
+not (first or second)                           :green:`True`  :green:`True` :green:`True` :red:`False`  :ref:`logical_nor<test_logical_nor>`
+(not first or second) and (first or not second) :green:`True`  :red:`False`  :red:`False`  :green:`True` :ref:`logical_equality<test_logical_equality>`
+(not first) or second                           :green:`True`  :red:`False`  :green:`True` :green:`True` :ref:`material_implication<test_material_implication>`
+=============================================== =============  ============= ============= ============= ==============================================================
 
 ----
 
