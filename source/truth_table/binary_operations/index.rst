@@ -18,7 +18,7 @@ truth table: Binary Operations
 
 The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input, and :ref:`Unary Operations` which take 1 input.
 
-We know that there are two :ref:`booleans<what is a boolean?>`
+We know that there are two :ref:`booleans<what are booleans?>`
 
 :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
 
@@ -33,7 +33,7 @@ first input                         second input
 :ref:`False <test_what_is_false>`   :ref:`False <test_what_is_false>`
 =================================   =================================
 
-These combinations give 16 binary operations or outcomes when 2 :ref:`booleans<what is a boolean?>` interact, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input. Here are the 16 operations that are covered in these chapters and what they return
+These combinations give 16 binary operations or outcomes when 2 :ref:`booleans<what are booleans?>` interact, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input. Here are the 16 operations that are covered in these chapters and what they return
 
 =============================================== ======  ======  ======  ======  ==============================================================
                                                 True,   True,   False,  False,
