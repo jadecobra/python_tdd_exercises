@@ -335,6 +335,47 @@ first input     second input   return
 
 ----
 
+=================================================================================
+examples
+=================================================================================
+
+----
+
+* A broken light switch, if the inputs are
+
+  - is the switch on?
+  - is there electricity?
+
+  If the switch is broken, the inputs do not matter
+
+  ==============  ============== ==============
+  switch          electricity    bulb
+  ==============  ============== ==============
+  :green:`on`     :green:`on`    :red:`off`
+  :green:`on`     :red:`off`     :red:`off`
+  :red:`off`      :green:`on`    :red:`off`
+  :red:`off`      :red:`off`     :red:`off`
+  ==============  ============== ==============
+
+* A rule that does not allow watching TV, if the inputs are
+
+  - is homework done?
+  - is the room clean?
+
+  ==============  ============== ==============
+  homework done   clean room     can watch TV
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
+
+
+
+
+----
+
 *********************************************************************************
 test_logical_conjunction
 *********************************************************************************
