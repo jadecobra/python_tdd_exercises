@@ -371,8 +371,47 @@ examples
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ==============
 
+* A rule about loaning money to friends, if the inputs are
 
+  - person can be trusted?
+  - is a small amount?
 
+  ==============  ============== ====================
+  trusted person  small amount   loan money to friend
+  ==============  ============== ====================
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ====================
+
+* Do not disturb, if the inputs are
+
+  - is the person in favorites list?
+  - is it during allowed hours?
+
+  ==============  ============== ====================
+  favorites       allowed hours  allow to ring
+  ==============  ============== ====================
+  :green:`yes`    :green:`ye && s`   :red:`no`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ====================
+
+* Broken Multi Factor Authentication to log in, if the inputs are
+
+  - did user provide the right password?
+  - did user provide the MFA code?
+
+  ==============  ============== ==============
+  right password  right MFA code log in
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
 
 ----
 
@@ -877,6 +916,84 @@ first input     second input   return
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
 
+----
+
+=================================================================================
+examples
+=================================================================================
+
+----
+
+* A person can vote, if the inputs are
+
+  - is the person a citizen?
+  - is the person old enough?
+
+  ==============  ============== ==============
+  is a citizen    is old enough  can vote
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :green:`yes`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
+
+* Music player goes to the next song or pauses, if the inputs are
+
+  - are headphones connected?
+  - has the current song finished playing?
+
+  ====================  ===================== ==============
+  headphones connected  current song finished play next
+  ====================  ===================== ==============
+  :green:`yes`          :green:`yes`          :green:`yes`
+  :green:`yes`          :red:`no`             :red:`no`
+  :red:`no`             :green:`yes`          :red:`no`
+  :red:`no`             :red:`no`             :red:`no`
+  ====================  ===================== ==============
+
+* Baking a cake, if the inputs are
+
+  - flour?
+  - eggs?
+
+  =============  ============= ==============
+  flour          eggs          can bake
+  =============  ============= ==============
+  :green:`yes`   :green:`yes`  :green:`yes`
+  :green:`yes`   :red:`no`     :red:`no`
+  :red:`no`      :green:`yes`  :red:`no`
+  :red:`no`      :red:`no`     :red:`no`
+  =============  ============= ==============
+
+* I am a programmer, if the inputs are
+
+  - can read code?
+  - can write code?
+
+  =============  ============= ================
+  read           write         is a programmer
+  =============  ============= ================
+  :green:`yes`   :green:`yes`  :green:`yes`
+  :green:`yes`   :red:`no`     :red:`no`
+  :red:`no`      :green:`yes`  :red:`no`
+  :red:`no`      :red:`no`     :red:`no`
+  =============  ============= ================
+
+* Multi Factor Authentication to log in, if the inputs are
+
+  - did user provide the right password?
+  - did user provide the MFA code?
+
+  ==============  ============== ==============
+  right password  right MFA code log in
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :green:`yes`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
+
 -----
 
 .. NOTE::
@@ -1140,6 +1257,28 @@ first input     second input   return
 :red:`False`    :green:`True`  :green:`True`
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
+
+----
+
+=================================================================================
+examples
+=================================================================================
+
+----
+
+* Binge watching TV, if the inputs are
+
+  - is it late?
+  - do I want to watch one more episode?
+
+  ==============  =============== ==============
+  is it late?     I want to watch watch
+  ==============  =============== ==============
+  :green:`yes`    :green:`yes`    :green:`yes`
+  :green:`yes`    :red:`no`       :red:`no`
+  :red:`no`       :green:`yes`    :green:`yes`
+  :red:`no`       :red:`no`       :red:`no`
+  ==============  =============== ==============
 
 ----
 
