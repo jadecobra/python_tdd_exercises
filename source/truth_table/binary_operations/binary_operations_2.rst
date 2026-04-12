@@ -454,20 +454,6 @@ examples
   :red:`no`        :red:`no`          :green:`no beep`
   ===============  =================  ================
 
-* conversation, if the inputs are
-
-  - am I angry?
-  - are you angry?
-
-  ===============  =================  ================
-  am I angry?      are you angry?     conversation
-  ===============  =================  ================
-  :green:`yes`     :green:`yes`       :red:`bad`
-  :green:`yes`     :red:`no`          :red:`bad`
-  :red:`no`        :green:`yes`       :green:`good`
-  :red:`no`        :red:`no`          :green:`good`
-  ===============  =================  ================
-
 * can the system be used while it is being updated, if the inputs are
 
   - is update running?
@@ -480,6 +466,20 @@ examples
   :green:`yes`     :red:`guest`        :red:`no`
   :red:`no`        :green:`admin`      :green:`yes`
   :red:`no`        :red:`guest`        :green:`yes`
+  ===============  ==================  ==================
+
+* bad referee call, if the inputs are
+
+  - is home team?
+  - is bad play?
+
+  ===============  ==================  ==================
+  is home team?    is bad play?        good call
+  ===============  ==================  ==================
+  :green:`yes`     :green:`no`         :red:`no`
+  :green:`yes`     :red:`yes`          :red:`no`
+  :red:`no`        :green:`no`         :green:`yes`
+  :red:`no`        :red:`yes`          :green:`yes`
   ===============  ==================  ==================
 
 ----
@@ -819,6 +819,98 @@ first input     second input   return
 
 ----
 
+=================================================================================
+examples
+=================================================================================
+
+----
+
+* can the website be reached, if the inputs are
+
+  - is main server down?
+  - is backup server down?
+
+  ================  ==================  ==================
+  is main down?     is backup down?     can reach website?
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`no`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :green:`yes`
+  :red:`no`         :red:`no`           :green:`yes`
+  ================  ==================  ==================
+
+* safety with household cleaning products, if the inputs are
+
+  - is bleach?
+  - is soap?
+
+  ================  ==================  ==================
+  is bleach?        is soap?            is safe?
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`no`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :green:`yes`
+  :red:`no`         :red:`no`           :green:`yes`
+  ================  ==================  ==================
+
+* fridge alarm, if the inputs are
+
+  - door open?
+  - temperature rose?
+
+  ================  ==================  ==================
+  door open?        temperature rose?   alarm
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`yes`
+  :green:`yes`      :red:`no`           :green:`no`
+  :red:`no`         :green:`yes`        :green:`no`
+  :red:`no`         :red:`no`           :green:`no`
+  ================  ==================  ==================
+
+* deny a transaction, if the inputs are
+
+  - amount is larger than normal?
+  - the recipient is new?
+
+  ================  ==================  ==================
+  large amount?     new recipient?      approve/deny
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`deny`
+  :green:`yes`      :red:`no`           :green:`approve`
+  :red:`no`         :green:`yes`        :green:`approve`
+  :red:`no`         :red:`no`           :green:`approve`
+  ================  ==================  ==================
+
+* show content, if the inputs are
+
+  - is user younger than 18?
+  - is the content flagged as adult?
+
+  ================  ==================  ==================
+  less than 18?     adult content?      block/show
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`block`
+  :green:`yes`      :red:`no`           :green:`show`
+  :red:`no`         :green:`yes`        :green:`show`
+  :red:`no`         :red:`no`           :green:`show`
+  ================  ==================  ==================
+
+* stop 2 processes from writing to the same place, if the inputs are
+
+  - is process A writing?
+  - is process B writing?
+
+  ================  ==================  ==================
+  process A write?  process B write?    stop/allow
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`stop`
+  :green:`yes`      :red:`no`           :green:`allow`
+  :red:`no`         :green:`yes`        :green:`allow`
+  :red:`no`         :red:`no`           :green:`allow`
+  ================  ==================  ==================
+
+----
+
 .. NOTE::
 
   When there is only one :ref:`if statement<if statements>` that returns :ref:`False<test_what_is_false>` with an `else clause`_
@@ -1008,6 +1100,28 @@ first input     second input   return
 :red:`False`    :green:`True`  :green:`True`
 :red:`False`    :red:`False`   :green:`True`
 ==============  ============== ==============
+
+----
+
+=================================================================================
+examples
+=================================================================================
+
+----
+
+* work, if the inputs are
+
+  - do I have work?
+  - do I feel like working?
+
+  ===============  =================  ================
+  have work?       feel like work?    work?
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :green:`work`
+  :green:`yes`     :red:`no`          :green:`work`
+  :red:`no`        :green:`yes`       :green:`work`
+  :red:`no`        :red:`no`          :green:`work`
+  ===============  =================  ================
 
 ----
 
@@ -1485,19 +1599,27 @@ first input     second input   return
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
 
-* work, if the inputs are
+----
 
-  - do I have work?
-  - do I feel like working?
+=================================================================================
+examples
+=================================================================================
 
-  ===============  =================  ================
-  have work?       feel like work?    should I work?
-  ===============  =================  ================
-  :green:`yes`     :green:`yes`       :green:`work`
-  :green:`yes`     :red:`no`          :green:`work`
-  :red:`no`        :green:`yes`       :green:`work`
-  :red:`no`        :red:`no`          :green:`work`
-  ===============  =================  ================
+----
+
+* system works, if the inputs are
+
+  - is main system running?
+  - is backup system running?
+
+  ================  ==================  ==================
+  is main running?  is backup running?  is system working?
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :green:`yes`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :green:`yes`
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
 
 ----
 

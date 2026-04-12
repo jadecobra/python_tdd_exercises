@@ -573,6 +573,20 @@ first input     second input   return
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
 
+* magnets attract or repel, if the inputs are
+
+  - what is the direction of magnet A?
+  - what is the direction of magnet B?
+
+  ================  ==================  ==================
+  magnet A?         magnet B?           attract/repel
+  ================  ==================  ==================
+  :green:`north`    :green:`north`      :red:`repel`
+  :green:`north`    :red:`south`        :green:`attract`
+  :red:`south`      :green:`north`      :green:`attract`
+  :red:`south`      :red:`south`        :red:`repel`
+  ================  ==================  ==================
+
 ----
 
 *********************************************************************************
