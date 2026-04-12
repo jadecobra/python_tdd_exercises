@@ -546,6 +546,20 @@ first input     second input   return
 :red:`False`    :red:`False`   :green:`True`
 ==============  ============== ==============
 
+* smoke detector, if the inputs are
+
+  - is the battery dead?
+  - is there smoke?
+
+  ===============  =================  ================
+  battery dead?    is there smoke?    beep
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :red:`beep`
+  :green:`yes`     :red:`no`          :red:`beep`
+  :red:`no`        :green:`yes`       :red:`beep`
+  :red:`no`        :red:`no`          :green:`no beep`
+  ===============  =================  ================
+
 ----
 
 *********************************************************************************

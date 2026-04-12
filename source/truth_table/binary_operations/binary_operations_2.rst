@@ -407,6 +407,84 @@ first input     second input   return
 ----
 
 =================================================================================
+examples
+=================================================================================
+
+----
+
+* approval to do something, if the inputs are
+
+  - is risky?
+  - has a reason?
+
+  ===============  =================  ================
+  is risky?        has reason?        approved
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :red:`no`
+  :green:`yes`     :red:`no`          :red:`no`
+  :red:`no`        :green:`yes`       :green:`yes`
+  :red:`no`        :red:`no`          :green:`yes`
+  ===============  =================  ================
+
+* going for a walk, if the inputs are
+
+  - is it raining?
+  - do I feel like walking?
+
+  ===============  ===================  ================
+  is raining?      feel like walking?   should walk
+  ===============  ===================  ================
+  :green:`yes`     :green:`yes`         :red:`no`
+  :green:`yes`     :red:`no`            :red:`no`
+  :red:`no`        :green:`yes`         :green:`yes`
+  :red:`no`        :red:`no`            :green:`yes`
+  ===============  ===================  ================
+
+* smoke detector battery test, if the inputs are
+
+  - is the battery dead?
+  - is there smoke?
+
+  ===============  =================  ================
+  battery dead?    is there smoke?    beep
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :red:`beep`
+  :green:`yes`     :red:`no`          :red:`beep`
+  :red:`no`        :green:`yes`       :green:`no beep`
+  :red:`no`        :red:`no`          :green:`no beep`
+  ===============  =================  ================
+
+* conversation, if the inputs are
+
+  - am I angry?
+  - are you angry?
+
+  ===============  =================  ================
+  am I angry?      are you angry?     conversation
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :red:`bad`
+  :green:`yes`     :red:`no`          :red:`bad`
+  :red:`no`        :green:`yes`       :green:`good`
+  :red:`no`        :red:`no`          :green:`good`
+  ===============  =================  ================
+
+* can the system be used while it is being updated, if the inputs are
+
+  - is update running?
+  - what kind of user?
+
+  ===============  ==================  ==================
+  update running?  what kind of user?  system can be used
+  ===============  ==================  ==================
+  :green:`yes`     :green:`admin`      :red:`no`
+  :green:`yes`     :red:`guest`        :red:`no`
+  :red:`no`        :green:`admin`      :green:`yes`
+  :red:`no`        :red:`guest`        :green:`yes`
+  ===============  ==================  ==================
+
+----
+
+=================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
@@ -1406,6 +1484,20 @@ first input     second input   return
 :red:`False`    :green:`True`  :green:`True`
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
+
+* work, if the inputs are
+
+  - do I have work?
+  - do I feel like working?
+
+  ===============  =================  ================
+  have work?       feel like work?    should I work?
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :green:`work`
+  :green:`yes`     :red:`no`          :green:`work`
+  :red:`no`        :green:`yes`       :green:`work`
+  :red:`no`        :red:`no`          :green:`work`
+  ===============  =================  ================
 
 ----
 
