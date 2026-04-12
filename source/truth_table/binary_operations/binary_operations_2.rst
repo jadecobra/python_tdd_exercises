@@ -1123,6 +1123,76 @@ examples
   :red:`no`        :red:`no`          :green:`work`
   ===============  =================  ================
 
+* the customer is always right, if the inputs are
+
+  - did customer complain?
+  - is customer new?
+
+  ===============  =================  =================
+  complain?        new?               is customer king?
+  ===============  =================  =================
+  :green:`yes`     :green:`yes`       :green:`yes`
+  :green:`yes`     :red:`no`          :green:`yes`
+  :red:`no`        :green:`yes`       :green:`yes`
+  :red:`no`        :red:`no`          :green:`yes`
+  ===============  =================  =================
+
+* the sun is real, if the inputs are
+
+  - am I awake?
+  - is it bright or dark outside?
+
+  ===============  =================  ================
+  awake?           bright/dark?       is sun real?
+  ===============  =================  ================
+  :green:`yes`     :green:`bright`    :green:`yes`
+  :green:`yes`     :red:`dark`        :green:`yes`
+  :red:`no`        :green:`bright`    :green:`yes`
+  :red:`no`        :red:`dark`        :green:`yes`
+  ===============  =================  ================
+
+* I can get better, if the inputs are
+
+  - am I good?
+  - have I done this before?
+
+  ===============  =================  ================
+  good?            done before?       can get better?
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :green:`yes`
+  :green:`yes`     :red:`no`          :green:`yes`
+  :red:`no`        :green:`yes`       :green:`yes`
+  :red:`no`        :red:`no`          :green:`yes`
+  ===============  =================  ================
+
+* a noun is the name of a person, place or thing, if the inputs are
+
+  - is a person?
+  - is a place or a thing?
+
+  ===============  =================  ================
+  person?          place/thing?       noun is a name
+  ===============  =================  ================
+  :green:`yes`     :green:`place`     :green:`yes`
+  :green:`yes`     :red:`thing`       :green:`yes`
+  :red:`no`        :green:`place`     :green:`yes`
+  :red:`no`        :red:`thing`       :green:`yes`
+  ===============  =================  ================
+
+* unconditional love, if the inputs are
+
+  - has the person been good?
+  - does the person deserve love?
+
+  ===============  =================  ================
+  been good?       deserving?         love?
+  ===============  =================  ================
+  :green:`yes`     :green:`place`     :green:`love`
+  :green:`yes`     :red:`thing`       :green:`love`
+  :red:`no`        :green:`place`     :green:`love`
+  :red:`no`        :red:`thing`       :green:`love`
+  ===============  =================  ================
+
 ----
 
 *********************************************************************************

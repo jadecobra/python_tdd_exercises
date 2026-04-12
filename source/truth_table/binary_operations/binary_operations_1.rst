@@ -1336,6 +1336,20 @@ examples
   :red:`sick`       :red:`sick`       :red:`sick`
   ================  ================  ================
 
+* my expectation versus reality, if the inputs are
+
+  - my expectation?
+  - reality?
+
+  ================  ================  ================
+  expectation       reality           result
+  ================  ================  ================
+  :green:`True`     :green:`True`     :green:`True`
+  :green:`True`     :red:`False`      :red:`False`
+  :red:`False`      :green:`True`     :green:`True`
+  :red:`False`      :red:`False`      :red:`False`
+  ================  ================  ================
+
 ----
 
 *********************************************************************************
