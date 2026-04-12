@@ -1811,7 +1811,7 @@ examples
   :red:`no`        :red:`no`         :red:`no`
   ===============  ================  ============
 
-* new customer discount, if the inputs are
+* only give a discount to a new customer with a coupon code, if the inputs are
 
   - is already a customer?
   - does customer have the coupon code?

@@ -1691,6 +1691,50 @@ examples
   :red:`no`         :red:`no`           :red:`no`
   ================  ==================  ==================
 
+* emergency room triage, if the inputs are
+
+  - is it life threatening?
+  - is patient a child?
+
+  ================  ==================  ==================
+  life threat?      child?              treat immediately
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :green:`yes`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :green:`yes`
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
+
+* automatic door that opens, if the inputs are
+
+  - has keycard?
+  - entered code?
+
+  ================  ==================  ==================
+  has keycard?      entered code?       open door
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :green:`yes`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :green:`yes`
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
+
+* give discount if the person is already a customer or has a coupon, if the inputs are
+
+  - is already a customer?
+  - has coupon code?
+
+  ================  ================  =============
+  already customer  has coupon        give discount
+  ================  ================  =============
+  :green:`yes`      :green:`yes`      :green:`yes`
+  :green:`yes`      :red:`no`         :green:`yes`
+  :red:`no`         :green:`yes`      :green:`yes`
+  :red:`no`         :red:`no`         :red:`no`
+  ================  ================  =============
+
+
+
 ----
 
 *********************************************************************************
