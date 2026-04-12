@@ -20,7 +20,7 @@ truth table: Nullary and Unary Operations
 preview
 *********************************************************************************
 
-Here are the tests I have at the end of the chapters
+These are the tests I have at the end of the chapters
 
 .. literalinclude:: ../code/truth_table/tests/test_nullary_unary.py
   :language: python

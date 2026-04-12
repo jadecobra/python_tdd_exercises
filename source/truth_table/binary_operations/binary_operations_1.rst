@@ -1797,6 +1797,20 @@ examples
   :red:`no`        :red:`no`         :red:`no`
   ===============  ================  ============
 
+* new customer discount, if the inputs are
+
+  - is already a customer?
+  - does customer have the coupon code?
+
+  ================  ================  =============
+  already customer  has coupon        give discount
+  ================  ================  =============
+  :green:`yes`      :green:`yes`      :red:`no`
+  :green:`yes`      :red:`no`         :red:`no`
+  :red:`no`         :green:`yes`      :green:`yes`
+  :red:`no`         :red:`no`         :red:`no`
+  ================  ================  =============
+
 ----
 
 *********************************************************************************

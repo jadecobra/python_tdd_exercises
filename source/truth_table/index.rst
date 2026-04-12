@@ -28,7 +28,7 @@ These are the underlying operations that make the computer do what it does. All 
 preview
 *********************************************************************************
 
-Here are the tests I have at the end of the chapters
+These are the tests I have at the end of the chapters
 
 .. literalinclude:: ../code/truth_table/tests/test_nullary_unary.py
   :language: python

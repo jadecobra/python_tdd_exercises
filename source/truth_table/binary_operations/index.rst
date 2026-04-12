@@ -23,11 +23,9 @@ truth table: Binary Operations
 
 The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input, and :ref:`Unary Operations` which take 1 input.
 
-We know that there are two :ref:`booleans<what are booleans?>`
+We know that there are two :ref:`booleans<what are booleans?>` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
 
-:ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
-
-There are also Binary Operations, these take 2 inputs. Each of the inputs in this exercise will be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<what is a function?>`
+There are also Binary Operations, these take 2 inputs. Each of the inputs can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<what is a function?>`
 
 ==============  ==============
 first input     second input
@@ -38,10 +36,12 @@ first input     second input
 :red:`False`    :red:`False`
 ==============  ==============
 
-These combinations give 16 binary operations or outcomes when 2 :ref:`booleans<what are booleans?>` interact, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input. Here are the 16 operations that are covered in these chapters and what they return
+These combinations give 16 binary operations or outcomes when the :ref:`booleans<what are booleans?>` are put together, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input.
+
+Here are the 16 operations that are covered in these chapters and what they return
 
 =============================================== =============  ============= ============= ============= ==============================================================
-return                                          True,          True,         False,        False,        name of operation
+return                                          True,          True,         False,        False,        operation
                                                 True           False         True          False
 =============================================== =============  ============= ============= ============= ==============================================================
 False                                           :red:`False`   :red:`False`  :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
@@ -68,7 +68,7 @@ not (first or second)                           :green:`True`  :green:`True` :gr
 preview
 *********************************************************************************
 
-Here are the tests I have at the end of the chapters
+These are the tests I have at the end of the chapters
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary.py
   :language: python
