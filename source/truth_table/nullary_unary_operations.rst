@@ -413,6 +413,13 @@ I need to add a definition for it
 * if it gets :ref:`True<test_what_is_true>` it returns :ref:`True<test_what_is_true>`
 * if it gets :ref:`False<test_what_is_false>` it returns :ref:`False<test_what_is_false>`
 
+==============  ==============
+input           return
+==============  ==============
+:green:`True`   :green:`True`
+:red:`False`    :red:`False`
+==============  ==============
+
 ----
 
 =================================================================================
@@ -594,6 +601,13 @@ how to return the opposite of a boolean
 
 * if it gets :ref:`True<test_what_is_true>` it returns :ref:`False<test_what_is_false>`
 * if it gets :ref:`False<test_what_is_false>` it returns :ref:`True<test_what_is_true>`
+
+==============  ==============
+input           return
+==============  ==============
+:green:`True`   :red:`False`
+:red:`False`    :green:`True`
+==============  ==============
 
 ----
 

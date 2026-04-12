@@ -1163,6 +1163,21 @@ first input     second input   return
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
 
+* able to login with or without Multi Factor Authentication, if the inputs are
+
+  - did user provide the right password?
+  - does user have MFA?
+
+  ==============  ============== ==============
+  right password  right MFA code log in
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :green:`yes`
+  :green:`yes`    :red:`no`      :green:`yes`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
+
+
 ----
 
 *********************************************************************************

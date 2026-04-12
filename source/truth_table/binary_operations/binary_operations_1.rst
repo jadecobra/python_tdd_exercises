@@ -994,6 +994,20 @@ examples
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ==============
 
+* selling a product, if the inputs are
+
+  - is there supply?
+  - is there demand?
+
+  ==============  ============== ==============
+  supply          demand         can sell
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :green:`yes`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
+
 -----
 
 .. NOTE::
@@ -1268,17 +1282,59 @@ examples
 
 * Binge watching TV, if the inputs are
 
-  - is it late?
+  - should I sleep?
   - do I want to watch one more episode?
 
   ==============  =============== ==============
-  is it late?     I want to watch watch
+  sleep?          do I want it?   watch TV
   ==============  =============== ==============
   :green:`yes`    :green:`yes`    :green:`yes`
   :green:`yes`    :red:`no`       :red:`no`
   :red:`no`       :green:`yes`    :green:`yes`
   :red:`no`       :red:`no`       :red:`no`
   ==============  =============== ==============
+
+* fighting, if the inputs are
+
+  - hit first?
+  - hit second?
+
+  ==============  =============== ==============
+  hit first       hit second      fighting
+  ==============  =============== ==============
+  :green:`yes`    :green:`yes`    :green:`yes`
+  :green:`yes`    :red:`no`       :red:`no`
+  :red:`no`       :green:`yes`    :green:`yes`
+  :red:`no`       :red:`no`       :red:`no`
+  ==============  =============== ==============
+
+* dictatorship, if the inputs are
+
+  - is voters' choice?
+  - is dictator's choice?
+
+  ==============  =============== ==============
+  voters          dictator        outcome
+  ==============  =============== ==============
+  :green:`yes`    :green:`yes`    :green:`yes`
+  :green:`yes`    :red:`no`       :red:`no`
+  :red:`no`       :green:`yes`    :green:`yes`
+  :red:`no`       :red:`no`       :red:`no`
+  ==============  =============== ==============
+
+* being sick, if the inputs are
+
+  - sick before?
+  - sick now?
+
+  ================  ================  ================
+  before            now               sick
+  ================  ================  ================
+  :green:`healthy`  :green:`healthy`  :green:`healthy`
+  :green:`healthy`  :red:`sick`       :red:`sick`
+  :red:`sick`       :green:`healthy`  :green:`healthy`
+  :red:`sick`       :red:`sick`       :red:`sick`
+  ================  ================  ================
 
 ----
 
@@ -1676,6 +1732,70 @@ first input     second input   return
 :red:`False`    :green:`True`  :green:`True`
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
+
+----
+
+=================================================================================
+examples
+=================================================================================
+
+----
+
+* crossing the street, if the inputs are
+
+  - light is green for cars?
+  - light is green for walking?
+
+  ===============  =================  ================
+  green for cars?  green for person?  can cross street
+  ===============  =================  ================
+  :green:`yes`     :green:`yes`       :red:`no`
+  :green:`yes`     :red:`no`          :red:`no`
+  :red:`no`        :green:`yes`       :green:`yes`
+  :red:`no`        :red:`no`          :red:`no`
+  ===============  =================  ================
+
+* raise prices, if the inputs are
+
+  - is supply high or low?
+  - is demand high or low?
+
+  ==============  ============== ==============
+  supply          demand         raise prices
+  ==============  ============== ==============
+  :green:`high`   :green:`high`  :red:`no`
+  :green:`high`   :red:`low`     :red:`no`
+  :red:`low`      :green:`high`  :green:`yes`
+  :red:`low`      :red:`low`     :red:`no`
+  ==============  ============== ==============
+
+* do a computer update, if the inputs are
+
+  - is computer in use?
+  - is update available?
+
+  ===============  ================  ============
+  computer in use  update available  do update
+  ===============  ================  ============
+  :green:`yes`     :green:`yes`      :red:`no`
+  :green:`yes`     :red:`no`         :red:`no`
+  :red:`no`        :green:`yes`      :green:`yes`
+  :red:`no`        :red:`no`         :red:`no`
+  ===============  ================  ============
+
+* should I reply to a message, if the inputs are
+
+  - is it a group message?
+  - is it one on one from a close friend?
+
+  ===============  ================  ============
+  group chat       close friend      reply
+  ===============  ================  ============
+  :green:`yes`     :green:`yes`      :red:`no`
+  :green:`yes`     :red:`no`         :red:`no`
+  :red:`no`        :green:`yes`      :green:`yes`
+  :red:`no`        :red:`no`         :red:`no`
+  ===============  ================  ============
 
 ----
 
