@@ -1743,6 +1743,20 @@ examples of Converse Implication
   :red:`no`     :red:`no`      :green:`yes`
   ============  =============  =============
 
+* run the gas generator, if the inputs are
+
+  - is the house receiving electricity from the grid?
+  - is there fuel in the generator?
+
+  ==============  ============== ==============
+  grid            fuel           run generator
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :green:`yes`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
+
 ----
 
 *********************************************************************************

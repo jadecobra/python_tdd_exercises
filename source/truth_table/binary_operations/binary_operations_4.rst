@@ -313,8 +313,33 @@ examples of Negate Second
 
 ----
 
+* returning a defective product, if the inputs are
 
+  - do I have the original receipt?
+  - does the product work?
 
+  ==============  ============== ==============
+  receipt         product works  return
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :green:`yes`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :green:`yes`
+  ==============  ============== ==============
+
+* I do not pick up calls from numbers that are not in my contact list, if the inputs are
+
+  - am I busy?
+  - is the number saved in my phone?
+
+  ==============  ============== =================
+  busy            number saved   send to voicemail
+  ==============  ============== =================
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :green:`yes`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :green:`yes`
+  ==============  ============== =================
 
 ----
 
@@ -557,6 +582,28 @@ first input     second input   return
 :red:`False`    :red:`False`   :green:`True`
 ==============  ============== ==============
 
+----
+
+=================================================================================
+examples of Negate Second
+=================================================================================
+
+----
+
+* fitness discipline, if the inputs are
+
+  - did I eat cake?
+  - did I skip the workout?
+
+  ==============  ============== ==============
+  eat cake        skip workout   disciplined
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :green:`yes`
+  ==============  ============== ==============
+
 * smoke detector, if the inputs are
 
   - is the battery dead?
@@ -570,6 +617,36 @@ first input     second input   return
   :red:`no`        :green:`yes`       :red:`beep`
   :red:`no`        :red:`no`          :green:`no beep`
   ===============  =================  ================
+
+* a secret, if the inputs are
+
+  - does anyone know?
+  - did someone tell?
+
+  =============  ==============  ==============
+  someone knows  someone told    secret
+  =============  ==============  ==============
+  :green:`yes`   :green:`yes`    :red:`no`
+  :green:`yes`   :red:`no`       :red:`no`
+  :red:`no`      :green:`yes`    :red:`no`
+  :red:`no`      :red:`no`       :green:`yes`
+  =============  ==============  ==============
+
+* a late fee, if the inputs are
+
+  - did I make the payment?
+  - am I within the grace period?
+
+  ==============  ============== ================
+  made payment    grace period   late fee charged
+  ==============  ============== ================
+  :green:`yes`    :green:`yes`   :red:`no`
+  :green:`yes`    :red:`no`      :red:`no`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :green:`yes`
+  ==============  ============== ==============
+
+
 
 ----
 
