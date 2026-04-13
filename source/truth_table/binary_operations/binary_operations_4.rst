@@ -644,7 +644,7 @@ examples of Negate Second
   :green:`yes`    :red:`no`      :red:`no`
   :red:`no`       :green:`yes`   :red:`no`
   :red:`no`       :red:`no`      :green:`yes`
-  ==============  ============== ==============
+  ==============  ============== ================
 
 ----
 
@@ -1086,7 +1086,7 @@ examples of Logical Equality
   :green:`yes`    :red:`no`       :red:`no`
   :red:`no`       :green:`yes`    :red:`no`
   :red:`no`       :red:`no`       :green:`yes`
-  ==============  ============== ==============
+  ==============  ==============  ==============
 
 ----
 
@@ -1365,16 +1365,7 @@ more about Logical Equality
 
 ----
 
-``return ((first_input or not second_input) and (not first_input or second_input))`` can be thought of as
-
-.. code-block:: python
-
-  return x or y
-
-* if ``x`` is ``first_input or not second_input``
-* if ``y`` is ``not first_input or second_input``
-
-:ref:`Exclusive Disjunction<test_exclusive_disjunction>` can also be thought of as
+:ref:`Logical Equality<test_logical_equality>` can also be thought of as
 
 .. code-block:: python
 
@@ -1387,7 +1378,16 @@ more about Logical Equality
 because
 
 * :ref:`converse_implication<test_converse_implication>` returns ``first_input or not second_input``
-* :ref:`material_implication<test_material_implication>` return ``not first_input or second_input``
+* :ref:`material_implication<test_material_implication>` returns ``not first_input or second_input``
+
+``return (first_input or not second_input) and (not first_input or second_input)`` can be thought of as the :ref:`logical_conjunction<test_logical_conjunction>` of :ref:`converse_implication<test_converse_implication>` and :ref:`material_implication<test_material_implication>`
+
+.. code-block:: python
+
+  logical_conjunction(
+      converse_implication(first_input, second_input),
+      material_implication(first_input, second_input)
+  )
 
 This means that in the 4 cases
 

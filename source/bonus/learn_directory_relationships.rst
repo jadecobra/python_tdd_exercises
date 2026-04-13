@@ -44,7 +44,7 @@ I use these commands in the chapter to build each part of the tree below step by
       :sync: no_wsl
 
       .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
-        :language: shell
+        :language: none
 
 ----
 
@@ -253,13 +253,14 @@ when you type pwd_ or tree_, the terminal_ shows ``\`` between folder_ names, no
   :sync-group: os
 
   .. tab-item:: WSL/Linux/Mac
-    :sync:
+    :sync: unix
 
     .. code-block:: python
 
       .../pumping_python/doe
 
   .. tab-item:: no WSL
+    :sync: no_wsl
 
     .. code-block:: python
 

@@ -393,7 +393,7 @@ examples of Contradiction
   ==============  ============== ====================
   favorites       allowed hours  allow to ring
   ==============  ============== ====================
-  :green:`yes`    :green:`ye && s`   :red:`no`
+  :green:`yes`    :green:`yes`   :red:`no`
   :green:`yes`    :red:`no`      :red:`no`
   :red:`no`       :green:`yes`   :red:`no`
   :red:`no`       :red:`no`      :red:`no`

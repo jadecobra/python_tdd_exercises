@@ -1190,7 +1190,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
   and :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'calculator' is not defined. Did you mean: 'calculate'?
 
@@ -1963,7 +1963,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     # Exceptions seen
 
-* I remove the commented lines from the ``calculate`` :ref:`function<what is a function>` in ``streamlit_calculator.py``
+* I remove the commented lines from the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 20
@@ -2053,7 +2053,7 @@ I used :ref:`while loops<what is a while loop?>` and added tests for
 
 * :ref:`the session state object<test_streamlit_session_state>`
 * :ref:`decimals<test_streamlit_calculator_w_decimals>`
-* :ref:`backspace<test_streamlit_calculator_w_backspace>`
+* :ref:`backspace<test_streamlit_calculator_backspace>`
 * :ref:`+/-<test_streamlit_calculator_w_plus_minus>`
 * :ref:`resetting with 'C' and 'AC'<test_streamlit_calculator_reset>`
 * :ref:`calculator operatiosn<test_streamlit_calculator_operations>`
@@ -2078,7 +2078,7 @@ You now know how to:
 * Turn it into a Flask_ website
 * Turn it into a Streamlit_ app
 
-:ref:`Would you like to see how to make a Calculator with a Large Language Model?<calculator 11>`
+:ref:`Would you like to see how to make a Calculator with a Large Language Model?<how to make a calculator 11>`
 
 -----
 

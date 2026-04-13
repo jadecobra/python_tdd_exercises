@@ -6,7 +6,7 @@ booleans 4: inheritance
 
 :ref:`Inheritance<family ties>` showed that a :ref:`class<what is a class?>` can have more than one parent, and the parents are not the same.
 
-Earlier on, I tested if :ref:`booleans are Integers<booleans 4>` and the tests showed that :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` are both integers_ and :ref:`booleans<what are booleans?>`.
+Earlier on, I tested if :ref:`booleans are Integers<booleans 4: inheritance>` and the tests showed that :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` are both integers_ and :ref:`booleans<what are booleans?>`.
 
 Is bool_ a child of int_ or are they both parents of :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`?
 

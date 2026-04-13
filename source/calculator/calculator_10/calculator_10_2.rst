@@ -667,7 +667,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
   AssertionError: 0 != 4
 
 - ``len(self.tester.columns)`` returns the length of the columns object
-- `streamlit columns`_ are :ref:`lists<what is a list?>` and I know how to work with :ref:`lists<what is a list>`
+- `streamlit columns`_ are :ref:`lists<what is a list?>` and I know how to work with :ref:`lists<what is a list?>`
 
 ----
 
@@ -1209,7 +1209,7 @@ the test passes
 
     def add_buttons():
 
-* I call the new :ref:`function<what is a a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
+* I call the new :ref:`function<what is a function?>` in the ``add_buttons`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -2195,7 +2195,7 @@ I want the calculator to show the number when I press a button
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 7-18
+    :emphasize-lines: 7-14
     :emphasize-text: on_click args
 
     def add_buttons_to_column_1(column_1, display):
@@ -2281,7 +2281,7 @@ I want the calculator to show the number when I press a button
 
   .. code-block:: python
     :lineno-start: 47
-    :emphasize-lines: 5-24
+    :emphasize-lines: 5-20
     :emphasize-text: on_click args
 
     def add_buttons_to_column_3(column_3):
@@ -2405,7 +2405,7 @@ I made a website using Streamlit_ with a :ref:`title<test_streamlit_calculator_t
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: part 2: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<how to make a calculator 10: part 2: tests and solutions>`
 
 ----
 

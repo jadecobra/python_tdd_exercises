@@ -506,7 +506,7 @@ you know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to use a variable<functions 2>`
+* :ref:`how to use a variable<function 2: use variables>`
 
 There is a problem, I have done these same steps for each of the chapters up till now
 

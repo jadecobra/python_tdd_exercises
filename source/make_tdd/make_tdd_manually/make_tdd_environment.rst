@@ -75,7 +75,7 @@ There are answers to these questions in this chapter
 requirements
 *********************************************************************************
 
-* :ref:`how I setup my computer for development`
+* :ref:`start here`
 
 ----
 

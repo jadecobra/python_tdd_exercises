@@ -101,7 +101,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
 * I add a test for the `session state object`_, I want it to hold the number when I click the buttons, in ``test_streamlit_calculator.py``
 
-    .. code-block:: python
+  .. code-block:: python
     :lineno-start: 47
     :emphasize-lines: 9-10
 
@@ -119,9 +119,9 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
     # Exceptions seen
 
-    the terminal_ shows :ref:`KeyError<test_key_error>`
+  the terminal_ shows :ref:`KeyError<test_key_error>`
 
-    .. code-block:: shell
+  .. code-block:: shell
 
     KeyError: 'st.session_state has no key "number".
     Did you forget to initialize it?
@@ -1702,7 +1702,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* The last 4 :ref:`functions<what is a function?>` in ``streamlit_calculator.py`` - ``plus_minus``, ``backspace``, ``handle_decimals`` and ``show`` look the same. 2 of the :ref:`functions<what is a function?>` have ``number`` in the :ref:`function<what is a function?>` signature, all 4 have ``display`` in the :ref:`function<whats is a function?>` signature
+* The last 4 :ref:`functions<what is a function?>` in ``streamlit_calculator.py`` - ``plus_minus``, ``backspace``, ``handle_decimals`` and ``show`` look the same. 2 of the :ref:`functions<what is a function?>` have ``number`` in the :ref:`function<what is a function?>` signature, all 4 have ``display`` in the :ref:`function<what is a function?>` signature
 
   .. code-block:: python
 
@@ -2582,7 +2582,7 @@ I used :ref:`while loops<what is a while loop?>` and added tests for
 
 * :ref:`the session state object<test_streamlit_session_state>`
 * :ref:`decimals<test_streamlit_calculator_w_decimals>`
-* :ref:`backspace<test_streamlit_calculator_w_backspace>`
+* :ref:`backspace<test_streamlit_calculator_backspace>`
 * :ref:`+/-<test_streamlit_calculator_w_plus_minus>`
 
 *************************************************************************************
@@ -2610,7 +2610,7 @@ You now know how to:
 * how to add :ref:`functions<what is a function?>` to `streamlit buttons`_ to make them do things from
 
   - :ref:`test_streamlit_calculator_w_decimals`
-  - :ref:`test_streamlit_calculator_w_backspace`
+  - :ref:`test_streamlit_calculator_backspace`
   - :ref:`test_streamlit_calculator_w_plus_minus`
 
 :ref:`Would you like to continue with the operation buttons of the calculator?<how to make a calculator 10: part 4>`
