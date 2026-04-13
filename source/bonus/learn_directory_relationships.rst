@@ -2943,7 +2943,7 @@ how to use touch with directory relationships
         │   ├── .a_hidden_folder_in_jane
         │   └── mary
         │       │   .a_hidden_file_in_mary
-        │       │   .aka_mary_jane_doe
+        │       │   aka_mary_jane_doe
         │       │
         │       └── .a_hidden_folder_in_mary
         └── john
@@ -2953,7 +2953,7 @@ how to use touch with directory relationships
             ├── .a_hidden_folder_in_john
             └── lil
                 │   .a_hidden_file_in_lil
-                │   .aka_lil_john_doe
+                │   aka_lil_john_doe
                 │
                 └── .a_hidden_folder_in_lil
 
@@ -3101,7 +3101,7 @@ how to use touch with directory relationships
         │   ├── .a_hidden_folder_in_jane
         │   └── mary
         │       │   .a_hidden_file_in_mary
-        │       │   .aka_mary_jane_doe
+        │       │   aka_mary_jane_doe
         │       │   grandchild_of_doe
         │       │
         │       └── .a_hidden_folder_in_mary
@@ -3113,7 +3113,7 @@ how to use touch with directory relationships
             ├── .a_hidden_folder_in_john
             └── lil
                 │   .a_hidden_file_in_lil
-                │   .aka_lil_john_doe
+                │   aka_lil_john_doe
                 │   grandchild_of_doe
                 │
                 └── .a_hidden_folder_in_lil
@@ -3333,7 +3333,7 @@ mv_ means move, it takes two arguments
         │   ├── .a_hidden_folder_in_jane
         │   └── mary
         │       │   .a_hidden_file_in_mary
-        │       │   .aka_mary_jane_doe
+        │       │   aka_mary_jane_doe
         │       │   child_of_jane
         │       │   grandchild_of_doe
         │       │
@@ -3347,7 +3347,7 @@ mv_ means move, it takes two arguments
             ├── .a_hidden_folder_in_john
             └── lil
                 │   .a_hidden_file_in_lil
-                │   .aka_lil_john_doe
+                │   aka_lil_john_doe
                 │   child_of_sibling_of_jane
                 │   grandchild_of_doe
                 │
@@ -3548,7 +3548,7 @@ mv_ means move, it takes two arguments
         │   ├── .a_hidden_folder_in_jane
         │   └── mary
         │       │   .a_hidden_file_in_mary
-        │       │   .aka_mary_jane_doe
+        │       │   aka_mary_jane_doe
         │       │   child_of_jane
         │       │   child_of_sibling_of_john
         │       │   grandchild_of_doe
@@ -3563,7 +3563,7 @@ mv_ means move, it takes two arguments
             ├── .a_hidden_folder_in_john
             └── lil
                 │   .a_hidden_file_in_lil
-                │   .aka_lil_john_doe
+                │   aka_lil_john_doe
                 │   child_of_john
                 │   child_of_sibling_of_jane
                 │   grandchild_of_doe
@@ -3752,7 +3752,7 @@ mv_ means move, it takes two arguments
         │   ├── .a_hidden_folder_in_jane
         │   └── mary
         │       │   .a_hidden_file_in_mary
-        │       │   .aka_mary_jane_doe
+        │       │   aka_mary_jane_doe
         │       │   child_of_jane
         │       │   child_of_sibling_of_john
         │       │   grandchild_of_doe
@@ -3768,7 +3768,7 @@ mv_ means move, it takes two arguments
             ├── .a_hidden_folder_in_john
             └── lil
                 │   .a_hidden_file_in_lil
-                │   .aka_lil_john_doe
+                │   aka_lil_john_doe
                 │   child_of_john
                 │   child_of_sibling_of_jane
                 │   cousin_of_mary
@@ -3903,39 +3903,9 @@ mv_ means move, it takes two arguments
 
       the terminal_ shows
 
-      .. code-block:: shell
+      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
+        :language: shell
         :emphasize-lines: 1, 3, 8, 17, 21
-
-        ../../../doe
-        ├── a_file_in_doe
-        ├── aka_grandparent_of_lil
-        ├── aka_grandparent_of_mary
-        ├── aka_parent_of_jane
-        ├── aka_parent_of_john
-        ├── jane
-        │   ├── aka_aunt_of_lil
-        │   ├── aka_jane_doe
-        │   ├── aka_parent_of_mary
-        │   ├── aka_sibling_of_john
-        │   ├── child_of_doe
-        │   └── mary
-        │       ├── aka_mary_jane_doe
-        │       ├── child_of_jane
-        │       ├── child_of_sibling_of_john
-        │       ├── cousin_of_lil
-        │       └── grandchild_of_doe
-        └── john
-            ├── aka_john_doe
-            ├── aka_parent_of_lil
-            ├── aka_sibling_of_jane
-            ├── aka_uncle_of_mary
-            ├── child_of_doe
-            └── lil
-                ├── aka_lil_john_doe
-                ├── child_of_john
-                ├── child_of_sibling_of_jane
-                ├── cousin_of_mary
-                └── grandchild_of_doe
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -3947,54 +3917,9 @@ mv_ means move, it takes two arguments
 
       the terminal_ shows
 
-      .. code-block:: shell
+      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
+        :language: none
         :emphasize-lines: 3, 13, 24, 31
-
-        C:.\...\PUMPING_PYTHON\DOE
-        │   .a_hidden_file_in_doe
-        │   aka_grandparent_of_lil
-        │   aka_grandparent_of_mary
-        │   aka_parent_of_jane
-        │   aka_parent_of_john
-        │   a_file_in_doe
-        │
-        ├── .a_hidden_folder_in_doe
-        ├── jane
-        │   │   .a_hidden_file_in_jane
-        │   │   aka_jane_doe
-        │   │   aka_aunt_of_lil
-        │   │   aka_parent_of_mary
-        │   │   aka_sibling_of_john
-        │   │   child_of_doe
-        │   │
-        │   ├── .a_hidden_folder_in_jane
-        │   └── mary
-        │       │   .a_hidden_file_in_mary
-        │       │   .aka_mary_jane_doe
-        │       │   child_of_jane
-        │       │   child_of_sibling_of_john
-        │       │   cousin_of_lil
-        │       │   grandchild_of_doe
-        │       │
-        │       └── .a_hidden_folder_in_mary
-        └── john
-            │   .a_hidden_file_in_john
-            │   aka_john_doe
-            │   aka_parent_of_lil
-            │   aka_sibling_of_jane
-            │   aka_uncle_of_mary
-            │   child_of_doe
-            │
-            ├── .a_hidden_folder_in_john
-            └── lil
-                │   .a_hidden_file_in_lil
-                │   .aka_lil_john_doe
-                │   child_of_john
-                │   child_of_sibling_of_jane
-                │   cousin_of_mary
-                │   grandchild_of_doe
-                │
-                └── .a_hidden_folder_in_lil
 
   - ``..`` is for the parent of ``lil`` which is ``john``
   - ``../..`` is for the parent of the parent of ``lil`` which is ``doe``
@@ -4270,7 +4195,7 @@ how to use tree with directory relationships
 
         C:\...\PUMPING_PYTHON\DOE\JOHN\LIL
         │   .a_hidden_file_in_lil
-        │   .aka_lil_john_doe
+        │   aka_lil_john_doe
         │   child_of_john
         │   child_of_sibling_of_jane
         │   cousin_of_mary
@@ -4335,7 +4260,7 @@ how to use tree with directory relationships
         ├── .a_hidden_folder_in_john
         └── lil
             │   .a_hidden_file_in_lil
-            │   .aka_lil_john_doe
+            │   aka_lil_john_doe
             │   child_of_john
             │   child_of_sibling_of_jane
             │   cousin_of_mary
@@ -4421,7 +4346,7 @@ how to use tree with directory relationships
 
         C:\...\PUMPING_PYTHON\DOE\JANE\MARY
           │   .a_hidden_file_in_mary
-          │   .aka_mary_jane_doe
+          │   aka_mary_jane_doe
           │   child_of_jane
           │   child_of_sibling_of_john
           │   cousin_of_lil
@@ -4472,13 +4397,13 @@ how to use tree with directory relationships
 
       the terminal_ shows
 
-      .. code-block:: shell
+      .. code-block:: none
         :emphasize-lines: 1
 
-        ─ jane
+        C:\...\PUMPING_PYTHON\DOE\JANE
           │   .a_hidden_file_in_jane
-          │   aka_jane_doe
           │   aka_aunt_of_lil
+          │   aka_jane_doe
           │   aka_parent_of_mary
           │   aka_sibling_of_john
           │   child_of_doe
@@ -4486,7 +4411,7 @@ how to use tree with directory relationships
           ├── .a_hidden_folder_in_jane
           └── mary
               │   .a_hidden_file_in_mary
-              │   .aka_mary_jane_doe
+              │   aka_mary_jane_doe
               │   child_of_jane
               │   child_of_sibling_of_john
               │   cousin_of_lil
@@ -4507,95 +4432,142 @@ how to use tree with directory relationships
 
     .../pumping_python
 
-* I show all the ``doe`` family directories_ with the ``-a`` and ``-d`` options
+* I show all the ``doe`` family directories_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree doe -ad
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. code-block:: shell
+        tree doe -ad
 
-    doe
-    ├── .a_hidden_folder_in_doe
-    ├── jane
-    │   ├── .a_hidden_folder_in_jane
-    │   └── mary
-    │       └── .a_hidden_folder_in_mary
-    └── john
-        ├── .a_hidden_folder_in_john
-        └── lil
-            └── .a_hidden_folder_in_lil
+      the terminal_ shows
 
-    10 directories
+      .. code-block:: shell
+
+        doe
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        │       └── .a_hidden_folder_in_mary
+        └── john
+            ├── .a_hidden_folder_in_john
+            └── lil
+                └── .a_hidden_folder_in_lil
+
+        10 directories
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree doe
+
+      the terminal_ shows
+
+      .. code-block:: none
+
+        C:\...\PUMPING_PYTHON\DOE
+        ├── .a_hidden_folder_in_doe
+        ├── jane
+        │   ├── .a_hidden_folder_in_jane
+        │   └── mary
+        │       └── .a_hidden_folder_in_mary
+        └── john
+            ├── .a_hidden_folder_in_john
+            └── lil
+                └── .a_hidden_folder_in_lil
 
 * I show the relationships of files_ and folders_ in ``doe``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    tree -a doe
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
+        :emphasize-lines: 1
 
-  .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
-    :language: shell
+        tree -a doe
 
-* I show the path for each file_ and folder_ in ``doe`` with the ``-a`` and ``-f`` options
+      the terminal_ shows
 
-  .. code-block:: python
+      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
+        :language: shell
 
-    tree -af doe
+      * I show the path for each file_ and folder_ in ``doe`` with the ``-a`` and ``-f`` options
 
-  the terminal_ shows
+        .. code-block:: python
 
+          tree -af doe
 
-  .. code-block:: shell
+        the terminal_ shows
 
-    doe
-    ├── doe/a_file_in_doe
-    ├── doe/.a_hidden_file_in_doe
-    ├── doe/.a_hidden_folder_in_doe
-    ├── doe/aka_grandparent_of_lil
-    ├── doe/aka_grandparent_of_mary
-    ├── doe/aka_parent_of_jane
-    ├── doe/aka_parent_of_john
-    ├── doe/jane
-    │   ├── doe/jane/.a_hidden_file_in_jane
-    │   ├── doe/jane/.a_hidden_folder_in_jane
-    │   ├── doe/jane/aka_aunt_of_lil
-    │   ├── doe/jane/aka_jane_doe
-    │   ├── doe/jane/aka_parent_of_mary
-    │   ├── doe/jane/aka_sibling_of_john
-    │   ├── doe/jane/child_of_doe
-    │   └── doe/jane/mary
-    │       ├── doe/jane/mary/.a_hidden_file_in_mary
-    │       ├── doe/jane/mary/.a_hidden_folder_in_mary
-    │       ├── doe/jane/mary/aka_mary_jane_Doe
-    │       ├── doe/jane/mary/child_Of_jane
-    │       ├── doe/jane/mary/child_of_sibling_of_john
-    │       ├── doe/jane/mary/cousin_of_lil
-    │       └── doe/jane/mary/grandchild_of_doe
-    └── doe/john
-        ├── doe/john/.a_hidden_file_in_john
-        ├── doe/john/.a_hidden_folder_in_john
-        ├── doe/john/aka_john_doe
-        ├── doe/john/aka_parent_of_lil
-        ├── doe/john/aka_sibling_of_jane
-        ├── doe/john/aka_uncle_of_mary
-        ├── doe/john/child_of_doe
-        └── doe/john/lil
-            ├── doe/john/lil/.a_hidden_file_in_lil
-            ├── doe/john/lil/.a_hidden_folder_in_lil
-            ├── doe/john/lil/aka_lil_john_doe
-            ├── doe/john/lil/child_of_john
-            ├── doe/john/lil/child_of_sibling_of_jane
-            ├── doe/john/lil/cousin_of_mary
-            └── doe/john/lil/grandchild_of_doe
+        .. code-block:: shell
 
-    10 directories, 30 files
+          doe
+          ├── doe/a_file_in_doe
+          ├── doe/.a_hidden_file_in_doe
+          ├── doe/.a_hidden_folder_in_doe
+          ├── doe/aka_grandparent_of_lil
+          ├── doe/aka_grandparent_of_mary
+          ├── doe/aka_parent_of_jane
+          ├── doe/aka_parent_of_john
+          ├── doe/jane
+          │   ├── doe/jane/.a_hidden_file_in_jane
+          │   ├── doe/jane/.a_hidden_folder_in_jane
+          │   ├── doe/jane/aka_aunt_of_lil
+          │   ├── doe/jane/aka_jane_doe
+          │   ├── doe/jane/aka_parent_of_mary
+          │   ├── doe/jane/aka_sibling_of_john
+          │   ├── doe/jane/child_of_doe
+          │   └── doe/jane/mary
+          │       ├── doe/jane/mary/.a_hidden_file_in_mary
+          │       ├── doe/jane/mary/.a_hidden_folder_in_mary
+          │       ├── doe/jane/mary/aka_mary_jane_Doe
+          │       ├── doe/jane/mary/child_Of_jane
+          │       ├── doe/jane/mary/child_of_sibling_of_john
+          │       ├── doe/jane/mary/cousin_of_lil
+          │       └── doe/jane/mary/grandchild_of_doe
+          └── doe/john
+              ├── doe/john/.a_hidden_file_in_john
+              ├── doe/john/.a_hidden_folder_in_john
+              ├── doe/john/aka_john_doe
+              ├── doe/john/aka_parent_of_lil
+              ├── doe/john/aka_sibling_of_jane
+              ├── doe/john/aka_uncle_of_mary
+              ├── doe/john/child_of_doe
+              └── doe/john/lil
+                  ├── doe/john/lil/.a_hidden_file_in_lil
+                  ├── doe/john/lil/.a_hidden_folder_in_lil
+                  ├── doe/john/lil/aka_lil_john_doe
+                  ├── doe/john/lil/child_of_john
+                  ├── doe/john/lil/child_of_sibling_of_jane
+                  ├── doe/john/lil/cousin_of_mary
+                  └── doe/john/lil/grandchild_of_doe
+
+          10 directories, 30 files
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree /F doe
+
+      the terminal_ shows
+
+      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
+        :language: none
 
 I can do things with files_ and folders_ in one step as long as
 
