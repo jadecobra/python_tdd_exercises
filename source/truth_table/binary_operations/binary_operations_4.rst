@@ -973,6 +973,20 @@ examples
   :red:`no`         :red:`no`           :green:`dry`
   ================  ==================  ==================
 
+* my expectation matches reality, if the inputs are
+
+  - reality
+  - expectation
+
+  ================  ==================  ===========================
+  reality           my expectation      expectation matches reality
+  ================  ==================  ===========================
+  :green:`yes`      :green:`yes`        :green:`yes`
+  :green:`yes`      :red:`no`           :red:`no`
+  :red:`no`         :green:`yes`        :red:`no`
+  :red:`no`         :red:`no`           :green:`yes`
+  ================  ==================  ===========================
+
 ----
 
 *********************************************************************************

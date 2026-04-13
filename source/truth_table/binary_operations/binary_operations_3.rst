@@ -1342,6 +1342,20 @@ examples of Project First
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ==============
 
+* autocorrect, if the inputs are
+
+  - autocorrect suggests a word
+  - I write what I want
+
+  ==============  ============== ==============
+  autocorrect     what I want    what I get
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :green:`yes`
+  :green:`yes`    :red:`no`      :green:`yes`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
+
 ----
 
 *********************************************************************************
@@ -1692,6 +1706,32 @@ first input     second input   return
 :red:`False`    :green:`True`  :red:`False`
 :red:`False`    :red:`False`   :green:`True`
 ==============  ============== ==============
+
+----
+
+=================================================================================
+examples of Converse Implication
+=================================================================================
+
+----
+
+* I cannot get a table at a restaurant, if the inputs are
+
+  - do I have a reservation?
+  - is the place full?
+
+  ============  =============  =============
+  reservation   place is full  I get a table
+  ============  =============  =============
+  :green:`yes`  :green:`yes`   :green:`yes`
+  :green:`yes`  :red:`no`      :green:`yes`
+  :red:`no`     :green:`yes`   :red:`no`
+  :red:`no`     :red:`no`      :green:`yes`
+  ============  =============  =============
+
+* sleep through alarm, if the inputs are
+
+  - is the alarm ringing?
 
 ----
 
