@@ -637,6 +637,20 @@ examples of Exclusive Disjunction
   :red:`stop`       :red:`stop`         :red:`no`
   ================  ==================  ==================
 
+* A broken vending machine, if the inputs are
+
+  - did I put money in the machine?
+  - did I get what I picked?
+
+  ================  ==================  ==================
+  I paid            I got what I want   machine is broken
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`no`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :green:`yes`
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
+
 ----
 
 *********************************************************************************
@@ -935,6 +949,7 @@ first input     second input   return
 * returns ``first_input and not second_input`` which is the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 * returns :ref:`True<test_what_is_true>`, only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
 * is the :ref:`Logical Negation<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* can be thought of as a claim that does not deliver
 
 ==============  ============== ==============
 first input     second input   return
@@ -944,6 +959,56 @@ first input     second input   return
 :red:`False`    :green:`True`  :red:`False`
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
+
+----
+
+=================================================================================
+examples of Material NonImplication
+=================================================================================
+
+----
+
+* A broken promise, if the inputs are
+
+  - did I make a promise?
+  - did I do something?
+
+  ================  ==================  ==================
+  I promised        I did something     broken promise
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`no`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :red:`no`
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
+
+* A false alarm, if the inputs are
+
+  - did alarm ring?
+  - was there a bad event?
+
+  ================  ==================  ==================
+  alarm rang        bad event           false alarm
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`no`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :red:`no` (alarm is broken)
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
+
+* the boy who cried wolf, if the inputs
+
+  - did the boy cry?
+  - was there a wolf?
+
+  ================  ==================  ==================
+  boy cried         wolf                boy cried wolf
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :red:`no`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :red:`no`
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
 
 .. NOTE::
 
@@ -1227,6 +1292,28 @@ first input     second input   return
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
 
+----
+
+=================================================================================
+examples of Project First
+=================================================================================
+
+----
+
+* did the event happen, if the inputs are
+
+  - did the event happen?
+  - did we get a notification about it?
+
+  ================  ==================  ==================
+  event             notification        event happened
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :green:`yes`
+  :green:`yes`      :red:`no`           :green:`yes`
+  :red:`no`         :green:`yes`        :red:`no` (notification is broken)
+  :red:`no`         :red:`no`           :red:`no`
+  ================  ==================  ==================
+
 * able to login with or without Multi Factor Authentication, if the inputs are
 
   - did user provide the right password?
@@ -1237,10 +1324,23 @@ first input     second input   return
   ==============  ============== ==============
   :green:`yes`    :green:`yes`   :green:`yes`
   :green:`yes`    :red:`no`      :green:`yes`
-  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :green:`yes`   :red:`no` (how did user get the MFA code?)
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ==============
 
+* my actions, if the inputs are
+
+  - what I want to do?
+  - what you think I should do?
+
+  ==============  ============== ==============
+  what I want     your thoughts  what happens
+  ==============  ============== ==============
+  :green:`yes`    :green:`yes`   :green:`yes`
+  :green:`yes`    :red:`no`      :green:`yes`
+  :red:`no`       :green:`yes`   :red:`no`
+  :red:`no`       :red:`no`      :red:`no`
+  ==============  ============== ==============
 
 ----
 
