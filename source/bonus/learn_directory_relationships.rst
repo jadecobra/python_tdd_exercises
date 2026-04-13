@@ -31,9 +31,20 @@ I use these commands in the chapter to build each part of the tree below step by
 * mv_ to rename or move files_
 * rm_ to remove directories_
 
-.. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
-  :language: shell
+  .. tab-set::
+    :sync-group: os
 
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
+        :language: shell
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
+        :language: shell
 
 ----
 
@@ -4587,43 +4598,70 @@ how to remove a directory and all the things in it
 
 * I try to remove ``doe`` and all its children and their children
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    rm doe
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  the terminal_ shows
+      .. code-block:: python
 
-  .. code-block:: python
+        rm doe
 
-    rm: cannot remove 'doe': Is a directory
+      the terminal_ shows
 
-  I cannot remove a directory_ this way
+      .. code-block:: python
 
-* I remove ``doe`` and all its children and their children with the ``-r/--recursive`` option
+        rm: cannot remove 'doe': Is a directory
 
-  .. DANGER:: This is a destructive operation that takes a lot of work and time to undo on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
+      I cannot remove a directory_ this way
 
-  .. code-block:: python
-    :emphasize-lines: 1
+      * I remove ``doe`` and all its children and their children with the ``-r/--recursive`` option
 
-    rm --recursive doe
+        .. DANGER:: This is a destructive operation that takes a lot of work and time to undo on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
 
-  the terminal_ goes back to the command line
+        .. code-block:: python
+          :emphasize-lines: 1
 
-  .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
+          rm --recursive doe
 
-    use `Remove-Item`_ in place of ``rm``
+        the terminal_ goes back to the command line
 
-    .. code-block:: PowerShell
-      :emphasize-lines: 1
+        - ``rm`` means ``remove``
+        - ``--recursive`` or ``-r`` means remove child directories_ and what is in them until there is nothing left. It goes through every directory_ in the tree and removes everything
 
-      Remove-Item -Path doe -Recurse -Force
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
+      .. code-block:: PowerShell
+        :emphasize-lines: 1
 
-  - rm_ or `Remove-Item`_ is used to remove files_ and folders_
-  - ``rm`` means ``remove``
-  - ``--recursive`` or ``-r`` or ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through every directory_ in the tree and removes everything
-  - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
+        Remove-Item doe
+
+      the terminal_ shows
+
+      .. code-block:: none
+
+        Confirm
+        The item at C:\...\pumping_python\doe has children
+        and the Recurse parameter was not specified.
+        If you continue, all children will be removed with the item.
+        Are you sure you want to continue?
+        [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend
+        [?] Help (default is "Y"):
+
+      I could use :kbd:`A` on the keyboard to answer ``Yes to All`` or give one command to delete all the files_ and folders_ and ask me no questions.
+
+      I use :kbd:`ctrl+c` to go back to the command line then give use the ``-Recurse`` and ``-Force`` options
+
+      .. code-block:: PowerShell
+        :emphasize-lines: 1
+
+        Remove-Item -Path doe -Recurse -Force
+
+      - `Remove-Item`_ is used to remove files_ and folders_
+      - ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through every directory_ in the tree and removes everything
+      - ``-Force`` means do not ask me any questions, just remove the file_ or folder_
 
 * I try to `change directory`_  back to ``doe``
 
