@@ -951,6 +951,27 @@ first input     second input   return
 :red:`False`    :green:`True`  :red:`False`
 :red:`False`    :red:`False`   :green:`True`
 ==============  ============== ==============
+----
+
+=================================================================================
+examples
+=================================================================================
+
+----
+
+* staying dry outside, if the inputs are
+
+  - do I have an umbrella?
+  - is it raining?
+
+  ================  ==================  ==================
+  umbrella?         raining?            dry/wet
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :green:`dry`
+  :green:`yes`      :red:`no`           :red:`wet`
+  :red:`no`         :green:`yes`        :red:`wet`
+  :red:`no`         :red:`no`           :green:`dry`
+  ================  ==================  ==================
 
 ----
 

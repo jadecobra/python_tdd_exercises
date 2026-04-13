@@ -573,6 +573,28 @@ first input     second input   return
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
 
+----
+
+=================================================================================
+examples of Exclusive Disjunction
+=================================================================================
+
+----
+
+* two light switches for one bulb, if the inputs are
+
+  - is switch A on?
+  - is switch B on?
+
+  ================  ==================  ==================
+  switch A?         switch B?           bulb
+  ================  ==================  ==================
+  :green:`on`       :green:`on`         :red:`off`
+  :green:`on`       :red:`off`          :green:`on`
+  :red:`off`        :green:`on`         :green:`on`
+  :red:`off`        :red:`off`          :red:`off`
+  ================  ==================  ==================
+
 * magnets attract or repel, if the inputs are
 
   - what is the direction of magnet A?
@@ -585,6 +607,34 @@ first input     second input   return
   :green:`north`    :red:`south`        :green:`attract`
   :red:`south`      :green:`north`      :green:`attract`
   :red:`south`      :red:`south`        :red:`repel`
+  ================  ==================  ==================
+
+* a coin toss, if the inputs are
+
+  - my choice
+  - your choice
+
+  ================  ==================  ==================
+  my choice         your choice         there is a winner
+  ================  ==================  ==================
+  :green:`heads`    :green:`heads`      :red:`no`
+  :green:`heads`    :red:`tails`        :green:`yes`
+  :red:`tails`      :green:`heads`      :green:`yes`
+  :red:`tails`      :red:`tails`        :red:`no`
+  ================  ==================  ==================
+
+* two people meet at a door that can only take one person at a time, if the inputs are
+
+  - I go
+  - You go
+
+  ================  ==================  ==================
+  I go              you go              we both go
+  ================  ==================  ==================
+  :green:`go`       :green:`go`         :red:`no`
+  :green:`go`       :red:`stop`         :green:`yes`
+  :red:`stop`       :green:`go`         :green:`yes`
+  :red:`stop`       :red:`stop`         :red:`no`
   ================  ==================  ==================
 
 ----

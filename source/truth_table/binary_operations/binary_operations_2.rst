@@ -337,77 +337,8 @@ first input     second input   return
 
 ----
 
-*********************************************************************************
-test_logical_nand
-*********************************************************************************
-
-----
-
 =================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a new test to ``test_binary.py``
-
-.. code-block:: python
-  :lineno-start: 63
-  :emphasize-lines: 7-8
-
-      def test_negate_first(self):
-          self.assertFalse(src.truth_table.negate_first(True, True))
-          self.assertFalse(src.truth_table.negate_first(True, False))
-          self.assertTrue(src.truth_table.negate_first(False, True))
-          self.assertTrue(src.truth_table.negate_first(False, False))
-
-      def test_logical_nand(self):
-          self.assertFalse(src.truth_table.logical_nand(True, True))
-
-
-  # Exceptions seen
-
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
-
-.. code-block:: shell
-
-  AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
-
-there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I add the :ref:`function<what is a function?>` to ``truth_table.py``
-
-.. code-block:: python
-  :lineno-start: 34
-  :emphasize-lines: 5-6
-
-  def negate_first(first_input, second_input):
-      return not first_input
-
-
-  def logical_nand(first_input, second_input):
-      return False
-
-the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
-
-----
-
-=================================================================================
-examples
+examples of Negate First
 =================================================================================
 
 ----
@@ -481,6 +412,75 @@ examples
   :red:`no`        :green:`no`         :green:`yes`
   :red:`no`        :red:`yes`          :green:`yes`
   ===============  ==================  ==================
+
+----
+
+*********************************************************************************
+test_logical_nand
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a new test to ``test_binary.py``
+
+.. code-block:: python
+  :lineno-start: 63
+  :emphasize-lines: 7-8
+
+      def test_negate_first(self):
+          self.assertFalse(src.truth_table.negate_first(True, True))
+          self.assertFalse(src.truth_table.negate_first(True, False))
+          self.assertTrue(src.truth_table.negate_first(False, True))
+          self.assertTrue(src.truth_table.negate_first(False, False))
+
+      def test_logical_nand(self):
+          self.assertFalse(src.truth_table.logical_nand(True, True))
+
+
+  # Exceptions seen
+
+the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+.. code-block:: shell
+
+  AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
+
+there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add the :ref:`function<what is a function?>` to ``truth_table.py``
+
+.. code-block:: python
+  :lineno-start: 34
+  :emphasize-lines: 5-6
+
+  def negate_first(first_input, second_input):
+      return not first_input
+
+
+  def logical_nand(first_input, second_input):
+      return False
+
+the test passes. :ref:`logical_nand<test_logical_nand>` returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
 
 ----
 
@@ -820,7 +820,7 @@ first input     second input   return
 ----
 
 =================================================================================
-examples
+examples of Logical NAND
 =================================================================================
 
 ----
@@ -1104,7 +1104,7 @@ first input     second input   return
 ----
 
 =================================================================================
-examples
+examples of Tautology
 =================================================================================
 
 ----
@@ -1672,7 +1672,7 @@ first input     second input   return
 ----
 
 =================================================================================
-examples
+examples of Logical Disjunction
 =================================================================================
 
 ----
@@ -1733,7 +1733,20 @@ examples
   :red:`no`         :red:`no`         :red:`no`
   ================  ================  =============
 
+* elevator moves, if the inputs are
 
+  - did I push the button?
+  - did someone else push the button?
+
+
+  ================  ===================  ==================
+  I pushed          someone else pushed  elevator moves
+  ================  ===================  ==================
+  :green:`yes`      :green:`yes`         :green:`yes`
+  :green:`yes`      :red:`no`            :green:`yes`
+  :red:`no`         :green:`yes`         :green:`yes`
+  :red:`no`         :red:`no`            :red:`no`
+  ================  ===================  ==================
 
 ----
 
