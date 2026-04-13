@@ -1731,7 +1731,17 @@ examples of Converse Implication
 
 * sleep through alarm, if the inputs are
 
+  - am I too deep in sleep to hear the alarm?
   - is the alarm ringing?
+
+  ============  =============  =============
+  too tired     alarm rings    I sleep
+  ============  =============  =============
+  :green:`yes`  :green:`yes`   :green:`yes`
+  :green:`yes`  :red:`no`      :green:`yes`
+  :red:`no`     :green:`yes`   :red:`no`
+  :red:`no`     :red:`no`      :green:`yes`
+  ============  =============  =============
 
 ----
 
