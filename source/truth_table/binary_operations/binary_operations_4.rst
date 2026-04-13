@@ -646,8 +646,6 @@ examples of Negate Second
   :red:`no`       :red:`no`      :green:`yes`
   ==============  ============== ==============
 
-
-
 ----
 
 *********************************************************************************
@@ -1039,10 +1037,11 @@ first input     second input   return
 :red:`False`    :green:`True`  :red:`False`
 :red:`False`    :red:`False`   :green:`True`
 ==============  ============== ==============
+
 ----
 
 =================================================================================
-examples
+examples of Logical Equality
 =================================================================================
 
 ----
@@ -1074,6 +1073,34 @@ examples
   :red:`no`         :green:`yes`        :red:`no`
   :red:`no`         :red:`no`           :green:`yes`
   ================  ==================  ===========================
+
+* a market is balanced, if the inputs are
+
+  - supply
+  - demand
+
+  ==============  ==============  ==============
+  supply          demand          balance
+  ==============  ==============  ==============
+  :green:`high`   :green:`high`   :green:`yes`
+  :green:`high`   :red:`low`      :red:`no`
+  :red:`low`      :green:`high`   :red:`no`
+  :red:`low`      :red:`low`      :green:`yes`
+  ==============  ==============  ==============
+
+* we are in agreement, if the inputs are
+
+  - what did I say?
+  - what did you say?
+
+  ==============  ==============  ==============
+  I said          You said        agreement
+  ==============  ==============  ==============
+  :green:`yes`    :green:`yes`    :green:`yes`
+  :green:`yes`    :red:`no`       :red:`no`
+  :red:`no`       :green:`yes`    :red:`no`
+  :red:`no`       :red:`no`       :green:`yes`
+  ==============  ============== ==============
 
 ----
 
@@ -1321,6 +1348,28 @@ first input     second input   return
 :red:`False`    :green:`True`  :green:`True`
 :red:`False`    :red:`False`   :green:`True`
 ==============  ============== ==============
+
+----
+
+=================================================================================
+examples of Material Implication
+=================================================================================
+
+----
+
+* does the fire alarm work, if the inputs are
+
+  - is there a fire?
+  - is the alarm ringing?
+
+  ==============  ==============  ==============
+  fire?           alarm?          alarm works
+  ==============  ==============  ==============
+  :green:`yes`    :green:`yes`    :green:`yes`
+  :green:`yes`    :red:`no`       :red:`no`
+  :red:`no`       :green:`yes`    :green:`yes` (false positive)
+  :red:`no`       :red:`no`       :green:`yes`
+  ==============  ==============  ==============
 
 ----
 
