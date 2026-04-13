@@ -1743,19 +1743,19 @@ examples of Converse Implication
   :red:`no`     :red:`no`      :green:`yes`
   ============  =============  =============
 
-* run the gas generator, if the inputs are
+* staying dry outside, if the inputs are
 
-  - is the house receiving electricity from the grid?
-  - is there fuel in the generator?
+  - do I have an umbrella?
+  - is it raining?
 
-  ==============  ============== ==============
-  grid            fuel           run generator
-  ==============  ============== ==============
-  :green:`yes`    :green:`yes`   :red:`no`
-  :green:`yes`    :red:`no`      :red:`no`
-  :red:`no`       :green:`yes`   :green:`yes`
-  :red:`no`       :red:`no`      :red:`no`
-  ==============  ============== ==============
+  ================  ==================  ==================
+  umbrella?         raining?            dry/wet
+  ================  ==================  ==================
+  :green:`yes`      :green:`yes`        :green:`dry`
+  :green:`yes`      :red:`no`           :green:`dry`
+  :red:`no`         :green:`yes`        :red:`wet`
+  :red:`no`         :red:`no`           :green:`dry`
+  ================  ==================  ==================
 
 ----
 
