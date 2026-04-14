@@ -4346,7 +4346,6 @@ how to use tree with directory relationships
 
 * I look at what is in ``mary`` from inside ``lil``
 
-
   .. tab-set::
     :sync-group: os
 
@@ -4358,7 +4357,6 @@ how to use tree with directory relationships
 
         ls -a ../../jane/mary
 
-
     .. tab-item:: no WSL
       :sync: no_wsl
 
@@ -4366,12 +4364,6 @@ how to use tree with directory relationships
         :emphasize-lines: 1
 
         ls ../../jane/mary
-
-
-
-
-
-
 
   the terminal_ shows
 
@@ -4724,12 +4716,12 @@ how to remove a directory and all the things in it
 
       I could use :kbd:`A` on the keyboard to answer ``Yes to All`` or give one command to delete all the files_ and folders_ and ask me no questions.
 
-      I use :kbd:`ctrl+c` to go back to the command line then give use the ``-Recurse`` and ``-Force`` options
+      I use :kbd:`ctrl+c` on the keyboard to go back to the command line then use `Remove-Item`_ with the ``-Recurse`` and ``-Force`` options
 
       .. code-block:: PowerShell
         :emphasize-lines: 1
 
-        Remove-Item -Path doe -Recurse -Force
+        Remove-Item doe -Recurse -Force
 
       - `Remove-Item`_ is used to remove files_ and folders_
       - ``-Recurse`` means remove child directories_ and what is in them until there is nothing left. It goes through every directory_ in the tree and removes everything
@@ -4744,9 +4736,24 @@ how to remove a directory and all the things in it
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. tab-set::
+    :sync-group: os
 
-    cd: no such file or directory: doe
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+
+        cd: no such file or directory: doe
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+
+        Set-Location: Cannot find path
+                      'C:\...\pumping_python\doe'
+                      because it does not exist
 
   ``doe`` is gone!
 
