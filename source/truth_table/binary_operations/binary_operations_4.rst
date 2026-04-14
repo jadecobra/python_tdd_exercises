@@ -1763,7 +1763,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test the truth table tests?<test_truth_table_tests>`
+:ref:`Would you like to see more examples of the truth table?<truth table: Binary Operations 5>`
 
 ----
 

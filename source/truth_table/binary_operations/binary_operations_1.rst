@@ -1294,20 +1294,6 @@ examples of Project Second
   :red:`no`       :red:`no`       :red:`no`
   ==============  =============== ==============
 
-* fighting, if the inputs are
-
-  - hit first?
-  - hit second?
-
-  ==============  =============== ==============
-  hit first       hit second      fighting
-  ==============  =============== ==============
-  :green:`yes`    :green:`yes`    :green:`yes`
-  :green:`yes`    :red:`no`       :red:`no`
-  :red:`no`       :green:`yes`    :green:`yes`
-  :red:`no`       :red:`no`       :red:`no`
-  ==============  =============== ==============
-
 * dictatorship, if the inputs are
 
   - is voters' choice?
