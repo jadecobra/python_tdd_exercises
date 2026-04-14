@@ -54,13 +54,13 @@ not (motion and wrong code)                               :red:`off`  :green:`on
 alarm always                                              :green:`on` :green:`on` :green:`on` :green:`on` :ref:`tautology<test_tautology>`
 motion or right code                                      :green:`on` :green:`on` :green:`on` :red:`off`  :ref:`logical_disjunction<test_logical_disjunction>`
 (not (motion and wrong code)) and (motion or wrong code)  :red:`off`  :green:`on` :green:`on` :red:`off`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-motion and (right code)                                   :red:`off`  :green:`on` :red:`off`  :red:`off`  :ref:`material_non_implication<test_material_non_implication>`
+motion and right code                                     :red:`off`  :green:`on` :red:`off`  :red:`off`  :ref:`material_non_implication<test_material_non_implication>`
 motion                                                    :green:`on` :green:`on` :red:`off`  :red:`off`  :ref:`project_first<test_project_first>`
-motion or (right code)                                    :green:`on` :green:`on` :red:`off`  :green:`on` :ref:`converse_implication<test_converse_implication>`
+motion or right code                                      :green:`on` :green:`on` :red:`off`  :green:`on` :ref:`converse_implication<test_converse_implication>`
 right code                                                :red:`off`  :green:`on` :red:`off`  :green:`on` :ref:`negate_second<test_negate_second>`
 not (motion or wrong code)                                :red:`off`  :red:`off`  :red:`off`  :green:`on` :ref:`logical_nor<test_logical_nor>`
 (no motion or wrong code) and (motion or right code)      :green:`on` :red:`off`  :red:`off`  :green:`on` :ref:`logical_equality<test_logical_equality>`
-(no motion) or wrong code                                 :green:`on` :red:`off`  :green:`on` :green:`on` :ref:`material_implication<test_material_implication>`
+no motion or wrong code                                   :green:`on` :red:`off`  :green:`on` :green:`on` :ref:`material_implication<test_material_implication>`
 ========================================================  =========== =========== =========== =========== ========================================================
 
 ==============================================================  ===========================================================================================================
@@ -110,13 +110,13 @@ not (strong option and strong fit)                                      :red:`re
 hire                                                                    :green:`hire`   :green:`hire`   :green:`hire`   :green:`hire`   :ref:`tautology<test_tautology>`
 strong option or weak fit                                               :green:`hire`   :green:`hire`   :green:`hire`   :red:`reject`   :ref:`logical_disjunction<test_logical_disjunction>`
 (not (strong option and strong fit)) and (strong option or strong fit)  :red:`reject`   :green:`hire`   :green:`hire`   :red:`reject`   :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-strong option and (weak fit)                                            :red:`reject`   :green:`hire`   :red:`reject`   :red:`reject`   :ref:`material_non_implication<test_material_non_implication>`
+strong option and weak fit                                              :red:`reject`   :green:`hire`   :red:`reject`   :red:`reject`   :ref:`material_non_implication<test_material_non_implication>`
 strong option                                                           :green:`hire`   :green:`hire`   :red:`reject`   :red:`reject`   :ref:`project_first<test_project_first>`
-strong option or (weak fit)                                             :green:`hire`   :green:`hire`   :red:`reject`   :green:`hire`   :ref:`converse_implication<test_converse_implication>`
+strong option or weak fit                                               :green:`hire`   :green:`hire`   :red:`reject`   :green:`hire`   :ref:`converse_implication<test_converse_implication>`
 weak fit                                                                :red:`reject`   :green:`hire`   :red:`reject`   :green:`hire`   :ref:`negate_second<test_negate_second>`
 not (strong option or strong fit)                                       :red:`reject`   :red:`reject`   :red:`reject`   :green:`hire`   :ref:`logical_nor<test_logical_nor>`
 (weak option or strong fit) and (strong option or weak fit)             :green:`hire`   :red:`reject`   :red:`reject`   :green:`hire`   :ref:`logical_equality<test_logical_equality>`
-(weak option) or strong fit                                             :green:`hire`   :red:`reject`   :green:`hire`   :green:`hire`   :ref:`material_implication<test_material_implication>`
+weak option or strong fit                                               :green:`hire`   :red:`reject`   :green:`hire`   :green:`hire`   :ref:`material_implication<test_material_implication>`
 ======================================================================  =============== =============== =============== =============== ==============================================================
 
 ==============================================================  ===========================================================================================================
@@ -166,13 +166,13 @@ not (coupon and member)                             :red:`regular`    :green:`di
 discount                                            :green:`discount` :green:`discount` :green:`discount` :green:`discount` :ref:`tautology<test_tautology>`
 coupon or not member                                :green:`discount` :green:`discount` :green:`discount` :red:`regular`    :ref:`logical_disjunction<test_logical_disjunction>`
 (not (coupon and member)) and (coupon or member)    :red:`regular`    :green:`discount` :green:`discount` :red:`regular`    :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-coupon and (not member)                             :red:`regular`    :green:`discount` :red:`regular`    :red:`regular`    :ref:`material_non_implication<test_material_non_implication>`
+coupon and not member                               :red:`regular`    :green:`discount` :red:`regular`    :red:`regular`    :ref:`material_non_implication<test_material_non_implication>`
 coupon                                              :green:`discount` :green:`discount` :red:`regular`    :red:`regular`    :ref:`project_first<test_project_first>`
-coupon or (not member)                              :green:`discount` :green:`discount` :red:`regular`    :green:`discount` :ref:`converse_implication<test_converse_implication>`
+coupon or not member                                :green:`discount` :green:`discount` :red:`regular`    :green:`discount` :ref:`converse_implication<test_converse_implication>`
 not member                                          :red:`regular`    :green:`discount` :red:`regular`    :green:`discount` :ref:`negate_second<test_negate_second>`
 not (coupon or member)                              :red:`regular`    :red:`regular`    :red:`regular`    :green:`discount` :ref:`logical_nor<test_logical_nor>`
 (no coupon or member) and (coupon or not member)    :green:`discount` :red:`regular`    :red:`regular`    :green:`discount` :ref:`logical_equality<test_logical_equality>`
-(no coupon) or member                               :green:`discount` :red:`regular`    :green:`discount` :green:`discount` :ref:`material_implication<test_material_implication>`
+no coupon or member                                 :green:`discount` :red:`regular`    :green:`discount` :green:`discount` :ref:`material_implication<test_material_implication>`
 ==================================================  ================= ================= ================= ================= ==============================================================
 
 ==============================================================  ===========================================================================================================
@@ -185,15 +185,71 @@ operation                                                       rule
 :ref:`negate_first<test_negate_first>`                          discount price only if person does not have a coupon
 :ref:`logical_nand<test_logical_nand>`                          regular price only if person has a coupon and is a member
 :ref:`tautology<test_tautology>`                                everyone gets a discount
-:ref:`logical_disjunction<test_logical_disjunction>`            regular price only if person does not have a coupon and is a not member
+:ref:`logical_disjunction<test_logical_disjunction>`            regular price only if person does not have a coupon and is not a member
 :ref:`exclusive_disjunction<test_exclusive_disjunction>`        regular price if person has a coupon and is a member, regular price if person does not have a coupon and is not a member
-:ref:`material_non_implication<test_material_non_implication>`  discount price only if person has a coupon and is a not member
+:ref:`material_non_implication<test_material_non_implication>`  discount price only if person has a coupon and is not a member
 :ref:`project_first<test_project_first>`                        discount price only if person has a coupon
 :ref:`converse_implication<test_converse_implication>`          regular price only if person does not have a coupon and is a member
-:ref:`negate_second<test_negate_second>`                        discount price only if person is a not member
-:ref:`logical_nor<test_logical_nor>`                            discount price only if person does not have a coupon and is a not member
+:ref:`negate_second<test_negate_second>`                        discount price only if person is not a member
+:ref:`logical_nor<test_logical_nor>`                            discount price only if person does not have a coupon and is not a member
 :ref:`logical_equality<test_logical_equality>`                  discount price only if person has a coupon and is a member, discount price if person does not have a coupon and is not a member
-:ref:`material_implication<test_material_implication>`          regular price only if person has a coupon and is a not member
+:ref:`material_implication<test_material_implication>`          regular price only if person has a coupon and is not a member
+==============================================================  ===========================================================================================================
+
+----
+
+=================================================================================
+watering plants
+=================================================================================
+
+----
+
+if the inputs are
+
+- is the soil dry?
+- did it rain?
+
+======================================================  ============ ============ ============ ============ ==============================================================
+water the plants                                        dry soil,    dry soil,    wet soil,    wet soil,         operation
+                                                        no rain      it rained    no rain      it rained
+======================================================  ============ ============ ============ ============ ==============================================================
+do not water                                            :red:`no`    :red:`no`    :red:`no`    :red:`no`    :ref:`contradiction<test_contradiction>`
+dry soil and no rain                                    :green:`yes` :red:`no`    :red:`no`    :red:`no`    :ref:`logical_conjunction<test_logical_conjunction>`
+no rain                                                 :green:`yes` :red:`no`    :green:`yes` :red:`no`    :ref:`project_second<test_project_second>`
+wet soil and no rain                                    :red:`no`    :red:`no`    :green:`yes` :red:`no`    :ref:`converse_non_implication<test_converse_non_implication>`
+wet soil                                                :red:`no`    :red:`no`    :green:`yes` :green:`yes` :ref:`negate_first<test_negate_first>`
+not (dry soil and no rain)                              :red:`no`    :green:`yes` :green:`yes` :green:`yes` :ref:`logical_nand<test_logical_nand>`
+water                                                   :green:`yes` :green:`yes` :green:`yes` :green:`yes` :ref:`tautology<test_tautology>`
+dry soil or it rained                                   :green:`yes` :green:`yes` :green:`yes` :red:`no`    :ref:`logical_disjunction<test_logical_disjunction>`
+(not (dry soil and no rain)) and (dry soil or no rain)  :red:`no`    :green:`yes` :green:`yes` :red:`no`    :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+dry soil and it rained                                  :red:`no`    :green:`yes` :red:`no`    :red:`no`    :ref:`material_non_implication<test_material_non_implication>`
+dry soil                                                :green:`yes` :green:`yes` :red:`no`    :red:`no`    :ref:`project_first<test_project_first>`
+dry soil or it rained                                   :green:`yes` :green:`yes` :red:`no`    :green:`yes` :ref:`converse_implication<test_converse_implication>`
+rain                                                    :red:`no`    :green:`yes` :red:`no`    :green:`yes` :ref:`negate_second<test_negate_second>`
+not (dry soil or no rain)                               :red:`no`    :red:`no`    :red:`no`    :green:`yes` :ref:`logical_nor<test_logical_nor>`
+(wet soil or no rain) and (dry soil or it rained)       :green:`yes` :red:`no`    :red:`no`    :green:`yes` :ref:`logical_equality<test_logical_equality>`
+(wet soil) or no rain                                   :green:`yes` :red:`no`    :green:`yes` :green:`yes` :ref:`material_implication<test_material_implication>`
+======================================================  ============ ============ ============ ============ ==============================================================
+
+==============================================================  ===========================================================================================================
+operation                                                       rule
+==============================================================  ===========================================================================================================
+:ref:`contradiction<test_contradiction>`                        do not water
+:ref:`logical_conjunction<test_logical_conjunction>`            water only if soil is dry and it did not rain
+:ref:`project_second<test_project_second>`                      water only if it did not rain
+:ref:`converse_non_implication<test_converse_non_implication>`  water only if soil is wet and it did not rain
+:ref:`negate_first<test_negate_first>`                          water only if soil is wet
+:ref:`logical_nand<test_logical_nand>`                          do not water if soil is dry and it did not rain
+:ref:`tautology<test_tautology>`                                everyone gets a yes
+:ref:`logical_disjunction<test_logical_disjunction>`            do not water if soil is wet and it rained
+:ref:`exclusive_disjunction<test_exclusive_disjunction>`        do not water if soil is dry and it did not rain, do not water if soil is wet and it did not rain
+:ref:`material_non_implication<test_material_non_implication>`  water only if soil is dry and it rained
+:ref:`project_first<test_project_first>`                        water only if soil is dry
+:ref:`converse_implication<test_converse_implication>`          do not water if soil is wet and it did not rain
+:ref:`negate_second<test_negate_second>`                        water only if it rained
+:ref:`logical_nor<test_logical_nor>`                            water only if soil is wet and it rained
+:ref:`logical_equality<test_logical_equality>`                  water only if soil is dry and it did not rain, water if soil is wet and it did not rain
+:ref:`material_implication<test_material_implication>`          do not water if soil is dry and it rained
 ==============================================================  ===========================================================================================================
 
 
