@@ -31,14 +31,14 @@ more examples
 ----
 
 =================================================================================
-home security alarm
+security alarm
 =================================================================================
 
 ----
 
 if the inputs are
 
-- is there motion in the house?
+- is there motion?
 - is the code right?
 
 ========================================================  =========== =========== =========== =========== ========================================================
@@ -67,21 +67,21 @@ not (motion or wrong code)                                :red:`off`  :red:`off`
 operation                                                       rule
 ==============================================================  ===========================================================================================================
 :ref:`contradiction<test_contradiction>`                        alarm always off
-:ref:`logical_conjunction<test_logical_conjunction>`            alarm only if there is motion and if it is the wrong code
-:ref:`project_second<test_project_second>`                      alarm only if it is the wrong code
-:ref:`converse_non_implication<test_converse_non_implication>`  alarm only if there is no motion and if it is the wrong code
+:ref:`logical_conjunction<test_logical_conjunction>`            alarm only if there is motion and the code is wrong
+:ref:`project_second<test_project_second>`                      alarm only if the code is wrong
+:ref:`converse_non_implication<test_converse_non_implication>`  alarm only if there is no motion and the code is wrong
 :ref:`negate_first<test_negate_first>`                          alarm only if there is no motion
-:ref:`logical_nand<test_logical_nand>`                          alarm off only if there is motion and if it is the wrong code
+:ref:`logical_nand<test_logical_nand>`                          alarm off only if there is motion and the code is wrong
 :ref:`tautology<test_tautology>`                                alarm always on
-:ref:`logical_disjunction<test_logical_disjunction>`            alarm off if there is no motion and if it is the right code
-:ref:`exclusive_disjunction<test_exclusive_disjunction>`        alarm off if there is motion with the wrong code and if there is no motion with the right code
-:ref:`material_non_implication<test_material_non_implication>`  alarm only if there is motion and if it is the right code
+:ref:`logical_disjunction<test_logical_disjunction>`            alarm off if there is no motion and the code is right
+:ref:`exclusive_disjunction<test_exclusive_disjunction>`        alarm off if there is motion and the code is wrong, alarm off if there is no motion and the code is right
+:ref:`material_non_implication<test_material_non_implication>`  alarm only if there is motion and the code is right
 :ref:`project_first<test_project_first>`                        alarm only if there is motion
-:ref:`converse_implication<test_converse_implication>`          alarm off only if there is no motion and if it is the wrong code
-:ref:`negate_second<test_negate_second>`                        alarm only if it is the right code
-:ref:`logical_nor<test_logical_nor>`                            alarm only if there is no motion and if it is the right code
-:ref:`logical_equality<test_logical_equality>`                  alarm only if there is motion with the wrong code and if there is no motion with the right code
-:ref:`material_implication<test_material_implication>`          alarm off only if there is motion and if it is the right code
+:ref:`converse_implication<test_converse_implication>`          alarm off only if there is no motion and the code is wrong
+:ref:`negate_second<test_negate_second>`                        alarm only if the code is right
+:ref:`logical_nor<test_logical_nor>`                            alarm only if there is no motion and the code is right
+:ref:`logical_equality<test_logical_equality>`                  alarm if there is motion and the code is wrong, alarm if there is no motion and the code is right
+:ref:`material_implication<test_material_implication>`          alarm off only if there is motion and the code is right
 ==============================================================  ===========================================================================================================
 
 ----
@@ -123,22 +123,79 @@ not (strong option or strong fit)                                       :red:`re
 operation                                                       rule
 ==============================================================  ===========================================================================================================
 :ref:`contradiction<test_contradiction>`                        not hiring
-:ref:`logical_conjunction<test_logical_conjunction>`            hire only if it is a strong option and if it is a strong fit
+:ref:`logical_conjunction<test_logical_conjunction>`            hire only if it is a strong option that is a strong fit
 :ref:`project_second<test_project_second>`                      hire only if it is a strong fit
-:ref:`converse_non_implication<test_converse_non_implication>`  hire only if it is weak option and if it is a strong fit
+:ref:`converse_non_implication<test_converse_non_implication>`  hire only if it is weak option that is a strong fit
 :ref:`negate_first<test_negate_first>`                          hire only if it is weak option
-:ref:`logical_nand<test_logical_nand>`                          reject only if it is a strong option and if it is a strong fit
+:ref:`logical_nand<test_logical_nand>`                          reject only if it is a strong option that is a strong fit
 :ref:`tautology<test_tautology>`                                hiring
-:ref:`logical_disjunction<test_logical_disjunction>`            reject only if it is weak option and if it is a weak fit
-:ref:`exclusive_disjunction<test_exclusive_disjunction>`        reject only if it is a strong option with a strong fit and if it is a weak option with a weak fit
-:ref:`material_non_implication<test_material_non_implication>`  hire only if it is a strong option and if it is a weak fit
+:ref:`logical_disjunction<test_logical_disjunction>`            reject only if it is weak option that is a weak fit
+:ref:`exclusive_disjunction<test_exclusive_disjunction>`        reject if it is a strong option that is a strong fit, reject if it is a weak option that is a weak fit
+:ref:`material_non_implication<test_material_non_implication>`  hire only if it is a strong option that is a weak fit
 :ref:`project_first<test_project_first>`                        hire only if it is a strong option
-:ref:`converse_implication<test_converse_implication>`          reject only if it is weak option and if it is a strong fit
+:ref:`converse_implication<test_converse_implication>`          reject only if it is weak option that is a strong fit
 :ref:`negate_second<test_negate_second>`                        hire only if it is a weak fit
-:ref:`logical_nor<test_logical_nor>`                            hire only if it is a weak option and if it is a weak fit
-:ref:`logical_equality<test_logical_equality>`                  hire only if it is a strong option with a strong fit and if it is weak option with a weak fit
-:ref:`material_implication<test_material_implication>`          reject only if it is a strong option and if it is a weak fit
+:ref:`logical_nor<test_logical_nor>`                            hire only if it is a weak option that is a weak fit
+:ref:`logical_equality<test_logical_equality>`                  hire if it is a strong option that is a strong fit, hire if it is weak option that is a weak fit
+:ref:`material_implication<test_material_implication>`          reject only if it is a strong option that is a weak fit
 ==============================================================  ===========================================================================================================
+
+----
+
+=================================================================================
+store discount policy
+=================================================================================
+
+----
+
+if the inputs are
+
+- does the person have a coupon?
+- is the person a member?
+
+==================================================  ================= ================= ================= ================= ==============================================================
+discount/regular price                              coupon,           coupon,           no coupon,        no coupon,        operation
+                                                    member            not member        member            not member
+==================================================  ================= ================= ================= ================= ==============================================================
+regular                                             :red:`regular`    :red:`regular`    :red:`regular`    :red:`regular`    :ref:`contradiction<test_contradiction>`
+coupon and member                                   :green:`discount` :red:`regular`    :red:`regular`    :red:`regular`    :ref:`logical_conjunction<test_logical_conjunction>`
+member                                              :green:`discount` :red:`regular`    :green:`discount` :red:`regular`    :ref:`project_second<test_project_second>`
+no coupon and member                                :red:`regular`    :red:`regular`    :green:`discount` :red:`regular`    :ref:`converse_non_implication<test_converse_non_implication>`
+no coupon                                           :red:`regular`    :red:`regular`    :green:`discount` :green:`discount` :ref:`negate_first<test_negate_first>`
+not (coupon and member)                             :red:`regular`    :green:`discount` :green:`discount` :green:`discount` :ref:`logical_nand<test_logical_nand>`
+discount                                            :green:`discount` :green:`discount` :green:`discount` :green:`discount` :ref:`tautology<test_tautology>`
+coupon or not member                                :green:`discount` :green:`discount` :green:`discount` :red:`regular`    :ref:`logical_disjunction<test_logical_disjunction>`
+(not (coupon and member)) and (coupon or member)    :red:`regular`    :green:`discount` :green:`discount` :red:`regular`    :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+coupon and (not member)                             :red:`regular`    :green:`discount` :red:`regular`    :red:`regular`    :ref:`material_non_implication<test_material_non_implication>`
+coupon                                              :green:`discount` :green:`discount` :red:`regular`    :red:`regular`    :ref:`project_first<test_project_first>`
+coupon or (not member)                              :green:`discount` :green:`discount` :red:`regular`    :green:`discount` :ref:`converse_implication<test_converse_implication>`
+not member                                          :red:`regular`    :green:`discount` :red:`regular`    :green:`discount` :ref:`negate_second<test_negate_second>`
+not (coupon or member)                              :red:`regular`    :red:`regular`    :red:`regular`    :green:`discount` :ref:`logical_nor<test_logical_nor>`
+(no coupon or member) and (coupon or not member)    :green:`discount` :red:`regular`    :red:`regular`    :green:`discount` :ref:`logical_equality<test_logical_equality>`
+(no coupon) or member                               :green:`discount` :red:`regular`    :green:`discount` :green:`discount` :ref:`material_implication<test_material_implication>`
+==================================================  ================= ================= ================= ================= ==============================================================
+
+==============================================================  ===========================================================================================================
+operation                                                       rule
+==============================================================  ===========================================================================================================
+:ref:`contradiction<test_contradiction>`                        everyone pays regular price, no discounts
+:ref:`logical_conjunction<test_logical_conjunction>`            discount price only if person has a coupon and is a member
+:ref:`project_second<test_project_second>`                      discount price only if person is a member
+:ref:`converse_non_implication<test_converse_non_implication>`  discount price only if person does not have a coupon and is a member
+:ref:`negate_first<test_negate_first>`                          discount price only if person does not have a coupon
+:ref:`logical_nand<test_logical_nand>`                          regular price only if person has a coupon and is a member
+:ref:`tautology<test_tautology>`                                everyone gets a discount
+:ref:`logical_disjunction<test_logical_disjunction>`            regular price only if person does not have a coupon and is a not member
+:ref:`exclusive_disjunction<test_exclusive_disjunction>`        regular price if person has a coupon and is a member, regular price if person does not have a coupon and is not a member
+:ref:`material_non_implication<test_material_non_implication>`  discount price only if person has a coupon and is a not member
+:ref:`project_first<test_project_first>`                        discount price only if person has a coupon
+:ref:`converse_implication<test_converse_implication>`          regular price only if person does not have a coupon and is a member
+:ref:`negate_second<test_negate_second>`                        discount price only if person is a not member
+:ref:`logical_nor<test_logical_nor>`                            discount price only if person does not have a coupon and is a not member
+:ref:`logical_equality<test_logical_equality>`                  discount price only if person has a coupon and is a member, discount price if person does not have a coupon and is not a member
+:ref:`material_implication<test_material_implication>`          regular price only if person has a coupon and is a not member
+==============================================================  ===========================================================================================================
+
 
 ----
 
