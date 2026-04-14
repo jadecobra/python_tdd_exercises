@@ -119,9 +119,25 @@ note
     command argument_1 argument_2 ... argument_N
     command --option_1 --option_2 ... --option_N
     command argument --option
-    command --option argument
+    command --option
 
-  options for commands sometimes have a long and short form, for example ``--long_option`` could have ``-l`` as the short option, which means I can put many short options together like this
+  .. NOTE::
+
+    the space is important, it is how the computer knows what command you mean and what arguments or options you are giving, for example
+
+    .. code-block:: python
+
+      commandargument_1 argument_2
+
+    tells the computer to run a command named ``commandargument_1`` with ``argument_2`` as the argument, while
+
+    .. code-block:: python
+
+      command argument_1 argument_2
+
+    tells the computer to run a command named ``command`` with ``argument_1`` and ``argument_2`` as the arguments
+
+* options for commands sometimes have a long and short form, for example ``--long_option`` could have ``-l`` as the short option, which means I can put many short options together like this
 
   .. code-block:: python
 
@@ -129,30 +145,7 @@ note
 
   where ``a``, ``b``, ``c`` and ``d`` are different options
 
-----
-
-*********************************************************************************
-requirements
-*********************************************************************************
-
-I type this in a terminal_ to make sure the `tree program`_ is installed
-
-.. code-block:: python
-  :emphasize-lines: 1
-
-  tree
-
-* If it is not installed on the computer, the terminal_ shows
-
-  .. code-block:: python
-
-      tree: command not found
-
-  see :ref:`how to install tree` to install tree_
-
-* If it is installed and there is something in the directory_, the terminal_ shows how they are related.
-
-* If it is installed and there is nothing in the directory_, the terminal_ shows
+.. admonition:: if you have Windows_ without `Windows Subsystem for Linux`_, some of the commands and terminal_ output will be different, click on the tab where it shows `no WSL`, for example
 
   .. tab-set::
     :sync-group: os
@@ -160,25 +153,66 @@ I type this in a terminal_ to make sure the `tree program`_ is installed
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
+      You clicked on ``WSL/Linux/Mac``
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      You clicked on ``no WSL``
+
+----
+
+*********************************************************************************
+requirements
+*********************************************************************************
+
+.. tab-set::
+  :sync-group: os
+
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
+
+    * I type this in a terminal_ to make sure the `tree program`_ is installed
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        tree
+
+    * If it is not installed on the computer, the terminal_ shows
+
+      .. code-block:: python
+
+          tree: command not found
+
+      see :ref:`how to install tree` to install tree_
+
+    * If it is installed and there is nothing in the directory_, the terminal_ shows
+
+
       .. code-block:: python
 
         .
 
         0 directories, 0 files
 
-    .. tab-item:: no WSL
-      :sync: no_wsl
+    * If it is installed and there is something in the directory_, the terminal_ shows how they are related.
 
-      .. code-block:: python
+  .. tab-item:: no WSL
+    :sync: no_wsl
 
-        Folder PATH listing
-        Volume serial number is ABCD:EFGH
-        C:.
-        No subfolders exist
+    I type tree_
+
+    .. code-block:: python
+
+      Folder PATH listing
+      Volume serial number is ABCD:EFGH
+      C:.
+      No subfolders exist
 
 The `tree program`_ shows how files_ and folders_ on a computer are related, this helps to know how to go from one folder_ to another, because it shows the way I can go.
 
-If I know where I am it is easier to go where I want.
+It is easier to go where I want, if I know where I am.
 
 :ref:`Click here to see what directory I am in<how to see what directory I am in>`
 
@@ -334,9 +368,24 @@ if I am in the ``pumping_python`` folder_
 
 * pwd_ shows the path/address of the folder_ I am in
 * pwd_ means ``print working directory``, it prints the path/address of the directory_ I am in, to the terminal_
-* each ``/`` shows a parent-child relationship
-* the first ``/`` or ``C:\`` is for ``root`` which is the first folder_ on the computer
-* the first ``/`` or ``C:\`` is the highest level
+
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      * each ``/`` shows a parent-child relationship
+      * the first ``/`` is for ``root`` which is the first folder_ on the computer
+      * the first ``/`` is the highest level
+
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      * each ``\`` shows a parent-child relationship
+      * ``C:\`` is for ``root`` which is the first folder_ on the computer
+      * ``C:\`` is the highest level
 
   .. ADMONITION:: do you want to see every file_ and folder_ on your computer as a tree?
 
@@ -478,9 +527,9 @@ how to make a directory
 
       code .
 
-    A new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_. I can close the window I had before the new window to work only in the new window.
-
-    I open another terminal_ to continue
+    * A new `Visual Studio Code`_ window opens in the ``pumping_python`` directory_
+    * I close the window I had before the new window to work only in the new window.
+    * I open another terminal_ to continue
 
 .. _the part where I make doe:
 
@@ -658,7 +707,7 @@ how to see what is in a directory
 
         C:\...\pumping_python\doe
 
-* I try to `change directory`_ to the ``.``
+* I try to `change directory`_ to ``.``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -676,7 +725,7 @@ how to see what is in a directory
   - ``.`` is ``doe`` when I am in ``doe``
   - ``.`` is the working directory_
 
-* I try cd_ with ``..`` to see what happens
+* I try cd_ with ``..``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -2941,7 +2990,7 @@ how to use touch with directory relationships
       the terminal_ shows
 
       .. code-block:: shell
-        :emphasize-lines: 13, 23
+        :emphasize-lines: 12-13, 15, 22-23, 25
 
         C:.
         │   .a_hidden_file_in_doe
@@ -3241,7 +3290,7 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
 
   .. TIP::
 
-    I can also do it with one line from inside ``jane`` without cd_ (it is a long line)
+    I can also rename the file_ with one line from inside ``jane`` without cd_ (it is a long line)
 
     .. code-block:: python
 
@@ -3470,7 +3519,7 @@ mv_ means move, it takes two arguments
 
   .. TIP::
 
-    I can also do it with one line from inside ``john`` without cd_ (it is a long line)
+    I can also rename the file_ with one line from inside ``john`` without cd_ (it is a long line)
 
     .. code-block:: python
 
@@ -3931,7 +3980,7 @@ mv_ means move, it takes two arguments
 
       .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
         :language: none
-        :emphasize-lines: 3, 13, 24, 31
+        :emphasize-lines: 3, 12, 24, 31
 
   - ``..`` is for the parent of ``lil`` which is ``john``
   - ``../..`` is for the parent of the parent of ``lil`` which is ``doe``
@@ -4297,10 +4346,32 @@ how to use tree with directory relationships
 
 * I look at what is in ``mary`` from inside ``lil``
 
-  .. code-block:: python
-    :emphasize-lines: 1
 
-    ls -a ../../jane/mary
+  .. tab-set::
+    :sync-group: os
+
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls -a ../../jane/mary
+
+
+    .. tab-item:: no WSL
+      :sync: no_wsl
+
+      .. code-block:: python
+        :emphasize-lines: 1
+
+        ls ../../jane/mary
+
+
+
+
+
+
 
   the terminal_ shows
 
