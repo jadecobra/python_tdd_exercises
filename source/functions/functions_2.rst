@@ -44,11 +44,11 @@ open the project
 
     rootdir: .../pumping_python/functions
     configfile: pyproject.toml
-    collected 12 items
+    collected 11 items
 
-    tests/test_functions.py ............                          [100%]
+    tests/test_functions.py ...........                           [100%]
 
-    ======================= 12 passed in X.YZs =========================
+    ======================= 11 passed in X.YZs =========================
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_functions.py`` to open it in the :ref:`editor<2 editors>`
 
