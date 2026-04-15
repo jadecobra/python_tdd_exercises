@@ -1,7 +1,6 @@
 .. include:: ../links.rst
 
 .. _download and install Python: https://www.python.org/downloads/
-.. _download and install git: https://git-scm.com/install/windows
 
 #################################################################################
 Windows without Windows Subsystem Linux requirements

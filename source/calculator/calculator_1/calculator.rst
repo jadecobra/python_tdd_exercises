@@ -137,7 +137,7 @@ start the project
 
   .. TIP::
 
-    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program and the name of the file_. That means if I type this in the terminal_
+    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -2345,7 +2345,7 @@ you know a lot, you know
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
 
-:ref:`Would you like to see a better way to write test_why_use_a_function?<function 2: use variables>`
+:ref:`Would you like to see a better way to write test_why_use_a_function?<functions 2: use variables>`
 
 -----
 

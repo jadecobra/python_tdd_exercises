@@ -118,7 +118,7 @@ start the project
 
   .. TIP::
 
-    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program and the name of the file_. That means if I type this in the terminal_
+    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
     .. code-block:: shell
       :emphasize-lines: 1

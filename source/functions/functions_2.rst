@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 #################################################################################
-function 2: use variables
+functions 2: use variables
 #################################################################################
 
 Since I know how to use :ref:`variables<what is a variable?>`, I can do better with the results of :ref:`test_why_use_a_function`
@@ -506,7 +506,7 @@ you know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to use a variable<function 2: use variables>`
+* :ref:`how to use a variable<functions 2: use variables>`
 
 There is a problem, I have done these same steps for each of the chapters up till now
 

@@ -21,30 +21,34 @@ This exercise shows directories_ (folders_) and files_ on my computer and how th
 preview
 *************************************************************************************
 
-I use these commands in the chapter to build each part of the tree below step by step to see how files_ and folders_ are related.
+I use these commands in the chapter to build each part of the tree below step by step, to see how files_ and folders_ are related.
 
 * mkdir_ to `make directories`_
 * cd_ to `change directories`_
 * ls_ to show what is in directories_
 * tree_ to show the relationships between directories_
-* touch_ to make empty files_
 * mv_ to rename or move files_
-* rm_ to remove directories_
 
-  .. tab-set::
-    :sync-group: os
+.. tab-set::
+  :sync-group: os
 
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
+  .. tab-item:: WSL/Linux/Mac
+    :sync: unix
 
-      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
-        :language: shell
+    * touch_ to make empty files_
+    * rm_ to remove directories_
 
-    .. tab-item:: no WSL
-      :sync: no_wsl
+    .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
+      :language: shell
 
-      .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
-        :language: none
+  .. tab-item:: no WSL
+    :sync: no_wsl
+
+    * `New-Item`_ to make empty files_
+    * `Remove-Item`_ to remove directories_
+
+    .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
+      :language: none
 
 ----
 
