@@ -269,7 +269,7 @@ continue the project
 
     AssertionError: None is not true
 
-* I change the `return statement`_ to give the test what it wants
+* I change the `return statement`_ for :ref:`logical_identity<test_logical_identity>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 5
@@ -284,7 +284,7 @@ continue the project
 
     AssertionError: True is not false
 
-  the test expects :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
+  the test expects :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
 * I change the `return statement`_
 
@@ -340,7 +340,7 @@ continue the project
 
     AssertionError: None is not true
 
-* I change the `return statement`_ to give the test what it wants
+* I change the `return statement`_ for :ref:`logical_true<test_logical_true>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 9
