@@ -388,7 +388,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     NameError: name 'text' is not defined
 
-  the name is in the file_ but I have not told Python_ what it means
+  the name is in the file_, I have not told Python_ what it means
 
 * I point ``text`` to :ref:`None<what is None?>`
 
@@ -434,7 +434,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     TypeError: text() takes 0 positional arguments but 1 was given
 
-  ``src.telephone.text`` was called with ``"hello"`` as input but the definition of the :ref:`function<what is a function?>` does not take any input - the parentheses are empty
+  ``src.telephone.text`` was called with ``"hello"`` as input. The definition of the :ref:`function<what is a function?>` does not allow it take any input - the parentheses are empty
 
 * I make the :ref:`function<what is a function?>` take input and call it ``the_input``
 

@@ -174,7 +174,7 @@ test_contradiction
 
     TypeError: contradiction() takes 0 positional arguments but 2 were given
 
-  the :ref:`function<what is a function?>` takes no input but the test sent two
+  the :ref:`function<what is a function?>` takes no input and the test sent two
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 

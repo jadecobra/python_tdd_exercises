@@ -2966,7 +2966,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 test_index_error
 *********************************************************************************
 
-IndexError_ is raised when I try to get an item from a list_ but use a number that points to something that is NOT in it. When I see this :ref:`Exception<errors>` I know the underlying data structure is a list_
+IndexError_ is raised when I try to get an item from a list_ and use a number that points to something that is NOT in the list_. When I see this :ref:`Exception<errors>` I know the underlying data structure is a list_
 
 ----
 

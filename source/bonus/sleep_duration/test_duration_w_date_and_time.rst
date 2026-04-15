@@ -71,7 +71,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
     ValueError: invalid literal for int() with base 10: '1999/12/31 11'
     ValueError: invalid literal for int() with base 10: '1999/12/31 21'
 
-  the test calls ``duration``, which calls ``read_timestamp``, which uses ``int()`` to change the timestamp string_ to a number after it calls `str.split`_, but it is not in the right format
+  the test calls ``duration``, which calls ``read_timestamp``, which uses ``int()`` to change the timestamp string_ to a number after it calls `str.split`_, and it is not in the right format
 
 
 *********************************************************************************

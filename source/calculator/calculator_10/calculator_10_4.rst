@@ -780,7 +780,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
     :align: left
     :alt: Addition Result
 
-  the result is correct but the number looks different from the others I have seen so far
+  the result is correct and the number looks different from the others I have seen so far
 
 ----
 
@@ -1994,7 +1994,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
 ----
 
-All tests are green and when I try calculations, they work. But ... there is a problem - When I press a new number after I get the result, If I do not press ``C`` or ``AC`` to reset the number, it adds the number to the end of the result instead of replacing it
+All tests are green and when I try calculations, they work... there is a problem - When I press a new number after I get the result, If I do not press ``C`` or ``AC`` to reset the number, it adds the number to the end of the result instead of replacing it
 
 ----
 

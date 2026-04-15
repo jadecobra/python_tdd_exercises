@@ -20,7 +20,7 @@ how to make a Python Test Driven Development environment automatically with vari
 how to use a variable in a shell script
 ********************************************************************************************
 
-``makePythonTdd.sh`` works and always makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, but there is a problem
+``makePythonTdd.sh`` works and always makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want it, there is a problem.
 
 I change the name of the project in 5 places every time I use the program to make a project. I want the program_ to take a project name once and use that name when making the project to make the
 
@@ -146,7 +146,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     FAILED tests/test_pro_magic.py::Testpro_magic::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-  this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made but :ref:`there is a better way<BONUS: makePythonTdd.sh Pro>`
+  this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made, :ref:`there has to be a better way<BONUS: makePythonTdd.sh Pro>`
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/pro_magic.py`` in the terminal_ to open it in the :ref:`editor<2 editors>`
 

@@ -457,7 +457,7 @@ test_addition
 
     TypeError: add() takes 0 positional arguments but 2 were given
 
-  the definition of ``add`` does not allow it take input, but 2 were given in the call - ``0`` and ``1``
+  the definition of ``add`` does not allow it take input, and 2 were given in the call - ``0`` and ``1``
 
 * I add names in the parentheses to make the :ref:`function<what is a function?>` take 2 inputs
 
@@ -495,7 +495,7 @@ test_addition
 
 ----
 
-The ``add`` :ref:`function<what is a function?>` passes the test but does not do what I actually want because it always returns ``1``. I want it to return the result of a calculation with the inputs
+The ``add`` :ref:`function<what is a function?>` passes the test and does not do what I want because it always returns ``1``. I want it to return the result of a calculation with the inputs
 
 
 * I add another :ref:`assertion<what is an assertion?>` to show the problem with the :ref:`function<what is a function?>` in ``test_calculator.py``
@@ -1187,7 +1187,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 
   green
 
-* There is some duplication, If I want to use a different range of random numbers for the test, I have to make a change in more than one place. For example
+* There is some repetition, If I want to use a different range of random numbers for the test, I have to make a change in more than one place. For example
 
   .. code-block:: python
     :lineno-start: 8
@@ -1337,7 +1337,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 
     # Exceptions seen
 
-:ref:`I can use a variable to remove duplication<what is a variable?>`
+:ref:`I can use a variable to remove repetition<what is a variable?>`
 
 ----
 

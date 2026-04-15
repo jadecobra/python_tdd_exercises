@@ -2242,7 +2242,7 @@ I also used :ref:`Python's basic data structures<data structures>` in the tests
 * :ref:`booleans - True and False<what are booleans?>`
 * tuples_ - anything in parentheses (``()``) separated by commas separated by commas
 * :ref:`lists - anything in square brackets ([])<what is a list?>`
-* sets_ - anything in curly braces (``{}``) separated by commas but NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+* sets_ - anything in curly braces (``{}``) separated by commas and NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 * :ref:`dictionaries - key-value pairs in curly braces ({})<what is a dictionary?>`
 
 :ref:`How many questions can you answer after going through this chapter?<questions about None>`

@@ -229,7 +229,7 @@ I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`
     # AssertionError
     # ModuleNotFoundError
 
-* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem but I want to catch/handle it in the test. This way I can show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` when the file_ does NOT exist. I add the `assertRaises method`_
+* I can make ``does_not_exist.py`` in the ``src`` `folder (directory)`_ to solve the problem. What I want to do is catch/handle it in the test to make sure that this causes the problem. This way I can show that ``import does_not_exist`` raises :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` when the file_ does NOT exist. I add the `assertRaises method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -724,7 +724,7 @@ the test passes
 
   the test is green again again. I cannot use a number that is smaller than the negative of the total number of items in the :ref:`list<lists>` to :ref:`index the list<test_index_returns_first_position_of_item_in_a_list>`
 
-* It looks like this is a duplication of the assertRaises_ but it is not, even though the test is green when I remove the second one
+* It looks like this is a repetition of the assertRaises_. It is not, even though the test is still green when I remove the second assertRaises_
 
   .. code-block:: python
     :lineno-start: 23

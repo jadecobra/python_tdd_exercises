@@ -491,7 +491,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'
 
-  the ``duration`` :ref:`function<what is a function?>` returns negative timestamps but the test expects positive timestamps, and the negative days all look like they are one number less than the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns negative timestamps and the test expects positive timestamps, and the negative days all look like they are one number less than the expectation
 
 * I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
 

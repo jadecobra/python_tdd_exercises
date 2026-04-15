@@ -336,7 +336,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   ``range(0, 10)`` makes a `range object`_ that goes from the first number in the parentheses to the second number minus ``1``, in this case it goes from ``0`` to ``9``
 
-* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, but there is an easier way. I can do the same thing with ``list()``
+* The `for loop`_ is simpler than calling the :ref:`append method<test_append_adds_item_to_end_of_a_list>` for each item I want to add to a :ref:`list<lists>`, and there is an easier way. I can do the same thing with ``list()``
 
   .. code-block:: python
     :lineno-start: 12
@@ -361,7 +361,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to remove the duplication of the `range object`_
+* I add a :ref:`variable<what is a variable?>` to remove the repetition of the `range object`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -668,9 +668,9 @@ the test is green again again, the :ref:`extend method<test_extend_adds_items_fr
 
             self.assertEqual(a_list, list(iterable))
 
-  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ but is not better than ``list()``
+  the test passes. :ref:`extend<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` uses less lines than the `for loop`_ and is not better than ``list()``
 
-* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the duplication
+* I made the same :ref:`variables<what is a variable?>` twice, one for the empty :ref:`list<lists>` and one for the :ref:`iterable<what is an iterable?>`, I add :ref:`class attributes (variables)<test_attribute_error_w_class_attributes>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 6
@@ -1187,7 +1187,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test passes
 
-* I add a :ref:`function<what is a function?>` to remove the duplication in ``test_list_comprehensions.py``
+* I add a :ref:`function<what is a function?>` to remove the repetition in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :linenos:
@@ -1400,7 +1400,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the difference is the equality symbols ``==`` and ``!=``
 
-  I add a :ref:`function<what is a function?>` to remove the duplication
+  I add a :ref:`function<what is a function?>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 8
@@ -1500,7 +1500,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return list(filter(lambda number: not is_even(number), numbers))
         return [number for number in numbers if not is_even(number)]
 
-  the test passes, but this is not sexy
+  the test passes. This is not sexy.
 
 * another option is to use the `filterfalse method`_ from the `itertools module`_, it is part of `The Python Standard Library`_ and needs an `import statement`_
 
@@ -1894,7 +1894,7 @@ the numbers on the left are the squares of the even numbers from the right
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the duplication of the call to the ``process`` :ref:`function<what is a function?>`
+* I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the repetition of the call to the ``process`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 85

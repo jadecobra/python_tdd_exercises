@@ -274,7 +274,7 @@ start the project
 test_what_is_an_assertion
 *********************************************************************************
 
-We know that the result of ``1 + 1`` is ``2``, but what if I said that ``'1' + '1'`` is ``'11'``, would you agree?
+We know that the result of ``1 + 1`` is ``2``. What if I said that ``'1' + '1'`` is ``'11'``, would you agree?
 
 I can use assertions_ to make the computer check if these statements are :ref:`True<test_what_is_true>`
 
@@ -502,7 +502,7 @@ test_assertion_error_w_none
 
 For example,
 
-* if I have a process that changes something but does not return a value, I can use an assertion_ to make sure that the process returns :ref:`None<what is None?>`
+* if I have a process that changes something and does not return a value (it returns :ref:`None<what is None?>`), I can use an assertion_ to make sure that the process returns :ref:`None<what is None?>`
 * if I have people fill a form and I want to test for when they do not put anything in a place that needs something
 
 ----

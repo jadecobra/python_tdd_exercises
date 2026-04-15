@@ -82,7 +82,7 @@ how to enable virtualization from the BIOS
 In some cases your `Windows Subsystem for Linux`_ installation might succeed and you will have errors with Debian_, you might have to enable virtualization from your BIOS, here is how to do that
 
 * restart your computer
-* as soon as it restarts, press the key to enter setup mode, this varies by manufacturer but is one of these options
+* as soon as it restarts, press the key to enter setup mode, this changes based on the manufacturer, it will be one of these options
 
   - Esc
   - F2

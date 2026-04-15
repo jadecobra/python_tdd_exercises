@@ -1336,7 +1336,7 @@ I have not added a definition for ``constant`` in ``functions.py`` in the ``src`
 
   the test passes
 
-A constant :ref:`function<what is a function?>` always returns the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times, but who's counting?
+A constant :ref:`function<what is a function?>` always returns the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times (who's counting?)
 
 :ref:`a constant function always returns the same thing<test_constant_function>`
 
@@ -2347,7 +2347,7 @@ the test passes
 
     return first_name, last_name
 
-  but ``first_input``, ``first_name``, ``last_input`` and ``last_name`` are just names, they could be any name
+  ``first_input``, ``first_name``, ``last_input`` and ``last_name`` are just names, they could be any name
 
   .. code-block:: python
     :emphasize-text: positional keyword default

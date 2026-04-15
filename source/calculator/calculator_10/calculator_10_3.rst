@@ -1549,7 +1549,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     def backspace(display):
 
-* I add a :ref:`variable<what is a variable?>` to remove duplication from :ref:`test_streamlit_calculator_w_plus_minus` in ``test_streamlit_calculator.py``
+* I add a :ref:`variable<what is a variable?>` to remove repetition from :ref:`test_streamlit_calculator_w_plus_minus` in ``test_streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 114

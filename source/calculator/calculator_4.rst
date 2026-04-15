@@ -1666,7 +1666,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         else:
             return first_input + second_input
 
-  the test is still green. This removes the duplication of ``str`` in the call to the `isinstance function`_
+  the test is still green. This removes the repetition of ``str`` in the call to the `isinstance function`_
 
   .. code-block:: python
 

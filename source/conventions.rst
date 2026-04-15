@@ -30,7 +30,7 @@ CapWords
 
   class AClassName(object):
 
-I can use any case I want but :ref:`CapWords` keeps things consistent
+I can use any case I want. :ref:`CapWords` keeps things consistent
 
 ----
 
@@ -252,7 +252,7 @@ dictionaries/mappings
 *********************************************************************************
 
 
-:ref:`Dictionaries/Mappings<dictionaries>` are also represented with curly braces/brackets (``{}``) but have :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, for example
+:ref:`Dictionaries/Mappings<dictionaries>` are also represented with curly braces/brackets (``{}``) and have :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`, for example
 
 .. code-block:: python
 

@@ -1743,7 +1743,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     SUBFAILED(operation='multiply', bad_input=[0, 1, 2, 'n']) ... - TypeError: can't multiply sequence by non-int of type 'float'
 
-  the error message is different but the :ref:`function<what is a function?>` got ``[0, 1, 2, 'n']`` as input, it looks I will have to do this for all the other operations
+  the error message is different and the :ref:`function<what is a function?>` got ``[0, 1, 2, 'n']`` as input, it looks I will have to do this for all the other operations
 
 * I add :ref:`list<what is a list?>` to the :ref:`if statement<if statements>` in the other :ref:`functions<what is a function?>`
 
@@ -2173,7 +2173,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-All the tests are passing, but there are problems.
+All the tests are passing, and there are problems
 
 * What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test
 * It looks like the test for how the :ref:`calculator<how to make a calculator>` handles :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` never runs. I need to make that test better

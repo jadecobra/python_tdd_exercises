@@ -315,7 +315,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     AssertionError: 2 != 0
 
-  the result of ``150`` divided by ``60`` is also ``2`` but with a remainder of ``30``. I change the expectation to the right value
+  the result of ``150`` divided by ``60`` is also ``2``, and it has a remainder of ``30``. I change the expectation to the right value
 
   .. code-block:: python
 

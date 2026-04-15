@@ -445,9 +445,9 @@ the test passes
             y = 0
             self.assertEqual(add_x(x, y), x+y)
 
-  green. Much better than what I had before, the test passes for any number I try, but :ref:`there has to be a better way that does not need all these lines of code<what is a for loop?>`
+  green. Much better than what I had before, the test passes for any number I try. :ref:`There has to be a better way that does not need all these lines of code<what is a for loop?>`
 
-:ref:`I can use a variable to remove duplication<what is a variable?>`
+:ref:`I can use a variable to remove repetition<what is a variable?>`
 
 ----
 

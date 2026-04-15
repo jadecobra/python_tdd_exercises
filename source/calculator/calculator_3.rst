@@ -178,7 +178,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
             )
     E       ZeroDivisionError: division by zero
 
-  the expectated calculation in :ref:`test_division` divides by ``0`` when ``random_second_number`` is ``0`` but the result should be ``'brmph?! I cannot divide by 0. Try again...'``
+  the expectation in :ref:`test_division` when ``random_second_number`` is ``0`` should be ``'brmph?! I cannot divide by 0. Try again...'``
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the test
 

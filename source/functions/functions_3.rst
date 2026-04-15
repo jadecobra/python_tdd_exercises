@@ -354,7 +354,7 @@ the test passes
 
   the test is green again
 
-:ref:`I can use a for loop to remove duplication<what is a for loop?>`
+:ref:`I can use a for loop to remove repetition<what is a for loop?>`
 
 ----
 

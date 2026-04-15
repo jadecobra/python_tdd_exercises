@@ -213,7 +213,7 @@ test_factory_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'first_name'
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with input, but the definition in ``person.py`` does not take any input
+  the test calls the ``factory`` :ref:`function<what is a function?>` with input. The definition in ``person.py`` does not take any input
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -262,7 +262,7 @@ test_factory_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with 2 inputs, but the definition in ``person.py`` only takes 1 input
+  the test calls the ``factory`` :ref:`function<what is a function?>` with 2 inputs. The definition in ``person.py`` only takes 1 input
 
 
 * I add ``last_name`` to the :ref:`function<what is a function?>` definition in ``person.py``
@@ -300,7 +300,7 @@ test_factory_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'sex'
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with 3 inputs, but the definition in ``person.py`` only takes 2 inputs
+  the test calls the ``factory`` :ref:`function<what is a function?>` with 3 inputs. The definition in ``person.py`` only takes 2 inputs
 
 * I add ``sex`` as an input parameter to the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -365,7 +365,7 @@ test_factory_takes_keyword_arguments
 
     TypeError: factory() got an unexpected keyword argument 'year_of_birth'
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with 4 inputs, but the definition in ``person.py`` only takes 3 inputs
+  the test calls the ``factory`` :ref:`function<what is a function?>` with 4 inputs. The definition in ``person.py`` only takes 3 inputs
 
 * I add the name to the :ref:`function<what is a function?>` definition in ``person.py``
 

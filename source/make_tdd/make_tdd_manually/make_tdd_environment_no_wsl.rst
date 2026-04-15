@@ -492,7 +492,7 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
     * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().``
 
-      .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name but it is easier to stick with convention for this concept
+      .. IMPORTANT:: the name ``self`` is Python_ convention. I can use any name, though it is easier to stick with convention for this one
 
     * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>`
 
@@ -645,7 +645,7 @@ how to change the name of a file on Windows without WSL
 
     FAILED (failures=1)
 
-  .. IMPORTANT:: I can use any name for the test file_ but it must start with ``test_`` or unittest_ will NOT run the tests in the file
+  .. IMPORTANT:: I can use any name for the test file_ and it must start with ``test_`` or unittest_ will NOT run the tests in the file
 
 * This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
@@ -766,7 +766,7 @@ what is a virtual environment?
 
 ----
 
-I can install `pytest-watcher`_ globally (for the entire computer), which means it will always be available to any project on the computer, but a better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
+I can install `pytest-watcher`_ globally (for the entire computer), which means it will always be available to any project on the computer. A better way would be to put it in a `virtual environment`_ so that it is installed only for this project.
 
 A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
 

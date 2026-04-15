@@ -908,7 +908,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 * I copy and paste the string_ in the `return statement`_ of the ``hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 34
     :emphasize-lines: 3
 
         @staticmethod
@@ -1329,7 +1329,7 @@ the test passes
 
 ----
 
-* time to remove some duplication. I add a :ref:`variable<what is a variable?>` for the original year of birth in ``test_update_factory_person_year_of_birth`` in ``test_person.py``
+* time to remove some repetition. I add a :ref:`variable<what is a variable?>` for the original year of birth in ``test_update_factory_person_year_of_birth`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 111
