@@ -1642,7 +1642,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I cannot put a parameter that does NOT have a default value after a parameter that has a default value
+  :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -2561,7 +2561,7 @@ I want to write the solution without looking at the tests
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  I cannot put a parameter that does NOT have a default value after a parameter that has a default value
+  :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
 
 * I add a default value for ``sex``
 
