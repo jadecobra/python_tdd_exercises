@@ -541,7 +541,7 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: project_second() takes 0 positional arguments but 2 were given
+    TypeError: project_first() takes 0 positional arguments but 2 were given
 
   okay, I have seen this before
 
