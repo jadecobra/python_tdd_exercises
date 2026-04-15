@@ -303,8 +303,8 @@ continue the project
 
   the test expects
 
-  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>`
 
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
