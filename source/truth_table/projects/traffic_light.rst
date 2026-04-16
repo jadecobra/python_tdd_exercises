@@ -3666,6 +3666,10 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
             walk_button=False,
         ):
 
+
+### REFACTOR ``show``
+
+
 * I add 2 :ref:`global variables<what is a variable?>` to ``test_traffic_light.py``
 
   .. code-block:: python
