@@ -464,7 +464,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
     def show(current_light, timer_done):
         return 'GREEN'
 
-  the test passes. The ``show`` :ref:`function<what is a function?>` always returns :green:`GREEN`
+  the test passes. The ``show`` :ref:`function<what is a function?>` always returns :green:`GREEN`, it does not care about the inputs. Is this :ref:`Contradiction<test_contradiction>` or :ref:`Tautology<test_tautology>`?
 
 ----
 
@@ -524,8 +524,8 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   the test passes. The ``show`` :ref:`function<what is a function?>` returns
 
+  * :green:`GREEN` if the timer is done
   * :red:`RED` if the timer is NOT done
-  * :green:`GREEN` in every other case
 
 ----
 
@@ -612,9 +612,9 @@ the test passes.
 
 The ``show`` :ref:`function<what is a function?>` returns
 
-* :red:`RED` if the timer is NOT done
 * :red:`RED` if the timer is done and the current light is :yellow:`YELLOW`
-* :green:`GREEN` in every other case
+* :red:`RED` if the timer is NOT done
+* :green:`GREEN` if the timer is done and the current light is NOT :yellow:`YELLOW` and if none of the conditions are met
 
 ----
 
@@ -663,7 +663,7 @@ The ``show`` :ref:`function<what is a function?>` returns
 
     AssertionError: 'RED' != 'YELLOW'
 
-* I add an :ref:`if statement<if statements>` to the :ref:`if statement<if statements>` for when the timer is NOT done ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` to the one for when the timer is NOT done, in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -682,10 +682,10 @@ The ``show`` :ref:`function<what is a function?>` returns
 
 The ``show`` :ref:`function<what is a function?>` returns
 
-* :red:`RED` if the timer is NOT done
-* :yellow:`YELLOW` if the timer is NOT done and the current light is :yellow:`YELLOW`
 * :red:`RED` if the timer is done and the current light is :yellow:`YELLOW`
-* :green:`GREEN` in every other case
+* :red:`RED` if the timer is NOT done and the current light is NOT :yellow:`YELLOW`
+* :yellow:`YELLOW` if the timer is NOT done and the current light is :yellow:`YELLOW`
+* :green:`GREEN` if the timer is done and the current light is NOT :yellow:`YELLOW` and if none of the conditions are met
 
 ----
 
@@ -701,7 +701,7 @@ test_traffic_light_when_green
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>`for when the traffic light is :green:`GREEN` and the timer is done, to ``test_traffic_light.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for when the traffic light is :green:`GREEN` and the timer is done, to ``test_traffic_light.py``
 
 ================  ==============  =================
 current light     timer done      show
@@ -761,22 +761,28 @@ I add an :ref:`if statement<if statements>` to ``traffic_light.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 2-4
+  :emphasize-lines: 8-9
 
   def show(current_light, timer_done):
-      if current_light == 'GREEN':
-          if timer_done:
-              return 'YELLOW'
-      if current_light == 'YELLOW':
-          if timer_done:
-              return 'RED'
-          else:
-              return 'YELLOW'
       if not timer_done:
+          if current_light == 'YELLOW':
+              return 'YELLOW'
           return 'RED'
+      if current_light == 'YELLOW':
+          return 'RED'
+      if current_light == 'GREEN':
+          return 'YELLOW'
       return 'GREEN'
 
-the test passes
+the test passes.
+
+The ``show`` :ref:`function<what is a function?>` returns
+
+* :yellow:`YELLOW` if the timer is done and the current light is :green:`GREEN`
+* :red:`RED` if the timer is done and the current light is :yellow:`YELLOW`
+* :red:`RED` if the timer is NOT done and the current light is NOT :yellow:`YELLOW`
+* :yellow:`YELLOW` if the timer is NOT done and the current light is :yellow:`YELLOW`
+* :green:`GREEN` if the timer is done and the current light is NOT :yellow:`YELLOW` and is NOT :green:`GREEN` and if none of the other conditions are met
 
 ----
 
@@ -825,30 +831,94 @@ the test passes
 
   .. code-block:: python
 
-    AssertionError: 'RED' != 'YELLOW'
+    AssertionError: 'RED' != 'GREEN'
 
-* I add an :ref:`if statement<if statements>` to ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` to the one for when the timer is NOT done in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 5-6
 
     def show(current_light, timer_done):
-        if current_light == 'GREEN':
-            if timer_done:
-                return 'YELLOW'
-            else:
-                return 'GREEN'
-        if current_light == 'YELLOW':
-            if timer_done:
-                return 'RED'
-            else:
-                return 'YELLOW'
         if not timer_done:
+            if current_light == 'YELLOW':
+                return 'YELLOW'
+            if current_light == 'GREEN':
+                return 'GREEN'
             return 'RED'
+        if current_light == 'YELLOW':
+            return 'RED'
+        if current_light == 'GREEN':
+            return 'YELLOW'
         return 'GREEN'
 
-  the test passes
+  the test passes. The ``show`` :ref:`function<what is a function?>` returns
+
+  * :yellow:`YELLOW` if the timer is NOT done and the current light is :yellow:`YELLOW`
+  * :green:`GREEN` if the timer is NOT done and the current light is :green:`GREEN`
+  * :red:`RED` if the timer is NOT done and the current light is NOT :yellow:`YELLOW`
+  * :red:`RED` if the timer is done and the current light is :yellow:`YELLOW`
+  * :yellow:`YELLOW` if the timer is done and the current light is :green:`GREEN`
+  * :green:`GREEN` if the timer is done and the current light is :red:`RED` or if none of the conditions are met
+
+* I add an :ref:`if statement<if statements>` for when the timer is NOT done and the light is :red:`RED`, to be clearer
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8
+
+    def show(current_light, timer_done):
+        if not timer_done:
+            if current_light == 'YELLOW':
+                return 'YELLOW'
+            if current_light == 'GREEN':
+                return 'GREEN'
+            if current_light == 'RED':
+                return 'RED'
+        if current_light == 'YELLOW':
+            return 'RED'
+        if current_light == 'GREEN':
+            return 'YELLOW'
+        return 'GREEN'
+
+  the test is still green. The ``show`` :ref:`function<what is a function?>` returns the current light when the timer is NOT done
+
+* I add a `return statement`_ to return the current light when the timer is NOT done
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3
+
+    def show(current_light, timer_done):
+        if not timer_done:
+            return current_light
+            if current_light == 'YELLOW':
+                return 'YELLOW'
+            if current_light == 'GREEN':
+                return 'GREEN'
+            if current_light == 'RED':
+                return 'RED'
+        if current_light == 'YELLOW':
+            return 'RED'
+        if current_light == 'GREEN':
+            return 'YELLOW'
+        return 'GREEN'
+
+  still green
+
+* I remove the other :ref:`if statements<if statements>` from the one for when the timer is NOT done
+
+  .. code-block:: python
+    :linenos:
+
+    def show(current_light, timer_done):
+        if not timer_done:
+            return current_light
+        if current_light == 'YELLOW':
+            return 'RED'
+        if current_light == 'GREEN':
+            return 'YELLOW'
+        return 'GREEN'
 
 * I add :ref:`variables<what is a variable?>` for the colors to remove repetition
 
@@ -857,50 +927,32 @@ the test passes
     :emphasize-lines: 2
 
     def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if current_light == 'GREEN':
-            if timer_done:
-                return 'YELLOW'
-            else:
-                return 'GREEN'
-        if current_light == 'YELLOW':
-            if timer_done:
-                return 'RED'
-            else:
-                return 'YELLOW'
+        yellow, green = 'YELLOW', 'GREEN'
         if not timer_done:
+            return current_light
+        if current_light == 'YELLOW':
             return 'RED'
+        if current_light == 'GREEN':
+            return 'YELLOW'
         return 'GREEN'
 
 * I use the new :ref:`variables<what is a variable?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5, 7-8, 10-13, 15-16, 18-19, 21-24
+    :emphasize-lines: 5-6, 8-13
 
     def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        # if current_light == 'GREEN':
-        if current_light == green:
-            if timer_done:
-                # return 'YELLOW'
-                return yellow
-            else:
-                # return 'GREEN'
-                return green
+        yellow, green = 'YELLOW', 'GREEN'
+        if not timer_done:
+            return current_light
         # if current_light == 'YELLOW':
         if current_light == yellow:
-            if timer_done:
-                # return 'RED'
-                return red
-            else:
-                # return 'YELLOW'
-                return yellow
-        if not timer_done:
-            # return 'RED'
-            return red
+            return 'RED'
+        # if current_light == 'GREEN':
+        if current_light == green:
+            # return 'YELLOW'
+            return yellow
         # return 'GREEN'
         return green
 
@@ -912,227 +964,14 @@ the test passes
     :linenos:
 
     def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if current_light == green:
-            if timer_done:
-                return yellow
-            else:
-                return green
-        if current_light == yellow:
-            if timer_done:
-                return red
-            else:
-                return yellow
+        yellow, green = 'YELLOW', 'GREEN'
         if not timer_done:
-            return red
-        return green
-
-* I add a new :ref:`if statement<if statements>` for the timer because it controls the traffic lights
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-10
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if timer_done:
-            if current_light == green:
-                return yellow
-            if current_light == yellow:
-                return red
-            if current_light == red:
-                return green
-        if current_light == green:
-            if timer_done:
-                return yellow
-            else:
-                return green
+            return current_light
         if current_light == yellow:
-            if timer_done:
-                return red
-            else:
-                return yellow
-        if not timer_done:
-            return red
-        return green
-
-  the test is still green
-
-* I add an :ref:`else clause<if statements>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 11-12
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if timer_done:
-            if current_light == green:
-                return yellow
-            if current_light == yellow:
-                return red
-            if current_light == red:
-                return green
-        else:
-            return current_light
-
+            return 'RED'
         if current_light == green:
-            if timer_done:
-                return yellow
-            else:
-                return green
-        if current_light == yellow:
-            if timer_done:
-                return red
-            else:
-                return yellow
-        if not timer_done:
-            return red
+            return yellow
         return green
-
-  still green
-
-* I remove the other :ref:`if statements`
-
-  .. code-block:: python
-    :linenos:
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if timer_done:
-            if current_light == green:
-                return yellow
-            if current_light == yellow:
-                return red
-            if current_light == red:
-                return green
-        else:
-            return current_light
-
-  green
-
-#### REFACTOR HERE, use negation, not variable. prefer multiple return statements to prevent branching, you should exit once a condition is met
-
-
-* I add a :ref:`variable<what is a variable?>` for the next light
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-
-        if timer_done:
-            if current_light == green:
-                return yellow
-            if current_light == yellow:
-                return red
-            if current_light == red:
-                return green
-        else:
-            return current_light
-
-* I use the new :ref:`variable<what is a variable?>` in each :ref:`condition<if statements>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7, 10, 13, 16
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-
-        if timer_done:
-            if current_light == green:
-                next_light = yellow
-                return yellow
-            if current_light == yellow:
-                next_light = red
-                return red
-            if current_light == red:
-                next_light = green
-                return green
-        else:
-            next_light = current_light
-            return current_light
-
-  the test is still green
-
-* I add a `return statement`_ for the :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 19
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-
-        if timer_done:
-            if current_light == green:
-                next_light = yellow
-                return yellow
-            if current_light == yellow:
-                next_light = red
-                return red
-            if current_light == red:
-                next_light = green
-                return green
-        else:
-            next_light = current_light
-            return current_light
-
-        return next_light
-
-* I remove the other `return statements`_
-
-  .. code-block:: python
-    :linenos:
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-
-        if timer_done:
-            if current_light == green:
-                next_light = yellow
-            if current_light == yellow:
-                next_light = red
-            if current_light == red:
-                next_light = green
-        else:
-            next_light = current_light
-
-        return next_light
-
-  still green
-
-* I remove the :ref:`if statement<if statements>` for when the light is ``'YELLOW'`` because I no longer need it
-
-  .. code-block:: python
-    :linenos:
-
-    def show(current_light, timer_done):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-
-        if timer_done:
-            if current_light == green:
-                next_light = yellow
-            if current_light == red:
-                next_light = green
-        else:
-            next_light = current_light
-
-        return next_light
-
-  the test is still green
 
 ----
 
@@ -1142,11 +981,24 @@ test_traffic_light_when_red_w_walk_button
 
 ----
 
+So far, the :ref:`truth table` for the Traffic Light is
+
+================  ==============  =================
+current light     timer done      show
+================  ==============  =================
+:red:`RED`        :green:`yes`    :green:`GREEN`
+:red:`RED`        :red:`no`       :red:`RED`
+:yellow:`YELLOW`  :green:`yes`    :red:`RED`
+:yellow:`YELLOW`  :red:`no`       :yellow:`YELLOW`
+:green:`GREEN`    :green:`yes`    :yellow:`YELLOW`
+:green:`GREEN`    :red:`no`       :green:`GREEN`
+================  ==============  =================
+
 I want to add a button for people to push when they want to cross the street, the inputs for the traffic light will now be
 
+* did the person push the walk button?
 * what color is the light now?
 * is the timer done?
-* did the person push the walk button?
 
 and the truth table when the traffic light is :red:`RED` is
 
