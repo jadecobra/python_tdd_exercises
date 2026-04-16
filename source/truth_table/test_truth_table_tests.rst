@@ -23,10 +23,7 @@ requirements
 *********************************************************************************
 
 * :ref:`Nullary & Unary Operations<truth table: Nullary and Unary Operations>`
-* :ref:`Binary Operations 1<truth table: Binary Operations 1>`
-* :ref:`Binary Operations 2<truth table: Binary Operations 2>`
-* :ref:`Binary Operations 3<truth table: Binary Operations 3>`
-* :ref:`Binary Operations 4<truth table: Binary Operations 4>`
+* :ref:`Binary Operations<truth table: Binary Operations>`
 
 *********************************************************************************
 continue the project
