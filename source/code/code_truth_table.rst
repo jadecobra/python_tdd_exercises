@@ -48,3 +48,23 @@ the solutions in ``truth_table/src/truth_table.py`` from :ref:`truth table`
 .. literalinclude:: truth_table/solutions/truth_table.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+Traffic Light: tests and solutions
+*********************************************************************************
+
+the code from ``traffic_light/tests/test_traffic_light.py`` from :ref:`Traffic Light`
+
+.. literalinclude:: truth_table/tests/test_traffic_light.py
+  :language: python
+  :linenos:
+
+the code from ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
+
+.. literalinclude:: truth_table/solutions/traffic_light.py
+  :language: python
+  :linenos:
+
+----
