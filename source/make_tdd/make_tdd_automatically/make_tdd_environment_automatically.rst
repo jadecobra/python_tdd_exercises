@@ -67,7 +67,7 @@ how to make a shell script
     `Visual Studio Code`_ opens ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
 
 
-* I add the commands I use to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project in ``makePythonTdd.sh``
+* I add the commands I use to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project in ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
 
   .. code-block:: shell
     :linenos:

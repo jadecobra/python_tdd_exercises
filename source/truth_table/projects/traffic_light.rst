@@ -4,6 +4,8 @@
 
 .. include:: ../../links.rst
 
+.. ATTENTION:: This is still a work in progress. There will be errors in the text. The code works and will change as I work on it. Have fun!
+
 .. _traffic_light:
 
 #################################################################################
@@ -12,12 +14,12 @@ Traffic Light
 
 ----
 
-I use the :ref:`truth table` to build a **Traffic Light** that changes color based on a timer, if the inputs are
+I want to make a **Traffic Light** that changes color based on a timer, if the inputs are
 
 * what color is the light now?
 * is the timer done?
 
-Here is the truth table for the traffic light
+Here is the :ref:`truth table` for the traffic light
 
 ================  ==============  =================
 current light     timer done      show
@@ -34,7 +36,7 @@ current light     timer done      show
 preview
 *********************************************************************************
 
-Here are the tests I have at the end of this chapter
+These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_traffic_light.py
   :language: python
@@ -223,7 +225,7 @@ start the project
 
   .. code-block:: shell
 
-    Initialized project `traffic-light-controller`
+    Initialized project `traffic-light`
 
   then goes back to the command line
 
@@ -312,7 +314,13 @@ test_traffic_light_when_red
 
 ----
 
-I change ``test_failure`` to ``test_traffic_light_when_red``
+I change ``test_failure`` to ``test_traffic_light_when_red``, then add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED` and the timer is done
+
+================  ==============  =================
+current light     timer done      show
+================  ==============  =================
+:red:`RED`        :green:`yes`    :green:`GREEN`
+================  ==============  =================
 
 .. code-block:: python
   :lineno-start: 4
@@ -320,7 +328,7 @@ I change ``test_failure`` to ``test_traffic_light_when_red``
 
   class TestTrafficLight(unittest.TestCase):
 
-      def test_traffic_light_when_red(self):(self):
+      def test_traffic_light_when_red(self):
           my_expectation = 'GREEN'
           reality = src.traffic_light.show(
               current_light='RED',
@@ -366,6 +374,9 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
     import src.traffic_light
     import unittest
 
+
+    class TestTrafficLight(unittest.TestCase):
+
   the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
@@ -405,7 +416,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 4
+    :emphasize-lines: 5
     :emphasize-text: TypeError
 
     # Exceptions seen
@@ -453,7 +464,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
     def show(current_light, timer_done):
         return 'GREEN'
 
-  the test passes
+  the test passes. The ``show`` :ref:`function<what is a function?>` always returns :green:`GREEN`
 
 ----
 
@@ -463,7 +474,14 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` for when the current light is :red:`RED` and the timer has not expired, in ``test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the current light is :red:`RED` and the timer is NOT done, in ``test_traffic_light.py``
+
+  ================  ==============  =================
+  current light     timer done      show
+  ================  ==============  =================
+  :red:`RED`        :green:`yes`    :green:`GREEN`
+  :red:`RED`        :red:`no`       :red:`RED`
+  ================  ==============  =================
 
   .. code-block:: python
     :lineno-start: 7
@@ -504,7 +522,10 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
             return 'RED'
         return 'GREEN'
 
-  the test passes
+  the test passes. The ``show`` :ref:`function<what is a function?>` returns
+
+  * :red:`RED` if the timer is NOT done
+  * :green:`GREEN` in every other case
 
 ----
 
@@ -520,7 +541,15 @@ test_traffic_light_when_yellow
 
 ----
 
-I add another test for when the traffic light is red, to ``test_traffic_light.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for when the traffic light is :yellow:`YELLOW` and the timer is done, to ``test_traffic_light.py``
+
+================  ==============  =================
+current light     timer done      show
+================  ==============  =================
+:red:`RED`        :green:`yes`    :green:`GREEN`
+:red:`RED`        :red:`no`       :red:`RED`
+:yellow:`YELLOW`  :green:`yes`    :red:`RED`
+================  ==============  =================
 
 .. code-block:: python
   :lineno-start: 7
@@ -570,17 +599,22 @@ I add an :ref:`if statement<if statements>` to ``traffic_light.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 2-4
+  :emphasize-lines: 4-5
 
   def show(current_light, timer_done):
-      if current_light == 'YELLOW':
-          if timer_done:
-              return 'RED'
       if not timer_done:
+          return 'RED'
+      if current_light == 'YELLOW':
           return 'RED'
       return 'GREEN'
 
-the test passes
+the test passes.
+
+The ``show`` :ref:`function<what is a function?>` returns
+
+* :red:`RED` if the timer is NOT done
+* :red:`RED` if the timer is done and the current light is :yellow:`YELLOW`
+* :green:`GREEN` in every other case
 
 ----
 
@@ -590,7 +624,16 @@ the test passes
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` to ``test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW` and the timer is NOT done to ``test_traffic_light.py``
+
+  ================  ==============  =================
+  current light     timer done      show
+  ================  ==============  =================
+  :red:`RED`        :green:`yes`    :green:`GREEN`
+  :red:`RED`        :red:`no`       :red:`RED`
+  :yellow:`YELLOW`  :green:`yes`    :red:`RED`
+  :yellow:`YELLOW`  :red:`no`       :yellow:`YELLOW`
+  ================  ==============  =================
 
   .. code-block:: python
     :lineno-start: 22
@@ -620,23 +663,29 @@ the test passes
 
     AssertionError: 'RED' != 'YELLOW'
 
-* I add an :ref:`if statement<if statements>` to ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` to the :ref:`if statement<if statements>` for when the timer is NOT done ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 3-4
 
     def show(current_light, timer_done):
-        if current_light == 'YELLOW':
-            if timer_done:
-                return 'RED'
-            else:
-                return 'YELLOW'
         if not timer_done:
+            if current_light == 'YELLOW':
+                return 'YELLOW'
+            return 'RED'
+        if current_light == 'YELLOW':
             return 'RED'
         return 'GREEN'
 
-  the test passes
+  the test passes.
+
+The ``show`` :ref:`function<what is a function?>` returns
+
+* :red:`RED` if the timer is NOT done
+* :yellow:`YELLOW` if the timer is NOT done and the current light is :yellow:`YELLOW`
+* :red:`RED` if the timer is done and the current light is :yellow:`YELLOW`
+* :green:`GREEN` in every other case
 
 ----
 
@@ -652,7 +701,17 @@ test_traffic_light_when_green
 
 ----
 
-I add a test for when the traffic light is green, to ``test_traffic_light.py``
+I add a test with an :ref:`assertion<what is an assertion?>`for when the traffic light is :green:`GREEN` and the timer is done, to ``test_traffic_light.py``
+
+================  ==============  =================
+current light     timer done      show
+================  ==============  =================
+:red:`RED`        :green:`yes`    :green:`GREEN`
+:red:`RED`        :red:`no`       :red:`RED`
+:yellow:`YELLOW`  :green:`yes`    :red:`RED`
+:yellow:`YELLOW`  :red:`no`       :yellow:`YELLOW`
+:green:`GREEN`    :green:`yes`    :yellow:`YELLOW`
+================  ==============  =================
 
 .. code-block:: python
   :lineno-start: 22
@@ -727,7 +786,18 @@ the test passes
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to ``test_traffic_light.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN` and the timer is NOT done, to ``test_traffic_light.py``
+
+  ================  ==============  =================
+  current light     timer done      show
+  ================  ==============  =================
+  :red:`RED`        :green:`yes`    :green:`GREEN`
+  :red:`RED`        :red:`no`       :red:`RED`
+  :yellow:`YELLOW`  :green:`yes`    :red:`RED`
+  :yellow:`YELLOW`  :red:`no`       :yellow:`YELLOW`
+  :green:`GREEN`    :green:`yes`    :yellow:`YELLOW`
+  :green:`GREEN`    :red:`no`       :green:`GREEN`
+  ================  ==============  =================
 
   .. code-block:: python
     :lineno-start: 37
@@ -858,7 +928,7 @@ the test passes
             return red
         return green
 
-* I add a new :ref:`if statement<if statements>` for it the timer because it controls the traffic lights
+* I add a new :ref:`if statement<if statements>` for the timer because it controls the traffic lights
 
   .. code-block:: python
     :linenos:
@@ -944,6 +1014,9 @@ the test passes
             return current_light
 
   green
+
+#### REFACTOR HERE, use negation, not variable. prefer multiple return statements to prevent branching, you should exit once a condition is met
+
 
 * I add a :ref:`variable<what is a variable?>` for the next light
 

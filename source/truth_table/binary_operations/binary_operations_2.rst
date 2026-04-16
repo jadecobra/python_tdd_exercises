@@ -29,7 +29,7 @@ requirements
 preview
 *********************************************************************************
 
-Here are the tests I have at the end of this chapter
+These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/truth_table/tests/test_binary_2.py
   :language: python

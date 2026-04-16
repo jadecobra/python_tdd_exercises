@@ -18,11 +18,15 @@ preview
 
 These are the tests I have at the end of the chapters
 
-.. literalinclude:: ../code/truth_table/tests/test_traffic_light.py
+.. literalinclude:: ../../code/truth_table/tests/test_traffic_light.py
   :language: python
   :linenos:
 
+----
 
+*********************************************************************************
+the projects
+*********************************************************************************
 
 .. toctree::
   :titlesonly:
@@ -35,4 +39,4 @@ These are the tests I have at the end of the chapters
 what is next?
 *************************************************************************************
 
-:ref:`Nullary and Unary Operations<truth table: Nullary and Unary Operations>`
+:ref:`Traffic Light<Traffic Light>`

@@ -21,7 +21,7 @@ The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`T
 preview
 *********************************************************************************
 
-Here are the tests I have at the end of this chapter
+These are the tests I have at the end of the chapter
 
 .. literalinclude:: ../../code/booleans/test_booleans_list_comprehensions.py
   :language: python
