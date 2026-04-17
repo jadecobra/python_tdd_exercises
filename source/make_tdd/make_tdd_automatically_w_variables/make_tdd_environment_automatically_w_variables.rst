@@ -126,7 +126,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
     ./makePythonTdd.sh
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 2, 4, 10, 12
@@ -169,7 +169,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
     tree -a -L 1 pro_magic
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -242,7 +242,7 @@ Here are a few other examples
 
     ./makePythonTdd.sh pro_magic_plus
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 10
@@ -273,7 +273,7 @@ Here are a few other examples
 
     tree -a -L 1 pro_magic_plus
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -291,7 +291,7 @@ Here are a few other examples
 
     ./makePythonTdd.sh person
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

@@ -23,7 +23,7 @@ open the project
 
     cd functions
 
-  the terminal_ is your friend, and shows I am in the ``functions`` folder_
+  the terminal_ is my friend, and shows I am in the ``functions`` folder_
 
   .. code-block:: shell
 
@@ -37,7 +37,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -92,7 +92,7 @@ a better way to handle the results changing
             self.assertEqual(add_x(x, y), x+x)
             self.assertEqual(add_x(y=1), 4)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -142,7 +142,7 @@ the test passes
             self.assertEqual(add_x(x, y), x+x)
             self.assertEqual(add_x(y=2), 5)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -174,7 +174,7 @@ the test passes
             self.assertEqual(add_x(x, y), y+y)
             self.assertEqual(add_x(y=3), 6)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -221,7 +221,7 @@ the test passes
             self.assertEqual(add_x(x, y), y+y)
             self.assertEqual(add_x(y=5), 8)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -253,7 +253,7 @@ the test passes
             self.assertEqual(add_x(x, x), x+y)
             self.assertEqual(add_x(y=6), 9)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -285,7 +285,7 @@ the test passes
             self.assertEqual(add_x(y, y), x+y)
             self.assertEqual(add_x(y=7), 10)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -317,7 +317,7 @@ the test passes
             self.assertEqual(add_x(x, y), y+y)
             self.assertEqual(add_x(y=8), 11)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -348,7 +348,7 @@ the test passes
             # self.assertEqual(add_x(y=8), 11)
             self.assertEqual(add_x(x, y), x+x)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -465,7 +465,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

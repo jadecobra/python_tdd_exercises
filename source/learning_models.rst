@@ -33,7 +33,7 @@ An Infinite Learning Model
 
       ./makePythonTdd.ps1 learning
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -59,7 +59,7 @@ An Infinite Learning Model
 
   .. literalinclude:: /code/tests/test_learning_models.py
 
-* the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+* the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 

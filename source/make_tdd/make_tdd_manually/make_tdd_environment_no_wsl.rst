@@ -96,7 +96,7 @@ I choose ``magic`` as the name of this project
 
     cd pumping_python
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -119,7 +119,7 @@ the terminal_ goes back to the command line
 
     cd pumping_python
 
-  the terminal_ is your friend, and shows I am in the ``pumping_python`` `folder (directory)`_
+  the terminal_ is my friend, and shows I am in the ``pumping_python`` `folder (directory)`_
 
   .. code-block:: shell
 
@@ -132,7 +132,7 @@ the terminal_ goes back to the command line
 
     tree /F
 
-* the terminal_ is your friend, and shows
+* the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -156,7 +156,7 @@ how to make a directory for the project on Windows without WSL
 
     cd magic
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -180,7 +180,7 @@ how to make a directory for the project on Windows without WSL
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 2
@@ -203,7 +203,7 @@ I try cd_ again
 
     cd magic
 
-  the terminal_ is your friend, and shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+  the terminal_ is my friend, and shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
   .. code-block:: PowerShell
 
@@ -224,7 +224,7 @@ how to run a Python program on Windows without Windows Subsystem for Linux
 
     python src/magic.py
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: text
 
@@ -256,7 +256,7 @@ how to make a directory for the source code on Windows without WSL
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 2
@@ -271,7 +271,7 @@ how to make a directory for the source code on Windows without WSL
 
     python src/magic.py
 
-  the terminal_ is your friend, and shows the same error from before. I have to make the file_
+  the terminal_ is my friend, and shows the same error from before. I have to make the file_
 
 ----
 
@@ -297,7 +297,7 @@ how to make an empty file in the src folder on Windows without Windows Subsystem
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 3
@@ -338,7 +338,7 @@ how to manually run tests on Windows without WSL
 
     python -m unittest
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -377,7 +377,7 @@ the terminal_ goes back to the command line
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 4
@@ -411,7 +411,7 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -429,7 +429,7 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
     python -m unittest
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -514,7 +514,7 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
 
     python -m unittest
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -548,7 +548,7 @@ how to make the tests a Python package on Windows without WSL
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -567,7 +567,7 @@ how to make the tests a Python package on Windows without WSL
 
     python -m unittest
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -603,7 +603,7 @@ how to change the name of a file on Windows without WSL
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. NOTE:: if you do not see ``__pycache__`` in the list do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
 
@@ -625,7 +625,7 @@ how to change the name of a file on Windows without WSL
 
     python -m unittest
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 9
@@ -689,7 +689,7 @@ I run the test again in the terminal_
 
   python -m unittest
 
-the test passes! the terminal_ is your friend, and shows
+the test passes! the terminal_ is my friend, and shows
 
 .. code-block:: none
 
@@ -750,7 +750,7 @@ I type it in the terminal_
 
   pytest-watcher
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: PowerShell
 
@@ -804,7 +804,7 @@ how to make a virtual environment on Windows without WSL
     tree /F
 
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 8
@@ -863,13 +863,13 @@ how to activate a virtual environment on Windows without WSL
 
     .venv/scripts/activate.ps1
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
     .. code-block:: PowerShell
 
       (.venv) .../magic
 
-  the ``(.venv)`` on the far left of the command line in the terminal_ is your friend, and shows that I am in the `virtual environment`_
+  the ``(.venv)`` on the far left of the command line in the terminal_ is my friend, and shows that I am in the `virtual environment`_
 
 * I use `pytest-watcher`_ to run the test again
 
@@ -879,7 +879,7 @@ how to activate a virtual environment on Windows without WSL
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -902,7 +902,7 @@ I use the `Python package manager (pip)`_ to see what `Python packages`_ are ins
 
   pip list
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: PowerShell
 
@@ -930,7 +930,7 @@ I want to make a file_ where I can list all the `Python packages`_ for my projec
 
     echo "pytest-watcher"
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -964,7 +964,7 @@ I want to make a file_ where I can list all the `Python packages`_ for my projec
 
     tree /F
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :force:
@@ -1003,7 +1003,7 @@ I can use the `cat program`_ to see what is inside a file_. I use it to make sur
 
   cat requirements.txt
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: shell
 
@@ -1029,7 +1029,7 @@ how to install Python packages with uv on Windows without WSL
   - ``--requirement`` is an option that can be passed to the ``install`` argument for `Python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_
 
-  the terminal_ is your friend, and shows programs_ being downloaded and installed, and when I do not have the latest version of pip_ installed, it shows this at the end
+  the terminal_ is my friend, and shows programs_ being downloaded and installed, and when I do not have the latest version of pip_ installed, it shows this at the end
 
   .. code-block:: PowerShell
 
@@ -1068,7 +1068,7 @@ how to upgrade the Python package manager in a virtual environment on Windows wi
 
     pip list
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -1134,7 +1134,7 @@ how to open the test file in the editor from the terminal on Windows without WSL
 
           self.assertFalse(True)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: PowerShell
     :emphasize-lines: 10
@@ -1202,7 +1202,7 @@ how to deactivate a virtual environment on Windows without WSL
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -1215,7 +1215,7 @@ how to deactivate a virtual environment on Windows without WSL
 
     cd ..
 
-  ``..`` is shorthand for the parent of any directory_ you are in. the terminal_ is your friend, and shows
+  ``..`` is shorthand for the parent of any directory_ you are in. the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
 
@@ -1246,7 +1246,7 @@ how to view all the commands typed in a terminal on Windows without WSL
 
     history
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: PowerShell
     :emphasize-lines: 6, 8, 10, 13, 19, 22, 29, 32, 37, 39-40, 44

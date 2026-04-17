@@ -25,7 +25,7 @@ open the project
 
     cd functions
 
-  the terminal_ is your friend, and shows I am in the ``functions`` folder_
+  the terminal_ is my friend, and shows I am in the ``functions`` folder_
 
   .. code-block:: shell
 
@@ -39,7 +39,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -99,7 +99,7 @@ a better way to test why use a function
             y = 0
             self.assertEqual(add(x, y), x+y)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -175,7 +175,7 @@ the test passes
                       with self.subTest(x=x, y=y):
                           self.assertEqual(add(x, y), x+100)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -242,7 +242,7 @@ the test passes
                 with self.subTest(x=x, y=y):
                     self.assertEqual(add(x, y), x+100)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -273,7 +273,7 @@ the test passes
                 with self.subTest(x=x, y=y):
                     self.assertEqual(add(x, y), x+100)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -316,7 +316,7 @@ the test passes
                     with self.subTest(x=x, y=y):
                         self.assertEqual(add(x, y), x+100)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -372,7 +372,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

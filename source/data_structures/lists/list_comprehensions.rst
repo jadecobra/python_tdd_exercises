@@ -152,7 +152,7 @@ start the project
 
       ./makePythonTdd.ps1
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 10
@@ -222,7 +222,7 @@ I change ``test_failure`` to ``test_making_a_list_w_a_for_loop`` to show what ha
           a_list.append(9)
           self.assertEqual(a_list, [])
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -345,7 +345,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
             self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
             self.assertEqual(list(), a_list)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -391,7 +391,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         )
 
-  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -416,7 +416,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     import src.list_comprehensions
     import unittest
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -444,7 +444,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     def a_for_loop():
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -471,7 +471,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     def a_for_loop(a_container):
         return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -506,7 +506,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
             iterable = range(0, random.randint(2, 1000))
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -553,7 +553,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
                 a_list
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -613,7 +613,7 @@ I add a new test
 
     # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -654,7 +654,7 @@ the test is green again again, the :ref:`extend method<test_extend_adds_items_fr
             self.assertIsNone(a_list.extend(iterable))
             self.assertEqual(a_list, list())
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -745,7 +745,7 @@ the test is green again again, the :ref:`extend method<test_extend_adds_items_fr
             a_list = self.a_list
             iterable = self.iterable
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -871,7 +871,7 @@ I add a failing test
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -951,7 +951,7 @@ the test passes.
                 [item for item in self.iterable]
             )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1038,7 +1038,7 @@ I add a failing test to ``test_list_comprehensions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1108,7 +1108,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if item % 2 == 0]
             )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1141,7 +1141,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
             if item % 3 == 0:
                 even_numbers.append(item)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1171,7 +1171,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if item % 3 == 0]
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1281,7 +1281,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     def condition(number):
         return number % 2 == 0
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1336,7 +1336,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable]
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1370,7 +1370,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if not condition(item)]
             )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1456,7 +1456,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return filter(is_even, numbers)
         return [number for number in numbers if is_even(number)]
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1484,7 +1484,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return list(filter(not is_even, numbers))
         return [number for number in numbers if not is_even(number)]
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1557,7 +1557,7 @@ I add a failing test to ``test_list_comprehensions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1607,7 +1607,7 @@ the test passes
                 [item*item for item in self.iterable]
             )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1644,7 +1644,7 @@ the test passes
         return map(lambda number: number**2, numbers)
         return [number**2 for number in numbers]
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1785,7 +1785,7 @@ I add a failing test
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1812,7 +1812,7 @@ the numbers on the left are the squares of the even numbers from the right
                 [item for item in self.iterable if condition(item)]
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1854,7 +1854,7 @@ the numbers on the left are the squares of the even numbers from the right
                 [item for item in self.iterable]
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1873,7 +1873,7 @@ the numbers on the left are the squares of the even numbers from the right
                 [item for item in self.iterable if not condition(item)]
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1943,7 +1943,7 @@ I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. 
 
       cd ..
 
-    the terminal_ is your friend, and shows
+    the terminal_ is my friend, and shows
 
     .. code-block:: PowerShell
 

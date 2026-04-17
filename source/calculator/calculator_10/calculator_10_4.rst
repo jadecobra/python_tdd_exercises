@@ -37,7 +37,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -58,7 +58,7 @@ open the project
 
     uv run streamlit run src/streamlit_calculator.py
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -138,7 +138,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -269,7 +269,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -341,7 +341,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
                 self.tester.session_state['number'], number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -435,7 +435,7 @@ I add a test for a calculation in ``test_streamlit_calculator.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
+the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
 .. code-block:: python
 
@@ -463,7 +463,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
             self.press_button(second_number)
             self.press_button('=')
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -494,7 +494,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                 float(first_number)+float(second_number)
             )
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
@@ -523,7 +523,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     if __name__ == '__main__':
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -574,7 +574,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def main():
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` and :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` and :ref:`TypeError<what causes TypeError?>`
 
 * I add ``display`` as a :ref:`positional argument<test_functions_w_positional_arguments>` of the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
@@ -584,7 +584,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def add_buttons_to_column_4(column_4, display):
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for more sub tests
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for more sub tests
 
 * I add ``display`` to the call to the ``add_buttons_to_column_4`` :ref:`function<what is a function?>` from the ``main`` :ref:`function<what is a function?>`
 
@@ -607,7 +607,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     if __name__ == '__main__':
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -644,7 +644,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                 float(first_number)+float(second_number)
             )
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
@@ -674,7 +674,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     if __name__ == '__main__':
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -725,7 +725,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
             args=[calculate, display], type='primary',
         )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -750,7 +750,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def plus_minus():
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -815,7 +815,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def plus_minus():
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -887,7 +887,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -939,7 +939,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                 str(float(first_number)-float(second_number))
             )
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
@@ -970,7 +970,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     if __name__ == '__main__':
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<test_assertion_error>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<test_assertion_error>`
 
   .. code-block:: python
 
@@ -992,7 +992,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def calculate():
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1028,7 +1028,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def main():
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1089,7 +1089,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1124,7 +1124,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def main():
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1182,7 +1182,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def plus_minus():
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1206,7 +1206,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def show_number(display):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1247,7 +1247,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def plus_minus():
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1315,7 +1315,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1488,7 +1488,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
             operation = r'\+'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1509,7 +1509,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                         first_number
                     )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1566,7 +1566,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
             operation = r'\+'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1587,7 +1587,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                         operation
                     )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1622,7 +1622,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
             on_click=on_click, args=[calculate, display],
         )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1701,7 +1701,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
                     self.press_button('AC')
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1742,7 +1742,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
             'X': 'multiply',
         }
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1832,7 +1832,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                     self.press_button('AC')
 
 
-  the terminal_ is your friend, and shows :ref:`Exceptions<errors>`
+  the terminal_ is my friend, and shows :ref:`Exceptions<errors>`
 
   .. code-block:: python
     :emphasize-lines: NameError
@@ -1857,7 +1857,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     class TestStreamlitCalculator(unittest.TestCase):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1881,7 +1881,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                         )
                     )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2012,7 +2012,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
 
@@ -2029,7 +2029,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
 

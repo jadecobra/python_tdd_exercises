@@ -35,7 +35,7 @@ open the project
 
     cd calculator
 
-  the terminal_ is your friend, and shows I am in the ``calculator`` folder_
+  the terminal_ is my friend, and shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 
@@ -49,7 +49,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -94,7 +94,7 @@ I add the `setUp method`_ to the ``TestCalculator`` :ref:`class<what is a class?
 
       def test_addition(self):
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -120,7 +120,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
               self.random_first_number = a_random_number()
               random_second_number = a_random_number()
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -202,7 +202,7 @@ I add a new test with a :ref:`for loop<what is a for loop?>` and an :ref:`assert
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -229,7 +229,7 @@ the terminal_ is your friend, and shows :ref:`AssertionError<what causes Asserti
                     error_message
                 )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -265,7 +265,7 @@ the terminal_ is your friend, and shows :ref:`AssertionError<what causes Asserti
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<data structures>` I am testing
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for two of the :ref:`data types<data structures>` I am testing
 
   .. code-block:: python
     :emphasize-lines: 3, 4
@@ -411,7 +411,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                         'BOOM!!!'
                     )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -439,7 +439,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                         error_message
                     )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -495,7 +495,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -523,7 +523,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                         error_message
                     )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -633,7 +633,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -662,7 +662,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1077,7 +1077,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                 dict(), {'key': 'value'},
             ):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1127,7 +1127,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

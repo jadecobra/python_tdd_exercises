@@ -35,7 +35,7 @@ open the project
 
     cd calculator
 
-  the terminal_ is your friend, and shows I am in the ``calculator`` folder_
+  the terminal_ is my friend, and shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 
@@ -49,7 +49,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -151,7 +151,7 @@ I add a new test
 
       def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -218,7 +218,7 @@ this means
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -261,7 +261,7 @@ this means
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -304,7 +304,7 @@ this means
                 self.random_first_number-self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -387,7 +387,7 @@ I use ``**`` like I did for the :ref:`keyword arguments<test_functions_w_keyword
               self.random_first_number-self.random_second_number
           )
 
-the terminal_ is your friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError`
 
 .. code-block:: python
 
@@ -417,7 +417,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 'second_input': self.random_second_number,
             }
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -459,7 +459,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number+self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -658,7 +658,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number-self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -700,7 +700,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -734,7 +734,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number/self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -768,7 +768,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number+self.random_second_number
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -873,7 +873,7 @@ I can use the :ref:`values method of dictionaries<test_values_of_a_dictionary>` 
               self.random_first_number+self.random_second_number
           )
 
-the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -1095,7 +1095,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1293,7 +1293,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 arithmetic operations
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 arithmetic operations
 
   .. code-block:: python
 
@@ -1492,7 +1492,7 @@ this means all these statements are the same
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`:
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`:
 
   .. code-block:: python
 
@@ -1585,7 +1585,7 @@ this means all these statements are the same
 
             arithmetic_tests = {
 
-  the terminal_ is your friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
 
@@ -1652,7 +1652,7 @@ this means all these statements are the same
                 },
             }
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1865,7 +1865,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
             # x = self.random_first_number
             # y = self.random_second_number
 
-  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -2052,7 +2052,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
             with self.assertRaises(TypeError):
                 src.calculator.subtract(*not_two_numbers)
 
-  the terminal_ is your friend, and shows :ref:`TypeError` for all 4 cases
+  the terminal_ is my friend, and shows :ref:`TypeError` for all 4 cases
 
   .. code-block:: python
 
@@ -2219,7 +2219,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
   .. code-block:: python
 
@@ -2371,7 +2371,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_w_dictionary_items(self):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the 4 operations
 
   .. code-block:: python
 
@@ -2462,7 +2462,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line, the terminal_ is your friend, and shows
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line, the terminal_ is my friend, and shows
 
   .. code-block:: python
 
@@ -2488,7 +2488,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
 

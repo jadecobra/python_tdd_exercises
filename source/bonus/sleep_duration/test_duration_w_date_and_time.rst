@@ -62,7 +62,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
                 )
             )
 
-  the terminal_ is your friend, and shows ValueError_
+  the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: shell
 
@@ -96,7 +96,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 
         int('1999/12/31 21')
 
-  the terminal_ is your friend, and shows ValueError_ with the same message from ``test_duration_w_date_and_time``
+  the terminal_ is my friend, and shows ValueError_ with the same message from ``test_duration_w_date_and_time``
 
   .. code-block:: shell
 
@@ -142,7 +142,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
                 )
             )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -162,7 +162,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
         else:
             return None
 
-  the terminal_ is your friend, and shows ValueError_
+  the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: shell
 
@@ -193,7 +193,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
                 (wake_time, sleep_time)
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -254,7 +254,7 @@ I add a test to ``test_sleep_duration.py`` from `Examples of usage: datetime <ht
   def test_duration_w_date_and_time(self):
   ...
 
-the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: shell
 
@@ -273,7 +273,7 @@ I add an `import statement`_ for the datetime_ module
   import unittest
   ...
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -292,7 +292,7 @@ because my `import statement`_ is different from `the example in the documentati
           ''
       )
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -343,7 +343,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
             )
         )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -381,7 +381,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
             )
         )
 
-  the terminal_ is your friend, and shows ValueError_
+  the terminal_ is my friend, and shows ValueError_
 
   .. code-block:: shell
 
@@ -436,7 +436,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
                 )
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -466,7 +466,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
                 )
             )
 
-  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -568,7 +568,7 @@ then add a :ref:`variable<what is a variable?>` for a random timestamp
           )
       )
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -665,7 +665,7 @@ and the test is still green
                 )
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -723,7 +723,7 @@ and the test is still green
                 )
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -752,7 +752,7 @@ and the test is still green
   the test passes
 
 * I remove ``duration`` because ``duration_a`` is a better solution
-* which means I can remove ``read_timestamp`` because no one calls it anymore. the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+* which means I can remove ``read_timestamp`` because no one calls it anymore. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -792,7 +792,7 @@ and the test is still green
             f'{random.randint(0,59):02}'
         )
 
-  the terminal_ is your friend, and shows a random ValueError_
+  the terminal_ is my friend, and shows a random ValueError_
 
   .. code-block:: shell
 
@@ -851,7 +851,7 @@ and the test is still green
         )
 
   all tests are still green
-* I change ``test_duration_w_date_and_time`` to ``test_duration`` the terminal_ is your friend, and shows all tests are still passing
+* I change ``test_duration_w_date_and_time`` to ``test_duration`` the terminal_ is my friend, and shows all tests are still passing
 
 .. _sleep_duration_review:
 

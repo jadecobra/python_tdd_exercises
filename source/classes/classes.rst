@@ -40,7 +40,7 @@ open the project
 
     cd person
 
-  the terminal_ is your friend, and shows I am in the ``person`` folder_
+  the terminal_ is my friend, and shows I am in the ``person`` folder_
 
   .. code-block:: python
 
@@ -54,7 +54,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -179,7 +179,7 @@ I add a :ref:`for loop<what is a for loop?>` with the `subTest method`_ and an :
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>` for each one of the people
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>` for each one of the people
 
 .. code-block:: python
 
@@ -217,7 +217,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def hello():
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -261,7 +261,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
                         )
                     )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -276,7 +276,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
     def hello(person):
         return 'Hi, my name is john smith and I am 446'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -294,7 +294,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
     def hello(person):
         return f'Hi, my name is {person.get("first_name")} smith and I am 446'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 4
@@ -318,7 +318,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
             f'{person.get("last_name")} and I am 446'
         )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines:  2, 4
@@ -390,7 +390,7 @@ I add a new test to ``test_person.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -422,7 +422,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
 
         pass
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -439,7 +439,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def __init__():
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -456,7 +456,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def __init__(first_name):
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -473,7 +473,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def __init__(self, first_name):
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -490,7 +490,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def __init__(self, first_name, last_name):
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -540,7 +540,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
                 year_of_birth=1991,
             )
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -558,7 +558,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
             ):
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -578,7 +578,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
             ):
             return None
 
-  the terminal_ is your friend, and shows SyntaxError_
+  the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
 
@@ -650,7 +650,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -668,7 +668,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
                 with self.subTest(name=person.first_name):
                     self.assertEqual(
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -687,7 +687,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
             self.first_name = first_name
             return None
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -710,7 +710,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
                         )
                     )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -732,7 +732,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def hello():
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -757,7 +757,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def hello():
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -773,7 +773,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def hello(person):
             return None
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -794,7 +794,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
                         )
                     )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -815,7 +815,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
                         )
                     )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -838,7 +838,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         @staticmethod
         def hello(person):
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -859,7 +859,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
                         )
                     )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -879,7 +879,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def get_age():
             return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -899,7 +899,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def get_age():
             return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -915,7 +915,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def hello(person):
             return 'Hi, my name is john smith and I am None'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 4
@@ -937,7 +937,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
         def hello(person):
             return f'Hi, my name is {person.first_name} smith and I am None'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 4
@@ -987,7 +987,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1086,7 +1086,7 @@ I cannot update the ``year_of_birth`` :ref:`key<test_keys_of_a_dictionary>` beca
 
     # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1131,7 +1131,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1186,7 +1186,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1218,7 +1218,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1261,7 +1261,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1287,7 +1287,7 @@ the test passes
 
     class Person:
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1302,7 +1302,7 @@ the test passes
     def update_year_of_birth(person, new_year_of_birth):
         return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1695,7 +1695,7 @@ I add a new test
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1721,7 +1721,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
         def get_age():
             return this_year() - self.year_of_birth
 
-  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1742,7 +1742,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
     def factory(
 
-  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1758,7 +1758,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
         def get_age(self):
             return this_year() - self.year_of_birth
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1778,7 +1778,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
         def get_age(self):
             return this_year() - self.year_of_birth
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1810,7 +1810,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
         def get_age(self):
             return this_year() - self.year_of_birth
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1824,7 +1824,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
             self.assertEqual(person.get_age(), 446)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 4
@@ -1921,7 +1921,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2868,7 +2868,7 @@ I want to add randomness to the test
             person = self.random_classy_person
             self.assertEqual(person.get_age(), 446)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3432,7 +3432,7 @@ I want to add a test for the ``Person`` :ref:`class<what is a class?>` to make s
 
         def expected_greeting(self):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3475,7 +3475,7 @@ the test passes
 
         def expected_greeting(self):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3510,7 +3510,7 @@ the test passes
 
         def expected_greeting(self):
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -3532,7 +3532,7 @@ the test passes
             self.sex = sex
             return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3583,7 +3583,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
 
         def expected_greeting(self):
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -3602,7 +3602,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
                 year_of_birth=this_year(), sex='M',
             ):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3635,7 +3635,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
                     # year_of_birth=self.random_year_of_birth,
                 ),
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -3652,7 +3652,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
             last_name='doe', sex='M',
         ):
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -3669,7 +3669,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
             last_name='doe', sex='M',
         ):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -3759,7 +3759,7 @@ I add a new test
 
     # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -3850,7 +3850,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

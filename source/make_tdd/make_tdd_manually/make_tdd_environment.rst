@@ -96,7 +96,7 @@ I choose ``magic`` as the name of this project
 
     cd pumping_python
 
-  - if the terminal_ is your friend, and shows
+  - if the terminal_ is my friend, and shows
 
     .. code-block:: shell
 
@@ -118,7 +118,7 @@ I choose ``magic`` as the name of this project
 
       cd pumping_python
 
-    the terminal_ is your friend, and shows I am in the ``pumping_python`` `folder (directory)`_
+    the terminal_ is my friend, and shows I am in the ``pumping_python`` `folder (directory)`_
 
     .. code-block:: shell
 
@@ -131,7 +131,7 @@ I choose ``magic`` as the name of this project
 
     tree
 
-  - if tree_ is not installed on the computer, the terminal_ is your friend, and shows
+  - if tree_ is not installed on the computer, the terminal_ is my friend, and shows
 
     .. code-block:: shell
 
@@ -139,7 +139,7 @@ I choose ``magic`` as the name of this project
 
     :ref:`you can install it from here<what is covered?>`
 
-  - if tree_ is installed on the computer, the terminal_ is your friend, and shows
+  - if tree_ is installed on the computer, the terminal_ is my friend, and shows
 
     .. code-block:: shell
 
@@ -164,7 +164,7 @@ how to make a directory for the project
 
     cd magic
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -188,7 +188,7 @@ how to make a directory for the project
 
     tree
 
-  the terminal_ is your friend, and shows ``magic``
+  the terminal_ is my friend, and shows ``magic``
 
   .. code-block:: shell
     :emphasize-lines: 2
@@ -212,7 +212,7 @@ I try to go to ``magic`` again
 
   cd magic
 
-the terminal_ is your friend, and shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+the terminal_ is my friend, and shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
 
 .. code-block:: shell
 
@@ -233,7 +233,7 @@ I use Python_ to run the ``magic`` program_
 
   python3 src/magic.py
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: text
 
@@ -265,7 +265,7 @@ how to make a directory for the source code
 
     tree
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 2
@@ -280,7 +280,7 @@ how to make a directory for the source code
 
     python3 src/magic.py
 
-  the terminal_ is your friend, and shows the same error from before. I have to make the file_
+  the terminal_ is my friend, and shows the same error from before. I have to make the file_
 
 ----
 
@@ -306,7 +306,7 @@ how to make an empty file in the src folder
 
     tree
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 3
@@ -351,7 +351,7 @@ how to manually run tests
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>`, unittest_ in this case
   - a :ref:`Python module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `click here to see the source code for unittest`_
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -386,7 +386,7 @@ how to make a directory for the tests
 
     tree
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 4
@@ -420,7 +420,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     tree
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -438,7 +438,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     python3 -m unittest
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -525,7 +525,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     python3 -m unittest
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -559,7 +559,7 @@ how to make the tests a Python package
 
     tree
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -578,7 +578,7 @@ how to make the tests a Python package
 
     python3 -m unittest
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -614,7 +614,7 @@ how to change the name of a file
 
     tree -L 2
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 7
@@ -638,7 +638,7 @@ how to change the name of a file
 
     python3 -m unittest
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 9
@@ -703,7 +703,7 @@ I run the test again in the terminal_
 
   python3 -m unittest
 
-the test passes! the terminal_ is your friend, and shows
+the test passes! the terminal_ is my friend, and shows
 
 .. code-block:: none
   :emphasize-lines: 3, 5
@@ -768,7 +768,7 @@ I type `pytest-watcher`_ in the terminal_
 
   pytest-watcher
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: shell
 
@@ -793,7 +793,7 @@ I want to make a file_ where I can list all the `Python packages`_ that my proje
 
     echo "pytest"
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -827,7 +827,7 @@ I want to make a file_ where I can list all the `Python packages`_ that my proje
 
     tree -a -L 2
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 2
@@ -858,7 +858,7 @@ I can use the `cat program`_ to see what is inside a file_. I use it to make sur
 
   cat requirements.txt
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: shell
 
@@ -882,7 +882,7 @@ how to setup a project with uv
 
     uv init
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -939,7 +939,7 @@ how to setup a project with uv
 
     cat .gitignore
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
 
@@ -961,7 +961,7 @@ how to setup a project with uv
 
     cat pyproject.toml
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
 
@@ -980,7 +980,7 @@ how to setup a project with uv
 
     cat .python-version
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
 
@@ -1018,7 +1018,7 @@ how to install Python packages with uv
   - ``--requirement`` is an option that can be given to the ``add`` argument for `Python packages`_ in a given file_
   - ``requirements.txt`` is the name of the given file_. It helps to manage `Python programs`_ that are needed by the project. In this case I only have one program. A project can have a big number of programs it needs and using one file_ with one command is easier than one command for each program_
 
-  the terminal_ is your friend, and shows setup and installation
+  the terminal_ is my friend, and shows setup and installation
 
   .. code-block:: shell
 
@@ -1041,7 +1041,7 @@ how to install Python packages with uv
 
     tree -a -L 1
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 10-11
@@ -1069,7 +1069,7 @@ how to install Python packages with uv
 
     cat pyproject.toml
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
     :emphasize-lines: 7-9
@@ -1114,13 +1114,13 @@ how to activate a virtual environment
 
     source .venv/bin/activate
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
     (magic) .../magic
 
-  ``(magic)`` on the far left of the command line in the terminal_ is your friend, and shows that I am in the `virtual environment`_
+  ``(magic)`` on the far left of the command line in the terminal_ is my friend, and shows that I am in the `virtual environment`_
 
 ----
 
@@ -1159,7 +1159,7 @@ how to run the tests automatically with uv and pytest-watcher
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows results without going back to the command line
+  the terminal_ is my friend, and shows results without going back to the command line
 
   .. code-block:: shell
     :emphasize-lines: 10
@@ -1196,7 +1196,7 @@ how to open the test file in the editor from the terminal
 
           self.assertFalse(True)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 10
@@ -1254,7 +1254,7 @@ close the project
 
     cd ..
 
-  ``..`` is for the parent of any directory_ I am in. the terminal_ is your friend, and shows
+  ``..`` is for the parent of any directory_ I am in. the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -1290,7 +1290,7 @@ how to view all the commands typed in a terminal
 
     history
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 6, 8, 10, 13, 17, 19, 22, 23, 31, 34, 36, 41, 50

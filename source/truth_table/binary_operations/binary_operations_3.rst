@@ -47,7 +47,7 @@ continue the project
 
     pwd
 
-  if the terminal_ is your friend, and shows anything other than
+  if the terminal_ is my friend, and shows anything other than
 
   .. code-block:: shell
 
@@ -62,7 +62,7 @@ continue the project
 
     cd truth_table
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -76,7 +76,7 @@ continue the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -132,7 +132,7 @@ I add a new test to ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -185,7 +185,7 @@ first input     second input   return
             self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
             self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -226,7 +226,7 @@ first input     second input   return
             self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
             self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -685,7 +685,7 @@ I add another test to ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -748,7 +748,7 @@ first input     second input   return
                 src.truth_table.material_non_implication(True, False)
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1105,7 +1105,7 @@ I add a new test in ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1182,7 +1182,7 @@ first input     second input   return
             self.assertTrue(src.truth_table.project_first(True, False))
             self.assertFalse(src.truth_table.project_first(False, True))
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1228,7 +1228,7 @@ first input     second input   return
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1388,7 +1388,7 @@ I add a new test to ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1458,7 +1458,7 @@ first input     second input   return
             self.assertTrue(src.truth_table.converse_implication(True, False))
             self.assertFalse(src.truth_table.converse_implication(False, True))
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1653,7 +1653,7 @@ first input     second input   return
         return (not not first_input) (not and) (not second_input)
         return not (not first_input and second_input)
 
-  the terminal_ is your friend, and shows SyntaxError_
+  the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: shell
 
@@ -1863,7 +1863,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

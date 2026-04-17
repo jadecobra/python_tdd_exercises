@@ -108,7 +108,7 @@ start the project
 
     cd functions
 
-  the terminal_ is your friend, and shows I am in the ``functions`` folder_
+  the terminal_ is my friend, and shows I am in the ``functions`` folder_
 
   .. code-block:: python
 
@@ -248,7 +248,7 @@ start the project
 
     uv init
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -282,7 +282,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -357,7 +357,7 @@ Why use a :ref:`function<what is a function?>` when I can just write code to do 
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -399,7 +399,7 @@ the test passes
             self.assertEqual(1+0, 1)
             self.assertEqual(1+1, 1)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -426,7 +426,7 @@ the test passes
             self.assertEqual(1+1, 2)
             self.assertEqual(1+2, 2)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<What causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<What causes AssertionError?>`
 
   .. code-block:: python
 
@@ -454,7 +454,7 @@ the test passes
             self.assertEqual(1+2, 3)
             self.assertEqual(1+3, 3)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -484,7 +484,7 @@ the test passes
     # Exceptions seen
     # AssertionError
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -513,7 +513,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -541,7 +541,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -570,7 +570,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -599,7 +599,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -628,7 +628,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -676,7 +676,7 @@ the test passes
             self.assertEqual(2+8, 9)
             self.assertEqual(2+9, 10)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -769,7 +769,7 @@ the test passes
             def add_x(x=3, y=0):
                 return x + y
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -845,7 +845,7 @@ I add a new test
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block::
 
@@ -886,7 +886,7 @@ the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error
 
     class TestFunctions(unittest.TestCase):
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -957,7 +957,7 @@ I add a new failing test in ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1042,7 +1042,7 @@ I add another failing test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1103,7 +1103,7 @@ the test passes
     def w_return_none():
         return 'something'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1157,7 +1157,7 @@ I add a test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -1205,7 +1205,7 @@ the test passes
     def return_is_last():
         return 'something'
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1287,7 +1287,7 @@ I add a test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1317,7 +1317,7 @@ I have not added a definition for ``constant`` in ``functions.py`` in the ``src`
     def constant():
         return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1374,7 +1374,7 @@ I add a failing test in ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1403,7 +1403,7 @@ because ``functions.py`` has no ``identity``?
     def identity():
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1457,7 +1457,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
         self.assertIsNone(src.functions.identity(None))
         self.assertEqual(src.functions.identity(object), object)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1515,7 +1515,7 @@ I add a failing test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1544,7 +1544,7 @@ because ...
     def w_positional_arguments():
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1559,7 +1559,7 @@ because ...
     def w_positional_arguments(first_input):
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1574,7 +1574,7 @@ because ...
     def w_positional_arguments(first_input, last_input):
         return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1618,7 +1618,7 @@ because ...
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1727,7 +1727,7 @@ I add a new test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1756,7 +1756,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_keyword_arguments():
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1771,7 +1771,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_keyword_arguments(first_input):
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1786,7 +1786,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_keyword_arguments(first_input, last_input):
         return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1831,7 +1831,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
                 ('last', 'first')
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1882,7 +1882,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2022,7 +2022,7 @@ I add a failing test to ``test_functions.py``
     # Exceptions seen
 
 
-the terminal_ is your friend, and shows SyntaxError_
+the terminal_ is my friend, and shows SyntaxError_
 
 .. code-block:: shell
 
@@ -2066,7 +2066,7 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
                 ('first', 'last')
             )
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -2085,7 +2085,7 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
       def w_positional_and_keyword_arguments():
           return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -2101,7 +2101,7 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
     def w_positional_and_keyword_arguments(last_input):
         return None
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -2117,7 +2117,7 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
     def w_positional_and_keyword_arguments(last_input, first_input):
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -2135,7 +2135,7 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
     def w_positional_and_keyword_arguments(first_input, last_input):
         return None
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2193,7 +2193,7 @@ I add a failing test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -2242,7 +2242,7 @@ the test passes
                 ('jane', 'doe')
             )
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -2306,7 +2306,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2419,7 +2419,7 @@ I add a new test to ``test_functions.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -2446,7 +2446,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_unknown_arguments():
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -2461,7 +2461,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_unknown_arguments(a):
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -2478,7 +2478,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_unknown_arguments(**kwargs):
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -2494,7 +2494,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_unknown_arguments(**kwargs, x):
         return None
 
-  the terminal_ is your friend, and shows SyntaxError_
+  the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: shell
 
@@ -2512,7 +2512,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_unknown_arguments(x, **kwargs):
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -2557,7 +2557,7 @@ the terminal_ is your friend, and shows :ref:`AttributeError<what causes Attribu
     def w_unknown_arguments(*positional_arguments, **keyword_arguments):
         return positional_arguments, keyword_arguments
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -2608,7 +2608,7 @@ I want to see what happens when I call ``w_unknown_arguments`` with ONLY :ref:`p
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -2655,7 +2655,7 @@ I add another :ref:`assertion<what is an assertion?>` to see what happens when I
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: python
 
@@ -2701,7 +2701,7 @@ I add one more :ref:`assertion<what is an assertion?>` to see what happens when 
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows
+the terminal_ is my friend, and shows
 
 .. code-block:: shell
 
@@ -2788,7 +2788,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

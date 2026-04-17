@@ -25,7 +25,7 @@ open the project
 
     cd booleans
 
-  the terminal_ is your friend, and shows I am in the ``booleans`` folder_
+  the terminal_ is my friend, and shows I am in the ``booleans`` folder_
 
   .. code-block:: shell
 
@@ -39,7 +39,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -79,7 +79,7 @@ I add a new :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
           self.assertNotIsInstance(False, int)
           self.assertFalse(False)
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -140,7 +140,7 @@ the test passes
             self.assertIsInstance(False, float)
             self.assertFalse(False)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -186,7 +186,7 @@ the test passes
             self.assertNotIsInstance(False, (bool, int))
             self.assertNotIsInstance(False, float)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -253,7 +253,7 @@ the test passes
 
         def test_what_is_true(self):
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for all of them
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for all of them
 
   .. code-block:: shell
 
@@ -333,7 +333,7 @@ I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to 
           self.assertNotIsInstance(True, int)
           self.assertTrue(True)
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -390,7 +390,7 @@ the test passes
             self.assertIsInstance(True, float)
             self.assertTrue(True)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -431,7 +431,7 @@ the test passes
             self.assertNotIsInstance(True, (bool, int))
             self.assertNotIsInstance(True, float)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -498,7 +498,7 @@ the test passes
                 with self.subTest(item=true_item):
                     self.assertFalse(true_item)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for all of them
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` for all of them
 
   .. code-block:: shell
 
@@ -589,7 +589,7 @@ I add a new test to find out the value of :ref:`False<test_what_is_false>`
 
   # NOTES
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -633,7 +633,7 @@ the test passes
             self.assertEqual(False+1, 1)
             self.assertEqual(False-1, 1)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -662,7 +662,7 @@ the test passes
             self.assertEqual(False-1, -1)
             self.assertEqual(False*1, -1)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -692,7 +692,7 @@ the test passes
             self.assertEqual(False*1, 0)
             1 / False
 
-  the terminal_ is your friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` because :ref:`False<test_what_is_false>` is ``0``
+  the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` because :ref:`False<test_what_is_false>` is ``0``
 
 * I add assertRaises_
 
@@ -762,7 +762,7 @@ I add a new test to find out the value of :ref:`True<test_what_is_true>`
 
   # NOTES
 
-the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -806,7 +806,7 @@ the test passes
             self.assertEqual(True+1, 2)
             self.assertEqual(True-1, 2)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -835,7 +835,7 @@ the test passes
             self.assertEqual(True-1, 0)
             self.assertEqual(True*1, 0)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -865,7 +865,7 @@ the test passes
             self.assertEqual(True*1, 1)
             self.assertEqual(True/2, 1)
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -943,7 +943,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 

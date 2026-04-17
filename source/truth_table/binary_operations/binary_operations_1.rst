@@ -52,7 +52,7 @@ continue the project
 
     pwd
 
-  if the terminal_ is your friend, and shows anything other than
+  if the terminal_ is my friend, and shows anything other than
 
   .. code-block:: shell
 
@@ -67,7 +67,7 @@ continue the project
 
     cd truth_table
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -81,7 +81,7 @@ continue the project
 
     uv run pytest-watcher . --now
 
-* the terminal_ is your friend, and shows
+* the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
@@ -129,7 +129,7 @@ test_contradiction
 
     # Exceptions seen
 
-  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -168,7 +168,7 @@ test_contradiction
     def contradiction():
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -196,7 +196,7 @@ test_contradiction
     def contradiction(first_input):
         return None
 
-  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -455,7 +455,7 @@ I add a test for the first case where the two inputs are :ref:`True<test_what_is
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -513,7 +513,7 @@ first input     second input   return
                 src.truth_table.logical_conjunction(True, False)
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -540,7 +540,7 @@ first input     second input   return
     def logical_conjunction(first_input, second_input):
         return False
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -587,7 +587,7 @@ first input     second input   return
                 src.truth_table.logical_conjunction(False, True)
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1107,7 +1107,7 @@ I add a test for another Binary Operation to ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1164,7 +1164,7 @@ first input     second input   return
                 src.truth_table.project_second(True, False)
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1378,7 +1378,7 @@ I add a test for :ref:`converse_non_implication<test_converse_non_implication>` 
 
   # Exceptions seen
 
-the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1464,7 +1464,7 @@ first input     second input   return
                 src.truth_table.converse_non_implication(False, True)
             )
 
-  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1841,7 +1841,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend, and shows
+  the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
