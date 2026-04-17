@@ -38,6 +38,19 @@ if the inputs are
 - is there motion?
 - is the code right?
 
+it means the possible states are
+
+==================  ==================
+motion?             code?
+==================  ==================
+:green:`no motion`  :green:`right code`
+:green:`no motion`  :red:`wrong code`
+:red:`motion`       :green:`right code`
+:red:`motion`       :red:`wrong code`
+==================  ==================
+
+the inputs give the :ref:`truth table` below
+
 ========================================================  =========== =========== =========== =========== ========================================================
 alarm                                                     motion,     motion,     no motion,  no motion,  operation
                                                           wrong code  right code  wrong code  right code
@@ -49,7 +62,7 @@ wrong code                                                :green:`on` :red:`off`
 no motion                                                 :red:`off`  :red:`off`  :green:`on` :green:`on` :ref:`negate_first<test_negate_first>`
 not (motion and wrong code)                               :red:`off`  :green:`on` :green:`on` :green:`on` :ref:`logical_nand<test_logical_nand>`
 alarm always                                              :green:`on` :green:`on` :green:`on` :green:`on` :ref:`tautology<test_tautology>`
-motion or right code                                      :green:`on` :green:`on` :green:`on` :red:`off`  :ref:`logical_disjunction<test_logical_disjunction>`
+motion or wrong code                                      :green:`on` :green:`on` :green:`on` :red:`off`  :ref:`logical_disjunction<test_logical_disjunction>`
 (not (motion and wrong code)) and (motion or wrong code)  :red:`off`  :green:`on` :green:`on` :red:`off`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 motion and right code                                     :red:`off`  :green:`on` :red:`off`  :red:`off`  :ref:`material_non_implication<test_material_non_implication>`
 motion                                                    :green:`on` :green:`on` :red:`off`  :red:`off`  :ref:`project_first<test_project_first>`
@@ -59,6 +72,8 @@ not (motion or wrong code)                                :red:`off`  :red:`off`
 (no motion or wrong code) and (motion or right code)      :green:`on` :red:`off`  :red:`off`  :green:`on` :ref:`logical_equality<test_logical_equality>`
 no motion or wrong code                                   :green:`on` :red:`off`  :green:`on` :green:`on` :ref:`material_implication<test_material_implication>`
 ========================================================  =========== =========== =========== =========== ========================================================
+
+we can say this in English as
 
 ==============================================================  ===========================================================================================================
 operation                                                       rule
@@ -94,6 +109,19 @@ if the inputs are
 - is the person a strong option?
 - is the person a strong fit?
 
+it means the possible states are
+
+======================  ======================
+option                  fit
+======================  ======================
+:green:`strong option`  :green:`strong fit`
+:green:`strong option`  :red:`weak fit`
+:red:`weak option`      :green:`strong fit`
+:red:`weak option`      :red:`weak fit`
+======================  ======================
+
+the inputs give the :ref:`truth table` below
+
 ======================================================================  =============== =============== =============== =============== ==============================================================
 hire/reject                                                             strong option,  strong option,  weak option,    weak option,    operation
                                                                         strong fit      weak fit        strong fit      weak fit
@@ -105,7 +133,7 @@ weak option and strong fit                                              :red:`re
 weak option                                                             :red:`reject`   :red:`reject`   :green:`hire`   :green:`hire`   :ref:`negate_first<test_negate_first>`
 not (strong option and strong fit)                                      :red:`reject`   :green:`hire`   :green:`hire`   :green:`hire`   :ref:`logical_nand<test_logical_nand>`
 hire                                                                    :green:`hire`   :green:`hire`   :green:`hire`   :green:`hire`   :ref:`tautology<test_tautology>`
-strong option or weak fit                                               :green:`hire`   :green:`hire`   :green:`hire`   :red:`reject`   :ref:`logical_disjunction<test_logical_disjunction>`
+strong option or strong fit                                               :green:`hire`   :green:`hire`   :green:`hire`   :red:`reject`   :ref:`logical_disjunction<test_logical_disjunction>`
 (not (strong option and strong fit)) and (strong option or strong fit)  :red:`reject`   :green:`hire`   :green:`hire`   :red:`reject`   :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 strong option and weak fit                                              :red:`reject`   :green:`hire`   :red:`reject`   :red:`reject`   :ref:`material_non_implication<test_material_non_implication>`
 strong option                                                           :green:`hire`   :green:`hire`   :red:`reject`   :red:`reject`   :ref:`project_first<test_project_first>`
@@ -115,6 +143,8 @@ not (strong option or strong fit)                                       :red:`re
 (weak option or strong fit) and (strong option or weak fit)             :green:`hire`   :red:`reject`   :red:`reject`   :green:`hire`   :ref:`logical_equality<test_logical_equality>`
 weak option or strong fit                                               :green:`hire`   :red:`reject`   :green:`hire`   :green:`hire`   :ref:`material_implication<test_material_implication>`
 ======================================================================  =============== =============== =============== =============== ==============================================================
+
+we can say this in English as
 
 ==============================================================  ===========================================================================================================
 operation                                                       rule
@@ -150,6 +180,19 @@ if the inputs are
 - does the person have a coupon?
 - is the person a member?
 
+it means the possible states are
+
+======================  ======================
+option                  fit
+======================  ======================
+:green:`strong option`  :green:`strong fit`
+:green:`strong option`  :red:`weak fit`
+:red:`weak option`      :green:`strong fit`
+:red:`weak option`      :red:`weak fit`
+======================  ======================
+
+the inputs give the :ref:`truth table` below
+
 ==================================================  ================= ================= ================= ================= ==============================================================
 discount/regular price                              coupon,           coupon,           no coupon,        no coupon,        operation
                                                     member            not member        member            not member
@@ -161,7 +204,7 @@ no coupon and member                                :red:`regular`    :red:`regu
 no coupon                                           :red:`regular`    :red:`regular`    :green:`discount` :green:`discount` :ref:`negate_first<test_negate_first>`
 not (coupon and member)                             :red:`regular`    :green:`discount` :green:`discount` :green:`discount` :ref:`logical_nand<test_logical_nand>`
 discount                                            :green:`discount` :green:`discount` :green:`discount` :green:`discount` :ref:`tautology<test_tautology>`
-coupon or not member                                :green:`discount` :green:`discount` :green:`discount` :red:`regular`    :ref:`logical_disjunction<test_logical_disjunction>`
+coupon or member                                :green:`discount` :green:`discount` :green:`discount` :red:`regular`    :ref:`logical_disjunction<test_logical_disjunction>`
 (not (coupon and member)) and (coupon or member)    :red:`regular`    :green:`discount` :green:`discount` :red:`regular`    :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 coupon and not member                               :red:`regular`    :green:`discount` :red:`regular`    :red:`regular`    :ref:`material_non_implication<test_material_non_implication>`
 coupon                                              :green:`discount` :green:`discount` :red:`regular`    :red:`regular`    :ref:`project_first<test_project_first>`
@@ -171,6 +214,8 @@ not (coupon or member)                              :red:`regular`    :red:`regu
 (no coupon or member) and (coupon or not member)    :green:`discount` :red:`regular`    :red:`regular`    :green:`discount` :ref:`logical_equality<test_logical_equality>`
 no coupon or member                                 :green:`discount` :red:`regular`    :green:`discount` :green:`discount` :ref:`material_implication<test_material_implication>`
 ==================================================  ================= ================= ================= ================= ==============================================================
+
+we can say this in English as
 
 ==============================================================  ===========================================================================================================
 operation                                                       rule
@@ -217,7 +262,7 @@ wet soil and no rain                                    :red:`no`    :red:`no`  
 wet soil                                                :red:`no`    :red:`no`    :green:`yes` :green:`yes` :ref:`negate_first<test_negate_first>`
 not (dry soil and no rain)                              :red:`no`    :green:`yes` :green:`yes` :green:`yes` :ref:`logical_nand<test_logical_nand>`
 water                                                   :green:`yes` :green:`yes` :green:`yes` :green:`yes` :ref:`tautology<test_tautology>`
-dry soil or it rained                                   :green:`yes` :green:`yes` :green:`yes` :red:`no`    :ref:`logical_disjunction<test_logical_disjunction>`
+dry soil or no rain                                   :green:`yes` :green:`yes` :green:`yes` :red:`no`    :ref:`logical_disjunction<test_logical_disjunction>`
 (not (dry soil and no rain)) and (dry soil or no rain)  :red:`no`    :green:`yes` :green:`yes` :red:`no`    :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 dry soil and it rained                                  :red:`no`    :green:`yes` :red:`no`    :red:`no`    :ref:`material_non_implication<test_material_non_implication>`
 dry soil                                                :green:`yes` :green:`yes` :red:`no`    :red:`no`    :ref:`project_first<test_project_first>`
@@ -227,6 +272,8 @@ not (dry soil or no rain)                               :red:`no`    :red:`no`  
 (wet soil or no rain) and (dry soil or it rained)       :green:`yes` :red:`no`    :red:`no`    :green:`yes` :ref:`logical_equality<test_logical_equality>`
 (wet soil) or no rain                                   :green:`yes` :red:`no`    :green:`yes` :green:`yes` :ref:`material_implication<test_material_implication>`
 ======================================================  ============ ============ ============ ============ ==============================================================
+
+we can say this in English as
 
 ==============================================================  ===========================================================================================================
 operation                                                       rule
