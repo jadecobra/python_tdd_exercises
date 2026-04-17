@@ -53,7 +53,7 @@ start the project
 
     cd calculator
 
-  the terminal_ shows I am in the ``calculator`` folder_
+  the terminal_ is your friend and shows I am in the ``calculator`` folder_
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ start the project
 
     uv init
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -217,7 +217,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -338,7 +338,7 @@ test_addition
 
     in other words, ``self.assertEqual(src.calculator.add(0, 1), 1)`` checks if the result of calling ``src.calculator.add`` with ``0`` and ``1`` as input is equal to ``1``
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -377,7 +377,7 @@ test_addition
 
     class TestCalculator(unittest.TestCase):
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -405,7 +405,7 @@ test_addition
 
     add
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -421,7 +421,7 @@ test_addition
 
     add = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -451,7 +451,7 @@ test_addition
     def add():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -468,7 +468,7 @@ test_addition
     def add(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -508,7 +508,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(0, 1), 1)
             self.assertEqual(src.calculator.add(0, 2), 2)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -525,7 +525,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
     def add(first_input, second_input):
         return 2
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -563,7 +563,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(0, 2), 2)
             self.assertEqual(src.calculator.add(0, 3), 2)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -591,7 +591,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(0, 3), 3)
             self.assertEqual(src.calculator.add(1, 3), 3)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -620,7 +620,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(1, 3), 4)
             self.assertEqual(src.calculator.add(123456, 789012), 4)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -650,7 +650,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(123456, 789012), 912468)
             self.assertEqual(src.calculator.add(-1, 0), 912468)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -677,7 +677,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(-1, 0), -1)
             self.assertEqual(src.calculator.add(-2, -3), -1)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -704,7 +704,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(-2, -3), -5)
             self.assertEqual(src.calculator.add(0.1, 1), -5)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -731,7 +731,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
             self.assertEqual(src.calculator.add(0.1, 1), 1.1)
             self.assertEqual(src.calculator.add(0.1, 0.2), 1.1)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -770,7 +770,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
                 0.30000000000000004
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1115,7 +1115,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
                 first_number+first_number
             )
 
-  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
+  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   .. code-block:: python
 
@@ -1253,7 +1253,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
                 random_second_number+random_second_number
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1302,7 +1302,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
     def a_random_number():
         return random.triangular(-10.0**100000, 10.0**100000)
 
-  the terminal_ shows OverflowError_
+  the terminal_ is your friend and shows OverflowError_
 
   .. code-block:: python
 
@@ -1386,7 +1386,7 @@ I add a test for subtraction in ``test_calculator.py``
 
   # TODO
 
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -1414,7 +1414,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     subtract
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1428,7 +1428,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
 
     subtract = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1445,7 +1445,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     def subtract():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -1460,7 +1460,7 @@ the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
     def subtract(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1542,7 +1542,7 @@ I add a failing test for multiplication in ``test_calculator.py``
 
     # TODO
 
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -1635,7 +1635,7 @@ Time for division. I add a new test to ``test_calculator.py``
   # TODO
   # test division
 
-the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -2032,7 +2032,7 @@ Since everything is green, I can write the program_ that makes the tests pass wi
 ----
 
 * I close ``test_calculator.py``
-* I delete all the text in ``calculator.py``, the terminal_ shows 4 failures
+* I delete all the text in ``calculator.py``, the terminal_ is your friend and shows 4 failures
 
   .. code-block:: shell
 
@@ -2066,7 +2066,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     subtract
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -2080,7 +2080,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     subtract = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -2095,7 +2095,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def subtract():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -2110,7 +2110,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def subtract(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers
 
   .. code-block:: python
 
@@ -2125,7 +2125,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def subtract(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: python
 
@@ -2142,7 +2142,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def subtract(first_input, second_input):
         return first_input - second_input
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -2163,7 +2163,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def multiply():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -2178,7 +2178,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def multiply(first_input, second_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2193,7 +2193,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def multiply(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: python
 
@@ -2208,7 +2208,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def multiply(first_input, second_input):
         return first_input * second_input
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -2229,7 +2229,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def divide(first_input, second_input):
         return first_input, second_input
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` with random numbers that look like this
 
   .. code-block:: python
 
@@ -2244,7 +2244,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def divide(first_input, second_input):
         return first_input / second_input
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -2291,7 +2291,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 

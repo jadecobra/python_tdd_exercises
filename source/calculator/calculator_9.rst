@@ -54,7 +54,7 @@ open the project
 
     cd calculator
 
-  the terminal_ shows I am in the ``calculator`` folder_
+  the terminal_ is your friend and shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 
@@ -93,7 +93,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -136,7 +136,7 @@ test_home_page
         def test_home_page(self):
             client = src.website.app.test_client()
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -175,7 +175,7 @@ test_home_page
     import src.website
     import unittest
 
-  the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+  the terminal_ is your friend and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -192,7 +192,7 @@ test_home_page
     # NameError
     # ModuleNotFoundError
 
-* then I add ``website.py`` to the ``src`` folder_ and the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+* then I add ``website.py`` to the ``src`` folder_ and the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -242,7 +242,7 @@ test_home_page
             response = client.get('/')
             self.assertEqual(response.status_code, 'BOOM!!!')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ test_home_page
             response = client.get('/')
             self.assertEqual(response.status_code, 200)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -314,7 +314,7 @@ test_home_page
     def home():
         return flask.render_template('index.html')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -362,7 +362,7 @@ how to view the website
 
     uv run flask --app src/website run --debug
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -399,7 +399,7 @@ how to view the website
                 '<h1>Calculator</h1>'
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -429,7 +429,7 @@ how to view the website
   - ``<></>`` are called tags, they are :ref:`enclosures`
   - ``<h1>HEADING</h1>`` tells the computer to make ``HEADING`` a heading
 
-* I go back to ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the test, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I go back to ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the test, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -500,7 +500,7 @@ I add a new test for doing calculations with the website
 
     # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -551,7 +551,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
   - ``flask.request.form.get(NAME)`` uses the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``NAME`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` when the user makes a request
   - ``<h2>SMALLER HEADING</h2>`` tells the computer to make ``SMALLER HEADING`` a heading that is smaller than ``h1`` headings
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -566,7 +566,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
     import calculator
     import flask
 
-  the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+  the terminal_ is your friend and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -605,7 +605,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
     import calculator
     import flask
 
-  the terminal_ shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+  the terminal_ is your friend and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -688,7 +688,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.data, 'BOOM!!!')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -708,7 +708,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
         first_input = float(first_input)
         second_input = flask.request.form.get('second_input')
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -733,7 +733,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
             f'= {result}</h2>'
         )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -797,7 +797,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
                 }
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -816,7 +816,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
                 fb'<h2>0.0 + 1.0 = 1.0</h2>'
             )
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -856,7 +856,7 @@ how to change a bytes object to a string
                 f'<h2>0.0 + 1.0 = 1.0</h2>'
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -907,7 +907,7 @@ how to change a bytes object to a string
                 }
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1056,7 +1056,7 @@ how to change a bytes object to a string
                         )
                     )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1235,7 +1235,7 @@ how to make a form
   -  ``action="/calculate"`` means the form will send the data to the ``calculate`` :ref:`function<what is a function?>` in ``website.py``
 
 * I go to the website and click refresh, there is no change
-* I click on ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the tests again, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+* I click on ``test_calculator_website.py`` and use :kbd:`ctrl+s` on the keyboard to run the tests again, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1503,7 +1503,7 @@ I add a new test
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` in ``short test summary info``
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` in ``short test summary info``
 
 .. code-block:: python
 
@@ -1544,7 +1544,7 @@ good
     @check_input
     def multiply(first_input, second_input):
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1963,7 +1963,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 
         def test_calculator_functions(self):
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1998,7 +1998,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
             return function(first_input, second_input)
         return wrapper
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2161,7 +2161,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 

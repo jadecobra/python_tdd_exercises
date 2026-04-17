@@ -183,7 +183,7 @@ requirements
 
         tree
 
-    * If it is not installed on the computer, the terminal_ shows
+    * If it is not installed on the computer, the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -191,7 +191,7 @@ requirements
 
       see :ref:`how to install tree` to install tree_
 
-    * If it is installed and there is nothing in the directory_, the terminal_ shows
+    * If it is installed and there is nothing in the directory_, the terminal_ is your friend and shows
 
 
       .. code-block:: python
@@ -200,7 +200,7 @@ requirements
 
         0 directories, 0 files
 
-    * If it is installed and there is something in the directory_, the terminal_ shows how they are related.
+    * If it is installed and there is something in the directory_, the terminal_ is your friend and shows how they are related.
 
   .. tab-item:: no WSL
     :sync: no_wsl
@@ -285,7 +285,7 @@ Click on the tab that says ``no WSL`` to see the commands or results if you have
 * ``dir`` or `Get-ChildItem`_ or ``ls`` for ``ls --all/-a``
 * `Remove-Item`_ for rm_
 
-when you type pwd_ or tree_, the terminal_ shows ``\`` between folder_ names, not ``/``. Click the ``no WSL`` tab for an example
+when you type pwd_ or tree_, the terminal_ is your friend and shows ``\`` between folder_ names, not ``/``. Click the ``no WSL`` tab for an example
 
 .. tab-set::
   :sync-group: os
@@ -347,7 +347,7 @@ I start with a check of where I am in the terminal_ because It is easier to go w
 
   pwd
 
-the terminal_ shows
+the terminal_ is your friend and shows
 
 .. tab-set::
   :sync-group: os
@@ -436,7 +436,7 @@ I use the `cd program`_ to change directories_
 
 `cd`_ means ``change directory``
 
-the terminal_ shows
+the terminal_ is your friend and shows
 
 .. tab-set::
   :sync-group: os
@@ -473,7 +473,7 @@ how to make a directory
     mkdir pumping_python
 
   - ``mkdir`` means ``make directory``
-  - the terminal_ shows
+  - the terminal_ is your friend and shows
 
     .. tab-set::
       :sync-group: os
@@ -503,7 +503,7 @@ how to make a directory
 
     cd pumping_python
 
-  the terminal_ shows I am in the ``pumping_python`` `folder (directory)`_
+  the terminal_ is your friend and shows I am in the ``pumping_python`` `folder (directory)`_
 
   .. tab-set::
     :sync-group: os
@@ -544,7 +544,7 @@ how to make a directory
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -574,7 +574,7 @@ how to make a directory
 
     mkdir doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -604,7 +604,7 @@ how to make a directory
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -619,7 +619,7 @@ how to make a directory
 
     pwd
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -664,7 +664,7 @@ how to see what is in a directory
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -679,7 +679,7 @@ how to see what is in a directory
 
           ls --all
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
           :emphasize-lines: 1
@@ -688,7 +688,7 @@ how to see what is in a directory
 
       .. attention::
 
-        * on MacOS_ the terminal_ shows
+        * on MacOS_ the terminal_ is your friend and shows
 
           .. code-block:: none
 
@@ -718,7 +718,7 @@ how to see what is in a directory
 
     cd .
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -736,7 +736,7 @@ how to see what is in a directory
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -763,7 +763,7 @@ how to look at directory relationships
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -776,7 +776,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -809,7 +809,7 @@ how to look at directory relationships
 
     cd jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -848,7 +848,7 @@ how to look at directory relationships
 
     ls
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -861,7 +861,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -897,7 +897,7 @@ how to look at directory relationships
 
     cd jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -912,7 +912,7 @@ how to look at directory relationships
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -948,7 +948,7 @@ how to look at directory relationships
 
     cd john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -987,7 +987,7 @@ how to look at directory relationships
 
     ls
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1000,7 +1000,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
     :emphasize-lines: 1, 3
@@ -1022,7 +1022,7 @@ how to look at directory relationships
 
     cd john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1037,7 +1037,7 @@ how to look at directory relationships
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1071,7 +1071,7 @@ how to look at directory relationships
 
     cd .a_hidden_folder_in_doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1096,7 +1096,7 @@ how to look at directory relationships
 
     ls
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -1117,7 +1117,7 @@ how to look at directory relationships
 
           ls -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
 
@@ -1143,7 +1143,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -1169,7 +1169,7 @@ how to look at directory relationships
 
           tree -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
           :emphasize-lines: 2
@@ -1204,7 +1204,7 @@ how to look at directory relationships
 
     cd .a_hidden_folder_in_doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1219,7 +1219,7 @@ how to look at directory relationships
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -1270,7 +1270,7 @@ how to look at directory relationships
 
     cd jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1298,7 +1298,7 @@ how to look at directory relationships
 
           ls -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
 
@@ -1318,7 +1318,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1335,7 +1335,7 @@ how to look at directory relationships
 
     cd mary
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1359,7 +1359,7 @@ how to look at directory relationships
 
     cd mary
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1376,7 +1376,7 @@ how to look at directory relationships
 
     cd jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1392,7 +1392,7 @@ how to look at directory relationships
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1407,7 +1407,7 @@ how to look at directory relationships
 
     cd .a_hidden_folder_in_jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1432,7 +1432,7 @@ how to look at directory relationships
 
     cd .a_hidden_folder_in_jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1445,7 +1445,7 @@ how to look at directory relationships
 
     cd jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1461,7 +1461,7 @@ how to look at directory relationships
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1476,7 +1476,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -1499,7 +1499,7 @@ how to look at directory relationships
 
           tree -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
           :emphasize-lines: 2
@@ -1532,7 +1532,7 @@ how to look at directory relationships
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1549,7 +1549,7 @@ how to look at directory relationships
 
     cd john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1579,7 +1579,7 @@ how to look at directory relationships
 
           ls -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
 
@@ -1599,7 +1599,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1616,7 +1616,7 @@ how to look at directory relationships
 
     cd lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1640,7 +1640,7 @@ how to look at directory relationships
 
     cd lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1657,7 +1657,7 @@ how to look at directory relationships
 
     cd john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1673,7 +1673,7 @@ how to look at directory relationships
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1688,7 +1688,7 @@ how to look at directory relationships
 
     cd .a_hidden_folder_in_john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1713,7 +1713,7 @@ how to look at directory relationships
 
     cd .a_hidden_folder_in_john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1726,7 +1726,7 @@ how to look at directory relationships
 
     cd john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1742,7 +1742,7 @@ how to look at directory relationships
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1757,7 +1757,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -1780,7 +1780,7 @@ how to look at directory relationships
 
           tree -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
           :emphasize-lines: 2
@@ -1813,7 +1813,7 @@ how to look at directory relationships
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1828,7 +1828,7 @@ how to look at directory relationships
 
     tree
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -1854,7 +1854,7 @@ how to look at directory relationships
 
           tree -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
           :emphasize-lines: 2, 4, 7
@@ -1943,7 +1943,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         ls
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -1956,7 +1956,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         ls -a
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -1994,7 +1994,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         ls
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -2015,7 +2015,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
     cd jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2052,7 +2052,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           ls -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
 
@@ -2091,7 +2091,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           ls
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
 
@@ -2111,7 +2111,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2128,7 +2128,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
     cd john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2165,7 +2165,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           ls -a
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
 
@@ -2204,7 +2204,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           ls
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: python
 
@@ -2224,7 +2224,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2247,7 +2247,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         tree
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 2, 4, 7
@@ -2270,7 +2270,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         tree -a
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 3, 6, 11
@@ -2300,7 +2300,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         tree
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 2, 4, 7
@@ -2321,7 +2321,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         tree /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 2, 7, 13
@@ -2359,7 +2359,7 @@ how to use directory relationships
 
     cd mary
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -2378,7 +2378,7 @@ how to use directory relationships
 
           tree -d
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
           :emphasize-text: jane mary
@@ -2407,7 +2407,7 @@ how to use directory relationships
 
           tree
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
 
@@ -2431,7 +2431,7 @@ how to use directory relationships
 
     cd jane/mary
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2446,7 +2446,7 @@ how to use directory relationships
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2462,7 +2462,7 @@ how to use directory relationships
 
     cd ../..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2484,7 +2484,7 @@ how to use directory relationships
 
     cd lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os
@@ -2503,7 +2503,7 @@ how to use directory relationships
 
           tree -d
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
           :emphasize-text: john lil
@@ -2532,7 +2532,7 @@ how to use directory relationships
 
           tree
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
 
@@ -2556,7 +2556,7 @@ how to use directory relationships
 
     cd john/lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2571,7 +2571,7 @@ how to use directory relationships
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2587,7 +2587,7 @@ how to use directory relationships
 
     cd ../..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2627,7 +2627,7 @@ how to use touch with directory relationships
 
         tree
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
 
@@ -2649,7 +2649,7 @@ how to use touch with directory relationships
 
         tree /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
 
@@ -2678,7 +2678,7 @@ how to use touch with directory relationships
 
     cd jane/mary
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2753,7 +2753,7 @@ how to use touch with directory relationships
 
         ls -a
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -2773,7 +2773,7 @@ how to use touch with directory relationships
 
       .. TIP:: I can also use ``dir``
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -2790,7 +2790,7 @@ how to use touch with directory relationships
 
     cd ../..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2807,7 +2807,7 @@ how to use touch with directory relationships
 
     cd john/lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2872,7 +2872,7 @@ how to use touch with directory relationships
 
         ls -a
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -2892,7 +2892,7 @@ how to use touch with directory relationships
 
       .. TIP:: I can also use ``dir``
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -2909,7 +2909,7 @@ how to use touch with directory relationships
 
     cd ../..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -2930,7 +2930,7 @@ how to use touch with directory relationships
 
         tree
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 6, 10
@@ -2955,7 +2955,7 @@ how to use touch with directory relationships
 
         tree -a
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 10-11, 18-19
@@ -2991,7 +2991,7 @@ how to use touch with directory relationships
 
         tree /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 12-13, 15, 22-23, 25
@@ -3118,7 +3118,7 @@ how to use touch with directory relationships
 
         tree
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 5, 8, 11, 14
@@ -3148,7 +3148,7 @@ how to use touch with directory relationships
 
         tree /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 9, 15, 21, 27
@@ -3345,7 +3345,7 @@ mv_ means move, it takes two arguments
 
         tree
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 3, 9, 13, 17
@@ -3379,7 +3379,7 @@ mv_ means move, it takes two arguments
 
         tree /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 3, 16, 23, 30
@@ -3554,7 +3554,7 @@ mv_ means move, it takes two arguments
 
         tree
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 4, 7, 12, 20
@@ -3592,7 +3592,7 @@ mv_ means move, it takes two arguments
 
         tree /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 4, 11, 19, 33
@@ -3752,7 +3752,7 @@ mv_ means move, it takes two arguments
 
         tree ../..
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 1, 3, 8, 19, 25
@@ -3794,7 +3794,7 @@ mv_ means move, it takes two arguments
 
         tree ../.. /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 3, 12, 29, 38
@@ -3848,7 +3848,7 @@ mv_ means move, it takes two arguments
 
     cd ../../john/lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -3966,7 +3966,7 @@ mv_ means move, it takes two arguments
 
         tree ../../../doe
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
         :language: shell
@@ -3980,7 +3980,7 @@ mv_ means move, it takes two arguments
 
         tree ../../../doe /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
         :language: none
@@ -4009,7 +4009,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
     cd ../../..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4045,7 +4045,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
           dir doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4082,7 +4082,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
         ls doe/jane
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4118,7 +4118,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
         ls doe/jane/mary
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4160,7 +4160,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
         ls ../../john
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4196,7 +4196,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
         ls ../../john/lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4231,7 +4231,7 @@ how to use tree with directory relationships
 
         tree ../../john/lil
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 1
@@ -4253,7 +4253,7 @@ how to use tree with directory relationships
 
         tree ../../john/lil /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: none
         :emphasize-lines: 1
@@ -4281,7 +4281,7 @@ how to use tree with directory relationships
 
         tree ../../john
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 1
@@ -4309,7 +4309,7 @@ how to use tree with directory relationships
 
         tree /F ../../john
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: none
         :emphasize-lines: 1
@@ -4340,7 +4340,7 @@ how to use tree with directory relationships
 
     cd ../../john/lil
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4369,7 +4369,7 @@ how to use tree with directory relationships
 
         ls ../../jane/mary
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4396,7 +4396,7 @@ how to use tree with directory relationships
 
         tree ../../jane/mary
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 1
@@ -4418,7 +4418,7 @@ how to use tree with directory relationships
 
         tree ../../jane/mary /F
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: none
         :emphasize-lines: 1
@@ -4446,7 +4446,7 @@ how to use tree with directory relationships
 
         tree ../../jane
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
         :emphasize-lines: 1
@@ -4474,7 +4474,7 @@ how to use tree with directory relationships
 
         tree /F ../../jane
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: none
         :emphasize-lines: 1
@@ -4505,7 +4505,7 @@ how to use tree with directory relationships
 
     cd ../../..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -4524,7 +4524,7 @@ how to use tree with directory relationships
 
         tree doe -ad
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: shell
 
@@ -4549,7 +4549,7 @@ how to use tree with directory relationships
 
         tree doe
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: none
 
@@ -4577,7 +4577,7 @@ how to use tree with directory relationships
 
         tree -a doe
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTree
         :language: shell
@@ -4588,7 +4588,7 @@ how to use tree with directory relationships
 
           tree -af doe
 
-        the terminal_ shows
+        the terminal_ is your friend and shows
 
         .. code-block:: shell
 
@@ -4643,7 +4643,7 @@ how to use tree with directory relationships
 
         tree /F doe
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. literalinclude:: ../code/bonus/learnDirectoryRelationshipsTreeNoWsl
         :language: none
@@ -4676,7 +4676,7 @@ how to remove a directory and all the things in it
 
         rm doe
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: python
 
@@ -4706,7 +4706,7 @@ how to remove a directory and all the things in it
 
         Remove-Item doe
 
-      the terminal_ shows
+      the terminal_ is your friend and shows
 
       .. code-block:: none
 
@@ -4738,7 +4738,7 @@ how to remove a directory and all the things in it
 
     cd doe
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. tab-set::
     :sync-group: os

@@ -86,7 +86,7 @@ start the project
 
     cd assertion_error
 
-  the terminal_ shows I am in the ``assertion_error`` folder_
+  the terminal_ is your friend and shows I am in the ``assertion_error`` folder_
 
   .. code-block:: python
 
@@ -191,7 +191,7 @@ start the project
 
     uv init
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -223,7 +223,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -327,7 +327,7 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
             assert 1 + 1 == 11
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -383,7 +383,7 @@ the test passes
 
             assert '1' + '1' == '2'
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 3-4
@@ -441,7 +441,7 @@ the test passes
 
             assert 'I am' + ' a programmer' == '11'
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 3-4
@@ -530,7 +530,7 @@ For example,
 
     # Exceptions seen
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -582,7 +582,7 @@ I add a failing line with the `assertIsNotNone method`_ which checks if the thin
           assert None is None
           self.assertIsNotNone(None)
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>` with a clearer message
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` with a clearer message
 
 .. code-block:: python
 
@@ -639,7 +639,7 @@ how to test if something is None
 
     # NOTES
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -669,7 +669,7 @@ how to test if something is None
             assert False is not None
             self.assertIsNone(False)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -724,7 +724,7 @@ how to test if something is None
 
     # NOTES
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -750,7 +750,7 @@ how to test if something is None
             assert True is not None
             self.assertIsNone(True)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -836,7 +836,7 @@ I add a failing test
 
   # NOTES
 
-the terminal_ shows AssertionError_
+the terminal_ is your friend and shows AssertionError_
 
 .. code-block:: python
 
@@ -885,7 +885,7 @@ how to test if something is False
             assert True is not False
             self.assertFalse(True)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -956,7 +956,7 @@ I add a failing test
 
   # NOTES
 
-the terminal_ shows AssertionError_
+the terminal_ is your friend and shows AssertionError_
 
 .. code-block:: python
 
@@ -1005,7 +1005,7 @@ how to test if something is True
             assert False is not True
             self.assertTrue(False)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1086,7 +1086,7 @@ I add a new failing test
 
   # NOTES
 
-the terminal_ shows AssertionError_
+the terminal_ is your friend and shows AssertionError_
 
 .. code-block:: python
 
@@ -1157,7 +1157,7 @@ There are `assert methods`_ to check if 2 things are equal or not.
             assert None == None
             self.assertNotEqual(None, None)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1214,7 +1214,7 @@ how to test if two things are Equal
 
             assert False == None
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1243,7 +1243,7 @@ how to test if two things are Equal
             assert False != None
             self.assertEqual(False, None)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1302,7 +1302,7 @@ how to test if two things are Equal
 
             assert True == None
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1334,7 +1334,7 @@ how to test if two things are Equal
             assert True != None
             self.assertEqual(True, None)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1395,7 +1395,7 @@ how to test if two things are Equal
 
             assert True == False
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1430,7 +1430,7 @@ how to test if two things are Equal
             assert True != False
             self.assertEqual(True, False)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1492,7 +1492,7 @@ how to test if two things are Equal
     # True is True
     # False is not True
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1517,7 +1517,7 @@ how to test if two things are Equal
             assert False == False
             self.assertNotEqual(False, False)
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1582,7 +1582,7 @@ how to test if two things are Equal
     # True is True
     # False is not True
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1615,7 +1615,7 @@ how to test if two things are Equal
     # True is True
     # False is not True
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1673,7 +1673,7 @@ how to test if two things are Equal
     # True is True
     # False is not True and not equal to True
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1706,7 +1706,7 @@ how to test if two things are Equal
     # True is True
     # False is not True and not equal to True
 
-  the terminal_ shows AssertionError_
+  the terminal_ is your friend and shows AssertionError_
 
   .. code-block:: python
 
@@ -1783,7 +1783,7 @@ how to test if two things are Equal
 
         def test_assertion_error_w_none(self):
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1815,7 +1815,7 @@ how to test if two things are Equal
 
             assert 'I am' + ' a programmer' == 'I am a programmer'
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 
@@ -1848,7 +1848,7 @@ how to test if two things are Equal
             assert 'I am' + ' a programmer' == 'I am a programmer'
             self.assertEqual('I am'+' a programmer', '11')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1892,7 +1892,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 

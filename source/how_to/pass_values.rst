@@ -70,7 +70,7 @@ start the project
 
     cd telephone
 
-  the terminal_ shows I am in the ``telephone`` folder_
+  the terminal_ is your friend and shows I am in the ``telephone`` folder_
 
   .. code-block:: shell
 
@@ -202,7 +202,7 @@ start the project
 
     uv init
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -236,7 +236,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -315,7 +315,7 @@ I change ``test_failure`` to ``test_passing_a_string``
 
   # Exceptions seen
 
-the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: shell
 
@@ -354,7 +354,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     class TestTelephone(unittest.TestCase):
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -382,7 +382,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     text
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -398,7 +398,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     text = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -428,7 +428,7 @@ there is no definition for ``src`` in ``test_telephone.py``
     def text():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -445,7 +445,7 @@ there is no definition for ``src`` in ``test_telephone.py``
     def text(the_input):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -495,7 +495,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -512,7 +512,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
     def text(the_input):
         return 'I got: yes'
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -585,7 +585,7 @@ I add a failing test in ``test_telephone.py`` to see what happens when I pass a 
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -639,7 +639,7 @@ the test passes
                 "I got: <class 'object'>"
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -705,7 +705,7 @@ I add a new failing test for :ref:`None<what is None?>` (it is the simplest :ref
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -772,7 +772,7 @@ I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assert
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -817,7 +817,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                 "I got: 'False'"
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -884,7 +884,7 @@ I add a test for an integer_ (a whole number)
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -951,7 +951,7 @@ I add a test for a float_ (binary floating point decimal numbers)
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1018,7 +1018,7 @@ I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1083,7 +1083,7 @@ I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), sepa
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1151,7 +1151,7 @@ I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly br
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1184,7 +1184,7 @@ I change the expectation
 
   # Exceptions seen
 
-the terminal_ shows all tests are passing.
+the terminal_ is your friend and shows all tests are passing.
 
 ----
 
@@ -1203,7 +1203,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 ----
 
 * I close ``test_telephone.py``
-* then delete all the text in ``telephone.py``, the terminal_ shows 9 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* then delete all the text in ``telephone.py``, the terminal_ is your friend and shows 9 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1224,7 +1224,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     text
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -1237,7 +1237,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     text = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1251,7 +1251,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     def text():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1266,7 +1266,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     def text(value):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1281,7 +1281,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     def text(value):
         return 'I got: None'
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1341,7 +1341,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 

@@ -62,7 +62,7 @@ start the project
 
     cd attribute_error
 
-  the terminal_ shows I am in the ``attribute_error`` folder_
+  the terminal_ is your friend and shows I am in the ``attribute_error`` folder_
 
   .. code-block:: shell
 
@@ -194,7 +194,7 @@ start the project
 
     uv init
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -228,7 +228,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -353,7 +353,7 @@ test_attribute_error_w_variables
 
     variable_00
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -403,7 +403,7 @@ test_attribute_error_w_variables
             src.attribute_error.variable_00
             src.attribute_error.variable_01
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -418,7 +418,7 @@ test_attribute_error_w_variables
     variable_00 = None
     variable_01
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -446,7 +446,7 @@ test_attribute_error_w_variables
             src.attribute_error.variable_01
             src.attribute_error.variable_02
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
     :force:
@@ -478,7 +478,7 @@ test_attribute_error_w_variables
             src.attribute_error.variable_02
             src.attribute_error.variable_03
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -535,7 +535,7 @@ I add a new test to ``test_attribute_error.py``
 
   # Exceptions seen
 
-the terminal_ shows AttributeError_
+the terminal_ is your friend and shows AttributeError_
 
 .. code-block:: shell
 
@@ -563,7 +563,7 @@ the terminal_ shows AttributeError_
 
     function_00 = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -619,7 +619,7 @@ the terminal_ shows AttributeError_
             src.attribute_error.function_00()
             src.attribute_error.function_01()
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -651,7 +651,7 @@ the terminal_ shows AttributeError_
             src.attribute_error.function_01()
             src.attribute_error.function_02()
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -691,7 +691,7 @@ the terminal_ shows AttributeError_
 
     # Exceptions seen
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -761,7 +761,7 @@ I add a new test to ``test_attribute_error.py``
 
   # Exceptions seen
 
-the terminal_ shows AttributeError_
+the terminal_ is your friend and shows AttributeError_
 
 .. code-block:: shell
 
@@ -788,7 +788,7 @@ the terminal_ shows AttributeError_
     def AClass():
         return None
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -818,7 +818,7 @@ the terminal_ shows AttributeError_
         attribute_00 = None
         return None
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -876,7 +876,7 @@ the terminal_ shows AttributeError_
 
     # Exceptions seen
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -906,7 +906,7 @@ the terminal_ shows AttributeError_
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -941,7 +941,7 @@ the terminal_ shows AttributeError_
 
     # Exceptions seen
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -1007,7 +1007,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
     # Exceptions seen
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -1036,7 +1036,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
         method_00 = None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1082,7 +1082,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
             src.attribute_error.AClass.method_00()
             src.attribute_error.AClass.method_01()
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -1113,7 +1113,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
             src.attribute_error.AClass.method_01()
             src.attribute_error.AClass.method_02()
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -1151,7 +1151,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
     # Exceptions seen
 
-  the terminal_ shows AttributeError_
+  the terminal_ is your friend and shows AttributeError_
 
   .. code-block:: shell
 
@@ -1208,7 +1208,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 

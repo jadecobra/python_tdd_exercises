@@ -36,7 +36,7 @@ continue the project
 
     pwd
 
-  if the terminal_ shows anything other than
+  if the terminal_ is your friend and shows anything other than
 
   .. code-block:: shell
 
@@ -51,7 +51,7 @@ continue the project
 
     cd truth_table
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -65,7 +65,7 @@ continue the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -85,7 +85,7 @@ continue the project
 *********************************************************************************
 
 * I open ``truth_table.py`` from the ``src`` folder_
-* I delete everything in ``truth_table.py``, the terminal_ shows 20 failures, I start with the last one
+* I delete everything in ``truth_table.py``, the terminal_ is your friend and shows 20 failures, I start with the last one
 
   .. code-block:: shell
 
@@ -105,7 +105,7 @@ continue the project
 
     logical_negation
 
-  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -119,7 +119,7 @@ continue the project
 
     logical_negation = None
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -136,7 +136,7 @@ continue the project
     def logical_negation():
         return None
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -151,7 +151,7 @@ continue the project
     def logical_negation(something):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -185,7 +185,7 @@ continue the project
     def logical_negation(something):
         return False
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -205,7 +205,7 @@ continue the project
     def logical_negation(something):
         return something
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ continue the project
     def logical_negation(something):
         return not something
 
-  1 test passes with 19 failures to go, progress! The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  1 test passes with 19 failures to go, progress! the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -245,7 +245,7 @@ continue the project
     def logical_identity():
         return None
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -260,7 +260,7 @@ continue the project
     def logical_identity(something):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -275,7 +275,7 @@ continue the project
     def logical_identity(something):
         return True
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -292,7 +292,7 @@ continue the project
     def logical_identity(something):
         return False
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -312,7 +312,7 @@ continue the project
     def logical_identity(something):
         return something
 
-  18 failed, 2 passed, more progress! The terminal_ shows :ref:`AttributeError<what causes ATtributeError?>`
+  18 failed, 2 passed, more progress! the terminal_ is your friend and shows :ref:`AttributeError<what causes ATtributeError?>`
 
   .. code-block:: python
 
@@ -331,7 +331,7 @@ continue the project
     def logical_true():
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -346,7 +346,7 @@ continue the project
     def logical_true():
         return True
 
-  17 failed, 3 passed. That was simple. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  17 failed, 3 passed. That was simple. the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -365,7 +365,7 @@ continue the project
     def logical_false():
         return None
 
-  16 failed, 4 passed, simple again. I am getting it. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  16 failed, 4 passed, simple again. I am getting it. the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -384,7 +384,7 @@ continue the project
     def tautology():
         return None
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -399,7 +399,7 @@ continue the project
     def tautology(first, second):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ continue the project
     def tautology(first, second):
         return True
 
-  15 failed, 5 passed, Ayy! the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  15 failed, 5 passed, Ayy! the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -433,7 +433,7 @@ continue the project
     def project_second():
         return None
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -448,7 +448,7 @@ continue the project
     def project_second(first, second):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -463,7 +463,7 @@ continue the project
     def project_second(first, second):
         return False
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -480,7 +480,7 @@ continue the project
     def project_second(first, second):
         return True
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -500,7 +500,7 @@ continue the project
     def project_second(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -515,7 +515,7 @@ continue the project
     def project_second(first, second):
         return second
 
-  14 failed, 6 passed. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  14 failed, 6 passed. the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -534,7 +534,7 @@ continue the project
     def project_first():
         return None
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -551,7 +551,7 @@ continue the project
     def project_first(first, second):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -566,7 +566,7 @@ continue the project
     def project_first(first, second):
         return True
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -583,7 +583,7 @@ continue the project
     def project_first(first, second):
         return False
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -603,7 +603,7 @@ continue the project
     def project_first(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -618,7 +618,7 @@ continue the project
     def project_first(first, second):
         return first
 
-  13 failed, 7 passed. The terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  13 failed, 7 passed. the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -637,7 +637,7 @@ continue the project
     def negate_second(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -653,7 +653,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -670,7 +670,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -691,7 +691,7 @@ continue the project
     def negate_first(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -707,7 +707,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -724,7 +724,7 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -745,7 +745,7 @@ continue the project
     def material_non_implication(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -761,7 +761,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -778,7 +778,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -796,7 +796,7 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -818,7 +818,7 @@ continue the project
     def material_implication(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -834,7 +834,7 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -854,7 +854,7 @@ continue the project
     def logical_nor(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -870,7 +870,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -887,7 +887,7 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -905,7 +905,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -927,7 +927,7 @@ continue the project
     def logical_nand(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -943,7 +943,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -963,7 +963,7 @@ continue the project
     def logical_equality(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -979,7 +979,7 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -996,7 +996,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1017,7 +1017,7 @@ continue the project
     def logical_disjunction(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1033,7 +1033,7 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1053,7 +1053,7 @@ continue the project
     def logical_conjunction(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1069,7 +1069,7 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1086,7 +1086,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1104,7 +1104,7 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1126,7 +1126,7 @@ continue the project
     def exclusive_disjunction(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1142,7 +1142,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1159,7 +1159,7 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1180,7 +1180,7 @@ continue the project
     def converse_non_implication(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1196,7 +1196,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1213,7 +1213,7 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1231,7 +1231,7 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1253,7 +1253,7 @@ continue the project
     def converse_implication(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1269,7 +1269,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1289,7 +1289,7 @@ continue the project
     def contradiction(first, second):
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1305,7 +1305,7 @@ continue the project
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1322,7 +1322,7 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1340,7 +1340,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1359,7 +1359,7 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -1467,7 +1467,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return (not not first) (not and) (not second)
         return not (not first and second)
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -1668,7 +1668,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -1921,7 +1921,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -2085,7 +2085,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             (not first and second)
         )
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -2125,7 +2125,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             (not (not first and second))
         )
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -2177,7 +2177,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             ((not not first) (not and) (not second))
         )
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
     :lineno-start: 65
@@ -2344,7 +2344,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return (not first) (not or) (not second)
         return not first and not second
 
-  the terminal_ shows `SyntaxError`_
+  the terminal_ is your friend and shows `SyntaxError`_
 
   .. code-block:: python
 
@@ -2424,7 +2424,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return (not first) (not and) (not not second)
         return not (first and not second)
 
-  the terminal_ shows `SyntaxError`_
+  the terminal_ is your friend and shows `SyntaxError`_
 
   .. code-block:: python
 
@@ -2709,7 +2709,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 

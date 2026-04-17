@@ -74,7 +74,7 @@ start the project
 
     cd traffic_light
 
-  the terminal_ shows I am in the ``traffic_light`` folder_
+  the terminal_ is your friend and shows I am in the ``traffic_light`` folder_
 
   .. code-block:: shell
 
@@ -221,7 +221,7 @@ start the project
 
     uv init
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -255,7 +255,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -340,7 +340,7 @@ current light     timer done      show
     # Exceptions seen
     # AssertionError
 
-the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 .. code-block:: python
 
@@ -377,7 +377,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
     class TestTrafficLight(unittest.TestCase):
 
-  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -406,7 +406,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
     def show():
         return None
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -434,7 +434,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
     def show(current_light):
         return None
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -449,7 +449,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
     def show(current_light, timer_done):
         return None
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -505,7 +505,7 @@ the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -581,7 +581,7 @@ current light     timer done      show
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -657,7 +657,7 @@ The ``show`` :ref:`function<what is a function?>` returns
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -743,7 +743,7 @@ current light     timer done      show
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -827,7 +827,7 @@ The ``show`` :ref:`function<what is a function?>` returns
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1049,7 +1049,7 @@ current light     timer done      walk button     show
 
       def test_traffic_light_when_yellow(self):
 
-the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -1071,7 +1071,7 @@ the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
     def show(current_light, timer_done, walk_button):
 
-  the terminal_ shows 3 failures with :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows 3 failures with :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1115,7 +1115,7 @@ the terminal_ shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, my_expectation)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1252,7 +1252,7 @@ the terminal_ shows :ref:`TypeError<what causes TypeError?>`
 
             my_expectation = 'BOOM'
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1527,7 +1527,7 @@ the terminal_ shows :ref:`TypeError<what causes TypeError?>`
             walk_button=False,
         ):
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is your friend and shows SyntaxError_
 
   .. code-block:: python
 
@@ -2846,7 +2846,7 @@ I change the expectation of the first :ref:`assertion<what is an assertion?>` in
                 (RED, 'WALK')
             )
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -2886,7 +2886,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
         return next_light, 'WALK'
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2904,7 +2904,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
         return next_light
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3035,7 +3035,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                 (GREEN, 'NO WALK')
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3066,7 +3066,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                 (GREEN, 'NO WALK')
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3168,7 +3168,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                 (RED, 'WALK')
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -3270,7 +3270,7 @@ the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
                 (RED, 'WALK')
             )
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 

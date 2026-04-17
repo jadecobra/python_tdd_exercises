@@ -37,7 +37,7 @@ open the project
 
     cd calculator
 
-  the terminal_ shows I am in the ``calculator`` folder_
+  the terminal_ is your friend and shows I am in the ``calculator`` folder_
 
   .. code-block:: python
 
@@ -51,7 +51,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -107,7 +107,7 @@ I add a new failing test to show that the :ref:`calculator<how to make a calcula
 
   # Exceptions seen
 
-the terminal_ shows TypeError_
+the terminal_ is your friend and shows TypeError_
 
 .. code-block:: python
 
@@ -152,7 +152,7 @@ the test passes
                 src.calculator.add(None, None)
             src.calculator.divide(None, None)
 
-  the terminal_ shows TypeError_
+  the terminal_ is your friend and shows TypeError_
 
   .. code-block:: python
 
@@ -181,7 +181,7 @@ the test passes
                 src.calculator.divide(None, None)
             src.calculator.multiply(None, None)
 
-  the terminal_ shows TypeError_
+  the terminal_ is your friend and shows TypeError_
 
   .. code-block:: python
 
@@ -210,7 +210,7 @@ the test passes
                 src.calculator.multiply(None, None)
             src.calculator.subtract(None, None)
 
-  the terminal_ shows TypeError_
+  the terminal_ is your friend and shows TypeError_
 
   .. code-block:: python
 
@@ -270,7 +270,7 @@ I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -312,7 +312,7 @@ the test passes
             self.assertEqual(src.calculator.add('1', '1'), '11')
             self.assertEqual(src.calculator.divide('1', '1'), '11')
 
-  the terminal_ shows TypeError_
+  the terminal_ is your friend and shows TypeError_
 
   .. code-block:: python
 
@@ -341,7 +341,7 @@ the test passes
                 src.calculator.divide('1', '1')
             src.calculator.multiply('1', '1')
 
-  the terminal_ shows TypeError_
+  the terminal_ is your friend and shows TypeError_
 
   .. code-block:: none
 
@@ -370,7 +370,7 @@ the test passes
                 src.calculator.multiply('1', '1')
             src.calculator.subtract('1', '1')
 
-  the terminal_ shows TypeError_
+  the terminal_ is your friend and shows TypeError_
 
   .. code-block:: python
 
@@ -413,7 +413,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
             with self.assertRaises(TypeError):
                 src.calculator.divide('1', '1')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -505,7 +505,7 @@ I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addit
           with self.assertRaises(TypeError):
               src.calculator.subtract(None, None)
 
-the terminal_ shows TypeError_
+the terminal_ is your friend and shows TypeError_
 
 .. code-block:: python
 
@@ -565,7 +565,7 @@ the test passes
             )
             with self.assertRaises(TypeError):
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -585,7 +585,7 @@ the test passes
         except TypeError:
             return 'brmph?! Numbers only. Try again...'
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -633,7 +633,7 @@ the test passes
 
       def test_calculator_raises_type_error_w_strings(self):
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -674,7 +674,7 @@ the test passes
 
         def test_calculator_raises_type_error_w_strings(self):
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -963,7 +963,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             )
             with self.assertRaises(TypeError):
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1009,7 +1009,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             )
             with self.assertRaises(TypeError):
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1056,7 +1056,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             with self.assertRaises(TypeError):
                 src.calculator.subtract('1', '1')
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: none
 
@@ -1106,7 +1106,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
     # Exceptions seen
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1793,7 +1793,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: python
 

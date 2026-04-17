@@ -170,7 +170,7 @@ start the project
 
       ./makePythonTdd.ps1
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 10
@@ -228,7 +228,7 @@ I change ``test_failure`` to ``test_making_a_list``
       def test_making_a_list(self):
           self.assertEqual(list(), None)
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -269,7 +269,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
             self.assertEqual(list(), [])
             self.assertEqual(list(0), [])
 
-  the terminal_ shows :ref:`TypeError`
+  the terminal_ is your friend and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -300,7 +300,7 @@ An :ref:`iterable<what is an iterable?>` is an :ref:`object<what is a class?>` t
             self.assertEqual(list(), [])
             self.assertEqual(list((0, 1, 2, 'n')), [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -356,7 +356,7 @@ I add a failing test
               []
           )
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -391,7 +391,7 @@ there is also a note on how to see the full difference between ``dir(list)`` and
                 []
             )
 
-  the terminal_ shows a long list_ of items. I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) them from the terminal_ then use `find and replace`_ to remove the extra characters ``E`` and  ``-``
+  the terminal_ is your friend and shows a long list_ of items. I copy (:kbd:`ctrl/command+c`) and paste (:kbd:`ctrl/command+v`) them from the terminal_ then use `find and replace`_ to remove the extra characters ``E`` and  ``-``
 
   .. note:: results can be different because of the Python_ version
 
@@ -512,7 +512,7 @@ I add a test for the `append method`_
 
     'append',
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -553,7 +553,7 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
             self.assertIsNone(a_list.append(0))
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -579,7 +579,7 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
 
             self.assertIsNone(a_list.append('n+1'))
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -667,7 +667,7 @@ I add an :ref:`assertion<what is an assertion?>` to see what clear_ did to the l
           self.assertIsNone(a_list.clear())
           self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -761,7 +761,7 @@ I add another test
 
   'copy',
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -786,7 +786,7 @@ the :ref:`method<what is a function?>` returns a copy of the list_
             a_list = [0, 1, 2, 'n']
             self.assertIsNone(a_list.copy(), [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -871,7 +871,7 @@ I add a test for the next :ref:`method<what is a function?>`
 
   'count',
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -887,7 +887,7 @@ I add a value to the call
           a_list = [0, 1, 2, 'n']
           self.assertIsNone(a_list.count(0))
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -909,7 +909,7 @@ I add the value
 
           self.assertIsNone(a_list.count(0), 1)
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -944,7 +944,7 @@ the test passes
             self.assertEqual(a_list.count(0), 1)
             self.assertEqual(a_list.count(1), 1)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -969,7 +969,7 @@ the test passes
             self.assertEqual(a_list.count(1), 3)
             self.assertEqual(a_list.count('not in list'), 3)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1047,7 +1047,7 @@ time for another test
 
   'extend',
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -1069,7 +1069,7 @@ I pass a value to the call
 
           self.assertIsNone(a_list.extend(0))
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -1102,7 +1102,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
             self.assertIsNone(a_list.extend((0, 1)))
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1129,7 +1129,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
             self.assertIsNone(a_list.extend((2, 1, 0)))
             self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1202,7 +1202,7 @@ I add a test for the `index method`_
 
   'index',
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -1226,7 +1226,7 @@ I add a value to the call
           a_list = [0, 1, 2, 'n']
           self.assertIsNone(a_list.index(0))
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1240,7 +1240,7 @@ I add the expectation
 
           self.assertIsNone(a_list.index(0), 0)
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1276,7 +1276,7 @@ the test passes
             a_list = ['1st', '2nd', '3rd', '...last']
             self.assertEqual(a_list.index(0), 0)
 
-  the terminal_ shows ValueError_
+  the terminal_ is your friend and shows ValueError_
 
   .. code-block:: shell
 
@@ -1305,7 +1305,7 @@ the test passes
             a_list = ['1st', '2nd', '3rd', '...last']
             a_list.index('not in list')
 
-  the terminal_ shows ValueError_
+  the terminal_ is your friend and shows ValueError_
 
   .. code-block:: shell
 
@@ -1338,7 +1338,7 @@ the test passes
             with self.assertRaises(ValueError):
                 a_list.index('not in list')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1365,7 +1365,7 @@ the test passes
             self.assertEqual(a_list.index('1st'), 0)
             self.assertEqual(a_list.index('3rd'), 0)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1393,7 +1393,7 @@ the test passes
           with self.assertRaises(ValueError):
               a_list.index('not in list')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1418,7 +1418,7 @@ the test passes
             self.assertEqual(a_list.index('2nd'), 1)
             self.assertEqual(a_list.index('...last'), 1)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1454,7 +1454,7 @@ the test passes
             self.assertEqual(a_list.index('...last'), 3)
             self.assertEqual(a_list.index('1st'), 4)
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1567,7 +1567,7 @@ I add a test for the next :ref:`method<what is a function?>`
 
   'insert',
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -1610,7 +1610,7 @@ the test passes. What did the `insert method`_ do to the list_?
             self.assertIsNone(a_list.insert(0, 1))
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1644,7 +1644,7 @@ the test passes. What did the `insert method`_ do to the list_?
             self.assertIsNone(a_list.insert(0, -1))
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1680,7 +1680,7 @@ the test passes. What did the `insert method`_ do to the list_?
             self.assertIsNone(a_list.insert(3, 1.5))
             self.assertEqual(a_list, [-1, 0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1756,7 +1756,7 @@ I add a new test
 
   'pop',
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1780,7 +1780,7 @@ I add the expectation
 
           self.assertIsNone(a_list.pop(), 'n')
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -1815,7 +1815,7 @@ the test passes
             self.assertEqual(a_list.pop(), 'n')
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1840,7 +1840,7 @@ the test passes
             self.assertEqual(a_list, [0, 1, 2])
             self.assertEqual(a_list.pop(), 'n')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1865,7 +1865,7 @@ the test passes
             self.assertEqual(a_list.pop(), 2)
             self.assertEqual(a_list, [0, 1, 2])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1939,7 +1939,7 @@ time for the next :ref:`method<what is a function?>`
 
   'remove',
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -1980,7 +1980,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
             self.assertIsNone(a_list.remove(0))
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2009,7 +2009,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
             self.assertIsNone(a_list.remove(0))
             self.assertEqual(a_list, [1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2034,7 +2034,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
             self.assertEqual(a_list, [1, 0, 2, 0, 'n'])
             self.assertIsNone(a_list.remove('not in list'))
 
-  the terminal_ shows ValueError_
+  the terminal_ is your friend and shows ValueError_
 
   .. code-block:: shell
 
@@ -2128,7 +2128,7 @@ test_reverse_a_list
             self.assertIsNone(a_list.reverse())
             self.assertEqual(a_list, [0, 1, 2, 'n'])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2220,7 +2220,7 @@ I add a test for the last :ref:`method<what is a function?>` in the TODO list
 
   'sort'
 
-the terminal_ shows :ref:`TypeError`
+the terminal_ is your friend and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -2307,7 +2307,7 @@ the test passes
             self.assertIsNone(a_list.sort())
             self.assertEqual(a_list, [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2335,7 +2335,7 @@ the test passes
             self.assertIsNone(a_list.sort())
             self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2416,7 +2416,7 @@ I add a failing test
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -2459,7 +2459,7 @@ the test passes
             self.assertEqual(a_list[0], '1st')
             self.assertEqual(a_list[a_list.index('1st')], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2487,7 +2487,7 @@ the test passes
             self.assertEqual(a_list[a_list.index('1st')], '1st')
             self.assertEqual(a_list[-4], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2512,7 +2512,7 @@ the test passes
             self.assertEqual(a_list[-4], '1st')
             self.assertEqual(a_list[2], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2537,7 +2537,7 @@ the test passes
             self.assertEqual(a_list[2], '3rd')
             self.assertEqual(a_list[-2], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2562,7 +2562,7 @@ the test passes
             self.assertEqual(a_list[-2], '3rd')
             self.assertEqual(a_list[1], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2585,7 +2585,7 @@ the test passes
             self.assertEqual(a_list[1], '2nd')
             self.assertEqual(a_list[-3], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2610,7 +2610,7 @@ the test passes
             self.assertEqual(a_list[-3], '2nd')
             self.assertEqual(a_list[3], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2635,7 +2635,7 @@ the test passes
             self.assertEqual(a_list[3], '...last')
             self.assertEqual(a_list[-1], '')
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2698,7 +2698,7 @@ I add an :ref:`assertion<what is an assertion?>`
 
   # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -2755,7 +2755,7 @@ I add another test
 
     # Exceptions seen
 
-the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -2798,7 +2798,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
             self.assertEqual(a_list[0:2], ['a', 'b'])
             self.assertEqual(a_list[:2], [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2823,7 +2823,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
             self.assertEqual(a_list[:2], ['a', 'b'])
             self.assertEqual(a_list[1:4], [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2848,7 +2848,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
             self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
             self.assertEqual(a_list[1:], [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2873,7 +2873,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
             self.assertEqual(a_list[1:], ['b', 'c', 'd'])
             self.assertEqual(a_list[0:3], [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2898,7 +2898,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
             self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
             self.assertEqual(a_list[1:3], [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2923,7 +2923,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
             self.assertEqual(a_list[1:3], ['b', 'c'])
             self.assertEqual(a_list[:], [])
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2991,7 +2991,7 @@ I add a failing test
 
   # Exceptions seen
 
-the terminal_ shows IndexError_
+the terminal_ is your friend and shows IndexError_
 
 .. code-block:: shell
 
@@ -3051,7 +3051,7 @@ the test passes
                 a_list[4]
             a_list[-5]
 
-  the terminal_ shows IndexError_
+  the terminal_ is your friend and shows IndexError_
 
   .. code-block:: python
 
@@ -3085,7 +3085,7 @@ the test passes
                 a_list[-5]
             [].pop()
 
-  the terminal_ shows IndexError_
+  the terminal_ is your friend and shows IndexError_
 
   .. code-block:: python
 
@@ -3114,7 +3114,7 @@ the test passes
                 [].pop()
             [][-1]
 
-  the terminal_ shows IndexError_
+  the terminal_ is your friend and shows IndexError_
 
   .. code-block:: python
 
@@ -3151,7 +3151,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: PowerShell
 

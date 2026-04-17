@@ -58,7 +58,7 @@ start the project
 
       ./makePythonTdd.ps1 module_not_found_error
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -116,7 +116,7 @@ test_module_not_found_error
         def test_module_not_found_error(self):
             import src.module_00
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: shell
 
@@ -163,7 +163,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
             import src.module_00
             import src.module_01
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: shell
 
@@ -182,7 +182,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
             import src.module_01
             import src.module_02
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: shell
 
@@ -202,7 +202,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
             import src.module_02
             import src.module_03
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
@@ -222,7 +222,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     # Exceptions seen
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -242,7 +242,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     # Exceptions seen
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -262,7 +262,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     # Exceptions seen
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -282,7 +282,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     # Exceptions seen
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -318,7 +318,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     # Exceptions seen
 
-  the terminal_ shows ModuleNotFoundError_
+  the terminal_ is your friend and shows ModuleNotFoundError_
 
   .. code-block:: python
 
@@ -342,7 +342,7 @@ close the project
 
       cd ..
 
-    the terminal_ shows
+    the terminal_ is your friend and shows
 
     .. code-block:: python
 

@@ -35,7 +35,7 @@ open the project
 
     cd calculator
 
-  the terminal_ shows I am in the ``calculator`` folder_
+  the terminal_ is your friend and shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 
@@ -49,7 +49,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -97,7 +97,7 @@ I add a new :ref:`assertion<what is an assertion?>` to show that the ``divide`` 
 
   # Exceptions seen
 
-the terminal_ shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+the terminal_ is your friend and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 .. code-block:: shell
 
@@ -143,7 +143,7 @@ close the project
 
     cd ..
 
-  the terminal_ shows
+  the terminal_ is your friend and shows
 
   .. code-block:: shell
 
