@@ -40,7 +40,7 @@ open the project
 
     cd booleans
 
-  the terminal_ is your friend and shows I am in the ``booleans`` folder_
+  the terminal_ is your friend, and shows I am in the ``booleans`` folder_
 
   .. code-block:: shell
 
@@ -54,7 +54,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -97,7 +97,7 @@ I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`
           self.assertTrue(bool(None))
           self.assertFalse(0)
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -147,7 +147,7 @@ the test passes
             self.assertTrue(bool(0))
             self.assertFalse(0.0)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -181,7 +181,7 @@ the test passes
             self.assertTrue(bool(0.0))
             self.assertFalse(str())
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -213,7 +213,7 @@ the test passes
 
         def test_what_is_true(self):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -246,7 +246,7 @@ the test passes
 
         def test_what_is_true(self):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -280,7 +280,7 @@ the test passes
 
         def test_what_is_true(self):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -311,7 +311,7 @@ the test passes
 
         def test_what_is_true(self):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -343,7 +343,7 @@ the test passes
 
         def test_what_is_true(self):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -418,7 +418,7 @@ I add an :ref:`assertion<what is an assertion?>` with bool_ to :ref:`test_what_i
 
   # NOTES
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -465,7 +465,7 @@ the test passes
             self.assertFalse(bool(1))
             self.assertTrue(-0.1)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -498,7 +498,7 @@ the test passes
             self.assertTrue(bool(-0.1))
             self.assertFalse(0.1)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -532,7 +532,7 @@ the test passes
 
     # NOTES
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -565,7 +565,7 @@ the test passes
             self.assertTrue({1, 2, 3, 'n'})
             self.assertTrue({'key': 'value'})
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -595,7 +595,7 @@ the test passes
             self.assertTrue({1, 2, 3, 'n'})
             self.assertTrue({'key': 'value'})
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -626,7 +626,7 @@ the test passes
             self.assertTrue({1, 2, 3, 'n'})
             self.assertTrue({'key': 'value'})
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -657,7 +657,7 @@ the test passes
 
     # NOTES
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -689,7 +689,7 @@ the test passes
 
     # NOTES
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -744,7 +744,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

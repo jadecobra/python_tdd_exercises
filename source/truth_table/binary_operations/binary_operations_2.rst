@@ -48,7 +48,7 @@ continue the project
 
     pwd
 
-  if the terminal_ is your friend and shows anything other than
+  if the terminal_ is your friend, and shows anything other than
 
   .. code-block:: shell
 
@@ -63,7 +63,7 @@ continue the project
 
     cd truth_table
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -77,7 +77,7 @@ continue the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -133,7 +133,7 @@ I add a new test for ``negate_first`` in ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -217,7 +217,7 @@ first input     second input   return
             self.assertFalse(src.truth_table.negate_first(True, False))
             self.assertTrue(src.truth_table.negate_first(False, True))
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -263,7 +263,7 @@ first input     second input   return
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -445,7 +445,7 @@ I add a new test to ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -500,7 +500,7 @@ first input     second input   return
             self.assertFalse(src.truth_table.logical_nand(True, True))
             self.assertTrue(src.truth_table.logical_nand(True, False))
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -542,7 +542,7 @@ first input     second input   return
             self.assertTrue(src.truth_table.logical_nand(True, False))
             self.assertTrue(src.truth_table.logical_nand(False, True))
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -592,7 +592,7 @@ first input     second input   return
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -980,7 +980,7 @@ I add a test for the next Binary Operation in ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1227,7 +1227,7 @@ I add another test to ``test_binary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -1354,7 +1354,7 @@ first input     second input   return
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -1601,7 +1601,7 @@ first input     second input   return
         return (not not first_input) (not and) (not not second_input)
         return not ((not first_input) and (not second_input))
 
-  the terminal_ is your friend and shows SyntaxError_
+  the terminal_ is your friend, and shows SyntaxError_
 
   .. code-block:: shell
 
@@ -1764,7 +1764,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

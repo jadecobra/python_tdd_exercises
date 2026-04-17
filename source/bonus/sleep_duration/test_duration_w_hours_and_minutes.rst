@@ -62,7 +62,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
         f'{difference_hours:02}:00'
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -159,7 +159,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
             f'{difference_minutes:02}'
         )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -215,7 +215,7 @@ If ``duration`` is given a ``wake_time`` of ``'03:30'`` and a ``sleep_time`` of 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` when I add ``test_duration_calculation``
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` when I add ``test_duration_calculation``
 
 .. code-block:: shell
 
@@ -240,7 +240,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
         f'{difference_minutes:02}'
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` for ``test_duration_w_hours_and_minutes``
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for ``test_duration_w_hours_and_minutes``
 
   .. code-block:: shell
 
@@ -257,7 +257,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` for ``test_duration_calculation``
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for ``test_duration_calculation``
 
   .. code-block:: shell
 
@@ -289,7 +289,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
     def test_duration_calculation(self):
     ...
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -309,7 +309,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     self.assertEqual(150//60, 0)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -340,7 +340,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_calculation(self):
     ...
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -360,7 +360,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(150%60, 0)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -434,7 +434,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     def test_duration_w_hours_and_minutes(self):
     ...
 
-  the terminal_ is your friend and shows random successes and random :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows random successes and random :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -498,7 +498,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         )
     ...
 
-* and remove ``get_hour`` and ``get_minutes``. the terminal_ is your friend and shows all tests are still passing!
+* and remove ``get_hour`` and ``get_minutes``. the terminal_ is your friend, and shows all tests are still passing!
 
 *********************************************************************************
 review

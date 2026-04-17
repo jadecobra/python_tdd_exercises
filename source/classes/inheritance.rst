@@ -49,7 +49,7 @@ open the project
 
     cd person
 
-  the terminal_ is your friend and shows I am in the ``person`` folder_
+  the terminal_ is your friend, and shows I am in the ``person`` folder_
 
   .. code-block:: python
 
@@ -63,7 +63,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
     :emphasize-lines: 4
@@ -125,7 +125,7 @@ to review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -189,7 +189,7 @@ I add another test in ``test_classes.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -239,7 +239,7 @@ the test passes
 
         pass
 
-  the terminal_ is your friend and shows all tests are still passing.
+  the terminal_ is your friend, and shows all tests are still passing.
 
 pass_ is a placeholder, it makes sure I am following Python_ rules, I can make a :ref:`class<what is a class?>` with
 
@@ -275,7 +275,7 @@ I add another test to ``TestClasses`` in ``test_classes.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -366,7 +366,7 @@ I add a test to ``test_classes.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -455,7 +455,7 @@ I add a new test
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -484,7 +484,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
 
         pass
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -501,7 +501,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
         def __init__(self):
             return None
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -518,7 +518,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
         def __init__(self, first_name):
             return None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -576,7 +576,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -674,7 +674,7 @@ test_family_ties
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -718,7 +718,7 @@ I change the expectation
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -746,7 +746,7 @@ I change the expectation
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -776,7 +776,7 @@ I change the expectation
 
             self.assertEqual(doe.last_name, 'doe')
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -804,7 +804,7 @@ I change the expectation
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -818,7 +818,7 @@ I change the expectation
 
             self.assertEqual(mary.last_name, 'smith')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -835,7 +835,7 @@ I change the expectation
         def __init__(self, first_name, last_name='smith'):
             pass
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -870,7 +870,7 @@ I change the expectation
 
             self.assertEqual(doe.last_name, 'doe')
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -903,7 +903,7 @@ I change the expectation
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -919,7 +919,7 @@ I change the expectation
         def __init__(self, first_name, last_name='blow'):
             pass
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -948,7 +948,7 @@ I change the expectation
 
             self.assertEqual(doe.last_name, 'doe')
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -983,7 +983,7 @@ I change the expectation
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1011,7 +1011,7 @@ I change the expectation
 
             self.assertEqual(doe.last_name, 'doe')
 
-  the terminal_ is your friend and shows :ref:`AttributError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1043,7 +1043,7 @@ I change the expectation
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1057,7 +1057,7 @@ I change the expectation
 
     class Lil(Doe, Smith): pass
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1079,7 +1079,7 @@ I change the expectation
 
     class Smith(src.person.Person):
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1098,7 +1098,7 @@ I change the expectation
         def __init__(self, first_name, last_name='doe'):
             super().__init__(first_name, last_name)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1140,7 +1140,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

@@ -74,7 +74,7 @@ start the project
 
     cd truth_table
 
-  the terminal_ is your friend and shows I am in the ``truth_table`` folder_
+  the terminal_ is your friend, and shows I am in the ``truth_table`` folder_
 
   .. code-block:: shell
 
@@ -206,7 +206,7 @@ start the project
 
     uv init
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -240,7 +240,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
     :emphasize-lines: 8, 10

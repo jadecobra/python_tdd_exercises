@@ -92,7 +92,7 @@ test_logical_true
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -130,7 +130,7 @@ test_logical_true
     def logical_true():
         return None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -180,7 +180,7 @@ I add another test to ``test_nullary_unary.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -209,7 +209,7 @@ I have not added a definition for :ref:`logical_false<test_logical_false>` to ``
     def logical_false():
         return True
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -277,7 +277,7 @@ I add a new TestCase_ for Unary Operations with a test to ``test_nullary_unary.p
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -306,7 +306,7 @@ I need to add a definition for it
     def logical_identity():
         return False
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -335,7 +335,7 @@ I need to add a definition for it
     def logical_identity(the_input):
         return False
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -370,7 +370,7 @@ I need to add a definition for it
             self.assertTrue(src.truth_table.logical_identity(True))
             self.assertFalse(src.truth_table.logical_identity(False))
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -385,7 +385,7 @@ I need to add a definition for it
     def logical_identity(the_input):
         return False
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -452,7 +452,7 @@ I add a test for :ref:`logical_negation<test_logical_negation>` to ``test_nullar
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -479,7 +479,7 @@ I add the :ref:`function<what is a function?>` in ``truth_table.py``
   def logical_negation(the_input):
       return the_input
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -514,7 +514,7 @@ the test passes
             self.assertFalse(src.truth_table.logical_negation(True))
             self.assertTrue(src.truth_table.logical_negation(False))
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -529,7 +529,7 @@ the test passes
     def logical_negation(the_input):
         return True
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -546,7 +546,7 @@ the test passes
     def logical_negation(the_input):
         return the_input
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -625,7 +625,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

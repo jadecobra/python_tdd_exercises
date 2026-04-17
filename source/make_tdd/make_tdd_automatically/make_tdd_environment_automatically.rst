@@ -163,7 +163,7 @@ I go back to the terminal_ to run the program_
 
   makePythonTdd.sh
 
-the terminal_ is your friend and shows
+the terminal_ is your friend, and shows
 
 .. code-block:: shell
 
@@ -176,7 +176,7 @@ I have to tell the computer where the file_ is
 
   ./makePythonTdd.sh
 
-``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. the terminal_ is your friend and shows
+``./`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.sh`` is saved. The computer checks a few directories_ when a command is given. Those directories are where commands like mkdir_, cd_, tree_ and echo_ are saved. the terminal_ is your friend, and shows
 
 .. code-block:: shell
 
@@ -199,7 +199,7 @@ I use ls_ to check the permissions of the file_
 
 ``-l`` is the option to show the long listing format which includes permissions for the file_
 
-the terminal_ is your friend and shows
+the terminal_ is your friend, and shows
 
 .. code-block:: shell
 
@@ -249,7 +249,7 @@ how to make a shell script run as a command
 
     ls -l makePythonTdd.sh
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -269,7 +269,7 @@ how to make a shell script run as a command
 
     ./makePythonTdd.sh
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 10
@@ -292,7 +292,7 @@ how to make a shell script run as a command
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
 
-* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests, the terminal_ is your friend and shows
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests, the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -352,7 +352,7 @@ how to use makePythonTdd.sh to make a different project
 
     ./makePythonTdd.sh
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 10
@@ -373,7 +373,7 @@ how to use makePythonTdd.sh to make a different project
 
   I make the test pass
 
-* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests, the terminal_ is your friend and shows
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests, the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

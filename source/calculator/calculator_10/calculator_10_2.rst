@@ -37,7 +37,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -58,7 +58,7 @@ open the project
 
     uv run streamlit run src/streamlit_calculator.py
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -132,7 +132,7 @@ I want to add buttons for the numbers and operations.
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -183,7 +183,7 @@ I want to add buttons for the numbers and operations.
 
         streamlit.button('<-', key='<-')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -200,7 +200,7 @@ I want to add buttons for the numbers and operations.
 
             self.assertIsNone(tester.button('<-').label)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -214,7 +214,7 @@ I want to add buttons for the numbers and operations.
 
             self.assertIsNone(tester.button('<-').label, '<-')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -278,7 +278,7 @@ I want to add buttons for the numbers and operations.
             self.assertEqual(tester.button('<-').label, '<-')
             self.assertEqual(tester.button('7').label, '7')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -328,7 +328,7 @@ I want to add buttons for the numbers and operations.
             self.assertEqual(tester.button('<-').label, '<-')
             self.assertEqual(tester.button('7').label, '7')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for 18 sub tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for 18 sub tests
 
   .. code-block:: python
 
@@ -660,7 +660,7 @@ I add a new test to make sure the Calculator has 4 columns
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -715,7 +715,7 @@ the test passes
 
             self.assertIsNone(self.tester.columns[0].children)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -794,7 +794,7 @@ the test passes
         streamlit.button('1', key='1')
         streamlit.button('+/-', key='+/-')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -816,7 +816,7 @@ the test passes
                 ''
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -858,7 +858,7 @@ the test passes
                 '<-'
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` for the ``<-`` button
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for the ``<-`` button
 
   .. code-block:: python
 
@@ -937,7 +937,7 @@ the test passes
         add_buttons_to_column_1(column_1)
         column_1.button(label='<-', key='<-')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
 
 * I remove the buttons for column 1 from the ``add_buttons`` :ref:`function<what is a function?>` since ``add_buttons_to_column_1`` now makes them
 
@@ -983,7 +983,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1013,7 +1013,7 @@ the test passes
 
         streamlit.button(label='AC', key='AC')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1085,7 +1085,7 @@ the test passes
 
         column_2.button(label='C', key='C')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
 
 * I remove the buttons for the second column from the ``add_buttons`` :ref:`function<what is a function?>`
 
@@ -1127,7 +1127,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1224,7 +1224,7 @@ the test passes
 
         column_3.button(label='AC', key='AC')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
 
 * I remove the buttons for column 3 from the ``add_buttons`` :ref:`function<what is a function?>`
 
@@ -1267,7 +1267,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1346,7 +1346,7 @@ the test passes
 
         operations.button(label='/', key='/')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` and ``streamlit.errors.StreamlitDuplicateElementKey``
 
 * I remove the buttons for the fourth column from the ``add_buttons`` :ref:`function<what is a function?>`
 
@@ -1526,7 +1526,7 @@ the test passes
 
             for key in ('<-', '7', '4', '1', '+/-'):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` for 20 sub tests
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for 20 sub tests
 
   .. code-block:: python
 
@@ -1720,7 +1720,7 @@ how to use raw strings and escape characters
         column_4.button(label='+', key='+', width='stretch')
         column_4.button(label='=', key='=', width='stretch')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1762,7 +1762,7 @@ how to use raw strings and escape characters
         column_4.button(label=r'\+', key=r'\+', width='stretch')
         column_4.button(label='=', key='=', width='stretch')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1877,7 +1877,7 @@ I add a test for the ``type`` parameter of `streamlit buttons`_
 
     # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1924,7 +1924,7 @@ the test passes
                 'primary'
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1971,7 +1971,7 @@ the test passes
                         'primary'
                     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2026,7 +2026,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2049,7 +2049,7 @@ the test passes
         column_3.button(label='3', key='3', width='stretch')
         column_3.button(label='.', key='.', width='stretch')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2138,7 +2138,7 @@ I want the calculator to show the number when I press a button
         column_1.button(label='1', key='1', width='stretch')
         column_1.button(label='+/-', key='+/-', width='stretch')
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -2158,7 +2158,7 @@ I want the calculator to show the number when I press a button
 
     def add_buttons_to_column_1(column_1, display):
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for 27 sub tests and the terminal_ for the streamlit_ application shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for 27 sub tests and the terminal_ for the streamlit_ application shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2243,7 +2243,7 @@ I want the calculator to show the number when I press a button
             on_click=show, args=[display, '0'],
         )
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for 20 sub tests and the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for 20 sub tests and the terminal_ for the application shows :ref:`NameError<test_catching_name_error_in_tests>`
 
 * I add ``display`` to the :ref:`function<what is a function?>` signature of the ``add_buttons_to_column_2`` :ref:`function<what is a function?>`
 
@@ -2253,7 +2253,7 @@ I want the calculator to show the number when I press a button
 
     def add_buttons_to_column_2(column_2, display):
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for 22 sub tests and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for 22 sub tests and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2305,7 +2305,7 @@ I want the calculator to show the number when I press a button
             on_click=show, args=[display, '.'],
         )
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for 14 sub tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for 14 sub tests
 
   .. code-block:: python
 
@@ -2326,7 +2326,7 @@ I want the calculator to show the number when I press a button
 
     def add_buttons_to_column_3(column_3, display):
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` and the terminal_ for the application shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2368,7 +2368,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 
@@ -2385,7 +2385,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 

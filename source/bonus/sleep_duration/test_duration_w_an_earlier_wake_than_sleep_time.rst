@@ -46,7 +46,7 @@ I add a failing test to ``test_sleep_duration.py`` with a `while statement`_ to 
   def test_duration_w_hours_and_minutes(self):
   ...
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -81,7 +81,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
                 wake_time=wake_time
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -121,7 +121,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
                 f'{duration_minutes:02}'
             )
 
-  the terminal_ is your friend and shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
+  the terminal_ is your friend, and shows a random ValueError_ for ``test_duration_w_hours_and_minutes`` when ``wake_time`` is earlier than ``sleep_time``
 
   .. code-block:: shell
 
@@ -266,7 +266,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
                 f'{duration_minutes:02}'
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` for ``test_duration_w_an_earlier_wake_than_sleep_time`` and a random one when ``wake_time`` is earlier than ``sleep_time`` in ``test_duration_w_hours_and_minutes``
 
   .. code-block:: shell
 

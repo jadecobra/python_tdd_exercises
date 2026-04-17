@@ -35,7 +35,7 @@ open the project
 
     cd calculator
 
-  the terminal_ is your friend and shows I am in the ``calculator`` folder_
+  the terminal_ is your friend, and shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 
@@ -49,7 +49,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -102,7 +102,7 @@ I add a test to see what happens when I send a :ref:`list<lists>` as input
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -158,7 +158,7 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -237,7 +237,7 @@ how to multiply a list
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -256,7 +256,7 @@ how to multiply a list
                 error_message
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -300,7 +300,7 @@ how to multiply a list
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -475,7 +475,7 @@ I add a new test to use the :ref:`index of the items in the list<test_index_retu
 
     # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -538,7 +538,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -584,7 +584,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -630,7 +630,7 @@ the test passes. ``two_numbers`` is a :ref:`list<what is a list?>` with two item
                 self.random_first_number-self.random_second_number
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -690,7 +690,7 @@ I can use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in 
             self.random_first_number-self.random_second_number
         )
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -747,7 +747,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
                 self.random_first_number*self.random_second_number
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -781,7 +781,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
                 self.random_first_number/self.random_second_number
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -815,7 +815,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
                 self.random_first_number+self.random_second_number
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -918,7 +918,7 @@ I add a new test to show the problem when I have more than 2 inputs and use a `s
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`TypeError`
+the terminal_ is your friend, and shows :ref:`TypeError`
 
 .. code-block:: shell
 
@@ -967,7 +967,7 @@ the test passes
                 src.calculator.add(*not_two_numbers)
             src.calculator.divide(*not_two_numbers)
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -996,7 +996,7 @@ the test passes
                 src.calculator.divide(*not_two_numbers)
             src.calculator.multiply(*not_two_numbers)
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1025,7 +1025,7 @@ the test passes
                 src.calculator.multiply(*not_two_numbers)
             src.calculator.subtract(*not_two_numbers)
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -1070,7 +1070,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

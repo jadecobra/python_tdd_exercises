@@ -39,7 +39,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -60,7 +60,7 @@ open the project
 
     uv run streamlit run src/streamlit_calculator.py
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -119,7 +119,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
@@ -152,7 +152,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
         add_buttons_to_column_3(column_3, display)
         add_buttons_to_column_4(operations)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -167,7 +167,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
         def test_streamlit_session_state(self):
             self.assertIsNone(self.tester.session_state['number'], '0')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -230,7 +230,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   - ``.click()`` presses the button
   - ``.run()`` runs the program - ``streamlit_calculator.py``, which is what happens when a person uses the application in the browser
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -263,7 +263,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
             self.tester.button('4').click().run()
             self.assertEqual(self.tester.session_state['number'], '01')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -307,7 +307,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
                 self.tester.session_state['number'], '1234'
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -368,7 +368,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
   - ``numbers = '0123456789'`` makes a string_ with ten numbers
   - ``x = random.choice(numbers)`` picks a random number from the ten numbers and points ``x`` to it
 
-  the terminal_ is your friend and shows. :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows. :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -396,7 +396,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
                 self.tester.session_state['number'], '1234'
             )
 
-  when ``x`` is not ``1``, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  when ``x`` is not ``1``, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -422,7 +422,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
                 self.tester.session_state['number'], '1234'
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -438,7 +438,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
                 self.tester.session_state['number'], f'{x}{y}{z}{a}'
             )
 
-  when ``x`` is ``0``, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  when ``x`` is ``0``, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -530,7 +530,7 @@ what is a while loop?
 
   ``for _ in range(0, 10):`` uses ``_`` because I do not need a name for each number from the `range object`_ in the :ref:`for loop<what is a for loop?>` since I do not use it
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -698,7 +698,7 @@ test_streamlit_calculator_w_decimals
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -872,7 +872,7 @@ test_streamlit_calculator_w_decimals
             )
 
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1063,7 +1063,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1186,7 +1186,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
   - ``a_random_number = tests.test_calculator.a_random_number()`` uses the ``a_random_number`` :ref:`function<what is a function?>` from ``test_calculator.py`` that I made in :ref:`how to use random numbers`
   - ``a_random_number = str(a_random_number)`` changes the random number to a string_ since all the tests of the calculator have been done with strings_ so far
 
-  I use :kbd:`ctrl+s` on the keyboard to run the test a few times because I am using random numbers. If the number is positive, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl+s` on the keyboard to run the test a few times because I am using random numbers. If the number is positive, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1194,7 +1194,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 
   the last number was not removed
 
-  If the random number is negative, the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  If the random number is negative, the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1216,7 +1216,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 
             for key in a_random_number:
 
-  I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1274,7 +1274,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
                 '123'
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1390,7 +1390,7 @@ I add a new test for the ``+/-`` button
 
     # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -1491,7 +1491,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1623,7 +1623,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
             a_number = '96'
             self.press_button(a_number)
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -1729,7 +1729,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
 
     def backspace(display):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1789,7 +1789,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
 
     def handle_decimals(display, number):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2291,7 +2291,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
             args=[add_decimal, display]
         )
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
 
@@ -2377,7 +2377,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
             args=[backspace, display],
         )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2447,7 +2447,7 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
             args=[plus_minus, display],
         )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-text: -
@@ -2541,7 +2541,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 
@@ -2558,7 +2558,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 

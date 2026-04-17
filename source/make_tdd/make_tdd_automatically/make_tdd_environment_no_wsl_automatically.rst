@@ -114,7 +114,7 @@ how to run a PowerShell script
 
     makePythonTdd.ps1
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: PowerShell
 
@@ -127,7 +127,7 @@ how to run a PowerShell script
 
     .\makePythonTdd.ps1
 
-  ``.\`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. the terminal_ is your friend and shows
+  ``.\`` is shorthand for ``this directory`` which in this case is ``pumping_python`` where ``makePythonTdd.ps1`` is saved. the terminal_ is your friend, and shows
 
 
   .. code-block:: PowerShell
@@ -168,7 +168,7 @@ how to run a PowerShell script
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: PowerShell
 
@@ -209,7 +209,7 @@ how to run a PowerShell script
 
     ./makePythonTdd.ps1
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: PowerShell
     :emphasize-lines: 10
@@ -251,7 +251,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

@@ -37,7 +37,7 @@ open the project
 
     cd calculator
 
-  the terminal_ is your friend and shows I am in the ``calculator`` folder_
+  the terminal_ is your friend, and shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 
@@ -51,7 +51,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -106,7 +106,7 @@ I add a new test
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
@@ -164,7 +164,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 )
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -297,7 +297,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['add']
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -348,7 +348,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['subtract']
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['multiply']
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -476,7 +476,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['add']
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-text: add subtract multiply divide
@@ -743,7 +743,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         bad_input=bad_input,
                     ):
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for all 52 sub tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for all 52 sub tests
 
 * I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
 
@@ -811,7 +811,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for all 4 sub tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for all 4 sub tests
 
 * I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
 
@@ -863,7 +863,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
             for operation in self.calculator_tests:
                 with self.subTest(operation=operation):
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for the 4 tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for the 4 tests
 
 * I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
 
@@ -879,7 +879,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for the 4 sub tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for the 4 sub tests
 
 * I use ``self.calculator_tests`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -972,7 +972,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
           for operation in self.calculator_tests:
               with self.subTest(operation=operation):
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for the 4 sub tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for the 4 sub tests
 
 * I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
 
@@ -988,7 +988,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>` for the sub tests
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>` for the sub tests
 
 * I use ``self.calculator_tests`` in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -1171,7 +1171,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 'divide': self.get_division_result(x, y)
             }
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1239,7 +1239,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
 * I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
-* then I delete everything in ``calculator.py``, the terminal_ is your friend and shows 3 passing tests and :ref:`AttributeError<what causes AttributeError?>` for 70 failing tests, I start with the last one
+* then I delete everything in ``calculator.py``, the terminal_ is your friend, and shows 3 passing tests and :ref:`AttributeError<what causes AttributeError?>` for 70 failing tests, I start with the last one
 
   .. code-block:: python
 
@@ -1253,7 +1253,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     add
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1275,7 +1275,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     add = None
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1290,7 +1290,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def add():
         return None
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1305,7 +1305,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def add(x):
         return None
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1320,7 +1320,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def add(x, y):
         return None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1354,7 +1354,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(x, y):
         return x / y
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1373,7 +1373,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def multiply(x, y):
         return x * y
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1392,7 +1392,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def subtract(x, y):
         return x - y
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1409,7 +1409,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(x, y, first_input):
         return x / y
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1424,7 +1424,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(x, y, first_input=None):
         return x / y
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1439,7 +1439,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(x, y, first_input=None, second_input=None):
         return x / y
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1454,7 +1454,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(first_input=None, second_input=None):
         return x / y
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1469,7 +1469,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(first_input=None, second_input=None):
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1484,7 +1484,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def multiply(first_input, y):
         return first_input * y
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1499,7 +1499,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def divide(first_input, second_input):
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1516,7 +1516,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def subtract(first_input, second_input):
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1531,7 +1531,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def add(first_input, second_input):
         return first_input + second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1551,7 +1551,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return None
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1569,7 +1569,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1587,7 +1587,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return None
         return first_input * second_input
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1605,7 +1605,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1625,7 +1625,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1643,7 +1643,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1663,7 +1663,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1681,7 +1681,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1699,7 +1699,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1717,7 +1717,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1737,7 +1737,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1775,7 +1775,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1797,7 +1797,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1835,7 +1835,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1873,7 +1873,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1925,7 +1925,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1948,7 +1948,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1970,7 +1970,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2019,7 +2019,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -2196,7 +2196,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 

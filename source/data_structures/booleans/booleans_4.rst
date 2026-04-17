@@ -23,7 +23,7 @@ open the project
 
     cd booleans
 
-  the terminal_ is your friend and shows I am in the ``booleans`` folder_
+  the terminal_ is your friend, and shows I am in the ``booleans`` folder_
 
   .. code-block:: shell
 
@@ -37,7 +37,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -84,7 +84,7 @@ I add a new test
 
   # NOTES
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 

@@ -26,7 +26,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 *********************************************************************************
 
 * I close ``test_sleep_duration.py``
-* then delete all the text in ``sleep_duration.py`` the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+* then delete all the text in ``sleep_duration.py`` the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -49,7 +49,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     get_datetime
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -69,7 +69,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     get_datetime = None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -91,7 +91,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def get_datetime():
         return None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -103,7 +103,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     def get_datetime(the_input):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -129,7 +129,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def get_datetime(the_input):
         return datetime.datetime(2006, 11, 21, 19, 8)
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -145,7 +145,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
       def get_datetime(the_input):
       ...
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -160,7 +160,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def get_datetime(the_input):
         return the_input
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -180,7 +180,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
             argument, '%Y/%m/%d %H:%M'
         )
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -192,7 +192,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     duration
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -206,7 +206,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     duration = None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -219,7 +219,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def duration():
         return None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -231,7 +231,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     def duration(sleep_time):
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -243,7 +243,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     def duration(sleep_time, wake_time):
 
-  the terminal_ is your friend and shows this :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows this :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -267,7 +267,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def duration(sleep_time, wake_time):
         raise ValueError(sleep_time, wake_time)
 
-* When I raise ValueError_ in ``duration`` the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` because the message in the ValueError_ does not match the expectation of the test
+* When I raise ValueError_ in ``duration`` the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` because the message in the ValueError_ does not match the expectation of the test
 
   .. code-block:: shell
 
@@ -296,7 +296,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
             "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
         )
 
-  the terminal_ is your friend and shows SyntaxError_
+  the terminal_ is your friend, and shows SyntaxError_
 
   .. code-block:: shell
 
@@ -329,7 +329,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
             'sleep_time: "8720/08/18 01:02"'
         )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` because the timestamps in the ValueError_ message are not the same
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` because the timestamps in the ValueError_ message are not the same
 
   .. code-block:: shell
 
@@ -356,7 +356,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
         #    'sleep_time: "8720/08/18 01:02"'
         # )
 
-  the terminal_ is your friend and shows the :ref:`AssertionError<what causes AssertionError?>` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError<what causes AssertionError?>` that the ValueError_ messages do not match
+  the terminal_ is your friend, and shows the :ref:`AssertionError<what causes AssertionError?>` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError<what causes AssertionError?>` that the ValueError_ messages do not match
 
 * I :ref:`interpolate<how to pass values>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -370,7 +370,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
             f'sleep_time: "{sleep_time}"'
         )
 
-  the terminal_ is your friend and shows ValueError_
+  the terminal_ is your friend, and shows ValueError_
 
   .. code-block:: shell
 
@@ -404,7 +404,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     else:
         return (sleep_time, wake_time)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -429,7 +429,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
         else:
             return (sleep_time - wake_time)
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -454,7 +454,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
               - get_datetime(wake_time)
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -482,7 +482,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
               - get_datetime(wake_time)
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -525,7 +525,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
             timestamp, '%Y/%m/%d %H:%M'
         )
 
-  the terminal_ is your friend and shows all tests are still passing
+  the terminal_ is your friend, and shows all tests are still passing
 
 * then I remove the list of :ref:`Exceptions<errors>` seen because it was just for me
 

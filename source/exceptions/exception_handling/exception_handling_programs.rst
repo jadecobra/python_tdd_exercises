@@ -65,7 +65,7 @@ open the project
 
     cd exceptions
 
-  the terminal_ is your friend and shows I am in the ``exceptions`` folder_
+  the terminal_ is your friend, and shows I am in the ``exceptions`` folder_
 
   .. code-block:: shell
 
@@ -79,7 +79,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
     :emphasize-lines: 5
@@ -115,7 +115,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
         def test_catching_exceptions_w_messages(self):
             src.exceptions.raise_exception()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -141,7 +141,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     raise_exception
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -155,7 +155,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     raise_exception = None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -182,7 +182,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
             with self.assertRaises(Exception):
                 src.exceptions.raise_exception()
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -211,7 +211,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
             ):
                 src.exceptions.raise_exception()
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -264,7 +264,7 @@ I add a new failing test in ``test_exceptions.py``
                 'failed'
             )
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block::
 
@@ -290,7 +290,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
 
     an_exception_handler
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -304,7 +304,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
 
     an_exception_handler = None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -319,7 +319,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
     def an_exception_handler():
         return None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -334,7 +334,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
     def an_exception_handler(the_input):
         return None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -391,7 +391,7 @@ I add a new test to ``test_exceptions.py``
                 'succeeded'
             )
 
-the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: shell
 
@@ -421,7 +421,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
     def an_exception_handler(the_input):
         return 'failed'
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -435,7 +435,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
 
     does_not_raise_exception = None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
 
@@ -456,7 +456,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
         return the_input
         return 'failed'
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -486,7 +486,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
         return a_function()
         return 'failed'
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -512,7 +512,7 @@ the terminal_ is your friend and shows :ref:`AttributeError<what causes Attribut
         return a_function()
         return 'failed'
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -564,7 +564,7 @@ how to use try...except...else
         else:
             return None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -622,7 +622,7 @@ how to use try...except...else
         else:
             return 'succeeded'
 
-  the terminal_ is your friend and shows :ref:`Exception<errors>` for ``test_catching_failures``
+  the terminal_ is your friend, and shows :ref:`Exception<errors>` for ``test_catching_failures``
 
   .. code-block:: shell
 
@@ -662,7 +662,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 

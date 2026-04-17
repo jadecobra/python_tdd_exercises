@@ -15,7 +15,7 @@ MacOS requirements
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-  the terminal_ is your friend and shows instructions about how to add brew_ to your path
+  the terminal_ is your friend, and shows instructions about how to add brew_ to your path
 
 * after installation it has instructions, copy and paste the 3 lines it shows in the terminal_ then use :kbd:`return` on the keyboard to run it, the terminal_ will not show anything if the commands run successfully
 

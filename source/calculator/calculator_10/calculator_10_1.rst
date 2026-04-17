@@ -52,7 +52,7 @@ open the project
 
     cat requirements.txt
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 
@@ -78,7 +78,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -123,7 +123,7 @@ test_streamlit_calculator_title
                 'src/streamlit_calculator.py'
             )
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -170,7 +170,7 @@ test_streamlit_calculator_title
 
     class TestStreamlitCalculator(unittest.TestCase):
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -197,7 +197,7 @@ test_streamlit_calculator_title
     import streamlit.testing
     import unittest
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -255,7 +255,7 @@ test_streamlit_calculator_title
             tester.run()
             self.assertEqual(tester.title, 'Calculator')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -289,7 +289,7 @@ test_streamlit_calculator_title
     def main():
         streamlit.title('Calculator')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -308,7 +308,7 @@ test_streamlit_calculator_title
     if __name__ == '__main__':
         main()
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -344,7 +344,7 @@ test_streamlit_calculator_title
 
             self.assertEqual(tester.title[0], 'Calculator')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -378,7 +378,7 @@ how to see the streamlit calculator website
 
     uv run streamlit run src/streamlit_calculator.py
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: shell
 
@@ -460,7 +460,7 @@ I add a test to see all the :ref:`attributes<test_attribute_error_w_class_attrib
           tester.run()
           self.assertIsNone(tester.main)
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: python
 
@@ -489,7 +489,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
             self.assertIsNone(tester.main.children, {})
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -504,7 +504,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
             self.assertEqual(tester.main.children, {})
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -528,7 +528,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 {0: Title(tag='h1')}
             )
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -565,7 +565,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
         streamlit.title('Calculator')
         streamlit.container()
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -589,7 +589,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 }
             )
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -610,7 +610,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 }
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -632,7 +632,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 }
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -655,7 +655,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 }
             )
 
-  the terminal_ is your friend and shows the full difference
+  the terminal_ is your friend, and shows the full difference
 
 * I copy the :ref:`dictionary<what is a dictionary?>`, remove the extra characters with ``Find and Replace`` (:kbd:`ctrl+H` (Windows_) or :kbd:`command+option+F` (MacOS_)) and use it as the expectation
 
@@ -705,7 +705,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows SyntaxError_
+  the terminal_ is your friend, and shows SyntaxError_
 
   .. code-block:: shell
 
@@ -737,7 +737,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 {}
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -758,7 +758,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 {}
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -783,7 +783,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 {}
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -881,7 +881,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
             self.assertEqual(display.gap_config.gap_size, 1)
             self.assertEqual(display.direction, '')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -907,7 +907,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
             self.assertEqual(display.direction, 1)
             self.assertEqual(display.justify, '')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -934,7 +934,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
             self.assertEqual(display.justify, 1)
             self.assertEqual(display.align, '')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -972,7 +972,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
             self.assertEqual(display.align, 1)
             self.assertEqual(display.border, '')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1013,7 +1013,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -1057,7 +1057,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 
@@ -1074,7 +1074,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 

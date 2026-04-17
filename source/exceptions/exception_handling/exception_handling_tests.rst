@@ -141,7 +141,7 @@ start the project
 
       ./makePythonTdd.ps1
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 10
@@ -203,7 +203,7 @@ I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` w
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+the terminal_ is your friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
 .. code-block:: shell
 
@@ -272,7 +272,7 @@ NameError_ is raised when I use a name that is not defined in the file_ I am wor
         def test_catching_name_error_in_tests(self):
             does_not_exist
 
-  the terminal_ is your friend and shows NameError_
+  the terminal_ is your friend, and shows NameError_
 
   .. code-block:: shell
 
@@ -340,7 +340,7 @@ test_catching_attribute_error_in_tests
         def test_catching_attribute_error_in_tests(self):
             src.exceptions.does_not_exist
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -355,7 +355,7 @@ test_catching_attribute_error_in_tests
     import src.exceptions
     import unittest
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -430,7 +430,7 @@ test_catching_type_error_in_tests
         def test_catching_type_error_in_tests(self):
             src.exceptions.function_name('the input')
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -444,7 +444,7 @@ test_catching_type_error_in_tests
 
     function_name
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -458,7 +458,7 @@ test_catching_type_error_in_tests
 
     function_name = None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -527,7 +527,7 @@ the test passes
     def function_name(parameter_name):
         return None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -612,7 +612,7 @@ test_catching_index_error_in_tests
             a_list = [1, 2, 3, 'n']
             a_list[4]
 
-  the terminal_ is your friend and shows :ref:`IndexError<test_index_error>`
+  the terminal_ is your friend, and shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -703,7 +703,7 @@ the test passes
                 a_list[4]
             a_list[-5]
 
-  the terminal_ is your friend and shows :ref:`IndexError<test_index_error>`
+  the terminal_ is your friend, and shows :ref:`IndexError<test_index_error>`
 
   .. code-block:: python
 
@@ -809,7 +809,7 @@ test_catching_key_error_in_tests
         def test_catching_key_error_in_tests(self):
             {'key': 'value'}['not_in_dictionary']
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
@@ -875,7 +875,7 @@ test_catching_zero_division_error_in_tests
         def test_catching_zero_division_error_in_tests(self):
             1 / 0
 
-  the terminal_ is your friend and shows ZeroDivisionError_
+  the terminal_ is your friend, and shows ZeroDivisionError_
 
   .. code-block:: python
 
@@ -946,7 +946,7 @@ test_catching_exceptions_in_tests
         def test_catching_exceptions_in_tests(self):
             raise Exception
 
-  the terminal_ is your friend and shows :ref:`Exception<errors>`
+  the terminal_ is your friend, and shows :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -963,7 +963,7 @@ test_catching_exceptions_in_tests
         def test_catching_exceptions_in_tests(self):
             raise AssertionError
 
-  and the terminal_ is your friend and shows the :ref:`Exception<errors>` I give the `raise statement`_
+  and the terminal_ is your friend, and shows the :ref:`Exception<errors>` I give the `raise statement`_
 
   .. code-block:: python
 
@@ -978,7 +978,7 @@ test_catching_exceptions_in_tests
         def test_catching_exceptions_in_tests(self):
             raise Exception
 
-  the terminal_ is your friend and shows :ref:`Exception<errors>`
+  the terminal_ is your friend, and shows :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -1005,7 +1005,7 @@ I add the `assertRaises method`_ to catch it
 
   # Exceptions seen
 
-the terminal_ is your friend and shows all tests are passing. The `assertRaises method`_ checks that the code under it raises the :ref:`Exception<errors>` it is given in parentheses
+the terminal_ is your friend, and shows all tests are passing. The `assertRaises method`_ checks that the code under it raises the :ref:`Exception<errors>` it is given in parentheses
 
 ----
 
@@ -1057,7 +1057,7 @@ the terminal_ is your friend and shows all tests are passing. The `assertRaises 
             with self.assertRaises(ModuleNotFoundError):
                 {'key': 'value'}['not_in_dictionary']
 
-  the terminal_ is your friend and shows :ref:`KeyError<test_key_error>`
+  the terminal_ is your friend, and shows :ref:`KeyError<test_key_error>`
 
   .. code-block:: shell
 
@@ -1085,7 +1085,7 @@ the terminal_ is your friend and shows all tests are passing. The `assertRaises 
             with self.assertRaises(ZeroDivisionError):
                 raise Exception
 
-  the terminal_ is your friend and shows :ref:`Exception<errors>`
+  the terminal_ is your friend, and shows :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -1152,7 +1152,7 @@ one exception one exception handler
                 a_list[-5]
             # with self.assertRaises(IndexError):
 
-  the terminal_ is your friend and shows :ref:`Exception<errors>`
+  the terminal_ is your friend, and shows :ref:`Exception<errors>`
 
   .. code-block:: python
 
@@ -1194,7 +1194,7 @@ close the exceptions project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: PowerShell
 

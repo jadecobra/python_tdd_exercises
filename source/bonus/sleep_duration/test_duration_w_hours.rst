@@ -38,7 +38,7 @@ requirements
 
       ./makePythonTdd.ps1 sleep_duration
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -86,7 +86,7 @@ requirements
 
             )
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -122,7 +122,7 @@ requirements
         None
     )
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -148,7 +148,7 @@ requirements
     class TestSleepDuration(unittest.TestCase):
     ...
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -163,7 +163,7 @@ requirements
         None
     )
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -183,7 +183,7 @@ requirements
 
     duration
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: shell
 
@@ -204,7 +204,7 @@ requirements
         None
     )
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -253,7 +253,7 @@ requirements
         None
     )
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -278,7 +278,7 @@ requirements
         ('08:00', '07:00')
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -322,7 +322,7 @@ requirements
         wake_time = '09:00'
         sleep_time = '07:00'
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -345,7 +345,7 @@ requirements
         wake_time = '09:00'
         sleep_time = '06:00'
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -394,7 +394,7 @@ requirements
         sleep_time=f'{sleep_hour:02}:00'
     ...
 
-  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it shows have a ``0`` in front of it, for example ``01``. the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the ``:02`` tells Python_ to always show the numbers as 2 digits, if it is less than ``10`` it shows have a ``0`` in front of it, for example ``01``. the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -424,7 +424,7 @@ requirements
         (wake_time-sleep_time)
     )
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -450,7 +450,7 @@ requirements
         self.assertEqual(help(str))
     ...
 
-  the terminal_ is your friend and shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<what is a function?>` that looks like what I am looking for
+  the terminal_ is your friend, and shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<what is a function?>` that looks like what I am looking for
 
   .. code-block:: shell
 
@@ -493,7 +493,7 @@ I add a failing test for the `str.split`_ :ref:`method<what is a function?>` to 
   def test_duration_w_hours(self):
   ...
 
-the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
 .. code-block:: shell
 
@@ -525,7 +525,7 @@ the test passes
         '01:23'.split(), ['01', '23']
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -556,7 +556,7 @@ the test passes
         )
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -593,7 +593,7 @@ the test passes
     self.assertEqual(split, ['01', '23'])
     self.assertEqual(split[0], 0)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>` because the first item (index 0) from splitting ``'01:23'`` on the separator ``':'`` is ``'01'``, the hours part of the timestamp
 
   .. code-block:: shell
 
@@ -614,7 +614,7 @@ the test passes
     self.assertEqual(split[0], '01')
     self.assertEqual(split[1], '01')
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -643,7 +643,7 @@ the test passes
         )
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -680,7 +680,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     def test_duration_w_hours(self):
     ...
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -700,7 +700,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('23'), 1)
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -731,7 +731,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -767,7 +767,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
         )
     )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 

@@ -35,7 +35,7 @@ open the project
 
     cd calculator
 
-  the terminal_ is your friend and shows I am in the ``calculator`` folder_
+  the terminal_ is your friend, and shows I am in the ``calculator`` folder_
 
   .. code-block:: python
 
@@ -49,7 +49,7 @@ open the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -100,7 +100,7 @@ I change the assertRaises_ to assertEqual_ in :ref:`test_division`
 
   # Exceptions seen
 
-the terminal_ is your friend and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+the terminal_ is your friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
 .. code-block:: python
 
@@ -163,7 +163,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
         return 0
         return random.triangular(-1000.0, 1000.0)
 
-  the terminal_ is your friend and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
   .. code-block:: python
     :emphasize-lines: 7
@@ -237,7 +237,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: python
 

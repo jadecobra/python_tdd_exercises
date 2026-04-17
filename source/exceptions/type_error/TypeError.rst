@@ -148,7 +148,7 @@ start the project
 
       ./makePythonTdd.ps1
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 10
@@ -216,7 +216,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
         def test_type_error_w_the_uncallables(self):
             src.type_error.none()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -250,7 +250,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
 
     none = None
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -303,7 +303,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.none()
             src.type_error.false()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -323,7 +323,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     false = False
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -356,7 +356,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.false()
             src.type_error.true()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -376,7 +376,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     true = True
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -408,7 +408,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.true()
             src.type_error.an_integer()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -426,7 +426,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     an_integer = 1234
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
 * I change the :ref:`variable<what is a variable?>` to a :ref:`funcion<what is a function?>`
 
@@ -454,7 +454,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.an_integer()
             src.type_error.a_float()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -472,7 +472,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     a_float = 1.234
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -504,7 +504,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.a_float()
             src.type_error.a_string()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -522,7 +522,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     a_string = 'a string'
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -554,7 +554,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.a_string()
             src.type_error.a_tuple()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -572,7 +572,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     a_tuple = (1, 2, 3, 'n')
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -604,7 +604,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.a_tuple()
             src.type_error.a_list()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -622,7 +622,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     a_list = [1, 2, 3, 'n']
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -654,7 +654,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
             src.type_error.a_list()
             src.type_error.a_set()
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -672,7 +672,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     a_set = {1, 2, 3, 'n'}
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -714,7 +714,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -732,7 +732,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     a_dictionary = {'key': 'value'}
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -785,7 +785,7 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -812,7 +812,7 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
     def function_00():
         return None
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -850,7 +850,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
         src.type_error.function_00('a')
         src.type_error.function_01('a', 'b')
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -869,7 +869,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
     def function_01(the_input):
         return None
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -899,7 +899,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
             src.type_error.function_01('a', 'b')
             src.type_error.function_02('a', 'b', 'c')
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -918,7 +918,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
     def function_02(first, second):
         return None
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -947,7 +947,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
             src.type_error.function_02('a', 'b', 'c')
             src.type_error.function_03('a', 'b', 'c', 'd')
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -966,7 +966,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
     def function_03(first, second, third):
         return None
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -1015,7 +1015,7 @@ I add a new test with a failing line in ``test_type_error.py``
 
   # Exceptions seen
 
-the terminal_ is your friend and shows TypeError_
+the terminal_ is your friend, and shows TypeError_
 
 .. code-block:: shell
 
@@ -1062,7 +1062,7 @@ the test passes
                 None + False
             True - 'text'
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -1095,7 +1095,7 @@ the test passes
                 True - 'text'
             (0, 1, 2, 'n') * [0, 1, 2, 'n']
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: none
 
@@ -1134,7 +1134,7 @@ the test passes
                 (0, 1, 2, 'n') * [0, 1, 2, 'n']
             {0, 1, 2, 'n'} / {'key': 'value'}
 
-  the terminal_ is your friend and shows TypeError_
+  the terminal_ is your friend, and shows TypeError_
 
   .. code-block:: shell
 
@@ -1157,7 +1157,7 @@ the test passes
         with self.assertRaises(TypeError):
             {0, 1, 2, 'n'} / {'key': 'value'}
 
-  the terminal_ is your friend and shows all tests are passing
+  the terminal_ is your friend, and shows all tests are passing
 
 ----
 
@@ -1176,7 +1176,7 @@ close the project
 
     cd ..
 
-  the terminal_ is your friend and shows
+  the terminal_ is your friend, and shows
 
   .. code-block:: PowerShell
 

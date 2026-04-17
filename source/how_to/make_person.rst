@@ -57,7 +57,7 @@ start the project
 
       ./makePythonTdd.ps1 person
 
-  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  it makes the folders_ and files_ that are needed, installs packages_, runs the first test, and the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 3
@@ -122,7 +122,7 @@ test_factory_takes_keyword_arguments
     # Exceptions seen
     # AssertionError
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -156,7 +156,7 @@ test_factory_takes_keyword_arguments
     import src.person
     import unittest
 
-  the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -207,7 +207,7 @@ test_factory_takes_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -256,7 +256,7 @@ test_factory_takes_keyword_arguments
                 None
             )
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
@@ -294,7 +294,7 @@ test_factory_takes_keyword_arguments
                 None
             )
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -335,7 +335,7 @@ test_factory_takes_keyword_arguments
                 None
             )
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -359,7 +359,7 @@ test_factory_takes_keyword_arguments
 
     class TestPerson(unittest.TestCase):
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -400,7 +400,7 @@ test_factory_takes_keyword_arguments
                 dict()
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -441,7 +441,7 @@ test_factory_takes_keyword_arguments
                 )
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -540,7 +540,7 @@ test_factory_takes_keyword_arguments
         def test_factory_takes_keyword_arguments(self):
             first_name = 'jane'
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -581,7 +581,7 @@ test_factory_takes_keyword_arguments
                 )
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 2
@@ -686,7 +686,7 @@ test_factory_takes_keyword_arguments
             first_name = 'jane'
             last_name = 'doe'
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -738,7 +738,7 @@ test_factory_takes_keyword_arguments
                 )
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 3
@@ -848,7 +848,7 @@ test_factory_takes_keyword_arguments
             last_name = 'doe'
             sex = 'F'
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -900,7 +900,7 @@ test_factory_takes_keyword_arguments
                 )
             )
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -942,7 +942,7 @@ test_factory_takes_keyword_arguments
       def this_year():
           return datetime.datetime.today().year
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 3
@@ -1235,7 +1235,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
   - ``this_year()`` returns ``datetime.datetime.now().year`` which is the value for the current year
   - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and also the current year which is returned by the call to ``this_year()``
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests. When the age is not ``0``, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times to run the tests. When the age is not ``0``, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -1273,7 +1273,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
             'age': this_year() - year_of_birth,
         }
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1295,7 +1295,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
             'age': datetime.datetime.now().year - year_of_birth,
         }
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -1351,7 +1351,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``sex`` is randomly ``'F'``.
 
-  When ``sex`` is randomly ``'M'``, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  When ``sex`` is randomly ``'M'``, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -1399,7 +1399,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``last_name`` is ``'doe'``.
 
-  When ``last_name`` is not ``doe``, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  When ``last_name`` is not ``doe``, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -1449,7 +1449,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``first_name`` is ``'jane'``.
 
-  When ``first_name`` is not ``'jane'`` the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  When ``first_name`` is not ``'jane'`` the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -1611,7 +1611,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     # Exceptions seen
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1636,7 +1636,7 @@ I want to see what happens when I try to make a person without a value for the `
             sex, year_of_birth,
         ):
 
-  the terminal_ is your friend and shows SyntaxError_
+  the terminal_ is your friend, and shows SyntaxError_
 
   .. code-block:: python
 
@@ -1669,7 +1669,7 @@ I want to see what happens when I try to make a person without a value for the `
             sex=None, year_of_birth,
         ):
 
-  the terminal_ is your friend and shows SyntaxError_
+  the terminal_ is your friend, and shows SyntaxError_
 
   .. code-block:: python
 
@@ -1686,7 +1686,7 @@ I want to see what happens when I try to make a person without a value for the `
             sex=None, year_of_birth=None,
         ):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
     :emphasize-lines: 2
@@ -1712,7 +1712,7 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
     :emphasize-lines: 2, 5
@@ -1771,7 +1771,7 @@ I want to see what happens when I try to make a person without a value for the `
                 # sex=choose('F', 'M'),
             )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2
@@ -1796,7 +1796,7 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -1876,7 +1876,7 @@ I want to see what happens when I try to make a person without a value for the `
                     year_of_birth=year_of_birth,
                 ),
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1924,7 +1924,7 @@ I want to see what happens when I try to make a person without a value for the `
                     age=this_year()-year_of_birth,
                 )
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2286,7 +2286,7 @@ I want to write the solution without looking at the tests
 ----
 
 * I close ``test_person.py`` in the :ref:`editor<2 editors>`
-* then I delete all the text in ``person.py``. the terminal_ is your friend and shows :ref:`AttributeError<what causes AttributeError?>`
+* then I delete all the text in ``person.py``. the terminal_ is your friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -2310,7 +2310,7 @@ I want to write the solution without looking at the tests
 
     factory
 
-  the terminal_ is your friend and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is your friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
@@ -2324,7 +2324,7 @@ I want to write the solution without looking at the tests
 
     factory = None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -2341,7 +2341,7 @@ I want to write the solution without looking at the tests
     def factory():
         return None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -2358,7 +2358,7 @@ I want to write the solution without looking at the tests
     def factory(first_name):
         return None
 
-  the terminal_ is your friend and shows :ref:`TypeError`
+  the terminal_ is your friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
@@ -2375,7 +2375,7 @@ I want to write the solution without looking at the tests
     def factory(first_name, year_of_birth):
         return None
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2397,7 +2397,7 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. ATTENTION:: Some of your values will be different because the test uses random values
 
@@ -2425,7 +2425,7 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the first name matches and when the ages are different, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the first name matches and when the ages are different, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2435,7 +2435,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?         ^
 
-  sometimes the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  sometimes the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2455,7 +2455,7 @@ I want to write the solution without looking at the tests
             'age': year_of_birth,
         }
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2494,7 +2494,7 @@ I want to write the solution without looking at the tests
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2515,7 +2515,7 @@ I want to write the solution without looking at the tests
         ):
         return {
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2535,7 +2535,7 @@ I want to write the solution without looking at the tests
         ):
         return {
 
-  the terminal_ is your friend and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is your friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2555,7 +2555,7 @@ I want to write the solution without looking at the tests
             last_name=None, sex,
         ):
 
-  the terminal_ is your friend and shows SyntaxError_
+  the terminal_ is your friend, and shows SyntaxError_
 
   .. code-block:: python
 
@@ -2574,7 +2574,7 @@ I want to write the solution without looking at the tests
             last_name=None, sex=None,
         ):
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
@@ -2599,7 +2599,7 @@ I want to write the solution without looking at the tests
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2625,7 +2625,7 @@ I want to write the solution without looking at the tests
 
   the test passes when the ``last_name`` is randomly ``'doe'``.
 
-  When the ``last_name`` is not ``'doe'``, the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  When the ``last_name`` is not ``'doe'``, the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 5
@@ -2651,7 +2651,7 @@ I want to write the solution without looking at the tests
             'age': datetime.datetime.today().year - year_of_birth,
         }
 
-  the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is your friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
     :emphasize-lines: 2, 5
@@ -2726,7 +2726,7 @@ close the project
 
       cd ..
 
-    the terminal_ is your friend and shows
+    the terminal_ is your friend, and shows
 
     .. code-block:: python
 
