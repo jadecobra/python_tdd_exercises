@@ -2548,7 +2548,7 @@ current light     timer done      walk button     show
             self.assertEqual(
                 src.traffic_light.show(
                     timer_done=True,
-                    walk_button=False
+                    walk_button=False,
                 ),
                 GREEN
             )
@@ -2571,7 +2571,7 @@ current light     timer done      walk button     show
 
         def test_traffic_light_when_yellow_w_walk_button(self):
 
-* I do the same thing in :ref:`test_traffic_light_when_yellow_w_walk_button`
+* I do the same thing with :ref:`test_traffic_light_when_yellow_w_walk_button`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2680,9 +2680,9 @@ current light     timer done      walk button     show
                 YELLOW
             )
 
-        def test_traffic_light_when_green_w_walk_button
+        def test_traffic_light_when_green_w_walk_button(self):
 
-* I can also do it with :ref:`test_traffic_light_when_green_w_walk_button`
+* I also do it with :ref:`test_traffic_light_when_green_w_walk_button`
 
   .. code-block:: python
     :lineno-start: 80
@@ -2752,7 +2752,7 @@ current light     timer done      walk button     show
 * I remove the ``reality`` :ref:`variable<what is a variable?>` and comments from :ref:`test_traffic_light_when_green_w_walk_button`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 80
 
         def test_traffic_light_when_green_w_walk_button(self):
             self.assertEqual(
@@ -2864,27 +2864,23 @@ the terminal_ is your friend and shows :ref:`AssertionError<what causes Assertio
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 19
+    :emphasize-lines: 14-15
 
     def show(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
+        if not timer_done:
+            return current_light
+        if current_light == yellow:
+            return red
+        if current_light == green:
+            return yellow
+        if walk_button:
+            return red
 
-        if timer_done:
-            if current_light == green:
-                next_light = yellow
-            if current_light == red:
-                if walk_button:
-                    next_light = red
-                else:
-                    next_light = green
-        else:
-            next_light = current_light
-
-        return next_light, 'WALK'
+        return green, 'WALK'
 
   the terminal_ is your friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
