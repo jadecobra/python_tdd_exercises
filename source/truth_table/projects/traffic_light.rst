@@ -3531,7 +3531,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   ================  ==============  ==============  =================================
 
   .. code-block:: python
-    :lineno-start: 98
+    :lineno-start: 88
     :emphasize-lines: 13-14, 19
 
         def test_traffic_light_when_green_w_walk_button(self):
@@ -3542,7 +3542,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     timer_done=True,
                     walk_button=True,
                 ),
-                (YELLOW, NO_WALK)
+                (YELLOW, 'NO WALK')
             )
 
             self.assertEqual(
@@ -3552,16 +3552,12 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     timer_done=True,
                     walk_button=False,
                 ),
-                (YELLOW, NO_WALK)
+                (YELLOW, 'NO WALK')
             )
 
-  still green
+  the test is still green
 
 * I change the third :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 23-24, 29
 
   ================  ==============  ==============  =================================
   current light     timer done      walk button     show
@@ -3571,6 +3567,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   :green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
   ================  ==============  ==============  =================================
 
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 23-24, 29
+
         def test_traffic_light_when_green_w_walk_button(self):
             self.assertEqual(
                 # src.traffic_light.show(
@@ -3579,7 +3579,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     timer_done=True,
                     walk_button=True,
                 ),
-                (YELLOW, NO_WALK)
+                (YELLOW, 'NO WALK')
             )
 
             self.assertEqual(
@@ -3589,7 +3589,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     timer_done=True,
                     walk_button=False,
                 ),
-                (YELLOW, NO_WALK)
+                (YELLOW, 'NO WALK')
             )
 
             self.assertEqual(
@@ -3599,8 +3599,12 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                     timer_done=False,
                     walk_button=True,
                 ),
-                (GREEN, NO_WALK)
+                (GREEN, 'NO WALK')
             )
+
+  the terminal_ is my friend, and shows
+
+  .. code-
 
 * I change the last :ref:`assertion<what is an assertion?>`
 
