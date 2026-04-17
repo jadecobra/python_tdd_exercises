@@ -760,9 +760,9 @@ review
 
 * ``bool(anything)`` returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
 * ``assertFalse(anything) == assertFalse(bool(anything))``
-* ``assertFalse(anything)`` checks if the result of ``bool(anything)`` is :ref:`True<test_what_is_true>`, it raises :ref:`AssertionError<what causes AssertionError?>` if it is
+* ``assertFalse(anything)`` checks if the result of ``bool(anything)`` is :ref:`True<test_what_is_true>` and raises :ref:`AssertionError<what causes AssertionError?>` if it is
 * ``assertTrue(anything) == assertTrue(bool(anything))``
-* ``assertTrue(anything)`` checks if the result of ``bool(anything)`` is :ref:`False<test_what_is_false>`, it raises :ref:`AssertionError<what causes AssertionError?>` if it is
+* ``assertTrue(anything)`` checks if the result of ``bool(anything)`` is :ref:`False<test_what_is_false>` and it raises :ref:`AssertionError<what causes AssertionError?>` if it is
 
 `you can take a look at the source code here <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L750>`_
 
