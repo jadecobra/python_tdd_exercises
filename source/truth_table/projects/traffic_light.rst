@@ -2136,6 +2136,12 @@ current light     timer done      walk button     show
 
 * I add ``walk_button`` to the call to ``src.traffic_light.show`` in the first :ref:`assertion<what is an assertion?>` of :ref:`test_traffic_light_when_green` in ``test_traffic_light.py``
 
+  ================  ==============  ==============  =================
+  current light     timer done      walk button     show
+  ================  ==============  ==============  =================
+  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW`
+  ================  ==============  ==============  =================
+
   .. code-block:: python
     :lineno-start: 65
     :emphasize-lines: 6
@@ -2162,6 +2168,13 @@ current light     timer done      walk button     show
   the test is still green
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is done and the walk button is NOT pushed
+
+  ================  ==============  ==============  =================
+  current light     timer done      walk button     show
+  ================  ==============  ==============  =================
+  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW`
+  :green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW`
+  ================  ==============  ==============  =================
 
   .. code-block:: python
     :lineno-start: 65
@@ -2195,6 +2208,14 @@ current light     timer done      walk button     show
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is NOT done and the walk button is pushed
 
+  ================  ==============  ==============  =================
+  current light     timer done      walk button     show
+  ================  ==============  ==============  =================
+  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW`
+  :green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW`
+  :green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN`
+  ================  ==============  ==============  =================
+
   .. code-block:: python
     :lineno-start: 82
     :emphasize-lines: 5
@@ -2210,6 +2231,15 @@ current light     timer done      walk button     show
   green
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is NOT done and the walk button is NOT pushed
+
+  ================  ==============  ==============  =================
+  current light     timer done      walk button     show
+  ================  ==============  ==============  =================
+  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW`
+  :green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW`
+  :green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN`
+  :green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN`
+  ================  ==============  ==============  =================
 
   .. code-block:: python
     :lineno-start: 82
@@ -2251,6 +2281,143 @@ current light     timer done      walk button     show
 
     class TestTrafficLight(unittest.TestCase):
 
+* I use the :green:`GREEN` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_traffic_light_when_green`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 4-5, 13-14, 20, 22-23, 27-28, 30, 32-33, 37-38
+
+        def test_traffic_light_when_green(self):
+            my_expectation = 'YELLOW'
+            reality = src.traffic_light.show(
+                # current_light='GREEN',
+                current_light=GREEN,
+                timer_done=True,
+                walk_button=True,
+            )
+            self.assertEqual(reality, my_expectation)
+
+            my_expectation = 'YELLOW'
+            reality = src.traffic_light.show(
+                # current_light='GREEN',
+                current_light=GREEN,
+                timer_done=True,
+                walk_button=False,
+            )
+            self.assertEqual(reality, my_expectation)
+
+            # my_expectation = 'GREEN'
+            reality = src.traffic_light.show(
+                # current_light='GREEN',
+                current_light=GREEN,
+                timer_done=False,
+                walk_button=True,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, GREEN)
+
+            # my_expectation = 'GREEN'
+            reality = src.traffic_light.show(
+                # current_light='GREEN',
+                current_light=GREEN,
+                timer_done=False,
+                walk_button=False,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, GREEN)
+
+  green
+
+* I use the :yellow:`YELLOW` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_traffic_light_when_green`
+
+  .. code-block:: python
+    :lineno-start: 65
+    :emphasize-lines: 2, 9-10, 12, 19-20
+
+        def test_traffic_light_when_green(self):
+            # my_expectation = 'YELLOW'
+            reality = src.traffic_light.show(
+                # current_light='GREEN',
+                current_light=GREEN,
+                timer_done=True,
+                walk_button=True,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, YELLOW)
+
+            # my_expectation = 'YELLOW'
+            reality = src.traffic_light.show(
+                # current_light='GREEN',
+                current_light=GREEN,
+                timer_done=True,
+                walk_button=False,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, YELLOW)
+
+  still green
+
+* I change the name of the test from :ref:`test_traffic_light_when_green` to :ref:`test_traffic_light_when_green_w_walk_button`
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 8
+
+            reality = src.traffic_light.show(
+                current_light=YELLOW,
+                timer_done=False,
+                walk_button=False,
+            )
+            self.assertEqual(reality, YELLOW)
+
+        def test_traffic_light_when_green_w_walk_button(self):
+            # my_expectation = 'YELLOW'
+            reality = src.traffic_light.show(
+                # current_light='GREEN',
+                current_light=GREEN,
+                timer_done=True,
+                walk_button=True,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, YELLOW)
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 65
+
+        def test_traffic_light_when_green_w_walk_button(self):
+            reality = src.traffic_light.show(
+                current_light=GREEN,
+                timer_done=True,
+                walk_button=True,
+            )
+            self.assertEqual(reality, YELLOW)
+
+            reality = src.traffic_light.show(
+                current_light=GREEN,
+                timer_done=True,
+                walk_button=False,
+            )
+            self.assertEqual(reality, YELLOW)
+
+            reality = src.traffic_light.show(
+                current_light=GREEN,
+                timer_done=False,
+                walk_button=True,
+            )
+            self.assertEqual(reality, GREEN)
+
+            reality = src.traffic_light.show(
+                current_light=GREEN,
+                timer_done=False,
+                walk_button=False,
+            )
+            self.assertEqual(reality, GREEN)
+
+
+    # Exceptions seen
+
 * I use the :green:`GREEN` :ref:`global variable<what is a variable?>` in :ref:`test_traffic_light_when_red_w_walk_button`
 
   .. code-block:: python
@@ -2260,7 +2427,7 @@ current light     timer done      walk button     show
             # my_expectation = 'GREEN'
             reality = src.traffic_light.show(
                 timer_done=True,
-                walk_button=False
+                walk_button=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, GREEN)
@@ -2281,7 +2448,7 @@ current light     timer done      walk button     show
 
             reality = src.traffic_light.show(
                 timer_done=True,
-                walk_button=False
+                walk_button=False,
             )
             self.assertEqual(reality, GREEN)
 
@@ -2299,145 +2466,13 @@ current light     timer done      walk button     show
 
         def test_traffic_light_when_yellow_w_walk_button
 
-* I change the name of :ref:`test_traffic_light_when_green` to :ref:`test_traffic_light_when_green_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 8
-
-            reality = src.traffic_light.show(
-                current_light=YELLOW,
-                timer_done=False,
-                walk_button=False,
-            )
-            self.assertEqual(reality, YELLOW)
-
-        def test_traffic_light_when_green_w_walk_button(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
-                current_light='GREEN',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-* I use the :green:`GREEN` :ref:`global variable<what is a variable?>` in :ref:`test_traffic_light_when_green_w_walk_button`
-
-  .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 4-5, 13-14, 20, 22-23, 27-28, 30, 32-33, 37-38
-
-        def test_traffic_light_when_green_w_walk_button(self):
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            # my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, GREEN)
-
-            # my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=False,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, GREEN)
-
-  still green
-
-* I use the :yellow:`YELLOW` :ref:`global variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 2, 9-10, 12, 19-20
-
-        def test_traffic_light_when_green_w_walk_button(self):
-            # my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, YELLOW)
-
-            # my_expectation = 'YELLOW'
-            reality = src.traffic_light.show(
-                # current_light='GREEN',
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=False,
-            )
-            # self.assertEqual(reality, my_expectation)
-            self.assertEqual(reality, YELLOW)
-
-  green
-
-* I remove the comments
-
-  .. code-block:: python
-    :lineno-start: 64
-
-        def test_traffic_light_when_green_w_walk_button(self):
-            reality = src.traffic_light.show(
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, YELLOW)
-
-            reality = src.traffic_light.show(
-                current_light=GREEN,
-                timer_done=True,
-                walk_button=False,
-            )
-            self.assertEqual(reality, YELLOW)
-
-            reality = src.traffic_light.show(
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=True,
-            )
-            self.assertEqual(reality, GREEN)
-
-            reality = src.traffic_light.show(
-                current_light=GREEN,
-                timer_done=False,
-                walk_button=False,
-            )
-            self.assertEqual(reality, GREEN)
-
 ----
 
 *********************************************************************************
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I can remove the ``reality`` :ref:`variable<what is a variable?>` since it is only used once for each :ref:`assertion<what is an assertion?>` in :ref:`test_traffic_light_when_red_w_walk_button`
+* I can remove the ``reality`` :ref:`variable<what is a variable?>`, since it is only used once for each :ref:`assertion<what is an assertion?>`, I can make the call to ``src.traffic_light.show`` directly, in :ref:`test_traffic_light_when_red_w_walk_button`
 
   .. code-block:: python
     :lineno-start: 10
@@ -2459,13 +2494,13 @@ current light     timer done      walk button     show
 
             reality = src.traffic_light.show(
                 timer_done=True,
-                walk_button=False
+                walk_button=False,
             )
             # self.assertEqual(reality, GREEN)
             self.assertEqual(
                 src.traffic_light.show(
                     timer_done=True,
-                    walk_button=False
+                    walk_button=False,
                 ),
                 GREEN
             )
