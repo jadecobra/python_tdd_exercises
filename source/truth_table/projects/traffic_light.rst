@@ -3709,6 +3709,17 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
+
+* Since my new solution works, I right click on the name ``show_walk`` and select ``Rename Symbol`` (`Visual Studio Code`_) to change the name to ``show`` and all tests are still green
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
 
         if not timer_done:
@@ -3725,17 +3736,6 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             return red, 'WALK'
 
         return green, 'NO WALK'
-
-* Since my new solution works, I right click on the name ``show_walk`` and select ``Rename Symbol`` (`Visual Studio Code`_) to change the name to ``show`` and all tests are still green
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
 
   green
 
@@ -3762,6 +3762,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I use ``GREEN_NO_WALK`` for ``(GREEN, 'NO WALK')`` in the second :ref:`assertion<what is an assertion?>` of :ref:`test_traffic_light_when_red_w_walk_button`
 
+
   .. code-block:: python
     :lineno-start: 24
     :emphasize-lines: 7-8
@@ -3779,6 +3780,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   the test is still green
 
 * I use ``WALK`` for ``(RED, 'WALK')`` in :ref:`test_traffic_light_when_red_w_walk_button`
+
+  .. NOTE:: ``Rename Symbol`` changes the names of the calls to ``src.traffic_light.show_walk`` to ``src.traffic_light.show`` in the tests
 
   .. code-block:: python
     :lineno-start: 14
@@ -4085,298 +4088,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* The :ref:`if statements<if statements>` when the timer is NOT done all return the current light, I add a statement for :red:`RED` to be clearer, in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 12-13
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            if current_light == green:
-                return current_light, 'NO WALK'
-            if current_light == yellow:
-                return current_light, 'NO WALK'
-            if current_light == red:
-                return current_light, 'WALK'
-        if current_light == yellow:
-            return red, 'WALK'
-        if current_light == green:
-            return yellow, 'NO WALK'
-        if walk_button:
-            return red, 'WALK'
-
-        return green, 'NO WALK'
-
-  the tests are still green
-
-* I write a new :ref:`if statement with an else clause<if statements>`, that covers the 3 cases
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 8-11
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            if current_light != red:
-                return current_light, 'NO WALK'
-            else:
-                return current_light, 'WALK'
-            if current_light == green:
-
-  still green
-
-* I add a :ref:`conditional expression<conditional expressions>` for the new :ref:`if statement<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2-5
-
-        if not timer_done:
-            return current_light, (
-                'NO WALK' if current_light != red
-                else 'WALK'
-            )
-            if current_light != red:
-                return current_light, 'NO WALK'
-            else:
-                return current_light, 'WALK'
-            if current_light == green:
-
-  green
-
-* I remove the other :ref:`if statements<if statements>` from the one for when the timer is NOT done
-
-  .. code-block:: python
-    :linenos:
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light, (
-                'NO WALK' if current_light != red
-                else 'WALK'
-            )
-        if current_light == yellow:
-            return red, 'WALK'
-        if current_light == green:
-            return yellow, 'NO WALK'
-        if walk_button:
-            return red, 'WALK'
-
-        return green, 'NO WALK'
-
-* I add an :ref:`if statement<if statements>` for when the light is :green:`GREEN`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 16-17
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-        walk = 'NO WALK'
-
-        if not timer_done:
-            return current_light, (
-                'WALK'
-                if current_light == red
-                else 'NO WALK'
-            )
-
-        if current_light == green:
-            return yellow, 'NO WALK'
-
-        if timer_done:
-
-  still green
-
-* I add an :ref:`if statement<if statements>` for when the light is :red:`RED`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 18-23
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-        walk = 'NO WALK'
-
-        if not timer_done:
-            return current_light, (
-                'WALK'
-                if current_light == red
-                else 'NO WALK'
-            )
-
-        if current_light == green:
-            return yellow, 'NO WALK'
-        if current_light == red:
-            return (
-                (red, 'WALK')
-                if walk_button
-                else (green, 'NO WALK')
-            )
-
-        if timer_done:
-
-  the test is still green
-
-* I add a `return statement`_ for the default case which covers when the light is :yellow:`YELLOW`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 25
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-        walk = 'NO WALK'
-
-        if not timer_done:
-            return current_light, (
-                'WALK'
-                if current_light == red
-                else 'NO WALK'
-            )
-
-        if current_light == green:
-            return yellow, 'NO WALK'
-        if current_light == red:
-            return (
-                (red, 'WALK')
-                if walk_button
-                else (green, 'NO WALK')
-            )
-
-        return (red, 'WALK')
-
-        if timer_done:
-            if current_light == green:
-                next_light = yellow
-            if current_light == red:
-                if walk_button:
-                    next_light = red
-                else:
-                    next_light = green
-        else:
-            next_light = current_light
-
-        if next_light == red:
-            walk = 'WALK'
-
-        return next_light, walk
-
-  still green
-
-* I remove the other statements
-
-  .. code-block:: python
-    :linenos:
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-        walk = 'NO WALK'
-
-        if not timer_done:
-            return current_light, (
-                'WALK'
-                if current_light == red
-                else 'NO WALK'
-            )
-
-        if current_light == green:
-            return yellow, 'NO WALK'
-        if current_light == red:
-            return (
-                (red, 'WALK')
-                if walk_button
-                else (green, 'NO WALK')
-            )
-
-        return (red, 'WALK')
-
-* I change the value of the ``walk`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-        walk = 'WALK'
-
-        if not timer_done:
-
-* I use it to remove repetition in the statements
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 11-12, 21-22, 27-28
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        next_light = red
-        walk = 'WALK'
-
-        if not timer_done:
-            return current_light, (
-                # 'WALK'
-                walk
-                if current_light == red
-                else 'NO WALK'
-            )
-
-        if current_light == green:
-            return yellow, 'NO WALK'
-        if current_light == red:
-            return (
-                # (red, 'WALK')
-                (red, walk)
-                if walk_button
-                else (green, 'NO WALK')
-            )
-
-        # return (red, 'WALK')
-        return (red, walk)
-
-  green
-
-* I change the ``next_light`` :ref:`variable<what is a variable?>` to ``no_walk``
+* I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``show`` :ref:`functionM<what is a function?>` in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -4387,52 +4099,120 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             walk_button=False,
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        no_walk = 'NO WALK'
-        walk = 'WALK'
+        walk, no_walk = 'WALK', 'NO WALK
 
-        if not timer_done:
-
-* I use it to remove repetition
+* I use the new :ref:`variables<what is a variable?>` to remove repetition
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 19-20, 26-27
+    :emphasize-lines: 10-11, 13-14, 15-16, 18-19, 21-22, 24-25, 27-28
 
     def show(
             current_light='RED', timer_done=False,
             walk_button=False,
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        no_walk = 'NO WALK'
-        walk = 'WALK'
+        walk, no_walk = 'WALK', 'NO WALK'
 
         if not timer_done:
-            return current_light, (
-                # 'WALK'
-                walk
-                if current_light == red
-                # else 'NO WALK'
-                else no_walk
-            )
-
+            if current_light == green:
+                # return current_light, 'NO WALK'
+                return current_light, no_walk
+            if current_light == yellow:
+                # return current_light, 'NO WALK'
+                return current_light, no_walk
+            # return current_light, 'WALK'
+            return current_light, walk
+        if current_light == yellow:
+            # return red, 'WALK'
+            return red, walk
         if current_light == green:
             # return yellow, 'NO WALK'
             return yellow, no_walk
-        if current_light == red:
-            return (
-                # (red, 'WALK')
-                (red, walk)
-                if walk_button
-                # else (green, 'NO WALK')
-                else (green, no_walk)
-            )
+        if walk_button:
+            # return red, 'WALK'
+            return red, walk
 
-        # return (red, 'WALK')
-        return (red, walk)
+        # return green, 'NO WALK'
+        return green, no_walk
+
+  the tests are still green
+
+* The :ref:`if statements<if statements>` when the timer is NOT done all return the current light, I add a statement for :red:`RED` to be clearer
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 16-17
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        walk, no_walk = 'WALK', 'NO WALK'
+
+        if not timer_done:
+            if current_light == green:
+                # return current_light, 'NO WALK'
+                return current_light, no_walk
+            if current_light == yellow:
+                # return current_light, 'NO WALK'
+                return current_light, no_walk
+            # return current_light, 'WALK'
+            if current_light == red:
+                return current_light, walk
+        if current_light == yellow:
+            # return red, 'WALK'
+            return red, walk
+        if current_light == green:
+            # return yellow, 'NO WALK'
+            return yellow, no_walk
+        if walk_button:
+            # return red, 'WALK'
+            return red, walk
+
+        # return green, 'NO WALK'
+        return green, no_walk
+
+  the tests are still green
+
+* I write a new :ref:`if statement with an else clause<if statements>`, that covers the 3 cases when the timer is NOT done
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 9-12
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        walk, no_walk = 'WALK', 'NO WALK'
+
+        if not timer_done:
+            if current_light != red:
+                return current_light, no_walk
+            else:
+                return current_light, walk
 
   still green
 
-* I remove the commented lines
+* I add a :ref:`conditional expression<conditional expressions>` for the new :ref:`if statement<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 2-5
+
+        if not timer_done:
+            return current_light, (
+                no_walk if current_light != red
+                else walk
+            )
+            if current_light != red:
+
+  green
+
+* I remove the other :ref:`if statements<if statements>` from the one for when the timer is NOT done, and the commented lines
 
   .. code-block:: python
     :linenos:
@@ -4442,26 +4222,182 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             walk_button=False,
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        no_walk = 'NO WALK'
-        walk = 'WALK'
+        walk, no_walk = 'WALK', 'NO WALK'
 
         if not timer_done:
             return current_light, (
-                walk
-                if current_light == red
-                else no_walk
+                no_walk if current_light != red
+                else walk
+            )
+        if current_light == yellow:
+            return red, walk
+        if current_light == green:
+            return yellow, no_walk
+        if walk_button:
+            return red, walk
+
+        return green, no_walk
+
+* I write out the :ref:`if statements<if statements>` for when the light is :red:`RED` and the timer is done, to be clearer
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-7, 9
+
+        if current_light == red:
+            if not walk_button:
+                return green, no_walk
+            else:
+                return red, walk
+        # if walk_button:
+        #     return red, walk
+
+        # return green, no_walk
+
+  still green
+
+* I add a :ref:`conditional expression<conditional expressions>` for the :ref:`if statement<if statements>` with ``walk_button``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-5
+
+        if current_light == red:
+            return (
+                (green, no_walk) if not walk_button
+                else (red, walk)
+            )
+            if not walk_button:
+                return green, no_walk
+            else:
+                return red, walk
+        # if walk_button:
+        #     return red, walk
+
+        # return green, no_walk
+
+  the tests are still green
+
+* I remove the other :ref:`if statements<if statements>` and commented lines below the new statement
+
+  .. code-block:: python
+    :linenos:
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        walk, no_walk = 'WALK', 'NO WALK'
+
+        if not timer_done:
+            return current_light, (
+                no_walk if current_light != red
+                else walk
+            )
+
+        if current_light == yellow:
+            return red, walk
+
+        if current_light == green:
+            return yellow, no_walk
+
+        if current_light == red:
+            return (
+                (green, no_walk) if not walk_button
+                else (red, walk)
+            )
+
+* ``(red, walk)`` happens 3 times in the :ref:`function<what is a function?>`, I add a `return statement`_ to make it the default state of the light
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 23
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        walk, no_walk = 'WALK', 'NO WALK'
+
+        if not timer_done:
+            return current_light, (
+                no_walk if current_light != red
+                else walk
+            )
+
+        if current_light == yellow:
+            return red, walk
+
+        if current_light == green:
+            return yellow, no_walk
+
+        if current_light == red:
+            return (
+                (green, no_walk) if not walk_button
+                else (red, walk)
+            )
+
+        return red, walk
+
+  still green. This means if no :ref:`conditions<if statements>` are met, the light stays :red:`RED`
+
+* I no longer need the :ref:`if statement<if statements>` for :yellow:`YELLOW` because it returns the default state. I comment it out
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 14-15
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        walk, no_walk = 'WALK', 'NO WALK'
+
+        if not timer_done:
+            return current_light, (
+                no_walk if current_light != red
+                else walk
+            )
+
+        # if current_light == yellow:
+        #     return red, walk
+
+        if current_light == green:
+            return yellow, no_walk
+
+  green
+
+* I remove the commented lines
+
+  .. code-block::
+    :linenos:
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        walk, no_walk = 'WALK', 'NO WALK'
+
+        if not timer_done:
+            return current_light, (
+                no_walk if current_light != red
+                else walk
             )
 
         if current_light == green:
             return yellow, no_walk
+
         if current_light == red:
             return (
-                (red, walk)
-                if walk_button
-                else (green, no_walk)
+                (green, no_walk) if not walk_button
+                else (red, walk)
             )
 
-        return (red, walk)
+        return red, walk
 
 ----
 
@@ -4493,6 +4429,13 @@ current light     timer done      walk button     show
 :green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
 :green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
 ================  ==============  ==============  =================================
+
+What would the :ref:`truth table` be if I want the Traffic Light to turn :red:`RED` when there is an emergency vehicle present? The inputs would be
+
+* what color is the light now?
+* is the timer done?
+* did the person push the walk button?
+* is there an emergency vehicle?
 
 ----
 
