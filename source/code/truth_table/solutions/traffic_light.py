@@ -3,22 +3,21 @@ def show(
         walk_button=False,
     ):
     red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-    next_light = red
-    walk = 'NO WALK'
+    walk, no_walk = 'WALK', 'NO WALK'
 
-    if timer_done:
-        if current_light == green:
-            next_light = yellow
-            return yellow, walk
-        if current_light == red:
-            if walk_button:
-                next_light = red
-            else:
-                next_light = green
     if not timer_done:
-        next_light = current_light
+        return current_light, (
+            no_walk if current_light != red
+            else walk
+        )
 
-    if next_light == red:
-        walk = 'WALK'
+    if current_light == green:
+        return yellow, no_walk
 
-    return next_light, walk
+    if current_light == red:
+        return (
+            (green, no_walk) if not walk_button
+            else (red, walk)
+        )
+
+    return red, walk

@@ -23,7 +23,7 @@ class TestTrafficLight(unittest.TestCase):
         self.assertEqual(
             src.traffic_light.show(
                 timer_done=True,
-                walk_button=False
+                walk_button=False,
             ),
             GREEN_NO_WALK
         )

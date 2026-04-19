@@ -1322,7 +1322,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   still green
 
-* I add add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is NOT done and the walk button is not pressed
+* I add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is NOT done and the walk button is not pressed
 
   ================  ==============  ==============  =================
   current light     timer done      walk button     show
@@ -4088,7 +4088,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``show`` :ref:`functionM<what is a function?>` in ``traffic_light.py``
+* I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -4099,7 +4099,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             walk_button=False,
         ):
         red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-        walk, no_walk = 'WALK', 'NO WALK
+        walk, no_walk = 'WALK', 'NO WALK'
 
 * I use the new :ref:`variables<what is a variable?>` to remove repetition
 
@@ -4368,7 +4368,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         if current_light == green:
             return yellow, no_walk
 
-  green
+  green. Why does this work?
 
 * I remove the commented lines
 
@@ -4430,12 +4430,51 @@ current light     timer done      walk button     show
 :green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
 ================  ==============  ==============  =================================
 
-What would the :ref:`truth table` be if I want the Traffic Light to turn :red:`RED` when there is an emergency vehicle present? The inputs would be
+What if there is an emergency vehicle present and the Traffic Light changes based on that as well? The inputs would be
 
 * what color is the light now?
 * is the timer done?
 * did the person push the walk button?
 * is there an emergency vehicle?
+
+and the :ref:`truth table` would be
+
+================  ==============  ==============  ===========  =================================
+current light     timer done      walk button     emergency    show
+================  ==============  ==============  ===========  =================================
+:red:`RED`        :green:`yes`    :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
+:red:`RED`        :green:`yes`    :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
+:red:`RED`        :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
+:red:`RED`        :green:`yes`    :red:`no`       :green:`no`  :green:`GREEN` + :red:`NO WALK`
+:red:`RED`        :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
+:red:`RED`        :red:`no`       :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
+:red:`RED`        :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
+:red:`RED`        :red:`no`       :red:`no`       :green:`no`  :red:`RED` + :green:`WALK`
+================  ==============  ==============  ===========  =================================
+================  ==============  ==============  ===========  =================================
+current light     timer done      walk button     emergency    show
+================  ==============  ==============  ===========  =================================
+:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :green:`yes`    :red:`no`       :green:`no`  :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`no`       :green:`yes`    :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`no`       :red:`no`       :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
+================  ==============  ==============  ===========  =================================
+================  ==============  ==============  ===========  =================================
+current light     timer done      walk button     emergency    show
+================  ==============  ==============  ===========  =================================
+:green:`GREEN`    :green:`yes`    :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
+:green:`GREEN`    :green:`yes`    :green:`yes`    :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
+:green:`GREEN`    :green:`yes`    :red:`no`       :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
+:green:`GREEN`    :red:`no`       :green:`yes`    :green:`no`  :green:`GREEN` + :red:`NO WALK`
+:green:`GREEN`    :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
+:green:`GREEN`    :red:`no`       :red:`no`       :green:`no`  :green:`GREEN` + :red:`NO WALK`
+================  ==============  ==============  ===========  =================================
 
 ----
 
