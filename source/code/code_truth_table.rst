@@ -68,3 +68,21 @@ the code from ``traffic_light/src/traffic_light.py`` from :ref:`Traffic Light`
   :linenos:
 
 ----
+
+*********************************************************************************
+Automatic Teller Machine: tests and solutions
+*********************************************************************************
+
+the code from ``atm/tests/test_atm.py`` from :ref:`Automatic Teller Machine`
+
+.. literalinclude:: truth_table/tests/test_atm.py
+  :language: python
+  :linenos:
+
+the code from ``atm/src/atm.py`` from :ref:`Automatic Teller Machine`
+
+.. literalinclude:: truth_table/solutions/atm.py
+  :language: python
+  :linenos:
+
+----

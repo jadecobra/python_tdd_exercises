@@ -4,8 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. ATTENTION:: This is still a work in progress. There will be errors in the text. The code works and will change as I work on it. Have fun!
-
 .. _traffic_light:
 
 #################################################################################
@@ -4398,6 +4396,30 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             )
 
         return red, walk
+
+----
+
+*********************************************************************************
+close the project
+*********************************************************************************
+
+* I close ``traffic_light.py`` in the :ref:`editor<2 editors>`
+* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+
+* I `change directory`_ to the parent of ``traffic_light``
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    cd ..
+
+  the terminal_ is my friend, and shows
+
+  .. code-block:: shell
+
+    .../pumping_python
+
+  I am back in the ``pumping_python`` directory_
 
 ----
 
