@@ -96,7 +96,7 @@ Binary Operations
   Binary Operations 2<binary_operations_2>
   Binary Operations 3<binary_operations_3>
   Binary Operations 4<binary_operations_4>
-  Binary Operations 5<binary_operations_5>
+  Binary Operations 5: more examples<binary_operations_5>
 
 ----
 

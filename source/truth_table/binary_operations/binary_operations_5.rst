@@ -568,7 +568,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`no coupon`        :red:`NOT a member`    :red:`NO DISCOUNT`
   ======================  =====================  =====================
 
-  always :red:`NO DISCOUNT`. I never give a discount, everyone pays full price.
+  :red:`NO DISCOUNT` always. I never give a discount, everyone pays full price.
 
 * :ref:`logical_conjunction<test_logical_conjunction>`: ``return first and second``
 
@@ -594,7 +594,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`no coupon`        :red:`NOT a member`    :red:`NO DISCOUNT`
   ======================  =====================  =====================
 
-  :green:`DISCOUNT` if the person is a :green:`member`, it does not matter if they have a :green:`coupon` or  :red:`no coupon`. I give the discount only to members. A loyalty program. Sorry you brought a coupon.
+  :green:`DISCOUNT` only if the person is a :green:`member`, it does not matter if they have a :green:`coupon` or  :red:`no coupon`. I give the discount only to members. A loyalty program. Sorry you brought a coupon.
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -673,7 +673,7 @@ the :ref:`truth table` shows all the logically possible states of
   ======================  =====================  =====================
 
   - :red:`NO DISCOUNT` if the person has a :green:`coupon` AND person is a :green:`member`
-  - :red:`NO DISCOUNT` if it is :red:`NOT a coupon` AND :red:`NOT a member`
+  - :red:`NO DISCOUNT` if the person does :red:`NOT have a coupon` AND is :red:`NOT a member`
 
   Why is "coupon AND member" the same as "no coupon AND not member"? I do not want a members to have a coupon and I do not want someone who is not a member and does not have a coupon.
 
@@ -688,7 +688,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`no coupon`        :red:`NOT a member`    :red:`NO DISCOUNT`
   ======================  =====================  =====================
 
-  :green:`DISCOUNT` if the person has a :green:`coupon` AND is :red:`NOT a member`. A coupon for people that are not members.
+  :green:`DISCOUNT` only if the person has a :green:`coupon` AND is :red:`NOT a member`. A coupon for people that are not members.
 
 * :ref:`project_first<test_project_first>`: ``return first``
 
@@ -701,7 +701,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`no coupon`        :red:`NOT a member`    :red:`NO DISCOUNT`
   ======================  =====================  =====================
 
-  :green:`DISCOUNT` if the person has a :green:`coupon`, I do not care about if they are a member or not.
+  :green:`DISCOUNT` only if the person has a :green:`coupon`, I do not care about if they are a member or not.
 
 * :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
 
@@ -714,7 +714,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`no coupon`        :red:`NOT a member`    :green:`DISCOUNT`
   ======================  =====================  =====================
 
-  :red:`NO DISCOUNT` if the person :red:`does NOT have a coupon` AND is a :green:`member`.
+  :red:`NO DISCOUNT` only if the person :red:`does NOT have a coupon` AND is a :green:`member`.
 
 * :ref:`negate_second<test_negate_second>`: ``return not second``
 
@@ -1132,6 +1132,54 @@ The examples above show
   :ref:`material_implication<test_material_implication>`          :red:`REJECT` if it is a :green:`strong option` AND :red:`NOT a strong fit`
   ==============================================================  ===========================================================================================================
 
+* store discount policy
+
+    ====================================================================================  ==================  =================== ==================  =================== ==============================================================
+  output                                                                                :green:`coupon`,    :green:`coupon`,    :red:`no coupon`,   :red:`no coupon`,   operation
+                                                                                        :green:`member`     :red:`NOT a member` :green:`member`     :red:`NOT a member`
+  ====================================================================================  ==================  =================== ==================  =================== ==============================================================
+  :red:`NO DISCOUNT`                                                                    :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :ref:`contradiction<test_contradiction>`
+  :green:`coupon` AND :green:`member`                                                   :green:`DISCOUNT`   :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :ref:`logical_conjunction<test_logical_conjunction>`
+  :green:`member`                                                                       :green:`DISCOUNT`   :red:`NO DISCOUNT`  :green:`DISCOUNT`   :red:`NO DISCOUNT`  :ref:`project_second<test_project_second>`
+  :red:`no coupon` AND :green:`member`                                                  :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :green:`DISCOUNT`   :red:`NO DISCOUNT`  :ref:`converse_non_implication<test_converse_non_implication>`
+  :red:`no coupon`                                                                      :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :green:`DISCOUNT`   :green:`DISCOUNT`   :ref:`negate_first<test_negate_first>`
+  NOT (:green:`coupon` AND :green:`member`)                                             :red:`NO DISCOUNT`  :green:`DISCOUNT`   :green:`DISCOUNT`   :green:`DISCOUNT`   :ref:`logical_nand<test_logical_nand>`
+  :green:`DISCOUNT`                                                                     :green:`DISCOUNT`   :green:`DISCOUNT`   :green:`DISCOUNT`   :green:`DISCOUNT`   :ref:`tautology<test_tautology>`
+  :green:`coupon` OR :green:`member`                                                    :green:`DISCOUNT`   :green:`DISCOUNT`   :green:`DISCOUNT`   :red:`NO DISCOUNT`  :ref:`logical_disjunction<test_logical_disjunction>`
+  (NOT (:green:`coupon` AND :green:`member`)) AND (:green:`coupon` OR :green:`member`)  :red:`NO DISCOUNT`  :green:`DISCOUNT`   :green:`DISCOUNT`   :red:`NO DISCOUNT`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+  :green:`coupon` AND :red:`NOT a member`                                               :red:`NO DISCOUNT`  :green:`DISCOUNT`   :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :ref:`material_non_implication<test_material_non_implication>`
+  :green:`coupon`                                                                       :green:`DISCOUNT`   :green:`DISCOUNT`   :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :ref:`project_first<test_project_first>`
+  :green:`coupon` OR :red:`NOT a member`                                                :green:`DISCOUNT`   :green:`DISCOUNT`   :red:`NO DISCOUNT`  :green:`DISCOUNT`   :ref:`converse_implication<test_converse_implication>`
+  :red:`NOT a member`                                                                   :red:`NO DISCOUNT`  :green:`DISCOUNT`   :red:`NO DISCOUNT`  :green:`DISCOUNT`   :ref:`negate_first<test_negate_second>`
+  NOT (:green:`coupon` OR :green:`member`)                                              :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :green:`DISCOUNT`   :ref:`logical_nor<test_logical_nor>`
+  (:red:`no coupon` OR :green:`member`) AND (:green:`coupon` OR :red:`NOT a member`)    :green:`DISCOUNT`   :red:`NO DISCOUNT`  :red:`NO DISCOUNT`  :green:`DISCOUNT`   :ref:`logical_equality<test_logical_equality>`
+  :red:`no coupon` OR :green:`member`                                                   :green:`DISCOUNT`   :red:`NO DISCOUNT`  :green:`DISCOUNT`   :green:`DISCOUNT`   :ref:`material_implication<test_material_implication>`
+  ====================================================================================  ==================  =================== ==================  =================== ==============================================================
+
+  I can say this in English as
+
+  I can say this in English as
+
+  ==============================================================  ===========================================================================================================
+  operation                                                       rule
+  ==============================================================  ===========================================================================================================
+  :ref:`contradiction<test_contradiction>`                        :red:`NO DISCOUNT` always
+  :ref:`logical_conjunction<test_logical_conjunction>`            :green:`DISCOUNT` only if the person has a :green:`coupon` AND person is a :green:`member`
+  :ref:`project_second<test_project_second>`                      :green:`DISCOUNT` only if the person is a :green:`member`, it does not matter if they have a :green:`coupon` or  :red:`no coupon`
+  :ref:`converse_non_implication<test_converse_non_implication>`  :green:`DISCOUNT` only if the person does :red:`NOT have a coupon` AND the person is a :green:`member`
+  :ref:`negate_first<test_negate_first>`                          :green:`DISCOUNT` only if the person does :red:`NOT have a coupon`, I do not care if it is a member or not
+  :ref:`logical_nand<test_logical_nand>`                          :red:`NO DISCOUNT` only if the person has a :green:`coupon` AND is a :green:`member`
+  :ref:`tautology<test_tautology>`                                :green:`DISCOUNT` always
+  :ref:`logical_disjunction<test_logical_disjunction>`            :red:`NO DISCOUNT` only if the person does :red:`NOT have a coupon` AND is :red:`NOT a member`
+  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        :red:`NO DISCOUNT` if the person has a :green:`coupon` AND person is a :green:`member`, AND if the person does :red:`NOT have a coupon` AND is :red:`NOT a member`
+  :ref:`material_non_implication<test_material_non_implication>`  :green:`DISCOUNT` only if the person has a :green:`coupon` AND is :red:`NOT a member`
+  :ref:`project_first<test_project_first>`                        :green:`DISCOUNT` only if the person has a :green:`coupon`
+  :ref:`converse_implication<test_converse_implication>`          :red:`NO DISCOUNT` only if the person :red:`does NOT have a coupon` AND is a :green:`member`
+  :ref:`negate_second<test_negate_second>`                        :green:`DISCOUNT` only if the person is :red:`NOT a member`, I do not care if they have a coupon or not
+  :ref:`logical_nor<test_logical_nor>`                            :green:`DISCOUNT` only if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
+  :ref:`logical_equality<test_logical_equality>`                  :green:`DISCOUNT` if the person has a :green:`coupon` AND is a :green:`member`, AND if the person :red:`does NOT have a coupon` AND is :red:`NOT a member`
+  :ref:`material_implication<test_material_implication>`          :red:`NO DISCOUNT` if the person has a :green:`coupon` AND :red:`NOT a member`
+  ==============================================================  ===========================================================================================================
 ----
 
 *************************************************************************************
