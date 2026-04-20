@@ -1074,18 +1074,63 @@ The examples above show
   :ref:`logical_nand<test_logical_nand>`                          outputs :red:`OFF` only if there is :green:`motion` AND the :green:`right code` is entered.
   :ref:`tautology<test_tautology>`                                outputs :green:`ON` always
   :ref:`logical_disjunction<test_logical_disjunction>`            outputs :red:`OFF` only if there is :red:`NOT motion` and :red:`NOT the right code` is entered
-  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered, AND outputs :red:`OFF` if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered, AND if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
   :ref:`material_non_implication<test_material_non_implication>`  outputs :green:`ON` if there is :green:`motion` AND :red:`NOT the right code` is entered
   :ref:`project_first<test_project_first>`                        outputs :green:`ON` if there is :green:`motion`, it does not matter what code is entered
   :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` if there is :red:`NOT motion` AND the :green:`right code` is entered
   :ref:`negate_second<test_negate_second>`                        outputs :green:`ON` only if :red:`NOT the right code` is entered
   :ref:`logical_nor<test_logical_nor>`                            outputs :green:`ON` only if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
-  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered, ANDoutputs :green:`ON` if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered, AND if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
   :ref:`material_implication<test_material_implication>`          outputs :red:`OFF` if there is :green:`motion` AND :red:`NOT the right code` is entered.
   ==============================================================  ===========================================================================================================
 
 
 * hiring
+
+  ==========================================================================================================  ======================= ======================= ====================  =================== ==============================================================
+  output                                                                                                      :green:`strong option`, :green:`strong option`, :red:`weak option`,   :red:`weak option`, operation
+                                                                                                              :green:`strong fit`     :red:`weak fit`         :green:`strong fit`   :red:`weak fit`
+  ==========================================================================================================  ======================= ======================= ====================  =================== ==============================================================
+  :red:`REJECT`                                                                                               :red:`REJECT`           :red:`REJECT`           :red:`REJECT`         :red:`REJECT`       :ref:`contradiction<test_contradiction>`
+  :green:`strong option` AND :green:`strong fit`                                                              :green:`HIRE`           :red:`REJECT`           :red:`REJECT`         :red:`REJECT`       :ref:`logical_conjunction<test_logical_conjunction>`
+  :green:`strong fit`                                                                                         :green:`HIRE`           :red:`REJECT`           :green:`HIRE`         :red:`REJECT`       :ref:`project_second<test_project_second>`
+  :red:`weak option` AND :green:`strong fit`                                                                  :red:`REJECT`           :red:`REJECT`           :green:`HIRE`         :red:`REJECT`       :ref:`converse_non_implication<test_converse_non_implication>`
+  :red:`weak option`                                                                                          :red:`REJECT`           :red:`REJECT`           :green:`HIRE`         :green:`HIRE`       :ref:`negate_first<test_negate_first>`
+  NOT (:green:`strong option` AND :green:`strong fit`)                                                        :red:`REJECT`           :green:`HIRE`           :green:`HIRE`         :green:`HIRE`       :ref:`logical_nand<test_logical_nand>`
+  :green:`HIRE`                                                                                               :green:`HIRE`           :green:`HIRE`           :green:`HIRE`         :green:`HIRE`       :ref:`tautology<test_tautology>`
+  :green:`strong option` OR :green:`strong fit`                                                               :green:`HIRE`           :green:`HIRE`           :green:`HIRE`         :red:`REJECT`       :ref:`logical_disjunction<test_logical_disjunction>`
+  (NOT (:green:`strong option` AND :green:`strong fit`)) AND (:green:`strong option` OR :green:`strong fit`)  :red:`REJECT`           :green:`HIRE`           :green:`HIRE`         :red:`REJECT`       :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+  :green:`strong option` AND :red:`weak fit`                                                                  :red:`REJECT`           :green:`HIRE`           :red:`REJECT`         :red:`REJECT`       :ref:`material_non_implication<test_material_non_implication>`
+  :green:`strong option`                                                                                      :green:`HIRE`           :green:`HIRE`           :red:`REJECT`         :red:`REJECT`       :ref:`project_first<test_project_first>`
+  :green:`strong option` OR :red:`weak fit`                                                                   :green:`HIRE`           :green:`HIRE`           :red:`REJECT`         :green:`HIRE`       :ref:`converse_implication<test_converse_implication>`
+  :red:`weak fit`                                                                                             :red:`REJECT`           :green:`HIRE`           :red:`REJECT`         :green:`HIRE`       :ref:`negate_first<test_negate_second>`
+  NOT (:green:`strong option` OR :green:`strong fit`)                                                         :red:`REJECT`           :red:`REJECT`           :red:`REJECT`         :green:`HIRE`       :ref:`logical_nor<test_logical_nor>`
+  (:red:`weak option` OR :green:`strong fit`) AND (:green:`strong option` OR :red:`weak fit`)                 :green:`HIRE`           :red:`REJECT`           :red:`REJECT`         :green:`HIRE`       :ref:`logical_equality<test_logical_equality>`
+  :red:`weak option` OR :green:`strong fit`                                                                   :green:`HIRE`           :red:`REJECT`           :green:`HIRE`         :green:`HIRE`       :ref:`material_implication<test_material_implication>`
+  ==========================================================================================================  ======================= ======================= ====================  =================== ==============================================================
+
+  I can say this in English as
+
+  ==============================================================  ===========================================================================================================
+  operation                                                       rule
+  ==============================================================  ===========================================================================================================
+  :ref:`contradiction<test_contradiction>`                        always :red:`REJECT`
+  :ref:`logical_conjunction<test_logical_conjunction>`            :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit`
+  :ref:`project_second<test_project_second>`                      :green:`HIRE` if it is a :green:`strong fit`, it does not matter it is a :green:`strong option` or  :red:`weak option`
+  :ref:`converse_non_implication<test_converse_non_implication>`  :green:`HIRE` only if it is :red:`NOT a strong option` AND it is a :green:`strong fit`
+  :ref:`negate_first<test_negate_first>`                          :green:`HIRE` only if it is :red:`NOT a strong option`, I do not care about fit
+  :ref:`logical_nand<test_logical_nand>`                          :red:`REJECT` only if it is a :green:`strong option` AND it is a :green:`strong fit`
+  :ref:`tautology<test_tautology>`                                :green:`HIRE` always, it does not care about the inputs
+  :ref:`logical_disjunction<test_logical_disjunction>`            :red:`REJECT` only if it is :red:`NOT a strong option` and :red:`NOT a strong fit`
+  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        :red:`REJECT` if it is a :green:`strong option` AND it is a :green:`strong fit`, AND if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
+  :ref:`material_non_implication<test_material_non_implication>`  :green:`HIRE` if it is a :green:`strong option` AND :red:`NOT a strong fit`
+  :ref:`project_first<test_project_first>`                        :green:`HIRE` if it is a :green:`strong option`, I do not care about fit
+  :ref:`converse_implication<test_converse_implication>`          :red:`REJECT` if it is :red:`NOT a strong option` AND it is a :green:`strong fit`
+  :ref:`negate_second<test_negate_second>`                        :green:`HIRE` only if :red:`NOT a strong fit`, I do not care whether it is a strong or weak option
+  :ref:`logical_nor<test_logical_nor>`                            :green:`HIRE` only if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
+  :ref:`logical_equality<test_logical_equality>`                  :green:`HIRE` if it is a :green:`strong option` AND it is a :green:`strong fit`, AND if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
+  :ref:`material_implication<test_material_implication>`          :red:`REJECT` if it is a :green:`strong option` AND :red:`NOT a strong fit`
+  ==============================================================  ===========================================================================================================
 
 ----
 
