@@ -32,6 +32,7 @@ the projects
   :titlesonly:
 
   Traffic Light<traffic_light>
+  Automated Teller Machine<atm>
 
 ----
 
