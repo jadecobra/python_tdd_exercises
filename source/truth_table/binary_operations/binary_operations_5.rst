@@ -38,7 +38,7 @@ if the inputs are
 - is there motion?
 - is the code right?
 
-the possible states for the inputs are
+then the possible states for the inputs are
 
 =====================  =====================
 motion (first)          code (second)
@@ -93,7 +93,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :red:`OFF`
   =====================  =====================  =====================
 
-  outputs :green:`ON` only if the :green:`right code` is entered, it does not care about motion. How is the :green:`right code` entered without motion?
+  outputs :green:`ON` only if the :green:`right code` is entered, it does not care if there is :green:`motion` or :red:`no motion`. How is the :green:`right code` entered without motion?
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -106,7 +106,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :red:`OFF`
   =====================  =====================  =====================
 
-  outputs :green:`ON` only if there is :red:`NOT motion` AND the :green:`right code` is entered. How is the :green:`right code` entered without motion?
+  outputs :green:`ON` only if there is :red:`no motion` AND the :green:`right code` is entered. How is the :green:`right code` entered without motion?
 
 * :ref:`negate_first<test_negate_first>`: ``return not first``
 
@@ -119,7 +119,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :green:`ON`
   =====================  =====================  =====================
 
-  outputs :green:`ON` only if there is :red:`NOT motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered.
+  outputs :green:`ON` only if there is :red:`no motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered.
 
 * :ref:`logical_nand<test_logical_nand>`: ``return not (first and second)``
 
@@ -158,7 +158,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :red:`OFF`
   =====================  =====================  =====================
 
-  outputs :red:`OFF` only if there is :red:`NOT motion` and :red:`NOT the right code` is entered. How is the code entered without motion?
+  outputs :red:`OFF` only if there is :red:`no motion` AND the :red:`wrong code` is entered. How is the code entered without motion?
 
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>`: ``return (not (first and second) and (first or second))``
 
@@ -172,7 +172,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   =====================  =====================  =====================
 
   - outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered
-  - outputs :red:`OFF` if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  - outputs :red:`OFF` if there is :red:`no motion` AND the :red:`wrong code` is entered
 
   Wait a minute! Why is "motion AND the :green:`right code`" the same as "NOT motion AND :red:`NOT the right code`"?
 
@@ -187,7 +187,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :red:`OFF`
   =====================  =====================  =====================
 
-  outputs :green:`ON` if there is :green:`motion` AND :red:`NOT the right code` is entered. Is there a burglar?
+  outputs :green:`ON` only if there is :green:`motion` AND :red:`NOT the right code` is entered. Is there a burglar?
 
 * :ref:`project_first<test_project_first>`: ``return first``
 
@@ -200,7 +200,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :red:`OFF`
   =====================  =====================  =====================
 
-  outputs :green:`ON` if there is :green:`motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered.
+  outputs :green:`ON` only if there is :green:`motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered.
 
 * :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
 
@@ -213,7 +213,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :green:`ON`
   =====================  =====================  =====================
 
-  outputs :red:`OFF` if there is :red:`NOT motion` AND the :green:`right code` is entered. How is the code entered if there is no motion?
+  outputs :red:`OFF` only if there is :red:`no motion` AND the :green:`right code` is entered. How is the code entered if there is no motion?
 
 * :ref:`negate_second<test_negate_second>`: ``return not second``
 
@@ -226,7 +226,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :green:`ON`
   =====================  =====================  =====================
 
-  outputs :green:`ON` only if :red:`NOT the right code` is entered, it does not care about motion.
+  outputs :green:`ON` only if the :red:`wrong code` is entered, it does not care if there is :green:`motion` or :red:`no motion`.
 
 * :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
 
@@ -239,7 +239,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :green:`ON`
   =====================  =====================  =====================
 
-  outputs :green:`ON` only if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  outputs :green:`ON` only if there is :red:`no motion` AND the :red:`wrong code` is entered.
 
 * :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
 
@@ -253,7 +253,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   =====================  =====================  =====================
 
   - outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered
-  - outputs :green:`ON` if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  - outputs :green:`ON` if there is :red:`no motion` AND the :red:`wrong code` is entered
 
 * :ref:`material_implication<test_material_implication>`: ``return (not first) or second``
 
@@ -266,12 +266,12 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :green:`ON`
   =====================  =====================  =====================
 
-  outputs :red:`OFF` if there is :green:`motion` AND :red:`NOT the right code` is entered.
+  outputs :red:`OFF` only if there is :green:`motion` AND :red:`NOT the right code` is entered.
 
 I do not need to know or memorize every operation, the only operations that I want in this case are:
 
 * :ref:`logical_conjunction<test_logical_conjunction>`, where it outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered. I assume this is an authorized entry.
-* :ref:`material_non_implication<test_material_non_implication>`, where it outputs :green:`ON` if there is :green:`motion` AND the :red:`wrong code` is entered. I assume this is NOT an authorized entry.
+* :ref:`material_non_implication<test_material_non_implication>`, where it outputs :green:`ON` only if there is :green:`motion` AND the :red:`wrong code` is entered. I assume this is NOT an authorized entry.
 
 Because I want to first check if there is motion, then check if the code entered is correct.
 
@@ -288,7 +288,7 @@ if the inputs are
 - is the person a strong option?
 - is the person a strong fit?
 
-the possible states for the inputs are
+then the possible states for the inputs are
 
 ======================  =====================
 option (first)          fit (second)
@@ -343,7 +343,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :red:`REJECT`
   ======================  =====================  =====================
 
-  :green:`HIRE` if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or  :red:`weak option`. I like this person and do not care about whether it is a strong or weak option. How does the team feel about this?
+  :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or  :red:`weak option`. I like this person and do not care about whether it is a strong or weak option. How does the team feel about this?
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -356,7 +356,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :red:`REJECT`
   ======================  =====================  =====================
 
-  :green:`HIRE` only if it is :red:`NOT a strong option` AND it is a :green:`strong fit`. What is the benefit of a weak option that is a strong fit?
+  :green:`HIRE` only if it is a :red:`weak option` AND it is a :green:`strong fit`. What is the benefit of a weak option that is a strong fit?
 
 * :ref:`negate_first<test_negate_first>`: ``return not first``
 
@@ -369,7 +369,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :green:`HIRE`
   ======================  =====================  =====================
 
-  :green:`HIRE` only if it is :red:`NOT a strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`. Why would I hire a weak option?
+  :green:`HIRE` only if it is a :red:`weak option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`. Why would I hire a weak option?
 
 * :ref:`logical_nand<test_logical_nand>`: ``return not (first and second)``
 
@@ -395,7 +395,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :green:`HIRE`
   ======================  =====================  =====================
 
-  :green:`HIRE` always, it does not care about the inputs. Anybody can get a job here.
+  :green:`HIRE` always, I do not care about the inputs. Anybody can get a job here.
 
 * :ref:`logical_disjunction<test_logical_disjunction>`: ``return first or second``
 
@@ -408,7 +408,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :red:`REJECT`
   ======================  =====================  =====================
 
-  :red:`REJECT` only if it is :red:`NOT a strong option` and :red:`NOT a strong fit`. I hire just about anybody but have to draw the line somewhere.
+  :red:`REJECT` only if it is a :red:`weak option` and :red:`NOT a strong fit`. I hire just about anybody but have to draw the line somewhere.
 
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>`: ``return (not (first and second) and (first or second))``
 
@@ -437,7 +437,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :red:`REJECT`
   ======================  =====================  =====================
 
-  :green:`HIRE` if it is a :green:`strong option` AND :red:`NOT a strong fit`. How does the team feel about this?
+  :green:`HIRE` only if it is a :green:`strong option` AND :red:`NOT a strong fit`. How does the team feel about this?
 
 * :ref:`project_first<test_project_first>`: ``return first``
 
@@ -450,7 +450,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :red:`REJECT`
   ======================  =====================  =====================
 
-  :green:`HIRE` if it is a :green:`strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`.
+  :green:`HIRE` only if it is a :green:`strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`.
 
 * :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
 
@@ -463,7 +463,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :green:`HIRE`
   ======================  =====================  =====================
 
-  :red:`REJECT` if it is :red:`NOT a strong option` AND it is a :green:`strong fit`. Did I just hire a weak option that is also a weak fit?
+  :red:`REJECT` only if it is a :red:`weak option` AND it is a :green:`strong fit`. Did I just hire a weak option that is also a weak fit?
 
 * :ref:`negate_second<test_negate_second>`: ``return not second``
 
@@ -476,7 +476,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :green:`HIRE`
   ======================  =====================  =====================
 
-  :green:`HIRE` only if :red:`NOT a strong fit`, I do not care if it is a strong or weak option.
+  :green:`HIRE` only if it is a :red:`weak fit`, I do not care if it is a :green:`strong option` or :red:`weak option`.
 
 * :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
 
@@ -489,7 +489,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :green:`HIRE`
   ======================  =====================  =====================
 
-  :green:`HIRE` only if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`. Trouble.
+  :green:`HIRE` only if it is a :red:`weak option` AND :red:`NOT a strong fit`. Trouble.
 
 * :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
 
@@ -518,7 +518,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`weak option`      :red:`weak fit`        :green:`HIRE`
   ======================  =====================  =====================
 
-  :red:`REJECT` if it is a :green:`strong option` AND :red:`NOT a strong fit`.
+  :red:`REJECT` only if it is a :green:`strong option` AND :red:`NOT a strong fit`.
 
 I do not need to know or memorize every operation, the only operations that I want in this case are:
 
@@ -539,7 +539,7 @@ if the inputs are
 - does the person have a coupon?
 - is the person a member?
 
-the possible states for the inputs are
+then the possible states for the inputs are
 
 ======================  =====================
 coupon (first)          member (second)
@@ -594,7 +594,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`no coupon`        :red:`NOT a member`    :red:`REGULAR PRICE`
   ======================  =====================  =====================
 
-  :green:`DISCOUNT PRICE` only if the person is a :green:`member`, it does not care if they have a :green:`coupon` or  :red:`no coupon`. I give the discount only to members. A loyalty program. Sorry you brought a coupon.
+  :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or  :red:`no coupon`. I give the discount only to members. A loyalty program. Sorry you brought a coupon.
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -791,7 +791,7 @@ if the inputs are
 - is the soil dry?
 - did it rain?
 
-the possible states for the inputs are
+then the possible states for the inputs are
 
 ======================  =====================
 soil (first)            rain (second)
@@ -846,7 +846,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
-  :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or  :red:`wet`. Am I trying to make a swamp?
+  :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or  if the :red:`soil is wet`. Am I trying to make a swamp?
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -977,7 +977,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
-  :green:`WATER` only if it did :red:`NOT rain`, I do not care if the soil is :green:`dry` or :red:`wet`. What if the soil is wet?
+  :green:`WATER` only if it did :red:`NOT rain`, I do not care if the  :green:`soil is dry` or if the :red:`soil is wet`.
 
 * :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
 
@@ -990,7 +990,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
-  :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. How did the soil get wet? Did I water it and forget?
+  :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. How did the soil get wet? Did I water it already and forget?
 
 * :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
 
@@ -1019,7 +1019,7 @@ the :ref:`truth table` shows all the logically possible states of
   :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
-  :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`. I want to kill the plants
+  :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`. I want to kill the plants.
 
 I do not need to know or memorize every operation, the only operations that I want in this case are:
 
@@ -1033,7 +1033,7 @@ I do not need to know or memorize every operation, the only operations that I wa
 review
 *********************************************************************************
 
-The :ref:`truth table` shows the possible states inputs can take and how they interact to give possible outputs. In most cases I do not need to know all the operations, just the conditions for the problem I am solving, and as always remember that they can be made with some combination of :ref:`NOT<test_logical_negation>`, :ref:`AND<test_logical_conjunction>` and :ref:`OR<test_logical_disjunction>`
+The :ref:`truth table` shows the possible states inputs can take and how they interact to give possible outputs. In most cases, I do not need to know all the operations. I only need to know the conditions for the problem I am solving, and remember that they can be made with some combination of :ref:`NOT<test_logical_negation>`, :ref:`AND<test_logical_conjunction>` and :ref:`OR<test_logical_disjunction>`
 
 
 The examples above show
@@ -1070,19 +1070,19 @@ The examples above show
   :ref:`contradiction<test_contradiction>`                        outputs :red:`OFF` always, it does not care about the inputs
   :ref:`logical_conjunction<test_logical_conjunction>`            outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered
   :ref:`project_second<test_project_second>`                      outputs :green:`ON` only if the :green:`right code` is entered
-  :ref:`converse_non_implication<test_converse_non_implication>`  outputs :green:`ON` only if there is :red:`NOT motion` AND the :green:`right code` is entered
-  :ref:`negate_first<test_negate_first>`                          outputs :green:`ON` only if there is :red:`NOT motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered
+  :ref:`converse_non_implication<test_converse_non_implication>`  outputs :green:`ON` only if there is :red:`no motion` AND the :green:`right code` is entered
+  :ref:`negate_first<test_negate_first>`                          outputs :green:`ON` only if there is :red:`no motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered
   :ref:`logical_nand<test_logical_nand>`                          outputs :red:`OFF` only if there is :green:`motion` AND the :green:`right code` is entered.
   :ref:`tautology<test_tautology>`                                outputs :green:`ON` always, it does not care about the inputs
-  :ref:`logical_disjunction<test_logical_disjunction>`            outputs :red:`OFF` only if there is :red:`NOT motion` and :red:`NOT the right code` is entered
-  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered, OR if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
-  :ref:`material_non_implication<test_material_non_implication>`  outputs :green:`ON` if there is :green:`motion` AND :red:`NOT the right code` is entered
-  :ref:`project_first<test_project_first>`                        outputs :green:`ON` if there is :green:`motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered
-  :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` if there is :red:`NOT motion` AND the :green:`right code` is entered
-  :ref:`negate_second<test_negate_second>`                        outputs :green:`ON` only if :red:`NOT the right code` is entered
-  :ref:`logical_nor<test_logical_nor>`                            outputs :green:`ON` only if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
-  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered, AND if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
-  :ref:`material_implication<test_material_implication>`          outputs :red:`OFF` if there is :green:`motion` AND :red:`NOT the right code` is entered.
+  :ref:`logical_disjunction<test_logical_disjunction>`            outputs :red:`OFF` only if there is :red:`no motion` AND the :red:`wrong code` is entered
+  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered, OR if there is :red:`no motion` AND the :red:`wrong code` is entered
+  :ref:`material_non_implication<test_material_non_implication>`  outputs :green:`ON` only if there is :green:`motion` AND :red:`NOT the right code` is entered
+  :ref:`project_first<test_project_first>`                        outputs :green:`ON` only if there is :green:`motion`, it does not care if the :green:`right code` or :red:`wrong code` was entered
+  :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` if there is :red:`no motion` AND the :green:`right code` is entered
+  :ref:`negate_second<test_negate_second>`                        outputs :green:`ON` only if the :red:`wrong code` is entered
+  :ref:`logical_nor<test_logical_nor>`                            outputs :green:`ON` only if there is :red:`no motion` AND the :red:`wrong code` is entered
+  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered, AND if there is :red:`no motion` AND the :red:`wrong code` is entered
+  :ref:`material_implication<test_material_implication>`          outputs :red:`OFF` only if there is :green:`motion` AND :red:`NOT the right code` is entered.
   ==============================================================  ===================================================================================================================================================================
 
 * :ref:`hiring`
@@ -1116,20 +1116,20 @@ The examples above show
   ==============================================================  =====================================================================================================================================================
   :ref:`contradiction<test_contradiction>`                        always :red:`REJECT`
   :ref:`logical_conjunction<test_logical_conjunction>`            :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit`
-  :ref:`project_second<test_project_second>`                      :green:`HIRE` if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or  :red:`weak option`
-  :ref:`converse_non_implication<test_converse_non_implication>`  :green:`HIRE` only if it is :red:`NOT a strong option` AND it is a :green:`strong fit`
-  :ref:`negate_first<test_negate_first>`                          :green:`HIRE` only if it is :red:`NOT a strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`
+  :ref:`project_second<test_project_second>`                      :green:`HIRE` only if it is a :green:`strong fit`, I do not care if it is a :green:`strong option` or  :red:`weak option`
+  :ref:`converse_non_implication<test_converse_non_implication>`  :green:`HIRE` only if it is a :red:`weak option` AND it is a :green:`strong fit`
+  :ref:`negate_first<test_negate_first>`                          :green:`HIRE` only if it is a :red:`weak option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`
   :ref:`logical_nand<test_logical_nand>`                          :red:`REJECT` only if it is a :green:`strong option` AND it is a :green:`strong fit`
-  :ref:`tautology<test_tautology>`                                :green:`HIRE` always, it does not care about the inputs
-  :ref:`logical_disjunction<test_logical_disjunction>`            :red:`REJECT` only if it is :red:`NOT a strong option` and :red:`NOT a strong fit`
+  :ref:`tautology<test_tautology>`                                :green:`HIRE` always, I do not care about the inputs
+  :ref:`logical_disjunction<test_logical_disjunction>`            :red:`REJECT` only if it is a :red:`weak option` and :red:`NOT a strong fit`
   :ref:`exclusive_disjunction<test_exclusive_disjunction>`        :red:`REJECT` if it is a :green:`strong option` AND it is a :green:`strong fit`, OR if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
-  :ref:`material_non_implication<test_material_non_implication>`  :green:`HIRE` if it is a :green:`strong option` AND :red:`NOT a strong fit`
-  :ref:`project_first<test_project_first>`                        :green:`HIRE` if it is a :green:`strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`
-  :ref:`converse_implication<test_converse_implication>`          :red:`REJECT` if it is :red:`NOT a strong option` AND it is a :green:`strong fit`
-  :ref:`negate_second<test_negate_second>`                        :green:`HIRE` only if :red:`NOT a strong fit`, I do not care if it is a strong or weak option
-  :ref:`logical_nor<test_logical_nor>`                            :green:`HIRE` only if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
-  :ref:`logical_equality<test_logical_equality>`                  :green:`HIRE` if it is a :green:`strong option` AND it is a :green:`strong fit`, AND if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
-  :ref:`material_implication<test_material_implication>`          :red:`REJECT` if it is a :green:`strong option` AND :red:`NOT a strong fit`
+  :ref:`material_non_implication<test_material_non_implication>`  :green:`HIRE` only if it is a :green:`strong option` AND :red:`NOT a strong fit`
+  :ref:`project_first<test_project_first>`                        :green:`HIRE` only if it is a :green:`strong option`, I do not care if it is a :green:`strong fit` or :red:`weak fit`
+  :ref:`converse_implication<test_converse_implication>`          :red:`REJECT` only if it is a :red:`weak option` AND it is a :green:`strong fit`
+  :ref:`negate_second<test_negate_second>`                        :green:`HIRE` only if it is a :red:`weak fit`, I do not care if it is a :green:`strong option` or :red:`weak option`
+  :ref:`logical_nor<test_logical_nor>`                            :green:`HIRE` only if it is a :red:`weak option` AND :red:`NOT a strong fit`
+  :ref:`logical_equality<test_logical_equality>`                  :green:`HIRE` only if it is a :green:`strong option` AND it is a :green:`strong fit`, AND if it is :red:`NOT a strong option` AND :red:`NOT a strong fit`
+  :ref:`material_implication<test_material_implication>`          :red:`REJECT` only if it is a :green:`strong option` AND :red:`NOT a strong fit`
   ==============================================================  =====================================================================================================================================================
 
 * :ref:`store discount policy`
@@ -1163,7 +1163,7 @@ The examples above show
   ==============================================================  ================================================================================================================================================================
   :ref:`contradiction<test_contradiction>`                        :red:`REGULAR PRICE` always
   :ref:`logical_conjunction<test_logical_conjunction>`            :green:`DISCOUNT PRICE` only if the person has a :green:`coupon` AND is a :green:`member`
-  :ref:`project_second<test_project_second>`                      :green:`DISCOUNT PRICE` only if the person is a :green:`member`, it does not care if they have a :green:`coupon` or  :red:`no coupon`
+  :ref:`project_second<test_project_second>`                      :green:`DISCOUNT PRICE` only if the person is a :green:`member`, I do not care if they have a :green:`coupon` or  :red:`no coupon`
   :ref:`converse_non_implication<test_converse_non_implication>`  :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon` AND is a :green:`member`
   :ref:`negate_first<test_negate_first>`                          :green:`DISCOUNT PRICE` only if the person does :red:`NOT have a coupon`, I do not care if it is a member or not
   :ref:`logical_nand<test_logical_nand>`                          :red:`REGULAR PRICE` only if the person has a :green:`coupon` AND is a :green:`member`
@@ -1210,7 +1210,7 @@ The examples above show
   ==============================================================  =====================================================================================================================================================
   :ref:`contradiction<test_contradiction>`                        :red:`DO NOT WATER` always
   :ref:`logical_conjunction<test_logical_conjunction>`            :green:`WATER` only if the :green:`soil is dry` AND :green:`it rained`
-  :ref:`project_second<test_project_second>`                      :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or  :red:`wet`
+  :ref:`project_second<test_project_second>`                      :green:`WATER` only if :green:`it rained`, I do not care if the :green:`soil is dry` or  if the :red:`soil is wet`
   :ref:`converse_non_implication<test_converse_non_implication>`  :green:`WATER` only if the :red:`soil is wet` AND :green:`it rained`
   :ref:`negate_first<test_negate_first>`                          :green:`WATER` only if the :red:`soil is wet`, I do not care if it :green:`rained` or did :red:`NOT rain`
   :ref:`logical_nand<test_logical_nand>`                          :red:`DO NOT WATER` only if the :green:`soil is dry` AND :green:`it rained`
@@ -1220,7 +1220,7 @@ The examples above show
   :ref:`material_non_implication<test_material_non_implication>`  :green:`WATER` only if the :green:`soil is dry` AND it did :red:`NOT rain`
   :ref:`project_first<test_project_first>`                        :green:`WATER` only if the :green:`soil is dry`, I do not care if it :green:`rained` or did :red:`NOT rain`
   :ref:`converse_implication<test_converse_implication>`          :red:`DO NOT WATER` only if the :red:`soil is wet` AND :green:`it rained`
-  :ref:`negate_second<test_negate_second>`                        :green:`WATER` only if it did :red:`NOT rain`, I do not care if the soil is :green:`dry` or :red:`wet`
+  :ref:`negate_second<test_negate_second>`                        :green:`WATER` only if it did :red:`NOT rain`, I do not care if the  :green:`soil is dry` or if the :red:`soil is wet`
   :ref:`logical_nor<test_logical_nor>`                            :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`
   :ref:`logical_equality<test_logical_equality>`                  :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`, AND if the :red:`soil is wet` AND it did :red:`NOT rain`
   :ref:`material_implication<test_material_implication>`          :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`
