@@ -93,7 +93,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :red:`OFF`
   =====================  =====================  =====================
 
-  outputs :green:`ON` if the :green:`right code` is entered, it does not care about motion. How is the :green:`right code` entered without motion?
+  outputs :green:`ON` only if the :green:`right code` is entered, it does not care about motion. How is the :green:`right code` entered without motion?
 
 * :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
 
@@ -266,7 +266,7 @@ the :ref:`truth table` shows all the logically possible states of the alarm
   :red:`no motion`       :red:`wrong code`      :green:`ON`
   =====================  =====================  =====================
 
-  output is :red:`OFF` if there is :green:`motion` AND :red:`NOT the right code` is entered.
+  outputs :red:`OFF` if there is :green:`motion` AND :red:`NOT the right code` is entered.
 
 I do not need to know or memorize every operation, the only operations that matter in this case are
 
@@ -815,9 +815,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   :red:`DO NOT WATER`. I never water, survival of the fittest.
@@ -828,9 +828,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   :green:`WATER` only if the :green:`soil is dry` AND :green:`it rained`. Why is the soil still dry after it rained?
@@ -841,9 +841,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   :green:`WATER` if :green:`it rained`, it does not matter if the :green:`soil is dry` or  :red:`wet`. Am I trying to make a swamp?
@@ -854,9 +854,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   :green:`WATER` only if the :red:`soil is wet` AND :green:`it rained`. Maybe this is why all my plants die, I keep over watering them.
@@ -867,9 +867,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   :green:`WATER` only if the :red:`soil is wet`, I do not care if it is :green:`rained` or :red:`not`. I must really want a swamp.
@@ -880,9 +880,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   :red:`DO NOT WATER` only if the :green:`soil is dry` AND :green:`it rained`. Why do I water when the soil is wet and it rained?
@@ -893,9 +893,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   :green:`WATER` always. It does not matter what state the soil is or if it rained or not.
@@ -906,9 +906,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   :red:`DO NOT WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. I pretty much always water unless the soil is wet and it did not rain.
@@ -919,9 +919,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   - :red:`DO NOT WATER` if the :green:`soil is dry` AND :green:`it rained`
@@ -933,9 +933,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   :green:`WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`. I think the plants might like this.
@@ -946,9 +946,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :red:`DO NOT WATER`
   ======================  =====================  =====================
 
   :green:`WATER` if the :green:`soil is dry`, I do not care if it rained or not. Maybe there was not enough rain.
@@ -959,9 +959,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   :red:`DO NOT WATER` if the :red:`soil is wet` AND :green:`it rained`. Too much water.
@@ -972,9 +972,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :green:`WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   :green:`WATER` only if it did :red:`NOT rain`, I do not care about the soil. What if the soil is wet?
@@ -985,9 +985,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. How did the soil get wet? Did I water it and forget?
@@ -998,9 +998,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   - :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`
@@ -1014,9 +1014,9 @@ the :ref:`truth table` shows all the logically possible states of
   soil (first)            rain (second)          output
   ======================  =====================  =====================
   :green:`soil is dry`    :green:`it rained`     :green:`WATER`
-  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`        :red:`DO NOT WATER`
   :red:`soil is wet`      :green:`it rained`     :green:`WATER`
-  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`        :green:`WATER`
   ======================  =====================  =====================
 
   :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`. I want to kill the plants
@@ -1032,7 +1032,57 @@ I do not need to know or memorize every operation, the only operations that matt
 review
 *********************************************************************************
 
-The :ref:`truth table` shows the possible states inputs can take and how they interact to give possible outputs. The examples above show
+The :ref:`truth table` shows the possible states inputs can take and how they interact to give possible outputs. In most cases I do not need to know all the operations, just the conditions for the problem I am solving, and as always remember that they are can be made with some combination of :ref:`NOT<test_logical_negation>`, :ref:`AND<test_logical_conjunction>` and :ref:`OR<test_logical_disjunction>`
+
+
+The examples above show
+
+* security alarm
+
+  ============================================================================================  ==================== ================= ===================  ================= ==============================================================
+  output                                                                                        :green:`motion`,     :green:`motion`,  :red:`no motion`,    :red:`no motion`, operation
+                                                                                                :green:`right code`  :red:`wrong code` :green:`right code`  :red:`wrong code`
+  ============================================================================================  ==================== ================= ===================  ================= ==============================================================
+  :red:`OFF`                                                                                    :red:`OFF`           :red:`OFF`        :red:`OFF`           :red:`OFF`        :ref:`contradiction<test_contradiction>`
+  :green:`motion` AND :green:`right code`                                                       :green:`ON`          :red:`OFF`        :red:`OFF`           :red:`OFF`        :ref:`logical_conjunction<test_logical_conjunction>`
+  :green:`right code`                                                                           :green:`ON`          :red:`OFF`        :green:`ON`          :red:`OFF`        :ref:`project_second<test_project_second>`
+  :red:`no motion` AND :green:`right code`                                                      :red:`OFF`           :red:`OFF`        :green:`ON`          :red:`OFF`        :ref:`converse_non_implication<test_converse_non_implication>`
+  :red:`no motion`                                                                              :red:`OFF`           :red:`OFF`        :green:`ON`          :green:`ON`       :ref:`negate_first<test_negate_first>`
+  NOT (:green:`motion` AND :green:`right code`)                                                 :red:`OFF`           :green:`ON`       :green:`ON`          :green:`ON`       :ref:`logical_nand<test_logical_nand>`
+  :green:`ON`                                                                                   :green:`ON`          :green:`ON`       :green:`ON`          :green:`ON`       :ref:`tautology<test_tautology>`
+  :green:`motion` OR :green:`right code`                                                        :green:`ON`          :green:`ON`       :green:`ON`          :red:`OFF`        :ref:`logical_disjunction<test_logical_disjunction>`
+  (NOT (:green:`motion` AND :green:`right code`)) AND (:green:`motion` OR :green:`right code`)  :red:`OFF`           :green:`ON`       :green:`ON`          :red:`OFF`        :ref:`exclusive_disjunction<test_exclusive_disjunction>`
+  :green:`motion` AND :red:`wrong code`                                                         :red:`OFF`           :green:`ON`       :red:`OFF`           :red:`OFF`        :ref:`material_non_implication<test_material_non_implication>`
+  :green:`motion`                                                                               :green:`ON`          :green:`ON`       :red:`OFF`           :red:`OFF`        :ref:`project_first<test_project_first>`
+  :green:`motion` OR :red:`wrong code`                                                          :green:`ON`          :green:`ON`       :red:`OFF`           :green:`ON`       :ref:`converse_implication<test_converse_implication>`
+  :red:`wrong code`                                                                             :red:`OFF`           :green:`ON`       :red:`OFF`           :green:`ON`       :ref:`negate_first<test_negate_second>`
+  NOT (:green:`motion` OR :green:`right code`)                                                  :red:`OFF`           :red:`OFF`        :red:`OFF`           :green:`ON`       :ref:`logical_nor<test_logical_nor>`
+  (:red:`no motion` OR :green:`right code`) AND (:green:`motion` OR :red:`wrong code`)          :green:`ON`          :red:`OFF`        :red:`OFF`           :green:`ON`       :ref:`logical_equality<test_logical_equality>`
+  :red:`no motion` OR :green:`right code`                                                       :green:`ON`          :red:`OFF`        :green:`ON`          :green:`ON`       :ref:`material_implication<test_material_implication>`
+  ============================================================================================  ==================== ================= ===================  ================= ==============================================================
+
+  I can say this in English as
+
+  ==============================================================  ===========================================================================================================
+  operation                                                       rule
+  ==============================================================  ===========================================================================================================
+  :ref:`contradiction<test_contradiction>`                        outputs :red:`OFF` always
+  :ref:`logical_conjunction<test_logical_conjunction>`            outputs :green:`ON` only if there is :green:`motion` AND the :green:`right code` is entered
+  :ref:`project_second<test_project_second>`                      outputs :green:`ON` only if the :green:`right code` is entered
+  :ref:`converse_non_implication<test_converse_non_implication>`  outputs :green:`ON` only if there is :red:`NOT motion` AND the :green:`right code` is entered
+  :ref:`negate_first<test_negate_first>`                          outputs :green:`ON` only if there is :red:`NOT motion`, it does not care about the code
+  :ref:`logical_nand<test_logical_nand>`                          outputs :red:`OFF` only if there is :green:`motion` AND the :green:`right code` is entered.
+  :ref:`tautology<test_tautology>`                                outputs :green:`ON` always
+  :ref:`logical_disjunction<test_logical_disjunction>`            outputs :red:`OFF` only if there is :red:`NOT motion` and :red:`NOT the right code` is entered
+  :ref:`exclusive_disjunction<test_exclusive_disjunction>`        outputs :red:`OFF` if there is :green:`motion` AND the :green:`right code` is entered, AND outputs :red:`OFF` if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  :ref:`material_non_implication<test_material_non_implication>`  outputs :green:`ON` if there is :green:`motion` AND :red:`NOT the right code` is entered
+  :ref:`project_first<test_project_first>`                        outputs :green:`ON` if there is :green:`motion`, it does not matter what code is entered
+  :ref:`converse_implication<test_converse_implication>`          outputs :red:`OFF` if there is :red:`NOT motion` AND the :green:`right code` is entered
+  :ref:`negate_second<test_negate_second>`                        outputs :green:`ON` only if :red:`NOT the right code` is entered
+  :ref:`logical_nor<test_logical_nor>`                            outputs :green:`ON` only if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  :ref:`logical_equality<test_logical_equality>`                  outputs :green:`ON` if there is :green:`motion` AND the :green:`right code` is entered, ANDoutputs :green:`ON` if there is :red:`NOT motion` AND :red:`NOT the right code` is entered
+  :ref:`material_implication<test_material_implication>`          outputs :red:`OFF` if there is :green:`motion` AND :red:`NOT the right code` is entered.
+  ==============================================================  ===========================================================================================================
 
 ----
 
