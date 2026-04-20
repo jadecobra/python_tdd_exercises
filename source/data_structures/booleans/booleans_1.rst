@@ -155,7 +155,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-* I setup the project with uv_
+* I set up the project with uv_
 
   .. code-block:: python
     :emphasize-lines: 1

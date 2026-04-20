@@ -39,7 +39,7 @@ what is next?
 
 * **Check Your Email:** You should see a recurring invitation for the next 8 weeks. Please accept it now. If you do not see it, check your spam folder since this is probably the first time I have sent you an email.
 * **WhatsApp Community:** I will add you to a WhatsApp group for the class where we can text and share links about the class.
-* **Setup your Integrated Development Environment:** :ref:`Click Here for how to set up your computer the way I have mine setup, before our first session<how I setup my Integrated Development Environment (IDE)>`
+* **Setup your Integrated Development Environment:** :ref:`Click Here for how to set up your computer the way I have mine setup, before our first session<how I set up my Integrated Development Environment (IDE)>`
 
 .. note::
 

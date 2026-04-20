@@ -61,7 +61,7 @@ There are answers to these questions in this chapter
 * :ref:`how can I run tests manually?<how to manually run tests>`
 * :ref:`how can I run tests automatically?<how to run the tests automatically>`
 * :ref:`how can I stop automated Python tests from running?<how to stop the automated tests>`
-* :ref:`how can I setup a project with uv?<how to setup a project with uv>`
+* :ref:`how can I set up a project with uv?<how to setup a project with uv>`
 * :ref:`what is a Virtual Environment?<what is a virtual environment?>`
 * :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment>`
 * :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`

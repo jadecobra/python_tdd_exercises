@@ -6,7 +6,7 @@ pumping python videos
 
 If you prefer videos to text, here are videos for some of the chapters in the book
 
-* :ref:`how I setup my Integrated Development Environment (IDE)`
+* :ref:`how I set up my Integrated Development Environment (IDE)`
 
   .. raw:: html
 

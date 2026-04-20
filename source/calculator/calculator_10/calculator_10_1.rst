@@ -68,7 +68,7 @@ open the project
 
     uv add --requirement requirements.txt
 
-  the terminal shows it installed the `Python packages`_
+  the terminal_ shows that it installed the `Python packages`_
 
 * I use ``pytest-watcher`` to run the tests
 

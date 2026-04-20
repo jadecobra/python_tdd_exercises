@@ -93,7 +93,7 @@ what is covered?
 *********************************************************************************
 
 
-These chapters show how I setup a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
+These chapters show how I set up a project in Python_ on any computer (Linux_, Windows_, MacOS_) to help you get started with `Test Driven Development`_ right now
 
 .. toctree::
   :titlesonly:

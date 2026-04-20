@@ -80,7 +80,7 @@
 - [how to make a person](https://www.pumpingpython.com/how_to/make_person.html)
 - [how to make a python test driven development environment](https://www.pumpingpython.com/how_to/make_tdd_environment.html)
 - [how to pass values](https://www.pumpingpython.com/how_to/pass_values.html)
-- [how I setup my Integrated Development Environment (IDE)](https://www.pumpingpython.com/how_to/setup_my_ide.html)
+- [how I set up my Integrated Development Environment (IDE)](https://www.pumpingpython.com/how_to/setup_my_ide.html)
 - [how to measure sleep duration](https://www.pumpingpython.com/how_to/sleep_duration/index.html)
 - [how to measure sleep duration: test_duration_tests](https://www.pumpingpython.com/how_to/sleep_duration/test_duration_tests.html)
 - [how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time](https://www.pumpingpython.com/how_to/sleep_duration/test_duration_w_an_earlier_wake_than_sleep_time.html)

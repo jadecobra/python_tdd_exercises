@@ -18,7 +18,7 @@ As of this writing I use `Visual Studio Code`_, you can download and install it 
 what is covered?
 *********************************************************************************
 
-These chapters show how I setup any computer for development
+These chapters show how I set up any computer for development
 
 .. toctree::
   :titlesonly:

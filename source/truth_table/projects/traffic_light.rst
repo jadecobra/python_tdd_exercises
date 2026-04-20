@@ -14,23 +14,23 @@ Traffic Light
 
 ----
 
-I want to make a **Traffic Light** that changes color based on a timer, if the inputs are
+I want to make a **Traffic Light** that changes color based on a timer. If the inputs are
 
 * what color is the light now?
 * is the timer done?
 
-Here is the :ref:`truth table` for the traffic light
+then this is the :ref:`truth table` I get
 
-================  ==============  =================
-current light     timer done      show
-================  ==============  =================
-:red:`RED`        :green:`yes`    :green:`GREEN`
-:red:`RED`        :red:`no`       :red:`RED`
-:yellow:`YELLOW`  :green:`yes`    :red:`RED`
-:yellow:`YELLOW`  :red:`no`       :yellow:`YELLOW`
-:green:`GREEN`    :green:`yes`    :yellow:`YELLOW`
-:green:`GREEN`    :red:`no`       :green:`GREEN`
-================  ==============  =================
+=====================  ===================  =================
+current light (first)  timer done (second)  show (output)
+=====================  ===================  =================
+:red:`RED`             :green:`yes`         :green:`GREEN`
+:red:`RED`             :red:`no`            :red:`RED`
+:yellow:`YELLOW`       :green:`yes`         :red:`RED`
+:yellow:`YELLOW`       :red:`no`            :yellow:`YELLOW`
+:green:`GREEN`         :green:`yes`         :yellow:`YELLOW`
+:green:`GREEN`         :red:`no`            :green:`GREEN`
+=====================  ===================  =================
 
 *********************************************************************************
 preview
@@ -214,7 +214,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I setup the project with uv_
+* I set up the project with uv_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -245,7 +245,7 @@ start the project
 
     uv add --requirement requirements.txt
 
-  the terminal shows it installed the `Python packages`_
+  the terminal_ shows that it installed the `Python packages`_
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -3739,7 +3739,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   green
 
-  .. TIP:: ``Rename Symbol`` changes the name every where in the code that it is used or defined, including the tests
+  .. TIP:: ``Rename Symbol`` changes the name everywhere in the code that it is used or defined, including the tests
 
 * I add more :ref:`global variables<what is a variable?>` to ``test_traffic_light.py``
 
@@ -4138,7 +4138,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the tests are still green
 
-* The :ref:`if statements<if statements>` when the timer is NOT done all return the current light, I add a statement for :red:`RED` to be clearer
+* The :ref:`if statements<if statements>` for when the timer is NOT done all return the current light, I add a statement for :red:`RED` to be clearer
 
   .. code-block:: python
     :linenos:
@@ -4372,7 +4372,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I remove the commented lines
 
-  .. code-block::
+  .. code-block:: python
     :linenos:
 
     def show(
@@ -4451,6 +4451,7 @@ current light     timer done      walk button     emergency    show
 :red:`RED`        :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
 :red:`RED`        :red:`no`       :red:`no`       :green:`no`  :red:`RED` + :green:`WALK`
 ================  ==============  ==============  ===========  =================================
+
 ================  ==============  ==============  ===========  =================================
 current light     timer done      walk button     emergency    show
 ================  ==============  ==============  ===========  =================================
@@ -4463,6 +4464,7 @@ current light     timer done      walk button     emergency    show
 :yellow:`YELLOW`  :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
 :yellow:`YELLOW`  :red:`no`       :red:`no`       :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
 ================  ==============  ==============  ===========  =================================
+
 ================  ==============  ==============  ===========  =================================
 current light     timer done      walk button     emergency    show
 ================  ==============  ==============  ===========  =================================

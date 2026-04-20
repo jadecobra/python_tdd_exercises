@@ -420,7 +420,7 @@ These are the tests I have by the end of the chapter
 
     uv add --requirement requirements.txt
 
-  the terminal shows it installed the `Python packages`_
+  the terminal_ shows that it installed the `Python packages`_
 
 * I use ``pytest-watcher`` to run the tests
 

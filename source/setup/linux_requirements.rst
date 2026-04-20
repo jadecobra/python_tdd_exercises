@@ -72,4 +72,4 @@ Linux/Windows Subsystem for Linux requirements
 what is next?
 *************************************************************************************
 
-:ref:`Click Here to setup your Integrated Development Environment the same way I set mine up<how I setup my Integrated Development Environment (IDE)>`
+:ref:`Click Here to setup your Integrated Development Environment the same way I set mine up<how I set up my Integrated Development Environment (IDE)>`

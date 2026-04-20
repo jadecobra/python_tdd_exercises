@@ -184,7 +184,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I setup the project with uv_
+* I set up the project with uv_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -213,7 +213,7 @@ start the project
 
     uv add --requirement requirements.txt
 
-  the terminal shows it installed the `Python packages`_
+  the terminal_ shows that it installed the `Python packages`_
 
 * I use `pytest-watcher`_ to run the tests automatically
 

@@ -31,7 +31,7 @@ on a computer with MacOS_, Linux_ or `Windows`_ with `Windows Subsystem for Linu
 #. :ref:`I make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
 #. :ref:`I add the first failing test to the test file<test_failure>`
 #. :ref:`I make a requirements file for the Python packages I need<how to write text to a file>`
-#. :ref:`I setup the project with uv<how to setup a project with uv>`
+#. :ref:`I set up the project with uv<how to setup a project with uv>`
 #. :ref:`I install the Python packages I gave in the requirements file<how to install Python packages with uv>`
 #. :ref:`I run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
 #. :ref:`I open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
@@ -84,7 +84,7 @@ As a reminder here is what the structure looks like if the name of the project i
 what is covered?
 *********************************************************************************
 
-These chapters show how I setup a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` automatically on any computer (Linux_, Windows_, MacOS_)
+These chapters show how I set up a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` automatically on any computer (Linux_, Windows_, MacOS_)
 
 .. toctree::
   :titlesonly:
