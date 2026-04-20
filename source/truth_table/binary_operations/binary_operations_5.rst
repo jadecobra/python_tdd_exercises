@@ -779,142 +779,6 @@ I do not need to know or memorize every operation, the only operations that matt
 * :ref:`logical_disjunction<test_logical_disjunction>`, if I only charge a :red:`REGULAR PRICE` to the person who :red:`does NOT have a coupon` AND is :red:`not a member`.
 
 ----
-----
-----
-
-
-
-
-the possible states for the inputs are
-
-======================  ======================
-option (first)    fit (second)
-======================  ======================
-:green:`strong option`  :green:`strong fit`
-:green:`strong option`  :red:`weak fit`
-:red:`weak option`      :green:`strong fit`
-:red:`weak option`      :red:`weak fit`
-======================  ======================
-
-the inputs give the :ref:`truth table` below (all the logically possible states of hiring)
-
-======================================================================  =============== =============== =============== =============== ==============================================================
-hire/reject                                                             strong option,  strong option,  weak option,    weak option,    operation
-                                                                        strong fit      weak fit        strong fit      weak fit
-======================================================================  =============== =============== =============== =============== ==============================================================
-reject                                                                  :red:`reject`   :red:`reject`   :red:`reject`   :red:`reject`   :ref:`contradiction<test_contradiction>`
-strong option and strong fit                                            :green:`hire`   :red:`reject`   :red:`reject`   :red:`reject`   :ref:`logical_conjunction<test_logical_conjunction>`
-strong fit                                                              :green:`hire`   :red:`reject`   :green:`hire`   :red:`reject`   :ref:`project_second<test_project_second>`
-weak option and strong fit                                              :red:`reject`   :red:`reject`   :green:`hire`   :red:`reject`   :ref:`converse_non_implication<test_converse_non_implication>`
-weak option                                                             :red:`reject`   :red:`reject`   :green:`hire`   :green:`hire`   :ref:`negate_first<test_negate_first>`
-not (strong option and strong fit)                                      :red:`reject`   :green:`hire`   :green:`hire`   :green:`hire`   :ref:`logical_nand<test_logical_nand>`
-hire                                                                    :green:`hire`   :green:`hire`   :green:`hire`   :green:`hire`   :ref:`tautology<test_tautology>`
-strong option or strong fit                                             :green:`hire`   :green:`hire`   :green:`hire`   :red:`reject`   :ref:`logical_disjunction<test_logical_disjunction>`
-(not (strong option and strong fit)) and (strong option or strong fit)  :red:`reject`   :green:`hire`   :green:`hire`   :red:`reject`   :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-strong option and weak fit                                              :red:`reject`   :green:`hire`   :red:`reject`   :red:`reject`   :ref:`material_non_implication<test_material_non_implication>`
-strong option                                                           :green:`hire`   :green:`hire`   :red:`reject`   :red:`reject`   :ref:`project_first<test_project_first>`
-strong option or weak fit                                               :green:`hire`   :green:`hire`   :red:`reject`   :green:`hire`   :ref:`converse_implication<test_converse_implication>`
-weak fit                                                                :red:`reject`   :green:`hire`   :red:`reject`   :green:`hire`   :ref:`negate_second<test_negate_second>`
-not (strong option or strong fit)                                       :red:`reject`   :red:`reject`   :red:`reject`   :green:`hire`   :ref:`logical_nor<test_logical_nor>`
-(weak option or strong fit) and (strong option or weak fit)             :green:`hire`   :red:`reject`   :red:`reject`   :green:`hire`   :ref:`logical_equality<test_logical_equality>`
-weak option or strong fit                                               :green:`hire`   :red:`reject`   :green:`hire`   :green:`hire`   :ref:`material_implication<test_material_implication>`
-======================================================================  =============== =============== =============== =============== ==============================================================
-
-I can say this in English as
-
-==============================================================  ===========================================================================================================
-operation                                                       rule
-==============================================================  ===========================================================================================================
-:ref:`contradiction<test_contradiction>`                        not hiring
-:ref:`logical_conjunction<test_logical_conjunction>`            hire only if it is a strong option that is a strong fit
-:ref:`project_second<test_project_second>`                      hire only if it is a strong fit
-:ref:`converse_non_implication<test_converse_non_implication>`  hire only if it is weak option that is a strong fit
-:ref:`negate_first<test_negate_first>`                          hire only if it is weak option
-:ref:`logical_nand<test_logical_nand>`                          reject only if it is a strong option that is a strong fit
-:ref:`tautology<test_tautology>`                                hiring
-:ref:`logical_disjunction<test_logical_disjunction>`            reject only if it is weak option that is a weak fit
-:ref:`exclusive_disjunction<test_exclusive_disjunction>`        reject if it is a strong option that is a strong fit, reject if it is a weak option that is a weak fit
-:ref:`material_non_implication<test_material_non_implication>`  hire only if it is a strong option that is a weak fit
-:ref:`project_first<test_project_first>`                        hire only if it is a strong option
-:ref:`converse_implication<test_converse_implication>`          reject only if it is weak option that is a strong fit
-:ref:`negate_second<test_negate_second>`                        hire only if it is a weak fit
-:ref:`logical_nor<test_logical_nor>`                            hire only if it is a weak option that is a weak fit
-:ref:`logical_equality<test_logical_equality>`                  hire if it is a strong option that is a strong fit, hire if it is weak option that is a weak fit
-:ref:`material_implication<test_material_implication>`          reject only if it is a strong option that is a weak fit
-==============================================================  ===========================================================================================================
-
-----
-
-=================================================================================
-store discount policy
-=================================================================================
-
-----
-
-if the inputs are
-
-- does the person have a coupon?
-- is the person a member?
-
-the possible states for the inputs are
-
-======================  ======================
-coupon (first)    member (second)
-======================  ======================
-:green:`coupon`         :green:`member`
-:green:`coupon`         :red:`NOT a member`
-:red:`no coupon`        :green:`member`
-:red:`no coupon`        :red:`NOT a member`
-======================  ======================
-
-the inputs give the :ref:`truth table` below (all the logically possible states of the discount)
-
-==================================================  ================= ================= ================= ================= ==============================================================
-discount/regular price                              coupon,           coupon,           no coupon,        no coupon,        operation
-                                                    member            not member        member            not member
-==================================================  ================= ================= ================= ================= ==============================================================
-regular                                             :red:`regular`    :red:`regular`    :red:`regular`    :red:`regular`    :ref:`contradiction<test_contradiction>`
-coupon and member                                   :green:`discount` :red:`regular`    :red:`regular`    :red:`regular`    :ref:`logical_conjunction<test_logical_conjunction>`
-member                                              :green:`discount` :red:`regular`    :green:`discount` :red:`regular`    :ref:`project_second<test_project_second>`
-no coupon and member                                :red:`regular`    :red:`regular`    :green:`discount` :red:`regular`    :ref:`converse_non_implication<test_converse_non_implication>`
-no coupon                                           :red:`regular`    :red:`regular`    :green:`discount` :green:`discount` :ref:`negate_first<test_negate_first>`
-not (coupon and member)                             :red:`regular`    :green:`discount` :green:`discount` :green:`discount` :ref:`logical_nand<test_logical_nand>`
-discount                                            :green:`discount` :green:`discount` :green:`discount` :green:`discount` :ref:`tautology<test_tautology>`
-coupon or member                                    :green:`discount` :green:`discount` :green:`discount` :red:`regular`    :ref:`logical_disjunction<test_logical_disjunction>`
-(not (coupon and member)) and (coupon or member)    :red:`regular`    :green:`discount` :green:`discount` :red:`regular`    :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-coupon and not member                               :red:`regular`    :green:`discount` :red:`regular`    :red:`regular`    :ref:`material_non_implication<test_material_non_implication>`
-coupon                                              :green:`discount` :green:`discount` :red:`regular`    :red:`regular`    :ref:`project_first<test_project_first>`
-coupon or not member                                :green:`discount` :green:`discount` :red:`regular`    :green:`discount` :ref:`converse_implication<test_converse_implication>`
-not member                                          :red:`regular`    :green:`discount` :red:`regular`    :green:`discount` :ref:`negate_second<test_negate_second>`
-not (coupon or member)                              :red:`regular`    :red:`regular`    :red:`regular`    :green:`discount` :ref:`logical_nor<test_logical_nor>`
-(no coupon or member) and (coupon or not member)    :green:`discount` :red:`regular`    :red:`regular`    :green:`discount` :ref:`logical_equality<test_logical_equality>`
-no coupon or member                                 :green:`discount` :red:`regular`    :green:`discount` :green:`discount` :ref:`material_implication<test_material_implication>`
-==================================================  ================= ================= ================= ================= ==============================================================
-
-I can say this in English as
-
-==============================================================  ===========================================================================================================
-operation                                                       rule
-==============================================================  ===========================================================================================================
-:ref:`contradiction<test_contradiction>`                        everyone pays regular price, no discounts
-:ref:`logical_conjunction<test_logical_conjunction>`            discount price only if person has a coupon and is a member
-:ref:`project_second<test_project_second>`                      discount price only if person is a member
-:ref:`converse_non_implication<test_converse_non_implication>`  discount price only if person does not have a coupon and is a member
-:ref:`negate_first<test_negate_first>`                          discount price only if person does not have a coupon
-:ref:`logical_nand<test_logical_nand>`                          regular price only if person has a coupon and is a member
-:ref:`tautology<test_tautology>`                                everyone gets a discount
-:ref:`logical_disjunction<test_logical_disjunction>`            regular price only if person does not have a coupon and is not a member
-:ref:`exclusive_disjunction<test_exclusive_disjunction>`        regular price if person has a coupon and is a member, regular price if person does not have a coupon and is not a member
-:ref:`material_non_implication<test_material_non_implication>`  discount price only if person has a coupon and is not a member
-:ref:`project_first<test_project_first>`                        discount price only if person has a coupon
-:ref:`converse_implication<test_converse_implication>`          regular price only if person does not have a coupon and is a member
-:ref:`negate_second<test_negate_second>`                        discount price only if person is not a member
-:ref:`logical_nor<test_logical_nor>`                            discount price only if person does not have a coupon and is not a member
-:ref:`logical_equality<test_logical_equality>`                  discount price only if person has a coupon and is a member, discount price if person does not have a coupon and is not a member
-:ref:`material_implication<test_material_implication>`          regular price only if person has a coupon and is not a member
-==============================================================  ===========================================================================================================
-
-----
 
 =================================================================================
 watering plants
@@ -929,112 +793,246 @@ if the inputs are
 
 the possible states for the inputs are
 
-======================  ======================
-soil (first)      rain (second)
-======================  ======================
-:green:`wet soil`       :green:`it rained`
-:green:`wet soil`       :red:`no rain`
-:red:`dry soil`         :green:`it rained`
-:red:`dry soil`         :red:`no rain`
-======================  ======================
+======================  =====================
+soil (first)            rain (second)
+======================  =====================
+:green:`soil is dry`    :green:`it rained`
+:green:`soil is dry`    :red:`NOT rain`
+:red:`soil is wet`      :green:`it rained`
+:red:`soil is wet`      :red:`NOT rain`
+======================  =====================
 
-the inputs give the :ref:`truth table` below (all the logically possible states of watering the plants)
+and the possible outputs are
 
-======================================================  ============ ============ ============ ============ ==============================================================
-water the plants                                        dry soil,    dry soil,    wet soil,    wet soil,    operation
-                                                        no rain      it rained    no rain      it rained
-======================================================  ============ ============ ============ ============ ==============================================================
-do not water                                            :red:`no`    :red:`no`    :red:`no`    :red:`no`    :ref:`contradiction<test_contradiction>`
-dry soil and no rain                                    :green:`yes` :red:`no`    :red:`no`    :red:`no`    :ref:`logical_conjunction<test_logical_conjunction>`
-no rain                                                 :green:`yes` :red:`no`    :green:`yes` :red:`no`    :ref:`project_second<test_project_second>`
-wet soil and no rain                                    :red:`no`    :red:`no`    :green:`yes` :red:`no`    :ref:`converse_non_implication<test_converse_non_implication>`
-wet soil                                                :red:`no`    :red:`no`    :green:`yes` :green:`yes` :ref:`negate_first<test_negate_first>`
-not (dry soil and no rain)                              :red:`no`    :green:`yes` :green:`yes` :green:`yes` :ref:`logical_nand<test_logical_nand>`
-water                                                   :green:`yes` :green:`yes` :green:`yes` :green:`yes` :ref:`tautology<test_tautology>`
-dry soil or no rain                                     :green:`yes` :green:`yes` :green:`yes` :red:`no`    :ref:`logical_disjunction<test_logical_disjunction>`
-(not (dry soil and no rain)) and (dry soil or no rain)  :red:`no`    :green:`yes` :green:`yes` :red:`no`    :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-dry soil and it rained                                  :red:`no`    :green:`yes` :red:`no`    :red:`no`    :ref:`material_non_implication<test_material_non_implication>`
-dry soil                                                :green:`yes` :green:`yes` :red:`no`    :red:`no`    :ref:`project_first<test_project_first>`
-dry soil or it rained                                   :green:`yes` :green:`yes` :red:`no`    :green:`yes` :ref:`converse_implication<test_converse_implication>`
-rain                                                    :red:`no`    :green:`yes` :red:`no`    :green:`yes` :ref:`negate_second<test_negate_second>`
-not (dry soil or no rain)                               :red:`no`    :red:`no`    :red:`no`    :green:`yes` :ref:`logical_nor<test_logical_nor>`
-(wet soil or no rain) and (dry soil or it rained)       :green:`yes` :red:`no`    :red:`no`    :green:`yes` :ref:`logical_equality<test_logical_equality>`
-(wet soil) or no rain                                   :green:`yes` :red:`no`    :green:`yes` :green:`yes` :ref:`material_implication<test_material_implication>`
-======================================================  ============ ============ ============ ============ ==============================================================
+* :green:`WATER`
+* :red:`DO NOT WATER`
 
-I can say this in English as
+the :ref:`truth table` shows all the logically possible states of
 
-==============================================================  ===========================================================================================================
-operation                                                       rule
-==============================================================  ===========================================================================================================
-:ref:`contradiction<test_contradiction>`                        do not water
-:ref:`logical_conjunction<test_logical_conjunction>`            water only if soil is dry and it did not rain
-:ref:`project_second<test_project_second>`                      water only if it did not rain
-:ref:`converse_non_implication<test_converse_non_implication>`  water only if soil is wet and it did not rain
-:ref:`negate_first<test_negate_first>`                          water only if soil is wet
-:ref:`logical_nand<test_logical_nand>`                          do not water if soil is dry and it did not rain
-:ref:`tautology<test_tautology>`                                everyone gets a yes
-:ref:`logical_disjunction<test_logical_disjunction>`            do not water if soil is wet and it rained
-:ref:`exclusive_disjunction<test_exclusive_disjunction>`        do not water if soil is dry and it did not rain, do not water if soil is wet and it did not rain
-:ref:`material_non_implication<test_material_non_implication>`  water only if soil is dry and it rained
-:ref:`project_first<test_project_first>`                        water only if soil is dry
-:ref:`converse_implication<test_converse_implication>`          do not water if soil is wet and it did not rain
-:ref:`negate_second<test_negate_second>`                        water only if it rained
-:ref:`logical_nor<test_logical_nor>`                            water only if soil is wet and it rained
-:ref:`logical_equality<test_logical_equality>`                  water only if soil is dry and it did not rain, water if soil is wet and it did not rain
-:ref:`material_implication<test_material_implication>`          do not water if soil is dry and it rained
-==============================================================  ===========================================================================================================
+* :ref:`contradiction<test_contradiction>`: ``return False``
 
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
 
+  :red:`DO NOT WATER`. I never water, survival of the fittest.
+
+* :ref:`logical_conjunction<test_logical_conjunction>`: ``return first and second``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` only if the :green:`soil is dry` AND :green:`it rained`. Why is the soil still dry after it rained?
+
+* :ref:`project_second<test_project_second>`: ``return second``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` if :green:`it rained`, it does not matter if the :green:`soil is dry` or  :red:`wet`. Am I trying to make a swamp?
+
+* :ref:`converse_non_implication<test_converse_non_implication>`: ``return (not first) and second``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` only if the :red:`soil is wet` AND :green:`it rained`. Maybe this is why all my plants die, I keep over watering them.
+
+* :ref:`negate_first<test_negate_first>`: ``return not first``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` only if the :red:`soil is wet`, I do not care if it is :green:`rained` or :red:`not`. I must really want a swamp.
+
+* :ref:`logical_nand<test_logical_nand>`: ``return not (first and second)``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  :red:`DO NOT WATER` only if the :green:`soil is dry` AND :green:`it rained`. Why do I water when the soil is wet and it rained?
+
+* :ref:`tautology<test_tautology>`: ``return True``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` always. It does not matter what state the soil is or if it rained or not.
+
+* :ref:`logical_disjunction<test_logical_disjunction>`: ``return first or second``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
+
+  :red:`DO NOT WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. I pretty much always water unless the soil is wet and it did not rain.
+
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>`: ``return (not (first and second) and (first or second))``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
+
+  - :red:`DO NOT WATER` if the :green:`soil is dry` AND :green:`it rained`
+  - :red:`DO NOT WATER` if the :red:`soil is wet` AND :red:`it did NOT rain`
+
+* :ref:`material_non_implication<test_material_non_implication>`: ``return first and (not second)``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`. I think the plants might like this.
+
+* :ref:`project_first<test_project_first>`: ``return first``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :red:`DO NOT WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` if the :green:`soil is dry`, I do not care if it rained or not. Maybe there was not enough rain.
+
+* :ref:`converse_implication<test_converse_implication>`: ``return first or (not second)``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  :red:`DO NOT WATER` if the :red:`soil is wet` AND :green:`it rained`. Too much water.
+
+* :ref:`negate_second<test_negate_second>`: ``return not second``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :green:`WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` only if it did :red:`NOT rain`, I do not care about the soil. What if the soil is wet?
+
+* :ref:`logical_nor<test_logical_nor>`: ``return not (first or second)``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :red:`DO NOT WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  :green:`WATER` only if the :red:`soil is wet` AND it did :red:`NOT rain`. How did the soil get wet? Did I water it and forget?
+
+* :ref:`logical_equality<test_logical_equality>`: ``return (not first or second) and (first or not second)``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :red:`DO NOT WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  - :green:`WATER` if the :green:`soil is dry` AND :green:`it rained`
+  - :green:`WATER` if the :red:`soil is wet` AND it did :red:`NOT rain`
+
+  this could be ideal if I treat it as one or the other, but both things cannot be :ref:`True<test_what_is_true>` at the same time
+
+* :ref:`material_implication<test_material_implication>`: ``return (not first) or second``
+
+  ======================  =====================  =====================
+  soil (first)            rain (second)          output
+  ======================  =====================  =====================
+  :green:`soil is dry`    :green:`it rained`     :green:`WATER`
+  :green:`soil is dry`    :red:`NOT rain`         :red:`DO NOT WATER`
+  :red:`soil is wet`      :green:`it rained`     :green:`WATER`
+  :red:`soil is wet`      :red:`NOT rain`         :green:`WATER`
+  ======================  =====================  =====================
+
+  :red:`DO NOT WATER` if the :green:`soil is dry` AND it did :red:`NOT rain`. I want to kill the plants
+
+I do not need to know or memorize every operation, the only operations that matter in this case are
+* :ref:`material_non_implication<test_material_non_implication>`, if I :green:`WATER` the plants only if the :green:`soil is dry` AND it did :red:`NOT rain`
+* :ref:`project_first<test_project_first>` if I :green:`WATER` only if the :red:`soil is dry` because I the plants need it to stay wet
+* :ref:`converse_implication<test_converse_implication>` to stop me from watering if the :red:`soil is wet` AND :green:`it rained`.
+
+----
+
+*********************************************************************************
 review
+*********************************************************************************
 
-security alarm
-
-========================================================  =========== =========== =========== =========== ========================================================
-alarm                                                     motion,     motion,     no motion,  no motion,     operation
-                                                          right code  wrong code  right code  wrong code
-========================================================  =========== =========== =========== =========== ========================================================
-alarm always off                                          :red:`off`  :red:`off`  :red:`off`  :red:`off`  :ref:`contradiction<test_contradiction>`
-motion and wrong code                                     :red:`off`  :green:`on` :green:`on` :green:`on` :ref:`logical_conjunction<test_logical_conjunction>`
-wrong code                                                :red:`off`  :green:`on` :red:`off`  :green:`on` :ref:`project_second<test_project_second>`
-(no motion) and wrong code                                :green:`on` :green:`on` :red:`off`  :green:`on` :ref:`converse_non_implication<test_converse_non_implication>`
-no motion                                                 :green:`on` :green:`on` :red:`off`  :red:`off`  :ref:`negate_first<test_negate_first>`
-not (motion and wrong code)                               :green:`on` :red:`off`  :red:`off`  :red:`off`  :ref:`logical_nand<test_logical_nand>`
-alarm always                                              :red:`off`  :red:`off`  :red:`off`  :red:`off`  :ref:`tautology<test_tautology>`
-motion or wrong code                                      :red:`off`  :red:`off`  :red:`off`  :green:`on` :ref:`logical_disjunction<test_logical_disjunction>`
-(not (motion and wrong code)) and (motion or wrong code)  :green:`on` :red:`off`  :red:`off`  :green:`on` :ref:`exclusive_disjunction<test_exclusive_disjunction>`
-motion and right code                                     :green:`on` :red:`off`  :green:`on` :green:`on` :ref:`material_non_implication<test_material_non_implication>`
-motion                                                    :red:`off`  :red:`off`  :green:`on` :green:`on` :ref:`project_first<test_project_first>`
-motion or right code                                      :red:`off`  :red:`off`  :green:`on` :red:`off`  :ref:`converse_implication<test_converse_implication>`
-right code                                                :green:`on` :red:`off`  :green:`on` :red:`off`  :ref:`negate_second<test_negate_second>`
-not (motion or wrong code)                                :green:`on` :green:`on` :green:`on` :red:`off`  :ref:`logical_nor<test_logical_nor>`
-(no motion or wrong code) and (motion or right code)      :red:`off`  :green:`on` :green:`on` :red:`off`  :ref:`logical_equality<test_logical_equality>`
-no motion or wrong code                                   :red:`off`  :green:`on` :red:`off`  :red:`off`  :ref:`material_implication<test_material_implication>`
-========================================================  =========== =========== =========== =========== ========================================================
-
-I can say this in English as
-
-==============================================================  ===========================================================================================================
-operation                                                       rule
-==============================================================  ===========================================================================================================
-:ref:`contradiction<test_contradiction>`                        alarm always off
-:ref:`logical_conjunction<test_logical_conjunction>`            alarm only if there is :green:`motion` and the code is wrong
-:ref:`project_second<test_project_second>`                      alarm only if the code is wrong
-:ref:`converse_non_implication<test_converse_non_implication>`  alarm only if there is no motion and the code is wrong
-:ref:`negate_first<test_negate_first>`                          alarm only if there is no motion
-:ref:`logical_nand<test_logical_nand>`                          alarm off only if there is :green:`motion` and the code is wrong
-:ref:`tautology<test_tautology>`                                alarm always on
-:ref:`logical_disjunction<test_logical_disjunction>`            alarm off if there is no motion and the code is right
-:ref:`exclusive_disjunction<test_exclusive_disjunction>`        alarm off if there is :green:`motion` and the code is wrong, alarm off if there is no motion and the code is right
-:ref:`material_non_implication<test_material_non_implication>`  alarm only if there is :green:`motion` and the code is right
-:ref:`project_first<test_project_first>`                        alarm only if there is :green:`motion`
-:ref:`converse_implication<test_converse_implication>`          alarm off only if there is no motion and the code is wrong
-:ref:`negate_second<test_negate_second>`                        alarm only if the code is right
-:ref:`logical_nor<test_logical_nor>`                            alarm only if there is no motion and the code is right
-:ref:`logical_equality<test_logical_equality>`                  alarm if there is :green:`motion` and the code is wrong, alarm if there is no motion and the code is right
-:ref:`material_implication<test_material_implication>`          alarm off only if there is :green:`motion` and the code is right
-==============================================================  ===========================================================================================================
-
+The :ref:`truth table` shows the possible states inputs can take and how they interact to give possible outputs. The examples above show
 
 ----
 
