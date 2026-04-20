@@ -1084,6 +1084,9 @@ The examples above show
   :ref:`material_implication<test_material_implication>`          outputs :red:`OFF` if there is :green:`motion` AND :red:`NOT the right code` is entered.
   ==============================================================  ===========================================================================================================
 
+
+* hiring
+
 ----
 
 *************************************************************************************
