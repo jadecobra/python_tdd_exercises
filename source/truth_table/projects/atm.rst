@@ -772,7 +772,7 @@ PIN                 balance            daily limit           withdrawal
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` for the first case where the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above the daily limit`, to ``test_atm_withdrawal`` in ``test_atm.py``
+I add an :ref:`assertion<what is an assertion?>` for the first case where the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, to ``test_atm_withdrawal`` in ``test_atm.py``
 
 ==================  =================  ====================  ==================
 PIN                 balance            daily limit           withdrawal
@@ -906,7 +906,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         above_daily_limit=False,
     )
 
-* I add an :ref:`assertion<what is an assertion?>` for the case where the :green:`right PIN` is entered, the account balance is :red:`NOT enough` and the account is :green:`above the daily limit`, in ``test_atm.py``
+* I add an :ref:`assertion<what is an assertion?>` for the case where the :green:`right PIN` is entered, the account balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals, in ``test_atm.py``
 
   ==================  =================  ====================  ==================
   PIN                 balance            daily limit           withdrawal
@@ -953,7 +953,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   the test is still green
 
-* I do not need to add anything to the fourth :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the daily limit is :red:`below limit`, because the :ref:`default value<test_functions_w_default_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
+* I do not need to add anything to the fourth :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals, because the :ref:`default value<test_functions_w_default_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
 
   ==================  =================  ====================  ==================
   PIN                 balance            daily limit           withdrawal
@@ -983,7 +983,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         above_daily_limit=False,
     )
 
-* I add ``above_daily_limit`` to the fifth :ref:`assertion<what is an assertion?>` for the case where the :red:`wrong PIN` is entered, the account balance is :green:`enough` and the daily limit is :green:`above limit`
+* I add ``above_daily_limit`` to the fifth :ref:`assertion<what is an assertion?>` for the case where the :red:`wrong PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
 
   ==================  =================  ====================  ==================
   PIN                 balance            daily limit           withdrawal
@@ -1044,7 +1044,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   still green
 
-* I do not need to add anything to the sixth :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the daily limit is :red:`below limit`, because the :ref:`default value<test_functions_w_default_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
+* I do not need to add anything to the sixth :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals, because the :ref:`default value<test_functions_w_default_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
 
   ==================  =================  ====================  ==================
   PIN                 balance            daily limit           withdrawal
@@ -1072,7 +1072,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         above_daily_limit=False,
     )
 
-* I add an :ref:`assertion<what is an assertion?>` for the when the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the daily limit is :green:`above limit`
+* I add an :ref:`assertion<what is an assertion?>` for the when the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals
 
   ==================  =================  ====================  ==================
   PIN                 balance            daily limit           withdrawal
@@ -1111,7 +1111,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the daily limit is :red:`below limit`
+* I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
 
   ==================  =================  ====================  ==================
   PIN                 balance            daily limit           withdrawal
@@ -1357,7 +1357,7 @@ card expired        PIN                 balance            daily limit          
 
 ----
 
-I add a value for the ``card_expired`` parameter to the call to the ``withdraw`` :ref:`function<what is a function?>` for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the daily limit is :green:`above limit`, in ``test_atm_withdrawal`` in ``test_atm.py``
+I add a value for the ``card_expired`` parameter to the call to the ``withdraw`` :ref:`function<what is a function?>` for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, in ``test_atm_withdrawal`` in ``test_atm.py``
 
 ==================  ==================  =================  ====================  =============
 card expired        PIN                 balance            daily limit           withdrawal
@@ -1441,7 +1441,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the daily limit is :red:`below limit` to ``test_atm_withdrawal`` in ``test_atm.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals, to ``test_atm_withdrawal`` in ``test_atm.py``
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1566,8 +1566,16 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   the test is still green
 
-* I add ``card_has_expired`` to the fifth :ref:`assertion<what is an assertion?>`, I also add ``above_daily_limit`` to be clearer, for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
+* I add ``card_has_expired`` to the fifth :ref:`assertion<what is an assertion?>`, I also add ``above_daily_limit`` to be clearer. This is for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
 
+  ==================  ==================  =================  ====================  =============
+  card expired        PIN                 balance            daily limit           withdrawal
+  ==================  ==================  =================  ====================  =============
+  :green:`expired`    :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
+  :green:`expired`    :green:`right PIN`  :green:`enough`    :red:`below limit`    :red:`DENIED`
+  :green:`expired`    :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+  :green:`expired`    :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+  ==================  ==================  =================  ====================  =============
 
   .. code-block:: python
     :lineno-start: 33
@@ -1598,7 +1606,43 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   still green
 
+* I add ``card_has_expired`` to the next :ref:`assertion<what is an assertion?>` , for the case where the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
 
+  ==================  ==================  =================  ====================  =============
+  card expired        PIN                 balance            daily limit           withdrawal
+  ==================  ==================  =================  ====================  =============
+  :green:`expired`    :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
+  ==================  ==================  =================  ====================  =============
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 10
+
+            reality = src.atm.withdraw(
+                card_has_expired=True,
+                pin_is_correct=True,
+                balance_is_enough=False,
+                above_daily_limit=False,
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.atm.withdraw(
+                card_has_expired=True,
+                pin_is_correct=False,
+                balance_is_enough=True,
+                above_daily_limit=True,
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.atm.withdraw(
+                pin_is_correct=False,
+                balance_is_enough=False,
+            )
+            self.assertEqual(reality, my_expectation)
+
+  green
+
+* I add an :ref:`assertion<what is an assertion?>` for the case where the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
 
 *********************************************************************************
 close the project
