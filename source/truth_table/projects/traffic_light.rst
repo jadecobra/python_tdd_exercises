@@ -1080,7 +1080,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     FAILED ...test_traffic_light_when_red - TypeError: show() missing 1 required positional arg...
     FAILED ...test_traffic_light_when_yellow - TypeError: show() missing 1 required positional arg...
 
-* I add a :ref:`default<test_functions_w_default_arguments>` value for the new :ref:`keyword argument<test_functions_w_keyword_arguments>`
+* I could add the ``walk_button`` parameter to every call to the ``show`` :ref:`function<what is a function?>` in every test or add a :ref:`default<test_functions_w_default_arguments>` value for the new :ref:`keyword argument<test_functions_w_keyword_arguments>` to make it a choice NOT a requirement. I make it a choice
 
   .. code-block:: python
     :linenos:
@@ -1091,7 +1091,24 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             walk_button=False,
         ):
 
-  the test passes
+  the test passes because
+
+  .. code-block:: python
+
+    src.traffic_light.show(
+        current_light='RED',
+        timer_done=True,
+    )
+
+  is the same as
+
+  .. code-block:: python
+
+    src.traffic_light.show(
+        current_light='RED',
+        timer_done=True,
+        walk_button=False,
+    )
 
 ----
 
