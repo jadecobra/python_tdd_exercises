@@ -4,8 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. ATTENTION:: This is still a work in progress. There will be errors in the text. The code works and will change as I work on it. Have fun!
-
 .. _atm:
 
 #################################################################################
@@ -2088,6 +2086,175 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 * I remove the ``reality`` :ref:`variables<what is a variable?>` because I do not need them, I can call the ``show`` :ref:`function<what is a function?>` directly
 
+  .. code-block:: python
+
+        def test_atm_withdrawal(self):
+            my_expectation = 'CASH'
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=True,
+                    balance_is_enough=True,
+                    above_daily_limit=False,
+                ),
+                my_expectation
+            )
+
+            my_expectation = 'DENIED'
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=True,
+                    balance_is_enough=True,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=True,
+                    balance_is_enough=True,
+                    above_daily_limit=False,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=True,
+                    balance_is_enough=False,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=True,
+                    balance_is_enough=False,
+                    above_daily_limit=False,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=False,
+                    balance_is_enough=True,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=False,
+                    balance_is_enough=True,
+                    above_daily_limit=False,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=False,
+                    balance_is_enough=False,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=True,
+                    pin_is_correct=False,
+                    balance_is_enough=False,
+                    above_daily_limit=False
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=True,
+                    balance_is_enough=True,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=True,
+                    balance_is_enough=False,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=True,
+                    balance_is_enough=False,
+                    above_daily_limit=False,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=False,
+                    balance_is_enough=True,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=False,
+                    balance_is_enough=True,
+                    above_daily_limit=False,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=False,
+                    balance_is_enough=False,
+                    above_daily_limit=True,
+                ),
+                my_expectation
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_has_expired=False,
+                    pin_is_correct=False,
+                    balance_is_enough=False,
+                    above_daily_limit=False,
+                ),
+                my_expectation
+            )
+
+
+    # Exceptions seen
+
 *********************************************************************************
 close the project
 *********************************************************************************
@@ -2116,7 +2283,58 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for a Automatic Teller Machine
+I ran tests for an Automatic Teller Machine with the following inputs:
+
+* has the card expired?
+* is the PIN correct?
+* is the requested amount smaller or bigger than what is in the account?
+* will this put the account above or below the daily limit for withdrawals?
+
+the inputs gave me this :ref:`truth table`
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
+:green:`expired`    :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
+:green:`expired`    :green:`right PIN`  :green:`enough`    :red:`below limit`    :red:`DENIED`
+:green:`expired`    :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:green:`expired`    :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+:green:`expired`    :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
+:green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
+:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
+:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
+:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
+
+What if I want the ATM to give a different message with each denial, so that the user knows why the withdrawal failed? The :ref:`truth table` could then be
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
+:green:`expired`    :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED: Card Expired`
+:green:`expired`    :green:`right PIN`  :green:`enough`    :red:`below limit`    :red:`DENIED: Card Expired`
+:green:`expired`    :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED: Card Expired`
+:green:`expired`    :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED: Card Expired`
+:green:`expired`    :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED: Card Expired`
+:green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED: Card Expired`
+:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED: Card Expired`
+:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED: Card Expired`
+:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED: You have exceeded the daily withdrawal Limit`
+:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
+:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED: There is not enough money in the account to complete the withdrawal`
+:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED: There is not enough money in the account to complete the withdrawal`
+:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`Error: You entered the wrong PIN. Try again`
+:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`Error: You entered the wrong PIN. Try again`
+:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`Error: You entered the wrong PIN. Try again`
+:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`Error: You entered the wrong PIN. Try again`
+==================  ==================  =================  ====================  =============
 
 ----
 
