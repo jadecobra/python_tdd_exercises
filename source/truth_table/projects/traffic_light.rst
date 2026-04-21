@@ -219,7 +219,7 @@ start the project
 
     uv init
 
-  the terminal_ is my friend, and shows
+  the terminal_ shows
 
   .. code-block:: shell
 
@@ -904,7 +904,7 @@ The ``show`` :ref:`function<what is a function?>` returns
 
   still green
 
-* I remove the other :ref:`if statements<if statements>` from the one for when the timer is NOT done
+* I remove the other :ref:`if statements<if statements>` from the one for when the timer is NOT done (lines 4-9)
 
   .. code-block:: python
     :linenos:
@@ -4403,7 +4403,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 close the project
 *********************************************************************************
 
-* I close ``traffic_light.py`` in the :ref:`editor<2 editors>`
+* I close ``test_traffic_light.py`` and ``traffic_light.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``traffic_light``

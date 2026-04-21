@@ -882,7 +882,7 @@ how to setup a project with uv
 
     uv init
 
-  the terminal_ is my friend, and shows
+  the terminal_ shows
 
   .. code-block:: shell
 
