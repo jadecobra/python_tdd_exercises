@@ -325,7 +325,7 @@ PIN                 balance            withdrawal
   class TestATM(unittest.TestCase):
 
       def test_atm_withdrawal(self):
-          my_expectation = 'ALLOWED'
+          my_expectation = 'CASH'
           reality = src.atm.withdraw(
               pin_is_correct=True,
               balance_is_enough=True,
@@ -449,7 +449,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   .. code-block:: python
 
-    AssertionError: None != 'ALLOWED'
+    AssertionError: None != 'CASH'
 
 * I change the `return statement`_ to give the test what it expects
 
@@ -458,7 +458,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     :emphasize-lines: 2
 
     def withdraw(pin_is_correct, balance_is_enough):
-        return 'ALLOWED'
+        return 'CASH'
 
   the test passes. The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`CASH`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
 
@@ -484,7 +484,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     :emphasize-lines: 9-14
 
         def test_atm_withdrawal(self):
-            my_expectation = 'ALLOWED'
+            my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_correct=True,
                 balance_is_enough=True,
@@ -505,7 +505,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   .. code-block:: python
 
-    AssertionError: 'ALLOWED' != 'DENIED'
+    AssertionError: 'CASH' != 'DENIED'
 
 * I add an :ref:`if statement<if statements>` to ``atm.py``
 
@@ -516,7 +516,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     def withdraw(pin_is_correct, balance_is_enough):
         if pin_is_correct and not balance_is_enough:
             return 'DENIED'
-        return 'ALLOWED'
+        return 'CASH'
 
   the test passes
 
@@ -535,7 +535,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     :emphasize-lines:
 
         def test_atm_withdrawal(self):
-            my_expectation = 'ALLOWED'
+            my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_correct=True,
                 balance_is_enough=True,
@@ -563,7 +563,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   .. code-block:: python
 
-    AssertionError: 'ALLOWED' != 'DENIED'
+    AssertionError: 'CASH' != 'DENIED'
 
 * I add an :ref:`if statement<if statements>` for this case to ``atm.py``
 
@@ -576,7 +576,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
             return 'DENIED'
         if pin_is_correct and not balance_is_enough:
             return 'DENIED'
-        return 'ALLOWED'
+        return 'CASH'
 
   the test passes
 
@@ -597,7 +597,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 
         def test_atm_withdrawal(self):
-            my_expectation = 'ALLOWED'
+            my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_correct=True,
                 balance_is_enough=True,
@@ -632,7 +632,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   .. code-block:: python
 
-    AssertionError: 'ALLOWED' != 'DENIED'
+    AssertionError: 'CASH' != 'DENIED'
 
 * I add an :ref:`if statement<if statements>` to ``atm.py`` for the last case
 
@@ -647,11 +647,11 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
             return 'DENIED'
         if pin_is_correct and not balance_is_enough:
             return 'DENIED'
-        return 'ALLOWED'
+        return 'CASH'
 
   the test passes
 
-* 3 of the cases return ``'DENIED'`` and only one case returns ``'ALLOWED'``. I add an :ref:`if statement with an else clause<if statements>` for the one case
+* 3 of the cases return ``'DENIED'`` and only one case returns ``'CASH'``. I add an :ref:`if statement with an else clause<if statements>` for the one case
 
   .. code-block:: python
     :linenos:
@@ -659,7 +659,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     def withdraw(pin_is_correct, balance_is_enough):
         if pin_is_correct and balance_is_enough:
-            return 'ALLOWED'
+            return 'CASH'
         else:
             return 'DENIED'
         if not pin_is_correct and not balance_is_enough:
@@ -668,7 +668,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
             return 'DENIED'
         if pin_is_correct and not balance_is_enough:
             return 'DENIED'
-        return 'ALLOWED'
+        return 'CASH'
 
   the test is still green
 
@@ -679,7 +679,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     def withdraw(pin_is_correct, balance_is_enough):
         if pin_is_correct and balance_is_enough:
-            return 'ALLOWED'
+            return 'CASH'
         else:
             return 'DENIED'
 
@@ -692,7 +692,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     :emphasize-lines: 9
 
         def test_atm_withdrawal(self):
-            my_expectation = 'ALLOWED'
+            my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_correct=True,
                 balance_is_enough=True,
@@ -791,7 +791,7 @@ PIN                 balance            daily limit           withdrawal
             )
             self.assertEqual(reality, my_expectation)
 
-            my_expectation = 'ALLOWED'
+            my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_correct=True,
                 balance_is_enough=True,
@@ -828,7 +828,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    AssertionError: 'ALLOWED' != 'DENIED'
+    AssertionError: 'CASH' != 'DENIED'
 
 * I add an :ref:`if statement<if statements>`
 
@@ -839,7 +839,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         if pin_is_correct and balance_is_enough:
             if above_daily_limit:
                 return 'DENIED'
-            return 'ALLOWED'
+            return 'CASH'
         else:
             return 'DENIED'
 
@@ -862,7 +862,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         if pin_is_correct and balance_is_enough:
             if above_daily_limit:
                 return 'DENIED'
-            return 'ALLOWED'
+            return 'CASH'
         else:
             return 'DENIED'
 
@@ -927,7 +927,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, my_expectation)
 
-            my_expectation = 'ALLOWED'
+            my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_correct=True,
                 balance_is_enough=True,
@@ -1002,7 +1002,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, my_expectation)
 
-            my_expectation = 'ALLOWED'
+            my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_correct=True,
                 balance_is_enough=True,
@@ -1207,7 +1207,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     # Exceptions seen
 
-* There is only one case where the ``withdraw`` :ref:`function<what is a function?>` returns ``'ALLOWED'``. I add :ref:`if statements` for the other cases to ``atm.py``
+* There is only one case where the ``withdraw`` :ref:`function<what is a function?>` returns ``'CASH'``. I add :ref:`if statements` for the other cases to ``atm.py``
 
   .. code-block:: python
     :linenos:
@@ -1229,7 +1229,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         if pin_is_correct and balance_is_enough:
             if above_daily_limit:
                 return 'DENIED'
-            return 'ALLOWED'
+            return 'CASH'
         else:
             return 'DENIED'
 
@@ -1259,12 +1259,12 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             return denial
         if above_daily_limit:
             return denial
-        return 'ALLOWED'
+        return 'CASH'
 
         if pin_is_correct and balance_is_enough:
             if above_daily_limit:
                 return 'DENIED'
-            return 'ALLOWED'
+            return 'CASH'
         else:
             return 'DENIED'
 
@@ -1294,7 +1294,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             return denial
         if above_daily_limit:
             return denial
-        return 'ALLOWED'
+        return 'CASH'
 
 ----
 
@@ -1514,7 +1514,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit. This only happens if the account balance is :green:`enough`.
   * :green:`approves` a withdrawal only if the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
 
-* I add ``card_has_expired`` to the fourth :ref:`assertion<what is an assertion?>`, which is for when the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :gree:`above limit` for daily withdrawals
+* I add ``card_has_expired`` to the fourth :ref:`assertion<what is an assertion?>`, which is for when the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1606,7 +1606,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add ``card_has_expired`` to the next :ref:`assertion<what is an assertion?>` , for the case where the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
+* I add ``card_has_expired`` to the next :ref:`assertion<what is an assertion?>`, for the case where the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1876,7 +1876,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the card has :red:`NOT expired` the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
+* I add an :ref:`assertion<what is an assertion?>` for when the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -2303,6 +2303,11 @@ card expired        PIN                 balance            daily limit          
 :green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
 :green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
 :red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
 :red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
 :red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
@@ -2326,6 +2331,11 @@ card expired        PIN                 balance            daily limit          
 :green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED: Card Expired`
 :green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED: Card Expired`
 :green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED: Card Expired`
+==================  ==================  =================  ====================  =============
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
 :red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED: You have exceeded the daily withdrawal Limit`
 :red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
 :red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED: There is not enough money in the account to complete the withdrawal`
