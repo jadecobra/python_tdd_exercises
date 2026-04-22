@@ -4,25 +4,24 @@ import unittest
 
 class TestATM(unittest.TestCase):
 
-    def test_atm_withdrawal(self):
-        my_expectation = 'CASH'
+    def test_withdrawal_w_not_expired_card_when_pin_is_right(self):
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=True,
-                balance_is_enough=True,
+                card_expired=False,
+                pin_is_right=True,
+                enough_balance=True,
                 above_daily_limit=False,
             ),
-            my_expectation
+            'CASH'
         )
 
         my_expectation = 'DENIED'
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=True,
-                balance_is_enough=True,
+                card_expired=False,
+                pin_is_right=True,
+                enough_balance=True,
                 above_daily_limit=True,
             ),
             my_expectation
@@ -30,9 +29,42 @@ class TestATM(unittest.TestCase):
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=True,
-                balance_is_enough=True,
+                card_expired=False,
+                pin_is_right=True,
+                enough_balance=False,
+                above_daily_limit=True,
+            ),
+            my_expectation
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                card_expired=False,
+                pin_is_right=True,
+                enough_balance=False,
+                above_daily_limit=False,
+            ),
+            my_expectation
+        )
+
+    def test_withdrawal_w_expired_card_when_pin_is_right(self):
+        my_expectation = 'DENIED'
+
+        self.assertEqual(
+            src.atm.withdraw(
+                card_expired=True,
+                pin_is_right=True,
+                enough_balance=True,
+                above_daily_limit=True,
+            ),
+            my_expectation
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                card_expired=True,
+                pin_is_right=True,
+                enough_balance=True,
                 above_daily_limit=False,
             ),
             my_expectation
@@ -40,9 +72,9 @@ class TestATM(unittest.TestCase):
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=True,
-                balance_is_enough=False,
+                card_expired=True,
+                pin_is_right=True,
+                enough_balance=False,
                 above_daily_limit=True,
             ),
             my_expectation
@@ -50,9 +82,32 @@ class TestATM(unittest.TestCase):
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=True,
-                balance_is_enough=False,
+                card_expired=True,
+                pin_is_right=True,
+                enough_balance=False,
+                above_daily_limit=False,
+            ),
+            my_expectation
+        )
+
+    def test_withdrawal_w_expired_card_when_pin_is_wrong(self):
+        my_expectation = 'DENIED'
+
+        self.assertEqual(
+            src.atm.withdraw(
+                card_expired=True,
+                pin_is_right=False,
+                enough_balance=True,
+                above_daily_limit=True,
+            ),
+            my_expectation
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                card_expired=True,
+                pin_is_right=False,
+                enough_balance=True,
                 above_daily_limit=False,
             ),
             my_expectation
@@ -60,9 +115,9 @@ class TestATM(unittest.TestCase):
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=False,
-                balance_is_enough=True,
+                card_expired=True,
+                pin_is_right=False,
+                enough_balance=False,
                 above_daily_limit=True,
             ),
             my_expectation
@@ -70,9 +125,32 @@ class TestATM(unittest.TestCase):
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=False,
-                balance_is_enough=True,
+                card_expired=True,
+                pin_is_right=False,
+                enough_balance=False,
+                above_daily_limit=False,
+            ),
+            my_expectation
+        )
+
+    def test_withdrawal_w_not_expired_card_when_pin_is_wrong(self):
+        my_expectation = 'DENIED'
+
+        self.assertEqual(
+            src.atm.withdraw(
+                card_expired=False,
+                pin_is_right=False,
+                enough_balance=True,
+                above_daily_limit=True,
+            ),
+            my_expectation
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                card_expired=False,
+                pin_is_right=False,
+                enough_balance=True,
                 above_daily_limit=False,
             ),
             my_expectation
@@ -80,9 +158,9 @@ class TestATM(unittest.TestCase):
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=False,
-                balance_is_enough=False,
+                card_expired=False,
+                pin_is_right=False,
+                enough_balance=False,
                 above_daily_limit=True,
             ),
             my_expectation
@@ -90,79 +168,9 @@ class TestATM(unittest.TestCase):
 
         self.assertEqual(
             src.atm.withdraw(
-                card_has_expired=True,
-                pin_is_correct=False,
-                balance_is_enough=False,
-                above_daily_limit=False
-            ),
-            my_expectation
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=True,
-                balance_is_enough=True,
-                above_daily_limit=True,
-            ),
-            my_expectation
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=True,
-                balance_is_enough=False,
-                above_daily_limit=True,
-            ),
-            my_expectation
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=True,
-                balance_is_enough=False,
-                above_daily_limit=False,
-            ),
-            my_expectation
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=False,
-                balance_is_enough=True,
-                above_daily_limit=True,
-            ),
-            my_expectation
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=False,
-                balance_is_enough=True,
-                above_daily_limit=False,
-            ),
-            my_expectation
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=False,
-                balance_is_enough=False,
-                above_daily_limit=True,
-            ),
-            my_expectation
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_has_expired=False,
-                pin_is_correct=False,
-                balance_is_enough=False,
+                card_expired=False,
+                pin_is_right=False,
+                enough_balance=False,
                 above_daily_limit=False,
             ),
             my_expectation
