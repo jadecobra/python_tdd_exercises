@@ -2525,7 +2525,274 @@ test_withdrawal_w_not_expired_card_when_pin_is_wrong
 
         def test_withdrawal_w_expired_card_when_pin_is_right(self):
 
-  all tests are green
+* I add a :ref:`global variable<what is a variable?>` for ``'DENIED'``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    import src.atm
+    import unittest
+
+
+    DENIED = 'DENIED'
+
+
+    class TestATM(unittest.TestCase):
+
+* I use the new :ref:`variable<what is a variable?>` to remove repetition from :ref:`test_withdrawal_w_not_expired_card_when_pin_is_right`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 12, 21-22, 32-33, 43-44
+
+        def test_withdrawal_w_not_expired_card_when_pin_is_right(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=True,
+                    above_daily_limit=False,
+                ),
+                'CASH'
+            )
+
+            # my_expectation = 'DENIED'
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=True,
+                    above_daily_limit=True,
+                ),
+                # my_expectation
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=False,
+                    above_daily_limit=True,
+                ),
+                # my_expectation
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=False,
+                    above_daily_limit=False,
+                ),
+                # my_expectation
+                DENIED
+            )
+
+        def test_withdrawal_w_expired_card_when_pin_is_right(self):
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 10
+
+        def test_withdrawal_w_not_expired_card_when_pin_is_right(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=True,
+                    above_daily_limit=False,
+                ),
+                'CASH'
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=True,
+                    enough_balance=False,
+                    above_daily_limit=False,
+                ),
+                DENIED
+            )
+
+        def test_withdrawal_w_expired_card_when_pin_is_right(self):
+
+* I do the same thing in :ref:`test_withdrawal_w_expired_card_when_pin_is_right`
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 9, 19, 29, 39
+
+        def test_withdrawal_w_expired_card_when_pin_is_right(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=True,
+                    enough_balance=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=True,
+                    enough_balance=True,
+                    above_daily_limit=False,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=True,
+                    enough_balance=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=True,
+                    enough_balance=False,
+                    above_daily_limit=False,
+                ),
+                DENIED
+            )
+
+        def test_withdrawal_w_expired_card_when_pin_is_wrong(self):
+
+* also in :ref:`test_withdrawal_w_expired_card_when_pin_is_wrong`
+
+  .. code-block:: python
+    :lineno-start: 92
+    :emphasize-lines: 9, 19, 29, 39
+
+        def test_withdrawal_w_expired_card_when_pin_is_wrong(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=False,
+                    enough_balance=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=False,
+                    enough_balance=True,
+                    above_daily_limit=False,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=False,
+                    enough_balance=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=True,
+                    pin_is_right=False,
+                    enough_balance=False,
+                    above_daily_limit=False,
+                ),
+                DENIED
+            )
+
+        def test_withdrawal_w_not_expired_card_when_pin_is_wrong(self):
+
+* and in :ref:`test_withdrawal_w_not_expired_card_when_pin_is_wrong`
+
+  .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 9, 19, 29, 39
+
+        def test_withdrawal_w_not_expired_card_when_pin_is_wrong(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=False,
+                    enough_balance=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=False,
+                    enough_balance=True,
+                    above_daily_limit=False,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=False,
+                    enough_balance=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    card_expired=False,
+                    pin_is_right=False,
+                    enough_balance=False,
+                    above_daily_limit=False,
+                ),
+                DENIED
+            )
+
+
+    # Exceptions seen
+
+  all the tests are passing. I am going to go eat something.
 
 *********************************************************************************
 close the project
