@@ -1737,7 +1737,73 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertFalse(False)
 
-  the case where the ATM returns ``'CASH'`` no longer belongs in this test
+  the case where the ATM gives me ``'CASH'`` no longer belongs in this test
+
+----
+
+*********************************************************************************
+test_withdrawal_w_not_expired_card_when_pin_is_right
+*********************************************************************************
+
+* I add a new test for when the card has :red:`NOT expired` and move the case where the ATM gives me ``'CASH'`` to it
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-9
+
+    class TestATM(unittest.TestCase):
+
+        def test_withdrawal_w_not_expired_card_when_pin_is_right(self):
+            my_expectation = 'CASH'
+            reality = src.atm.withdraw(
+                pin_is_right=True,
+                enough_balance=True,
+            )
+            self.assertFalse(False)
+
+        def test_withdrawal_w_expired_card_when_pin_is_right(self):
+            my_expectation = 'DENIED'
+
+            reality = src.atm.withdraw(
+                card_expired=True,
+                pin_is_right=True,
+                enough_balance=True,
+                above_daily_limit=True,
+            )
+            self.assertEqual(reality, my_expectation)
+
+* I add an :ref:`assertion<what is an assertion?>` for when the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
+
+  ==================  ==================  =================  ====================  =============
+  card expired        PIN                 balance            daily limit           withdrawal
+  ==================  ==================  =================  ====================  =============
+  :red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
+  ==================  ==================  =================  ====================  =============
+
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 11-17
+
+        def test_withdrawal_w_not_expired_card_when_pin_is_right(self):
+            my_expectation = 'CASH'
+            reality = src.atm.withdraw(
+                pin_is_right=True,
+                enough_balance=True,
+            )
+            self.assertFalse(False)
+
+            my_expectation = 'DENIED'
+
+            reality = src.atm.withdraw(
+                card_expired=False,
+                pin_is_right=True,
+                enough_balance=True,
+                above_daily_limit=True,
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_withdrawal_w_expired_card_when_pin_is_right(self):
 
 ----
 
