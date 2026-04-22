@@ -328,7 +328,7 @@ PIN                 balance            withdrawal
           my_expectation = 'CASH'
           reality = src.atm.withdraw(
               pin_is_right=True,
-              balance_is_enough=True,
+              enough_balance=True,
           )
           self.assertEqual(reality, my_expectation)
 
@@ -434,15 +434,15 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   .. code-block:: python
 
-    TypeError: withdraw() got an unexpected keyword argument 'balance_is_enough'
+    TypeError: withdraw() got an unexpected keyword argument 'enough_balance'
 
-* I add ``balance_is_enough`` to the :ref:`function signature<what is a function?>`
+* I add ``enough_balance`` to the :ref:`function signature<what is a function?>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
-    def withdraw(pin_is_right, balance_is_enough):
+    def withdraw(pin_is_right, enough_balance):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -457,7 +457,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     :linenos:
     :emphasize-lines: 2
 
-    def withdraw(pin_is_right, balance_is_enough):
+    def withdraw(pin_is_right, enough_balance):
         return 'CASH'
 
   the test passes, this ATM works. The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`CASH`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
@@ -487,14 +487,14 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'DENIED'
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -513,8 +513,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     :linenos:
     :emphasize-lines: 2-3
 
-    def withdraw(pin_is_right, balance_is_enough):
-        if pin_is_right and not balance_is_enough:
+    def withdraw(pin_is_right, enough_balance):
+        if pin_is_right and not enough_balance:
             return 'DENIED'
         return 'CASH'
 
@@ -550,14 +550,14 @@ PIN                 balance            withdrawal
           my_expectation = 'CASH'
           reality = src.atm.withdraw(
               pin_is_right=True,
-              balance_is_enough=True,
+              enough_balance=True,
           )
           self.assertEqual(reality, my_expectation)
 
           my_expectation = 'DENIED'
           reality = src.atm.withdraw(
               pin_is_right=True,
-              balance_is_enough=False,
+              enough_balance=False,
           )
           self.assertEqual(reality, my_expectation)
 
@@ -565,7 +565,7 @@ PIN                 balance            withdrawal
           my_expectation = 'DENIED'
           reality = src.atm.withdraw(
               pin_is_right=False,
-              balance_is_enough=True,
+              enough_balance=True,
           )
           self.assertEqual(reality, my_expectation)
 
@@ -592,10 +592,10 @@ I add an :ref:`if statement<if statements>` for this case to ``atm.py``
   :linenos:
   :emphasize-lines: 2-3
 
-  def withdraw(pin_is_right, balance_is_enough):
-      if not pin_is_right and balance_is_enough:
+  def withdraw(pin_is_right, enough_balance):
+      if not pin_is_right and enough_balance:
           return 'DENIED'
-      if pin_is_right and not balance_is_enough:
+      if pin_is_right and not enough_balance:
           return 'DENIED'
       return 'CASH'
 
@@ -615,14 +615,14 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
     :linenos:
     :emphasize-lines: 2-5
 
-    def withdraw(pin_is_right, balance_is_enough):
+    def withdraw(pin_is_right, enough_balance):
         return (
-            'DENIED' if pin_is_right != balance_is_enough
+            'DENIED' if pin_is_right != enough_balance
             else 'CASH'
         )
-        if not pin_is_right and balance_is_enough:
+        if not pin_is_right and enough_balance:
             return 'DENIED'
-        if pin_is_right and not balance_is_enough:
+        if pin_is_right and not enough_balance:
             return 'DENIED'
         return 'CASH'
 
@@ -634,18 +634,18 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
     :linenos:
     :emphasize-lines: 2-5
 
-    def withdraw(pin_is_right, balance_is_enough):
+    def withdraw(pin_is_right, enough_balance):
         return (
-            'CASH' if pin_is_right == balance_is_enough
+            'CASH' if pin_is_right == enough_balance
             else 'DENIED'
         )
         return (
-            'DENIED' if pin_is_right != balance_is_enough
+            'DENIED' if pin_is_right != enough_balance
             else 'CASH'
         )
-        if not pin_is_right and balance_is_enough:
+        if not pin_is_right and enough_balance:
             return 'DENIED'
-        if pin_is_right and not balance_is_enough:
+        if pin_is_right and not enough_balance:
             return 'DENIED'
         return 'CASH'
 
@@ -669,14 +669,14 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
             my_expectation = 'DENIED'
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertEqual(reality, my_expectation)
 
             my_expectation = 'DENIED'
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -697,12 +697,12 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
     :linenos:
     :emphasize-lines: 2-3
 
-    def withdraw(pin_is_right, balance_is_enough):
-        if not pin_is_right and not balance_is_enough:
+    def withdraw(pin_is_right, enough_balance):
+        if not pin_is_right and not enough_balance:
             return 'DENIED'
-        if not pin_is_right and balance_is_enough:
+        if not pin_is_right and enough_balance:
             return 'DENIED'
-        if pin_is_right and not balance_is_enough:
+        if pin_is_right and not enough_balance:
             return 'DENIED'
         return 'CASH'
 
@@ -714,16 +714,16 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
     :linenos:
     :emphasize-lines: 2-5
 
-    def withdraw(pin_is_right, balance_is_enough):
-        if pin_is_right and balance_is_enough:
+    def withdraw(pin_is_right, enough_balance):
+        if pin_is_right and enough_balance:
             return 'CASH'
         else:
             return 'DENIED'
-        if not pin_is_right and not balance_is_enough:
+        if not pin_is_right and not enough_balance:
             return 'DENIED'
-        if not pin_is_right and balance_is_enough:
+        if not pin_is_right and enough_balance:
             return 'DENIED'
-        if pin_is_right and not balance_is_enough:
+        if pin_is_right and not enough_balance:
             return 'DENIED'
         return 'CASH'
 
@@ -734,8 +734,8 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
   .. code-block:: python
     :linenos:
 
-    def withdraw(pin_is_right, balance_is_enough):
-        if pin_is_right and balance_is_enough:
+    def withdraw(pin_is_right, enough_balance):
+        if pin_is_right and enough_balance:
             return 'CASH'
         else:
             return 'DENIED'
@@ -752,13 +752,13 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -834,7 +834,7 @@ PIN                 balance            daily limit           withdrawal
           my_expectation = 'CASH'
           reality = src.atm.withdraw(
               pin_is_right=True,
-              balance_is_enough=True,
+              enough_balance=True,
           )
           self.assertFalse(False)
 
@@ -842,14 +842,14 @@ PIN                 balance            daily limit           withdrawal
 
           reality = src.atm.withdraw(
               pin_is_right=True,
-              balance_is_enough=True,
+              enough_balance=True,
               above_daily_limit=True,
           )
           self.assertEqual(reality, my_expectation)
 
           reality = src.atm.withdraw(
               pin_is_right=True,
-              balance_is_enough=False,
+              enough_balance=False,
           )
           self.assertEqual(reality, my_expectation)
 
@@ -876,7 +876,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 1-4
 
     def withdraw(
-            pin_is_right, balance_is_enough,
+            pin_is_right, enough_balance,
             above_daily_limit,
         ):
 
@@ -896,10 +896,10 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 3
 
     def withdraw(
-            pin_is_right, balance_is_enough,
+            pin_is_right, enough_balance,
             above_daily_limit=False,
         ):
-        if pin_is_right and balance_is_enough:
+        if pin_is_right and enough_balance:
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -913,7 +913,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 5
     :emphasize-lines: 2-3
 
-        if pin_is_right and balance_is_enough:
+        if pin_is_right and enough_balance:
             if above_daily_limit:
                 return 'DENIED'
             return 'CASH'
@@ -945,7 +945,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     reality = src.atm.withdraw(
         pin_is_right=True,
-        balance_is_enough=True,
+        enough_balance=True,
     )
 
   is the same as
@@ -954,7 +954,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     reality = src.atm.withdraw(
         pin_is_right=True,
-        balance_is_enough=True,
+        enough_balance=True,
         above_daily_limit=False,
     )
 
@@ -976,7 +976,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertFalse(False)
 
@@ -984,21 +984,21 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1023,7 +1023,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     reality = src.atm.withdraw(
         pin_is_right=True,
-        balance_is_enough=False,
+        enough_balance=False,
     )
 
   is the same as
@@ -1032,7 +1032,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     reality = src.atm.withdraw(
         pin_is_right=True,
-        balance_is_enough=False,
+        enough_balance=False,
         above_daily_limit=False,
     )
 
@@ -1048,7 +1048,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertFalse(False)
 
@@ -1075,14 +1075,14 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1109,20 +1109,20 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1135,7 +1135,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
     reality = src.atm.withdraw(
         pin_is_right=False,
-        balance_is_enough=True,
+        enough_balance=True,
     )
 
   is the same as
@@ -1144,7 +1144,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
     reality = src.atm.withdraw(
         pin_is_right=False,
-        balance_is_enough=True,
+        enough_balance=True,
         above_daily_limit=False,
     )
 
@@ -1167,20 +1167,20 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1210,27 +1210,27 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
 
 
@@ -1242,7 +1242,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
     reality = src.atm.withdraw(
         pin_is_right=False,
-        balance_is_enough=False,
+        enough_balance=False,
     )
 
   is the same as
@@ -1251,7 +1251,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
     reality = src.atm.withdraw(
         pin_is_right=False,
-        balance_is_enough=False,
+        enough_balance=False,
         above_daily_limit=False,
     )
 
@@ -1263,7 +1263,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1272,7 +1272,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1284,19 +1284,19 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
     :emphasize-lines: 5, 7-12
 
     def withdraw(
-            pin_is_right, balance_is_enough,
+            pin_is_right, enough_balance,
             above_daily_limit=False,
         ):
         denial = 'DENIED'
 
         if not pin_is_right:
             return denial
-        if not balance_is_enough:
+        if not enough_balance:
             return denial
         if above_daily_limit:
             return denial
 
-        if pin_is_right and balance_is_enough:
+        if pin_is_right and enough_balance:
             if above_daily_limit:
                 return 'DENIED'
             return 'CASH'
@@ -1316,21 +1316,21 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
     :emphasize-lines: 14
 
     def withdraw(
-            pin_is_right, balance_is_enough,
+            pin_is_right, enough_balance,
             above_daily_limit=False,
         ):
         denial = 'DENIED'
 
         if not pin_is_right:
             return denial
-        if not balance_is_enough:
+        if not enough_balance:
             return denial
         if above_daily_limit:
             return denial
 
         return 'CASH'
 
-        if pin_is_right and balance_is_enough:
+        if pin_is_right and enough_balance:
             if above_daily_limit:
                 return 'DENIED'
             return 'CASH'
@@ -1350,14 +1350,14 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
     :linenos:
 
     def withdraw(
-            pin_is_right, balance_is_enough,
+            pin_is_right, enough_balance,
             above_daily_limit=False,
         ):
         denial = 'DENIED'
 
         if not pin_is_right:
             return denial
-        if not balance_is_enough:
+        if not enough_balance:
             return denial
         if above_daily_limit:
             return denial
@@ -1367,7 +1367,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
 ----
 
 *********************************************************************************
-test_withdrawal_when_pin_is_right_w_expired_bank_card
+test_withdrawal_w_expired_card_when_pin_is_right
 *********************************************************************************
 
 The :ref:`truth table` for the Automatic Teller Machine is now
@@ -1379,13 +1379,18 @@ PIN                 balance            daily limit           withdrawal
 :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
 :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  =================  ====================  ==================
+
+==================  =================  ====================  ==================
+PIN                 balance            daily limit           withdrawal
+==================  =================  ====================  ==================
 :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
 :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
 :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
 ==================  =================  ====================  ==================
 
-I want to add a condition for when the bank card is expired.The inputs for the ATM will then be
+I want to add a condition for when the bank card is expired. The inputs for the ATM will then be
 
 * has the card expired?
 * is the PIN correct?
@@ -1401,14 +1406,29 @@ card expired        PIN                 balance            daily limit          
 :green:`expired`    :green:`right PIN`  :green:`enough`    :red:`below limit`    :red:`DENIED`
 :green:`expired`    :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :green:`expired`    :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
 :green:`expired`    :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
 :green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
 :green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
 :red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
 :red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
 :red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
 :red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
 :red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
 :red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
@@ -1423,7 +1443,7 @@ card expired        PIN                 balance            daily limit          
 
 ----
 
-I add a value for the ``card_expired`` parameter to the call to the ``withdraw`` :ref:`function<what is a function?>` for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, in ``test_withdrawal_when_pin_is_right`` in ``test_atm.py``
+I add a value for the ``card_expired`` parameter to the call to the ``withdraw`` :ref:`function<what is a function?>` for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, in :ref:`test_withdrawal_w_daily_limit_when_pin_is_right` in ``test_atm.py``
 
 ==================  ==================  =================  ====================  =============
 card expired        PIN                 balance            daily limit           withdrawal
@@ -1433,22 +1453,22 @@ card expired        PIN                 balance            daily limit          
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 11-17
+  :emphasize-lines: 12
 
-      def test_withdrawal_when_pin_is_right(self):
+      def test_withdrawal_w_daily_limit_when_pin_is_right(self):
           my_expectation = 'CASH'
           reality = src.atm.withdraw(
               pin_is_right=True,
-              balance_is_enough=True,
+              enough_balance=True,
           )
-          self.assertEqual(reality, my_expectation)
+          self.assertFalse(False)
 
           my_expectation = 'DENIED'
 
           reality = src.atm.withdraw(
-              card_has_expired=True,
+              card_expired=True,
               pin_is_right=True,
-              balance_is_enough=True,
+              enough_balance=True,
               above_daily_limit=True,
           )
           self.assertEqual(reality, my_expectation)
@@ -1457,7 +1477,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
-  TypeError: withdraw() got an unexpected keyword argument 'card_has_expired'
+  TypeError: withdraw() got an unexpected keyword argument 'card_expired'
 
 ----
 
@@ -1467,15 +1487,15 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add ``card_has_expired`` to the :ref:`function signature<what is a function?>` in ``atm.py``
+* I add ``card_expired`` to the :ref:`function signature<what is a function?>` in ``atm.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3
 
     def withdraw(
-            pin_is_right, balance_is_enough,
-            above_daily_limit=False, card_has_expired,
+            pin_is_right, enough_balance,
+            above_daily_limit=False, card_expired,
         ):
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -1486,18 +1506,18 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   because :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` for ``card_has_expired``
+* I add a :ref:`default value<test_functions_w_default_arguments>` for ``card_expired``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3
 
     def withdraw(
-            pin_is_right, balance_is_enough,
-            above_daily_limit=False, card_has_expired=False,
+            pin_is_right, enough_balance,
+            above_daily_limit=False, card_expired=False,
         ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1520,29 +1540,36 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 7
     :emphasize-lines: 19-25
 
-        def test_withdrawal_when_pin_is_right(self):
+        def test_withdrawal_w_daily_limit_when_pin_is_right(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertFalse(False)
 
             my_expectation = 'DENIED'
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.atm.withdraw(
+                pin_is_right=True,
+                enough_balance=False,
+                above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1559,30 +1586,31 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 7-8
 
     def withdraw(
-            pin_is_right, balance_is_enough,
-            above_daily_limit=False, card_has_expired=False,
+            pin_is_right, enough_balance,
+            above_daily_limit=False, card_expired=False,
         ):
         denial = 'DENIED'
 
-        if card_has_expired:
+        if card_expired:
             return denial
         if not pin_is_right:
             return denial
-        if not balance_is_enough:
+        if not enough_balance:
             return denial
         if above_daily_limit:
             return denial
+
         return 'CASH'
 
   the test passes. the ATM
 
   * :red:`denies` a withdrawal if the card has :green:`expired`, it will NOT check the PIN.
-  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered..
-  * :red:`denies` a withdrawal if the account balance is :red:`NOT enough`. This only happens if the :green:`right PIN` is entered.
-  * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit. This only happens if the account balance is :green:`enough`.
+  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered, which only happens if the card has :red:`NOT expired`.
+  * :red:`denies` a withdrawal if the account balance is :red:`NOT enough`, which only happens if the :green:`right PIN` is entered, which only happens if the card has :red:`NOT expired`.
+  * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit, which only happens if the account balance is :green:`enough`, which only happens if the :green:`right PIN` is entered, which only happens if the card has :red:`NOT expired`.
   * :green:`approves` a withdrawal only if the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
 
-* I add ``card_has_expired`` to the fourth :ref:`assertion<what is an assertion?>`, which is for when the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals
+* I add ``card_expired`` to the fourth :ref:`assertion<what is an assertion?>`, which is for when the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals, in :ref:`test_withdrawal_w_daily_limit_when_pin_is_right` in ``test_atm.py``
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1594,45 +1622,45 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 27-33
+    :emphasize-lines: 28
 
-        def test_withdrawal_when_pin_is_right(self):
+        def test_withdrawal_w_daily_limit_when_pin_is_right(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertFalse(False)
 
             my_expectation = 'DENIED'
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
   the test is still green
 
-* I add ``card_has_expired`` to the fifth :ref:`assertion<what is an assertion?>`, I also add ``above_daily_limit`` to be clearer. This is for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
+* I add ``card_expired`` to the fifth :ref:`assertion<what is an assertion?>`, I also add ``above_daily_limit`` to be clearer. This is for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1644,37 +1672,76 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   ==================  ==================  =================  ====================  =============
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 10, 13
+    :lineno-start: 7
+    :emphasize-lines: 36, 39
+
+        def test_withdrawal_w_daily_limit_when_pin_is_right(self):
+            my_expectation = 'CASH'
+            reality = src.atm.withdraw(
+                pin_is_right=True,
+                enough_balance=True,
+            )
+            self.assertFalse(False)
+
+            my_expectation = 'DENIED'
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                pin_is_right=False,
-                balance_is_enough=True,
+                card_expired=True,
+                pin_is_right=True,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
+            reality = src.atm.withdraw(
+                card_expired=True,
+                pin_is_right=True,
+                enough_balance=False,
+                above_daily_limit=False,
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_withdrawal_w_daily_limit_when_pin_is_wrong(self):
+
   still green
+
+* I change the name of the test from :ref:`test_withdrawal_w_daily_limit_when_pin_is_right` to :ref:`test_withdrawal_w_expired_card_when_pin_is_right`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines:
+
+    class TestATM(unittest.TestCase):
+
+        def test_withdrawal_w_expired_card_when_pin_is_right(self):
+            my_expectation = 'CASH'
+            reality = src.atm.withdraw(
+                pin_is_right=True,
+                enough_balance=True,
+            )
+            self.assertFalse(False)
+
+  the case where the ATM returns ``'CASH'`` no longer belongs in this test
 
 ----
 
-* I add ``card_has_expired`` to the next :ref:`assertion<what is an assertion?>`, for the case where the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
+* I add ``card_expired`` to the next :ref:`assertion<what is an assertion?>`, for the case where the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1687,24 +1754,24 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 10
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1724,30 +1791,30 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 9-15
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
   still green
 
-* I add ``card_has_expired`` and ``above_daily_limit`` to the next :ref:`assertion<what is an assertion?>`, which is for when the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals
+* I add ``card_expired`` and ``above_daily_limit`` to the next :ref:`assertion<what is an assertion?>`, which is for when the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1762,24 +1829,24 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 10, 13
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True
             )
             self.assertEqual(reality, my_expectation)
@@ -1802,40 +1869,40 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 17-23
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=False
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1856,17 +1923,17 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 10-13
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=False
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1876,7 +1943,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   green
 
-* I go back to the first :ref:`assertion<what is an assertion?>` to add the ``card_has_expired`` and ``above_daily_limit`` parameters. This is the one case where the ATM gives cash - when the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
+* I go back to the first :ref:`assertion<what is an assertion?>` to add the ``card_expired`` and ``above_daily_limit`` parameters. This is the one case where the ATM gives cash - when the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -1892,9 +1959,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         def test_withdrawal_when_pin_is_right(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1916,25 +1983,25 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 17-23
 
             reality = src.atm.withdraw(
-                card_has_expired=True,
+                card_expired=True,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=False
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -1960,25 +2027,25 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 17-23
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -2003,17 +2070,17 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 9-15
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=True,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -2037,17 +2104,17 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 9-15
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -2072,25 +2139,25 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 17-23
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -2116,33 +2183,33 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :emphasize-lines: 25-31
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=True,
+                enough_balance=True,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.atm.withdraw(
-                card_has_expired=False,
+                card_expired=False,
                 pin_is_right=False,
-                balance_is_enough=False,
+                enough_balance=False,
                 above_daily_limit=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -2160,9 +2227,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             my_expectation = 'CASH'
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=True,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=False,
                 ),
                 my_expectation
@@ -2172,9 +2239,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=True,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2182,9 +2249,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=True,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=False,
                 ),
                 my_expectation
@@ -2192,9 +2259,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=True,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2202,9 +2269,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=True,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=False,
                 ),
                 my_expectation
@@ -2212,9 +2279,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=False,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2222,9 +2289,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=False,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=False,
                 ),
                 my_expectation
@@ -2232,9 +2299,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=False,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2242,9 +2309,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=True,
+                    card_expired=True,
                     pin_is_right=False,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=False
                 ),
                 my_expectation
@@ -2252,9 +2319,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=True,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2262,9 +2329,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=True,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2272,9 +2339,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=True,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=False,
                 ),
                 my_expectation
@@ -2282,9 +2349,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=False,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2292,9 +2359,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=False,
-                    balance_is_enough=True,
+                    enough_balance=True,
                     above_daily_limit=False,
                 ),
                 my_expectation
@@ -2302,9 +2369,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=False,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=True,
                 ),
                 my_expectation
@@ -2312,9 +2379,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             self.assertEqual(
                 src.atm.withdraw(
-                    card_has_expired=False,
+                    card_expired=False,
                     pin_is_right=False,
-                    balance_is_enough=False,
+                    enough_balance=False,
                     above_daily_limit=False,
                 ),
                 my_expectation
