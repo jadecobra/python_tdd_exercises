@@ -628,7 +628,7 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
 
   the test is still green, and this :ref:`if statement<if statements>` is confusing
 
-* I add a :ref:`conditional expression<conditional>` for :ref:`Logical Equality<test_logical_equality>`
+* I add a :ref:`conditional expression<conditional expressions>` for :ref:`Logical Equality<test_logical_equality>`
 
   .. code-block:: python
     :linenos:
@@ -1303,19 +1303,17 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
         else:
             return 'DENIED'
 
-  the test is still green.
+  the test is still green. The ATM
 
-  The ATM
-
-  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered because you cannot enter the system
+  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered.
   * :red:`denies` a withdrawal if the account balance is :red:`NOT enough`. This only happens if the :green:`right PIN` is entered.
-  * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit. This only happens if the account balance is :green:`enough`.
+  * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit. This only happens if the account balance is :green:`enough`, which only happens if the :green:`right PIN` is entered.
 
 * I add a `return statement`_ for the one case where the withdrawal is allowed
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 13
+    :emphasize-lines: 14
 
     def withdraw(
             pin_is_right, balance_is_enough,
@@ -1329,6 +1327,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
             return denial
         if above_daily_limit:
             return denial
+
         return 'CASH'
 
         if pin_is_right and balance_is_enough:
@@ -1338,14 +1337,12 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
         else:
             return 'DENIED'
 
-  still green.
+  still green. The ATM
 
-  The ATM
-
-  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered because you cannot enter the system
+  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered.
   * :red:`denies` a withdrawal if the account balance is :red:`NOT enough`. This only happens if the :green:`right PIN` is entered.
-  * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit. This only happens if the account balance is :green:`enough`.
-  * :green:`approves` a withdrawal only if the :green:`right PIN` is entered and the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
+  * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit. This only happens if the account balance is :green:`enough`, which only happens if the :green:`right PIN` is entered.
+  * :green:`approves` a withdrawal only if the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
 
 * I remove the other statements
 
@@ -1364,6 +1361,7 @@ test_withdrawal_w_daily_limit_when_pin_is_wrong
             return denial
         if above_daily_limit:
             return denial
+
         return 'CASH'
 
 ----
@@ -1579,7 +1577,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   the test passes. the ATM
 
   * :red:`denies` a withdrawal if the card has :green:`expired`, it will NOT check the PIN.
-  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered because you cannot enter the system.
+  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered..
   * :red:`denies` a withdrawal if the account balance is :red:`NOT enough`. This only happens if the :green:`right PIN` is entered.
   * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit. This only happens if the account balance is :green:`enough`.
   * :green:`approves` a withdrawal only if the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
