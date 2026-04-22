@@ -86,3 +86,21 @@ the code from ``atm/src/atm.py`` from :ref:`Automatic Teller Machine`
   :linenos:
 
 ----
+
+*********************************************************************************
+Microwave: tests and solutions
+*********************************************************************************
+
+the code from ``microwave/tests/test_microwave.py`` from :ref:`Microwave`
+
+.. literalinclude:: truth_table/tests/test_microwave.py
+  :language: python
+  :linenos:
+
+the code from ``microwave/src/microwave.py`` from :ref:`Microwave`
+
+.. literalinclude:: truth_table/solutions/microwave.py
+  :language: python
+  :linenos:
+
+----

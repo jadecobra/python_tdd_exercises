@@ -1540,7 +1540,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, red)
 
-* I add a default value for the ``current_light`` :ref:`keyword argument<test_functions_w_keyword_arguments>` in ``traffic_light.py``
+* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``current_light`` :ref:`keyword argument<test_functions_w_keyword_arguments>` in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -1573,7 +1573,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     # TypeError
     # SyntaxError
 
-* I add a default value for ``timer_done`` in ``traffic_light.py``
+* I add a :ref:`default value<test_functions_w_default_arguments>` for ``timer_done`` in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -1584,7 +1584,21 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         walk_button=False,
     ):
 
-  the test is green again
+  the test is green again. All the arguments in the :ref:`function<what is a function?>` are now choices, which means
+
+  .. code-block:: python
+
+    src.traffic_light.show()
+
+  is the same as
+
+  .. code-block:: python
+
+    src.traffic_light.show(
+        current_light='RED',
+        timer_done=False,
+        walk_button=False,
+    )
 
 * I change the name of :ref:`test_traffic_light_when_red` to :ref:`test_traffic_light_when_red_w_walk_button` in ``test_traffic_light.py``
 
