@@ -310,7 +310,7 @@ test_withdrawal_when_pin_is_right
 
 ----
 
-I change ``test_failure`` to ``test_withdrawal_when_pin_is_right``, then add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered and there amount in the account is :green:`enough`
+I change ``test_failure`` to ``test_withdrawal_when_pin_is_right``, then add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered and the amount in the account is :green:`enough`
 
 ==================  =================  =================
 PIN                 balance            withdrawal
@@ -784,7 +784,7 @@ PIN                 balance            withdrawal
 :red:`wrong PIN`    :red:`NOT enough`  :red:`DENIED`
 ==================  =================  =================
 
-I want to add a condition for a daily limit on how much can be taken from the account.The inputs for the ATM will then be
+I want to add a condition for a daily limit on how much can be taken from the account. The inputs for the ATM will then be
 
 * is the PIN correct?
 * is the amount I want to take, smaller or bigger than what is in the account?

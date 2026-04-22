@@ -33,6 +33,7 @@ the projects
 
   Traffic Light<traffic_light>
   Automated Teller Machine<atm>
+  Microwave<microwave>
 
 ----
 
