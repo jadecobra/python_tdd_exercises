@@ -1940,7 +1940,7 @@ current light     timer done      walk button     show
 
   still green
 
-* I make :ref:`global variables<what is a variable?>` for the colors at the top of the file_ since :red:`RED` is used in both :ref:`test_traffic_light_when_yellow_w_walk_button` and :ref:`test_traffic_light_when_red_w_walk_button`
+* I make :ref:`global variables<what is a variable?>` for the colors at the top of the file_ since :red:`RED` is used in both :ref:`test_traffic_light_when_yellow_w_walk_button` and :ref:`test_traffic_light_when_red_w_walk_button`, I want to use them to remove repetition from the tests
 
   .. code-block:: python
     :linenos:
