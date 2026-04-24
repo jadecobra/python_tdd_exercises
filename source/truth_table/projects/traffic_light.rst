@@ -1449,36 +1449,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         return green
 
-* I add a value for ``walk_button`` parameter to the :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`
-
-  ================  ===============  =================  =================
-  current light     timer            walk button        show
-  ================  ===============  =================  =================
-  :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
-  ================  ===============  =================  =================
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2
-
-        def test_traffic_light_when_red(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.show(
-                current_light='RED',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'GREEN' != 'RED'
-
-
-
-* I add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :red:`NOT pushed`, to :ref:`test_traffic_light_when_red` in ``test_traffic_light.py``
+* I do not need to do anything to the :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
   current light     timer            walk button        show
@@ -1487,67 +1458,25 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
   ================  ===============  =================  =================
 
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 10-16
-
-        def test_traffic_light_when_red(self):
-            my_expectation = 'RED'
-            reality = src.traffic_light.show(
-                current_light='RED',
-                timer_done=True,
-                walk_button=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
-                current_light='RED',
-                timer_done=True,
-                walk_button=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            my_expectation = 'RED'
-            reality = src.traffic_light.show(
-                current_light='RED',
-                timer_done=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-        def test_traffic_light_when_yellow(self):
-
-  the test is still green
-
-* I change the expectation to make sure the test works
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 1
-
-            my_expectation = 'BOOM'
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  because
 
   .. code-block:: python
 
-    AssertionError: 'GREEN' != 'BOOM'
+    src.traffic_light.show(
+        current_light='RED',
+        timer_done=True,
+    )
 
-* I change the expectation back
+  is now the same as
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 1
 
-            my_expectation = 'GREEN'
-            reality = src.traffic_light.show(
-                current_light='RED',
-                timer_done=True,
-                walk_button=False
-            )
-            self.assertEqual(reality, my_expectation)
+    src.traffic_light.show(
+        current_light='RED',
+        timer_done=True,
+    )
 
-  the test is green again
+  because the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
@@ -1561,7 +1490,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 22
+    :emphasize-lines: 21
 
         def test_traffic_light_when_red(self):
             my_expectation = 'RED'
@@ -1576,7 +1505,6 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             reality = src.traffic_light.show(
                 current_light='RED',
                 timer_done=True,
-                walk_button=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1588,7 +1516,39 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, my_expectation)
 
-  still green
+        def test_traffic_light_when_yellow(self):
+
+* I change the expectation to make sure the test works
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 1
+
+            my_expectation = 'BOOM'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'RED' != 'BOOM'
+
+* I change the expectation back
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 1
+
+            my_expectation = 'RED'
+            reality = src.traffic_light.show(
+                current_light='RED',
+                timer_done=False,
+                walk_button=True,
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_traffic_light_when_yellow(self):
+
+  the test is green again
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
@@ -1618,7 +1578,6 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             reality = src.traffic_light.show(
                 current_light='RED',
                 timer_done=True,
-                walk_button=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1634,13 +1593,31 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             reality = src.traffic_light.show(
                 current_light='RED',
                 timer_done=False,
-                walk_button=False,
             )
             self.assertEqual(reality, my_expectation)
 
         def test_traffic_light_when_yellow(self):
 
-  green
+  green. I do not nee dto provide a value for the ``walk_button`` parameter because
+
+  .. code-block:: python
+
+    src.traffic_light.show(
+        current_light='RED',
+        timer_done=False,
+    )
+
+  is the same as
+
+  .. code-block:: python
+
+    src.traffic_light.show(
+        current_light='RED',
+        timer_done=False,
+        walk_button=False,
+    )
+
+  because the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
 
 * I add a :ref:`variable<what is a variable?>` for ``'RED'``
 
