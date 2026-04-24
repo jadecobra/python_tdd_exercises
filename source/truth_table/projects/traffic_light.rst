@@ -2902,44 +2902,6 @@ current light     timer            walk button        show
 
     # Exceptions seen
 
-* As a reminder, the ``show`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :linenos:
-
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-
-        if current_light == yellow:
-            return red
-
-        if current_light == green:
-            return 'YELLOW'
-
-        if walk_button:
-            return red
-
-        return green
-
-  * returns the current light if the timer is :red:`NOT done`
-  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is done), then returns :red:`RED` if the current light is :yellow:`YELLOW`
-  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW` and the current light is NOT :green:`GREEN`, this means the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
-  * returns :green:`GREEN` if the timer is :green:`done` and the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
-
-----
-
-*********************************************************************************
-:yellow:`REFACTOR`: make it better
-*********************************************************************************
-
 * I want to remove the ``reality`` :ref:`variable<what is a variable?>`, because it is only used once for each :ref:`assertion<what is an assertion?>`, I can make the call to ``src.traffic_light.show`` directly, in :ref:`test_green_traffic_light_w_walk_button`
 
   .. code-block:: python
@@ -3377,13 +3339,82 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light_w_walk_button(self):
 
+.. admonition:: REMINDER
+
+  .. code-block:: python
+    :linenos:
+
+    def show(
+            current_light='RED', timer_done=False,
+            walk_button=False,
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if not timer_done:
+            return current_light
+
+        if current_light == yellow:
+            return red
+
+        if current_light == green:
+            return 'YELLOW'
+
+        if walk_button:
+            return red
+
+        return green
+
+  the ``show`` :ref:`function<what is a function?>`
+
+  * returns the current light if the timer is :red:`NOT done`
+  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is done), then returns :red:`RED` if the current light is :yellow:`YELLOW`
+  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW` and the current light is NOT :green:`GREEN`, this means the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
+  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
+  * returns :green:`GREEN` if the timer is :green:`done` and the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
+
 ----
 
 *************************************************************************************
 test_red_traffic_light_w_walk
 *************************************************************************************
 
-I want the traffic light to show ``WALK`` or ``NO WALK`` when a person can walk. This means the :ref:`truth table` for the Traffic Light is
+The the inputs for the traffic light up till now are
+
+* did the person push the walk button?
+* what color is the light now?
+* is the timer done?
+
+which gives this :ref:`truth table`
+
+================  ===============  =================  =================
+current light     timer            walk button        show
+================  ===============  =================  =================
+:red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
+:red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
+:red:`RED`        :red:`NOT done`  :green:`pushed`    :red:`RED`
+:red:`RED`        :red:`NOT done`  :red:`NOT pushed`  :red:`RED`
+================  ===============  =================  =================
+
+================  ===============  =================  =================
+current light     timer            walk button        show
+================  ===============  =================  =================
+:yellow:`YELLOW`  :green:`done`    :green:`pushed`    :red:`RED`
+:yellow:`YELLOW`  :green:`done`    :red:`NOT pushed`  :red:`RED`
+:yellow:`YELLOW`  :red:`NOT done`  :green:`pushed`    :yellow:`YELLOW`
+:yellow:`YELLOW`  :red:`NOT done`  :red:`NOT pushed`  :yellow:`YELLOW`
+================  ===============  =================  =================
+
+================  ===============  =================  =================
+current light     timer            walk button        show
+================  ===============  =================  =================
+:green:`GREEN`    :green:`done`    :green:`pushed`    :yellow:`YELLOW`
+:green:`GREEN`    :green:`done`    :red:`NOT pushed`  :yellow:`YELLOW`
+:green:`GREEN`    :red:`NOT done`  :green:`pushed`    :green:`GREEN`
+:green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN`
+================  ===============  =================  =================
+
+I want the traffic light to show ``WALK`` or ``NO WALK`` when a person can walk. This means the :ref:`truth table` for if the Traffic Light is :red:`RED` with the walk sign is
 
 ================  ==============  ==============  =================================
 current light     timer done      walk button     show
@@ -3392,17 +3423,9 @@ current light     timer done      walk button     show
 :red:`RED`        :green:`yes`    :red:`no`       :green:`GREEN` + :red:`NO WALK`
 :red:`RED`        :red:`no`       :green:`yes`    :red:`RED` + :green:`WALK`
 :red:`RED`        :red:`no`       :red:`no`       :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :red:`no`       :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`no`       :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
 ================  ==============  ==============  =================================
 
-this shows that the Traffic Light only shows :green:`WALK` when the light is :red:`RED`
+
 
 ----
 
@@ -3813,6 +3836,17 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 test_yellow_traffic_light_w_walk
 *************************************************************************************
 
+The :ref:`truth table` for if the Traffic Light is :yellow:`YELLOW` with the walk sign is
+
+================  ==============  ==============  =================================
+current light     timer done      walk button     show
+================  ==============  ==============  =================================
+:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :red:`no`       :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`no`       :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
+================  ==============  ==============  =================================
+
 * I change the first :ref:`assertion<what is an assertion?>` in :ref:`test_yellow_traffic_light_w_walk_button`
 
   ================  ==============  ==============  =================================
@@ -4046,6 +4080,17 @@ test_yellow_traffic_light_w_walk
 *************************************************************************************
 test_green_traffic_light_w_walk
 *************************************************************************************
+
+The :ref:`truth table` for if the Traffic Light is :green:`GREEN` with the walk sign is
+
+================  ==============  ==============  =================================
+current light     timer done      walk button     show
+================  ==============  ==============  =================================
+:green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
+:green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
+================  ==============  ==============  =================================
 
 * I change the first :ref:`assertion<what is an assertion?>` in :ref:`test_green_traffic_light_w_walk_button`
 
@@ -4670,6 +4715,10 @@ test_green_traffic_light_w_walk
 
 ----
 
+*********************************************************************************
+:yellow:`REFACTOR`: make it better
+*********************************************************************************
+
 * I add :ref:`variables<what is a variable?>` for ``'WALK'`` and ``'NO WALK'`` to the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
 
   .. code-block:: python
@@ -5026,10 +5075,20 @@ current light     timer done      walk button     show
 :red:`RED`        :green:`yes`    :red:`no`       :green:`GREEN` + :red:`NO WALK`
 :red:`RED`        :red:`no`       :green:`yes`    :red:`RED` + :green:`WALK`
 :red:`RED`        :red:`no`       :red:`no`       :red:`RED` + :green:`WALK`
+================  ==============  ==============  =================================
+
+================  ==============  ==============  =================================
+current light     timer done      walk button     show
+================  ==============  ==============  =================================
 :yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
 :yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
 :yellow:`YELLOW`  :red:`no`       :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
 :yellow:`YELLOW`  :red:`no`       :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
+================  ==============  ==============  =================================
+
+================  ==============  ==============  =================================
+current light     timer done      walk button     show
+================  ==============  ==============  =================================
 :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
 :green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
 :green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
@@ -5054,6 +5113,10 @@ current light     timer done      walk button     emergency    show
 :red:`RED`        :green:`yes`    :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
 :red:`RED`        :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
 :red:`RED`        :green:`yes`    :red:`no`       :green:`no`  :green:`GREEN` + :red:`NO WALK`
+
+================  ==============  ==============  ===========  =================================
+current light     timer done      walk button     emergency    show
+================  ==============  ==============  ===========  =================================
 :red:`RED`        :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
 :red:`RED`        :red:`no`       :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
 :red:`RED`        :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
@@ -5067,6 +5130,10 @@ current light     timer done      walk button     emergency    show
 :yellow:`YELLOW`  :green:`yes`    :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
 :yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
 :yellow:`YELLOW`  :green:`yes`    :red:`no`       :green:`no`  :red:`RED` + :green:`WALK`
+
+================  ==============  ==============  ===========  =================================
+current light     timer done      walk button     emergency    show
+================  ==============  ==============  ===========  =================================
 :yellow:`YELLOW`  :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
 :yellow:`YELLOW`  :red:`no`       :green:`yes`    :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
 :yellow:`YELLOW`  :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
@@ -5080,6 +5147,10 @@ current light     timer done      walk button     emergency    show
 :green:`GREEN`    :green:`yes`    :green:`yes`    :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
 :green:`GREEN`    :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
 :green:`GREEN`    :green:`yes`    :red:`no`       :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
+
+================  ==============  ==============  ===========  =================================
+current light     timer done      walk button     emergency    show
+================  ==============  ==============  ===========  =================================
 :green:`GREEN`    :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
 :green:`GREEN`    :red:`no`       :green:`yes`    :green:`no`  :green:`GREEN` + :red:`NO WALK`
 :green:`GREEN`    :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
