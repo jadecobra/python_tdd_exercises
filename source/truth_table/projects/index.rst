@@ -18,9 +18,23 @@ preview
 
 These are the tests I have at the end of the chapters
 
-.. literalinclude:: ../../code/truth_table/tests/test_traffic_light.py
-  :language: python
-  :linenos:
+* Traffic Light Tests
+
+  .. literalinclude:: ../../code/truth_table/tests/test_traffic_light.py
+    :language: python
+    :linenos:
+
+* Automated Teller Machine Tests
+
+  .. literalinclude:: ../../code/truth_table/tests/test_atm.py
+    :language: python
+    :linenos:
+
+* Microwave Tests
+
+  .. literalinclude:: ../../code/truth_table/tests/test_microwave.py
+    :language: python
+    :linenos:
 
 ----
 
