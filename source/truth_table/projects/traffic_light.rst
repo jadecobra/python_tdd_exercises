@@ -272,6 +272,35 @@ start the project
     FAILED tests/test_traffic_light.py::TestTrafficLight::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
+  .. admonition:: if the terminal_ shows
+
+    .. code-block:: shell
+
+      error: Failed to spawn: `pytest-watcher`
+      Caused by: No such file or directory (os error 2)
+
+    then add `pytest-watcher`_ to the ``requirements.txt`` file_
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      echo "pytest-watcher" >> requirements.txt
+
+    run
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      uv add --requirement requirements.txt
+
+    then
+
+    .. code-block:: python
+      :emphasize-lines: 1
+      :emphasize-text: .
+
+      uv run pytest-watcher . --now
+
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
 
   .. code-block:: python

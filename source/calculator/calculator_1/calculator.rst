@@ -236,6 +236,35 @@ start the project
     FAILED tests/test_calculator.py::TestCalculator::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
+  .. admonition:: if the terminal_ shows
+
+    .. code-block:: shell
+
+      error: Failed to spawn: `pytest-watcher`
+      Caused by: No such file or directory (os error 2)
+
+    then add `pytest-watcher`_ to the ``requirements.txt`` file_
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      echo "pytest-watcher" >> requirements.txt
+
+    run
+
+    .. code-block:: python
+      :emphasize-lines: 1
+
+      uv add --requirement requirements.txt
+
+    then
+
+    .. code-block:: python
+      :emphasize-lines: 1
+      :emphasize-text: .
+
+      uv run pytest-watcher . --now
+
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
