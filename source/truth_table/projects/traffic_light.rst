@@ -4547,7 +4547,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you now know
+you know
 
 * :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
@@ -4558,7 +4558,7 @@ you now know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 
-:ref:`Would you like to test making a calculator?<how to make a calculator>`
+:ref:`Would you like to test making an Automatic Teller Machine?<Automatic Teller Machine>`
 
 ----
 
