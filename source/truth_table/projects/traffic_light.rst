@@ -4485,6 +4485,8 @@ current light     timer done      walk button     show
 :green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
 ================  ==============  ==============  =================================
 
+The Traffic Light only shows ``'WALK'`` when the light is :red:`RED`.
+
 What if there is an emergency vehicle present and the Traffic Light changes based on that as well? The inputs would be
 
 * what color is the light now?

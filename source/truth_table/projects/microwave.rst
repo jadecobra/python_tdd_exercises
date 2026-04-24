@@ -10,7 +10,7 @@
 Microwave
 #################################################################################
 
-I want to make a **Microwave** that HEATINGs up food or stays off, if the inputs are
+I want to make a **Microwave** that heats up food or stays off, if the inputs are
 
 * is the door open?
 * has the start button been pushed?
@@ -308,7 +308,7 @@ test_door_open
 
 ----
 
-I change ``test_failure`` to ``test_door_open``, then add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :green:`pushed` amount in the account is :green:`enough`
+I change ``test_failure`` to ``test_door_open``, then add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :green:`pushed`
 
 ==================  =================  =================
 door                start button       output
@@ -1264,7 +1264,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   because :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``overheating`` parameter in the :ref:`function signature<what is a function?>` to. make it a choice
+* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``overheating`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
 
   .. code-block:: python
     :linenos:
@@ -1616,7 +1616,7 @@ test_door_open_timer_not_set_w_overheating
 
   the test is still green
 
-* I add a value for ``overheating`` to the next :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the microwave temperatur is :green:`too hot`
+* I add a value for ``overheating`` to the next :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the microwave temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -1732,7 +1732,7 @@ test_door_open_timer_not_set_w_overheating
         def test_door_open_timer_not_set_w_overheating(self):
             my_expectation = 'OFF'
 
-* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from
+* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_door_open_timer_not_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2307,7 +2307,7 @@ test_door_closed_timer_not_set_w_overheating
 
   still green
 
-* I use the call to the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>` I do not the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each one
+* I use the call to the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>`. I do not need the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each one
 
   .. code-block:: python
     :lineno-start: 110
@@ -2507,6 +2507,8 @@ test_door_closed_timer_not_set_w_overheating
 
         def test_door_open_timer_not_set_w_overheating(self):
 
+  all the tests are green
+
 *********************************************************************************
 close the project
 *********************************************************************************
@@ -2535,12 +2537,12 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for an Microwave with the following inputs:
+I ran tests for a Microwave with these inputs:
 
-* has the card expired?
-* is the PIN correct?
-* is the amount I want to take, smaller or bigger than what is in the account?
-* will this put the account above or below the daily limit for microwaveals?
+* is the door open?
+* is the timer set?
+* has the start button been pushed?
+* is the microwave too hot?
 
 the inputs gave me this :ref:`truth table`
 
@@ -2579,45 +2581,6 @@ door           timer           start button       too hot             output
 :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
 :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
-
-What if I want the microwave to give a different message with each denial, so that the user knows why the microwaveal failed? The :ref:`truth table` could then be
-
-==================  ==================  =================  ====================  =============
-card expired        PIN                 balance            daily limit           microwaveal
-==================  ==================  =================  ====================  =============
-:green:`expired`    :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED: Card Expired`
-:green:`expired`    :green:`right PIN`  :green:`enough`    :red:`below limit`    :red:`DENIED: Card Expired`
-:green:`expired`    :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED: Card Expired`
-:green:`expired`    :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED: Card Expired`
-==================  ==================  =================  ====================  =============
-
-==================  ==================  =================  ====================  =============
-card expired        PIN                 balance            daily limit           microwaveal
-==================  ==================  =================  ====================  =============
-:green:`expired`    :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED: Card Expired`
-:green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED: Card Expired`
-:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED: Card Expired`
-:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED: Card Expired`
-==================  ==================  =================  ====================  =============
-
-==================  ==================  =================  ====================  =============
-card expired        PIN                 balance            daily limit           microwaveal
-==================  ==================  =================  ====================  =============
-:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED: You have exceeded the daily microwaveal Limit`
-:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
-:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED: There is not enough money in the account to complete the microwaveal`
-:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED: There is not enough money in the account to complete the microwaveal`
-==================  ==================  =================  ====================  =============
-
-
-==================  ==================  =================  ====================  =============
-card expired        PIN                 balance            daily limit           microwaveal
-==================  ==================  =================  ====================  =============
-:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`Error: You entered the wrong PIN. Try again`
-:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`Error: You entered the wrong PIN. Try again`
-:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`Error: You entered the wrong PIN. Try again`
-:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`Error: You entered the wrong PIN. Try again`
-==================  ==================  =================  ====================  =============
 
 ----
 

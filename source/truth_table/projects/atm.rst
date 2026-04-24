@@ -2822,7 +2822,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for an Automatic Teller Machine with the following inputs:
+I ran tests for an Automatic Teller Machine with these inputs:
 
 * has the card expired?
 * is the PIN correct?
@@ -2866,6 +2866,8 @@ card expired        PIN                 balance            daily limit          
 :red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
 ==================  ==================  =================  ====================  =============
+
+The ATM only gives me ``'CASH'`` when the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` for the withdrawal, and the account is :red:`below limit` for daily withdrawals.
 
 What if I want the ATM to give a different message with each denial, so that the user knows why the withdrawal failed? The :ref:`truth table` could then be
 
