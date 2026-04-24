@@ -744,7 +744,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             return 'HEATING'
         return 'OFF'
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1285,7 +1285,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
             return 'HEATING'
         return 'OFF'
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
 

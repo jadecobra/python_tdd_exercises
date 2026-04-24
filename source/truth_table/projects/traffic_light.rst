@@ -1177,7 +1177,7 @@ current light     timer            walk button        show
 
 ----
 
-I add ``walk_button`` to the call to ``src.traffic_light.show`` for when the current light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`, in the first :ref:`assertion<what is an assertion?>` of :ref:`test_traffic_light_when_red` in ``test_traffic_light.py``
+I add an :ref:`assertion<what is an assertion?>` for when the current light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`, to :ref:`test_traffic_light_when_red` in ``test_traffic_light.py``
 
 ================  ===============  =================  =================
 current light     timer            walk button        show
@@ -1187,14 +1187,21 @@ current light     timer            walk button        show
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 6
+  :emphasize-lines: 2-8
 
       def test_traffic_light_when_red(self):
-          my_expectation = 'GREEN'
+          my_expectation = 'RED'
           reality = src.traffic_light.show(
               current_light='RED',
               timer_done=True,
               walk_button=True,
+          )
+          self.assertEqual(reality, my_expectation)
+
+          my_expectation = 'GREEN'
+          reality = src.traffic_light.show(
+              current_light='RED',
+              timer_done=True,
           )
           self.assertEqual(reality, my_expectation)
 
@@ -1221,13 +1228,25 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add a :ref:`keyword argument<test_functions_w_keyword_arguments>` in ``traffic_light.py``
+* I add a :ref:`keyword argument<test_functions_w_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 1
 
     def show(current_light, timer_done, walk_button):
+        yellow, green = 'YELLOW', 'GREEN'
+
+        if not timer_done:
+            return current_light
+
+        if current_light == yellow:
+            return 'RED'
+
+        if current_light == green:
+            return 'YELLOW'
+
+        return green
 
   the terminal_ is my friend, and shows 3 failures with :ref:`TypeError<what causes TypeError?>`
 
@@ -1237,7 +1256,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     FAILED ...test_traffic_light_when_red - TypeError: show() missing 1 required positional arg...
     FAILED ...test_traffic_light_when_yellow - TypeError: show() missing 1 required positional arg...
 
-* I could add the ``walk_button`` parameter to every call to the ``show`` :ref:`function<what is a function?>` in every test or add a :ref:`default value<test_functions_w_default_arguments>` for the new :ref:`keyword argument<test_functions_w_keyword_arguments>` to make it a choice NOT a requirement. I make it a choice
+  because all the other tests call the ``show`` :ref:`function<what is a function?>` with two arguments and I changed the :ref:`function signature<what is a function?>` to make it expect three. I need to make the third argument a choice.
+
+* I could add the ``walk_button`` parameter to every call to the ``show`` :ref:`function<what is a function?>` in every test or add a :ref:`default value<test_functions_w_default_arguments>` for the new :ref:`keyword argument<test_functions_w_keyword_arguments>` to make it a choice, NOT a requirement. I make it a choice
 
   .. code-block:: python
     :linenos:
@@ -1248,26 +1269,62 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             walk_button=False,
         ):
 
-  the test passes because
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    src.traffic_light.show(
-        current_light='RED',
-        timer_done=False,
-    )
+    AssertionError: 'GREEN' != 'RED'
 
-  is now the same as
+  yes!
+
+* I add an :ref:`if statement<if statements>` for ``walk_button``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 16-17
 
-    src.traffic_light.show(
-        current_light='RED',
-        timer_done=False,
-        walk_button=False,
-    )
+    def show(
+            current_light, timer_done,
+            walk_button=False
+        ):
+        yellow, green = 'YELLOW', 'GREEN'
 
-  because the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` is :ref:`False<test_what_is_false>`
+        if not timer_done:
+            return current_light
+
+        if current_light == yellow:
+            return 'RED'
+
+        if current_light == green:
+            return 'YELLOW'
+
+        if walk_button == True:
+            return 'RED'
+
+        return green
+
+  the test passes
+
+  .. TIP:: Because I set a :ref:`default value<test_functions_w_default_arguments>` for the new :ref:`keyword argument<test_functions_w_keyword_arguments>` to make it a choice, NOT a requirement, this call to the ``show`` :ref:`function<what is a function?>`
+
+    .. code-block:: python
+
+      src.traffic_light.show(
+          current_light='RED',
+          timer_done=True,
+      )
+
+    is now the same as
+
+    .. code-block:: python
+
+      src.traffic_light.show(
+          current_light='RED',
+          timer_done=True,
+          walk_button=False,
+      )
+
+    If I call the ``show`` :ref:`function<what is a function?>` without giving a value for the ``walk_button`` parameter, it will use the :ref:`default value (False)<test_functions_w_default_arguments>` for the ``walk_button``
 
 ----
 
@@ -1277,7 +1334,128 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I change the expectation for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`
+* I add bool_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 1-2
+
+        # if walk_button == True:
+        if bool(walk_button) == True:
+            return 'RED'
+
+        return green
+
+  the test is still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 2-3
+
+        # if walk_button == True:
+        # if bool(walk_button) == True:
+        if bool(walk_button):
+            return 'RED'
+
+        return green
+
+  still green
+
+* I remove bool_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3-4
+
+        # if walk_button == True:
+        # if bool(walk_button) == True:
+        # if bool(walk_button):
+        if walk_button:
+            return 'RED'
+
+  green
+
+* I add a :ref:`variable<what is a variable?>` for :red:`RED`, to use to remove repetition of ``'RED'``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    def show(
+            current_light, timer_done,
+            walk_button=False
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if not timer_done:
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11-12, 21-22
+
+    def show(
+            current_light, timer_done,
+            walk_button=False
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if not timer_done:
+            return current_light
+
+        if current_light == yellow:
+            # return 'RED'
+            return red
+
+        if current_light == green:
+            return 'YELLOW'
+
+        # if walk_button == True:
+        # if bool(walk_button) == True:
+        # if bool(walk_button):
+        if walk_button:
+            # return 'RED'
+            return red
+
+        return green
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def show(
+            current_light, timer_done,
+            walk_button=False
+        ):
+        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+        if not timer_done:
+            return current_light
+
+        if current_light == yellow:
+            return red
+
+        if current_light == green:
+            return 'YELLOW'
+
+        if walk_button:
+            return red
+
+        return green
+
+* I add a value for ``walk_button`` parameter to the :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed`
+
+  ================  ===============  =================  =================
+  current light     timer            walk button        show
+  ================  ===============  =================  =================
+  :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
+  ================  ===============  =================  =================
 
   .. code-block:: python
     :lineno-start: 7
@@ -1298,99 +1476,16 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     AssertionError: 'GREEN' != 'RED'
 
-* I add an :ref:`if statement<if statements>` to ``traffic_light.py``
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 13-14
-
-    def show(
-            current_light, timer_done,
-            walk_button=False,
-        ):
-        yellow, green = 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-        if current_light == yellow:
-            return 'RED'
-        if current_light == green:
-            return yellow
-        if walk_button:
-            return 'RED'
-        return green
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` for :red:`RED`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5
-
-    def show(
-            current_light, timer_done,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 10-11, 15-16
-
-    def show(
-            current_light, timer_done,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-        if current_light == yellow:
-            # return 'RED'
-            return red
-        if current_light == green:
-            return yellow
-        if walk_button:
-            # return 'RED'
-            return red
-        return green
-
-  the test is green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :linenos:
-
-    def show(
-            current_light, timer_done,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
-
-        if not timer_done:
-            return current_light
-        if current_light == yellow:
-            return red
-        if current_light == green:
-            return yellow
-        if walk_button:
-            return red
-        return green
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :red:`NOT pushed`, to :ref:`test_traffic_light_when_red` in ``test_traffic_light.py``
 
-    ================  ===============  =================  =================
-    current light     timer            walk button        show
-    ================  ===============  =================  =================
-    :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
-    :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
-    ================  ===============  =================  =================
+  ================  ===============  =================  =================
+  current light     timer            walk button        show
+  ================  ===============  =================  =================
+  :red:`RED`        :green:`done`    :green:`pushed`    :red:`RED`
+  :red:`RED`        :green:`done`    :red:`NOT pushed`  :green:`GREEN`
+  ================  ===============  =================  =================
 
   .. code-block:: python
     :lineno-start: 7
@@ -1409,7 +1504,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             reality = src.traffic_light.show(
                 current_light='RED',
                 timer_done=True,
-                walk_button=False
+                walk_button=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1417,7 +1512,6 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             reality = src.traffic_light.show(
                 current_light='RED',
                 timer_done=False,
-                walk_button=False,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1803,7 +1897,14 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         def test_traffic_light_when_yellow(self):
 
-  the test is still green
+  the test is still green. The ``show`` :ref:`function<what is a function?>`
+
+  * returns the current light if the timer is :red:`NOT done`
+  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is done), then returns :red:`RED` if the current light is :yellow:`YELLOW`
+  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW` and the current light is NOT :green:`GREEN`, this means the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
+  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
+  * returns :green:`GREEN` if the timer is :green:`done` and the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
 
 ----
 
