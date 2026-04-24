@@ -333,15 +333,7 @@ start the project
 test_traffic_light_when_red
 *********************************************************************************
 
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-The :ref:`truth table` for when the traffic light is :red:`RED` is
+The :ref:`truth table` for if the Traffic Light is :red:`RED` is
 
 ================  ===============  ================
 current light     timer            show
@@ -349,6 +341,14 @@ current light     timer            show
 :red:`RED`        :green:`done`    :green:`GREEN`
 :red:`RED`        :red:`NOT done`  :red:`RED`
 ================  ===============  ================
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
 
 I change ``test_failure`` to ``test_traffic_light_when_red``, then add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED` and the timer is :green:`done`
 
@@ -514,12 +514,12 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED` and the timer is :red:`NOT done`, in ``test_traffic_light.py``
 
-  ================  ==============  =================
-  current light     timer           show
-  ================  ==============  =================
-  :red:`RED`        :green:`done`   :green:`GREEN`
-  :red:`RED`        :red:`NOT done` :red:`RED`
-  ================  ==============  =================
+  ================  ===============  ================
+  current light     timer            show
+  ================  ===============  ================
+  :red:`RED`        :green:`done`    :green:`GREEN`
+  :red:`RED`        :red:`NOT done`  :red:`RED`
+  ================  ===============  ================
 
   .. code-block:: python
     :lineno-start: 7
@@ -645,6 +645,15 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 test_traffic_light_when_yellow
 *********************************************************************************
 
+The :ref:`truth table` for if the Traffic Light is :yellow:`YELLOW` is
+
+================  ===============  ================
+current light     timer            show
+================  ===============  ================
+:yellow:`YELLOW`  :green:`done`    :red:`RED`
+:yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
+================  ===============  ================
+
 ----
 
 =================================================================================
@@ -655,11 +664,11 @@ test_traffic_light_when_yellow
 
 I add a test with an :ref:`assertion<what is an assertion?>` for when the traffic light is :yellow:`YELLOW` and the timer is :green:`done`, to ``test_traffic_light.py``
 
-  ================  ==============  =================
-  current light     timer           show
-  ================  ==============  =================
-  :yellow:`YELLOW`  :green:`done`   :red:`RED`
-  ================  ==============  =================
+  ================  ===============  ================
+  current light     timer            show
+  ================  ===============  ================
+  :yellow:`YELLOW`  :green:`done`    :red:`RED`
+  ================  ===============  ================
 
 .. code-block:: python
   :lineno-start: 7
@@ -738,12 +747,12 @@ The ``show`` :ref:`function<what is a function?>`
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW` and the timer is :red:`NOT done`, to :ref:`test_traffic_light_when_yellow` in test_traffic_light.py``
 
-  ================  ==============  =================
-  current light     timer           show
-  ================  ==============  =================
-  :yellow:`YELLOW`  :green:`done`   :red:`RED`
-  :yellow:`YELLOW`  :red:`NOT done` :yellow:`YELLOW`
-  ================  ==============  =================
+  ================  ===============  ================
+  current light     timer            show
+  ================  ===============  ================
+  :yellow:`YELLOW`  :green:`done`    :red:`RED`
+  :yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
+  ================  ===============  ================
 
   .. code-block:: python
     :lineno-start: 22
@@ -805,6 +814,15 @@ The ``show`` :ref:`function<what is a function?>`
 test_traffic_light_when_green
 *********************************************************************************
 
+The :ref:`truth table` for if the Traffic Light is :green:`GREEN` is
+
+================  ===============  ================
+current light     timer            show
+================  ===============  ================
+:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
+:green:`GREEN`    :red:`NOT done`  :green:`GREEN`
+================  ===============  ================
+
 ----
 
 =================================================================================
@@ -815,11 +833,11 @@ test_traffic_light_when_green
 
 I add a test with an :ref:`assertion<what is an assertion?>` for when the traffic light is :green:`GREEN` and the timer is :green:`done`, to ``test_traffic_light.py``
 
-================  ==============  =================
-current light     timer           show
-================  ==============  =================
-:green:`GREEN`    :green:`done`   :yellow:`YELLOW`
-================  ==============  =================
+================  ===============  ================
+current light     timer            show
+================  ===============  ================
+:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
+================  ===============  ================
 
 .. code-block:: python
   :lineno-start: 22
@@ -906,12 +924,12 @@ The ``show`` :ref:`function<what is a function?>`
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN` and the timer is :red:`NOT done`, to ``test_traffic_light.py``
 
-  ================  ==============  =================
-  current light     timer           show
-  ================  ==============  =================
-  :green:`GREEN`    :green:`done`   :yellow:`YELLOW`
-  :green:`GREEN`    :red:`NOT done` :green:`GREEN`
-  ================  ==============  =================
+  ================  ===============  ================
+  current light     timer            show
+  ================  ===============  ================
+  :green:`GREEN`    :green:`done`    :yellow:`YELLOW`
+  :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
+  ================  ===============  ================
 
   .. code-block:: python
     :lineno-start: 37
@@ -1123,16 +1141,16 @@ test_traffic_light_when_red_w_walk_button
 
 So far, the :ref:`truth table` for the Traffic Light is
 
-================  ==============  =================
-current light     timer           show
-================  ==============  =================
-:red:`RED`        :green:`done`   :green:`GREEN`
-:red:`RED`        :red:`NOT done` :red:`RED`
-:yellow:`YELLOW`  :green:`done`   :red:`RED`
-:yellow:`YELLOW`  :red:`NOT done` :yellow:`YELLOW`
-:green:`GREEN`    :green:`done`   :yellow:`YELLOW`
-:green:`GREEN`    :red:`NOT done` :green:`GREEN`
-================  ==============  =================
+================  ===============  ================
+current light     timer            show
+================  ===============  ================
+:red:`RED`        :green:`done`    :green:`GREEN`
+:red:`RED`        :red:`NOT done`  :red:`RED`
+:yellow:`YELLOW`  :green:`done`    :red:`RED`
+:yellow:`YELLOW`  :red:`NOT done`  :yellow:`YELLOW`
+:green:`GREEN`    :green:`done`    :yellow:`YELLOW`
+:green:`GREEN`    :red:`NOT done`  :green:`GREEN`
+================  ===============  ================
 
 I want to add a walk button for a person to push when they want to cross the street, the inputs for the traffic light will then be
 
@@ -1140,7 +1158,7 @@ I want to add a walk button for a person to push when they want to cross the str
 * what color is the light now?
 * is the timer done?
 
-and the :ref:`truth table` for the cases where the traffic light is :red:`RED` is
+and the :ref:`truth table` for if the Traffic Light is :red:`RED` is
 
 ================  ===============  =================  =================
 current light     timer            walk button        show
@@ -1793,7 +1811,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 test_traffic_light_when_yellow_w_walk_button
 *********************************************************************************
 
-The truth table when the traffic light is :yellow:`YELLOW` with the walk button is
+The :ref:`truth table` for if the Traffic Light is :yellow:`YELLOW` with the walk button is
 
 ================  ===============  =================  =================
 current light     timer            walk button        show
@@ -2300,7 +2318,7 @@ current light     timer            walk button        show
 test_traffic_light_when_green_w_walk_button
 *********************************************************************************
 
-The truth table when the traffic light is :green:`GREEN` with the walk button is
+The :ref:`truth table` for if the Traffic Light is :green:`GREEN` with the walk button is
 
 ================  ===============  =================  =================
 current light     timer            walk button        show
