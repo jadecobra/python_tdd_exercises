@@ -2305,7 +2305,7 @@ test_door_closed_timer_not_set_w_overheating
 
     # Exceptions seen
 
-  still green. All the tests are still passing
+  still green
 
 * I use the call to the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>` I do not the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each one
 
@@ -2357,6 +2357,155 @@ test_door_closed_timer_not_set_w_overheating
 
     # Exceptions seen
 
+  green
+
+* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_door_closed_timer_set_w_overheating`
+
+  .. code-block:: python
+    :lineno-start: 76
+
+        def test_door_closed_timer_set_w_overheating(self):
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    overheating=False,
+                ),
+                'HEATING'
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=True,
+                    start_is_pushed=False,
+                    overheating=True,
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=True,
+                    start_is_pushed=False,
+                    overheating=True,
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=True,
+                    start_is_pushed=False,
+                    overheating=False
+                ),
+                OFF
+            )
+
+        def test_door_closed_timer_not_set_w_overheating(self):
+
+  still green
+
+* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_door_open_timer_not_set_w_overheating`
+
+  .. code-block:: python
+    :lineno-start: 43
+
+        def test_door_open_timer_not_set_w_overheating(self):
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=False,
+                    start_is_pushed=True,
+                    overheating=True,
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=False,
+                    start_is_pushed=True,
+                    overheating=False,
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=False,
+                    start_is_pushed=False,
+                    overheating=True
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=False,
+                    start_is_pushed=False,
+                    overheating=False,
+                ),
+                OFF
+            )
+
+        def test_door_closed_timer_set_w_overheating(self):
+
+  the tests are still green
+
+* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_door_open_timer_set_w_overheating`
+
+  .. code-block:: python
+    :lineno-start: 10
+
+        def test_door_open_timer_set_w_overheating(self):
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    overheating=True,
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    overheating=False,
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=False,
+                    overheating=True
+                ),
+                OFF
+            )
+
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=False,
+                    overheating=False,
+                ),
+                OFF
+            )
+
+        def test_door_open_timer_not_set_w_overheating(self):
 
 *********************************************************************************
 close the project
