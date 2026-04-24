@@ -482,6 +482,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     AssertionError: None != 'GREEN'
 
+  the ``show`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the test expects ``'GREEN'``
+
 * I change the `return statement`_ to give the test what it expects
 
   .. code-block:: python
@@ -538,18 +540,92 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     AssertionError: 'GREEN' != 'RED'
 
-* I add an :ref:`if statement<if statements>` to ``traffic_light.py``
+* I add an :ref:`if statement<if statements>` to ``traffic_light.py`` for this
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-3
 
     def show(current_light, timer_done):
+        if timer_done == False:
+            return 'RED'
+        return 'GREEN'
+
+  the test passes
+
+* I use bool_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    def show(current_light, timer_done):
+        # if timer_done == False:
+        if bool(timer_done) == False:
+            return 'RED'
+        return 'GREEN'
+
+  the test is still green
+
+* I use :ref:`logical_negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    def show(current_light, timer_done):
+        # if timer_done == False:
+        # if bool(timer_done) == False:
+        if not bool(timer_done) == True:
+            return 'RED'
+        return 'GREEN'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    def show(current_light, timer_done):
+        # if timer_done == False:
+        # if bool(timer_done) == False:
+        # if not bool(timer_done) == True:
+        if not bool(timer_done):
+            return 'RED'
+        return 'GREEN'
+
+  green
+
+* I remove bool_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def show(current_light, timer_done):
+        # if timer_done == False:
+        # if bool(timer_done) == False:
+        # if not bool(timer_done) == True:
+        # if not bool(timer_done):
         if not timer_done:
             return 'RED'
         return 'GREEN'
 
-  the test passes. The ``show`` :ref:`function<what is a function?>` returns
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def show(current_light, timer_done):
+        if not timer_done:
+            return 'RED'
+        return 'GREEN'
+
+  If the current Traffic Light is :red:`RED`, the ``show`` :ref:`function<what is a function?>` returns
 
   * :green:`GREEN` if the timer is done
   * :red:`RED` if the timer is NOT done
