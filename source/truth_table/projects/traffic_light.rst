@@ -3369,7 +3369,6 @@ current light     timer            walk button        show
   * returns the current light if the timer is :red:`NOT done`
   * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is done), then returns :red:`RED` if the current light is :yellow:`YELLOW`
   * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW` and the current light is NOT :green:`GREEN`, this means the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
   * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
   * returns :green:`GREEN` if the timer is :green:`done` and the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
 
@@ -3379,7 +3378,7 @@ current light     timer            walk button        show
 test_red_traffic_light_w_walk
 *************************************************************************************
 
-The the inputs for the traffic light up till now are
+The inputs for the traffic light up till now are
 
 * did the person push the walk button?
 * what color is the light now?
@@ -3416,14 +3415,14 @@ current light     timer            walk button        show
 
 I want the traffic light to show ``WALK`` or ``NO WALK`` when a person can walk. This means the :ref:`truth table` for if the Traffic Light is :red:`RED` with the walk sign is
 
-================  ==============  ==============  =================================
-current light     timer done      walk button     show
-================  ==============  ==============  =================================
-:red:`RED`        :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-:red:`RED`        :green:`yes`    :red:`no`       :green:`GREEN` + :red:`NO WALK`
-:red:`RED`        :red:`no`       :green:`yes`    :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`no`       :red:`no`       :red:`RED` + :green:`WALK`
-================  ==============  ==============  =================================
+================  =============== ================= =================================
+current light     timer           walk button       show
+================  =============== ================= =================================
+:red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+:red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
+:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
+================  =============== ================= =================================
 
 
 
@@ -3435,13 +3434,13 @@ current light     timer done      walk button     show
 
 ----
 
-I change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button`
+I add values for the other parameters in the call to the ``show`` :ref:`function<what is a function?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :green:`pushed` to be clearer, then change the expectation of the first :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button`
 
-================  ==============  ==============  =================================
-current light     timer done      walk button     show
-================  ==============  ==============  =================================
-:red:`RED`        :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-================  ==============  ==============  =================================
+================  =============== ================= =================================
+current light     timer           walk button       show
+================  =============== ================= =================================
+:red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+================  =============== ================= =================================
 
 .. code-block:: python
   :lineno-start: 10
@@ -3470,28 +3469,86 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change the `return statement`_ in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+I change the `return statement`_ in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 17
+
+  def show(
+          current_light='RED', timer_done=False,
+          walk_button=False,
+      ):
+      red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+
+      if not timer_done:
+          return current_light
+
+      if current_light == yellow:
+          return red
+
+      if current_light == green:
+          return 'YELLOW'
+
+      if walk_button:
+          return red, 'WALK'
+
+      return green
+
+the test passes. The ``show`` :ref:`function<what is a function?>`
+
+* returns the current light if the timer is :red:`NOT done`
+* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is done), then returns :red:`RED` if the current light is :yellow:`YELLOW`
+* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` and the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` and the current light is :red:`RED`), then returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
+* returns :green:`GREEN` if the timer is :green:`done` and the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
+
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+  :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+  ================  =============== ================= =================================
+
+
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 15-16
+    :lineno-start: 10
+    :emphasize-lines: 16
 
-    def show(
-            current_light='RED', timer_done=False,
-            walk_button=False,
-        ):
-        red, yellow, green = 'RED', 'YELLOW', 'GREEN'
+        def test_red_traffic_light_w_walk_button(self):
+            self.assertEqual(
+                # src.traffic_light.show(
+                src.traffic_light.show_walk(
+                    timer_done=True,
+                    walk_button=True,
+                ),
+                (RED, 'WALK')
+            )
 
-        if not timer_done:
-            return current_light
-        if current_light == yellow:
-            return red
-        if current_light == green:
-            return yellow
-        if walk_button:
-            return red
+            self.assertEqual(
+                src.traffic_light.show(
+                    timer_done=True,
+                    walk_button=False,
+                ),
+                (GREEN, 'NO WALK')
+            )
 
-        return green, 'WALK'
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'GREEN' != ('GREEN', 'NO WALK')
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3601,50 +3658,23 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test passes
 
-----
 
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
 
-----
 
-* I change the expectation of the second :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :red:`RED`        :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-  :red:`RED`        :green:`yes`    :red:`no`       :green:`GREEN` + :red:`NO WALK`
-  ================  ==============  ==============  =================================
 
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 16
 
-        def test_red_traffic_light_w_walk_button(self):
-            self.assertEqual(
-                # src.traffic_light.show(
-                src.traffic_light.show_walk(
-                    timer_done=True,
-                    walk_button=True,
-                ),
-                (RED, 'WALK')
-            )
 
-            self.assertEqual(
-                src.traffic_light.show(
-                    timer_done=True,
-                    walk_button=False,
-                ),
-                (GREEN, 'NO WALK')
-            )
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
 
-    AssertionError: 'GREEN' != ('GREEN', 'NO WALK')
+
+
+
+
+
+
+
 
 * I change the call in the second :ref:`assertion<what is an assertion?>` from ``show`` to ``show_walk``
 
@@ -3704,13 +3734,15 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I change the third :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :red:`RED`        :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-  :red:`RED`        :green:`yes`    :red:`no`       :green:`GREEN` + :red:`NO WALK`
-  :red:`RED`        :red:`no`       :green:`yes`    :red:`RED` + :green:`WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+  :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+  :red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
+  ================  =============== ================= =================================
+
+
 
   .. code-block:: python
     :lineno-start: 10
@@ -3777,14 +3809,16 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I change the last :ref:`assertion<what is an assertion?>` in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :red:`RED`        :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-  :red:`RED`        :green:`yes`    :red:`no`       :green:`GREEN` + :red:`NO WALK`
-  :red:`RED`        :red:`no`       :green:`yes`    :red:`RED` + :green:`WALK`
-  :red:`RED`        :red:`no`       :red:`no`       :red:`RED` + :green:`WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+  :red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+  :red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
+  :red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
+  ================  =============== ================= =================================
+
+
 
   .. code-block:: python
     :lineno-start: 10
@@ -3838,22 +3872,26 @@ test_yellow_traffic_light_w_walk
 
 The :ref:`truth table` for if the Traffic Light is :yellow:`YELLOW` with the walk sign is
 
-================  ==============  ==============  =================================
-current light     timer done      walk button     show
-================  ==============  ==============  =================================
-:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :red:`no`       :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`no`       :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-================  ==============  ==============  =================================
+================  =============== ================= =================================
+current light     timer           walk button       show
+================  =============== ================= =================================
+:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+================  =============== ================= =================================
+
+
 
 * I change the first :ref:`assertion<what is an assertion?>` in :ref:`test_yellow_traffic_light_w_walk_button`
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+  ================  =============== ================= =================================
+
+
 
   .. code-block:: python
     :lineno-start: 47
@@ -3903,12 +3941,14 @@ current light     timer done      walk button     show
 
 * I change the second :ref:`assertion<what is an assertion?>` in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-  :yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+  :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
+  ================  =============== ================= =================================
+
+
 
   .. code-block:: python
     :lineno-start: 47
@@ -3939,13 +3979,15 @@ current light     timer done      walk button     show
 
 * I change the third :ref:`assertion<what is an assertion?>`
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-  :yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
-  :yellow:`YELLOW`  :red:`no`       :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+  :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
+  :yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+  ================  =============== ================= =================================
+
+
 
   .. code-block:: python
     :lineno-start: 47
@@ -4017,14 +4059,16 @@ current light     timer done      walk button     show
 
 * I change the last :ref:`assertion<what is an assertion?>` in :ref:`test_yellow_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-  :yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
-  :yellow:`YELLOW`  :red:`no`       :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-  :yellow:`YELLOW`  :red:`no`       :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+  :yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
+  :yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+  :yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+  ================  =============== ================= =================================
+
+
 
   .. code-block:: python
     :lineno-start: 47
@@ -4083,22 +4127,22 @@ test_green_traffic_light_w_walk
 
 The :ref:`truth table` for if the Traffic Light is :green:`GREEN` with the walk sign is
 
-================  ==============  ==============  =================================
-current light     timer done      walk button     show
-================  ==============  ==============  =================================
-:green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
-================  ==============  ==============  =================================
+================  =============== ================= =================================
+current light     timer           walk button       show
+================  =============== ================= =================================
+:green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`GREEN` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+================  =============== ================= =================================
 
 * I change the first :ref:`assertion<what is an assertion?>` in :ref:`test_green_traffic_light_w_walk_button`
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+  ================  =============== ================= =================================
 
   .. code-block:: python
     :lineno-start: 88
@@ -4150,12 +4194,12 @@ current light     timer done      walk button     show
 
 * I change the second :ref:`assertion<what is an assertion?>`
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-  :green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+  :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+  ================  =============== ================= =================================
 
   .. code-block:: python
     :lineno-start: 88
@@ -4186,13 +4230,13 @@ current light     timer done      walk button     show
 
 * I change the third :ref:`assertion<what is an assertion?>`
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-  :green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-  :green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+  :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+  :green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`GREEN` + :red:`NO WALK`
+  ================  =============== ================= =================================
 
   .. code-block:: python
     :lineno-start: 88
@@ -4266,14 +4310,14 @@ current light     timer done      walk button     show
 
 * I change the last :ref:`assertion<what is an assertion?>`
 
-  ================  ==============  ==============  =================================
-  current light     timer done      walk button     show
-  ================  ==============  ==============  =================================
-  :green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-  :green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-  :green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
-  :green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
-  ================  ==============  ==============  =================================
+  ================  =============== ================= =================================
+  current light     timer           walk button       show
+  ================  =============== ================= =================================
+  :green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+  :green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+  :green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`GREEN` + :red:`NO WALK`
+  :green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+  ================  =============== ================= =================================
 
   .. code-block:: python
     :lineno-start: 88
