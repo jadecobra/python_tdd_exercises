@@ -4945,43 +4945,63 @@ I ran tests for a Traffic Light that has a timer and a button for people to push
 
 then this is the :ref:`truth table` for the Traffic Light
 
-================  ==============  ==============  =================================
-current light     timer done      walk button     show
-================  ==============  ==============  =================================
-:red:`RED`        :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-:red:`RED`        :green:`yes`    :red:`no`       :green:`GREEN` + :red:`NO WALK`
-:red:`RED`        :red:`no`       :green:`yes`    :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`no`       :red:`no`       :red:`RED` + :green:`WALK`
-================  ==============  ==============  =================================
+================  =============== ================= =================================
+current light     timer           walk button       show
+================  =============== ================= =================================
+:red:`RED`        :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+:red:`RED`        :green:`done`   :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
+:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
+================  =============== ================= =================================
 
-================  ==============  ==============  =================================
-current light     timer done      walk button     show
-================  ==============  ==============  =================================
-:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :red:`no`       :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`no`       :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-================  ==============  ==============  =================================
+================  =============== ================= =================================
+current light     timer           walk button       show
+================  =============== ================= =================================
+:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+================  =============== ================= =================================
 
-================  ==============  ==============  =================================
-current light     timer done      walk button     show
-================  ==============  ==============  =================================
-:green:`GREEN`    :green:`yes`    :green:`yes`    :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`yes`    :red:`no`       :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :green:`yes`    :green:`GREEN` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :red:`no`       :green:`GREEN` + :red:`NO WALK`
-================  ==============  ==============  =================================
+================  =============== ================= =================================
+current light     timer           walk button       show
+================  =============== ================= =================================
+:green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`GREEN` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+================  =============== ================= =================================
 
 The Traffic Light only shows ``'WALK'`` when the light is :red:`RED`.
 
-What if there is an emergency vehicle present and the Traffic Light changes based on that as well? The inputs would be
+What if there is an emergency vehicle? If the Traffic Light changes based on the emergency vehicale, its inputs would be
 
 * what color is the light now?
 * is the timer done?
 * did the person push the walk button?
 * is there an emergency vehicle?
 
-and the :ref:`truth table` would be
+and the :ref:`truth table` would
+
+
+================  =============== ================= ====================  =================================
+current light     timer           walk button       emergency             show
+================  =============== ================= ====================  =================================
+:red:`RED`        :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :green:`WALK`
+:red:`RED`        :green:`done`   :red:`NOT pushed` :red:`NOT emergency`  :green:`GREEN` + :red:`NO WALK`
+:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
+:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`GREEN` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
+================  =============== ================= ====================  =================================
+
+
 
 ================  ==============  ==============  ===========  =================================
 current light     timer done      walk button     emergency    show
