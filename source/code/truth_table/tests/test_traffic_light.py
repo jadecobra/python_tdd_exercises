@@ -11,9 +11,10 @@ GREEN_NO_WALK = (GREEN, NO_WALK)
 
 class TestTrafficLight(unittest.TestCase):
 
-    def test_traffic_light_when_red_w_walk_button(self):
+    def test_red_traffic_light_w_walk(self):
         self.assertEqual(
             src.traffic_light.show(
+                current_light=RED,
                 timer_done=True,
                 walk_button=True,
             ),
@@ -22,6 +23,7 @@ class TestTrafficLight(unittest.TestCase):
 
         self.assertEqual(
             src.traffic_light.show(
+                current_light=RED,
                 timer_done=True,
                 walk_button=False,
             ),
@@ -30,6 +32,7 @@ class TestTrafficLight(unittest.TestCase):
 
         self.assertEqual(
             src.traffic_light.show(
+                current_light=RED,
                 timer_done=False,
                 walk_button=True,
             ),
@@ -38,13 +41,14 @@ class TestTrafficLight(unittest.TestCase):
 
         self.assertEqual(
             src.traffic_light.show(
+                current_light=RED,
                 timer_done=False,
                 walk_button=False,
             ),
             WALK
         )
 
-    def test_traffic_light_when_yellow_w_walk_button(self):
+    def test_green_traffic_light_w_walk(self):
         self.assertEqual(
             src.traffic_light.show(
                 current_light=YELLOW,
@@ -81,7 +85,7 @@ class TestTrafficLight(unittest.TestCase):
             YELLOW_NO_WALK
         )
 
-    def test_traffic_light_when_green_w_walk_button(self):
+    def test_green_traffic_light_w_walk(self):
         self.assertEqual(
             src.traffic_light.show(
                 current_light=GREEN,
@@ -95,7 +99,7 @@ class TestTrafficLight(unittest.TestCase):
             src.traffic_light.show(
                 current_light=GREEN,
                 timer_done=True,
-                walk_button=False,
+                walk_button=True,
             ),
             YELLOW_NO_WALK
         )
