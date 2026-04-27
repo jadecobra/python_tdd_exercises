@@ -243,7 +243,7 @@ start the project
     * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
     * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
 
-  fix those errors then try to run ``uv run pytest-watcher . --now`` again
+    fix those errors then try to run ``uv run pytest-watcher . --now`` again
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
 

@@ -298,7 +298,7 @@ start the project
     * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
     * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
 
-  fix those errors then try to run ``uv run pytest-watcher . --now`` again
+    fix those errors then try to run ``uv run pytest-watcher . --now`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_atm.py``
 

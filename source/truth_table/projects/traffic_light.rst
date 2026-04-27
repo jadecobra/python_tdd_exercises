@@ -300,7 +300,7 @@ start the project
     * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
     * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
 
-  fix those errors then try to run ``uv run pytest-watcher . --now`` again
+    fix those errors then try to run ``uv run pytest-watcher . --now`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
 
@@ -381,7 +381,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 .. code-block:: python
 
-  NameError: name 'src' is not
+  NameError: name 'src' is not defined
 
 because I do not have a definition for ``src`` in this file_
 
@@ -453,7 +453,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: show() got an unexpected keyword argument 'current_light'
 
-  because I called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with no input
+  because I called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
 
@@ -633,7 +633,7 @@ because I do not have a definition for ``src`` in this file_
             return 'RED'
         return 'GREEN'
 
-  still green
+  still green because ``if not something`` is the same as ``if bool(something) == False``
 
 * I remove the commented lines
 
