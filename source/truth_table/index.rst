@@ -190,7 +190,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I add `pytest-watcher`_ to the file_
+* I add `pytest-watcher`_ to the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1

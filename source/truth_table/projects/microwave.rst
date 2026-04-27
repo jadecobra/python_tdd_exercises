@@ -199,7 +199,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I add `pytest-watcher`_ to the file_
+* I add `pytest-watcher`_ to the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -231,6 +231,21 @@ start the project
     rm main.py
 
   the terminal_ goes back to the command line
+
+* I use tree_ to look at the structure of the project
+
+  .. code-block:: shell
+    :emphasize-lines: 2
+
+    .
+    ├── README.md
+    ├── pyproject.toml
+    ├── requirements.txt
+    ├── src
+    │   └── microwave.py
+    └── tests
+        ├── __init__.py
+        └── test_microwave.py
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 

@@ -12,7 +12,7 @@ Traffic Light
 
 ----
 
-I want to make a **Traffic Light** that changes color based on a timer. If the inputs are
+I want to make a **Traffic Light** that changes color because of a timer. If the inputs are
 
 * what color is the light now?
 * is the timer done?
@@ -203,7 +203,7 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I add `pytest-watcher`_ to the file_
+* I add `pytest-watcher`_ to the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -235,6 +235,21 @@ start the project
     rm main.py
 
   the terminal_ goes back to the command line
+
+* I use tree_ to look at the structure of the project
+
+  .. code-block:: shell
+    :emphasize-lines: 2
+
+    .
+    ├── README.md
+    ├── pyproject.toml
+    ├── requirements.txt
+    ├── src
+    │   └── traffic_light.py
+    └── tests
+        ├── __init__.py
+        └── test_traffic_light.py
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -5075,12 +5090,12 @@ current light     timer           walk button       show
             # else:
             #     return walk
             # if current_light == red:
-            #     # return current_light, 'WALK'
+                # return current_light, 'WALK'
             #     return walk
             # if current_light == yellow:
-            #     # return current_light, 'NO WALK'
-            #     return current_light, no_walk
-            # # return current_light, 'NO WALK'
+                # return current_light, 'NO WALK'
+                # return current_light, no_walk
+            # return current_light, 'NO WALK'
             # return current_light, no_walk
 
         # if current_light == yellow:
@@ -5151,7 +5166,7 @@ This is what happens in the ``show`` :ref:`function<what is a function?>`
 
 * if the none of the other conditions are met :green:`pushed`
 
-The :ref:`function<what is a function?>` does not look like the :ref:`truth table` but makes every test pass. There is a problem with the :ref:`if statement<if statements>` for when the timer is :green:`done` AND the current light is NOT :red:`RED`
+The :ref:`function<what is a function?>` does not look like the :ref:`truth table` and makes every test pass. There is a problem with the :ref:`if statement<if statements>` for when the timer is :green:`done` AND the current light is NOT :red:`RED`
 
 .. code-block:: python
 

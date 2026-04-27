@@ -148,7 +148,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-* I add `pytest-watcher`_ to the file_
+* I add `pytest-watcher`_ to the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
