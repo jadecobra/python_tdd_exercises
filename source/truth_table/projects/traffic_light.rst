@@ -562,7 +562,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   the test passes
 
-* I use bool_
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
     :linenos:
@@ -662,7 +662,7 @@ current light     timer            show
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the traffic light is :yellow:`YELLOW` and the timer is :green:`done`, to ``test_traffic_light.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for if the Traffic Light is :yellow:`YELLOW` and the timer is :green:`done`, to ``test_traffic_light.py``
 
 ================  ===============  ================
 current light     timer            show
@@ -837,7 +837,7 @@ current light     timer            show
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the traffic light is :green:`GREEN` and the timer is :green:`done`, to ``test_traffic_light.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for if the Traffic Light is :green:`GREEN` and the timer is :green:`done`, to ``test_traffic_light.py``
 
 ================  ===============  ================
 current light     timer            show
@@ -1178,7 +1178,7 @@ current light     timer            show
 :green:`GREEN`    :red:`NOT done`  :green:`GREEN`
 ================  ===============  ================
 
-I want to add a walk button for a person to push when they want to cross the street, the inputs for the traffic light will then be
+I want to add a walk button for a person to push when they want to cross the street. The inputs for the Traffic Light will then be
 
 * did the person push the walk button?
 * what color is the light now?
@@ -1661,7 +1661,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
             my_expectation = 'RED'
 
-* I use the ``red`` :ref:`variable<what is a variable?>` to remove the repetition of ``'RED'`` and ``my_expectation`` when its value is ``'RED'``
+* I use the ``red`` :ref:`local variable<what is a variable?>` to remove the repetition of ``'RED'`` and ``my_expectation`` when its value is ``'RED'``
 
   .. code-block:: python
     :lineno-start: 7
@@ -3450,7 +3450,7 @@ current light     timer            walk button        show
 test_red_traffic_light_w_walk
 *************************************************************************************
 
-The inputs for the traffic light up till now are
+The inputs for the Traffic Light up till now are
 
 * did the person push the walk button?
 * what color is the light now?
@@ -3485,7 +3485,7 @@ current light     timer            walk button        show
 :green:`GREEN`    :red:`NOT done`  :red:`NOT pushed`  :green:`GREEN`
 ================  ===============  =================  =================
 
-I want the traffic light to show ``WALK`` when a person can cross the street or ``NO WALK`` when a person can NOT cross the street. This means the :ref:`truth table` for if the Traffic Light is :red:`RED` with the walk sign is
+I want the Traffic Light to show ``WALK`` when a person can cross the street or ``NO WALK`` when a person can NOT cross the street. This means the :ref:`truth table` for if the Traffic Light is :red:`RED` with the walk sign is
 
 ================  =============== ================= =================================
 current light     timer           walk button       show
@@ -5127,7 +5127,14 @@ This is what happens in the ``show`` :ref:`function<what is a function?>`
 
 * if the none of the other conditions are met :green:`pushed`
 
-There is a problem with ``if not timer_done and current_light != red: return current_light, no_walk``, what does it return if I call the ``show`` :ref:`function<what is a function?>` with a color that is NOT :yellow:`YELLOW` or :green:`GREEN`. There is one way to find out
+There is a problem with this :ref:`if statement<if statements>`
+
+.. code-block:: python
+
+  if not timer_done and current_light != red:
+      return current_light, no_walk
+
+What does it return if I call the ``show`` :ref:`function<what is a function?>` with a color that is NOT :red:`RED`, :yellow:`YELLOW` or :green:`GREEN`. There is one way to find out ...
 
 ----
 

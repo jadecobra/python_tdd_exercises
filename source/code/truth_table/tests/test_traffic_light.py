@@ -99,7 +99,7 @@ class TestTrafficLight(unittest.TestCase):
             src.traffic_light.show(
                 current_light=GREEN,
                 timer_done=True,
-                walk_button=True,
+                walk_button=False,
             ),
             YELLOW_NO_WALK
         )

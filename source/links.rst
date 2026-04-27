@@ -30,6 +30,7 @@
 .. _bash file: bash_
 .. _bool: https://docs.python.org/3/library/functions.html#bool
 .. _bool class: bool_
+.. _bool built-in function: bool_
 .. _brew: https://brew.sh
 .. _bytes: https://docs.python.org/3/library/stdtypes.html#bytes
 .. _call: https://docs.python.org/3/reference/expressions.html#calls

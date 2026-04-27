@@ -868,7 +868,7 @@ first input     second input   return
 
   still green
 
-* I use bool_
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
     :lineno-start: 61
@@ -1546,7 +1546,7 @@ first input     second input   return
 
   green
 
-* I use bool_
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
     :lineno-start: 69
