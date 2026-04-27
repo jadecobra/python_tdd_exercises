@@ -1598,7 +1598,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         def test_yellow_traffic_light(self):
 
-  green. I do not nee dto provide a value for the ``walk_button`` parameter because
+  green. I do not need to provide a value for the ``walk_button`` parameter because
 
   .. code-block:: python
 
@@ -4892,7 +4892,7 @@ current light     timer           walk button       show
 
         return walk
 
-  The show :ref:`function<what is a function?>`
+  The ``show`` :ref:`function<what is a function?>`
 
   - checks if the timer is :red:`NOT done`
 

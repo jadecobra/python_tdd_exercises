@@ -48,7 +48,7 @@ class TestTrafficLight(unittest.TestCase):
             WALK
         )
 
-    def test_green_traffic_light_w_walk(self):
+    def test_yellow_traffic_light_w_walk(self):
         self.assertEqual(
             src.traffic_light.show(
                 current_light=YELLOW,
