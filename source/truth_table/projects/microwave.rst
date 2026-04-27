@@ -234,8 +234,14 @@ start the project
 
 * I use tree_ to look at the structure of the project
 
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree
+
+  the terminal_ shows
+
   .. code-block:: shell
-    :emphasize-lines: 2
 
     .
     ├── README.md
