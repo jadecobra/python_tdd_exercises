@@ -1830,7 +1830,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 7
     :emphasize-lines: 5, 13, 19, 26
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             red = 'RED'
 
             reality = src.traffic_light.show(
@@ -1870,7 +1870,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 7
     :emphasize-lines: 20, 27
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             red = 'RED'
 
             reality = src.traffic_light.show(
@@ -1909,7 +1909,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   .. code-block:: python
     :lineno-start: 7
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             red = 'RED'
 
             reality = src.traffic_light.show(
@@ -2335,7 +2335,7 @@ current light     timer            walk button        show
     :lineno-start: 10
     :emphasize-lines: 2, 8-9, 20-21, 24-25
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             # red = 'RED'
 
             reality = src.traffic_light.show(
@@ -2370,7 +2370,7 @@ current light     timer            walk button        show
   .. code-block:: python
     :lineno-start: 10
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             reality = src.traffic_light.show(
                 timer_done=True,
                 walk_button=True,
@@ -2802,7 +2802,7 @@ current light     timer            walk button        show
     :lineno-start: 10
     :emphasize-lines: 8, 12-13
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             reality = src.traffic_light.show(
                 timer_done=True,
                 walk_button=True,
@@ -2833,7 +2833,7 @@ current light     timer            walk button        show
   .. code-block:: python
     :lineno-start: 10
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             reality = src.traffic_light.show(
                 timer_done=True,
                 walk_button=True,
@@ -3279,7 +3279,7 @@ current light     timer            walk button        show
     :lineno-start: 10
     :emphasize-lines: 6-9, 14-17, 22-25, 28-31
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             reality = src.traffic_light.show(
                 timer_done=True,
                 walk_button=True,
@@ -3319,7 +3319,7 @@ current light     timer            walk button        show
     :lineno-start: 10
     :emphasize-lines: 7-11, 19-22, 30-33, 39-40
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             reality = src.traffic_light.show(
                 timer_done=True,
                 walk_button=True,
@@ -3371,7 +3371,7 @@ current light     timer            walk button        show
   .. code-block:: python
     :lineno-start: 10
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             self.assertEqual(
                 src.traffic_light.show(
                     timer_done=True,
@@ -3514,9 +3514,9 @@ current light     timer           walk button       show
 
 .. code-block:: python
   :lineno-start: 10
-  :emphasize-lines: 4, 7
+  :emphasize-lines: 4, 8
 
-        def test_red_traffic_light_walk_button(self):
+        def test_red_traffic_light_w_walk_button(self):
             self.assertEqual(
                 src.traffic_light.show(
                     current_light=RED,
@@ -3798,7 +3798,7 @@ the test passes. The ``show`` :ref:`function<what is a function?>`
 
   the test passes
 
-* I change the name of :ref:`test_red_traffic_light_w_walk_button` to :ref:`test_red_traffic_light_w_walk`
+* I change the name of the test from :ref:`test_red_traffic_light_w_walk_button` to :ref:`test_red_traffic_light_w_walk`
 
   .. code-block:: python
     :lineno-start: 8
@@ -3816,19 +3816,24 @@ the test passes. The ``show`` :ref:`function<what is a function?>`
                 (RED, 'WALK')
             )
 
-The ``show`` :ref:`function<what is a function?>`
+Here is what happens in the ``show`` :ref:`function<what is a function?>`
 
-* returns ``'RED', 'WALK'`` if the timer is :red:`NOT done` AND the current light is :red:`RED`
-* returns the current light if the timer is :red:`NOT done` AND the current light is NOT :red:`RED`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+* if the timer is :red:`NOT done`
 
-    - returns :red:`RED` if the current light is :yellow:`YELLOW`
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+  - it returns ``'RED', 'WALK'`` if the current light is :red:`RED`
+  - it returns the current light if the current light is NOT :red:`RED`
 
-    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`)
-    - returns``'RED', 'WALK'`` if the walk button is :green:`pushed`
-* returns ``'GREEN', 'NO WALK'`` if the timer is :green:`done` AND the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
+* if the timer is :green:`done`
+
+  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  - if the walk button is :green:`pushed`
+
+    * it returns ``'RED', 'WALK'`` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` (this includes the case where the current light is :red:`RED`)
+
+  - if the walk button is :red:`NOT pushed`
+
+    * it returns ``'GREEN', 'NO WALK'`` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
 ----
 
