@@ -924,7 +924,7 @@ The ``show`` :ref:`function<what is a function?>`
   - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
 
 * returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-* returns :green:`GREEN` if none of the conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
+* returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
 
 ----
 
@@ -997,12 +997,18 @@ The ``show`` :ref:`function<what is a function?>`
 
   * returns :yellow:`YELLOW` if the timer is :red:`NOT done` AND the current light is :yellow:`YELLOW`
   * returns :green:`GREEN` if the timer is :red:`NOT done` AND the current light is :green:`GREEN`
-  * returns :red:`RED` if the timer is :red:`NOT done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-  * returns :red:`RED` if the timer is :red:`NOT done` AND the current light is :red:`RED`
-  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`), then returns :red:`RED` if the current light is :yellow:`YELLOW`
-  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  * returns :red:`RED` if the timer is :red:`NOT done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` (this covers the case where the timer is :red:`NOT done` AND the current light is :red:`RED`)
+  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+
+    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+
+  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+
+    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+
   * returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-  * returns :green:`GREEN` if the timer is :green:`done` AND the current light is :red:`RED`
+  * returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
+
 
 * I add an :ref:`if statement<if statements>` for when the timer is :red:`NOT done` and the light is :red:`RED`, to be clearer
 
@@ -1072,7 +1078,7 @@ The ``show`` :ref:`function<what is a function?>`
 
         return 'GREEN'
 
-* I add :ref:`variables<what is a variable?>` for the colors to use to remove the repetition of the values
+* I add :ref:`variables<what is a variable?>` for the colors to use to remove the repetition of ``'YELLOW'`` and ``'GREEN'``
 
   .. code-block:: python
     :linenos:
@@ -1092,11 +1098,11 @@ The ``show`` :ref:`function<what is a function?>`
 
         return 'GREEN'
 
-* I use the new :ref:`variables<what is a variable?>` to remove repetition
+* I use the new :ref:`variables<what is a variable?>` to remove the repetition of ``'YELLOW'`` and ``'GREEN'``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-8, 11-12, 15-16
+    :emphasize-lines: 7-8, 11-14, 16-17
 
     def show(current_light, timer_done):
         yellow, green = 'YELLOW', 'GREEN'
@@ -1110,7 +1116,8 @@ The ``show`` :ref:`function<what is a function?>`
 
         # if current_light == 'GREEN':
         if current_light == green:
-            return 'YELLOW'
+            # return 'YELLOW'
+            return yellow
 
         # return 'GREEN'
         return green
@@ -1132,16 +1139,23 @@ The ``show`` :ref:`function<what is a function?>`
             return 'RED'
 
         if current_light == green:
-            return 'YELLOW'
+            return yellow
 
         return green
 
 The ``show`` :ref:`function<what is a function?>`
 
 * returns the current light if the timer is :red:`NOT done`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`), then returns :red:`RED` if the current light is :yellow:`YELLOW`
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-* returns :green:`GREEN` if the timer is :green:`done` AND the current light is :red:`RED`
+* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+
+  - returns :red:`RED` if the current light is :yellow:`YELLOW`
+
+* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+
+  - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+
+* returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
+* returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
 
 ----
 
@@ -1944,10 +1958,18 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         return green
 
   * returns the current light if the timer is :red:`NOT done`
-  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`), then returns :red:`RED` if the current light is :yellow:`YELLOW`
-  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`, this means the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
+  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+
+    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+
+    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`, this means the current light is :red:`RED`)
+
+    - returns :red:`RED` if the walk button is :green:`pushed`
+  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`)
+
+    - returns :red:`RED` if the walk button is :green:`pushed`
   * returns :green:`GREEN` if the timer is :green:`done` AND the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
 
 ----
@@ -3378,9 +3400,15 @@ current light     timer            walk button        show
   the ``show`` :ref:`function<what is a function?>`
 
   * returns the current light if the timer is :red:`NOT done`
-  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`), then returns :red:`RED` if the current light is :yellow:`YELLOW`
-  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`), then returns :red:`RED` if the walk button is :green:`pushed`
+  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+
+    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+
+    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`)
+
+    - returns :red:`RED` if the walk button is :green:`pushed`
   * returns :green:`GREEN` if the timer is :green:`done` AND the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
 
 ----
@@ -3507,9 +3535,14 @@ I change the `return statement`_ for this case ``show`` :ref:`function<what is a
 the test passes. The ``show`` :ref:`function<what is a function?>`
 
 * returns the current light if the timer is :red:`NOT done`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`), then returns :red:`RED` if the current light is :yellow:`YELLOW`
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`), then returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
+* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+
+    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+
+    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`)
+    - returns``'RED', 'WALK'`` if the walk button is :green:`pushed`
 * returns :green:`GREEN` if the timer is :green:`done` AND the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
 
 ----
@@ -3748,9 +3781,14 @@ The ``show`` :ref:`function<what is a function?>`
 
 * returns ``'RED', 'WALK'`` if the timer is :red:`NOT done` AND the current light is :red:`RED`
 * returns the current light if the timer is :red:`NOT done` AND the current light is NOT :red:`RED`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`), then returns :red:`RED` if the current light is :yellow:`YELLOW`
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`), then returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
+* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+
+    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+
+    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is :red:`RED`)
+    - returns``'RED', 'WALK'`` if the walk button is :green:`pushed`
 * returns ``'GREEN', 'NO WALK'`` if the timer is :green:`done` AND the current light is :red:`RED` (this only happens if the walk button is :red:`NOT pushed`)
 
 ----
@@ -4040,9 +4078,13 @@ The ``show`` :ref:`function<what is a function?>`
 * returns ``'RED', 'WALK'`` if the timer is :red:`NOT done` AND the current light is :red:`RED`
 * returns ``'YELLOW', 'WALK'`` if the timer is :red:`NOT done` AND the current light is :red:`YELLOW`
 * returns the current light if the timer is :red:`NOT done` AND the current light is NOT :red:`RED` AND the current light is NOT :yellow:`YELLOW`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`), then returns ``'RED', 'WALK'`` if the current light is :yellow:`YELLOW`
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`), then returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :red:`GREEN`), then returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
+* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+    - returns``'RED', 'WALK'`` if the current light is :yellow:`YELLOW`
+* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+
+    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :red:`GREEN`)
+    - returns``'RED', 'WALK'`` if the walk button is :green:`pushed`
 * returns ``'GREEN', 'NO WALK'`` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is not :green:`GREEN` (this only happens if the walk button is :red:`NOT pushed`)
 
 ----
@@ -4911,7 +4953,8 @@ current light     timer           walk button       show
     * returns the current light and ``'NO WALK'`` if the timer is :red:`NOT done` AND the current light is NOT :red:`RED`
     * returns ``'RED', 'WALK'`` if the timer is :red:`NOT done` AND the current light is :red:`RED`
 
-  - checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done`), then returns ``'YELLOW', 'NO WALK'`` if the current light is :green:`GREEN`
+  - checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done`)
+    - returns``'YELLOW', 'NO WALK'`` if the current light is :green:`GREEN`
   - checks if the current light is :red:`RED` (this only happens if the timer is :green:`done`)
 
     * returns ``'GREEN', 'NO WALK'`` if the timer is :green:`done` AND the walk button is :red:`NOT pushed`
