@@ -5151,7 +5151,7 @@ This is what happens in the ``show`` :ref:`function<what is a function?>`
 
 * if the none of the other conditions are met :green:`pushed`
 
-There is a problem with this :ref:`if statement<if statements>`
+The :ref:`function<what is a function?>` does not look like the :ref:`truth table` but makes every test pass. There is a problem with the :ref:`if statement<if statements>` for when the timer is :green:`done` AND the current light is NOT :red:`RED`
 
 .. code-block:: python
 
