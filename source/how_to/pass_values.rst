@@ -70,7 +70,7 @@ start the project
 
     cd telephone
 
-  the terminal_ is my friend, and shows I am in the ``telephone`` folder_
+  the terminal_ shows I am in the ``telephone`` folder_
 
   .. code-block:: shell
 
@@ -254,6 +254,8 @@ start the project
     ======================== short test summary info =========================
     FAILED tests/test_telephone.py::TestTelephone::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
+
+  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ shows
 

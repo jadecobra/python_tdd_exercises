@@ -391,7 +391,7 @@ These are the tests I have by the end of the chapter
 
     cd calculator
 
-  the terminal_ is my friend, and shows I am in the ``calculator`` folder_
+  the terminal_ shows I am in the ``calculator`` folder_
 
   .. code-block:: shell
 

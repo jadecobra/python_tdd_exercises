@@ -67,7 +67,7 @@ start the project
 
     cd booleans
 
-  the terminal_ is my friend, and shows I am in the ``booleans`` folder_
+  the terminal_ shows I am in the ``booleans`` folder_
 
   .. code-block:: shell
 

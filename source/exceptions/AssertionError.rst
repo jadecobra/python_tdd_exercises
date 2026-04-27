@@ -86,7 +86,7 @@ start the project
 
     cd assertion_error
 
-  the terminal_ is my friend, and shows I am in the ``assertion_error`` folder_
+  the terminal_ shows I am in the ``assertion_error`` folder_
 
   .. code-block:: python
 
@@ -241,6 +241,8 @@ start the project
     ======================== short test summary info =========================
     FAILED tests/test_assertion_error.py::TestAssertionError::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
+
+  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ shows
 

@@ -82,7 +82,7 @@ requirements
 
     cd none
 
-  the terminal_ is my friend, and shows I am in the ``none`` folder_
+  the terminal_ shows I am in the ``none`` folder_
 
   .. code-block:: shell
 
@@ -239,6 +239,8 @@ requirements
     ======================== short test summary info =========================
     FAILED tests/test_none.py::TestNone::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
+
+  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ shows
 

@@ -503,7 +503,7 @@ how to make a directory
 
     cd pumping_python
 
-  the terminal_ is my friend, and shows I am in the ``pumping_python`` `folder (directory)`_
+  the terminal_ shows I am in the ``pumping_python`` `folder (directory)`_
 
   .. tab-set::
     :sync-group: os

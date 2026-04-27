@@ -49,7 +49,7 @@ open the project
 
     cd person
 
-  the terminal_ is my friend, and shows I am in the ``person`` folder_
+  the terminal_ shows I am in the ``person`` folder_
 
   .. code-block:: python
 

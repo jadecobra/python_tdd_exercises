@@ -72,7 +72,7 @@ start the project
 
     cd traffic_light
 
-  the terminal_ is my friend, and shows I am in the ``traffic_light`` folder_
+  the terminal_ shows I am in the ``traffic_light`` folder_
 
   .. code-block:: shell
 
@@ -272,6 +272,8 @@ start the project
     FAILED tests/test_traffic_light.py::TestTrafficLight::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
+  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+
   .. admonition:: if the terminal_ shows
 
     .. code-block:: shell
@@ -380,7 +382,9 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 .. code-block:: python
 
-  NameError: name 'src' is not defined
+  NameError: name 'src' is not
+
+because I do not have a definition for ``src`` in this file_
 
 ----
 
@@ -419,6 +423,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     AttributeError: module 'src.traffic_light' has no attribute 'show'
 
+  because ``traffic_light.py`` in the ``src`` folder_ does not have anything named ``show`` in it
+
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
@@ -448,6 +454,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     TypeError: show() got an unexpected keyword argument 'current_light'
 
+  because I called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with no input
+
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
 
   .. code-block:: python
@@ -475,6 +483,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
   .. code-block:: python
 
     TypeError: show() got an unexpected keyword argument 'timer_done'
+
+  because I called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition now only allows calls with 1 input
 
 * I add ``timer_done`` to the :ref:`function signature<what is a function?>`
 
@@ -548,6 +558,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
   .. code-block:: python
 
     AssertionError: 'GREEN' != 'RED'
+
+  because the ``show`` :ref:`function<what is a function?>` returns ``'GREEN'`` and the test expects ``'RED'``
 
 * I add an :ref:`if statement<if statements>` for this case, to ``traffic_light.py``
 
@@ -706,6 +718,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'GREEN' != 'RED'
 
+because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the test expects ``'RED'``
+
 ----
 
 =================================================================================
@@ -784,6 +798,8 @@ The ``show`` :ref:`function<what is a function?>`
   .. code-block:: python
 
     AssertionError: 'RED' != 'YELLOW'
+
+  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the test expects ``'YELLOW'``
 
 * I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done`, in ``traffic_light.py``
 
@@ -881,6 +897,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'GREEN' != 'YELLOW'
 
+because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the test expects ``'YELLOW'``
+
 ----
 
 =================================================================================
@@ -970,6 +988,8 @@ The ``show`` :ref:`function<what is a function?>`
   .. code-block:: python
 
     AssertionError: 'RED' != 'GREEN'
+
+  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the test expects ``'GREEN'``
 
 * I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done` in ``traffic_light.py``
 
@@ -1245,6 +1265,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
 
   TypeError: show() got an unexpected keyword argument 'walk_button'
+
+because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments (``current_light`` and ``timer_don``)  and the test called it with 3 arguments
 
 ----
 
@@ -1561,6 +1583,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     AssertionError: 'RED' != 'BOOM'
 
+  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the test expects ``'BOOM'``
+
 * I change the expectation back
 
   .. code-block:: python
@@ -1764,7 +1788,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
+  because :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
 
@@ -5069,7 +5093,7 @@ current light     timer           walk button       show
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9, 12
+    :emphasize-lines: 9-11
 
     def show(
             current_light='RED', timer_done=False,

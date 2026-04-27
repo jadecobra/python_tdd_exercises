@@ -65,7 +65,7 @@ open the project
 
     cd exceptions
 
-  the terminal_ is my friend, and shows I am in the ``exceptions`` folder_
+  the terminal_ shows I am in the ``exceptions`` folder_
 
   .. code-block:: shell
 

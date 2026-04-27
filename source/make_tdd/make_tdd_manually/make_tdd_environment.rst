@@ -118,7 +118,7 @@ I choose ``magic`` as the name of this project
 
       cd pumping_python
 
-    the terminal_ is my friend, and shows I am in the ``pumping_python`` `folder (directory)`_
+    the terminal_ shows I am in the ``pumping_python`` `folder (directory)`_
 
     .. code-block:: shell
 
