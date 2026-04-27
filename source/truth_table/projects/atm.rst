@@ -293,34 +293,12 @@ start the project
 
   because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 
-  .. admonition:: if the terminal_ shows
+  .. admonition:: if the terminal_ does not show the same error, then check
 
-    .. code-block:: shell
+    * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
+    * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
 
-      error: Failed to spawn: `pytest-watcher`
-      Caused by: No such file or directory (os error 2)
-
-    then add `pytest-watcher`_ to the ``requirements.txt`` file_
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      echo "pytest-watcher" >> requirements.txt
-
-    run
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      uv add --requirement requirements.txt
-
-    then
-
-    .. code-block:: python
-      :emphasize-lines: 1
-      :emphasize-text: .
-
-      uv run pytest-watcher . --now
+  fix those errors then try to run ``uv run pytest-watcher . --now`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_atm.py``
 
