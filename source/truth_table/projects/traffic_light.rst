@@ -4974,85 +4974,68 @@ current light     timer           walk button       show
 
 The Traffic Light only shows ``'WALK'`` when the light is :red:`RED`.
 
-What if there is an emergency vehicle? If the Traffic Light changes based on the emergency vehicale, its inputs would be
+What if there is an emergency vehicle? If the Traffic Light changes based on the emergency vehicle, its inputs would be
 
 * what color is the light now?
 * is the timer done?
 * did the person push the walk button?
 * is there an emergency vehicle?
 
-and the :ref:`truth table` would
-
+and the :ref:`truth table` would be
 
 ================  =============== ================= ====================  =================================
 current light     timer           walk button       emergency             show
 ================  =============== ================= ====================  =================================
-:red:`RED`        :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :green:`WALK`
+:red:`RED`        :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
+:red:`RED`        :green:`done`   :green:`pushed`   :red:`NOT emergency`  :green:`GREEN` + :red:`NO WALK`
+:red:`RED`        :green:`done`   :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`NO WALK`
 :red:`RED`        :green:`done`   :red:`NOT pushed` :red:`NOT emergency`  :green:`GREEN` + :red:`NO WALK`
-:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`done`   :green:`pushed`   :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`done`   :red:`NOT pushed` :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`GREEN` + :red:`NO WALK`
-:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`GREEN` + :red:`NO WALK`
 ================  =============== ================= ====================  =================================
 
+================  =============== ================= ====================  =================================
+current light     timer           walk button       emergency             show
+================  =============== ================= ====================  =================================
+:red:`RED`        :red:`NOT done` :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
+:red:`RED`        :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :red:`RED` + :green:`WALK`
+:red:`RED`        :red:`NOT done` :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`NO WALK`
+:red:`RED`        :red:`NOT done` :red:`NOT pushed` :red:`NOT emergency`  :red:`RED` + :green:`WALK`
+================  =============== ================= ====================  =================================
 
+================  =============== ================= ====================  =================================
+current light     timer           walk button       emergency             show
+================  =============== ================= ====================  =================================
+:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :green:`done`   :green:`pushed`   :red:`NOT emergency`  :red:`RED` + :green:`WALK`
+:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :green:`done`   :red:`NOT pushed` :red:`NOT emergency`  :red:`RED` + :green:`WALK`
+================  =============== ================= ====================  =================================
 
-================  ==============  ==============  ===========  =================================
-current light     timer done      walk button     emergency    show
-================  ==============  ==============  ===========  =================================
-:red:`RED`        :green:`yes`    :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
-:red:`RED`        :green:`yes`    :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
-:red:`RED`        :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
-:red:`RED`        :green:`yes`    :red:`no`       :green:`no`  :green:`GREEN` + :red:`NO WALK`
+================  =============== ================= ====================  =================================
+current light     timer           walk button       emergency             show
+================  =============== ================= ====================  =================================
+:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :green:`emergency`    :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :yellow:`YELLOW` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :green:`emergency`    :red:`RED` + :red:`NO WALK`
+:yellow:`YELLOW`  :red:`NOT done` :red:`NOT pushed` :red:`NOT emergency`  :yellow:`YELLOW` + :red:`NO WALK`
+================  =============== ================= ====================  =================================
 
-================  ==============  ==============  ===========  =================================
-current light     timer done      walk button     emergency    show
-================  ==============  ==============  ===========  =================================
-:red:`RED`        :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
-:red:`RED`        :red:`no`       :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
-:red:`RED`        :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
-:red:`RED`        :red:`no`       :red:`no`       :green:`no`  :red:`RED` + :green:`WALK`
-================  ==============  ==============  ===========  =================================
+================  =============== ================= ====================  =================================
+current light     timer           walk button       emergency             show
+================  =============== ================= ====================  =================================
+:green:`GREEN`    :green:`done`   :green:`pushed`   :green:`emergency`    :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`   :green:`pushed`   :red:`NOT emergency`  :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`   :red:`NOT pushed` :green:`emergency`    :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :green:`done`   :red:`NOT pushed` :red:`NOT emergency`  :yellow:`YELLOW` + :red:`NO WALK`
+================  =============== ================= ====================  =================================
 
-================  ==============  ==============  ===========  =================================
-current light     timer done      walk button     emergency    show
-================  ==============  ==============  ===========  =================================
-:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
-:yellow:`YELLOW`  :green:`yes`    :green:`yes`    :green:`no`  :red:`RED` + :green:`WALK`
-:yellow:`YELLOW`  :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
-:yellow:`YELLOW`  :green:`yes`    :red:`no`       :green:`no`  :red:`RED` + :green:`WALK`
-
-================  ==============  ==============  ===========  =================================
-current light     timer done      walk button     emergency    show
-================  ==============  ==============  ===========  =================================
-:yellow:`YELLOW`  :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`no`       :green:`yes`    :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
-:yellow:`YELLOW`  :red:`no`       :red:`no`       :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
-================  ==============  ==============  ===========  =================================
-
-================  ==============  ==============  ===========  =================================
-current light     timer done      walk button     emergency    show
-================  ==============  ==============  ===========  =================================
-:green:`GREEN`    :green:`yes`    :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
-:green:`GREEN`    :green:`yes`    :green:`yes`    :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
-:green:`GREEN`    :green:`yes`    :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
-:green:`GREEN`    :green:`yes`    :red:`no`       :green:`no`  :yellow:`YELLOW` + :red:`NO WALK`
-
-================  ==============  ==============  ===========  =================================
-current light     timer done      walk button     emergency    show
-================  ==============  ==============  ===========  =================================
-:green:`GREEN`    :red:`no`       :green:`yes`    :red:`yes`   :red:`RED` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :green:`yes`    :green:`no`  :green:`GREEN` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :red:`no`       :red:`yes`   :red:`RED` + :red:`NO WALK`
-:green:`GREEN`    :red:`no`       :red:`no`       :green:`no`  :green:`GREEN` + :red:`NO WALK`
-================  ==============  ==============  ===========  =================================
+================  =============== ================= ====================  =================================
+current light     timer           walk button       emergency             show
+================  =============== ================= ====================  =================================
+:green:`GREEN`    :red:`NOT done` :green:`pushed`   :green:`emergency`    :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :green:`pushed`   :red:`NOT emergency`  :green:`GREEN` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :green:`emergency`    :yellow:`YELLOW` + :red:`NO WALK`
+:green:`GREEN`    :red:`NOT done` :red:`NOT pushed` :red:`NOT emergency`  :green:`GREEN` + :red:`NO WALK`
+================  =============== ================= ====================  =================================
 
 ----
 
