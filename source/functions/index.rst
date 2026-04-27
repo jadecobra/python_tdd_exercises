@@ -2566,7 +2566,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to be clearer
+* ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to make it clearer
 
   .. code-block:: python
     :lineno-start: 42

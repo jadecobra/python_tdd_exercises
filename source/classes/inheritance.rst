@@ -603,7 +603,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes. I do not need to add an `import statement`_ because ``classes.py`` imports ``src.person`` and I import ``src.classes`` at the beginning of ``test_person.py``
 
-* I add the `import statement`_ to be clearer
+* I add the `import statement`_ to make it clearer
 
   .. code-block:: python
     :linenos:

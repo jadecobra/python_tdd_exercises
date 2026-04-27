@@ -1689,7 +1689,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   the test is still green
 
-* I add ``card_expired`` to the fifth :ref:`assertion<what is an assertion?>`, I also add ``above_daily_limit`` to be clearer. This is for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
+* I add ``card_expired`` to the fifth :ref:`assertion<what is an assertion?>`, I also add ``above_daily_limit`` to make it clearer. This is for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal

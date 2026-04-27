@@ -466,7 +466,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
   - ``test_catching_failure`` fails because ``an_exception_handler`` returns the name (``raise_exception``) and address in the computer(``0xabcd12e34567``) of the :ref:`function<what is a function?>` it gets
   - ``test_catching_success`` fails because ``an_exception_handler`` returns ``does_not_raise_exception`` which points to :ref:`None<what is None?>`
 
-* I change the name of the input parameter to be clearer
+* I change the name of the input parameter to make it clearer
 
   .. code-block:: python
     :lineno-start: 12

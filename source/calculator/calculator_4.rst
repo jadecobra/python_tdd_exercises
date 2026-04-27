@@ -1565,7 +1565,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             )
             self.assertEqual(
 
-* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to be clearer
+* I change the name from :ref:`test_calculator_raises_type_error_w_none` to ``test_calculator_sends_message_when_input_is_not_a_number`` to make it clearer
 
   .. code-block:: python
     :lineno-start: 57

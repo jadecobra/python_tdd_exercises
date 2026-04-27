@@ -516,7 +516,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I change the name of the positional argument in ``get_datetime`` to be clearer
+* I change the name of the positional argument in ``get_datetime`` to make it clearer
 
   .. code-block:: python
 

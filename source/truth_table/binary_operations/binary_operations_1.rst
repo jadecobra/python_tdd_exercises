@@ -221,7 +221,7 @@ test_contradiction
 
 ----
 
-* I change the `return statement`_ to be clearer
+* I change the `return statement`_ to make it clearer
 
   .. code-block:: python
     :lineno-start: 17
@@ -835,7 +835,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   the test is still green
 
-* I add an else_ clause to be clearer
+* I add an else_ clause to make it clearer
 
   .. code-block:: python
     :lineno-start: 22

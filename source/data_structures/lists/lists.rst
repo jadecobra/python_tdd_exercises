@@ -1295,7 +1295,7 @@ the test passes
     # TypeError
     # ValueError
 
-* I remove the things around the call and change the value to be clearer
+* I remove the things around the call and change the value to make it clearer
 
   .. code-block:: python
     :lineno-start: 91

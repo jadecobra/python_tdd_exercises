@@ -1578,7 +1578,7 @@ the test passes
 
   the test passes
 
-* I change ``0`` in the call to be clearer
+* I change ``0`` in the call to make it clearer
 
   .. code-block:: python
     :lineno-start: 118
@@ -2183,7 +2183,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
     # NameError
     # KeyError
 
-* I remove the things around the call in the test and change the value given to be clearer
+* I remove the things around the call in the test and change the value given to make it clearer
 
   .. code-block:: python
     :lineno-start: 150
