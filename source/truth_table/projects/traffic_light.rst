@@ -742,16 +742,14 @@ I add an :ref:`if statement<if statements>` to ``traffic_light.py``
 
       return 'GREEN'
 
-the test passes.
+the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
 
-The ``show`` :ref:`function<what is a function?>`
+* if the timer is :red:`NOT done` it returns :red:`RED`
 
-* returns :red:`RED` if the timer is :red:`NOT done`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+* if the timer is :green:`done`
 
-  - returns :red:`RED` if the current light is :yellow:`YELLOW`
-
-* returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`
+  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW`
 
 ----
 
@@ -819,15 +817,17 @@ The ``show`` :ref:`function<what is a function?>`
 
   the test passes.
 
-The ``show`` :ref:`function<what is a function?>`
+This is what happens in the ``show`` :ref:`function<what is a function?>`
 
-* returns :yellow:`YELLOW` if the timer is :red:`NOT done` AND the current light is :yellow:`YELLOW`
-* returns :red:`RED` if the timer is :red:`NOT done` AND the current light is NOT :yellow:`YELLOW`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+* if the timer is :red:`NOT done`
 
-  - returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :yellow:`YELLOW` if the current light is :yellow:`YELLOW`
+  - it returns :red:`RED` if the current light is NOT :yellow:`YELLOW`
 
-* returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`
+* if the timer is :green:`done`
+
+  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW`
 
 ----
 
@@ -926,22 +926,18 @@ I add an :ref:`if statement<if statements>` to ``traffic_light.py``
 
       return 'GREEN'
 
-the test passes.
+the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
 
-The ``show`` :ref:`function<what is a function?>`
+* if the timer is :red:`NOT done`
 
-* returns :yellow:`YELLOW` if the timer is :red:`NOT done` AND the current light is :yellow:`YELLOW`
-* returns :red:`RED` if the timer is :red:`NOT done` AND the current light is NOT :yellow:`YELLOW`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+  - it returns :yellow:`YELLOW` if the current light is :yellow:`YELLOW`
+  - it returns :red:`RED` if the current light is NOT :yellow:`YELLOW`
 
-  - returns :red:`RED` if the current light is :yellow:`YELLOW`
+* if the timer is :green:`done`
 
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
-
-  - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-
-* returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-* returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
+  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
 ----
 
@@ -1012,22 +1008,19 @@ The ``show`` :ref:`function<what is a function?>`
 
         return 'GREEN'
 
-  the test passes. The ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
 
-  * returns :yellow:`YELLOW` if the timer is :red:`NOT done` AND the current light is :yellow:`YELLOW`
-  * returns :green:`GREEN` if the timer is :red:`NOT done` AND the current light is :green:`GREEN`
-  * returns :red:`RED` if the timer is :red:`NOT done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` (this covers the case where the timer is :red:`NOT done` AND the current light is :red:`RED`)
-  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+* if the timer is :red:`NOT done`
 
-    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :yellow:`YELLOW` if the current light is :yellow:`YELLOW`
+  - it returns :green:`GREEN` if the current light is :green:`GREEN`
+  - it returns :red:`RED` if the current light is NOT :yellow:`YELLOW` and the current light is NOT :green:`GREEN`
 
-  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
+* if the timer is :green:`done`
 
-    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-
-  * returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-  * returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
-
+  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
 * I add an :ref:`if statement<if statements>` for when the timer is :red:`NOT done` and the light is :red:`RED`, to make it clearer
 
@@ -1162,19 +1155,14 @@ The ``show`` :ref:`function<what is a function?>`
 
         return green
 
-The ``show`` :ref:`function<what is a function?>`
+This is what happens in the ``show`` :ref:`function<what is a function?>`
 
-* returns the current light if the timer is :red:`NOT done`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+* if the timer is :red:`NOT done` it returns the current light
+* if the timer is :green:`done`
 
-  - returns :red:`RED` if the current light is :yellow:`YELLOW`
-
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
-
-  - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-
-* returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-* returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
+  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  - it returns :green:`GREEN` if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
 ----
 
@@ -1265,7 +1253,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: show() got an unexpected keyword argument 'walk_button'
 
-because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments (``current_light`` and ``timer_don``)  and the test called it with 3 arguments
+because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments (``current_light`` and ``timer_done``)  and the test called it with 3 arguments (``current_light``, ``timer_done`` and ``walk_button``)
 
 ----
 
@@ -1352,27 +1340,6 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   the test passes
 
-  .. TIP:: Because I set a :ref:`default value<test_functions_w_default_arguments>` for the new :ref:`keyword argument<test_functions_w_keyword_arguments>` to make it a choice, NOT a requirement, this call to the ``show`` :ref:`function<what is a function?>`
-
-    .. code-block:: python
-
-      src.traffic_light.show(
-          current_light='RED',
-          timer_done=True,
-      )
-
-    is now the same as
-
-    .. code-block:: python
-
-      src.traffic_light.show(
-          current_light='RED',
-          timer_done=True,
-          walk_button=False,
-      )
-
-    If I call the ``show`` :ref:`function<what is a function?>` without giving a value for the ``walk_button`` parameter, it will use the :ref:`default value (False)<test_functions_w_default_arguments>` for the ``walk_button``
-
 ----
 
 =================================================================================
@@ -1381,7 +1348,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
 ----
 
-* I add bool_
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1422,9 +1389,9 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
         if walk_button:
             return 'RED'
 
-  green
+  green because ``if something`` is the same as ``if bool(something) == True``
 
-* I add a :ref:`variable<what is a variable?>` for :red:`RED`, to use to remove repetition of ``'RED'``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'RED'``
 
   .. code-block:: python
     :linenos:
@@ -1438,7 +1405,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         if not timer_done:
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'RED'``
 
   .. code-block:: python
     :linenos:
@@ -1496,6 +1463,18 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         return green
 
+  This is what happens in the ``show`` :ref:`function<what is a function?>`
+
+  * if the timer is :red:`NOT done` it returns the current light
+  * if the timer is :green:`done`
+
+    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
+
+      * it returns :red:`RED` if the walk button is :green:`pushed`
+      * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
+
 * I do not need to do anything to the :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
   ================  ===============  =================  =================
@@ -1524,7 +1503,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
         walk_button=False,
     )
 
-  because the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
+  since the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
@@ -1671,7 +1650,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
           walk_button=False,
       )
 
-    because the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
+    since the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'RED'`` from the test
 
@@ -1770,7 +1749,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``current_light`` :ref:`keyword argument<test_functions_w_keyword_arguments>` in ``traffic_light.py`` as a fail safe so that the light is always :red:`RED` if no value is given
+* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``current_light`` :ref:`keyword argument<test_functions_w_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` ``traffic_light.py`` as a fail safe so that the light is always :red:`RED` if no value is given
 
   .. code-block:: python
     :linenos:
@@ -1803,7 +1782,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` for ``timer_done`` in ``traffic_light.py``
+* I add a :ref:`default value<test_functions_w_default_arguments>` for ``timer_done`` to the ``show`` :ref:`function<what is a function?>` ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -1832,9 +1811,10 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   because
 
-  - the :ref:`default value<test_functions_w_default_arguments>` for ``current_light`` is :red:`'RED'`
+  - the :ref:`default value<test_functions_w_default_arguments>` for ``current_light`` is ``'RED'``
   - the :ref:`default value<test_functions_w_default_arguments>` for ``timer_done`` is :ref:`False<test_what_is_false>`
   - the :ref:`default value<test_functions_w_default_arguments>` for ``walk_button`` is :ref:`False<test_what_is_false>`
+  - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter
 
 * I change the name of :ref:`test_red_traffic_light` to :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
@@ -1961,7 +1941,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
 .. admonition:: REMINDER
 
-  The ``show`` :ref:`function<what is a function?>`
+  This is what happens in the ``show`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1986,21 +1966,15 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         return green
 
-  * returns the current light if the timer is :red:`NOT done`
-  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+  * if the timer is :red:`NOT done` it returns the current light
+  * if the timer is :green:`done`
 
-    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
-  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
-
-    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`, this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
-
-    - returns :red:`RED` if the walk button is :green:`pushed`
-
-  * returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-  * returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
+      * it returns :red:`RED` if the walk button is :green:`pushed`
+      * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
 
 ----
 
@@ -2110,7 +2084,7 @@ current light     timer            walk button        show
           walk_button=False,
       )
 
-    the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
+    the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>`, for when the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
@@ -2221,6 +2195,7 @@ current light     timer            walk button        show
 
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
+    - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter
 
 * I change the name of the test from :ref:`test_yellow_traffic_light` to :ref:`test_yellow_traffic_light_w_walk_button`
 
@@ -2693,6 +2668,7 @@ current light     timer            walk button        show
 
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
+    - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter
 
 * I change the name of the test from :ref:`test_green_traffic_light` to :ref:`test_green_traffic_light_w_walk_button`
 
@@ -3002,7 +2978,6 @@ current light     timer            walk button        show
             reality = src.traffic_light.show(
                 current_light=GREEN,
                 timer_done=True,
-                walk_button=True,
             )
             # self.assertEqual(reality, YELLOW)
             self.assertEqual(
@@ -3094,9 +3069,6 @@ current light     timer            walk button        show
                 ),
                 GREEN
             )
-
-
-    # Exceptions seen
 
   green
 
@@ -3334,8 +3306,6 @@ current light     timer            walk button        show
                 RED
             )
 
-        def test_yellow_traffic_light_w_walk_button(self):
-
 * I call the ``show`` :ref:`function<what is a function?>` directly
 
   .. code-block:: python
@@ -3385,8 +3355,6 @@ current light     timer            walk button        show
                 RED
             )
 
-        def test_yellow_traffic_light_w_walk_button(self):
-
   still green
 
 * I remove the ``reality`` :ref:`variable<what is a variable?>` and the comments from :ref:`test_red_traffic_light_w_walk_button`
@@ -3426,6 +3394,8 @@ current light     timer            walk button        show
 
 .. admonition:: REMINDER
 
+  This is what happens in the ``show`` :ref:`function<what is a function?>`
+
   .. code-block:: python
     :linenos:
 
@@ -3449,23 +3419,16 @@ current light     timer            walk button        show
 
         return green
 
-  the ``show`` :ref:`function<what is a function?>`
 
-  * returns the current light if the timer is :red:`NOT done`
-  * checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+  * if the timer is :red:`NOT done` it returns the current light
+  * if the timer is :green:`done`
 
-    - returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
-  * checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
-
-    - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-
-  * checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`, this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
-
-    - returns :red:`RED` if the walk button is :green:`pushed`
-
-  * returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-  * returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
+      * it returns :red:`RED` if the walk button is :green:`pushed`
+      * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
 
 ----
 
