@@ -2,6 +2,9 @@ import src.atm
 import unittest
 
 
+DENIED = 'DENIED'
+
+
 class TestATM(unittest.TestCase):
 
     def test_withdraw_w_not_expired_card_w_right_pin(self):
@@ -15,8 +18,6 @@ class TestATM(unittest.TestCase):
             'CASH'
         )
 
-        my_expectation = 'DENIED'
-
         self.assertEqual(
             src.atm.withdraw(
                 card_expired=False,
@@ -24,7 +25,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=True,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -34,7 +35,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -44,12 +45,10 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=False,
             ),
-            my_expectation
+            DENIED
         )
 
     def test_withdraw_w_expired_card_w_right_pin(self):
-        my_expectation = 'DENIED'
-
         self.assertEqual(
             src.atm.withdraw(
                 card_expired=True,
@@ -57,7 +56,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=True,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -67,7 +66,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=True,
                 above_daily_limit=False,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -77,7 +76,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -87,12 +86,10 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=False,
             ),
-            my_expectation
+            DENIED
         )
 
     def test_withdraw_w_expired_card_w_wrong_pin(self):
-        my_expectation = 'DENIED'
-
         self.assertEqual(
             src.atm.withdraw(
                 card_expired=True,
@@ -100,7 +97,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=True,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -110,7 +107,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=True,
                 above_daily_limit=False,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -120,7 +117,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -130,12 +127,10 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=False,
             ),
-            my_expectation
+            DENIED
         )
 
     def test_withdraw_w_not_expired_card_w_wrong_pin(self):
-        my_expectation = 'DENIED'
-
         self.assertEqual(
             src.atm.withdraw(
                 card_expired=False,
@@ -143,7 +138,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=True,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -153,7 +148,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=True,
                 above_daily_limit=False,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -163,7 +158,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=True,
             ),
-            my_expectation
+            DENIED
         )
 
         self.assertEqual(
@@ -173,7 +168,7 @@ class TestATM(unittest.TestCase):
                 enough_balance=False,
                 above_daily_limit=False,
             ),
-            my_expectation
+            DENIED
         )
 
 
