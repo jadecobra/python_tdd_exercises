@@ -3345,7 +3345,7 @@ card expired        PIN                 balance            daily limit          
 
     # Exceptions seen
 
-  all the tests are passing. I am going to go eat something.
+  all the tests are passing. Time to eat.
 
 *********************************************************************************
 close the project
