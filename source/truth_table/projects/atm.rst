@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a real-world Automatic Teller Machine using truth tables and Test-Driven Development in Python. Learn how boolean logic controls physical systems like traffic signals.
-  :keywords: Jacob Itegboje, python truth table, Automatic Teller Machine python, tdd python, real world boolean logic, state machine truth table, pumping python
+  :description: Learn Python boolean logic by building a real-world ATM withdrawal system. This step-by-step Test-Driven Development (TDD) tutorial teaches beginners how to translate truth tables into clean Python code using unittest, uv, and pytest-watcher.
+  keywords: Python ATM project tutorial, translate truth tables to python code, TDD python exercises for beginners, learn boolean logic with python projects, python unittest step by step guide, how to use uv for python projects, pytest-watcher tutorial, red green refactor python example, automatic teller machine logic python, Jacob Itegboje
 
 .. include:: ../../links.rst
 
@@ -2276,7 +2276,7 @@ card expired        PIN                 balance            daily limit          
 
 * I add a new test for when the card has :red:`NOT expired` and move the case where the ATM gives me ``'CASH'`` to the new test
 
-  .. TIP:: I can move lines I select or where the cursor is, with :kbd:`alt/option+ ↑` on the keyboard to move lines up or  :kbd:`alt/option+ ↓` to move lines down
+  .. TIP:: I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 5
@@ -3365,17 +3365,6 @@ card expired        PIN                 balance            daily limit          
         ):
             return 'CASH'
         return denied
-
-        if card_expired:
-            return denied
-        if not pin_is_right:
-            return denied
-        if not enough_balance:
-            return denied
-        if above_daily_limit:
-            return denied
-
-        return 'CASH'
 
   all the tests are still passing. Which do you like better? Time to eat.
 

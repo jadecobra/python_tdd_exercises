@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a real-world Microwave using truth tables and Test-Driven Development in Python. Learn how boolean logic controls physical systems like Microwaves.
-  :keywords: Jacob Itegboje, python truth table, Microwave python, tdd python, real world boolean logic, state machine truth table, pumping python
+  :description: Build a safety-critical Microwave logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—door status, timers, and overheating failsafes—while writing clean, verified code.
+  :keywords: Python microwave logic project, safety-critical systems python tutorial, TDD python microwave example, how to code a microwave in python, python multiple boolean inputs tutorial, red green refactor examples, python truth table practice, learn Converse NonImplication python, uv python project management, pytest-watcher logic testing, Jacob Itegboje
 
 .. include:: ../../links.rst
 

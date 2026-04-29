@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a real-world Traffic Light using truth tables and Test-Driven Development in Python. Learn how boolean logic controls physical systems like traffic signals.
-  :keywords: Jacob Itegboje, python truth table, Traffic Light python, tdd python, real world boolean logic, state machine truth table, pumping python
+  :description: Build a state-controlled Traffic Light system in Python using truth tables and TDD. This beginner-friendly tutorial covers the Red-Green-Refactor cycle, python default arguments, and translating complex physical logic into clean code with unittest and uv.
+  :keywords: Python traffic light project, state machine logic tutorial python, TDD traffic light example, how to code a traffic signal in python, python function default arguments tutorial, red green refactor examples, python truth table to code, learn logic gates with python, python automation for beginners, pytest-watcher traffic light tutorial, Jacob Itegboje
 
 .. include:: ../../links.rst
 
