@@ -332,6 +332,15 @@ start the project
 test_withdraw_w_right_pin
 *********************************************************************************
 
+The :ref:`truth table` for if the :green:`right PIN` is entered, is
+
+==================  =================  =================
+PIN                 balance            withdrawal
+==================  =================  =================
+:green:`right PIN`  :green:`enough`    :green:`CASH`
+:green:`right PIN`  :red:`NOT enough`  :red:`DENIED`
+==================  =================  =================
+
 ----
 
 =================================================================================
@@ -686,6 +695,15 @@ What :ref:`binary operation<truth table: Binary Operations>` is the ``withdraw``
 *********************************************************************************
 test_withdraw_w_wrong_pin
 *********************************************************************************
+
+The :ref:`truth table` for if the :red:`wrong PIN` is entered, is
+
+==================  =================  =================
+PIN                 balance            withdrawal
+==================  =================  =================
+:red:`wrong PIN`    :green:`enough`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough`  :red:`DENIED`
+==================  =================  =================
 
 ----
 
@@ -1187,7 +1205,7 @@ I want to add a condition for a daily limit on how much can be taken from the ac
 * is the amount I want to take, smaller or bigger than what is in the account?
 * will this put the account above or below the daily limit for withdrawals?
 
-the :ref:`truth table` for the ATM will now be
+The :ref:`truth table` for if the :green:`right PIN` is entered, will be
 
 ==================  =================  ====================  ==================
 PIN                 balance            daily limit           withdrawal
@@ -1196,15 +1214,6 @@ PIN                 balance            daily limit           withdrawal
 :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
 :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
-==================  =================  ====================  ==================
-
-==================  =================  ====================  ==================
-PIN                 balance            daily limit           withdrawal
-==================  =================  ====================  ==================
-:red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
-:red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
-:red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
 ==================  =================  ====================  ==================
 
 ----
@@ -1554,6 +1563,17 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 *********************************************************************************
 test_withdraw_w_daily_limit_w_wrong_pin
 *********************************************************************************
+
+The :ref:`truth table` for if the :green:`wrong PIN` is entered, will be
+
+==================  =================  ====================  ==================
+PIN                 balance            daily limit           withdrawal
+==================  =================  ====================  ==================
+:red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
+:red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  =================  ====================  ==================
 
 * I add ``above_daily_limit`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_withdraw_w_wrong_pin`, for the case where the :red:`wrong PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
 
