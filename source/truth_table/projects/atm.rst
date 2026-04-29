@@ -54,14 +54,20 @@ start the project
 
 * I name this project ``atm``
 * I open a terminal_
-* I make a directory_ for the project
+* I use uv_ to make a directory_ for the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir atm
+    uv init atm
 
-  the terminal_ goes back to the command line
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    Initialized project `atm` at `.../pumping_python/atm`
+
+  then goes back to the command line
 
 * I change directory_ to the project
 
@@ -75,6 +81,15 @@ start the project
   .. code-block:: shell
 
     .../pumping_python/atm
+
+* I remove ``main.py`` from the project because I do not use it
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    rm main.py
+
+  the terminal_ goes back to the command line
 
 * I make a directory_ for the source code
 
@@ -209,21 +224,6 @@ start the project
     echo "pytest-watcher" >> requirements.txt
 
   the terminal_ goes back to the command line
-
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `atm`
-
-  then goes back to the command line
 
 * I remove ``main.py`` from the project because I do not use it
 
