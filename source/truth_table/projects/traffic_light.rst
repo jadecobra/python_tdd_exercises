@@ -633,7 +633,7 @@ because I do not have a definition for ``src`` in this file_
             return 'RED'
         return 'GREEN'
 
-  still green because ``if not something`` is the same as ``if not bool(something) == True`` which is the same as ``if bool(something) == False``
+  still green because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
 
 * I remove the commented lines
 
@@ -742,7 +742,7 @@ I add an :ref:`if statement<if statements>` to ``traffic_light.py``
 
       return 'GREEN'
 
-the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done` it returns :red:`RED`
 
@@ -817,7 +817,7 @@ the test passes. This is what happens in the ``show`` :ref:`function<what is a f
 
   the test passes.
 
-This is what happens in the ``show`` :ref:`function<what is a function?>`
+This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
@@ -926,7 +926,7 @@ I add an :ref:`if statement<if statements>` to ``traffic_light.py``
 
       return 'GREEN'
 
-the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
@@ -1008,7 +1008,7 @@ the test passes. This is what happens in the ``show`` :ref:`function<what is a f
 
         return 'GREEN'
 
-  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
@@ -1155,7 +1155,7 @@ the test passes. This is what happens in the ``show`` :ref:`function<what is a f
 
         return green
 
-This is what happens in the ``show`` :ref:`function<what is a function?>`
+This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done` it returns the current light
 * if the timer is :green:`done`
@@ -1389,7 +1389,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
         if walk_button:
             return 'RED'
 
-  green because ``if something`` is the same as ``if bool(something) == True``
+  green because ``if bool(something) == True`` is the same as ``if something``
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'RED'``
 
@@ -1463,7 +1463,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         return green
 
-  This is what happens in the ``show`` :ref:`function<what is a function?>`
+  This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done` it returns the current light
   * if the timer is :green:`done`
@@ -1941,7 +1941,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
 .. admonition:: REMINDER
 
-  This is what happens in the ``show`` :ref:`function<what is a function?>`
+  This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   .. code-block:: python
     :linenos:
@@ -3394,7 +3394,7 @@ current light     timer            walk button        show
 
 .. admonition:: REMINDER
 
-  This is what happens in the ``show`` :ref:`function<what is a function?>`
+  This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   .. code-block:: python
     :linenos:
@@ -3551,7 +3551,7 @@ I change the `return statement`_ for this case, in the ``show`` :ref:`function<w
 
       return green
 
-the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done` it returns the current light
 * if the timer is :green:`done`
@@ -3635,7 +3635,7 @@ the test passes. This is what happens in the ``show`` :ref:`function<what is a f
 
         return green, 'NO WALK'
 
-  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done` it returns the current light
   * if the timer is :green:`done`
@@ -3785,7 +3785,7 @@ the test passes. This is what happens in the ``show`` :ref:`function<what is a f
 
         def test_yellow_traffic_light_w_walk_button(self):
 
-  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -3932,7 +3932,7 @@ current light     timer           walk button       show
                 (RED, 'WALK')
             )
 
-  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4088,7 +4088,7 @@ current light     timer           walk button       show
 
         def test_green_traffic_light_w_walk_button(self):
 
-  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4245,7 +4245,7 @@ current light     timer           walk button       show
                 (YELLOW, 'NO WALK')
             )
 
-  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -4403,7 +4403,7 @@ current light     timer           walk button       show
 
     # Exceptions seen
 
-  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+  the test passes. This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
   * if the timer is :red:`NOT done`
 
@@ -5131,7 +5131,7 @@ current light     timer           walk button       show
 
         return walk
 
-This is what happens in the ``show`` :ref:`function<what is a function?>`
+This is what happens when the ``show`` :ref:`function<what is a function?>` is called
 
 * if the timer is :red:`NOT done`
 
