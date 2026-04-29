@@ -649,19 +649,104 @@ the test passes
 
   the test is still green
 
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    def microwave(door_is_open, start_is_pushed):
+        # if door_is_open == False:
+        # if bool(door_is_open) == False:
+        if not bool(door_is_open) == True:
+            # if start_is_pushed == True:
+            if bool(start_is_pushed) == True:
+                return 'HEATING'
+        return 'OFF'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5, 7-8
+
+    def microwave(door_is_open, start_is_pushed):
+        # if door_is_open == False:
+        # if bool(door_is_open) == False:
+        # if not bool(door_is_open) == True:
+        if not bool(door_is_open):
+            # if start_is_pushed == True:
+            # if bool(start_is_pushed) == True:
+            if bool(start_is_pushed):
+                return 'HEATING'
+        return 'OFF'
+
+  green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6, 9-10
+
+    def microwave(door_is_open, start_is_pushed):
+        # if door_is_open == False:
+        # if bool(door_is_open) == False:
+        # if not bool(door_is_open) == True:
+        # if not bool(door_is_open):
+        if not door_is_open:
+            # if start_is_pushed == True:
+            # if bool(start_is_pushed) == True:
+            # if bool(start_is_pushed):
+            if start_is_pushed:
+                return 'HEATING'
+        return 'OFF'
+
+  still green, because
+
+  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+  - ``if bool(something) == True`` is the same as ``if something``
+
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6, 10-12
+
+    def microwave(door_is_open, start_is_pushed):
+        # if door_is_open == False:
+        # if bool(door_is_open) == False:
+        # if not bool(door_is_open) == True:
+        # if not bool(door_is_open):
+        # if not door_is_open:
+            # if start_is_pushed == True:
+            # if bool(start_is_pushed) == True:
+            # if bool(start_is_pushed):
+            # if start_is_pushed:
+        if not door_is_open and start_is_pushed:
+            return 'HEATING'
+        return 'OFF'
+
+  the test is still green
 
 * I remove the commented lines
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-3
 
     def microwave(door_is_open, start_is_pushed):
         if not door_is_open and start_is_pushed:
             return 'HEATING'
         return 'OFF'
 
-Is this :ref:`Converse NonImplication?<test_converse_non_implication>`
+  This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
+
+  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
+  - it returns :red:`'OFF'` if the condition is not met
+
+  is this :ref:`Converse NonImplication?<test_converse_non_implication>`
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_closed_door` in ``test_microwave.py``
 
