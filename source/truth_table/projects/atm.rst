@@ -500,7 +500,7 @@ because I do not have a definition for ``src`` in this file_
     def withdraw(pin_is_right, enough_balance):
         return 'CASH'
 
-  the test passes, this ATM works. The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`CASH`, it does not care about the inputs. Is this :ref:`Tautology<test_tautology>` or :green:`CASH` that never ends?
+  the test passes, this ATM works. The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`'CASH'`, it does not care about the inputs. Is this :ref:`Tautology<test_tautology>` or :green:`'CASH'` that never ends?
 
 ----
 
@@ -547,7 +547,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: 'CASH' != 'DENIED'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` returns ``'CASH'`` and the test expects ``'DENIED'``
+  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the test expects :red:`'DENIED'`
 
 * I add an :ref:`if statement<if statements>` to ``atm.py``
 
@@ -676,8 +676,8 @@ because I do not have a definition for ``src`` in this file_
 
 The ``withdraw`` :ref:`function<what is a function?>`
 
-* returns ``'DENIED'`` if the :green:`right PIN` is entered AND the balance is :red:`NOT enough`
-* returns ``'CASH'`` if the first condition is NOT met
+* returns :red:`'DENIED'` if the :green:`right PIN` is entered AND the balance is :red:`NOT enough`
+* returns :green:`'CASH'` if the first condition is NOT met
 
 What :ref:`binary operation<truth table: Binary Operations>` is the ``withdraw`` :ref:`function<what is a function?>` using?
 
@@ -739,7 +739,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'CASH' != 'DENIED'
 
-because the ``withdraw`` :ref:`function<what is a function?>` returned :green:`CASH` and the test expects :red:`DENIED`. Why is this ATM giving :green:`CASH` when the :red:`wrong PIN` is entered?
+because the ``withdraw`` :ref:`function<what is a function?>` returned :green:`'CASH'` and the test expects :red:`DENIED`. Why is this ATM giving :green:`'CASH'` when the :red:`wrong PIN` is entered?
 
 ----
 
@@ -895,9 +895,9 @@ the test passes
 
   The ``withdraw`` :ref:`function<what is a function?>`
 
-  - returns ``'DENIED'`` if the :red:`wrong PIN` is entered AND the balance is :green:`enough`
-  - returns ``'DENIED'`` if the :green:`right PIN` is entered AND the balance is :red:`NOT enough`
-  - returns ``'CASH'`` if none of the conditions are met
+  - returns :red:`'DENIED'` if the :red:`wrong PIN` is entered AND the balance is :green:`enough`
+  - returns :red:`'DENIED'` if the :green:`right PIN` is entered AND the balance is :red:`NOT enough`
+  - returns :green:`'CASH'` if none of the conditions are met
 
 * I add an :ref:`if statement<if statements>` to test if it is :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
 
@@ -952,8 +952,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 22
-    :emphasize-lines: 23-28
-
+    :emphasize-lines: 9-13
 
         def test_withdrawal_when_pin_is_wrong(self):
             my_expectation = 'DENIED'
@@ -963,7 +962,6 @@ the test passes
             )
             self.assertEqual(reality, my_expectation)
 
-            my_expectation = 'DENIED'
             reality = src.atm.withdraw(
                 pin_is_right=False,
                 enough_balance=False,
@@ -973,13 +971,14 @@ the test passes
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  - I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (:red:`'DENIED'`)
+  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    AssertionError: 'CASH' != 'DENIED'
+      AssertionError: 'CASH' != 'DENIED'
 
-  this is not :ref:`Exclusive Disjunction<test_exclusive_disjunction>` or :ref:`Logical Equality<test_logical_equality>`
+    this is not :ref:`Exclusive Disjunction<test_exclusive_disjunction>` or :ref:`Logical Equality<test_logical_equality>`
 
 * I remove the :ref:`conditional expressions` then add an :ref:`if statement<if statements>` to ``atm.py`` for the last case
 
