@@ -980,15 +980,16 @@ the test passes
 
     this is not :ref:`Exclusive Disjunction<test_exclusive_disjunction>` or :ref:`Logical Equality<test_logical_equality>`
 
-* I remove the :ref:`conditional expressions` then add an :ref:`if statement<if statements>` to ``atm.py`` for the last case
+* I remove the :ref:`if statements` for :ref:`Exclusive Disjunction<test_exclusive_disjunction>` and :ref:`Logical Equality<test_logical_equality>`, then add :ref:`if statements` for the last case, to ``atm.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-3
+    :emphasize-lines:
 
     def withdraw(pin_is_right, enough_balance):
-        if not pin_is_right and not enough_balance:
-            return 'DENIED'
+        if pin_is_right == False:
+            if enough_balance == False:
+                return 'DENIED'
         if not pin_is_right and enough_balance:
             return 'DENIED'
         if pin_is_right and not enough_balance:
@@ -997,17 +998,115 @@ the test passes
 
   the test passes
 
-* 3 of the cases return ``'DENIED'`` and only one case returns ``'CASH'``, this is :ref:`Logical Conjunction (AND)<test_logical_conjunction>`. I add an :ref:`if statement with an else clause<if statements>` for the one case that gives me ``'CASH'``
+* I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 2-5
 
     def withdraw(pin_is_right, enough_balance):
-        if pin_is_right and enough_balance:
-            return 'CASH'
-        else:
+        # if pin_is_right == False:
+        if bool(pin_is_right) == False:
+            # if enough_balance == False:
+            if bool(enough_balance) == False:
+                return 'DENIED'
+        if not pin_is_right and enough_balance:
             return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  the test is still green
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4, 6-7
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        # if bool(pin_is_right) == False:
+        if not bool(pin_is_right) == True:
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            if not bool(enough_balance) == True:
+                return 'DENIED'
+        if not pin_is_right and enough_balance:
+            return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5, 8-9
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        # if bool(pin_is_right) == False:
+        # if not bool(pin_is_right) == True:
+        if not bool(pin_is_right):
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            # if not bool(enough_balance) == True:
+            if not bool(enough_balance):
+                return 'DENIED'
+        if not pin_is_right and enough_balance:
+            return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6, 10-11
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        # if bool(pin_is_right) == False:
+        # if not bool(pin_is_right) == True:
+        # if not bool(pin_is_right):
+        if not pin_is_right:
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            # if not bool(enough_balance) == True:
+            # if not bool(enough_balance):
+            if not enough_balance:
+                return 'DENIED'
+        if not pin_is_right and enough_balance:
+            return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  still green because ``if not something`` is the same as ``if not bool(something) == True`` which is the same as ``if bool(something) == False``
+
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6, 11-13
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        # if bool(pin_is_right) == False:
+        # if not bool(pin_is_right) == True:
+        # if not bool(pin_is_right):
+        # if not pin_is_right:
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            # if not bool(enough_balance) == True:
+            # if not bool(enough_balance):
+            # if not enough_balance:
         if not pin_is_right and not enough_balance:
             return 'DENIED'
         if not pin_is_right and enough_balance:
@@ -1018,7 +1117,38 @@ the test passes
 
   the test is still green
 
-* I remove the :ref:`if statements` after the :ref:`else clause<if statements>`
+* 3 of the cases return ``'DENIED'`` and only one case returns ``'CASH'``, this is :ref:`Logical Conjunction (AND)<test_logical_conjunction>`. I add an :ref:`if statement with an else clause<if statements>` for the one case that gives me ``'CASH'``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 16-22
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        # if bool(pin_is_right) == False:
+        # if not bool(pin_is_right) == True:
+        # if not bool(pin_is_right):
+        # if not pin_is_right:
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            # if not bool(enough_balance) == True:
+            # if not bool(enough_balance):
+            # if not enough_balance:
+        # if not pin_is_right and not enough_balance:
+        #     return 'DENIED'
+        # if not pin_is_right and enough_balance:
+        #     return 'DENIED'
+        # if pin_is_right and not enough_balance:
+        #     return 'DENIED'
+        # return 'CASH'
+        if pin_is_right and enough_balance:
+            return 'CASH'
+        else:
+            return 'DENIED'
+
+  the test is still green
+
+* I remove the comments
 
   .. code-block:: python
     :linenos:
@@ -1029,32 +1159,10 @@ the test passes
         else:
             return 'DENIED'
 
-  still green
+  The ``withdraw`` :ref:`function<what is a function?>`
 
-* I do not need to make the ``my_expectation`` :ref:`variable<what is a variable?>` 2 times in ``test_withdrawal_when_pin_is_wrong`` since it is the same value both times. I remove the repetition from ``test_atm.py``
-
-  .. code-block:: python
-    :lineno-start: 22
-
-        def test_withdrawal_when_pin_is_wrong(self):
-            my_expectation = 'DENIED'
-
-            reality = src.atm.withdraw(
-                pin_is_right=False,
-                enough_balance=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.atm.withdraw(
-                pin_is_right=False,
-                enough_balance=False,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  green
+  - returns :green:`'CASH'` if the :green:`right PIN` is entered AND the balance is :green:`enough`
+  - returns :red:`'DENIED'` if the above condition is NOT met
 
 ----
 
