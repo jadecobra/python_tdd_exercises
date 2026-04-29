@@ -4,7 +4,7 @@ import unittest
 
 class TestATM(unittest.TestCase):
 
-    def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+    def test_withdraw_w_not_expired_card_w_right_pin(self):
         self.assertEqual(
             src.atm.withdraw(
                 card_expired=False,
@@ -133,7 +133,7 @@ class TestATM(unittest.TestCase):
             my_expectation
         )
 
-    def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+    def test_withdraw_w_not_expired_card_w_wrong_pin(self):
         my_expectation = 'DENIED'
 
         self.assertEqual(

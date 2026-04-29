@@ -1941,7 +1941,7 @@ card expired        PIN                 balance            daily limit          
 
 ----
 
-I add a value for the ``card_expired`` parameter to the call to the ``withdraw`` :ref:`function<what is a function?>` for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, in :ref:`test_withdraw_w_daily_limit_w_right_pin` in ``test_atm.py``
+I add a value for the ``card_expired`` parameter to the call to the ``withdraw`` :ref:`function<what is a function?>` for the case where the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, in the second :ref:`assertion<what is an assertion?>` in :ref:`test_withdraw_w_daily_limit_w_right_pin` in ``test_atm.py``
 
 ==================  ==================  =================  ====================  =============
 card expired        PIN                 balance            daily limit           withdrawal
@@ -1976,6 +1976,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 .. code-block:: python
 
   TypeError: withdraw() got an unexpected keyword argument 'card_expired'
+
+because the ``withdraw`` :ref:`function<what is a function?>` only takes 3 arguments (``pin_is_right``, ``enough_balance`` and ``above_daily_limit``) and the test called it with 4 arguments (``card_expired``, ``pin_is_right``, ``enough_balance`` and ``above_daily_limit``)
 
 ----
 
@@ -2015,7 +2017,17 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             above_daily_limit=False, card_expired=False,
         ):
 
-  the test passes.
+  the test passes. This is what happens when the ``withdraw`` :ref:`function<what is a function?>` is called
+
+  * if the :red:`wrong PIN` is entered it returns :red:`'DENIED'`
+  * if the :green:`right PIN` is entered
+
+    - it returns :red:`'DENIED'` if the balance in the account is :red:`NOT enough`
+    - if the balance in the account is :green:`enough`
+
+      * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals
+
+  * it returns :green:`'CASH'` if none of the above conditions are met
 
 ----
 
@@ -2100,13 +2112,20 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
         return 'CASH'
 
-  the test passes. the ATM
+  the test passes. This is what happens when the ``withdraw`` :ref:`function<what is a function?>` is called
 
-  * :red:`denies` a withdrawal if the card has :green:`expired`, it will NOT check the PIN.
-  * :red:`denies` a withdrawal if the :red:`wrong PIN` is entered, which only happens if the card has :red:`NOT expired`.
-  * :red:`denies` a withdrawal if the account balance is :red:`NOT enough`, which only happens if the :green:`right PIN` is entered, which only happens if the card has :red:`NOT expired`.
-  * :red:`denies` a withdrawal if the account is :green:`above limit` for the daily withdrawal limit, which only happens if the account balance is :green:`enough`, which only happens if the :green:`right PIN` is entered, which only happens if the card has :red:`NOT expired`.
-  * :green:`approves` a withdrawal only if the card has :red:`NOT expired`, the :green:`right PIN` is entered, the balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals
+  * if the card has :green:`expired` it returns :red:`'DENIED'`
+  * if the card has :red:`NOT expired`
+
+    - if the :red:`wrong PIN` is entered it returns :red:`'DENIED'`
+    - if the :green:`right PIN` is entered
+
+      * it returns :red:`'DENIED'` if the balance in the account is :red:`NOT enough`
+      * if the balance in the account is :green:`enough`
+
+        - it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals
+
+  * it returns :green:`'CASH'` if none of the above conditions are met
 
 * I add ``card_expired`` to the fourth :ref:`assertion<what is an assertion?>`, which is for when the card has :green:`expired`, the :green:`right PIN` is entered, the balance is :red:`NOT enough` and the account is :green:`above limit` for daily withdrawals, in :ref:`test_withdraw_w_daily_limit_w_right_pin` in ``test_atm.py``
 
@@ -2223,7 +2242,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines:
+    :emphasize-lines: 3
 
     class TestATM(unittest.TestCase):
 
@@ -2240,7 +2259,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 ----
 
 *********************************************************************************
-test_withdraw_w_not_expired_card_when_pin_is_right
+test_withdraw_w_not_expired_card_w_right_pin
 *********************************************************************************
 
 The :ref:`truth table` for if the card has :red:`NOT expired` AND the :green:`right PIN` is entered, will be
@@ -2255,7 +2274,9 @@ card expired        PIN                 balance            daily limit          
 ==================  ==================  =================  ====================  =============
 
 
-* I add a new test for when the card has :red:`NOT expired` and move the case where the ATM gives me ``'CASH'`` to it
+* I add a new test for when the card has :red:`NOT expired` and move the case where the ATM gives me ``'CASH'`` to the new test
+
+  .. TIP:: I can move lines I select or where the cursor is, with :kbd:`alt/option+ ↑` on the keyboard to move lines up or  :kbd:`alt/option+ ↓` to move lines down
 
   .. code-block:: python
     :lineno-start: 5
@@ -2263,7 +2284,7 @@ card expired        PIN                 balance            daily limit          
 
     class TestATM(unittest.TestCase):
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_right=True,
@@ -2293,9 +2314,9 @@ card expired        PIN                 balance            daily limit          
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 11-17
+    :emphasize-lines: 9, 11-17
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 pin_is_right=True,
@@ -2330,7 +2351,7 @@ card expired        PIN                 balance            daily limit          
     :lineno-start: 7
     :emphasize-lines: 4, 7
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 card_expired=False,
@@ -2368,7 +2389,7 @@ card expired        PIN                 balance            daily limit          
     :lineno-start: 7
     :emphasize-lines: 21-27
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 card_expired=False,
@@ -2415,7 +2436,7 @@ card expired        PIN                 balance            daily limit          
     :lineno-start: 7
     :emphasize-lines: 29-35
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             my_expectation = 'CASH'
             reality = src.atm.withdraw(
                 card_expired=False,
@@ -2604,7 +2625,7 @@ card expired        PIN                 balance            daily limit          
 
   still green
 
-* I values for the ``card_expired`` and ``above_daily_limit`` parameters to the last :ref:`assertion<what is an assertion?>`, for when the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
+* I add values for the ``card_expired`` and ``above_daily_limit`` parameters to the last :ref:`assertion<what is an assertion?>`, for when the card has :green:`expired`, the :red:`wrong PIN` is entered, the balance is :red:`NOT enough` and the account is :red:`below limit` for daily withdrawals
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal
@@ -2662,7 +2683,7 @@ card expired        PIN                 balance            daily limit          
 ----
 
 *********************************************************************************
-test_withdraw_w_not_expired_card_when_pin_is_wrong
+test_withdraw_w_not_expired_card_w_wrong_pin
 *********************************************************************************
 
 The :ref:`truth table` for if the card has :red:`NOT expired` AND the :red:`wrong PIN` is entered, will be
@@ -2696,7 +2717,7 @@ card expired        PIN                 balance            daily limit          
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
             my_expectation = 'DENIED'
 
             reality = src.atm.withdraw(
@@ -2725,7 +2746,7 @@ card expired        PIN                 balance            daily limit          
     :lineno-start: 113
     :emphasize-lines: 12-18
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
             my_expectation = 'DENIED'
 
             reality = src.atm.withdraw(
@@ -2763,7 +2784,7 @@ card expired        PIN                 balance            daily limit          
     :lineno-start: 113
     :emphasize-lines: 20-26
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
             my_expectation = 'DENIED'
 
             reality = src.atm.withdraw(
@@ -2810,7 +2831,7 @@ card expired        PIN                 balance            daily limit          
     :lineno-start: 113
     :emphasize-lines: 28-34
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
             my_expectation = 'DENIED'
 
             reality = src.atm.withdraw(
@@ -2852,13 +2873,13 @@ card expired        PIN                 balance            daily limit          
 
 ----
 
-* I remove the ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_withdraw_w_not_expired_card_when_pin_is_wrong` because I do not need them, I can call the ``withdraw`` :ref:`function<what is a function?>` directly
+* I remove the ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_withdraw_w_not_expired_card_w_wrong_pin` because I do not need them, I can call the ``withdraw`` :ref:`function<what is a function?>` directly
 
   .. code-block:: python
     :lineno-start: 113
     :emphasize-lines: 5-11, 15-21, 25-31, 35-41
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
             my_expectation = 'DENIED'
 
             self.assertEqual(
@@ -2953,7 +2974,7 @@ card expired        PIN                 balance            daily limit          
                 my_expectation
             )
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
 
 * I remove the ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_withdraw_w_expired_card_w_right_pin` next
 
@@ -3006,13 +3027,13 @@ card expired        PIN                 balance            daily limit          
 
         def test_withdraw_w_expired_card_w_wrong_pin(self):
 
-* I remove the ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_withdraw_w_not_expired_card_when_pin_is_right`
+* I remove the ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_withdraw_w_not_expired_card_w_right_pin`
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 3-9, 15-21, 25-31, 35-41
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             self.assertEqual(
                 src.atm.withdraw(
                     card_expired=False,
@@ -3072,13 +3093,13 @@ card expired        PIN                 balance            daily limit          
 
     class TestATM(unittest.TestCase):
 
-* I use the new :ref:`variable<what is a variable?>` to remove repetition from :ref:`test_withdraw_w_not_expired_card_when_pin_is_right`
+* I use the new :ref:`variable<what is a variable?>` to remove repetition from :ref:`test_withdraw_w_not_expired_card_w_right_pin`
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 12, 21-22, 32-33, 43-44
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             self.assertEqual(
                 src.atm.withdraw(
                     card_expired=False,
@@ -3133,7 +3154,7 @@ card expired        PIN                 balance            daily limit          
   .. code-block:: python
     :lineno-start: 10
 
-        def test_withdraw_w_not_expired_card_when_pin_is_right(self):
+        def test_withdraw_w_not_expired_card_w_right_pin(self):
             self.assertEqual(
                 src.atm.withdraw(
                     card_expired=False,
@@ -3272,15 +3293,15 @@ card expired        PIN                 balance            daily limit          
                 DENIED
             )
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
 
-* and in :ref:`test_withdraw_w_not_expired_card_when_pin_is_wrong`
+* and in :ref:`test_withdraw_w_not_expired_card_w_wrong_pin`
 
   .. code-block:: python
     :lineno-start: 133
     :emphasize-lines: 9, 19, 29, 39
 
-        def test_withdraw_w_not_expired_card_when_pin_is_wrong(self):
+        def test_withdraw_w_not_expired_card_w_wrong_pin(self):
             self.assertEqual(
                 src.atm.withdraw(
                     card_expired=False,

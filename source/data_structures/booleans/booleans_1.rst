@@ -469,7 +469,7 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_true` to the :ref:`test_what_is_false method<test_what_is_false>`
 
-  .. TIP:: In `Visual Studio Code`_ I can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+ ↑` on the keyboard to move lines up or  :kbd:`alt/option+ ↓` to move lines down
 
   .. code-block:: python
     :lineno-start: 4
@@ -1083,6 +1083,8 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+ ↑` on the keyboard to move lines up or  :kbd:`alt/option+ ↓` to move lines down
+
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 6
@@ -1512,7 +1514,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
 
-  .. TIP:: In `Visual Studio Code`_ I can use :kbd:`alt` (Windows_/Linux_) or :kbd:`option` (MacOS_) with the up/down arrows on the keyboard to move a line up or down
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+ ↑` on the keyboard to move lines up or  :kbd:`alt/option+ ↓` to move lines down
 
   .. code-block:: python
     :lineno-start: 12
@@ -1987,6 +1989,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     # False is a boolean
 
 * I move the :ref:`assertion<what is an assertion?>` to the :ref:`test_what_is_false method<test_what_is_false>`
+
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+ ↑` on the keyboard to move lines up or  :kbd:`alt/option+ ↓` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
