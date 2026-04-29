@@ -234,6 +234,15 @@ start the project
 
   the terminal_ goes back to the command line
 
+* I install the `Python packages`_ that I wrote in the requirements file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv add --requirement requirements.txt
+
+  the terminal_ shows that it installed the `Python packages`_
+
 * I use tree_ to look at the structure of the project
 
   .. code-block:: python
@@ -251,18 +260,11 @@ start the project
     ├── requirements.txt
     ├── src
     │   └── atm.py
-    └── tests
-        ├── __init__.py
-        └── test_atm.py
+    ├── tests
+    │   ├── __init__.py
+    │   └── test_atm.py
+    └── uv.lock
 
-* I install the `Python packages`_ that I wrote in the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed the `Python packages`_
 
 * I use `pytest-watcher`_ to run the tests automatically
 

@@ -223,6 +223,15 @@ start the project
 
   the terminal_ goes back to the command line
 
+* I install the `Python packages`_ that I wrote in the requirements file_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    uv add --requirement requirements.txt
+
+  the terminal_ shows that it installed the `Python packages`_
+
 * I use tree_ to look at the structure of the project
 
   .. code-block:: python
@@ -240,18 +249,10 @@ start the project
     ├── requirements.txt
     ├── src
     │   └── microwave.py
-    └── tests
-        ├── __init__.py
-        └── test_microwave.py
-
-* I install the `Python packages`_ that I wrote in the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv add --requirement requirements.txt
-
-  the terminal_ shows that it installed the `Python packages`_
+    ├── tests
+    │   ├── __init__.py
+    │   └── test_microwave.py
+    └── uv.lock
 
 * I use `pytest-watcher`_ to run the tests automatically
 
