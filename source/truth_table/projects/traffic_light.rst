@@ -5144,7 +5144,7 @@ This is what happens in the ``show`` :ref:`function<what is a function?>`
 
 * it returns ``'RED', 'WALK'`` if none of the above conditions are met
 
-The :ref:`function<what is a function?>` does not look like the :ref:`truth table` and makes every test pass. There is a problem with the :ref:`if statement<if statements>` for when the timer is :green:`done` AND the current light is NOT :red:`RED`
+The :ref:`function<what is a function?>` does not look like the :ref:`truth table` and makes every test pass. There is also a problem with the :ref:`if statement<if statements>` for when the timer is :green:`done` AND the current light is NOT :red:`RED`
 
 .. code-block:: python
 
