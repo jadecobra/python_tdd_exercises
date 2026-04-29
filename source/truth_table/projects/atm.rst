@@ -24,7 +24,7 @@ PIN                 balance            withdrawal
 ==================  =================  =================
 :green:`right PIN`  :green:`enough`    :green:`CASH`
 :green:`right PIN`  :red:`NOT enough`  :red:`DENIED`
-:red:`wrong PIN`    :green:`yes`       :red:`DENIED`
+:red:`wrong PIN`    :green:`enough`    :red:`DENIED`
 :red:`wrong PIN`    :red:`NOT enough`  :red:`DENIED`
 ==================  =================  =================
 

@@ -3419,7 +3419,6 @@ current light     timer            walk button        show
 
         return green
 
-
   * if the timer is :red:`NOT done` it returns the current light
   * if the timer is :green:`done`
 
@@ -3552,23 +3551,17 @@ I change the `return statement`_ for this case, in the ``show`` :ref:`function<w
 
       return green
 
-the test passes. The ``show`` :ref:`function<what is a function?>`
+the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
 
-* returns the current light if the timer is :red:`NOT done`
-* checks if the current light is :yellow:`YELLOW` (this only happens if the timer is :green:`done`)
+* if the timer is :red:`NOT done` it returns the current light
+* if the timer is :green:`done`
 
-  - returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+  - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
 
-* checks if the current light is :green:`GREEN` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW`)
-
-  - returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-
-* checks if the walk button is :green:`pushed` (this only happens if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`, this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
-
-  - returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
-
-* returns :green:`GREEN` if the timer is :green:`done` AND the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
-* returns :green:`GREEN` if none of the other conditions are met (this includes the case where the timer is :green:`done` AND the current light is :red:`RED`)
+    * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
+    * it returns :green:`GREEN` if the walk button is :red:`NOT pushed`
 
 ----
 
@@ -3642,7 +3635,17 @@ the test passes. The ``show`` :ref:`function<what is a function?>`
 
         return green, 'NO WALK'
 
-  the test passes
+  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+
+  * if the timer is :red:`NOT done` it returns the current light
+  * if the timer is :green:`done`
+
+    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
+
+      * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
+      * it returns ``'GREEN', 'NO WALK'`` if the walk button is :red:`NOT pushed`
 
 * I change the third :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done`, and the walk button is :green:`pushed`, in :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
@@ -3782,7 +3785,21 @@ the test passes. The ``show`` :ref:`function<what is a function?>`
 
         def test_yellow_traffic_light_w_walk_button(self):
 
-  the test passes
+  the test passes. This is what happens in the ``show`` :ref:`function<what is a function?>`
+
+  * if the timer is :red:`NOT done`
+
+    - it returns ``'RED', 'WALK'`` if the current light is :red:`RED`
+    - it returns the current light if the current light is NOT :red:`RED`
+
+  * if the timer is :green:`done`
+
+    - it returns :red:`RED` if the current light is :yellow:`YELLOW`
+    - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
+    - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN`
+
+      * it returns ``'RED', 'WALK'`` if the walk button is :green:`pushed`
+      * it returns ``'GREEN', 'NO WALK'`` if the walk button is :red:`NOT pushed`
 
 * I change the name of the test from :ref:`test_red_traffic_light_w_walk_button` to :ref:`test_red_traffic_light_w_walk`
 
@@ -3801,28 +3818,6 @@ the test passes. The ``show`` :ref:`function<what is a function?>`
                 ),
                 (RED, 'WALK')
             )
-
-This is what happens in the ``show`` :ref:`function<what is a function?>`
-
-* if the timer is :red:`NOT done`
-
-  - it returns ``'RED', 'WALK'`` if the current light is :red:`RED`
-  - it returns the current light if the current light is NOT :red:`RED`
-
-* if the timer is :green:`done`
-
-  - it returns :red:`RED` if the current light is :yellow:`YELLOW`
-  - it returns :yellow:`YELLOW` if the current light is :green:`GREEN`
-  - if the current light is NOT :yellow:`YELLOW` AND the current light is NOT :green:`GREEN` (this includes the case where the current light is :red:`RED`)
-
-    * if the walk button is :green:`pushed`
-
-      - it returns ``'RED', 'WALK'``
-
-    * if the walk button is :red:`NOT pushed`
-
-      - it returns ``'GREEN', 'NO WALK'``
-
 
 ----
 
