@@ -1809,14 +1809,14 @@ PIN                 balance            daily limit           withdrawal
             pin_is_right, enough_balance,
             above_daily_limit=False,
         ):
-        denial = 'DENIED'
+        denied = 'DENIED'
 
         if not pin_is_right:
-            return denial
+            return denied
         if not enough_balance:
-            return denial
+            return denied
         if above_daily_limit:
-            return denial
+            return denied
 
         if pin_is_right and enough_balance:
             if above_daily_limit:
@@ -1837,14 +1837,14 @@ PIN                 balance            daily limit           withdrawal
             pin_is_right, enough_balance,
             above_daily_limit=False,
         ):
-        denial = 'DENIED'
+        denied = 'DENIED'
 
         if not pin_is_right:
-            return denial
+            return denied
         if not enough_balance:
-            return denial
+            return denied
         if above_daily_limit:
-            return denial
+            return denied
 
         return 'CASH'
 
@@ -1866,14 +1866,14 @@ PIN                 balance            daily limit           withdrawal
             pin_is_right, enough_balance,
             above_daily_limit=False,
         ):
-        denial = 'DENIED'
+        denied = 'DENIED'
 
         if not pin_is_right:
-            return denial
+            return denied
         if not enough_balance:
-            return denial
+            return denied
         if above_daily_limit:
-            return denial
+            return denied
 
         return 'CASH'
 
@@ -1922,7 +1922,7 @@ I want to add a condition for when the bank card is expired. The inputs for the 
 * is the amount I want to take, smaller or bigger than what is in the account?
 * will this put the account above or below the daily limit for withdrawals?
 
-the :ref:`truth table` for the ATM will now be
+The :ref:`truth table` for if the card has :green:`expired` AND the :green:`right PIN` is entered, will be
 
 ==================  ==================  =================  ====================  =============
 card expired        PIN                 balance            daily limit           withdrawal
@@ -1931,33 +1931,6 @@ card expired        PIN                 balance            daily limit          
 :green:`expired`    :green:`right PIN`  :green:`enough`    :red:`below limit`    :red:`DENIED`
 :green:`expired`    :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
 :green:`expired`    :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
-==================  ==================  =================  ====================  =============
-
-==================  ==================  =================  ====================  =============
-card expired        PIN                 balance            daily limit           withdrawal
-==================  ==================  =================  ====================  =============
-:green:`expired`    :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
-:green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
-:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
-:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
-==================  ==================  =================  ====================  =============
-
-==================  ==================  =================  ====================  =============
-card expired        PIN                 balance            daily limit           withdrawal
-==================  ==================  =================  ====================  =============
-:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
-:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
-:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
-:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
-==================  ==================  =================  ====================  =============
-
-==================  ==================  =================  ====================  =============
-card expired        PIN                 balance            daily limit           withdrawal
-==================  ==================  =================  ====================  =============
-:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
-:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
-:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
-:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
 ==================  ==================  =================  ====================  =============
 
 ----
@@ -2114,16 +2087,16 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             pin_is_right, enough_balance,
             above_daily_limit=False, card_expired=False,
         ):
-        denial = 'DENIED'
+        denied = 'DENIED'
 
         if card_expired:
-            return denial
+            return denied
         if not pin_is_right:
-            return denial
+            return denied
         if not enough_balance:
-            return denial
+            return denied
         if above_daily_limit:
-            return denial
+            return denied
 
         return 'CASH'
 
@@ -2269,6 +2242,18 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 *********************************************************************************
 test_withdraw_w_not_expired_card_when_pin_is_right
 *********************************************************************************
+
+The :ref:`truth table` for if the card has :red:`NOT expired` AND the :green:`right PIN` is entered, will be
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
+:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :green:`right PIN`  :green:`enough`    :red:`below limit`    :green:`CASH`
+:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :green:`right PIN`  :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
+
 
 * I add a new test for when the card has :red:`NOT expired` and move the case where the ATM gives me ``'CASH'`` to it
 
@@ -2476,6 +2461,17 @@ test_withdraw_w_not_expired_card_when_pin_is_right
 test_withdraw_w_expired_card_w_wrong_pin
 *********************************************************************************
 
+The :ref:`truth table` for if the card has :green:`expired` AND the :red:`wrong PIN` is entered, will be
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
+:green:`expired`    :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
+:green:`expired`    :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
+:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:green:`expired`    :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
+
 * I change the name of :ref:`test_withdraw_w_daily_limit_w_wrong_pin` to :ref:`test_withdraw_w_expired_card_w_wrong_pin`
 
   .. code-block:: python
@@ -2668,6 +2664,17 @@ test_withdraw_w_expired_card_w_wrong_pin
 *********************************************************************************
 test_withdraw_w_not_expired_card_when_pin_is_wrong
 *********************************************************************************
+
+The :ref:`truth table` for if the card has :red:`NOT expired` AND the :red:`wrong PIN` is entered, will be
+
+==================  ==================  =================  ====================  =============
+card expired        PIN                 balance            daily limit           withdrawal
+==================  ==================  =================  ====================  =============
+:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :red:`wrong PIN`    :green:`enough`    :red:`below limit`    :red:`DENIED`
+:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :green:`above limit`  :red:`DENIED`
+:red:`NOT expired`  :red:`wrong PIN`    :red:`NOT enough`  :red:`below limit`    :red:`DENIED`
+==================  ==================  =================  ====================  =============
 
 * I add a new test, with an :ref:`assertion<what is an assertion?>` for when the card is :red:`NOT expired` and the :green:`wrong PIN` is entered, the balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals
 
