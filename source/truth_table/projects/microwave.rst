@@ -319,8 +319,17 @@ start the project
 ----
 
 *********************************************************************************
-test_door_open
+test_open_door
 *********************************************************************************
+
+The :ref:`truth table` for if the door is :green:`open` is
+
+==================  =================  =================
+door                start button       output
+==================  =================  =================
+:green:`open`       :green:`pushed`    :red:`OFF`
+:green:`open`       :red:`NOT pushed`  :red:`OFF`
+==================  =================  =================
 
 ----
 
@@ -330,7 +339,7 @@ test_door_open
 
 ----
 
-I change ``test_failure`` to ``test_door_open``, then add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :green:`pushed`
+I change ``test_failure`` to ``test_open_door``, then add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :green:`pushed`
 
 ==================  =================  =================
 door                start button       output
@@ -344,7 +353,7 @@ door                start button       output
 
   class TestMicrowave(unittest.TestCase):
 
-      def test_door_open(self):
+      def test_open_door(self):
           my_expectation = 'OFF'
 
           reality = src.microwave.microwave(
@@ -438,7 +447,7 @@ because I do not have a definition for ``src`` in this file_
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_microwave.py``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 17
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -480,7 +489,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: None != 'OFF'
 
-  the ``microwave`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the test expects ``'OFF'``
+  the ``microwave`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the test expects :red:`'OFF'`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -514,7 +523,7 @@ because I do not have a definition for ``src`` in this file_
     :lineno-start: 7
     :emphasize-lines: 10-14
 
-        def test_door_open(self):
+        def test_open_door(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -537,8 +546,17 @@ because I do not have a definition for ``src`` in this file_
 ----
 
 *********************************************************************************
-test_door_closed
+test_closed_door
 *********************************************************************************
+
+The :ref:`truth table` for if the door is :red:`closed` is
+
+==================  =================  =================
+door                start button       output
+==================  =================  =================
+:red:`closed`       :green:`pushed`    :green:`HEATING`
+:red:`closed`       :red:`NOT pushed`  :red:`OFF`
+==================  =================  =================
 
 ----
 
@@ -566,7 +584,7 @@ door                start button       output
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed(self):
+        def test_closed_door(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -583,7 +601,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'OFF' != 'HEATING'
 
-because the ``microwave`` :ref:`function<what is a function?>` returns ``'OFF'`` and the test expects ``'HEATING'``
+because the ``microwave`` :ref:`function<what is a function?>` returns :red:`'OFF'` and the test expects :green:`'HEATING'`
 
 ----
 
@@ -597,14 +615,15 @@ I add an :ref:`if statement<if statements>` to ``microwave.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 2-3
+  :emphasize-lines: 2-4
 
   def microwave(door_is_open, start_is_pushed):
-      if not door_is_open and start_is_pushed:
-          return 'HEATING'
+      if door_is_open == False:
+          if start_is_pushed == True:
+              return 'HEATING'
       return 'OFF'
 
-the test passes. Is this :ref:`Converse NonImplication?<test_converse_non_implication>`
+the test passes
 
 ----
 
@@ -614,7 +633,37 @@ the test passes. Is this :ref:`Converse NonImplication?<test_converse_non_implic
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_door_closed` in ``test_microwave.py``
+* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-5
+
+    def microwave(door_is_open, start_is_pushed):
+        # if door_is_open == False:
+        if bool(door_is_open) == False:
+            # if start_is_pushed == True:
+            if bool(start_is_pushed) == True:
+                return 'HEATING'
+        return 'OFF'
+
+  the test is still green
+
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    def microwave(door_is_open, start_is_pushed):
+        if not door_is_open and start_is_pushed:
+            return 'HEATING'
+        return 'OFF'
+
+Is this :ref:`Converse NonImplication?<test_converse_non_implication>`
+
+* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_closed_door` in ``test_microwave.py``
 
   ==================  =================  =================
   door                start button       output
@@ -627,7 +676,7 @@ the test passes. Is this :ref:`Converse NonImplication?<test_converse_non_implic
     :lineno-start: 22
     :emphasize-lines: 9, 11-15
 
-        def test_door_closed(self):
+        def test_closed_door(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -651,7 +700,7 @@ the test passes. Is this :ref:`Converse NonImplication?<test_converse_non_implic
 ----
 
 *********************************************************************************
-test_door_open_and_timer_set
+test_open_door_timer_set
 *********************************************************************************
 
 So far, the :ref:`truth table` for the Microwave is
@@ -699,7 +748,7 @@ door           timer           start button       output
 
 ----
 
-I add a value for ``timer_is_set`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_door_open`, for when the door is :green:`open`, the timer is :green:`set` and the start button is :green:`pushed`
+I add a value for ``timer_is_set`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_open_door`, for when the door is :green:`open`, the timer is :green:`set` and the start button is :green:`pushed`
 
 =============  ==============  =================  ===========
 door           timer           start button       output
@@ -711,7 +760,7 @@ door           timer           start button       output
   :lineno-start: 7
   :emphasize-lines: 6
 
-      def test_door_open(self):
+      def test_open_door(self):
           my_expectation = 'OFF'
 
           reality = src.microwave.microwave(
@@ -754,7 +803,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
   .. code-block:: python
 
     FAILED ...test_microwave_w - TypeError: microwave() missing 1 required positional argument:...
-    FAILED ...test_door_open - TypeError: microwave() missing 1 required positional argument:...
+    FAILED ...test_open_door - TypeError: microwave() missing 1 required positional argument:...
 
   because the other :ref:`assertions<what is an assertion?>` call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments
 
@@ -811,7 +860,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 7
     :emphasize-lines: 13
 
-        def test_door_open(self):
+        def test_open_door(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -832,7 +881,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   the test is still green
 
-* I change the name of the test from :ref:`test_door_open` to :ref:`test_door_open_and_timer_set`
+* I change the name of the test from :ref:`test_open_door` to :ref:`test_open_door_timer_set`
 
   .. code-block:: python
     :lineno-start: 5
@@ -840,13 +889,13 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_door_open_and_timer_set(self):
+        def test_open_door_timer_set(self):
             my_expectation = 'OFF'
 
 ----
 
 *********************************************************************************
-test_door_open_and_timer_not_set
+test_open_door_timer_not_set
 *********************************************************************************
 
 * I add a new test with an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set` and the start button is :green:`pushed`
@@ -868,7 +917,7 @@ test_door_open_and_timer_not_set
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -878,7 +927,7 @@ test_door_open_and_timer_not_set
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed(self):
+        def test_closed_door(self):
 
   still green
 
@@ -895,7 +944,7 @@ test_door_open_and_timer_not_set
     :lineno-start: 24
     :emphasize-lines: 11-16
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -912,17 +961,17 @@ test_door_open_and_timer_not_set
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed(self):
+        def test_closed_door(self):
 
   green
 
 ----
 
 *********************************************************************************
-test_door_closed_and_timer_set
+test_closed_door_timer_set
 *********************************************************************************
 
-* I add a value for the ``timer_is_set`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_door_closed` for the case where the door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pushed`
+* I add a value for the ``timer_is_set`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door` for the case where the door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pushed`
 
   =============  ==============  =================  =============
   door           timer           start button       output
@@ -934,7 +983,7 @@ test_door_closed_and_timer_set
     :lineno-start: 41
     :emphasize-lines: 5
 
-        def test_door_closed(self):
+        def test_closed_door(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -983,7 +1032,7 @@ test_door_closed_and_timer_set
 
   the :ref:`default value<test_functions_w_default_arguments>` for ``timer_is_set`` is :ref:`False<test_what_is_false>`
 
-* I change the name of the test from :ref:`test_door_closed` to :ref:`test_door_closed_and_timer_set`
+* I change the name of the test from :ref:`test_closed_door` to :ref:`test_closed_door_timer_set`
 
   .. code-block:: python
     :lineno-start: 34
@@ -996,7 +1045,7 @@ test_door_closed_and_timer_set
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -1008,7 +1057,7 @@ test_door_closed_and_timer_set
 ----
 
 *********************************************************************************
-test_door_closed_and_timer_not_set
+test_closed_door_timer_not_set
 *********************************************************************************
 
 ----
@@ -1037,7 +1086,7 @@ test_door_closed_and_timer_not_set
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1100,7 +1149,7 @@ the test passes. The Microwave returns
     :lineno-start: 58
     :emphasize-lines: 11-16
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1155,13 +1204,13 @@ the test passes. The Microwave returns
 
   still green. The Microwave returns
 
-  - ``'HEATING'`` if the door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pushed`
-  - ``'OFF'`` in every other case
+  - :green:`'HEATING'` if the door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pushed`
+  - :red:`'OFF'` in every other case
 
 ----
 
 *********************************************************************************
-test_door_open_timer_set_overheating
+test_open_door_timer_set_w_overheating
 *********************************************************************************
 
 the :ref:`truth table` for the Microwave is
@@ -1237,9 +1286,9 @@ door           timer           start button       too hot             output
 
 ----
 
-test_door_open_timer_set_and_overheating
+test_open_door_timer_set_and_w_overheating
 
-I add a value for ``overheating`` to the :ref:`assertion<what is an assertion?>` for the case where the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :green:`too hot`, to :ref:`test_door_open_and_timer_set` in ``test_microwave.py``
+I add a value for ``overheating`` to the :ref:`assertion<what is an assertion?>` for the case where the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :green:`too hot`, to :ref:`test_open_door_timer_set` in ``test_microwave.py``
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
@@ -1251,7 +1300,7 @@ door           timer           start button       too hot             output
   :lineno-start: 7
   :emphasize-lines: 8
 
-        def test_door_open_and_timer_set(self):
+        def test_open_door_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1332,7 +1381,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 7
     :emphasize-lines: 12-18
 
-        def test_door_open_and_timer_set(self):
+        def test_open_door_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1374,7 +1423,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 7
     :emphasize-lines: 24
 
-        def test_door_open_and_timer_set(self):
+        def test_open_door_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1401,7 +1450,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
 
   still green
 
@@ -1420,7 +1469,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
     :lineno-start: 7
     :emphasize-lines: 28-33
 
-        def test_door_open_and_timer_set(self):
+        def test_open_door_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1454,11 +1503,11 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
                 overheating=False,
             )
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
 
   green
 
-* I change the name of the test from :ref:`test_door_open_and_timer_set` to :ref:`test_door_open_timer_set_overheating`
+* I change the name of the test from :ref:`test_open_door_timer_set` to :ref:`test_open_door_timer_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1466,10 +1515,10 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_door_open_timer_set_overheating(self):
+        def test_open_door_timer_set_w_overheating(self):
             my_expectation = 'OFF'
 
-* I add a :ref:`global variable<what is a variable?>` for ``'OFF'``. I want to use it to remove repetition from the tests
+* I add a :ref:`global variable<what is a variable?>` for :red:`'OFF'`. I want to use it to remove repetition from the tests
 
   .. code-block:: python
     :linenos:
@@ -1484,15 +1533,15 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
     class TestMicrowave(unittest.TestCase):
 
-        def test_door_open_timer_set_overheating(self):
+        def test_open_door_timer_set_w_overheating(self):
 
-* I use the :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_door_open_timer_set_overheating`
+* I use the :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_open_door_timer_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 2, 10-11, 19-20, 28-29, 37-38
 
-        def test_door_open_timer_set_overheating(self):
+        def test_open_door_timer_set_w_overheating(self):
             # my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1531,7 +1580,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
 
   still green
 
@@ -1540,7 +1589,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
   .. code-block:: python
     :lineno-start: 10
 
-        def test_door_open_timer_set_overheating(self):
+        def test_open_door_timer_set_w_overheating(self):
             reality = src.microwave.microwave(
                 door_is_open=True,
                 timer_is_set=True,
@@ -1573,15 +1622,15 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
 
 ----
 
 *********************************************************************************
-test_door_open_timer_not_set_overheating
+test_open_door_timer_not_set_w_overheating
 *********************************************************************************
 
-* I add a value for the ``overheating`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_door_open_and_timer_not_set` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the microwave temperature is :green:`too hot`
+* I add a value for the ``overheating`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_timer_not_set` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the microwave temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -1593,7 +1642,7 @@ test_door_open_timer_not_set_overheating
     :lineno-start: 43
     :emphasize-lines: 8
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1619,7 +1668,7 @@ test_door_open_timer_not_set_overheating
     :lineno-start: 43
     :emphasize-lines: 12-18
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1645,7 +1694,7 @@ test_door_open_timer_not_set_overheating
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
 
   the test is still green
 
@@ -1663,7 +1712,7 @@ test_door_open_timer_not_set_overheating
     :lineno-start: 43
     :emphasize-lines: 20-26
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1690,7 +1739,7 @@ test_door_open_timer_not_set_overheating
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
 
   still green
 
@@ -1709,7 +1758,7 @@ test_door_open_timer_not_set_overheating
     :lineno-start: 43
     :emphasize-lines: 28-34
 
-        def test_door_open_and_timer_not_set(self):
+        def test_open_door_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1744,11 +1793,11 @@ test_door_open_timer_not_set_overheating
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
 
   green
 
-* I change the name of the test from :ref:`test_door_open_and_timer_not_set` to :ref:`test_door_open_timer_not_set_overheating`
+* I change the name of the test from :ref:`test_open_door_timer_not_set` to :ref:`test_open_door_timer_not_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 35
@@ -1762,16 +1811,16 @@ test_door_open_timer_not_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_open_timer_not_set_overheating(self):
+        def test_open_door_timer_not_set_w_overheating(self):
             my_expectation = 'OFF'
 
-* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_door_open_timer_not_set_overheating`
+* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_open_door_timer_not_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 2, 10-11, 19-20, 28-29, 37-38
 
-        def test_door_open_timer_not_set_overheating(self):
+        def test_open_door_timer_not_set_w_overheating(self):
             # my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -1817,7 +1866,7 @@ test_door_open_timer_not_set_overheating
   .. code-block:: python
     :lineno-start: 43
 
-        def test_door_open_timer_not_set_overheating(self):
+        def test_open_door_timer_not_set_w_overheating(self):
             reality = src.microwave.microwave(
                 door_is_open=True,
                 timer_is_set=False,
@@ -1850,21 +1899,21 @@ test_door_open_timer_not_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
 
 ----
 
 *********************************************************************************
-test_door_closed_timer_set_overheating
+test_closed_door_timer_set_w_overheating
 *********************************************************************************
 
-* I use the ``OFF`` :ref:`global variable<what is a variable?>` for ``my_expectation`` when the value is ``'OFF'`` in :ref:`test_door_closed_and_timer_set`
+* I use the ``OFF`` :ref:`global variable<what is a variable?>` for ``my_expectation`` when the value is :red:`'OFF'` in :ref:`test_closed_door_timer_set`
 
   .. code-block:: python
     :lineno-start: 76
     :emphasize-lines: 10, 16-17
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -1882,7 +1931,7 @@ test_door_closed_timer_set_overheating
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
 
   the test is still green
 
@@ -1891,7 +1940,7 @@ test_door_closed_timer_set_overheating
   .. code-block:: python
     :lineno-start: 76
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -1906,7 +1955,7 @@ test_door_closed_timer_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
 
 * I add a value for the ``overheating`` and ``timer_is_set`` parameters in the second :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed`, and the microwave temperature is :green:`too hot`
 
@@ -1920,7 +1969,7 @@ test_door_closed_timer_set_overheating
     :lineno-start: 76
     :emphasize-lines: 12, 14
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -1937,7 +1986,7 @@ test_door_closed_timer_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
 
   still green
 
@@ -1954,7 +2003,7 @@ test_door_closed_timer_set_overheating
     :lineno-start: 76
     :emphasize-lines: 7
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -1972,7 +2021,7 @@ test_door_closed_timer_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
 
   green
 
@@ -1990,7 +2039,7 @@ test_door_closed_timer_set_overheating
     :lineno-start: 76
     :emphasize-lines: 19-25
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -2016,7 +2065,7 @@ test_door_closed_timer_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
 
   still green
 
@@ -2035,7 +2084,7 @@ test_door_closed_timer_set_overheating
     :lineno-start: 76
     :emphasize-lines: 27-33
 
-        def test_door_closed_and_timer_set(self):
+        def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
             reality = src.microwave.microwave(
                 door_is_open=False,
@@ -2069,11 +2118,11 @@ test_door_closed_timer_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
 
   the test is still green
 
-* I change the name of the test from :ref:`test_door_closed_and_timer_set` to :ref:`test_door_closed_timer_set_overheating`
+* I change the name of the test from :ref:`test_closed_door_timer_set` to :ref:`test_closed_door_timer_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 68
@@ -2087,22 +2136,22 @@ test_door_closed_timer_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_timer_set_overheating(self):
+        def test_closed_door_timer_set_w_overheating(self):
             my_expectation = 'HEATING'
 
 ----
 
 *********************************************************************************
-test_door_closed_timer_not_set_overheating
+test_closed_door_timer_not_set_w_overheating
 *********************************************************************************
 
-* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_door_closed_and_timer_not_set`
+* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_closed_door_timer_not_set`
 
   .. code-block:: python
     :lineno-start: 110
     :emphasize-lines: 2, 9-10, 17-18
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
             # my_expectation = 'OFF'
 
             reality = src.microwave.microwave(
@@ -2131,7 +2180,7 @@ test_door_closed_timer_not_set_overheating
   .. code-block:: python
     :lineno-start: 110
 
-        def test_door_closed_and_timer_not_set(self):
+        def test_closed_door_timer_not_set(self):
             reality = src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=False,
@@ -2149,7 +2198,7 @@ test_door_closed_timer_not_set_overheating
 
     # Exceptions seen
 
-* I change the name of the test from :ref:`test_door_closed_and_timer_not_set` to :ref:`test_door_closed_timer_not_set_overheating`
+* I change the name of the test from :ref:`test_closed_door_timer_not_set` to :ref:`test_closed_door_timer_not_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 102
@@ -2163,7 +2212,7 @@ test_door_closed_timer_not_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-        def test_door_closed_timer_not_set_overheating(self):
+        def test_closed_door_timer_not_set_w_overheating(self):
             reality = src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=False,
@@ -2171,7 +2220,7 @@ test_door_closed_timer_not_set_overheating
             )
             self.assertEqual(reality, OFF)
 
-* I add a value for the ``overheating`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_door_closed_timer_not_set_overheating`, for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the microwave temperature is :green:`too hot`
+* I add a value for the ``overheating`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door_timer_not_set_w_overheating`, for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the microwave temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2183,7 +2232,7 @@ test_door_closed_timer_not_set_overheating
     :lineno-start: 110
     :emphasize-lines: 6
 
-        def test_door_closed_timer_not_set_overheating(self):
+        def test_closed_door_timer_not_set_w_overheating(self):
             reality = src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=False,
@@ -2214,7 +2263,7 @@ test_door_closed_timer_not_set_overheating
     :lineno-start: 110
     :emphasize-lines: 10-16
 
-        def test_door_closed_timer_not_set_overheating(self):
+        def test_closed_door_timer_not_set_w_overheating(self):
             reality = src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=False,
@@ -2257,7 +2306,7 @@ test_door_closed_timer_not_set_overheating
     :lineno-start: 110
     :emphasize-lines: 18-24
 
-        def test_door_closed_timer_not_set_overheating(self):
+        def test_closed_door_timer_not_set_w_overheating(self):
             reality = src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=False,
@@ -2302,7 +2351,7 @@ test_door_closed_timer_not_set_overheating
     :lineno-start: 110
     :emphasize-lines: 26-32
 
-        def test_door_closed_timer_not_set_overheating(self):
+        def test_closed_door_timer_not_set_w_overheating(self):
             reality = src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=False,
@@ -2346,7 +2395,7 @@ test_door_closed_timer_not_set_overheating
     :lineno-start: 110
     :emphasize-lines:
 
-        def test_door_closed_timer_not_set_overheating(self):
+        def test_closed_door_timer_not_set_w_overheating(self):
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
@@ -2392,12 +2441,12 @@ test_door_closed_timer_not_set_overheating
 
   green
 
-* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_door_closed_timer_set_overheating`
+* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_closed_door_timer_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 76
 
-        def test_door_closed_timer_set_overheating(self):
+        def test_closed_door_timer_set_w_overheating(self):
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
@@ -2438,16 +2487,16 @@ test_door_closed_timer_not_set_overheating
                 OFF
             )
 
-        def test_door_closed_timer_not_set_overheating(self):
+        def test_closed_door_timer_not_set_w_overheating(self):
 
   still green
 
-* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_door_open_timer_not_set_overheating`
+* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_open_door_timer_not_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 43
 
-        def test_door_open_timer_not_set_overheating(self):
+        def test_open_door_timer_not_set_w_overheating(self):
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
@@ -2488,16 +2537,16 @@ test_door_closed_timer_not_set_overheating
                 OFF
             )
 
-        def test_door_closed_timer_set_overheating(self):
+        def test_closed_door_timer_set_w_overheating(self):
 
   the tests are still green
 
-* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_door_open_timer_set_overheating`
+* I remove the ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_open_door_timer_set_w_overheating`
 
   .. code-block:: python
     :lineno-start: 10
 
-        def test_door_open_timer_set_overheating(self):
+        def test_open_door_timer_set_w_overheating(self):
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=True,
@@ -2538,7 +2587,7 @@ test_door_closed_timer_not_set_overheating
                 OFF
             )
 
-        def test_door_open_timer_not_set_overheating(self):
+        def test_open_door_timer_not_set_w_overheating(self):
 
   all the tests are green
 
