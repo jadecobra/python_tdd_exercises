@@ -584,7 +584,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
+  :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_arguments>`
 
 * I add a default value for ``year_of_birth``
 

@@ -1292,7 +1292,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`I cannot put a parameter that does NOT have a default value after a parameter that has a default value<test_functions_w_positional_and_keyword_arguments>`
+  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_arguments>`
 
 * I add a :ref:`default value<test_functions_w_default_arguments>` for the ``overheating`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
 
