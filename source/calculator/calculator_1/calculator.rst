@@ -160,7 +160,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need, in the terminal_
+* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -217,7 +217,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is my friend, and shows
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -240,8 +240,8 @@ start the project
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
-    * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
-    * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
+    * if your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors then try to run ``uv run pytest-watcher . --now`` again
 

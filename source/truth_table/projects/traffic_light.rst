@@ -194,7 +194,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need, in the terminal_
+* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -274,7 +274,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is my friend, and shows
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -297,8 +297,8 @@ start the project
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
-    * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
-    * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
+    * if your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors then try to run ``uv run pytest-watcher . --now`` again
 
@@ -483,7 +483,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: show() got an unexpected keyword argument 'timer_done'
 
-  because I called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition now only allows calls with 1 input
+  because I called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
 
 * I add ``timer_done`` to the :ref:`function signature<what is a function?>`
 
@@ -618,7 +618,7 @@ because I do not have a definition for ``src`` in this file_
 
   green
 
-* I remove bool_
+* I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
     :linenos:
@@ -633,7 +633,7 @@ because I do not have a definition for ``src`` in this file_
             return 'RED'
         return 'GREEN'
 
-  still green because ``if not something`` is the same as ``if bool(something) == False``
+  still green because ``if not something`` is the same as ``if not bool(something) == True`` which is the same as ``if bool(something) == False``
 
 * I remove the commented lines
 
@@ -1377,7 +1377,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   still green
 
-* I remove bool_
+* I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
     :lineno-start: 16

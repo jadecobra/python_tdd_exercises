@@ -190,7 +190,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need, in the terminal_
+* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -270,7 +270,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is my friend, and shows
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -293,8 +293,8 @@ start the project
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
-    * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
-    * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
+    * if your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors then try to run ``uv run pytest-watcher . --now`` again
 
@@ -371,6 +371,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   NameError: name 'src' is not defined
 
+because I do not have a definition for ``src`` in this file_
+
 ----
 
 =================================================================================
@@ -408,6 +410,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     AttributeError: module 'src.microwave' has no attribute 'microwave'
 
+  because ``microwave.py`` in the ``src`` folder_ does not have anything named ``microwave`` in it
+
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
@@ -437,6 +441,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     TypeError: microwave() got an unexpected keyword argument 'door_is_open'
 
+  because I called the ``microwave`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
+
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_microwave.py``
 
   .. code-block:: python
@@ -465,6 +471,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     TypeError: microwave() got an unexpected keyword argument 'start_is_pushed'
 
+  because I called the ``microwave`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
+
 * I add ``start_is_pushed`` to the :ref:`function signature<what is a function?>`
 
   .. code-block:: python
@@ -479,6 +487,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
   .. code-block:: python
 
     AssertionError: None != 'OFF'
+
+  the ``microwave`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the test expects ``'OFF'``
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -580,6 +590,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 .. code-block:: python
 
   AssertionError: 'OFF' != 'HEATING'
+
+because the ``microwave`` :ref:`function<what is a function?>` returns ``'OFF'`` and the test expects ``'HEATING'``
 
 ----
 

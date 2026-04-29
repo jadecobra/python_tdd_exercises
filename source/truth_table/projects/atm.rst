@@ -192,7 +192,7 @@ start the project
         def test_failure(self):
             self.assertFalse(True)
 
-* I make a requirements file_ for the `Python packages`_ I need, in the terminal_
+* I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -272,7 +272,7 @@ start the project
 
     uv run pytest-watcher . --now
 
-  the terminal_ is my friend, and shows
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 8, 10
@@ -295,8 +295,8 @@ start the project
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
-    * does your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``?
-    * did you run ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_?
+    * if your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors then try to run ``uv run pytest-watcher . --now`` again
 
@@ -372,6 +372,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   NameError: name 'src' is not defined
 
+because I do not have a definition for ``src`` in this file_
+
 ----
 
 =================================================================================
@@ -409,6 +411,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     AttributeError: module 'src.atm' has no attribute 'withdraw'
 
+  because ``atm.py`` in the ``src`` folder_ does not have anything named ``withdraw`` in it
+
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
@@ -438,6 +442,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     TypeError: withdraw() got an unexpected keyword argument 'pin_is_right'
 
+  because I called the ``withdraw`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
+
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_atm.py``
 
   .. code-block:: python
@@ -466,6 +472,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     TypeError: withdraw() got an unexpected keyword argument 'enough_balance'
 
+  because I called the ``withdraw`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
+
 * I add ``enough_balance`` to the :ref:`function signature<what is a function?>`
 
   .. code-block:: python
@@ -481,6 +489,8 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     AssertionError: None != 'CASH'
 
+  the ``withdraw`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the test expects ``'CASH'``
+
 * I change the `return statement`_ to give me ``'CASH'``
 
   .. code-block:: python
@@ -490,7 +500,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     def withdraw(pin_is_right, enough_balance):
         return 'CASH'
 
-  the test passes, this ATM works. The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`CASH`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
+  the test passes, this ATM works. The ``withdraw`` :ref:`function<what is a function?>` always returns :green:`CASH`, it does not care about the inputs. Is this :ref:`Tautology<test_tautology>` or :green:`CASH` that never ends?
 
 ----
 
@@ -537,7 +547,118 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     AssertionError: 'CASH' != 'DENIED'
 
+  because the ``withdraw`` :ref:`function<what is a function?>` returns ``'CASH'`` and the test expects ``'DENIED'``
+
 * I add an :ref:`if statement<if statements>` to ``atm.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-4
+
+    def withdraw(pin_is_right, enough_balance):
+        if pin_is_right == True:
+            if enough_balance == False:
+                return 'DENIED'
+        return 'CASH'
+
+  the test passes
+
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-5
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == True:
+        if bool(pin_is_right) == True:
+            # if enough_balance == False:
+            if bool(enough_balance) == False:
+                return 'DENIED'
+        return 'CASH'
+
+  the test is still green
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == True:
+        if bool(pin_is_right) == True:
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            if not bool(enough_balance) == True:
+                return 'DENIED'
+        return 'CASH'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4, 7-8
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == True:
+        # if bool(pin_is_right) == True:
+        if bool(pin_is_right):
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            # if not bool(enough_balance) == True:
+            if not bool(enough_balance):
+                return 'DENIED'
+        return 'CASH'
+
+  green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5, 9-10
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == True:
+        # if bool(pin_is_right) == True:
+        # if bool(pin_is_right):
+        if pin_is_right:
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            # if not bool(enough_balance) == True:
+            # if not bool(enough_balance):
+            if not enough_balance:
+                return 'DENIED'
+        return 'CASH'
+
+  still green
+
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5, 10-12
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == True:
+        # if bool(pin_is_right) == True:
+        # if bool(pin_is_right):
+        # if pin_is_right:
+            # if enough_balance == False:
+            # if bool(enough_balance) == False:
+            # if not bool(enough_balance) == True:
+            # if not bool(enough_balance):
+            # if not enough_balance:
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  the test is still green
+
+* I remove the commented lines
 
   .. code-block:: python
     :linenos:
@@ -548,7 +669,17 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
             return 'DENIED'
         return 'CASH'
 
-  the test passes
+  still green because
+
+  - ``if something`` is the same as ``if bool(something) == True``
+  - ``if not something`` is the same as ``if not bool(something) == True`` which is the same as ``if bool(something) == False``
+
+The ``withdraw`` :ref:`function<what is a function?>`
+
+* returns ``'DENIED'`` if the :green:`right PIN` is entered AND the balance is :red:`NOT enough`
+* returns ``'CASH'`` if the first condition is NOT met
+
+What :ref:`binary operation<truth table: Binary Operations>` is the ``withdraw`` :ref:`function<what is a function?>` using?
 
 ----
 
@@ -608,6 +739,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'CASH' != 'DENIED'
 
+because the ``withdraw`` :ref:`function<what is a function?>` returned :green:`CASH` and the test expects :red:`DENIED`. Why is this ATM giving :green:`CASH` when the :red:`wrong PIN` is entered?
+
 ----
 
 =================================================================================
@@ -620,16 +753,17 @@ I add an :ref:`if statement<if statements>` for this case to ``atm.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 2-3
+  :emphasize-lines: 2-4
 
   def withdraw(pin_is_right, enough_balance):
-      if not pin_is_right and enough_balance:
-          return 'DENIED'
+      if pin_is_right == False:
+          if enough_balance == True:
+              return 'DENIED'
       if pin_is_right and not enough_balance:
           return 'DENIED'
       return 'CASH'
 
-the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction>` or :ref:`Logical Equality<test_logical_equality>`
+the test passes
 
 ----
 
@@ -638,6 +772,76 @@ the test passes. Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction
 =================================================================================
 
 ----
+
+* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-5
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        if bool(pin_is_right) == False:
+            # if enough_balance == True:
+            if bool(enough_balance) == True:
+                return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  the test is still green
+
+* I use :ref:`Logical Negation(NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        # if bool(pin_is_right) == False:
+        if not bool(pin_is_right) == True:
+            # if enough_balance == True:
+            if bool(enough_balance) == True:
+                return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines:
+
+    def withdraw(pin_is_right, enough_balance):
+        # if pin_is_right == False:
+        # if bool(pin_is_right) == False:
+        # if not bool(pin_is_right) == True:
+        if not bool(pin_is_right):
+            # if enough_balance == True:
+            # if bool(enough_balance) == True:
+            if bool(enough_balance):
+                return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  .. code-block:: python
+    :linenos:
+
+
+    def withdraw(pin_is_right, enough_balance):
+        if not pin_is_right and enough_balance:
+            return 'DENIED'
+        if pin_is_right and not enough_balance:
+            return 'DENIED'
+        return 'CASH'
+
+  Is this :ref:`Exclusive Disjunction?<test_exclusive_disjunction>` or :ref:`Logical Equality<test_logical_equality>`
+
 
 * I add a :ref:`conditional expression<conditional expressions>` to test if it is :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
 

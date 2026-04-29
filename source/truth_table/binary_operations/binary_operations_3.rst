@@ -385,7 +385,7 @@ first input     second input   return
 
   still green
 
-* I remove bool_
+* I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -896,7 +896,7 @@ first input     second input   return
 
   still green
 
-* I remove bool_
+* I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
     :lineno-start: 61
@@ -1574,7 +1574,7 @@ first input     second input   return
 
   the test is still green
 
-* I remove bool_
+* I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
     :lineno-start: 69
