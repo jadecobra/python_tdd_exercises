@@ -3349,7 +3349,29 @@ card expired        PIN                 balance            daily limit          
 
   all tests are still green
 
-* The ``withdraw`` :ref:`function<what is a function?>` could also be written using :ref:`Logical Conjunction (AND)<test_logical_conjunction>` for the one case where the ATM gives me :green:`'CASH'`, in ``atm.py``
+* This is what the ``withdraw`` :ref:`function<what is a function?>` looks like now
+
+  .. code-block:: python
+    :linenos:
+
+    def withdraw(
+            pin_is_right, enough_balance,
+            above_daily_limit=False, card_expired=False,
+        ):
+        denied = 'DENIED'
+
+        if card_expired:
+            return denied
+        if not pin_is_right:
+            return denied
+        if not enough_balance:
+            return denied
+        if above_daily_limit:
+            return denied
+
+        return 'CASH'
+
+  it could also be written using :ref:`Logical Conjunction (AND)<test_logical_conjunction>` for the one case where the ATM gives me :green:`'CASH'`, in ``atm.py``
 
   .. code-block:: python
     :linenos:
