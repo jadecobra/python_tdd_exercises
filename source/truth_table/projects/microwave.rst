@@ -1473,8 +1473,6 @@ door           timer           start button       too hot             output
 
 ----
 
-test_open_door_timer_set_and_w_overheating
-
 I add a value for ``overheating`` to the :ref:`assertion<what is an assertion?>` for the case where the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :green:`too hot`, to :ref:`test_open_door_timer_set` in ``test_microwave.py``
 
 =============  ==============  =================  ==================  ================
@@ -1504,6 +1502,8 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: microwave() got an unexpected keyword argument 'overheating'
 
+because the test called the ``microwave`` :ref:`function<what is a function?>` with 4 keyword arguments (``door_is_open``, ``timer_is_set``, ``start_is_pushed`` and ``overheating``) and the definition only allows calls with 2 required arguments (``door_is_open`` and ``start_is_pushed``) and 1 optional argument (``timer_is_set``)
+
 ----
 
 =================================================================================
@@ -1512,7 +1512,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
 ----
 
-* I add ``overheating`` to the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
+* I add ``overheating`` to the ``microwave`` :ref:`function signature<what is a function?>` in ``microwave.py``
 
   .. code-block:: python
     :linenos:
@@ -1654,7 +1654,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 28-33
+    :emphasize-lines: 28-34
 
         def test_open_door_timer_set(self):
             my_expectation = 'OFF'
@@ -1679,7 +1679,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
                 door_is_open=True,
                 timer_is_set=True,
                 start_is_pushed=False,
-                overheating=True
+                overheating=True,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1689,6 +1689,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
                 start_is_pushed=False,
                 overheating=False,
             )
+            self.assertEqual(reality, my_expectation)
 
         def test_open_door_timer_not_set(self):
 
@@ -1753,7 +1754,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
                 door_is_open=True,
                 timer_is_set=True,
                 start_is_pushed=False,
-                overheating=True
+                overheating=True,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
@@ -1767,9 +1768,88 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-        def test_open_door_timer_not_set(self):
-
   still green
+
+* I remove the ``reality`` :ref:`variables<what is a variable?>`, I do not need them because they are called only once in every :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 11-20, 29-38, 46-56, 65-74
+
+        def test_open_door_timer_set_w_overheating(self):
+            # my_expectation = 'OFF'
+
+            reality = src.microwave.microwave(
+                door_is_open=True,
+                timer_is_set=True,
+                start_is_pushed=True,
+                overheating=True,
+            )
+            # self.assertEqual(reality, my_expectation)
+            # self.assertEqual(reality, OFF)
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    overheating=True,
+                ),
+                OFF
+            )
+
+            reality = src.microwave.microwave(
+                door_is_open=True,
+                timer_is_set=True,
+                start_is_pushed=True,
+                overheating=False,
+            )
+            # self.assertEqual(reality, my_expectation)
+            # self.assertEqual(reality, OFF)
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    overheating=False,
+                ),
+                OFF
+            )
+
+            reality = src.microwave.microwave(
+                door_is_open=True,
+                timer_is_set=True,
+                start_is_pushed=False,
+                overheating=True,
+            )
+            # self.assertEqual(reality, my_expectation)
+            # self.assertEqual(reality, OFF)
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=False,
+                    overheating=True,
+                ),
+                OFF
+            )
+
+            reality = src.microwave.microwave(
+                door_is_open=True,
+                timer_is_set=True,
+                start_is_pushed=False,
+                overheating=False,
+            )
+            # self.assertEqual(reality, my_expectation)
+            # self.assertEqual(reality, OFF)
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=True,
+                    timer_is_set=True,
+                    start_is_pushed=False,
+                    overheating=False,
+                ),
+                OFF
+            )
 
 * I remove the commented lines
 
@@ -1797,7 +1877,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
                 door_is_open=True,
                 timer_is_set=True,
                 start_is_pushed=False,
-                overheating=True
+                overheating=True,
             )
             self.assertEqual(reality, OFF)
 
