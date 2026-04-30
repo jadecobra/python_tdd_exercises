@@ -351,7 +351,7 @@ PIN                 balance            withdrawal
 
 ----
 
-I change ``test_failure`` to ``test_withdraw_w_right_pin``, then add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered and the amount in the account is :green:`enough`
+I change ``test_failure`` to :ref:`test_withdraw_w_right_pin`, then add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered and the amount in the account is :green:`enough`
 
 ==================  =================  =================
 PIN                 balance            withdrawal
@@ -961,7 +961,7 @@ the test passes
 
   the test is still green, and this is also confusing
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case - when the :red:`wrong PIN` is entered and the account balance is :red:`NOT enough`, to ``test_withdraw_w_wrong_pin`` in ``test_atm.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case - when the :red:`wrong PIN` is entered and the account balance is :red:`NOT enough`, to :ref:`test_withdraw_w_wrong_pin` in ``test_atm.py``
 
   ==================  =================  =================
   PIN                 balance            withdrawal
@@ -1226,7 +1226,7 @@ PIN                 balance            daily limit           withdrawal
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` for the first case where the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, to ``test_withdraw_w_right_pin`` in ``test_atm.py``
+I add an :ref:`assertion<what is an assertion?>` for the first case where the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :green:`above limit` for daily withdrawals, to :ref:`test_withdraw_w_right_pin` in ``test_atm.py``
 
 ==================  =================  ====================  ==================
 PIN                 balance            daily limit           withdrawal
@@ -1434,7 +1434,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
 ----
 
-* I do not need to add anything to the first :ref:`assertion<what is an assertion?>` in ``test_withdraw_w_right_pin`` because the :ref:`default value<test_functions_w_default_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
+* I do not need to add anything to the first :ref:`assertion<what is an assertion?>` in :ref:`test_withdraw_w_right_pin` because the :ref:`default value<test_functions_w_default_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
 
   ==================  =================  ====================  ==================
   PIN                 balance            daily limit           withdrawal
@@ -2039,7 +2039,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 3 argum
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals, to ``test_withdraw_w_right_pin`` in ``test_atm.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the card has :green:`expired`, the :green:`right PIN` is entered, the account balance is :green:`enough` and the account is :red:`below limit` for daily withdrawals, to :ref:`test_withdraw_w_right_pin` in ``test_atm.py``
 
   ==================  ==================  =================  ====================  =============
   card expired        PIN                 balance            daily limit           withdrawal

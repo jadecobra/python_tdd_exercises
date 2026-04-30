@@ -623,6 +623,7 @@ I add an :ref:`if statement<if statements>` to ``microwave.py``
       if door_is_open == False:
           if start_is_pushed == True:
               return 'HEATING'
+
       return 'OFF'
 
 the test passes
@@ -647,6 +648,7 @@ the test passes
             # if start_is_pushed == True:
             if bool(start_is_pushed) == True:
                 return 'HEATING'
+
         return 'OFF'
 
   the test is still green
@@ -683,6 +685,7 @@ the test passes
             # if bool(start_is_pushed) == True:
             if bool(start_is_pushed):
                 return 'HEATING'
+
         return 'OFF'
 
   green
@@ -729,6 +732,7 @@ the test passes
             # if start_is_pushed:
         if not door_is_open and start_is_pushed:
             return 'HEATING'
+
         return 'OFF'
 
   the test is still green
@@ -741,6 +745,7 @@ the test passes
     def microwave(door_is_open, start_is_pushed):
         if not door_is_open and start_is_pushed:
             return 'HEATING'
+
         return 'OFF'
 
   This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
@@ -874,6 +879,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
         ):
         if not door_is_open and start_is_pushed:
             return 'HEATING'
+
         return 'OFF'
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -1058,7 +1064,7 @@ door           timer           start button       output
 test_closed_door_timer_set
 *********************************************************************************
 
-The :ref:`truth table` for when the door is :red:`closed` and is the timer is :green:`set`
+The :ref:`truth table` for when the door is :red:`closed` and the timer is :green:`set` is
 
 =============  ==============  =================  ================
 door           timer           start button       output
@@ -1098,7 +1104,7 @@ door           timer           start button       output
 
   the test is still green
 
-* I do not need to add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pushed`
+* I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pushed`
 
   =============  ==============  =================  =============
   door           timer           start button       output
@@ -1107,26 +1113,32 @@ door           timer           start button       output
   :red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
   =============  ==============  =================  =============
 
-  because
-
   .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 14
 
-    src.microwave.microwave(
-        door_is_open=False,
-        start_is_pushed=False,
-    )
+        def test_closed_door(self):
+            my_expectation = 'HEATING'
+            reality = src.microwave.microwave(
+                door_is_open=False,
+                timer_is_set=True,
+                start_is_pushed=True,
+            )
+            self.assertEqual(reality, my_expectation)
 
-  is the same as
+            my_expectation = 'OFF'
 
-  .. code-block:: python
+            reality = src.microwave.microwave(
+                door_is_open=False,
+                timer_is_set=True,
+                start_is_pushed=False,
+            )
+            self.assertEqual(reality, my_expectation)
 
-    src.microwave.microwave(
-        door_is_open=False,
-        start_is_pushed=False,
-        timer_is_set=False,
-    )
 
-  the :ref:`default value<test_functions_w_default_arguments>` for ``timer_is_set`` is :ref:`False<test_what_is_false>`
+    # Exceptions seen
+
+  still green
 
 * I change the name of the test from :ref:`test_closed_door` to :ref:`test_closed_door_timer_set`
 
@@ -1182,10 +1194,11 @@ door           timer           start button       output
 
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 7-8, 10-15
+    :emphasize-lines: 8-9, 11-16
 
             reality = src.microwave.microwave(
                 door_is_open=False,
+                timer_is_set=True,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -1231,12 +1244,13 @@ I add a :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<w
       ):
       if timer_is_set == False:
           return 'OFF'
+
       if not door_is_open and start_is_pushed:
           return 'HEATING'
+
       return 'OFF'
 
 the test passes
-
 
 ----
 
@@ -1259,8 +1273,10 @@ the test passes
         # if timer_is_set == False:
         if bool(timer_is_set) == False:
             return 'OFF'
+
         if not door_is_open and start_is_pushed:
             return 'HEATING'
+
         return 'OFF'
 
   the test is still green
@@ -1279,8 +1295,10 @@ the test passes
         # if bool(timer_is_set) == False:
         if not bool(timer_is_set) == True:
             return 'OFF'
+
         if not door_is_open and start_is_pushed:
             return 'HEATING'
+
         return 'OFF'
 
   still green
@@ -1300,8 +1318,10 @@ the test passes
         # if not bool(timer_is_set) == True:
         if not bool(timer_is_set):
             return 'OFF'
+
         if not door_is_open and start_is_pushed:
             return 'HEATING'
+
         return 'OFF'
 
   green
@@ -1339,8 +1359,10 @@ the test passes
         ):
         if not timer_is_set:
             return 'OFF'
+
         if not door_is_open and start_is_pushed:
             return 'HEATING'
+
         return 'OFF'
 
   This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
@@ -1351,10 +1373,16 @@ the test passes
     * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
   - it returns :red:`'OFF'` if none of the conditions are met
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_closed_door_timer_not_set`, for when the door is :red:`closed`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`, in ``test_microwave.py``
+
+  =============  ==============  =================  ================
+  door           timer           start button       output
+  =============  ==============  =================  ================
+  :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
+  =============  ==============  =================  ================
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 59
     :emphasize-lines: 11-16
 
         def test_closed_door_timer_not_set(self):
@@ -1383,20 +1411,22 @@ the test passes
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7
+    :emphasize-lines: 8-12
 
     def microwave(
             door_is_open, start_is_pushed,
-            timer_is_set=False
+            timer_is_set=False,
         ):
         if not timer_is_set:
             return 'OFF'
+
         if (
             not door_is_open
             and start_is_pushed
             and timer_is_set
         ):
             return 'HEATING'
+
         return 'OFF'
 
   the test is still green
@@ -1416,6 +1446,7 @@ the test passes
             and timer_is_set
         ):
             return 'HEATING'
+
         return 'OFF'
 
   still green. This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
@@ -1526,6 +1557,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
         ):
         if not door_is_open and start_is_pushed and timer_is_set:
             return 'HEATING'
+
         return 'OFF'
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -1635,11 +1667,9 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
                 door_is_open=True,
                 timer_is_set=True,
                 start_is_pushed=False,
-                too_hot=True
+                too_hot=True,
             )
             self.assertEqual(reality, my_expectation)
-
-        def test_open_door_timer_not_set(self):
 
   still green
 
@@ -1982,8 +2012,6 @@ door           timer           start button       too hot             output
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_closed_door_timer_set(self):
-
   the test is still green
 
 * I add a value for ``too_hot`` to the next :ref:`assertion<what is an assertion?>`, for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the microwave temperature is :green:`too hot`
@@ -2023,11 +2051,9 @@ door           timer           start button       too hot             output
                 door_is_open=True,
                 timer_is_set=False,
                 start_is_pushed=False,
-                too_hot=True
+                too_hot=True,
             )
             self.assertEqual(reality, my_expectation)
-
-        def test_closed_door_timer_set(self):
 
   still green
 
@@ -2151,7 +2177,7 @@ door           timer           start button       too hot             output
 
   still green
 
-* I call the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>` because I only use the ``reality`` :ref:`variable<what is a variable?>` once for each :ref:`assertion<what is an assertion?>`
+* I call the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertions<what is an assertion?>` because I only use the ``reality`` :ref:`variable<what is a variable?>` once for each :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -2297,7 +2323,7 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :lineno-start: 92
-    :emphasize-lines: 10, 16-17
+    :emphasize-lines: 10, 17-18
 
         def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
@@ -2312,10 +2338,13 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
+                timer_is_set=True,
                 start_is_pushed=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
+
+        def test_closed_door_timer_not_set(self):
 
   the test is still green
 
@@ -2323,7 +2352,7 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :lineno-start: 92
-    :emphasize-lines: 8-15, 24-30
+    :emphasize-lines: 8-15, 25-32
 
         def test_closed_door_timer_set(self):
             my_expectation = 'HEATING'
@@ -2345,12 +2374,14 @@ door           timer           start button       too hot             output
 
             reality = src.microwave.microwave(
                 door_is_open=False,
+                timer_is_set=True,
                 start_is_pushed=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
+                    timer_is_set=True,
                     start_is_pushed=False,
                 ),
                 OFF
@@ -2376,6 +2407,7 @@ door           timer           start button       too hot             output
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
+                    timer_is_set=True,
                     start_is_pushed=False,
                 ),
                 OFF
@@ -2383,7 +2415,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-* I add a value for the ``too_hot`` and ``timer_is_set`` parameters in the second :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed`, and the microwave temperature is :green:`too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed`, and the microwave temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2393,9 +2425,19 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :lineno-start: 92
-    :emphasize-lines: 14, 16
+    :emphasize-lines: 2-10
 
         def test_closed_door_timer_set(self):
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    too_hot=True,
+                ),
+                OFF
+            )
+
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
@@ -2410,14 +2452,126 @@ door           timer           start button       too hot             output
                     door_is_open=False,
                     timer_is_set=True,
                     start_is_pushed=False,
-                    too_hot=True,
                 ),
                 OFF
             )
 
-  green
+        def test_closed_door_timer_not_set(self):
 
-* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'HEATING' != 'OFF'
+
+  because the ``microwave`` :ref:`function<what is a function?>` returned :green:`'HEATING'` and the test expects :red:`'OFF'`
+
+* I add an :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        if too_hot == True:
+            return 'OFF'
+
+        if (
+            not door_is_open
+            and start_is_pushed
+            and timer_is_set
+        ):
+            return 'HEATING'
+
+        return 'OFF'
+
+  the test passes
+
+* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        # if too_hot == True:
+        if bool(too_hot) == True:
+            return 'OFF'
+
+  the test is still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        # if too_hot == True:
+        # if bool(too_hot) == True:
+        if bool(too_hot):
+            return 'OFF'
+
+  still green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8-9
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        # if too_hot == True:
+        # if bool(too_hot) == True:
+        # if bool(too_hot):
+        # if bool(too_hot):
+        if too_hot:
+            return 'OFF'
+
+  green, because ``if bool(something) == True`` is the same as ``if something``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        if too_hot:
+            return 'OFF'
+
+        if (
+            not door_is_open
+            and start_is_pushed
+            and timer_is_set
+        ):
+            return 'HEATING'
+
+        return 'OFF'
+
+  this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
+
+  - it returns :red:`'OFF'` if the microwave temperature is :green:`too hot`
+  - if the microwave temperature is :red:`NOT too hot`
+
+    * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed` AND the timer is :green:`set`
+  - it returns :red:`'OFF'` in every other case
+
+* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2428,9 +2582,19 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :lineno-start: 92
-    :emphasize-lines: 7
+    :emphasize-lines: 17
 
         def test_closed_door_timer_set(self):
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    too_hot=True,
+                ),
+                OFF
+            )
+
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
@@ -2446,14 +2610,13 @@ door           timer           start button       too hot             output
                     door_is_open=False,
                     timer_is_set=True,
                     start_is_pushed=False,
-                    too_hot=True,
                 ),
                 OFF
             )
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the microwave temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the microwave temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2465,9 +2628,19 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :lineno-start: 92
-    :emphasize-lines: 22-30
+    :emphasize-lines: 27
 
         def test_closed_door_timer_set(self):
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=True,
+                    start_is_pushed=True,
+                    too_hot=True,
+                ),
+                OFF
+            )
+
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
@@ -2476,16 +2649,6 @@ door           timer           start button       too hot             output
                     too_hot=False,
                 ),
                 'HEATING'
-            )
-
-            self.assertEqual(
-                src.microwave.microwave(
-                    door_is_open=False,
-                    timer_is_set=True,
-                    start_is_pushed=False,
-                    too_hot=True,
-                ),
-                OFF
             )
 
             self.assertEqual(
@@ -2521,19 +2684,19 @@ door           timer           start button       too hot             output
                     door_is_open=False,
                     timer_is_set=True,
                     start_is_pushed=True,
-                    too_hot=False,
+                    too_hot=True,
                 ),
-                'HEATING'
+                OFF
             )
 
             self.assertEqual(
                 src.microwave.microwave(
                     door_is_open=False,
                     timer_is_set=True,
-                    start_is_pushed=False,
-                    too_hot=True,
+                    start_is_pushed=True,
+                    too_hot=False,
                 ),
-                OFF
+                'HEATING'
             )
 
             self.assertEqual(
@@ -2558,7 +2721,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-  the test is still green
+  still green
 
 * I change the name of the test from :ref:`test_closed_door_timer_set` to :ref:`test_too_hot_closed_door_timer_set`
 
@@ -2582,9 +2745,9 @@ door           timer           start button       too hot             output
                     door_is_open=False,
                     timer_is_set=True,
                     start_is_pushed=True,
-                    too_hot=False,
+                    too_hot=True,
                 ),
-                'HEATING'
+                OFF
             )
 
 ----
