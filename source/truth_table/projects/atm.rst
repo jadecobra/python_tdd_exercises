@@ -720,7 +720,7 @@ I add a test with an :ref:`assertion<what is an assertion?>` for when the :red:`
 ==================  =================  =================
 PIN                 balance            withdrawal
 ==================  =================  =================
-:red:`wrong PIN`    :green:`yes`       :red:`DENIED`
+:red:`wrong PIN`    :green:`enough`    :red:`DENIED`
 ==================  =================  =================
 
 .. code-block:: python
@@ -966,7 +966,7 @@ the test passes
   ==================  =================  =================
   PIN                 balance            withdrawal
   ==================  =================  =================
-  :red:`wrong PIN`    :green:`yes`       :red:`DENIED`
+  :red:`wrong PIN`    :green:`enough`    :red:`DENIED`
   :red:`wrong PIN`    :red:`NOT enough`  :red:`DENIED`
   ==================  =================  =================
 
@@ -1197,7 +1197,7 @@ PIN                 balance            withdrawal
 ==================  =================  =================
 :green:`right PIN`  :green:`enough`    :green:`CASH`
 :green:`right PIN`  :red:`NOT enough`  :red:`DENIED`
-:red:`wrong PIN`    :green:`yes`       :red:`DENIED`
+:red:`wrong PIN`    :green:`enough`    :red:`DENIED`
 :red:`wrong PIN`    :red:`NOT enough`  :red:`DENIED`
 ==================  =================  =================
 

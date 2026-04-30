@@ -418,7 +418,7 @@ because I do not have a definition for ``src`` in this file_
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 17
     :emphasize-lines: 4
     :emphasize-text: AttributeError
 
