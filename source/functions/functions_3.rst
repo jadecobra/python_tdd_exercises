@@ -372,7 +372,7 @@ close the project
 
     cd ..
 
-  the terminal_ is my friend, and shows
+  the terminal_ shows
 
   .. code-block:: shell
 

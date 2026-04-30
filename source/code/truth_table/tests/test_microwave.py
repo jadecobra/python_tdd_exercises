@@ -7,13 +7,13 @@ OFF = 'OFF'
 
 class TestMicrowave(unittest.TestCase):
 
-    def test_door_open_timer_set_w_overheating(self):
+    def test_too_hot_open_door_timer_set(self):
         self.assertEqual(
             src.microwave.microwave(
                 door_is_open=True,
                 timer_is_set=True,
                 start_is_pushed=True,
-                overheating=True,
+                too_hot=True,
             ),
             OFF
         )
@@ -23,17 +23,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=True,
                 timer_is_set=True,
                 start_is_pushed=True,
-                overheating=False,
-            ),
-            OFF
-        )
-
-        self.assertEqual(
-            src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=True,
-                start_is_pushed=False,
-                overheating=True
+                too_hot=False,
             ),
             OFF
         )
@@ -43,18 +33,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=True,
                 timer_is_set=True,
                 start_is_pushed=False,
-                overheating=False,
-            ),
-            OFF
-        )
-
-    def test_door_open_timer_not_set_w_overheating(self):
-        self.assertEqual(
-            src.microwave.microwave(
-                door_is_open=True,
-                timer_is_set=False,
-                start_is_pushed=True,
-                overheating=True,
+                too_hot=True,
             ),
             OFF
         )
@@ -62,9 +41,30 @@ class TestMicrowave(unittest.TestCase):
         self.assertEqual(
             src.microwave.microwave(
                 door_is_open=True,
+                timer_is_set=True,
+                start_is_pushed=False,
+                too_hot=False,
+            ),
+            OFF
+        )
+
+    def test_too_hot_open_door_timer_not_set(self):
+        self.assertEqual(
+            src.microwave.microwave(
+                door_is_open=True,
                 timer_is_set=False,
                 start_is_pushed=True,
-                overheating=False,
+                too_hot=True,
+            ),
+            OFF
+        )
+
+        self.assertEqual(
+            src.microwave.microwave(
+                door_is_open=True,
+                timer_is_set=False,
+                start_is_pushed=True,
+                too_hot=False,
             ),
             OFF
         )
@@ -74,7 +74,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=True,
                 timer_is_set=False,
                 start_is_pushed=False,
-                overheating=True
+                too_hot=True,
             ),
             OFF
         )
@@ -84,18 +84,18 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=True,
                 timer_is_set=False,
                 start_is_pushed=False,
-                overheating=False,
+                too_hot=False,
             ),
             OFF
         )
 
-    def test_door_closed_timer_set_w_overheating(self):
+    def test_too_hot_closed_door_timer_set(self):
         self.assertEqual(
             src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=True,
                 start_is_pushed=True,
-                overheating=False,
+                too_hot=False,
             ),
             'HEATING'
         )
@@ -105,7 +105,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=False,
                 timer_is_set=True,
                 start_is_pushed=False,
-                overheating=True,
+                too_hot=True,
             ),
             OFF
         )
@@ -115,7 +115,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=False,
                 timer_is_set=True,
                 start_is_pushed=False,
-                overheating=True,
+                too_hot=True,
             ),
             OFF
         )
@@ -125,18 +125,18 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=False,
                 timer_is_set=True,
                 start_is_pushed=False,
-                overheating=False
+                too_hot=False,
             ),
             OFF
         )
 
-    def test_door_closed_timer_not_set_w_overheating(self):
+    def test_too_hot_closed_door_timer_not_set(self):
         self.assertEqual(
             src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=False,
                 start_is_pushed=True,
-                overheating=True,
+                too_hot=True,
             ),
             OFF
         )
@@ -146,7 +146,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=False,
                 timer_is_set=False,
                 start_is_pushed=True,
-                overheating=False,
+                too_hot=False,
             ),
             OFF
         )
@@ -156,7 +156,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=False,
                 timer_is_set=False,
                 start_is_pushed=False,
-                overheating=True,
+                too_hot=True,
             ),
             OFF
         )
@@ -166,7 +166,7 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=False,
                 timer_is_set=False,
                 start_is_pushed=False,
-                overheating=False,
+                too_hot=False,
             ),
             OFF
         )
