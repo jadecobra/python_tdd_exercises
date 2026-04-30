@@ -1,18 +1,18 @@
 .. meta::
   :description: Learn Python boolean logic by building a real-world ATM withdrawal system. This step-by-step Test-Driven Development (TDD) tutorial teaches beginners how to translate truth tables into clean Python code using unittest, uv, and pytest-watcher.
-  keywords: Python ATM project tutorial, translate truth tables to python code, TDD python exercises for beginners, learn boolean logic with python projects, python unittest step by step guide, how to use uv for python projects, pytest-watcher tutorial, red green refactor python example, Automated Teller Machiner logic python, Jacob Itegboje
+  keywords: Python ATM project tutorial, translate truth tables to python code, TDD python exercises for beginners, learn boolean logic with python projects, python unittest step by step guide, how to use uv for python projects, pytest-watcher tutorial, red green refactor python example, Automated Teller Machine logic python, Jacob Itegboje
 
 .. include:: ../../links.rst
 
 .. _atm:
 
 #################################################################################
-Automated Teller Machiner
+Automated Teller Machine
 #################################################################################
 
 ----
 
-I want to make an **Automated Teller Machiner** that allows withdrawals or denies them, if the inputs are
+I want to make an **Automated Teller Machine** that allows withdrawals or denies them, if the inputs are
 
 * is the PIN correct?
 * is the amount I want to take, smaller or bigger than what is in the account?
@@ -1190,7 +1190,7 @@ the test passes
 test_withdraw_w_daily_limit_w_right_pin
 *********************************************************************************
 
-So far, the :ref:`truth table` for the Automated Teller Machiner is
+So far, the :ref:`truth table` for the Automated Teller Machine is
 
 ==================  =================  =================
 PIN                 balance            withdrawal
@@ -1897,7 +1897,7 @@ This is what happens when the ``withdraw`` :ref:`function<what is a function?>` 
 test_withdraw_w_expired_card_w_right_pin
 *********************************************************************************
 
-The :ref:`truth table` for the Automated Teller Machiner is now
+The :ref:`truth table` for the Automated Teller Machine is now
 
 ==================  =================  ====================  ==================
 PIN                 balance            daily limit           withdrawal
@@ -3398,7 +3398,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests for an Automated Teller Machiner with these inputs:
+I ran tests for an Automated Teller Machine with these inputs:
 
 * has the card expired?
 * is the PIN correct?
@@ -3490,7 +3490,7 @@ card expired        PIN                 balance            daily limit          
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<Automated Teller Machiner: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<Automated Teller Machine: tests and solutions>`
 
 ----
 
