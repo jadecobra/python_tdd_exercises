@@ -254,6 +254,8 @@ start the project
     │   └── test_microwave.py
     └── uv.lock
 
+  if you do not see ``uv.lock`` in your tree, do not worry, run the tests next
+
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
@@ -385,7 +387,7 @@ because I do not have a definition for ``src`` in this file_
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 16
     :emphasize-lines: 3
     :emphasize-text: NameError
 
@@ -393,7 +395,7 @@ because I do not have a definition for ``src`` in this file_
     # AssertionError
     # NameError
 
-* I add an `import statement`_ at the top of the file_
+* I add an `import statement`_ at the top of the file_ so that I can test ``microwave.py`` from the ``src`` folder_
 
   .. code-block:: python
     :linenos:
@@ -2981,7 +2983,7 @@ door           timer           start button       too hot             output
 :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
-the only time this Microwave heats food is when the door is :green:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`.
+the only time this Microwave heats food is when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`.
 
 ----
 

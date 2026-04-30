@@ -404,7 +404,7 @@ because I do not have a definition for ``src`` in this file_
     # AssertionError
     # NameError
 
-* I add an `import statement`_ at the top of the file_
+* I add an `import statement`_ at the top of the file_ so that I can test ``atm.py`` from the ``src`` folder_
 
   .. code-block:: python
     :linenos:
