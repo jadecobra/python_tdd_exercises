@@ -13,7 +13,7 @@ Microwave
 I want to make a **Microwave** that heats up food or stays off, if the inputs are
 
 * is the door open?
-* has the start button been pushed?
+* was the start button pushed?
 
 this is the :ref:`truth table` I get
 
@@ -442,7 +442,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: microwave() got an unexpected keyword argument 'door_is_open'
 
-  because I called the ``microwave`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
+  because the test called the ``microwave`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_microwave.py``
 
@@ -472,7 +472,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: microwave() got an unexpected keyword argument 'start_is_pushed'
 
-  because I called the ``microwave`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
+  because the test called the ``microwave`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
 
 * I add ``start_is_pushed`` to the :ref:`function signature<what is a function?>`
 
@@ -799,31 +799,20 @@ door                start button       output
 :red:`closed`       :red:`NOT pushed`  :red:`OFF`
 ==================  =================  =================
 
-I want it to only HEATING up food when the timer is set, the inputs for the microwave will then be
+I want the microwave to only heat up food when the timer is set, the inputs for the microwave will then be
 
 * is the door open?
 * is the timer set?
-* has the start button been pushed?
+* was the start button pushed?
 
-and the :ref:`truth table` will be
+and the :ref:`truth table` for when the door is :green:`open` and the timer is :green:`set`, will be
 
 =============  ==============  =================  ===========
 door           timer           start button       output
 =============  ==============  =================  ===========
 :green:`open`  :green:`set`    :green:`pushed`    :red:`OFF`
 :green:`open`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
-:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
 =============  ==============  =================  ===========
-
-=============  ==============  =================  ================
-door           timer           start button       output
-=============  ==============  =================  ================
-:red:`closed`  :green:`set`    :green:`pushed`    :green:`HEATING`
-:red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
-:red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-:red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
-=============  ==============  =================  ================
 
 ----
 
@@ -861,6 +850,8 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: microwave() got an unexpected keyword argument 'timer_is_set'
 
+because the test called the ``microwave`` :ref:`function<what is a function?>` with 3 keyword arguments (``door_is_open``, ``timer_is_set`` and ``start_is_pushed``) and the :ref:`function<what is a function?>` only allows calls with 2 arguments (``door_is_open`` and ``start_is_pushed``)
+
 ----
 
 =================================================================================
@@ -887,10 +878,10 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_microwave_w - TypeError: microwave() missing 1 required positional argument:...
+    FAILED ...test_closed_door - TypeError: microwave() missing 1 required positional argument:...
     FAILED ...test_open_door - TypeError: microwave() missing 1 required positional argument:...
 
-  because the other :ref:`assertions<what is an assertion?>` call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments
+  because the tests call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pushed`` and ``timer_is_set``). I have to make ``timer_is_set`` a choice.
 
 * I add a :ref:`default value<test_functions_w_default_arguments>` to make ``timer_is_set`` a choice
 
@@ -903,7 +894,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             timer_is_set=False,
         ):
 
-  the test passes because this
+  the test passes because
 
   .. code-block:: python
 
@@ -922,7 +913,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
         timer_is_set=False,
     )
 
-  because ``timer_is_set`` has a :ref:`default value<test_functions_w_default_arguments>`
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
 
 ----
 
@@ -962,7 +953,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_microwave_w(self):
+        def test_closed_door(self):
 
   the test is still green
 
@@ -982,6 +973,15 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 *********************************************************************************
 test_open_door_timer_not_set
 *********************************************************************************
+
+The :ref:`truth table` for when the door is :green:`open` and the timer is :red:`NOT set` is
+
+=============  ==============  =================  ===========
+door           timer           start button       output
+=============  ==============  =================  ===========
+:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
+:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
+=============  ==============  =================  ===========
 
 * I add a new test with an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set` and the start button is :green:`pushed`
 
@@ -1055,6 +1055,15 @@ test_open_door_timer_not_set
 *********************************************************************************
 test_closed_door_timer_set
 *********************************************************************************
+
+The :ref:`truth table` for when the door is :red:`closed` and is the timer is :green:`set`
+
+=============  ==============  =================  ================
+door           timer           start button       output
+=============  ==============  =================  ================
+:red:`closed`  :green:`set`    :green:`pushed`    :green:`HEATING`
+:red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
+=============  ==============  =================  ================
 
 * I add a value for the ``timer_is_set`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_closed_door` for the case where the door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pushed`
 
@@ -1145,6 +1154,14 @@ test_closed_door_timer_set
 test_closed_door_timer_not_set
 *********************************************************************************
 
+The :ref:`truth table` for when the door is :red:`closed` and the timer is :red:`NOT set` is
+
+=============  ==============  =================  ================
+door           timer           start button       output
+=============  ==============  =================  ================
+:red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
+:red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
+=============  ==============  =================  ================
 ----
 
 =================================================================================
@@ -1190,6 +1207,8 @@ test_closed_door_timer_not_set
 
     AssertionError: 'HEATING' != 'OFF'
 
+  because the ``microwave`` :ref:`function<what is a function?>` returns :green:`'HEATING'` and the test expects :red:`'OFF'`
+
 ----
 
 =================================================================================
@@ -1206,19 +1225,16 @@ I add a :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<w
 
   def microwave(
           door_is_open, start_is_pushed,
-          timer_is_set=False,
+          timer_is_set=False
       ):
-      if not timer_is_set:
+      if timer_is_set == False:
           return 'OFF'
       if not door_is_open and start_is_pushed:
           return 'HEATING'
       return 'OFF'
 
-the test passes. The Microwave returns
+the test passes
 
-* :red:`OFF` if the timer is :red:`NOT set`
-* :green:`HEATING` if the door is :red:`closed` and the start button is :green:`pushed`, which only happens if the timer is :green:`set`
-* :red:`OFF` if none of the conditions are met
 
 ----
 
@@ -1227,6 +1243,111 @@ the test passes. The Microwave returns
 =================================================================================
 
 ----
+
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False
+        ):
+        # if timer_is_set == False:
+        if bool(timer_is_set) == False:
+            return 'OFF'
+        if not door_is_open and start_is_pushed:
+            return 'HEATING'
+        return 'OFF'
+
+  the test is still green
+
+* I use :ref:`Logical Negation(NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False
+        ):
+        # if timer_is_set == False:
+        # if bool(timer_is_set) == False:
+        if not bool(timer_is_set) == True:
+            return 'OFF'
+        if not door_is_open and start_is_pushed:
+            return 'HEATING'
+        return 'OFF'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False
+        ):
+        # if timer_is_set == False:
+        # if bool(timer_is_set) == False:
+        # if not bool(timer_is_set) == True:
+        if not bool(timer_is_set):
+            return 'OFF'
+        if not door_is_open and start_is_pushed:
+            return 'HEATING'
+        return 'OFF'
+
+  green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8-9
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False
+        ):
+        # if timer_is_set == False:
+        # if bool(timer_is_set) == False:
+        # if not bool(timer_is_set) == True:
+        # if not bool(timer_is_set):
+        if not timer_is_set:
+            return 'OFF'
+        if not door_is_open and start_is_pushed:
+            return 'HEATING'
+        return 'OFF'
+
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False,
+        ):
+        if not timer_is_set:
+            return 'OFF'
+        if not door_is_open and start_is_pushed:
+            return 'HEATING'
+        return 'OFF'
+
+  This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
+
+  - it returns :red:`'OFF'` if the timer is :red:`NOT set`
+  - if the timer is :green:`set`
+
+    * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
+  - it returns :red:`'OFF'` if none of the conditions are met
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
 
@@ -1264,11 +1385,15 @@ the test passes. The Microwave returns
 
     def microwave(
             door_is_open, start_is_pushed,
-            timer_is_set=False,
+            timer_is_set=False
         ):
         if not timer_is_set:
             return 'OFF'
-        if not door_is_open and start_is_pushed and timer_is_set:
+        if (
+            not door_is_open
+            and start_is_pushed
+            and timer_is_set
+        ):
             return 'HEATING'
         return 'OFF'
 
@@ -1281,16 +1406,20 @@ the test passes. The Microwave returns
 
     def microwave(
             door_is_open, start_is_pushed,
-            timer_is_set=False,
+            timer_is_set=False
         ):
-        if not door_is_open and start_is_pushed and timer_is_set:
+        if (
+            not door_is_open
+            and start_is_pushed
+            and timer_is_set
+        ):
             return 'HEATING'
         return 'OFF'
 
-  still green. The Microwave returns
+  still green. This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
 
-  - :green:`'HEATING'` if the door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pushed`
-  - :red:`'OFF'` in every other case
+  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed` AND the timer is :green:`set`
+  - it returns :red:`'OFF'` in every other case
 
 ----
 
@@ -1322,10 +1451,10 @@ I want to add a failsafe to stop the Microwave if it gets too hot. The inputs wi
 
 * is the door open?
 * is the timer set?
-* has the start button been pushed?
+* was the start button pushed?
 * is the microwave too hot?
 
-and the :ref:`truth table` will be
+and the :ref:`truth table` for when the door is :green:`open` and the timer is :green:`set` will be
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
@@ -1334,33 +1463,6 @@ door           timer           start button       too hot             output
 :green:`open`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
 :green:`open`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
 :green:`open`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
-=============  ==============  =================  ==================  ================
-
-=============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
-=============  ==============  =================  ==================  ================
-:green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
-=============  ==============  =================  ==================  ================
-
-=============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
-=============  ==============  =================  ==================  ================
-:red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
-:red:`closed`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :green:`HEATING`
-:red:`closed`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-:red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
-=============  ==============  =================  ==================  ================
-
-=============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
-=============  ==============  =================  ==================  ================
-:red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
-:red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-:red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-:red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
 ----
@@ -1715,6 +1817,17 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 test_open_door_timer_not_set_w_overheating
 *********************************************************************************
 
+The :ref:`truth table` for when the door is :green:`open` and the timer is :red:`NOT set` is
+
+=============  ==============  =================  ==================  ================
+door           timer           start button       too hot             output
+=============  ==============  =================  ==================  ================
+:green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+=============  ==============  =================  ==================  ================
+
 * I add a value for the ``overheating`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_timer_not_set` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the microwave temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
@@ -1992,6 +2105,17 @@ test_open_door_timer_not_set_w_overheating
 test_closed_door_timer_set_w_overheating
 *********************************************************************************
 
+The :ref:`truth table` for when the door is :red:`closed` and the timer is :green:`set` is
+
+=============  ==============  =================  ==================  ================
+door           timer           start button       too hot             output
+=============  ==============  =================  ==================  ================
+:red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
+:red:`closed`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :green:`HEATING`
+:red:`closed`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+:red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+=============  ==============  =================  ==================  ================
+
 * I use the ``OFF`` :ref:`global variable<what is a variable?>` for ``my_expectation`` when the value is :red:`'OFF'` in :ref:`test_closed_door_timer_set`
 
   .. code-block:: python
@@ -2229,6 +2353,17 @@ test_closed_door_timer_set_w_overheating
 *********************************************************************************
 test_closed_door_timer_not_set_w_overheating
 *********************************************************************************
+
+The :ref:`truth table` for when the door is :red:`closed` and the timer is :red:`NOT set` is
+
+=============  ==============  =================  ==================  ================
+door           timer           start button       too hot             output
+=============  ==============  =================  ==================  ================
+:red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+:red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+:red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+:red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+=============  ==============  =================  ==================  ================
 
 * I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_closed_door_timer_not_set`
 
@@ -2708,7 +2843,7 @@ I ran tests for a Microwave with these inputs:
 
 * is the door open?
 * is the timer set?
-* has the start button been pushed?
+* was the start button pushed?
 * is the microwave too hot?
 
 the inputs gave me this :ref:`truth table`

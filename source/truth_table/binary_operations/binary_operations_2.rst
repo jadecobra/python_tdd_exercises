@@ -931,7 +931,7 @@ examples of Logical NAND
     else:
         return False
 
-  I can then write it as a :ref:`ternary operator<conditional expressions>` (:ref:`conditional expression<conditional expressions>`)
+  I can write it with a :ref:`ternary operator<conditional expressions>` (:ref:`conditional expression<conditional expressions>`)
 
   .. code-block:: python
 

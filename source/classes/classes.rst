@@ -3822,7 +3822,7 @@ I copy and paste the values from the terminal_ and remove the extra characters I
 
   the test passes
 
-The attributes I defined in the ``__init__`` :ref:`method<what is a function?>` are not in the list, because I called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>` definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<test_attribute_error_w_class_attributes>`.
+The attributes I defined in the ``__init__`` :ref:`method<what is a function?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>` definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<test_attribute_error_w_class_attributes>`.
 
 What is the difference between ``dir(src.person.Person)`` and ``dir(src.person.Person('jane'))``?
 
