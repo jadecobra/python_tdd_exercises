@@ -739,7 +739,7 @@ the test passes
 
   still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
 
-* I use :ref:`Logical Disjuncion (OR)<test_logical_disjunction>` to put the two :ref:`if statements` together
+* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` together because they return the same thing
 
   .. code-block:: python
     :linenos:
@@ -788,7 +788,21 @@ the test passes
 
   because I cannot :ref:`negate<test_logical_negation>` :ref:`and<test_logical_conjunction>` this way
 
-* I "factor" out the :ref:`nots<test_logical_negation>`
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 6
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* I "factor" out the :ref:`nots<test_logical_negation>` in the ``starter`` :ref:`function<what is a function?>` in ``car.py``
 
   .. code-block:: python
     :linenos:
@@ -826,8 +840,8 @@ the test passes
 
   this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :green:`pushed`
-  - it returns :green:`'ON'` if the condition is not met
+  - it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :red:`NOT pushed`
+  - it returns :green:`'ON'` if the above conditions are not met
 
   is this :ref:`Logical Conjunction?<test_logical_conjunction>`
 
@@ -1129,8 +1143,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
     :emphasize-lines: 13
 
         def test_key_close(self):
-            my_expectation = 'OFF'
-
+            my_expectation = 'ON'
             reality = src.car.starter(
                 key_is_close=True,
                 brake_is_pressed=True,
@@ -1143,9 +1156,9 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
                 brake_is_pressed=True,
                 start_is_pushed=False,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, OFF)
 
-        def test_key_close(self):
+        def test_key_far(self):
 
   the test is still green
 
@@ -1184,29 +1197,215 @@ key             brake               start button       output
   ==============  ==================  =================  ===========
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 8-9, 11-16
+    :lineno-start: 19
+    :emphasize-lines: 8-14
 
             reality = src.car.starter(
                 key_is_close=True,
                 brake_is_pressed=True,
                 start_is_pushed=False,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, OFF)
 
         def test_key_close_brake_not_pressed(self):
-            my_expectation = 'OFF'
-
             reality = src.car.starter(
                 key_is_close=True,
                 brake_is_pressed=False,
                 start_is_pushed=True,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, OFF)
 
-        def test_key_close(self):
+        def test_key_far(self):
 
-  still green
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'ON' != 'OFF'
+
+  because the ``starter`` :ref:`function<what is a function?>` returned :green:`'ON'` and the test expects :red:`'OFF'`
+
+* I add an :ref:`if statement<if statements>` to the ``starter`` :ref:`function<what is a function?>` in ``car.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def starter(
+            key_is_close, start_is_pushed,
+            brake_is_pressed=False,
+        ):
+        if brake_is_pressed == False:
+            return 'OFF'
+
+        if not (key_is_close and start_is_pushed):
+            return 'OFF'
+
+        return 'ON'
+
+  the test passes
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def starter(
+            key_is_close, start_is_pushed,
+            brake_is_pressed=False,
+        ):
+        # if brake_is_pressed == False:
+        if not brake_is_pressed == True:
+            return 'OFF'
+
+        if not (key_is_close and start_is_pushed):
+            return 'OFF'
+
+        return 'ON'
+
+  the test is still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7
+
+    def starter(
+            key_is_close, start_is_pushed,
+            brake_is_pressed=False,
+        ):
+        # if brake_is_pressed == False:
+        # if not brake_is_pressed == True:
+        if not brake_is_pressed:
+            return 'OFF'
+
+        if not (key_is_close and start_is_pushed):
+            return 'OFF'
+
+        return 'ON'
+
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+
+* I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two :ref:`if statements` together because they return the same thing
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8, 10-15
+
+    def starter(
+            key_is_close, start_is_pushed,
+            brake_is_pressed=False,
+        ):
+        # if brake_is_pressed == False:
+        # if not brake_is_pressed == True:
+        # if not brake_is_pressed:
+            # return 'OFF'
+
+        # if not (key_is_close and start_is_pushed):
+        if (
+            not (key_is_close and start_is_pushed)
+            or
+            not brake_is_pressed
+        ):
+            return 'OFF'
+
+        return 'ON'
+
+  green
+
+* I write the statement in terms of :ref:`NOT<test_logical_negation>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 12-15
+
+    def starter(
+            key_is_close, start_is_pushed,
+            brake_is_pressed=False,
+        ):
+        # if brake_is_pressed == False:
+        # if not brake_is_pressed == True:
+        # if not brake_is_pressed:
+            # return 'OFF'
+
+        # if not (key_is_close and start_is_pushed):
+        if (
+            (not (key_is_close and start_is_pushed))
+            # or
+            (not and)
+            (not brake_is_pressed)
+        ):
+            return 'OFF'
+
+        return 'ON'
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  I cannot :ref:`negate<test_logical_negation>` :ref:`and<test_logical_conjunction>` this way
+
+* I "factor" out the :ref:`nots<test_logical_negation>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 11-23
+
+    def starter(
+            key_is_close, start_is_pushed,
+            brake_is_pressed=False,
+        ):
+        # if brake_is_pressed == False:
+        # if not brake_is_pressed == True:
+        # if not brake_is_pressed:
+            # return 'OFF'
+
+        # if not (key_is_close and start_is_pushed):
+        # if (
+        #     (not (key_is_close and start_is_pushed))
+        #     # or
+        #     (not and)
+        #     (not brake_is_pressed)
+        # ):
+        if (
+            not (
+                (key_is_close and start_is_pushed)
+                and
+                brake_is_pressed
+            )
+        ):
+            return 'OFF'
+
+        return 'ON'
+
+  the test is green again
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def starter(
+            key_is_close, start_is_pushed,
+            brake_is_pressed=False,
+        ):
+        if not (
+            key_is_close
+            and start_is_pushed
+            and brake_is_pressed
+        ):
+            return 'OFF'
+
+        return 'ON'
+
+  this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+
+  - it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :red:`NOT pushed` AND the brake is :red:`NOT pressed`
+  - it returns :green:`'ON'` if none of the conditions are met
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :red:`NOT pushed`
 
@@ -1218,29 +1417,26 @@ key             brake               start button       output
   ==============  ==================  =================  ===========
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 26
     :emphasize-lines: 11-16
 
         def test_key_close_brake_not_pressed(self):
-            my_expectation = 'OFF'
-
             reality = src.car.starter(
                 key_is_close=True,
                 brake_is_pressed=False,
                 start_is_pushed=True,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
                 key_is_close=True,
                 brake_is_pressed=False,
                 start_is_pushed=False,
             )
-            self.assertEqual(reality, my_expectation)
 
-        def test_key_close(self):
+        def test_key_far(self):
 
-  green
+  the test is still green
 
 ----
 
@@ -1725,6 +1921,8 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
     SyntaxError: parameter without a default follows parameter with a default
 
   because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_arguments>`
+
+* I add SyntaxError_ to the list
 
 * I add a :ref:`default value<test_functions_w_default_arguments>` for the ``too_hot`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
 
