@@ -1176,6 +1176,7 @@ door           timer           start button       output
 :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
 :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
 =============  ==============  =================  ================
+
 ----
 
 =================================================================================
@@ -2895,7 +2896,7 @@ door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
-    :lineno-start: 110
+    :lineno-start: 133
     :emphasize-lines: 7
 
         def test_too_hot_closed_door_timer_not_set(self):
@@ -2913,7 +2914,7 @@ door           timer           start button       too hot             output
                 src.microwave.microwave(
                     door_is_open=False,
                     timer_is_set=False,
-                    start_is_pushed=True,
+                    start_is_pushed=False,
                 ),
                 OFF
             )
@@ -2977,7 +2978,7 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :lineno-start: 133
-    :emphasize-lines: 22-30
+    :emphasize-lines: 27
 
         def test_too_hot_closed_door_timer_not_set(self):
             self.assertEqual(
@@ -3027,51 +3028,125 @@ door           timer           start button       too hot             output
     :lineno-start: 133
     :emphasize-lines: 32-40
 
-          def test_too_hot_closed_door_timer_not_set(self):
-              self.assertEqual(
-                  src.microwave.microwave(
-                      door_is_open=False,
-                      timer_is_set=False,
-                      start_is_pushed=True,
-                      too_hot=True,
-                  ),
-                  OFF
-              )
+        def test_too_hot_closed_door_timer_not_set(self):
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=False,
+                    start_is_pushed=True,
+                    too_hot=True,
+                ),
+                OFF
+            )
 
-              self.assertEqual(
-                  src.microwave.microwave(
-                      door_is_open=False,
-                      timer_is_set=False,
-                      start_is_pushed=True,
-                      too_hot=False,
-                  ),
-                  OFF
-              )
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=False,
+                    start_is_pushed=True,
+                    too_hot=False,
+                ),
+                OFF
+            )
 
-              self.assertEqual(
-                  src.microwave.microwave(
-                      door_is_open=False,
-                      timer_is_set=False,
-                      start_is_pushed=False,
-                      too_hot=True,
-                  ),
-                  OFF
-              )
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=False,
+                    start_is_pushed=False,
+                    too_hot=True,
+                ),
+                OFF
+            )
 
-              self.assertEqual(
-                  src.microwave.microwave(
-                      door_is_open=False,
-                      timer_is_set=False,
-                      start_is_pushed=False,
-                      too_hot=False,
-                  ),
-                  OFF
-              )
+            self.assertEqual(
+                src.microwave.microwave(
+                    door_is_open=False,
+                    timer_is_set=False,
+                    start_is_pushed=False,
+                    too_hot=False,
+                ),
+                OFF
+            )
 
 
-      # Exceptions seen
+    # Exceptions seen
 
   all the tests are still green
+
+* I add another :ref:`condition<if statements>` to the one that returns :green:`'HEATING'` in the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 12
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        if too_hot:
+            return 'OFF'
+
+        if (
+            not door_is_open
+            and start_is_pushed
+            and timer_is_set
+            and not too_hot
+        ):
+            return 'HEATING'
+
+        return 'OFF'
+
+  still green
+
+* I remove the :ref:`if statement<if statements>` for when the microwave temperature is :green:`too hot` because I no longer need it
+
+  .. code-block:: python
+    :linenos:
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        if (
+            not door_is_open
+            and start_is_pushed
+            and timer_is_set
+            and not too_hot
+        ):
+            return 'HEATING'
+
+        return 'OFF'
+
+  green. This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
+
+  * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed` AND the timer is :green:`set` AND the microwave temperature is :red:`NOT too hot`
+  * it returns :red:`'OFF'` in every other case
+
+* I can also write the ``microwave`` :ref:`function<what is a function?>` with the negative cases first
+
+  .. code-block:: python
+    :linenos:
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        off = 'OFF'
+
+        if too_hot:
+            return off
+        if not timer_is_set:
+            return off
+        if not start_is_pushed:
+            return off
+        if door_is_open:
+            return off
+
+        return 'HEATING'
+
+
+  which do you like better?
 
 *********************************************************************************
 close the project

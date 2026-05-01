@@ -95,19 +95,19 @@ class TestMicrowave(unittest.TestCase):
                 door_is_open=False,
                 timer_is_set=True,
                 start_is_pushed=True,
-                too_hot=False,
+                too_hot=True,
             ),
-            'HEATING'
+            OFF
         )
 
         self.assertEqual(
             src.microwave.microwave(
                 door_is_open=False,
                 timer_is_set=True,
-                start_is_pushed=False,
-                too_hot=True,
+                start_is_pushed=True,
+                too_hot=False,
             ),
-            OFF
+            'HEATING'
         )
 
         self.assertEqual(
