@@ -2549,15 +2549,7 @@ door           timer           start button       too hot             output
 
     * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`closed`
 
-  this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
-
-  - it returns :red:`'OFF'` if the microwave temperature is :green:`too hot`
-  - if the microwave temperature is :red:`NOT too hot`
-
-    * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed` AND the timer is :green:`set`
-  - it returns :red:`'OFF'` in every other case
-
-* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`
+* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot` in :ref:`test_closed_door_timer_set` in ``test_microwave.py``
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2600,7 +2592,9 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  still green
+        def test_closed_door_timer_not_set(self):
+
+  the test is still green
 
 * I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the microwave temperature is :green:`too hot`
 
@@ -2646,6 +2640,8 @@ door           timer           start button       too hot             output
                 ),
                 OFF
             )
+
+        def test_closed_door_timer_not_set(self):
 
   the test is still green
 
