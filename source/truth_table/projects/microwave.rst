@@ -853,7 +853,7 @@ the test passes
 
   this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'OFF'` if the door is :green:`open` or if the start button is :red:`NOT pushed`, this means
+  - it returns :red:`'OFF'` if the door is :green:`open` OR if the start button is :red:`NOT pushed`, this means
 
     * it returns :red:`'OFF'` if the door is :green:`open`
     * it returns :red:`'OFF'` if the start button is :red:`NOT pushed`
@@ -1379,7 +1379,7 @@ the test passes
   - it returns :red:`'OFF'` if the timer is :red:`NOT set`
   - if the timer is :green:`set`
 
-    - it returns :red:`'OFF'` if the door is :green:`open` or if the start button is :red:`NOT pushed`, this means
+    - it returns :red:`'OFF'` if the door is :green:`open` OR if the start button is :red:`NOT pushed`, this means
 
       * it returns :red:`'OFF'` if the door is :green:`open`
       * it returns :red:`'OFF'` if the start button is :red:`NOT pushed`
@@ -2161,6 +2161,8 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
+        def test_closed_door_timer_set(self):
+
   still green
 
 * I call the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertions<what is an assertion?>` because I only use the ``reality`` :ref:`variable<what is a variable?>` once for each :ref:`assertion<what is an assertion?>`
@@ -2239,6 +2241,8 @@ door           timer           start button       too hot             output
                 ),
                 OFF
             )
+
+        def test_closed_door_timer_set(self):
 
 * I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>`
 
@@ -2373,6 +2377,8 @@ door           timer           start button       too hot             output
                 OFF
             )
 
+        def test_closed_door_timer_not_set(self):
+
   still green
 
 * I remove the commented lines and :ref:`variables<what is a variable?>` that are not used anymore
@@ -2465,68 +2471,50 @@ door           timer           start button       too hot             output
         if too_hot == True:
             return 'OFF'
 
-        if (
-            not door_is_open
-            and start_is_pushed
-            and timer_is_set
-        ):
-            return 'HEATING'
-
-        return 'OFF'
-
-  the test passes
-
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False, too_hot=False,
-        ):
-        # if too_hot == True:
-        if bool(too_hot) == True:
+        if not timer_is_set:
             return 'OFF'
 
-  the test is still green
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
+            return 'HEATING'
+
+  the test passes
 
 * I remove ``== True``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-7
+    :lineno-start: 5
+    :emphasize-lines: 1-2
 
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False, too_hot=False,
-        ):
         # if too_hot == True:
-        # if bool(too_hot) == True:
-        if bool(too_hot):
-            return 'OFF'
-
-  still green
-
-* I remove :ref:`bool<booleans 2: test with bool>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 8-9
-
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False, too_hot=False,
-        ):
-        # if too_hot == True:
-        # if bool(too_hot) == True:
-        # if bool(too_hot):
-        # if bool(too_hot):
         if too_hot:
             return 'OFF'
 
-  green, because ``if bool(something) == True`` is the same as ``if something``
+  the test is still green, because ``if something == True`` is the same as ``if something``
+
+* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the :ref:`if statement<if statements>` for when the microwave temperature is :green:`too hot` and the :ref:`if statement<if statements>` for when the timer is :red:`NOT set`, because they both return :red:`'OFF'`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7, 9-10
+
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        # if too_hot == True:
+        # if too_hot:
+        #     return 'OFF'
+
+        # if not timer_is_set:
+        if too_hot or not timer_is_set:
+            return 'OFF'
+
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
+            return 'HEATING'
 
 * I remove the commented lines
 
@@ -2537,17 +2525,29 @@ door           timer           start button       too hot             output
             door_is_open, start_is_pushed,
             timer_is_set=False, too_hot=False,
         ):
-        if too_hot:
+        if too_hot or not timer_is_set:
             return 'OFF'
 
-        if (
-            not door_is_open
-            and start_is_pushed
-            and timer_is_set
-        ):
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
             return 'HEATING'
 
-        return 'OFF'
+  this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
+
+  - it returns :red:`'OFF'` if the microwave temperature is :green:`too hot` OR the timer is :red:`NOT set`, this means
+
+    * it returns :red:`'OFF'` if the microwave temperature is :green:`too hot`
+    * it returns :red:`'OFF'` if the timer is :red:`NOT set`
+
+  - if the above condition is not met
+
+    * it returns :red:`'OFF'` if the door is :green:`open` OR if the start button is :red:`NOT pushed`, this means
+
+      - it returns :red:`'OFF'` if the door is :green:`open`
+      - it returns :red:`'OFF'` if the start button is :red:`NOT pushed`
+
+    * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`closed`
 
   this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
 
