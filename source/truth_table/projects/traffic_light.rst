@@ -416,6 +416,10 @@ because I do not have a definition for ``src`` in this file_
 
   because ``traffic_light.py`` in the ``src`` folder_ does not have anything named ``show`` in it
 
+  .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
+
+    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
