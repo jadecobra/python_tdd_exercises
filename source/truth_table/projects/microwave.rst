@@ -417,6 +417,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
 
+    .. code-block:: python
+
+      ModuleNotFoundError: No module named 'src'
+
     check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
@@ -621,14 +625,13 @@ I add an :ref:`if statement<if statements>` to ``microwave.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 2-4
+  :emphasize-lines: 2-3
 
-  def microwave(door_is_open, start_is_pushed):
-      if door_is_open == False:
-          if start_is_pushed == True:
-              return 'HEATING'
+    def microwave(door_is_open, start_is_pushed):
+        if door_is_open == False:
+            return 'HEATING'
 
-      return 'OFF'
+        return 'OFF'
 
 the test passes
 
@@ -640,24 +643,22 @@ the test passes
 
 ----
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2-3
 
     def microwave(door_is_open, start_is_pushed):
         # if door_is_open == False:
-        if bool(door_is_open) == False:
-            # if start_is_pushed == True:
-            if bool(start_is_pushed) == True:
-                return 'HEATING'
+        if not door_is_open == True:
+            return 'HEATING'
 
         return 'OFF'
 
   the test is still green
 
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+* I remove ``== True``
 
   .. code-block:: python
     :linenos:
@@ -665,81 +666,13 @@ the test passes
 
     def microwave(door_is_open, start_is_pushed):
         # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        if not bool(door_is_open) == True:
-            # if start_is_pushed == True:
-            if bool(start_is_pushed) == True:
-                return 'HEATING'
-        return 'OFF'
-
-  still green
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5, 7-8
-
-    def microwave(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        # if not bool(door_is_open) == True:
-        if not bool(door_is_open):
-            # if start_is_pushed == True:
-            # if bool(start_is_pushed) == True:
-            if bool(start_is_pushed):
-                return 'HEATING'
-
-        return 'OFF'
-
-  green
-
-* I remove :ref:`bool<booleans 2: test with bool>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6, 9-10
-
-    def microwave(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        # if not bool(door_is_open) == True:
-        # if not bool(door_is_open):
+        # if not door_is_open == True:
         if not door_is_open:
-            # if start_is_pushed == True:
-            # if bool(start_is_pushed) == True:
-            # if bool(start_is_pushed):
-            if start_is_pushed:
-                return 'HEATING'
-        return 'OFF'
-
-  still green, because
-
-  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
-  - ``if bool(something) == True`` is the same as ``if something``
-
-* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6, 10-12
-
-    def microwave(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        # if not bool(door_is_open) == True:
-        # if not bool(door_is_open):
-        # if not door_is_open:
-            # if start_is_pushed == True:
-            # if bool(start_is_pushed) == True:
-            # if bool(start_is_pushed):
-            # if start_is_pushed:
-        if not door_is_open and start_is_pushed:
             return 'HEATING'
 
         return 'OFF'
 
-  the test is still green
+  green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
 
 * I remove the commented lines
 
@@ -754,10 +687,8 @@ the test passes
 
   This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
 
-  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
+  - it returns :green:`'HEATING'` if the door is :red:`closed`
   - it returns :red:`'OFF'` if the condition is not met
-
-  is this :ref:`Converse NonImplication?<test_converse_non_implication>`
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_closed_door` in ``test_microwave.py``
 
@@ -791,7 +722,143 @@ the test passes
 
     # Exceptions seen
 
-  the test is still green
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'HEATING' != 'OFF'
+
+* I add an :ref:`if statement<if statements>` for this case
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    def microwave(door_is_open, start_is_pushed):
+        if start_is_pushed == False:
+            return 'OFF'
+
+        if not door_is_open:
+            return 'HEATING'
+
+        return 'OFF'
+
+  the test passes
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 2
+    :emphasize-lines: 1-2
+
+        # if start_is_pushed == False:
+        if not start_is_pushed == True:
+            return 'OFF'
+
+  the test are still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 2
+    :emphasize-lines: 2-3
+
+        # if start_is_pushed == False:
+        # if not start_is_pushed == True:
+        if not start_is_pushed:
+            return 'OFF'
+
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+
+* I add an :ref:`if statement<if statements>` for when the door is :green:`open`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8
+
+    def microwave(door_is_open, start_is_pushed):
+        # if start_is_pushed == False:
+        # if not start_is_pushed == True:
+        if not start_is_pushed:
+            return 'OFF'
+
+        if door_is_open:
+            return 'OFF'
+
+        if not door_is_open:
+            return 'HEATING'
+
+        return 'OFF'
+
+  green
+
+* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` that return :red:`'OFF'` together
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5, 7-9
+
+    def microwave(door_is_open, start_is_pushed):
+        # if start_is_pushed == False:
+        # if not start_is_pushed == True:
+        # if not start_is_pushed:
+        #     return 'OFF'
+
+        # if door_is_open:
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+
+        if not door_is_open:
+            return 'HEATING'
+
+        return 'OFF'
+
+  still green
+
+* I add an :ref:`else clause<if statements>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10-11
+
+    def microwave(door_is_open, start_is_pushed):
+        # if start_is_pushed == False:
+        # if not start_is_pushed == True:
+        # if not start_is_pushed:
+        #     return 'OFF'
+
+        # if door_is_open:
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
+            return 'HEATING'
+
+        if not door_is_open:
+            return 'HEATING'
+
+        return 'OFF'
+
+  the tests are still green
+
+* I remove the other :ref:`if statements` and the commented lines, because they are no longer used
+
+  .. code-block:: python
+    :linenos:
+
+    def microwave(door_is_open, start_is_pushed):
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
+            return 'HEATING'
+
+  this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
+
+  - it returns :red:`'OFF'` if the door is :green:`open` or if the start button is :red:`NOT pushed`, this means
+
+    * it returns :red:`'OFF'` if the door is :green:`open`
+    * it returns :red:`'OFF'` if the start button is :red:`NOT pushed`
+
+  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`closed`
 
 ----
 
@@ -810,7 +877,7 @@ door                start button       output
 :red:`closed`       :red:`NOT pushed`  :red:`OFF`
 ==================  =================  =================
 
-I want the microwave to only heat up food when the timer is set, the inputs for the microwave will then be
+I want the microwave to only heat up food when the timer is set, The inputs for the microwave will then be
 
 * is the door open?
 * is the timer set?
@@ -845,15 +912,15 @@ door           timer           start button       output
   :lineno-start: 7
   :emphasize-lines: 6
 
-      def test_open_door(self):
-          my_expectation = 'OFF'
+        def test_open_door(self):
+            my_expectation = 'OFF'
 
-          reality = src.microwave.microwave(
-              door_is_open=True,
-              timer_is_set=True,
-              start_is_pushed=True,
-          )
-          self.assertEqual(reality, my_expectation)
+            reality = src.microwave.microwave(
+                door_is_open=True,
+                timer_is_set=True,
+                start_is_pushed=True,
+            )
+            self.assertEqual(reality, my_expectation)
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -881,17 +948,17 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
             door_is_open, start_is_pushed,
             timer_is_set,
         ):
-        if not door_is_open and start_is_pushed:
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
             return 'HEATING'
-
-        return 'OFF'
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_closed_door - TypeError: microwave() missing 1 required positional argument:...
-    FAILED ...test_open_door - TypeError: microwave() missing 1 required positional argument:...
+    FAILED ...test_closed_door - TypeError: microwave() missing 1 required positional argument: 'timer_is_set'
+    FAILED ...test_open_door - TypeError: microwave() missing 1 required positional argument: 'timer_is_set'
 
   because the tests call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pushed`` and ``timer_is_set``). I have to make ``timer_is_set`` a choice.
 
@@ -935,7 +1002,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
 ----
 
-* I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set` and the start button is :red:`NOT pushed`
+* I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>`, for when the door is :green:`open`, the timer is :green:`set` and the start button is :red:`NOT pushed`
 
   =============  ==============  =================  ===========
   door           timer           start button       output
@@ -1237,7 +1304,7 @@ door           timer           start button       output
 
 ----
 
-I add a :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
+I add an :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
 
 .. code-block:: python
   :linenos:
@@ -1245,15 +1312,15 @@ I add a :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<w
 
   def microwave(
           door_is_open, start_is_pushed,
-          timer_is_set=False
+          timer_is_set=False,
       ):
       if timer_is_set == False:
           return 'OFF'
 
-      if not door_is_open and start_is_pushed:
+      if door_is_open or not start_is_pushed:
+          return 'OFF'
+      else:
           return 'HEATING'
-
-      return 'OFF'
 
 the test passes
 
@@ -1265,91 +1332,28 @@ the test passes
 
 ----
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`Logical Negation(NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
+    :lineno-start: 5
+    :emphasize-lines: 1-2
 
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False
-        ):
         # if timer_is_set == False:
-        if bool(timer_is_set) == False:
+        if not timer_is_set == True:
             return 'OFF'
-
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
-
-        return 'OFF'
 
   the test is still green
-
-* I use :ref:`Logical Negation(NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-7
-
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False
-        ):
-        # if timer_is_set == False:
-        # if bool(timer_is_set) == False:
-        if not bool(timer_is_set) == True:
-            return 'OFF'
-
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
-
-        return 'OFF'
-
-  still green
 
 * I remove ``== True``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7-8
+    :lineno-start: 5
+    :emphasize-lines: 2-3
 
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False
-        ):
         # if timer_is_set == False:
-        # if bool(timer_is_set) == False:
-        # if not bool(timer_is_set) == True:
-        if not bool(timer_is_set):
-            return 'OFF'
-
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
-
-        return 'OFF'
-
-  green
-
-* I remove :ref:`bool<booleans 2: test with bool>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 8-9
-
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False
-        ):
-        # if timer_is_set == False:
-        # if bool(timer_is_set) == False:
-        # if not bool(timer_is_set) == True:
-        # if not bool(timer_is_set):
+        # if not timer_is_set == True:
         if not timer_is_set:
             return 'OFF'
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
-        return 'OFF'
 
   still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
 
@@ -1365,26 +1369,31 @@ the test passes
         if not timer_is_set:
             return 'OFF'
 
-        if not door_is_open and start_is_pushed:
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
             return 'HEATING'
 
-        return 'OFF'
-
-  This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
+  this is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`'OFF'` if the timer is :red:`NOT set`
   - if the timer is :green:`set`
 
-    * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
-  - it returns :red:`'OFF'` if none of the conditions are met
+    - it returns :red:`'OFF'` if the door is :green:`open` or if the start button is :red:`NOT pushed`, this means
+
+      * it returns :red:`'OFF'` if the door is :green:`open`
+      * it returns :red:`'OFF'` if the start button is :red:`NOT pushed`
+
+    - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`closed`
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_closed_door_timer_not_set`, for when the door is :red:`closed`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`, in ``test_microwave.py``
 
-  =============  ==============  =================  ================
+  =============  ==============  =================  =============
   door           timer           start button       output
-  =============  ==============  =================  ================
+  =============  ==============  =================  =============
+  :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
   :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
-  =============  ==============  =================  ================
+  =============  ==============  =================  =============
 
   .. code-block:: python
     :lineno-start: 59
@@ -1411,53 +1420,6 @@ the test passes
     # Exceptions seen
 
   the test is still green
-
-* I add another clause to the :ref:`if statement<if statements>` for when the timer is :green:`set`, in the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 8-12
-
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False,
-        ):
-        if not timer_is_set:
-            return 'OFF'
-
-        if (
-            not door_is_open
-            and start_is_pushed
-            and timer_is_set
-        ):
-            return 'HEATING'
-
-        return 'OFF'
-
-  the test is still green
-
-* I remove the :ref:`if statement<if statements>` for when the timer is :red:`NOT set` because I do not need it anymore
-
-  .. code-block:: python
-    :linenos:
-
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False
-        ):
-        if (
-            not door_is_open
-            and start_is_pushed
-            and timer_is_set
-        ):
-            return 'HEATING'
-
-        return 'OFF'
-
-  still green. This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
-
-  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed` AND the timer is :green:`set`
-  - it returns :red:`'OFF'` in every other case
 
 ----
 
@@ -1560,10 +1522,13 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
             door_is_open, start_is_pushed,
             timer_is_set=False, too_hot,
         ):
-        if not door_is_open and start_is_pushed and timer_is_set:
-            return 'HEATING'
+        if not timer_is_set:
+            return 'OFF'
 
-        return 'OFF'
+        if door_is_open or not start_is_pushed:
+            return 'OFF'
+        else:
+            return 'HEATING'
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -1573,7 +1538,21 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
   because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_arguments>`
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``too_hot`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_microwave.py``
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 6
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``too_hot`` parameter in the :ref:`function signature<what is a function?>` to make it a choice, in ``microwave.py``
 
   .. code-block:: python
     :linenos:
@@ -1594,7 +1573,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`, in :ref:`test_open_door_timer_set` in ``test_microwave.py``
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -1632,6 +1611,8 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
+
+        def test_open_door_timer_not_set(self):
 
   the test is still green
 
@@ -1811,7 +1792,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
   .. code-block:: python
     :lineno-start: 10
-    :emphasize-lines: 11-20, 29-38, 46-56, 65-74
+    :emphasize-lines: 11-20, 29-38, 47-56, 65-74
 
         def test_too_hot_open_door_timer_set(self):
             # my_expectation = 'OFF'

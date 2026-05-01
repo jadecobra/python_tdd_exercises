@@ -426,6 +426,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
 
+    .. code-block:: python
+
+      ModuleNotFoundError: No module named 'src'
+
     check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
@@ -3371,6 +3375,28 @@ card expired        PIN                 balance            daily limit          
         if not enough_balance:
             return denied
         if above_daily_limit:
+            return denied
+
+        return 'CASH'
+
+  it could also be written using :ref:`Logical Disjunction (OR)<test_logical_disjunction>` for all the :ref:`if statements` because they all return :red:`'DENIED'`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-12
+
+    def withdraw(
+            pin_is_right, enough_balance,
+            above_daily_limit=False, card_expired=False,
+        ):
+        denied = 'DENIED'
+
+        if (
+            card_expired
+            or not pin_is_right
+            or not enough_balance
+            or above_daily_limit
+        ):
             return denied
 
         return 'CASH'

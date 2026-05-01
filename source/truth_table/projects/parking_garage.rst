@@ -415,6 +415,10 @@ because I do not have a definition for ``src`` in this file_
 
   .. admonition:: If you get :ref:`ModuleNotFoundError<what is a module?>`
 
+    .. code-block:: python
+
+      ModuleNotFoundError: No module named 'src'
+
     check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
