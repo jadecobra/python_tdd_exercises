@@ -50,7 +50,7 @@ requirements
 start the project
 *********************************************************************************
 
-* I name this project ``starter``
+* I name this project ``car``
 * I open a terminal_
 * I use uv_ to make a directory_ for the project
 
@@ -74,7 +74,7 @@ start the project
 
     cd car
 
-  the terminal_ shows I am in the ``starter`` folder_
+  the terminal_ shows I am in the ``car`` folder_
 
   .. code-block:: shell
 
@@ -321,17 +321,17 @@ start the project
 ----
 
 *********************************************************************************
-test_open_door
+test_starter_w_key_close
 *********************************************************************************
 
-The :ref:`truth table` for if the door is :green:`open` is
+The :ref:`truth table` for when the key is :green:`close` to the starter is
 
-==================  =================  =================
-door                start button       output
-==================  =================  =================
-:green:`open`       :green:`pushed`    :red:`OFF`
-:green:`open`       :red:`NOT pushed`  :red:`OFF`
-==================  =================  =================
+==============  =================  =================
+key             start button       output
+==============  =================  =================
+:green:`close`  :green:`pushed`    :green:`ON`
+:green:`close`  :red:`NOT pushed`  :red:`OFF`
+==============  =================  =================
 
 ----
 
@@ -341,25 +341,24 @@ door                start button       output
 
 ----
 
-I change ``test_failure`` to ``test_open_door``, then add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :green:`pushed`
+I change ``test_failure`` to ``test_starter_w_key_close``, then add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :green:`pushed`
 
-==================  =================  =================
-door                start button       output
-==================  =================  =================
-:green:`open`       :green:`start`     :red:`OFF`
-==================  =================  =================
+==============  =================  =================
+key             start button       output
+==============  =================  =================
+:green:`close`  :green:`pushed`    :green:`ON`
+==============  =================  =================
 
 .. code-block:: python
   :lineno-start: 4
-  :emphasize-lines: 3-4, 6-10
+  :emphasize-lines: 3-9
 
   class TestCar(unittest.TestCase):
 
-      def test_open_door(self):
-          my_expectation = 'OFF'
-
+      def test_starter_w_key_close(self):
+          my_expectation = 'ON'
           reality = src.car.starter(
-              door_is_open=True,
+              key_is_close=True,
               start_is_pushed=True,
           )
           self.assertEqual(reality, my_expectation)
@@ -411,7 +410,7 @@ because I do not have a definition for ``src`` in this file_
 
   .. code-block:: python
 
-    AttributeError: module 'src.car' has no attribute 'car'
+    AttributeError: module 'src.car' has no attribute 'starter'
 
   because ``car.py`` in the ``src`` folder_ does not have anything named ``starter`` in it
 
@@ -435,21 +434,21 @@ because I do not have a definition for ``src`` in this file_
     :linenos:
     :emphasize-lines: 1-2
 
-    def car():
+    def starter():
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: car() got an unexpected keyword argument 'door_is_open'
+    TypeError: starter() got an unexpected keyword argument 'key_is_close'
 
   because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 16
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -465,14 +464,14 @@ because I do not have a definition for ``src`` in this file_
     :linenos:
     :emphasize-lines: 1
 
-    def car(door_is_open):
+    def starter(key_is_close):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: car() got an unexpected keyword argument 'start_is_pushed'
+    TypeError: starter() got an unexpected keyword argument 'start_is_pushed'
 
   because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
 
@@ -482,16 +481,16 @@ because I do not have a definition for ``src`` in this file_
     :linenos:
     :emphasize-lines: 1
 
-    def car(door_is_open, start_is_pushed):
+    def starter(key_is_close, start_is_pushed):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: None != 'OFF'
+    AssertionError: None != 'ON'
 
-  the ``starter`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the test expects :red:`'OFF'`
+  the ``starter`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the test expects :green:`'ON'`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -499,10 +498,10 @@ because I do not have a definition for ``src`` in this file_
     :linenos:
     :emphasize-lines: 2
 
-    def car(door_is_open, start_is_pushed):
-        return 'OFF'
+    def starter(key_is_close, start_is_pushed):
+        return 'ON'
 
-  the test passes. The ``starter`` :ref:`function<what is a function?>` always returns :red:`OFF`, it does not care about the inputs. Is this :ref:`Contradiction?<test_contradiction>`
+  the test passes. The ``car`` :ref:`function<what is a function?>` always returns :green:`ON`, it does not care about the inputs. Is this :ref:`Tautology?<test_tautology>`
 
 ----
 
@@ -512,30 +511,30 @@ because I do not have a definition for ``src`` in this file_
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :red:`NOT pushed`, in ``test_car.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :red:`NOT pushed`, in ``test_car.py``
 
-  ==================  =================  =================
-  door                start button       output
-  ==================  =================  =================
-  :green:`open`       :green:`pushed`    :red:`OFF`
-  :green:`open`       :red:`NOT pushed`  :red:`OFF`
-  ==================  =================  =================
+  ==============  =================  =================
+  key             start button       output
+  ==============  =================  =================
+  :green:`close`  :green:`pushed`    :green:`ON`
+  :green:`close`  :red:`NOT pushed`  :red:`OFF`
+  ==============  =================  =================
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 10-14
+    :emphasize-lines: 9-14
 
-        def test_open_door(self):
-            my_expectation = 'OFF'
-
+        def test_starter_w_key_close(self):
+            my_expectation = 'ON'
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 start_is_pushed=True,
             )
             self.assertEqual(reality, my_expectation)
 
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -543,21 +542,88 @@ because I do not have a definition for ``src`` in this file_
 
     # Exceptions seen
 
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'ON' != 'OFF'
+
+  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the test expects :red:`'OFF'`
+
+* I add an :ref:`if statement<if statements>` to the ``starter`` :ref:`function<what is a function?>` in ``car.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    def starter(key_is_close, start_is_pushed):
+        if start_is_pushed == False:
+            return 'OFF'
+
+        return 'ON'
+
+  the test passes
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    def starter(key_is_close, start_is_pushed):
+        # if start_is_pushed == False:
+        if not start_is_pushed == True:
+            return 'OFF'
+
+        return 'ON'
+
   the test is still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 3-4
+
+    def starter(key_is_close, start_is_pushed):
+        # if start_is_pushed == False:
+        # if not start_is_pushed == True:
+        if not start_is_pushed:
+            return 'OFF'
+
+        return 'ON'
+
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def starter(key_is_close, start_is_pushed):
+        if not start_is_pushed:
+            return 'OFF'
+
+        return 'ON'
+
+  this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+
+  - it returns :red:`'OFF'` if the start button is :red:`NOT pushed`
+  - it returns :green:`'ON'` if the above condition is not met
 
 ----
 
 *********************************************************************************
-test_car_w_key_close
+test_car_w_key_far
 *********************************************************************************
 
-The :ref:`truth table` for if the door is :red:`closed` is
+The :ref:`truth table` for when the key is :red:`far` from the starter is
 
 ==============  =================  =================
 key             start button       output
 ==============  =================  =================
-:green:`close`  :green:`pushed`    :green:`ON`
-:green:`close`  :red:`NOT pushed`  :red:`OFF`
+:red:`far`      :green:`pushed`    :red:`OFF`
+:red:`far`      :red:`NOT pushed`  :red:`OFF`
 ==============  =================  =================
 
 ----
@@ -568,7 +634,7 @@ key             start button       output
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :green:`pushed`
+I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pushed`
 
 ==================  =================  =================
 door                start button       output
@@ -577,19 +643,20 @@ door                start button       output
 ==================  =================  =================
 
 .. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 7-13
+  :lineno-start: 15
+  :emphasize-lines: 8-14
 
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close(self):
-            my_expectation = 'HEATING'
+        def test_starter_w_key_close(self):
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 start_is_pushed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -601,9 +668,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  AssertionError: 'OFF' != 'HEATING'
+  AssertionError: 'ON' != 'OFF'
 
-because the ``starter`` :ref:`function<what is a function?>` returns :red:`'OFF'` and the test expects :green:`'HEATING'`
+because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the test expects :red:`'OFF'`
 
 ----
 
@@ -617,13 +684,15 @@ I add an :ref:`if statement<if statements>` to ``car.py``
 
 .. code-block:: python
   :linenos:
-  :emphasize-lines: 2-4
+  :emphasize-lines: 2-3
 
-  def car(door_is_open, start_is_pushed):
-      if door_is_open == False:
-          if start_is_pushed == True:
-              return 'HEATING'
-      return 'OFF'
+  def starter(key_is_close, start_is_pushed):
+    if key_is_close == False:
+        return 'OFF'
+    if not start_is_pushed:
+        return 'OFF'
+
+    return 'ON'
 
 the test passes
 
@@ -635,122 +704,134 @@ the test passes
 
 ----
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-5
+    :emphasize-lines: 2-3
 
-    def car(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        if bool(door_is_open) == False:
-            # if start_is_pushed == True:
-            if bool(start_is_pushed) == True:
-                return 'HEATING'
-        return 'OFF'
+    def starter(key_is_close, start_is_pushed):
+        # if key_is_close == False:
+        if not key_is_close == True:
+            return 'OFF'
+        if not start_is_pushed:
+            return 'OFF'
+
+        return 'ON'
 
   the test is still green
-
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3-4
-
-    def car(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        if not bool(door_is_open) == True:
-            # if start_is_pushed == True:
-            if bool(start_is_pushed) == True:
-                return 'HEATING'
-        return 'OFF'
-
-  still green
 
 * I remove ``== True``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5, 7-8
+    :emphasize-lines: 3-4
 
-    def car(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        # if not bool(door_is_open) == True:
-        if not bool(door_is_open):
-            # if start_is_pushed == True:
-            # if bool(start_is_pushed) == True:
-            if bool(start_is_pushed):
-                return 'HEATING'
-        return 'OFF'
+    def starter(key_is_close, start_is_pushed):
+        # if key_is_close == False:
+        # if not key_is_close == True:
+        if not key_is_close:
+            return 'OFF'
+        if not start_is_pushed:
+            return 'OFF'
 
-  green
+        return 'ON'
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6, 9-10
-
-    def car(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        # if not bool(door_is_open) == True:
-        # if not bool(door_is_open):
-        if not door_is_open:
-            # if start_is_pushed == True:
-            # if bool(start_is_pushed) == True:
-            # if bool(start_is_pushed):
-            if start_is_pushed:
-                return 'HEATING'
-        return 'OFF'
-
-  still green, because
-
-  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
-  - ``if bool(something) == True`` is the same as ``if something``
-
-* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
+* I use :ref:`Logical Disjuncion (OR)<test_logical_disjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6, 10-12
+    :emphasize-lines: 4-7
 
-    def car(door_is_open, start_is_pushed):
-        # if door_is_open == False:
-        # if bool(door_is_open) == False:
-        # if not bool(door_is_open) == True:
-        # if not bool(door_is_open):
-        # if not door_is_open:
-            # if start_is_pushed == True:
-            # if bool(start_is_pushed) == True:
-            # if bool(start_is_pushed):
-            # if start_is_pushed:
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
-        return 'OFF'
+    def starter(key_is_close, start_is_pushed):
+        # if key_is_close == False:
+        # if not key_is_close == True:
+        # if not key_is_close:
+        #     return 'OFF'
+        # if not start_is_pushed:
+        if not key_is_close or not start_is_pushed:
+            return 'OFF'
+
+        return 'ON'
 
   the test is still green
+
+* I rewrite the statement in terms of :ref:`Logical Negation (NOT)<test_logical_negation>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-12
+
+    def starter(key_is_close, start_is_pushed):
+        # if key_is_close == False:
+        # if not key_is_close == True:
+        # if not key_is_close:
+        #     return 'OFF'
+        # if not start_is_pushed:
+        # if not key_is_close or not start_is_pushed:
+        if (
+            (not key_is_close)
+            (not and)
+            (not start_is_pushed)
+        ):
+            return 'OFF'
+
+        return 'ON'
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: invalid syntax
+
+  because I cannot :ref:`negate<test_logical_negation>` :ref:`and<test_logical_conjunction>` this way
+
+* I "factor" out the :ref:`nots<test_logical_negation>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8-13
+
+    def starter(key_is_close, start_is_pushed):
+        # if key_is_close == False:
+        # if not key_is_close == True:
+        # if not key_is_close:
+        #     return 'OFF'
+        # if not start_is_pushed:
+        # if not key_is_close or not start_is_pushed:
+        # if (
+        #     (not key_is_close)
+        #     (not and)
+        #     (not start_is_pushed)
+        # ):
+        if not (key_is_close and start_is_pushed):
+            return 'OFF'
+
+        return 'ON'
+
+  the test is green again
 
 * I remove the commented lines
 
   .. code-block:: python
     :linenos:
 
-    def car(door_is_open, start_is_pushed):
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
-        return 'OFF'
+    def starter(key_is_close, start_is_pushed):
+        if not (key_is_close and start_is_pushed):
+            return 'OFF'
 
-  This is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+        return 'ON'
 
-  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
+  this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
+
+  - it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :green:`pushed`
   - it returns :red:`'OFF'` if the condition is not met
 
-  is this :ref:`Converse NonImplication?<test_converse_non_implication>`
+  is this :ref:`Logical Conjunction?<test_logical_conjunction>`
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_car_w_key_close` in ``test_car.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :red:`NOT pushed` to :ref:`test_starter_w_key_close` in ``test_car.py``
 
   ==================  =================  =================
   door                start button       output
@@ -763,10 +844,10 @@ the test passes
     :lineno-start: 22
     :emphasize-lines: 9, 11-15
 
-        def test_car_w_key_close(self):
-            my_expectation = 'HEATING'
+        def test_starter_w_key_close(self):
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 start_is_pushed=True,
             )
             self.assertEqual(reality, my_expectation)
@@ -774,7 +855,7 @@ the test passes
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
@@ -787,7 +868,7 @@ the test passes
 ----
 
 *********************************************************************************
-test_open_door_timer_set
+test_starter_w_key_close_timer_set
 *********************************************************************************
 
 So far, the :ref:`truth table` for the car is
@@ -795,8 +876,8 @@ So far, the :ref:`truth table` for the car is
 ==================  =================  =================
 door                start button       output
 ==================  =================  =================
-:green:`open`       :green:`pushed`    :red:`OFF`
-:green:`open`       :red:`NOT pushed`  :red:`OFF`
+:green:`close`       :green:`pushed`    :red:`OFF`
+:green:`close`       :red:`NOT pushed`  :red:`OFF`
 :red:`closed`       :green:`pushed`    :green:`HEATING`
 :red:`closed`       :red:`NOT pushed`  :red:`OFF`
 ==================  =================  =================
@@ -807,13 +888,13 @@ I want the car to only heat up food when the timer is set, the inputs for the ca
 * is the timer set?
 * was the start button pushed?
 
-and the :ref:`truth table` for when the door is :green:`open` and the timer is :green:`set`, will be
+and the :ref:`truth table` for when the key is :green:`close` and the timer is :green:`set`, will be
 
 =============  ==============  =================  ===========
 door           timer           start button       output
 =============  ==============  =================  ===========
-:green:`open`  :green:`set`    :green:`pushed`    :red:`OFF`
-:green:`open`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
+:green:`close`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
 =============  ==============  =================  ===========
 
 ----
@@ -824,23 +905,23 @@ door           timer           start button       output
 
 ----
 
-I add a value for ``timer_is_set`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_open_door`, for when the door is :green:`open`, the timer is :green:`set` and the start button is :green:`pushed`
+I add a value for ``timer_is_set`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_starter_w_key_close`, for when the key is :green:`close`, the timer is :green:`set` and the start button is :green:`pushed`
 
 =============  ==============  =================  ===========
 door           timer           start button       output
 =============  ==============  =================  ===========
-:green:`open`  :green:`set`    :green:`pushed`    :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
 =============  ==============  =================  ===========
 
 .. code-block:: python
   :lineno-start: 7
   :emphasize-lines: 6
 
-      def test_open_door(self):
+      def test_starter_w_key_close(self):
           my_expectation = 'OFF'
 
           reality = src.car.starter(
-              door_is_open=True,
+              key_is_close=True,
               timer_is_set=True,
               start_is_pushed=True,
           )
@@ -850,9 +931,9 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
-  TypeError: car() got an unexpected keyword argument 'timer_is_set'
+  TypeError: starter() got an unexpected keyword argument 'timer_is_set'
 
-because the test called the ``starter`` :ref:`function<what is a function?>` with 3 keyword arguments (``door_is_open``, ``timer_is_set`` and ``start_is_pushed``) and the :ref:`function<what is a function?>` only allows calls with 2 arguments (``door_is_open`` and ``start_is_pushed``)
+because the test called the ``starter`` :ref:`function<what is a function?>` with 3 keyword arguments (``key_is_close``, ``timer_is_set`` and ``start_is_pushed``) and the :ref:`function<what is a function?>` only allows calls with 2 arguments (``key_is_close`` and ``start_is_pushed``)
 
 ----
 
@@ -868,22 +949,22 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
     :linenos:
     :emphasize-lines: 1-4
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set,
         ):
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
+        if not key_is_close and start_is_pushed:
+            return 'OFF'
         return 'OFF'
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_car_w_key_close - TypeError: car() missing 1 required positional argument:...
-    FAILED ...test_open_door - TypeError: car() missing 1 required positional argument:...
+    FAILED ...test_starter_w_key_close - TypeError: starter() missing 1 required positional argument:...
+    FAILED ...test_starter_w_key_close - TypeError: starter() missing 1 required positional argument:...
 
-  because the tests call the ``starter`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pushed`` and ``timer_is_set``). I have to make ``timer_is_set`` a choice.
+  because the tests call the ``starter`` :ref:`function<what is a function?>` with 2 arguments (``key_is_close`` and ``start_is_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``key_is_close``, ``start_is_pushed`` and ``timer_is_set``). I have to make ``timer_is_set`` a choice.
 
 * I add a :ref:`default value<test_functions_w_default_arguments>` to make ``timer_is_set`` a choice
 
@@ -891,8 +972,8 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
     :linenos:
     :emphasize-lines: 3
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False,
         ):
 
@@ -901,7 +982,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
   .. code-block:: python
 
     src.car.starter(
-        door_is_open=True,
+        key_is_close=True,
         start_is_pushed=False,
     )
 
@@ -910,7 +991,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
   .. code-block:: python
 
     src.car.starter(
-        door_is_open=True,
+        key_is_close=True,
         start_is_pushed=False,
         timer_is_set=False,
     )
@@ -925,41 +1006,41 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
 ----
 
-* I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set` and the start button is :red:`NOT pushed`
+* I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :green:`set` and the start button is :red:`NOT pushed`
 
   =============  ==============  =================  ===========
   door           timer           start button       output
   =============  ==============  =================  ===========
-  :green:`open`  :green:`set`    :green:`pushed`    :red:`OFF`
-  :green:`open`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
+  :green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
+  :green:`close`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
   =============  ==============  =================  ===========
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 13
 
-        def test_open_door(self):
+        def test_starter_w_key_close(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close(self):
+        def test_starter_w_key_close(self):
 
   the test is still green
 
-* I change the name of the test from :ref:`test_open_door` to :ref:`test_open_door_timer_set`
+* I change the name of the test from :ref:`test_starter_w_key_close` to :ref:`test_starter_w_key_close_timer_set`
 
   .. code-block:: python
     :lineno-start: 5
@@ -967,30 +1048,30 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
     class TestCar(unittest.TestCase):
 
-        def test_open_door_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             my_expectation = 'OFF'
 
 ----
 
 *********************************************************************************
-test_open_door_timer_not_set
+test_starter_w_key_close_timer_not_set
 *********************************************************************************
 
-The :ref:`truth table` for when the door is :green:`open` and the timer is :red:`NOT set` is
+The :ref:`truth table` for when the key is :green:`close` and the timer is :red:`NOT set` is
 
 =============  ==============  =================  ===========
 door           timer           start button       output
 =============  ==============  =================  ===========
-:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
+:green:`close`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
+:green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
 =============  ==============  =================  ===========
 
-* I add a new test with an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set` and the start button is :green:`pushed`
+* I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :red:`NOT set` and the start button is :green:`pushed`
 
   =============  ==============  =================  ===========
   door           timer           start button       output
   =============  ==============  =================  ===========
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
   =============  ==============  =================  ===========
 
   .. code-block:: python
@@ -998,67 +1079,67 @@ door           timer           start button       output
     :emphasize-lines: 8-9, 11-16
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close(self):
+        def test_starter_w_key_close(self):
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
 
   =============  ==============  =================  ===========
   door           timer           start button       output
   =============  ==============  =================  ===========
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-  :green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
   =============  ==============  =================  ===========
 
   .. code-block:: python
     :lineno-start: 24
     :emphasize-lines: 11-16
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close(self):
+        def test_starter_w_key_close(self):
 
   green
 
 ----
 
 *********************************************************************************
-test_car_w_key_close_timer_set
+test_starter_w_key_close_timer_set
 *********************************************************************************
 
-The :ref:`truth table` for when the door is :red:`closed` and is the timer is :green:`set`
+The :ref:`truth table` for when the key is :red:`far` from the starter and is the timer is :green:`set`
 
 =============  ==============  =================  ================
 door           timer           start button       output
@@ -1067,7 +1148,7 @@ door           timer           start button       output
 :red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
 =============  ==============  =================  ================
 
-* I add a value for the ``timer_is_set`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_car_w_key_close` for the case where the door is :red:`closed`, the timer is :green:`set` and the start button is :green:`pushed`
+* I add a value for the ``timer_is_set`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_starter_w_key_close` for the case where the key is :red:`far` from the starter, the timer is :green:`set` and the start button is :green:`pushed`
 
   =============  ==============  =================  =============
   door           timer           start button       output
@@ -1079,10 +1160,10 @@ door           timer           start button       output
     :lineno-start: 41
     :emphasize-lines: 5
 
-        def test_car_w_key_close(self):
-            my_expectation = 'HEATING'
+        def test_starter_w_key_close(self):
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=True,
                 start_is_pushed=True,
             )
@@ -1091,14 +1172,14 @@ door           timer           start button       output
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
   the test is still green
 
-* I do not need to add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pushed`
+* I do not need to add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the timer is :green:`set` and the start button is :red:`NOT pushed`
 
   =============  ==============  =================  =============
   door           timer           start button       output
@@ -1112,7 +1193,7 @@ door           timer           start button       output
   .. code-block:: python
 
     src.car.starter(
-        door_is_open=False,
+        key_is_close=False,
         start_is_pushed=False,
     )
 
@@ -1121,30 +1202,30 @@ door           timer           start button       output
   .. code-block:: python
 
     src.car.starter(
-        door_is_open=False,
+        key_is_close=False,
         start_is_pushed=False,
         timer_is_set=False,
     )
 
   the :ref:`default value<test_functions_w_default_arguments>` for ``timer_is_set`` is :ref:`False<test_what_is_false>`
 
-* I change the name of the test from :ref:`test_car_w_key_close` to :ref:`test_car_w_key_close_timer_set`
+* I change the name of the test from :ref:`test_starter_w_key_close` to :ref:`test_starter_w_key_close_timer_set`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 8
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close_timer_set(self):
-            my_expectation = 'HEATING'
+        def test_starter_w_key_close_timer_set(self):
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=True,
                 start_is_pushed=True,
             )
@@ -1153,10 +1234,10 @@ door           timer           start button       output
 ----
 
 *********************************************************************************
-test_car_w_key_close_timer_not_set
+test_starter_w_key_close_timer_not_set
 *********************************************************************************
 
-The :ref:`truth table` for when the door is :red:`closed` and the timer is :red:`NOT set` is
+The :ref:`truth table` for when the key is :red:`far` from the starter and the timer is :red:`NOT set` is
 
 =============  ==============  =================  ================
 door           timer           start button       output
@@ -1172,7 +1253,7 @@ door           timer           start button       output
 
 ----
 
-* I add a new test with an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set` and the start button is :green:`pushed`
+* I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the timer is :red:`NOT set` and the start button is :green:`pushed`
 
   =============  ==============  =================  =============
   door           timer           start button       output
@@ -1185,16 +1266,16 @@ door           timer           start button       output
     :emphasize-lines: 7-8, 10-15
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=False,
                 start_is_pushed=True,
             )
@@ -1207,9 +1288,9 @@ door           timer           start button       output
 
   .. code-block:: python
 
-    AssertionError: 'HEATING' != 'OFF'
+    AssertionError: 'OFF' != 'OFF'
 
-  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'HEATING'` and the test expects :red:`'OFF'`
+  because the ``starter`` :ref:`function<what is a function?>` returns :red:`'OFF'` and the test expects :red:`'OFF'`
 
 ----
 
@@ -1225,14 +1306,14 @@ I add a :ref:`if statement<if statements>` to the ``starter`` :ref:`function<wha
   :linenos:
   :emphasize-lines: 5-6
 
-  def car(
-          door_is_open, start_is_pushed,
+  def starter(
+          key_is_close, start_is_pushed,
           timer_is_set=False
       ):
       if timer_is_set == False:
           return 'OFF'
-      if not door_is_open and start_is_pushed:
-          return 'HEATING'
+      if not key_is_close and start_is_pushed:
+          return 'OFF'
       return 'OFF'
 
 the test passes
@@ -1252,15 +1333,15 @@ the test passes
     :linenos:
     :emphasize-lines: 5-6
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False
         ):
         # if timer_is_set == False:
         if bool(timer_is_set) == False:
             return 'OFF'
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
+        if not key_is_close and start_is_pushed:
+            return 'OFF'
         return 'OFF'
 
   the test is still green
@@ -1271,16 +1352,16 @@ the test passes
     :linenos:
     :emphasize-lines: 6-7
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False
         ):
         # if timer_is_set == False:
         # if bool(timer_is_set) == False:
         if not bool(timer_is_set) == True:
             return 'OFF'
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
+        if not key_is_close and start_is_pushed:
+            return 'OFF'
         return 'OFF'
 
   still green
@@ -1291,8 +1372,8 @@ the test passes
     :linenos:
     :emphasize-lines: 7-8
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False
         ):
         # if timer_is_set == False:
@@ -1300,8 +1381,8 @@ the test passes
         # if not bool(timer_is_set) == True:
         if not bool(timer_is_set):
             return 'OFF'
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
+        if not key_is_close and start_is_pushed:
+            return 'OFF'
         return 'OFF'
 
   green
@@ -1312,8 +1393,8 @@ the test passes
     :linenos:
     :emphasize-lines: 8-9
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False
         ):
         # if timer_is_set == False:
@@ -1322,8 +1403,8 @@ the test passes
         # if not bool(timer_is_set):
         if not timer_is_set:
             return 'OFF'
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
+        if not key_is_close and start_is_pushed:
+            return 'OFF'
         return 'OFF'
 
   still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
@@ -1333,14 +1414,14 @@ the test passes
   .. code-block:: python
     :linenos:
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False,
         ):
         if not timer_is_set:
             return 'OFF'
-        if not door_is_open and start_is_pushed:
-            return 'HEATING'
+        if not key_is_close and start_is_pushed:
+            return 'OFF'
         return 'OFF'
 
   This is what happens when the ``starter`` :ref:`function<what is a function?>` is called
@@ -1348,27 +1429,27 @@ the test passes
   - it returns :red:`'OFF'` if the timer is :red:`NOT set`
   - if the timer is :green:`set`
 
-    * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
+    * it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :green:`pushed`
   - it returns :red:`'OFF'` if none of the conditions are met
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
 
   .. code-block:: python
     :lineno-start: 58
     :emphasize-lines: 11-16
 
-        def test_car_w_key_close_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=False,
                 start_is_pushed=True,
             )
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=False,
                 start_is_pushed=False,
             )
@@ -1385,18 +1466,18 @@ the test passes
     :linenos:
     :emphasize-lines: 7
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False
         ):
         if not timer_is_set:
             return 'OFF'
         if (
-            not door_is_open
+            not key_is_close
             and start_is_pushed
             and timer_is_set
         ):
-            return 'HEATING'
+            return 'OFF'
         return 'OFF'
 
   the test is still green
@@ -1406,21 +1487,21 @@ the test passes
   .. code-block:: python
     :linenos:
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False
         ):
         if (
-            not door_is_open
+            not key_is_close
             and start_is_pushed
             and timer_is_set
         ):
-            return 'HEATING'
+            return 'OFF'
         return 'OFF'
 
   still green. This is what happens when the ``starter`` :ref:`function<what is a function?>` is called
 
-  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed` AND the timer is :green:`set`
+  - it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :green:`pushed` AND the timer is :green:`set`
   - it returns :red:`'OFF'` in every other case
 
 ----
@@ -1434,10 +1515,10 @@ the :ref:`truth table` for the car is
 =============  ==============  =================  ===========
 door           timer           start button       output
 =============  ==============  =================  ===========
-:green:`open`  :green:`set`    :green:`pushed`    :red:`OFF`
-:green:`open`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
-:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
+:green:`close`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
+:green:`close`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
+:green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
 =============  ==============  =================  ===========
 
 =============  ==============  =================  ================
@@ -1456,15 +1537,15 @@ I want to add a failsafe to stop the car if it gets too hot. The inputs will the
 * was the start button pushed?
 * is the car too hot?
 
-and the :ref:`truth table` for when the door is :green:`open` and the timer is :green:`set` will be
+and the :ref:`truth table` for when the key is :green:`close` and the timer is :green:`set` will be
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
-:green:`open`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
-:green:`open`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-:green:`open`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-:green:`open`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+:green:`close`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
 ----
@@ -1475,23 +1556,23 @@ door           timer           start button       too hot             output
 
 ----
 
-I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` for the case where the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the car temperature is :green:`too hot`, to :ref:`test_open_door_timer_set` in ``test_car.py``
+I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the timer is :green:`set`, the start button is :green:`pushed` and the car temperature is :green:`too hot`, to :ref:`test_starter_w_key_close_timer_set` in ``test_car.py``
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
-:green:`open`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
 =============  ==============  =================  ==================  ================
 
 .. code-block:: python
   :lineno-start: 7
   :emphasize-lines: 8
 
-        def test_open_door_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1502,9 +1583,9 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
-  TypeError: car() got an unexpected keyword argument 'too_hot'
+  TypeError: starter() got an unexpected keyword argument 'too_hot'
 
-because the test called the ``starter`` :ref:`function<what is a function?>` with 4 keyword arguments (``door_is_open``, ``timer_is_set``, ``start_is_pushed`` and ``too_hot``) and the definition only allows calls with 2 required arguments (``door_is_open`` and ``start_is_pushed``) and 1 optional argument (``timer_is_set``)
+because the test called the ``starter`` :ref:`function<what is a function?>` with 4 keyword arguments (``key_is_close``, ``timer_is_set``, ``start_is_pushed`` and ``too_hot``) and the definition only allows calls with 2 required arguments (``key_is_close`` and ``start_is_pushed``) and 1 optional argument (``timer_is_set``)
 
 ----
 
@@ -1514,18 +1595,18 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
 ----
 
-* I add ``too_hot`` to the ``starter`` :ref:`function signature<what is a function?>` in ``car.py``
+* I add ``too_hot`` to the ``car`` :ref:`function signature<what is a function?>` in ``car.py``
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False, too_hot,
         ):
-        if not door_is_open and start_is_pushed and timer_is_set:
-            return 'HEATING'
+        if not key_is_close and start_is_pushed and timer_is_set:
+            return 'OFF'
         return 'OFF'
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -1542,8 +1623,8 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
     :linenos:
     :emphasize-lines: 3
 
-    def car(
-            door_is_open, start_is_pushed,
+    def starter(
+            key_is_close, start_is_pushed,
             timer_is_set=False, too_hot=False,
         ):
 
@@ -1557,24 +1638,24 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :green:`set`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
-  :green:`open`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
-  :green:`open`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
+  :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 12-18
 
-        def test_open_door_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1582,7 +1663,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=False,
@@ -1590,7 +1671,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
             )
@@ -1598,25 +1679,25 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
   the test is still green
 
-* I add a value for the ``too_hot`` parameter in the next :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter in the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
-  :green:`open`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
-  :green:`open`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-  :green:`open`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+  :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
+  :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 24
 
-        def test_open_door_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1624,7 +1705,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=False,
@@ -1632,37 +1713,37 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
                 too_hot=True
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the car temperature is  :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the car temperature is  :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
-  :green:`open`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
-  :green:`open`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-  :green:`open`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-  :green:`open`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
+  :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+  :green:`close`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 28-34
 
-        def test_open_door_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1670,7 +1751,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=False,
@@ -1678,7 +1759,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
                 too_hot=True,
@@ -1686,18 +1767,18 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
                 too_hot=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
 
   green
 
-* I change the name of the test from :ref:`test_open_door_timer_set` to :ref:`test_too_hot_open_door_timer_set`
+* I change the name of the test from :ref:`test_starter_w_key_close_timer_set` to :ref:`test_too_hot_open_door_timer_set`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1735,7 +1816,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1744,7 +1825,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=False,
@@ -1753,7 +1834,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
                 too_hot=True,
@@ -1762,7 +1843,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
                 too_hot=False,
@@ -1782,7 +1863,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1791,7 +1872,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             # self.assertEqual(reality, OFF)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=True,
@@ -1800,7 +1881,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             )
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=True,
                 too_hot=False,
@@ -1809,7 +1890,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             # self.assertEqual(reality, OFF)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=False,
@@ -1818,7 +1899,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             )
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
                 too_hot=True,
@@ -1827,7 +1908,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             # self.assertEqual(reality, OFF)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -1836,7 +1917,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             )
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=True,
                 start_is_pushed=False,
                 too_hot=False,
@@ -1845,7 +1926,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             # self.assertEqual(reality, OFF)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=False,
@@ -1861,7 +1942,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
         def test_too_hot_open_door_timer_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=True,
@@ -1871,7 +1952,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=False,
@@ -1881,7 +1962,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -1891,7 +1972,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=False,
@@ -1899,7 +1980,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
                 OFF
             )
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
 
 ----
 
@@ -1907,34 +1988,34 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 test_too_hot_open_door_timer_not_set
 *********************************************************************************
 
-The :ref:`truth table` for when the door is :green:`open` and the timer is :red:`NOT set` is
+The :ref:`truth table` for when the key is :green:`close` and the timer is :red:`NOT set` is
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
-:green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+:green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+:green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
-* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_open_door_timer_not_set` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_starter_w_key_close_timer_not_set` for when the key is :green:`close`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 8
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1943,24 +2024,24 @@ door           timer           start button       too hot             output
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 12-18
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=True,
@@ -1968,7 +2049,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=False,
@@ -1976,35 +2057,35 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
 
   the test is still green
 
-* I add a value for ``too_hot`` to the next :ref:`assertion<what is an assertion?>`, for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
+* I add a value for ``too_hot`` to the next :ref:`assertion<what is an assertion?>`, for when the key is :green:`close`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-  :green:`open`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 24
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=True,
@@ -2012,7 +2093,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=False,
@@ -2020,37 +2101,37 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
                 too_hot=True
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
   =============  ==============  =================  ==================  ================
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
-  :green:`open`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-  :green:`open`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-  :green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+  :green:`close`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+  :green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
   =============  ==============  =================  ==================  ================
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 28-34
 
-        def test_open_door_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=True,
@@ -2058,7 +2139,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=False,
@@ -2066,7 +2147,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
                 too_hot=True,
@@ -2074,18 +2155,18 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, my_expectation)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
                 too_hot=False,
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
 
   green
 
-* I change the name of the test from :ref:`test_open_door_timer_not_set` to :ref:`test_too_hot_open_door_timer_not_set`
+* I change the name of the test from :ref:`test_starter_w_key_close_timer_not_set` to :ref:`test_too_hot_open_door_timer_not_set`
 
   .. code-block:: python
     :lineno-start: 41
@@ -2093,7 +2174,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=False,
@@ -2114,7 +2195,7 @@ door           timer           start button       too hot             output
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=True,
@@ -2123,7 +2204,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=False,
@@ -2132,7 +2213,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
                 too_hot=True,
@@ -2141,7 +2222,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
                 too_hot=False,
@@ -2161,7 +2242,7 @@ door           timer           start button       too hot             output
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=True,
@@ -2169,7 +2250,7 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=True,
@@ -2178,7 +2259,7 @@ door           timer           start button       too hot             output
             )
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=True,
                 too_hot=False,
@@ -2186,7 +2267,7 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=False,
@@ -2195,7 +2276,7 @@ door           timer           start button       too hot             output
             )
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
                 too_hot=True,
@@ -2203,7 +2284,7 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2212,7 +2293,7 @@ door           timer           start button       too hot             output
             )
 
             reality = src.car.starter(
-                door_is_open=True,
+                key_is_close=True,
                 timer_is_set=False,
                 start_is_pushed=False,
                 too_hot=False,
@@ -2220,7 +2301,7 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=False,
                     too_hot=False,
@@ -2236,7 +2317,7 @@ door           timer           start button       too hot             output
         def test_too_hot_open_door_timer_not_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=True,
@@ -2246,7 +2327,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=False,
@@ -2256,7 +2337,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2266,7 +2347,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=False,
                     too_hot=False,
@@ -2274,7 +2355,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
 
 ----
 
@@ -2282,7 +2363,7 @@ door           timer           start button       too hot             output
 test_too_hot_closed_door_timer_set
 *********************************************************************************
 
-The :ref:`truth table` for when the door is :red:`closed` and the timer is :green:`set` is
+The :ref:`truth table` for when the key is :red:`far` from the starter and the timer is :green:`set` is
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
@@ -2293,16 +2374,16 @@ door           timer           start button       too hot             output
 :red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
-* I use the ``OFF`` :ref:`global variable<what is a variable?>` for ``my_expectation`` when the value is :red:`'OFF'` in :ref:`test_car_w_key_close_timer_set`
+* I use the ``OFF`` :ref:`global variable<what is a variable?>` for ``my_expectation`` when the value is :red:`'OFF'` in :ref:`test_starter_w_key_close_timer_set`
 
   .. code-block:: python
     :lineno-start: 92
     :emphasize-lines: 10, 16-17
 
-        def test_car_w_key_close_timer_set(self):
-            my_expectation = 'HEATING'
+        def test_starter_w_key_close_timer_set(self):
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=True,
                 start_is_pushed=True,
             )
@@ -2311,7 +2392,7 @@ door           timer           start button       too hot             output
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 start_is_pushed=False,
             )
             # self.assertEqual(reality, my_expectation)
@@ -2325,32 +2406,32 @@ door           timer           start button       too hot             output
     :lineno-start: 92
     :emphasize-lines: 8-15, 24-30
 
-        def test_car_w_key_close_timer_set(self):
-            my_expectation = 'HEATING'
+        def test_starter_w_key_close_timer_set(self):
+            my_expectation = 'OFF'
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=True,
                 start_is_pushed=True,
             )
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=True,
                 ),
-                'HEATING'
+                'OFF'
             )
 
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 start_is_pushed=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     start_is_pushed=False,
                 ),
                 OFF
@@ -2363,27 +2444,27 @@ door           timer           start button       too hot             output
   .. code-block:: python
     :lineno-start: 92
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=True,
                 ),
-                'HEATING'
+                'OFF'
             )
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     start_is_pushed=False,
                 ),
                 OFF
             )
 
-        def test_car_w_key_close_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
 
-* I add a value for the ``too_hot`` and ``timer_is_set`` parameters in the second :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` and ``timer_is_set`` parameters in the second :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the timer is :green:`set`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2395,19 +2476,19 @@ door           timer           start button       too hot             output
     :lineno-start: 92
     :emphasize-lines: 14, 16
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=True,
                 ),
-                'HEATING'
+                'OFF'
             )
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2417,7 +2498,7 @@ door           timer           start button       too hot             output
 
   green
 
-* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
+* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the timer is :green:`set`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2430,20 +2511,20 @@ door           timer           start button       too hot             output
     :lineno-start: 92
     :emphasize-lines: 7
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=False,
                 ),
-                'HEATING'
+                'OFF'
             )
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2453,7 +2534,7 @@ door           timer           start button       too hot             output
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2467,20 +2548,20 @@ door           timer           start button       too hot             output
     :lineno-start: 92
     :emphasize-lines: 22-30
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=False,
                 ),
-                'HEATING'
+                'OFF'
             )
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2490,7 +2571,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2500,7 +2581,7 @@ door           timer           start button       too hot             output
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2515,20 +2596,20 @@ door           timer           start button       too hot             output
     :lineno-start: 92
     :emphasize-lines: 32-40
 
-        def test_car_w_key_close_timer_set(self):
+        def test_starter_w_key_close_timer_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=False,
                 ),
-                'HEATING'
+                'OFF'
             )
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2538,7 +2619,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2548,7 +2629,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=False,
@@ -2556,11 +2637,11 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-        def test_car_w_key_close_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
 
   the test is still green
 
-* I change the name of the test from :ref:`test_car_w_key_close_timer_set` to :ref:`test_too_hot_closed_door_timer_set`
+* I change the name of the test from :ref:`test_starter_w_key_close_timer_set` to :ref:`test_too_hot_closed_door_timer_set`
 
   .. code-block:: python
     :lineno-start: 82
@@ -2568,7 +2649,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=True,
+                    key_is_close=True,
                     timer_is_set=False,
                     start_is_pushed=False,
                     too_hot=False,
@@ -2579,12 +2660,12 @@ door           timer           start button       too hot             output
         def test_too_hot_closed_door_timer_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=True,
                     too_hot=False,
                 ),
-                'HEATING'
+                'OFF'
             )
 
 ----
@@ -2593,7 +2674,7 @@ door           timer           start button       too hot             output
 test_too_hot_closed_door_timer_not_set
 *********************************************************************************
 
-The :ref:`truth table` for when the door is :red:`closed` and the timer is :red:`NOT set` is
+The :ref:`truth table` for when the key is :red:`far` from the starter and the timer is :red:`NOT set` is
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
@@ -2604,17 +2685,17 @@ door           timer           start button       too hot             output
 :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
-* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_car_w_key_close_timer_not_set`
+* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_starter_w_key_close_timer_not_set`
 
   .. code-block:: python
     :lineno-start: 133
     :emphasize-lines: 2, 9-10, 17-18
 
-        def test_car_w_key_close_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=False,
                 start_is_pushed=True,
             )
@@ -2622,7 +2703,7 @@ door           timer           start button       too hot             output
             self.assertEqual(reality, OFF)
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=False,
                 start_is_pushed=False,
             )
@@ -2637,18 +2718,18 @@ door           timer           start button       too hot             output
     :lineno-start: 133
     :emphasize-lines: 10-17, 25-32
 
-        def test_car_w_key_close_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=False,
                 start_is_pushed=True,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                 ),
@@ -2656,14 +2737,14 @@ door           timer           start button       too hot             output
             )
 
             reality = src.car.starter(
-                door_is_open=False,
+                key_is_close=False,
                 timer_is_set=False,
                 start_is_pushed=False,
             )
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=False,
                 ),
@@ -2675,10 +2756,10 @@ door           timer           start button       too hot             output
   .. code-block:: python
     :lineno-start: 133
 
-        def test_car_w_key_close_timer_not_set(self):
+        def test_starter_w_key_close_timer_not_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                 ),
@@ -2687,7 +2768,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=False,
                 ),
@@ -2697,7 +2778,7 @@ door           timer           start button       too hot             output
 
     # Exceptions seen
 
-* I change the name of the test from :ref:`test_car_w_key_close_timer_not_set` to :ref:`test_too_hot_closed_door_timer_not_set`
+* I change the name of the test from :ref:`test_starter_w_key_close_timer_not_set` to :ref:`test_too_hot_closed_door_timer_not_set`
 
   .. code-block:: python
     :lineno-start: 123
@@ -2705,7 +2786,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=True,
                     start_is_pushed=False,
                     too_hot=False,
@@ -2716,14 +2797,14 @@ door           timer           start button       too hot             output
         def test_too_hot_closed_door_timer_not_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                 ),
                 OFF
             )
 
-* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_too_hot_closed_door_timer_not_set`, for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_too_hot_closed_door_timer_not_set`, for when the key is :red:`far` from the starter, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2738,7 +2819,7 @@ door           timer           start button       too hot             output
         def test_too_hot_closed_door_timer_not_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=True,
@@ -2748,7 +2829,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                 ),
@@ -2757,7 +2838,7 @@ door           timer           start button       too hot             output
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2773,7 +2854,7 @@ door           timer           start button       too hot             output
         def test_too_hot_closed_door_timer_not_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=True,
@@ -2783,7 +2864,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=False,
@@ -2793,7 +2874,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=False,
                 ),
@@ -2802,7 +2883,7 @@ door           timer           start button       too hot             output
 
   still green
 
-* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2819,7 +2900,7 @@ door           timer           start button       too hot             output
         def test_too_hot_closed_door_timer_not_set(self):
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=True,
@@ -2829,7 +2910,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=True,
                     too_hot=False,
@@ -2839,7 +2920,7 @@ door           timer           start button       too hot             output
 
             self.assertEqual(
                 src.car.starter(
-                    door_is_open=False,
+                    key_is_close=False,
                     timer_is_set=False,
                     start_is_pushed=False,
                     too_hot=True,
@@ -2849,7 +2930,7 @@ door           timer           start button       too hot             output
 
   green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
   door           timer           start button       too hot             output
@@ -2867,7 +2948,7 @@ door           timer           start button       too hot             output
           def test_too_hot_closed_door_timer_not_set(self):
               self.assertEqual(
                   src.car.starter(
-                      door_is_open=False,
+                      key_is_close=False,
                       timer_is_set=False,
                       start_is_pushed=True,
                       too_hot=True,
@@ -2877,7 +2958,7 @@ door           timer           start button       too hot             output
 
               self.assertEqual(
                   src.car.starter(
-                      door_is_open=False,
+                      key_is_close=False,
                       timer_is_set=False,
                       start_is_pushed=True,
                       too_hot=False,
@@ -2887,7 +2968,7 @@ door           timer           start button       too hot             output
 
               self.assertEqual(
                   src.car.starter(
-                      door_is_open=False,
+                      key_is_close=False,
                       timer_is_set=False,
                       start_is_pushed=False,
                       too_hot=True,
@@ -2897,7 +2978,7 @@ door           timer           start button       too hot             output
 
               self.assertEqual(
                   src.car.starter(
-                      door_is_open=False,
+                      key_is_close=False,
                       timer_is_set=False,
                       start_is_pushed=False,
                       too_hot=False,
@@ -2917,7 +2998,7 @@ close the project
 * I close ``test_car.py`` and ``car.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
-* I `change directory`_ to the parent of ``starter``
+* I `change directory`_ to the parent of ``car``
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -2950,19 +3031,19 @@ the inputs gave me this :ref:`truth table`
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
-:green:`open`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
-:green:`open`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-:green:`open`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-:green:`open`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
+:green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :green:`set`    :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+:green:`close`  :green:`set`    :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
-:green:`open`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
-:green:`open`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
+:green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
+:green:`close`  :red:`NOT set`  :red:`NOT pushed`  :green:`too hot`    :red:`OFF`
+:green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
 =============  ==============  =================  ==================  ================
