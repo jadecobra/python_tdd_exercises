@@ -3414,10 +3414,13 @@ card expired        PIN                 balance            daily limit          
         denied = 'DENIED'
 
         if (
-            not card_expired and pin_is_right
-            and enough_balance and not above_daily_limit
+            not card_expired
+            and pin_is_right
+            and enough_balance
+            and not above_daily_limit
         ):
             return 'CASH'
+
         return denied
 
   all the tests are still passing. Which do you like better? Time to eat.
