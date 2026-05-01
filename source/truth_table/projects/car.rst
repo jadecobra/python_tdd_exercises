@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build a safety-critical car logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—key status, brakes, and in_park failsafes—while writing clean, verified code.
-  :keywords: Python car logic project, safety-critical systems python tutorial, TDD python car example, how to code a car in python, python multiple boolean inputs tutorial, red green refactor examples, python truth table practice, learn Converse NonImplication python, uv python project management, pytest-watcher logic testing, Jacob Itegboje
+  :description: Master Python and Test-Driven Development (TDD) by building a safety-critical car ignition system. This beginner-friendly project uses truth tables to handle complex inputs—including proximity keys, brake pedals, and park-gear failsafes—while teaching the Red-Green-Refactor cycle using uv, pytest-watcher, and common Python exceptions
+  :keywords: Python car starter project, TDD for beginners tutorial, truth table logic python, Red-Green-Refactor examples, safety-critical system python, pytest-watcher automated testing, uv python project management, proximity key logic python, brake pedal failsafe code, transmission in park check, handling TypeError in python tests, AssertionError vs NameError python, Jacob Itegboje
 
 .. include:: ../../links.rst
 
