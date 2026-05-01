@@ -1921,7 +1921,7 @@ I want to make sure the car is in park before it can start, so it does not immed
 and the :ref:`truth table` for when the key is :green:`close` and the brake is being :green:`pressed` will be
 
 ==============  ================  ==================  ==================  ================
-key             brake             start button        gear                output
+key             brake             start               gear                output
 ==============  ================  ==================  ==================  ================
 :green:`close`  :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`ON`
 :green:`close`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -1940,7 +1940,7 @@ key             brake             start button        gear                output
 I add a value for ``in_park`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`, to :ref:`test_key_close_brake_pressed` in ``test_car.py``
 
 ==============  ================  ==================  ==================  ================
-key             brake             start button        gear                output
+key             brake             start               gear                output
 ==============  ================  ==================  ==================  ================
 :green:`close`  :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`ON`
 ==============  ================  ==================  ==================  ================
@@ -2027,7 +2027,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
 
   ==============  ================  ==================  ==================  ================
-  key             brake             start button        gear                output
+  key             brake             start               gear                output
   ==============  ================  ==================  ==================  ================
   :green:`close`  :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`ON`
   :green:`close`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2263,7 +2263,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 * I add a value for the ``in_park`` parameter in the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed`, the start button is :red:`NOT pressed` and the car gear is :green:`in park`, in :ref:`test_key_close_brake_pressed` in ``test_car.py``
 
   ==============  ================  ==================  ==================  ================
-  key             brake             start button        gear                output
+  key             brake             start               gear                output
   ==============  ================  ==================  ==================  ================
   :green:`close`  :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`ON`
   :green:`close`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2312,7 +2312,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed`, the start button is :red:`NOT pressed` and the car gear is  :red:`NOT in park`
 
   ==============  ================  ==================  ==================  ================
-  key             brake             start button        gear                output
+  key             brake             start               gear                output
   ==============  ================  ==================  ==================  ================
   :green:`close`  :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`ON`
   :green:`close`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2397,7 +2397,7 @@ test_key_close_brake_not_pressed_w_gear
 The :ref:`truth table` for when the key is :green:`close` and the brake is :red:`NOT pressed` is
 
 ==============  ==================  ==================  ==================  ==========
-key             brake               start button        gear                output
+key             brake               start               gear                output
 ==============  ==================  ==================  ==================  ==========
 :green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
 :green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2408,7 +2408,7 @@ key             brake               start button        gear                outp
 * I add a value for the ``in_park`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close_brake_not_pressed` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`
 
   ==============  ==================  ==================  ==================  ==========
-  key             brake               start button        gear                output
+  key             brake               start               gear                output
   ==============  ==================  ==================  ==================  ==========
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   ==============  ==================  ==================  ==================  ==========
@@ -2433,7 +2433,7 @@ key             brake               start button        gear                outp
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
 
   ==============  ==================  ==================  ==================  ==========
-  key             brake               start button        gear                output
+  key             brake               start               gear                output
   ==============  ==================  ==================  ==================  ==========
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2480,7 +2480,7 @@ key             brake               start button        gear                outp
 * I add a value for ``in_park`` to the next :ref:`assertion<what is an assertion?>`, for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` and the car gear is :green:`in park`
 
   ==============  ==================  ==================  ==================  ==========
-  key             brake               start button        gear                output
+  key             brake               start               gear                output
   ==============  ==================  ==================  ==================  ==========
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2529,7 +2529,7 @@ key             brake               start button        gear                outp
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` and the car gear is :red:`NOT in park`
 
   ==============  ==================  ==================  ==================  ==========
-  key             brake               start button        gear                output
+  key             brake               start               gear                output
   ==============  ==================  ==================  ==================  ==========
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2622,7 +2622,7 @@ test_key_far_brake_pressed_w_gear
 The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is being :green:`pressed` is
 
 ==========  ================  ==================  ==================  ==========
-key         brake             start button        gear                output
+key         brake             start               gear                output
 ==========  ================  ==================  ==================  ==========
 :red:`far`  :green:`pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
 :red:`far`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2633,7 +2633,7 @@ key         brake             start button        gear                output
 * I add a value for the ``in_park`` parameter in the first :ref:`assertion<what is an assertion?>` of :ref:`test_key_far_brake_pressed`, for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :green:`pressed`, and the car gear is :green:`in park`
 
   ==========  ================  ==================  ==================  ==========
-  key         brake             start button        gear                output
+  key         brake             start               gear                output
   ==========  ================  ==================  ==================  ==========
   :red:`far`  :green:`pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   ==========  ================  ==================  ==================  ==========
@@ -2658,7 +2658,7 @@ key         brake             start button        gear                output
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
 
   ==========  ================  ==================  ==================  ==========
-  key         brake             start button        gear                output
+  key         brake             start               gear                output
   ==========  ================  ==================  ==================  ==========
   :red:`far`  :green:`pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :red:`far`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2705,7 +2705,7 @@ key         brake             start button        gear                output
 * I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, and the car gear is :green:`in park`
 
   ==========  ================  ==================  ==================  ==========
-  key         brake             start button        gear                output
+  key         brake             start               gear                output
   ==========  ================  ==================  ==================  ==========
   :red:`far`  :green:`pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :red:`far`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2754,7 +2754,7 @@ key         brake             start button        gear                output
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, and the car gear is :red:`NOT in park`
 
   ==========  ================  ==================  ==================  ==========
-  key         brake             start button        gear                output
+  key         brake             start               gear                output
   ==========  ================  ==================  ==================  ==========
   :red:`far`  :green:`pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :red:`far`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2847,7 +2847,7 @@ test_key_far_brake_not_pressed_w_gear
 The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is :red:`NOT pressed` is
 
 ==========  ==================  ==================  ==================  ==========
-key         brake               start button        gear                output
+key         brake               start               gear                output
 ==========  ==================  ==================  ==================  ==========
 :red:`far`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
 :red:`far`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2858,7 +2858,7 @@ key         brake               start button        gear                output
 * I add a value for the ``in_park`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_far_brake_not_pressed`, for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :green:`pressed`, and the car gear is :green:`in park`
 
   ==========  ==================  ==================  ==================  ==========
-  key         brake               start button        gear                output
+  key         brake               start               gear                output
   ==========  ==================  ==================  ==================  ==========
   :red:`far`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   ==========  ==================  ==================  ==================  ==========
@@ -2883,7 +2883,7 @@ key         brake               start button        gear                output
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :green:`pressed`, and the car gear is :red:`NOT in park`
 
   ==========  ==================  ==================  ==================  ==========
-  key         brake               start button        gear                output
+  key         brake               start               gear                output
   ==========  ==================  ==================  ==================  ==========
   :red:`far`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :red:`far`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2931,7 +2931,7 @@ key         brake               start button        gear                output
 * I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, and the car gear is :green:`in park`
 
   ==========  ==================  ==================  ==================  ==========
-  key         brake               start button        gear                output
+  key         brake               start               gear                output
   ==========  ==================  ==================  ==================  ==========
   :red:`far`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :red:`far`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2978,7 +2978,7 @@ key         brake               start button        gear                output
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, and the car gear is :red:`NOT in park`
 
   ==========  ==================  ==================  ==================  ==========
-  key         brake               start button        gear                output
+  key         brake               start               gear                output
   ==========  ==================  ==================  ==================  ==========
   :red:`far`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
   :red:`far`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
@@ -2990,51 +2990,77 @@ key         brake               start button        gear                output
     :lineno-start: 133
     :emphasize-lines: 32-40
 
-          def test_key_far_brake_not_pressed_w_gear(self):
-              self.assertEqual(
-                  src.car.starter(
-                      key_is_close=False,
-                      brake_is_pressed=False,
-                      start_is_pressed=True,
-                      in_park=True,
-                  ),
-                  OFF
-              )
+        def test_key_far_brake_not_pressed(self):
+            self.assertEqual(
+                src.car.starter(
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    start_is_pushed=True,
+                    in_park=True,
+                ),
+                OFF
+            )
 
-              self.assertEqual(
-                  src.car.starter(
-                      key_is_close=False,
-                      brake_is_pressed=False,
-                      start_is_pressed=True,
-                      in_park=False,
-                  ),
-                  OFF
-              )
+            self.assertEqual(
+                src.car.starter(
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    start_is_pushed=True,
+                    in_park=False,
+                ),
+                OFF
+            )
 
-              self.assertEqual(
-                  src.car.starter(
-                      key_is_close=False,
-                      brake_is_pressed=False,
-                      start_is_pressed=False,
-                      in_park=True,
-                  ),
-                  OFF
-              )
+            self.assertEqual(
+                src.car.starter(
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    start_is_pushed=False,
+                    in_park=True,
+                ),
+                OFF
+            )
 
-              self.assertEqual(
-                  src.car.starter(
-                      key_is_close=False,
-                      brake_is_pressed=False,
-                      start_is_pressed=False,
-                      in_park=False,
-                  ),
-                  OFF
-              )
+            self.assertEqual(
+                src.car.starter(
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    start_is_pushed=False,
+                    in_park=False,
+                ),
+                OFF
+            )
 
 
-      # Exceptions seen
+    # Exceptions seen
 
   all the tests are still green
+
+* I change the name of the test from :ref:`test_key_far_brake_not_pressed` to :ref:`test_key_far_brake_not_pressed_w_gear`
+
+  .. code-block:: python
+    :lineno-start: 123
+
+            self.assertEqual(
+                src.car.starter(
+                    key_is_close=False,
+                    brake_is_pressed=True,
+                    start_is_pushed=False,
+                    in_park=False,
+                ),
+                OFF
+            )
+
+        def test_key_far_brake_not_pressed_w_gear(self):
+            self.assertEqual(
+                src.car.starter(
+                    key_is_close=False,
+                    brake_is_pressed=False,
+                    start_is_pushed=True,
+                    in_park=True,
+                ),
+                OFF
+            )
 
 *********************************************************************************
 close the project
@@ -3073,43 +3099,43 @@ I ran tests for a car with these inputs:
 
 the inputs gave me this :ref:`truth table`
 
-=============  ==============  =================  ==================  ================
-key           brake           start button       in park             output
-=============  ==============  =================  ==================  ================
-:green:`close`  :green:`set`    :green:`pressed`    :green:`in park`    :red:`OFF`
-:green:`close`  :green:`set`    :green:`pressed`    :red:`NOT in park`  :red:`OFF`
-:green:`close`  :green:`set`    :red:`NOT pressed`  :green:`in park`    :red:`OFF`
-:green:`close`  :green:`set`    :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+==============  ================  ==================  ==================  ================
+key             brake             start               gear                output
+==============  ================  ==================  ==================  ================
+:green:`close`  :green:`pressed`  :green:`pressed`    :green:`in park`    :green:`ON`
+:green:`close`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
+:green:`close`  :green:`pressed`  :red:`NOT pressed`  :green:`in park`    :red:`OFF`
+:green:`close`  :green:`pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
+==============  ================  ==================  ==================  ================
 
-=============  ==============  =================  ==================  ================
-key           brake           start button       in park             output
-=============  ==============  =================  ==================  ================
-:green:`close`  :red:`NOT set`  :green:`pressed`    :green:`in park`    :red:`OFF`
-:green:`close`  :red:`NOT set`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
-:green:`close`  :red:`NOT set`  :red:`NOT pressed`  :green:`in park`    :red:`OFF`
-:green:`close`  :red:`NOT set`  :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+==============  ==================  ==================  ==================  ==========
+key             brake               start               gear                output
+==============  ==================  ==================  ==================  ==========
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
+:green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`OFF`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
+==============  ==================  ==================  ==================  ==========
 
-=============  ==============  =================  ==================  ================
-key           brake           start button       in park             output
-=============  ==============  =================  ==================  ================
-:red:`closed`  :green:`set`    :green:`pressed`    :green:`in park`    :red:`OFF`
-:red:`closed`  :green:`set`    :green:`pressed`    :red:`NOT in park`  :green:`HEATING`
-:red:`closed`  :green:`set`    :red:`NOT pressed`  :green:`in park`    :red:`OFF`
-:red:`closed`  :green:`set`    :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+==========  ================  ==================  ==================  ==========
+key         brake             start               gear                output
+==========  ================  ==================  ==================  ==========
+:red:`far`  :green:`pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
+:red:`far`  :green:`pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
+:red:`far`  :green:`pressed`  :red:`NOT pressed`  :green:`in park`    :red:`OFF`
+:red:`far`  :green:`pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
+==========  ================  ==================  ==================  ==========
 
-=============  ==============  =================  ==================  ================
-key           brake           start button       in park             output
-=============  ==============  =================  ==================  ================
-:red:`closed`  :red:`NOT set`  :green:`pressed`    :green:`in park`    :red:`OFF`
-:red:`closed`  :red:`NOT set`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
-:red:`closed`  :red:`NOT set`  :red:`NOT pressed`  :green:`in park`    :red:`OFF`
-:red:`closed`  :red:`NOT set`  :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
-=============  ==============  =================  ==================  ================
+==========  ==================  ==================  ==================  ==========
+key         brake               start               gear                output
+==========  ==================  ==================  ==================  ==========
+:red:`far`  :red:`NOT pressed`  :green:`pressed`    :green:`in park`    :red:`OFF`
+:red:`far`  :red:`NOT pressed`  :green:`pressed`    :red:`NOT in park`  :red:`OFF`
+:red:`far`  :red:`NOT pressed`  :red:`NOT pressed`  :green:`in park`    :red:`OFF`
+:red:`far`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`NOT in park`  :red:`OFF`
+==========  ==================  ==================  ==================  ==========
 
-the only time this car heats food is when the key is :green:`closed`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`.
+the only time I can start this car is when the key is :green:`close` to the starter, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`.
 
 ----
 
