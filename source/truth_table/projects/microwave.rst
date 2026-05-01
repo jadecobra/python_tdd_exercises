@@ -3248,7 +3248,7 @@ you now know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 
-:ref:`Would you like to test making a calculator?<how to make a calculator>`
+:ref:`Would you like to test making a Car starter?<car>`
 
 ----
 
