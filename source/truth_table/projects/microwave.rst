@@ -10,7 +10,7 @@
 Microwave
 #################################################################################
 
-I want to make a **Microwave** that heats up food or stays off, if the inputs are
+I want to make a **Microwave** that heats up food, if the inputs are
 
 * is the door open?
 * was the start button pushed?
