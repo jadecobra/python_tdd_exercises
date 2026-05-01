@@ -1,5 +1,5 @@
 .. meta::
-  :description: Build a safety-critical car logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—door status, timers, and too_hot failsafes—while writing clean, verified code.
+  :description: Build a safety-critical car logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—key status, brakes, and too_hot failsafes—while writing clean, verified code.
   :keywords: Python car logic project, safety-critical systems python tutorial, TDD python car example, how to code a car in python, python multiple boolean inputs tutorial, red green refactor examples, python truth table practice, learn Converse NonImplication python, uv python project management, pytest-watcher logic testing, Jacob Itegboje
 
 .. include:: ../../links.rst
@@ -637,7 +637,7 @@ key             start button       output
 I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pushed`
 
 ==================  =================  =================
-door                start button       output
+key                start button       output
 ==================  =================  =================
 :red:`closed`       :green:`pushed`    :green:`HEATING`
 ==================  =================  =================
@@ -834,7 +834,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :red:`NOT pushed` to :ref:`test_key_close` in ``test_car.py``
 
   ==================  =================  =================
-  door                start button       output
+  key                start button       output
   ==================  =================  =================
   :red:`closed`       :green:`pushed`    :green:`HEATING`
   :red:`closed`       :red:`NOT pushed`  :red:`OFF`
@@ -996,14 +996,14 @@ I want the car to start only when the brake pedal is pressed, the inputs for the
 * is the brake being pressed?
 * was the start button pushed?
 
-and the :ref:`truth table` for when the key is :green:`close` and the the brake is being :green:`pressed`, will be
+and the :ref:`truth table` for when the key is :green:`close` and the brake is being :green:`pressed`, will be
 
-=============  ==============  =================  ===========
-door           timer           start button       output
-=============  ==============  =================  ===========
-:green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
-:green:`close`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
-=============  ==============  =================  ===========
+==============  ==================  =================  ===========
+key             brake               start button       output
+==============  ==================  =================  ===========
+:green:`close`  :green:`pressed`    :green:`pushed`    :green:`ON`
+:green:`close`  :green:`pressed`    :red:`NOT pushed`  :red:`OFF`
+==============  ==================  =================  ===========
 
 ----
 
@@ -1013,21 +1013,21 @@ door           timer           start button       output
 
 ----
 
-I add a value for ``brake_is_pressed`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close`, for when the key is :green:`close`, the the brake is being :green:`pressed` and the start button is :green:`pushed`
+I add a value for ``brake_is_pressed`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close`, for when the key is :green:`close`, the brake is being :green:`pressed` and the start button is :green:`pushed`
 
-=============  ==============  =================  ===========
-door           timer           start button       output
-=============  ==============  =================  ===========
-:green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
-=============  ==============  =================  ===========
+==============  ==================  =================  ===========
+key             brake               start button       output
+==============  ==================  =================  ===========
+:green:`close`  :green:`pressed`    :green:`pushed`    :green:`ON`
+==============  ==================  =================  ===========
+
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 6
+  :emphasize-lines: 5
 
       def test_key_close(self):
-          my_expectation = 'OFF'
-
+          my_expectation = 'ON'
           reality = src.car.starter(
               key_is_close=True,
               brake_is_pressed=True,
@@ -1061,16 +1061,17 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             key_is_close, start_is_pushed,
             brake_is_pressed,
         ):
-        if not key_is_close and start_is_pushed:
+        if not (key_is_close and start_is_pushed):
             return 'OFF'
-        return 'OFF'
+
+        return 'ON'
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    FAILED ...test_key_close - TypeError: starter() missing 1 required positional argument:...
-    FAILED ...test_key_close - TypeError: starter() missing 1 required positional argument:...
+    FAILED ...test_key_close - TypeError: starter() missing 1 required positional argument: 'brake_is_pressed'
+    FAILED ...test_key_far - TypeError: starter() missing 1 required positional argument: 'brake_is_pressed'
 
   because the tests call the ``starter`` :ref:`function<what is a function?>` with 2 arguments (``key_is_close`` and ``start_is_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``key_is_close``, ``start_is_pushed`` and ``brake_is_pressed``). I have to make ``brake_is_pressed`` a choice.
 
@@ -1114,14 +1115,14 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
 ----
 
-* I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is being :green:`pressed` and the start button is :red:`NOT pushed`
+* I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed` and the start button is :red:`NOT pushed`
 
-  =============  ==============  =================  ===========
-  door           timer           start button       output
-  =============  ==============  =================  ===========
-  :green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
-  :green:`close`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
-  =============  ==============  =================  ===========
+  ==============  ==================  =================  ===========
+  key             brake               start button       output
+  ==============  ==================  =================  ===========
+  :green:`close`  :green:`pressed`    :green:`pushed`    :green:`ON`
+  :green:`close`  :green:`pressed`    :red:`NOT pushed`  :red:`OFF`
+  ==============  ==================  =================  ===========
 
   .. code-block:: python
     :lineno-start: 7
@@ -1165,22 +1166,22 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 test_key_close_brake_not_pressed
 *********************************************************************************
 
-The :ref:`truth table` for when the key is :green:`close` and the the brake is :red:`NOT pressed` is
+The :ref:`truth table` for when the key is :green:`close` and the brake is :red:`NOT pressed` is
 
-=============  ==============  =================  ===========
-door           timer           start button       output
-=============  ==============  =================  ===========
-:green:`close`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-:green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
-=============  ==============  =================  ===========
+==============  ==================  =================  ===========
+key             brake               start button       output
+==============  ==================  =================  ===========
+:green:`close`  :red:`NOT pressed`  :green:`pushed`    :red:`OFF`
+:green:`close`  :red:`NOT pressed`  :red:`NOT pushed`  :red:`OFF`
+==============  ==================  =================  ===========
 
-* I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is :red:`NOT pressed` and the start button is :green:`pushed`
+* I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :green:`pushed`
 
-  =============  ==============  =================  ===========
-  door           timer           start button       output
-  =============  ==============  =================  ===========
-  :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-  =============  ==============  =================  ===========
+  ==============  ==================  =================  ===========
+  key             brake               start button       output
+  ==============  ==================  =================  ===========
+  :green:`close`  :red:`NOT pressed`  :green:`pushed`    :red:`OFF`
+  ==============  ==================  =================  ===========
 
   .. code-block:: python
     :lineno-start: 17
@@ -1207,14 +1208,14 @@ door           timer           start button       output
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is :red:`NOT pressed` and the start button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :red:`NOT pushed`
 
-  =============  ==============  =================  ===========
-  door           timer           start button       output
-  =============  ==============  =================  ===========
-  :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
-  :green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
-  =============  ==============  =================  ===========
+  ==============  ==================  =================  ===========
+  key             brake               start button       output
+  ==============  ==================  =================  ===========
+  :green:`close`  :red:`NOT pressed`  :green:`pushed`    :red:`OFF`
+  :green:`close`  :red:`NOT pressed`  :red:`NOT pushed`  :red:`OFF`
+  ==============  ==================  =================  ===========
 
   .. code-block:: python
     :lineno-start: 24
@@ -1247,19 +1248,19 @@ door           timer           start button       output
 test_key_close_brake_pressed
 *********************************************************************************
 
-The :ref:`truth table` for when the key is :red:`far` from the starter and is the the brake is being :green:`pressed`
+The :ref:`truth table` for when the key is :red:`far` from the starter and is the brake is being :green:`pressed`
 
 =============  ==============  =================  ================
-door           timer           start button       output
+key           brake           start button       output
 =============  ==============  =================  ================
 :red:`closed`  :green:`set`    :green:`pushed`    :green:`HEATING`
 :red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
 =============  ==============  =================  ================
 
-* I add a value for the ``brake_is_pressed`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close` for the case where the key is :red:`far` from the starter, the the brake is being :green:`pressed` and the start button is :green:`pushed`
+* I add a value for the ``brake_is_pressed`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close` for the case where the key is :red:`far` from the starter, the brake is being :green:`pressed` and the start button is :green:`pushed`
 
   =============  ==============  =================  =============
-  door           timer           start button       output
+  key           brake           start button       output
   =============  ==============  =================  =============
   :red:`closed`  :green:`set`    :green:`pushed`    :green:`HEATING`
   =============  ==============  =================  =============
@@ -1287,10 +1288,10 @@ door           timer           start button       output
 
   the test is still green
 
-* I do not need to add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the the brake is being :green:`pressed` and the start button is :red:`NOT pushed`
+* I do not need to add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed` and the start button is :red:`NOT pushed`
 
   =============  ==============  =================  =============
-  door           timer           start button       output
+  key           brake           start button       output
   =============  ==============  =================  =============
   :red:`closed`  :green:`set`    :green:`pushed`    :green:`HEATING`
   :red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
@@ -1345,10 +1346,10 @@ door           timer           start button       output
 test_key_close_brake_not_pressed
 *********************************************************************************
 
-The :ref:`truth table` for when the key is :red:`far` from the starter and the the brake is :red:`NOT pressed` is
+The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is :red:`NOT pressed` is
 
 =============  ==============  =================  ================
-door           timer           start button       output
+key           brake           start button       output
 =============  ==============  =================  ================
 :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
 :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`OFF`
@@ -1361,10 +1362,10 @@ door           timer           start button       output
 
 ----
 
-* I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the the brake is :red:`NOT pressed` and the start button is :green:`pushed`
+* I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed` and the start button is :green:`pushed`
 
   =============  ==============  =================  =============
-  door           timer           start button       output
+  key           brake           start button       output
   =============  ==============  =================  =============
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`OFF`
   =============  ==============  =================  =============
@@ -1534,13 +1535,13 @@ the test passes
 
   This is what happens when the ``starter`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'OFF'` if the the brake is :red:`NOT pressed`
-  - if the the brake is being :green:`pressed`
+  - it returns :red:`'OFF'` if the brake is :red:`NOT pressed`
+  - if the brake is being :green:`pressed`
 
     * it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :green:`pushed`
   - it returns :red:`'OFF'` if none of the conditions are met
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the the brake is :red:`NOT pressed` and the start button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed` and the start button is :red:`NOT pushed`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1568,7 +1569,7 @@ the test passes
 
   the test is still green
 
-* I add another clause to the :ref:`if statement<if statements>` for when the the brake is being :green:`pressed`, in the ``starter`` :ref:`function<what is a function?>` in ``car.py``
+* I add another clause to the :ref:`if statement<if statements>` for when the brake is being :green:`pressed`, in the ``starter`` :ref:`function<what is a function?>` in ``car.py``
 
   .. code-block:: python
     :linenos:
@@ -1590,7 +1591,7 @@ the test passes
 
   the test is still green
 
-* I remove the :ref:`if statement<if statements>` for when the the brake is :red:`NOT pressed` because I do not need it anymore
+* I remove the :ref:`if statement<if statements>` for when the brake is :red:`NOT pressed` because I do not need it anymore
 
   .. code-block:: python
     :linenos:
@@ -1609,19 +1610,19 @@ the test passes
 
   still green. This is what happens when the ``starter`` :ref:`function<what is a function?>` is called
 
-  - it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :green:`pushed` AND the the brake is being :green:`pressed`
+  - it returns :red:`'OFF'` if the key is :red:`far` from the starter AND the start button is :green:`pushed` AND the brake is being :green:`pressed`
   - it returns :red:`'OFF'` in every other case
 
 ----
 
 *********************************************************************************
-test_too_hot_open_door_brake_pressed
+test_too_hot_open_key_brake_pressed
 *********************************************************************************
 
 the :ref:`truth table` for the car is
 
 =============  ==============  =================  ===========
-door           timer           start button       output
+key           brake           start button       output
 =============  ==============  =================  ===========
 :green:`close`  :green:`set`    :green:`pushed`    :red:`OFF`
 :green:`close`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
@@ -1630,7 +1631,7 @@ door           timer           start button       output
 =============  ==============  =================  ===========
 
 =============  ==============  =================  ================
-door           timer           start button       output
+key           brake           start button       output
 =============  ==============  =================  ================
 :red:`closed`  :green:`set`    :green:`pushed`    :green:`HEATING`
 :red:`closed`  :green:`set`    :red:`NOT pushed`  :red:`OFF`
@@ -1645,10 +1646,10 @@ I want to add a failsafe to stop the car if it gets too hot. The inputs will the
 * was the start button pushed?
 * is the car too hot?
 
-and the :ref:`truth table` for when the key is :green:`close` and the the brake is being :green:`pressed` will be
+and the :ref:`truth table` for when the key is :green:`close` and the brake is being :green:`pressed` will be
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
 :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -1664,10 +1665,10 @@ door           timer           start button       too hot             output
 
 ----
 
-I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :green:`too hot`, to :ref:`test_key_close_brake_pressed` in ``test_car.py``
+I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :green:`too hot`, to :ref:`test_key_close_brake_pressed` in ``test_car.py``
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
 =============  ==============  =================  ==================  ================
@@ -1746,10 +1747,10 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
   :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -1787,10 +1788,10 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
   the test is still green
 
-* I add a value for the ``too_hot`` parameter in the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is being :green:`pressed`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter in the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
   :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -1832,10 +1833,10 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is being :green:`pressed`, the start button is :red:`NOT pushed` and the car temperature is  :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed`, the start button is :red:`NOT pushed` and the car temperature is  :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
   :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -1886,7 +1887,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
   green
 
-* I change the name of the test from :ref:`test_key_close_brake_pressed` to :ref:`test_too_hot_open_door_brake_pressed`
+* I change the name of the test from :ref:`test_key_close_brake_pressed` to :ref:`test_too_hot_open_key_brake_pressed`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1894,7 +1895,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
     class TestCar(unittest.TestCase):
 
-        def test_too_hot_open_door_brake_pressed(self):
+        def test_too_hot_open_key_brake_pressed(self):
             my_expectation = 'OFF'
 
 * I add a :ref:`global variable<what is a variable?>` for :red:`'OFF'`. I want to use it to remove repetition from the tests
@@ -1912,15 +1913,15 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
     class TestCar(unittest.TestCase):
 
-        def test_too_hot_open_door_brake_pressed(self):
+        def test_too_hot_open_key_brake_pressed(self):
 
-* I use the :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_too_hot_open_door_brake_pressed`
+* I use the :ref:`global variable<what is a variable?>` for ``my_expectation`` in :ref:`test_too_hot_open_key_brake_pressed`
 
   .. code-block:: python
     :lineno-start: 10
     :emphasize-lines: 2, 10-11, 19-20, 28-29, 37-38
 
-        def test_too_hot_open_door_brake_pressed(self):
+        def test_too_hot_open_key_brake_pressed(self):
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
@@ -1967,7 +1968,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
     :lineno-start: 10
     :emphasize-lines: 11-20, 29-38, 46-56, 65-74
 
-        def test_too_hot_open_door_brake_pressed(self):
+        def test_too_hot_open_key_brake_pressed(self):
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
@@ -2047,7 +2048,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
   .. code-block:: python
     :lineno-start: 10
 
-        def test_too_hot_open_door_brake_pressed(self):
+        def test_too_hot_open_key_brake_pressed(self):
             self.assertEqual(
                 src.car.starter(
                     key_is_close=True,
@@ -2093,13 +2094,13 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 ----
 
 *********************************************************************************
-test_too_hot_open_door_brake_not_pressed
+test_too_hot_open_key_brake_not_pressed
 *********************************************************************************
 
-The :ref:`truth table` for when the key is :green:`close` and the the brake is :red:`NOT pressed` is
+The :ref:`truth table` for when the key is :green:`close` and the brake is :red:`NOT pressed` is
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
 :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -2107,10 +2108,10 @@ door           timer           start button       too hot             output
 :green:`close`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
-* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close_brake_not_pressed` for when the key is :green:`close`, the the brake is :red:`NOT pressed`, the start button is :green:`pushed` and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close_brake_not_pressed` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pushed` and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   =============  ==============  =================  ==================  ================
@@ -2132,10 +2133,10 @@ door           timer           start button       too hot             output
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is :red:`NOT pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -2175,10 +2176,10 @@ door           timer           start button       too hot             output
 
   the test is still green
 
-* I add a value for ``too_hot`` to the next :ref:`assertion<what is an assertion?>`, for when the key is :green:`close`, the the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
+* I add a value for ``too_hot`` to the next :ref:`assertion<what is an assertion?>`, for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed` and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -2220,10 +2221,10 @@ door           timer           start button       too hot             output
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed` and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -2274,7 +2275,7 @@ door           timer           start button       too hot             output
 
   green
 
-* I change the name of the test from :ref:`test_key_close_brake_not_pressed` to :ref:`test_too_hot_open_door_brake_not_pressed`
+* I change the name of the test from :ref:`test_key_close_brake_not_pressed` to :ref:`test_too_hot_open_key_brake_not_pressed`
 
   .. code-block:: python
     :lineno-start: 41
@@ -2290,16 +2291,16 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-        def test_too_hot_open_door_brake_not_pressed(self):
+        def test_too_hot_open_key_brake_not_pressed(self):
             my_expectation = 'OFF'
 
-* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_too_hot_open_door_brake_not_pressed`
+* I use the ``OFF`` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_too_hot_open_key_brake_not_pressed`
 
   .. code-block:: python
     :lineno-start: 51
     :emphasize-lines: 2, 10-11, 19-20, 28-29, 37-38
 
-        def test_too_hot_open_door_brake_not_pressed(self):
+        def test_too_hot_open_key_brake_not_pressed(self):
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
@@ -2346,7 +2347,7 @@ door           timer           start button       too hot             output
     :lineno-start: 51
     :emphasize-lines: 11-19, 28-36, 45-53, 62-70
 
-        def test_too_hot_open_door_brake_not_pressed(self):
+        def test_too_hot_open_key_brake_not_pressed(self):
             # my_expectation = 'OFF'
 
             reality = src.car.starter(
@@ -2422,7 +2423,7 @@ door           timer           start button       too hot             output
   .. code-block:: python
     :lineno-start: 51
 
-        def test_too_hot_open_door_brake_not_pressed(self):
+        def test_too_hot_open_key_brake_not_pressed(self):
             self.assertEqual(
                 src.car.starter(
                     key_is_close=True,
@@ -2468,13 +2469,13 @@ door           timer           start button       too hot             output
 ----
 
 *********************************************************************************
-test_too_hot_closed_door_brake_pressed
+test_too_hot_closed_key_brake_pressed
 *********************************************************************************
 
-The :ref:`truth table` for when the key is :red:`far` from the starter and the the brake is being :green:`pressed` is
+The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is being :green:`pressed` is
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
 :red:`closed`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :green:`HEATING`
@@ -2572,10 +2573,10 @@ door           timer           start button       too hot             output
 
         def test_key_close_brake_not_pressed(self):
 
-* I add a value for the ``too_hot`` and ``brake_is_pressed`` parameters in the second :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the the brake is being :green:`pressed`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` and ``brake_is_pressed`` parameters in the second :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
   =============  ==============  =================  ==================  ================
@@ -2606,10 +2607,10 @@ door           timer           start button       too hot             output
 
   green
 
-* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
+* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
   :red:`closed`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :green:`HEATING`
@@ -2642,10 +2643,10 @@ door           timer           start button       too hot             output
 
   still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the the brake is being :green:`pressed`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
   :red:`closed`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :green:`HEATING`
@@ -2689,10 +2690,10 @@ door           timer           start button       too hot             output
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the the brake is being :green:`pressed`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
   :red:`closed`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :green:`HEATING`
@@ -2749,7 +2750,7 @@ door           timer           start button       too hot             output
 
   the test is still green
 
-* I change the name of the test from :ref:`test_key_close_brake_pressed` to :ref:`test_too_hot_closed_door_brake_pressed`
+* I change the name of the test from :ref:`test_key_close_brake_pressed` to :ref:`test_too_hot_closed_key_brake_pressed`
 
   .. code-block:: python
     :lineno-start: 82
@@ -2765,7 +2766,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-        def test_too_hot_closed_door_brake_pressed(self):
+        def test_too_hot_closed_key_brake_pressed(self):
             self.assertEqual(
                 src.car.starter(
                     key_is_close=False,
@@ -2779,13 +2780,13 @@ door           timer           start button       too hot             output
 ----
 
 *********************************************************************************
-test_too_hot_closed_door_brake_not_pressed
+test_too_hot_closed_key_brake_not_pressed
 *********************************************************************************
 
-The :ref:`truth table` for when the key is :red:`far` from the starter and the the brake is :red:`NOT pressed` is
+The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is :red:`NOT pressed` is
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
 :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -2886,7 +2887,7 @@ door           timer           start button       too hot             output
 
     # Exceptions seen
 
-* I change the name of the test from :ref:`test_key_close_brake_not_pressed` to :ref:`test_too_hot_closed_door_brake_not_pressed`
+* I change the name of the test from :ref:`test_key_close_brake_not_pressed` to :ref:`test_too_hot_closed_key_brake_not_pressed`
 
   .. code-block:: python
     :lineno-start: 123
@@ -2902,7 +2903,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-        def test_too_hot_closed_door_brake_not_pressed(self):
+        def test_too_hot_closed_key_brake_not_pressed(self):
             self.assertEqual(
                 src.car.starter(
                     key_is_close=False,
@@ -2912,10 +2913,10 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_too_hot_closed_door_brake_not_pressed`, for when the key is :red:`far` from the starter, the the brake is :red:`NOT pressed`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_too_hot_closed_key_brake_not_pressed`, for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :green:`pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   =============  ==============  =================  ==================  ================
@@ -2924,7 +2925,7 @@ door           timer           start button       too hot             output
     :lineno-start: 110
     :emphasize-lines: 7
 
-        def test_too_hot_closed_door_brake_not_pressed(self):
+        def test_too_hot_closed_key_brake_not_pressed(self):
             self.assertEqual(
                 src.car.starter(
                     key_is_close=False,
@@ -2946,10 +2947,10 @@ door           timer           start button       too hot             output
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the the brake is :red:`NOT pressed`, the start button is :green:`pushed`, and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :green:`pushed`, and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -2959,7 +2960,7 @@ door           timer           start button       too hot             output
     :lineno-start: 133
     :emphasize-lines: 12-20
 
-        def test_too_hot_closed_door_brake_not_pressed(self):
+        def test_too_hot_closed_key_brake_not_pressed(self):
             self.assertEqual(
                 src.car.starter(
                     key_is_close=False,
@@ -2991,10 +2992,10 @@ door           timer           start button       too hot             output
 
   still green
 
-* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
+* I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed`, and the car temperature is :green:`too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -3005,7 +3006,7 @@ door           timer           start button       too hot             output
     :lineno-start: 133
     :emphasize-lines: 22-30
 
-        def test_too_hot_closed_door_brake_not_pressed(self):
+        def test_too_hot_closed_key_brake_not_pressed(self):
             self.assertEqual(
                 src.car.starter(
                     key_is_close=False,
@@ -3038,10 +3039,10 @@ door           timer           start button       too hot             output
 
   green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :red:`NOT pushed`, and the car temperature is :red:`NOT too hot`
 
   =============  ==============  =================  ==================  ================
-  door           timer           start button       too hot             output
+  key           brake           start button       too hot             output
   =============  ==============  =================  ==================  ================
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
   :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -3053,7 +3054,7 @@ door           timer           start button       too hot             output
     :lineno-start: 133
     :emphasize-lines: 32-40
 
-          def test_too_hot_closed_door_brake_not_pressed(self):
+          def test_too_hot_closed_key_brake_not_pressed(self):
               self.assertEqual(
                   src.car.starter(
                       key_is_close=False,
@@ -3137,7 +3138,7 @@ I ran tests for a car with these inputs:
 the inputs gave me this :ref:`truth table`
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :green:`close`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
 :green:`close`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -3146,7 +3147,7 @@ door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :green:`close`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
 :green:`close`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -3155,7 +3156,7 @@ door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :red:`closed`  :green:`set`    :green:`pushed`    :green:`too hot`    :red:`OFF`
 :red:`closed`  :green:`set`    :green:`pushed`    :red:`NOT too hot`  :green:`HEATING`
@@ -3164,7 +3165,7 @@ door           timer           start button       too hot             output
 =============  ==============  =================  ==================  ================
 
 =============  ==============  =================  ==================  ================
-door           timer           start button       too hot             output
+key           brake           start button       too hot             output
 =============  ==============  =================  ==================  ================
 :red:`closed`  :red:`NOT set`  :green:`pushed`    :green:`too hot`    :red:`OFF`
 :red:`closed`  :red:`NOT set`  :green:`pushed`    :red:`NOT too hot`  :red:`OFF`
@@ -3172,7 +3173,7 @@ door           timer           start button       too hot             output
 :red:`closed`  :red:`NOT set`  :red:`NOT pushed`  :red:`NOT too hot`  :red:`OFF`
 =============  ==============  =================  ==================  ================
 
-the only time this car heats food is when the door is :green:`closed`, the the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`.
+the only time this car heats food is when the key is :green:`closed`, the brake is being :green:`pressed`, the start button is :green:`pushed` and the car temperature is :red:`NOT too hot`.
 
 ----
 
