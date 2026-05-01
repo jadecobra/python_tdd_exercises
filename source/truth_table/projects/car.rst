@@ -2995,7 +2995,7 @@ key         brake               start               gear                output
                 src.car.starter(
                     key_is_close=False,
                     brake_is_pressed=False,
-                    start_is_pushed=True,
+                    start_is_pressed=True,
                     in_park=True,
                 ),
                 OFF
@@ -3005,7 +3005,7 @@ key         brake               start               gear                output
                 src.car.starter(
                     key_is_close=False,
                     brake_is_pressed=False,
-                    start_is_pushed=True,
+                    start_is_pressed=True,
                     in_park=False,
                 ),
                 OFF
@@ -3015,7 +3015,7 @@ key         brake               start               gear                output
                 src.car.starter(
                     key_is_close=False,
                     brake_is_pressed=False,
-                    start_is_pushed=False,
+                    start_is_pressed=False,
                     in_park=True,
                 ),
                 OFF
@@ -3025,7 +3025,7 @@ key         brake               start               gear                output
                 src.car.starter(
                     key_is_close=False,
                     brake_is_pressed=False,
-                    start_is_pushed=False,
+                    start_is_pressed=False,
                     in_park=False,
                 ),
                 OFF
@@ -3045,7 +3045,7 @@ key         brake               start               gear                output
                 src.car.starter(
                     key_is_close=False,
                     brake_is_pressed=True,
-                    start_is_pushed=False,
+                    start_is_pressed=False,
                     in_park=False,
                 ),
                 OFF
@@ -3056,7 +3056,7 @@ key         brake               start               gear                output
                 src.car.starter(
                     key_is_close=False,
                     brake_is_pressed=False,
-                    start_is_pushed=True,
+                    start_is_pressed=True,
                     in_park=True,
                 ),
                 OFF
