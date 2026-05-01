@@ -104,3 +104,57 @@ the code from ``microwave/src/microwave.py`` from :ref:`Microwave`
   :linenos:
 
 ----
+
+*********************************************************************************
+Car: tests and solutions
+*********************************************************************************
+
+the code from ``car/tests/test_car.py`` from :ref:`Car`
+
+.. literalinclude:: truth_table/tests/test_car.py
+  :language: python
+  :linenos:
+
+the code from ``car/src/car.py`` from :ref:`Microwave`
+
+.. literalinclude:: truth_table/solutions/car.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+Elevator: tests and solutions
+*********************************************************************************
+
+the code from ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
+
+.. literalinclude:: truth_table/tests/test_elevator.py
+  :language: python
+  :linenos:
+
+the code from ``elevator/src/elevator.py`` from :ref:`Microwave`
+
+.. literalinclude:: truth_table/solutions/elevator.py
+  :language: python
+  :linenos:
+
+----
+
+*********************************************************************************
+Parking Garage: tests and solutions
+*********************************************************************************
+
+the code from ``parking_garage/tests/test_parking_garage.py`` from :ref:`Parking Garage`
+
+.. literalinclude:: truth_table/tests/test_parking_garage.py
+  :language: python
+  :linenos:
+
+the code from ``parking_garage/src/parking_garage.py`` from :ref:`Microwave`
+
+.. literalinclude:: truth_table/solutions/parking_garage.py
+  :language: python
+  :linenos:
+
+----
