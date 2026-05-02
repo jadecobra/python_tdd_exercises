@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python and Test-Driven Development (TDD) by building a safety-critical car ignition system. This beginner-friendly project uses truth tables to handle complex inputs—including proximity keys, brake pedals, and park-gear failsafes—while teaching the Red-Green-Refactor cycle using uv, pytest-watcher, and common Python exceptions
-  :keywords: Python car starter project, TDD for beginners tutorial, truth table logic python, Red-Green-Refactor examples, safety-critical system python, pytest-watcher automated testing, uv python project management, proximity key logic python, brake pedal failsafe code, transmission in park check, handling TypeError in python tests, AssertionError vs NameError python, Jacob Itegboje
+  :description: Learn Python and Test-Driven Development (TDD) by building a safety-critical car ignition system. This beginner project uses truth tables to manage multiple boolean inputs—proximity keys, brake pedals, and transmission park failsafes—while teaching the Red-Green-Refactor cycle using uv, pytest-watcher, and common Python exceptions.
+  :keywords: Python car ignition logic tutorial, TDD car starter project, truth table to python code, multiple boolean inputs python example, red green refactor for beginners, uv python project management, pytest-watcher automated testing, proximity key ignition logic, brake pedal safety check code, transmission in park failsafe, troubleshooting TypeError in python tests, AssertionError vs AttributeError python, Jacob Itegboje
 
 .. include:: ../../links.rst
 
