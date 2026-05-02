@@ -18,7 +18,7 @@ I want to make a **Car** that can be turned on with the push of a button, if the
 this is the :ref:`truth table` I get for the Car Starter
 
 ==============  ==================  =================
-key             start button        output
+key             start               output
 ==============  ==================  =================
 :green:`close`  :green:`pressed`    :green:`ON`
 :green:`close`  :red:`NOT pressed`  :red:`OFF`
@@ -327,7 +327,7 @@ test_key_close
 The :ref:`truth table` for when the key is :green:`close` to the starter is
 
 ==============  ==================  =================
-key             start button        output
+key             start               output
 ==============  ==================  =================
 :green:`close`  :green:`pressed`    :green:`ON`
 :green:`close`  :red:`NOT pressed`  :red:`OFF`
@@ -344,7 +344,7 @@ key             start button        output
 I change ``test_failure`` to ``test_key_close``, then add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :green:`pressed`
 
 ==============  ==================  =================
-key             start button        output
+key             start               output
 ==============  ==================  =================
 :green:`close`  :green:`pressed`    :green:`ON`
 ==============  ==================  =================
@@ -522,7 +522,7 @@ because I do not have a definition for ``src`` in this file_
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :red:`NOT pressed`, in ``test_car.py``
 
   ==============  ==================  =================
-  key             start button        output
+  key             start               output
   ==============  ==================  =================
   :green:`close`  :green:`pressed`    :green:`ON`
   :green:`close`  :red:`NOT pressed`  :red:`OFF`
@@ -628,7 +628,7 @@ test_key_far
 The :ref:`truth table` for when the key is :red:`far` from the starter is
 
 ==============  ==================  ==========
-key             start button        output
+key             start               output
 ==============  ==================  ==========
 :red:`far`      :green:`pressed`    :red:`OFF`
 :red:`far`      :red:`NOT pressed`  :red:`OFF`
@@ -645,7 +645,7 @@ key             start button        output
 I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pressed`, in ``test_car.py``
 
 ==============  ==================  ==========
-key             start button        output
+key             start               output
 ==============  ==================  ==========
 :red:`far`      :green:`pressed`    :red:`OFF`
 ==============  ==================  ==========
@@ -860,7 +860,7 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :red:`NOT pressed` to :ref:`test_key_far` in ``test_car.py``
 
   ==============  ==================  ==========
-  key             start button        output
+  key             start               output
   ==============  ==================  ==========
   :red:`far`      :green:`pressed`    :red:`OFF`
   :red:`far`      :red:`NOT pressed`  :red:`OFF`
@@ -1010,7 +1010,7 @@ test_key_close_brake_pressed
 So far, the :ref:`truth table` for the car starter is
 
 ==============  ==================  =================
-key             start button        output
+key             start               output
 ==============  ==================  =================
 :green:`close`  :green:`pressed`    :green:`ON`
 :green:`close`  :red:`NOT pressed`  :red:`OFF`
@@ -1024,10 +1024,10 @@ I want the car to start only when the brake pedal is pressed, the inputs for the
 * is the brake being pressed?
 * was the start button pressed?
 
-and the :ref:`truth table` for when the key is :green:`close` and the brake is being :green:`pressed`, will be
+and the :ref:`truth table` for when the key is :green:`close` and the brake is being :green:`pressed`, is:
 
 ==============  ==================  ==================  ===========
-key             brake               start button        output
+key             brake               start               output
 ==============  ==================  ==================  ===========
 :green:`close`  :green:`pressed`    :green:`pressed`    :green:`ON`
 :green:`close`  :green:`pressed`    :red:`NOT pressed`  :red:`OFF`
@@ -1044,7 +1044,7 @@ key             brake               start button        output
 I add a value for ``brake_is_pressed`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close`, for when the key is :green:`close`, the brake is being :green:`pressed` and the start button is :green:`pressed`
 
 ==============  ==================  ==================  ===========
-key             brake               start button        output
+key             brake               start               output
 ==============  ==================  ==================  ===========
 :green:`close`  :green:`pressed`    :green:`pressed`    :green:`ON`
 ==============  ==================  ==================  ===========
@@ -1146,7 +1146,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 * I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed` and the start button is :red:`NOT pressed`
 
   ==============  ==================  ==================  ===========
-  key             brake               start button        output
+  key             brake               start               output
   ==============  ==================  ==================  ===========
   :green:`close`  :green:`pressed`    :green:`pressed`    :green:`ON`
   :green:`close`  :green:`pressed`    :red:`NOT pressed`  :red:`OFF`
@@ -1196,7 +1196,7 @@ test_key_close_brake_not_pressed
 The :ref:`truth table` for when the key is :green:`close` and the brake is :red:`NOT pressed` is
 
 ==============  ==================  ==================  ===========
-key             brake               start button        output
+key             brake               start               output
 ==============  ==================  ==================  ===========
 :green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`OFF`
 :green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`OFF`
@@ -1205,7 +1205,7 @@ key             brake               start button        output
 * I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :green:`pressed`
 
   ==============  ==================  ==================  ===========
-  key             brake               start button        output
+  key             brake               start               output
   ==============  ==================  ==================  ===========
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`OFF`
   ==============  ==================  ==================  ===========
@@ -1430,7 +1430,7 @@ key             brake               start button        output
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :red:`NOT pressed`, in :ref:`test_key_close_brake_not_pressed` in ``test_car.py``
 
   ==============  ==================  ==================  ===========
-  key             brake               start button        output
+  key             brake               start               output
   ==============  ==================  ==================  ===========
   :green:`close`  :red:`NOT pressed`  :green:`pressed`    :red:`OFF`
   :green:`close`  :red:`NOT pressed`  :red:`NOT pressed`  :red:`OFF`
@@ -1465,10 +1465,10 @@ key             brake               start button        output
 test_key_far_brake_pressed
 *********************************************************************************
 
-The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is being :green:`pressed`, is
+The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is being :green:`pressed`, is:
 
 ==============  ==================  ==================  ===========
-key             brake               start button        output
+key             brake               start               output
 ==============  ==================  ==================  ===========
 :red:`far`      :green:`pressed`    :green:`pressed`    :red:`OFF`
 :red:`far`      :green:`pressed`    :red:`NOT pressed`  :red:`OFF`
@@ -1477,7 +1477,7 @@ key             brake               start button        output
 * I add a value for the ``brake_is_pressed`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_key_close` for the case where the key is :red:`far` from the starter, the brake is being :green:`pressed` and the start button is :green:`pressed`
 
   ==============  ==================  ==================  ===========
-  key             brake               start button        output
+  key             brake               start               output
   ==============  ==================  ==================  ===========
   :red:`far`      :green:`pressed`    :green:`pressed`    :red:`OFF`
   ==============  ==================  ==================  ===========
@@ -1506,7 +1506,7 @@ key             brake               start button        output
 * I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the brake is being :green:`pressed` and the start button is :red:`NOT pressed`
 
   ==============  ==================  ==================  ===========
-  key             brake               start button        output
+  key             brake               start               output
   ==============  ==================  ==================  ===========
   :red:`far`      :green:`pressed`    :green:`pressed`    :red:`OFF`
   :red:`far`      :green:`pressed`    :red:`NOT pressed`  :red:`OFF`
@@ -1566,7 +1566,7 @@ test_key_far_brake_not_pressed
 The :ref:`truth table` for when the key is :red:`far` from the starter and the brake is :red:`NOT pressed` is
 
 ==============  ==================  ==================  ===========
-key             brake               start button        output
+key             brake               start               output
 ==============  ==================  ==================  ===========
 :red:`far`      :red:`NOT pressed`  :green:`pressed`    :red:`OFF`
 :red:`far`      :red:`NOT pressed`  :red:`NOT pressed`  :red:`OFF`
@@ -1575,7 +1575,7 @@ key             brake               start button        output
 * I add a new test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed` and the start button is :green:`pressed`
 
   ==============  ==================  ==================  ===========
-  key             brake               start button        output
+  key             brake               start               output
   ==============  ==================  ==================  ===========
   :red:`far`      :red:`NOT pressed`  :green:`pressed`    :red:`OFF`
   ==============  ==================  ==================  ===========
@@ -1607,7 +1607,7 @@ key             brake               start button        output
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed` and the start button is :red:`NOT pressed`
 
   ==============  ==================  ==================  ===========
-  key             brake               start button        output
+  key             brake               start               output
   ==============  ==================  ==================  ===========
   :red:`far`      :red:`NOT pressed`  :green:`pressed`    :red:`OFF`
   :red:`far`      :red:`NOT pressed`  :red:`NOT pressed`  :red:`OFF`
@@ -1914,7 +1914,7 @@ test_key_close_brake_pressed_w_gear
 the :ref:`truth table` for the car starter is
 
 ==============  ==================  ==================  ===========
-key             brake               start button        output
+key             brake               start               output
 ==============  ==================  ==================  ===========
 :green:`close`  :green:`pressed`    :green:`pressed`    :green:`ON`
 :green:`close`  :green:`pressed`    :red:`NOT pressed`  :red:`OFF`
@@ -1923,7 +1923,7 @@ key             brake               start button        output
 ==============  ==================  ==================  ===========
 
 ==============  ==================  ==================  ===========
-key             brake               start button        output
+key             brake               start               output
 ==============  ==================  ==================  ===========
 :red:`far`      :green:`pressed`    :green:`pressed`    :red:`OFF`
 :red:`far`      :green:`pressed`    :red:`NOT pressed`  :red:`OFF`
@@ -1938,7 +1938,7 @@ I want to make sure the car is in park before it can start, so it does not immed
 * was the start button pressed?
 * is the gear in park?
 
-and the :ref:`truth table` for when the key is :green:`close` and the brake is being :green:`pressed` will be
+and the :ref:`truth table` for when the key is :green:`close` and the brake is being :green:`pressed`, is:
 
 ==============  ================  ==================  ==================  ================
 key             brake             start               gear                output
