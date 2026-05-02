@@ -346,7 +346,7 @@ I change ``test_failure`` to ``test_open_door``, then add an :ref:`assertion<wha
 ==================  =================  =================
 door                start button       output
 ==================  =================  =================
-:green:`open`       :green:`start`     :red:`OFF`
+:green:`open`       :green:`pushed`    :red:`OFF`
 ==================  =================  =================
 
 .. code-block:: python
@@ -680,7 +680,7 @@ the test passes
     :linenos:
 
     def microwave(door_is_open, start_is_pushed):
-        if not door_is_open and start_is_pushed:
+        if not door_is_open:
             return 'HEATING'
 
         return 'OFF'
@@ -858,7 +858,7 @@ the test passes
     * it returns :red:`'OFF'` if the door is :green:`open`
     * it returns :red:`'OFF'` if the start button is :red:`NOT pushed`
 
-  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`closed`
+  - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
 
 ----
 
