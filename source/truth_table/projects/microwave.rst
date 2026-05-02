@@ -3105,9 +3105,21 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines:
+    :emphasize-lines: 3-10
 
+    def microwave(
+            door_is_open, start_is_pushed,
+            timer_is_set=False, too_hot=False,
+        ):
+        if (
+            too_hot
+            or not timer_is_set
+            or not start_is_pushed
+            or door_is_open
+        ):
+            return 'OFF'
 
+        return 'HEATING'
 
   which do you like better?
 
