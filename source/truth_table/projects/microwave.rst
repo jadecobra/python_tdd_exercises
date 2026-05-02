@@ -2774,6 +2774,9 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
+
+    # Exceptions seen
+
   still green
 
 * I call the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>`, I do not need the ``reality`` :ref:`variables<what is a variable?>` because they are only used once in each :ref:`assertion<what is an assertion?>`
@@ -2814,6 +2817,9 @@ door           timer           start button       too hot             output
                 ),
                 OFF
             )
+
+
+    # Exceptions seen
 
 * I remove the commented lines and :ref:`variables<what is a variable?>` that are not used
 
@@ -2891,15 +2897,6 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-            self.assertEqual(
-                src.microwave.microwave(
-                    door_is_open=False,
-                    timer_is_set=False,
-                    start_is_pushed=False,
-                ),
-                OFF
-            )
-
   the test is still green
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the microwave temperature is :red:`NOT too hot`
@@ -2944,6 +2941,9 @@ door           timer           start button       too hot             output
                 ),
                 OFF
             )
+
+
+    # Exceptions seen
 
   still green
 
@@ -2991,6 +2991,9 @@ door           timer           start button       too hot             output
                 ),
                 OFF
             )
+
+
+    # Exceptions seen
 
   green
 
@@ -3055,35 +3058,11 @@ door           timer           start button       too hot             output
 
   all the tests are still green
 
-* I add another :ref:`condition<if statements>` to the one that returns :green:`'HEATING'` in the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
+* The :ref:`condition<if statements>` of the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py`` can be written with :ref:`Logical Conjunction (AND)<test_logical_conjunction>` for the one case where it returns :green:`'HEATING'`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 12
-
-    def microwave(
-            door_is_open, start_is_pushed,
-            timer_is_set=False, too_hot=False,
-        ):
-        if too_hot:
-            return 'OFF'
-
-        if (
-            not door_is_open
-            and start_is_pushed
-            and timer_is_set
-            and not too_hot
-        ):
-            return 'HEATING'
-
-        return 'OFF'
-
-  still green
-
-* I remove the :ref:`if statement<if statements>` for when the microwave temperature is :green:`too hot` because I no longer need it
-
-  .. code-block:: python
-    :linenos:
+    :emphasize-lines: 5-10
 
     def microwave(
             door_is_open, start_is_pushed,
@@ -3099,15 +3078,11 @@ door           timer           start button       too hot             output
 
         return 'OFF'
 
-  green. This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
-
-  * it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed` AND the timer is :green:`set` AND the microwave temperature is :red:`NOT too hot`
-  * it returns :red:`'OFF'` in every other case
-
-* I can also write the ``microwave`` :ref:`function<what is a function?>` with the negative cases first
+  or it could be written with the negative cases first
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 5, 7-14
 
     def microwave(
             door_is_open, start_is_pushed,
@@ -3125,6 +3100,13 @@ door           timer           start button       too hot             output
             return off
 
         return 'HEATING'
+
+  or it could be written with :ref:`Logical Disjunction (OR)<test_logical_disjunction>` for all the cases that return :red:`'OFF'`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines:
+
 
 
   which do you like better?

@@ -24,3 +24,11 @@ def microwave(
         return 'HEATING'
 
     return 'OFF'
+
+    if too_hot or not timer_is_set:
+        return 'OFF'
+
+    if door_is_open or not start_is_pushed:
+        return 'OFF'
+    else:
+        return 'HEATING'
