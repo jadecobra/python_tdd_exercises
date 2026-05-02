@@ -3105,7 +3105,7 @@ door           timer           start button       too hot             output
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3-10
+    :emphasize-lines: 5-10
 
     def microwave(
             door_is_open, start_is_pushed,
