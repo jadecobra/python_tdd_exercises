@@ -902,7 +902,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
             timer_is_set=False,
         ):
 
-  the test passes because
+  the tests are green again, because
 
   .. code-block:: python
 

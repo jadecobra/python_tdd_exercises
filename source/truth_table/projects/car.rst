@@ -1114,7 +1114,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             brake_is_pressed=False,
         ):
 
-  the test passes because
+  the tests are green again, because
 
   .. code-block:: python
 

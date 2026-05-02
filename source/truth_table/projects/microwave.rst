@@ -973,7 +973,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
             timer_is_set=False,
         ):
 
-  the test passes because
+  the tests are green again, because
 
   .. code-block:: python
 
