@@ -12,7 +12,7 @@ Car
 
 I want to make a **Car** that can be turned on with the push of a button, if the inputs are
 
-* is the key close?
+* is the key close to the starter?
 * was the start button pressed?
 
 this is the :ref:`truth table` I get for the Car Starter
@@ -269,8 +269,8 @@ start the project
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ================================ FAILURES ================================
-    _________________________ TestCar.test_failure ___________________________
+    ======================== FAILURES ========================
+    _________________ TestCar.test_failure ___________________
 
     self = <tests.test_car.TestCar testMethod=test_failure>
 
@@ -279,9 +279,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_car.py:7: AssertionError
-    ======================== short test summary info =========================
+    ================ short test summary info =================
     FAILED tests/test_car.py::TestCar::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    =================== 1 failed in X.YZs ====================
 
   because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
 
@@ -451,7 +451,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: starter() got an unexpected keyword argument 'key_is_close'
 
-  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
+  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only allows calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
 
@@ -481,7 +481,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: starter() got an unexpected keyword argument 'start_is_pressed'
 
-  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
+  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only allows calls with 1 input
 
 * I add ``start_is_pressed`` to the :ref:`function signature<what is a function?>`
 
@@ -642,7 +642,7 @@ key             start button        output
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pressed`
+I add a test with an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :green:`pressed`, in ``test_car.py``
 
 ==============  ==================  ==========
 key             start button        output
@@ -697,6 +697,7 @@ I add an :ref:`if statement<if statements>` to ``car.py``
   def starter(key_is_close, start_is_pressed):
       if key_is_close == False:
           return 'OFF'
+
       if not start_is_pressed:
           return 'OFF'
 
@@ -722,6 +723,7 @@ the test passes
         # if key_is_close == False:
         if not key_is_close == True:
             return 'OFF'
+
         if not start_is_pressed:
             return 'OFF'
 
@@ -740,6 +742,7 @@ the test passes
         # if not key_is_close == True:
         if not key_is_close:
             return 'OFF'
+
         if not start_is_pressed:
             return 'OFF'
 
@@ -747,17 +750,18 @@ the test passes
 
   still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
 
-* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` together because they return the same thing
+* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` together because they both return the same thing (``'OFF'``)
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-7
+    :emphasize-lines: 4-5, 7-8
 
     def starter(key_is_close, start_is_pressed):
         # if key_is_close == False:
         # if not key_is_close == True:
         # if not key_is_close:
         #     return 'OFF'
+
         # if not start_is_pressed:
         if not key_is_close or not start_is_pressed:
             return 'OFF'
@@ -766,7 +770,7 @@ the test passes
 
   the test is still green
 
-* I rewrite the statement in terms of :ref:`Logical Negation (NOT)<test_logical_negation>`
+* I rewrite the statement in terms of :ref:`Logical Negation (NOT)<test_logical_negation>` because it happens two times
 
   .. code-block:: python
     :linenos:
@@ -853,7 +857,7 @@ the test passes
 
   is this :ref:`Logical Conjunction?<test_logical_conjunction>`
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :red:`NOT pressed` to :ref:`test_key_close` in ``test_car.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter and the start button is :red:`NOT pressed` to :ref:`test_key_far` in ``test_car.py``
 
   ==============  ==================  ==========
   key             start button        output
@@ -901,6 +905,8 @@ the test passes
 
 
     class TestCar(unittest.TestCase):
+
+  this way all the tests can use the same :ref:`global variable<what is a variable?>` and I do not have to make one for each test
 
 * I use the new :ref:`global variable<what is a variable?>` to remove ``'OFF'`` from :ref:`test_key_close`
 
@@ -1014,7 +1020,7 @@ key             start button        output
 
 I want the car to start only when the brake pedal is pressed, the inputs for the car will then be
 
-* is the key close?
+* is the key close to the starter?
 * is the brake being pressed?
 * was the start button pressed?
 
@@ -1059,9 +1065,9 @@ key             brake               start button        output
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-.. code-block:: python
+.. code-block:: shell
 
-  TypeError: starter() got an unexpected keyword argument 'brake_is_pressed'
+  TypeError: starter() got an unexpected keyword argument 'brake_is_pressed'. Did you mean 'start_is_pressed'?
 
 because the test called the ``starter`` :ref:`function<what is a function?>` with 3 keyword arguments (``key_is_close``, ``brake_is_pressed`` and ``start_is_pressed``) and the :ref:`function<what is a function?>` only allows calls with 2 arguments (``key_is_close`` and ``start_is_pressed``)
 
@@ -1148,7 +1154,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 13
+    :emphasize-lines: 12
 
         def test_key_close(self):
             my_expectation = 'ON'
@@ -1309,7 +1315,7 @@ key             brake               start button        output
         # if brake_is_pressed == False:
         # if not brake_is_pressed == True:
         # if not brake_is_pressed:
-            # return 'OFF'
+        #     return 'OFF'
 
         # if not (key_is_close and start_is_pressed):
         if (
@@ -1327,7 +1333,7 @@ key             brake               start button        output
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 12-15
+    :emphasize-lines: 11-20
 
     def starter(
             key_is_close, start_is_pressed,
@@ -1336,12 +1342,16 @@ key             brake               start button        output
         # if brake_is_pressed == False:
         # if not brake_is_pressed == True:
         # if not brake_is_pressed:
-            # return 'OFF'
+        #     return 'OFF'
 
         # if not (key_is_close and start_is_pressed):
+        # if (
+        #     not (key_is_close and start_is_pressed)
+        #     or
+        #     not brake_is_pressed
+        # ):
         if (
             (not (key_is_close and start_is_pressed))
-            # or
             (not and)
             (not brake_is_pressed)
         ):
@@ -1361,7 +1371,7 @@ key             brake               start button        output
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 11-23
+    :emphasize-lines: 16-25
 
     def starter(
             key_is_close, start_is_pressed,
@@ -1370,21 +1380,23 @@ key             brake               start button        output
         # if brake_is_pressed == False:
         # if not brake_is_pressed == True:
         # if not brake_is_pressed:
-            # return 'OFF'
+        #     return 'OFF'
 
         # if not (key_is_close and start_is_pressed):
         # if (
+        #     not (key_is_close and start_is_pressed)
+        #     or
+        #     not brake_is_pressed
+        # ):
+        # if (
         #     (not (key_is_close and start_is_pressed))
-        #     # or
         #     (not and)
         #     (not brake_is_pressed)
         # ):
-        if (
-            not (
-                (key_is_close and start_is_pressed)
-                and
-                brake_is_pressed
-            )
+        if not (
+            (key_is_close and start_is_pressed)
+            and
+            (brake_is_pressed)
         ):
             return 'OFF'
 
@@ -1415,7 +1427,7 @@ key             brake               start button        output
   - it returns :red:`'OFF'` if the key is :red:`far` from the starter OR the start button is :red:`NOT pressed` OR the brake is :red:`NOT pressed`
   - it returns :green:`'ON'` if none of the conditions are met
 
-* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :red:`NOT pressed`
+* I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed` and the start button is :red:`NOT pressed`, in :ref:`test_key_close_brake_not_pressed` in ``test_car.py``
 
   ==============  ==================  ==================  ===========
   key             brake               start button        output
@@ -1921,7 +1933,7 @@ key             brake               start button        output
 
 I want to make sure the car is in park before it can start, so it does not immediately move when it is turned on (that would be a problem). The inputs will then be
 
-* is the key close?
+* is the key close to the starter?
 * is the brake being pressed?
 * was the start button pressed?
 * is the gear in park?
@@ -1945,7 +1957,7 @@ key             brake             start               gear                output
 
 ----
 
-I add a value for ``in_park`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`, to :ref:`test_key_close_brake_pressed` in ``test_car.py``
+I add a value for ``in_park`` to the :ref:`assertion<what is an assertion?>` for the case where the key is :green:`close`, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :green:`in park`, to :ref:`test_key_close_brake_pressed`
 
 ==============  ================  ==================  ==================  ================
 key             brake             start               gear                output
@@ -2162,6 +2174,8 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
             return 'OFF'
 
         return 'ON'
+
+  that is one long confusing statement
 
 * I write the new :ref:`if statement<if statements>` in terms of :ref:`not<test_logical_negation>`
 
@@ -2722,7 +2736,7 @@ key         brake             start               gear                output
 
   .. code-block:: python
     :lineno-start: 92
-    :emphasize-lines: 22-30
+    :emphasize-lines: 27
 
         def test_key_far_brake_pressed(self):
             self.assertEqual(
@@ -3048,6 +3062,7 @@ key         brake               start               gear                output
 
   .. code-block:: python
     :lineno-start: 123
+    :emphasize-lines: 11
 
             self.assertEqual(
                 src.car.starter(
@@ -3100,7 +3115,7 @@ review
 
 I ran tests for a car with these inputs:
 
-* is the key close?
+* is the key close to the starter?
 * is the brake being pressed?
 * was the start button pressed?
 * is the car in park?
