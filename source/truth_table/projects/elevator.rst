@@ -1000,7 +1000,7 @@ I want the elevator to move only when it is :red:`NOT above` the weight limit, t
 * is it above the weight limit?
 * was the number for a floor pushed?
 
-The :ref:`truth table` for when the doors are :green:`clear` and the button for a floor is :green:`pushed` is
+The :ref:`truth table` for when the doors are :green:`clear` and the button for a floor is :green:`pushed`, is:
 
 ==============  ==================  ==================  ===============
 doors           weight limit        floor number        output
@@ -1180,7 +1180,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 test_weight_w_doors_clear_number_not_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the doors are :green:`clear` and the button for a floor is :red:`NOT pushed` is:
+The :ref:`truth table` for when the doors are :green:`clear` and the button for a floor is :red:`NOT pushed`, is:
 
 ==============  ==================  ==================  ===============
 doors           weight limit        floor number        output
@@ -1271,7 +1271,7 @@ doors           weight limit        floor number        output
 test_weight_w_doors_not_clear_number_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the doors are :red:`NOT clear` and the button for a floor is :green:`pushed`
+The :ref:`truth table` for when the doors are :red:`NOT clear` and the button for a floor is :green:`pushed`, is:
 
 ================  ==================  ==================  ===============
 doors             weight limit        floor number        output
@@ -1280,13 +1280,13 @@ doors             weight limit        floor number        output
 :red:`NOT clear`  :red:`NOT above`    :green:`pushed`     :red:`NOT MOVE`
 ================  ==================  ==================  ===============
 
-* I add a value for the ``above_weight_limit`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_doors_clear_number_pushed` for the case where the doors are :red:`NOT clear` , the elevator is :red:`NOT above` the weight limit and the button for a floor is :green:`pushed`
+* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` in :ref:`test_doors_not_clear_number_pushed` for the case where the doors are :red:`NOT clear` , the elevator is :red:`NOT above` the weight limit and the button for a floor is :green:`pushed`
 
-  ==================  ==================  ==================  ===========
-  doors             weight limit        floor button        output
-  ==================  ==================  ==================  ===========
-  :red:`NOT clear`  :green:`above`      :green:`pushed`    :red:`NOT MOVE`
-  ==================  ==================  ==================  ===========
+  ================  ==================  ==================  ===============
+  doors             weight limit        floor number        output
+  ================  ==================  ==================  ===============
+  :red:`NOT clear`  :green:`above`      :green:`pushed`     :red:`NOT MOVE`
+  ================  ==================  ==================  ===============
 
   .. code-block:: python
     :lineno-start: 34
@@ -1309,18 +1309,17 @@ doors             weight limit        floor number        output
 
   the test is still green
 
-* I add a value for ``above_weight_limit`` to the next :ref:`assertion<what is an assertion?>`, for when the doors are :red:`NOT clear` , the elevator is :red:`NOT above` the weight limit and the button for the floor is :red:`NOT pushed`
+* I add a value for ``above_weight_limit`` to the next :ref:`assertion<what is an assertion?>`, for when the doors are :red:`NOT clear` , the elevator is :green:`above` the weight limit and the button for the floor is :green:`pushed`
 
-  ==================  ==================  ==================  ===========
-  doors             weight limit        floor button        output
-  ==================  ==================  ==================  ===========
-  :red:`NOT clear`  :green:`above`      :green:`pushed`    :red:`NOT MOVE`
-  :red:`NOT clear`  :green:`above`      :red:`NOT pushed`  :red:`NOT MOVE`
-  ==================  ==================  ==================  ===========
+  ================  ==================  ==================  ===============
+  doors             weight limit        floor number        output
+  ================  ==================  ==================  ===============
+  :red:`NOT clear`  :red:`NOT above`    :green:`pushed`     :red:`NOT MOVE`
+  ================  ==================  ==================  ===============
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 11
+    :lineno-start: 41
+    :emphasize-lines: 4
 
         def test_doors_not_clear_number_pushed(self):
             reality = src.elevator.elevator(
@@ -1329,16 +1328,6 @@ doors             weight limit        floor number        output
                 number_pushed=True,
             )
             self.assertEqual(reality, NOT_MOVE)
-
-            reality = src.elevator.elevator(
-                doors_clear=False,
-                above_weight_limit=True,
-                number_pushed=False,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-
-    # Exceptions seen
 
   still green
 
