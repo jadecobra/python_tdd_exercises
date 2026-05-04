@@ -54,7 +54,7 @@ start the project
 
 * I name this project ``atm``
 * I open a terminal_
-* I use uv_ to make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -293,7 +293,7 @@ start the project
     FAILED tests/test_atm.py::TestATM::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ does not show the same error, then check
 

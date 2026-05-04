@@ -242,7 +242,7 @@ start the project
     FAILED tests/test_assertion_error.py::TestAssertionError::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
@@ -499,7 +499,7 @@ which is like this `assertion`_
 
   assert True is False
 
-With these statements, I am telling the computer "CONTINUE ONLY if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`, they at least have different spellings. If it does not fail, then Python_ and I have a problem
+With these statements, I am telling the computer "CONTINUE ONLY if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`, they at least have different spellings. If it does not fail, then Python_ and I have a problem
 
 ----
 

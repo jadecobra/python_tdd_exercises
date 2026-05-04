@@ -236,7 +236,7 @@ start the project
     FAILED tests/test_calculator.py::TestCalculator::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
-  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ does not show the same error, then check
 

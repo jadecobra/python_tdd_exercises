@@ -17,7 +17,7 @@ I want to make an **Elevator** that goes up and down when I push a button, if th
 * are the doors clear?
 * was the number for a floor pushed?
 
-this is the :ref:`truth table` I get for the Elevator
+I get this :ref:`truth table` for the Elevator
 
 ================  ==================  =================
 doors             floor button        output
@@ -54,7 +54,7 @@ number the project
 
 * I name this project ``elevator``
 * I open a terminal_
-* I use uv_ to make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -285,7 +285,7 @@ number the project
     FAILED tests/test_elevator.py::TestElevator::test_failure - AssertionError: True is not false
     =================== 1 failed in X.YZs ====================
 
-  because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
@@ -518,7 +518,7 @@ test_doors_clear_number_not_pushed
 
 ----
 
-I add a test named ``test_doors_clear_number_not_pushed`` with an :ref:`assertion<what is an assertion>` for when the doors are :green:`clear` and the button for a floor is :red:`NOT pushed`
+I add a test named ``test_doors_clear_number_not_pushed`` with an :ref:`assertion<what is an assertion>` for when the doors are :green:`clear` and the button for a floor is :red:`NOT pushed`, in ``test_elevator.py``
 
 ================  ==================  =================
 doors             floor button        output
@@ -587,7 +587,7 @@ the test passes
 
 ----
 
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
     :linenos:
@@ -595,14 +595,14 @@ the test passes
 
     def elevator(doors_clear, number_pushed):
         # if number_pushed == False:
-        if not number_pushed == True:
+        if bool(number_pushed) == False:
             return 'NOT MOVE'
 
         return 'MOVE'
 
   the test is still green
 
-* I remove ``== True``
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :linenos:
@@ -610,13 +610,48 @@ the test passes
 
     def elevator(doors_clear, number_pushed):
         # if number_pushed == False:
-        # if not number_pushed == True:
+        # if bool(number_pushed) == False:
+        if not bool(number_pushed) == True:
+            return 'NOT MOVE'
+
+        return 'MOVE'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    def elevator(doors_clear, number_pushed):
+        # if number_pushed == False:
+        # if bool(number_pushed) == False:
+        # if not bool(number_pushed) == True:
+        if not bool(number_pushed):
+            return 'NOT MOVE'
+
+        return 'MOVE'
+
+  green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5-6
+
+    def elevator(doors_clear, number_pushed):
+        # if number_pushed == False:
+        # if bool(number_pushed) == False:
+        # if not bool(number_pushed) == True:
+        # if not bool(number_pushed):
         if not number_pushed:
             return 'NOT MOVE'
 
         return 'MOVE'
 
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
 
 * I remove the commented lines
 
@@ -720,7 +755,7 @@ the test passes
 
 ----
 
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
     :linenos:
@@ -728,7 +763,7 @@ the test passes
 
     def elevator(doors_clear, number_pushed):
         # if doors_clear == False:
-        if not doors_clear == True:
+        if bool(doors_clear) == False:
             return 'NOT MOVE'
 
         if not number_pushed:
@@ -738,16 +773,36 @@ the test passes
 
   the test is still green
 
-* I remove ``== True``
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 3-4
 
     def elevator(doors_clear, number_pushed):
+    # if doors_clear == False:
+    # if bool(doors_clear) == False:
+    if not bool(doors_clear) == True:
+        return 'NOT MOVE'
+
+    if not number_pushed:
+        return 'NOT MOVE'
+
+    return 'MOVE'
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    def elevator(doors_clear, number_pushed):
         # if doors_clear == False:
-        # if not doors_clear == True:
-        if not doors_clear:
+        # if bool(doors_clear) == False:
+        # if not bool(doors_clear) == True:
+        if not bool(doors_clear):
             return 'NOT MOVE'
 
         if not number_pushed:
@@ -755,30 +810,32 @@ the test passes
 
         return 'MOVE'
 
-  still green, because ``if something == False`` is the same as ``if not something == True`` is the same as ``if not something``
+  green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of :red:`'NOT MOVE'`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 2
 
     def elevator(doors_clear, number_pushed):
         not_move = 'NOT MOVE'
         # if doors_clear == False:
-        # if not doors_clear == True:
+        # if bool(doors_clear) == False:
+        # if not bool(doors_clear) == True:
 
-* I use the :ref:`variable<what is a variable>` to remove repetition of :red:`'NOT MOVE'`
+* I use the :ref:`variable<what is a variable>` to remove repetition of :red:`'NOT MOVE'` from the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines:
+    :emphasize-lines: 7-8, 11-12
 
     def elevator(doors_clear, number_pushed):
         not_move = 'NOT MOVE'
         # if doors_clear == False:
-        # if not doors_clear == True:
-        if not doors_clear:
+        # if bool(doors_clear) == False:
+        # if not bool(doors_clear) == True:
+        if not bool(doors_clear):
             # return 'NOT MOVE'
             return not_move
 
@@ -787,6 +844,8 @@ the test passes
             return not_move
 
         return 'MOVE'
+
+  still green
 
 * I remove the commented lines
 
@@ -796,7 +855,7 @@ the test passes
     def elevator(doors_clear, number_pushed):
         not_move = 'NOT MOVE'
 
-        if not doors_clear:
+        if not bool(doors_clear):
             return not_move
 
         if not number_pushed:

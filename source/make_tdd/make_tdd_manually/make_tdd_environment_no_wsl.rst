@@ -499,7 +499,7 @@ how to make a Python file for the tests in the 'tests' directory on Windows with
       - assertFalse_ is a :ref:`method<what is a function?>` in the `unittest.TestCase`_ :ref:`class <what is a class?>` that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
-      I expect this line to fail because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
+      I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_ by saving (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) every time I make a change
 
@@ -651,7 +651,7 @@ how to change the name of a file on Windows without WSL
 
   - ``FAILED (failures=1)`` the number of failures
   - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-  - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError<what causes AssertionError?>` because :ref:`True<test_what_is_true>` is not :ref:`False<test_what_is_false>`
+  - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError<what causes AssertionError?>` because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
   - ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
   - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above that Python_ thinks caused the :ref:`error<errors>`
   - ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
