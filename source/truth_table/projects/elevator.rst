@@ -1294,12 +1294,11 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
         return 'MOVE'
 
-* I do not need to add a value for the ``above_weight_limit`` parameter to the next :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit and the button for the floor is :green:`pushed`
+* I do not need to add a value for the ``above_weight_limit`` parameter to the next :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for the floor is :green:`pushed` and the elevator is :red:`NOT above` the weight limit
 
   ==============  ==================  ==================  ===============
   doors           floor number        weight limit        output
   ==============  ==================  ==================  ===============
-  :green:`clear`  :green:`pushed`     :green:`above`      :red:`NOT MOVE`
   :green:`clear`  :green:`pushed`     :red:`NOT above`    :green:`MOVE`
   ==============  ==================  ==================  ===============
 
@@ -1312,7 +1311,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         number_pushed=True,
     )
 
-  the same as
+  is the same as
 
   .. code-block:: python
 
@@ -1333,13 +1332,12 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
     class TestElevator(unittest.TestCase):
 
         def test_weight_w_doors_clear_number_pushed(self):
-            my_expectation = 'MOVE'
             reality = src.elevator.elevator(
                 doors_clear=True,
-                above_weight_limit=False,
                 number_pushed=True,
+                above_weight_limit=True,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, NOT_MOVE)
 
 ----
 
@@ -1350,29 +1348,29 @@ test_weight_w_doors_clear_number_not_pushed
 The :ref:`truth table` for when the doors are :green:`clear` and the button for a floor is :red:`NOT pushed`, is:
 
 ==============  ==================  ==================  ===============
-doors           weight limit        floor number        output
+doors           floor number        weight limit        output
 ==============  ==================  ==================  ===============
-:green:`clear`  :green:`above`      :red:`NOT pushed`   :red:`NOT MOVE`
-:green:`clear`  :red:`NOT above`    :red:`NOT pushed`   :red:`NOT MOVE`
+:green:`clear`  :red:`NOT pushed`   :green:`above`      :red:`NOT MOVE`
+:green:`clear`  :red:`NOT pushed`   :red:`NOT above`    :red:`NOT MOVE`
 ==============  ==================  ==================  ===============
 
-* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :green:`above` the weight limit and the button for a floor is :red:`NOT pushed` in :ref:`test_doors_clear_number_not_pushed`
+* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for a floor is :red:`NOT pushed` and the elevator is :green:`above` the weight limit, in :ref:`test_doors_clear_number_not_pushed`
 
   ==============  ==================  ==================  ===============
-  doors           weight limit        floor number        output
+  doors           floor number        weight limit        output
   ==============  ==================  ==================  ===============
-  :green:`clear`  :green:`above`      :red:`NOT pushed`   :red:`NOT MOVE`
+  :green:`clear`  :red:`NOT pushed`   :green:`above`      :red:`NOT MOVE`
   ==============  ==================  ==================  ===============
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 25
     :emphasize-lines: 4
 
         def test_doors_clear_number_not_pushed(self):
             reality = src.elevator.elevator(
                 doors_clear=True,
-                above_weight_limit=True,
                 number_pushed=False,
+                above_weight_limit=True,
             )
             self.assertEqual(reality, NOT_MOVE)
 
@@ -1380,36 +1378,54 @@ doors           weight limit        floor number        output
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit and the button for the floor is :red:`NOT pushed`, in :ref:`test_doors_clear_number_not_pushed` in ``test_elevator.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
 
   ==============  ==================  ==================  ===============
-  doors           weight limit        floor number        output
+  doors           floor number        weight limit        output
   ==============  ==================  ==================  ===============
-  :green:`clear`  :red:`NOT above`    :red:`NOT pushed`   :red:`NOT MOVE`
+  :green:`clear`  :red:`NOT pushed`   :red:`NOT above`    :red:`NOT MOVE`
   ==============  ==================  ==================  ===============
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 25
     :emphasize-lines: 9-14
 
         def test_doors_clear_number_not_pushed(self):
             reality = src.elevator.elevator(
                 doors_clear=True,
-                above_weight_limit=True,
                 number_pushed=False,
+                above_weight_limit=True,
             )
             self.assertEqual(reality, NOT_MOVE)
 
             reality = src.elevator.elevator(
                 doors_clear=True,
-                above_weight_limit=False,
                 number_pushed=False,
             )
             self.assertEqual(reality, NOT_MOVE)
 
         def test_doors_not_clear_number_pushed(self):
 
-  the test is still green
+  still green. I do not need to add a value for the ``above_weight_limit`` parameter because
+
+  .. code-block:: python
+
+    src.elevator.elevator(
+        doors_clear=True,
+        number_pushed=False,
+    )
+
+  is the same as
+
+  .. code-block:: python
+
+    src.elevator.elevator(
+        doors_clear=True,
+        number_pushed=False,
+        above_weight_limit=False,
+    )
+
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
 
 * I change the name of the test from :ref:`test_doors_clear_number_not_pushed` to :ref:`test_weight_w_doors_clear_number_not_pushed`
 
