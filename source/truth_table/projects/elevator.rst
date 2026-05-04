@@ -1189,7 +1189,7 @@ doors           weight limit        floor number        output
 :green:`clear`  :red:`NOT above`    :red:`NOT pushed`   :red:`NOT MOVE`
 ==============  ==================  ==================  ===============
 
-* I add a value for the ``above_weight_limit`` parameter to :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :green:`above` the weight limit and the button for a floor is :red:`NOT pushed` in :ref:`test_doors_clear_number_not_pushed`
+* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :green:`above` the weight limit and the button for a floor is :red:`NOT pushed` in :ref:`test_doors_clear_number_not_pushed`
 
   ==============  ==================  ==================  ===============
   doors           weight limit        floor number        output
@@ -1355,10 +1355,10 @@ doors             weight limit        floor number        output
 ----
 
 *********************************************************************************
-test_doors_not_clear_number_pushed_weight limit_not_pushed
+test_weight_w_doors_not_clear_number_not_pushed
 *********************************************************************************
 
-The :ref:`truth table` for when the doors are :red:`NOT clear` and the button for a floor is :red:`NOT pushed`
+The :ref:`truth table` for when the doors are :red:`NOT clear` and the button for a floor is :red:`NOT pushed`, is:
 
 ================  ==================  ==================  ===============
 doors             weight limit        floor number        output
@@ -1367,30 +1367,31 @@ doors             weight limit        floor number        output
 :red:`NOT clear`  :red:`NOT above`    :red:`NOT pushed`   :red:`NOT MOVE`
 ================  ==================  ==================  ===============
 
-* I add a new test with an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear` , the elevator is :red:`NOT above` the weight limit and the button for a floor is :green:`pushed`
+* I add a value for the ``above_weight_limit`` parameter to the :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear` , the elevator is :green:`above` the weight limit and the button for a floor is :red:`NOT pushed`
 
-  ==================  ==================  ==================  ===========
-  doors             weight limit        floor button        output
-  ==================  ==================  ==================  ===========
-  :red:`NOT clear`  :red:`NOT above`    :green:`pushed`    :red:`NOT MOVE`
-  ==================  ==================  ==================  ===========
+  ================  ==================  ==================  ===============
+  doors             weight limit        floor number        output
+  ================  ==================  ==================  ===============
+  :red:`NOT clear`  :green:`above`      :red:`NOT pushed`   :red:`NOT MOVE`
+  ================  ==================  ==================  ===============
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 8-14
+    :lineno-start: 41
+    :emphasize-lines: 9-15
 
+        def test_weight_w_doors_not_clear_number_pushed(self):
+            reality = src.elevator.elevator(
+                doors_clear=False,
+                above_weight_limit=True,
+                number_pushed=True,
+            )
+            self.assertEqual(reality, NOT_MOVE)
+
+        def test_doors_not_clear_number_not_pushed(self):
             reality = src.elevator.elevator(
                 doors_clear=False,
                 above_weight_limit=True,
                 number_pushed=False,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
-            reality = src.elevator.elevator(
-                doors_clear=False,
-                above_weight_limit=False,
-                number_pushed=True,
             )
             self.assertEqual(reality, NOT_MOVE)
 
@@ -1401,22 +1402,21 @@ doors             weight limit        floor number        output
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear` , the elevator is :red:`NOT above` the weight limit and the button for the floor is :red:`NOT pushed`
 
-  ==================  ==================  ==================  ===========
-  doors             weight limit        floor button        output
-  ==================  ==================  ==================  ===========
-  :red:`NOT clear`  :red:`NOT above`    :green:`pushed`    :red:`NOT MOVE`
-  :red:`NOT clear`  :red:`NOT above`    :red:`NOT pushed`  :red:`NOT MOVE`
-  ==================  ==================  ==================  ===========
+  ================  ==================  ==================  ===============
+  doors             weight limit        floor number        output
+  ================  ==================  ==================  ===============
+  :red:`NOT clear`  :red:`NOT above`    :red:`NOT pushed`   :red:`NOT MOVE`
+  ================  ==================  ==================  ===============
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 49
     :emphasize-lines: 9-14
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_doors_not_clear_number_not_pushed(self):
             reality = src.elevator.elevator(
                 doors_clear=False,
-                above_weight_limit=False,
-                number_pushed=True,
+                above_weight_limit=True,
+                number_pushed=False,
             )
             self.assertEqual(reality, NOT_MOVE)
 
@@ -1432,13 +1432,34 @@ doors             weight limit        floor number        output
 
   still green
 
-* I call the ``elevator`` :ref:`function<what is a function?>` directly in :ref:`test_doors_not_clear_number_pushed_weight limit_not_pushed`, I do not need the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each :ref:`assertion<what is an assertion?>`
+* I change the name of the test from :ref:`test_doors_not_clear_number_pushed` to :ref:`test_weight_w_doors_not_clear_number_pushed`
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 8
+
+            reality = src.elevator.elevator(
+                doors_clear=True,
+                above_weight_limit=False,
+                number_pushed=False,
+            )
+            self.assertEqual(reality, NOT_MOVE)
+
+        def test_weight_w_doors_not_clear_number_pushed(self):
+            reality = src.elevator.elevator(
+                doors_clear=False,
+                above_weight_limit=True,
+                number_pushed=True,
+            )
+            self.assertEqual(reality, NOT_MOVE)
+
+* I call the ``elevator`` :ref:`function<what is a function?>` directly in :ref:`test_weight_w_doors_not_clear_number_not_pushed`, I do not need the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 56
     :emphasize-lines: 7-15, 22-30
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
             reality = src.elevator.elevator(
                 doors_clear=False,
                 above_weight_limit=False,
@@ -1476,7 +1497,7 @@ doors             weight limit        floor number        output
   .. code-block:: python
     :lineno-start: 56
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
             self.assertEqual(
                 src.elevator.elevator(
                     doors_clear=False,
@@ -1535,7 +1556,7 @@ doors             weight limit        floor number        output
                 NOT_MOVE
             )
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
 
   still green
 
@@ -1563,7 +1584,7 @@ doors             weight limit        floor number        output
                 NOT_MOVE
             )
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
 
 * on to :ref:`test_weight_w_doors_clear_number_not_pushed`
 
@@ -2515,7 +2536,7 @@ doors             weight limit      floor button        emergency button      ou
                 NOT_MOVE
             )
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
 
   still green
 
@@ -2564,7 +2585,7 @@ doors             weight limit      floor button        emergency button      ou
                 NOT_MOVE
             )
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
 
   the test is still green
 
@@ -2624,7 +2645,7 @@ doors             weight limit      floor button        emergency button      ou
                 NOT_MOVE
             )
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
 
   still green
 
@@ -2658,7 +2679,7 @@ doors             weight limit      floor button        emergency button      ou
 ----
 
 *********************************************************************************
-test_doors_not_clear_number_pushed_weight limit_not_pushed_w_emergency
+test_weight_w_doors_not_clear_number_not_pushed_w_emergency
 *********************************************************************************
 
 The :ref:`truth table` for when the doors are :red:`NOT clear` and the elevator is :red:`NOT above` the weight limit is
@@ -2672,7 +2693,7 @@ doors             weight limit        floor button        emergency button      
 :red:`NOT clear`  :red:`NOT above`    :red:`NOT pushed`  :red:`NOT pushed`  :red:`NOT MOVE`
 ==================  ==================  ==================  ====================  ==========
 
-* I add a value for the ``emergency`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_doors_not_clear_number_pushed_weight limit_not_pushed`, for when the doors are :red:`NOT clear` , the elevator is :red:`NOT above` the weight limit, button for a floor is :green:`pushed`, and the emergency button is :red:`NOT pushed`
+* I add a value for the ``emergency`` parameter to the first :ref:`assertion<what is an assertion?>` in :ref:`test_weight_w_doors_not_clear_number_not_pushed`, for when the doors are :red:`NOT clear` , the elevator is :red:`NOT above` the weight limit, button for a floor is :green:`pushed`, and the emergency button is :red:`NOT pushed`
 
   ==================  ==================  ==================  ====================  ==========
   doors             weight limit        floor button        emergency button         output
@@ -2684,7 +2705,7 @@ doors             weight limit        floor button        emergency button      
     :lineno-start: 133
     :emphasize-lines: 7
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
             self.assertEqual(
                 src.elevator.elevator(
                     doors_clear=False,
@@ -2710,7 +2731,7 @@ doors             weight limit        floor button        emergency button      
     :lineno-start: 133
     :emphasize-lines: 12-20
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
             self.assertEqual(
                 src.elevator.elevator(
                     doors_clear=False,
@@ -2759,7 +2780,7 @@ doors             weight limit        floor button        emergency button      
     :lineno-start: 133
     :emphasize-lines: 27
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
             self.assertEqual(
                 src.elevator.elevator(
                     doors_clear=False,
@@ -2807,7 +2828,7 @@ doors             weight limit        floor button        emergency button      
     :lineno-start: 133
     :emphasize-lines: 32-40
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed(self):
+        def test_weight_w_doors_not_clear_number_not_pushed(self):
             self.assertEqual(
                 src.elevator.elevator(
                     doors_clear=False,
@@ -2853,7 +2874,7 @@ doors             weight limit        floor button        emergency button      
 
   all the tests are still green
 
-* I change the name of the test from :ref:`test_doors_not_clear_number_pushed_weight limit_not_pushed` to :ref:`test_doors_not_clear_number_pushed_weight limit_not_pushed_w_emergency`
+* I change the name of the test from :ref:`test_weight_w_doors_not_clear_number_not_pushed` to :ref:`test_weight_w_doors_not_clear_number_not_pushed_w_emergency`
 
   .. code-block:: python
     :lineno-start: 123
@@ -2869,7 +2890,7 @@ doors             weight limit        floor button        emergency button      
                 NOT_MOVE
             )
 
-        def test_doors_not_clear_number_pushed_weight limit_not_pushed_w_emergency(self):
+        def test_weight_w_doors_not_clear_number_not_pushed_w_emergency(self):
             self.assertEqual(
                 src.elevator.elevator(
                     doors_clear=False,
