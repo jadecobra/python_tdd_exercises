@@ -444,7 +444,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: elevator() got an unexpected keyword argument 'doors_clear'
 
-  because the test called the ``elevator`` :ref:`function<what is a function?>` with 2 keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only allows calls with 0 arguments
+  because the test called the ``elevator`` :ref:`function<what is a function?>` with 2 keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_elevator.py``
 
@@ -474,7 +474,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: elevator() got an unexpected keyword argument 'number_pushed'
 
-  because the test called the ``elevator`` :ref:`function<what is a function?>` with 2 keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only allows calls with 1 input
+  because the test called the ``elevator`` :ref:`function<what is a function?>` with 2 keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only takes calls with 1 input
 
 * I add ``number_pushed`` to the :ref:`function signature<what is a function?>`
 
@@ -518,7 +518,7 @@ test_doors_clear_number_not_pushed
 
 ----
 
-I add a test named ``test_doors_clear_number_not_pushed`` with an :ref:`assertion<what is an assertion>` for when the doors are :green:`clear` and the button for a floor is :red:`NOT pushed`, in ``test_elevator.py``
+I add a test named ``test_doors_clear_number_not_pushed`` with an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear` and the button for a floor is :red:`NOT pushed`, in ``test_elevator.py``
 
 ================  ==================  =================
 doors             floor button        output
@@ -824,7 +824,7 @@ the test passes
         # if bool(doors_clear) == False:
         # if not bool(doors_clear) == True:
 
-* I use the :ref:`variable<what is a variable>` to remove repetition of :red:`'NOT MOVE'` from the :ref:`function<what is a function?>`
+* I use the :ref:`variable<what is a variable?>` to remove repetition of :red:`'NOT MOVE'` from the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -1019,7 +1019,7 @@ the test is still green
 
     # Exceptions seen
 
-  green
+  still green
 
 * I remove the commented lines
 
@@ -1053,19 +1053,19 @@ doors             floor button        output
 :red:`NOT clear`  :red:`NOT pushed`   :red:`NOT MOVE`
 ================  ==================  =================
 
-I want the elevator to move only when it is :red:`NOT above` the weight limit, the inputs for the elevator will then be
+I want the elevator to move only when it is :red:`NOT above` a weight limit, the inputs for the elevator will then be
 
 * are the doors clear?
-* is it above the weight limit?
 * was the number for a floor pushed?
+* is it above the weight limit?
 
 The :ref:`truth table` for when the doors are :green:`clear` and the button for a floor is :green:`pushed`, is:
 
 ==============  ==================  ==================  ===============
-doors           weight limit        floor number        output
+doors           floor number        weight limit        output
 ==============  ==================  ==================  ===============
-:green:`clear`  :green:`above`      :green:`pushed`     :red:`NOT MOVE`
-:green:`clear`  :red:`NOT above`    :green:`pushed`     :green:`MOVE`
+:green:`clear`  :green:`pushed`     :green:`above`      :red:`NOT MOVE`
+:green:`clear`  :green:`pushed`     :red:`NOT above`    :green:`MOVE`
 ==============  ==================  ==================  ===============
 
 ----
@@ -1076,27 +1076,35 @@ doors           weight limit        floor number        output
 
 ----
 
-I add a value for ``above_weight_limit`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_doors_clear_number_pushed`, for when the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit and the button for a floor is :green:`pushed`
+I add an :ref:`assertion<what is an assertion?>` with a value for ``above_weight_limit`` to :ref:`test_doors_clear_number_pushed`, for when the doors are :green:`clear`, the button for a floor is :green:`pushed` and the elevator is :green:`above` the weight limit
 
 ==============  ==================  ==================  ===============
-doors           weight limit        floor number        output
+doors           floor number        weight limit        output
 ==============  ==================  ==================  ===============
-:green:`clear`  :red:`NOT above`    :green:`pushed`     :green:`MOVE`
+:green:`clear`  :green:`pushed`     :green:`above`      :red:`NOT MOVE`
 ==============  ==================  ==================  ===============
 
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 5
+  :lineno-start: 10
+  :emphasize-lines: 2-7
 
       def test_doors_clear_number_pushed(self):
+          reality = src.elevator.elevator(
+              doors_clear=True,
+              number_pushed=True,
+              above_weight_limit=True,
+          )
+          self.assertEqual(reality, NOT_MOVE)
+
           my_expectation = 'MOVE'
           reality = src.elevator.elevator(
               doors_clear=True,
-              above_weight_limit=False,
               number_pushed=True,
           )
           self.assertEqual(reality, my_expectation)
+
+      def test_doors_clear_number_not_pushed(self):
 
 the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1104,7 +1112,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: elevator() got an unexpected keyword argument 'above_weight_limit'
 
-because the test called the ``elevator`` :ref:`function<what is a function?>` with 3 keyword arguments (``doors_clear``, ``above_weight_limit`` and ``number_pushed``) and the :ref:`function<what is a function?>` only allows calls with 2 arguments (``doors_clear`` and ``number_pushed``)
+because the test called the ``elevator`` :ref:`function<what is a function?>` with 3 keyword arguments (``doors_clear``, ``number_pushed`` and ``above_weight_limit``) and the :ref:`function<what is a function?>` only takes calls with 2 arguments (``doors_clear`` and ``number_pushed``)
 
 ----
 
@@ -1126,7 +1134,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         ):
         not_move = 'NOT MOVE'
 
-        if not doors_clear:
+        if not bool(doors_clear):
             return not_move
 
         if not number_pushed:
@@ -1134,15 +1142,23 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
         return 'MOVE'
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  - the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    FAILED ...test_doors_clear_number_not_pushed - TypeError: elevator() missing 1 required positional argument: 'above_weight_limit'
-    FAILED ...test_doors_not_clear_number_not_pushed - TypeError: elevator() missing 1 required positional argument: 'above_weight_limit'
-    FAILED ...test_doors_not_clear_number_pushed - TypeError: elevator() missing 1 required positional argument: 'above_weight_limit'
+      FAILED ...test_doors_clear_number_not_pushed - TypeError: elevator() missing 1 required positional argument: 'above_weight_limit'
+      FAILED t...test_doors_not_clear_number_not_pushed - TypeError: elevator() missing 1 required positional argument: 'above_weight_limit'
+      FAILED ...test_doors_not_clear_number_pushed - TypeError: elevator() missing 1 required positional argument: 'above_weight_limit'
 
-  because the tests call the ``elevator`` :ref:`function<what is a function?>` with 2 arguments (``doors_clear`` and ``number_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``doors_clear``, ``number_pushed`` and ``above_weight_limit``). I have to make ``above_weight_limit`` a choice.
+    because the tests call the ``elevator`` :ref:`function<what is a function?>` with 2 arguments (``doors_clear`` and ``number_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``doors_clear``, ``number_pushed`` and ``above_weight_limit``). I have to make ``above_weight_limit`` a choice.
+
+  - the terminal_ also shows :ref:`AssertionError<what causes AssertionError?>`
+
+    .. code-block:: python
+
+      AssertionError: 'MOVE' != 'NOT MOVE'
+
+    because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'` when it was called with the ``above_weight_limit`` parameter and the test expects :red:`'NOT MOVe'`
 
 * I add a :ref:`default value<test_functions_w_default_arguments>` to make ``above_weight_limit`` a choice
 
@@ -1155,26 +1171,59 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
             above_weight_limit=False,
         ):
 
-  the tests are green again, because
+  - the :ref:`TypeError<what causes TypeError?>` goes away because
+
+    .. code-block:: python
+
+      src.elevator.elevator(
+          doors_clear=True,
+          number_pushed=False,
+      )
+
+    is now the same as
+
+    .. code-block:: python
+
+      src.elevator.elevator(
+          doors_clear=True,
+          number_pushed=False,
+          above_weight_limit=False,
+      )
+
+    a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+
+  - the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    src.elevator.elevator(
-        doors_clear=True,
-        number_pushed=False,
-    )
+    AssertionError: 'MOVE' != 'NOT MOVE'
 
-  is now the same as
+  because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'`  and the test expects :red:`'NOT MOVE'`
+
+* I add an :ref:`if statement<if statements>` to the :ref:`function<what is a function?>` in ``elevator.py``
 
   .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7-8
 
-    src.elevator.elevator(
-        doors_clear=True,
-        number_pushed=False,
-        above_weight_limit=False,
-    )
+    def elevator(
+            doors_clear, number_pushed,
+            above_weight_limit=False,
+        ):
+        not_move = 'NOT MOVE'
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+        if above_weight_limit == True:
+            return not_move
+
+        if not bool(doors_clear):
+            return not_move
+
+        if not number_pushed:
+            return not_move
+
+        return 'MOVE'
+
+  the test passes
 
 ----
 
@@ -1184,37 +1233,96 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :green:`above` the weight limit and the button for the floor is :green:`pushed`
-
-  ==============  ==================  ==================  ===============
-  doors           weight limit        floor number        output
-  ==============  ==================  ==================  ===============
-  :green:`clear`  :green:`above`      :green:`pushed`     :red:`NOT MOVE`
-  ==============  ==================  ==================  ===============
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 10-15
+    :lineno-start: 7
+    :emphasize-lines: 1-2
 
-        def test_doors_clear_number_pushed(self):
-            my_expectation = 'MOVE'
-            reality = src.elevator.elevator(
-                doors_clear=True,
-                above_weight_limit=False,
-                number_pushed=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.elevator.elevator(
-                doors_clear=True,
-                above_weight_limit=True,
-                number_pushed=False,
-            )
-            self.assertEqual(reality, NOT_MOVE)
-
-        def test_doors_clear_number_not_pushed(self):
+        # if above_weight_limit == True:
+        if bool(above_weight_limit) == True:
+            return not_move
 
   the test is still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3-4
+
+        # if above_weight_limit == True:
+        # if bool(above_weight_limit) == True:
+        if bool(above_weight_limit):
+            return not_move
+
+  still green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3-4
+
+        # if above_weight_limit == True:
+        # if bool(above_weight_limit) == True:
+        # if bool(above_weight_limit):
+        if above_weight_limit:
+            return not_move
+
+  green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def elevator(
+            doors_clear, number_pushed,
+            above_weight_limit=False,
+        ):
+        not_move = 'NOT MOVE'
+
+        if above_weight_limit:
+            return not_move
+
+        if not bool(doors_clear):
+            return not_move
+
+        if not number_pushed:
+            return not_move
+
+        return 'MOVE'
+
+* I do not need to add a value for the ``above_weight_limit`` parameter to the next :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit and the button for the floor is :green:`pushed`
+
+  ==============  ==================  ==================  ===============
+  doors           floor number        weight limit        output
+  ==============  ==================  ==================  ===============
+  :green:`clear`  :green:`pushed`     :green:`above`      :red:`NOT MOVE`
+  :green:`clear`  :green:`pushed`     :red:`NOT above`    :green:`MOVE`
+  ==============  ==================  ==================  ===============
+
+  because
+
+  .. code-block:: python
+
+    src.elevator.elevator(
+        doors_clear=True,
+        number_pushed=True,
+    )
+
+  the same as
+
+  .. code-block:: python
+
+    src.elevator.elevator(
+        doors_clear=True,
+        number_pushed=True,
+        above_weight_limit=False,
+    )
+
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
 
 * I change the name of the test from :ref:`test_doors_clear_number_pushed` to :ref:`test_weight_w_doors_clear_number_pushed`
 
@@ -1861,7 +1969,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: elevator() got an unexpected keyword argument 'emergency'
 
-because the test called the ``elevator`` :ref:`function<what is a function?>` with 4 keyword arguments (``doors_clear``, ``above_weight_limit``, ``number_pushed`` and ``emergency``) and the definition only allows calls with 2 required arguments (``doors_clear`` and ``number_pushed``) and 1 optional argument (``above_weight_limit``)
+because the test called the ``elevator`` :ref:`function<what is a function?>` with 4 keyword arguments (``doors_clear``, ``above_weight_limit``, ``number_pushed`` and ``emergency``) and the definition only takes calls with 2 required arguments (``doors_clear`` and ``number_pushed``) and 1 optional argument (``above_weight_limit``)
 
 ----
 

@@ -453,7 +453,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: show() got an unexpected keyword argument 'current_light'
 
-  because the test called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
+  because the test called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
 
@@ -483,7 +483,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: show() got an unexpected keyword argument 'timer_done'
 
-  because the test called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
+  because the test called the ``show`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only takes calls with 1 input
 
 * I add ``timer_done`` to the :ref:`function signature<what is a function?>`
 

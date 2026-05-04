@@ -450,7 +450,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: parking garage() got an unexpected keyword argument 'door_is_open'
 
-  because the test called the ``parking garage`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 0 arguments
+  because the test called the ``parking garage`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_parking garage.py``
 
@@ -480,7 +480,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: parking garage() got an unexpected keyword argument 'start_is_pushed'
 
-  because the test called the ``parking garage`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only allows calls with 1 input
+  because the test called the ``parking garage`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only takes calls with 1 input
 
 * I add ``start_is_pushed`` to the :ref:`function signature<what is a function?>`
 
@@ -858,7 +858,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: parking garage() got an unexpected keyword argument 'timer_is_set'
 
-because the test called the ``parking garage`` :ref:`function<what is a function?>` with 3 keyword arguments (``door_is_open``, ``timer_is_set`` and ``start_is_pushed``) and the :ref:`function<what is a function?>` only allows calls with 2 arguments (``door_is_open`` and ``start_is_pushed``)
+because the test called the ``parking garage`` :ref:`function<what is a function?>` with 3 keyword arguments (``door_is_open``, ``timer_is_set`` and ``start_is_pushed``) and the :ref:`function<what is a function?>` only takes calls with 2 arguments (``door_is_open`` and ``start_is_pushed``)
 
 ----
 
@@ -1510,7 +1510,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: parking garage() got an unexpected keyword argument 'too_hot'
 
-because the test called the ``parking garage`` :ref:`function<what is a function?>` with 4 keyword arguments (``door_is_open``, ``timer_is_set``, ``start_is_pushed`` and ``too_hot``) and the definition only allows calls with 2 required arguments (``door_is_open`` and ``start_is_pushed``) and 1 optional argument (``timer_is_set``)
+because the test called the ``parking garage`` :ref:`function<what is a function?>` with 4 keyword arguments (``door_is_open``, ``timer_is_set``, ``start_is_pushed`` and ``too_hot``) and the definition only takes calls with 2 required arguments (``door_is_open`` and ``start_is_pushed``) and 1 optional argument (``timer_is_set``)
 
 ----
 

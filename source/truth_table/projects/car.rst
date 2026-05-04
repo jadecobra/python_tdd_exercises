@@ -451,7 +451,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: starter() got an unexpected keyword argument 'key_is_close'
 
-  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only allows calls with 0 arguments
+  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
 
@@ -481,7 +481,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: starter() got an unexpected keyword argument 'start_is_pressed'
 
-  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only allows calls with 1 input
+  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 1 input
 
 * I add ``start_is_pressed`` to the :ref:`function signature<what is a function?>`
 
@@ -1069,7 +1069,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: starter() got an unexpected keyword argument 'brake_is_pressed'. Did you mean 'start_is_pressed'?
 
-because the test called the ``starter`` :ref:`function<what is a function?>` with 3 keyword arguments (``key_is_close``, ``brake_is_pressed`` and ``start_is_pressed``) and the :ref:`function<what is a function?>` only allows calls with 2 arguments (``key_is_close`` and ``start_is_pressed``)
+because the test called the ``starter`` :ref:`function<what is a function?>` with 3 keyword arguments (``key_is_close``, ``brake_is_pressed`` and ``start_is_pressed``) and the :ref:`function<what is a function?>` only takes calls with 2 arguments (``key_is_close`` and ``start_is_pressed``)
 
 ----
 
@@ -1986,7 +1986,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: starter() got an unexpected keyword argument 'in_park'
 
-because the test called the ``starter`` :ref:`function<what is a function?>` with 4 keyword arguments (``key_is_close``, ``brake_is_pressed``, ``start_is_pressed`` and ``in_park``) and the definition only allows calls with 2 required arguments (``key_is_close`` and ``start_is_pressed``) and 1 optional argument (``brake_is_pressed``)
+because the test called the ``starter`` :ref:`function<what is a function?>` with 4 keyword arguments (``key_is_close``, ``brake_is_pressed``, ``start_is_pressed`` and ``in_park``) and the definition only takes calls with 2 required arguments (``key_is_close`` and ``start_is_pressed``) and 1 optional argument (``brake_is_pressed``)
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
 
