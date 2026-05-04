@@ -239,11 +239,10 @@ I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`
             with self.assertRaises(ModuleNotFoundError):
                 import does_not_exist
 
-  the test passes.
+  the test passes, showing that
 
-assertRaises_ checks that the code in its context (``import does_not_exist``), raises the :ref:`Exception<errors>` (``ModuleNotFoundError``) it is given in parentheses.
-
-:ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is raised when I try to import a :ref:`module<what is a module?>` that does NOT exist
+  * assertRaises_ checks that the code in its context (``import does_not_exist``), raises the :ref:`Exception<errors>` (`ModuleNotFoundError<what causes ModuleNotFoundError?>`) it is given in parentheses.
+  * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is raised when I try to import a :ref:`module<what is a module?>` that does NOT exist
 
 ----
 
@@ -311,7 +310,10 @@ I add assertRaises_
             with self.assertRaises(NameError):
                 does_not_exist
 
-the test passes, showing that NameError_ is raised when I use a name that is not defined in the file
+the test passes, showing that
+
+* assertRaises_ checks that the code in its context (``does_not_exist``), raises the :ref:`Exception<errors>` (NameError_) it is given in parentheses.
+* NameError_ is raised when I use a name that is not defined in the file
 
 ----
 
@@ -401,7 +403,10 @@ I add the `assertRaises method`_
           with self.assertRaises(AttributeError):
               src.exceptions.does_not_exist
 
-the test passes. :ref:`AttributeError<what causes AttributeError?>` is raised when I try to call something that does NOT exist from something that does exist
+the test passes, showing that
+
+* assertRaises_ checks that the code in its context (``src.exceptions.does_not_exist``), raises the :ref:`Exception<errors>` (:ref:`AttributeError<what causes AttributeError?>`) it is given in parentheses.
+* :ref:`AttributeError<what causes AttributeError?>` is raised when I try to call something that does NOT exist from something that does exist
 
 ----
 
@@ -499,7 +504,7 @@ I use assertRaises_ to take care of the :ref:`Exception<errors>`
           with self.assertRaises(TypeError):
               src.exceptions.function_name('the input')
 
-the test passes
+the test passes, showing that assertRaises_ checks that the code in its context (``src.exceptions.function_name('the input')``), raises the :ref:`Exception<errors>` (:ref:`TypeError`) it is given in parentheses
 
 ----
 
@@ -544,7 +549,7 @@ the test passes
     def function_name():
         return None
 
-  the test is green again again
+  the test is green again
 
 :ref:`TypeError` is raised when I call something in a way that it should NOT be called
 
@@ -590,7 +595,7 @@ test_catching_index_error_in_tests
             a_list = [1, 2, 3, 'n']
             a_list[0]
 
-  the test is green again
+  the test is still green
 
 * The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the last item is the total number of items minus ``1``, which is ``3`` in this case
 
@@ -655,7 +660,7 @@ I add assertRaises_
           with self.assertRaises(IndexError):
               a_list[4]
 
-the test passes
+the test passes, showing that assertRaises_ checks that the code in its context (``a_list[4]``), raises the :ref:`Exception<errors>` (:ref:`IndexError<test_index_error>`) it is given in parentheses.
 
 ----
 
@@ -850,7 +855,10 @@ I add assertRaises_ to the test
           with self.assertRaises(KeyError):
               {'key': 'value'}['not_in_dictionary']
 
-the test passes. :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<dictionaries>`
+the test passes, showing that
+
+* assertRaises_ checks that the code in its context (``{'key': 'value'}['not_in_dictionary']``), raises the :ref:`Exception<errors>` (:ref:`KeyError<test_key_error>`) it is given in parentheses.
+* :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<dictionaries>`
 
 *********************************************************************************
 test_catching_zero_division_error_in_tests
@@ -919,7 +927,10 @@ I add assertRaises_
           with self.assertRaises(ZeroDivisionError):
               1 / 0
 
-the test passes. ZeroDivisionError_ is raised when I try to divide any number by ``0``, same as I get ``undefined`` when I try it with a calculator, because dividing by ``0`` is underfined in Mathematics_, I can use this with :ref:`test_division` in the ``calculator`` project
+the test passes, showing that
+
+* assertRaises_ checks that the code in its context (``1 / 0``), raises the :ref:`Exception<errors>` (ZeroDivisionError_) it is given in parentheses.
+* ZeroDivisionError_ is raised when I try to divide any number by ``0``, same as I get ``undefined`` when I try it with a calculator, because dividing by ``0`` is undefined in Mathematics_, I can use this with :ref:`test_division` in the ``calculator`` project
 
 ----
 
