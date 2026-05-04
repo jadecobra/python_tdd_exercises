@@ -444,7 +444,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I open ``atm.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+I use the :ref:`Explorer<explorer on left>` to open ``atm.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` to ``atm.py``
 

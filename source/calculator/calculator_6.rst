@@ -279,7 +279,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data_type`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. :ref:`Is a boolean a number?<booleans 3: values of True and False>`
 
-* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * then add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` to the :ref:`add function<test_addition>` in ``calculator.py``
 

@@ -1525,7 +1525,7 @@ good
 
 ----
 
-* I open ``calculator.py`` from the ``src`` folder_
+I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder_
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the :ref:`divide function<test_division>` in ``calculator.py``
 

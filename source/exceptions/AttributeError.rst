@@ -352,7 +352,7 @@ test_attribute_error_w_variables
 
 ----
 
-* I open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
+I use the :ref:`Explorer<explorer on left>` to open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
 
 * I add the name to ``attribute_error.py``
 

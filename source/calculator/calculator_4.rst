@@ -419,7 +419,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
     AssertionError: TypeError not raised
 
-* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * then I add an :ref:`if statement<if statements>` to the :ref:`add function<test_addition>` in ``calculator.py``
 

@@ -406,7 +406,7 @@ test_addition
     # NameError
     # AttributeError
 
-* I open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add the name
+I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add the name
 
   .. code-block:: python
     :linenos:

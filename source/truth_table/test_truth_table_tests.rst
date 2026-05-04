@@ -84,7 +84,7 @@ continue the project
 :red:`RED`: make it fail
 *********************************************************************************
 
-* I open ``truth_table.py`` from the ``src`` folder_
+I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_
 * I delete everything in ``truth_table.py``, the terminal_ is my friend, and shows 20 failures, I start with the last one
 
   .. code-block:: shell

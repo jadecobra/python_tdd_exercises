@@ -176,7 +176,7 @@ test_factory_takes_keyword_arguments
     # NameError
     # AttributeError
 
-* I open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+I use the :ref:`Explorer<explorer on left>` to open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` to ``person.py``
 

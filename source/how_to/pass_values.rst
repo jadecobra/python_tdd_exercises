@@ -383,7 +383,7 @@ there is no definition for ``src`` in ``test_telephone.py``
     # NameError
     # AttributeError
 
-* I open ``telephone.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add a name
+I use the :ref:`Explorer<explorer on left>` to open ``telephone.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add a name
 
   .. code-block:: python
     :linenos:

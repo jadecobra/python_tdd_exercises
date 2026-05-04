@@ -242,7 +242,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
 
 ----
 
-* I open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
+I use the :ref:`Explorer<explorer on left>` to open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
