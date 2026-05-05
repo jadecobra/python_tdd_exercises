@@ -225,15 +225,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line
-
 * I install the `Python packages`_ that I wrote in the requirements file_
 
   .. code-block:: python
@@ -265,6 +256,7 @@ start the project
     │   └── test_atm.py
     └── uv.lock
 
+  if you do not see ``uv.lock`` in your tree, make sure you ran ``uv add --requirement requirements.txt``, then run the tests next
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -279,8 +271,8 @@ start the project
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ================================ FAILURES ================================
-    _________________________ TestATM.test_failure ___________________________
+    ======================== FAILURES ========================
+    _________________ TestATM.test_failure ___________________
 
     self = <tests.test_atm.TestATM testMethod=test_failure>
 
@@ -289,9 +281,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_atm.py:7: AssertionError
-    ======================== short test summary info =========================
+    ================ short test summary info =================
     FAILED tests/test_atm.py::TestATM::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    =================== 1 failed in X.YZs ====================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
@@ -430,7 +422,7 @@ because I do not have a definition for ``src`` in this file_
 
       ModuleNotFoundError: No module named 'src'
 
-    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``, then add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -444,7 +436,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-I use the :ref:`Explorer<explorer on left>` to open ``atm.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+  I use the :ref:`Explorer<explorer on left>` to open ``atm.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` to ``atm.py``
 
@@ -2016,7 +2008,21 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 3 argum
 
   because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_arguments>`
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` for ``card_expired``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_atm.py``
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 6
+    :emphasize-text: SyntaxError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
+
+* I add a :ref:`default value<test_functions_w_default_arguments>` for ``card_expired`` in ``atm.py``
 
   .. code-block:: python
     :linenos:

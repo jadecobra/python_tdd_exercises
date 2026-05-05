@@ -915,7 +915,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     # NameError
     # AttributeError
 
-I use the :ref:`Explorer<explorer on left>` to open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+  I use the :ref:`Explorer<explorer on left>` to open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` definition to ``functions.py``
 

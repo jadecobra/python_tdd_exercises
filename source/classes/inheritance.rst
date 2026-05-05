@@ -141,7 +141,7 @@ to review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what
 
 ----
 
-I use the :ref:`Explorer<explorer on left>` to open ``classes.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+  I use the :ref:`Explorer<explorer on left>` to open ``classes.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * then I add a :ref:`class<what is a class?>` definition to ``classes.py``
 

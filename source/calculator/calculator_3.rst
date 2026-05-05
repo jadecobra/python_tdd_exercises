@@ -128,7 +128,8 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
     # TypeError
     # ZeroDivisionError
 
-I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+  I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+
 * I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<what is a function?>`
 
   .. code-block:: python

@@ -1238,7 +1238,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 ----
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+  I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
 * then I delete everything in ``calculator.py``, the terminal_ is my friend, and shows 3 passing tests and :ref:`AttributeError<what causes AttributeError?>` for 70 failing tests, I start with the last one
 
   .. code-block:: python

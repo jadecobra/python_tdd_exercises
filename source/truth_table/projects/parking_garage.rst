@@ -419,7 +419,7 @@ because I do not have a definition for ``src`` in this file_
 
       ModuleNotFoundError: No module named 'src'
 
-    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``, then add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -433,7 +433,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-I use the :ref:`Explorer<explorer on left>` to open ``parking garage.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+  I use the :ref:`Explorer<explorer on left>` to open ``parking garage.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` named ``parking garage`` to ``parking garage.py``
 

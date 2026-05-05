@@ -254,7 +254,7 @@ start the project
     │   └── test_microwave.py
     └── uv.lock
 
-  if you do not see ``uv.lock`` in your tree, do not worry, run the tests next
+  if you do not see ``uv.lock`` in your tree, make sure you ran ``uv add --requirement requirements.txt``, then run the tests next
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -421,7 +421,7 @@ because I do not have a definition for ``src`` in this file_
 
       ModuleNotFoundError: No module named 'src'
 
-    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    check if you have ``__init__.py`` in the ``tests`` folder_ with underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``, then add :ref:`ModuleNotFoundError<what is a module?>` to the list of :ref:`Exceptions<errors>` seen
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -435,7 +435,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-I use the :ref:`Explorer<explorer on left>` to open ``microwave.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+  I use the :ref:`Explorer<explorer on left>` to open ``microwave.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` named ``microwave`` to ``microwave.py``
 

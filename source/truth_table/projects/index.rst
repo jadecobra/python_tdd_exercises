@@ -49,6 +49,7 @@ the projects
   Automated Teller Machine<atm>
   Microwave<microwave>
   Car Starter<car>
+  Elevator<elevator>
 
 ----
 
