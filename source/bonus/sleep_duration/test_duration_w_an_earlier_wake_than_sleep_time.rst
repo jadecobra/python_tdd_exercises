@@ -87,7 +87,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: ValueError not raised
 
-  I add a condition to the ``duration`` :ref:`function<what is a function?>` to raise the ValueError_
+  I add a :ref:`condition<if statements>` to the ``duration`` :ref:`function<what is a function?>` to raise the ValueError_
 
   .. code-block:: python
 
@@ -232,7 +232,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             )
         )
 
-  and comment out the condition in ``duration`` to make sure the test still works as expected
+  and comment out the :ref:`condition<if statements>` in ``duration`` to make sure the test still works as expected
 
   .. code-block:: python
 

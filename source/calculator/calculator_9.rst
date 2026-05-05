@@ -1979,7 +1979,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 
 ----
 
-* I add a condition to the :ref:`if statement<if statements>` in the ``check_input`` :ref:`decorator function<what is a decorator function?>` in ``calculator.py``
+* I add a :ref:`condition<if statements>` to the :ref:`if statement<if statements>` in the ``check_input`` :ref:`decorator function<what is a decorator function?>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -2007,7 +2007,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
     SUBFAILED(operation='multiply', bad_input=None) ... - TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'
     SUBFAILED(operation='divide', bad_input=None) ... - TypeError: unsupported operand type(s) for /: 'float' and 'NoneType'
 
-* I add a condition for when the second input is :ref:`None<what is None?>` to the :ref:`if statement<if statements>` in ``check_input`` in ``calculator.py``
+* I add a :ref:`condition<if statements>` for when the second input is :ref:`None<what is None?>` to the :ref:`if statement<if statements>` in ``check_input`` in ``calculator.py``
 
   .. code-block:: python
     :linenos:

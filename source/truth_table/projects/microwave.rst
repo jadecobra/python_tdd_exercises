@@ -688,7 +688,7 @@ the test passes
   This is what happens when the ``microwave`` :ref:`function<what is a function?>` is called
 
   - it returns :green:`'HEATING'` if the door is :red:`closed`
-  - it returns :red:`'OFF'` if the condition is not met
+  - it returns :red:`'OFF'` if the :ref:`condition<if statements>`is NOT met
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_closed_door` in ``test_microwave.py``
 
@@ -2540,7 +2540,7 @@ door           timer           start button       too hot             output
     * it returns :red:`'OFF'` if the microwave temperature is :green:`too hot`
     * it returns :red:`'OFF'` if the timer is :red:`NOT set`
 
-  - if the above condition is not met
+  - if the above :ref:`condition<if statements>` is NOT met
 
     * it returns :red:`'OFF'` if the door is :green:`open` OR if the start button is :red:`NOT pushed`, this means
 

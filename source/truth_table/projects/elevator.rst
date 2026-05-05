@@ -667,7 +667,7 @@ the test passes
   this is what happens when the ``elevator`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
-  - it returns :green:`'MOVE'` if the above condition is not met
+  - it returns :green:`'MOVE'` if the above :ref:`condition<if statements>` is NOT met
 
 ----
 
@@ -889,7 +889,7 @@ the test passes
 
   - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
   - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT clear`
-  - it returns :green:`'MOVE'` if the above conditions are not met
+  - it returns :green:`'MOVE'` if the above :ref:`conditions<if statements>` are NOT met
 
 ----
 
@@ -1321,7 +1321,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
   - it returns :red:`'NOT MOVE'` if the elevator is :green:`above` the weight limit
   - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
   - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT clear`
-  - it returns :green:`'MOVE'` if the above conditions are not met
+  - it returns :green:`'MOVE'` if the above :ref:`conditions<if statements>` are NOT met
 
 * I do not need to add a value for the ``above_weight_limit`` parameter to the next :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for the floor is :green:`pushed` and the elevator is :red:`NOT above` the weight limit
 
@@ -2276,7 +2276,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
   - it returns :red:`'NOT MOVE'` if the elevator is :green:`above` the weight limit
   - it returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
   - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT clear`
-  - it returns :green:`'MOVE'` if the above conditions are not met
+  - it returns :green:`'MOVE'` if the above :ref:`conditions<if statements>` are NOT met
 
 * I add values for the ``above_weight_limit`` and ``emergency`` parameters, even though I do not need to because they have :ref:`default values<test_functions_w_default_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>` which is for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is  :red:`NOT pushed`, in ``test_elevator.py``
 
@@ -3040,7 +3040,7 @@ doors             floor number        weight limit        emergency button      
   - returns :red:`'NOT MOVE'` if the elevator is :green:`above` the weight limit
   - returns :red:`'NOT MOVE'` if the button for the floor is :red:`NOT pushed`
   - returns :red:`'NOT MOVE'` if the doors are :red:`NOT clear`
-  - returns :green:`'MOVE'` if the above conditions are not met
+  - returns :green:`'MOVE'` if the above :ref:`conditions<if statements>` are NOT met
 
 * All the :ref:`if statements` return :red:`'NOT MOVE'` which means I could use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put them together though it will be a long statement
 

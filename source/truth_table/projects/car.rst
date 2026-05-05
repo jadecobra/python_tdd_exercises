@@ -617,7 +617,7 @@ because I do not have a definition for ``src`` in this file_
   this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`'OFF'` if the start button is :red:`NOT pressed`
-  - it returns :green:`'ON'` if the above condition is not met
+  - it returns :green:`'ON'` if the above :ref:`condition<if statements>` is NOT met
 
 ----
 
@@ -853,7 +853,7 @@ the test passes
   this is what happens when the ``starter`` :ref:`function<what is a function?>` is called
 
   - it returns :red:`'OFF'` if the key is :red:`far` from the starter OR the start button is :red:`NOT pressed`
-  - it returns :green:`'ON'` if the above conditions are not met
+  - it returns :green:`'ON'` if the above :ref:`conditions<if statements>` are NOT met
 
   is this :ref:`Logical Conjunction?<test_logical_conjunction>`
 

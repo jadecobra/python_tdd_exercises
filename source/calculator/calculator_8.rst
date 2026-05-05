@@ -1978,7 +1978,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
   same problem, same ...
 
-* I add the new condition to the :ref:`if statement<if statements>` of the other :ref:`functions<what is a function?>`
+* I add the new :ref:`condition<if statements>` to the :ref:`if statement<if statements>` of the other :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:

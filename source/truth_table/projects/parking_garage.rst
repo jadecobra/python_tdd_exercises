@@ -752,7 +752,7 @@ the test passes
   This is what happens when the ``parking garage`` :ref:`function<what is a function?>` is called
 
   - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
-  - it returns :red:`'OFF'` if the condition is not met
+  - it returns :red:`'OFF'` if the :ref:`condition<if statements>`is NOT met
 
   is this :ref:`Converse NonImplication?<test_converse_non_implication>`
 

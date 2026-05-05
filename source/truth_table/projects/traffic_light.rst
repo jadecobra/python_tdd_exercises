@@ -5142,7 +5142,7 @@ This is what happens when the ``show`` :ref:`function<what is a function?>` is c
   - it returns ``'YELLOW', 'NO WALK'`` if the current light is :green:`GREEN`
   - it returns ``'GREEN', 'NO WALK'`` if the current light is :red:`RED` AND the walk button is :red:`NOT pushed`
 
-* it returns ``'RED', 'WALK'`` if none of the above conditions are met
+* it returns ``'RED', 'WALK'`` if none of the above :ref:`conditions<if statements>` are met
 
 The :ref:`function<what is a function?>` does not look like the :ref:`truth table` and makes every test pass. There is also a problem with the :ref:`if statement<if statements>` for when the timer is :green:`done` AND the current light is NOT :red:`RED`
 

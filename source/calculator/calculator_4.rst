@@ -1627,7 +1627,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I can make a :ref:`function<what is a function?>` for the condition in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
+* I can make a :ref:`function<what is a function?>` for the :ref:`condition<if statements>` in the :ref:`if statement<if statements>` in the :ref:`add function<test_addition>` in ``calculator.py``
 
   .. code-block:: python
     :lineno-start: 24
