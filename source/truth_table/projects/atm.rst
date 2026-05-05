@@ -862,7 +862,7 @@ the test passes
 ----
 
 *********************************************************************************
-test_right_pin_not_enough_money_w_limit
+test_wrong_pin_not_enough_money
 *********************************************************************************
 
 I add a test with an :ref:`assertion<what is an assertion?>` for the last case - when the :red:`wrong PIN` is entered and there is :red:`NOT enough money` in the account, to ``test_atm.py``
@@ -1234,6 +1234,47 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
   green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'DENIED'``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    def withdraw(
+            right_pin, enough_money,
+            above_daily_limit=False,
+        ):
+        denied = 'DENIED'
+        # if above_daily_limit == True:
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'DENIED'``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10-11, 14-15, 18-19
+
+    def withdraw(
+            right_pin, enough_money,
+            above_daily_limit=False,
+        ):
+        denied = 'DENIED'
+        # if above_daily_limit == True:
+        # if bool(above_daily_limit) == True:
+        # if bool(above_daily_limit):
+        if above_daily_limit:
+            # return 'DENIED'
+            return denied
+
+        if not right_pin:
+            # return 'DENIED'
+            return denied
+
+        if not enough_money:
+            # return 'DENIED'
+            return denied
+
+        return 'CASH'
+
 * I remove the commented lines
 
   .. code-block:: python
@@ -1243,14 +1284,16 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
             right_pin, enough_money,
             above_daily_limit=False,
         ):
+        denied = 'DENIED'
+
         if above_daily_limit:
-            return 'DENIED'
+            return denied
 
         if not right_pin:
-            return 'DENIED'
+            return denied
 
         if not enough_money:
-            return 'DENIED'
+            return denied
 
         return 'CASH'
 
@@ -1537,52 +1580,34 @@ PIN                 money                   daily limit             withdrawal
 test_wrong_pin_not_enough_money_w_limit
 *********************************************************************************
 
-The :ref:`truth table` for if the :green:`wrong PIN` is entered and there is :green:`enough money` in the account, is
+The :ref:`truth table` for if the :green:`wrong PIN` is entered and there is :red:`NOT enough money` in the account, is
 
 ==================  ======================= ======================  ==================
 PIN                 money                   daily limit             withdrawal
 ==================  ======================= ======================  ==================
-:red:`wrong PIN`    :green:`enough money`   :green:`above limit`    :red:`DENIED`
-:red:`wrong PIN`    :green:`enough money`   :red:`NOT above limit`  :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough money` :green:`above limit`    :red:`DENIED`
+:red:`wrong PIN`    :red:`NOT enough money` :red:`NOT above limit`  :red:`DENIED`
 ==================  ======================= ======================  ==================
 
-
-* I add ``above_daily_limit`` to the next :ref:`assertion<what is an assertion?>`, which is for when the :red:`wrong PIN` is entered, there is :red:`NOT enough money` in the account, and it is :green:`above limit` for daily withdrawals
+* I add ``above_daily_limit`` to the call to ``src.atm.withdraw`` in :ref:`test_wrong_pin_not_enough_money`, for when the :red:`wrong PIN` is entered, there is :red:`NOT enough money` in the account, and it is :green:`above limit` for daily withdrawals
 
   ==================  ======================= ======================  ==================
   PIN                 money                   daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :red:`wrong PIN`    :green:`enough money`   :green:`above limit`    :red:`DENIED`
-  :red:`wrong PIN`    :green:`enough money`   :red:`NOT above limit`  :red:`DENIED`
   :red:`wrong PIN`    :red:`NOT enough money` :green:`above limit`    :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 20
+    :lineno-start: 53
+    :emphasize-lines: 5
 
-        def test_wrong_pin_enough_money(self):
-            my_expectation = 'DENIED'
-
-            reality = src.atm.withdraw(
-                right_pin=False,
-                enough_money=True,
-                above_daily_limit=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.atm.withdraw(
-                right_pin=False,
-                enough_money=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
+        def test_wrong_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=False,
                 above_daily_limit=True,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, DENIED)
 
 
     # Exceptions seen
@@ -1594,44 +1619,26 @@ PIN                 money                   daily limit             withdrawal
   ==================  ======================= ======================  ==================
   PIN                 money                   daily limit             withdrawal
   ==================  ======================= ======================  ==================
-  :red:`wrong PIN`    :green:`enough money`   :green:`above limit`    :red:`DENIED`
-  :red:`wrong PIN`    :green:`enough money`   :red:`NOT above limit`  :red:`DENIED`
-  :red:`wrong PIN`    :red:`NOT enough money` :green:`above limit`    :red:`DENIED`
   :red:`wrong PIN`    :red:`NOT enough money` :red:`NOT above limit`  :red:`DENIED`
   ==================  ======================= ======================  ==================
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 24-28
+    :lineno-start: 53
+    :emphasize-lines: 9-13
 
-        def test_wrong_pin_enough_money(self):
-            my_expectation = 'DENIED'
-
-            reality = src.atm.withdraw(
-                right_pin=False,
-                enough_money=True,
-                above_daily_limit=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.atm.withdraw(
-                right_pin=False,
-                enough_money=True,
-            )
-            self.assertEqual(reality, my_expectation)
-
+        def test_wrong_pin_not_enough_money(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=False,
                 above_daily_limit=True,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, DENIED)
 
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=False,
             )
-            self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, DENIED)
 
 
     # Exceptions seen
@@ -1657,117 +1664,208 @@ PIN                 money                   daily limit             withdrawal
 
   A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
 
-* I change the name of the test from :ref:`test_wrong_pin_enough_money` to :ref:`test_wrong_pin_enough_money`
+* I change the name of the test from :ref:`test_wrong_pin_not_enough_money` to :ref:`test_wrong_pin_not_enough_money_w_limit`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 47
     :emphasize-lines: 7
 
             reality = src.atm.withdraw(
-                right_pin=True,
+                right_pin=False,
+                enough_money=True,
+            )
+            self.assertEqual(reality, DENIED)
+
+        def test_wrong_pin_not_enough_money_w_limit(self):
+            reality = src.atm.withdraw(
+                right_pin=False,
+                enough_money=False,
+                above_daily_limit=True,
+            )
+            self.assertEqual(reality, DENIED)
+
+* I call the ``withdraw`` :ref:`function<what is a function?>` directly in :ref:`test_wrong_pin_not_enough_money_w_limit`. I do not need the ``reality`` :ref:`variable<what is a variable?>` as a middle man because I only use the :ref:`variables<what is a variable?>` once for each :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 7-15, 21-28
+
+        def test_wrong_pin_not_enough_money_w_limit(self):
+            reality = src.atm.withdraw(
+                right_pin=False,
+                enough_money=False,
+                above_daily_limit=True,
+            )
+            # self.assertEqual(reality, DENIED)
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            reality = src.atm.withdraw(
+                right_pin=False,
                 enough_money=False,
             )
-            self.assertEqual(reality, my_expectation)
+            # self.assertEqual(reality, DENIED)
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=False,
+                ),
+                DENIED
+            )
 
-        def test_wrong_pin_enough_money(self):
-            my_expectation = 'DENIED'
+  still green
 
+* I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_wrong_pin_not_enough_money_w_limit`
+
+  .. code-block:: python
+    :lineno-start: 53
+
+        def test_wrong_pin_not_enough_money_w_limit(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=False,
+                ),
+                DENIED
+            )
+
+
+    # Exceptions seen
+
+* I make the same change in :ref:`test_wrong_pin_enough_money_w_limit`
+
+  .. code-block:: python
+    :lineno-start: 39
+    :emphasize-lines: 7-15, 21-28
+
+        def test_wrong_pin_enough_money_w_limit(self):
             reality = src.atm.withdraw(
                 right_pin=False,
                 enough_money=True,
                 above_daily_limit=True,
             )
-            self.assertEqual(reality, my_expectation)
+            # self.assertEqual(reality, DENIED)
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
 
-* There is only one case where the ``withdraw`` :ref:`function<what is a function?>` returns ``'CASH'``. I add :ref:`if statements` for the other cases to ``atm.py``
+            reality = src.atm.withdraw(
+                right_pin=False,
+                enough_money=True,
+            )
+            # self.assertEqual(reality, DENIED)
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=True,
+                ),
+                DENIED
+            )
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5, 7-12
+        def test_wrong_pin_not_enough_money_w_limit(self):
 
-    def withdraw(
-            right_pin, enough_money,
-            above_daily_limit=False,
-        ):
-        denied = 'DENIED'
+  green
 
-        if not right_pin:
-            return denied
-        if not enough_money:
-            return denied
-        if above_daily_limit:
-            return denied
-
-        if right_pin and enough_money:
-            if above_daily_limit:
-                return 'DENIED'
-            return 'CASH'
-        else:
-            return 'DENIED'
-
-  the test is still green
-
-* I add a `return statement`_ for the one case where the withdrawal is allowed
+* I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_wrong_pin_enough_money_w_limit`
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 14
+    :lineno-start: 39
 
-    def withdraw(
-            right_pin, enough_money,
-            above_daily_limit=False,
-        ):
-        denied = 'DENIED'
+        def test_wrong_pin_enough_money_w_limit(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
 
-        if not right_pin:
-            return denied
-        if not enough_money:
-            return denied
-        if above_daily_limit:
-            return denied
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=False,
+                    enough_money=True,
+                ),
+                DENIED
+            )
 
-        return 'CASH'
+        def test_wrong_pin_not_enough_money_w_limit(self):
 
-        if right_pin and enough_money:
-            if above_daily_limit:
-                return 'DENIED'
-            return 'CASH'
-        else:
-            return 'DENIED'
+* I change :ref:`test_right_pin_not_enough_money_w_limit`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 3-8, 12-16
+
+        def test_right_pin_not_enough_money_w_limit(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=False,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
+
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=False,
+                ),
+                DENIED
+            )
+
+        def test_wrong_pin_enough_money_w_limit(self):
 
   still green
 
-* I remove the other statements
+* I also change :ref:`test_right_pin_enough_money_w_limit`
 
   .. code-block:: python
-    :linenos:
+    :lineno-start: 10
+    :emphasize-lines: 3-8, 12-16
 
-    def withdraw(
-            right_pin, enough_money,
-            above_daily_limit=False,
-        ):
-        denied = 'DENIED'
+        def test_right_pin_enough_money_w_limit(self):
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=True,
+                    above_daily_limit=True,
+                ),
+                DENIED
+            )
 
-        if not right_pin:
-            return denied
-        if not enough_money:
-            return denied
-        if above_daily_limit:
-            return denied
+            self.assertEqual(
+                src.atm.withdraw(
+                    right_pin=True,
+                    enough_money=True,
+                ),
+                'CASH'
+            )
 
-        return 'CASH'
+        def test_right_pin_not_enough_money_w_limit(self):
 
-This is what happens when the ``withdraw`` :ref:`function<what is a function?>` is called
-
-* if the :red:`wrong PIN` is entered it returns :red:`'DENIED'`
-* if the :green:`right PIN` is entered
-
-  - it returns :red:`'DENIED'` if the balance in the account is :red:`NOT enough`
-  - if the balance in the account is :green:`enough`
-
-    * it returns :red:`'DENIED'` if the account is :green:`above limit` for daily withdrawals
-
-* it gives me :green:`'CASH'` if none of the above :ref:`conditions<if statements>` are met
+  the test is still green
 
 ----
 
