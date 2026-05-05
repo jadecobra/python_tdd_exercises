@@ -1057,7 +1057,7 @@ I want the elevator to move only when it is :red:`NOT above` a weight limit, the
 
 * are the doors clear?
 * was the number for a floor pushed?
-* is it above the weight limit?
+* is the elevator above the weight limit?
 
 The :ref:`truth table` for when the doors are :green:`clear` and the button for a floor is :green:`pushed`, is:
 
@@ -1862,11 +1862,11 @@ doors             floor number        weight limit        output
 
         def test_weight_w_doors_not_clear_number_pushed(self):
 
-* I call the ``elevator`` :ref:`function<what is a function?>` directly then remove the commented lines and unused :ref:`variables<what is a variable?>` :ref:`test_weight_w_doors_clear_number_pushed`
+* I call the ``elevator`` :ref:`function<what is a function?>` directly then remove the commented lines and unused :ref:`variables<what is a variable?>` in :ref:`test_weight_w_doors_clear_number_pushed`
 
   .. code-block:: python
     :lineno-start: 10
-    :emphasize-lines: 8-16, 23-31
+    :emphasize-lines: 3-8, 12-16
 
         def test_weight_w_doors_clear_number_pushed(self):
             self.assertEqual(
@@ -1890,75 +1890,49 @@ doors             floor number        weight limit        output
 
   still green
 
-* I  from :ref:`test_weight_w_doors_clear_number_pushed`
-
-  .. code-block:: python
-    :lineno-start: 10
-
-        def test_weight_w_doors_clear_number_pushed(self):
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_clear=True,
-                    above_weight_limit=True,
-                    number_pushed=True,
-                ),
-                'MOVE'
-            )
-
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_clear=True,
-                    above_weight_limit=True,
-                    number_pushed=False,
-                ),
-                NOT_MOVE
-            )
-
-        def test_weight_w_doors_clear_number_not_pushed(self):
-
 ----
 
 *********************************************************************************
 test_weight_w_doors_clear_number_pushed_w_emergency
 *********************************************************************************
 
-the :ref:`truth table` for the elevator is
+The :ref:`truth table` for the elevator is
 
-==============  ==================  ==================  ===========
-doors           weight limit        floor button        output
-==============  ==================  ==================  ===========
-:green:`clear`  :green:`above`      :green:`pushed`    :green:`MOVE`
-:green:`clear`  :green:`above`      :red:`NOT pushed`  :red:`NOT MOVE`
-:green:`clear`  :red:`NOT above`    :green:`pushed`    :red:`NOT MOVE`
-:green:`clear`  :red:`NOT above`    :red:`NOT pushed`  :red:`NOT MOVE`
-==============  ==================  ==================  ===========
+==============  ==================  ==================  ===============
+doors           floor number        weight limit        output
+==============  ==================  ==================  ===============
+:green:`clear`  :green:`pushed`     :green:`above`      :red:`NOT MOVE`
+:green:`clear`  :green:`pushed`     :red:`NOT above`    :green:`MOVE`
+:green:`clear`  :red:`NOT pushed`   :green:`above`      :red:`NOT MOVE`
+:green:`clear`  :red:`NOT pushed`   :red:`NOT above`    :red:`NOT MOVE`
+==============  ==================  ==================  ===============
 
-================  ==================  ==================  ===========
-doors             weight limit        floor button        output
-================  ==================  ==================  ===========
-:red:`NOT clear`  :green:`above`      :green:`pushed`    :red:`NOT MOVE`
-:red:`NOT clear`  :green:`above`      :red:`NOT pushed`  :red:`NOT MOVE`
-:red:`NOT clear`  :red:`NOT above`    :green:`pushed`    :red:`NOT MOVE`
-:red:`NOT clear`  :red:`NOT above`    :red:`NOT pushed`  :red:`NOT MOVE`
-================  ==================  ==================  ===========
+================  ==================  ==================  ===============
+doors             floor number        weight limit        output
+================  ==================  ==================  ===============
+:red:`NOT clear`  :green:`pushed`     :green:`above`      :red:`NOT MOVE`
+:red:`NOT clear`  :green:`pushed`     :red:`NOT above`    :red:`NOT MOVE`
+:red:`NOT clear`  :red:`NOT pushed`   :green:`above`      :red:`NOT MOVE`
+:red:`NOT clear`  :red:`NOT pushed`   :red:`NOT above`    :red:`NOT MOVE`
+================  ==================  ==================  ===============
 
-I want to make sure the elevator is emergency before it can number, so it does not immediately move when it is turned on (that would be a problem). The inputs will then be
+I want to make sure the elevator can be stopped with a button in an emergency. The inputs will then be
 
 * are the doors clear?
-* is it above the weight limit?
 * was the number for a floor pushed?
-* emergency stop?
+* is the elevator above the weight limit?
+* was the emergency button pushed?
 
-and the :ref:`truth table` for when the doors are :green:`clear` and the elevator is :red:`NOT above` the weight limit, is :
+and the :ref:`truth table` for when the doors are :green:`clear` and the number for a floor is :green:`pushed`, is
 
-==============  ==================  ==================  ====================  ==========
-doors           weight limit        floor button        emergency button      output
-==============  ==================  ==================  ====================  ==========
-:green:`clear`  :green:`above`    :green:`pushed`    :green:`pushed`    :green:`MOVE`
-:green:`clear`  :green:`above`    :green:`pushed`    :red:`NOT pushed`  :red:`NOT MOVE`
-:green:`clear`  :green:`above`    :red:`NOT pushed`  :green:`pushed`    :red:`NOT MOVE`
-:green:`clear`  :green:`above`    :red:`NOT pushed`  :red:`NOT pushed`  :red:`NOT MOVE`
-==============  ==================  ==================  ====================  ================
+==============  ================  ==================  ====================  ================
+doors           floor number      weight limit        emergency button      output
+==============  ================  ==================  ====================  ================
+:green:`clear`  :green:`pushed`   :green:`above`      :green:`pushed`       :red:`NOT MOVE`
+:green:`clear`  :green:`pushed`   :green:`above`      :red:`NOT pushed`     :red:`NOT MOVE`
+:green:`clear`  :green:`pushed`   :red:`NOT above`    :green:`pushed`       :red:`NOT MOVE`
+:green:`clear`  :green:`pushed`   :red:`NOT above`    :red:`NOT pushed`     :green:`MOVE`
+==============  ================  ==================  ====================  ================
 
 ----
 
@@ -1968,28 +1942,38 @@ doors           weight limit        floor button        emergency button      ou
 
 ----
 
-I add a value for ``emergency`` to the :ref:`assertion<what is an assertion?>` for the case where the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit, button for a floor is :green:`pushed` and the emergency button is :red:`NOT pushed`, to :ref:`test_weight_w_doors_clear_number_pushed`
+I add a value for ``emergency`` to the first :ref:`assertion<what is an assertion?>` in :ref:`test_weight_w_doors_clear_number_pushed` for the case where the doors are :green:`clear`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit,  and the emergency button is :green:`pushed`
 
-==============  ==================  ==================  ====================  ==========
-doors           weight limit        floor button        emergency button      output
-==============  ==================  ==================  ====================  ==========
-:green:`clear`  :green:`above`    :green:`pushed`    :green:`pushed`    :green:`MOVE`
-==============  ==================  ==================  ====================  ================
+==============  ================  ==================  ====================  ================
+doors           floor number      weight limit        emergency button      output
+==============  ================  ==================  ====================  ================
+:green:`clear`  :green:`pushed`   :green:`above`      :green:`pushed`       :red:`NOT MOVE`
+==============  ================  ==================  ====================  ================
 
 .. code-block:: python
   :lineno-start: 10
   :emphasize-lines: 7
 
-        def test_weight_w_doors_clear_number_pushed(self):
-            self.assertEqual(
-                src.elevator.elevator(
-                    doors_clear=True,
-                    above_weight_limit=True,
-                    number_pushed=True,
-                    emergency=True,
-                ),
-                'MOVE'
-            )
+      def test_weight_w_doors_clear_number_pushed(self):
+          self.assertEqual(
+              src.elevator.elevator(
+                  doors_clear=True,
+                  number_pushed=True,
+                  above_weight_limit=True,
+                  emergency=True,
+              ),
+              NOT_MOVE
+          )
+
+          self.assertEqual(
+              src.elevator.elevator(
+                  doors_clear=True,
+                  number_pushed=True,
+              ),
+              'MOVE'
+          )
+
+      def test_weight_w_doors_clear_number_not_pushed(self):
 
 the terminal shows :ref:`TypeError<what causes TypeError?>`
 
@@ -1997,7 +1981,7 @@ the terminal shows :ref:`TypeError<what causes TypeError?>`
 
   TypeError: elevator() got an unexpected keyword argument 'emergency'
 
-because the test called the ``elevator`` :ref:`function<what is a function?>` with 4 keyword arguments (``doors_clear``, ``above_weight_limit``, ``number_pushed`` and ``emergency``) and the definition only takes calls with 2 required arguments (``doors_clear`` and ``number_pushed``) and 1 optional argument (``above_weight_limit``)
+because the test called the ``elevator`` :ref:`function<what is a function?>` with 4 keyword arguments (``doors_clear``, ``number_pushed``, ``above_weight_limit`` and ``emergency``) and the definition only takes calls with 2 required arguments (``doors_clear`` and ``number_pushed``) and 1 optional argument (``above_weight_limit``)
 
 ----
 
@@ -2017,12 +2001,16 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
             doors_clear, number_pushed,
             above_weight_limit=False, emergency,
         ):
-        if not (
-            doors_clear
-            and number_pushed
-            and above_weight_limit
-        ):
-            return 'NOT MOVE'
+        not_move = 'NOT MOVE'
+
+        if above_weight_limit:
+            return not_move
+
+        if not bool(doors_clear):
+            return not_move
+
+        if not number_pushed:
+            return not_move
 
         return 'MOVE'
 
@@ -2057,12 +2045,11 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit, button for a floor is :green:`pushed` and the emergency button was :red:`NOT pushed`
 
-  ==============  ==================  ==================  ====================  ================
-  doors           weight limit      floor button        emergency button         output
-  ==============  ==================  ==================  ====================  ================
-  :green:`clear`  :green:`above`    :green:`pushed`    :green:`pushed`    :green:`MOVE`
-  :green:`clear`  :green:`above`    :green:`pushed`    :red:`NOT pushed`  :red:`NOT MOVE`
-  ==============  ==================  ==================  ====================  ================
+  ==============  ================  ==================  ====================  ================
+  doors           floor number      weight limit        emergency button      output
+  ==============  ================  ==================  ====================  ================
+  :green:`clear`  :green:`pushed`   :green:`above`      :red:`NOT pushed`     :red:`NOT MOVE`
+  ==============  ================  ==================  ====================  ================
 
   .. code-block:: python
     :lineno-start: 10
@@ -2295,13 +2282,11 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
 * I add a value for the ``emergency`` parameter in the next :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit, the button for the floor is :red:`NOT pushed` and the emergency button is :red:`NOT pushed`, in :ref:`test_weight_w_doors_clear_number_pushed` in ``test_elevator.py``
 
-  ==============  ==================  ==================  ====================  ================
-  doors           weight limit      floor button        emergency button         output
-  ==============  ==================  ==================  ====================  ================
-  :green:`clear`  :green:`above`    :green:`pushed`    :green:`pushed`    :green:`MOVE`
-  :green:`clear`  :green:`above`    :green:`pushed`    :red:`NOT pushed`  :red:`NOT MOVE`
-  :green:`clear`  :green:`above`    :red:`NOT pushed`  :green:`pushed`    :red:`NOT MOVE`
-  ==============  ==================  ==================  ====================  ================
+  ==============  ================  ==================  ====================  ================
+  doors           floor number      weight limit        emergency button      output
+  ==============  ================  ==================  ====================  ================
+  :green:`clear`  :green:`pushed`   :red:`NOT above`    :green:`pushed`       :red:`NOT MOVE`
+  ==============  ================  ==================  ====================  ================
 
   .. code-block:: python
     :lineno-start: 10
@@ -2344,14 +2329,11 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the elevator is :red:`NOT above` the weight limit, the button for the floor is :red:`NOT pushed` and the elevator emergency is  :red:`NOT pushed`
 
-  ==============  ==================  ==================  ====================  ================
-  doors           weight limit      floor button        emergency button         output
-  ==============  ==================  ==================  ====================  ================
-  :green:`clear`  :green:`above`    :green:`pushed`    :green:`pushed`    :green:`MOVE`
-  :green:`clear`  :green:`above`    :green:`pushed`    :red:`NOT pushed`  :red:`NOT MOVE`
-  :green:`clear`  :green:`above`    :red:`NOT pushed`  :green:`pushed`    :red:`NOT MOVE`
-  :green:`clear`  :green:`above`    :red:`NOT pushed`  :red:`NOT pushed`  :red:`NOT MOVE`
-  ==============  ==================  ==================  ====================  ================
+  ==============  ================  ==================  ====================  ================
+  doors           floor number      weight limit        emergency button      output
+  ==============  ================  ==================  ====================  ================
+  :green:`clear`  :green:`pushed`   :red:`NOT above`    :red:`NOT pushed`     :green:`MOVE`
+  ==============  ================  ==================  ====================  ================
 
   .. code-block:: python
     :lineno-start: 10

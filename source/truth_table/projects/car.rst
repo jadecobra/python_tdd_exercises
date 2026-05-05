@@ -1185,7 +1185,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
     class TestCar(unittest.TestCase):
 
         def test_key_close_brake_pressed(self):
-            my_expectation = 'OFF'
+            my_expectation = 'ON'
 
 ----
 

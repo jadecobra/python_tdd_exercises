@@ -1107,7 +1107,9 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
                 first_number+second_number
             )
 
-  green. `random.triangular`_ returns a random float_ that could be any number from ``-0.1`` to ``1.0`` in this case, I can also use `random.randint`_ if I want a random integer_
+  green
+
+  `random.triangular`_ returns a random float_ that could be any number from ``-0.1`` to ``1.0`` in this case, I can also use `random.randint`_ if I want a random integer_
 
 * I want to see the test fail to be sure everything works as expected. I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
