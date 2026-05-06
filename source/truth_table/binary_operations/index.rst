@@ -39,7 +39,7 @@ first input     second input
 :red:`False`    :red:`False`
 ==============  ==============
 
-These combinations give us :ref:`16 binary operations<truth table: binary operations>`, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. Here are the 16 operations covered in these chapters and what they return
+These combinations give us :ref:`16 binary operations<truth table: binary operations>`, and each operation returns :green:`True` or :red:`False`. Here are the 16 operations covered in these chapters and what they return
 
 =============================================== ============= ============= ============= ============= ==============================================================
 return                                          True,         True,         False,        False,        operation

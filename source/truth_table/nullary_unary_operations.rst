@@ -138,7 +138,7 @@ test_logical_true
 
     AssertionError: None is not true
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects :ref:`True<test_what_is_true>`
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects :green:`True`
 
 * I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the `return statement`_
 
@@ -219,7 +219,7 @@ because I have not added a definition for :ref:`logical_false<test_logical_false
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
+  because the :ref:`function<what is a function?>` returns :green:`True` and the test expects :red:`False`
 
 * I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
 
@@ -234,8 +234,8 @@ because I have not added a definition for :ref:`logical_false<test_logical_false
 
 .. NOTE::
 
-  * :ref:`logical_true<test_logical_true>` always returns :ref:`True<test_what_is_true>`
-  * :ref:`logical_false<test_logical_false>` always returns :ref:`False<test_what_is_false>`
+  * :ref:`logical_true<test_logical_true>` always returns :green:`True`
+  * :ref:`logical_false<test_logical_false>` always returns :red:`False``
   * both Nullary Operations do not take input
 
   ==============  ========================================
@@ -361,7 +361,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>` and the test expects :ref:`True<test_what_is_true>`
+  because the :ref:`function<what is a function?>` returns :red:`False`` and the test expects :green:`True`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -409,7 +409,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
+  because the :ref:`function<what is a function?>` returns :green:`True` and the test expects :red:`False`
 
 * I change the `return statement`_ of :ref:`logical_identity<test_logical_identity>` in ``truth_table.py``
 
@@ -426,7 +426,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     AssertionError: False is not true
 
-  because the :ref:`assertion<what is an assertion?>` that was passing before, expects :ref:`True<test_what_is_true>` and the :ref:`function<what is a function?>` now returns :ref:`False<test_what_is_false>`
+  because the :ref:`assertion<what is an assertion?>` that was passing before, expects :ref:`True<test_what_is_true>` and the :ref:`function<what is a function?>` now returns :red:`False``
 
 * I change the `return statement`_ of the :ref:`function<what is a function?>`
 
@@ -446,7 +446,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
   This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
 
   - it returns :green:`True` if the input is :ref:`True<test_what_is_true>`
-  - it returns :red:`False` if the input is :ref:`False<test_what_is_false>`
+  - it returns :red:`False`, if the input is :ref:`False<test_what_is_false>`
   - it returns the input as output
 
   ==============  =============
@@ -530,7 +530,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returned :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
+  because the :ref:`function<what is a function?>` returned :ref:`True<test_what_is_true>` and the test expects :red:`False`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -578,7 +578,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>` and the new :ref:`assertion<what is an assertion?>` expects :ref:`True<test_what_is_true>`
+  because the :ref:`function<what is a function?>` returns :red:`False`` and the new :ref:`assertion<what is an assertion?>` expects :ref:`True<test_what_is_true>`
 
 * I change the `return statement`_ of the :ref:`logical_negation function<test_logical_negation>` in ``truth_table.py``
 
@@ -595,7 +595,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
     AssertionError: True is not false
 
-  the test fails for the :ref:`assertion<what is an assertion?>` that passed before, because the :ref:`function<what is a function?>` now returns :ref:`True<test_what_is_true>` and that :ref:`assertion<what is an assertion?>` expects :ref:`False<test_what_is_false>`
+  the test fails for the :ref:`assertion<what is an assertion?>` that passed before, because the :ref:`function<what is a function?>` now returns :green:`True` and that :ref:`assertion<what is an assertion?>` expects :ref:`False<test_what_is_false>`
 
 * I make the :ref:`function<what is a function?>` return its input again
 
@@ -614,8 +614,8 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
   this means the expectation of the test is that the :ref:`logical_negation function<test_logical_negation>`
 
-  - returns :ref:`True<test_what_is_true>` if the input is :ref:`False<test_what_is_false>`
-  - returns :ref:`False<test_what_is_false>` if the input is :ref:`True<test_what_is_true>`
+  - returns :green:`True` if the input is :ref:`False<test_what_is_false>`
+  - returns :red:`False`` if the input is :ref:`True<test_what_is_true>`
   - returns the opposite of the input it gets
 
 ----
@@ -637,7 +637,7 @@ how to return the opposite of a boolean
 
   the test passes. This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
 
-  - it returns :red:`False` if the input is :ref:`True<test_what_is_true>`
+  - it returns :red:`False`, if the input is :ref:`True<test_what_is_true>`
   - it returns :green:`True` if the input is :ref:`False<test_what_is_false>`
   - it returns the opposite of the input, as output
 

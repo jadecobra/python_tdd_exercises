@@ -758,7 +758,7 @@ close the project
 review
 *********************************************************************************
 
-* ``bool(anything)`` returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`
+* ``bool(anything)`` returns :green:`True` or :ref:`False<test_what_is_false>`
 * ``assertFalse(anything) == assertFalse(bool(anything))``
 * ``assertFalse(anything)`` checks if the result of ``bool(anything)`` is :ref:`True<test_what_is_true>` and raises :ref:`AssertionError<what causes AssertionError?>` if it is
 * ``assertTrue(anything) == assertTrue(bool(anything))``
