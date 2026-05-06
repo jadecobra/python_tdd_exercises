@@ -219,7 +219,7 @@ because I have not added a definition for :ref:`logical_false<test_logical_false
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>`  :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
+  because the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
 
 * I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
 
@@ -332,7 +332,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
 
-  because the test called the ``logical_identity`` :ref:`function<what is a function?>` with 1 argument and this definition only takes calls with 0 arguments
+  because the test called the :ref:`logical_identity function<test_logical_identity>` with 1 argument and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_nullary_unary.py``
 
@@ -445,8 +445,8 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
   This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
 
-  - it returns :ref:`True<test_what_is_true>` if the input is :ref:`True<test_what_is_true>`
-  - it returns :ref:`False<test_what_is_false>` if the input is :ref:`False<test_what_is_false>`
+  - it returns :green:`True` if the input is :ref:`True<test_what_is_true>`
+  - it returns :red:`False` if the input is :ref:`False<test_what_is_false>`
   - it returns the input as output
 
   ==============  =============
@@ -637,8 +637,8 @@ how to return the opposite of a boolean
 
   the test passes. This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
 
-  - it returns :ref:`False<test_what_is_false>` if the input is :ref:`True<test_what_is_true>`
-  - it returns :ref:`True<test_what_is_true>` if the input is :ref:`False<test_what_is_false>`
+  - it returns :red:`False` if the input is :ref:`True<test_what_is_true>`
+  - it returns :green:`True` if the input is :ref:`False<test_what_is_false>`
   - it returns the opposite of the input, as output
 
 * I add to the name of the test

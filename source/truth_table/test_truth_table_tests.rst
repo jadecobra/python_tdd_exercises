@@ -36,7 +36,7 @@ continue the project
 
     pwd
 
-  if the terminal_ is my friend, and shows anything other than
+  if the terminal_ does not show
 
   .. code-block:: shell
 

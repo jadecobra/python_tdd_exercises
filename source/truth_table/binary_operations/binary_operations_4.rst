@@ -47,7 +47,7 @@ continue the project
 
     pwd
 
-  if the terminal_ is my friend, and shows anything other than
+  if the terminal_ does not show
 
   .. code-block:: shell
 
@@ -104,7 +104,7 @@ test_negate_second
 
 ----
 
-I add a new test with the first case for another Binary Operation - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, to ``test_truth_table.py``
+I add a new test with the first case for another Binary Operation - when the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 127
@@ -149,7 +149,7 @@ I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate
   def negate_second(first_input, second_input):
       return False
 
-the test passes. :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+the test passes. :ref:`negate_second<test_negate_second>` returns :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :green:`True`
 
 ==============  ============== ==============
 first input     second input   return
@@ -165,7 +165,7 @@ first input     second input   return
 
 ----
 
-* I add the next case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_negate_second` in ``test_truth_table.py``
+* I add the next case - when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 127
@@ -194,8 +194,8 @@ first input     second input   return
 
   the test passes. :ref:`negate_second<test_negate_second>` returns
 
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :red:`False`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :green:`True`
   - the :ref:`logical negation<test_logical_negation>` of the second input
 
   ==============  ============== ==============
@@ -205,7 +205,7 @@ first input     second input   return
   :green:`True`   :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* I add the third case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, to :ref:`test_negate_second` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>`  for the third case - when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 127
@@ -218,7 +218,7 @@ first input     second input   return
 
   the test is still green. :ref:`negate_second<test_negate_second>` returns
 
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :red:`False` and the second input is :green:`True`
   - the :ref:`logical negation<test_logical_negation>` of the second input in all 3 cases
 
   ==============  ============== ==============
@@ -229,7 +229,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+* I add the last case - when the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 127
@@ -262,7 +262,7 @@ first input     second input   return
 
   the test passes. :ref:`negate_second<test_negate_second>` returns
 
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :red:`False` and the second input is :red:`False`
   - the :ref:`logical negation<test_logical_negation>` of the second input in all 4 cases
 
 * I add a `return statement`_ to show that :ref:`negate_second<test_negate_second>` always returns the :ref:`opposite<test_logical_negation>` of the second input
@@ -416,7 +416,7 @@ first input     second input   return
 
 ----
 
-* I add the second case - when the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, to :ref:`test_logical_nor` in ``test_truth_table.py``
+* I add the second case - when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nor` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 133
@@ -428,8 +428,8 @@ first input     second input   return
 
   the test is still green. :ref:`logical_nor<test_logical_nor>` returns
 
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :red:`False`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :green:`True`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
@@ -439,7 +439,7 @@ first input     second input   return
   :green:`True`   :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* on to the next case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+* on to the next case - when the first input is :red:`False` and the second input is :green:`True`
 
   .. code-block:: python
     :lineno-start: 133
@@ -452,7 +452,7 @@ first input     second input   return
 
   the test is still green. :ref:`logical_nor<test_logical_nor>` returns
 
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :red:`False` and the second input is :green:`True`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
@@ -463,7 +463,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+* I add the last case - when the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 133
@@ -497,8 +497,8 @@ first input     second input   return
 
   the test passes. :ref:`logical_nor<test_logical_nor>` returns
 
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :red:`False` and the second input is :red:`False`
+  - :ref:`False<test_what_is_false>`, if the first input is :red:`False` and the second input is :green:`True`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
 
 * I make the :ref:`if statement<if statements>` simpler
@@ -569,7 +569,7 @@ first input     second input   return
 :ref:`Logical NOR<test_logical_nor>` returns
 
 * ``not (first_input or second_input)``
-* :ref:`True<test_what_is_true>` if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
+* :ref:`True<test_what_is_true>` if the first input is :red:`False` and the second input is :red:`False`
 * the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Disjunction (or)<test_logical_disjunction>` of the first input and second input
 * :ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>` of the first input and second input
 
@@ -705,7 +705,7 @@ I add a :ref:`function<what is a function?>` for it in ``truth_table.py``
   def logical_equality(first_input, second_input):
       return True
 
-the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+the test passes. :ref:`logical_equality<test_logical_equality>` returns :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
 
 ==============  ============== ==============
 first input     second input   return
@@ -750,8 +750,8 @@ first input     second input   return
 
   the test passes. :ref:`logical_equality<test_logical_equality>` returns
 
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :red:`False`
+  - :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input, if the first input is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
@@ -793,9 +793,9 @@ first input     second input   return
 
   the test passes. :ref:`logical_equality<test_logical_equality>` returns
 
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :red:`False` and the second input is :green:`True`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :red:`False`
+  - :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input, if the first input is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
@@ -823,11 +823,11 @@ first input     second input   return
 
   the test is still green. :ref:`logical_equality<test_logical_equality>` returns
 
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :red:`False` and the second input is :red:`False`
+  - :ref:`False<test_what_is_false>`, if the first input is :red:`False` and the second input is :green:`True`
   - the :ref:`logical_negation<test_logical_negation>` of the second input if the first input is :ref:`False<test_what_is_false>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :red:`False`
+  - :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input, if the first input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the two inputs are the same
   - :ref:`False<test_what_is_false>`, if the two inputs are NOT the same
@@ -1152,7 +1152,7 @@ I add a :ref:`function<what is a function?>` for :ref:`material_implication<test
   def material_implication(first_input, second_input):
       return True
 
-the test passes. :ref:`material_implication<test_material_implication>` returns :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+the test passes. :ref:`material_implication<test_material_implication>` returns :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
 
 ==============  ============== ==============
 first input     second input   return
@@ -1197,8 +1197,8 @@ first input     second input   return
 
   the test passes. :ref:`material_implication<test_material_implication>` returns
 
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :red:`False`
+  - :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input in these 2 cases
 
   ==============  ============== ==============
@@ -1221,9 +1221,9 @@ first input     second input   return
 
   the test is still green. :ref:`material_implication<test_material_implication>` returns
 
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :red:`False` and the second input is :green:`True`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :red:`False`
+  - :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
   - returns the second input in all 3 cases
 
   ==============  ============== ==============
@@ -1234,7 +1234,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add the fourth case
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case
 
   .. code-block:: python
     :lineno-start: 145
@@ -1251,10 +1251,10 @@ first input     second input   return
 
   the test is still green. :ref:`material_implication<test_material_implication>` returns
 
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
-  - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>` - this is the only case where it returns :ref:`False<test_what_is_false>`
-  - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
+  - :ref:`True<test_what_is_true>`, if the first input is :red:`False` and the second input is :red:`False`
+  - :ref:`True<test_what_is_true>`, if the first input is :red:`False` and the second input is :green:`True`
+  - :ref:`False<test_what_is_false>`, if the first input is :green:`True` and the second input is :red:`False` - this is the only case where it returns :ref:`False<test_what_is_false>`
+  - :ref:`True<test_what_is_true>`, if the first input is :green:`True` and the second input is :green:`True`
 
 * since ``if something: return False`` is the same as ``return not (something)``, I add a `return statement`_ for the :ref:`if statement<if statements>` in :ref:`material_implication<test_material_implication>` in ``truth_table.py``
 
@@ -1322,9 +1322,9 @@ first input     second input   return
 
 * ``not first_input or second_input``
 * the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input
-* :ref:`False<test_what_is_false>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+* :ref:`False<test_what_is_false>` only if the first input is :green:`True` and the second input is :red:`False`
 
-it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :ref:`True<test_what_is_true>` only if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
+it is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :ref:`True<test_what_is_true>` only if the first input is :green:`True` and the second input is :red:`False`
 
 ==============  ============== ==============
 first input     second input   return
@@ -1391,7 +1391,7 @@ because
 
 This means that in the 4 cases
 
-* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_equality<test_logical_equality>` returns
+* if the first input is :green:`True` and the second input is :green:`True`, :ref:`logical_equality<test_logical_equality>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -1402,7 +1402,7 @@ This means that in the 4 cases
      True                   and  True
      True                   # logical_conjunction(True, True)
 
-* if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_equality<test_logical_equality>` returns
+* if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_equality<test_logical_equality>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -1414,7 +1414,7 @@ This means that in the 4 cases
      True                   and  False
      False                  # logical_conjunction(True, False)
 
-* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`, :ref:`logical_equality<test_logical_equality>` returns
+* if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_equality<test_logical_equality>` returns
 
   .. code-block:: python
     :emphasize-lines: 5
@@ -1425,7 +1425,7 @@ This means that in the 4 cases
      False                  and  True
      False                  # logical_conjunction(False, True)
 
-* if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`False<test_what_is_false>`, :ref:`logical_equality<test_logical_equality>` returns
+* if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_equality<test_logical_equality>` returns
 
   .. code-block:: python
     :emphasize-lines: 5

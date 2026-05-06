@@ -96,7 +96,7 @@ I choose ``magic`` as the name of this project
 
     cd pumping_python
 
-  - if the terminal_ is my friend, and shows
+  - if the terminal_ shows
 
     .. code-block:: shell
 
