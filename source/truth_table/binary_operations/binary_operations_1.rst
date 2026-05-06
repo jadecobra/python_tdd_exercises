@@ -344,7 +344,7 @@ first input     second input   return
 
   the test is still green. This is what happens when the :ref:`contradiction function<test_contradiction>` is called
 
-  - it returns :ref:`False` if the first input is :red:`False` and the second input is :red:`False`
+  - it returns :red:`False` if the first input is :red:`False` and the second input is :red:`False`
   - it returns :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
   - it returns :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - it returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
@@ -574,7 +574,7 @@ the test passes. This is what happens when the :ref:`logical_conjunction functio
     # TypeError
     # AssertionError
 
-* I make :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
+* I make the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py`` return :ref:`False <test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -597,7 +597,7 @@ the test passes. This is what happens when the :ref:`logical_conjunction functio
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input in these 2 cases
 
-* I change the `return statement`_ of :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
+* I change the `return statement`_ of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -608,10 +608,18 @@ the test passes. This is what happens when the :ref:`logical_conjunction functio
 
   the test passes. This is what happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called
 
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - it returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+  - it returns :red:`False`, if the second input is :red:`False`
+  - it returns :green:`True`, if the second input is :green:`True`
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True` to :ref:`test_logical_conjunction` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  :green:`True`   :red:`False`   :red:`False`
+  :red:`False`    :green:`True`  :red:`False`
+  ==============  ============== ==============
 
   .. code-block:: python
     :lineno-start: 21
@@ -643,7 +651,7 @@ the test passes. This is what happens when the :ref:`logical_conjunction functio
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 
-  I can make it do that with `if statements`_
+  I can use `if statements`_ to make it choose what to do based on the :ref:`conditions<if statements>`
 
 ----
 
@@ -651,52 +659,35 @@ the test passes. This is what happens when the :ref:`logical_conjunction functio
 if statements
 *********************************************************************************
 
-An `if statement`_ is a way for a program_ to choose what to do based on something else. I can use `if statements`_ to make a :ref:`function<what is a function?>` choose between 2 things. They are written this in Python_
+An `if statement`_ is a way for a program_ to choose what to do based on something else. I can use `if statements`_ to make a :ref:`function<what is a function?>` choose between 2 things. They are written this way in Python_
 
 .. code-block:: python
 
   if something:
       then do this
 
-* I add `if statements`_ for when :ref:`False<test_what_is_false>` is the first_input and the second input is :ref:`True<test_what_is_true>` to :ref:`the logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
+* I add an `if statement`_ for when the first input is :red:`False` to the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-3
 
     def logical_conjunction(first_input, second_input):
         if first_input == False:
-            if second_input == True:
-                return False
+            return False
         return second_input
 
-  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
+  the test passes. This is what happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called
 
-  - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-
-  ==============  ============== ==============
-  first input     second input   return
-  ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :red:`False`
-  :red:`False`    :green:`True`  :red:`False`
-  ==============  ============== ==============
+  - it returns :red:`False`, if the first input is :red:`False`
+  - it returns the second input if the above :ref:`condition<if statements>` is NOT met
 
   .. NOTE::
 
-    - ``if first_input == False:`` checks if ``first_input`` is equal to :ref:`False<test_what_is_false>`
+    - ``if first_input == False:`` checks if ``first_input`` is equal to :red:`False`
 
-      * if ``first_input`` is NOT equal to :ref:`False<test_what_is_false>`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``
-      * if ``first_input`` is equal to :ref:`False<test_what_is_false>`, it goes to the next line - ``if second_input == True:``
-
-    - ``if second_input == True:`` checks if ``second_input`` is equal to :ref:`True<test_what_is_true>`
-
-      * if ``second_input`` is NOT equal to :ref:`True<test_what_is_true>`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``
-      * if ``second_input`` is equal to :ref:`True<test_what_is_true>`, it goes to the next line - ``return False``
-
-        - ``return False`` returns :red:`False`` and leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+      * if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+      * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 * I add the last case, which is when the two inputs are :ref:`False<test_what_is_false>`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -1242,7 +1233,7 @@ first input     second input   return
   :green:`True`   :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True` for :ref:`test_project_second` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True` for :ref:`test_project_second` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 35
