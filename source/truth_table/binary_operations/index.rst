@@ -16,16 +16,19 @@ truth table: Binary Operations
 
 ----
 
-.. WARNING:: Welcome to the wonderful world of Boolean Logic. If this is new to you, then prepare for headaches and moving closer to the edge of insanity. This is part of the process as you stretch yourself and learn new things that will help you solve problems.
+.. WARNING:: Welcome to the wonderful world of Boolean Logic. If this is new to you, then prepare for headaches and moving closer to the edge of insanity.
+
+  This is part of the process as you stretch yourself and learn new things that help you solve problems and see the world in a new way.
 
   Do you still want to continue?
 
 
-The last chapter covered 2 types of operations. :ref:`Nullary Operations` which do not take input, and :ref:`Unary Operations` which take 1 input.
+The last chapter covered 2 types of operations
 
-We know that there are two :ref:`booleans<what are booleans?>` - :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`
+- :ref:`Nullary Operations` which do not take input and
+- :ref:`Unary Operations` which take 1 input
 
-There are also Binary Operations, these take 2 inputs. Each of the inputs can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to an :ref:`operation<what is a function?>`
+We know that there are two :ref:`booleans<what are booleans?>`: :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. There are also :ref:`Binary Operations<truth table: Binary Operations>`, they take 2 inputs. Each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to a :ref:`binary operation<truth table: binary operations>`
 
 ==============  ==============
 first input     second input
@@ -36,9 +39,7 @@ first input     second input
 :red:`False`    :red:`False`
 ==============  ==============
 
-These combinations give 16 binary operations or outcomes when the :ref:`booleans<what are booleans?>` are put together, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` when it gets input.
-
-Here are the 16 operations that are covered in these chapters and what they return
+These combinations give us :ref:`16 binary operations<truth table: binary operations>`, and each operation returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. Here are the 16 operations covered in these chapters and what they return
 
 =============================================== ============= ============= ============= ============= ==============================================================
 return                                          True,         True,         False,        False,        operation
