@@ -773,12 +773,21 @@ review
 I ran these tests for :ref:`Nullary Operations<Nullary Operations>` which take no input
 
 * :ref:`test_logical_true`
-* :ref:`test_logical_false`
+* :ref:`test_logical_false``
 
 and for :ref:`Unary operations<Unary Operations>` which take 1 input
 
 * :ref:`test_logical_identity`
 * :ref:`test_logical_negation`
+
+the :ref:`truth table` for :ref:`Unary Operations<Unary Operations>` is
+
+==============  ============= ============= ====================================================
+return          True          False         operation
+==============  ============= ============= ====================================================
+the_input       :green:`True` :red:`False`  :ref:`logical_identity<test_logical_identity>`
+not the_input   :red:`False`  :green:`True` :ref:`logical_negation (NOT)<test_logical_negation>`
+==============  ============= ============= ====================================================
 
 :ref:`How many questions can you answer after going through this chapter?<questions about Nullary and Unary Operations>`
 
