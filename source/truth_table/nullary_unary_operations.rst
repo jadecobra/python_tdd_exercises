@@ -72,7 +72,9 @@ test_logical_true
 
 ----
 
-* I change the name of ``test_truth_table.py`` to ``test_nullary_unary.py``
+* I open the :ref:`Explorer<explorer on left>` to change the name of ``test_truth_table.py``
+
+* I right click on ``test_truth_table.py`` select ``Rename`` then change it to ``test_nullary_unary.py``
 
 * I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_nullary_unary.py``
 
@@ -98,7 +100,7 @@ test_logical_true
 
     AttributeError: module 'src.truth_table' has no attribute 'logical_true'
 
-  I have not added a definition for :ref:`logical_true<test_logical_true>` to ``truth_table.py`` in the ``src`` folder_
+  because I have not added a definition for :ref:`logical_true<test_logical_true>` to ``truth_table.py`` in the ``src`` folder_
 
 ----
 
@@ -135,6 +137,8 @@ test_logical_true
   .. code-block:: shell
 
     AssertionError: None is not true
+
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects :ref:`True<test_what_is_true>`
 
 * I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the `return statement`_
 
@@ -186,7 +190,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
 
-I have not added a definition for :ref:`logical_false<test_logical_false>` to ``truth_table.py``, I only added one for :ref:`logical_true<test_logical_true>`
+because I have not added a definition for :ref:`logical_false<test_logical_false>` to ``truth_table.py``, I only added one for :ref:`logical_true<test_logical_true>`
 
 ----
 
@@ -215,6 +219,8 @@ I have not added a definition for :ref:`logical_false<test_logical_false>` to ``
 
     AssertionError: True is not false
 
+  because the :ref:`function<what is a function?>`  :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
+
 * I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
 
   .. code-block:: python
@@ -231,6 +237,13 @@ I have not added a definition for :ref:`logical_false<test_logical_false>` to ``
   * :ref:`logical_true<test_logical_true>` always returns :ref:`True<test_what_is_true>`
   * :ref:`logical_false<test_logical_false>` always returns :ref:`False<test_what_is_false>`
   * both Nullary Operations do not take input
+
+  ==============  ========================================
+  return          operation
+  ==============  ========================================
+  :green:`True`   :ref:`logical_true<test_logical_true>`
+  :red:`False`    :ref:`logical_false<test_logical_false>`
+  ==============  ========================================
 
 ----
 
@@ -254,11 +267,17 @@ test_logical_identity
 
 ----
 
-I add a new TestCase_ for Unary Operations with a test to ``test_nullary_unary.py``
+I add a new TestCase_ for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input
+
+==============  =============
+input           output
+==============  =============
+:green:`True`   :green:`True`
+==============  =============
 
 .. code-block:: python
   :lineno-start: 5
-  :emphasize-lines: 10, 12-13
+  :emphasize-lines: 10, 12-14
 
   class TestNullaryOperations(unittest.TestCase):
 
@@ -272,7 +291,8 @@ I add a new TestCase_ for Unary Operations with a test to ``test_nullary_unary.p
   class TestUnaryOperations(unittest.TestCase):
 
       def test_logical_identity(self):
-          self.assertTrue(src.truth_table.logical_identity(True))
+          reality = src.truth_table.logical_identity(True)
+          self.assertTrue(reality)
 
 
   # Exceptions seen
@@ -283,7 +303,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_identity'
 
-I need to add a definition for it
+because I need to add a definition for :ref:`logical_identity<test_logical_identity>` to ``truth_table.py``
 
 ----
 
@@ -312,12 +332,12 @@ I need to add a definition for it
 
     TypeError: logical_identity() takes 0 positional arguments but 1 was given
 
-  I need to make the :ref:`function<what is a function?>` accept input since the test sends :ref:`True<test_what_is_true>` as input
+  because the test called the ``logical_identity`` :ref:`function<what is a function?>` with 1 argument and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_nullary_unary.py``
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 21
     :emphasize-lines: 4
     :emphasize-text: TypeError
 
@@ -326,7 +346,7 @@ I need to add a definition for it
     # AttributeError
     # TypeError
 
-* I add a name in parentheses for :ref:`logical_identity<test_logical_identity>` to take input in ``truth_table.py``
+* I add a name in parentheses for :ref:`logical_identity<test_logical_identity>` to take calls with 1 input, in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -341,7 +361,9 @@ I need to add a definition for it
 
     AssertionError: False is not true
 
-* I change the `return statement`_
+  because the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>` and the test expects :ref:`True<test_what_is_true>`
+
+* I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 9
@@ -360,21 +382,34 @@ I need to add a definition for it
 
 ----
 
-* I add another line to :ref:`test_logical_identity` in ``test_nullary_unary.py`` for the case when it gets :ref:`False<test_what_is_false>` as input
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_identity` in ``test_nullary_unary.py`` for the case when it gets :ref:`False<test_what_is_false>` as input
+
+  ==============  =============
+  input           output
+  ==============  =============
+  :red:`False`    :red:`False`
+  ==============  =============
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 3
+    :emphasize-lines: 4-5
 
         def test_logical_identity(self):
-            self.assertTrue(src.truth_table.logical_identity(True))
-            self.assertFalse(src.truth_table.logical_identity(False))
+            reality = src.truth_table.logical_identity(True)
+            self.assertTrue(reality)
+            reality = src.truth_table.logical_identity(False)
+            self.assertFalse(reality)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
     AssertionError: True is not false
+
+  because the :ref:`function<what is a function?>` returns :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
 
 * I change the `return statement`_ of :ref:`logical_identity<test_logical_identity>` in ``truth_table.py``
 
@@ -391,11 +426,7 @@ I need to add a definition for it
 
     AssertionError: False is not true
 
-  there is a failure for the test that passed before. The expectation of the test is that
-
-  - if :ref:`True<test_what_is_true>` is given, the result is :ref:`True<test_what_is_true>`
-  - if :ref:`False<test_what_is_false>` is given, the result is :ref:`False<test_what_is_false>`
-  - if input is given, the result is the input
+  because the :ref:`assertion<what is an assertion?>` that was passing before, expects :ref:`True<test_what_is_true>` and the :ref:`function<what is a function?>` now returns :ref:`False<test_what_is_false>`
 
 * I change the `return statement`_ of the :ref:`function<what is a function?>`
 
@@ -406,19 +437,24 @@ I need to add a definition for it
     def logical_identity(the_input):
         return the_input
 
-  the test passes. ``the_input`` is a name, I can use any name.
+  the test passes.
 
-:ref:`logical_identity returns its input as output<test_logical_identity>`
+  .. TIP::
 
-* if it gets :ref:`True<test_what_is_true>` it returns :ref:`True<test_what_is_true>`
-* if it gets :ref:`False<test_what_is_false>` it returns :ref:`False<test_what_is_false>`
+    ``the_input`` is a name, I can use any name.
 
-==============  ==============
-input           return
-==============  ==============
-:green:`True`   :green:`True`
-:red:`False`    :red:`False`
-==============  ==============
+  This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
+
+  - it returns :ref:`True<test_what_is_true>` if the input is :ref:`True<test_what_is_true>`
+  - it returns :ref:`False<test_what_is_false>` if the input is :ref:`False<test_what_is_false>`
+  - it returns the input as output
+
+  ==============  =============
+  input           output
+  ==============  =============
+  :green:`True`   :green:`True`
+  :red:`False`    :red:`False`
+  ==============  =============
 
 ----
 
@@ -434,20 +470,27 @@ test_logical_negation
 
 ----
 
-I add a test for :ref:`logical_negation<test_logical_negation>` to ``test_nullary_unary.py``
+I add a test for :ref:`logical_negation<test_logical_negation>` with an :ref:`assertion<what is an assertion?>` for when it gets :ref:`True<test_what_is_true>` as input, to ``test_nullary_unary.py``
+
+==============  =============
+input           output
+==============  =============
+:green:`True`   :red:`False`
+==============  =============
 
 .. code-block:: python
-  :lineno-start: 14
-  :emphasize-lines: 7-8
-
-  class TestUnaryOperations(unittest.TestCase):
+  :lineno-start: 16
+  :emphasize-lines: 7-9
 
       def test_logical_identity(self):
-          self.assertTrue(src.truth_table.logical_identity(True))
-          self.assertFalse(src.truth_table.logical_identity(False))
+          reality = src.truth_table.logical_identity(True)
+          self.assertTrue(reality)
+          reality = src.truth_table.logical_identity(False)
+          self.assertFalse(reality)
 
       def test_logical_negation(self):
-          self.assertFalse(src.truth_table.logical_negation(True))
+          reality = src.truth_table.logical_negation(True)
+          self.assertFalse(reality)
 
 
   # Exceptions seen
@@ -505,6 +548,12 @@ the test passes
 ----
 
 * I add another line to :ref:`test_logical_negation` in ``test_nullary_unary.py``
+
+  ==============  =============
+  input           output
+  ==============  =============
+  :red:`False`    :green:`True`
+  ==============  =============
 
   .. code-block:: python
     :lineno-start: 20
@@ -602,12 +651,12 @@ how to return the opposite of a boolean
 * if it gets :ref:`True<test_what_is_true>` it returns :ref:`False<test_what_is_false>`
 * if it gets :ref:`False<test_what_is_false>` it returns :ref:`True<test_what_is_true>`
 
-==============  ==============
-input           return
-==============  ==============
+==============  =============
+input           output
+==============  =============
 :green:`True`   :red:`False`
 :red:`False`    :green:`True`
-==============  ==============
+==============  =============
 
 ----
 
