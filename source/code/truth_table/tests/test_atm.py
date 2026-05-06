@@ -7,166 +7,166 @@ DENIED = 'DENIED'
 
 class TestATM(unittest.TestCase):
 
-    def test_withdraw_w_not_expired_card_w_right_pin(self):
+    def test_right_pin_enough_money_w_limit(self):
         self.assertEqual(
             src.atm.withdraw(
+                right_pin=True,
+                enough_money=True,
+                above_daily_limit=True,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_money=True,
+                above_daily_limit=True,
                 card_expired=False,
-                pin_is_right=True,
-                enough_balance=True,
+            ),
+            DENIED
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_money=True,
                 above_daily_limit=False,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_money=True,
+                above_daily_limit=False,
+                card_expired=False,
             ),
             'CASH'
         )
 
+    def test_right_pin_not_enough_money_w_card(self):
         self.assertEqual(
             src.atm.withdraw(
+                right_pin=True,
+                enough_money=False,
+                above_daily_limit=True,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_money=False,
+                above_daily_limit=True,
                 card_expired=False,
-                pin_is_right=True,
-                enough_balance=True,
-                above_daily_limit=True,
             ),
             DENIED
         )
 
         self.assertEqual(
             src.atm.withdraw(
+                right_pin=True,
+                enough_money=False,
+                above_daily_limit=False,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=True,
+                enough_money=False,
+                above_daily_limit=False,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+    def test_wrong_pin_enough_money_w_card(self):
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=False,
+                enough_money=True,
+                above_daily_limit=True,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=False,
+                enough_money=True,
+                above_daily_limit=True,
                 card_expired=False,
-                pin_is_right=True,
-                enough_balance=False,
-                above_daily_limit=True,
             ),
             DENIED
         )
 
         self.assertEqual(
             src.atm.withdraw(
+                right_pin=False,
+                enough_money=True,
+                above_daily_limit=False,
+                card_expired=True,
+            ),
+            DENIED
+        )
+
+        self.assertEqual(
+            src.atm.withdraw(
+                right_pin=False,
+                enough_money=True,
+                above_daily_limit=False,
                 card_expired=False,
-                pin_is_right=True,
-                enough_balance=False,
-                above_daily_limit=False,
             ),
             DENIED
         )
 
-    def test_withdraw_w_expired_card_w_right_pin(self):
+    def test_wrong_pin_not_enough_money_w_limit(self):
         self.assertEqual(
             src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=True,
-                enough_balance=True,
+                right_pin=False,
+                enough_money=False,
                 above_daily_limit=True,
+                card_expired=True,
             ),
             DENIED
         )
 
         self.assertEqual(
             src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=True,
-                enough_balance=True,
-                above_daily_limit=False,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=True,
-                enough_balance=False,
+                right_pin=False,
+                enough_money=False,
                 above_daily_limit=True,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=True,
-                enough_balance=False,
-                above_daily_limit=False,
-            ),
-            DENIED
-        )
-
-    def test_withdraw_w_expired_card_w_wrong_pin(self):
-        self.assertEqual(
-            src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=False,
-                enough_balance=True,
-                above_daily_limit=True,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=False,
-                enough_balance=True,
-                above_daily_limit=False,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=False,
-                enough_balance=False,
-                above_daily_limit=True,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_expired=True,
-                pin_is_right=False,
-                enough_balance=False,
-                above_daily_limit=False,
-            ),
-            DENIED
-        )
-
-    def test_withdraw_w_not_expired_card_w_wrong_pin(self):
-        self.assertEqual(
-            src.atm.withdraw(
                 card_expired=False,
-                pin_is_right=False,
-                enough_balance=True,
-                above_daily_limit=True,
             ),
             DENIED
         )
 
         self.assertEqual(
             src.atm.withdraw(
-                card_expired=False,
-                pin_is_right=False,
-                enough_balance=True,
+                right_pin=False,
+                enough_money=False,
                 above_daily_limit=False,
+                card_expired=True,
             ),
             DENIED
         )
 
         self.assertEqual(
             src.atm.withdraw(
-                card_expired=False,
-                pin_is_right=False,
-                enough_balance=False,
-                above_daily_limit=True,
-            ),
-            DENIED
-        )
-
-        self.assertEqual(
-            src.atm.withdraw(
-                card_expired=False,
-                pin_is_right=False,
-                enough_balance=False,
+                right_pin=False,
+                enough_money=False,
                 above_daily_limit=False,
+                card_expired=False,
             ),
             DENIED
         )
@@ -177,3 +177,4 @@ class TestATM(unittest.TestCase):
 # NameError
 # AttributeError
 # TypeError
+# SyntaxError
