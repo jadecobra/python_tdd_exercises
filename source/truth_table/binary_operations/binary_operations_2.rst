@@ -1378,7 +1378,7 @@ first input     second input   return
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>` and the second input is :ref:`True<test_what_is_true>`
   - :ref:`True<test_what_is_true>`, if the first input is :ref:`True<test_what_is_true>`
 
-* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with :ref:`logical conjunction (and)<test_logical_conjunction>`
+* I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with :ref:`Logical Conjunction (AND)<test_logical_conjunction>`
 
   .. code-block:: python
     :lineno-start: 47

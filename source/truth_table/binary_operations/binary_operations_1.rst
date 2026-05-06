@@ -1526,7 +1526,7 @@ first input     second input   return
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>` and the second input is :ref:`True<test_what_is_true>`
 
-* I use :ref:`logical conjunction (and)<test_logical_conjunction>` to put the two `if statements`_ together in :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py``
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together in :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 29
