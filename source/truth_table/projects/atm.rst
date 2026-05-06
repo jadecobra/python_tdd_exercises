@@ -2216,7 +2216,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
   * it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
   * it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met
 
-* I add values for the ``daily_limit`` and ``card_expired`` parameters to make it clearer even though they have :ref:`default values<test_functions_w_default_arguments>`, in the next :ref:`assertion<what is an assertion?>` in :ref:`test_right_pin_enough_money_w_limit` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`, in ``test_atm.py``
+* I add values for the ``above_daily_limit`` and ``card_expired`` parameters to make it clearer even though they have :ref:`default values<test_functions_w_default_arguments>`, in the next :ref:`assertion<what is an assertion?>` in :ref:`test_right_pin_enough_money_w_limit` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`, in ``test_atm.py``
 
   ==================  ===================== ======================  ==================  =============
   PIN                 money                 daily limit             card expired        withdrawal

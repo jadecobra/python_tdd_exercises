@@ -7,7 +7,7 @@ DENIED = 'DENIED'
 
 class TestATM(unittest.TestCase):
 
-    def test_right_pin_enough_money_w_limit(self):
+    def test_right_pin_enough_money_w_card(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=True,
@@ -130,7 +130,7 @@ class TestATM(unittest.TestCase):
             DENIED
         )
 
-    def test_wrong_pin_not_enough_money_w_limit(self):
+    def test_wrong_pin_not_enough_money_w_card(self):
         self.assertEqual(
             src.atm.withdraw(
                 right_pin=False,

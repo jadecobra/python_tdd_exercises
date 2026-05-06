@@ -10,17 +10,17 @@ truth table
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=7_bVE9tCltIq1uBF&amp;list=PL5lANtH-CROCjQaiFJP0-XEjHfCiwgwt1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Sometimes I want programs_ to choose what to do based on inputs or conditions, and can make this happen with :ref:`if statements<if statements>`. For example, If I want to know if a person can vote, the conditions could be
+Sometimes I want programs_ to choose what to do based on inputs or :ref:`conditions<if statements>`, and can make this happen with :ref:`if statements<if statements>`. For example, If I want to know if a person can vote, the inputs could be
 
 * Is the person alive?
 * Is the person old enough?
 * Is the person a citizen?
 
-I can add these to a program so that when it gets information about the person it returns output of :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can not vote" after it looks at the options.
+I can add these to a program so that when it gets information about the person it returns  :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can NOT vote".
 
 These are exercises on writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`.
 
-These are the underlying operations that make the computer do what it does. All operations from the `Truth Table`_ always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
+The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -91,19 +91,24 @@ start the project
 
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch src/truth_table.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/truth_table.py`` instead of ``touch src/truth_table.py``
+        touch src/truth_table.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item src/truth_table.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item src/truth_table.py
 
   the terminal_ goes back to the command line
 

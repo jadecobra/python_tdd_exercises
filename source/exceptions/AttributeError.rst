@@ -79,19 +79,24 @@ start the project
 
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch src/attribute_error.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/attribute_error.py`` instead of ``touch src/attribute_error.py``
+        touch src/attribute_error.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item src/attribute_error.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item src/attribute_error.py
 
   the terminal_ goes back to the command line
 
