@@ -113,37 +113,47 @@ start the project
 
   .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/__init__.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+        touch tests/__init__.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/__init__.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/__init__.py
 
   the terminal_ goes back to the command line
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/test_attribute_error.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_attribute_error.py`` instead of ``touch tests/test_attribute_error.py``
+        touch tests/test_attribute_error.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/test_attribute_error.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/test_attribute_error.py
 
   the terminal_ goes back to the command line
 
@@ -259,7 +269,7 @@ start the project
     * if your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
-    fix those errors then try to run ``uv run pytest-watcher . --now`` again
+    fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py`` in the :ref:`editor<2 editors>`
 
