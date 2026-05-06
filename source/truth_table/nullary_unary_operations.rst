@@ -501,6 +501,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_negation'
 
+there is no definition for :ref:`logical_negation<test_logical_negation>` in ``truth_table.py``
+
 ----
 
 ---------------------------------------------------------------------------------
@@ -509,35 +511,37 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-I add the :ref:`function<what is a function?>` in ``truth_table.py``
+* I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
-.. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-6
 
-  def logical_identity(the_input):
-      return the_input
+    def logical_identity(the_input):
+        return the_input
 
 
-  def logical_negation(the_input):
-      return the_input
+    def logical_negation(the_input):
+        return the_input
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: True is not false
+    AssertionError: True is not false
 
-I change the `return statement`_
+  because the :ref:`function<what is a function?>` returned :ref:`True<test_what_is_true>` and the test expects :ref:`False<test_what_is_false>`
 
-.. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 2
+* I change the `return statement`_ to give the test what it wants
 
-  def logical_negation(the_input):
-      return False
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2
 
-the test passes
+    def logical_negation(the_input):
+        return False
+
+  the test passes
 
 ----
 
@@ -547,7 +551,7 @@ the test passes
 
 ----
 
-* I add another line to :ref:`test_logical_negation` in ``test_nullary_unary.py``
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_logical_negation` for when :ref:`logical_negation<test_logical_negation>` gets :ref:`False<test_what_is_false>` as input, in ``test_nullary_unary.py``
 
   ==============  =============
   input           output
@@ -556,18 +560,25 @@ the test passes
   ==============  =============
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 3
+    :lineno-start: 22
+    :emphasize-lines: 4-5
 
         def test_logical_negation(self):
-            self.assertFalse(src.truth_table.logical_negation(True))
-            self.assertTrue(src.truth_table.logical_negation(False))
+            reality = src.truth_table.logical_negation(True)
+            self.assertFalse(reality)
+            reality = src.truth_table.logical_negation(False)
+            self.assertTrue(reality)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
     AssertionError: False is not true
+
+  because the :ref:`function<what is a function?>` returns :ref:`False<test_what_is_false>` and the new :ref:`assertion<what is an assertion?>` expects :ref:`True<test_what_is_true>`
 
 * I change the `return statement`_ of the :ref:`logical_negation function<test_logical_negation>` in ``truth_table.py``
 
@@ -584,7 +595,7 @@ the test passes
 
     AssertionError: True is not false
 
-  the test fails for the line that passed before
+  the test fails for the :ref:`assertion<what is an assertion?>` that passed before, because the :ref:`function<what is a function?>` now returns :ref:`True<test_what_is_true>` and that :ref:`assertion<what is an assertion?>` expects :ref:`False<test_what_is_false>`
 
 * I make the :ref:`function<what is a function?>` return its input again
 
@@ -601,11 +612,11 @@ the test passes
 
     AssertionError: True is not false
 
-  the expectation of the test is
+  this means the expectation of the test is that the :ref:`logical_negation function<test_logical_negation>`
 
-  - if :ref:`True<test_what_is_true>` is given, the result is :ref:`False<test_what_is_false>`
-  - if :ref:`False<test_what_is_false>` is given, the result is :ref:`True<test_what_is_true>`
-  - if input is given, the result is the opposite of the input, it is "not" the input
+  - returns :ref:`True<test_what_is_true>` if the input is :ref:`False<test_what_is_false>`
+  - returns :ref:`False<test_what_is_false>` if the input is :ref:`True<test_what_is_true>`
+  - returns the opposite of the input it gets
 
 ----
 
@@ -624,20 +635,74 @@ how to return the opposite of a boolean
     def logical_negation(the_input):
         return not the_input
 
-  the test passes
+  the test passes. This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
+
+  - it returns :ref:`False<test_what_is_false>` if the input is :ref:`True<test_what_is_true>`
+  - it returns :ref:`True<test_what_is_true>` if the input is :ref:`False<test_what_is_false>`
+  - it returns the opposite of the input, as output
 
 * I add to the name of the test
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 22
     :emphasize-lines: 7
     :emphasize-text: _aka_not
 
-    class TestUnaryOperations(unittest.TestCase):
-
         def test_logical_identity(self):
-            self.assertTrue(src.truth_table.logical_identity(True))
-            self.assertFalse(src.truth_table.logical_identity(False))
+            reality = src.truth_table.logical_identity(True)
+            self.assertTrue(reality)
+            reality = src.truth_table.logical_identity(False)
+            self.assertFalse(reality)
+
+        def test_logical_negation_aka_not(self):
+            reality = src.truth_table.logical_negation(True)
+            self.assertFalse(reality)
+            reality = src.truth_table.logical_negation(False)
+            self.assertTrue(reality)
+
+
+    # Exceptions seen
+
+:ref:`logical_negation also known as not returns the opposite of its input<test_logical_negation>`
+
+==============  =============
+input           output
+==============  =============
+:green:`True`   :red:`False`
+:red:`False`    :green:`True`
+==============  =============
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I can call the :ref:`logical_negation function<test_logical_negation>` directly in the test, I do not need the ``reality`` :ref:`variables<what is a variable?>` because they are only used once for each :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 3-4, 6-7
+
+        def test_logical_negation_aka_not(self):
+            reality = src.truth_table.logical_negation(True)
+            # self.assertFalse(reality)
+            self.assertFalse(src.truth_table.logical_negation(True))
+            reality = src.truth_table.logical_negation(False)
+            # self.assertTrue(reality)
+            self.assertTrue(src.truth_table.logical_negation(False))
+
+
+    # Exceptions seen
+
+  the test is still green
+
+* I remove the commented lines and unused :ref:`variables<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 22
 
         def test_logical_negation_aka_not(self):
             self.assertFalse(src.truth_table.logical_negation(True))
@@ -646,17 +711,34 @@ how to return the opposite of a boolean
 
     # Exceptions seen
 
-:ref:`logical_negation also known as not returns the opposite of its input<test_logical_negation>`
+* I call the :ref:`logical_identity function<test_logical_identity>` directly, in its test
 
-* if it gets :ref:`True<test_what_is_true>` it returns :ref:`False<test_what_is_false>`
-* if it gets :ref:`False<test_what_is_false>` it returns :ref:`True<test_what_is_true>`
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3-4, 6-7
 
-==============  =============
-input           output
-==============  =============
-:green:`True`   :red:`False`
-:red:`False`    :green:`True`
-==============  =============
+        def test_logical_identity(self):
+            reality = src.truth_table.logical_identity(True)
+            # self.assertTrue(reality)
+            self.assertTrue(src.truth_table.logical_identity(True))
+            reality = src.truth_table.logical_identity(False)
+            # self.assertFalse(reality)
+            self.assertFalse(src.truth_table.logical_identity(False))
+
+        def test_logical_negation_aka_not(self):
+
+  still green
+
+* I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_logical_identity`
+
+  .. code-block:: python
+    :lineno-start: 16
+
+        def test_logical_identity(self):
+            self.assertTrue(src.truth_table.logical_identity(True))
+            self.assertFalse(src.truth_table.logical_identity(False))
+
+        def test_logical_negation_aka_not(self):
 
 ----
 
