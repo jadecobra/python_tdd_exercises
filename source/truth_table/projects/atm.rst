@@ -865,7 +865,7 @@ the test passes
 test_wrong_pin_not_enough_money
 *********************************************************************************
 
-I add a test with an :ref:`assertion<what is an assertion?>` for the last case - when the :red:`wrong PIN` is entered and there is :red:`NOT enough money` in the account, to ``test_atm.py``
+I add a test with an :ref:`assertion<what is an assertion?>` for the last case, which is when the :red:`wrong PIN` is entered and there is :red:`NOT enough money` in the account, to ``test_atm.py``
 
 ==================  ======================= =================
 PIN                 money                   withdrawal

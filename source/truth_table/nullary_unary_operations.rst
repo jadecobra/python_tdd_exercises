@@ -235,7 +235,7 @@ because I have not added a definition for :ref:`logical_false<test_logical_false
 .. NOTE::
 
   * :ref:`logical_true<test_logical_true>` always returns :green:`True`
-  * :ref:`logical_false<test_logical_false>` always returns :red:`False``
+  * :ref:`logical_false<test_logical_false>` always returns :red:`False`
   * both Nullary Operations do not take input
 
   ==============  ========================================
@@ -361,7 +361,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returns :red:`False`` and the test expects :green:`True`
+  because the :ref:`function<what is a function?>` returns :red:`False` and the test expects :green:`True`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -426,7 +426,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     AssertionError: False is not true
 
-  because the :ref:`assertion<what is an assertion?>` that was passing before, expects :ref:`True<test_what_is_true>` and the :ref:`function<what is a function?>` now returns :red:`False``
+  because the :ref:`assertion<what is an assertion?>` that was passing before, expects :ref:`True<test_what_is_true>` and the :ref:`function<what is a function?>` now returns :red:`False`
 
 * I change the `return statement`_ of the :ref:`function<what is a function?>`
 
@@ -578,7 +578,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returns :red:`False`` and the new :ref:`assertion<what is an assertion?>` expects :ref:`True<test_what_is_true>`
+  because the :ref:`function<what is a function?>` returns :red:`False` and the new :ref:`assertion<what is an assertion?>` expects :ref:`True<test_what_is_true>`
 
 * I change the `return statement`_ of the :ref:`logical_negation function<test_logical_negation>` in ``truth_table.py``
 
@@ -615,7 +615,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
   this means the expectation of the test is that the :ref:`logical_negation function<test_logical_negation>`
 
   - returns :green:`True` if the input is :ref:`False<test_what_is_false>`
-  - returns :red:`False`` if the input is :ref:`True<test_what_is_true>`
+  - returns :red:`False` if the input is :ref:`True<test_what_is_true>`
   - returns the opposite of the input it gets
 
 ----

@@ -253,9 +253,7 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return False
 
-  the test is still green. This is what happens when the :ref:`contradiction function<test_contradiction>` is called
-
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  the test is still green. :ref:`contradiction function<test_contradiction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
 * I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
 
@@ -280,10 +278,10 @@ first input     second input   return
 
     # Exceptions seen
 
-  the test is still green. This is what happens when the :ref:`contradiction function<test_contradiction>` is called
+  the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`
 
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  - if the first input is :green:`True` and the second input is :red:`False`
+  - if the first input is :green:`True` and the second input is :green:`True`
 
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`
@@ -313,11 +311,11 @@ first input     second input   return
 
     # Exceptions seen
 
-  the test is still green. This is what happens when the :ref:`contradiction function<test_contradiction>` is called
+  the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`
 
-  - it returns :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  - if the first input is :red:`False` and the second input is :green:`True`
+  - if the first input is :green:`True` and the second input is :red:`False`
+  - if the first input is :green:`True` and the second input is :green:`True`
 
 * I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
 
@@ -342,14 +340,14 @@ first input     second input   return
 
     # Exceptions seen
 
-  the test is still green. This is what happens when the :ref:`contradiction function<test_contradiction>` is called
+  the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`
 
-  - it returns :red:`False` if the first input is :red:`False` and the second input is :red:`False`
-  - it returns :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - it returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  - if the first input is :red:`False` and the second input is :red:`False`
+  - if the first input is :red:`False` and the second input is :green:`True`
+  - if the first input is :green:`True` and the second input is :red:`False`
+  - if the first input is :green:`True` and the second input is :green:`True`
 
-:ref:`contradiction always returns False, it does not care about what it gets<test_contradiction>`
+:ref:`contradiction always returns False, it does not care about the inputs<test_contradiction>`
 
 ----
 
@@ -519,9 +517,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def logical_conjunction(first_input, second_input):
       return True
 
-the test passes. This is what happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called
-
-- it returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 
 ----
 
@@ -606,10 +602,10 @@ the test passes. This is what happens when the :ref:`logical_conjunction functio
     def logical_conjunction(first_input, second_input):
         return second_input
 
-  the test passes. This is what happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called
+  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
 
-  - it returns :red:`False`, if the second input is :red:`False`
-  - it returns :green:`True`, if the second input is :green:`True`
+  - :red:`False`, if the second input is :red:`False`
+  - :green:`True`, if the second input is :green:`True`
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True` to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -675,10 +671,10 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
             return False
         return second_input
 
-  the test passes. This is what happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called
+  the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns
 
-  - it returns :red:`False`, if the first input is :red:`False`
-  - it returns the second input if the above :ref:`condition<if statements>` is NOT met
+  - :red:`False`, if the first input is :red:`False`
+  - the second input if the above :ref:`condition<if statements>` is NOT met
 
   .. NOTE::
 
@@ -1003,7 +999,7 @@ conditional expressions
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
 
-:ref:`Logical Conjunction<test_logical_conjunction>` also known as and_, always returns
+:ref:`logical_conjunction<test_logical_conjunction>` also known as and_, always returns
 
 * ``first_input and second_input``
 * :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
@@ -1165,6 +1161,17 @@ examples of Logical Conjunction
 test_project_second
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`project_second<test_project_second>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :red:`False`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -1173,7 +1180,13 @@ test_project_second
 
 ----
 
-I add a test for another Binary Operation to ``test_binary.py``
+I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case where the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
 
 .. code-block:: python
   :lineno-start: 21
@@ -1207,6 +1220,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'project_second'
 
+because I do not have a definition for the :ref:`project_second function<test_project_second>` in ``truth_table.py``
+
 ----
 
 =================================================================================
@@ -1228,13 +1243,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def project_second(first_input, second_input):
       return True
 
-the test passes. :ref:`project_second<test_project_second>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`. So far this is the same as :ref:`logical_conjunction<test_logical_conjunction>`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
+the test passes. :ref:`project_second<test_project_second>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`, just like :ref:`logical_conjunction<test_logical_conjunction>`
 
 ----
 
@@ -1244,7 +1253,13 @@ first input     second input   return
 
 ----
 
-* I add the second case - when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_second` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_second` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :red:`False`
+  ==============  ============== ==============
 
   .. code-block:: python
     :lineno-start: 35
@@ -1264,7 +1279,7 @@ first input     second input   return
 
     AssertionError: True is not false
 
-  the test expects
+  because the :ref:`function<what is a function?>` returns :green:`True` and the test expects
 
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
@@ -1279,20 +1294,9 @@ first input     second input   return
     def project_second(first_input, second_input):
         return second_input
 
-  the test passes. :ref:`project_second<test_project_second>` returns
+  the test passes. :ref:`project_second function<test_project_second>` returns the second input
 
-  - :ref:`True<test_what_is_true>` if the first input is :green:`True` and the second input is :red:`False`
-  - :ref:`False<test_what_is_false>` if the first input is :green:`True` and the second input is :green:`True`
-  - the second input in both cases
-
-  ==============  ============== ==============
-  first input     second input   return
-  ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :red:`False`
-  ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True` for :ref:`test_project_second` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 35
@@ -1309,22 +1313,15 @@ first input     second input   return
                 src.truth_table.project_second(False, True)
             )
 
-  the test is still green. :ref:`project_second<test_project_second>` returns
+  the test is still green
 
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input in all 3 cases
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :red:`False`
-  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 35
@@ -1347,24 +1344,9 @@ first input     second input   return
 
     # Exceptions seen
 
-  still green
+  still green.
 
-:ref:`project_second<test_project_second>` returns
-
-* :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
-* :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-* :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-* :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-* the second input in all cases, it does not care about the first input
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-:green:`True`   :red:`False`   :red:`False`
-:red:`False`    :green:`True`  :green:`True`
-:red:`False`    :red:`False`   :red:`False`
-==============  ============== ==============
+:ref:`project_second<test_project_second>` always returns the second input, it does not care about the first input
 
 ----
 
@@ -1418,8 +1400,8 @@ examples of Project Second
 
 * my expectation versus reality, if the inputs are
 
-  - my expectation?
-  - reality?
+  - my expectation
+  - reality
 
   ================  ================  ================
   expectation       reality           result
@@ -1436,6 +1418,17 @@ examples of Project Second
 test_converse_non_implication
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`converse_non_implication<test_converse_non_implication>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :red:`False`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -1444,7 +1437,13 @@ test_converse_non_implication
 
 ----
 
-I add a test for :ref:`converse_non_implication<test_converse_non_implication>` to ``test_binary.py``
+I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
 
 .. code-block:: python
   :lineno-start: 35
@@ -1478,6 +1477,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
 
+because there is no definition for :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py`` in the ``src`` folder_
+
 ----
 
 =================================================================================
@@ -1492,20 +1493,14 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   :lineno-start: 25
   :emphasize-lines: 5-6
 
-  def project_second(first_input, second_input):
-      return second_input
+    def project_second(first_input, second_input):
+        return second_input
 
 
-  def converse_non_implication(first_input, second_input):
-      return False
+    def converse_non_implication(first_input, second_input):
+        return False
 
-the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns :red:`False``, if the first input is :green:`True` and the second input is :green:`True`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
+the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
 ----
 
@@ -1516,6 +1511,12 @@ first input     second input   return
 ----
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False` to :ref:`test_converse_non_implication` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :red:`False`
+  ==============  ============== ==============
 
   .. code-block:: python
     :lineno-start: 49
@@ -1529,7 +1530,7 @@ first input     second input   return
                 src.truth_table.converse_non_implication(True, False)
             )
 
-  the test is still green. :ref:`converse_non_implication<test_converse_non_implication>` returns :red:`False``
+  the test is still green. :ref:`converse_non_implication<test_converse_non_implication>` returns :red:`False`
 
   - if the first input is :green:`True` and the second input is :red:`False`
   - if the first input is :green:`True` and the second input is :green:`True`
@@ -1955,7 +1956,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``not first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False`` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1985,7 +1986,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False`` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1998,7 +1999,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 * :ref:`Contradiction<test_contradiction>`
 
-  - always returns :red:`False``
+  - always returns :red:`False`
   - never returns :green:`True`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
 

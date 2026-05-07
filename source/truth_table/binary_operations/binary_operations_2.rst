@@ -167,7 +167,7 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 
   the test passes.
 
-``negate_first`` returns :red:`False``, if the first input is :green:`True` and the second input is :green:`True`
+``negate_first`` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
 ==============  ============== ==============
 first input     second input   return
@@ -183,7 +183,7 @@ first input     second input   return
 
 ----
 
-* I add the second case - when the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -248,7 +248,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False` to ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False` to ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -474,7 +474,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def logical_nand(first_input, second_input):
       return False
 
-the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False``, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
 ==============  ============== ==============
 first input     second input   return
@@ -490,7 +490,7 @@ first input     second input   return
 
 ----
 
-* I add the second case - when the first input is :green:`True` and the second input is :red:`False`, in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 69
@@ -577,7 +577,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 69
@@ -620,9 +620,9 @@ first input     second input   return
   - :green:`True`, if the first input is :red:`False` and the second input is :red:`False`
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True` - this is the only case where it returns :red:`False``
+  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True` - this is the only case where it returns :red:`False`
 
-* I add an :ref:`if statement<if statements>` for the one case where it returns :red:`False`` with an else_ clause for the other 3 cases
+* I add an :ref:`if statement<if statements>` for the one case where it returns :red:`False` with an else_ clause for the other 3 cases
 
   .. code-block:: python
     :lineno-start: 38
@@ -802,7 +802,7 @@ first input     second input   return
 
 :ref:`Logical NAND<test_logical_nand>`
 
-* returns :red:`False``, if the first input is :ref:`True<test_what_is_true>` and the  second input is :ref:`True<test_what_is_true>`
+* returns :red:`False`, if the first input is :ref:`True<test_what_is_true>` and the  second input is :ref:`True<test_what_is_true>`
 * returns ``not (first_input and second_input)`` which is the :ref:`opposite (Logical Negation)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
 * is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :ref:`True<test_what_is_true>` and second input is :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
@@ -913,7 +913,7 @@ examples of Logical NAND
 
 .. NOTE::
 
-  When there is only one :ref:`if statement<if statements>` that returns :red:`False`` with an `else clause`_
+  When there is only one :ref:`if statement<if statements>` that returns :red:`False` with an `else clause`_
 
   .. code-block:: python
 
@@ -1073,7 +1073,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 75
@@ -1090,7 +1090,7 @@ first input     second input   return
 
   still green, there is only one result for this operation.
 
-:ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :red:`False``
+:ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
 
 ==============  ============== ==============
 first input     second input   return
@@ -1374,7 +1374,7 @@ first input     second input   return
 
   the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns
 
-  - :red:`False`, if the first input is :red:`False` and the second input is :red:`False` - this is the only case where it returns :red:`False``
+  - :red:`False`, if the first input is :red:`False` and the second input is :red:`False` - this is the only case where it returns :red:`False`
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
   - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
 
@@ -1529,7 +1529,7 @@ first input     second input   return
             (not first_input) and (not second_input)
         ) else False
 
-  the test is still green. A reminder that I can return the :ref:`Logical Negation (not)<test_logical_negation>` of an :ref:`if statement<if statements>` that returns :red:`False`` like I did with :ref:`Logical NAND<test_logical_nand>`
+  the test is still green. A reminder that I can return the :ref:`Logical Negation (not)<test_logical_negation>` of an :ref:`if statement<if statements>` that returns :red:`False` like I did with :ref:`Logical NAND<test_logical_nand>`
 
   .. NOTE::
 
@@ -1783,7 +1783,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Logical Disjunction<test_logical_disjunction>`
 
   - returns ``first_input or second_input``
-  - returns :red:`False`` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`False<test_what_is_false>`
+  - returns :red:`False` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`False<test_what_is_false>`
   - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :ref:`False<test_what_is_False>` and ``second_input`` is :ref:`False<test_what_is_false>`
 
   ==============  ============== ==============
@@ -1798,8 +1798,8 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Tautology<test_tautology>`
 
   - always returns :green:`True`
-  - never returns :red:`False``
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False``
+  - never returns :red:`False`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1813,7 +1813,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 * :ref:`Logical NAND<test_logical_nand>`
 
   - returns ``not (first_input and second_input)``
-  - returns :red:`False`` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - returns :red:`False` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
   - is the :ref:`opposite (Logical Negation) (not)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
@@ -1844,7 +1844,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``not first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False`` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1874,7 +1874,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False`` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1887,7 +1887,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
 * :ref:`Contradiction<test_contradiction>`
 
-  - always returns :red:`False``
+  - always returns :red:`False`
   - never returns :green:`True`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
 

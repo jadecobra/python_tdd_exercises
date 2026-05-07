@@ -1180,7 +1180,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
       AssertionError: 'MOVE' != 'NOT MOVE'
 
-    because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'` when it was called with the ``above_weight_limit`` parameter and the test expects :red:`'NOT MOVe'`
+    because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'` when it was called with the ``above_weight_limit`` parameter and the test expects :red:`'NOT MOVE'`
 
 * I add a :ref:`default value<test_functions_w_default_arguments>` to make ``above_weight_limit`` a choice
 
