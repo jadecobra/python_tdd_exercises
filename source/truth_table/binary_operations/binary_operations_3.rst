@@ -261,7 +261,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :red:`False` and the second input is :red:`False` to :ref:`test_exclusive_disjunction`, in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False` to :ref:`test_exclusive_disjunction`, in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 95
@@ -555,8 +555,8 @@ first input     second input   return
 
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns
 
-* :ref:`True<test_what_is_true>`, if the first input is NOT EQUAL to the second input
-* :ref:`False<test_what_is_false>`, if the first input is EQUAL to the second input
+* :green:`True`, if the first input is NOT EQUAL to the second input
+* :red:`False`, if the first input is EQUAL to the second input
 * ``first_input != second_input`` - which reads as first input is NOT equal to second input
 * ``not (first_input == second_input)`` - which reads as the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Equality<test_logical_equality>` of the first input and the second input
 * ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot.
@@ -1213,7 +1213,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
 
-* I add the last case to :ref:`test_project_first` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_project_first` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 115
@@ -1488,7 +1488,7 @@ first input     second input   return
   :green:`True`   :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* I add the last case to :ref:`test_converse_implication` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_converse_implication` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 121
@@ -1877,7 +1877,7 @@ close the project
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :red:`False`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
 * :ref:`Converse Implication<test_converse_implication>`
 

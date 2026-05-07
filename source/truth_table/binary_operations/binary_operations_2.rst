@@ -248,7 +248,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :red:`False` and the second input is :red:`False` to ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False` to ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 63
@@ -322,8 +322,8 @@ first input     second input   return
 :ref:`Negate First<test_negate_first>` always returns
 
 * ``not first_input``
-* :ref:`True<test_what_is_true>`, if the first input is :ref:`False<test_what_is_false>`
-* :ref:`False<test_what_is_false>`, if the first input is :ref:`True<test_what_is_true>`
+* :green:`True`, if the first input is :ref:`False<test_what_is_false>`
+* :red:`False`, if the first input is :ref:`True<test_what_is_true>`
 * the :ref:`opposite (Logical Negation)<test_logical_negation>` of the first input in all cases, it does not care about the second input
 
 ==============  ============== ==============
@@ -577,7 +577,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 69
@@ -1073,7 +1073,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 75
@@ -1658,7 +1658,7 @@ first input     second input   return
 :ref:`Logical Disjunction<test_logical_disjunction>` also known as "or_" returns
 
 * ``first_input or second_input``
-* :ref:`False<test_what_is_false>`, if the first input is :red:`False` and the second input is :red:`False`
+* :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
 
 ==============  ============== ==============
 first input     second input   return
@@ -1778,7 +1778,7 @@ close the project
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if the first input is named ``first_input`` and the second input is named ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :red:`False`, if the first input is named ``first_input`` and the second input is named ``second_input``, the tests show that
 
 * :ref:`Logical Disjunction<test_logical_disjunction>`
 

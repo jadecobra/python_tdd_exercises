@@ -229,7 +229,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 127
@@ -463,7 +463,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
 
-* I add the last case - when the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the last case - when the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 133
@@ -806,7 +806,7 @@ first input     second input   return
   :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
 
-* I add the last case to :ref:`test_logical_equality` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_logical_equality` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 139
@@ -1477,7 +1477,7 @@ close the project
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :red:`False`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
 
 * :ref:`Material/Logical Implication<test_material_implication>`
 
