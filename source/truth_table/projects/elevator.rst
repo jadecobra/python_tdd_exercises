@@ -1417,7 +1417,7 @@ doors           floor number        weight limit        output
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 9-14
+    :emphasize-lines: 9-13
 
         def test_doors_clear_number_not_pushed(self):
             reality = src.elevator.elevator(

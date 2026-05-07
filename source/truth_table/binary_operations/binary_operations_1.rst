@@ -808,7 +808,10 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  the test is still green, because ``if bool(something)`` checks if ``bool(something)`` returns :ref:`True <test_what_is_true>`
+  the test is still green, because
+
+  - ``if bool(something)`` checks if ``bool(something)`` returns :ref:`True <test_what_is_true>`
+  - ``if bool(something) == True`` is the same as ``if bool(something)``
 
 * I can remove bool_
 
@@ -1447,7 +1450,7 @@ first input     second input   return
 
 .. code-block:: python
   :lineno-start: 35
-  :emphasize-lines: 15-18
+  :emphasize-lines: 15-20
 
       def test_project_second(self):
           self.assertTrue(
@@ -1465,7 +1468,9 @@ first input     second input   return
 
       def test_converse_non_implication(self):
           self.assertFalse(
-              src.truth_table.converse_non_implication(True, True)
+              src.truth_table.converse_non_implication(
+                  True, True
+              )
           )
 
 
@@ -1520,14 +1525,18 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 49
-    :emphasize-lines: 5-7
+    :emphasize-lines: 7-11
 
         def test_converse_non_implication(self):
             self.assertFalse(
-                src.truth_table.converse_non_implication(True, True)
+                src.truth_table.converse_non_implication(
+                    True, True
+                )
             )
             self.assertFalse(
-                src.truth_table.converse_non_implication(True, False)
+                src.truth_table.converse_non_implication(
+                    True, False
+                )
             )
 
 
@@ -1548,17 +1557,23 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 49
-    :emphasize-lines: 8-10
+    :emphasize-lines: 12-16
 
         def test_converse_non_implication(self):
             self.assertFalse(
-                src.truth_table.converse_non_implication(True, True)
+                src.truth_table.converse_non_implication(
+                    True, True
+                )
             )
             self.assertFalse(
-                src.truth_table.converse_non_implication(True, False)
+                src.truth_table.converse_non_implication(
+                    True, False
+                )
             )
             self.assertTrue(
-                src.truth_table.converse_non_implication(False, True)
+                src.truth_table.converse_non_implication(
+                    False, True
+                )
             )
 
 
@@ -1596,29 +1611,111 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 49
-    :emphasize-lines: 11-13
+    :emphasize-lines: 17-21
 
         def test_converse_non_implication(self):
             self.assertFalse(
-                src.truth_table.converse_non_implication(True, True)
+                src.truth_table.converse_non_implication(
+                    True, True
+                )
             )
             self.assertFalse(
-                src.truth_table.converse_non_implication(True, False)
+                src.truth_table.converse_non_implication(
+                    True, False
+                )
             )
             self.assertTrue(
-                src.truth_table.converse_non_implication(False, True)
+                src.truth_table.converse_non_implication(
+                    False, True
+                )
             )
             self.assertFalse(
-                src.truth_table.converse_non_implication(False, False)
+                src.truth_table.converse_non_implication(
+                    False, False
+                )
             )
 
 
     # Exceptions seen
 
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
 
+  .. code-block:: python
 
+    AssertionError: True is not false
 
-  the test is still green. :ref:`converse_non_implication<test_converse_non_implication>` returns
+  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+
+* I add an `if statement`_ for the one case that returns :green:`True`, to the one in :ref:`the converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 3-4
+
+    def converse_non_implication(first_input, second_input):
+        if first_input == False:
+            if second_input == True:
+                return True
+        return False
+
+  the test passes
+
+* I add bool_
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-5
+
+    def converse_non_implication(first_input, second_input):
+        # if first_input == False:
+        if bool(first_input) == False:
+            # if second_input == True:
+            if bool(second_input) == True:
+                return True
+        return False
+
+  the test is still green
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :green:`True`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 3-4
+
+    def converse_non_implication(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        if not bool(first_input) == True:
+            # if second_input == True:
+            if bool(second_input) == True:
+                return True
+        return False
+
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True``
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 4-5, 7-8
+
+    def converse_non_implication(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        if not bool(first_input):
+            # if second_input == True:
+            # if bool(second_input) == True:
+            if bool(second_input):
+                return True
+        return False
+
+  green, because
+
+  - ``if not bool(something) == True`` is the same as ``if not bool(something)``
+  - ``if bool(something) == True`` is the same as ``if bool(something)``
+
+  :ref:`converse_non_implication<test_converse_non_implication>` returns
 
   - :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True` - this is the only case where it returns :green:`True`
