@@ -1133,7 +1133,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
         brake_is_pressed=False,
     )
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 ----
 

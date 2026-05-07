@@ -1212,7 +1212,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
           above_weight_limit=False,
       )
 
-    a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+    a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
   - the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1350,7 +1350,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         above_weight_limit=False,
     )
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 * I change the name of the test from :ref:`test_doors_clear_number_pushed` to :ref:`test_weight_w_doors_clear_number_pushed`
 
@@ -1454,7 +1454,7 @@ doors           floor number        weight limit        output
         above_weight_limit=False,
     )
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 * I change the name of the test from :ref:`test_doors_clear_number_not_pushed` to :ref:`test_weight_w_doors_clear_number_not_pushed`
 
@@ -1563,7 +1563,7 @@ doors             floor number        weight limit        output
         above_weight_limit=False,
     )
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 * I change the name of the test from :ref:`test_doors_not_clear_number_pushed` to :ref:`test_weight_w_doors_not_clear_number_pushed`
 
@@ -1674,7 +1674,7 @@ doors             floor number        weight limit        output
         above_weight_limit=False,
     )
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 * I change the name of the test from :ref:`test_doors_not_clear_number_pushed` to :ref:`test_weight_w_doors_not_clear_number_pushed`
 

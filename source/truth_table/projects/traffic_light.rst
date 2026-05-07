@@ -1503,7 +1503,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
         walk_button=False,
     )
 
-  since the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+  since the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>` for when the light is :red:`RED`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
@@ -1650,7 +1650,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
           walk_button=False,
       )
 
-    since the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+    since the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'RED'`` from the test
 
@@ -1814,7 +1814,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
   - the :ref:`default value<test_functions_w_default_arguments>` for ``current_light`` is ``'RED'``
   - the :ref:`default value<test_functions_w_default_arguments>` for ``timer_done`` is :ref:`False<test_what_is_false>`
   - the :ref:`default value<test_functions_w_default_arguments>` for ``walk_button`` is :ref:`False<test_what_is_false>`
-  - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter
+  - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter
 
 * I change the name of :ref:`test_red_traffic_light` to :ref:`test_red_traffic_light_w_walk_button` in ``test_traffic_light.py``
 
@@ -2084,7 +2084,7 @@ current light     timer            walk button        show
           walk_button=False,
       )
 
-    the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter.
+    the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
 
 * I add ``walk_button`` to the third :ref:`assertion<what is an assertion?>`, for when the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :green:`pushed`
 
@@ -2195,7 +2195,7 @@ current light     timer            walk button        show
 
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
-    - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter
+    - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter
 
 * I change the name of the test from :ref:`test_yellow_traffic_light` to :ref:`test_yellow_traffic_light_w_walk_button`
 
@@ -2668,7 +2668,7 @@ current light     timer            walk button        show
 
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``timer_done`` parameter is :ref:`False<test_what_is_false>`
     - the :ref:`default value<test_functions_w_default_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`
-    - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without a value for the parameter
+    - a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter
 
 * I change the name of the test from :ref:`test_green_traffic_light` to :ref:`test_green_traffic_light_w_walk_button`
 
