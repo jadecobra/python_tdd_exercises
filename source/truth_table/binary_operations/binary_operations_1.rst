@@ -1715,219 +1715,253 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   - ``if not bool(something) == True`` is the same as ``if not bool(something)``
   - ``if bool(something) == True`` is the same as ``if bool(something)``
 
-  :ref:`converse_non_implication<test_converse_non_implication>` returns
+* I remove bool_
 
-  - :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True` - this is the only case where it returns :green:`True`
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 5-6, 9-10
 
-* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together in :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py``
+    def converse_non_implication(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            if second_input:
+                return True
+        return False
+
+  still green, because
+
+  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+
+* I use :ref:`AND<test_logical_conjunction>` to put the two `if statements`_ together
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 6, 10-11
+
+    def converse_non_implication(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        if not first_input and second_input:
+                return True
+        return False
+
+  the test is still green, because I can use :ref:`AND<test_logical_conjunction>` to put two `if statements`_ together when one is indented under the other. For example
+
+  .. code-block:: python
+
+    if something:
+        if something_else:
+
+  can also be written as
+
+  .. code-block:: python
+
+    if something and something_else:
+
+* I add an `else clause`_ to be clearer
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 12-14
+
+    def converse_non_implication(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        if not first_input and second_input:
+            return True
+        else:
+            return False
+
+  still green
+
+* I add a `conditional expression`_
 
   .. code-block:: python
     :lineno-start: 29
     :emphasize-lines: 2-6
 
     def converse_non_implication(first_input, second_input):
+        return (
+            True
+            if not first_input and second_input
+            else False
+        )
         # if first_input == False:
-        #     if second_input == True:
-        if first_input == False and second_input == True:
-                return True
-        return False
-
-  still green
-
-* I remove the comments and use :ref:`not<test_logical_negation>` to write the `if statement`_ with :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-3
-
-    def converse_non_implication(first_input, second_input):
-        # if first_input == False and second_input == True:
-        if not first_input == True and second_input == True:
-                return True
-        return False
-
-  green
-
-* I remove the commented line and use bool_
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-3
-
-    def converse_non_implication(first_input, second_input):
-        # if not first_input == True and second_input == True:
-        if not bool(first_input) == True and bool(second_input) == True:
-                return True
-        return False
-
-  still green
-
-* I remove the comment and the repeated ``== True``
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-3
-
-    def converse_non_implication(first_input, second_input):
-        # if not bool(first_input) == True and bool(second_input) == True:
-        if not bool(first_input) and bool(second_input):
-                return True
-        return False
-
-  the test is still green
-
-* I remove the comment and bool_
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-3
-
-    def converse_non_implication(first_input, second_input):
-        # if not bool(first_input) and bool(second_input):
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
         if not first_input and second_input:
             return True
-        return False
-
-  still green
-
-* I remove the comment then add an `else clause`_
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 4-5
-
-    def converse_non_implication(first_input, second_input):
-        if not bool(first_input) and bool(second_input):
-                return True
         else:
             return False
 
   green
 
-* I use a `conditional expression`_
+* I remove ``True if`` and ``else False`` to make the simpler `return statement`_
 
   .. code-block:: python
     :lineno-start: 29
     :emphasize-lines: 2
 
     def converse_non_implication(first_input, second_input):
-        return True if not first_input and second_input else False
-        if not bool(first_input) and bool(second_input):
-                return True
+        return not first_input and second_input
+        return (
+            True
+            if not first_input and second_input
+            else False
+        )
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        if not first_input and second_input:
+            return True
         else:
             return False
 
   still green
 
-* I remove the other statements then use the simpler `return statement`_
+* :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
+
+  - ``not first_input`` returns the :ref:`opposite (Logical Negation)<test_logical_negation>` of ``first_input``
+
+    * if the first input is :ref:`True<test_what_is_true>`, this part of the statement is :ref:`False<test_what_is_false>`
+    * if the first input is :ref:`False<test_what_is_false>`, this part of the statement is :ref:`True<test_what_is_true>`
+
+  this means that in the 4 cases
+
+  - if the first input is :green:`True` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      (not first) and second
+      (not True ) and True
+      False       and True  # logical_conjunction(False, True)
+      False                 # logical_conjunction(False, True)
+
+  - if the first input is :green:`True` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      (not first) and second
+      (not True ) and False
+      False       and False # logical_conjunction(False, False)
+      False                 # logical_conjunction(False, False)
+
+  - if the first input is :red:`False` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      (not first) and second
+      (not False) and True
+      True        and True  # logical_conjunction(True, True)
+      True                  # logical_conjunction(True, True)
+
+  - if the first input is :red:`False` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      (not first) and second
+      (not False) and False
+      True        and False # logical_conjunction(True, False)
+      False                 # logical_conjunction(True, False)
+
+  ==============  =============== =============== ================
+  first           not first       second          (not first)
+                                                  and
+                                                  second
+  ==============  =============== =============== ================
+  :green:`True`   :red:`False`    :green:`True`   :red:`False`
+  :green:`True`   :red:`False`    :red:`False`    :red:`False`
+  :red:`False`    :green:`True`   :green:`True`   :green:`True`
+  :red:`False`    :green:`True`   :red:`False`    :red:`False`
+  ==============  =============== =============== ================
+
+  I add a `return statement`_ to show this
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2
+    :emphasize-lines: 2-5
 
     def converse_non_implication(first_input, second_input):
+        return logical_conjunction(
+            not first_input,
+            second_input
+        )
         return not first_input and second_input
-        return True if not first_input and second_input else False
+        return (
+            True
+            if not first_input and second_input
+            else False
+        )
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        if not first_input and second_input:
+            return True
+        else:
+            return False
 
   the test is still green
 
-* I remove the second `return statement`_
+* I remove the other statements
 
   .. code-block:: python
     :lineno-start: 29
 
     def converse_non_implication(first_input, second_input):
+        return logical_conjunction(
+            not first_input,
+            second_input
+        )
         return not first_input and second_input
-
-  .. NOTE::
-
-    - ``not first_input`` returns the :ref:`opposite (Logical Negation)<test_logical_negation>` of ``first_input``
-
-      * if the first input is :ref:`True<test_what_is_true>`, this part of the statement is :ref:`False<test_what_is_false>`
-      * if the first input is :ref:`False<test_what_is_false>`, this part of the statement is :ref:`True<test_what_is_true>`
-
-    this means that in the 4 cases
-
-    - if the first input is :green:`True` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
-
-      .. code-block:: python
-        :emphasize-lines: 4
-
-        (not first) and second
-        (not True ) and True
-        False       and True  # logical_conjunction(False, True)
-        False                 # logical_conjunction(False, True)
-
-    - if the first input is :green:`True` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
-
-      .. code-block:: python
-        :emphasize-lines: 4
-
-        (not first) and second
-        (not True ) and False
-        False       and False # logical_conjunction(False, False)
-        False                 # logical_conjunction(False, False)
-
-    - if the first input is :red:`False` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
-
-      .. code-block:: python
-        :emphasize-lines: 4
-
-        (not first) and second
-        (not False) and True
-        True        and True  # logical_conjunction(True, True)
-        True                  # logical_conjunction(True, True)
-
-    - if the first input is :red:`False` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
-
-      .. code-block:: python
-        :emphasize-lines: 4
-
-        (not first) and second
-        (not False) and False
-        True        and False # logical_conjunction(True, False)
-        False                 # logical_conjunction(True, False)
-
-    ==============  =============== =============== ================
-    first           not first       second          (not first)
-                                                    and
-                                                    second
-    ==============  =============== =============== ================
-    :green:`True`   :red:`False`    :green:`True`   :red:`False`
-    :green:`True`   :red:`False`    :red:`False`    :red:`False`
-    :red:`False`    :green:`True`   :green:`True`   :green:`True`
-    :red:`False`    :green:`True`   :red:`False`    :red:`False`
-    ==============  =============== =============== ================
-
-* I add a `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2
-
-    def converse_non_implication(first_input, second_input):
-        return logical_conjunction(not first_input, second_input)
-        return not first_input and second_input
-
-  the test is still green
 
 :ref:`Converse NonImplication<test_converse_non_implication>` always returns
 
 * ``not first_input and second_input``
 * the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Negation<test_logical_negation>` of the first input, and the second input
 * :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-:green:`True`   :red:`False`   :red:`False`
-:red:`False`    :green:`True`  :green:`True`
-:red:`False`    :red:`False`   :red:`False`
-==============  ============== ==============
 
 ----
 
@@ -1942,33 +1976,33 @@ examples of Converse NonImplication
   - light is green for cars?
   - light is green for walking?
 
-  ===============  =================  ================
-  green for cars?  green for person?  can cross street
-  ===============  =================  ================
-  :green:`yes`     :green:`yes`       :red:`no`
-  :green:`yes`     :red:`no`          :red:`no`
-  :red:`no`        :green:`yes`       :green:`yes`
-  :red:`no`        :red:`no`          :red:`no`
-  ===============  =================  ================
+  ===============  ===================  =======================
+  green for cars?  green for walking?   can I cross the street?
+  ===============  ===================  =======================
+  :green:`yes`     :green:`yes`         :red:`no`
+  :green:`yes`     :red:`no`            :red:`no`
+  :red:`no`        :green:`yes`         :green:`yes`
+  :red:`no`        :red:`no`            :red:`no`
+  ===============  ===================  =======================
 
 * raise prices, if the inputs are
 
-  - is supply high or low?
-  - is demand high or low?
+  - is supply abundant or scarce?
+  - is demand strong or weak?
 
-  ==============  ============== ==============
-  supply          demand         raise prices
-  ==============  ============== ==============
-  :green:`high`   :green:`high`  :red:`no`
-  :green:`high`   :red:`low`     :red:`no`
-  :red:`low`      :green:`high`  :green:`yes`
-  :red:`low`      :red:`low`     :red:`no`
-  ==============  ============== ==============
+  ================= =============== ==============
+  supply            demand          raise prices
+  ================= =============== ==============
+  :green:`abundant` :green:`strong` :red:`no`
+  :green:`abundant` :red:`weak`     :red:`no`
+  :red:`scarce`     :green:`strong` :green:`yes`
+  :red:`scarce`     :red:`weak`     :red:`no`
+  ================= =============== ==============
 
 * do a computer update, if the inputs are
 
-  - is computer in use?
-  - is update available?
+  - is the computer in use?
+  - is there an update available?
 
   ===============  ================  ============
   computer in use  update available  do update
@@ -1979,7 +2013,7 @@ examples of Converse NonImplication
   :red:`no`        :red:`no`         :red:`no`
   ===============  ================  ============
 
-* should I reply to a message, if the inputs are
+* should I reply to a message?, if the inputs are
 
   - is it a group message?
   - is it one on one from a close friend?
