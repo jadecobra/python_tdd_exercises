@@ -193,8 +193,8 @@ continue the project
 
   the test expects
 
-  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :green:`True`
+  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
+  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
@@ -214,8 +214,8 @@ continue the project
   the test expects
 
   - the :ref:`opposite<test_logical_negation>` of the input
-  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :green:`True`
+  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
+  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
 
 * I use :ref:`not<test_logical_negation>` in the `return statement`_
 
@@ -300,8 +300,8 @@ continue the project
 
   the test expects
 
-  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :green:`True`
+  - :red:`False` if the :ref:`function<what is a function?>` returns :red:`False`
+  - :green:`True` if the :ref:`function<what is a function?>` returns :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
@@ -488,8 +488,8 @@ continue the project
 
   the test expects
 
-  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :green:`True`
-  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :red:`False`
+  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
+  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
 
 * I change the `return statement`_ to see the difference between the input and what the test expects
 
@@ -591,8 +591,8 @@ continue the project
 
   the test expects
 
-  - :ref:`True<test_what_is_true>` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :ref:`False<test_what_is_false>` if the :ref:`function<what is a function?>` returns :green:`True`
+  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
+  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the test expects
 

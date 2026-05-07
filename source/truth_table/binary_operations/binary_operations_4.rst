@@ -205,7 +205,7 @@ first input     second input   return
   :green:`True`   :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case - when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_truth_table.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_negate_second` in ``test_truth_table.py``
 
   .. code-block:: python
     :lineno-start: 127
@@ -569,7 +569,7 @@ first input     second input   return
 :ref:`Logical NOR<test_logical_nor>` returns
 
 * ``not (first_input or second_input)``
-* :ref:`True<test_what_is_true>` if the first input is :red:`False` and the second input is :red:`False`
+* :green:`True` if the first input is :red:`False` and the second input is :red:`False`
 * the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Disjunction (or)<test_logical_disjunction>` of the first input and second input
 * :ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>` of the first input and second input
 
