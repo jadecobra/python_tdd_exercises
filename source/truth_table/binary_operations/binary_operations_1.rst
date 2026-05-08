@@ -89,9 +89,9 @@ continue the project
     configfile: pyproject.toml
     collected 4 items
 
-    tests/test_nullary_unary.py ....                              [100%]
+    tests/test_nullary_unary.py ....                  [100%]
 
-    ======================== 4 passed in G.HIs =========================
+    ================== 4 passed in G.HIs ===================
 
 ----
 

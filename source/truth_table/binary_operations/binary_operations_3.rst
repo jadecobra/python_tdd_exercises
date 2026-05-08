@@ -85,10 +85,10 @@ continue the project
     configfile: pyproject.toml
     collected 12 items
 
-    tests/test_binary.py ............                             [ 66%]
-    tests/test_nullary_unary.py ....                              [100%]
+    tests/test_binary.py ............                  [ 66%]
+    tests/test_nullary_unary.py ....                   [100%]
 
-    ======================== 12 passed in G.HIs ========================
+    ================== 12 passed in G.HIs ===================
 
 * I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it in the :ref:`editor<2 editors>`
 

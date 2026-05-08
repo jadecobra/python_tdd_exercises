@@ -85,10 +85,10 @@ continue the project
     configfile: pyproject.toml
     collected 16 items
 
-    tests/test_binary.py ................                         [ 66%]
-    tests/test_nullary_unary.py ....                              [100%]
+    tests/test_binary.py ................              [ 66%]
+    tests/test_nullary_unary.py ....                   [100%]
 
-    ======================== 16 passed in G.HIs ========================
+    ================== 16 passed in G.HIs ===================
 
 ----
 
