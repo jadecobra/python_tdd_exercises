@@ -2117,7 +2117,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, , the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit and the emergency button is :green:`pushed`, in :ref:`test_weight_w_doors_clear_number_pushed` in ``test_elevator.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit and the emergency button is :green:`pushed`, in :ref:`test_weight_w_doors_clear_number_pushed` in ``test_elevator.py``
 
   ==============  ================  ==================  ====================  ================
   doors           floor number      weight limit        emergency button      output

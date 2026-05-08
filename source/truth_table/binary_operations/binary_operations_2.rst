@@ -118,7 +118,7 @@ first input     second input   return
 
 ----
 
-I add a new test for :ref:`negate_first<test_negate_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+I add a test for :ref:`negate_first<test_negate_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -128,7 +128,7 @@ first input     second input   return
 
 .. code-block:: python
   :lineno-start: 49
-  :emphasize-lines: 23-28
+  :emphasize-lines: 23-26
 
       def test_converse_non_implication(self):
           self.assertFalse(
@@ -154,9 +154,7 @@ first input     second input   return
 
       def test_negate_first(self):
           self.assertFalse(
-              src.truth_table.negate_first(
-                  True, True
-              )
+              src.truth_table.negate_first(True, True)
           )
 
 
@@ -217,18 +215,14 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 7-11
+    :emphasize-lines: 5-7
 
         def test_negate_first(self):
             self.assertFalse(
-                src.truth_table.negate_first(
-                    True, True
-                )
+                src.truth_table.negate_first(True, True)
             )
             self.assertFalse(
-                src.truth_table.negate_first(
-                    True, False
-                )
+                src.truth_table.negate_first(True, False)
             )
 
 
@@ -250,23 +244,17 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 12-16
+    :emphasize-lines: 8-10
 
         def test_negate_first(self):
             self.assertFalse(
-                src.truth_table.negate_first(
-                    True, True
-                )
+                src.truth_table.negate_first(True, True)
             )
             self.assertFalse(
-                src.truth_table.negate_first(
-                    True, False
-                )
+                src.truth_table.negate_first(True, False)
             )
             self.assertTrue(
-                src.truth_table.negate_first(
-                    False, True
-                )
+                src.truth_table.negate_first(False, True)
             )
 
 
@@ -304,28 +292,20 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   .. code-block:: python
     :lineno-start: 71
-    :emphasize-lines: 17-21
+    :emphasize-lines: 11-13
 
         def test_negate_first(self):
             self.assertFalse(
-                src.truth_table.negate_first(
-                    True, True
-                )
+                src.truth_table.negate_first(True, True)
             )
             self.assertFalse(
-                src.truth_table.negate_first(
-                    True, False
-                )
+                src.truth_table.negate_first(True, False)
             )
             self.assertTrue(
-                src.truth_table.negate_first(
-                    False, True
-                )
+                src.truth_table.negate_first(False, True)
             )
             self.assertTrue(
-                src.truth_table.negate_first(
-                    False, False
-                )
+                src.truth_table.negate_first(False, False)
             )
 
 
@@ -395,7 +375,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
 
-* I use a :ref:`conditional expression`
+* I use a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -447,8 +427,6 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 * :red:`False`, if the first input is :green:`True`
 * the :ref:`opposite (Logical Negation)<test_logical_negation>` of the first input in all cases, it does not care about the second input
 
-
-
 ----
 
 =================================================================================
@@ -457,18 +435,18 @@ examples of Negate First
 
 ----
 
-* approval to do something, if the inputs are
+* approval to do something based on risk and reason, if the inputs are
 
-  - is risky?
-  - has a reason?
+  - is it risky?
+  - has a good reason?
 
   ===============  =================  ================
   is risky?        has reason?        approved
   ===============  =================  ================
-  :green:`yes`     :green:`yes`       :red:`no`
-  :green:`yes`     :red:`no`          :red:`no`
-  :red:`no`        :green:`yes`       :green:`yes`
-  :red:`no`        :red:`no`          :green:`yes`
+  :green:`yes`     :green:`good`      :red:`no`
+  :green:`yes`     :red:`bad`         :red:`no`
+  :red:`no`        :green:`good`      :green:`yes`
+  :red:`no`        :red:`bad`         :green:`yes`
   ===============  =================  ================
 
 * going for a walk, if the inputs are
@@ -493,10 +471,10 @@ examples of Negate First
   ===============  =================  ================
   battery dead?    is there smoke?    beep
   ===============  =================  ================
-  :green:`yes`     :green:`yes`       :red:`beep`
-  :green:`yes`     :red:`no`          :red:`beep`
-  :red:`no`        :green:`yes`       :green:`no beep`
-  :red:`no`        :red:`no`          :green:`no beep`
+  :green:`yes`     :green:`yes`       :red:`NOT silent`
+  :green:`yes`     :red:`no`          :red:`NOT silent`
+  :red:`no`        :green:`yes`       :green:`silent`
+  :red:`no`        :red:`no`          :green:`silent`
   ===============  =================  ================
 
 * can the system be used while it is being updated, if the inputs are
@@ -515,8 +493,8 @@ examples of Negate First
 
 * bad referee call, if the inputs are
 
-  - is home team?
-  - is bad play?
+  - is the home team playing?
+  - is it a bad play?
 
   ===============  ==================  ==================
   is home team?    is bad play?        good call
@@ -533,6 +511,17 @@ examples of Negate First
 test_logical_nand
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`logical_nand<test_logical_nand>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -541,20 +530,36 @@ test_logical_nand
 
 ----
 
-I add a new test to ``test_binary.py``
+I add a test for :ref:`logical_nand<test_logical_nand>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 63
-  :emphasize-lines: 7-8
+  :lineno-start: 71
+  :emphasize-lines: 15-18
 
       def test_negate_first(self):
-          self.assertFalse(src.truth_table.negate_first(True, True))
-          self.assertFalse(src.truth_table.negate_first(True, False))
-          self.assertTrue(src.truth_table.negate_first(False, True))
-          self.assertTrue(src.truth_table.negate_first(False, False))
+          self.assertFalse(
+              src.truth_table.negate_first(True, True)
+          )
+          self.assertFalse(
+              src.truth_table.negate_first(True, False)
+          )
+          self.assertTrue(
+              src.truth_table.negate_first(False, True)
+          )
+          self.assertTrue(
+              src.truth_table.negate_first(False, False)
+          )
 
       def test_logical_nand(self):
-          self.assertFalse(src.truth_table.logical_nand(True, True))
+          self.assertFalse(
+              src.truth_table.logical_nand(True, True)
+          )
 
 
   # Exceptions seen
@@ -565,7 +570,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_false'?
 
-there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
+because there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
 
 ----
 
@@ -578,7 +583,7 @@ there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_tab
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 34
+  :lineno-start: 37
   :emphasize-lines: 5-6
 
   def negate_first(first_input, second_input):
@@ -588,13 +593,8 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def logical_nand(first_input, second_input):
       return False
 
-the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
+the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
 ----
 
@@ -604,104 +604,25 @@ first input     second input   return
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, in ``test_binary.py``
-
-  .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 3
-
-        def test_logical_nand(self):
-            self.assertFalse(src.truth_table.logical_nand(True, True))
-            self.assertTrue(src.truth_table.logical_nand(True, False))
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: False is not true
-
-* I add :ref:`if statements` to :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-4
-
-    def logical_nand(first_input, second_input):
-        if first_input == True:
-            if second_input == False:
-                return True
-        return False
-
-  the test passes. :ref:`logical_nand<test_logical_nand>` returns
-
-  - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-  - the :ref:`logical negation<test_logical_negation>` of the second input so far
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :red:`False`
   :green:`True`   :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* I add another case, where the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_nand` in ``test_binary.py``
-
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 4
+    :lineno-start: 85
+    :emphasize-lines: 5-7
 
         def test_logical_nand(self):
-            self.assertFalse(src.truth_table.logical_nand(True, True))
-            self.assertTrue(src.truth_table.logical_nand(True, False))
-            self.assertTrue(src.truth_table.logical_nand(False, True))
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: False is not true
-
-* I add :ref:`if statements` to :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-4
-
-    def logical_nand(first_input, second_input):
-        if first_input == False:
-            if second_input == True:
-                return True
-        if first_input == True:
-            if second_input == False:
-                return True
-        return False
-
-  the test passes. :ref:`logical_nand<test_logical_nand>` returns
-
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-
-  ==============  ============== ==============
-  first input     second input   return
-  ==============  ============== ==============
-  :green:`True`   :green:`True`  :red:`False`
-  :green:`True`   :red:`False`   :green:`True`
-  :red:`False`    :green:`True`  :green:`True`
-  ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
-
-  .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 5
-
-        def test_logical_nand(self):
-            self.assertFalse(src.truth_table.logical_nand(True, True))
-            self.assertTrue(src.truth_table.logical_nand(True, False))
-            self.assertTrue(src.truth_table.logical_nand(False, True))
-            self.assertTrue(src.truth_table.logical_nand(False, False))
+            self.assertFalse(
+                src.truth_table.logical_nand(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.logical_nand(True, False)
+            )
 
 
     # Exceptions seen
@@ -712,215 +633,528 @@ first input     second input   return
 
     AssertionError: False is not true
 
-* I add an :ref:`if statement<if statements>` to :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
+  because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+
+* I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 3-4
+    :lineno-start: 41
+    :emphasize-lines: 2-3
 
     def logical_nand(first_input, second_input):
-        if first_input == False:
-            if second_input == False:
-                return True
-            if second_input == True:
-                return True
-        if first_input == True:
-            if second_input == False:
-                return True
+        if second_input == False:
+            return True
         return False
+
 
   the test passes. :ref:`logical_nand<test_logical_nand>` returns
 
-  - :green:`True`, if the first input is :red:`False` and the second input is :red:`False`
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True` - this is the only case where it returns :red:`False`
+  - :green:`True`, if the second input is :red:`False`
+  - :red:`False`, if the above condition is not met
+  - the :ref:`logical negation<test_logical_negation>` of the second input so far
 
-* I add an :ref:`if statement<if statements>` for the one case where it returns :red:`False` with an else_ clause for the other 3 cases
+* I add another :ref:`assertion<what is an assertion?>`, for the case where the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_nand` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :red:`False`    :green:`True`  :green:`True`
+  ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-6
+    :lineno-start: 85
+    :emphasize-lines: 8-10
+
+        def test_logical_nand(self):
+            self.assertFalse(
+                src.truth_table.logical_nand(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.logical_nand(True, False)
+            )
+            self.assertTrue(
+                src.truth_table.logical_nand(False, True)
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: False is not true
+
+  because the :ref:`logical_nand function<test_logical_nand>` returned :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+
+* I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 2-3
 
     def logical_nand(first_input, second_input):
-        if first_input == True:
-            if second_input == True:
-                return False
-        else:
-            return True
         if first_input == False:
-            if second_input == False:
-                return True
-            if second_input == True:
-                return True
-        if first_input == True:
-            if second_input == False:
-                return True
+            return True
+        if second_input == False:
+            return True
         return False
+
+
+  the test passes. :ref:`logical_nand<test_logical_nand>` returns
+
+  - :green:`True`, if the first input is :red:`False`
+  - :green:`True`, if the second input is :red:`False`
+  - :red:`False`, if none of the above conditions are met
+
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_nand` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :red:`False`    :red:`False`   :green:`True`
+  ==============  ============== ==============
+
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 11-13
+
+        def test_logical_nand(self):
+            self.assertFalse(
+                src.truth_table.logical_nand(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.logical_nand(True, False)
+            )
+            self.assertTrue(
+                src.truth_table.logical_nand(False, True)
+            )
+            self.assertTrue(
+                src.truth_table.logical_nand(False, False)
+            )
+
+
+    # Exceptions seen
 
   the test is still green
 
-* I remove the other statements and put the two :ref:`if statements` together
+* There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` I add an :ref:`if statement<if statements>` for it, in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-4
+    :lineno-start: 41
+    :emphasize-lines: 2-10
 
     def logical_nand(first_input, second_input):
-        # if first_input == True:
-        #     if second_input == True:
-        if first_input == True and second_input == True:
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        if first_input == True:
+            if second_input == True:
                 return False
-        else:
-            return True
+        return True
 
   still green
 
-* I remove the comments and use bool_
+* I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-3
+    :lineno-start: 41
+    :emphasize-lines: 7-10
 
     def logical_nand(first_input, second_input):
-        # if first_input == True and second_input == True:
-        if bool(first_input) == True and bool(second_input) == True:
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        if bool(first_input) == True:
+            # if second_input == True:
+            if bool(second_input) == True:
                 return False
-        else:
-            return True
+        return True
 
   green
 
-* I remove the commented line and ``== True``
+* I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-3
+    :lineno-start: 41
+    :emphasize-lines: 8-9, 11-12
 
     def logical_nand(first_input, second_input):
-        # if bool(first_input) == True and bool(second_input) == True:
-        if bool(first_input) and bool(second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        if bool(first_input):
+            # if second_input == True:
+            # if bool(second_input) == True:
+            if bool(second_input):
                 return False
-        else:
-            return True
+        return True
 
   still green
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-3
+    :lineno-start: 41
+    :emphasize-lines: 9-10, 13-14
 
     def logical_nand(first_input, second_input):
-        # if bool(first_input) and bool(second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            if second_input:
+                return False
+        return True
+
+  the test is still green, because ``if something == True`` is the same as ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 10, 14-15
+
+    def logical_nand(first_input, second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
         if first_input and second_input:
                 return False
+        return True
+
+
+  still green, because I can use :ref:`AND<test_logical_conjunction>` to put two :ref:`if statements` together when one is indented under the other. For example
+
+  .. code-block:: python
+
+    if something:
+        if something_else:
+
+  can also be written as
+
+  .. code-block:: python
+
+    if something and something_else:
+
+* I add an :ref:`else clause<if statements>` to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 16-18
+
+    def logical_nand(first_input, second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        if first_input and second_input:
+            return False
         else:
             return True
 
-  the test is still green
+  green
 
-* I want to use one `return statement`_ (:ref:`a conditional expression<conditional expressions>`) for everything, which means I need an :ref:`if statement<if statements>` that returns :green:`True`. I use :ref:`logical negation (not)<test_logical_negation>` to change the `else clause`_ to the opposite of the :ref:`if statement<if statements>`
+* I rewrite the :ref:`else clause<if statements>` with the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input and second_input`` so I can write the statements with a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 4-5
+    :lineno-start: 41
+    :emphasize-lines: 17-18
 
     def logical_nand(first_input, second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
         if first_input and second_input:
-                return False
+            return False
         # else:
         if not (first_input and second_input):
             return True
 
   still green
 
-* I move the new :ref:`if statement<if statements>` to the top
+* I move the first new :ref:`if statement<if statements>` below this new one
+
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2-3
+    :lineno-start: 41
+    :emphasize-lines: 18-19
 
     def logical_nand(first_input, second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        # else:
         if not (first_input and second_input):
             return True
         if first_input and second_input:
-                return False
+            return False
 
-  green
+  the test is still green
 
-* I change the second :ref:`if statement<if statements>` to an `else clause`_
+* I change it to an :ref:`else clause<if statements>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 4-5
+    :lineno-start: 41
+    :emphasize-lines: 18-19
 
     def logical_nand(first_input, second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        # else:
         if not (first_input and second_input):
             return True
         # if first_input and second_input:
         else:
-                return False
+            return False
 
-  green, green, green again 🎶
+  still green
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2
+    :lineno-start: 41
+    :emphasize-lines: 16-20
 
     def logical_nand(first_input, second_input):
-        return True if not (first_input and second_input) else False
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        # else:
+        return (
+            True
+            if not (first_input and second_input)
+            else False
+        )
         if not (first_input and second_input):
             return True
+        # if first_input and second_input:
         else:
-                return False
+            return False
 
-  still green
+  green
 
-* I remove the :ref:`if statement<if statements>` and use the simpler form of the :ref:`ternary operator<conditional expressions>`
+* I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2
+    :lineno-start: 41
+    :emphasize-lines: 16
 
     def logical_nand(first_input, second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        # else:
         return not (first_input and second_input)
-        return True if not (first_input and second_input) else False
+        return (
+            True
+            if not (first_input and second_input)
+            else False
+        )
+        if not (first_input and second_input):
+            return True
+        # if first_input and second_input:
+        else:
+            return False
+
+* :ref:`logical_nand<test_logical_nand>` returns ``not (first_input and second_input)``, which means that in the 4 cases
+
+  - if the first input is :green:`True` and the second input is :green:`True`, :ref:`logical_nand<test_logical_nand>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      not (first and second)
+      not (True  and True)  # not logical_conjunction(True, True)
+      not (True)            # not logical_conjunction(True, True)
+      False
+
+  - if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_nand<test_logical_nand>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      not (first and second)
+      not (True  and False) # not logical_conjunction(True, False)
+      not (False)           # not logical_conjunction(True, False)
+      True
+
+  - if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_nand<test_logical_nand>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      not (first and second)
+      not (False and True)  # not logical_conjunction(False, True)
+      not (False)           # not logical_conjunction(False, True)
+      True
+
+  - if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_nand<test_logical_nand>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      not (first and second)
+      not (False and False) # not logical_conjunction(False, False)
+      not (True)            # not logical_conjunction(False, False)
+      True
+
+  ==============  =============== =============== ================
+  first           second          first           not (first
+                                  and             and
+                                  second          second)
+  ==============  =============== =============== ================
+  :green:`True`   :green:`True`   :green:`True`   :red:`False`
+  :green:`True`   :red:`False`    :red:`False`    :green:`True`
+  :red:`False`    :green:`True`   :red:`False`    :green:`True`
+  :red:`False`    :red:`False`    :red:`False`    :green:`True`
+  ==============  =============== =============== ================
+
+  I add a `return statement`_ to show this
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 16-18
+
+    def logical_nand(first_input, second_input):
+        # if first_input == False:
+        #     return True
+        # if second_input == False:
+        #     return True
+        # return False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
+        # else:
+        return not (
+            logical_conjunction(first_input, second_input)
+        )
+        return not (first_input and second_input)
+        return (
+            True
+            if not (first_input and second_input)
+            else False
+        )
+        if not (first_input and second_input):
+            return True
+        # if first_input and second_input:
+        else:
+            return False
+
 
   the test is still green
 
-* I remove the second `return statement`_
+* I remove the other statements and comments
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 41
 
     def logical_nand(first_input, second_input):
+        return not (
+            logical_conjunction(first_input, second_input)
+        )
         return not (first_input and second_input)
-
-  this is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`logical_conjunction<test_logical_conjunction>`
-
-* I add a `return statement`_ to make sure
-
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 2
-
-    def logical_nand(first_input, second_input):
-        return not logical_conjunction(first_input, second_input)
-        return not (first_input and second_input)
-
-  green all the way
 
 :ref:`Logical NAND<test_logical_nand>`
 
-* returns :red:`False`, if the first input is :green:`True` and the  second input is :ref:`True<test_what_is_true>`
+* returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 * returns ``not (first_input and second_input)`` which is the :ref:`opposite (Logical Negation)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
-* is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :green:`True` and second input is :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
+* is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
-* is :ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`
+* is :ref:`not and<test_logical_nand>`
 
 ==============  ============== ==============
 first input     second input   return
@@ -953,13 +1187,13 @@ examples of Logical NAND
   :red:`no`         :red:`no`           :green:`yes`
   ================  ==================  ==================
 
-* safety with household cleaning products, if the inputs are
+* safety when mixing household cleaning products, if the inputs are
 
   - is bleach?
   - is soap?
 
   ================  ==================  ==================
-  is bleach?        is soap?            is safe?
+  is bleach?        is soap?            is safe when mixed?
   ================  ==================  ==================
   :green:`yes`      :green:`yes`        :red:`no`
   :green:`yes`      :red:`no`           :green:`yes`
@@ -973,12 +1207,12 @@ examples of Logical NAND
   - temperature rose?
 
   ================  ==================  ==================
-  door open?        temperature rose?   alarm
+  door open?        temperature rose?   silent
   ================  ==================  ==================
-  :green:`yes`      :green:`yes`        :red:`yes`
-  :green:`yes`      :red:`no`           :green:`no`
-  :red:`no`         :green:`yes`        :green:`no`
-  :red:`no`         :red:`no`           :green:`no`
+  :green:`yes`      :green:`yes`        :red:`alarm`
+  :green:`yes`      :red:`no`           :green:`silent`
+  :red:`no`         :green:`yes`        :green:`silent`
+  :red:`no`         :red:`no`           :green:`silent`
   ================  ==================  ==================
 
 * deny a transaction, if the inputs are
@@ -1015,7 +1249,7 @@ examples of Logical NAND
   - is process B writing?
 
   ================  ==================  ==================
-  process A write?  process B write?    stop/allow
+  process A write?  process B write?    allow/stop
   ================  ==================  ==================
   :green:`yes`      :green:`yes`        :red:`stop`
   :green:`yes`      :red:`no`           :green:`allow`
