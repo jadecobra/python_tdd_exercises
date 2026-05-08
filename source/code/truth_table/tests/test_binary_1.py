@@ -48,16 +48,24 @@ class TestBinaryOperations(unittest.TestCase):
 
     def test_converse_non_implication(self):
         self.assertFalse(
-            src.truth_table.converse_non_implication(True, True)
+            src.truth_table.converse_non_implication(
+                True, True
+            )
         )
         self.assertFalse(
-            src.truth_table.converse_non_implication(True, False)
+            src.truth_table.converse_non_implication(
+                True, False
+            )
         )
         self.assertTrue(
-            src.truth_table.converse_non_implication(False, True)
+            src.truth_table.converse_non_implication(
+                False, True
+            )
         )
         self.assertFalse(
-            src.truth_table.converse_non_implication(False, False)
+            src.truth_table.converse_non_implication(
+                False, False
+            )
         )
 
 

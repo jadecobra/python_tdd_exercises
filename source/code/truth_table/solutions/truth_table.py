@@ -27,6 +27,10 @@ def project_second(first_input, second_input):
 
 
 def converse_non_implication(first_input, second_input):
+    return logical_conjunction(
+        not first_input,
+        second_input
+    )
     return not first_input and second_input
 
 

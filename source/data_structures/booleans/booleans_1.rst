@@ -5,6 +5,7 @@
 .. include:: ../../links.rst
 
 .. _booleans: bool_
+.. _binary floating point numbers: float_
 
 #################################################################################
 booleans 1
@@ -84,35 +85,49 @@ start the project
 
   .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/__init__.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+        touch tests/__init__.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/__init__.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/__init__.py
+
+  the terminal_ goes back to the command line
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/test_booleans.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_booleans.py`` instead of ``touch tests/test_booleans.py``
+        touch tests/test_booleans.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/test_booleans.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/test_booleans.py
+
+  the terminal_ goes back to the command line
 
 * I open ``test_booleans.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
@@ -257,29 +272,37 @@ test_what_is_false
 
 ----
 
-* I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ I learned from :ref:`testing None<what is None?>` to check if False_ is a child (instance) of the `bool class`_. I think this will fail
+I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ I learned from :ref:`testing None<what is None?>` to check if False_ is a child (instance) of the `bool class`_. I think this will fail
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-7
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 6-7
 
-    import unittest
-
-
-    class TestBooleans(unittest.TestCase):
-
-        def test_what_is_false(self):
-            self.assertNotIsInstance(False, bool)
+  import unittest
 
 
-    # Exceptions seen
-    # AssertionError
+  class TestBooleans(unittest.TestCase):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+      def test_what_is_false(self):
+          self.assertNotIsInstance(False, bool)
 
-  .. code-block:: shell
 
-    AssertionError: False is an instance of <class 'bool'>
+  # Exceptions seen
+  # AssertionError
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError: False is an instance of <class 'bool'>
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I add comments
 
@@ -302,23 +325,15 @@ test_what_is_false
 
   so far this is something I already know from :ref:`testing None<what is None?>`
 
-----
+* I change assertNotIsInstance_ to assertIsInstance_
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
 
-----
+            self.assertIsInstance(False, bool)
 
-I change assertNotIsInstance_ to assertIsInstance_
-
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 1
-
-          self.assertIsInstance(False, bool)
-
-the test passes
+  the test passes
 
 :ref:`False is a boolean<test_what_is_false>`
 
@@ -328,8 +343,6 @@ the test passes
 test_what_is_true
 *********************************************************************************
 
-I do the same thing with True_
-
 ----
 
 =================================================================================
@@ -338,7 +351,7 @@ I do the same thing with True_
 
 ----
 
-* I add another failing test
+* I add another failing test for True_
 
   .. code-block:: python
     :lineno-start: 6
@@ -393,9 +406,7 @@ I change the `assert method`_
 
   # NOTES
 
-the test passes
-
-:ref:`True is a boolean<test_what_is_true>`
+the test passes. :ref:`True is a boolean<test_what_is_true>`
 
 ----
 
@@ -403,7 +414,7 @@ the test passes
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-* I add a line that will fail to the :ref:`test_what_is_true method<test_what_is_true>`
+* I add a failing :ref:`assertion<what is an assertion?>`, to the :ref:`test_what_is_true method<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -487,7 +498,7 @@ the test passes
 
     # NOTES
 
-* I add a line that will fail to the :ref:`test_what_is_false method<test_what_is_false>`
+* I add a failing :ref:`assertion<what is an assertion?>`, to the :ref:`test_what_is_false method<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -672,6 +683,8 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_true` to :ref:`test_what_is_false`
 
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 4
@@ -705,7 +718,7 @@ is an integer False or True?
 
 ----
 
-I add a line that will fail to the :ref:`test_what_is_false method<test_what_is_false>` to see if an integer_ (a whole number) is False_
+I add a failing :ref:`assertion<what is an assertion?>` to the :ref:`test_what_is_false method<test_what_is_false>` to see if an integer_ (a whole number) is False_
 
 .. code-block:: python
   :lineno-start: 6
@@ -770,6 +783,8 @@ the test passes
     # False is a boolean
 
 * I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_false` to :ref:`test_what_is_true`
+
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -840,6 +855,8 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 5
@@ -906,6 +923,8 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
 
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 11
@@ -962,7 +981,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: -0.1 is not false
 
-I use ``-0.1`` for all the binary floating point numbers that are smaller than ``0.0``.
+I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller than ``0.0``.
 
 ----
 
@@ -1001,6 +1020,8 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
     # False is a boolean
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
+
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 9
@@ -1104,8 +1125,12 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
 
   .. code-block:: python
     :lineno-start: 10
-    :emphasize-lines: 3
+    :emphasize-lines: 7
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
             self.assertFalse(0)
             self.assertFalse(0.0)
             self.assertFalse(0.1)
@@ -1118,7 +1143,7 @@ I use ``-0.1`` for all the binary floating point numbers that are smaller than `
 
     AssertionError: 0.1 is not false
 
-  I use ``0.1`` for all the binary floating point numbers that are bigger than ``0.0``.
+  I use ``0.1`` for all the `binary floating point numbers`_ that are bigger than ``0.0``.
 
 * I change the :ref:`method<what is a function?>`
 
@@ -1202,7 +1227,7 @@ is a string False or True?
 
 ----
 
-I add a line that will fail to :ref:`test_what_is_true` to test if a string_ (anything in :ref:`quotes`) is True_
+I add a failing :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to test if a string_ (anything in :ref:`quotes`) is True_
 
 .. code-block:: python
   :lineno-start: 13
@@ -1288,7 +1313,7 @@ the test passes
 
         def test_what_is_true(self):
 
-* I add a line that will fail to :ref:`test_what_is_false`
+* I add a failing :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1623,9 +1648,15 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 3
+    :lineno-start: 6
+    :emphasize-lines: 9
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
+            self.assertFalse(0)
+            self.assertFalse(0.0)
             self.assertFalse(str())
             self.assertFalse(tuple())
             self.assertFalse(list())
@@ -1798,9 +1829,15 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 4
+    :lineno-start: 6
+    :emphasize-lines: 10
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
+            self.assertFalse(0)
+            self.assertFalse(0.0)
             self.assertFalse(str())
             self.assertFalse(tuple())
             self.assertFalse(list())
@@ -2081,6 +2118,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
     # AssertionError
 
 * I move the :ref:`assertion<what is an assertion?>` to the :ref:`test_what_is_true method<test_what_is_true>`
+
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6

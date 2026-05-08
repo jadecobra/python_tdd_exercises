@@ -10,10 +10,10 @@
 booleans 2: test with bool
 #################################################################################
 
-I use the `bool built-in function`_ the way I used the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true` while I was refactoring :ref:`if statements` in :ref:`Truth Table: Binary Operations 1<binary_operations_1>`.
+I want to use the `bool built-in function`_ with the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true`.
 
 
-The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. I use it in :ref:`test_what_is_true` and :ref:`test_what_is_false`.
+The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. Which means the result of ``bool(something)`` is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -23,7 +23,7 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/booleans/test_booleans_list_comprehensions.py
+.. literalinclude:: ../../code/booleans/test_booleans_truth_table.py
   :language: python
   :linenos:
 
@@ -88,7 +88,7 @@ I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`
 .. code-block:: python
   :lineno-start: 6
   :emphasize-lines: 5
-  :emphasize-text: bool
+  :emphasize-text: bool assertTrue
 
       def test_what_is_false(self):
           self.assertIsInstance(False, bool)
@@ -96,6 +96,14 @@ I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`
           self.assertFalse(None)
           self.assertTrue(bool(None))
           self.assertFalse(0)
+          self.assertFalse(0.0)
+          self.assertFalse(str())
+          self.assertFalse(tuple())
+          self.assertFalse(list())
+          self.assertFalse(set())
+          self.assertFalse(dict())
+
+      def test_what_is_true(self):
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -136,7 +144,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 7
-    :emphasize-text: bool
+    :emphasize-text: bool assertTrue
 
         def test_what_is_false(self):
             self.assertIsInstance(False, bool)
@@ -146,12 +154,21 @@ the test passes
             self.assertFalse(0)
             self.assertTrue(bool(0))
             self.assertFalse(0.0)
+            self.assertFalse(str())
+            self.assertFalse(tuple())
+            self.assertFalse(list())
+            self.assertFalse(set())
+            self.assertFalse(dict())
+
+        def test_what_is_true(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: False is not true
+
+  the result of ``bool(0)`` is :ref:`False<test_what_is_false>`
 
 * I change the :ref:`assertion<what is an assertion?>`
 
@@ -163,12 +180,12 @@ the test passes
 
   the test passes
 
-* I add an `assert method`_
+* I add a failing :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 9
-    :emphasize-text: bool
+    :emphasize-text: bool assertTrue
 
         def test_what_is_false(self):
             self.assertIsInstance(False, bool)
@@ -180,12 +197,20 @@ the test passes
             self.assertFalse(0.0)
             self.assertTrue(bool(0.0))
             self.assertFalse(str())
+            self.assertFalse(tuple())
+            self.assertFalse(list())
+            self.assertFalse(set())
+            self.assertFalse(dict())
+
+        def test_what_is_true(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: False is not true
+
+  the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`
 
 * I change the :ref:`assertion<what is an assertion?>`
 
@@ -200,10 +225,19 @@ the test passes
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2
-    :emphasize-text: bool
+    :lineno-start: 6
+    :emphasize-lines: 11
+    :emphasize-text: bool assertTrue
 
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertFalse(False)
+            self.assertFalse(None)
+            self.assertFalse(bool(None))
+            self.assertFalse(0)
+            self.assertFalse(bool(0))
+            self.assertFalse(0.0)
+            self.assertFalse(bool(0.0))
             self.assertFalse(str())
             self.assertTrue(bool(str()))
             self.assertFalse(tuple())
@@ -218,6 +252,8 @@ the test passes
   .. code-block:: python
 
     AssertionError: False is not true
+
+  the result of ``bool(str())`` is :ref:`False<test_what_is_false>`
 
 * I change assertTrue_ to assertFalse_
 
@@ -234,7 +270,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 15
     :emphasize-lines: 4
-    :emphasize-text: bool
+    :emphasize-text: bool assertTrue
 
             self.assertFalse(str())
             self.assertFalse(bool(str()))
@@ -252,6 +288,8 @@ the test passes
 
     AssertionError: False is not true
 
+  the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`
+
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -262,12 +300,12 @@ the test passes
 
   the test passes
 
-* I add another line
+* I add another failing :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 15
     :emphasize-lines: 6
-    :emphasize-text: bool
+    :emphasize-text: bool assertTrue
 
             self.assertFalse(str())
             self.assertFalse(bool(str()))
@@ -286,6 +324,8 @@ the test passes
 
     AssertionError: False is not true
 
+  the result of ``bool(list())`` is :ref:`False<test_what_is_false>`
+
 * I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -296,12 +336,12 @@ the test passes
 
   the test passes
 
-* I add another line
+* I add another failing :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 4
-    :emphasize-text: bool
+    :emphasize-text: bool assertTrue
 
             self.assertFalse(list())
             self.assertFalse(bool(list()))
@@ -316,6 +356,8 @@ the test passes
   .. code-block:: python
 
     AssertionError: False is not true
+
+  the result of ``bool(set())`` is :ref:`False<test_what_is_false>`
 
 * I change assertTrue_ to assertFalse_
 
@@ -332,7 +374,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 6
-    :emphasize-text: bool
+    :emphasize-text: bool assertTrue
 
             self.assertFalse(list())
             self.assertFalse(bool(list()))
@@ -348,6 +390,8 @@ the test passes
   .. code-block:: python
 
     AssertionError: False is not true
+
+  the result of ``bool(dict())`` is :ref:`False<test_what_is_false>`
 
 * I change the :ref:`assertion<what is an assertion?>`
 
@@ -378,6 +422,43 @@ the test passes
         def test_what_is_true(self):
 
   the test passes
+
+* The `assertFalse method`_ uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
+
+  .. code-block:: python
+
+    def assertFalse(self, something, message=None):
+        """Check that something is false."""
+        if something:
+            raise AssertionError(message)
+
+  here is what happens when the `assertFalse method`_ is called
+
+  - it raises :ref:`AssertionError<what causes AssertionError?>` if ``something`` is :ref:`True<test_what_is_true>`, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  - it returns :ref:`None<what is None?>` if something is :ref:`False<test_what_is_false>` because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
+
+  - I do not have to give a value for the ``message`` parameter when I call `assertFalse`_ because
+
+    .. code-block:: python
+
+      self.assertFalse(something)
+
+    is the same as
+
+    .. code-block:: python
+
+      self.assertFalse(something, None)
+
+    is the same as
+
+    .. code-block:: python
+
+      self.assertFalse(
+          something=something,
+          message=None,
+      )
+
+    A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter, which means
 
 ----
 
