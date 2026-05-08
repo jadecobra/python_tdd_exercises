@@ -1156,15 +1156,6 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
 * is :ref:`not and<test_logical_nand>`
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-:green:`True`   :red:`False`   :green:`True`
-:red:`False`    :green:`True`  :green:`True`
-:red:`False`    :red:`False`   :green:`True`
-==============  ============== ==============
-
 ----
 
 =================================================================================
@@ -1291,16 +1282,24 @@ examples of Logical NAND
 
     return not (something)
 
-  this means
-
-  - ``if something: return False`` is the same as ``return not (something)``, just like
-  - ``if something: return True`` is the same as ``return something``
+  this means ``if something: return False`` is the same as ``return not (something)``
 
 ----
 
 *********************************************************************************
 test_tautology
 *********************************************************************************
+
+The :ref:`truth table` for :ref:`tautology<test_tautology>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
 
 ----
 
@@ -1310,20 +1309,36 @@ test_tautology
 
 ----
 
-I add a test for the next Binary Operation in ``test_binary.py``
+I add a test for :ref:`tautology<test_tautology>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 69
-  :emphasize-lines: 7-8
+  :lineno-start: 85
+  :emphasize-lines: 15-18
 
       def test_logical_nand(self):
-          self.assertFalse(src.truth_table.logical_nand(True, True))
-          self.assertTrue(src.truth_table.logical_nand(True, False))
-          self.assertTrue(src.truth_table.logical_nand(False, True))
-          self.assertTrue(src.truth_table.logical_nand(False, False))
+          self.assertFalse(
+              src.truth_table.logical_nand(True, True)
+          )
+          self.assertTrue(
+              src.truth_table.logical_nand(True, False)
+          )
+          self.assertTrue(
+              src.truth_table.logical_nand(False, True)
+          )
+          self.assertTrue(
+              src.truth_table.logical_nand(False, False)
+          )
 
       def test_tautology(self):
-          self.assertTrue(src.truth_table.tautology(True, True))
+          self.assertTrue(
+              src.truth_table.tautology(True, True)
+          )
 
 
   # Exceptions seen
@@ -1347,24 +1362,20 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 38
-  :emphasize-lines: 6-7
+  :lineno-start: 41
+  :emphasize-lines: 8-9
 
-  def logical_nand(first_input, second_input):
-      return not logical_conjunction(first_input, second_input)
-      return not (first_input and second_input)
+    def logical_nand(first_input, second_input):
+        return not (
+            logical_conjunction(first_input, second_input)
+        )
+        return not (first_input and second_input)
 
 
-  def tautology(first_input, second_input):
-      return True
+    def tautology(first_input, second_input):
+        return True
 
 the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
 
 ----
 
@@ -1376,13 +1387,26 @@ first input     second input   return
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_tautology` in ``test_binary.py``
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 3
+    :lineno-start: 99
+    :emphasize-lines: 5-7
 
         def test_tautology(self):
-            self.assertTrue(src.truth_table.tautology(True, True))
-            self.assertTrue(src.truth_table.tautology(True, False))
+            self.assertTrue(
+                src.truth_table.tautology(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.tautology(True, False)
+            )
+
+
+    # Exceptions seen
 
   the test is still green. :ref:`tautology<test_tautology>` returns
 
@@ -1390,48 +1414,62 @@ first input     second input   return
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
-
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 4
+    :lineno-start: 99
+    :emphasize-lines: 8-10
 
         def test_tautology(self):
-            self.assertTrue(src.truth_table.tautology(True, True))
-            self.assertTrue(src.truth_table.tautology(True, False))
-            self.assertTrue(src.truth_table.tautology(False, True))
+            self.assertTrue(
+                src.truth_table.tautology(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.tautology(True, False)
+            )
+            self.assertTrue(
+                src.truth_table.tautology(False, True)
+            )
+
+
+    # Exceptions seen
 
   the test is still green. :ref:`tautology<test_tautology>` returns :green:`True`
 
   - if the first input is :red:`False` and the second input is :green:`True`
   - if the first input is :green:`True`
 
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
-  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
-
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 5
+    :lineno-start: 99
+    :emphasize-lines: 11-13
 
         def test_tautology(self):
-            self.assertTrue(src.truth_table.tautology(True, True))
-            self.assertTrue(src.truth_table.tautology(True, False))
-            self.assertTrue(src.truth_table.tautology(False, True))
-            self.assertTrue(src.truth_table.tautology(False, False))
+            self.assertTrue(
+                src.truth_table.tautology(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.tautology(True, False)
+            )
+            self.assertTrue(
+                src.truth_table.tautology(False, True)
+            )
+            self.assertTrue(
+                src.truth_table.tautology(False, False)
+            )
 
 
     # Exceptions seen
@@ -1439,15 +1477,6 @@ first input     second input   return
   still green, there is only one result for this operation.
 
 :ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-:green:`True`   :red:`False`   :green:`True`
-:red:`False`    :green:`True`  :green:`True`
-:red:`False`    :red:`False`   :green:`True`
-==============  ============== ==============
 
 ----
 
@@ -1505,7 +1534,7 @@ examples of Tautology
   - have I done this before?
 
   ===============  =================  ================
-  good?            done before?       can get better?
+  good?            done before?       can I get better?
   ===============  =================  ================
   :green:`yes`     :green:`yes`       :green:`yes`
   :green:`yes`     :red:`no`          :green:`yes`
@@ -1535,10 +1564,10 @@ examples of Tautology
   ===============  =================  ================
   been good?       deserving?         love?
   ===============  =================  ================
-  :green:`yes`     :green:`place`     :green:`love`
-  :green:`yes`     :red:`thing`       :green:`love`
-  :red:`no`        :green:`place`     :green:`love`
-  :red:`no`        :red:`thing`       :green:`love`
+  :green:`yes`     :green:`yes`       :green:`love`
+  :green:`yes`     :red:`no`          :green:`love`
+  :red:`no`        :green:`yes`       :green:`love`
+  :red:`no`        :red:`no`          :green:`love`
   ===============  =================  ================
 
 ----
