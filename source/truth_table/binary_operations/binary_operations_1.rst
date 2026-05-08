@@ -2085,13 +2085,9 @@ close the project
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :red:`False`, if the first input is named ``first_input`` and the second input is named ``second_input``, the tests show that
+Binary Operations take 2 inputs, each input can be :green:`True` or :red:`False`, if the first input is named ``first_input`` and the second input is named ``second_input``, the tests show that
 
 * :ref:`Converse NonImplication<test_converse_non_implication>`
-
-  - returns ``not first_input and second_input``
-  - returns :green:`True` only if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :ref:`False<test_what_is_false>` and ``second_input`` is :ref:`True<test_what_is_true>`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2102,11 +2098,11 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* :ref:`Project Second<test_project_second>`
+  - returns ``not first_input and second_input``
+  - returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
 
-  - always returns ``second_input``
-  - returns :green:`True` only if ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second_input`` is :ref:`False<test_what_is_false>`
+* :ref:`Project Second<test_project_second>`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2117,11 +2113,11 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* :ref:`Logical Conjunction<test_logical_conjunction>` returns
+  - always returns ``second_input``
+  - returns :green:`True` only if ``second_input`` is :green:`True`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second_input`` is :red:`False`
 
-  - returns ``first_input and second_input``
-  - returns :green:`True` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :ref:`True<test_what_is_true>` and ``second_input`` is :ref:`True<test_what_is_true>`
+* :ref:`Logical Conjunction<test_logical_conjunction>` returns
 
   ==============  ============== ==============
   first input     second input   return
@@ -2132,27 +2128,31 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
 
+  - returns ``first_input and second_input``
+  - returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+
 * :ref:`Contradiction<test_contradiction>`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  :green:`True`   :red:`False`   :red:`False`
+  :red:`False`    :green:`True`  :red:`False`
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
 
   - always returns :red:`False`
   - never returns :green:`True`
   - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
 
-  ==============  ============== ==============
-  first input     second input   return
-  ==============  ============== ==============
-  :green:`True`   :green:`True`  :red:`False`
-  :green:`True`   :red:`False`   :red:`False`
-  :red:`False`    :green:`True`  :red:`False`
-  :red:`False`    :red:`False`   :red:`False`
-  ==============  ============== ==============
-
 and
 
-* :ref:`Logical Conjunction is "and"<test_logical_conjunction>`
-* :ref:`Logical Negation is "not" <test_logical_negation>`
+* :ref:`Logical Conjunction is "AND"<test_logical_conjunction>`
+* :ref:`Logical Negation is "NOT" <test_logical_negation>`
 
-All the logic statements or conditions have been written with and_ or :ref:`not<test_logical_negation>` or both.
+1 logic statement has been written with and_, another was written both.
 
 =============================================== =============  ============= ============= ============= ==============================================================
 return                                          True,          True,         False,        False,        name of operation

@@ -2835,8 +2835,8 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 and
 
 * :ref:`Logical Disjunction is "or"<test_logical_disjunction>`
-* :ref:`Logical Conjunction is "and"<test_logical_conjunction>`
-* :ref:`Logical Negation is "not" <test_logical_negation>`
+* :ref:`Logical Conjunction is "AND"<test_logical_conjunction>`
+* :ref:`Logical Negation is "NOT" <test_logical_negation>`
 
 All the logic statements or conditions have been written with some or all of the above 3.
 
