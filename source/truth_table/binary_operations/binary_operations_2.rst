@@ -1576,7 +1576,16 @@ examples of Tautology
 test_logical_disjunction
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`logical_disjunction<test_logical_disjunction>` is
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
 
 ----
 
@@ -1588,9 +1597,15 @@ test_logical_disjunction
 
 I add a test for :ref:`logical_disjunction<test_logical_disjunction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
+
 .. code-block:: python
   :lineno-start: 99
-  :emphasize-lines: 15-19
+  :emphasize-lines: 15-20
 
       def test_tautology(self):
           self.assertTrue(
@@ -1647,12 +1662,6 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
-
 ----
 
 =================================================================================
@@ -1663,17 +1672,30 @@ first input     second input   return
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_disjunction` in ``test_binary.py``
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 5-7
+    :lineno-start: 113
+    :emphasize-lines: 7-11
 
         def test_logical_disjunction(self):
             self.assertTrue(
-                src.truth_table.logical_disjunction(True, True)
+                src.truth_table.logical_disjunction(
+                    True, True
+                )
             )
             self.assertTrue(
-                src.truth_table.logical_disjunction(True, False)
+                src.truth_table.logical_disjunction(
+                    True, False
+                )
             )
+
+
+    # Exceptions seen
 
   the test is still green. :ref:`logical_disjunction<test_logical_disjunction>` returns
 
@@ -1683,17 +1705,16 @@ first input     second input   return
 
   so far this is the same as :ref:`Tautology<test_tautology>`
 
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
-
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 113
     :emphasize-lines: 8-10
 
         def test_logical_disjunction(self):
@@ -1712,15 +1733,13 @@ first input     second input   return
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case, where the first input is :red:`False` and the second input is :red:`False`
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
-  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the fourth case, where the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 81
