@@ -2878,7 +2878,7 @@ doors             floor number        weight limit        emergency button      
 
   still green
 
-* I add values for the ``above_weight_limit`` and ``emergency`` parameters, even though I do not need to because they have :ref:`default values<test_functions_w_default_arguments>`. This will make things clearer in the third :ref:`assertion<what is an assertion?>`, which is for when the doors are :red:`NOT clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
+* I add values for the ``above_weight_limit`` parameter, even though I do not need to because it has a :ref:`default value<test_functions_w_default_arguments>`. I also add a value for the ``emergency`` parameter. This will make things clearer in the third :ref:`assertion<what is an assertion?>`, which is for when the doors are :red:`NOT clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
 
   ================  ==================  ==================  ====================  ===============
   doors             floor number        weight limit        emergency button      output
