@@ -458,7 +458,9 @@ the test passes
           message=None,
       )
 
-    A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter, which means
+    A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter
+
+  `click here to see that actual code for the assertFalse method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L750>`_
 
 ----
 
@@ -808,6 +810,45 @@ the test passes
     # NOTES
 
   the test passes
+
+* The `assertTrue method`_ uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
+
+  .. code-block:: python
+
+    def assertTrue(self, something, message=None):
+        """Check that something is true."""
+        if not something:
+            raise AssertionError(message)
+
+  here is what happens when the `assertTrue method`_ is called
+
+  - it raises :ref:`AssertionError<what causes AssertionError?>` if ``something`` is :ref:`False<test_what_is_false>`, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - it returns :ref:`None<what is None?>` if something is :ref:`True<test_what_is_true>` because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
+
+  - I do not have to give a value for the ``message`` parameter when I call `assertTrue`_ because
+
+    .. code-block:: python
+
+      self.assertTrue(something)
+
+    is the same as
+
+    .. code-block:: python
+
+      self.assertTrue(something, None)
+
+    is the same as
+
+    .. code-block:: python
+
+      self.assertTrue(
+          something=something,
+          message=None,
+      )
+
+    A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter
+
+  `click here to see that actual code for the assertTrue method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L756>`_
 
 ----
 
