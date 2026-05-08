@@ -430,7 +430,7 @@ first input     second input   return
 
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-  - :red:`False`, if the first input is :ref:`True<test_what_is_true>`
+  - :red:`False`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -453,7 +453,7 @@ first input     second input   return
   the test is still green. :ref:`logical_nor<test_logical_nor>` returns
 
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :ref:`True<test_what_is_true>`
+  - :red:`False`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -499,7 +499,7 @@ first input     second input   return
 
   - :green:`True`, if the first input is :red:`False` and the second input is :red:`False`
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :ref:`True<test_what_is_true>`
+  - :red:`False`, if the first input is :green:`True`
 
 * I make the :ref:`if statement<if statements>` simpler
 
@@ -752,7 +752,7 @@ first input     second input   return
 
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input, if the first input is :ref:`True<test_what_is_true>`
+  - the second input, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -796,7 +796,7 @@ first input     second input   return
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input, if the first input is :ref:`True<test_what_is_true>`
+  - the second input, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -825,10 +825,10 @@ first input     second input   return
 
   - :green:`True`, if the first input is :red:`False` and the second input is :red:`False`
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - the :ref:`logical_negation<test_logical_negation>` of the second input if the first input is :ref:`False<test_what_is_false>`
+  - the :ref:`logical_negation<test_logical_negation>` of the second input if the first input is :red:`False`
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input, if the first input is :ref:`True<test_what_is_true>`
+  - the second input, if the first input is :green:`True`
   - :green:`True`, if the two inputs are the same
   - :red:`False`, if the two inputs are NOT the same
 

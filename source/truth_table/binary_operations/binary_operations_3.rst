@@ -1162,7 +1162,7 @@ first input     second input   return
 
   - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1203,7 +1203,7 @@ first input     second input   return
   the test passes. :ref:`project_first<test_project_first>` returns
 
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1252,8 +1252,8 @@ first input     second input   return
 
   - :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :ref:`False<test_what_is_false>`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :red:`False`, if the first input is :red:`False`
+  - :green:`True`, if the first input is :green:`True`
   - the first input in every case
 
 * I add a `return statement`_
@@ -1445,7 +1445,7 @@ first input     second input   return
 
   - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
 * time for the next case
 
@@ -1479,7 +1479,7 @@ first input     second input   return
   the test passes. :ref:`converse_implication<test_converse_implication>` returns
 
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1507,7 +1507,7 @@ first input     second input   return
 
   - :green:`True`, if the first input is :ref:`False<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True` - this is the only case where it returns :red:`False`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return

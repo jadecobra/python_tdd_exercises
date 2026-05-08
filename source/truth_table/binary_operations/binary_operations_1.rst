@@ -1853,8 +1853,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   - ``not first_input`` returns the :ref:`opposite (Logical Negation)<test_logical_negation>` of ``first_input``
 
-    * if the first input is :ref:`True<test_what_is_true>`, this part of the statement is :ref:`False<test_what_is_false>`
-    * if the first input is :ref:`False<test_what_is_false>`, this part of the statement is :ref:`True<test_what_is_true>`
+    * if the first input is :green:`True`, this part of the statement is :ref:`False<test_what_is_false>`
+    * if the first input is :red:`False`, this part of the statement is :ref:`True<test_what_is_true>`
 
   this means that in the 4 cases
 

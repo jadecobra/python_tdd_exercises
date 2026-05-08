@@ -99,6 +99,17 @@ continue the project
 test_negate_first
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`negate_first<test_negate_first>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :red:`False`
+:red:`False`    :green:`True`  :green:`True`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -107,28 +118,46 @@ test_negate_first
 
 ----
 
-I add a new test for ``negate_first`` in ``test_binary.py``
+I add a new test for :ref:`negate_first<test_negate_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :red:`False`   :red:`False`
+==============  ============== ==============
 
 .. code-block:: python
   :lineno-start: 49
-  :emphasize-lines: 15-16
+  :emphasize-lines: 23-28
 
       def test_converse_non_implication(self):
           self.assertFalse(
-              src.truth_table.converse_non_implication(True, True)
+              src.truth_table.converse_non_implication(
+                  True, True
+              )
           )
           self.assertFalse(
-              src.truth_table.converse_non_implication(True, False)
+              src.truth_table.converse_non_implication(
+                  True, False
+              )
           )
           self.assertTrue(
-              src.truth_table.converse_non_implication(False, True)
+              src.truth_table.converse_non_implication(
+                  False, True
+              )
           )
           self.assertFalse(
-              src.truth_table.converse_non_implication(False, False)
+              src.truth_table.converse_non_implication(
+                  False, False
+              )
           )
 
       def test_negate_first(self):
-          self.assertFalse(src.truth_table.negate_first(True, True))
+          self.assertFalse(
+              src.truth_table.negate_first(
+                  True, True
+              )
+          )
 
 
   # Exceptions seen
@@ -139,7 +168,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-there is no definition for ``negate_first`` in ``truth_table.py``
+there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_table.py``
 
 ----
 
@@ -149,31 +178,26 @@ there is no definition for ``negate_first`` in ``truth_table.py``
 
 ----
 
-  I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+*  I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
-* I add the :ref:`function<what is a function?>` in ``truth_table.py``
+* I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 6-7
+    :emphasize-lines: 9-10
 
     def converse_non_implication(first_input, second_input):
-        return logical_conjunction(not first_input, second_input)
+        return logical_conjunction(
+            not first_input,
+            second_input
+        )
         return not first_input and second_input
 
 
     def negate_first(first_input, second_input):
         return False
 
-  the test passes.
-
-``negate_first`` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
+  the test passes. :ref:`negate_first<test_negate_first>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
 ----
 
@@ -183,39 +207,70 @@ first input     second input   return
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
-
-  .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 3
-
-        def test_negate_first(self):
-            self.assertFalse(src.truth_table.negate_first(True, True))
-            self.assertFalse(src.truth_table.negate_first(True, False))
-
-  the test is still green. ``negate_first`` returns
-
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-  - :red:`False`, if the first input is :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_negate_first` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :red:`False`
   :green:`True`   :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
-
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 4
+    :lineno-start: 71
+    :emphasize-lines: 7-11
 
         def test_negate_first(self):
-            self.assertFalse(src.truth_table.negate_first(True, True))
-            self.assertFalse(src.truth_table.negate_first(True, False))
-            self.assertTrue(src.truth_table.negate_first(False, True))
+            self.assertFalse(
+                src.truth_table.negate_first(
+                    True, True
+                )
+            )
+            self.assertFalse(
+                src.truth_table.negate_first(
+                    True, False
+                )
+            )
+
+
+    # Exceptions seen
+
+  the test is still green. :ref:`negate_first<test_negate_first>` returns
+
+  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
+  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  - :red:`False`, if the first input is :green:`True`
+
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :red:`False`    :green:`True`  :green:`True`
+  ==============  ============== ==============
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 12-16
+
+        def test_negate_first(self):
+            self.assertFalse(
+                src.truth_table.negate_first(
+                    True, True
+                )
+            )
+            self.assertFalse(
+                src.truth_table.negate_first(
+                    True, False
+                )
+            )
+            self.assertTrue(
+                src.truth_table.negate_first(
+                    False, True
+                )
+            )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -223,117 +278,176 @@ first input     second input   return
 
     AssertionError: False is not true
 
-* I add :ref:`if statements` for this case to ``negate_first`` in ``truth_table.py``
+* I add an :ref:`if statement<if statements>` for this case to :ref:`negate_first<test_negate_first>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-3
 
     def negate_first(first_input, second_input):
         if first_input == False:
-            if second_input == True:
-                return True
+            return True
         return False
 
-  the test passes. ``negate_first`` returns
+  the test passes. :ref:`negate_first<test_negate_first>` returns
 
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :ref:`True<test_what_is_true>`
+  - :red:`False`, if the above :ref:`condition<if statements>` is not met
+
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False` to :ref:`test_negate_first` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :red:`False`
-  :green:`True`   :red:`False`   :red:`False`
-  :red:`False`    :green:`True`  :green:`True`
+  :red:`False`    :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False` to ``test_binary.py``
-
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 5
+    :lineno-start: 71
+    :emphasize-lines: 17-21
 
         def test_negate_first(self):
-            self.assertFalse(src.truth_table.negate_first(True, True))
-            self.assertFalse(src.truth_table.negate_first(True, False))
-            self.assertTrue(src.truth_table.negate_first(False, True))
-            self.assertTrue(src.truth_table.negate_first(False, False))
+            self.assertFalse(
+                src.truth_table.negate_first(
+                    True, True
+                )
+            )
+            self.assertFalse(
+                src.truth_table.negate_first(
+                    True, False
+                )
+            )
+            self.assertTrue(
+                src.truth_table.negate_first(
+                    False, True
+                )
+            )
+            self.assertTrue(
+                src.truth_table.negate_first(
+                    False, False
+                )
+            )
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the test is still green
+
+* I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statement<if statements>` in the :ref:`negate_first function<test_negate_first>` in ``truth_table.py``
 
   .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 2-3
 
-    AssertionError: False is not true
+    def negate_first(first_input, second_input):
+        # if first_input == False:
+        if bool(first_input) == False:
+            return True
+        return False
 
-* I add an :ref:`if statement<if statements>` for it in ``truth_table.py``
+  still green
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 37
     :emphasize-lines: 3-4
 
     def negate_first(first_input, second_input):
-        if first_input == False:
-            if second_input == False:
-                return True
-            if second_input == True:
-                return True
+        # if first_input == False:
+        # if bool(first_input) == False:
+        if not bool(first_input) == True:
+            return True
         return False
 
-  the test passes. ``negate_first`` returns
+  green
 
-  - :green:`True`, if the first input is :red:`False` and the second input is :red:`False`
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`False<test_what_is_false>`
-  - :red:`False`, if the first input is :ref:`True<test_what_is_true>`
-
-  oh! It returns the :ref:`logical negation<test_logical_negation>` of the first input
-
-* I add a `return statement`_
+* I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 37
+    :emphasize-lines: 4-5
+
+    def negate_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        if not bool(first_input):
+            return True
+        return False
+
+  still green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 5-6
+
+    def negate_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            return True
+        return False
+
+  the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+
+* I use a :ref:`conditional expression`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 2
+
+    def negate_first(first_input, second_input):
+        return True if not first_input else False
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            return True
+        return False
+
+  still green
+
+* I remove ``True if`` and ``else False``
+
+  .. code-block:: python
+    :lineno-start: 37
     :emphasize-lines: 2
 
     def negate_first(first_input, second_input):
         return not first_input
-        if first_input == False:
-            if second_input == False:
-                return True
-            if second_input == True:
-                return True
+        return True if not first_input else False
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            return True
         return False
 
-  the test is still green
+  green
 
 * I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 37
 
     def negate_first(first_input, second_input):
         return not first_input
 
-  still green, no need for :ref:`if statements` here.
-
 :ref:`Negate First<test_negate_first>` always returns
 
 * ``not first_input``
-* :green:`True`, if the first input is :ref:`False<test_what_is_false>`
-* :red:`False`, if the first input is :ref:`True<test_what_is_true>`
+* :green:`True`, if the first input is :red:`False`
+* :red:`False`, if the first input is :green:`True`
 * the :ref:`opposite (Logical Negation)<test_logical_negation>` of the first input in all cases, it does not care about the second input
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-:green:`True`   :red:`False`   :red:`False`
-:red:`False`    :green:`True`  :green:`True`
-:red:`False`    :red:`False`   :green:`True`
-==============  ============== ==============
+
 
 ----
 
@@ -802,9 +916,9 @@ first input     second input   return
 
 :ref:`Logical NAND<test_logical_nand>`
 
-* returns :red:`False`, if the first input is :ref:`True<test_what_is_true>` and the  second input is :ref:`True<test_what_is_true>`
+* returns :red:`False`, if the first input is :green:`True` and the  second input is :ref:`True<test_what_is_true>`
 * returns ``not (first_input and second_input)`` which is the :ref:`opposite (Logical Negation)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
-* is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :ref:`True<test_what_is_true>` and second input is :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
+* is the opposite of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :green:`True` and second input is :ref:`True<test_what_is_true>` or returns ``first_input and second_input``
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
 * is :ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`
 
@@ -1040,7 +1154,7 @@ first input     second input   return
 
   - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1063,7 +1177,7 @@ first input     second input   return
   the test is still green. :ref:`tautology<test_tautology>` returns :green:`True`
 
   - if the first input is :red:`False` and the second input is :green:`True`
-  - if the first input is :ref:`True<test_what_is_true>`
+  - if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1290,7 +1404,7 @@ first input     second input   return
 
   - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
   so far this is the same as :ref:`Tautology<test_tautology>`
 
@@ -1321,7 +1435,7 @@ first input     second input   return
   the test is still green. :ref:`logical_disjunction<test_logical_disjunction>` still looks like :ref:`Tautology<test_tautology>`, it returns
 
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1376,7 +1490,7 @@ first input     second input   return
 
   - :red:`False`, if the first input is :red:`False` and the second input is :red:`False` - this is the only case where it returns :red:`False`
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :ref:`True<test_what_is_true>`
+  - :green:`True`, if the first input is :green:`True`
 
 * I change the two :ref:`if statements` to one :ref:`if statement<if statements>` with :ref:`Logical Conjunction (AND)<test_logical_conjunction>`
 
