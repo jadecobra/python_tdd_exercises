@@ -460,7 +460,7 @@ the test passes
 
     A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter
 
-  `click here to see that actual code for the assertFalse method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L750>`_
+  `click here to see the actual code for the assertFalse method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L750>`_
 
 ----
 
@@ -483,6 +483,7 @@ I add an :ref:`assertion<what is an assertion?>` with bool_ to :ref:`test_what_i
 .. code-block:: python
   :lineno-start: 26
   :emphasize-lines: 5
+  :emphasize-text: bool assertFalse
 
       def test_what_is_true(self):
           self.assertIsInstance(True, bool)
@@ -538,6 +539,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 26
     :emphasize-lines: 7
+    :emphasize-text: bool assertFalse
 
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
@@ -569,6 +571,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 26
     :emphasize-lines: 9
+    :emphasize-text: bool assertFalse
 
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
@@ -578,8 +581,16 @@ the test passes
             self.assertTrue(1)
             self.assertTrue(bool(1))
             self.assertTrue(-0.1)
-            self.assertTrue(bool(-0.1))
-            self.assertFalse(0.1)
+            self.assertFalse(bool(-0.1))
+            self.assertTrue(0.1)
+            self.assertTrue("text")
+            self.assertTrue((1, 2, 3, 'n'))
+            self.assertTrue([1, 2, 3, 'n'])
+            self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue({'key': 'value'})
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -602,6 +613,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 33
     :emphasize-lines: 4
+    :emphasize-text: bool assertFalse
 
             self.assertTrue(-0.1)
             self.assertTrue(bool(-0.1))
@@ -636,6 +648,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 33
     :emphasize-lines: 6
+    :emphasize-text: bool assertFalse
 
             self.assertTrue(-0.1)
             self.assertTrue(bool(-0.1))
@@ -647,6 +660,9 @@ the test passes
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
             self.assertTrue({'key': 'value'})
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -669,6 +685,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 37
     :emphasize-lines: 4
+    :emphasize-text: bool assertFalse
 
             self.assertTrue("text")
             self.assertTrue(bool("text"))
@@ -677,6 +694,9 @@ the test passes
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
             self.assertTrue({'key': 'value'})
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -699,6 +719,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 37
     :emphasize-lines: 6
+    :emphasize-text: bool assertFalse
 
             self.assertTrue("text")
             self.assertTrue(bool("text"))
@@ -708,6 +729,9 @@ the test passes
             self.assertFalse(bool([1, 2, 3, 'n']))
             self.assertTrue({1, 2, 3, 'n'})
             self.assertTrue({'key': 'value'})
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -730,6 +754,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 4
+    :emphasize-text: bool assertFalse
 
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue(bool([1, 2, 3, 'n']))
@@ -761,6 +786,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 6
+    :emphasize-text: bool assertFalse
 
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue(bool([1, 2, 3, 'n']))
@@ -783,6 +809,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 26
     :emphasize-lines: 21
+    :emphasize-text: bool assertFalse
 
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
@@ -848,7 +875,7 @@ the test passes
 
     A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter
 
-  `click here to see that actual code for the assertTrue method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L756>`_
+  `click here to see the actual code for the assertTrue method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L756>`_
 
 ----
 
