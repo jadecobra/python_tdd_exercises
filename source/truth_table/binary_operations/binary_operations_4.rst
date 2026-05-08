@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python truth tables by implementing binary operations like negation, NOR, and material implication. Learn to code these logical functions step-by-step. Watch the full tutorial.
-  :keywords: Jacob Itegboje, python truth table for binary operations, how to implement logical NOR in python, python material implication explained, python truth table for loop, python logical operations tutorial, truth table for negation in python, python binary operations tutorial, how to create a truth table in python with multiple inputs
+  :description: Master advanced Python binary operations—Logical NOR, Equality, Material Implication, and Negate Second—using Test Driven Development (TDD). Learn to refactor complex nested if-statements into clean, professional boolean expressions like "not (A or B)". This guide uses real-world logic examples—including fire alarms, secret keeping, and defective product returns—to bridge the gap between abstract truth tables and practical Python programming.
+  :keywords: Jacob Itegboje, Python logical NOR implementation, material implication truth table, negate second logic python, logical equality vs XOR, TDD Red Green Refactor tutorial, Python boolean refactoring, fire alarm logic gate, smoke detector logic example, defective product return rule code, Python if-statement simplification, boolean logic for programmers, programming truth tables for beginners, python unittest examples, boolean algebra software engineering, logic gate examples, python conditional expressions, not (A or B) logic, binary operations tutorial, logic for software engineers
 
 .. include:: ../../links.rst
 

@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn how Python's boolean data type, operators (and, or, not), and truthiness work in conditional statements to control program_ flow. Watch the tutorial!
-  :keywords: Jacob Itegboje, python boolean tutorial for beginners, python boolean operators and or not, python if statement with boolean, python truthiness and falsiness explained, what is boolean in python with example, how to use bool() in python, python boolean return function, common python boolean mistakes, python boolean best practices
+  :description: Master Python's truthiness and falsiness rules through Test Driven Development (TDD). This step-by-step tutorial uses unittest.assertTrue and assertFalse to explore why 0, 0.0, None, and empty collections (strings, lists, tuples, sets, and dicts) are False, while non-zero numbers and populated collections are True. Includes instructions for setting up a Python project with uv and automating tests with pytest-watcher.
+  :keywords: Jacob Itegboje, Python booleans for beginners, Python truthiness and falsiness, what is False in Python, Python unittest assertTrue, Python unittest assertFalse, TDD Red Green Refactor tutorial, Python bool type explained, is empty list True or False, is 0.0 False in Python, is None False or True, testing Python data structures, python uv init, pytest-watcher tutorial, boolean logic in programming, truthy and falsy values list, python empty string boolean, python empty dict truthiness, python zero-based indexing, python unit testing tutorial
 
 .. include:: ../../links.rst
 

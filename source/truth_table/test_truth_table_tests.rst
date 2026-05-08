@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master test-driven development in Python by learning to build and refactor logical functions from scratch. Watch the full tutorial to go from 20 failures to success.
-  :keywords: Jacob Itegboje, python test driven development tutorial, how to write logical functions in python, python tdd practical example, python truth table tests, refactoring python code, python unittest tutorial, learn tdd with python, python binary operations tutorial
+  :description: Rebuild a complete boolean logic library from scratch in this ultimate Python TDD challenge. Follow a step-by-step guide to resolving 20 failing tests while learning to debug NameError, TypeError, and AttributeError. Master the full lifecycle of software engineering—from a blank file to passing tests—and refactor complex logic gates like XOR, NAND, and Implication into clean, idiomatic Python.
+  :keywords: Jacob Itegboje, Python TDD challenge, test driven development from scratch, rebuilding truth tables, debugging Python errors tutorial, how to fix TypeError in Python, AttributeError module attribute, logical negation implementation, NAND NOR XOR Python code, TDD Red Green Refactor cycle, Python boolean logic library, programming logic final exam, refactoring nested if-statements, De Morgan's Law in practice, Python unittest examples, binary operations tutorial, software engineering best practices, logic gate implementation guide, truth table test suite, coding from failing tests
 
 .. include:: ../links.rst
 

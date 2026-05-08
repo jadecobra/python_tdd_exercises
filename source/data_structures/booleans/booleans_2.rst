@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python list comprehensions with this hands-on TDD tutorial. Learn to create lists efficiently with code examples. Start coding now!
-  :keywords: Jacob Itegboje, Python list comprehensions, test-driven development, Python programming, coding tutorials, data structures, Python for beginners
+  :description: Learn Python truthiness and falsiness using the bool() function and unittest. This TDD tutorial guides beginners through testing None, zero, empty lists, strings, and dictionaries using assertTrue and assertFalse. Understand how Python evaluates objects as True or False and see the internal logic of unittest assertion methods.
+  :keywords: Jacob Itegboje, Python bool function tutorial, truthiness and falsiness in Python, unittest assertTrue vs assertFalse, TDD for beginners, python bool(None), is empty list false in python, python bool(0) vs bool(1), testing truthy values, python unittest internal logic, programming tutorials for beginners, python data structure truthiness, bool(str), bool(tuple), bool(dict), bool(set), python truth table tests
 
 .. include:: ../../links.rst
 
@@ -107,7 +107,7 @@ I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
   AssertionError: False is not true
 
@@ -332,7 +332,7 @@ the test passes
     :lineno-start: 20
     :emphasize-lines: 1
 
-        self.assertFalse(bool(list()))
+            self.assertFalse(bool(list()))
 
   the test passes
 
@@ -508,6 +508,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: True is not false
 
+the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
+
 ----
 
 =================================================================================
@@ -556,6 +558,8 @@ the test passes
 
     AssertionError: True is not false
 
+  the result of ``bool(1)`` is :ref:`True<test_what_is_true>`
+
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -564,7 +568,7 @@ the test passes
 
             self.assertTrue(bool(1))
 
-  the test passes. The result of ``bool(1)`` is :ref:`True<test_what_is_true>`
+  the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -597,6 +601,8 @@ the test passes
   .. code-block:: python
 
     AssertionError: True is not false
+
+  the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`
 
 * I change assertFalse_ to assertTrue_
 
@@ -632,6 +638,8 @@ the test passes
   .. code-block:: python
 
     AssertionError: True is not false
+
+  the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`
 
 * I change the :ref:`assertion<what is an assertion?>`
 
@@ -670,6 +678,8 @@ the test passes
 
     AssertionError: True is not false
 
+  the result of ``bool("text")`` is :ref:`True<test_what_is_true>`
+
 * I change assertFalse_ to assertTrue_
 
   .. code-block:: python
@@ -678,7 +688,7 @@ the test passes
 
             self.assertTrue(bool("text"))
 
-  the tests passes
+  the the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`, when is this going to end?
 
@@ -703,6 +713,8 @@ the test passes
   .. code-block:: python
 
     AssertionError: True is not false
+
+  the result of ``bool((1, 2, 3, 'n'))`` is :ref:`True<test_what_is_true>`
 
 * I change assertFalse_ to assertTrue_
 
@@ -739,6 +751,8 @@ the test passes
 
     AssertionError: True is not false
 
+  the result of ``bool([1, 2, 3, 'n'])`` is :ref:`True<test_what_is_true>`
+
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -769,7 +783,9 @@ the test passes
 
   .. code-block:: python
 
-    AssertionError: True is not false
+    AssertionError: True is not
+
+  the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`
 
 * I change assertFalse_ to assertTrue_
 
@@ -804,12 +820,13 @@ the test passes
 
     AssertionError: True is not false
 
+  the result of ``bool({'key': 'value'})`` is :ref:`True<test_what_is_true>`
+
 * I change assertFalse_ to assertTrue_
 
   .. code-block:: python
     :lineno-start: 26
     :emphasize-lines: 21
-    :emphasize-text: bool assertFalse
 
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)

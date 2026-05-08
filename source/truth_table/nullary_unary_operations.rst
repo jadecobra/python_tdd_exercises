@@ -1,6 +1,6 @@
 .. meta::
-  :description: Stumped by Python's logic? Master nullary and unary operations with our easy-to-follow truth table tutorial. Learn the key differences and start coding.
-  :keywords: Jacob Itegboje, python nullary vs unary operations, python truth table tutorial for beginners, logical identity and negation in python, test-driven development with python for truth tables, python boolean logic explained for data structures, how to implement logical operations in python from scratch, what are nullary functions in python, python logical operators and, or, not examples
+  :description: Learn the foundational building blocks of programming logic: Nullary and Unary operations. This step-by-step TDD tutorial explains how to build functions that take zero or one input, including Logical True, Logical False, Logical Identity, and Logical Negation (NOT). Master the "not" keyword in Python, learn how to return an input as an output, and practice the Red-Green-Refactor cycle with clear unittest examples.
+  :keywords: Jacob Itegboje, Python nullary vs unary operations, Python logical negation tutorial, how to use the not keyword in python, logical identity function example, truth table for one variable, TDD for absolute beginners, python function taking zero arguments, building a logical NOT gate in code, what is a nullary operation, return input as output python, Red Green Refactor boolean logic, python unittest assertTrue and assertFalse, programming logic basics, how to return opposite of a boolean, python logical true vs logical false functions, learning boolean algebra with code, software engineering foundations for beginners
 
 .. include:: ../links.rst
 

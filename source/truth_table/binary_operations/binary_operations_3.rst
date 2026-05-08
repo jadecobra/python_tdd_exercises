@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python's boolean logic. This clear, step-by-step guide explains AND, OR, and NOT operators with easy-to-follow truth tables. Build your first one now.
-  :keywords: Jacob Itegboje, python truth table for beginners, boolean logic and or not first_inputython tutorial, how to make a truth table in python code, practical use of truth tables in programming, python logical operators explained for new programmers, understanding boolean expressions in python, python 'and' vs 'or' truth table differences, troubleshooting boolean logic in python script
+  :description: Explore advanced Python logic gates with a focus on Exclusive Disjunction (XOR), Material Non-Implication, and Converse Implication. This TDD-driven guide explains why XOR is the same as logical inequality (!=) and how to model complex rules like light switch circuits, magnet attraction, and broken promises. Learn to refactor verbose nested if-statements into elegant boolean expressions and conditional operators.
+  :keywords: Jacob Itegboje, Python exclusive disjunction XOR, Python material non-implication, project first logic, converse implication python, XOR vs logical inequality, Python != operator truth table, real-world examples of XOR, light switch logic circuit, magnets attract repel logic, TDD Red Green Refactor tutorial, Python conditional expressions, boolean logic for software engineers, programming truth tables for beginners, python boolean simplification, logical negation examples, vending machine logic, coin toss probability code, refactoring python logic, boolean algebra for programmers
 
 .. include:: ../../links.rst
 

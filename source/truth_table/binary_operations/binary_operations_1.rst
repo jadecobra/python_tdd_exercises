@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python truth tables for binary operations. This guide simplifies 'if' statements with clear, step-by-step Python code examples. Watch the tutorial!
-  :keywords: Jacob Itegboje, python truth table for if statements, python truth table generator from expression, python logical operators truth table, python truth table for two variables, how to make a truth table in python, python contradiction function, python logical conjunction truth table
+  :description: Learn Python truth tables for binary operations (Contradiction, AND/Conjunction, Project Second, and Converse NonImplication) using TDD. This tutorial explains how to implement complex logic using if statements, nested conditions, the 'and' operator, and ternary conditional expressions. Master logical gates with real-world examples like light switches, voting eligibility, and multi-factor authentication.
+  :keywords: Jacob Itegboje, Python truth table binary operations, logical conjunction AND operator, python contradiction function, project second logic, converse non-implication python, python if statement tutorial, nested if statements vs and operator, python ternary operator examples, conditional expressions python, bool() truthy falsy, binary logic gates in python, Red Green Refactor truth table, python unit testing logical operators, MFA logic gate, light switch logic example, programming truth tables for beginners, python and operator vs nested if, python return true if else false, boolean algebra for programmers
 
 .. include:: ../../links.rst
 .. _the Visual Studio Code Python Extension: `Python Extension`_
@@ -714,7 +714,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   the test is still green
 
-* There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add a `if statements`_ for it in ``truth_table.py``
+* There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add an `if statement`_ for it in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -1155,9 +1155,6 @@ examples of Logical Conjunction
 
       return something
 
-  this means that ``if something: return True`` is the same as ``return something``
-
-
 ----
 
 *********************************************************************************
@@ -1426,7 +1423,7 @@ The :ref:`truth table` for :ref:`converse_non_implication<test_converse_non_impl
 ==============  ============== ==============
 first input     second input   return
 ==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :green:`True`  :red:`False`
 :green:`True`   :red:`False`   :red:`False`
 :red:`False`    :green:`True`  :green:`True`
 :red:`False`    :red:`False`   :red:`False`

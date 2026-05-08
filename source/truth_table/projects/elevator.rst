@@ -1,8 +1,8 @@
 .. orphan::
 
 .. meta::
-  :description: Build a safety-critical elevator logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—door status, timers, and too_hot failsafes—while writing clean, verified code.
-  :keywords: Python elevator logic project, safety-critical systems python tutorial, TDD python elevator example, how to code a elevator in python, python multiple boolean inputs tutorial, red green refactor examples, python truth table practice, learn Converse NonImplication python, uv python project management, pytest-watcher logic testing, Jacob Itegboje
+  :description: Build a safety-critical elevator control system from scratch using Python and Test Driven Development (TDD). This project-based tutorial teaches beginners how to manage multiple boolean inputs—including door sensors, floor requests, weight limits, and emergency stop buttons—to create robust, failsafe logic. Master the professional Red-Green-Refactor cycle using modern tools like uv, unittest, and pytest-watcher.
+  :keywords: Jacob Itegboje, Python elevator logic project, safety-critical systems tutorial, TDD for beginners, building failsafes in Python, multiple boolean conditions example, elevator simulation code, Python unittest tutorial, uv package manager guide, pytest-watcher automated testing, Red Green Refactor Python project, debugging NameError and TypeError, logical conjunction tutorial, translating truth tables to code, weight limit failsafe logic, emergency stop button code, software engineering projects for beginners, Python boolean logic practice, building a controller in Python, robust software development
 
 .. include:: ../../links.rst
 

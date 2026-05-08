@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn Python boolean logic by building a real-world ATM withdrawal system. This step-by-step Test-Driven Development (TDD) tutorial teaches beginners how to translate truth tables into clean Python code using unittest, uv, and pytest-watcher.
-  keywords: Python ATM project tutorial, translate truth tables to python code, TDD python exercises for beginners, learn boolean logic with python projects, python unittest step by step guide, how to use uv for python projects, pytest-watcher tutorial, red green refactor python example, Automated Teller Machine logic python, Jacob Itegboje
+  :description: Build a realistic ATM withdrawal system from scratch using Python and Test Driven Development (TDD). This hands-on project tutorial guides beginners through translating complex business rules—including PIN verification, account balance checks, daily withdrawal limits, and card expiration—into clean, modular code. Learn to use the uv package manager, unittest, and pytest-watcher to manage a professional Red-Green-Refactor workflow.
+  :keywords: Jacob Itegboje, Python ATM project tutorial, TDD for beginners exercises, translate truth tables to code, Python boolean logic project, unittest tutorial for beginners, uv package manager tutorial, pytest-watcher automation, Red Green Refactor Python example, ATM withdrawal logic code, Python if statement refactoring, banking software logic gates, Python default parameters tutorial, handling multiple conditions in Python, logic modeling for software engineers, PIN verification system code, account balance truth table, daily limit logic, card expiration check Python, iterative software development
 
 .. include:: ../../links.rst
 
