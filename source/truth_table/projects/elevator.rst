@@ -2451,7 +2451,7 @@ doors           floor number        weight limit        emergency button      ou
 
   .. code-block:: python
     :lineno-start: 51
-    :emphasize-lines: 27
+    :emphasize-lines: 25, 27
 
         def test_weight_w_doors_clear_number_not_pushed(self):
             self.assertEqual(
