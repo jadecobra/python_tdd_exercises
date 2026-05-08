@@ -1576,6 +1576,8 @@ examples of Tautology
 test_logical_disjunction
 *********************************************************************************
 
+
+
 ----
 
 =================================================================================
@@ -1584,21 +1586,31 @@ test_logical_disjunction
 
 ----
 
-I add another test to ``test_binary.py``
+I add a test for :ref:`logical_disjunction<test_logical_disjunction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
 .. code-block:: python
-  :lineno-start: 75
-  :emphasize-lines: 7-10
+  :lineno-start: 99
+  :emphasize-lines: 15-19
 
       def test_tautology(self):
-          self.assertTrue(src.truth_table.tautology(True, True))
-          self.assertTrue(src.truth_table.tautology(True, False))
-          self.assertTrue(src.truth_table.tautology(False, True))
-          self.assertTrue(src.truth_table.tautology(False, False))
+          self.assertTrue(
+              src.truth_table.tautology(True, True)
+          )
+          self.assertTrue(
+              src.truth_table.tautology(True, False)
+          )
+          self.assertTrue(
+              src.truth_table.tautology(False, True)
+          )
+          self.assertTrue(
+              src.truth_table.tautology(False, False)
+          )
 
       def test_logical_disjunction(self):
           self.assertTrue(
-              src.truth_table.logical_disjunction(True, True)
+              src.truth_table.logical_disjunction(
+                  True, True
+              )
           )
 
 
