@@ -2783,7 +2783,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
     - returns ``not (first and second)``
     - returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation) (not)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Logical NOR<test_logical_nor>`
 
@@ -2834,11 +2834,11 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
 and
 
-* :ref:`Logical Disjunction is "or"<test_logical_disjunction>`
+* :ref:`Logical Disjunction is "OR"<test_logical_disjunction>`
 * :ref:`Logical Conjunction is "AND"<test_logical_conjunction>`
 * :ref:`Logical Negation is "NOT" <test_logical_negation>`
 
-All the logic statements or conditions have been written with some or all of the above 3.
+All the :ref:`binary operations<truth table: binary operations>` or conditions have been written with some or all of the above 3.
 
 ----
 

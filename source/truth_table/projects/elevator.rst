@@ -2072,7 +2072,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_weight_w_doors_clear_number_pushed` for when the doors are :green:`clear`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
 
   ==============  ================  ==================  ====================  ================
   doors           floor number      weight limit        emergency button      output
@@ -2117,7 +2117,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
   the test is still green
 
-* I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit and the emergency button is :green:`pushed`, in :ref:`test_weight_w_doors_clear_number_pushed` in ``test_elevator.py``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_weight_w_doors_clear_number_pushed` for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit and the emergency button is :green:`pushed`, in :ref:`test_weight_w_doors_clear_number_pushed` in ``test_elevator.py``
 
   ==============  ================  ==================  ====================  ================
   doors           floor number      weight limit        emergency button      output
@@ -2278,7 +2278,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
   - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT clear`
   - it returns :green:`'MOVE'` if the above :ref:`conditions<if statements>` are NOT met
 
-* I add values for the ``above_weight_limit`` and ``emergency`` parameters, even though I do not need to because they have :ref:`default values<test_functions_w_default_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>` which is for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is  :red:`NOT pushed`, in ``test_elevator.py``
+* I add values for the ``above_weight_limit`` and ``emergency`` parameters to :ref:`test_weight_w_doors_clear_number_pushed`, even though I do not need to because they have :ref:`default values<test_functions_w_default_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>` which is for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is  :red:`NOT pushed`, in ``test_elevator.py``
 
   ==============  ================  ==================  ====================  ================
   doors           floor number      weight limit        emergency button      output
