@@ -778,241 +778,110 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-
-  . :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
-
-  - :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-
-* I put the first two :ref:`if statements` together to make them simpler in :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-4
+    :lineno-start: 56
+    :emphasize-lines: 25-30, 40-46
 
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
-        #     if second_input == True:
-        if first_input == False and second_input == True:
-                return True
-        if first_input == True:
-            if second_input == False:
-                return True
-        return False
-
-  the test is still green
-
-* I do the same thing with the next two :ref:`if statements`
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 4-6
-
-    def exclusive_disjunction(first_input, second_input):
-        if first_input == False and second_input == True:
-                return True
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
         # if first_input == True:
-        #     if second_input == False:
-        if first_input == True and second_input == False:
-                return True
-        return False
-
-  still green
-
-* I add :ref:`not<test_logical_negation>` to the first :ref:`if statement<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-3
-
-    def exclusive_disjunction(first_input, second_input):
-        # if first_input == False and second_input == True:
-        if not first_input == True and second_input == True:
-                return True
-        if first_input == True and second_input == False:
-                return True
-        return False
-
-  green
-
-* I do the same thing to the second :ref:`if statement<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 4-5
-
-    def exclusive_disjunction(first_input, second_input):
-        if not first_input == True and second_input == True:
-                return True
-        # if first_input == True and second_input == False:
-        if first_input == True and not second_input == True:
-                return True
-        return False
-
-  still green
-
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-3, 5-6
-    :emphasize-text: bool
-
-    def exclusive_disjunction(first_input, second_input):
-        # if not first_input == True and second_input == True:
-        if not bool(first_input) == True and bool(second_input) == True:
-                return True
-        # if first_input == True and not second_input == True:
-        if bool(first_input) == True and not bool(second_input) == True:
-                return True
-        return False
-
-  green
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-3, 5-6
-
-    def exclusive_disjunction(first_input, second_input):
-        # if not bool(first_input) == True and bool(second_input) == True:
-        if not bool(first_input) and bool(second_input):
-                return True
-        # if bool(first_input) == True and not bool(second_input) == True:
-        if bool(first_input) and not bool(second_input):
-                return True
-        return False
-
-  still green
-
-* I remove :ref:`bool<booleans 2: test with bool>`
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-3, 5-6
-
-    def exclusive_disjunction(first_input, second_input):
-        # if not bool(first_input) and bool(second_input):
-        if not first_input and second_input:
-                return True
-        # if bool(first_input) and not bool(second_input):
-        if first_input and not second_input:
-                return True
-        return False
-
-  the test is still green
-
-* I use :ref:`Logical Disjunction<test_logical_disjunction>` to put the two :ref:`if statements` together because they both return :ref:`True<test_what_is_true>`
-
-  .. TIP::
-
-    I can put two :ref:`if statements` together with :ref:`Logical Disjunction (or)<test_logical_disjunction>` when they are at the same indentation level and return the same thing.
-
-    For example
-
-    .. code-block:: python
-
-      if something:
-          return this
-      if something_else:
-          return this
-
-    can also be written as
-
-    .. code-block:: python
-
-      if something or something_else:
-          return this
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-10
-
-    def exclusive_disjunction(first_input, second_input):
+        # if bool(first_input) == True:
+        # if bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if not first_input:
+        #     if not second_input:
+            # if second_input:
         # if not first_input and second_input:
-        #         return True
+        #     return True
+        # if first_input:
+        #     if not second_input:
         # if first_input and not second_input:
-        #         return True
-        if (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        ):
-            return True
-        return False
-
-  still green
-
-* I use a :ref:`conditional expression<conditional expressions>`
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-6
-
-    def exclusive_disjunction(first_input, second_input):
-        return True if (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        ) else False
-        if (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        ):
-            return True
-        return False
-
-  green
-
-* I remove the other statements in the :ref:`function<what is a function?>` and make the :ref:`ternary operator<conditional expressions>` simpler
-
-  .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-6
-
-    def exclusive_disjunction(first_input, second_input):
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        )
+        # if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ):
+        #     return True
+            # if second_input:
+        # if not first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        # if (
+        #     (not first_input and not second_input)
+        #     or
+        #     (first_input and second_input)
+        # ):
+        # else:
+        #     return False
         return True if (
             (not first_input and second_input)
             or
             (first_input and not second_input)
         ) else False
 
-  why is the grass greener on the other side?
-
-* I remove the second `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 51
-
-    def exclusive_disjunction(first_input, second_input):
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        )
-
   still green
 
-* :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` when ``first_input`` and ``second_input`` are the same and returns :green:`True`, if they are NOT. I add an :ref:`if statement<if statements>` to show this with the equality symbol (2 equal signs together :kbd:`=+=`)
+* I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2-5
+    :lineno-start: 56
+    :emphasize-lines: 42-51
 
     def exclusive_disjunction(first_input, second_input):
-        if first_input == second_input:
-            return False
-        else:
-            return True
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if not first_input:
+        #     if not second_input:
+            # if second_input:
+        # if not first_input and second_input:
+        #     return True
+        # if first_input:
+        #     if not second_input:
+        # if first_input and not second_input:
+        # if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ):
+        #     return True
+            # if second_input:
+        # if not first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        # if (
+        #     (not first_input and not second_input)
+        #     or
+        #     (first_input and second_input)
+        # ):
+        # else:
+        #     return False
+        # return True if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ) else False
         return (
             (not first_input and second_input)
             or
@@ -1021,18 +890,244 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   the test is still green
 
-* I change the new :ref:`if statement<if statements>` to a simple `return statement`_
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns ``((not first_input and second_input) or (first_input and not second_input))``
+
+  - ``not first_input and second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input
+  - ``not first_input`` is the :ref:`Logical Negation<test_logical_negation>` of ``first_input``
+  - ``first_input and not second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)` of the second input
+  - ``not second_input`` is the :ref:`Logical Negation<test_logical_negation>` of ``second_input``
+  - ``((not first_input and second_input) or (first_input and not second_input))`` can be thought of as the :ref:`Logical Disjunction (OR)` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)` of the second input
+
+    .. code-block:: python
+
+      logical_disjunction(
+          (not first_input and second_input),
+          (first_input and not second_input)
+      )
+
+    which is the same as
+
+    .. code-block:: python
+
+      logical_disjunction(
+          logical_conjunction(not first_input, second_input),
+          logical_conjunction(first_input, not second_input)
+      )
+
+    or as the :ref:`Logical Disjunction (OR)` of the :ref:`Converse Non-Implication<test_converse_non_implication>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)` of the second input
+
+    .. code-block:: python
+
+      logical_disjunction(
+          converse_non_implication(first_input, second_input),
+          (first_input and not second_input)
+      )
+
+    which is the same as
+
+    .. code-block:: python
+
+      logical_disjunction(
+          converse_non_implication(first_input, second_input),
+          logical_conjunction(first_input, not second_input)
+      )
+
+    because :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
+
+  This means that in the 4 cases
+
+  * if the first input is :green:`True` and the second input is :green:`True`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 5
+
+      (not first and second) or (first and not second)
+      (not True  and True  ) or (True  and not True  )
+      (False     and True  ) or (True  and False     )
+       False                 or  False
+       False                 # logical_disjunction(False, False)
+
+  * if the first input is :green:`True` and the second input is :red:`False`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 5
+      :force:
+
+      (not first and second) or (first and not second)
+      (not True  and False ) or (True  and not False )
+      (False     and False ) or (True  and True      )
+       False                 or  True
+       True                  # logical_disjunction(False, True)
+
+  * if the first input is :red:`False` and the second input is :green:`True`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 5
+
+      (not first and second) or (first and not second)
+      (not False and True  ) or (False and not True  )
+      (True      and True  ) or (False and False     )
+       True                  or  False
+       True                  # logical_disjunction(True, False)
+
+  * if the first input is :red:`False` and the second input is :red:`False`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 5
+
+      (not first and second) or (first and not second)
+      (not False and False ) or (False and not False )
+      (True      and False ) or (False and True      )
+       False                 or  False
+       False                 # logical_disjunction(False, False)
+
+  ==============  =============== =============== ================  ================  ================= ========================
+  first           second          not first       not second        ((not first)      (first            ((not first) and second)
+                                                                    and               and               or
+                                                                    second)           (not second))     (first and (not second))
+  ==============  =============== =============== ================  ================  ================= ========================
+  :green:`True`   :green:`True`   :red:`False`    :red:`False`      :red:`False`      :red:`False`      :red:`False`
+  :green:`True`   :red:`False`    :red:`False`    :green:`True`     :red:`False`      :green:`True`     :green:`True`
+  :red:`False`    :green:`True`   :green:`True`   :red:`False`      :green:`True`     :red:`False`      :green:`True`
+  :red:`False`    :red:`False`    :green:`True`   :green:`True`     :red:`False`      :red:`False`      :red:`False`
+  ==============  =============== =============== ================  ================  ================= ========================
+
+  I add a `return statement`_ to show this
 
   .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2
+    :lineno-start: 29
+    :emphasize-lines: 52-55
 
     def exclusive_disjunction(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if not first_input:
+        #     if not second_input:
+            # if second_input:
+        # if not first_input and second_input:
+        #     return True
+        # if first_input:
+        #     if not second_input:
+        # if first_input and not second_input:
+        # if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ):
+        #     return True
+            # if second_input:
+        # if not first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        # if (
+        #     (not first_input and not second_input)
+        #     or
+        #     (first_input and second_input)
+        # ):
+        # else:
+        #     return False
+        # return True if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ) else False
+        # if first_input == second_input:
+        #     return False
+        # else:
+        # if not (first_input == second_input):
+        #     return True
+        return logical_disjunction(
+            converse_non_implication(first_input, second_input),
+            logical_conjunction(first_input, not second_input)
+        )
         return not (first_input == second_input)
+        return (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
+
+  the test is still green
+
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` when ``first_input`` and ``second_input`` are the same and returns :green:`True`, if they are NOT. I add an :ref:`if statement<if statements>` to show this with the equality symbol (2 equal signs together :kbd:`=+=` on the keyboard)
+
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 52-55
+
+    def exclusive_disjunction(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if not first_input:
+        #     if not second_input:
+            # if second_input:
+        # if not first_input and second_input:
+        #     return True
+        # if first_input:
+        #     if not second_input:
+        # if first_input and not second_input:
+        # if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ):
+        #     return True
+            # if second_input:
+        # if not first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        # if (
+        #     (not first_input and not second_input)
+        #     or
+        #     (first_input and second_input)
+        # ):
+        # else:
+        #     return False
+        # return True if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ) else False
+        # if first_input == second_input:
+        #     return False
+        # else:
+        # if not (first_input == second_input):
+        #     return True
         if first_input == second_input:
             return False
         else:
             return True
+        return logical_disjunction(
+            converse_non_implication(first_input, second_input),
+            logical_conjunction(first_input, not second_input)
+        )
+        return not (first_input == second_input)
         return (
             (not first_input and second_input)
             or
@@ -1041,14 +1136,92 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   still green
 
-* I remove the commented lines, then use an even simpler `return statement`_ with the NOT equal symbol (``!=``) (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
+* I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<test_logical_negation>` of the new :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 2
+    :lineno-start: 107
+    :emphasize-lines: 3-4
+
+        if first_input == second_input:
+            return False
+        # else:
+        if not (first_input == second_input):
+            return True
+        return logical_disjunction(
+            converse_non_implication(first_input, second_input),
+            logical_conjunction(first_input, not second_input)
+        )
+        return not (first_input == second_input)
+        return (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
+
+  green
+
+* I add a :ref:`conditional expression<conditional expressions>`
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 1-6
+
+        # if first_input == second_input:
+        #     return False
+        # else:
+        # if not (first_input == second_input):
+        #     return True
+        return not (first_input == second_input)
+        return logical_disjunction(
+            converse_non_implication(first_input, second_input),
+            logical_conjunction(first_input, not second_input)
+        )
+        return not (first_input == second_input)
+        return (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
+
+  still green
+
+* I can also write the :ref:`conditional expression<conditional expressions>` with the NOT equal symbol (``!=``) (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 6
+
+        # if first_input == second_input:
+        #     return False
+        # else:
+        # if not (first_input == second_input):
+        #     return True
+        return not (first_input == second_input)
+        return logical_disjunction(
+            converse_non_implication(first_input, second_input),
+            logical_conjunction(first_input, not second_input)
+        )
+        return not (first_input == second_input)
+        return (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 56
 
     def exclusive_disjunction(first_input, second_input):
         return first_input != second_input
+        return not (first_input == second_input)
+        return logical_disjunction(
+            converse_non_implication(first_input, second_input),
+            logical_conjunction(first_input, not second_input)
+        )
         return not (first_input == second_input)
         return (
             (not first_input and second_input)
@@ -1061,10 +1234,11 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * :green:`True`, if the first input is NOT EQUAL to the second input
 * :red:`False`, if the first input is EQUAL to the second input
 * ``first_input != second_input`` - which reads as first input is NOT equal to second input
-* ``not (first_input == second_input)`` - which reads as the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Equality<test_logical_equality>` of the first input and the second input
+* ``not (first_input == second_input)`` - which reads as the :ref:`Logical Negation<test_logical_negation>` of the :ref:`Logical Equality<test_logical_equality>` of the first input and the second input. Ha ha ha.
 * ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot.
+* All of the above statements mean the same thing.
 
-All of the above statements mean the same thing. :ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR`_ or XOR_.
+:ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR`_ or XOR_.
 Would "Logical Inequality" be a better name?
 
 ----

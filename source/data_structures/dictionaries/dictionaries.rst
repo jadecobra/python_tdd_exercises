@@ -401,7 +401,7 @@ I change ``'bap'`` to ``'boom'``
 
           self.assertEqual({False: 'boom'}, {False: 'boom'})
 
-the the test passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
+the test passes. I can use :ref:`False<test_what_is_false>` as a :ref:`key in a dictionary<test_keys_of_a_dictionary>`
 
 ----
 

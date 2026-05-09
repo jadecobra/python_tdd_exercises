@@ -1326,7 +1326,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
   the tests are still green
 
-* I remove the other :ref:`wrappers<what is a decorator function?>` from the the :ref:`subtract function<test_subtraction>`
+* I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
     :lineno-start: 31

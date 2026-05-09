@@ -149,7 +149,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
   - ``self.press_button(number)`` presses the random number
   - ``self.assertEqual(self.tester.session_state['number'], number)`` checks that the value of the ``number`` :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_ is the same as the number that was pressed
   - ``self.press_button('C')`` presses the ``C`` button
-  - ``self.assertEqual(self.tester.session_state['number'], '0')`` checks that the the ``number`` :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_ is set back to ``0`` after the ``C`` button is pressed
+  - ``self.assertEqual(self.tester.session_state['number'], '0')`` checks that the ``number`` :ref:`key<test_keys_of_a_dictionary>` in the `session state object`_ is set back to ``0`` after the ``C`` button is pressed
 
 ----
 

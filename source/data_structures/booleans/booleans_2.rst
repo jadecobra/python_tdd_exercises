@@ -688,7 +688,7 @@ the test passes
 
             self.assertTrue(bool("text"))
 
-  the the test passes
+  the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`, when is this going to end?
 
