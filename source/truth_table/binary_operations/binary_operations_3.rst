@@ -944,7 +944,7 @@ first input     second input   return
     def material_non_implication(first_input, second_input):
         return first_input and not second_input
 
-:ref:`Material NonImplication<test_material_non_implication>`
+:ref:`Material Non-Implication<test_material_non_implication>`
 
 * returns ``first_input and not second_input`` which is the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 * returns :green:`True`, only if the first input is :green:`True` and the second input is :red:`False`
@@ -963,7 +963,7 @@ first input     second input   return
 ----
 
 =================================================================================
-examples of Material NonImplication
+examples of Material Non-Implication
 =================================================================================
 
 ----
@@ -1696,7 +1696,7 @@ first input     second input   return
 - ``first_input or not second_input``
 - :red:`False`, only if the first input is :red:`False` and the second input is :green:`True`
 - the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
-- It is the opposite of :ref:`Converse NonImplication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`True<test_what_is_true>`, only if the first input is :red:`False` and the second input is :green:`True`
+- It is the opposite of :ref:`Converse Non-Implication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`True<test_what_is_true>`, only if the first input is :red:`False` and the second input is :green:`True`
 
 ==============  ============== ==============
 first input     second input   return
@@ -1883,7 +1883,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input or not second_input``
   - returns :red:`False` if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse NonImplication<test_converse_non_implication>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
+  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Non-Implication<test_converse_non_implication>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1909,7 +1909,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* :ref:`Material NonImplication<test_material_non_implication>`
+* :ref:`Material Non-Implication<test_material_non_implication>`
 
   - returns ``first_input and not second_input``
   - returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :red:`False`
@@ -1999,7 +1999,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   :red:`False`    :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* :ref:`Converse NonImplication<test_converse_non_implication>`
+* :ref:`Converse Non-Implication<test_converse_non_implication>`
 
   - returns ``not first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`

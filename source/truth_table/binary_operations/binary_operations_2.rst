@@ -471,8 +471,8 @@ examples of Negate First
   ===============  =================  ================
   battery dead?    is there smoke?    beep
   ===============  =================  ================
-  :green:`yes`     :green:`yes`       :red:`NOT silent`
-  :green:`yes`     :red:`no`          :red:`NOT silent`
+  :green:`yes`     :green:`yes`       :red:`beep`
+  :green:`yes`     :red:`no`          :red:`beep`
   :red:`no`        :green:`yes`       :green:`silent`
   :red:`no`        :red:`no`          :green:`silent`
   ===============  =================  ================
@@ -1083,7 +1083,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
       not (first and second)
       not (False and False) # not logical_conjunction(False, False)
-      not (True)            # not logical_conjunction(False, False)
+      not (False)           # not logical_conjunction(False, False)
       True
 
   ==============  =============== =============== ================
@@ -2452,7 +2452,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
   :red:`False`    :red:`False`   :green:`True`
   ==============  ============== ==============
 
-* :ref:`Converse NonImplication<test_converse_non_implication>`
+* :ref:`Converse Non-Implication<test_converse_non_implication>`
 
   - returns ``not first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
@@ -2518,7 +2518,7 @@ and
 * :ref:`Logical Conjunction is "AND"<test_logical_conjunction>`
 * :ref:`Logical Negation is "NOT" <test_logical_negation>`
 
-3 :ref:`binary operations<truth table: binary operations>` have been written with :ref:`AND<test_logical_conjunction>`, 3 with :ref:`NOT<test_logical_negation>` and another was written with :ref:`OR<test_logical_disjunction>`.
+Three :ref:`binary operations<truth table: binary operations>` were written with :ref:`AND<test_logical_conjunction>`, three with :ref:`NOT<test_logical_negation>` and one was written with :ref:`OR<test_logical_disjunction>`.
 
 =============================================== =============  ============= ============= ============= ==============================================================
 return                                          True,          True,         False,        False,        name of operation

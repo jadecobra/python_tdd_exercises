@@ -1,6 +1,6 @@
 .. meta::
   :description: Build a safety-critical ParkingGarage logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—door status, timers, and too_hot failsafes—while writing clean, verified code.
-  :keywords: Python parking garage logic project, safety-critical systems python tutorial, TDD python parking garage example, how to code a parking garage in python, python multiple boolean inputs tutorial, red green refactor examples, python truth table practice, learn Converse NonImplication python, uv python project management, pytest-watcher logic testing, Jacob Itegboje
+  :keywords: Python parking garage logic project, safety-critical systems python tutorial, TDD python parking garage example, how to code a parking garage in python, python multiple boolean inputs tutorial, red green refactor examples, python truth table practice, learn Converse Non-Implication python, uv python project management, pytest-watcher logic testing, Jacob Itegboje
 
 .. include:: ../../links.rst
 
@@ -754,7 +754,7 @@ the test passes
   - it returns :green:`'HEATING'` if the door is :red:`closed` AND the start button is :green:`pushed`
   - it returns :red:`'OFF'` if the :ref:`condition<if statements>`is NOT met
 
-  is this :ref:`Converse NonImplication?<test_converse_non_implication>`
+  is this :ref:`Converse Non-Implication?<test_converse_non_implication>`
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_closed_door` in ``test_parking garage.py``
 

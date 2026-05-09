@@ -2747,9 +2747,9 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
     - returns ``first or not second``
     - returns :red:`False` if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse NonImplication<test_converse_non_implication>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Non-Implication<test_converse_non_implication>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
 
-  * :ref:`Converse NonImplication<test_converse_non_implication>`
+  * :ref:`Converse Non-Implication<test_converse_non_implication>`
 
     - returns ``not first and second``
     - returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
@@ -2795,9 +2795,9 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
     - returns ``not first or second``
     - returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material NonImplication<test_material_non_implication>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material Non-Implication<test_material_non_implication>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
 
-  * :ref:`Material NonImplication<test_material_non_implication>`
+  * :ref:`Material Non-Implication<test_material_non_implication>`
 
     - returns ``first and not second``
     - returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`

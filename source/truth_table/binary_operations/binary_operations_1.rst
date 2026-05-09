@@ -1,5 +1,5 @@
 .. meta::
-  :description: Learn Python truth tables for binary operations (Contradiction, AND/Conjunction, Project Second, and Converse NonImplication) using TDD. This tutorial explains how to implement complex logic using if statements, nested conditions, the 'and' operator, and ternary conditional expressions. Master logical gates with real-world examples like light switches, voting eligibility, and multi-factor authentication.
+  :description: Learn Python truth tables for binary operations (Contradiction, AND/Conjunction, Project Second, and Converse Non-Implication) using TDD. This tutorial explains how to implement complex logic using if statements, nested conditions, the 'and' operator, and ternary conditional expressions. Master logical gates with real-world examples like light switches, voting eligibility, and multi-factor authentication.
   :keywords: Jacob Itegboje, Python truth table binary operations, logical conjunction AND operator, python contradiction function, project second logic, converse non-implication python, python if statement tutorial, nested if statements vs and operator, python ternary operator examples, conditional expressions python, bool() truthy falsy, binary logic gates in python, Red Green Refactor truth table, python unit testing logical operators, MFA logic gate, light switch logic example, programming truth tables for beginners, python and operator vs nested if, python return true if else false, boolean algebra for programmers
 
 .. include:: ../../links.rst
@@ -1954,7 +1954,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         )
         return not first_input and second_input
 
-:ref:`Converse NonImplication<test_converse_non_implication>` always returns
+:ref:`Converse Non-Implication<test_converse_non_implication>` always returns
 
 * ``not first_input and second_input``
 * the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Negation<test_logical_negation>` of the first input, and the second input
@@ -1963,7 +1963,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 ----
 
 =================================================================================
-examples of Converse NonImplication
+examples of Converse Non-Implication
 =================================================================================
 
 ----
@@ -2084,7 +2084,7 @@ review
 
 Binary Operations take 2 inputs, each input can be :green:`True` or :red:`False`, if the first input is named ``first_input`` and the second input is named ``second_input``, the tests show that
 
-* :ref:`Converse NonImplication<test_converse_non_implication>`
+* :ref:`Converse Non-Implication<test_converse_non_implication>`
 
   ==============  ============== ==============
   first input     second input   return
