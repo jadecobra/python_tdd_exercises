@@ -39,6 +39,9 @@ def negate_first(first_input, second_input):
 
 
 def logical_nand(first_input, second_input):
+    return not (
+        logical_conjunction(first_input, second_input)
+    )
     return not (first_input and second_input)
 
 
