@@ -504,7 +504,7 @@ test_addition
 
 ----
 
-The ``add`` :ref:`function<what is a function?>` passes the test and does not do what I want because it always returns ``1``. I want it to return the result of a calculation with the inputs
+The ``add`` :ref:`function<what is a function?>` passes the test, and does not do what I want because it always returns ``1``. I want it to return the result of a calculation with the inputs
 
 
 * I add another :ref:`assertion<what is an assertion?>` to show the problem with the :ref:`function<what is a function?>` in ``test_calculator.py``
@@ -783,7 +783,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test and does not do
 
   .. code-block:: python
 
-    AssertionError: -5.555499999999999 != -5
+    AssertionError: -5.555499999999999 != 0.30000000000000004
 
   whaaaaat?!
 
