@@ -1486,7 +1486,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   the test passes. :ref:`material_non_implication<test_material_non_implication>` returns
 
   - :green:`True`, if the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  - :red:`False`, if the above condition is not met
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, where the first input is :red:`False` and the second input is :green:`True` in ``test_binary.py``
 
