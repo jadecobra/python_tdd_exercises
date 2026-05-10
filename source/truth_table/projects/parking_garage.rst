@@ -2997,7 +2997,7 @@ the only time this ParkingGarage heats food is when the door is :green:`closed`,
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<ParkingGarage: tests and solutions>`
+.. :ref:`Do you want to see all the CODE I typed in this chapter?<ParkingGarage: tests and solutions>`
 
 ----
 

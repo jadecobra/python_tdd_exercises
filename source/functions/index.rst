@@ -25,7 +25,7 @@ Part of `Computer Programming`_ is sending input data to a process and getting o
 
     input_data -> process -> output_data
 
-I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
+Where ``process`` is the function_. I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
 
 .. math::
 
@@ -38,15 +38,14 @@ in other words
                   f(x) -> y
   function(input_data) -> output_data
 
-the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and gives me ``output_data`` as the result.
+the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and returns ``output_data`` as the result.
 
 functions_ are made with the def_ keyword in Python_, a name, parentheses and a colon at the end. The code that makes up the :ref:`function<what is a function?>` is indented to the right on the line after the colon.
 
 .. code-block:: python
 
   def name_of_function():
-      code indented to the right
-      more code indented to the right
+      the body of the function
       ...
 
 ----
@@ -930,7 +929,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   * the test checks if the result of the call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is :ref:`None<what is None?>`
   * the :ref:`function<what is a function?>` definition simply says pass_ and the test passes
-  * pass_ is a special keyword that allows the :ref:`function<what is a function?>` definition to follow Python_ language rules
+  * pass_ is a special keyword that allows the :ref:`function<what is a function?>` definition to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body)
   * the test passes because all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``, which leads me to the next test
 
 :ref:`I can make a function with pass<test_making_a_function_w_pass>`

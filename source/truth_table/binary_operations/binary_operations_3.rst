@@ -894,9 +894,9 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   - ``not first_input and second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input
   - ``not first_input`` is the :ref:`Logical Negation<test_logical_negation>` of ``first_input``
-  - ``first_input and not second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)` of the second input
+  - ``first_input and not second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
   - ``not second_input`` is the :ref:`Logical Negation<test_logical_negation>` of ``second_input``
-  - ``((not first_input and second_input) or (first_input and not second_input))`` can be thought of as the :ref:`Logical Disjunction (OR)` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)` of the second input
+  - ``((not first_input and second_input) or (first_input and not second_input))`` can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
 
     .. code-block:: python
 
@@ -914,7 +914,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
           logical_conjunction(first_input, not second_input)
       )
 
-    or as the :ref:`Logical Disjunction (OR)` of the :ref:`Converse Non-Implication<test_converse_non_implication>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)` of the second input
+    or as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Converse Non-Implication<test_converse_non_implication>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
 
     .. code-block:: python
 
@@ -1238,8 +1238,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * ``(not first_input and second_input) or (first_input and not second_input)`` which is the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input. Wow! That's a lot.
 * All of the above statements mean the same thing.
 
-:ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR`_ or XOR_.
-Would "Logical Inequality" be a better name?
+:ref:`Exclusive Disjunction<test_exclusive_disjunction>` is also known as `Exclusive OR`_ or XOR_. Would "Logical Inequality" be a better name?
 
 ----
 
@@ -1325,6 +1324,17 @@ examples of Exclusive Disjunction
 test_material_non_implication
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`material_non_implication<test_material_non_implication>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :green:`False`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -1333,21 +1343,45 @@ test_material_non_implication
 
 ----
 
-I add another test to ``test_binary.py``
+I add a test for :ref:`material_non_implication<test_material_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :red:`False`
+==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 95
-  :emphasize-lines: 7-10
+  :lineno-start: 135
+  :emphasize-lines: 23-28
 
       def test_exclusive_disjunction(self):
-          self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
-          self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
-          self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
-          self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
+          self.assertFalse(
+              src.truth_table.exclusive_disjunction(
+                  True, True
+              )
+          )
+          self.assertTrue(
+              src.truth_table.exclusive_disjunction(
+                  True, False
+              )
+          )
+          self.assertTrue(
+              src.truth_table.exclusive_disjunction(
+                  False, True
+              )
+          )
+          self.assertFalse(
+              src.truth_table.exclusive_disjunction(
+                  False, False
+              )
+          )
 
       def test_material_non_implication(self):
           self.assertFalse(
-              src.truth_table.material_non_implication(True, True)
+              src.truth_table.material_non_implication(
+                  True, True
+              )
           )
 
 
@@ -1358,6 +1392,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'. Did you mean: 'converse_non_implication'?
+
+:ref:`material_non_implication<test_material_non_implication>` is not in ``truth_table.py``
 
 ----
 
@@ -1370,11 +1406,16 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 51
-  :emphasize-lines: 11-12
+  :lineno-start: 56
+  :emphasize-lines: 16-17
 
   def exclusive_disjunction(first_input, second_input):
       return first_input != second_input
+      return not (first_input == second_input)
+      return logical_disjunction(
+          converse_non_implication(first_input, second_input),
+          logical_conjunction(first_input, not second_input)
+      )
       return not (first_input == second_input)
       return (
           (not first_input and second_input)
@@ -1388,12 +1429,6 @@ I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_
 
 the test passes. :ref:`material_non_implication<test_material_non_implication>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
-
 ----
 
 =================================================================================
@@ -1404,17 +1439,30 @@ first input     second input   return
 
 * I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False` to :ref:`test_material_non_implication` in ``test_binary.py``
 
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
+
   .. code-block:: python
     :lineno-start: 101
-    :emphasize-lines: 5-7
+    :emphasize-lines: 7-11
 
         def test_material_non_implication(self):
             self.assertFalse(
-                src.truth_table.material_non_implication(True, True)
+                src.truth_table.material_non_implication(
+                    True, True
+                )
             )
             self.assertTrue(
-                src.truth_table.material_non_implication(True, False)
+                src.truth_table.material_non_implication(
+                    True, False
+                )
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1422,31 +1470,31 @@ first input     second input   return
 
     AssertionError: False is not true
 
+  because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+
 * I add an :ref:`if statement<if statements>` to :ref:`material_non_implication<test_material_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2-4
+    :lineno-start: 71
+    :emphasize-lines: 2-3
 
     def material_non_implication(first_input, second_input):
-        if first_input == True:
-            if second_input == False:
-                return True
+        if second_input == False:
+            return True
         return False
 
   the test passes. :ref:`material_non_implication<test_material_non_implication>` returns
 
-  - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
+  - :green:`True`, if the second input is :red:`False`
   - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+
+* I add an :ref:`assertion<what is an assertion?>` for the third case, where the first input is :red:`False` and the second input is :green:`True` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :red:`False`
-  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :green:`False`
   ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the third case, where the first input is :red:`False` and the second input is :green:`True` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 101
@@ -1469,15 +1517,13 @@ first input     second input   return
   - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
   - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case, where the first input is :red:`False` and the second input is :red:`False`
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :red:`False`
-  :green:`True`   :red:`False`   :green:`True`
-  :red:`False`    :green:`True`  :red:`False`
+  :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the fourth case, where the first input is :red:`False` and the second input is :red:`False`
 
   .. code-block:: python
     :lineno-start: 101
@@ -1618,15 +1664,6 @@ first input     second input   return
 * returns :green:`True`, only if the first input is :green:`True` and the second input is :red:`False`
 * is the :ref:`Logical Negation<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :red:`False` only if the first input is :green:`True` and the second input is :red:`False`
 * can be thought of as a claim that does not deliver
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-:green:`True`   :red:`False`   :green:`True`
-:red:`False`    :green:`True`  :red:`False`
-:red:`False`    :red:`False`   :red:`False`
-==============  ============== ==============
 
 ----
 
