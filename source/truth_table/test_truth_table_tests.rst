@@ -2741,96 +2741,96 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
     - always returns :red:`False`
     - never returns :green:`True`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
 
   * :ref:`Converse Implication<test_converse_implication>`
 
     - returns ``first or not second``
     - returns :red:`False` if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Non-Implication<test_converse_non_implication>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Converse Non-Implication<test_converse_non_implication>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Converse Non-Implication<test_converse_non_implication>`
 
     - returns ``not first and second``
     - returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Exclusive Disjunction<test_exclusive_disjunction>`
 
     - returns ``first != second``
     - returns :green:`True` only if ``first`` and ``second`` are NOT equal
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :green:`True` only if ``first`` and ``second`` are equal
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :green:`True` only if ``first`` and ``second`` are equal
 
   * :ref:`Logical Conjunction<test_logical_conjunction>` returns
 
     - returns ``first and second``
     - returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Logical Disjunction<test_logical_disjunction>`
 
     - returns ``first or second``
     - returns :red:`False` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Logical Equality<test_logical_equality>`
 
     - returns ``first == second``
     - returns :green:`True` only if ``first`` and ``second`` are equal
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Exclusive Disjunction (Exclusive OR)<test_exclusive_disjunction>` which returns :green:`True` only if ``first`` and ``second`` are NOT equal
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Exclusive Disjunction (Exclusive OR)<test_exclusive_disjunction>` which returns :green:`True` only if ``first`` and ``second`` are NOT equal
 
   * :ref:`Logical NAND<test_logical_nand>`
 
     - returns ``not (first and second)``
     - returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Logical NOR<test_logical_nor>`
 
     - returns ``not (first or second)``
     - returns :green:`True` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which returns :red:`False` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which returns :red:`False` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Material/Logical Implication<test_material_implication>`
 
     - returns ``not first or second``
     - returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material Non-Implication<test_material_non_implication>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Material Non-Implication<test_material_non_implication>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Material Non-Implication<test_material_non_implication>`
 
     - returns ``first and not second``
     - returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Negate First<test_negate_first>`
 
     - always returns ``not first``
     - returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project First<test_project_first>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Project First<test_project_first>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Negate Second<test_negate_second>`
 
     - always returns ``not second``
     - returns :green:`True` only if ``second`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which returns :green:`True` only if ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Project Second<test_project_second>` which returns :green:`True` only if ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Project First<test_project_first>`
 
     - always returns ``first``
     - returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>`
   * :ref:`Project Second<test_project_second>`
 
     - always returns ``second``
     - returns :green:`True` only if ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Tautology<test_tautology>`
 
     - always returns :green:`True`
     - never returns :red:`False`
-    - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
 
 and
 

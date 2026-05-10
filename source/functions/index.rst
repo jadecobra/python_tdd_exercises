@@ -2573,7 +2573,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   I get a tuple_ that has another tuple_ and a :ref:`dictionary<what is a dictionary?>`
 
-* I copy the tuple_ from the terminal_ and use it to change the expectation in ``test_functions_w_unknown_arguments`` in ``test_functions.py``
+* I copy the tuple_ from the terminal_ and use it to change the expectation in :ref:`test_functions_w_unknown_arguments` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 90

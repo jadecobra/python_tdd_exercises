@@ -425,7 +425,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 * ``not first_input``
 * :green:`True`, if the first input is :red:`False`
 * :red:`False`, if the first input is :green:`True`
-* the :ref:`opposite (Logical Negation)<test_logical_negation>` of the first input in all cases, it does not care about the second input
+* the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input in all cases, it does not care about the second input
 
 ----
 
@@ -1044,7 +1044,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         else:
             return False
 
-* :ref:`logical_nand<test_logical_nand>` returns ``not (first_input and second_input)``, which means that in the 4 cases
+* :ref:`logical_nand<test_logical_nand>` returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, which means that in the four cases
 
   - if the first input is :green:`True` and the second input is :green:`True`, :ref:`logical_nand<test_logical_nand>` returns
 
@@ -1150,8 +1150,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 :ref:`Logical NAND<test_logical_nand>`
 
 * returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-* returns ``not (first_input and second_input)`` which is the :ref:`opposite (Logical Negation)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
-* is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+* returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
+* is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
 * is :ref:`not and<test_logical_nand>`
 
@@ -2217,7 +2217,19 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
     def logical_disjunction(first_input, second_input):
         return first_input or second_input
 
-* :ref:`logical_disjunction<test_logical_disjunction>` returns ``not ((not first_input) and (not second_input))`` which is the :ref:`opposite (Logical Negation)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and the :ref:`Logical Negation<test_logical_negation>` of ``second_input``. This means that in the 4 cases
+* :ref:`logical_disjunction<test_logical_disjunction>` returns ``not ((not first_input) and (not second_input))`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and the :ref:`Logical Negation<test_logical_negation>` of ``second_input``.
+
+  - ``not first_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input``
+
+    * if the first input is :green:`True`, this part of the statement is :red:`False`
+    * if the first input is :red:`False`, this part of the statement is :green:`True`
+
+  - ``not second_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``second_input``
+
+    * if the second input is :green:`True`, this part of the statement is :red:`False`
+    * if the second input is :red:`False`, this part of the statement is :green:`True`
+
+  This means that in the four cases
 
   - if the first input is :green:`True` and the second input is :green:`True`, :ref:`logical_disjunction<test_logical_disjunction>` returns
 
@@ -2279,7 +2291,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
 * ``first_input or second_input``
 * :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
-* is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
+* is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
 
 ----
 
@@ -2396,7 +2408,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input or second_input``
   - returns :red:`False` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
-  - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
+  - is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2411,7 +2423,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns :green:`True`
   - never returns :red:`False`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2426,7 +2438,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``not (first_input and second_input)``
   - returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2441,7 +2453,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns ``not first_input``
   - returns :green:`True` only if ``first_input`` is :red:`False`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project First<test_project_first>` which returns :green:`True` only if ``first_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Project First<test_project_first>` which returns :green:`True` only if ``first_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2456,7 +2468,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``not first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2471,7 +2483,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns ``second_input``
   - returns :green:`True` only if ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second_input`` is :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2486,7 +2498,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2501,7 +2513,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns :red:`False`
   - never returns :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
 
   ==============  ============== ==============
   first input     second input   return

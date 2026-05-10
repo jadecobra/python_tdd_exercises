@@ -500,8 +500,8 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   the test is still green, because
 
-  - because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
-  - because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
 * I move all the :ref:`if statements` together
 
@@ -893,9 +893,17 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns ``((not first_input and second_input) or (first_input and not second_input))``
 
   - ``not first_input and second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input
-  - ``not first_input`` is the :ref:`Logical Negation<test_logical_negation>` of ``first_input``
+  - ``not first_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input``
+
+    * if the first input is :green:`True`, this part of the statement is :red:`False`
+    * if the first input is :red:`False`, this part of the statement is :green:`True`
+
   - ``first_input and not second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
-  - ``not second_input`` is the :ref:`Logical Negation<test_logical_negation>` of ``second_input``
+  - ``not second_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``second_input``
+
+    * if the second input is :green:`True`, this part of the statement is :red:`False`
+    * if the second input is :red:`False`, this part of the statement is :green:`True`
+
   - ``((not first_input and second_input) or (first_input and not second_input))`` can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
 
     .. code-block:: python
@@ -934,7 +942,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
     because :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
 
-  This means that in the 4 cases
+  This means that in the four cases
 
   * if the first input is :green:`True` and the second input is :green:`True`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
@@ -1570,120 +1578,283 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   because the :ref:`function<what is a function?>` returned :green:`True` and the text expects :red:`False`
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for the one case that returns :green:`True` to the :ref:`material_non_implication function<test_material_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
-
-  still green. :ref:`material_non_implication<test_material_non_implication>` returns
-
-  - :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
-  - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :green:`True` and the second input is :red:`False` - this is the only case where it returns :green:`True`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
-
-* I change the two :ref:`if statements` to one, in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 71
     :emphasize-lines: 2-4
 
     def material_non_implication(first_input, second_input):
-        # if first_input == True:
-            # if second_input == False:
-        if first_input == True and second_input == False:
+        if first_input == True:
+            if second_input == False:
                 return True
         return False
 
-  green
-
-* I add :ref:`not<test_logical_negation>`
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2-3
-
-    def material_non_implication(first_input, second_input):
-        # if first_input == True and second_input == False:
-        if first_input == True and not second_input == True:
-                return True
-        return False
-
-  still green
+  the test passes
 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2-3
+    :lineno-start: 71
+    :emphasize-lines: 2-5
 
     def material_non_implication(first_input, second_input):
-        # if first_input == True and not second_input == True:
-        if bool(first_input) == True and not bool(second_input) == True:
+        # if first_input == True:
+        if bool(first_input) == True:
+            # if second_input == False:
+            if bool(second_input) == False:
                 return True
         return False
 
   the test is still green
 
-* I remove ``== True``
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2-3
+    :lineno-start: 71
+    :emphasize-lines: 5-6
 
     def material_non_implication(first_input, second_input):
-        # if bool(first_input) == True and not bool(second_input) == True:
-        if bool(first_input) and not bool(second_input):
+        # if first_input == True:
+        if bool(first_input) == True:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            if not bool(second_input) == True:
                 return True
         return False
 
   still green
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2-3
+    :lineno-start: 71
+    :emphasize-lines: 3-4, 7-8
 
     def material_non_implication(first_input, second_input):
-        # if bool(first_input) and not bool(second_input):
-        if first_input and not second_input:
+        # if first_input == True:
+        # if bool(first_input) == True:
+        if bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            if not bool(second_input):
                 return True
         return False
 
   green
 
-* I add a :ref:`conditional expression<conditional expressions>`
+* I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 4-5, 9-10
 
     def material_non_implication(first_input, second_input):
-        return True if first_input and not second_input else False
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        if first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            if not second_input:
+                return True
+        return False
+
+  still green, because
+
+  - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 5, 10-11
+
+    def material_non_implication(first_input, second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
         if first_input and not second_input:
                 return True
         return False
 
+  the test is still green, because I can use :ref:`AND<test_logical_conjunction>` to put two :ref:`if statements` together when one is indented under the other. For example
+
+  .. code-block:: python
+
+    if something:
+        if something_else:
+
+  can also be written as
+
+  .. code-block:: python
+
+    if something and something_else:
+
+* I add a :ref:`conditional expression<conditional expressions>`
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 11-19
+
+    def material_non_implication(first_input, second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
+        # if first_input and not second_input:
+        #         return True
+        # return False
+        return (
+            True
+            if first_input and not second_input
+            else False
+        )
+
   still green
 
-* I make the statement simpler
+* I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 14-20
 
     def material_non_implication(first_input, second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
+        # if first_input and not second_input:
+        #         return True
+        # return False
+        # return (
+        #     True
+        #     if first_input and not second_input
+        #     else False
+        # )
         return first_input and not second_input
-        return True if first_input and not second_input else False
 
-  the test is still green
+  green
 
-* I remove the other statement in the :ref:`function<what is a function?>`
+* :ref:`material_non_implication<test_material_non_implication>` returns ``first_input and not second_input``
+
+  - ``not second_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``second_input``
+
+    * if the second input is :green:`True`, this part of the statement is :red:`False`
+    * if the second input is :red:`False`, this part of the statement is :green:`True`
+  - ``first_input and not second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
+
+  this means that in the four cases
+
+  - if the first input is :green:`True` and the second input is :green:`True`, :ref:`material_non_implication<test_material_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      first_input and not second_input
+      True        and not True
+      True        and False # logical_conjunction(True, False)
+      False                 # logical_conjunction(True, False)
+
+  - if the first input is :green:`True` and the second input is :red:`False`, :ref:`material_non_implication<test_material_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      first_input and not second_input
+      True        and not False
+      True        and True  # logical_conjunction(True, True)
+      True                  # logical_conjunction(True, True)
+
+  - if the first input is :red:`False` and the second input is :green:`True`, :ref:`material_non_implication<test_material_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      first_input and not second_input
+      False       and not True
+      False       and False # logical_conjunction(False, False)
+      False                 # logical_conjunction(False, False)
+
+  - if the first input is :red:`False` and the second input is :red:`False`, :ref:`material_non_implication<test_material_non_implication>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 4
+
+      first_input and not second_input
+      False       and not False
+      False       and True  # logical_conjunction(False, True)
+      False                 # logical_conjunction(False, True)
+
+  ==============  =============== =============== ================
+  first           second          not             (first and not second)
+  ==============  =============== =============== ================
+  :green:`True`   :green:`True`   :red:`False`    :red:`False`
+  :green:`True`   :red:`False`    :green:`True`   :green:`True`
+  :red:`False`    :green:`True`   :red:`False`    :red:`False`
+  :red:`False`    :red:`False`    :green:`True`   :red:`False`
+  ==============  =============== =============== ================
+
+  I add a `return statement`_ to show this
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 71
+    :emphasize-lines: 19-21
 
     def material_non_implication(first_input, second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
+        # if first_input and not second_input:
+        #         return True
+        # return False
+        # return (
+        #     True
+        #     if first_input and not second_input
+        #     else False
+        # )
+        return logical_conjunction(
+            first_input, not second_input
+        )
+        return first_input and not second_input
+
+  still green
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 71
+
+    def material_non_implication(first_input, second_input):
+        return logical_conjunction(
+            first_input, not second_input
+        )
         return first_input and not second_input
 
 :ref:`Material Non-Implication<test_material_non_implication>`
@@ -1729,74 +1900,19 @@ examples of Material Non-Implication
   :red:`no`         :red:`no`           :red:`no`
   ================  ==================  ==================
 
-* the boy who cried wolf, if the inputs
+* the boy who cried wolf, if the inputs are
 
   - did the boy cry?
   - was there a wolf?
 
   ================  ==================  ==================
-  boy cried         wolf                boy cried wolf
+  boy cried         wolf                false claim
   ================  ==================  ==================
   :green:`yes`      :green:`yes`        :red:`no`
   :green:`yes`      :red:`no`           :green:`yes`
   :red:`no`         :green:`yes`        :red:`no`
   :red:`no`         :red:`no`           :red:`no`
   ================  ==================  ==================
-
-.. NOTE::
-
-  ``return first_input and not second_input`` returns the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of  the second input. This means that in the 4 cases
-
-  - if the first input is :green:`True` and the second input is :green:`True`, :ref:`material_non_implication<test_material_non_implication>` returns
-
-    .. code-block:: python
-      :emphasize-lines: 4
-
-      first and not second
-      True  and not True
-      True  and False     # logical_conjunction(True, False)
-      False               # logical_conjunction(True, False)
-
-  - if the first input is :green:`True` and the second input is :red:`False`, :ref:`material_non_implication<test_material_non_implication>` returns
-
-    .. code-block:: python
-      :emphasize-lines: 4
-
-      first and not second
-      True  and not False
-      True  and True      # logical_conjunction(True, True)
-      True                # logical_conjunction(True, True)
-
-  - if the first input is :red:`False` and the second input is :green:`True`, :ref:`material_non_implication<test_material_non_implication>` returns
-
-    .. code-block:: python
-      :emphasize-lines: 4
-
-      first and not second
-      False and not True
-      False and False     # logical_conjunction(False, False)
-      False               # logical_conjunction(False, False)
-
-  - if the first input is :red:`False` and the second input is :red:`False`, :ref:`material_non_implication<test_material_non_implication>` returns
-
-    .. code-block:: python
-      :emphasize-lines: 4
-
-      first and not second
-      False and not False
-      False and True      # logical_conjunction(False, True)
-      False               # logical_conjunction(False, True)
-
-    ==============  =============== ================= ================
-    first           second          not second        first
-                                                      and
-                                                      (not second)
-    ==============  =============== ================= ================
-    :green:`True`   :green:`True`   :red:`False`      :red:`False`
-    :green:`True`   :red:`False`    :green:`True`     :green:`True`
-    :red:`False`    :green:`True`   :red:`False`      :red:`False`
-    :red:`False`    :red:`False`    :green:`True`     :red:`False`
-    ==============  =============== ================= ================
 
 ----
 
@@ -2522,7 +2638,7 @@ because
       material_non_implication(first_input, second_input)
   )
 
-This means that in the 4 cases
+This means that in the four cases
 
 * if the first input is :green:`True` and the second input is :green:`True`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
@@ -2616,7 +2732,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input or not second_input``
   - returns :red:`False` if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Non-Implication<test_converse_non_implication>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Converse Non-Implication<test_converse_non_implication>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2631,7 +2747,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns ``first_input``
   - returns :green:`True` only if ``first_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which returns :green:`True` only if ``first_input`` is :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Negate First<test_negate_first>` which returns :green:`True` only if ``first_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2646,7 +2762,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input and not second_input``
   - returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :red:`False`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Material/Logical Implication<test_material_implication>` which returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2661,7 +2777,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input != second_input``
   - returns :green:`True` only if ``first_input`` and ``second_input`` are NOT equal
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :green:`True` only if ``first_input`` and ``second_input`` are equal
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Equality<test_logical_equality>` which returns :green:`True` only if ``first_input`` and ``second_input`` are equal
 
   ==============  ============== ==============
   first input     second input   return
@@ -2676,7 +2792,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input or second_input``
   - returns :red:`False` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
-  - is the  :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
+  - is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2691,7 +2807,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns :green:`True`
   - never returns :red:`False`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2706,7 +2822,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``not (first_input and second_input)``
   - returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2721,7 +2837,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns ``not first_input``
   - returns :green:`True` only if ``first_input`` is :red:`False`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Project First<test_project_first>` which returns :green:`True` only if ``first_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Project First<test_project_first>` which returns :green:`True` only if ``first_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2736,7 +2852,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``not first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Converse Implication<test_converse_implication>` which returns :red:`False` if ``first_input`` is :red:`False` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2751,7 +2867,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns ``second_input``
   - returns :green:`True` only if ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second_input`` is :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Negate Second<test_negate_second>` which returns :green:`True` only if ``second_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2766,7 +2882,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input and second_input``
   - returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NAND<test_logical_nand>` which returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2781,7 +2897,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - always returns :red:`False`
   - never returns :green:`True`
-  - is the :ref:`opposite (Logical Negation)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Tautology<test_tautology>` which always returns :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
