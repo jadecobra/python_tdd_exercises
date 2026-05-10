@@ -454,7 +454,7 @@ first input     second input   return
 
 ----
 
-I add a new test with an :ref:`assertion<what is an assertion?>` for the first case, which is where the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+I add a new test with an :ref:`assertion<what is an assertion?>` for the first case, which is when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -1180,7 +1180,7 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case where the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return

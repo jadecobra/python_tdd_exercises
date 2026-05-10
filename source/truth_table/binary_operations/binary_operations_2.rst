@@ -653,7 +653,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   - :red:`False`, if the above condition is not met
   - the :ref:`logical negation<test_logical_negation>` of the second input so far
 
-* I add another :ref:`assertion<what is an assertion?>`, for the case where the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_nand` in ``test_binary.py``
+* I add another :ref:`assertion<what is an assertion?>`, for the case when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_nand` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1741,7 +1741,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
-* I add an :ref:`assertion<what is an assertion?>` for the fourth case, where the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return

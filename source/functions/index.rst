@@ -1607,7 +1607,7 @@ because ...
 
 ----
 
-* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add a test to ``test_functions.py``
+* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_functions_w_positional_arguments` in  ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 44

@@ -117,7 +117,7 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`exclusive_disjunction<test_exclusive_disjunction>` with an :ref:`assertion<what is an assertion?>` for the case where the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+I add a test for :ref:`exclusive_disjunction<test_exclusive_disjunction>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -1488,7 +1488,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   - :green:`True`, if the second input is :red:`False`
   - :red:`False`, if the above condition is not met
 
-* I add an :ref:`assertion<what is an assertion?>` for the third case, where the first input is :red:`False` and the second input is :green:`True` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the third case to :ref:`test_material_non_implication`, for when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -1497,27 +1497,35 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 8-10
+    :lineno-start: 157
+    :emphasize-lines: 12-16
 
         def test_material_non_implication(self):
             self.assertFalse(
-                src.truth_table.material_non_implication(True, True)
+                src.truth_table.material_non_implication(
+                    True, True
+                )
             )
             self.assertTrue(
-                src.truth_table.material_non_implication(True, False)
+                src.truth_table.material_non_implication(
+                    True, False
+                )
             )
             self.assertFalse(
-                src.truth_table.material_non_implication(False, True)
+                src.truth_table.material_non_implication(
+                    False, True
+                )
             )
+
+
+    # Exceptions seen
 
   the test is still green. :ref:`material_non_implication<test_material_non_implication>` returns
 
-  - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :green:`True` and the second input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  - :green:`True`, if the second input is :red:`False`
+  - :red:`False`, if the above condition is not met
 
-* I add an :ref:`assertion<what is an assertion?>` for the fourth case, where the first input is :red:`False` and the second input is :red:`False`
+* I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1526,25 +1534,45 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 11-13
+    :lineno-start: 157
+    :emphasize-lines: 17-21
 
         def test_material_non_implication(self):
             self.assertFalse(
-                src.truth_table.material_non_implication(True, True)
+                src.truth_table.material_non_implication(
+                    True, True
+                )
             )
             self.assertTrue(
-                src.truth_table.material_non_implication(True, False)
+                src.truth_table.material_non_implication(
+                    True, False
+                )
             )
             self.assertFalse(
-                src.truth_table.material_non_implication(False, True)
+                src.truth_table.material_non_implication(
+                    False, True
+                )
             )
             self.assertFalse(
-                src.truth_table.material_non_implication(False, False)
+                src.truth_table.material_non_implication(
+                    False, False
+                )
             )
 
 
     # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  because the :ref:`function<what is a function?>` returned :green:`True` and the text expects :red:`False`
+
+* I add an :ref:`if statement<if statements>`
+
+  .. code-block:: python
 
   still green. :ref:`material_non_implication<test_material_non_implication>` returns
 
