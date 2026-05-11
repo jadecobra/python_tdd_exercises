@@ -2214,10 +2214,10 @@ examples of Logical Disjunction
 
 ----
 
-* system works, if the inputs are
+* the system works, if the inputs are
 
-  - is main system running?
-  - is backup system running?
+  - is the main system running?
+  - is the backup system running?
 
   ================  ==================  ==================
   is main running?  is backup running?  is system working?
