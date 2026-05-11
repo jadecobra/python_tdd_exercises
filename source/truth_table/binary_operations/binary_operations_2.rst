@@ -127,7 +127,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 49
+  :lineno-start: 57
   :emphasize-lines: 23-26
 
       def test_converse_non_implication(self):
@@ -186,7 +186,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
     def converse_non_implication(first_input, second_input):
         return logical_conjunction(
-            not first_input,
+            logical_negation(first_input),
             second_input
         )
         return not first_input and second_input
@@ -214,7 +214,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 79
     :emphasize-lines: 5-7
 
         def test_negate_first(self):
@@ -243,7 +243,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 79
     :emphasize-lines: 8-10
 
         def test_negate_first(self):
@@ -266,10 +266,12 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
     AssertionError: False is not true
 
+  because the :ref:`negate_first function<test_negate_first>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+
 * I add an :ref:`if statement<if statements>` for this case to :ref:`negate_first<test_negate_first>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 37
     :emphasize-lines: 2-3
 
     def negate_first(first_input, second_input):
@@ -279,7 +281,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   the test passes. :ref:`negate_first<test_negate_first>` returns
 
-  - :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
+  - :green:`True`, if the first input is :red:`False`
   - :red:`False`, if the above :ref:`condition<if statements>` is not met
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False` to :ref:`test_negate_first` in ``test_binary.py``
@@ -291,7 +293,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 79
     :emphasize-lines: 11-13
 
         def test_negate_first(self):
@@ -375,21 +377,40 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
 
-* I use a :ref:`conditional expression (ternary operator)<conditional expressions>`
+* I add an :ref:`else clause<if statements>` to be clearer
 
   .. code-block:: python
     :lineno-start: 37
-    :emphasize-lines: 2
+    :emphasize-lines: 8-9
 
     def negate_first(first_input, second_input):
-        return True if not first_input else False
         # if first_input == False:
         # if bool(first_input) == False:
         # if not bool(first_input) == True:
         # if not bool(first_input):
         if not first_input:
             return True
-        return False
+        else:
+            return False
+
+  still green
+
+* I use a :ref:`conditional expression (ternary operator)<conditional expressions>` for the :ref:`if statements`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 6-10
+
+    def negate_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+        #     return True
+        # else:
+        #     return False
+        return True if not first_input else False
 
   still green
 
@@ -397,22 +418,23 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   .. code-block:: python
     :lineno-start: 37
-    :emphasize-lines: 2
+    :emphasize-lines: 10-11
 
     def negate_first(first_input, second_input):
-        return not first_input
-        return True if not first_input else False
         # if first_input == False:
         # if bool(first_input) == False:
         # if not bool(first_input) == True:
         # if not bool(first_input):
-        if not first_input:
-            return True
-        return False
+        # if not first_input:
+        #     return True
+        # else:
+        #     return False
+        # return True if not first_input else False
+        return not first_input
 
   green
 
-* I remove the other statements
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 37
