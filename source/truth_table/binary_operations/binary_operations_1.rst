@@ -122,7 +122,7 @@ first input     second input   return
 
 * I right click the ``tests`` folder_ then select ``New File`` and name the new file_ ``test_binary.py``
 
-* I add a new test for :ref:`contradiction<test_contradiction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True` in ``test_binary.py``
+* I add a test for :ref:`contradiction<test_contradiction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -253,7 +253,7 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return False
 
-  the test is still green. :ref:`contradiction function<test_contradiction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+  the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 
 * I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to ``test_binary.py``
 
@@ -282,6 +282,7 @@ first input     second input   return
 
   - if the first input is :green:`True` and the second input is :red:`False`
   - if the first input is :green:`True` and the second input is :green:`True`
+  - if the first input is :green:`True`
 
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`
@@ -314,10 +315,15 @@ first input     second input   return
   the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`
 
   - if the first input is :red:`False` and the second input is :green:`True`
-  - if the first input is :green:`True` and the second input is :red:`False`
-  - if the first input is :green:`True` and the second input is :green:`True`
+  - if the first input is :green:`True`
 
 * I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
 
   .. code-block:: python
     :lineno-start: 7
@@ -342,10 +348,8 @@ first input     second input   return
 
   the test is still green. :ref:`contradiction<test_contradiction>` returns :red:`False`
 
-  - if the first input is :red:`False` and the second input is :red:`False`
-  - if the first input is :red:`False` and the second input is :green:`True`
-  - if the first input is :green:`True` and the second input is :red:`False`
-  - if the first input is :green:`True` and the second input is :green:`True`
+  - if the first input is :red:`False`
+  - if the first input is :green:`True`
 
 :ref:`contradiction always returns False, it does not care about the inputs<test_contradiction>`
 
@@ -454,7 +458,7 @@ first input     second input   return
 
 ----
 
-I add a new test with an :ref:`assertion<what is an assertion?>` for the first case, which is when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+I add a test for :ref:`logical_conjunction<test_logical_conjunction>` with an :ref:`assertion<what is an assertion?>` for the first case, which is when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -464,7 +468,7 @@ first input     second input   return
 
 .. code-block:: python
   :lineno-start: 7
-  :emphasize-lines: 15-18
+  :emphasize-lines: 15-20
 
       def test_contradiction(self):
           self.assertFalse(
@@ -482,7 +486,9 @@ first input     second input   return
 
       def test_logical_conjunction(self):
           self.assertTrue(
-              src.truth_table.logical_conjunction(True, True)
+              src.truth_table.logical_conjunction(
+                  True, True
+              )
           )
 
 
@@ -537,14 +543,18 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 5-7
+    :emphasize-lines: 7-11
 
         def test_logical_conjunction(self):
             self.assertTrue(
-                src.truth_table.logical_conjunction(True, True)
+                src.truth_table.logical_conjunction(
+                    True, True
+                )
             )
             self.assertFalse(
-                src.truth_table.logical_conjunction(True, False)
+                src.truth_table.logical_conjunction(
+                    True, False
+                )
             )
 
 
@@ -617,17 +627,23 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 8-10
+    :emphasize-lines: 12-16
 
         def test_logical_conjunction(self):
             self.assertTrue(
-                src.truth_table.logical_conjunction(True, True)
+                src.truth_table.logical_conjunction(
+                    True, True
+                )
             )
             self.assertFalse(
-                src.truth_table.logical_conjunction(True, False)
+                src.truth_table.logical_conjunction(
+                    True, False
+                )
             )
             self.assertFalse(
-                src.truth_table.logical_conjunction(False, True)
+                src.truth_table.logical_conjunction(
+                    False, True
+                )
             )
 
 
@@ -693,20 +709,28 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 11-13
+    :emphasize-lines: 17-21
 
         def test_logical_conjunction(self):
             self.assertTrue(
-                src.truth_table.logical_conjunction(True, True)
+                src.truth_table.logical_conjunction(
+                    True, True
+                )
             )
             self.assertFalse(
-                src.truth_table.logical_conjunction(True, False)
+                src.truth_table.logical_conjunction(
+                    True, False
+                )
             )
             self.assertFalse(
-                src.truth_table.logical_conjunction(False, True)
+                src.truth_table.logical_conjunction(
+                    False, True
+                )
             )
             self.assertFalse(
-                src.truth_table.logical_conjunction(False, False)
+                src.truth_table.logical_conjunction(
+                    False, False
+                )
             )
 
 
@@ -841,7 +865,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
     - ``if something == True:`` checks if ``something`` is equal to :ref:`True<test_what_is_true>`
 
-    - these `if statements`_ check if the result of ``bool(something)`` is :ref:`True<test_what_is_true>`, the same way the `assertTrue method`_ does
+    - these `if statements`_ check if the result of ``bool(something)`` is equal to :ref:`True<test_what_is_true>`, the same way the `assertTrue method`_ does
 
       * ``if bool(something) == True:``
       * ``if bool(something):``
@@ -890,7 +914,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 * I add an else_ clause to make it clearer
 
   .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 21
     :emphasize-lines: 14, 16-17
 
     def logical_conjunction(first_input, second_input):
@@ -919,30 +943,21 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 conditional expressions
 *********************************************************************************
 
-* There is a way to write the `if statement`_ and `else clause`_ that currently take up 4 lines, with one line. It is called a `ternary operator`_ or `conditional expression`_. I add one to the :ref:`function<what is a function?>`
+* There is a way to write the `if statement`_ and `else clause`_ on one line instead of four. It is called a `ternary operator`_ or `conditional expression`_. I add one to the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2
+    :lineno-start: 33
+    :emphasize-lines: 1-2, 4-9
 
-    def logical_conjunction(first_input, second_input):
-        return True if first_input and second_input else False
-        # if first_input == False:
-        #     return False
-        # return second_input
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == True:
-            # if bool(second_input) == True:
-            # if bool(second_input):
-            # if second_input:
-        if first_input and second_input:
-            return True
+        # if first_input and second_input:
+        #     return True
         # return None
-        else:
-            return False
+        # else:
+        #     return False
+        return (
+            True if first_input and second_input
+            else False
+        )
 
   the test is still green, because this is the same statement in a different order
 
@@ -966,15 +981,13 @@ conditional expressions
     else:
         return False
 
-* I can make the `conditional expression`_ even simpler, if I remove ``return True`` and ``else False``
+* I can make the `conditional expression`_ even simpler, if I remove ``True if`` and ``else False``
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2
+    :emphasize-lines: 18-22
 
     def logical_conjunction(first_input, second_input):
-        return first_input and second_input
-        return True if first_input and second_input else False
         # if first_input == False:
         #     return False
         # return second_input
@@ -986,15 +999,20 @@ conditional expressions
             # if bool(second_input) == True:
             # if bool(second_input):
             # if second_input:
-        if first_input and second_input:
-            return True
+        # if first_input and second_input:
+        #     return True
         # return None
-        else:
-            return False
+        # else:
+        #     return False
+        # return (
+        #     True if first_input and second_input
+        #     else False
+        # )
+        return first_input and second_input
 
   still green!
 
-* I remove the other statements because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 21
@@ -1190,20 +1208,28 @@ first input     second input   return
 
 .. code-block:: python
   :lineno-start: 21
-  :emphasize-lines: 15-18
+  :emphasize-lines: 23-26
 
       def test_logical_conjunction(self):
           self.assertTrue(
-              src.truth_table.logical_conjunction(True, True)
+              src.truth_table.logical_conjunction(
+                  True, True
+              )
           )
           self.assertFalse(
-              src.truth_table.logical_conjunction(True, False)
+              src.truth_table.logical_conjunction(
+                  True, False
+              )
           )
           self.assertFalse(
-              src.truth_table.logical_conjunction(False, True)
+              src.truth_table.logical_conjunction(
+                  False, True
+              )
           )
           self.assertFalse(
-              src.truth_table.logical_conjunction(False, False)
+              src.truth_table.logical_conjunction(
+                  False, False
+              )
           )
 
       def test_project_second(self):
@@ -1262,7 +1288,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 43
     :emphasize-lines: 5-7
 
         def test_project_second(self):
@@ -1272,6 +1298,9 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
             self.assertFalse(
                 src.truth_table.project_second(True, False)
             )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1299,7 +1328,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 43
     :emphasize-lines: 8-10
 
         def test_project_second(self):
@@ -1313,6 +1342,9 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
                 src.truth_table.project_second(False, True)
             )
 
+
+    # Exceptions seen
+
   the test is still green
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
@@ -1324,7 +1356,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 43
     :emphasize-lines: 11-13
 
         def test_project_second(self):
