@@ -2771,7 +2771,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`True<te
 
     - returns ``first or second``
     - returns :red:`False` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Logical Equality<test_logical_equality>`
 

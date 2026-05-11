@@ -1603,7 +1603,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input or second_input``
   - returns :red:`False` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
-  - is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return

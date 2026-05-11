@@ -876,7 +876,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
                 return False
         return True
 
-  still green, because I can use :ref:`AND<test_logical_conjunction>` to put two :ref:`if statements` together when one is indented under the other. For example
+  still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
 
   .. code-block:: python
 
@@ -1105,7 +1105,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
 * returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
 * returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the first input and the second input, many words
-* is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction<test_what_is_true>` which only returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+* is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction<test_logical_conjunction>` which only returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 * is the :ref:`not<test_logical_negation>` of the :ref:`and<test_logical_conjunction>` of the first input and second input, confusing?
 * is :ref:`not and<test_logical_nand>`
 
@@ -1557,7 +1557,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 99
+  :lineno-start: 107
   :emphasize-lines: 15-20
 
       def test_tautology(self):
@@ -1632,7 +1632,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 121
     :emphasize-lines: 7-11
 
         def test_logical_disjunction(self):
@@ -1667,7 +1667,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 121
     :emphasize-lines: 12-16
 
         def test_logical_disjunction(self):
@@ -1704,7 +1704,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 121
     :emphasize-lines: 17-21
 
         def test_logical_disjunction(self):
@@ -1851,7 +1851,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  still green, because I can use :ref:`AND<test_logical_conjunction>` to put two :ref:`if statements` together when one is indented under the other. For example
+  still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
 
   .. code-block:: python
 
@@ -1891,20 +1891,9 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to change the :ref:`else clause<if statements>` to the opposite of the :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 14-15
+    :lineno-start: 63
+    :emphasize-lines: 3-4
 
-    def logical_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
         if not first_input and not second_input:
             return False
         # else:
@@ -1943,20 +1932,9 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I change it to an :ref:`else clause<if statements>`
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 15-16
+    :lineno-start: 63
+    :emphasize-lines: 4-5
 
-    def logical_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
         # else:
         if not (not first_input and not second_input):
             return True
@@ -1969,100 +1947,67 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 13-17
+    :lineno-start: 63
+    :emphasize-lines: 2-3, 5-11
 
-    def logical_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
         # else:
+        # if not (not first_input and not second_input):
+        #     return True
+        # if not first_input and not second_input:
+        # else:
+        #     return False
         return (
-            True
-            if not (not first_input and not second_input)
+            True if
+            not (not first_input and not second_input)
             else False
         )
-        if not (not first_input and not second_input):
-            return True
-        # if not first_input and not second_input:
-        else:
-            return False
 
   green
 
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 13
+    :lineno-start: 63
+    :emphasize-lines: 7-14
 
-    def logical_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
         # else:
-        return not (not first_input and not second_input)
-        return (
-            True
-            if not (not first_input and not second_input)
-            else False
-        )
-        if not (not first_input and not second_input):
-            return True
+        # if not (not first_input and not second_input):
+        #     return True
         # if not first_input and not second_input:
-        else:
-            return False
+        # else:
+        #     return False
+        # return (
+        #     True if
+        #     not (not first_input and not second_input)
+        #     else False
+        # )
+        return not (not first_input and not second_input)
 
   still green
 
 * :ref:`not<test_logical_negation>` happens 3 times in this statement. I "multiply" it by every symbol in the statement to try to make it simpler
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 13-17
+    :lineno-start: 63
+    :emphasize-lines: 12-17
 
-    def logical_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
         # else:
+        # if not (not first_input and not second_input):
+        #     return True
+        # if not first_input and not second_input:
+        # else:
+        #     return False
+        # return (
+        #     True if
+        #     not (not first_input and not second_input)
+        #     else False
+        # )
         # return not (not first_input and not second_input)
         return (
             (not not first_input)
             (not and)
             (not not second_input)
         )
-        return (
-            True
-            if not (not first_input and not second_input)
-            else False
-        )
-        if not (not first_input and not second_input):
-            return True
-        # if not first_input and not second_input:
-        else:
-            return False
 
   the terminal_ is my friend and shows SyntaxError_
 
@@ -2088,60 +2033,24 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I change ``not and`` to ``or`` in the :ref:`logical_disjunction function<test_logical_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 16-17
+    :lineno-start: 75
+    :emphasize-lines: 3-4
 
-    def logical_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
-        # else:
-        # return not (not first_input and not second_input)
         return (
             (not not first_input)
             # (not and)
             or
             (not not second_input)
         )
-        return (
-            True
-            if not (not first_input and not second_input)
-            else False
-        )
-        if not (not first_input and not second_input):
-            return True
-        # if not first_input and not second_input:
-        else:
-            return False
 
   the test is green again
 
 * I remove ``not not`` because they cancel out
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 15-16, 19-20
+    :lineno-start: 75
+    :emphasize-lines: 2-3, 6-7
 
-    def logical_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-        # if not first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
-        # else:
-        # return not (not first_input and not second_input)
         return (
             # (not not first_input)
             first_input
@@ -2150,28 +2059,19 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
             # (not not second_input)
             second_input
         )
-        return (
-            True
-            if not (not first_input and not second_input)
-            else False
-        )
-        if not (not first_input and not second_input):
-            return True
-        # if not first_input and not second_input:
-        else:
-            return False
 
   the test is still green. Do two :ref:`nots<test_logical_negation>` make a right?
 
-* I remove all the other statements and comments
+* :ref:`logical_disjunction<test_logical_disjunction>` returns ``not ((not first_input) and (not second_input))`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and the :ref:`Logical Negation<test_logical_negation>` of ``second_input``.
 
   .. code-block:: python
-    :lineno-start: 52
 
-    def logical_disjunction(first_input, second_input):
-        return first_input or second_input
-
-* :ref:`logical_disjunction<test_logical_disjunction>` returns ``not ((not first_input) and (not second_input))`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of ``first_input``, and the :ref:`Logical Negation<test_logical_negation>` of ``second_input``.
+    logical_negation(
+        logical_conjunction(
+            logical_negation(first_input),
+            logical_negation(second_input)
+        )
+    )
 
   - ``not first_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input``
 
@@ -2193,7 +2093,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
       not ((not first) and (not second))
       not ((not True)  and (not True)  )
       not (False       and False       )
-      not False        # not logical_conjunction(False, False)
+      not  False       # not logical_conjunction(False, False)
       True
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_disjunction<test_logical_disjunction>` returns
@@ -2204,7 +2104,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
       not ((not first) and (not second))
       not ((not True)  and (not False) )
       not (False       and True        )
-      not False        # not logical_conjunction(False, True)
+      not  False       # not logical_conjunction(False, True)
       True
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_disjunction<test_logical_disjunction>` returns
@@ -2215,7 +2115,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
       not ((not first) and (not second))
       not ((not False) and (not True)  )
       not (True        and False       )
-      not False        # not logical_conjunction(True, False)
+      not  False       # not logical_conjunction(True, False)
       True
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_disjunction<test_logical_disjunction>` returns
@@ -2226,26 +2126,85 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
       not ((not first) and (not second))
       not ((not False) and (not False) )
       not (True        and True        )
-      not True         # not logical_conjunction(True, True)
+      not  True        # not logical_conjunction(True, True)
       False
 
-  ==============  =============== ===============  ================ ==================  ====================
-  first           second          not first        not second       ((not first)        not ((not first)
-                                                                    and                 and
-                                                                    (not second))       (not second))
-  ==============  =============== ===============  ================ ==================  ====================
-  :green:`True`   :green:`True`   :red:`False`     :red:`False`     :red:`False`        :green:`True`
-  :green:`True`   :red:`False`    :red:`False`     :green:`True`    :red:`False`        :green:`True`
-  :red:`False`    :green:`True`   :green:`True`    :red:`False`     :red:`False`        :green:`True`
-  :red:`False`    :red:`False`    :green:`True`    :green:`True`    :green:`True`       :red:`False`
-  ==============  =============== ===============  ================ ==================  ====================
+  ==============  =============== ===============  ================ ==============================  ===================================
+  first           second          not first        not second       ((not first) and (not second))  not ((not first) and (not second))
+  ==============  =============== ===============  ================ ==============================  ===================================
+  :green:`True`   :green:`True`   :red:`False`     :red:`False`     :red:`False`                    :green:`True`
+  :green:`True`   :red:`False`    :red:`False`     :green:`True`    :red:`False`                    :green:`True`
+  :red:`False`    :green:`True`   :green:`True`    :red:`False`     :red:`False`                    :green:`True`
+  :red:`False`    :red:`False`    :green:`True`    :green:`True`    :green:`True`                   :red:`False`
+  ==============  =============== ===============  ================ ==============================  ===================================
 
+  I add a `return statement`_ to show this
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 24-29
+
+    def logical_disjunction(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
+        # else:
+        # if not (not first_input and not second_input):
+        #     return True
+        # if not first_input and not second_input:
+        # else:
+        #     return False
+        # return (
+        #     True if
+        #     not (not first_input and not second_input)
+        #     else False
+        # )
+        # return not (not first_input and not second_input)
+        return logical_negation(
+            logical_conjunction(
+                logical_negation(first_input),
+                logical_negation(second_input)
+            )
+        )
+        return (
+            # (not not first_input)
+            first_input
+            # (not and)
+            or
+            # (not not second_input)
+            second_input
+        )
+
+  still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 52
+
+    def logical_disjunction(first_input, second_input):
+        return logical_negation(
+            logical_conjunction(
+                logical_negation(first_input),
+                logical_negation(second_input)
+            )
+        )
+        return first_input or second_input
+
+  I can use any of these two `return statements`_, though only one runs because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 :ref:`Logical Disjunction<test_logical_disjunction>` also known as "OR_" returns
 
 * ``first_input or second_input``
 * :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
-* is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
+* is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
 
 ----
 
@@ -2362,7 +2321,7 @@ Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>
 
   - returns ``first_input or second_input``
   - returns :red:`False` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
-  - is the  :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first_input`` is :red:`False` and ``second_input`` is :red:`False`
 
   ==============  ============== ==============
   first input     second input   return
