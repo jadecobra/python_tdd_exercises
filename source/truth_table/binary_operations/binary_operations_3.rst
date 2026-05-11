@@ -1339,7 +1339,7 @@ first input     second input   return
 ==============  ============== ==============
 :green:`True`   :green:`True`  :red:`False`
 :green:`True`   :red:`False`   :green:`True`
-:red:`False`    :green:`True`  :green:`False`
+:red:`False`    :green:`True`  :red:`False`
 :red:`False`    :red:`False`   :red:`False`
 ==============  ============== ==============
 
@@ -1501,7 +1501,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :red:`False`    :green:`True`  :green:`False`
+  :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
 
   .. code-block:: python
@@ -1920,6 +1920,17 @@ examples of Material Non-Implication
 test_project_first
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`project_first<test_project_first>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :red:`False`
+:red:`False`    :red:`False`   :red:`False`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -1929,6 +1940,12 @@ test_project_first
 ----
 
 I add a new test in ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
 
 .. code-block:: python
   :lineno-start: 101
@@ -1983,12 +2000,6 @@ I add a :ref:`function<what is a function?>` for :ref:`project_first<test_projec
 
 the test passes. :ref:`project_first<test_project_first>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
-
 ----
 
 =================================================================================
@@ -1998,6 +2009,12 @@ first input     second input   return
 ----
 
 * I add the second case to :ref:`test_project_first` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
 
   .. code-block:: python
     :lineno-start: 115
@@ -2013,14 +2030,13 @@ first input     second input   return
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
+* on to the next case
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :green:`True`  :red:`False`
   ==============  ============== ==============
-
-* on to the next case
 
   .. code-block:: python
     :lineno-start: 115
@@ -2054,15 +2070,13 @@ first input     second input   return
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
+* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_project_first` in ``test_binary.py``
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
-  :red:`False`    :green:`True`  :red:`False`
+  :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_project_first` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 115
@@ -2130,16 +2144,7 @@ first input     second input   return
     def project_first(first_input, second_input):
         return first_input
 
-:ref:`Project First always returns the first input<test_project_first>`, like :ref:`Project Second which always returns the second input<test_project_second>`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-:green:`True`   :red:`False`   :green:`True`
-:red:`False`    :green:`True`  :red:`False`
-:red:`False`    :red:`False`   :red:`False`
-==============  ============== ==============
+:ref:`Project First always returns the first input<test_project_first>` it does not care about the second input, like :ref:`Project Second which always returns the second input<test_project_second>` and does not care about the first input
 
 ----
 
