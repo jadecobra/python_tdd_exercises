@@ -2195,7 +2195,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
 
-* I add an :ref:`else clause<if statement>` to make it clearer
+* I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
     :lineno-start: 78
@@ -2213,7 +2213,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   still green
 
-* I use :ref:`Logical Negation (NOT)<if statements>` for the :ref:`else clause<if statement>`
+* I use :ref:`Logical Negation (NOT)<if statements>` for the :ref:`else clause<if statements>`
 
   .. code-block:: python
     :lineno-start: 78
@@ -2336,7 +2336,7 @@ examples of Project First
   right password  right MFA code log in
   ==============  ============== ==============
   :green:`yes`    :green:`yes`   :green:`yes`
-  :green:`yes`    :red:`no`      :green:`yes`
+  :green:`yes`    :red:`no`      :green:`yes` (why ask for MFA code?)
   :red:`no`       :green:`yes`   :red:`no` (how did user get the MFA code?)
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ==============
@@ -2375,6 +2375,17 @@ examples of Project First
 test_converse_implication
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`converse_implication<test_converse_implication>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :green:`True`
+:red:`False`    :green:`True`  :red:`False`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -2384,6 +2395,12 @@ test_converse_implication
 ----
 
 I add a new test to ``test_binary.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
 
 .. code-block:: python
   :lineno-start: 115
@@ -2430,12 +2447,6 @@ I add a :ref:`function<what is a function?>` for :ref:`converse_implication<test
 
 the test passes. :ref:`converse_implication<test_converse_implication>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
-
 ----
 
 =================================================================================
@@ -2445,6 +2456,12 @@ first input     second input   return
 ----
 
 * I add the second case to :ref:`test_converse_implication` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :red:`False`   :green:`True`
+  ==============  ============== ==============
 
   .. code-block:: python
     :lineno-start: 121
@@ -2494,14 +2511,13 @@ first input     second input   return
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
+* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_converse_implication` in ``test_binary.py``
+
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
+  :red:`False`    :red:`False`   :green:`True`
   ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_converse_implication` in ``test_binary.py``
 
   .. code-block:: python
     :lineno-start: 121
@@ -2521,14 +2537,6 @@ first input     second input   return
   - :green:`True`, if the first input is :ref:`False<test_what_is_true>` and the second input is :ref:`False<test_what_is_false>`
   - :red:`False`, if the first input is :red:`False` and the second input is :green:`True` - this is the only case where it returns :red:`False`
   - :green:`True`, if the first input is :green:`True`
-
-  ==============  ============== ==============
-  first input     second input   return
-  ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :green:`True`
-  :red:`False`    :green:`True`  :red:`False`
-  ==============  ============== ==============
 
 * I change the two :ref:`if statements` to one in ``truth_table.py``
 
@@ -2710,15 +2718,6 @@ first input     second input   return
 - :red:`False`, only if the first input is :red:`False` and the second input is :green:`True`
 - the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 - It is the opposite of :ref:`Converse Non-Implication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`True<test_what_is_true>`, only if the first input is :red:`False` and the second input is :green:`True`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-:green:`True`   :red:`False`   :green:`True`
-:red:`False`    :green:`True`  :red:`False`
-:red:`False`    :red:`False`   :green:`True`
-==============  ============== ==============
 
 ----
 
