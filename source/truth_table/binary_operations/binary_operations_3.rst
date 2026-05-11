@@ -1939,7 +1939,7 @@ first input     second input   return
 
 ----
 
-I add a new test in ``test_binary.py``
+I add a test for :ref:`project_first<test_project_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
 ==============  ============== ==============
 first input     second input   return
@@ -1948,25 +1948,35 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 101
-  :emphasize-lines: 15-16
+  :lineno-start: 157
+  :emphasize-lines: 23-26
 
       def test_material_non_implication(self):
           self.assertFalse(
-              src.truth_table.material_non_implication(True, True)
+              src.truth_table.material_non_implication(
+                  True, True
+              )
           )
           self.assertTrue(
-              src.truth_table.material_non_implication(True, False)
+              src.truth_table.material_non_implication(
+                  True, False
+              )
           )
           self.assertFalse(
-              src.truth_table.material_non_implication(False, True)
+              src.truth_table.material_non_implication(
+                  False, True
+              )
           )
           self.assertFalse(
-              src.truth_table.material_non_implication(False, False)
+              src.truth_table.material_non_implication(
+                  False, False
+              )
           )
 
       def test_project_first(self):
-          self.assertTrue(src.truth_table.project_first(True, True))
+          self.assertTrue(
+              src.truth_table.project_first(True, True)
+          )
 
 
   # Exceptions seen
@@ -1977,6 +1987,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'project_first'
 
+there is nothing names :ref:`project_first<test_project_first>` in ``truth_table.py``
+
 ----
 
 =================================================================================
@@ -1985,13 +1997,16 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-I add a :ref:`function<what is a function?>` for :ref:`project_first<test_project_first>` in ``truth_table.py``
+I add a :ref:`function<what is a function?>` for :ref:`project_first<test_project_first>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 61
-  :emphasize-lines: 5-6
+  :lineno-start: 71
+  :emphasize-lines: 8-9
 
   def material_non_implication(first_input, second_input):
+      return logical_conjunction(
+          first_input, not second_input
+      )
       return first_input and not second_input
 
 
@@ -2008,7 +2023,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
 ----
 
-* I add the second case to :ref:`test_project_first` in ``test_binary.py``
+* I add an :ref:`assertion<what is an assertion?>` for the second case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_project_first` in ``test_binary.py``
 
   ==============  ============== ==============
   first input     second input   return
@@ -2017,12 +2032,19 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 3
+    :lineno-start: 179
+    :emphasize-lines: 5-7
 
         def test_project_first(self):
-            self.assertTrue(src.truth_table.project_first(True, True))
-            self.assertTrue(src.truth_table.project_first(True, False))
+            self.assertTrue(
+                src.truth_table.project_first(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.project_first(True, False)
+            )
+
+
+    # Exceptions seen
 
   the test is still green. :ref:`project_first<test_project_first>` returns
 
@@ -2030,7 +2052,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
-* on to the next case
+* on to the next case, which is when the first input is :red:`False` and the first input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -2043,50 +2065,15 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     :emphasize-lines: 4
 
         def test_project_first(self):
-            self.assertTrue(src.truth_table.project_first(True, True))
-            self.assertTrue(src.truth_table.project_first(True, False))
-            self.assertFalse(src.truth_table.project_first(False, True))
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: True is not false
-
-* I add :ref:`if statements` for this case to :ref:`project_first<test_project_first>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-4
-
-    def project_first(first_input, second_input):
-        if first_input == False:
-            if second_input == True:
-                return False
-        return True
-
-  the test passes. :ref:`project_first<test_project_first>` returns
-
-  - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :green:`True`, if the first input is :green:`True`
-
-* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_project_first` in ``test_binary.py``
-
-  ==============  ============== ==============
-  first input     second input   return
-  ==============  ============== ==============
-  :red:`False`    :red:`False`   :red:`False`
-  ==============  ============== ==============
-
-  .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 5
-
-        def test_project_first(self):
-            self.assertTrue(src.truth_table.project_first(True, True))
-            self.assertTrue(src.truth_table.project_first(True, False))
-            self.assertFalse(src.truth_table.project_first(False, True))
-            self.assertFalse(src.truth_table.project_first(False, False))
+            self.assertTrue(
+                src.truth_table.project_first(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.project_first(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.project_first(False, True)
+            )
 
 
     # Exceptions seen
@@ -2097,49 +2084,221 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
     AssertionError: True is not false
 
-* I add more :ref:`if statements` to :ref:`project_first<test_project_first>` in ``truth_table.py``
+  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+
+* I add an :ref:`if statement<if statements>` for this case to the :ref:`project_first function<test_project_first>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 3-4
+    :lineno-start: 78
+    :emphasize-lines: 2-3
 
     def project_first(first_input, second_input):
         if first_input == False:
-            if second_input == False:
-                return False
-            if second_input == True:
-                return False
+            return False
         return True
 
   the test passes. :ref:`project_first<test_project_first>` returns
 
-  - :red:`False`, if the first input is :red:`False` and the second input is :red:`False`
-  - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
   - :red:`False`, if the first input is :red:`False`
-  - :green:`True`, if the first input is :green:`True`
-  - the first input in every case
+  - :green:`True`, if the above condition is not met
 
-* I add a `return statement`_
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_project_first` in ``test_binary.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :red:`False`    :red:`False`   :red:`False`
+  ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2
+    :lineno-start: 179
+    :emphasize-lines: 11-13
 
-    def project_first(first_input, second_input):
-        return first_input
-        if first_input == False:
-            if second_input == False:
-                return False
-            if second_input == True:
-                return False
-        return True
+        def test_project_first(self):
+            self.assertTrue(
+                src.truth_table.project_first(True, True)
+            )
+            self.assertTrue(
+                src.truth_table.project_first(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.project_first(False, True)
+            )
+            self.assertFalse(
+                src.truth_table.project_first(False, False)
+            )
+
+
+    # Exceptions seen
 
   the test is still green
+
+* I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 2-3
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        if bool(first_input) == False:
+            return False
+        return True
+
+  still green
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 3-4
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        if not bool(first_input) == True:
+            return False
+        return True
+
+  green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 4-5
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        if not bool(first_input):
+            return False
+        return True
+
+  still green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 5-6
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            return False
+        return True
+
+  the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+
+* I add an :ref:`else clause<if statement>` to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 8-9
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            return False
+        else:
+            return True
+
+  still green
+
+* I use :ref:`Logical Negation (NOT)<if statements>` for the :ref:`else clause<if statement>`
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 8-9
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            return False
+        # else:
+        if not (not first_input):
+            return True
+
+  green
+
+* I remove the :ref:`nots<test_logical_negation>` because they cancel out
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 9-10
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            return False
+        # else:
+        # if not (not first_input):
+        if first_input:
+            return True
+
+  still green
+
+* I add a :ref:`conditional expression<conditional expressions>`
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 6-7, 10-12
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+        #     return False
+        # else:
+        # if not (not first_input):
+        # if first_input:
+        #     return True
+        return True if first_input else False
+
+  the test is still green
+
+* I remove ``True if`` and ``else False``
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 13
+
+    def project_first(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+        #     return False
+        # else:
+        # if not (not first_input):
+        # if first_input:
+        #     return True
+        # return True if first_input else False
+        return first_input
+
+  still green
 
 * I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 78
 
     def project_first(first_input, second_input):
         return first_input
