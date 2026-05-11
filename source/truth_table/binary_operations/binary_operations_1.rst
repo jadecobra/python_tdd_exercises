@@ -1478,7 +1478,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 35
+  :lineno-start: 43
   :emphasize-lines: 15-20
 
       def test_project_second(self):
@@ -1553,7 +1553,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 57
     :emphasize-lines: 7-11
 
         def test_converse_non_implication(self):
@@ -1585,7 +1585,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 57
     :emphasize-lines: 12-16
 
         def test_converse_non_implication(self):
@@ -1614,6 +1614,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
     AssertionError: False is not true
 
+  because the :ref:`converse_non_implication function<test_converse_non_implication>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+
 * I add an `if statement`_ for this case to the :ref:`converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
@@ -1639,7 +1641,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 57
     :emphasize-lines: 17-21
 
         def test_converse_non_implication(self):
@@ -1768,7 +1770,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
-* I use :ref:`AND<test_logical_conjunction>` to put the two `if statements`_ together
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together
 
   .. code-block:: python
     :lineno-start: 29
@@ -1788,7 +1790,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  the test is still green, because I can use :ref:`AND<test_logical_conjunction>` to put two `if statements`_ together when one is indented under the other. For example
+  the test is still green, because I can put two `if statements`_ together when one is indented under the other. For example
 
   .. code-block:: python
 
@@ -1828,14 +1830,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2-6
+    :emphasize-lines: 11-18
 
     def converse_non_implication(first_input, second_input):
-        return (
-            True
-            if not first_input and second_input
-            else False
-        )
         # if first_input == False:
         # if bool(first_input) == False:
         # if not bool(first_input) == True:
@@ -1845,10 +1842,14 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
             # if bool(second_input) == True:
             # if bool(second_input):
             # if second_input:
-        if not first_input and second_input:
-            return True
-        else:
-            return False
+        # if not first_input and second_input:
+        #     return True
+        # else:
+        #     return False
+        return (
+            True if not first_input and second_input
+            else False
+        )
 
   green
 
@@ -1856,15 +1857,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2
+    :emphasize-lines: 15-19
 
     def converse_non_implication(first_input, second_input):
-        return not first_input and second_input
-        return (
-            True
-            if not first_input and second_input
-            else False
-        )
         # if first_input == False:
         # if bool(first_input) == False:
         # if not bool(first_input) == True:
@@ -1874,10 +1869,15 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
             # if bool(second_input) == True:
             # if bool(second_input):
             # if second_input:
-        if not first_input and second_input:
-            return True
-        else:
-            return False
+        # if not first_input and second_input:
+        #     return True
+        # else:
+        #     return False
+        # return (
+        #     True if not first_input and second_input
+        #     else False
+        # )
+        return not first_input and second_input
 
   still green
 
@@ -1897,8 +1897,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not True ) and True
-      False       and True  # logical_conjunction(False, True)
-      False                 # logical_conjunction(False, True)
+       False      and True  # logical_conjunction(False, True)
+       False                # logical_conjunction(False, True)
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -1907,8 +1907,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not True ) and False
-      False       and False # logical_conjunction(False, False)
-      False                 # logical_conjunction(False, False)
+       False      and False # logical_conjunction(False, False)
+       False                # logical_conjunction(False, False)
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -1917,8 +1917,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not False) and True
-      True        and True  # logical_conjunction(True, True)
-      True                  # logical_conjunction(True, True)
+       True       and True  # logical_conjunction(True, True)
+       True                 # logical_conjunction(True, True)
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -1927,8 +1927,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not False) and False
-      True        and False # logical_conjunction(True, False)
-      False                 # logical_conjunction(True, False)
+       True       and False # logical_conjunction(True, False)
+       False                # logical_conjunction(True, False)
 
   ==============  =============== =============== ================
   first           not first       second          (not first)
@@ -1945,19 +1945,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2-5
+    :emphasize-lines: 19-23
 
     def converse_non_implication(first_input, second_input):
-        return logical_conjunction(
-            not first_input,
-            second_input
-        )
-        return not first_input and second_input
-        return (
-            True
-            if not first_input and second_input
-            else False
-        )
         # if first_input == False:
         # if bool(first_input) == False:
         # if not bool(first_input) == True:
@@ -1967,29 +1957,40 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
             # if bool(second_input) == True:
             # if bool(second_input):
             # if second_input:
-        if not first_input and second_input:
-            return True
-        else:
-            return False
+        # if not first_input and second_input:
+        #     return True
+        # else:
+        #     return False
+        # return (
+        #     True if not first_input and second_input
+        #     else False
+        # )
+        return logical_conjunction(
+            logical_negation(first_input),
+            second_input
+        )
+        return not first_input and second_input
 
   the test is still green
 
-* I remove the other statements
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 29
 
     def converse_non_implication(first_input, second_input):
         return logical_conjunction(
-            not first_input,
+            logical_negation(first_input),
             second_input
         )
         return not first_input and second_input
 
+  I can use any of these two `return statements`_, though only one runs because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+
 :ref:`Converse Non-Implication<test_converse_non_implication>` always returns
 
 * ``not first_input and second_input``
-* the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Negation<test_logical_negation>` of the first input, and the second input
+* the :ref:`Logical Conjunction<test_logical_conjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input
 * :green:`True`, if the first input is :red:`False` and the second input is :green:`True`
 
 ----
