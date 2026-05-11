@@ -48,81 +48,169 @@ class TestBinaryOperations(unittest.TestCase):
 
     def test_converse_non_implication(self):
         self.assertFalse(
-            src.truth_table.converse_non_implication(True, True)
+            src.truth_table.converse_non_implication(
+                True, True
+            )
         )
         self.assertFalse(
-            src.truth_table.converse_non_implication(True, False)
+            src.truth_table.converse_non_implication(
+                True, False
+            )
         )
         self.assertTrue(
-            src.truth_table.converse_non_implication(False, True)
+            src.truth_table.converse_non_implication(
+                False, True
+            )
         )
         self.assertFalse(
-            src.truth_table.converse_non_implication(False, False)
+            src.truth_table.converse_non_implication(
+                False, False
+            )
         )
 
     def test_negate_first(self):
-        self.assertFalse(src.truth_table.negate_first(True, True))
-        self.assertFalse(src.truth_table.negate_first(True, False))
-        self.assertTrue(src.truth_table.negate_first(False, True))
-        self.assertTrue(src.truth_table.negate_first(False, False))
+        self.assertFalse(
+            src.truth_table.negate_first(True, True)
+        )
+        self.assertFalse(
+            src.truth_table.negate_first(True, False)
+        )
+        self.assertTrue(
+            src.truth_table.negate_first(False, True)
+        )
+        self.assertTrue(
+            src.truth_table.negate_first(False, False)
+        )
 
     def test_logical_nand(self):
-        self.assertFalse(src.truth_table.logical_nand(True, True))
-        self.assertTrue(src.truth_table.logical_nand(True, False))
-        self.assertTrue(src.truth_table.logical_nand(False, True))
-        self.assertTrue(src.truth_table.logical_nand(False, False))
+        self.assertFalse(
+            src.truth_table.logical_nand(True, True)
+        )
+        self.assertTrue(
+            src.truth_table.logical_nand(True, False)
+        )
+        self.assertTrue(
+            src.truth_table.logical_nand(False, True)
+        )
+        self.assertTrue(
+            src.truth_table.logical_nand(False, False)
+        )
 
     def test_tautology(self):
-        self.assertTrue(src.truth_table.tautology(True, True))
-        self.assertTrue(src.truth_table.tautology(True, False))
-        self.assertTrue(src.truth_table.tautology(False, True))
-        self.assertTrue(src.truth_table.tautology(False, False))
+        self.assertTrue(
+            src.truth_table.tautology(True, True)
+        )
+        self.assertTrue(
+            src.truth_table.tautology(True, False)
+        )
+        self.assertTrue(
+            src.truth_table.tautology(False, True)
+        )
+        self.assertTrue(
+            src.truth_table.tautology(False, False)
+        )
 
     def test_logical_disjunction(self):
         self.assertTrue(
-            src.truth_table.logical_disjunction(True, True)
+            src.truth_table.logical_disjunction(
+                True, True
+            )
         )
         self.assertTrue(
-            src.truth_table.logical_disjunction(True, False)
+            src.truth_table.logical_disjunction(
+                True, False
+            )
         )
         self.assertTrue(
-            src.truth_table.logical_disjunction(False, True)
+            src.truth_table.logical_disjunction(
+                False, True
+            )
         )
         self.assertFalse(
-            src.truth_table.logical_disjunction(False, False)
+            src.truth_table.logical_disjunction(
+                False, False
+            )
         )
 
     def test_exclusive_disjunction(self):
-        self.assertFalse(src.truth_table.exclusive_disjunction(True, True))
-        self.assertTrue(src.truth_table.exclusive_disjunction(True, False))
-        self.assertTrue(src.truth_table.exclusive_disjunction(False, True))
-        self.assertFalse(src.truth_table.exclusive_disjunction(False, False))
+        self.assertFalse(
+            src.truth_table.exclusive_disjunction(
+                True, True
+            )
+        )
+        self.assertTrue(
+            src.truth_table.exclusive_disjunction(
+                True, False
+            )
+        )
+        self.assertTrue(
+            src.truth_table.exclusive_disjunction(
+                False, True
+            )
+        )
+        self.assertFalse(
+            src.truth_table.exclusive_disjunction(
+                False, False
+            )
+        )
 
     def test_material_non_implication(self):
         self.assertFalse(
-            src.truth_table.material_non_implication(True, True)
+            src.truth_table.material_non_implication(
+                True, True
+            )
         )
         self.assertTrue(
-            src.truth_table.material_non_implication(True, False)
+            src.truth_table.material_non_implication(
+                True, False
+            )
         )
         self.assertFalse(
-            src.truth_table.material_non_implication(False, True)
+            src.truth_table.material_non_implication(
+                False, True
+            )
         )
         self.assertFalse(
-            src.truth_table.material_non_implication(False, False)
+            src.truth_table.material_non_implication(
+                False, False
+            )
         )
 
     def test_project_first(self):
-        self.assertTrue(src.truth_table.project_first(True, True))
-        self.assertTrue(src.truth_table.project_first(True, False))
-        self.assertFalse(src.truth_table.project_first(False, True))
-        self.assertFalse(src.truth_table.project_first(False, False))
+        self.assertTrue(
+            src.truth_table.project_first(True, True)
+        )
+        self.assertTrue(
+            src.truth_table.project_first(True, False)
+        )
+        self.assertFalse(
+            src.truth_table.project_first(False, True)
+        )
+        self.assertFalse(
+            src.truth_table.project_first(False, False)
+        )
 
     def test_converse_implication(self):
-        self.assertTrue(src.truth_table.converse_implication(True, True))
-        self.assertTrue(src.truth_table.converse_implication(True, False))
-        self.assertFalse(src.truth_table.converse_implication(False, True))
-        self.assertTrue(src.truth_table.converse_implication(False, False))
+        self.assertTrue(
+            src.truth_table.converse_implication(
+                True, True
+            )
+        )
+        self.assertTrue(
+            src.truth_table.converse_implication(
+                True, False
+            )
+        )
+        self.assertFalse(
+            src.truth_table.converse_implication(
+                False, True
+            )
+        )
+        self.assertTrue(
+            src.truth_table.converse_implication(
+                False, False
+            )
+        )
 
 
 # Exceptions seen

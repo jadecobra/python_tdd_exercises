@@ -28,7 +28,7 @@ def project_second(first_input, second_input):
 
 def converse_non_implication(first_input, second_input):
     return logical_conjunction(
-        not first_input,
+        logical_negation(first_input),
         second_input
     )
     return not first_input and second_input
@@ -39,7 +39,7 @@ def negate_first(first_input, second_input):
 
 
 def logical_nand(first_input, second_input):
-    return not (
+    return logical_negation(
         logical_conjunction(first_input, second_input)
     )
     return not (first_input and second_input)
@@ -55,7 +55,15 @@ def logical_disjunction(first_input, second_input):
 
 def exclusive_disjunction(first_input, second_input):
     return first_input != second_input
-    return not first_input == second_input
+    return not (first_input == second_input)
+    return logical_disjunction(
+        converse_non_implication(first_input, second_input),
+        logical_conjunction(
+            first_input,
+            logical_negation(second_input)
+        )
+    )
+    return not (first_input == second_input)
     return (
         (not first_input and second_input)
         or
@@ -64,6 +72,10 @@ def exclusive_disjunction(first_input, second_input):
 
 
 def material_non_implication(first_input, second_input):
+    return logical_conjunction(
+        first_input,
+        logical_negation(second_input)
+    )
     return first_input and not second_input
 
 
@@ -72,6 +84,10 @@ def project_first(first_input, second_input):
 
 
 def converse_implication(first_input, second_input):
+    return logical_disjunction(
+        first_input,
+        logical_negation(second_input)
+    )
     return first_input or not second_input
 
 
