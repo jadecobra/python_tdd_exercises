@@ -1271,7 +1271,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 85
+  :lineno-start: 93
   :emphasize-lines: 15-18
 
       def test_logical_nand(self):
@@ -1347,7 +1347,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 107
     :emphasize-lines: 5-7
 
         def test_tautology(self):
@@ -1376,7 +1376,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 107
     :emphasize-lines: 8-10
 
         def test_tautology(self):
@@ -1407,7 +1407,7 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 99
+    :lineno-start: 107
     :emphasize-lines: 11-13
 
         def test_tautology(self):
