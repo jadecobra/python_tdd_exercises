@@ -50,6 +50,12 @@ def tautology(first_input, second_input):
 
 
 def logical_disjunction(first_input, second_input):
+    return logical_negation(
+        logical_conjunction(
+            logical_negation(first_input),
+            logical_negation(second_input)
+        )
+    )
     return first_input or second_input
 
 
@@ -57,13 +63,15 @@ def exclusive_disjunction(first_input, second_input):
     return first_input != second_input
     return not (first_input == second_input)
     return logical_disjunction(
-        converse_non_implication(first_input, second_input),
-        logical_conjunction(
+        converse_non_implication(
             first_input,
-            logical_negation(second_input)
+            second_input
+        ),
+        material_non_implication(
+            first_input,
+            second_input
         )
     )
-    return not (first_input == second_input)
     return (
         (not first_input and second_input)
         or

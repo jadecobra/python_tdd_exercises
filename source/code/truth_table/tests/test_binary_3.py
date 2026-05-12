@@ -20,16 +20,24 @@ class TestBinaryOperations(unittest.TestCase):
 
     def test_logical_conjunction(self):
         self.assertTrue(
-            src.truth_table.logical_conjunction(True, True)
+            src.truth_table.logical_conjunction(
+                True, True
+            )
         )
         self.assertFalse(
-            src.truth_table.logical_conjunction(True, False)
+            src.truth_table.logical_conjunction(
+                True, False
+            )
         )
         self.assertFalse(
-            src.truth_table.logical_conjunction(False, True)
+            src.truth_table.logical_conjunction(
+                False, True
+            )
         )
         self.assertFalse(
-            src.truth_table.logical_conjunction(False, False)
+            src.truth_table.logical_conjunction(
+                False, False
+            )
         )
 
     def test_project_second(self):
