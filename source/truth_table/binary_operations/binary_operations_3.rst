@@ -1217,7 +1217,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  I can use any of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  I can use any of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
 
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns
 
@@ -1843,7 +1843,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         )
         return first_input and not second_input
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
 
 :ref:`Material Non-Implication<test_material_non_implication>`
 
@@ -3009,7 +3009,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         )
         return first_input or not second_input
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
 
 :ref:`Converse Implication<test_converse_implication>` returns
 

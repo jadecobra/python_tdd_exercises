@@ -696,8 +696,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
     - ``if first_input == False:`` checks if ``first_input`` is equal to :red:`False`
 
-      * if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
-      * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+      * if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
+      * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -1707,7 +1707,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   the test is still green
 
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :green:`True`
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -1985,7 +1985,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         )
         return not first_input and second_input
 
-  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
 
 :ref:`Converse Non-Implication<test_converse_non_implication>` always returns
 
