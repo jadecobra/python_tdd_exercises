@@ -85,7 +85,7 @@ continue the project
     configfile: pyproject.toml
     collected 16 items
 
-    tests/test_binary.py ................              [ 66%]
+    tests/test_binary.py ............                  [ 75%]
     tests/test_nullary_unary.py ....                   [100%]
 
     ================== 16 passed in G.HIs ===================
@@ -104,7 +104,7 @@ test_negate_second
 
 ----
 
-I add a new test with the first case for another Binary Operation - when the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
+I add a new test for :ref:`negate_second<test_negate_second>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_truth_table.py``
 
 .. code-block:: python
   :lineno-start: 127
@@ -1437,7 +1437,7 @@ This means that in the four cases
      True                   # logical_conjunction(True, True)
 
 ==============  =============== =============== ================  ================  ================= =======================
-first           second          not first       not second        (first            ((not first)      (first or (not second))
+first_input     second_input    not first_input not second_input  (first            ((not first)      (first or (not second))
                                                                   or                or                and
                                                                   (not second))     second)           ((not first) or second)
 ==============  =============== =============== ================  ================  ================= =======================
