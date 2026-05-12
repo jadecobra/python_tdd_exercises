@@ -126,7 +126,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 113
+  :lineno-start: 121
   :emphasize-lines: 23-28
 
       def test_logical_disjunction(self):
@@ -209,7 +209,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 143
     :emphasize-lines: 7-11
 
         def test_exclusive_disjunction(self):
@@ -238,7 +238,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I add an :ref:`if statement<if statements>` to the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 2-3
 
     def exclusive_disjunction(first_input, second_input):
@@ -260,7 +260,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 143
     :emphasize-lines: 12-16
 
         def test_exclusive_disjunction(self):
@@ -294,7 +294,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I add an :ref:`if statement<if statements>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 2-3
 
     def exclusive_disjunction(first_input, second_input):
@@ -319,7 +319,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 143
     :emphasize-lines: 17-21
 
         def test_exclusive_disjunction(self):
@@ -358,7 +358,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I add an :ref:`if statement<if statements>` for this case, to the one for when the first input is :red:`False` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 3-4
 
     def exclusive_disjunction(first_input, second_input):
@@ -375,8 +375,8 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * there are two cases where :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` and two cases where it returns :green:`True`. I add an :ref:`if statement<if statements>` for the other case where it returns :red:`False`, to make it clearer
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 6-9
+    :lineno-start: 62
+    :emphasize-lines: 6-8
 
     def exclusive_disjunction(first_input, second_input):
         if first_input == False:
@@ -393,7 +393,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 2-5, 8-11
 
     def exclusive_disjunction(first_input, second_input):
@@ -415,7 +415,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write three of the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 3-4, 6-7, 13-14
 
     def exclusive_disjunction(first_input, second_input):
@@ -440,7 +440,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 4-5, 8-9, 13-14, 17-18
 
     def exclusive_disjunction(first_input, second_input):
@@ -470,7 +470,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 5-6, 10-11, 16-17, 21-22
 
     def exclusive_disjunction(first_input, second_input):
@@ -503,12 +503,12 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
-* I move all the :ref:`if statements` together
+* I move the :ref:`if statements` to put them together
 
   .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 17-21
 
     def exclusive_disjunction(first_input, second_input):
@@ -541,7 +541,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I add :ref:`if statements` for the other two cases to make it clearer
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 20-21, 25-26
 
     def exclusive_disjunction(first_input, second_input):
@@ -626,7 +626,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I move the first :ref:`if statement<if statements>` to the bottom to be with the other statement that returns the same thing (:red:`False`)
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 27-28
 
     def exclusive_disjunction(first_input, second_input):
@@ -665,88 +665,9 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I use :ref:`Logical Disjunction (OR)<test_logical_conjunction>` to put the :ref:`if statements` that return the same thing together
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 17-30, 32-39
+    :lineno-start: 78
+    :emphasize-lines: 4-5, 8-13, 16-23
 
-      def exclusive_disjunction(first_input, second_input):
-          # if first_input == False:
-          # if bool(first_input) == False:
-          # if not bool(first_input) == True:
-          # if not bool(first_input):
-              # if second_input == False:
-              # if bool(second_input) == False:
-              # if not bool(second_input) == True:
-              # if not bool(second_input):
-          # if first_input == True:
-          # if bool(first_input) == True:
-          # if bool(first_input):
-              # if second_input == False:
-              # if bool(second_input) == False:
-              # if not bool(second_input) == True:
-              # if not bool(second_input):
-          # if not first_input:
-          #     if not second_input:
-          #     if second_input:
-          # if not first_input and second_input:
-          #     return True
-          # if first_input:
-          #     if not second_input:
-          # if first_input and not second_input:
-          if (
-              (not first_input and second_input)
-              or
-              (first_input and not second_input)
-          ):
-              return True
-              # if second_input:
-          # if not first_input and not second_input:
-          #     return False
-          # if first_input and second_input:
-          if (
-              (not first_input and not second_input)
-              or
-              (first_input and second_input)
-          ):
-              return False
-
-  still green, because I can use :ref:`OR<test_logical_disjunction>` to put two :ref:`if statements` together when they both return the same thing and are at the same indentation level. For example
-
-  .. code-block:: python
-
-    if something:
-        return this
-    if something_else:
-        return this
-
-  can also be written as
-
-  .. code-block:: python
-
-    if something or something_else:
-        return this
-
-* I change the second :ref:`if statement<if statements>` to an :ref:`else clause<if statements>`
-
-  .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 35-40
-
-    def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
         # if not first_input:
         #     if not second_input:
             # if second_input:
@@ -765,11 +686,50 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
         # if not first_input and not second_input:
         #     return False
         # if first_input and second_input:
-        # if (
-        #     (not first_input and not second_input)
-        #     or
-        #     (first_input and second_input)
-        # ):
+        if (
+            (not first_input and not second_input)
+            or
+            (first_input and second_input)
+        ):
+            return False
+
+  still green, because I can put two :ref:`if statements` together when they both return the same thing and are at the same indentation level. For example
+
+  .. code-block:: python
+
+    if something:
+        return this
+    if something_else:
+        return this
+
+  can also be written as
+
+  .. code-block:: python
+
+    if something or something_else:
+        return this
+
+* I change the second :ref:`if statement<if statements>` to an :ref:`else clause<if statements>`
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 11-16
+
+        if (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        ):
+            return True
+            # if second_input:
+        # if not first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        if (
+            (not first_input and not second_input)
+            or
+            (first_input and second_input)
+        ):
         else:
             return False
 
@@ -778,33 +738,9 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 25-30, 40-46
+    :lineno-start: 86
+    :emphasize-lines: 1-6, 16-22
 
-    def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if not first_input:
-        #     if not second_input:
-            # if second_input:
-        # if not first_input and second_input:
-        #     return True
-        # if first_input:
-        #     if not second_input:
-        # if first_input and not second_input:
         # if (
         #     (not first_input and second_input)
         #     or
@@ -833,33 +769,9 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 86
     :emphasize-lines: 42-51
 
-    def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if not first_input:
-        #     if not second_input:
-            # if second_input:
-        # if not first_input and second_input:
-        #     return True
-        # if first_input:
-        #     if not second_input:
-        # if first_input and not second_input:
         # if (
         #     (not first_input and second_input)
         #     or
@@ -1076,7 +988,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` when ``first_input`` and ``second_input`` are the same and returns :green:`True`, if they are NOT. I add an :ref:`if statement<if statements>` to show this with the equality symbol (2 equal signs together :kbd:`=+=` on the keyboard)
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
     :emphasize-lines: 52-55
 
     def exclusive_disjunction(first_input, second_input):
@@ -1236,7 +1148,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 62
 
     def exclusive_disjunction(first_input, second_input):
         return first_input != second_input
@@ -1378,7 +1290,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 135
+  :lineno-start: 143
   :emphasize-lines: 23-28
 
       def test_exclusive_disjunction(self):
@@ -1432,7 +1344,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 56
+  :lineno-start: 62
   :emphasize-lines: 17-18
 
   def exclusive_disjunction(first_input, second_input):
