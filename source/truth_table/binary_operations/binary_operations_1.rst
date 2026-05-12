@@ -1897,8 +1897,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not True ) and True
-       False      and True  # logical_conjunction(False, True)
-       False                # logical_conjunction(False, True)
+       False      and True
+       False      # logical_conjunction(False, True)
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -1907,8 +1907,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not True ) and False
-       False      and False # logical_conjunction(False, False)
-       False                # logical_conjunction(False, False)
+       False      and False
+       False      # logical_conjunction(False, False)
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -1917,8 +1917,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not False) and True
-       True       and True  # logical_conjunction(True, True)
-       True                 # logical_conjunction(True, True)
+       True       and True
+       True       # logical_conjunction(True, True)
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`converse_non_implication<test_converse_non_implication>` returns
 
@@ -1927,8 +1927,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       (not first) and second
       (not False) and False
-       True       and False # logical_conjunction(True, False)
-       False                # logical_conjunction(True, False)
+       True       and False
+       False      # logical_conjunction(True, False)
 
   ==============  =============== =============== ================
   first           not first       second          (not first)
@@ -1985,7 +1985,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         )
         return not first_input and second_input
 
-  I can use any of these two `return statements`_, though only one runs because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 :ref:`Converse Non-Implication<test_converse_non_implication>` always returns
 

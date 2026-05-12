@@ -805,51 +805,61 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns ``((not first_input and second_input) or (first_input and not second_input))``
 
   - ``not first_input and second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input
+
+    .. code-block:: python
+
+      logical_conjunction(
+          logical_negation(first_input),
+          second_input
+      )
+
   - ``not first_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input``
 
     * if the first input is :green:`True`, this part of the statement is :red:`False`
     * if the first input is :red:`False`, this part of the statement is :green:`True`
 
   - ``first_input and not second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
+
+    .. code-block:: python
+
+      logical_conjunction(
+          first_input,
+          logical_negation(second_input)
+      )
+
   - ``not second_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``second_input``
 
     * if the second input is :green:`True`, this part of the statement is :red:`False`
     * if the second input is :red:`False`, this part of the statement is :green:`True`
 
-  - ``((not first_input and second_input) or (first_input and not second_input))`` can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
+  - ``((not first_input and second_input) or (first_input and not second_input))`` can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the :ref:`Logical Negation (NOT)<test_logical_negation>` of the first input, and the second input, and the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input. Very confusing when written in English
 
     .. code-block:: python
 
       logical_disjunction(
-          (not first_input and second_input),
-          (first_input and not second_input)
+          logical_conjunction(
+              logical_negation(first_input),
+              second_input
+          ),
+          logical_conjunction(
+              first_input,
+              logical_negation(second_input)
+          )
       )
 
-    which is the same as
+    it can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Converse Non-Implication<test_converse_non_implication>` of the first input, and the second input, and the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
 
     .. code-block:: python
 
       logical_disjunction(
-          logical_conjunction(not first_input, second_input),
-          logical_conjunction(first_input, not second_input)
-      )
-
-    or as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Converse Non-Implication<test_converse_non_implication>` of the first input, and the second input, AND the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input, and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
-
-    .. code-block:: python
-
-      logical_disjunction(
-          converse_non_implication(first_input, second_input),
-          (first_input and not second_input)
-      )
-
-    which is the same as
-
-    .. code-block:: python
-
-      logical_disjunction(
-          converse_non_implication(first_input, second_input),
-          logical_conjunction(first_input, not second_input)
+          converse_non_implication(
+              first_input,
+              second_input
+          ),
+          logical_conjunction(
+              first_input,
+              logical_negation(second_input)
+          )
       )
 
     because :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
@@ -915,73 +925,29 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   I add a `return statement`_ to show this
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 103
     :emphasize-lines: 52-56
 
-    def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if not first_input:
-        #     if not second_input:
-            # if second_input:
-        # if not first_input and second_input:
-        #     return True
-        # if first_input:
-        #     if not second_input:
-        # if first_input and not second_input:
-        # if (
-        #     (not first_input and second_input)
-        #     or
-        #     (first_input and not second_input)
-        # ):
-        #     return True
-            # if second_input:
-        # if not first_input and not second_input:
-        #     return False
-        # if first_input and second_input:
-        # if (
-        #     (not first_input and not second_input)
-        #     or
-        #     (first_input and second_input)
-        # ):
-        # else:
-        #     return False
-        # return True if (
-        #     (not first_input and second_input)
-        #     or
-        #     (first_input and not second_input)
-        # ) else False
-        # if first_input == second_input:
-        #     return False
-        # else:
-        # if not (first_input == second_input):
-        #     return True
-        return logical_disjunction(
-            converse_non_implication(first_input, second_input),
-            logical_conjunction(
-                first_input,
-                logical_negation(second_input)
-            )
+    # return True if (
+    #     (not first_input and second_input)
+    #     or
+    #     (first_input and not second_input)
+    # ) else False
+    return logical_disjunction(
+        converse_non_implication(
+            first_input,
+            second_input
+        ),
+        logical_conjunction(
+            first_input,
+            logical_negation(second_input)
         )
-        return not (first_input == second_input)
-        return (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        )
+    )
+    return (
+        (not first_input and second_input)
+        or
+        (first_input and not second_input)
+    )
 
   the test is still green
 
@@ -989,71 +955,23 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 52-55
+    :emphasize-lines: 6-15
 
-    def exclusive_disjunction(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-        # if not first_input:
-        #     if not second_input:
-            # if second_input:
-        # if not first_input and second_input:
-        #     return True
-        # if first_input:
-        #     if not second_input:
-        # if first_input and not second_input:
-        # if (
-        #     (not first_input and second_input)
-        #     or
-        #     (first_input and not second_input)
-        # ):
-        #     return True
-            # if second_input:
-        # if not first_input and not second_input:
-        #     return False
-        # if first_input and second_input:
-        # if (
-        #     (not first_input and not second_input)
-        #     or
-        #     (first_input and second_input)
-        # ):
-        # else:
-        #     return False
         # return True if (
         #     (not first_input and second_input)
         #     or
         #     (first_input and not second_input)
         # ) else False
-        # if first_input == second_input:
-        #     return False
-        # else:
-        # if not (first_input == second_input):
-        #     return True
-        if first_input == second_input:
-            return False
-        else:
-            return True
         return logical_disjunction(
-            converse_non_implication(first_input, second_input),
+            converse_non_implication(
+                first_input,
+                second_input
+            ),
             logical_conjunction(
                 first_input,
                 logical_negation(second_input)
             )
         )
-        return not (first_input == second_input)
         return (
             (not first_input and second_input)
             or
@@ -1062,25 +980,31 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   still green
 
-* I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<test_logical_negation>` of the new :ref:`if statement<if statements>`
+* :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` when the two inputs are equal, it returns :green:`True` when the two inputs are NOT equal. I add an :ref:`if statement<if statements>` to show this
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 3-4
+    :lineno-start: 103
+    :emphasize-lines: 6-9
 
+        # return True if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ) else False
         if first_input == second_input:
             return False
-        # else:
-        if not (first_input == second_input):
+        else:
             return True
         return logical_disjunction(
-            converse_non_implication(first_input, second_input),
+            converse_non_implication(
+                first_input,
+                second_input
+            ),
             logical_conjunction(
                 first_input,
                 logical_negation(second_input)
             )
         )
-        return not (first_input == second_input)
         return (
             (not first_input and second_input)
             or
@@ -1089,26 +1013,96 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   green
 
+* I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<test_logical_negation>` of the new :ref:`if statement<if statements>` so I can write a :ref:`conditional expression<conditional expressions>`
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 3-4
+
+        if first_input == second_input:
+            return False
+        # else:
+        if not (first_input == second_input):
+            return True
+        return logical_disjunction(
+            converse_non_implication(
+                first_input,
+                second_input
+            ),
+            logical_conjunction(
+                first_input,
+                logical_negation(second_input)
+            )
+        )
+        return (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
+
+  still green
+
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 1-6
+    :lineno-start: 108
+    :emphasize-lines: 1-2, 4-10
 
         # if first_input == second_input:
         #     return False
         # else:
         # if not (first_input == second_input):
         #     return True
-        return not (first_input == second_input)
+        return (
+            True if
+            not (first_input == second_input)
+            else False
+        )
         return logical_disjunction(
-            converse_non_implication(first_input, second_input),
+            converse_non_implication(
+                first_input,
+                second_input
+            ),
             logical_conjunction(
                 first_input,
                 logical_negation(second_input)
             )
         )
+        return (
+            (not first_input and second_input)
+            or
+            (first_input and not second_input)
+        )
+
+  the test is still green
+
+* I remove ``True if`` and ``else False`` to make the statement simpler
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 6-11
+
+        # if first_input == second_input:
+        #     return False
+        # else:
+        # if not (first_input == second_input):
+        #     return True
+        # return (
+        #     True if
+        #     not (first_input == second_input)
+        #     else False
+        # )
         return not (first_input == second_input)
+        return logical_disjunction(
+            converse_non_implication(
+                first_input,
+                second_input
+            ),
+            logical_conjunction(
+                first_input,
+                logical_negation(second_input)
+            )
+        )
         return (
             (not first_input and second_input)
             or
@@ -1120,30 +1114,84 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 * I can also write the :ref:`conditional expression<conditional expressions>` with the NOT equal symbol (``!=``) (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 6
+    :lineno-start: 62
+    :emphasize-lines: 57
 
+    def exclusive_disjunction(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+        # if not first_input:
+        #     if not second_input:
+            # if second_input:
+        # if not first_input and second_input:
+        #     return True
+        # if first_input:
+        #     if not second_input:
+        # if first_input and not second_input:
+        # if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ):
+        #     return True
+            # if second_input:
+        # if not first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        # if (
+        #     (not first_input and not second_input)
+        #     or
+        #     (first_input and second_input)
+        # ):
+        # else:
+        #     return False
+        # return True if (
+        #     (not first_input and second_input)
+        #     or
+        #     (first_input and not second_input)
+        # ) else False
         # if first_input == second_input:
         #     return False
         # else:
         # if not (first_input == second_input):
         #     return True
+        # return (
+        #     True if
+        #     not (first_input == second_input)
+        #     else False
+        # )
+        return first_input != second_input
         return not (first_input == second_input)
         return logical_disjunction(
-            converse_non_implication(first_input, second_input),
+            converse_non_implication(
+                first_input,
+                second_input
+            ),
             logical_conjunction(
                 first_input,
                 logical_negation(second_input)
             )
         )
-        return not (first_input == second_input)
         return (
             (not first_input and second_input)
             or
             (first_input and not second_input)
         )
 
-  the test is still green
+  green
 
 * I remove the commented lines
 
@@ -1154,18 +1202,22 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
         return first_input != second_input
         return not (first_input == second_input)
         return logical_disjunction(
-            converse_non_implication(first_input, second_input),
+            converse_non_implication(
+                first_input,
+                second_input
+            ),
             logical_conjunction(
                 first_input,
                 logical_negation(second_input)
             )
         )
-        return not (first_input == second_input)
         return (
             (not first_input and second_input)
             or
             (first_input and not second_input)
         )
+
+  I can use any of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns
 
@@ -1345,16 +1397,21 @@ I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_
 
 .. code-block:: python
   :lineno-start: 62
-  :emphasize-lines: 17-18
+  :emphasize-lines: 21-22
 
   def exclusive_disjunction(first_input, second_input):
       return first_input != second_input
       return not (first_input == second_input)
       return logical_disjunction(
-          converse_non_implication(first_input, second_input),
-          logical_conjunction(first_input, not second_input)
+          converse_non_implication(
+              first_input,
+              second_input
+          ),
+          logical_conjunction(
+              first_input,
+              logical_negation(second_input)
+          )
       )
-      return not (first_input == second_input)
       return (
           (not first_input and second_input)
           or
@@ -1384,7 +1441,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 165
     :emphasize-lines: 7-11
 
         def test_material_non_implication(self):
@@ -1413,7 +1470,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add an :ref:`if statement<if statements>` to :ref:`material_non_implication<test_material_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 2-3
 
     def material_non_implication(first_input, second_input):
@@ -1435,7 +1492,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 157
+    :lineno-start: 165
     :emphasize-lines: 12-16
 
         def test_material_non_implication(self):
@@ -1472,7 +1529,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 157
+    :lineno-start: 165
     :emphasize-lines: 17-21
 
         def test_material_non_implication(self):
@@ -1506,12 +1563,12 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returned :green:`True` and the text expects :red:`False`
+  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I add an :ref:`if statement<if statements>` for the one case that returns :green:`True` to the :ref:`material_non_implication function<test_material_non_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 2-4
 
     def material_non_implication(first_input, second_input):
@@ -1525,7 +1582,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 2-5
 
     def material_non_implication(first_input, second_input):
@@ -1541,7 +1598,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 5-6
 
     def material_non_implication(first_input, second_input):
@@ -1558,7 +1615,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 3-4, 7-8
 
     def material_non_implication(first_input, second_input):
@@ -1577,7 +1634,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 4-5, 9-10
 
     def material_non_implication(first_input, second_input):
@@ -1601,7 +1658,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 5, 10-11
 
     def material_non_implication(first_input, second_input):
@@ -1634,8 +1691,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 11-19
+    :lineno-start: 82
+    :emphasize-lines: 11-18
 
     def material_non_implication(first_input, second_input):
         # if first_input == True:
@@ -1651,8 +1708,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         #         return True
         # return False
         return (
-            True
-            if first_input and not second_input
+            True if
+            first_input and not second_input
             else False
         )
 
@@ -1661,25 +1718,15 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 14-20
+    :lineno-start: 92
+    :emphasize-lines: 4-9
 
-    def material_non_implication(first_input, second_input):
-        # if first_input == True:
-        # if bool(first_input) == True:
-        # if bool(first_input):
-        # if first_input:
-            # if second_input == False:
-            # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
-            # if not second_input:
         # if first_input and not second_input:
         #         return True
         # return False
         # return (
-        #     True
-        #     if first_input and not second_input
+        #     True if
+        #     first_input and not second_input
         #     else False
         # )
         return first_input and not second_input
@@ -1694,6 +1741,13 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
     * if the second input is :red:`False`, this part of the statement is :green:`True`
   - ``first_input and not second_input`` is the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
 
+    .. code-block:: python
+
+      logical_conjunction(
+          first_input,
+          logical_negation(second_input)
+      )
+
   this means that in the four cases
 
   - if the first input is :green:`True` and the second input is :green:`True`, :ref:`material_non_implication<test_material_non_implication>` returns
@@ -1703,8 +1757,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
       first_input and not second_input
       True        and not True
-      True        and False # logical_conjunction(True, False)
-      False                 # logical_conjunction(True, False)
+      True        and False
+      False       # logical_conjunction(True, False)
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`material_non_implication<test_material_non_implication>` returns
 
@@ -1713,8 +1767,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
       first_input and not second_input
       True        and not False
-      True        and True  # logical_conjunction(True, True)
-      True                  # logical_conjunction(True, True)
+      True        and True
+      True        # logical_conjunction(True, True)
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`material_non_implication<test_material_non_implication>` returns
 
@@ -1723,8 +1777,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
       first_input and not second_input
       False       and not True
-      False       and False # logical_conjunction(False, False)
-      False                 # logical_conjunction(False, False)
+      False       and False
+      False       # logical_conjunction(False, False)
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`material_non_implication<test_material_non_implication>` returns
 
@@ -1733,8 +1787,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
       first_input and not second_input
       False       and not False
-      False       and True  # logical_conjunction(False, True)
-      False                 # logical_conjunction(False, True)
+      False       and True
+      False       # logical_conjunction(False, True)
 
   ==============  =============== =============== =======================
   first           second          not second      (first and not second)
@@ -1748,7 +1802,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   I add a `return statement`_ to show this
 
   .. code-block:: python
-    :lineno-start: 74
+    :lineno-start: 82
     :emphasize-lines: 19-22
 
     def material_non_implication(first_input, second_input):
@@ -1765,8 +1819,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         #         return True
         # return False
         # return (
-        #     True
-        #     if first_input and not second_input
+        #     True if
+        #     first_input and not second_input
         #     else False
         # )
         return logical_conjunction(
@@ -1788,6 +1842,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
             logical_negation(second_input)
         )
         return first_input and not second_input
+
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 :ref:`Material Non-Implication<test_material_non_implication>`
 
@@ -1849,6 +1905,62 @@ examples of Material Non-Implication
 ----
 
 *********************************************************************************
+more about Exclusive Disjunction
+*********************************************************************************
+
+----
+
+Since I now know :ref:`material_non_implication<test_material_non_implication>` I can think of :ref:`Exclusive Disjunction<test_exclusive_disjunction>` which returns ``(not first_input and second_input) or (first_input and not second_input)`` as
+
+.. code-block:: python
+
+  return logical_disjunction(
+      converse_non_implication(
+          first_input, second_input
+      ),
+      material_non_implication(
+          first_input, second_input
+      )
+  )
+
+because
+
+* :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_input or second_input``
+
+  - ``first_input`` in this case is ``(not first_input and second_input)``
+  - ``second_input`` in this case is ``(first_input and not second_input)``
+
+* :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
+* :ref:`material_non_implication<test_material_non_implication>` returns ``first_input and not second_input``
+
+I change the `return statement`_ in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
+
+.. code-block:: python
+  :lineno-start: 62
+  :emphasize-lines: 9, 11
+
+  def exclusive_disjunction(first_input, second_input):
+      return first_input != second_input
+      return not (first_input == second_input)
+      return logical_disjunction(
+          converse_non_implication(
+              first_input,
+              second_input
+          ),
+          material_non_implication(
+              first_input,
+              second_input
+          )
+      )
+      return (
+          (not first_input and second_input)
+          or
+          (first_input and not second_input)
+      )
+
+----
+
+*********************************************************************************
 test_project_first
 *********************************************************************************
 
@@ -1880,7 +1992,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 157
+  :lineno-start: 165
   :emphasize-lines: 23-26
 
       def test_material_non_implication(self):
@@ -1919,7 +2031,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.truth_table' has no attribute 'project_first'
 
-there is nothing names :ref:`project_first<test_project_first>` in ``truth_table.py``
+there is nothing named :ref:`project_first<test_project_first>` in ``truth_table.py``
 
 ----
 
@@ -1932,7 +2044,7 @@ there is nothing names :ref:`project_first<test_project_first>` in ``truth_table
 I add a :ref:`function<what is a function?>` for :ref:`project_first<test_project_first>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 71
+  :lineno-start: 82
   :emphasize-lines: 9-10
 
   def material_non_implication(first_input, second_input):
@@ -1965,7 +2077,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 179
+    :lineno-start: 187
     :emphasize-lines: 5-7
 
         def test_project_first(self):
@@ -1985,7 +2097,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
-* on to the next case, which is when the first input is :red:`False` and the first input is :green:`True`
+* on to the next case, which is when the first input is :red:`False` and the second input is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return
@@ -1994,8 +2106,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 4
+    :lineno-start: 187
+    :emphasize-lines: 8-10
 
         def test_project_first(self):
             self.assertTrue(
@@ -2022,7 +2134,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add an :ref:`if statement<if statements>` for this case to the :ref:`project_first function<test_project_first>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 2-3
 
     def project_first(first_input, second_input):
@@ -2044,7 +2156,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 179
+    :lineno-start: 187
     :emphasize-lines: 11-13
 
         def test_project_first(self):
@@ -2069,7 +2181,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 2-3
 
     def project_first(first_input, second_input):
@@ -2083,7 +2195,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 3-4
 
     def project_first(first_input, second_input):
@@ -2098,7 +2210,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 4-5
 
     def project_first(first_input, second_input):
@@ -2114,7 +2226,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 5-6
 
     def project_first(first_input, second_input):
@@ -2131,7 +2243,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 8-9
 
     def project_first(first_input, second_input):
@@ -2149,7 +2261,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I use :ref:`Logical Negation (NOT)<if statements>` for the :ref:`else clause<if statements>`
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 8-9
 
     def project_first(first_input, second_input):
@@ -2168,7 +2280,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove the :ref:`nots<test_logical_negation>` because they cancel out
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 9-10
 
     def project_first(first_input, second_input):
@@ -2188,7 +2300,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 6-7, 10-12
 
     def project_first(first_input, second_input):
@@ -2209,7 +2321,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
     :emphasize-lines: 13
 
     def project_first(first_input, second_input):
@@ -2231,7 +2343,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 * I remove the other statements
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 90
 
     def project_first(first_input, second_input):
         return first_input
@@ -2336,7 +2448,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 179
+  :lineno-start: 187
   :emphasize-lines: 15-20
 
       def test_project_first(self):
@@ -2382,7 +2494,7 @@ because ``truth_table.py`` does not have anything named :ref:`converse_implicati
 I add a :ref:`function<what is a function?>` for :ref:`converse_implication<test_converse_implication>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 78
+  :lineno-start: 90
   :emphasize-lines: 5-6
 
   def project_first(first_input, second_input):
@@ -2411,7 +2523,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 193
+    :lineno-start: 201
     :emphasize-lines: 7-11
 
         def test_converse_implication(self):
@@ -2434,7 +2546,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * time for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
 
   .. code-block:: python
-    :lineno-start: 193
+    :lineno-start: 201
     :emphasize-lines: 12-16
 
         def test_converse_implication(self):
@@ -2468,7 +2580,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add an :ref:`if statement<if statements>` to :ref:`converse_implication<test_converse_implication>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 2-3
 
     def converse_implication(first_input, second_input):
@@ -2490,7 +2602,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 193
+    :lineno-start: 201
     :emphasize-lines: 17-21
 
         def test_converse_implication(self):
@@ -2529,7 +2641,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add an :ref:`if statement<if statements>` for the only case that returns :green:`True`
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 3-4
 
     def converse_implication(first_input, second_input):
@@ -2543,7 +2655,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 2-5
 
     def converse_implication(first_input, second_input):
@@ -2559,7 +2671,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 3-4
 
     def converse_implication(first_input, second_input):
@@ -2576,7 +2688,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 4-5, 7-8
 
     def converse_implication(first_input, second_input):
@@ -2595,7 +2707,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 5-6, 9-10
 
     def converse_implication(first_input, second_input):
@@ -2619,7 +2731,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 6, 10-11
 
     def converse_implication(first_input, second_input):
@@ -2652,7 +2764,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
     :emphasize-lines: 12-14
 
     def converse_implication(first_input, second_input):
@@ -2675,7 +2787,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I use the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`if statement<if statements>` for the :ref:`else clause<if statements>`
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 104
     :emphasize-lines: 3-4
 
         if not first_input and second_input:
@@ -2689,7 +2801,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I "multiply" the :ref:`not<test_logical_negation>` by every symbol in the parentheses
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 104
     :emphasize-lines: 4-5
 
         if not first_input and second_input:
@@ -2710,7 +2822,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 104
     :emphasize-lines: 5-6
 
         if not first_input and second_input:
@@ -2726,7 +2838,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove ``not not``
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 104
     :emphasize-lines: 6-7
 
         if not first_input and second_input:
@@ -2743,7 +2855,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I add a :ref:`conditional expression<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 104
     :emphasize-lines: 1-2, 7-12
 
         # if not first_input and second_input:
@@ -2764,7 +2876,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove ``True if`` and ``else False``
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 104
     :emphasize-lines: 9-13
 
         # if not first_input and second_input:
@@ -2791,6 +2903,13 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     * if the second input is :red:`False`, this part of the statement is :green:`True`
   - ``first_input or not second_input`` is the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and the :ref:`Logical Negation (NOT)<test_logical_negation>` of the second input
 
+    .. code-block:: python
+
+      logical_disjunction(
+          first_input,
+          logical_negation(second_input)
+      )
+
   this means that in the four cases
 
   - if the first input is :green:`True` and the second input is :green:`True`, :ref:`converse_implication<test_converse_implication>` returns
@@ -2800,8 +2919,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
       first_input or not second_input
       True        or not True
-      True        or False # logical_disjunction(True, False)
-      True                 # logical_disjunction(True, False)
+      True        or False
+      True        # logical_disjunction(True, False)
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`converse_implication<test_converse_implication>` returns
 
@@ -2810,8 +2929,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
       first_input or not second_input
       True        or not False
-      True        or True  # logical_disjunction(True, True)
-      True                 # logical_disjunction(True, True)
+      True        or True
+      True        # logical_disjunction(True, True)
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`converse_implication<test_converse_implication>` returns
 
@@ -2820,8 +2939,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
       first_input or not second_input
       False       or not True
-      False       or False # logical_disjunction(False, False)
-      False                # logical_disjunction(False, False)
+      False       or False
+      False       # logical_disjunction(False, False)
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`converse_implication<test_converse_implication>` returns
 
@@ -2830,8 +2949,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
       first_input or not second_input
       False       or not False
-      False       or True  # logical_disjunction(False, True)
-      True                 # logical_disjunction(False, True)
+      False       or True
+      True        # logical_disjunction(False, True)
 
   ==============  =============== =============== =====================
   first           second          not second      (first or not second)
@@ -2845,7 +2964,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   I add a `return statement`_ to show this
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 94
     :emphasize-lines: 23-26
 
     def converse_implication(first_input, second_input):
@@ -2861,7 +2980,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         # if not first_input and second_input:
         #     return False
         # else:
-        # if not (not first_input and second_input):
+        # if not (not first_input and second_input)
         # if (not not first_input) (not and) (not second_input):
         # if (not not first_input) or (not second_input):
         # if first_input or not second_input:
@@ -2881,7 +3000,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 94
 
     def converse_implication(first_input, second_input):
         return logical_disjunction(
@@ -2890,11 +3009,13 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         )
         return first_input or not second_input
 
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+
 :ref:`Converse Implication<test_converse_implication>` returns
 
 - ``first_input or not second_input``
 - :red:`False`, only if the first input is :red:`False` and the second input is :green:`True`
-- the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input (confusing when written like this)
+- the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input
 - It is the opposite of :ref:`Converse Non-Implication<test_converse_non_implication>` which always returns ``not first_input and second_input`` or :ref:`True<test_what_is_true>`, only if the first input is :red:`False` and the second input is :green:`True`
 
 ----
@@ -2946,91 +3067,6 @@ examples of Converse Implication
   :red:`no`         :green:`yes`        :red:`wet`
   :red:`no`         :red:`no`           :green:`dry`
   ================  ==================  ==================
-
-----
-
-*********************************************************************************
-more about Exclusive Disjunction
-*********************************************************************************
-
-----
-
-Since I now know :ref:`material_non_implication<test_material_non_implication>` I can think of :ref:`Exclusive Disjunction<test_exclusive_disjunction>` which returns ``(not first_input and second_input) or (first_input and not second_input)`` as
-
-.. code-block:: python
-
-  return logical_disjunction(
-      converse_non_implication(first_input, second_input),
-      material_non_implication(first_input, second_input)
-  )
-
-because
-
-* :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_input or second_input``
-
-  - ``first_input`` in this case is ``(not first_input and second_input)``
-  - ``second_input`` in this case is ``(first_input and not second_input)``
-
-* :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
-* :ref:`material_non_implication<test_material_non_implication>` returns ``first_input and not second_input``
-
-This means that in the four cases
-
-* if the first input is :green:`True` and the second input is :green:`True`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-
-    (not first and second) or (first and not second)
-    (not True  and True  ) or (True  and not True  )
-    (False     and True  ) or (True  and False     )
-     False                 or  False
-     False                 # logical_disjunction(False, False)
-
-* if the first input is :green:`True` and the second input is :red:`False`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-    :force:
-
-    (not first and second) or (first and not second)
-    (not True  and False ) or (True  and not False )
-    (False     and False ) or (True  and True      )
-     False                 or  True
-     True                  # logical_disjunction(False, True)
-
-* if the first input is :red:`False` and the second input is :green:`True`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-
-    (not first and second) or (first and not second)
-    (not False and True  ) or (False and not True  )
-    (True      and True  ) or (False and False     )
-     True                  or  False
-     True                  # logical_disjunction(True, False)
-
-* if the first input is :red:`False` and the second input is :red:`False`, :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-
-    (not first and second) or (first and not second)
-    (not False and False ) or (False and not False )
-    (True      and False ) or (False and True      )
-     False                 or  False
-     False                 # logical_disjunction(False, False)
-
-==============  =============== =============== ================  ================  ================= ========================
-first           second          not first       not second        ((not first)      (first            ((not first) and second)
-                                                                  and               and               or
-                                                                  second)           (not second))     (first and (not second))
-==============  =============== =============== ================  ================  ================= ========================
-:green:`True`   :green:`True`   :red:`False`    :red:`False`      :red:`False`      :red:`False`      :red:`False`
-:green:`True`   :red:`False`    :red:`False`    :green:`True`     :red:`False`      :green:`True`     :green:`True`
-:red:`False`    :green:`True`   :green:`True`   :red:`False`      :green:`True`     :red:`False`      :green:`True`
-:red:`False`    :red:`False`    :green:`True`   :green:`True`     :red:`False`      :red:`False`      :red:`False`
-==============  =============== =============== ================  ================  ================= ========================
 
 ----
 

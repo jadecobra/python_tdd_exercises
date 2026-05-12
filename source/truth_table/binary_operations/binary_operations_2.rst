@@ -1006,8 +1006,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (True  and True)  # not logical_conjunction(True, True)
-      not (True)            # not logical_conjunction(True, True)
+      not (True  and True)
+      not (True)  # not logical_conjunction(True, True)
       False
 
   - if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_nand<test_logical_nand>` returns
@@ -1016,8 +1016,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (True  and False) # not logical_conjunction(True, False)
-      not (False)           # not logical_conjunction(True, False)
+      not (True  and False)
+      not (False) # not logical_conjunction(True, False)
       True
 
   - if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_nand<test_logical_nand>` returns
@@ -1026,8 +1026,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (False and True)  # not logical_conjunction(False, True)
-      not (False)           # not logical_conjunction(False, True)
+      not (False and True)
+      not (False) # not logical_conjunction(False, True)
       True
 
   - if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_nand<test_logical_nand>` returns
@@ -1036,8 +1036,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
       :emphasize-lines: 4
 
       not (first and second)
-      not (False and False) # not logical_conjunction(False, False)
-      not (False)           # not logical_conjunction(False, False)
+      not (False and False)
+      not (False) # not logical_conjunction(False, False)
       True
 
   ==============  =============== =============== ================
@@ -1099,7 +1099,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         )
         return not (first_input and second_input)
 
-  I can use any of these two `return statements`_, though only one runs because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 :ref:`Logical NAND<test_logical_nand>`
 
@@ -2198,7 +2198,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         )
         return first_input or second_input
 
-  I can use any of these two `return statements`_, though only one runs because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
 
 :ref:`Logical Disjunction<test_logical_disjunction>` also known as "OR_" returns
 
