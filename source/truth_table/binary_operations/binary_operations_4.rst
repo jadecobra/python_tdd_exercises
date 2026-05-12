@@ -1050,6 +1050,17 @@ examples of Negate Second
 test_logical_equality
 *********************************************************************************
 
+The :ref:`truth table` for :ref:`logical_equality<test_logical_equality>` is
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+:green:`True`   :red:`False`   :red:`False`
+:red:`False`    :green:`True`  :red:`False`
+:red:`False`    :red:`False`   :green:`True`
+==============  ============== ==============
+
 ----
 
 =================================================================================
@@ -1058,20 +1069,44 @@ test_logical_equality
 
 ----
 
-I add a new test for the next Binary Operation in ``test_truth_table.py``
+I add a test for :ref:`Logical Equality<test_logical_equality>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True` to ``test_truth_table.py``
+
+==============  ============== ==============
+first input     second input   return
+==============  ============== ==============
+:green:`True`   :green:`True`  :green:`True`
+==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 133
-  :emphasize-lines: 7-8
+  :lineno-start: 237
+  :emphasize-lines: 23-26
 
       def test_logical_nor(self):
-          self.assertFalse(src.truth_table.logical_nor(True, True))
-          self.assertFalse(src.truth_table.logical_nor(True, False))
-          self.assertFalse(src.truth_table.logical_nor(False, True))
-          self.assertTrue(src.truth_table.logical_nor(False, False))
+          self.assertFalse(
+              src.truth_table.logical_nor(
+                  True, True
+              )
+          )
+          self.assertFalse(
+              src.truth_table.logical_nor(
+                  True, False
+              )
+          )
+          self.assertFalse(
+              src.truth_table.logical_nor(
+                  False, True
+              )
+          )
+          self.assertTrue(
+              src.truth_table.logical_nor(
+                  False, False
+              )
+          )
 
       def test_logical_equality(self):
-          self.assertTrue(src.truth_table.logical_equality(True, True))
+          self.assertTrue(
+              src.truth_table.logical_equality(True, True)
+          )
 
 
   # Exceptions seen
@@ -1081,6 +1116,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: shell
 
   AttributeError: module 'src.truth_table' has no attribute 'logical_equality'. Did you mean: 'logical_identity'?
+
+because there is no definition for :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
 
 ----
 
@@ -1094,9 +1131,15 @@ I add a :ref:`function<what is a function?>` for it in ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 106
-  :emphasize-lines: 5-6
+  :emphasize-lines: 11-12
 
   def logical_nor(first_input, second_input):
+      return logical_negation(
+          logical_disjunction(
+              first_input,
+              second_input
+          )
+      )
       return not (first_input or second_input)
 
 
@@ -1104,12 +1147,6 @@ I add a :ref:`function<what is a function?>` for it in ``truth_table.py``
       return True
 
 the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
 
 ----
 
@@ -1119,312 +1156,641 @@ first input     second input   return
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case to :ref:`test_logical_equality` in ``test_truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 139
-    :emphasize-lines: 3
-
-        def test_logical_equality(self):
-            self.assertTrue(src.truth_table.logical_equality(True, True))
-            self.assertFalse(src.truth_table.logical_equality(True, False))
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: True is not false
-
-* I add an :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2-3
-
-    def logical_equality(first_input, second_input):
-        if first_input and not second_input:
-            return False
-        return True
-
-  the test passes. :ref:`logical_equality<test_logical_equality>` returns
-
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input, if the first input is :green:`True`
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :green:`True` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
 
   ==============  ============== ==============
   first input     second input   return
   ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
   :green:`True`   :red:`False`   :red:`False`
   ==============  ============== ==============
 
-* I add an :ref:`assertion<what is an assertion?>` for the next case to :ref:`test_logical_equality` in ``test_truth_table.py``
-
   .. code-block:: python
-    :lineno-start: 139
-    :emphasize-lines: 4
+    :lineno-start: 259
+    :emphasize-lines: 5-7
 
         def test_logical_equality(self):
-            self.assertTrue(src.truth_table.logical_equality(True, True))
-            self.assertFalse(src.truth_table.logical_equality(True, False))
-            self.assertFalse(src.truth_table.logical_equality(False, True))
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: True is not false
-
-* I add another :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2-3
-
-    def logical_equality(first_input, second_input):
-        if not first_input and second_input:
-            return False
-        if first_input and not second_input:
-            return False
-        return True
-
-  the test passes. :ref:`logical_equality<test_logical_equality>` returns
-
-  - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input, if the first input is :green:`True`
-
-  ==============  ============== ==============
-  first input     second input   return
-  ==============  ============== ==============
-  :green:`True`   :green:`True`  :green:`True`
-  :green:`True`   :red:`False`   :red:`False`
-  :red:`False`    :green:`True`  :red:`False`
-  ==============  ============== ==============
-
-* I add an :ref:`assertion<what is an assertion?>` for the last case to :ref:`test_logical_equality` in ``test_truth_table.py``
-
-  .. code-block:: python
-    :lineno-start: 139
-    :emphasize-lines: 5
-
-        def test_logical_equality(self):
-            self.assertTrue(src.truth_table.logical_equality(True, True))
-            self.assertFalse(src.truth_table.logical_equality(True, False))
-            self.assertFalse(src.truth_table.logical_equality(False, True))
-            self.assertTrue(src.truth_table.logical_equality(False, False))
+            self.assertTrue(
+                src.truth_table.logical_equality(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_equality(True, False)
+            )
 
 
     # Exceptions seen
 
-  the test is still green. :ref:`logical_equality<test_logical_equality>` returns
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  - :green:`True`, if the first input is :red:`False` and the second input is :red:`False`
-  - :red:`False`, if the first input is :red:`False` and the second input is :green:`True`
-  - the :ref:`logical_negation<test_logical_negation>` of the second input if the first input is :red:`False`
-  - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
-  - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
-  - the second input, if the first input is :green:`True`
-  - :green:`True`, if the two inputs are the same
-  - :red:`False`, if the two inputs are NOT the same
+  .. code-block:: shell
 
-* I use ":ref:`or<test_logical_disjunction>`" to put the 2 statements that return :ref:`False<test_what_is_false>` together, since they are at the same level in :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
+    AssertionError: True is not false
+
+  because the :ref:`logical_equality function<test_logical_equality>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+
+* I add an :ref:`if statement<if statements>` to :ref:`logical_equality<test_logical_equality>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2-11
+    :lineno-start: 116
+    :emphasize-lines: 2-3
 
     def logical_equality(first_input, second_input):
+        if second_input == False:
+            return False
+        return True
+
+  the test passes. :ref:`logical_equality<test_logical_equality>` returns
+
+  - :red:`False`, if the second input is :red:`False`
+  - :green:`True`, if the above condition is NOT met
+  - the second input
+
+* I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :red:`False`    :green:`True`  :red:`False`
+  ==============  ============== ==============
+
+  .. code-block:: python
+    :lineno-start: 259
+    :emphasize-lines: 8-10
+
+        def test_logical_equality(self):
+            self.assertTrue(
+                src.truth_table.logical_equality(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_equality(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.logical_equality(False, True)
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: True is not false
+
+  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+
+* I add another :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 2-3
+
+    def logical_equality(first_input, second_input):
+        if first_input == False:
+            return False
+        if second_input == False:
+            return False
+        return True
+
+  the test passes. :ref:`logical_equality<test_logical_equality>` returns
+
+  - :red:`False`, if the first input is :red:`False`
+  - :red:`False`, if the second input is :red:`False`
+  - :green:`True`, if the above conditions are NOT met
+
+* I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_equality` in ``test_truth_table.py``
+
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :red:`False`    :red:`False`   :green:`True`
+  ==============  ============== ==============
+
+  .. code-block:: python
+    :lineno-start: 259
+    :emphasize-lines: 11-13
+
+        def test_logical_equality(self):
+            self.assertTrue(
+                src.truth_table.logical_equality(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_equality(True, False)
+            )
+            self.assertFalse(
+                src.truth_table.logical_equality(False, True)
+            )
+            self.assertTrue(
+                src.truth_table.logical_equality(False, False)
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  because the :ref:`logical_equality function<test_logical_equality>` returned :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+
+* I add an :ref:`if statement<if statements>` to the :ref:`logical_equality function<test_logical_equality>` in ``truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 3-4
+
+    def logical_equality(first_input, second_input):
+        if first_input == False:
+            if second_input == False:
+                return True
+            return False
+        if second_input == False:
+            return False
+        return True
+
+  the test passes
+
+* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 2-5, 8-9
+
+    def logical_equality(first_input, second_input):
+        # if first_input == False:
+        if bool(first_input) == False:
+            # if second_input == False:
+            if bool(second_input) == False:
+                return True
+            return False
+        # if second_input == False:
+        if bool(second_input) == False:
+            return False
+        return True
+
+  the test is still green
+
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statements in terms of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 3-4, 6-7, 11-12
+
+    def logical_equality(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        if not bool(first_input) == True:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            if not bool(second_input) == True:
+                return True
+            return False
+        # if second_input == False:
+        # if bool(second_input) == False:
+        if not bool(second_input) == True:
+            return False
+        return
+
+  still green
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 4-5, 8-9, 14-15
+
+    def logical_equality(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        if not bool(first_input):
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            if not bool(second_input):
+                return True
+            return False
+        # if second_input == False:
+        # if bool(second_input) == False:
+        # if not bool(second_input) == True:
+        if not bool(second_input):
+            return False
+        return True
+
+  green
+
+* I remove :ref:`bool<booleans 2: test with bool>`
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 5-6, 10-11, 17-18
+
+    def logical_equality(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        if not first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            if not second_input:
+                return True
+            return False
+        # if second_input == False:
+        # if bool(second_input) == False:
+        # if not bool(second_input) == True:
+        # if not bool(second_input):
+        if not second_input:
+            return False
+        return True
+
+  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+
+* I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to make two of the cases clearer
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 6, 11-15
+
+    def logical_equality(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
+        if not first_input and not second_input:
+            return True
+        if not first_input and second_input:
+            return False
+        # if second_input == False:
+        # if bool(second_input) == False:
+        # if not bool(second_input) == True:
+        # if not bool(second_input):
+        if not second_input:
+            return False
+        return True
+
+  the test is still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
+
+  .. code-block:: python
+
+    if something:
+        if something_else:
+
+  can also be written as
+
+  .. code-block:: python
+
+    if something and something_else:
+
+* I do the same thing for the other two cases
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 10-13
+
+        if not first_input and not second_input:
+            return True
+        if not first_input and second_input:
+            return False
+        # if second_input == False:
+        # if bool(second_input) == False:
+        # if not bool(second_input) == True:
+        # if not bool(second_input):
+        # if not second_input:
+        if first_input and not second_input:
+            return False
+        if first_input and second_input:
+            return True
+
+  still green
+
+* I put the :ref:`if statements` that return the same thing together
+
+  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+
+  .. code-block:: python
+    :lineno-start: 116
+    :emphasize-lines: 17-18, 23-24
+
+    def logical_equality(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
+        # if second_input == False:
+        # if bool(second_input) == False:
+        # if not bool(second_input) == True:
+        # if not bool(second_input):
+        # if not second_input:
+        if not first_input and second_input:
+            return False
+        if first_input and not second_input:
+            return False
+        if first_input and second_input:
+            return True
+        if not first_input and not second_input:
+            return True
+
+* I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` that return :green:`True` together
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 1-16
+
         # if not first_input and second_input:
         #     return False
         # if first_input and not second_input:
         #     return False
+        # if first_input and second_input:
+        #     return True
+        # if not first_input and not second_input:
+        #     return True
         if (
-            (not first_input and second_input)
+            (first_input and second_input)
             or
-            (first_input and not second_input)
+            (not first_input and not second_input)
         ):
+            return True
+        else:
             return False
-        return True
+
+  green, because I can put two :ref:`if statements` together when they both return the same thing and are at the same indentation level. For example
+
+  .. code-block:: python
+
+    if something:
+        return this
+    if something_else:
+        return this
+
+  can also be written as
+
+  .. code-block:: python
+
+    if something or something_else:
+        return this
+
+* I add a :ref:`conditional expression<conditional expressions>`
+
+  .. code-block:: python
+    :lineno-start: 132
+    :emphasize-lines: 9-21
+
+        # if not first_input and second_input:
+        #     return False
+        # if first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        #     return True
+        # if not first_input and not second_input:
+        #     return True
+        # if (
+        #     (first_input and second_input)
+        #     or
+        #     (not first_input and not second_input)
+        # ):
+        #     return True
+        # else:
+        #     return False
+        return True if (
+            (first_input and second_input)
+            or
+            (not first_input and not second_input)
+        ) else False
 
   still green
 
-* since ``if something: return False`` is the same as ``return not (something)``, I remove the commented lines and use a :ref:`conditional expression<conditional expressions>` with :ref:`not<test_logical_negation>`
+* I remove ``True if`` and ``else False``
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2-6
+    :lineno-start: 148
+    :emphasize-lines: 1-10
 
-    def logical_equality(first_input, second_input):
-        return not (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        )
-        if (
-            (not first_input and second_input)
-            or
-            (first_input and not second_input)
-        ):
-            return False
-        return True
-
-  greennn, yellow?
-
-* I remove the other statements in the :ref:`function<what is a function?>` then "multiply :ref:`not<test_logical_negation>`" by everything in the parentheses
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2-6
-
-    def logical_equality(first_input, second_input):
+        # return True if (
+        #     (first_input and second_input)
+        #     or
+        #     (not first_input and not second_input)
+        # ) else False
         return (
-            (not (not first_input and second_input))
-            (not or)
-            (not (first_input and not second_input))
-        )
-        return not (
-            (not first_input and second_input)
+            (first_input and second_input)
             or
-            (first_input and not second_input)
+            (not first_input and not second_input)
+        )
+
+  the test is still green
+
+* I write the second part of the statement in terms of :ref:`not<test_logical_negation>` because it happens twice
+
+  .. code-block:: python
+    :lineno-start: 153
+    :emphasize-lines: 4-5
+
+        return (
+            (first_input and second_input)
+            or
+            # (not first_input and not second_input)
+            (not first_input) (not or) (not second_input)
         )
 
   the terminal_ is my friend, and shows SyntaxError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
     SyntaxError: invalid syntax
 
-* I change ":ref:`not<test_logical_negation>` :ref:`or<test_logical_disjunction>`" to ":ref:`and<test_logical_conjunction>`"
+  because I cannot :ref:`negate<test_logical_negation>` :ref:`or<test_logical_disjunction>` this way
+
+* I "factor" out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 4
+    :lineno-start: 153
+    :emphasize-lines: 5-6
 
-    def logical_equality(first_input, second_input):
         return (
-            (not (not first_input and second_input))
-            and
-            (not (first_input and not second_input))
-        )
-        return not (
-            (not first_input and second_input)
+            (first_input and second_input)
             or
-            (first_input and not second_input)
-        )
-
-  green again
-
-* I remove the other `return statement`_ then "multiply" " :ref:`not<test_logical_negation>` in the first parentheses
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 3-4
-
-    def logical_equality(first_input, second_input):
-        return (
-            # (not (not first_input and second_input))
-            ((not not first_input) (not and) (not second_input))
-            and
-            (not (first_input and not second_input))
-        )
-
-  the terminal_ is my friend, and shows SyntaxError_
-
-  .. code-block:: shell
-
-    SyntaxError: invalid syntax
-
-* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 4
-
-    def logical_equality(first_input, second_input):
-        return (
-            # (not (not first_input and second_input))
-            ((not not first_input) or (not second_input))
-            and
-            (not (first_input and not second_input))
+            # (not first_input and not second_input)
+            # (not first_input) (not or) (not second_input)
+            not (first_input or second_input)
         )
 
   the test is green again
 
-* I remove the commented line and "multiply" :ref:`not<test_logical_negation>` in the next statement
+* :ref:`Logical Equality<test_logical_equality>` returns ``((first_input and second_input) or not (first_input or second_input))``, which can be thought of as the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 5-6
 
-    def logical_equality(first_input, second_input):
-        return (
-            ((not not first_input) or (not second_input))
-            and
-            # (not (first_input and not second_input))
-            ((not first_input) (not and) (not not second_input))
+    return logical_disjunction(
+        logical_conjunction(first_input, second_input),
+        logical_nor(first_input, second_input)
+    )
+
+  because
+
+  * :ref:`logical_disjunction<test_logical_disjunction>` returns ``first_input or second_input``
+  * :ref:`logical_conjunction<test_logical_conjunction>` returns ``first_input and second_input``
+  * :ref:`logical_nor<test_logical_nor>` returns ``not (first_input or second_input)``
+
+  or
+
+  .. code-block:: python
+
+    return logical_disjunction(
+        logical_conjunction(first_input, second_input),
+        logical_negation(
+            logical_disjunction(first_input, second_input)
         )
+    )
 
-  the terminal_ is my friend, and shows SyntaxError_
+  This means that in the four cases
 
-  .. code-block:: shell
+  * if the first input is :green:`True` and the second input is :green:`True`, :ref:`logical_equality<test_logical_equality>` returns
 
-    SyntaxError: invalid syntax
+    .. code-block:: python
+      :emphasize-lines: 5
 
-* I change ":ref:`not<test_logical_negation>` :ref:`and<test_logical_conjunction>`" to ":ref:`or<test_logical_disjunction>`"
+      (first and second) or (not (first or second))
+      (True  and True  ) or (not (True  or True  ))
+       True              or (not  True            )
+       True              or  False
+       True              # logical_disjunction(True, False)
+
+  * if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_equality<test_logical_equality>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 5
+      :force:
+
+      (first and second) or (not (first or second))
+      (True  and False ) or (not (True  or False ))
+       False             or (not  True            )
+       False             or  False
+       False             # logical_disjunction(False, False)
+
+  * if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_equality<test_logical_equality>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 5
+
+      (first and second) or (not (first or second))
+      (False and True  ) or (not (False or True  ))
+       False             or (not  True            )
+       False             or  False
+       False             # logical_disjunction(False, False)
+
+  * if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_equality<test_logical_equality>` returns
+
+    .. code-block:: python
+      :emphasize-lines: 5
+
+      (first and second) or (not (first or second))
+      (False and False ) or (not (False or False ))
+       False             or (not  False           )
+       False             or  True
+       True              # logical_disjunction(False, True)
+
+  ============= ============= ================  ================  ================  ======================
+  first         second        first and second  first or second   not (first        ((first and second)
+                                                                  or                or
+                                                                  second)           not (first or second))
+  ============= ============= ================  ================  ================  ======================
+  :green:`True` :green:`True` :green:`True`     :red:`False`      :green:`True`     :green:`True`
+  :green:`True` :red:`False`  :red:`False`      :green:`True`     :green:`True`     :red:`False`
+  :red:`False`  :green:`True` :red:`False`      :red:`False`      :red:`False`      :red:`False`
+  :red:`False`  :red:`False`  :red:`False`      :green:`True`     :green:`True`     :green:`True`
+  ============= ============= ================  ================  ================  ======================
+
+* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are the same, which means I can write a much simpler `return statement`_ thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=` on the keyboard)
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 5
+    :lineno-start: 116
+    :emphasize-lines: 38
 
     def logical_equality(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        # if not bool(first_input):
+        # if not first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if not bool(second_input) == True:
+            # if not bool(second_input):
+            # if not second_input:
+        # if second_input == False:
+        # if bool(second_input) == False:
+        # if not bool(second_input) == True:
+        # if not bool(second_input):
+        # if not second_input:
+        # if not first_input and second_input:
+        #     return False
+        # if first_input and not second_input:
+        #     return False
+        # if first_input and second_input:
+        #     return True
+        # if not first_input and not second_input:
+        #     return True
+        # if (
+        #     (first_input and second_input)
+        #     or
+        #     (not first_input and not second_input)
+        # ):
+        #     return True
+        # else:
+        #     return False
+        # return True if (
+        #     (first_input and second_input)
+        #     or
+        #     (not first_input and not second_input)
+        # ) else False
+        return first_input == second_input
         return (
-            ((not not first_input) or (not second_input))
-            and
-            # (not (first_input and not second_input))
-            ((not first_input) or (not not second_input))
-        )
-
-  green again
-
-* I remove the commented line and ``not not`` from both parentheses because they cancel out
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 3, 5
-
-    def logical_equality(first_input, second_input):
-        return (
-            (first_input or not second_input)
-            and
-            (not first_input or second_input)
+            (first_input and second_input)
+            or
+            # (not first_input and not second_input)
+            # (not first_input) (not or) (not second_input)
+            not (first_input or second_input)
         )
 
   the test is still green
 
-* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are the same, which means I can write a much simpler `return statement`_ thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=`)
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2
+    :lineno-start: 116
 
     def logical_equality(first_input, second_input):
         return first_input == second_input
         return (
-            (first_input or not second_input)
-            and
-            (not first_input or second_input)
+            (first_input and second_input)
+            or
+            # (not first_input and not second_input)
+            # (not first_input) (not or) (not second_input)
+            not (first_input or second_input)
         )
 
-  the test is still green
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
 
 :ref:`Logical Equality<test_logical_equality>` returns
 
 * ``first_input == second_input``
 * :ref:`True<test_what_is_true>` when the first input is equal to the second input
-* the :ref:`Logical Conjunction<test_logical_conjunction>` of the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the first input and the :ref:`Logical Negation<test_logical_negation>` of the second input, and the result of the :ref:`Logical Disjunction<test_logical_disjunction>` of the :ref:`Logical Negation<test_logical_negation>` of the first input, and the second input. Oh brother!
+* the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, and the :ref:`Logical Negation(NOT)<test_logical_negation>` of the :ref:`Logical Disjunction (OR)<test_logical_disjunction>` of the first input and second input. Oh brother!
 * is the :ref:`opposite<test_logical_negation>` of :ref:`Exclusive Disjunction<test_logical_disjunction>` which returns :green:`True`, only if the first input and second input are NOT equal
 
 ==============  ============== ==============
@@ -1503,7 +1869,7 @@ test_material_implication
 I add a new test for one more Binary Operation in ``test_truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 139
+  :lineno-start: 259
   :emphasize-lines: 7-8
 
       def test_logical_equality(self):
@@ -1535,7 +1901,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` in ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 81
+  :lineno-start: 116
   :emphasize-lines: 10-11
 
   def logical_equality(first_input, second_input):
@@ -1763,87 +2129,6 @@ more about Logical Equality
 
 ----
 
-:ref:`Logical Equality<test_logical_equality>` can also be thought of as
-
-.. code-block:: python
-
-  return (
-      converse_implication(first_input, second_input)
-      and
-      material_implication(first_input, second_input)
-  )
-
-because
-
-* :ref:`converse_implication<test_converse_implication>` returns ``first_input or not second_input``
-* :ref:`material_implication<test_material_implication>` returns ``not first_input or second_input``
-
-``return (first_input or not second_input) and (not first_input or second_input)`` can be thought of as the :ref:`logical_conjunction<test_logical_conjunction>` of :ref:`converse_implication<test_converse_implication>` and :ref:`material_implication<test_material_implication>`
-
-.. code-block:: python
-
-  logical_conjunction(
-      converse_implication(first_input, second_input),
-      material_implication(first_input, second_input)
-  )
-
-This means that in the four cases
-
-* if the first input is :green:`True` and the second input is :green:`True`, :ref:`logical_equality<test_logical_equality>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-
-    (first or (not second)) and ((not first) or second)
-    (True  or not True    ) and (not True    or True  )
-    (True  or False       ) and (False       or True  )
-     True                   and  True
-     True                   # logical_conjunction(True, True)
-
-* if the first input is :green:`True` and the second input is :red:`False`, :ref:`logical_equality<test_logical_equality>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-    :force:
-
-    (first or (not second)) and ((not first) or second)
-    (True  or not False   ) and (not True    or False )
-    (True  or True        ) and (False       or False )
-     True                   and  False
-     False                  # logical_conjunction(True, False)
-
-* if the first input is :red:`False` and the second input is :green:`True`, :ref:`logical_equality<test_logical_equality>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-
-    (first or (not second)) and ((not first) or second)
-    (False or not True    ) and (not False   or True  )
-    (False or False       ) and (True        or True  )
-     False                  and  True
-     False                  # logical_conjunction(False, True)
-
-* if the first input is :red:`False` and the second input is :red:`False`, :ref:`logical_equality<test_logical_equality>` returns
-
-  .. code-block:: python
-    :emphasize-lines: 5
-
-    (first or (not second)) and ((not first) or second)
-    (False or not False   ) and (not False   or False )
-    (False or True        ) and (True        or False )
-     True                   and  True
-     True                   # logical_conjunction(True, True)
-
-==============  =============== =============== ================  ================  ================= =======================
-first          second          not first       not second        (first            ((not first)      (first or (not second))
-                                                                  or                or                and
-                                                                  (not second))     second)           ((not first) or second)
-==============  =============== =============== ================  ================  ================= =======================
-:green:`True`   :green:`True`   :red:`False`    :red:`False`      :green:`True`     :green:`True`     :green:`True`
-:green:`True`   :red:`False`    :red:`False`    :green:`True`     :green:`True`     :red:`False`      :red:`False`
-:red:`False`    :green:`True`   :green:`True`   :red:`False`      :red:`False`      :green:`True`     :red:`False`
-:red:`False`    :red:`False`    :green:`True`   :green:`True`     :green:`True`     :green:`True`     :green:`True`
-==============  =============== =============== ================  ================  ================= =======================
 
 ----
 
