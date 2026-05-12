@@ -1630,7 +1630,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns
 
   - :green:`True` if the first input is :red:`False`
-  - :red:`False` if the above condition is not met
+  - :red:`False` if the above condition is NOT met
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
 

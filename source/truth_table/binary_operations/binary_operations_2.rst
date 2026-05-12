@@ -672,7 +672,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   the test passes. :ref:`logical_nand<test_logical_nand>` returns
 
   - :green:`True`, if the second input is :red:`False`
-  - :red:`False`, if the above condition is not met
+  - :red:`False`, if the above condition is NOT met
   - the :ref:`logical negation<test_logical_negation>` of the second input so far
 
 * I add another :ref:`assertion<what is an assertion?>`, for the case when the first input is :red:`False` and the second input is :green:`True`, to :ref:`test_logical_nand` in ``test_binary.py``
@@ -780,7 +780,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   still green. :ref:`logical_nand<test_logical_nand>` returns
 
   - :red:`False` if the first input is :green:`True` and the second input is :green:`True`
-  - :red:`True` if the above condition is not met
+  - :red:`True` if the above condition is NOT met
 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 

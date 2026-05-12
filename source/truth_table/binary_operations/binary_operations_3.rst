@@ -249,7 +249,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
 
   - :green:`True`, if the second input is :red:`False`
-  - :red:`False`, if the above condition is not met
+  - :red:`False`, if the above condition is NOT met
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case, which is when the first input is :red:`False` and the second input is :green:`True`, to ``test_binary.py``
 
@@ -1481,7 +1481,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   the test passes. :ref:`material_non_implication<test_material_non_implication>` returns
 
   - :green:`True`, if the second input is :red:`False`
-  - :red:`False`, if the above condition is not met
+  - :red:`False`, if the above condition is NOT met
 
 * I add an :ref:`assertion<what is an assertion?>` for the third case to :ref:`test_material_non_implication`, for when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
 
@@ -1518,7 +1518,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   the test is still green. :ref:`material_non_implication<test_material_non_implication>` returns
 
   - :green:`True`, if the second input is :red:`False`
-  - :red:`False`, if the above condition is not met
+  - :red:`False`, if the above condition is NOT met
 
 * I add an :ref:`assertion<what is an assertion?>` for the fourth case, which is when the first input is :red:`False` and the second input is :red:`False`
 
@@ -2145,7 +2145,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   the test passes. :ref:`project_first<test_project_first>` returns
 
   - :red:`False`, if the first input is :red:`False`
-  - :green:`True`, if the above condition is not met
+  - :green:`True`, if the above condition is NOT met
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_project_first` in ``test_binary.py``
 
@@ -2591,7 +2591,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   the test passes. :ref:`converse_implication<test_converse_implication>` returns
 
   - :red:`False`, if the first input is :red:`False`
-  - :green:`True`, if the above condition is not met
+  - :green:`True`, if the above condition is NOT met
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_implication` in ``test_binary.py``
 
