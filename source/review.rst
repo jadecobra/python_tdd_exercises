@@ -284,7 +284,7 @@ what is next?
 
 after that review you can confidently say you know something about Python_, you know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
+* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
@@ -302,7 +302,7 @@ after that review you can confidently say you know something about Python_, you 
 * :ref:`what you can do with classes<what is a class?>`
 * :ref:`how to raise ModuleNotFoundError<what is a module?>`
 
-:ref:`Do you remember how to make a test driven development environment?<how to make a test driven development environment>`
+:ref:`Do you remember how to make a Python test driven development environment?<how to make a Python test driven development environment>`
 
 ----
 

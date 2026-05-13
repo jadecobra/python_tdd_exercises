@@ -107,7 +107,7 @@ table of contents
   data_structures/booleans/index
   truth table<truth_table/index>
   make a calculator<calculator/calculator_1/index>
-  make TDD project 2<make_tdd/make_tdd_automatically/index>
+  make TDD project 2<make_tdd/make_tdd_automatically>
   handling Exceptions<exceptions/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index

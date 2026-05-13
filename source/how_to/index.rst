@@ -25,10 +25,10 @@ how to
   :maxdepth: 1
 
   setup my computer<../setup/index>
-  make TDD manually<../make_tdd/make_tdd_manually/index>
+  make TDD manually<../make_tdd/make_tdd_manually>
   pass values<pass_values>
   make a calculator<../calculator/index>
-  make TDD automatically<../make_tdd/make_tdd_automatically/index>
+  make TDD automatically<../make_tdd/make_tdd_automatically>
   handle Exceptions<../exceptions/exception_handling/index>
   make TDD w variables<../make_tdd/make_tdd_automatically_w_variables/index>
   make a person<make_person>

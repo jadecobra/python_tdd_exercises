@@ -98,7 +98,7 @@ table of contents
   hatches/index
   conventions
   start here<setup/index>
-  make TDD project 1<make_tdd/make_tdd_manually/index>
+  make TDD project 1<make_tdd/make_tdd_manually>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions/index>
   what causes AttributeError?<exceptions/AttributeError>
@@ -107,7 +107,7 @@ table of contents
   what is a boolean?<data_structures/booleans/booleans_1>
   truth table<truth_table/index>
   make a calculator<calculator/calculator_1/index>
-  make TDD project 2<make_tdd/make_tdd_automatically/index>
+  make TDD project 2<make_tdd/make_tdd_automatically>
   handling Exceptions<exceptions/exception_handling/index>
   exceptions/type_error/index
   data_structures/lists/index

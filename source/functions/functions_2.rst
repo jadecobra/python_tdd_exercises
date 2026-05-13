@@ -497,7 +497,7 @@ what is next?
 
 you know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
+* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
@@ -529,7 +529,7 @@ There is a problem, I have done these same steps for each of the chapters up til
 
 I think I know how to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`. I am going to :ref:`write a program that will do all the steps for making a project for me<how to make a Python Test Driven Development environment automatically>`, so I never have to do those steps again.
 
-:ref:`Would you like to know how to make a Python Test Driven Development environment automatically?<how to make a test driven development environment 2>`
+:ref:`Would you like to know how to make a Python Test Driven Development environment automatically?<how to make a Python test driven development environment 2>`
 
 ----
 

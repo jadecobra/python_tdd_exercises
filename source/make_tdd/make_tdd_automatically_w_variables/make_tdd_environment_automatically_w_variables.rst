@@ -336,7 +336,7 @@ what is next?
 
 you know
 
-* :ref:`how to make a test driven development environment manually<how to make a test driven development environment>`
+* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
@@ -351,7 +351,7 @@ you know
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 * :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`how to make a Python Test Driven Development environment automatically with variables<how to make a test driven development environment 3>`
+* :ref:`how to make a Python Test Driven Development environment automatically with variables<how to make a Python test driven development environment 3>`
 
 :ref:`would you like to test using dictionaries and functions to make a person?<how to make a person>`
 
