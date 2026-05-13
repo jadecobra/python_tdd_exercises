@@ -157,7 +157,7 @@ Questions to think about as I go through the chapter
 how to make a Python Test Driven Development environment manually
 ********************************************************************************************
 
-I choose ``magic`` as the name of this project
+* I choose ``magic`` as the name of this project
 
 * I click ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
@@ -205,7 +205,7 @@ I choose ``magic`` as the name of this project
 
     tree
 
-  - if tree_ is not installed on the computer, the terminal_ is my friend, and shows
+  - if tree_ is not installed on the computer, the terminal_ shows
 
     .. code-block:: shell
 
@@ -213,7 +213,7 @@ I choose ``magic`` as the name of this project
 
     :ref:`you can install it from here<what is covered?>`
 
-  - if tree_ is installed on the computer, the terminal_ is my friend, and shows
+  - if tree_ is installed on the computer, the terminal_ shows
 
     .. code-block:: shell
 
@@ -313,7 +313,7 @@ the terminal_ is my friend, and shows
 
   python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
 
-the computer cannot find the program_ because there is no file_ with that name in the ``src`` folder_, yet.
+the computer cannot find the program_ because there is no file_ , and there is no folder_ named ``src``, yet.
 
 ----
 
@@ -354,7 +354,7 @@ how to make a directory for the source code
 
     python3 src/magic.py
 
-  the terminal_ is my friend, and shows the same error from before. I have to make the file_
+  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``magic.py`` in the ``src`` folder_. I have to make the file_
 
 ----
 
@@ -429,12 +429,12 @@ how to manually run tests
 
   .. code-block:: shell
 
-    ----------------------------------------------------------------------
+    ------------------------------------------------------
     Ran 0 tests in 0.000s
 
     NO TESTS RAN
 
-  because I do not have any tests yet.
+  because I do not have any tests, yet.
 
 ----
 
@@ -524,7 +524,7 @@ how to make a Python file for the tests in the 'tests' directory
 :red:`RED`: make it fail
 ********************************************************************************************
 
-* I open ``tests/magic.py`` with the `Integrated Development Environment (IDE)`_ to open it in the :ref:`editor<2 editors>`
+* I use the `Integrated Development Environment (IDE)`_ to open ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
   .. TIP::
 
@@ -557,7 +557,7 @@ how to make a Python file for the tests in the 'tests' directory
 
   Here is an explanation of the code I typed in the file_
 
-  - ``import unittest`` imports the `unittest module`_ from `The Python Standard Library`_, this is what I am using for testing
+  - ``import unittest`` imports the `unittest module`_ from `The Python Standard Library`_, this is what I am using for testing. It is like a toolbox that contains the tools I will use to test the code
   - ``class TestMagic``
 
     * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<what causes AttributeError?>` and :ref:`methods (functions)<what is a function?>` that belong together, :ref:`see the classes chapter for more<what is a class?>`
@@ -565,8 +565,8 @@ how to make a Python file for the tests in the 'tests' directory
 
       .. TIP:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
-    * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for testing
-    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>` of the `unittest.TestCase class`_
+    * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for , this is the tool that contains the :ref:`methods<what is a function?>` I will use to test code in this book
+    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>` of the `unittest.TestCase class`_, I do not have to make them because someone else already did
 
   - ``def test_failure``
 
@@ -579,14 +579,14 @@ how to make a Python file for the tests in the 'tests' directory
 
       .. TIP:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name though it is easier to stick with convention for this one
 
-    * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>`
+    * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>` (a way to make sure something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`)
 
       - assertFalse_ is a :ref:`method<what is a function?>` in the `unittest.TestCase class`_ that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
 
-* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_, I do not want to use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) on the keyboard every time I make a change, I want the computer to do that for me
+* I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_. I do not want to use :kbd:`ctrl+s` ((Windows_/Linux_) or :kbd:`command+s` (MacOS_)) on the keyboard every time I make a change, I want the computer to do that for me
 
   .. ATTENTION:: Turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_
 
@@ -605,7 +605,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     NO TESTS RAN
 
-  I need to tell Python_ that the ``tests`` folder is a `Python package`_, so it can find the tests
+  because Python_ the ``tests`` folder_ is NOT a `Python package`_ and unittest_ cannot find my test. I need to add a file_ named ``__init__.py`` to the ``tests`` folder, to make it a `Python package`_ for unittest_ to find the test.
 
 ----
 
@@ -615,7 +615,7 @@ how to make the tests a Python package
 
 ----
 
-* I use touch_ to add an empty file_ with the name ``__init__.py`` in the ``tests`` folder
+* I use touch_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
   .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
@@ -658,11 +658,11 @@ how to make the tests a Python package
 
     NO TESTS RAN
 
-  I need to tell Python_ that ``magic.py`` in the ``tests`` folder is a test file
+  because unittest_ does not know that ``magic.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. CAUTION:: if you do not close ``magic.py`` in the :ref:`editor<2 editors>`, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the :ref:`editor<2 editors>` after you change its name
+  .. DANGER:: if you do not close ``magic.py`` in the :ref:`editor<2 editors>`, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the :ref:`editor<2 editors>` after you change its name
 
 ----
 
@@ -701,7 +701,9 @@ how to change the name of a file
         ├── __pycache__
         └── test_magic.py
 
-  .. NOTE:: if you do not see ``__pycache__`` in the tree do not worry, the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
+  .. ADMONITION:: if you do not see ``__pycache__`` in the tree do not worry,
+
+    the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
 
   the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of contents of the child folders_
 
@@ -718,31 +720,31 @@ how to change the name of a file
     :emphasize-lines: 9
 
     F
-    =============================================================
+    =========================================================
     FAIL: test_failure (tests.test_magic.TestMagic.test_failure)
-    -------------------------------------------------------------
+    ---------------------------------------------------------
     Traceback (most recent call last):
       File "...pumping_python/magic/tests/test_magic.py", line 7, in test_failure
         self.assertFalse(True)
         ~~~~~~~~~~~~~~~~^^^^^^
     AssertionError: True is not false
 
-    -------------------------------------------------------------
+    ---------------------------------------------------------
     Ran 1 test in A.XYZs
 
     FAILED (failures=1)
 
   .. TIP:: I can use any name for the test file_ and it must start with ``test_`` or unittest_ will NOT run the tests in the file_
 
-  This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
+  This is the :red:`RED` part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development cycle?>`. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
-  - ``FAILED (failures=1)`` the number of failures
-  - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took
-  - ``AssertionError: True is not false`` the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError<what causes AssertionError?>` because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
-  - ``self.assertFalse(True)`` the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
-  - ``~~~~~~~~~~~~~~~~^^^^^^`` points to the part of the line above, that Python_ thinks caused the :ref:`error<errors>`
-  - ``File ".../magic/tests/test_magic.py", line 7, in test_failure`` the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
-  - ``Traceback (most recent call last):`` all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
+  - ``FAILED (failures=1)``: the number of failures
+  - ``Ran 1 test in A.XYZs``: the number of tests it ran and how long they took
+  - ``AssertionError: True is not false``: the :ref:`Error (Exception)<errors>` that happened and its message, in this case :ref:`AssertionError<what causes AssertionError?>` because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
+  - ``self.assertFalse(True)``: the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
+  - ``~~~~~~~~~~~~~~~~^^^^^^``: points to the part of the line above, that Python_ thinks caused the :ref:`error<errors>`
+  - ``File ".../magic/tests/test_magic.py", line 7, in test_failure``: the line number of the code that caused the :ref:`error<errors>` and the location of the file where it is
+  - ``Traceback (most recent call last):``: all the information shown after this line that is indented to the right shows the calls that led to the failure, this is why I like to read it from the bottom up
   - ``FAIL: test_failure (tests.test_magic.TestMagic.test_failure)`` is a header with information in :ref:`dot notation` about the failing :ref:`test method<what is a function?>`
 
     - ``tests.test_magic.TestMagic.test_failure`` is the location of the failing test
@@ -764,10 +766,16 @@ how to change the name of a file
 
 I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py`` in the :ref:`editor<2 editors>`
 
-.. code-block:: shell
-  :lineno-start: 7
-  :emphasize-lines: 1
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 7
 
+  import unittest
+
+
+  class TestMagic(unittest.TestCase):
+
+      def test_failure(self):
           self.assertFalse(False)
 
 I run the test again in the terminal_
