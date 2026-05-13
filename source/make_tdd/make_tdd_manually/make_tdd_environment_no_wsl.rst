@@ -647,7 +647,7 @@ how to change the name of a file on Windows without WSL
 
   .. IMPORTANT:: I can use any name for the test file_ and it must start with ``test_`` or unittest_ will NOT run the tests in the file
 
-* This is the ``RED`` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
+* This is the :ref:`make a directory for the project<how to setup a project with uv>` part of the `Test Driven Development`_ cycle. The message in the terminal_ is about the failure, I like to read these from the bottom up, here is an explanation of each line, starting from the last line on the screen
 
   - ``FAILED (failures=1)`` the number of failures
   - ``Ran 1 test in A.XYZs`` the number of tests it ran and how long they took

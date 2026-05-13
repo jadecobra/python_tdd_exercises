@@ -223,14 +223,6 @@ how to make a Python Test Driven Development environment manually
 
     .. NOTE:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
-----
-
-=================================================================================
-how to make a directory for the project
-=================================================================================
-
-----
-
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
   .. code-block:: shell
@@ -246,30 +238,28 @@ how to make a directory for the project
 
   there is no folder_ with the name ``magic`` in this folder_, time to make ``magic``
 
-* I make the ``magic`` directory_
+----
+
+=====================================================================================================
+how to setup a project with uv
+=====================================================================================================
+
+----
+
+* I use the `uv Python Package Manager`_ to setup the project
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    mkdir magic
+    uv init magic
 
-  this makes a `folder (directory)`_ for the project where its files_ will stay
-
-* I use tree_ again
+  the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 1
 
-    tree
+    Initialized project `magic` at `.../pumping_python/magic`
 
-  the terminal_ is my friend, and shows ``magic``
-
-  .. code-block:: shell
-    :emphasize-lines: 2
-
-    .
-    └── magic
-
+  uv_ is a program_ that makes files_ and folders_ needed for a project. It also handles Python_ and `Python Packages`_
 
 ----
 
@@ -279,18 +269,125 @@ how to change directory to the project
 
 ----
 
-I try to go to ``magic`` again
+* I try to `change directory`_ to the ``magic`` folder_ again
 
-.. code-block:: shell
-  :emphasize-lines: 1
+  .. code-block:: python
+    :emphasize-lines: 1
 
-  cd magic
+    cd magic
 
-the terminal_ is my friend, and shows I am in the ``magic`` folder_ I just made in the ``pumping_python`` folder
+  the terminal_ shows
 
-.. code-block:: shell
+  .. code-block:: python
 
-  .../pumping_python/magic
+    .../pumping_python/magic
+
+  uv_ made the directory_ for me
+
+* I use tree_ to see what uv_ added to the folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -a -L 1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 2-7
+
+    .
+    ├── .git
+    ├── .gitignore
+    ├── .python-version
+    ├── README.md
+    ├── main.py
+    └── pyproject.toml
+
+  it added a few files_ and folders_. Here is what uv_ made for me
+
+  - ``.git`` this folder_ makes the project a git_ repository, it makes it easy to keep track of changes I make, and if I publish the repository I can work on the project from any computer anywhere
+  - ``.gitignore`` is a file_ that tells git_ what files_ in the project to not keep track of, this is useful for things that I do not want or need to share
+  - ``.python-version`` is a file_ that has the version of Python_ I am using, this helps if I do projects with different Python_ versions
+  - ``README.md`` is a file_ that is used to describe the project
+  - ``main.py`` is a :ref:`Python module<what is a module?>` for me to write the code for the project
+  - ``pyproject.toml`` is a file_ that is used to configure Python_ projects for packaging see `pyproject.toml`_ for more
+
+----
+
+=====================================================================================================
+how to see what is inside a file
+=====================================================================================================
+
+----
+
+* I can use the `cat program`_ to look at what is inside ``.gitignore``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat .gitignore
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+      # Python-generated files
+      __pycache__/
+      *.py[oc]
+      build/
+      dist/
+      wheels/
+      *.egg-info
+
+      # Virtual environments
+      .venv
+
+* I use cat_ to see what is inside ``pyproject.toml``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat pyproject.toml
+
+  the terminal_ and shows
+
+  .. code-block:: python
+
+    [project]
+    name = "magic"
+    version = "0.1.0"
+    description = "Add your description here"
+    readme = "README.md"
+    requires-python = ">=3.XY"
+    dependencies = []
+
+* I look at what is in ``.python-version``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat .python-version
+
+  the terminal_ is my friend, and shows
+
+  .. code-block:: python
+
+    3.XY
+
+* I show what is inside ``README.md``
+
+  .. code-block:: python
+
+    cat README.md
+
+  the terminal_ goes back to the command line
+
+  .. code-block:: python
+
+    .../pumping_python/magic
+
+  the file_ is empty
 
 ----
 
@@ -323,7 +420,7 @@ how to make a directory for the source code
 
 ----
 
-* I make a child folder_ in the ``magic`` directory_ for the program_
+* I make a child folder_ in the ``magic`` directory_ for the program_ because I want to keep the files_ separate from the other files_ in the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -337,14 +434,20 @@ how to make a directory for the source code
   .. code-block:: shell
     :emphasize-lines: 1
 
-    tree
+    tree -a -L 1
 
-  the terminal_ is my friend, and shows
+  the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 2
+    :emphasize-lines: 8
 
     .
+    ├── .git
+    ├── .gitignore
+    ├── .python-version
+    ├── README.md
+    ├── main.py
+    ├── pyproject.toml
     └── src
 
 * I try to run the ``magic`` program_ again
@@ -354,7 +457,24 @@ how to make a directory for the source code
 
     python3 src/magic.py
 
-  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``magic.py`` in the ``src`` folder_. I have to make the file_
+  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``magic.py`` in the ``src`` folder_
+
+----
+
+=====================================================================================================
+how to change the name of a file
+=====================================================================================================
+
+----
+
+* I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mv main.py src/magic.py
+
+  the terminal_ goes back to the command line
 
 ----
 
@@ -664,14 +784,6 @@ how to make the tests a Python package
 
   .. DANGER:: if you do not close ``magic.py`` in the :ref:`editor<2 editors>`, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the :ref:`editor<2 editors>` after you change its name
 
-----
-
-=====================================================================================================
-how to change the name of a file
-=====================================================================================================
-
-----
-
 * I use the `mv program`_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
   .. code-block:: shell
@@ -798,14 +910,13 @@ the test passes! the terminal_ is my friend, and shows
 
 *cue CELEBRATION MUSIC AND DANCE!* I am :green:`GREEN!!`
 
-
 ----
 
 ********************************************************************************************
 :yellow:`REFACTOR`: make it better
 ********************************************************************************************
 
-I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to know them better, it helps when I run into them later. I add :ref:`AssertionError<what causes AssertionError?>` in ``test_magic.py`` in the :ref:`editor<2 editors>`
+I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to know them better, it helps when I run into them later. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_magic.py`` in the :ref:`editor<2 editors>`
 
 .. code-block:: python
   :linenos:
@@ -823,11 +934,15 @@ I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ 
   # Exceptions seen
   # AssertionError
 
-* I ran ``python3 -m unittest`` a few times to see the test fail
-* I ran ``python3 -m unittest`` again to see the test pass
-* I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want.
+.. NOTE::
 
-This means I have to run ``python3 -m unittest`` for each part of the `Test Driven Development`_ cycle or any time there is a code change.
+  comments in Python_ are written with ``#`` at the beginning, they do not do anything, they are notes for me
+
+* I ran ``python3 -m unittest`` to see the test fail
+* I ran ``python3 -m unittest`` every time I made a change until the test passed
+* I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want
+
+This means I have to run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
 
 I do not want to type ``python3 -m unittest`` again, I want the computer to do it for me.
 
@@ -841,7 +956,7 @@ how to run the tests automatically
 
 I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a :ref:`Python file<what is a module?>` changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
-pytest_ is a `Python package`_ like unittest_, it is not part of `The Python Standard Library`_
+pytest_ is a `Python package`_ like unittest_ that is used for testing. It is not part of `The Python Standard Library`_
 
 I type `pytest-watcher`_ in the terminal_
 
@@ -856,7 +971,7 @@ the terminal_ is my friend, and shows
 
   command not found: pytest-watcher
 
-I need to install `pytest-watcher`_ for the computer to use it. Next, I use the `uv Python package manager`_ to install it
+because `pytest-watcher`_ is not installed on the computer. I need to install , I can do that with the `uv Python Package Manager`_.
 
 ----
 
@@ -868,20 +983,20 @@ how to write text to a file
 
 I want to make a file_ where I can list all the `Python packages`_ that my project needs as a way to document it and have uv_ install the programs_ listed in the file_
 
-* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example, in the terminal_
+* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example, if I type this in the terminal_
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     echo "pytest"
 
-  the terminal_ is my friend, and shows
+  it shows
 
   .. code-block:: shell
 
     pytest
 
-* I can also use echo_ to add text to a file_, I use it to make the requirements file_ with pytest_ as what is inside it
+* I can also use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -890,7 +1005,7 @@ I want to make a file_ where I can list all the `Python packages`_ that my proje
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
   - pytest_ is a `Python package`_ like unittest_, that is used for testing
-  - ``requirements.txt`` is the name of a file_ where I can list `Python packages`_ for pip_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
+  - ``requirements.txt`` is the name of the file_ I am adding `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
 
 * I add `pytest-watcher`_ to the requirements file_ as well
 
@@ -902,7 +1017,7 @@ I want to make a file_ where I can list all the `Python packages`_ that my proje
   - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it
   - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
 
-* I run tree_ to see what the project looks like now
+* I use tree_ to see what the project looks like now
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -925,162 +1040,21 @@ I want to make a file_ where I can list all the `Python packages`_ that my proje
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
-----
-
-=====================================================================================================
-how to see what is inside a file
-=====================================================================================================
-
-----
-
-I can use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watcher`` inside it
-
-.. code-block:: shell
-  :emphasize-lines: 1
-
-  cat requirements.txt
-
-the terminal_ is my friend, and shows
-
-.. code-block:: shell
-
-  pytest
-  pytest-watcher
-
-life is good!
-
-----
-
-=====================================================================================================
-how to setup a project with uv
-=====================================================================================================
-
-----
-
-* I use uv_ to setup the project
+* I use the `cat program`_ to see what is inside a file_. I use it to make sure my ``requirements.txt`` has ``pytest-watcher`` inside it
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    uv init
+    cat requirements.txt
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    Initialized project `magic`
+    pytest
+    pytest-watcher
 
-* I run tree_ to see what uv_ did to the folder_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    tree -a -L 1
-
-  .. code-block:: shell
-    :emphasize-lines: 2-7
-
-    .
-    ├── .git
-    ├── .gitignore
-    ├── main.py
-    ├── pyproject.toml
-    ├── .python-version
-    ├── README.md
-    ├── requirements.txt
-    ├── src
-    └── tests
-
-  it added a few files_ and folders_
-
-* I remove ``main.py`` since I already have ``magic.py`` in the ``src`` folder_ for the main program_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/magic
-
-* Here is what uv_ added to the project
-
-  - ``.git`` this folder_ makes the project a git_ repository, it makes it easy to keep track of changes I make, and if I publish the repository I can work on the project from any computer anywhere
-  - ``.gitignore`` is a file_ that tells git_ what files_ in the project to not keep track of, this is useful for things that I do not want or need to share
-  - ``pyproject.toml`` is a file_ that is used to configure Python_ projects for packaging see `pyproject.toml`_ for more
-  - ``.python-version`` is a file_ that has the version of Python_ I am using
-  - ``README.md`` is a file_ that is used to describe the project
-
-* I use cat_ to look at what is inside ``.gitignore``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cat .gitignore
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: python
-
-    # Python-generated files
-    __pycache__/
-    *.py[oc]
-    build/
-    dist/
-    wheels/
-    *.egg-info
-
-    # Virtual environments
-    .venv
-
-* I use cat_ to see what is inside ``pyproject.toml``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cat pyproject.toml
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: python
-
-    [project]
-    name = "magic"
-    version = "0.1.0"
-    description = "Add your description here"
-    readme = "README.md"
-    requires-python = ">=3.XY"
-    dependencies = []
-
-* I look at what is in ``.python-version``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cat .python-version
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: python
-
-    3.XY
-
-* I show what is in ``README.md``
-
-  .. code-block:: python
-
-    cat README.md
-
-  the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/magic
-
-  the file_ is empty
+  life is good!
 
 ----
 
@@ -1453,7 +1427,7 @@ how to view all the commands typed in a terminal
 * these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
   - give the project a name
-  - :ref:`make a directory for the project<how to make a directory for the project>`
+  - :ref:`make a directory for the project<how to setup a project with uv>`
   - :ref:`change directory to the project<how to change directory to the project>`
   - :ref:`make a directory for the source code<how to make a directory for the source code>`
   - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
