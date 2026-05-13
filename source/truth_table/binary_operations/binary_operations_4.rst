@@ -367,7 +367,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
             return True
         return False
 
-  the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something````if
+  the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -670,7 +670,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   because the :ref:`logical_nor function<test_logical_nor>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
-* I add an :ref:`if statements` for this case to :ref:`logical_nor<test_logical_nand>` in ``truth_table.py``
+* I add :ref:`if statements` for this case to :ref:`logical_nor<test_logical_nor>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 106
@@ -1011,7 +1011,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 ----
 
 =================================================================================
-examples of Negate Second
+examples of Logical Nor
 =================================================================================
 
 ----
