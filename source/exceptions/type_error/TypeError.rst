@@ -30,7 +30,7 @@ These are the tests I have by the end of the chapter
 questions about TypeError
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what causes TypeError?`
 * :ref:`are data structures callable?<test_type_error_w_the_uncallables>`

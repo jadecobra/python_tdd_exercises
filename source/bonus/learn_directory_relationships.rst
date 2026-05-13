@@ -56,7 +56,7 @@ I use these commands in the chapter to build each part of the tree below step by
 questions about directory relationships
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what is a folder (directory)?<what is a folder?>`
 * :ref:`what is a file?<what is a file?>`

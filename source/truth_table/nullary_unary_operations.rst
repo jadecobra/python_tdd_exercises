@@ -32,7 +32,7 @@ These are the tests I have at the end of the chapters
 questions about Nullary and Unary Operations
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what are the Nullary Operations?<Nullary Operations>`
 * :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`

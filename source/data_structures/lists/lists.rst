@@ -58,7 +58,7 @@ These are the tests I have by the end of the chapter
 questions about lists
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what is a list?`
 * :ref:`how can I add an item to the end of a list?<test_append_adds_item_to_end_of_a_list>`

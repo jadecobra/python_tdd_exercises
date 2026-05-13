@@ -114,7 +114,7 @@ AssertionError review
 functions review
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
@@ -217,7 +217,7 @@ Exception handling in Programs review
 TypeError review
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what causes TypeError?`
 * :ref:`are data structures callable?<test_type_error_w_the_uncallables>`
@@ -255,7 +255,7 @@ lists review
 list comprehensions review
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what is a list comprehension?`
 * :ref:`what is a for loop?`

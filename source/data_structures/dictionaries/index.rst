@@ -25,7 +25,7 @@ I think this is the most important :ref:`data structure<data structures>` becaus
 questions about dictionaries
 *********************************************************************************
 
-There are answers to these questions in this chapter
+Questions to think about as I go through the chapter
 
 * :ref:`what is a dictionary?`
 * :ref:`how can I empty a dictionary?<test_clear_empties_a_dictionary>`
