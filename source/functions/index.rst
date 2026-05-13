@@ -2131,7 +2131,7 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
 
     TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last_input'
 
-  I cannot put :ref:`positional arguments<test_functions_w_positional_arguments>` after :ref:`keyword arguments<test_functions_w_keyword_arguments>`. Python_ cannot tell the difference between the 2 values because ``last_input`` is both the second positional argument and passed in as a keyword argument
+  because I gave confusing values in the call. Python_ cannot tell the difference between the 2 values because I gave a positional value which according to the function_ definition is ``last_input`` and I gave a value with the name. How does it know what value to use for ``last_input``?
 
 * I change the order of the names in parentheses
 
