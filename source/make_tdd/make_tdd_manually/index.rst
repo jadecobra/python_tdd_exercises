@@ -1426,7 +1426,7 @@ close the project
 
     cd ..
 
-  ``..`` is for the parent of any directory_ I am in. the terminal_ is my friend, and shows
+  ``..`` is for the parent of any directory_ I am in. the terminal_ shows
 
   .. code-block:: shell
 
@@ -1462,81 +1462,29 @@ how to view all the commands typed in a terminal
 
     history
 
-  the terminal_ is my friend, and shows
+  the terminal_ shows
 
-  .. code-block:: shell
-    :emphasize-lines: 6, 8, 10, 13, 17, 19, 22, 23, 31, 34, 36, 41, 50
+  .. literalinclude:: ../../code/make_tdd/makePythonTddHistory.sh
+    :language: shell
+    :emphasize-lines: 1-2, 10, 14, 19, 21, 24, 33-34, 37, 41, 52
 
-    cd pumping_python
-    mkdir pumping_python
-    cd pumping_python
-    tree
-    cd magic
-    mkdir magic
-    tree
-    cd magic
-    python3 src/magic.py
-    mkdir src
-    tree
-    python3 src/magic.py
-    touch src/magic.py
-    tree
-    python3 src/magic.py
-    python3 -m unittest
-    mkdir tests
-    tree
-    touch tests/magic.py
-    tree
-    python3 -m unittest
-    code tests/magic.py
-    touch tests/__init__.py
-    tree
-    python3 -m unittest
-    mv tests/magic.py tests/test_magic.py
-    tree -L 2
-    python3 -m unittest
-    pytest-watcher
-    echo "pytest-watcher"
-    echo "pytest-watcher" > requirements.txt
-    tree -a -L 2
-    cat requirements.txt
-    uv init
-    tree -a -L 1
-    rm main.py
-    cat .gitignore
-    cat pyproject.toml
-    cat .python-version
-    cat README.md
-    uv add --requirement requirements.txt
-    tree -a -L 1
-    source .venv/bin/activate
-    deactivate
-    pytest-watcher
-    cat pyproject.toml
-    pytest-watcher
-    uv run pytest-watcher
-    uv run pytest-watcher --now
-    uv run pytest-watcher --now  .
-    cd ..
+  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will :ref:`automatically make a Python Test Driven Development environment<how to make a test driven development environment 2>` for me
 
-  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will automatically make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for me
-
-* these are the commands I used to help make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
+* these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
   .. code-block:: shell
 
-    mkdir NAME_OF_THE_PROJECT
+    uv init NAME_OF_THE_PROJECT
     cd NAME_OF_THE_PROJECT
     mkdir src
-    touch src/NAME_OF_THE_PROJECT.py
+    mv main.py src/NAME_OF_THE_PROJECT.py
     mkdir tests
     touch tests/__init__.py
     touch tests/test_NAME_OF_THE_PROJECT.py
-    echo "pytest-watcher" > requirements.txt
-    uv init
-    rm main.py
+    echo "pytest" > requirements.txt
+    echo "pytest-watcher" >> requirements.txt
     uv add --requirement requirements.txt
-    uv run pytest-watcher --now  .
+    uv run pytest-watcher . --now
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
@@ -1552,7 +1500,6 @@ how to view all the commands typed in a terminal
   - :ref:`make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
   - :ref:`add the first failing test to the test file<test_failure>`
   - :ref:`make a requirements file for the Python packages I need<how to write text to a file>`
-  - :ref:`setup the project with uv<how to setup a project with uv>`
   - :ref:`install the Python packages I gave in the requirements file<how to install Python packages with uv>`
   - :ref:`run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
