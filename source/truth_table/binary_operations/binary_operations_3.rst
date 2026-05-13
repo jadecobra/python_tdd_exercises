@@ -3288,6 +3288,8 @@ and
 
 All the :ref:`binary operations<truth table: binary operations>` or conditions have been written with some or all of the above 3.
 
+The :ref:`binary operations<truth table: binary operations>` can be written with some combination of :ref:`AND<test_logical_conjunction>`, :ref:`NOT<test_logical_negation>` and :ref:`OR<test_logical_disjunction>`.
+
 =============================================== =============  ============= ============= ============= ==============================================================
 return                                          True,          True,         False,        False,        name of operation
                                                 True           False         True          False
