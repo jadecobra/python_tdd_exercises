@@ -1,6 +1,6 @@
 .. meta::
-  :description: Today is the day to learn Python with Jacob Itegboje’s beginner-friendly guide. Save time and money while building confidence through practical exercises.
-  :keywords: Jacob Itegboje, learn Python for beginners, Python Test Driven Development, beginner coding guide, fast track Python learning, affordable Python course, TDD Python tutorial, programming for novices
+  :description: Master Python through the rigor of Test-Driven Development (TDD) in an intensive, 10-week high-accountability "Hatch". Join Jacob Itegboje for daily 1-on-1 video sessions and small-group mentorship (max 5 students). Write code from day one—no math required—and build daily coding habits through 100+ practical tests and 50 mentored sessions.
+  :keywords: Jacob Itegboje, learn Python with TDD, Test-Driven Development for beginners, hands-on Python mentorship, small group coding bootcamp, daily Python practice, coding accountability group, practical programming for novices, high-intensity coding course, zero-math Python learning, 1-on-1 coding help, Pumping Python community, coding consistency habits, TDD Python tutorial, mentored coding sessions
 
 .. include:: /links.rst
 
@@ -14,9 +14,9 @@ join a HATCH
 
 ----
 
-If you’ve ever thought to yourself “I will learn the Python_ programming language one day”. Today is someday! You can learn with me. See available times below
+If you have ever thought to yourself “I will learn the Python_ programming language one day”. Today is someday! You can learn with me. See available times below
 
-It’s 8 weeks of HARD work reading, writing and testing Python_ everyday, not for the faint of heart or weak of mind. Do not worry no math needed 🤔
+It is 10 weeks of HARD work - reading, writing and testing Python_ everyday, not for the faint of heart or weak of mind. Do not worry no math needed.
 
 :ref:`Sign up TODAY<sign_up>` for a Hatch that fits your schedule. The maximum number of people in each Hatch is **5** to make sure I give you one-on-one attention in a group learning environment.
 
@@ -24,11 +24,11 @@ It’s 8 weeks of HARD work reading, writing and testing Python_ everyday, not f
 what do I get?
 *********************************************************************************
 
-* 30 chapters
+* 44 chapters
 * 11 hours of video
-* 40 sessions
+* 50 sessions
 * 8 weeks
-* 80 hours
+* 100 hours
 * over 100 tests
 * writing code from day 1
 * improved typing skills (`click here to take a typing test <https://www.keybr.com/typing-test>`_)
@@ -55,7 +55,7 @@ Pick a time that works best for you
             <div class="price">FREE.99</div>
             <p class="time-slot">10AM - 12PM CST</p>
             <ul>
-                <li>Apr 27 - June 12</li>
+                <li>May 18 - July 24</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
@@ -66,9 +66,9 @@ Pick a time that works best for you
             <h3>sunlight soldiers</h3>
             <div class="price"><s>$199.98</s></div>
             <div class="price">FREE.99</div>
-            <p class="time-slot">2PM - 4PM CST</p>
+            <p class="time-slot">1PM - 3PM CST</p>
             <ul>
-                <li>Apr 27 - June 12</li>
+                <li>May 18 - July 24</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
@@ -82,7 +82,7 @@ Pick a time that works best for you
             <div class="price">FREE.99</div>
             <p class="time-slot">5PM - 7PM CST</p>
             <ul>
-                <li>daylight savings and loans discount</li>
+                <li>May 18 - July 24</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
@@ -90,15 +90,27 @@ Pick a time that works best for you
         </div>
 
         <div class="price-card highlight">
-            <h3>nighttime ninjas</h3>
+            <h1>nighttime ninjas</h1>
             <div class="price">$399.96</div>
             <p class="time-slot">8PM - 10PM CST</p>
             <ul>
-                <li>Apr 27 - June 12</li>
+                <li>May 18 - July 24</li>
                 <li>monday to friday</li>
                 <li>5 students MAX</li>
             </ul>
             <a href="#nighttime-ninjas-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-nighttime-ninjas" data-cal-namespace="pumping-python-nighttime-ninjas" data-cal-config='{"layout":"month_view"}'>join nighttime ninjas</a>
+        </div>
+
+        <div class="price-card">
+            <h3>weekend warriors</h3>
+            <div class="price">$399.96</div>
+            <p class="time-slot">8AM - 4PM CST</p>
+            <ul>
+                <li>May 23 - August 15</li>
+                <li>monday to friday</li>
+                <li>5 students MAX</li>
+            </ul>
+            <a href="#weekend-warriors-booking" class="enroll-btn" data-cal-link="jacobitegboje/pumping-python-weekend-warriors" data-cal-namespace="pumping-python-weekend-warriors" data-cal-config='{"layout":"month_view"}'>join weekend warriors</a>
         </div>
     </div>
 

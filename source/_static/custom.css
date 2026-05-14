@@ -25,7 +25,6 @@
 .price-card {
     background-color: var(--color-background-secondary, #ffffff);
     border-radius: 16px;
-    /* padding: 32px 24px; */
     padding: 40px 30px;
     max-width: 320px;
     text-align: center;
@@ -33,6 +32,13 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--color-text, #030303);
+}
+
+.dark .price-card {
+    background-color: var(--color-background-primary, #1a1a1a);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-text, #eeeeee);
 }
 
 .price-card:hover {
@@ -50,30 +56,42 @@
     transform: scale(1.05) translateY(-8px);
 }
 
-.price-card h3 {
+.price-card h1, .price-card h3 {
     margin-bottom: 8px;
-    color: var(--color-text, #030303);
+    color: inherit;
     font-size: 1.4rem;
     letter-spacing: -0.5px;
+    margin-top: 0;
+}
+
+.price-card.highlight h1 {
+    font-size: 1.8rem;
 }
 
 .price {
     font-size: 2.5rem;
     font-weight: bold;
     margin: 10px 0;
-    color: #ffd43b;
+    color: #306998; /* Python Blue for better contrast in light mode */
+}
+
+.dark .price {
+    color: #ffd43b; /* Python Yellow for dark mode */
 }
 
 .price span {
     font-size: 1rem;
-    color: var(--color-text, #030303);
-    /* color: var(--color-text-muted); */
+    color: inherit;
+    opacity: 0.8;
 }
 
 .time-slot {
     font-weight: 600;
-    color: #306998;
+    color: #000000; /* Dark text for better legibility on yellow background */
     background-color: #ffd43b;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 .price-card ul {
@@ -85,22 +103,27 @@
 }
 
 .price-card li {
-    /* padding: 8px 0; */
     font-size: 0.95rem;
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.dark .price-card li {
+    color: #eeeeee;
 }
 
 .enroll-btn {
     display: inline-block;
     width: 100%;
     background-color: #306998;
-    /* color: white !important; */
-    color: #ffd43b !important;
-    padding: 10px;
-    border-radius: 5px;
+    color: #ffffff !important; /* White text for high contrast */
+    padding: 12px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.2s;
 }
 
 .enroll-btn:hover {
