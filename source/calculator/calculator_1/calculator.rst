@@ -4,8 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. _variable: https://grokipedia.com/page/Variable_symbol
-.. _variables: variable_
 .. _Substitution: https://grokipedia.com/page/Substitution_(logic)#substitution-logic
 .. _unittest.TestCase assert methods: `assert methods`_
 
@@ -802,36 +800,30 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
   the test passes. `Why is the result "-5.555499999999999" not "-5.5555"? <https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic>`_
 
-----
+* I just did the same kind of calculation 10 times, there is a better way to do this thanks to Substitution_. I can use :ref:`variable<what is a variable?>` a letter or a name for the numbers, so that I can have one test for all possible numbers, it is called a :ref:`variable<what is a variable?>`.
 
-*********************************************************************************
-what is a variable?
-*********************************************************************************
+  A :ref:`variable<what is a variable?>` is a name that is used for values that change. For example, in the tests so far, I have
 
-I just did the same kind of calculation 10 times, there is a better way to do this thanks to Substitution_. I can use a letter or a name for the numbers, so that I can have one test for all possible numbers, it is called a variable_.
+  .. code-block:: python
 
-A variable_ is a name that is used for values that change. For example, in the tests so far, I have
+    src.calculator.add(0, 1) is 0 + 1 is 1
+    src.calculator.add(0, 2) is 0 + 2 is 2
+    src.calculator.add(0, 3) is 0 + 3 is 3
+    src.calculator.add(1, 3) is 1 + 3 is 4
+    src.calculator.add(123456, 789012)  is 123456 +789012 is 912468
+    src.calculator.add(-2, -3) is -2 + -3 is -5
+    src.calculator.add(-1, 0) is -1 + 0 is -1
+    src.calculator.add(0.1, 1) is 0.1 + 1 is 1.1
+    src.calculator.add(0.1, 0.2) is 0.1 + 0.2 is 0.30000000000000004
+    src.calculator.add(0.1234, -5.6789) is 0.1234 + -5.6789 is -5.555499999999999
 
-.. code-block:: python
+  all of these lines can be written using ``x`` as the name of the first number and ``y`` as the name for the second number, like this
 
-  src.calculator.add(0, 1) is 0 + 1 is 1
-  src.calculator.add(0, 2) is 0 + 2 is 2
-  src.calculator.add(0, 3) is 0 + 3 is 3
-  src.calculator.add(1, 3) is 1 + 3 is 4
-  src.calculator.add(123456, 789012)  is 123456 +789012 is 912468
-  src.calculator.add(-2, -3) is -2 + -3 is -5
-  src.calculator.add(-1, 0) is -1 + 0 is -1
-  src.calculator.add(0.1, 1) is 0.1 + 1 is 1.1
-  src.calculator.add(0.1, 0.2) is 0.1 + 0.2 is 0.30000000000000004
-  src.calculator.add(0.1234, -5.6789) is 0.1234 + -5.6789 is -5.555499999999999
+  .. code-block:: python
 
-all of these lines can be written using ``x`` as the name of the first number and ``y`` as the name for the second number, like this
+    src.calculator.add(x, y) is x + y is x + y
 
-.. code-block:: python
-
-  src.calculator.add(x, y) is x + y is x + y
-
-* I add names to the first :ref:`assertion<what is an assertion?>`
+  I add names to the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -1003,7 +995,7 @@ all of these lines can be written using ``x`` as the name of the first number an
 
   still green
 
-* I add variables_ to the next :ref:`assertion<what is an assertion?>`
+* I add :ref:`variables<what is a variable?>` to the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -1164,7 +1156,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 
   still green
 
-* I use the ``Rename Symbol`` feature to change the name of variables_ to say what they are
+* I use the ``Rename Symbol`` feature to change the name of :ref:`variables<what is a variable?>` to say what they are
 
   .. code-block:: python
     :lineno-start: 8

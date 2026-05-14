@@ -4,6 +4,13 @@
 
 .. include:: ../links.rst
 
+.. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _assert statement: assert_
+.. _assertion: assert_
+.. _assertions: assert_
+.. _assert statements: assert_
+.. _variable: https://grokipedia.com/page/:ref:`variable<what is a variable?>`symbol
+.. _variables: :ref:`variable<what is a variable?>`
 .. _AssertionError: https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError
 
 #################################################################################
@@ -16,7 +23,7 @@ what is an assertion?
 
 ----
 
-An `assertion`_ or `assert statement`_ is a way for me to tell the computer "DO NOT CONTINUE, IF this statement IS FALSE", or said a different way "GO TO THE NEXT LINE, ONLY IF this statement IS TRUE".
+An `assertion`_ or `assert statement`_ is a way for me to tell Python_, "DO NOT CONTINUE, if this statement is False", or said a different way "GO TO THE NEXT LINE, ONLY if this statement IS True".
 
 I use assertions_ in testing when making a program_ to make sure something is :ref:`True<test_what_is_true>` about the program_ before I continue building or to test ideas and see if they work, without worrying about if I will remember the ideas later.
 
@@ -46,6 +53,7 @@ questions about AssertionError
 Questions to think about as I go through the chapter
 
 * :ref:`what is an assertion?<what is an assertion?>`
+* :ref:`what is a variable?`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
 * :ref:`how can I test if something is NOT None?<how to test if something is NOT None>`
 * :ref:`how can I test if something is None?<how to test if something is None>`
@@ -225,8 +233,8 @@ start the project
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ================================ FAILURES ================================
-    ____________________ TestAssertionError.test_failure _____________________
+    ======================== FAILURES ========================
+    ____________ TestAssertionError.test_failure _____________
 
     self = <tests.test_assertion_error.TestAssertionError testMethod=test_failure>
 
@@ -235,9 +243,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_assertion_error.py:7: AssertionError
-    ======================== short test summary info =========================
+    ================ short test summary info =================
     FAILED tests/test_assertion_error.py::TestAssertionError::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    =================== 1 failed in X.YZs ====================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
@@ -277,12 +285,20 @@ start the project
 ----
 
 *********************************************************************************
+what is a variable?
+*********************************************************************************
+
+I can use a name to represent values when programming. This helps me avoid repetition when I have to change a value. A variable_ is a name that is used for values that change. For example, in Mathematics_ we use ``x`` to represent any number.
+
+----
+
+*********************************************************************************
 test_what_is_an_assertion
 *********************************************************************************
 
 We know that the result of ``1 + 1`` is ``2``. What if I said that ``'1' + '1'`` is ``'11'``, would you agree?
 
-I can use assertions_ to make the computer check if these statements are :ref:`True<test_what_is_true>`
+I can use :ref:`assertions<what is an assertion?>` to make the computer check if these statements are :ref:`True<test_what_is_true>`
 
 ----
 
@@ -292,11 +308,11 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
 ----
 
-* I change ``test_failure`` to ``test_what_is_an_assertion`` with the first statement
+* I change ``test_failure`` to ``test_what_is_an_assertion`` then add variables_ with a statement
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-7
+    :emphasize-lines: 6-9
 
     import unittest
 
@@ -304,40 +320,54 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
     class TestAssertionError(unittest.TestCase):
 
         def test_what_is_an_assertion(self):
-            1 + 1 == 2
+            reality = 1 + 1
+            my_expectation = 2
+            reality == my_expectation
 
 
     # Exceptions seen
     # AssertionError
 
-  .. NOTE::
+  the test is still green
 
-    ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``1 + 1 is equal to 2``. the test is still green
+  - ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``reality is equal to my_expectation`` because
 
-* I change the statement to make it :ref:`False<test_what_is_false>`
+    - ``reality`` is the name or variable_ I have given to ``1 + 1``
+    - ``my_expectation`` is the name or variable_ I have given to ``2``
+    - in other words the statement is ``1 + 1 is equal to 2``
+
+* I change ``my_expectation`` to make the statement :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 3
 
-            1 + 1 == 11
+        def test_what_is_an_assertion(self):
+            reality = 1 + 1
+            my_expectation = 11
+            reality == my_expectation
 
   the test is still green. Why?
 
-* I want the test to fail when I write a statement that is not :ref:`True<test_what_is_true>`. I change it to an `assert statement`_
+* I want the test to fail when I write a statement that is NOT :ref:`True<test_what_is_true>`. I change it to an `assert statement`_
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 3
     :emphasize-text: assert
 
-            assert 1 + 1 == 11
+        def test_what_is_an_assertion(self):
+            reality = 1 + 1
+            my_expectation = 11
+            assert reality == my_expectation
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    E       assert (1 + 1) == 11
+    E       assert 2 == 11
+
+  because ``1 + 1 == 11`` is :ref:`False<test_what_is_false>`, ``2`` is NOT equal to ``11`` and I added assert_ before the statement, which tells the computer ``DO NOT CONTINUE, if 1 + 1 == 11 is False``
 
 ----
 
@@ -347,15 +377,18 @@ I can use assertions_ to make the computer check if these statements are :ref:`T
 
 ----
 
-I change the statement to make it :ref:`True<test_what_is_true>`
+I change ``my_expectation`` to match ``reality`` and make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 1
+  :lineno-start: 6
+  :emphasize-lines: 3
 
-          assert 1 + 1 == 2
+      def test_what_is_an_assertion(self):
+          reality = 1 + 1
+          my_expectation = 2
+          assert reality == my_expectation
 
-the test passes
+the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, ``1 + 1 is equal to 2``
 
 ----
 
@@ -369,25 +402,41 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 3
+    :emphasize-lines: 6-8
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            '1' + '1' == '2'
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+
+            reality = '1' + '1'
+            my_expectation = '2'
+            reality == my_expectation
 
 
     # Exceptions seen
+    # AssertionError
 
-  the test is still green
+  the test is still green when the statement is not an assertion_
 
-* I add assert_ before the statement
+* I add assert_ before the statement to make it an assertion_
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 8
     :emphasize-text: assert
 
-            assert '1' + '1' == '2'
+        def test_what_is_an_assertion(self):
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+
+            reality = '1' + '1'
+            my_expectation = '2'
+            assert reality == my_expectation
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -400,20 +449,31 @@ the test passes
     E         - 2
     E         + 11
 
+  because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'1' + '1' == '2'" is False``
+
   - ``- 2`` shows my expectation - what I wrote as the result
   - ``+ 11`` shows reality - what the actual result is
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+* I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 7
     :emphasize-text: 11
 
+        def test_what_is_an_assertion(self):
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
 
-            assert '1' + '1' == '11'
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
 
-  the test passes
+
+    # Exceptions seen
+
+  the test passes because the statement is now :ref:`True<test_what_is_true>`
 
   .. NOTE::
 
@@ -426,26 +486,48 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 4
+    :emphasize-lines: 10-12
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            assert '1' + '1' == '11'
-            'I am' + ' a programmer' == '11'
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+
+            reality = 'I am' + ' a programmer'
+            my_expectation = '11'
+            reality == my_expectation
 
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green because ``reality == my_expectation`` is just a statement. Python_ does not care whether it is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. The statement follows Python_ rules.
 
 * I change the statement to an `assertion`_
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 1
+    :lineno-start: 6
+    :emphasize-lines: 12
     :emphasize-text: assert
 
-            assert 'I am' + ' a programmer' == '11'
+        def test_what_is_an_assertion(self):
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+
+            reality = 'I am' + ' a programmer'
+            my_expectation = '11'
+            assert reality == my_expectation
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -457,21 +539,31 @@ the test passes
     E         - 11
     E         + I am a programmer
 
+  because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'I am' + ' a programmer' == '11'" is False``
+
   - the ``- 11`` shows my expectation - what I wrote as the result
   - the ``+ I am a programmer`` shows reality - what the actual result is
 
-* I make the assertion_ :ref:`True<test_what_is_true>`
+  .. attention:: If your result is different, check that you added a space before ``a programmer``, it should be ``' a programmer'`` not ``'a programmer'``. There is a space before the phrase.
+
+* I change ``my_expectation`` to match ``reality`` and make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 6
-
-    class TestAssertionError(unittest.TestCase):
+    :emphasize-lines: 11
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            assert '1' + '1' == '11'
-            assert 'I am' + ' a programmer' == 'I am a programmer'
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+
+            reality = 'I am' + ' a programmer'
+            my_expectation = 'I am a programmer'
+            assert reality == my_expectation
 
 
     # Exceptions seen
@@ -496,7 +588,7 @@ which is like this `assertion`_
 
   assert True is False
 
-With these statements, I am telling the computer "CONTINUE ONLY if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`, they at least have different spellings. If it does not fail, then Python_ and I have a problem
+With these statements, I tell Python_ - "DO NOT CONTINUE, if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`", or said a different way "GO TO THE NEXT LINE, ONLY if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`, they at least have different spellings. If it does not fail, then Python_ and I have a problem.
 
 ----
 
@@ -504,12 +596,12 @@ With these statements, I am telling the computer "CONTINUE ONLY if :ref:`True<te
 test_assertion_error_w_none
 *********************************************************************************
 
-:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use assertions_ to test if something is :ref:`None<what is None?>`, this is useful when I want to check what value I am getting from some process or user input.
+:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`None<what is None?>`, this is useful when I want to check what value I am getting from some process or user input.
 
 For example,
 
-* if I have a process that changes something and does not return a value (it returns :ref:`None<what is None?>`), I can use an assertion_ to make sure that the process returns :ref:`None<what is None?>`
 * if I have people fill a form and I want to test for when they do not put anything in a place that needs something
+* if I have a process that changes something and does not return a value (it returns :ref:`None<what is None?>`), I can use an :ref:`assertion<what is an assertion?>` to make sure that the process returns :ref:`None<what is None?>`
 
 ----
 
@@ -523,12 +615,20 @@ For example,
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 6-7
+    :emphasize-lines: 14-15
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            assert '1' + '1' == '11'
-            assert 'I am' + ' a programmer' == 'I am a programmer'
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+
+            reality = 'I am' + ' a programmer'
+            my_expectation = 'I am a programmer'
+            assert reality == my_expectation
 
         def test_assertion_error_w_none(self):
             assert None is not None
@@ -540,9 +640,9 @@ For example,
 
   .. code-block:: python
 
-    E    assert None is not None
+    E       assert None is not None
 
-  the `assert statement`_ is :ref:`False<test_what_is_false>`
+  because ``None is not None`` is :ref:`False<test_what_is_false>`
 
 ----
 
@@ -552,13 +652,14 @@ For example,
 
 ----
 
-I change the line to make it :ref:`True<test_what_is_true>`
+I change the statement to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 12
-  :emphasize-lines: 1
+  :lineno-start: 19
+  :emphasize-lines: 2
   :emphasize-text: is
 
+      def test_assertion_error_w_none(self):
           assert None is None
 
 the test passes
@@ -571,7 +672,7 @@ the test passes
 
 ----
 
-I can also make assertions_ with `assert methods`_ from the `unittest.TestCase class`_, they have clearer messages
+I can also make :ref:`assertions<what is an assertion?>` with `assert methods`_ from the `unittest.TestCase class`_, they have clearer messages
 
 ---------------------------------------------------------------------------------
 how to test if something is NOT None
@@ -580,7 +681,7 @@ how to test if something is NOT None
 I add a failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses - ``( )``, is NOT :ref:`None<what is None?>`
 
 .. code-block:: python
-  :lineno-start: 11
+  :lineno-start: 19
   :emphasize-lines: 3
   :emphasize-text: Not
 
@@ -592,16 +693,18 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  AssertionError: unexpectedly None
+  E       AssertionError: unexpectedly None
+
+because :ref:`None<what is None?>` is ...
 
 ---------------------------------------------------------------------------------
 how to test if something is None
 ---------------------------------------------------------------------------------
 
-* I change the statement to use the `assertIsNone method`_ which checks if the thing in parentheses is :ref:`None<what is None?>`
+* I use the `assertIsNone method`_ which checks if the thing in parentheses is :ref:`None<what is None?>`, to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 19
     :emphasize-lines: 3
 
         def test_assertion_error_w_none(self):
@@ -610,10 +713,22 @@ how to test if something is None
 
   the test passes. I like the messages from the `assert methods`_ better
 
-* I add comments
+  .. code-block:: python
+
+    E       AssertionError: unexpectedly None
+
+  vs
 
   .. code-block:: python
-    :lineno-start: 11
+
+    E       assert None is not None
+
+  which do you like better?
+
+* I add comments with what I learned from the experiments in the test
+
+  .. code-block:: python
+    :lineno-start: 19
     :emphasize-lines: 6-7
 
         def test_assertion_error_w_none(self):
@@ -633,7 +748,7 @@ how to test if something is None
 * I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`False<test_what_is_false>`, another simple :ref:`data structure<data structures>`
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 19
     :emphasize-lines: 5
 
         def test_assertion_error_w_none(self):
@@ -654,7 +769,7 @@ how to test if something is None
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 23
     :emphasize-lines: 1
     :emphasize-text: not
 
@@ -662,10 +777,10 @@ how to test if something is None
 
   the test passes
 
-* I add another assertion_ with the `assertIsNone method`_
+* I add another :ref:`assertion<what is an assertion?>` with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 19
     :emphasize-lines: 6
 
         def test_assertion_error_w_none(self):
@@ -681,10 +796,10 @@ how to test if something is None
 
     AssertionError: False is not None
 
-* I change assertIsNone_ to assertIsNotNone_ to make the assertion_ :ref:`True<test_what_is_true>`
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 24
     :emphasize-lines: 1
     :emphasize-text: Not
 
@@ -695,7 +810,7 @@ how to test if something is None
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 27
     :emphasize-lines: 6
 
             assert False is not None
@@ -715,7 +830,7 @@ how to test if something is None
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 19
     :emphasize-lines: 8
 
         def test_assertion_error_w_none(self):
@@ -739,7 +854,7 @@ how to test if something is None
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 26
     :emphasize-lines: 1
     :emphasize-text: not
 
@@ -750,7 +865,7 @@ how to test if something is None
 * I add a failing line with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 27
     :emphasize-lines: 2
 
             assert True is not None
@@ -765,7 +880,7 @@ how to test if something is None
 * I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 19
     :emphasize-lines: 9
 
         def test_assertion_error_w_none(self):
@@ -810,7 +925,7 @@ how to test if something is None
 test_assertion_error_w_false
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is a simple :ref:`data type<data structures>`, it is one of the two :ref:`booleans<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`False<test_what_is_false>` or not.
+:ref:`False<test_what_is_false>` is a simple :ref:`data type<data structures>`, it is one of the two :ref:`booleans<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`False<test_what_is_false>` or not.
 
 ----
 
@@ -820,7 +935,7 @@ test_assertion_error_w_false
 
 ----
 
-I add a failing test
+I add a test with an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 11
@@ -936,7 +1051,7 @@ how to test if something is False
 test_assertion_error_w_true
 *********************************************************************************
 
-:ref:`True<test_what_is_true>` is a simple :ref:`data type<data structures>`, it is the other :ref:`boolean<what are booleans?>` and is NOT :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`. I can use assertions_ to test if something is :ref:`True<test_what_is_true>` or not.
+:ref:`True<test_what_is_true>` is a simple :ref:`data type<data structures>`, it is the other :ref:`boolean<what are booleans?>` and is NOT :ref:`False<test_what_is_false>` or :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`True<test_what_is_true>` or not.
 
 ----
 
@@ -946,7 +1061,7 @@ test_assertion_error_w_true
 
 ----
 
-I add a failing test
+I add a test with an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 21
@@ -1001,7 +1116,7 @@ There is an `assert method`_ to check if something is :ref:`True<test_what_is_tr
 how to test if something is True
 ---------------------------------------------------------------------------------
 
-* I add a failing assertion_ with the `assertTrue method`_
+* I add a failing :ref:`assertion<what is an assertion?>` with the `assertTrue method`_
 
   .. code-block:: python
     :lineno-start: 25
@@ -1017,7 +1132,7 @@ how to test if something is True
 
     AssertionError: False is not true
 
-* I change the assertion_ to make it :ref:`True<test_what_is_true>`
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -1054,7 +1169,7 @@ how to test if something is True
 
 :ref:`I can use assertions to test if something is True or NOT<test_assertion_error_w_true>`
 
-All the assertions_ I have typed so far show that, :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different. They give me a basic expectation of Python_ because I can compare things with them.
+All the :ref:`assertions<what is an assertion?>` I have typed so far show that, :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different. They give me a basic expectation of Python_ because I can compare things with them.
 
 ----
 
@@ -1062,7 +1177,7 @@ All the assertions_ I have typed so far show that, :ref:`True<test_what_is_true>
 test_assertion_error_w_equality
 *********************************************************************************
 
-I can use assertions_ to test if 2 things are equal, like I did with :ref:`test_what_is_an_assertion`
+I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal, like I did with :ref:`test_what_is_an_assertion`
 
 ----
 
@@ -1112,7 +1227,7 @@ because this statement can be read as ``assert None is NOT equal to None`` or "C
 
   ``==`` is :kbd:`=+=` on the keyboard and is the symbol for ``is equal``
 
-I change the assertion_ to make it :ref:`True<test_what_is_true>`
+I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 30
@@ -1208,7 +1323,7 @@ how to test if two things are Equal
     # Exceptions seen
     # AssertionError
 
-* I add a new failing assertion_ to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
+* I add a new failing :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -1236,7 +1351,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add a failing assertion_ with the `assertEqual method`_
+* I add a failing :ref:`assertion<what is an assertion?>` with the `assertEqual method`_
 
   .. code-block:: python
     :lineno-start: 29
@@ -1324,7 +1439,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add a failing assertion_ with assertEqual_
+* I add a failing :ref:`assertion<what is an assertion?>` with assertEqual_
 
   .. code-block:: python
     :lineno-start: 29
@@ -1346,7 +1461,7 @@ how to test if two things are Equal
 
     AssertionError: True != None
 
-* I make the assertion_ :ref:`True<test_what_is_true>` with assertNotEqual_
+* I make the statement :ref:`True<test_what_is_true>` with assertNotEqual_
 
   .. code-block:: python
     :lineno-start: 33
@@ -1417,7 +1532,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add a failing assertion_ with assertEqual_
+* I add a failing :ref:`assertion<what is an assertion?>` with assertEqual_
 
   .. code-block:: python
     :lineno-start: 29
@@ -1504,7 +1619,7 @@ how to test if two things are Equal
 
     E    assert False != False
 
-* I make the assertion_ :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1594,7 +1709,7 @@ how to test if two things are Equal
 
     E    assert False == True
 
-* I change the assertion_ to make it :ref:`True<test_what_is_true>`
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1685,7 +1800,7 @@ how to test if two things are Equal
 
     E    assert True != True
 
-* I make the assertion_ :ref:`True<test_what_is_true>`
+* I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1795,7 +1910,7 @@ how to test if two things are Equal
 
     AssertionError: 2 != 3
 
-* I change the expectation in the call to the `assertEqual method`_ to make the assertion_ :ref:`True<test_what_is_true>`
+* I change the expectation in the call to the `assertEqual method`_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 8
@@ -1838,7 +1953,7 @@ how to test if two things are Equal
 
   the test passes
 
-* I add assertEqual_ for the last assertion_ in :ref:`test_what_is_an_assertion`
+* I add assertEqual_ for the last :ref:`assertion<what is an assertion?>` in :ref:`test_what_is_an_assertion`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1860,7 +1975,7 @@ how to test if two things are Equal
 
     AssertionError: 'I am a programmer' != '11'
 
-* I make the expectation match reality
+* I make my expectation match reality
 
   .. code-block:: python
     :lineno-start: 6
