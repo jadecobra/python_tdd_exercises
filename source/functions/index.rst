@@ -76,8 +76,8 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make arguments a choice in a function?<test_functions_w_default_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_functions_w_unknown_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_functions_w_unknown_arguments>`
-* :ref:`how does Python read positional arguments in a function?<how Python reads positional arguments>`
-* :ref:`how does Python read keyword arguments in a function?<how Python reads keyword arguments>`
+* :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
+* :ref:`how does Python represent keyword arguments in a function?<how Python reads keyword arguments>`
 
 ----
 
@@ -1301,7 +1301,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.functions' has no attribute 'constant'
 
-I have not added a definition for ``constant`` in ``functions.py`` in the ``src`` folder_
+because I have not added a definition for ``constant`` in ``functions.py`` in the ``src`` folder_
 
 ----
 

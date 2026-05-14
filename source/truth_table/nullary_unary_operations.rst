@@ -773,7 +773,7 @@ review
 I ran these tests for :ref:`Nullary Operations<Nullary Operations>` which take no input
 
 * :ref:`test_logical_true`
-* :ref:`test_logical_false``
+* :ref:`test_logical_false`
 
 and for :ref:`Unary operations<Unary Operations>` which take 1 input
 
