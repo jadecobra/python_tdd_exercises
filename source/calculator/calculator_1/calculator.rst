@@ -37,52 +37,50 @@ start the project
 
 * I name this project ``calculator``
 * I open a terminal_
-* I make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir calculator
+    uv init calculator
 
-  the terminal_ goes back to the command line
+  the terminal_ shows
 
-* I change directory_ to the project
+  .. code-block:: shell
 
-  .. code-block:: python
-    :emphasize-lines: 1
+    Initialized project `calculator` at `.../pumping_python/calculator`
 
-    cd calculator
-
-  the terminal_ shows I am in the ``calculator`` folder_
-
-  .. code-block:: python
-
-    .../pumping_python/calculator
+  then goes back to the command line
 
 * I make a directory_ for the source code
 
-  .. code-block:: python
+  .. code-block:: shell
     :emphasize-lines: 1
 
     mkdir src
 
   the terminal_ goes back to the command line
 
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``calculator.py`` and move it to the ``src`` folder_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch src/calculator.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/calculator.py`` instead of ``touch src/calculator.py``
+        mv main.py src/calculator.py
 
-    .. code-block:: python
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item src/calculator.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        Move-Item main.py src/calculator.py
 
   the terminal_ goes back to the command line
 
@@ -99,37 +97,47 @@ start the project
 
   .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/__init__.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` instead of ``touch tests/__init__.py``
+        touch tests/__init__.py
 
-    .. code-block:: python
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/__init__.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/__init__.py
 
   the terminal_ goes back to the command line
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/test_calculator.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_calculator.py`` instead of ``touch tests/test_calculator.py``
+        touch tests/test_calculator.py
 
-    .. code-block:: python
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/test_calculator.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/test_calculator.py
 
   the terminal_ goes back to the command line
 
@@ -175,28 +183,6 @@ start the project
     :emphasize-lines: 1
 
     echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line
-
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `calculator`
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
 
   the terminal_ goes back to the command line
 

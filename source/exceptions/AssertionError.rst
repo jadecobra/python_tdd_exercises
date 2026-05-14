@@ -92,24 +92,14 @@ start the project
 
     .../pumping_python/assertion_error
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
+* I use rm_ to remove ``main.py`` because I do not use it in this project
 
   .. code-block:: shell
     :emphasize-lines: 1
 
-    mv main.py src/magic.py
+    rm main.py
 
   the terminal_ goes back to the command line
-
-* I make a directory_ for the source code
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line
-
 
 * I `make a directory`_ for the tests
 
@@ -124,37 +114,47 @@ start the project
 
   .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/__init__.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` not ``touch tests/__init__.py``
+        touch tests/__init__.py
 
-    .. code-block:: Powershell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/__init__.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/__init__.py
 
   the terminal_ goes back to the command line
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/test_assertion_error.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_assertion_error.py`` not ``touch tests/test_assertion_error.py``
+        touch tests/test_assertion_error.py
 
-    .. code-block:: Powershell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/test_assertion_error.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/test_assertion_error.py
 
   the terminal_ goes back to the command line
 
@@ -200,28 +200,6 @@ start the project
     :emphasize-lines: 1
 
     echo "pytest-watcher" >> requirements.txt
-
-  the terminal_ goes back to the command line
-
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `assertion-error`
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
 
   the terminal_ goes back to the command line
 

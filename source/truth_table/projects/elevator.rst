@@ -78,16 +78,7 @@ number the project
 
   the terminal_ goes back to the command line
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mv main.py src/elevator.py
-
-  the terminal_ goes back to the command line
-
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``elevator.py`` and move it to the ``src`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -98,7 +89,7 @@ number the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch src/elevator.py
+        mv main.py src/elevator.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -106,7 +97,7 @@ number the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item src/elevator.py
+        Move-Item main.py src/elevator.py
 
   the terminal_ goes back to the command line
 

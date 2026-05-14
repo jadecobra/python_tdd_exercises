@@ -32,7 +32,7 @@ preview
 
 These are the tests I have at the end of the chapter
 
-.. literalinclude:: ../../code/truth_table/tests/test_parking garage.py
+.. literalinclude:: ../../code/truth_table/tests/test_parking_garage.py
   :language: python
   :linenos:
 
@@ -78,15 +78,6 @@ start the project
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    mv main.py src/parking_garage.py
-
-  the terminal_ goes back to the command line
-
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
-
   .. tab-set::
     :sync-group: os
 
@@ -96,7 +87,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch src/parking garage.py
+        mv main.py src/parking_garage.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -104,7 +95,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item src/parking garage.py
+        Move-Item main.py src/parking_garage.py
 
   the terminal_ goes back to the command line
 
@@ -153,7 +144,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch tests/test_parking garage.py
+        touch tests/test_parking_garage.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -161,11 +152,11 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item tests/test_parking garage.py
+        New-Item tests/test_parking_garage.py
 
   the terminal_ goes back to the command line
 
-* I open ``test_parking garage.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_parking_garage.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
   .. TIP::
 
@@ -174,11 +165,11 @@ start the project
     .. code-block:: shell
       :emphasize-lines: 1
 
-      code tests/test_parking garage.py
+      code tests/test_parking_garage.py
 
-    `Visual Studio Code`_ opens ``test_parking garage.py`` in the :ref:`editor<2 editors>`
+    `Visual Studio Code`_ opens ``test_parking_garage.py`` in the :ref:`editor<2 editors>`
 
-* I add :ref:`the first failing test<test_failure>` to ``test_parking garage.py``
+* I add :ref:`the first failing test<test_failure>` to ``test_parking_garage.py``
 
   .. code-block:: python
     :linenos:
@@ -238,7 +229,7 @@ start the project
     │   └── parking garage.py
     ├── tests
     │   ├── __init__.py
-    │   └── test_parking garage.py
+    │   └── test_parking_garage.py
     └── uv.lock
 
 * I use `pytest-watcher`_ to run the tests automatically
@@ -257,15 +248,15 @@ start the project
     ================================ FAILURES ================================
     ______________________ TestParkingGarage.test_failure ________________________
 
-    self = <tests.test_parking garage.TestParkingGarage testMethod=test_failure>
+    self = <tests.test_parking_garage.TestParkingGarage testMethod=test_failure>
 
         def test_failure(self):
     >       self.assertFalse(True)
     E       AssertionError: True is not false
 
-    tests/test_parking garage.py:7: AssertionError
+    tests/test_parking_garage.py:7: AssertionError
     ======================== short test summary info =========================
-    FAILED tests/test_parking garage.py::TestParkingGarage::test_failure - AssertionError: True is not false
+    FAILED tests/test_parking_garage.py::TestParkingGarage::test_failure - AssertionError: True is not false
     =========================== 1 failed in X.YZs ============================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
@@ -277,7 +268,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_parking garage.py``
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_parking_garage.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -439,7 +430,7 @@ because I do not have a definition for ``src`` in this file_
 
   because the test called the ``parking garage`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only takes calls with 0 arguments
 
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_parking garage.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_parking_garage.py``
 
   .. code-block:: python
     :lineno-start: 17
@@ -505,7 +496,7 @@ because I do not have a definition for ``src`` in this file_
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :red:`NOT pushed`, in ``test_parking garage.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :red:`NOT pushed`, in ``test_parking_garage.py``
 
   ==================  =================  =================
   door                start button       output
@@ -743,7 +734,7 @@ the test passes
 
   is this :ref:`Converse Non-Implication?<test_converse_non_implication>`
 
-* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_closed_door` in ``test_parking garage.py``
+* I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed` and the start button is :red:`NOT pushed` to :ref:`test_closed_door` in ``test_parking_garage.py``
 
   ==================  =================  =================
   door                start button       output
@@ -1468,7 +1459,7 @@ door           timer           start button       too hot             output
 
 ----
 
-I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` for the case where the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the parking garage temperature is :green:`too hot`, to :ref:`test_open_door_timer_set` in ``test_parking garage.py``
+I add a value for ``too_hot`` to the :ref:`assertion<what is an assertion?>` for the case where the door is :green:`open`, the timer is :green:`set`, the start button is :green:`pushed` and the parking garage temperature is :green:`too hot`, to :ref:`test_open_door_timer_set` in ``test_parking_garage.py``
 
 =============  ==============  =================  ==================  ================
 door           timer           start button       too hot             output
@@ -2907,7 +2898,7 @@ door           timer           start button       too hot             output
 close the project
 *********************************************************************************
 
-* I close ``test_parking garage.py`` and ``parking garage.py`` in the :ref:`editor<2 editors>`
+* I close ``test_parking_garage.py`` and ``parking garage.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``parking garage``
