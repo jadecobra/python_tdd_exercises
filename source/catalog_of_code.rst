@@ -10,8 +10,7 @@ Here are the tests and solutions in the book
   :titlesonly:
   :maxdepth: 1
 
-  code/make_tdd/code_make_python_tdd_sh
-  code/make_tdd/code_make_python_tdd_ps1
+  code/make_tdd/code_make_python_tdd
   AssertionError<code/code_assertion_error>
   None<code/code_none>
   booleans<code/code_booleans>
