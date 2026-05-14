@@ -674,9 +674,13 @@ the test passes
 
 I can also make :ref:`assertions<what is an assertion?>` with `assert methods`_ from the `unittest.TestCase class`_, they have clearer messages
 
+----
+
 ---------------------------------------------------------------------------------
 how to test if something is NOT None
 ---------------------------------------------------------------------------------
+
+----
 
 I add a failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses - ``( )``, is NOT :ref:`None<what is None?>`
 
@@ -697,9 +701,13 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 because :ref:`None<what is None?>` is ...
 
+----
+
 ---------------------------------------------------------------------------------
 how to test if something is None
 ---------------------------------------------------------------------------------
+
+----
 
 * I use the `assertIsNone method`_ which checks if the thing in parentheses is :ref:`None<what is None?>`, to make the statement :ref:`True<test_what_is_true>`
 
@@ -938,7 +946,7 @@ test_assertion_error_w_false
 I add a test with an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
-  :lineno-start: 11
+  :lineno-start: 19
   :emphasize-lines: 11-12
 
       def test_assertion_error_w_none(self):
@@ -974,7 +982,7 @@ the terminal_ is my friend, and shows AssertionError_
 I change the `assertion`_ to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 22
+  :lineno-start: 30
   :emphasize-lines: 1
   :emphasize-text: not
 
@@ -992,14 +1000,18 @@ the test passes
 
 There is an `assert method`_ to check if something is :ref:`False<test_what_is_false>`, it is the one from :ref:`the first failing test<test_failure>`
 
+----
+
 ---------------------------------------------------------------------------------
 how to test if something is False
 ---------------------------------------------------------------------------------
 
+----
+
 * I add a failing line with the `assertFalse method`_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 29
     :emphasize-lines: 3
 
         def test_assertion_error_w_false(self):
@@ -1015,7 +1027,7 @@ how to test if something is False
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 31
     :emphasize-lines: 1
 
             self.assertFalse(False)
@@ -1025,7 +1037,7 @@ how to test if something is False
 * I add comments
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 26
     :emphasize-lines: 7-8
 
         def test_assertion_error_w_false(self):
@@ -1064,7 +1076,7 @@ test_assertion_error_w_true
 I add a test with an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
-  :lineno-start: 21
+  :lineno-start: 29
   :emphasize-lines: 5-6
 
       def test_assertion_error_w_false(self):
@@ -1094,7 +1106,7 @@ the terminal_ is my friend, and shows AssertionError_
 I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 26
+  :lineno-start: 34
   :emphasize-lines: 1
   :emphasize-text: not
 
@@ -1112,14 +1124,18 @@ the test passes
 
 There is an `assert method`_ to check if something is :ref:`True<test_what_is_true>`
 
+----
+
 ---------------------------------------------------------------------------------
 how to test if something is True
 ---------------------------------------------------------------------------------
 
+----
+
 * I add a failing :ref:`assertion<what is an assertion?>` with the `assertTrue method`_
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 33
     :emphasize-lines: 3
 
         def test_assertion_error_w_true(self):
@@ -1135,7 +1151,7 @@ how to test if something is True
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 33
     :emphasize-lines: 3
 
         def test_assertion_error_w_true(self):
@@ -1150,7 +1166,7 @@ how to test if something is True
 * I add more comments
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 38
     :emphasize-lines: 7-8
 
         def test_assertion_error_w_true(self):
@@ -1191,21 +1207,23 @@ I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal
 
   ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal``
 
-I add a new failing test
+I add a new test with a failing :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
-  :lineno-start: 25
-  :emphasize-lines: 5-6
+  :lineno-start: 29
+  :emphasize-lines: 5-8
 
-      def test_assertion_error_w_true(self):
-          assert False is not True
-          self.assertTrue(True)
+        def test_assertion_error_w_true(self):
+            assert False is not True
+            self.assertTrue(True)
 
-      def test_assertion_error_w_equality(self):
-          assert None != None
+        def test_assertion_error_w_equality(self):
+            reality = None
+            my_expectation = None
+            assert reality != my_expectation
 
 
-  # NOTES
+    # NOTES
 
 the terminal_ is my friend, and shows AssertionError_
 
@@ -1213,7 +1231,7 @@ the terminal_ is my friend, and shows AssertionError_
 
   E    assert None != None
 
-because this statement can be read as ``assert None is NOT equal to None`` or "CONTINUE only if None is NOT equal to None"
+because ``None is NOT equal to None`` is :ref:`False<test_what_is_false>`
 
 ----
 
@@ -1230,12 +1248,15 @@ because this statement can be read as ``assert None is NOT equal to None`` or "C
 I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 30
-  :emphasize-lines: 1
+  :lineno-start: 37
+  :emphasize-lines: 3
 
-          assert None == None
+      def test_assertion_error_w_equality(self):
+          reality = None
+          my_expectation = None
+          assert reality == my_expectation
 
-the test passes because this statement can be read as ``assert None is equal to None`` or "CONTINUE only if None is equal to None"
+the test passes because ``None is equal to None`` is :ref:`True<test_what_is_true>`
 
 ----
 
@@ -1243,11 +1264,15 @@ the test passes because this statement can be read as ``assert None is equal to 
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
+----
+
 ---------------------------------------------------------------------------------
 what is the difference between ``=`` and ``==``?
 ---------------------------------------------------------------------------------
 
-* ``=`` is the symbol for assignment or pointing, it's how to give a name to something in Python_, for example
+----
+
+* ``=`` is the symbol for assignment or pointing, it's how to give a name (:ref:`variable<what is a variable?>`) to something in Python_, for example
 
   .. code-block:: python
 
@@ -1261,22 +1286,28 @@ what is the difference between ``=`` and ``==``?
 
     'thing on the left' == 'thing on the right'
 
+----
+
 ---------------------------------------------------------------------------------
 how to test if two things are NOT Equal
 ---------------------------------------------------------------------------------
+
+----
 
 There are `assert methods`_ to check if 2 things are equal or not.
 
 * I add assertNotEqual_ which checks if the 2 things in the parentheses are NOT equal
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 3
+    :lineno-start: 37
+    :emphasize-lines: 5
     :emphasize-text: Not
 
         def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertNotEqual(None, None)
+            reality = None
+            my_expectation = None
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
 
   the terminal_ is my friend, and shows AssertionError_
 
@@ -1284,20 +1315,26 @@ There are `assert methods`_ to check if 2 things are equal or not.
 
     AssertionError: None == None
 
+----
+
 ---------------------------------------------------------------------------------
 how to test if two things are Equal
 ---------------------------------------------------------------------------------
 
+-----
+
 * I change assertNotEqual_ to assertEqual_ which checks if the 2 things in the parentheses are equal
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 3
+    :lineno-start: 37
+    :emphasize-lines: 4
     :emphasize-text: Equal
 
         def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+            reality = None
+            my_expectation = None
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
 
     # NOTES
