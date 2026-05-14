@@ -67,34 +67,21 @@ start the project
 
   then goes back to the command line
 
-* I change directory_ to the project
-
-  .. code-block:: shell
-    :emphasize-lines: 1
-
-    cd car
-
-  the terminal_ shows I am in the ``car`` folder_
-
-  .. code-block:: shell
-
-    .../pumping_python/car
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line
-
 * I make a directory_ for the source code
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     mkdir src
+
+  the terminal_ goes back to the command line
+
+* I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mv main.py src/car.py
 
   the terminal_ goes back to the command line
 

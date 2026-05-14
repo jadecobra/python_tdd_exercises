@@ -16,13 +16,11 @@ what is an assertion?
 
 ----
 
-An `assertion`_ or `assert statement`_ is me telling the computer "DO NOT CONTINUE, IF this statement IS FALSE"
+An `assertion`_ or `assert statement`_ is a way for me to tell the computer "DO NOT CONTINUE, IF this statement IS FALSE", or said a different way "GO TO THE NEXT LINE, ONLY IF this statement IS TRUE".
 
-I use assertions_ when making a program_ to make sure something is :ref:`True<test_what_is_true>` before the computer can continue running the program.
+I use assertions_ in testing when making a program_ to make sure something is :ref:`True<test_what_is_true>` about the program_ before I continue building or to test ideas and see if they work, without worrying about if I will remember the ideas later.
 
-I also use them to test how the program_ behaves, for example when it is given inputs.
-
-Assertions_ can help catch things that make tests that were passing before to start failing when I add new lines of code. They also help me answer 2 questions
+I use them to test how the program_ behaves, for example when it is given inputs. Assertions_ can help catch things that make tests that were passing before to start failing when I add new lines of code. They help me answer 2 questions
 
 * what is the same?
 * what is different?
@@ -66,18 +64,20 @@ start the project
 
 * I name this project ``assertion_error``
 * I open a terminal_
-* I make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir assertion_error
+    uv init assertion_error
 
-  the terminal_ goes back to the command line
+  the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    .../pumping_python
+    Initialized project `assertion-error` at `.../pumping_python/assertion_error`
+
+  then goes back to the command line
 
 * I change directory_ to the project
 
@@ -91,6 +91,25 @@ start the project
   .. code-block:: python
 
     .../pumping_python/assertion_error
+
+* I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mv main.py src/magic.py
+
+  the terminal_ goes back to the command line
+
+* I make a directory_ for the source code
+
+  .. code-block:: shell
+    :emphasize-lines: 1
+
+    mkdir src
+
+  the terminal_ goes back to the command line
+
 
 * I `make a directory`_ for the tests
 

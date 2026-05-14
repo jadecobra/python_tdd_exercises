@@ -87,18 +87,20 @@ start the project
 
 * I name this project ``functions``
 * I open a terminal_
-* I make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir functions
+    uv init functions
 
-  the terminal_ goes back to the command line
+  the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    .../pumping_python
+    Initialized project `functions` at `.../pumping_python/functions`
+
+  then goes back to the command line
 
 * I change directory_ to the project
 
