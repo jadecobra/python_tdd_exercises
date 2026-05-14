@@ -5,10 +5,38 @@ makePythonTdd.ps1
 #################################################################################
 
 *********************************************************************************
-makePythonTdd.sh program
+makePythonTdd.sh with no variables
 *********************************************************************************
 
-* Here is the ``makePythonTdd.ps1`` program_ from :ref:`how to make a python test driven development environment on Windows without Windows Subsystem for Linux`
+* Here is the ``makePythonTdd.ps1`` program_ from :ref:`how to make a Python Test Driven Development environment automatically`
+
+  .. literalinclude:: makePythonTddNoVariables.sh
+    :language: shell
+    :linenos:
+    :emphasize-lines: 2-3, 5, 12, 20
+
+* change ``more_magic`` to the name of your Project and when the program_ is called to make a `Test Driven Development`_ any time you want
+
+* use ``chmod`` to make the program_ executable
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    chmod +x makePythonTdd.sh
+
+* type this in the terminal_ to run the program_
+
+  .. code-block:: python
+
+    ./makePythonTdd.sh
+
+----
+
+*********************************************************************************
+makePythonTdd.ps1 with variables
+*********************************************************************************
+
+* Here is the ``makePythonTdd.ps1`` program_ from :ref:`how to make a python test driven development environment`
 
   .. literalinclude:: makePythonTdd.ps1
     :language: PowerShell

@@ -1,8 +1,8 @@
 $PROJECT_NAME=$args[0]
-mkdir $PROJECT_NAME
+uv init $PROJECT_NAME
 cd $PROJECT_NAME
 mkdir src
-New-Item "src/$PROJECT_NAME.py"
+Move-Item "main.py" "src/$PROJECT_NAME.py"
 mkdir tests
 New-Item tests/__init__.py
 
@@ -22,9 +22,7 @@ class Test$($PROJECT_NAME)(unittest.TestCase):
 code src/$PROJECT_NAME.py
 code tests/test_$PROJECT_NAME.py
 
-python -m venv .venv
-.venv/scripts/activate.ps1
-python -m pip install --upgrade pip
-"pytest-watcher" | Out-File requirements.txt -Encoding UTF8
-python -m pip install --requirement requirements.txt
-pytest-watcher
+"pytest" | Out-File requirements.txt -Encoding UTF8
+"pytest-watcher" >> Out-File requirements.txt
+uv add --requirement requirements.txt
+uv run pytest-watcher . --now

@@ -9,9 +9,11 @@ IFS='_' read -r -a words <<< "$PROJECT_NAME"
 IFS=''
 CLASS_NAME="${words[*]^}"
 
+uv init $PROJECT_NAME
 mkdir -p $PROJECT_NAME/{src,tests}
 cd $PROJECT_NAME
-touch src/$PROJECT_NAME.py tests/__init__.py
+mv main.py src/$PROJECT_NAME.py
+touch tests/__init__.py
 
 echo "import unittest
 
@@ -31,7 +33,5 @@ code tests/test_$PROJECT_NAME.py
 
 echo "pytest" > requirements.txt
 echo "pytest-watcher" >> requirements.txt
-uv init
-rm main.py
 uv add --requirement requirements.txt
 uv run pytest-watcher . --now
