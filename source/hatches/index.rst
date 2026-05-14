@@ -14,16 +14,22 @@ join a HATCH
 
 ----
 
-If you have ever thought to yourself “I will learn the Python_ programming language one day”. Today is someday! You can learn with me. See available times below
+If you have ever felt the frustration of staring at code and feeling like you will never "get it," this is for you. Most people quit because they get stuck and have no one to ask. In a "Hatch," you are never alone.
 
-It is 10 weeks of HARD work - reading, writing and testing Python_ everyday, not for the faint of heart or weak of mind. Do not worry no math needed.
+By the end of these 10 weeks of "hard labor," you won't just know Python, you will think like a professional with the confidence to look at a  problem and know how to test and build the solution from scratch. No more "tutorial hell." No more guessing.
 
 :ref:`Sign up TODAY<sign_up>` for a Hatch that fits your schedule. The maximum number of people in each Hatch is **5** to make sure I give you one-on-one attention in a group learning environment.
+
+----
 
 *********************************************************************************
 what do I get?
 *********************************************************************************
 
+* Master Test-Driven Development (TDD) from day one with Professional Habits
+* Daily 1-on-1s: Get unstuck instantly with daily video calls with me.
+* Math-Free Logic: If you can think, you can code.
+* Go from "I want to learn" to "I can build."
 * 44 chapters
 * 11 hours of video
 * 50 sessions
@@ -38,6 +44,8 @@ what do I get?
 * a group with 4 other Python PUMPERS like you
 * access to a growing WhatsApp community of people like you who have gone through or are going through the `Pumping Python`_
 
+----
+
 .. _sign_up:
 
 *************************************************************************************
@@ -48,9 +56,11 @@ Pick a time that works best for you
 
 .. raw:: html
 
+
     <div class="pricing-container">
         <div class="price-card">
-            <h3>morning marauders</h3>
+            <h1>morning marauders</h1>
+            <h4>daylight</h4>
             <div class="price"><s>$199.98</s></div>
             <div class="price">FREE.99</div>
             <p class="time-slot">10AM - 12PM CST</p>
@@ -63,7 +73,8 @@ Pick a time that works best for you
         </div>
 
         <div class="price-card">
-            <h3>sunlight soldiers</h3>
+            <h1>sunlight soldiers</h1>
+            <h4>daylight</h4>
             <div class="price"><s>$199.98</s></div>
             <div class="price">FREE.99</div>
             <p class="time-slot">1PM - 3PM CST</p>
@@ -77,7 +88,8 @@ Pick a time that works best for you
         </div>
 
         <div class="price-card">
-            <h3>happy hour heroes</h3>
+            <h1>happy hour heroes</h1>
+            <h4>daylight</h4>
             <div class="price"><s>$199.98</s></div>
             <div class="price">FREE.99</div>
             <p class="time-slot">5PM - 7PM CST</p>
@@ -91,6 +103,7 @@ Pick a time that works best for you
 
         <div class="price-card highlight">
             <h1>nighttime ninjas</h1>
+            <h4>pro</h4>
             <div class="price">$399.96</div>
             <p class="time-slot">8PM - 10PM CST</p>
             <ul>
@@ -103,6 +116,7 @@ Pick a time that works best for you
 
         <div class="price-card">
             <h3>weekend warriors</h3>
+            <h4>pro</h4>
             <div class="price">$399.96</div>
             <p class="time-slot">8AM - 4PM CST</p>
             <ul>
@@ -149,5 +163,14 @@ Pick a time that works best for you
     Cal("init", "pumping-python-nighttime-ninjas", {origin:"https://app.cal.com"});
 
     Cal.ns["pumping-python-nighttime-ninjas"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#ffd21f"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal element-click embed code ends -->
+
+    <!-- Weekend Warriors Calendar PopUp -->
+    <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "pumping-python-weekend-warriors", {origin:"https://app.cal.com"});
+
+    Cal.ns["pumping-python-weekend-warriors"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#292929"},"dark":{"cal-brand":"#ffd21f"}},"hideEventTypeDetails":false,"layout":"month_view"});
     </script>
     <!-- Cal element-click embed code ends -->
