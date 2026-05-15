@@ -4,14 +4,17 @@ import unittest
 class TestAssertionError(unittest.TestCase):
 
     def test_what_is_an_assertion(self):
-        assert 1 + 1 == 2
-        self.assertEqual(1+1, 2)
+        reality = 1 + 1
+        my_expectation = 2
+        assert reality == my_expectation
 
-        assert '1' + '1' == '11'
-        self.assertEqual('1'+'1', '11')
+        reality = '1' + '1'
+        my_expectation = '11'
+        assert reality == my_expectation
 
-        assert 'I am' + ' a programmer' == 'I am a programmer'
-        self.assertEqual('I am'+' a programmer', 'I am a programmer')
+        reality = 'I am' + ' alive'
+        my_expectation = 'I am alive'
+        assert reality == my_expectation
 
     def test_assertion_error_w_none(self):
         assert None is None
@@ -22,6 +25,27 @@ class TestAssertionError(unittest.TestCase):
 
         assert True is not None
         self.assertIsNotNone(True)
+
+        assert 0 is not None
+        self.assertIsNotNone(0)
+
+        assert 0.0 is not None
+        self.assertIsNotNone(0.0)
+
+        assert 'a string' is not None
+        self.assertIsNotNone('a string')
+
+        assert (1, 2, 3, 'n') is not None
+        self.assertIsNotNone((1, 2, 3, 'n'))
+
+        assert [1, 2, 3, 'n'] is not None
+        self.assertIsNotNone([1, 2, 3, 'n'])
+
+        assert {1, 2, 3, 'n'} is not None
+        self.assertIsNotNone({1, 2, 3, 'n'})
+
+        assert {'key': 'value'} is not None
+        self.assertIsNotNone({'key': 'value'})
 
     def test_assertion_error_w_false(self):
         assert True is not False
