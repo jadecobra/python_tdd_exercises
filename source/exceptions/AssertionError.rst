@@ -288,7 +288,9 @@ start the project
 what is a variable?
 *********************************************************************************
 
-I can use a name to represent values when programming. This helps me avoid repetition when I have to change a value. A variable_ is a name that is used for values that change. For example, in Mathematics_ we use ``x`` to represent any number.
+I can use a name for values when programming. This helps me avoid repetition when I have to change a value.
+
+A variable_ is a name that is used for values that change. For example, in Mathematics_ we use ``x`` to represent any number.
 
 ----
 
@@ -451,8 +453,8 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
   because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'1' + '1' == '2'" is False``
 
-  - ``- 2`` shows my expectation - what I wrote as the result
-  - ``+ 11`` shows reality - what the actual result is
+  - ``- 2`` shows my expectation - what I wrote as the result, which is what is missing from the actual result
+  - ``+ 11`` shows reality - what the actual result is, , which is what is missing from my expectation
 
 * I change ``my_expectation`` to match ``reality``
 
@@ -497,7 +499,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
             my_expectation = '11'
             assert reality == my_expectation
 
-            reality = 'I am' + ' a programmer'
+            reality = 'I am' + ' alive'
             my_expectation = '11'
             reality == my_expectation
 
@@ -522,7 +524,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
             my_expectation = '11'
             assert reality == my_expectation
 
-            reality = 'I am' + ' a programmer'
+            reality = 'I am' + ' alive'
             my_expectation = '11'
             assert reality == my_expectation
 
@@ -534,17 +536,17 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
   .. code-block:: python
     :emphasize-lines: 3-4
 
-    E       AssertionError: assert 'I am a programmer' == '11'
+    E       AssertionError: assert 'I am alive' == '11'
     E
     E         - 11
-    E         + I am a programmer
+    E         + I am alive
 
-  because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'I am' + ' a programmer' == '11'" is False``
+  because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'I am' + ' alive' == '11'" is False``
 
-  - the ``- 11`` shows my expectation - what I wrote as the result
-  - the ``+ I am a programmer`` shows reality - what the actual result is
+  - the ``- 11`` shows my expectation - what I wrote as the result, which is what is missing from the actual result
+  - the ``+ I am alive`` shows reality - what the actual result is, which is what is missing from my expectation
 
-  .. attention:: If your result is different, check that you added a space before ``a programmer``, it should be ``' a programmer'`` not ``'a programmer'``. There is a space before the phrase.
+  .. attention:: If your result is different, check that you added a space before ``alive``, it should be ``' alive'`` not ``'alive'``. There is a space before the phrase.
 
 * I change ``my_expectation`` to match ``reality`` and make the statement :ref:`True<test_what_is_true>`
 
@@ -561,8 +563,8 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
             my_expectation = '11'
             assert reality == my_expectation
 
-            reality = 'I am' + ' a programmer'
-            my_expectation = 'I am a programmer'
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
             assert reality == my_expectation
 
 
@@ -626,8 +628,8 @@ For example,
             my_expectation = '11'
             assert reality == my_expectation
 
-            reality = 'I am' + ' a programmer'
-            my_expectation = 'I am a programmer'
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
             assert reality == my_expectation
 
         def test_assertion_error_w_none(self):
@@ -815,7 +817,7 @@ how to test if something is None
 
   the test passes
 
-* I add a comment
+* I add a note
 
   .. code-block:: python
     :lineno-start: 27
@@ -873,7 +875,7 @@ how to test if something is None
 * I add a failing line with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 26
     :emphasize-lines: 2
 
             assert True is not None
@@ -906,10 +908,10 @@ how to test if something is None
 
   the test passes
 
-* I add a comment
+* I add a note
 
   .. code-block:: python
-    :lineno-start: 18
+    :lineno-start: 26
     :emphasize-lines: 6
 
             assert True is not None
@@ -924,6 +926,348 @@ how to test if something is None
 
     # Exceptions seen
     # AssertionError
+
+* I add an `assert statement`_ for an integer_ (a whole number with no decimals)
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            assert 0 is None
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert 0 is None
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 1
+
+            assert 0 is not None
+
+  the test passes
+
+* I add a statement with the `assertIsNone method`_
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2
+
+            assert 0 is not None
+            self.assertIsNone(0)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 is not None
+
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 12
+    :emphasize-text: Not
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+      # NOTES
+
+  the test passes
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 2
+
+    # NOTES
+    # an integer is not None
+    # True is not None
+    # False is not None
+    # None is None
+
+
+    # Exceptions seen
+    # AssertionError
+
+* I add an `assert statement`_ for a float_ (binary floating point decimal numbers)
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 14
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+  the test passes
+
+* I add a statement for floats_ with the `assertIsNone method`_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+    :emphasize-text: Not
+
+  the test passes
+
+* I add a note about floats_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+* I add an `assert statement`_ for a string_ (anything in :ref:`quotes`)
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 14
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+  the test passes
+
+* I add a statement for strings_ with the `assertIsNone method`_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+    :emphasize-text: Not
+
+  the test passes
+
+* I add a note about strings_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+* I add an `assert statement`_ for a tuple_ (anything in parentheses ``( )`` separated by a comma)
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 14
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+  the test passes
+
+* I add a statement for tuples_ with the `assertIsNone method`_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+    :emphasize-text: Not
+
+  the test passes
+
+* I add a note about tuples_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+* I add an `assert statement`_ for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 14
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+  the test passes
+
+* I add a statement for :ref:`lists<what is a list?>` with the `assertIsNone method`_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+    :emphasize-text: Not
+
+  the test passes
+
+* I add a note about :ref:`lists<what is a list?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+* I add an `assert statement`_ for a set (anything in curly braces ``{ }`` separated by a comma)
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 14
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+  the test passes
+
+* I add a statement for sets_ with the `assertIsNone method`_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+    :emphasize-text: Not
+
+  the test passes
+
+* I add a note about sets_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+* I add an `assert statement`_ for a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma)
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 14
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+
+  the test passes
+
+* I add a statement for :ref:`dictionaries<what is a dictionary?>` with the `assertIsNone method`_
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
+    :emphasize-text: Not
+
+  the test passes
+
+* I add a note about :ref:`dictionaries<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
 
 :ref:`I can use assertions to test if something is None<what is None?>`
 
@@ -1327,7 +1671,7 @@ how to test if two things are Equal
 
   .. code-block:: python
     :lineno-start: 37
-    :emphasize-lines: 4
+    :emphasize-lines: 5
     :emphasize-text: Equal
 
         def test_assertion_error_w_equality(self):
@@ -1344,7 +1688,7 @@ how to test if two things are Equal
 * I add to the ``None is None`` comment
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 44
     :emphasize-lines: 8
 
     # NOTES
@@ -1937,7 +2281,7 @@ how to test if two things are Equal
             self.assertEqual(1+1, 3)
 
             assert '1' + '1' == '11'
-            assert 'I am' + ' a programmer' == 'I am a programmer'
+            assert 'I am' + ' alive' == 'I am alive'
 
         def test_assertion_error_w_none(self):
 
@@ -1971,7 +2315,7 @@ how to test if two things are Equal
             assert '1' + '1' == '11'
             self.assertEqual('1'+'1', '2')
 
-            assert 'I am' + ' a programmer' == 'I am a programmer'
+            assert 'I am' + ' alive' == 'I am alive'
 
   the terminal_ is my friend, and shows
 
@@ -2003,14 +2347,14 @@ how to test if two things are Equal
             assert '1' + '1' == '11'
             self.assertEqual('1'+'1', '11')
 
-            assert 'I am' + ' a programmer' == 'I am a programmer'
-            self.assertEqual('I am'+' a programmer', '11')
+            assert 'I am' + ' alive' == 'I am alive'
+            self.assertEqual('I am'+' alive', '11')
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'I am a programmer' != '11'
+    AssertionError: 'I am alive' != '11'
 
 * I make my expectation match reality
 
@@ -2025,8 +2369,8 @@ how to test if two things are Equal
             assert '1' + '1' == '11'
             self.assertEqual('1'+'1', '11')
 
-            assert 'I am' + ' a programmer' == 'I am a programmer'
-            self.assertEqual('I am'+' a programmer', 'I am a programmer')
+            assert 'I am' + ' alive' == 'I am alive'
+            self.assertEqual('I am'+' alive', 'I am alive')
 
         def test_assertion_error_w_none(self):
 
