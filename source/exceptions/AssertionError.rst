@@ -817,7 +817,7 @@ how to test if something is None
 
   the test passes
 
-* I add a note
+* I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -908,7 +908,7 @@ how to test if something is None
 
   the test passes
 
-* I add a note
+* I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -926,6 +926,8 @@ how to test if something is None
 
     # Exceptions seen
     # AssertionError
+
+----
 
 * I add an `assert statement`_ for an integer_ (a whole number with no decimals)
 
@@ -1007,7 +1009,7 @@ how to test if something is None
 
   the test passes
 
-* I add a note
+* I add a note about integers_
 
   .. code-block:: python
     :lineno-start: 33
@@ -1023,46 +1025,109 @@ how to test if something is None
     # Exceptions seen
     # AssertionError
 
+----
+
 * I add an `assert statement`_ for a float_ (binary floating point decimal numbers)
 
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 14
 
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+            assert 0.0 is None
+
+
+    # NOTES
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    E       assert 0.0 is None
+
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 1
+
+            assert 0.0 is not None
 
   the test passes
 
 * I add a statement for floats_ with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 32
+    :emphasize-lines: 2
+
+            assert 0.0 is not None
+            self.assertIsNone(0.0)
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    E       AssertionError: 0.0 is not None
+
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 19
+    :emphasize-lines: 15
     :emphasize-text: Not
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+            assert 0.0 is not None
+            self.assertIsNotNone(0.0)
+
+
+    # NOTES
 
   the test passes
 
 * I add a note about floats_
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 36
+    :emphasize-lines: 2
+
+    # NOTES
+    # a float is not None
+    # an integer is not None
+    # True is not None
+    # False is not None
+    # None is None
+
+
+    # Exceptions seen
+    # AssertionError
+
+----
 
 * I add an `assert statement`_ for a string_ (anything in :ref:`quotes`)
 
@@ -1077,6 +1142,8 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
 
   the test passes
 
@@ -1118,6 +1185,8 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
 
   the test passes
 
@@ -1159,6 +1228,8 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
 
   the test passes
 
@@ -1200,6 +1271,8 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
 
   the test passes
 
@@ -1241,6 +1314,8 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
+    :lineno-start:
+    :emphasize-lines:
 
   the test passes
 
