@@ -1133,130 +1133,295 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 14
+    :emphasize-lines: 17
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+            assert 0.0 is not None
+            self.assertIsNotNone(0.0)
+
+            assert 'a string' is None
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    E       AssertionError: assert 'a string' is None
+
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 35
+    :emphasize-lines: 1
+
+            assert 'a string' is not None
 
   the test passes
 
 * I add a statement for strings_ with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 35
+    :emphasize-lines: 2
+
+            assert 'a string' is not None
+            self.assertIsNone('a string')
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    E       AssertionError: 'a string' is not None
+
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 35
+    :emphasize-lines: 2
     :emphasize-text: Not
+
+            assert 'a string' is not None
+            self.assertIsNotNone('a string')
+
+
+    # NOTES
 
   the test passes
 
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 39
+    :emphasize-lines: 2
+
+    # NOTES
+    # a string is not None
+    # a float is not None
+    # an integer is not None
+    # True is not None
+    # False is not None
+    # None is None
+
+
+    # Exceptions seen
+    # AssertionError
+
+----
 
 * I add an `assert statement`_ for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 14
+    :emphasize-lines: 20
+
+    def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+            assert 0.0 is not None
+            self.assertIsNotNone(0.0)
+
+            assert 'a string' is not None
+            self.assertIsNotNone('a string')
+
+            assert (1, 2, 3, 'n') is None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    E       AssertionError: assert (1, 2, 3, 'n') is None
+
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 38
+    :emphasize-lines: 1
+
+            assert (1, 2, 3, 'n') is not None
 
   the test passes
 
 * I add a statement for tuples_ with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 38
+    :emphasize-lines: 2
+
+            assert (1, 2, 3, 'n') is not None
+            self.assertIsNone((1, 2, 3, 'n'))
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    E       AssertionError: (1, 2, 3, 'n') is not None
+
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 29
+    :emphasize-lines: 11
     :emphasize-text: Not
+
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+            assert 0.0 is not None
+            self.assertIsNotNone(0.0)
+
+            assert 'a string' is not None
+            self.assertIsNotNone('a string')
+
+            assert (1, 2, 3, 'n') is not None
+            self.assertIsNotNone((1, 2, 3, 'n'))
+
+
+    # NOTES
 
   the test passes
 
 * I add a note about tuples_
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 42
+    :emphasize-lines: 2
+
+    # NOTES
+    # a tuple is not None
+    # a string is not None
+    # a float is not None
+    # an integer is not None
+    # True is not None
+    # False is not None
+    # None is None
+
+
+    # Exceptions seen
+    # AssertionError
+
+----
 
 * I add an `assert statement`_ for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 14
+    :lineno-start: 32
+    :emphasize-lines: 10
+
+            assert 0.0 is not None
+            self.assertIsNotNone(0.0)
+
+            assert 'a string' is not None
+            self.assertIsNotNone('a string')
+
+            assert (1, 2, 3, 'n') is not None
+            self.assertIsNotNone((1, 2, 3, 'n'))
+
+            assert [1, 2, 3, 'n'] is None
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block::
+
+    E       AssertionError: assert [1, 2, 3, 'n'] is None
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 41
+    :emphasize-lines: 1
+
+            assert [1, 2, 3, 'n'] is not None
 
   the test passes
 
 * I add a statement for :ref:`lists<what is a list?>` with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 41
+    :emphasize-lines: 2
+
+            assert [1, 2, 3, 'n'] is not None
+            self.assertIsNone([1, 2, 3, 'n'])
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
+    E       AssertionError: [1, 2, 3, 'n'] is not None
+
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 41
+    :emphasize-lines: 2
     :emphasize-text: Not
+
+            assert [1, 2, 3, 'n'] is not None
+            self.assertIsNotNone([1, 2, 3, 'n'])
+
+
+    # NOTES
+
 
   the test passes
 
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 45
+    :emphasize-lines: 2
+
+    # NOTES
+    # a list is not None
+    # a tuple is not None
+    # a string is not None
+    # a float is not None
+    # an integer is not None
+    # True is not None
+    # False is not None
+    # None is None
+
+
+    # Exceptions seen
+    # AssertionError
+
+----
 
 * I add an `assert statement`_ for a set (anything in curly braces ``{ }`` separated by a comma)
 
