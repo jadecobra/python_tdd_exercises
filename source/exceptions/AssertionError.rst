@@ -600,10 +600,7 @@ test_assertion_error_w_none
 
 :ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`None<what is None?>`, this is useful when I want to check what value I am getting from some process or user input.
 
-For example,
-
-* if I have people fill a form and I want to test for when they do not put anything in a place that needs something
-* if I have a process that changes something and does not return a value (it returns :ref:`None<what is None?>`), I can use an :ref:`assertion<what is an assertion?>` to make sure that the process returns :ref:`None<what is None?>`
+For example, if I have people fill a form and I want a test for when they leave a value blank, I can use an :ref:`assertion<what is an assertion?>` to make sure that the process returns :ref:`None<what is None?>`.
 
 ----
 
@@ -804,7 +801,7 @@ how to test if something is None
 
   .. code-block:: python
 
-    AssertionError: False is not None
+    E       AssertionError: False is not None
 
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
@@ -885,7 +882,7 @@ how to test if something is None
 
   .. code-block:: python
 
-    AssertionError: True is not None
+    E       AssertionError: True is not None
 
 * I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
@@ -982,7 +979,7 @@ how to test if something is None
 
   .. code-block:: python
 
-    AssertionError: 0 is not None
+    E       AssertionError: 0 is not None
 
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
@@ -1009,10 +1006,74 @@ how to test if something is None
 
   the test passes
 
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIsNotNone(0)
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+
 * I add a note about integers_
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 34
     :emphasize-lines: 2
 
     # NOTES
@@ -1110,6 +1171,70 @@ how to test if something is None
 
   the test passes
 
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIsNotNone(0)
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+
 * I add a note about floats_
 
   .. code-block:: python
@@ -1204,6 +1329,70 @@ how to test if something is None
     # NOTES
 
   the test passes
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIsNotNone(0)
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about strings_
 
@@ -1310,6 +1499,70 @@ how to test if something is None
 
   the test passes
 
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIsNotNone(0)
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+
 * I add a note about tuples_
 
   .. code-block:: python
@@ -1401,6 +1654,70 @@ how to test if something is None
 
   the test passes
 
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIsNotNone(0)
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
@@ -1488,6 +1805,70 @@ how to test if something is None
     # NOTES
 
   the test passes
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIsNotNone(0)
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about sets_
 
@@ -1627,6 +2008,70 @@ how to test if something is None
     # NOTES
 
   the test passes
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert 0 is not None
+            self.assertIsNotNone(0)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 2-3
+
+            an_integer = 0
+            # assert 0 is not None
+            assert an_integer is not None
+            # self.assertIsNotNone(0)
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIsNone(None)
+
+            assert False is not None
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNotNone(True)
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+
+    # NOTES
+
+  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
