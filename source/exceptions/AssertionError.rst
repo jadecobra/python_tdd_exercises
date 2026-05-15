@@ -1033,7 +1033,7 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
             an_integer = 0
             # assert 0 is not None
@@ -1068,7 +1068,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about integers_
 
@@ -1092,7 +1092,7 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 14
+    :emphasize-lines: 15
 
         def test_assertion_error_w_none(self):
             assert None is None
@@ -1104,8 +1104,9 @@ how to test if something is None
             assert True is not None
             self.assertIsNotNone(True)
 
-            assert 0 is not None
-            self.assertIsNotNone(0)
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
 
             assert 0.0 is None
 
@@ -1121,7 +1122,7 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 33
     :emphasize-lines: 1
 
             assert 0.0 is not None
@@ -1131,7 +1132,7 @@ how to test if something is None
 * I add a statement for floats_ with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 33
     :emphasize-lines: 2
 
             assert 0.0 is not None
@@ -1146,22 +1147,9 @@ how to test if something is None
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 15
+    :lineno-start: 33
+    :emphasize-lines: 2
     :emphasize-text: Not
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            assert 0 is not None
-            self.assertIsNotNone(0)
 
             assert 0.0 is not None
             self.assertIsNotNone(0.0)
@@ -1171,40 +1159,34 @@ how to test if something is None
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0.0``
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
+    :lineno-start: 29
+    :emphasize-lines: 5
 
             an_integer = 0
-            assert 0 is not None
-            self.assertIsNotNone(0)
+            assert an_integer is not None
+            self.assertIsNotNone(an_integer)
+
+            a_float = 0.0
+            assert 0.0 is not None
+            self.assertIsNotNone(0.0)
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0``
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-3
+    :lineno-start: 33
+    :emphasize-lines: 2-5
 
-            an_integer = 0
-            # assert 0 is not None
-            assert an_integer is not None
-            # self.assertIsNotNone(0)
-            self.assertIsNotNone(an_integer)
+            a_float = 0.0
+            # assert 0.0 is not None
+            assert a_float is not None
+            # self.assertIsNotNone(0.0)
+            self.assertIsNotNone(a_float)
 
 
     # NOTES
@@ -1230,10 +1212,14 @@ how to test if something is None
             assert an_integer is not None
             self.assertIsNotNone(an_integer)
 
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNotNone(a_float)
+
 
     # NOTES
 
-  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the float_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about floats_
 
@@ -1257,24 +1243,12 @@ how to test if something is None
 * I add an `assert statement`_ for a string_ (anything in :ref:`quotes`)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 17
+    :lineno-start: 33
+    :emphasize-lines: 5
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            assert 0 is not None
-            self.assertIsNotNone(0)
-
-            assert 0.0 is not None
-            self.assertIsNotNone(0.0)
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNotNone(a_float)
 
             assert 'a string' is None
 
@@ -1290,7 +1264,7 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 37
     :emphasize-lines: 1
 
             assert 'a string' is not None
@@ -1300,7 +1274,7 @@ how to test if something is None
 * I add a statement for strings_ with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 37
     :emphasize-lines: 2
 
             assert 'a string' is not None
@@ -1318,7 +1292,7 @@ how to test if something is None
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 37
     :emphasize-lines: 2
     :emphasize-text: Not
 
@@ -1330,40 +1304,34 @@ how to test if something is None
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'``
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11
+    :lineno-start: 33
+    :emphasize-lines: 5
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNotNone(a_float)
 
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert 0 is not None
-            self.assertIsNotNone(0)
+            a_string = 'a string'
+            assert 'a string' is not None
+            self.assertIsNotNone('a string')
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'a string'``
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-3
+    :lineno-start: 37
+    :emphasize-lines: 2-5
 
-            an_integer = 0
-            # assert 0 is not None
-            assert an_integer is not None
-            # self.assertIsNotNone(0)
-            self.assertIsNotNone(an_integer)
+            a_string = 'a string'
+            # assert 'a string' is not None
+            assert a_string is not None
+            # self.assertIsNotNone('a string')
+            self.assertIsNotNone(a_string)
 
 
     # NOTES
@@ -1389,19 +1357,27 @@ how to test if something is None
             assert an_integer is not None
             self.assertIsNotNone(an_integer)
 
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNotNone(a_float)
+
+            a_string = 'a string'
+            assert a_string is not None
+            self.assertIsNotNone(a_string)
+
 
     # NOTES
 
-  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 42
     :emphasize-lines: 2
 
     # NOTES
-    # a string is not None
+    # a string not None
     # a float is not None
     # an integer is not None
     # True is not None
@@ -1526,7 +1502,7 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
             an_integer = 0
             # assert 0 is not None
@@ -1561,7 +1537,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about tuples_
 
@@ -1681,7 +1657,7 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
             an_integer = 0
             # assert 0 is not None
@@ -1716,7 +1692,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -1833,7 +1809,7 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
             an_integer = 0
             # assert 0 is not None
@@ -1868,7 +1844,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about sets_
 
@@ -2036,7 +2012,7 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2-3
+    :emphasize-lines: 2-5
 
             an_integer = 0
             # assert 0 is not None
@@ -2071,7 +2047,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the integer_ in one place without worrying about the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
