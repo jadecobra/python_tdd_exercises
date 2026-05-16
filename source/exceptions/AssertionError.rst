@@ -2114,9 +2114,10 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 61
-    :emphasize-lines: 10
+    :emphasize-lines: 11
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
     # a list is not None
     # a tuple is not None
@@ -2173,9 +2174,10 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 9
+    :emphasize-lines: 10
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
     # a list is not None
     # a tuple is not None
@@ -2235,9 +2237,10 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 63
-    :emphasize-lines: 8
+    :emphasize-lines: 9
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
     # a list is not None
     # a tuple is not None
@@ -2296,9 +2299,10 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 64
-    :emphasize-lines: 7
+    :emphasize-lines: 8
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
     # a list is not None
     # a tuple is not None
@@ -2360,9 +2364,10 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 65
-    :emphasize-lines: 6
+    :emphasize-lines: 7
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
     # a list is not None
     # a tuple is not None
@@ -2427,9 +2432,10 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 66
-    :emphasize-lines: 8
+    :emphasize-lines: 6
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
     # a list is not None
     # a tuple is not None
@@ -2497,9 +2503,10 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 67
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
     # a list is not None
     # a tuple is not False
@@ -2519,15 +2526,21 @@ the test passes
 
 ----
 
-* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 9
 
         def test_assertion_error_w_false(self):
             assert None is not False
-            assert True is False
+            assert False is False
+            assert True is not False
+            assert 0 is not False
+            assert 0.0 is not False
+            assert 'a string' is not False
+            assert (1, 2, 3, 'n') is not False
+            assert [1, 2, 3, 'n'] is False
 
 
     # NOTES
@@ -2536,46 +2549,55 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is False
+    E       AssertionError: assert [1, 2, 3, 'n'] is False
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 9
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
             assert None is not False
+            assert False is False
             assert True is not False
+            assert 0 is not False
+            assert 0.0 is not False
+            assert 'a string' is not False
+            assert (1, 2, 3, 'n') is not False
+            assert [1, 2, 3, 'n'] is not False
 
 
     # NOTES
 
   the test passes
 
-* I add a note about :ref:`True<test_what_is_true>`
+* I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 8
+    :lineno-start: 68
+    :emphasize-lines: 4
 
     # NOTES
+    # a dictionary is not None
     # a set is not None
+    # a list is not False
     # a list is not None
+    # a tuple is not False
     # a tuple is not None
+    # a string is not False
     # a string not None
+    # a float is not False
     # a float is not None
+    # an integer is not False
     # an integer is not None
     # True is not False
     # True is not None
+    # False is False
     # False is not None
     # None is not False
     # None is None
-
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
