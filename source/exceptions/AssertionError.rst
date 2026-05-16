@@ -1068,7 +1068,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the integer_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about integers_
 
@@ -1219,7 +1219,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the float_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the float_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about floats_
 
@@ -1368,7 +1368,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the string_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about strings_
 
@@ -1522,7 +1522,7 @@ how to test if something is None
 
     # NOTES
 
-  I can change the value of the tuple_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the tuple_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about tuples_
 
@@ -1548,17 +1548,12 @@ how to test if something is None
 * I add an `assert statement`_ for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 10
+    :lineno-start: 41
+    :emphasize-lines: 5
 
-            assert 0.0 is not None
-            self.assertIsNotNone(0.0)
-
-            assert 'a string' is not None
-            self.assertIsNotNone('a string')
-
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNotNone((1, 2, 3, 'n'))
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNotNone(a_tuple)
 
             assert [1, 2, 3, 'n'] is None
 
@@ -1574,7 +1569,7 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 45
     :emphasize-lines: 1
 
             assert [1, 2, 3, 'n'] is not None
@@ -1584,7 +1579,7 @@ how to test if something is None
 * I add a statement for :ref:`lists<what is a list?>` with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 45
     :emphasize-lines: 2
 
             assert [1, 2, 3, 'n'] is not None
@@ -1602,7 +1597,7 @@ how to test if something is None
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 45
     :emphasize-lines: 2
     :emphasize-text: Not
 
@@ -1615,40 +1610,34 @@ how to test if something is None
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']``
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11
+    :lineno-start: 41
+    :emphasize-lines: 5
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNotNone(a_tuple)
 
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert 0 is not None
-            self.assertIsNotNone(0)
+            a_list = [1, 2, 3, 'n']
+            assert [1, 2, 3, 'n'] is not None
+            self.assertIsNotNone([1, 2, 3, 'n'])
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']``
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 45
     :emphasize-lines: 2-5
 
-            an_integer = 0
-            # assert 0 is not None
-            assert an_integer is not None
-            # self.assertIsNotNone(0)
-            self.assertIsNotNone(an_integer)
+            a_list = [1, 2, 3, 'n']
+            # assert [1, 2, 3, 'n'] is not None
+            assert a_list is not None
+            # self.assertIsNotNone([1, 2, 3, 'n'])
+            self.assertIsNotNone(a_list)
 
 
     # NOTES
@@ -1674,10 +1663,26 @@ how to test if something is None
             assert an_integer is not None
             self.assertIsNotNone(an_integer)
 
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNotNone(a_float)
+
+            a_string = 'a string'
+            assert a_string is not None
+            self.assertIsNotNone(a_string)
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNotNone(a_tuple)
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNotNone(a_list)
+
 
     # NOTES
 
-  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the :ref:`list<what is a list?>` in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -1704,14 +1709,12 @@ how to test if something is None
 * I add an `assert statement`_ for a set (anything in curly braces ``{ }`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 7
+    :lineno-start: 45
+    :emphasize-lines: 5
 
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNotNone((1, 2, 3, 'n'))
-
-            assert [1, 2, 3, 'n'] is not None
-            self.assertIsNotNone([1, 2, 3, 'n'])
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNotNone(a_list)
 
             assert {1, 2, 3, 'n'} is None
 
@@ -1727,7 +1730,7 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 49
     :emphasize-lines: 1
 
             assert {1, 2, 3, 'n'} is not None
@@ -1737,7 +1740,7 @@ how to test if something is None
 * I add a statement for sets_ with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 49
     :emphasize-lines: 2
 
             assert {1, 2, 3, 'n'} is not None
@@ -1755,7 +1758,7 @@ how to test if something is None
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 49
     :emphasize-lines: 2
     :emphasize-text: Not
 
@@ -1767,40 +1770,34 @@ how to test if something is None
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}``
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11
+    :lineno-start: 45
+    :emphasize-lines: 5
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNotNone(a_list)
 
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert 0 is not None
-            self.assertIsNotNone(0)
+            a_set = {1, 2, 3, 'n'}
+            assert {1, 2, 3, 'n'} is not None
+            self.assertIsNotNone({1, 2, 3, 'n'})
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}``
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 49
     :emphasize-lines: 2-5
 
-            an_integer = 0
-            # assert 0 is not None
-            assert an_integer is not None
-            # self.assertIsNotNone(0)
-            self.assertIsNotNone(an_integer)
+            a_set = {1, 2, 3, 'n'}
+            # assert {1, 2, 3, 'n'} is not None
+            assert a_set is not None
+            # self.assertIsNotNone({1, 2, 3, 'n'})
+            self.assertIsNotNone(a_set)
 
 
     # NOTES
@@ -1826,15 +1823,35 @@ how to test if something is None
             assert an_integer is not None
             self.assertIsNotNone(an_integer)
 
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNotNone(a_float)
+
+            a_string = 'a string'
+            assert a_string is not None
+            self.assertIsNotNone(a_string)
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNotNone(a_tuple)
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNotNone(a_list)
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not None
+            self.assertIsNotNone(a_set)
+
 
     # NOTES
 
-  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the set_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about sets_
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 56
     :emphasize-lines: 2
 
     # NOTES
@@ -1857,36 +1874,12 @@ how to test if something is None
 * I add an `assert statement`_ for a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 29
+    :lineno-start: 49
+    :emphasize-lines: 5
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            assert 0 is not None
-            self.assertIsNotNone(0)
-
-            assert 0.0 is not None
-            self.assertIsNotNone(0.0)
-
-            assert 'a string' is not None
-            self.assertIsNotNone('a string')
-
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNotNone((1, 2, 3, 'n'))
-
-            assert [1, 2, 3, 'n'] is not None
-            self.assertIsNotNone([1, 2, 3, 'n'])
-
-            assert {1, 2, 3, 'n'} is not None
-            self.assertIsNotNone({1, 2, 3, 'n'})
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not None
+            self.assertIsNotNone(a_set)
 
             assert {'key': 'value'} is None
 
@@ -1902,7 +1895,7 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 53
     :emphasize-lines: 1
 
             assert {'key': 'value'} is not None
@@ -1912,7 +1905,7 @@ how to test if something is None
 * I add a statement for :ref:`dictionaries<what is a dictionary?>` with the `assertIsNone method`_
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 53
     :emphasize-lines: 2
 
             assert {'key': 'value'} is not None
@@ -1930,37 +1923,9 @@ how to test if something is None
 * I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 30
+    :lineno-start: 53
+    :emphasize-lines: 2
     :emphasize-text: Not
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            assert 0 is not None
-            self.assertIsNotNone(0)
-
-            assert 0.0 is not None
-            self.assertIsNotNone(0.0)
-
-            assert 'a string' is not None
-            self.assertIsNotNone('a string')
-
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNotNone((1, 2, 3, 'n'))
-
-            assert [1, 2, 3, 'n'] is not None
-            self.assertIsNotNone([1, 2, 3, 'n'])
-
-            assert {1, 2, 3, 'n'} is not None
-            self.assertIsNotNone({1, 2, 3, 'n'})
 
             assert {'key': 'value'} is not None
             self.assertIsNotNone({'key': 'value'})
@@ -1970,40 +1935,34 @@ how to test if something is None
 
   the test passes
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{'key': 'value'}``
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11
+    :lineno-start: 49
+    :emphasize-lines: 5
 
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not None
+            self.assertIsNotNone(a_set)
 
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert 0 is not None
-            self.assertIsNotNone(0)
+            a_dictionary = {'key': 'value'}
+            assert {'key': 'value'} is not None
+            self.assertIsNotNone({'key': 'value'})
 
 
     # NOTES
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{'key': 'value'}``
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 53
     :emphasize-lines: 2-5
 
-            an_integer = 0
-            # assert 0 is not None
-            assert an_integer is not None
-            # self.assertIsNotNone(0)
-            self.assertIsNotNone(an_integer)
+            a_dictionary = {'key': 'value'}
+            # assert {'key': 'value'} is not None
+            assert a_dictionary is not None
+            # self.assertIsNotNone({'key': 'value'})
+            self.assertIsNotNone(a_dictionary)
 
 
     # NOTES
@@ -2029,10 +1988,34 @@ how to test if something is None
             assert an_integer is not None
             self.assertIsNotNone(an_integer)
 
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNotNone(a_float)
+
+            a_string = 'a string'
+            assert a_string is not None
+            self.assertIsNotNone(a_string)
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNotNone(a_tuple)
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNotNone(a_list)
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not None
+            self.assertIsNotNone(a_set)
+
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not None
+            self.assertIsNotNone(a_dictionary)
+
 
     # NOTES
 
-  I can change the value of the integer_ in one place without having to change the other lines because of the :ref:`variable<what is a variable?>`
+  I can change the value of the :ref:`dictionary<what is a dictionary?>` in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
