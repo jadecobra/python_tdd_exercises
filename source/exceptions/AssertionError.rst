@@ -1706,7 +1706,7 @@ how to test if something is None
 
 ----
 
-* I add an `assert statement`_ for a set (anything in curly braces ``{ }`` separated by a comma)
+* I add an `assert statement`_ for a set_ (anything in curly braces ``{ }`` separated by a comma)
 
   .. code-block:: python
     :lineno-start: 45
@@ -2253,7 +2253,7 @@ the test passes
 
 ----
 
-* I add an `assert statement`_ to see if an integer_ is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if an integer_ (a whole number with no decimals) is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -2315,15 +2315,18 @@ the test passes
 
 ----
 
-* I add an `assert statement`_ to see if a float_ is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 6
 
         def test_assertion_error_w_false(self):
             assert None is not False
-            assert True is False
+            assert False is False
+            assert True is not False
+            assert 0 is not False
+            assert 0.0 is False
 
 
     # NOTES
@@ -2332,56 +2335,64 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is False
+    E       assert 0.0 is False
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 6
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
             assert None is not False
+            assert False is False
             assert True is not False
+            assert 0 is not False
+            assert 0.0 is not False
 
 
     # NOTES
 
   the test passes
 
-* I add a note about :ref:`True<test_what_is_true>`
+* I add a note about floats_
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 8
+    :lineno-start: 65
+    :emphasize-lines: 6
 
     # NOTES
     # a set is not None
     # a list is not None
     # a tuple is not None
     # a string not None
+    # a float is not False
     # a float is not None
+    # an integer is not False
     # an integer is not None
     # True is not False
     # True is not None
+    # False is False
     # False is not None
     # None is not False
     # None is None
 
+----
 
-    # Exceptions seen
-    # AssertionError
-
-* I add an `assert statement`_ to see if a tuple_ is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 7
 
         def test_assertion_error_w_false(self):
             assert None is not False
-            assert True is False
+            assert False is False
+            assert True is not False
+            assert 0 is not False
+            assert 0.0 is not False
+            assert 'a string' is False
 
 
     # NOTES
@@ -2390,46 +2401,123 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is False
+    E       AssertionError: assert 'a string' is False
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 7
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
             assert None is not False
+            assert False is False
             assert True is not False
+            assert 0 is not False
+            assert 0.0 is not False
+            assert 'a string' is not False
 
 
     # NOTES
 
   the test passes
 
-* I add a note about :ref:`True<test_what_is_true>`
+* I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 66
     :emphasize-lines: 8
 
     # NOTES
     # a set is not None
     # a list is not None
     # a tuple is not None
+    # a string is not False
     # a string not None
+    # a float is not False
     # a float is not None
+    # an integer is not False
     # an integer is not None
     # True is not False
     # True is not None
+    # False is False
     # False is not None
     # None is not False
     # None is None
 
+----
 
-    # Exceptions seen
-    # AssertionError
+* I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 8
+
+        def test_assertion_error_w_false(self):
+            assert None is not False
+            assert False is False
+            assert True is not False
+            assert 0 is not False
+            assert 0.0 is not False
+            assert 'a string' is not False
+            assert (1, 2, 3, 'n') is False
+
+
+    # NOTES
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: assert (1, 2, 3, 'n') is False
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 8
+    :emphasize-text: not
+
+        def test_assertion_error_w_false(self):
+            assert None is not False
+            assert False is False
+            assert True is not False
+            assert 0 is not False
+            assert 0.0 is not False
+            assert 'a string' is not False
+            assert (1, 2, 3, 'n') is not False
+
+
+    # NOTES
+
+  the test passes
+
+* I add a note about tuples_
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 4
+
+    # NOTES
+    # a set is not None
+    # a list is not None
+    # a tuple is not False
+    # a tuple is not None
+    # a string is not False
+    # a string not None
+    # a float is not False
+    # a float is not None
+    # an integer is not False
+    # an integer is not None
+    # True is not False
+    # True is not None
+    # False is False
+    # False is not None
+    # None is not False
+    # None is None
+
+----
 
 * I add an `assert statement`_ to see if a :ref:`list<what is a list?>` is :ref:`False<test_what_is_false>`
 
