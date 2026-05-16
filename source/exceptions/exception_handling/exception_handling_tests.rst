@@ -241,7 +241,7 @@ I cannot import a :ref:`module<what is a module?>` that does not exist. A :ref:`
 
   the test passes, showing that
 
-  * assertRaises_ checks that the code in its context (``import does_not_exist``), raises the :ref:`Exception<errors>` (`ModuleNotFoundError<what causes ModuleNotFoundError?>`) it is given in parentheses.
+  * assertRaises_ checks that the code in its context (``import does_not_exist``), raises the :ref:`Exception<errors>` (:ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`) it is given in parentheses.
   * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` is raised when I try to import a :ref:`module<what is a module?>` that does NOT exist
 
 ----
