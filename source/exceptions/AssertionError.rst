@@ -2132,6 +2132,8 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+----
+
 * I add an `assert statement`_ that will fail about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
@@ -2165,6 +2167,8 @@ the test passes
 
     # NOTES
 
+  the test passes
+
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
@@ -2188,14 +2192,17 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+----
+
 * I add an `assert statement`_ to see if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
         def test_assertion_error_w_false(self):
             assert None is not False
+            assert False is False
             assert True is False
 
 
@@ -2211,20 +2218,23 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 4
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
             assert None is not False
+            assert False is False
             assert True is not False
 
 
     # NOTES
 
+  the test passes
+
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 63
     :emphasize-lines: 8
 
     # NOTES
@@ -2236,23 +2246,24 @@ the test passes
     # an integer is not None
     # True is not False
     # True is not None
+    # False is False
     # False is not None
     # None is not False
     # None is None
 
-
-    # Exceptions seen
-    # AssertionError
+----
 
 * I add an `assert statement`_ to see if an integer_ is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 5
 
         def test_assertion_error_w_false(self):
             assert None is not False
-            assert True is False
+            assert False is False
+            assert True is not False
+            assert 0 is False
 
 
     # NOTES
@@ -2261,27 +2272,31 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is False
+    E       assert 0 is False
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 3
+    :emphasize-lines: 5
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
             assert None is not False
+            assert False is False
             assert True is not False
+            assert 0 is not False
 
 
     # NOTES
 
-* I add a note about :ref:`True<test_what_is_true>`
+  the test passes
+
+* I add a note about integers_
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 8
+    :lineno-start: 64
+    :emphasize-lines: 7
 
     # NOTES
     # a set is not None
@@ -2289,16 +2304,16 @@ the test passes
     # a tuple is not None
     # a string not None
     # a float is not None
+    # an integer is not False
     # an integer is not None
     # True is not False
     # True is not None
+    # False is False
     # False is not None
     # None is not False
     # None is None
 
-
-    # Exceptions seen
-    # AssertionError
+----
 
 * I add an `assert statement`_ to see if a float_ is :ref:`False<test_what_is_false>`
 
@@ -2332,6 +2347,8 @@ the test passes
 
 
     # NOTES
+
+  the test passes
 
 * I add a note about :ref:`True<test_what_is_true>`
 
@@ -2389,6 +2406,8 @@ the test passes
 
     # NOTES
 
+  the test passes
+
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -2445,6 +2464,8 @@ the test passes
 
     # NOTES
 
+  the test passes
+
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -2467,6 +2488,8 @@ the test passes
 
     # Exceptions seen
     # AssertionError
+
+----
 
 * I add an `assert statement`_ to see if a set_ is :ref:`False<test_what_is_false>`
 
@@ -2501,6 +2524,8 @@ the test passes
 
     # NOTES
 
+  the test passes
+
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -2523,6 +2548,8 @@ the test passes
 
     # Exceptions seen
     # AssertionError
+
+-----
 
 * I add an `assert statement`_ to see if :ref:`dictionary<what is a dictionary?>` is :ref:`False<test_what_is_false>`
 
@@ -2556,6 +2583,8 @@ the test passes
 
 
     # NOTES
+
+  the test passes
 
 * I add a note about :ref:`True<test_what_is_true>`
 
