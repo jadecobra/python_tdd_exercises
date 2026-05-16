@@ -23,7 +23,7 @@ what is an assertion?
 
 ----
 
-An `assertion`_ or `assert statement`_ is a way for me to tell Python_, "DO NOT CONTINUE, if this statement is False", or said a different way "GO TO THE NEXT LINE, ONLY if this statement IS True".
+An :ref:`assertion<what is an assertion?>` or `assert statement`_ is a way for me to tell Python_, "DO NOT CONTINUE, if this statement is False", or said a different way "GO TO THE NEXT LINE, ONLY if this statement IS True".
 
 I use assertions_ in testing when making a program_ to make sure something is :ref:`True<test_what_is_true>` about the program_ before I continue building or to test ideas and see if they work, without worrying about if I will remember the ideas later.
 
@@ -508,7 +508,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
   the test is still green because ``reality == my_expectation`` is just a statement. Python_ does not care whether it is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. The statement follows Python_ rules.
 
-* I change the statement to an `assertion`_
+* I change the statement to an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -584,7 +584,7 @@ AssertionError_ happens when the statement after assert_ is :ref:`False<test_wha
 
   self.assertFalse(True)
 
-which is like this `assertion`_
+which is like this :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
 
@@ -2060,21 +2060,15 @@ test_assertion_error_w_false
 I add a test with an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
-  :lineno-start: 19
-  :emphasize-lines: 11-12
+  :lineno-start: 53
+  :emphasize-lines: 5-6
 
-      def test_assertion_error_w_none(self):
-          assert None is None
-          self.assertIsNone(None)
-
-          assert False is not None
-          self.assertIsNotNone(False)
-
-          assert True is not None
-          self.assertIsNotNone(True)
+          a_dictionary = {'key': 'value'}
+          assert a_dictionary is not None
+          self.assertIsNotNone(a_dictionary)
 
       def test_assertion_error_w_false(self):
-          assert True is False
+          assert None is False
 
 
   # NOTES
@@ -2083,7 +2077,7 @@ the terminal_ is my friend, and shows AssertionError_
 
 .. code-block:: python
 
-  E    assert True is False
+  E       assert None is False
 
 ----
 
@@ -2093,14 +2087,18 @@ the terminal_ is my friend, and shows AssertionError_
 
 ----
 
-I change the `assertion`_ to make it :ref:`True<test_what_is_true>`
+I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 30
-  :emphasize-lines: 1
+  :lineno-start: 57
+  :emphasize-lines: 2
   :emphasize-text: not
 
-          assert True is not False
+      def test_assertion_error_w_false(self):
+          assert None is not False
+
+
+  # NOTES
 
 the test passes
 
@@ -2109,6 +2107,100 @@ the test passes
 =================================================================================
 :yellow:`REFACTOR`: make it better
 =================================================================================
+
+----
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 61
+    :emphasize-lines: 10
+
+    # NOTES
+    # a set is not None
+    # a list is not None
+    # a tuple is not None
+    # a string not None
+    # a float is not None
+    # an integer is not None
+    # True is not None
+    # False is not None
+    # None is not False
+    # None is None
+
+
+    # Exceptions seen
+    # AssertionError
+
+
+
+* I add an `assert statement`_ to see if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 3
+
+        def test_assertion_error_w_false(self):
+            assert None is not False
+            assert True is False
+
+
+    # NOTES
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert True is False
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 57
+    :emphasize-lines: 3
+    :emphasize-text: not
+
+        def test_assertion_error_w_false(self):
+            assert None is not False
+            assert True is not False
+
+
+    # NOTES
+
+* I add a note
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 8
+
+    # NOTES
+    # a set is not None
+    # a list is not None
+    # a tuple is not None
+    # a string not None
+    # a float is not None
+    # an integer is not None
+    # True is not False
+    # True is not None
+    # False is not None
+    # None is not False
+    # None is None
+
+
+    # Exceptions seen
+    # AssertionError
+
+
+
+
+
+
+
+----
+
+----
+
+----
 
 ----
 
