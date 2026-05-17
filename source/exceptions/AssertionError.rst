@@ -234,7 +234,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'start project'
+    git commit --message 'start project'
 
   the terminal_ shows
 
@@ -628,7 +628,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_what_is_an_assertion'
+    git commit --message 'add test_what_is_an_assertion'
 
   the terminal_ shows the changes then goes back to the command line
 
@@ -697,7 +697,9 @@ For example, if I have people fill a form and I want a test for when they leave 
 
 ----
 
-* I add a new failing test
+* I go back to the terminal_ that is running the tests
+
+* I add a new failing test to ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1368,6 +1370,15 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --message 'add test_assertion_error_w_none'
+
+  the terminal_ shows the changes then goes back to the command line
+
 :ref:`I can use assertions to test if something is None<what is None?>`
 
 ----
@@ -1376,7 +1387,7 @@ the test passes
 test_assertion_error_w_false
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is another simple :ref:`data type<data structures>`, it is one of the two :ref:`booleans<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`False<test_what_is_false>` or not.
+:ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`False<test_what_is_false>` or not.
 
 ----
 
@@ -1386,25 +1397,27 @@ test_assertion_error_w_false
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is :ref:`False<test_what_is_false>`
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 29
-  :emphasize-lines: 3-4
+* I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is :ref:`False<test_what_is_false>`, in ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
 
-          assert {'key': 'value'} is not None
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 3-4
 
-      def test_assertion_error_w_false(self):
-          assert None is False
+            assert {'key': 'value'} is not None
+
+        def test_assertion_error_w_false(self):
+            assert None is False
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows AssertionError_
+  the terminal_ is my friend, and shows AssertionError_
 
-.. code-block:: python
+  .. code-block:: python
 
-  E       assert None is False
+    E       assert None is False
 
 ----
 
@@ -1943,7 +1956,7 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is False
+    E       AssertionError: assert {1, 2, 3, 'n'} is False
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2022,7 +2035,7 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is False
+    E       AssertionError: assert {'key': 'value'} is False
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2080,6 +2093,15 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --message 'add test_assertion_error_w_false'
+
+  the terminal_ shows the changes then goes back to the command line
+
 :ref:`I can use assertions to test if something is False or NOT<test_assertion_error_w_false>`
 
 ----
@@ -2088,7 +2110,7 @@ the test passes
 test_assertion_error_w_true
 *********************************************************************************
 
-:ref:`True<test_what_is_true>` is also a simple :ref:`data type<data structures>`, it is one of the two :ref:`booleans<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`True<test_what_is_true>` or not.
+:ref:`True<test_what_is_true>` is the other :ref:`boolean<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`True<test_what_is_true>` or not.
 
 ----
 
@@ -2098,25 +2120,27 @@ test_assertion_error_w_true
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is :ref:`True<test_what_is_true>`
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 41
-  :emphasize-lines: 3-4
+* I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is :ref:`True<test_what_is_true>`, in ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
 
-          assert {'key': 'value'} is not False
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3-4
 
-      def test_assertion_error_w_true(self):
-          assert None is True
+            assert {'key': 'value'} is not False
+
+        def test_assertion_error_w_true(self):
+            assert None is True
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows AssertionError_
+  the terminal_ is my friend, and shows AssertionError_
 
-.. code-block:: python
+  .. code-block:: python
 
-  E       assert None is True
+    E       assert None is True
 
 ----
 
@@ -2735,7 +2759,7 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is True
+    E       AssertionError: assert {1, 2, 3, 'n'} is True
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2764,7 +2788,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 8
+    :emphasize-lines: 4
 
     # NOTES
     # a dictionary is not False
@@ -2824,7 +2848,7 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is True
+    E       AssertionError: assert {'key': 'value'} is True
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2892,6 +2916,15 @@ the test passes
     # Exceptions seen
     # AssertionError
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --message 'add test_assertion_error_w_true'
+
+  the terminal_ shows the changes then goes back to the command line
+
 :ref:`I can use assertions to test if something is True or NOT<test_assertion_error_w_true>`
 
 ----
@@ -2912,31 +2945,34 @@ I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal
 
 ----
 
-.. NOTE::
 
-  ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal``
+* I go back to the terminal_ that is running the tests
 
-I add a new test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is NOT equal to :ref:`None<what is None?>`
+* I add a new test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is NOT equal to :ref:`None<what is None?>`, in ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
 
-.. code-block:: python
-  :lineno-start: 53
-  :emphasize-lines: 3-4
+  .. NOTE::
 
-          assert {'key': 'value'} is not True
+    ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal``
 
-      def test_assertion_error_w_equality(self):
-          assert None != None
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 3-4
+
+            assert {'key': 'value'} is not True
+
+        def test_assertion_error_w_equality(self):
+            assert None != None
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows AssertionError_
+  the terminal_ is my friend, and shows AssertionError_
 
-.. code-block:: python
+  .. code-block:: python
 
-  E    assert None != None
+    E    assert None != None
 
-because ``None is NOT equal to None`` is :ref:`False<test_what_is_false>`
+  because ``None is NOT equal to None`` is :ref:`False<test_what_is_false>`
 
 ----
 
