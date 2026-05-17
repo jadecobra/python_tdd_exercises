@@ -571,7 +571,7 @@ The program_ works and can automatically make a :ref:`Python Test Driven Develop
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen one way I can make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`, with a :ref:`program<makePythonTdd.sh>` to do it on any Linux_, Windows_ or MacOS_ computers.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen one way I can make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`, with a :ref:`program<makePythonTdd>` to do it on any Linux_, Windows_ or MacOS_ computers.
 
 :ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
 

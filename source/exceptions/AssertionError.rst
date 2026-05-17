@@ -23,9 +23,9 @@ what is an assertion?
 
 ----
 
-An :ref:`assertion<what is an assertion?>` or `assert statement`_ is a way for me to tell Python_, "DO NOT CONTINUE, if this statement is False", or said a different way "GO TO THE NEXT LINE, ONLY if this statement IS True".
+An :ref:`assertion<what is an assertion?>` or `assert statement`_ is a way for me to tell Python_, "DO NOT CONTINUE, if this statement is False", or said a different way "GO TO THE NEXT LINE, ONLY if this statement is True".
 
-I use assertions_ in testing when making a program_ to make sure something is :ref:`True<test_what_is_true>` about the program_ before I continue building or to test ideas and see if they work, without worrying about if I will remember the ideas later.
+I use assertions_ in tests when making a program_ to make sure something is :ref:`True<test_what_is_true>` about the program_ before I continue building or to test ideas and see if they work, without worrying about if I will remember the ideas later.
 
 I use them to test how the program_ behaves, for example when it is given inputs. Assertions_ can help catch things that make tests that were passing, start failing when I add new lines of code. They help me answer 2 questions
 
@@ -220,6 +220,39 @@ start the project
 
   the terminal_ shows that it installed the `Python packages`_
 
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'start project'
+
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    [main (root-commit) a0b12c3] start project
+     8 files changed, 142 insertions(+)
+     create mode 100644 .gitignore
+     create mode 100644 .python-version
+     create mode 100644 README.md
+     create mode 100644 pyproject.toml
+     create mode 100644 requirements.txt
+     create mode 100644 tests/__init__.py
+     create mode 100644 tests/test_assertion_error.py
+     create mode 100644 uv.lock
+
+  then goes back to the command line
+
 * I use `pytest-watcher`_ to run the tests automatically
 
   .. code-block:: python
@@ -275,10 +308,17 @@ start the project
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :lineno-start: 4
+    :emphasize-lines: 4
 
+    class TestAssertionError(unittest.TestCase):
+
+        def test_failure(self):
             self.assertFalse(False)
+
+
+    # Exceptions seen
+    # AssertionError
 
   the test passes
 
@@ -349,13 +389,13 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
             my_expectation = 11
             reality == my_expectation
 
-  Why is the test still green?
+  why is the test still green?
 
 * I want the test to fail when I write a statement that is NOT :ref:`True<test_what_is_true>`. I change it to an `assert statement`_
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 3
+    :emphasize-lines: 4
     :emphasize-text: assert
 
         def test_what_is_an_assertion(self):
@@ -369,7 +409,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
     E       assert 2 == 11
 
-  because ``1 + 1 == 11`` is :ref:`False<test_what_is_false>`, ``2`` is NOT equal to ``11`` and I added assert_ before the statement, which tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``
+  because ``1 + 1 == 11`` is :ref:`False<test_what_is_false>`. ``2`` is NOT equal to ``11`` and I added assert_ before the statement, which tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``.
 
 ----
 
@@ -482,7 +522,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
   - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
   - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is anything inside :ref:`quotes`
 
-  I add another statement to show the difference between the statements
+  I add another statement to show why ``'1' + '1' == '11'``
 
   .. code-block:: python
     :lineno-start: 6
@@ -504,7 +544,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
     # Exceptions seen
 
-  the test is still green because ``reality == my_expectation`` is just a statement. Python_ does not care whether it is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. The statement follows Python_ rules.
+  the test is still green because ``reality == my_expectation`` is just a statement. Python_ does not care whether it is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` and the statement follows Python_ rules.
 
 * I change the statement to an :ref:`assertion<what is an assertion?>`
 
@@ -544,7 +584,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
   - the ``- 11`` shows my expectation - what I wrote as the result, which is what is missing from the actual result
   - the ``+ I am alive`` shows reality - what the actual result is, which is what is missing from my expectation
 
-  .. attention:: If your result is different, check that you added a space before ``alive``, it should be ``' alive'`` not ``'alive'``. There is a space before the word.
+  .. attention:: If your result is different, check that you added a space before ``alive``, it should be ``' alive'`` not ``'alive'``.
 
 * I change ``my_expectation`` to match ``reality`` and make the statement :ref:`True<test_what_is_true>`
 
@@ -570,6 +610,28 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
   the test passes
 
+* I open a new terminal_ then change directories to ``assertion_error``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd assertion_error
+
+  the terminal_ shows I am in the ``assertion_error`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/assertion_error
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_what_is_an_assertion'
+
+  the terminal_ shows the changes then goes back to the command line
+
 ----
 
 *********************************************************************************
@@ -578,13 +640,13 @@ what is the difference between ``=`` and ``==``?
 
 ----
 
-* ``=`` is the symbol for assignment, pointing, defining references. It is how to give a name (:ref:`variable<what is a variable?>`) to something in Python_, for example
+* ``=`` is the symbol for assignment, pointing, defining references. It is how to give a name (:ref:`variable<what is a variable?>`) to an :ref:`object<what is a class?>` in Python_, for example
 
   .. code-block:: python
 
     project_name = 'assertion_error'
 
-  any time I use ``project_name`` after writing that line, Python_ will replace it with ``'assertion_error'`` because I told it that ``project_name`` is a reference for that string_ (anything in :ref:`quotes`)
+  is a way to tell Python_ that ``project_name`` is the name for the string_ ``'assertion_error'``. Python_ will substitute ``project_name`` with ``'assertion_error'`` anytime I use the name after the declaration, because I told it that ``project_name`` is a reference for that string_ (anything in :ref:`quotes`)
 
 * ``==`` is used to check if the thing on the left of ``==`` is equal to the thing on the right of ``==``, for example
 
@@ -623,7 +685,7 @@ With these statements, I tell Python_ - "DO NOT CONTINUE, if :ref:`True<test_wha
 test_assertion_error_w_none
 *********************************************************************************
 
-:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`None<what is None?>`, this is useful when I want to check what value I am getting from some process or user input.
+:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use :ref:`assertions<what is an assertion?>` to test if something is :ref:`None<what is None?>`, this is useful when I want to check what value I get from a process.
 
 For example, if I have people fill a form and I want a test for when they leave a value blank, I can use an :ref:`assertion<what is an assertion?>` to make sure that the process returns :ref:`None<what is None?>`.
 
@@ -3816,54 +3878,82 @@ how to test if two things are Equal
 
     E       AssertionError: '11' == '11'
 
-* I change the expectation to match reality
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 1
-    :emphasize-text: 11
-
-            self.assertEqual('1'+'1', '11')
-
-  the test passes
-
-* I add assertEqual_ for the last :ref:`assertion<what is an assertion?>` in :ref:`test_what_is_an_assertion`
+* I change assertNotEqual_ to assertEqual_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 9
+    :emphasize-lines: 10
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            self.assertEqual(1+1, 2)
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            assert '1' + '1' == '11'
-            self.assertEqual('1'+'1', '11')
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            assert 'I am' + ' alive' == 'I am alive'
-            self.assertEqual('I am'+' alive', '11')
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
+
+        def test_assertion_error_w_none(self):
+
+  the test passes
+
+* I add a call to  assertNotEqual_ for the last :ref:`assertion<what is an assertion?>` in :ref:`test_what_is_an_assertion`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 15
+
+        def test_what_is_an_assertion(self):
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+        def test_assertion_error_w_none(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'I am alive' != '11'
+    E       AssertionError: 'I am alive' == 'I am alive'
 
-* I make my expectation match reality
+* I change assertNotEqual_ to assertEqual_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 9
+    :emphasize-lines: 15
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            self.assertEqual(1+1, 2)
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            assert '1' + '1' == '11'
-            self.assertEqual('1'+'1', '11')
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            assert 'I am' + ' alive' == 'I am alive'
-            self.assertEqual('I am'+' alive', 'I am alive')
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
         def test_assertion_error_w_none(self):
 
@@ -3903,17 +3993,15 @@ review
 
 I can use `assert statements`_ and `assert methods`_ to test if something is
 
-* :ref:`NOT None<test_assertion_error_w_none>` with assertIsNotNone_
-* :ref:`None<test_assertion_error_w_none>` with assertIsNone_
-* :ref:`False or NOT False<test_assertion_error_w_none>` with assertFalse_
-* :ref:`True or NOT True<test_assertion_error_w_none>` with assertTrue_
+* :ref:`NOT None<test_assertion_error_w_none>`
+* :ref:`None<test_assertion_error_w_none>`
+* :ref:`False or NOT False<test_assertion_error_w_none>`
+* :ref:`True or NOT True<test_assertion_error_w_none>`
 
 and to test if 2 things are
 
 * :ref:`NOT Equal<test_assertion_error_w_equality>` with assertNotEqual_
 * :ref:`Equal<test_assertion_error_w_equality>` with assertEqual_
-
-for a total of 6 `assert methods`_ I can use when testing
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 

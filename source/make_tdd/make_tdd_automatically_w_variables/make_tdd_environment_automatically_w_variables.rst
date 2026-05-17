@@ -318,7 +318,7 @@ the computer makes a :ref:`Python Test Driven Development environment<what is a 
 review
 ********************************************************************************************
 
-`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`, and have a :ref:`program<makePythonTdd.sh>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
+`Computer Programming`_ allows me to take some steps and make them a one line command for the computer to do for me. You have seen a way to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`, and have a :ref:`program<makePythonTdd>` to do it for you on any Linux_, Windows_ or MacOS_ computers.
 
 ----
 
@@ -326,7 +326,7 @@ review
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see the CODE for makePythonTdd.sh?<makePythonTdd.sh>`
+:ref:`Do you want to see the CODE for makePythonTdd.sh?<makePythonTdd>`
 
 ----
 
