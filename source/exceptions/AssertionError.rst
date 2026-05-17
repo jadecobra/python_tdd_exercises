@@ -573,6 +573,33 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 ----
 
 *********************************************************************************
+what is the difference between ``=`` and ``==``?
+*********************************************************************************
+
+----
+
+* ``=`` is the symbol for assignment, pointing, defining references. It is how to give a name (:ref:`variable<what is a variable?>`) to something in Python_, for example
+
+  .. code-block:: python
+
+    project_name = 'assertion_error'
+
+  any time I use ``project_name`` after writing that line, Python_ will replace it with ``'assertion_error'`` because I told it that ``project_name`` is a reference for that string_ (anything in :ref:`quotes`)
+
+* ``==`` is used to check if the thing on the left of ``==`` is equal to the thing on the right of ``==``, for example
+
+  .. code-block:: python
+
+    assert 'thing on the left' == 'thing on the right'
+
+  .. code-block:: python
+
+    if 'thing on the left' == 'thing on the right':
+        return 'magic'
+
+----
+
+*********************************************************************************
 what causes AssertionError?
 *********************************************************************************
 
@@ -2831,14 +2858,12 @@ I add a new test with an :ref:`assertion<what is an assertion?>` to see if :ref:
 
 .. code-block:: python
   :lineno-start: 53
-  :emphasize-lines: 3-6
+  :emphasize-lines: 3-4
 
           assert {'key': 'value'} is not True
 
       def test_assertion_error_w_equality(self):
-          reality = None
-          my_expectation = None
-          assert reality != my_expectation
+          assert None != None
 
 
   # NOTES
@@ -2867,44 +2892,15 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
 
 .. code-block:: python
   :lineno-start: 55
-  :emphasize-lines: 4
+  :emphasize-lines: 2
 
-      def test_assertion_error_w_equality(self):
-          reality = None
-          my_expectation = None
-          assert reality == my_expectation
+        def test_assertion_error_w_equality(self):
+            assert None == None
 
 
-  # NOTES
+    # NOTES
 
 the test passes because ``None is equal to None`` is :ref:`True<test_what_is_true>`
-
-----
-
----------------------------------------------------------------------------------
-what is the difference between ``=`` and ``==``?
----------------------------------------------------------------------------------
-
-----
-
-* ``=`` is the symbol for assignment, pointing, defining references. It is how to give a name (:ref:`variable<what is a variable?>`) to something in Python_, for example
-
-  .. code-block:: python
-
-    project_name = 'assertion_error'
-
-  any time I use ``project_name`` after writing that line, Python_ will replace it with ``'assertion_error'`` because I told it that ``project_name`` is a reference for that string_ (anything in :ref:`quotes`)
-
-* ``==`` is used to check if the thing on the left of ``==`` is equal to the thing on the right of ``==``, for example
-
-  .. code-block:: python
-
-    assert 'thing on the left' == 'thing on the right'
-
-  .. code-block:: python
-
-    if 'thing on the left' == 'thing on the right':
-        return 'magic'
 
 ----
 
@@ -2917,7 +2913,7 @@ what is the difference between ``=`` and ``==``?
 * I add to the ``None is None`` note
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 59
     :emphasize-lines: 31
 
     # NOTES
@@ -2952,20 +2948,15 @@ what is the difference between ``=`` and ``==``?
     # None is not False
     # None is None and equal to None
 
-* I add a new failing :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
+* I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 6-8
+    :emphasize-lines: 3
 
         def test_assertion_error_w_equality(self):
-            reality = None
-            my_expectation = None
-            assert reality == my_expectation
-
-            reality = False
-            my_expectation = None
-            assert reality == my_expectation
+            assert None == None
+            assert False == None
 
 
     # NOTES
@@ -2980,27 +2971,22 @@ what is the difference between ``=`` and ``==``?
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 8
+    :emphasize-lines: 3
 
         def test_assertion_error_w_equality(self):
-            reality = None
-            my_expectation = None
-            assert reality == my_expectation
-
-            reality = False
-            my_expectation = None
-            assert reality != my_expectation
+            assert None == None
+            assert False != None
 
 
     # NOTES
 
   the test passes
 
-* I add to the ``False is not None`` note
+* I add to the ``False is not None`` and ``None is not False`` notes because equality goes both ways
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 28
+    :lineno-start: 60
+    :emphasize-lines: 28, 30
 
     # NOTES
     # a dictionary is not True
@@ -3031,30 +3017,19 @@ what is the difference between ``=`` and ``==``?
     # False is False
     # False is not None and NOT equal to None
     # None is not True
-    # None is not False
+    # None is not False and NOT equal to False
     # None is None and equal to None
 
-* I add a new failing :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 10-11
+    :emphasize-lines: 4
 
         def test_assertion_error_w_equality(self):
-            reality = None
-            my_expectation = None
-            assert reality == my_expectation
-
-            reality = False
-            my_expectation = None
-            assert reality != my_expectation
-
-            my_expectation = True
-            assert reality == my_expectation
-
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
+            assert None == None
+            assert False != None
+            assert False == True
 
 
     # NOTES
@@ -3065,32 +3040,27 @@ what is the difference between ``=`` and ``==``?
 
     E       assert False == True
 
-  I do not need to make a new :ref:`variable<what is a variable?>` for ``reality`` because it is the same for this new :ref:`assertion<what is an assertion?>` (:ref:`False<test_what_is_false>`)
-
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 6
+    :lineno-start: 55
+    :emphasize-lines: 4
 
-            reality = False
-            my_expectation = None
-            assert reality != my_expectation
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            assert False != None
+            assert False != True
 
-            my_expectation = True
-            assert reality != my_expectation
 
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
+    # NOTES
 
   the test passes
 
-* I add to the ``False is not True`` note
+* I add to the ``False is not True`` and ``True is not False`` notes because equality goes both ways
 
   .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 26
+    :lineno-start: 61
+    :emphasize-lines: 24, 26
 
     # NOTES
     # a dictionary is not True
@@ -3115,39 +3085,26 @@ what is the difference between ``=`` and ``==``?
     # an integer is not False
     # an integer is not None
     # True is True
-    # True is not False
-    # True is not None and NOT equal to None
+    # True is not False and NOT equal to False
+    # True is not None
     # False is not True and NOT equal to True
     # False is False
     # False is not None and NOT equal to None
     # None is not True
-    # None is not False
+    # None is not False and NOT equal to False
     # None is None and equal to None
 
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with itself
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 13-14
+    :emphasize-lines: 5
 
         def test_assertion_error_w_equality(self):
-            reality = None
-            my_expectation = None
-            assert reality == my_expectation
-
-            reality = False
-            my_expectation = None
-            assert reality != my_expectation
-
-            my_expectation = True
-            assert reality != my_expectation
-
-            my_expectation = False
-            assert reality != my_expectation
-
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
+            assert None == None
+            assert False != None
+            assert False != True
+            assert False != False
 
 
     # NOTES
@@ -3158,23 +3115,17 @@ what is the difference between ``=`` and ``==``?
 
     E    assert False != False
 
-  I do not need to make a new :ref:`variable<what is a variable?>` for ``reality`` because it is the same for this new :ref:`assertion<what is an assertion?>` (:ref:`False<test_what_is_false>`)
-
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 55
     :emphasize-lines: 5
 
-            my_expectation = True
-            assert reality != my_expectation
-
-            my_expectation = False
-            assert reality == my_expectation
-
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            assert False != None
+            assert False != True
+            assert False == False
 
 
     # NOTES
@@ -3184,7 +3135,7 @@ what is the difference between ``=`` and ``==``?
 * I add to the ``False is False`` note
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 62
     :emphasize-lines: 27
 
     # NOTES
@@ -3210,13 +3161,13 @@ what is the difference between ``=`` and ``==``?
     # an integer is not False
     # an integer is not None
     # True is True
-    # True is not False
-    # True is not None and NOT equal to None
+    # True is not False and NOT equal to False
+    # True is not None
     # False is not True and NOT equal to True
     # False is False and equal to False
     # False is not None and NOT equal to None
     # None is not True
-    # None is not False
+    # None is not False and NOT equal to False
     # None is None and equal to None
 
 ----
@@ -3224,16 +3175,15 @@ what is the difference between ``=`` and ``==``?
 * I add a new failing :ref:`assertion<what is an assertion?>` to compare :ref:`True<test_what_is_true>` with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 5-7
+    :lineno-start: 55
+    :emphasize-lines: 6
 
-            reality = False
-            my_expectation = None
-            assert reality != my_expectation
-
-            reality = True
-            my_expectation = None
-            assert reality == my_expectation
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            assert False != None
+            assert False != True
+            assert False == False
+            assert True == None
 
 
     # NOTES
@@ -3247,118 +3197,26 @@ what is the difference between ``=`` and ``==``?
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 3
+    :lineno-start: 55
+    :emphasize-lines: 6
 
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            assert False != None
+            assert False != True
+            assert False == False
+            assert True != None
 
 
     # NOTES
 
   the test passes
 
-* I add to the ``True is not None`` note
+* I add to the ``True is not None`` and ``None is not True`` notes because equality goes both ways
 
   .. code-block:: python
     :lineno-start: 69
-    :emphasize-lines: 25
-
-    # NOTES
-    # a dictionary is not True
-    # a dictionary is not False
-    # a dictionary is not None
-    # a set is not True
-    # a set is not False
-    # a set is not None
-    # a list is not True
-    # a list is not False
-    # a list is not None
-    # a tuple is not True
-    # a tuple is not False
-    # a tuple is not None
-    # a string is not True
-    # a string is not False
-    # a string is not None
-    # a float is not True
-    # a float is not False
-    # a float is not None
-    # an integer is not True
-    # an integer is not False
-    # an integer is not None
-    # True is True
-    # True is not False
-    # True is not None and NOT equal to None
-    # False is not True
-    # False is False
-    # False is not None and NOT equal to None
-    # None is not True
-    # None is not False
-    # None is None and equal to None
-
-* I add an :ref:`assertion<what is an assertion?>` to compare :ref:`True<test_what_is_true>` with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 20-21
-
-        def test_assertion_error_w_equality(self):
-            reality = None
-            my_expectation = None
-            assert reality == my_expectation
-
-            reality = False
-            my_expectation = None
-            assert reality != my_expectation
-
-            my_expectation = True
-            assert reality != my_expectation
-
-            my_expectation = False
-            assert reality == my_expectation
-
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
-
-            my_expectation = False
-            assert reality == my_expectation
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows AssertionError_
-
-  .. code-block:: python
-
-    E       assert True == False
-
-  I do not need to make a new :ref:`variable<what is a variable?>` for ``reality`` because it is the same for this new :ref:`assertion<what is an assertion?>` (:ref:`True<test_what_is_true>`)
-
-* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 70
-    :emphasize-lines: 6
-
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
-
-            my_expectation = False
-            assert reality != my_expectation
-
-
-    # NOTES
-
-  the test passes
-
-* I add to the ``True is not False`` note
-
-  .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines:  24
+    :emphasize-lines: 25, 29
 
     # NOTES
     # a dictionary is not True
@@ -3388,39 +3246,23 @@ what is the difference between ``=`` and ``==``?
     # False is not True and NOT equal to True
     # False is False and equal to False
     # False is not None and NOT equal to None
-    # None is not True
-    # None is not False
+    # None is not True and NOT equal to True
+    # None is not False and NOT equal to False
     # None is None and equal to None
 
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`True<test_what_is_true>` with itself
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 23
+    :emphasize-lines: 7
 
         def test_assertion_error_w_equality(self):
-            reality = None
-            my_expectation = None
-            assert reality == my_expectation
-
-            reality = False
-            my_expectation = None
-            assert reality != my_expectation
-
-            my_expectation = True
-            assert reality != my_expectation
-
-            my_expectation = False
-            assert reality == my_expectation
-
-            reality = True
-            my_expectation = None
-            assert reality != my_expectation
-
-            my_expectation = False
-            assert reality != my_expectation
-
-            assert reality != reality
+            assert None == None
+            assert False != None
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True != True
 
 
     # NOTES
@@ -3434,63 +3276,16 @@ what is the difference between ``=`` and ``==``?
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 1
-
-              assert True == True
-
-  the test passes
-
-* I add a failing line with the `assertNotEqual method`_
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 5
-
-            assert False != True
-            self.assertNotEqual(False, True)
-
-            assert True == True
-            self.assertNotEqual(True, True)
-
-
-    # NOTES
-    # True is True
-    # False is not True and not equal to True
-
-  the terminal_ is my friend, and shows AssertionError_
-
-  .. code-block:: python
-
-    AssertionError: True == True
-
-* I change the `assertNotEqual method`_ to the `assertEqual method`_
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 21
+    :lineno-start: 55
+    :emphasize-lines: 7
 
         def test_assertion_error_w_equality(self):
             assert None == None
-            self.assertEqual(None, None)
-
             assert False != None
-            self.assertNotEqual(False, None)
-
-            assert True != None
-            self.assertNotEqual(True, None)
-
-            assert True != False
-            self.assertNotEqual(True, False)
-
-            assert False == False
-            self.assertEqual(False, False)
-
             assert False != True
-            self.assertNotEqual(False, True)
-
+            assert False == False
+            assert True != None
             assert True == True
-            self.assertEqual(True, True)
 
 
     # NOTES
@@ -3501,22 +3296,327 @@ what is the difference between ``=`` and ``==``?
 
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 2
+    :emphasize-lines: 23
 
     # NOTES
+    # a dictionary is not True
+    # a dictionary is not False
+    # a dictionary is not None
+    # a set is not True
+    # a set is not False
+    # a set is not None
+    # a list is not True
+    # a list is not False
+    # a list is not None
+    # a tuple is not True
+    # a tuple is not False
+    # a tuple is not None
+    # a string is not True
+    # a string is not False
+    # a string is not None
+    # a float is not True
+    # a float is not False
+    # a float is not None
+    # an integer is not True
+    # an integer is not False
+    # an integer is not None
     # True is True and equal to True
-    # False is not True and not equal to True
+    # True is not False and NOT equal to False
+    # True is not None and NOT equal to None
+    # False is not True and NOT equal to True
     # False is False and equal to False
-    # True is not False and not equal to False
-    # True is not None and not equal to None
-    # False is not None and not equal to None
+    # False is not None and NOT equal to None
+    # None is not True and NOT equal to True
+    # None is not False and NOT equal to False
     # None is None and equal to None
 
+----
 
-    # Exceptions seen
-    # AssertionError
+=================================================================================
+how to test if two things are NOT Equal
+=================================================================================
 
 ----
+
+There is another way to test if 2 things are equal or not. It is with `assert methods`_ from the `unittest.TestCase class`_
+
+I add an :ref:`assertion<what is an assertion?>` with the `assertNotEqual method`_ which checks if the 2 things in the parentheses are NOT equal
+
+.. code-block:: python
+  :lineno-start: 55
+  :emphasize-lines: 3
+  :emphasize-text: Not
+
+      def test_assertion_error_w_equality(self):
+          assert None == None
+          self.assertNotEqual(None, None)
+
+          assert False != None
+          assert False != True
+          assert False == False
+          assert True != None
+          assert True == True
+
+
+  # NOTES
+
+the terminal_ is my friend, and shows AssertionError_
+
+.. code-block:: python
+
+  E       AssertionError: None == None
+
+compare this error message with the one for ``assert None != None``
+
+.. code-block:: python
+
+    E    assert None != None
+
+which do you like better?
+
+.. admonition:: these two statements check the same thing
+
+  .. code-block:: python
+
+    assert None != None
+    self.assertNotEqual(None, None)
+
+  they are asking the same question: ``is None NOT equal to None?`` or giving Python_ the command ``DO NOT CONTINUE if "None is NOT Equal to None" is False``
+
+----
+
+=================================================================================
+how to test if two things are Equal
+=================================================================================
+
+----
+
+* I change the `assert method`_ to the `assertEqual method`_ which checks if the 2 things in the parentheses are equal
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 3
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the test passes
+
+* I use assertEqual_ to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: False != None
+
+* I change assertEqual_ to assertNotEqual_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertNotEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the test passes
+
+* I use assertEqual_ to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: False != None
+
+* I change assertEqual_ to assertNotEqual_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertNotEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the test passes
+
+* I use assertEqual_ to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: False != None
+
+* I change assertEqual_ to assertNotEqual_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertNotEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the test passes
+
+* I use assertEqual_ to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: False != None
+
+* I change assertEqual_ to assertNotEqual_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 6
+
+        def test_assertion_error_w_equality(self):
+            assert None == None
+            self.assertEqual(None, None)
+
+            assert False != None
+            self.assertNotEqual(False, None)
+
+            assert False != True
+            assert False == False
+            assert True != None
+            assert True == True
+
+
+    # NOTES
+
+  the test passes
+
+
+
+
+
+
 
 * I add calls to the `assertEqual method`_ in :ref:`test_what_is_an_assertion`
 
