@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python's AssertionError for robust testing. Learn to use assert for debugging, handle exceptions, and see practical unittest examples. Watch the tutorial!
-  :keywords: Jacob Itegboje, python AssertionError example, how to handle AssertionError in Python, python unittest assert examples, python assert for debugging, python assert best practices, python custom AssertionError message, python testing with pytest and assert
+  :description: Learn what causes Python's AssertionError and how to use the assert statement in this beginner TDD tutorial. Master the Red-Green-Refactor cycle, pytest-watcher, the difference between = and ==, and how to test None, False, True, strings, lists, and dictionaries.
+  :keywords: Jacob Itegboje, Python AssertionError, what causes AssertionError, assert statement Python, Python TDD tutorial, Test-Driven Development beginners, unittest assert examples, pytest-watcher setup, uv init python, difference between = and ==, Python is None vs is not None, testing False in Python, red green refactor cycle, test None type, testing lists and dictionaries python
 
 .. include:: ../links.rst
 
@@ -875,7 +875,7 @@ the test passes
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 19
     :emphasize-lines: 8
 
         def test_assertion_error_w_none(self):
@@ -1003,7 +1003,7 @@ the test passes
 * I add a note about floats_
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 6
     :emphasize-lines: 10
 
         def test_assertion_error_w_none(self):
@@ -1177,7 +1177,7 @@ the test passes
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block::
+  .. code-block:: python
 
     E       AssertionError: assert [1, 2, 3, 'n'] is None
 
@@ -4097,6 +4097,8 @@ and to test if 2 things are
 
 * :ref:`NOT Equal<test_assertion_error_w_equality>` with assertNotEqual_
 * :ref:`Equal<test_assertion_error_w_equality>` with assertEqual_
+
+The tests show that :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different.
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 

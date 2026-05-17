@@ -128,27 +128,28 @@ start the project
 
     .../pumping_python/functions
 
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``functions.py`` and move it to the ``src`` folder_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch src/functions.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item src/functions.py`` not ``touch src/functions.py``
+        mv main.py src/functions.py
 
-    .. code-block:: Powershell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item src/functions.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        Move-Item main.py src/functions.py
 
   the terminal_ goes back to the command line
-
-  .. code-block:: python
-
-    .../pumping_python/functions
 
 * I `make a directory`_ for the tests
 
