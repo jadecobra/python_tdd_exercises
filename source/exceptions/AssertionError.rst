@@ -830,6 +830,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 5
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
@@ -894,39 +895,33 @@ the test passes
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 6
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
             assert False is not None
             assert True is not None
             assert 0 is not None
-            assert 0.0  not None
+            assert 0.0 is not None
 
 
     # NOTES
 
   the test passes
 
-* I add a statement for floats_ with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
-
-            assert 0.0 is not None
-            self.assertIsNone(0.0)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: 0.0 is not None
-
 * I add a note about floats_
 
   .. code-block:: python
     :lineno-start: 36
-    :emphasize-lines: 2
+    :emphasize-lines: 10
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+            assert 0.0 is not None
+
 
     # NOTES
     # a float is not None
@@ -944,13 +939,15 @@ the test passes
 * I add an `assert statement`_ for a string_ (anything in :ref:`quotes`)
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5
+    :lineno-start: 19
+    :emphasize-lines: 7
 
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+            assert 0.0 is not None
             assert 'a string' is None
 
 
@@ -965,120 +962,31 @@ the test passes
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 1
-
-            assert 'a string' is not None
-
-  the test passes
-
-* I add a statement for strings_ with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 2
-
-            assert 'a string' is not None
-            self.assertIsNone('a string')
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: 'a string' is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 2
-    :emphasize-text: Not
-
-            assert 'a string' is not None
-            self.assertIsNotNone('a string')
-
-
-    # NOTES
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'``
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 5
-
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
-            a_string = 'a string'
-            assert 'a string' is not None
-            self.assertIsNotNone('a string')
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'a string'``
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 2-5
-
-            a_string = 'a string'
-            # assert 'a string' is not None
-            assert a_string is not None
-            # self.assertIsNotNone('a string')
-            self.assertIsNotNone(a_string)
-
-
-    # NOTES
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
     :lineno-start: 19
+    :emphasize-lines: 7
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNotNone(a_string)
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
 
 
     # NOTES
 
-  I can change the value of the string_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
+  the test passes
 
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 28
     :emphasize-lines: 2
 
     # NOTES
-    # a string not None
+    # a string is not None
     # a float is not None
     # an integer is not None
     # True is not None
@@ -1094,13 +1002,16 @@ the test passes
 * I add an `assert statement`_ for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 5
+    :lineno-start: 19
+    :emphasize-lines: 8
 
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNotNone(a_string)
-
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
             assert (1, 2, 3, 'n') is None
 
 
@@ -1115,120 +1026,28 @@ the test passes
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 1
-
-            assert (1, 2, 3, 'n') is not None
-
-  the test passes
-
-* I add a statement for tuples_ with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
-
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNone((1, 2, 3, 'n'))
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: (1, 2, 3, 'n') is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
-    :emphasize-text: Not
-
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNotNone((1, 2, 3, 'n'))
-
-
-    # NOTES
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``(1, 2, 3, 'n')``
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 5
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNotNone(a_string)
-
-            a_tuple = (1, 2, 3, 'n')
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNotNone((1, 2, 3, 'n'))
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(1, 2, 3, 'n')``
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-5
-
-            a_tuple = (1, 2, 3, 'n')
-            # assert (1, 2, 3, 'n') is not None
-            assert a_tuple is not None
-            # self.assertIsNotNone((1, 2, 3, 'n'))
-            self.assertIsNotNone(a_tuple)
-
-
-    # NOTES
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
     :lineno-start: 19
+    :emphasize-lines: 8
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNotNone(a_string)
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not None
-            self.assertIsNotNone(a_tuple)
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
+            assert (1, 2, 3, 'n') is not None
 
 
     # NOTES
 
-  I can change the value of the tuple_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
+  the test passes
 
 * I add a note about tuples_
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 29
     :emphasize-lines: 2
 
     # NOTES
@@ -1249,13 +1068,17 @@ the test passes
 * I add an `assert statement`_ for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5
+    :lineno-start: 19
+    :emphasize-lines: 9
 
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not None
-            self.assertIsNotNone(a_tuple)
-
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
+            assert (1, 2, 3, 'n') is not None
             assert [1, 2, 3, 'n'] is None
 
 
@@ -1270,125 +1093,29 @@ the test passes
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 1
-
-            assert [1, 2, 3, 'n'] is not None
-
-  the test passes
-
-* I add a statement for :ref:`lists<what is a list?>` with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 2
-
-            assert [1, 2, 3, 'n'] is not None
-            self.assertIsNone([1, 2, 3, 'n'])
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: [1, 2, 3, 'n'] is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 2
-    :emphasize-text: Not
-
-            assert [1, 2, 3, 'n'] is not None
-            self.assertIsNotNone([1, 2, 3, 'n'])
-
-
-    # NOTES
-
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']``
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not None
-            self.assertIsNotNone(a_tuple)
-
-            a_list = [1, 2, 3, 'n']
-            assert [1, 2, 3, 'n'] is not None
-            self.assertIsNotNone([1, 2, 3, 'n'])
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']``
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 2-5
-
-            a_list = [1, 2, 3, 'n']
-            # assert [1, 2, 3, 'n'] is not None
-            assert a_list is not None
-            # self.assertIsNotNone([1, 2, 3, 'n'])
-            self.assertIsNotNone(a_list)
-
-
-    # NOTES
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
     :lineno-start: 19
+    :emphasize-lines: 9
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNotNone(a_string)
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not None
-            self.assertIsNotNone(a_tuple)
-
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not None
-            self.assertIsNotNone(a_list)
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
+            assert (1, 2, 3, 'n') is not None
+            assert [1, 2, 3, 'n'] is not None
 
 
     # NOTES
 
-  I can change the value of the :ref:`list<what is a list?>` in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
+  the test passes
 
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 30
     :emphasize-lines: 2
 
     # NOTES
@@ -1410,13 +1137,18 @@ the test passes
 * I add an `assert statement`_ for a set_ (anything in curly braces ``{ }`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 5
+    :lineno-start: 19
+    :emphasize-lines: 10
 
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not None
-            self.assertIsNotNone(a_list)
-
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
+            assert (1, 2, 3, 'n') is not None
+            assert [1, 2, 3, 'n'] is not None
             assert {1, 2, 3, 'n'} is None
 
 
@@ -1431,128 +1163,30 @@ the test passes
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 1
-
-            assert {1, 2, 3, 'n'} is not None
-
-  the test passes
-
-* I add a statement for sets_ with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 2
-
-            assert {1, 2, 3, 'n'} is not None
-            self.assertIsNone({1, 2, 3, 'n'})
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: {'n', 1, 2, 3} is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 2
-    :emphasize-text: Not
-
-            assert {1, 2, 3, 'n'} is not None
-            self.assertIsNotNone({1, 2, 3, 'n'})
-
-
-    # NOTES
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}``
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 5
-
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not None
-            self.assertIsNotNone(a_list)
-
-            a_set = {1, 2, 3, 'n'}
-            assert {1, 2, 3, 'n'} is not None
-            self.assertIsNotNone({1, 2, 3, 'n'})
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}``
-
-  .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 2-5
-
-            a_set = {1, 2, 3, 'n'}
-            # assert {1, 2, 3, 'n'} is not None
-            assert a_set is not None
-            # self.assertIsNotNone({1, 2, 3, 'n'})
-            self.assertIsNotNone(a_set)
-
-
-    # NOTES
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
     :lineno-start: 19
+    :emphasize-lines: 10
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNotNone(a_string)
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not None
-            self.assertIsNotNone(a_tuple)
-
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not None
-            self.assertIsNotNone(a_list)
-
-            a_set = {1, 2, 3, 'n'}
-            assert a_set is not None
-            self.assertIsNotNone(a_set)
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
+            assert (1, 2, 3, 'n') is not None
+            assert [1, 2, 3, 'n'] is not None
+            assert {1, 2, 3, 'n'} is not None
 
 
     # NOTES
 
-  I can change the value of the set_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
+  the test passes
 
 * I add a note about sets_
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 31
     :emphasize-lines: 2
 
     # NOTES
@@ -1575,13 +1209,19 @@ the test passes
 * I add an `assert statement`_ for a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 5
+    :lineno-start: 19
+    :emphasize-lines: 11
 
-            a_set = {1, 2, 3, 'n'}
-            assert a_set is not None
-            self.assertIsNotNone(a_set)
-
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
+            assert (1, 2, 3, 'n') is not None
+            assert [1, 2, 3, 'n'] is not None
+            assert {1, 2, 3, 'n'} is not None
             assert {'key': 'value'} is None
 
 
@@ -1596,132 +1236,31 @@ the test passes
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 1
-
-            assert {'key': 'value'} is not None
-
-  the test passes
-
-* I add a statement for :ref:`dictionaries<what is a dictionary?>` with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 2
-
-            assert {'key': 'value'} is not None
-            self.assertIsNone({'key': 'value'})
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: {'key': 'value'} is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 2
-    :emphasize-text: Not
-
-            assert {'key': 'value'} is not None
-            self.assertIsNotNone({'key': 'value'})
-
-
-    # NOTES
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{'key': 'value'}``
-
-  .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 5
-
-            a_set = {1, 2, 3, 'n'}
-            assert a_set is not None
-            self.assertIsNotNone(a_set)
-
-            a_dictionary = {'key': 'value'}
-            assert {'key': 'value'} is not None
-            self.assertIsNotNone({'key': 'value'})
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{'key': 'value'}``
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 2-5
-
-            a_dictionary = {'key': 'value'}
-            # assert {'key': 'value'} is not None
-            assert a_dictionary is not None
-            # self.assertIsNotNone({'key': 'value'})
-            self.assertIsNotNone(a_dictionary)
-
-
-    # NOTES
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
     :lineno-start: 19
+    :emphasize-lines: 11
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNotNone(a_string)
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not None
-            self.assertIsNotNone(a_tuple)
-
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not None
-            self.assertIsNotNone(a_list)
-
-            a_set = {1, 2, 3, 'n'}
-            assert a_set is not None
-            self.assertIsNotNone(a_set)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not None
-            self.assertIsNotNone(a_dictionary)
+            assert 0 is not None
+            assert 0.0 is not None
+            assert 'a string' is not None
+            assert (1, 2, 3, 'n') is not None
+            assert [1, 2, 3, 'n'] is not None
+            assert {1, 2, 3, 'n'} is not None
+            assert {'key': 'value'} is not None
 
 
     # NOTES
 
-  I can change the value of the :ref:`dictionary<what is a dictionary?>` in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
+  the test passes
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 32
     :emphasize-lines: 2
 
     # NOTES
