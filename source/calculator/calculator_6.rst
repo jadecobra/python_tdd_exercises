@@ -1118,7 +1118,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
-* I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
 
 * I `change directory`_ to the parent of ``calculator``
 

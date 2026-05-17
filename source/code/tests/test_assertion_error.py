@@ -7,17 +7,23 @@ class TestAssertionError(unittest.TestCase):
         reality = 1 + 1
         my_expectation = 2
         assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
+        self.assertEqual(
+            reality, my_expectation
+        )
 
         reality = '1' + '1'
         my_expectation = '11'
         assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
+        self.assertEqual(
+            reality, my_expectation
+        )
 
         reality = 'I am' + ' alive'
         my_expectation = 'I am alive'
         assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
+        self.assertEqual(
+            reality, my_expectation
+        )
 
     def test_assertion_error_w_none(self):
         assert None is None
@@ -79,9 +85,9 @@ class TestAssertionError(unittest.TestCase):
 # a dictionary is not True
 # a dictionary is not False
 # a dictionary is not None
-# a set is not True
 # a set is not False
 # a set is not None
+# a list is not False
 # a list is not True
 # a list is not False
 # a list is not None
@@ -106,7 +112,6 @@ class TestAssertionError(unittest.TestCase):
 # None is not True and NOT equal to True
 # None is not False and NOT equal to False
 # None is None and equal to None
-
 
 # Exceptions seen
 # AssertionError
