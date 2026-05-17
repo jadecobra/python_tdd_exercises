@@ -27,7 +27,7 @@ An :ref:`assertion<what is an assertion?>` or `assert statement`_ is a way for m
 
 I use assertions_ in testing when making a program_ to make sure something is :ref:`True<test_what_is_true>` about the program_ before I continue building or to test ideas and see if they work, without worrying about if I will remember the ideas later.
 
-I use them to test how the program_ behaves, for example when it is given inputs. Assertions_ can help catch things that make tests that were passing before to start failing when I add new lines of code. They help me answer 2 questions
+I use them to test how the program_ behaves, for example when it is given inputs. Assertions_ can help catch things that make tests that were passing, start failing when I add new lines of code. They help me answer 2 questions
 
 * what is the same?
 * what is different?
@@ -334,7 +334,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
   - ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``reality is equal to my_expectation`` because
 
-    - ``reality`` is the name or variable_ I have given to ``1 + 1``
+    - ``reality`` is the name or variable_ I have given to the result of ``1 + 1``
     - ``my_expectation`` is the name or variable_ I have given to ``2``
     - in other words the statement is ``1 + 1 is equal to 2``
 
@@ -349,7 +349,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
             my_expectation = 11
             reality == my_expectation
 
-  the test is still green. Why?
+  Why is the test still green?
 
 * I want the test to fail when I write a statement that is NOT :ref:`True<test_what_is_true>`. I change it to an `assert statement`_
 
@@ -369,7 +369,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
     E       assert 2 == 11
 
-  because ``1 + 1 == 11`` is :ref:`False<test_what_is_false>`, ``2`` is NOT equal to ``11`` and I added assert_ before the statement, which tells the computer ``DO NOT CONTINUE, if 1 + 1 == 11 is False``
+  because ``1 + 1 == 11`` is :ref:`False<test_what_is_false>`, ``2`` is NOT equal to ``11`` and I added assert_ before the statement, which tells the computer ``DO NOT CONTINUE, if "1 + 1 == 11" is False``
 
 ----
 
@@ -454,7 +454,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
   because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'1' + '1' == '2'" is False``
 
   - ``- 2`` shows my expectation - what I wrote as the result, which is what is missing from the actual result
-  - ``+ 11`` shows reality - what the actual result is, , which is what is missing from my expectation
+  - ``+ 11`` shows reality - what the actual result is, which is what is missing from my expectation
 
 * I change ``my_expectation`` to match ``reality``
 
@@ -477,14 +477,12 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
   the test passes because the statement is now :ref:`True<test_what_is_true>`
 
-  .. NOTE::
+* These 2 statements are NOT the same
 
-    * these 2 statements are not the same
+  - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
+  - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is anything inside :ref:`quotes`
 
-      - ``1 + 1 == 2`` checks if the result of :ref:`adding<test_addition>` two numbers is equal to the number on the right side of the ``==`` symbol
-      - ``'1' + '1' == '11'`` checks if the result of "adding" 2 strings_ is equal to the string_ on the right side of the ``==`` symbol. A string_ is anything inside :ref:`quotes`
-
-* I add another statement to show the difference between the statements
+  I add another statement to show the difference between the statements
 
   .. code-block:: python
     :lineno-start: 6
@@ -546,7 +544,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
   - the ``- 11`` shows my expectation - what I wrote as the result, which is what is missing from the actual result
   - the ``+ I am alive`` shows reality - what the actual result is, which is what is missing from my expectation
 
-  .. attention:: If your result is different, check that you added a space before ``alive``, it should be ``' alive'`` not ``'alive'``. There is a space before the phrase.
+  .. attention:: If your result is different, check that you added a space before ``alive``, it should be ``' alive'`` not ``'alive'``. There is a space before the word.
 
 * I change ``my_expectation`` to match ``reality`` and make the statement :ref:`True<test_what_is_true>`
 
@@ -588,9 +586,9 @@ which is like this :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
 
-  assert True is False
+  assert True == False
 
-With these statements, I tell Python_ - "DO NOT CONTINUE, if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`", or said a different way "GO TO THE NEXT LINE, ONLY if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`, they at least have different spellings. If it does not fail, then Python_ and I have a problem.
+With these statements, I tell Python_ - "DO NOT CONTINUE, if :ref:`True<test_what_is_true>` is equal to :ref:`False<test_what_is_false>`", or said a different way "GO TO THE NEXT LINE, ONLY if :ref:`True<test_what_is_true>` is equal to :ref:`False<test_what_is_false>`". I expect this line to fail because :ref:`True<test_what_is_true>` is NOT equal to :ref:`False<test_what_is_false>`, they at least have different spellings. If it does not fail, then Python_ and I have a problem.
 
 ----
 
@@ -2587,7 +2585,7 @@ the test passes
     # a tuple is not False
     # a tuple is not None
     # a string is not False
-    # a string not None
+    # a string  None
     # a float is not False
     # a float is not None
     # an integer is not False

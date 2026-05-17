@@ -587,7 +587,7 @@ test_catching_index_error_in_tests
         def test_catching_index_error_in_tests(self):
             a_list = [1, 2, 3, 'n']
 
-* the first item in a :ref:`list<lists>` has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>`
+* the first item in a :ref:`list<lists>` has ``0`` as its :ref:`index<test_index_returns_first_position_of_item_in_a_list>` (its position in the container)
 
   .. code-block:: python
     :lineno-start: 23
