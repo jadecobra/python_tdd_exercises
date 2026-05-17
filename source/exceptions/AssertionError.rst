@@ -1297,7 +1297,7 @@ test_assertion_error_w_false
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>`
+I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is :ref:`False<test_what_is_false>`
 
 .. code-block:: python
   :lineno-start: 29
@@ -2009,7 +2009,7 @@ test_assertion_error_w_true
 
 ----
 
-I add a test with an :ref:`assertion<what is an assertion?>`
+I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 41
@@ -2063,44 +2063,35 @@ the test passes
 * I add a note about :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 11
+    :lineno-start: 47
+    :emphasize-lines: 20
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
+    # a list is not False
     # a list is not None
+    # a tuple is not False
     # a tuple is not None
+    # a string is not False
     # a string is not None
+    # a float is not False
     # a float is not None
+    # an integer is not False
     # an integer is not None
+    # True is not False
     # True is not None
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ about :ref:`False<test_what_is_false>`, that will fail
-
-  .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 3
-
-        def test_assertion_error_w_true(self):
-            assert None is not True
-            assert False is not True
-
-
-    # NOTES
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       assert False is not True
-
-* I change the statement to make it :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if :ref:`False<test_what_is_false>` is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2109,6 +2100,26 @@ the test passes
         def test_assertion_error_w_true(self):
             assert None is not True
             assert False is True
+
+
+    # NOTES
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert False is True
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 3
+    :emphasize-text: not
+
+        def test_assertion_error_w_true(self):
+            assert None is not True
+            assert False is not True
 
 
     # NOTES
@@ -2118,26 +2129,36 @@ the test passes
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 10
+    :lineno-start: 48
+    :emphasize-lines: 18
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
+    # a list is not False
     # a list is not None
+    # a tuple is not False
     # a tuple is not None
+    # a string is not False
     # a string is not None
+    # a float is not False
     # a float is not None
+    # an integer is not False
     # an integer is not None
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if :ref:`True<test_what_is_true>` is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ about :ref:`True<test_what_is_true>`, that will fail
 
   .. code-block:: python
     :lineno-start: 43
@@ -2145,8 +2166,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is True
+            assert False is not True
+            assert True is not True
 
 
     # NOTES
@@ -2155,19 +2176,18 @@ the test passes
 
   .. code-block:: python
 
-    E       assert True is True
+    E       assert True is not True
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
     :emphasize-lines: 4
-    :emphasize-text: not
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
 
 
     # NOTES
@@ -2177,27 +2197,37 @@ the test passes
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 9
+    :lineno-start: 49
+    :emphasize-lines: 16
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
+    # a list is not False
     # a list is not None
+    # a tuple is not False
     # a tuple is not None
+    # a string is not False
     # a string is not None
+    # a float is not False
     # a float is not None
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if an integer_ (a whole number with no decimals) is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if an integer_ (a whole number with no decimals) is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2205,8 +2235,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is True
 
 
@@ -2227,8 +2257,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
 
 
@@ -2239,28 +2269,38 @@ the test passes
 * I add a note about integers_
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 8
+    :lineno-start: 50
+    :emphasize-lines: 14
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
+    # a list is not False
     # a list is not None
+    # a tuple is not False
     # a tuple is not None
+    # a string is not False
     # a string is not None
+    # a float is not False
     # a float is not None
     # an integer is not True
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2268,8 +2308,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is True
 
@@ -2291,8 +2331,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
 
@@ -2304,29 +2344,39 @@ the test passes
 * I add a note about floats_
 
   .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 7
+    :lineno-start: 51
+    :emphasize-lines: 12
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
+    # a list is not False
     # a list is not None
+    # a tuple is not False
     # a tuple is not None
+    # a string is not False
     # a string is not None
     # a float is not True
+    # a float is not False
     # a float is not None
     # an integer is not True
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2334,8 +2384,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is True
@@ -2358,8 +2408,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2372,30 +2422,40 @@ the test passes
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 6
+    :lineno-start: 52
+    :emphasize-lines: 10
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
+    # a list is not False
     # a list is not None
+    # a tuple is not False
     # a tuple is not None
     # a string is not True
+    # a string is not False
     # a string is not None
     # a float is not True
+    # a float is not False
     # a float is not None
     # an integer is not True
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2403,8 +2463,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2428,8 +2488,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2443,31 +2503,41 @@ the test passes
 * I add a note about tuples_
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5
+    :lineno-start: 53
+    :emphasize-lines: 8
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
+    # a list is not False
     # a list is not None
     # a tuple is not True
+    # a tuple is not False
     # a tuple is not None
     # a string is not True
+    # a string is not False
     # a string is not None
     # a float is not True
+    # a float is not False
     # a float is not None
     # an integer is not True
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2475,8 +2545,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2501,8 +2571,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2517,32 +2587,42 @@ the test passes
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 4
+    :lineno-start: 54
+    :emphasize-lines: 6
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
+    # a set is not False
     # a set is not None
     # a list is not True
+    # a list is not False
     # a list is not None
     # a tuple is not True
+    # a tuple is not False
     # a tuple is not None
     # a string is not True
+    # a string is not False
     # a string is not None
     # a float is not True
+    # a float is not False
     # a float is not None
     # an integer is not True
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 ----
 
-* I add an `assert statement`_ to see if a set_ is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a set_ is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2550,8 +2630,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2577,8 +2657,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2594,33 +2674,43 @@ the test passes
 * I add a note about sets_
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 3
+    :lineno-start: 55
+    :emphasize-lines: 8
 
     # NOTES
+    # a dictionary is not False
     # a dictionary is not None
     # a set is not True
+    # a set is not False
     # a set is not None
     # a list is not True
+    # a list is not False
     # a list is not None
     # a tuple is not True
+    # a tuple is not False
     # a tuple is not None
     # a string is not True
+    # a string is not False
     # a string is not None
     # a float is not True
+    # a float is not False
     # a float is not None
     # an integer is not True
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 -----
 
-* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2628,8 +2718,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2656,8 +2746,8 @@ the test passes
 
         def test_assertion_error_w_true(self):
             assert None is not True
-            assert False is True
-            assert True is not True
+            assert False is not True
+            assert True is True
             assert 0 is not True
             assert 0.0 is not True
             assert 'a string' is not True
@@ -2674,29 +2764,39 @@ the test passes
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 56
     :emphasize-lines: 2
 
     # NOTES
     # a dictionary is not True
+    # a dictionary is not False
     # a dictionary is not None
     # a set is not True
+    # a set is not False
     # a set is not None
     # a list is not True
+    # a list is not False
     # a list is not None
     # a tuple is not True
+    # a tuple is not False
     # a tuple is not None
     # a string is not True
+    # a string is not False
     # a string is not None
     # a float is not True
+    # a float is not False
     # a float is not None
     # an integer is not True
+    # an integer is not False
     # an integer is not None
-    # True is not True
+    # True is True
+    # True is not False
     # True is not None
-    # False is True
+    # False is not True
+    # False is False
     # False is not None
     # None is not True
+    # None is not False
     # None is None
 
 
