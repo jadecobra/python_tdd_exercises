@@ -731,7 +731,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
             with self.assertRaises(IndexError):
                 a_list[-5]
 
-  the test is green again again. I cannot use a number that is smaller than the negative of the total number of items in the :ref:`list<lists>` to :ref:`index the list<test_index_returns_first_position_of_item_in_a_list>`
+  the test is green again. I cannot use a number that is smaller than the negative of the total number of items in the :ref:`list<lists>` to :ref:`index the list<test_index_returns_first_position_of_item_in_a_list>`
 
 * It looks like this is a repetition of the assertRaises_. It is not, even though the test is still green when I remove the second assertRaises_
 

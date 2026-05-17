@@ -635,7 +635,7 @@ I add the :ref:`iterable<what is an iterable?>`
 
           self.assertIsNone(a_list.extend(iterable))
 
-the test is green again again, the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None<what is None?>`
+the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_iterable_to_end_of_a_list>` returns :ref:`None<what is None?>`
 
 ----
 

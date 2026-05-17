@@ -343,7 +343,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def false():
         return False
 
-  the test is green again again
+  the test is green again
 
 * I add a line to test the other :ref:`boolean<what are booleans?>` in ``test_type_error.py``
 
@@ -751,7 +751,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
     def a_dictionary():
         return {'key': 'value'}
 
-  the test is green again again. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
+  the test is green again. I can call a :ref:`function<what is a function?>`, :ref:`I cannot call a dictionary, set, list, tuple, string, float, integer, boolean or None<test_type_error_w_the_uncallables>`
 
 It is safe to say that :ref:`I cannot call data structures because they are NOT callable<test_type_error_w_the_uncallables>`. I can call :ref:`functions<what is a function?>`, they are callable_
 

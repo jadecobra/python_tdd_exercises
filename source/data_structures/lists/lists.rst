@@ -2526,7 +2526,7 @@ the test passes
 
             self.assertEqual(a_list[2], '3rd')
 
-  the test is green again again
+  the test is green again
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -2812,7 +2812,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
             self.assertEqual(a_list[:2], ['a', 'b'])
 
-  the test is green again again. ``[0:2]`` and ``[:2]`` are the same
+  the test is green again. ``[0:2]`` and ``[:2]`` are the same
 
 * I add another :ref:`assertion<what is an assertion?>`
 

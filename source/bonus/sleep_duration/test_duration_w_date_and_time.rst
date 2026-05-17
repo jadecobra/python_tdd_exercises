@@ -402,7 +402,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
             )
         )
 
-  the test is green again again
+  the test is green again
 
 * I add calls to the `datetime.datetime.strptime`_ :ref:`method<what is a function?>` in ``test_duration_w_date_and_time``
 
@@ -596,7 +596,7 @@ I add the :ref:`variable<what is a variable?>` to the expectation
           )
       )
 
-the test is green again again
+the test is green again
 
 :yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------

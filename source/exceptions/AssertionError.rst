@@ -669,76 +669,14 @@ the test passes
 
 ----
 
-I can also make :ref:`assertions<what is an assertion?>` with `assert methods`_ from the `unittest.TestCase class`_, they have clearer messages
-
-----
-
----------------------------------------------------------------------------------
-how to test if something is NOT None
----------------------------------------------------------------------------------
-
-----
-
-I add a failing line with the `assertIsNotNone method`_ which checks if the thing in parentheses - ``( )``, is NOT :ref:`None<what is None?>`
-
-.. code-block:: python
-  :lineno-start: 19
-  :emphasize-lines: 3
-  :emphasize-text: Not
-
-      def test_assertion_error_w_none(self):
-          assert None is None
-          self.assertIsNotNone(None)
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with a clearer message
-
-.. code-block:: python
-
-  E       AssertionError: unexpectedly None
-
-because :ref:`None<what is None?>` is ...
-
-----
-
----------------------------------------------------------------------------------
-how to test if something is None
----------------------------------------------------------------------------------
-
-----
-
-* I use the `assertIsNone method`_ which checks if the thing in parentheses is :ref:`None<what is None?>`, to make the statement :ref:`True<test_what_is_true>`
+* I add a note with what I learned from the experiment
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 3
+    :emphasize-lines: 5-6
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
-  the test passes. I like the messages from the `assert methods`_ better
-
-  .. code-block:: python
-
-    E       AssertionError: unexpectedly None
-
-  vs
-
-  .. code-block:: python
-
-    E       assert None is not None
-
-  which do you like better?
-
-* I add comments with what I learned from the experiments in the test
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 6-7
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
 
 
     # NOTES
@@ -754,12 +692,10 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 5
+    :emphasize-lines: 3
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is None
 
 
@@ -774,52 +710,28 @@ how to test if something is None
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 1
-    :emphasize-text: not
-
-            assert False is not None
-
-  the test passes
-
-* I add another :ref:`assertion<what is an assertion?>` with the `assertIsNone method`_
-
-  .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 6
+    :emphasize-lines: 3
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNone(False)
 
-  the terminal_ is my friend, and shows AssertionError_
 
-  .. code-block:: python
-
-    E       AssertionError: False is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 1
-    :emphasize-text: Not
-
-            self.assertIsNotNone(False)
+    # NOTES
 
   the test passes
 
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 6
+    :lineno-start: 19
+    :emphasize-lines: 7
 
+        def test_assertion_error_w_none(self):
+            assert None is None
             assert False is not None
-            self.assertIsNotNone(False)
 
 
     # NOTES
@@ -836,15 +748,11 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 8
+    :emphasize-lines: 4
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is None
 
 
@@ -859,44 +767,14 @@ how to test if something is None
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 1
-    :emphasize-text: not
-
-            assert True is not None
-
-  the test passes
-
-* I add a failing line with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 2
-
-            assert True is not None
-            self.assertIsNone(True)
-
-  the terminal_ is my friend, and shows AssertionError_
-
-  .. code-block:: python
-
-    E       AssertionError: True is not None
-
-* I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
-
-  .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 9
+    :emphasize-lines: 4
+    :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
 
 
     # NOTES
@@ -907,10 +785,12 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 26
-    :emphasize-lines: 6
+    :emphasize-lines: 8
 
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
             assert True is not None
-            self.assertIsNotNone(True)
 
 
     # NOTES
@@ -928,18 +808,12 @@ how to test if something is None
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 11
+    :emphasize-lines: 5
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
-
             assert 0 is None
 
 
@@ -954,125 +828,32 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 1
+    :lineno-start: 19
+    :emphasize-lines: 5
 
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
             assert 0 is not None
+
+
+    # NOTES
 
   the test passes
-
-* I add a statement with the `assertIsNone method`_
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2
-
-            assert 0 is not None
-            self.assertIsNone(0)
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: 0 is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 12
-    :emphasize-text: Not
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            assert 0 is not None
-            self.assertIsNotNone(0)
-
-
-      # NOTES
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0``
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert 0 is not None
-            self.assertIsNotNone(0)
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0``
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2-5
-
-            an_integer = 0
-            # assert 0 is not None
-            assert an_integer is not None
-            # self.assertIsNotNone(0)
-            self.assertIsNotNone(an_integer)
-
-
-    # NOTES
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 19
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-
-    # NOTES
-
-  I can change the value of the integer_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about integers_
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 2
+    :lineno-start: 19
+    :emphasize-lines: 9
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+
 
     # NOTES
     # an integer is not None
@@ -1086,26 +867,17 @@ how to test if something is None
 
 ----
 
-* I add an `assert statement`_ for a float_ (binary floating point decimal numbers)
+* I add an `assert statement`_ for a float_ (binary floating point decimal number)
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 15
+    :emphasize-lines: 6
 
         def test_assertion_error_w_none(self):
             assert None is None
-            self.assertIsNone(None)
-
             assert False is not None
-            self.assertIsNotNone(False)
-
             assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
+            assert 0 is not None
             assert 0.0 is None
 
 
@@ -1120,10 +892,18 @@ how to test if something is None
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 1
+    :lineno-start: 19
+    :emphasize-lines: 6
 
-            assert 0.0 is not None
+        def test_assertion_error_w_none(self):
+            assert None is None
+            assert False is not None
+            assert True is not None
+            assert 0 is not None
+            assert 0.0  not None
+
+
+    # NOTES
 
   the test passes
 
@@ -1141,83 +921,6 @@ how to test if something is None
   .. code-block:: python
 
     E       AssertionError: 0.0 is not None
-
-* I change assertIsNone_ to assertIsNotNone_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
-    :emphasize-text: Not
-
-            assert 0.0 is not None
-            self.assertIsNotNone(0.0)
-
-
-    # NOTES
-
-  the test passes
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0.0``
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 5
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-            a_float = 0.0
-            assert 0.0 is not None
-            self.assertIsNotNone(0.0)
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0``
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2-5
-
-            a_float = 0.0
-            # assert 0.0 is not None
-            assert a_float is not None
-            # self.assertIsNotNone(0.0)
-            self.assertIsNotNone(a_float)
-
-
-    # NOTES
-
-  the test is still green
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 19
-
-        def test_assertion_error_w_none(self):
-            assert None is None
-            self.assertIsNone(None)
-
-            assert False is not None
-            self.assertIsNotNone(False)
-
-            assert True is not None
-            self.assertIsNotNone(True)
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNotNone(an_integer)
-
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNotNone(a_float)
-
-
-    # NOTES
-
-  I can change the value of the float_ in one place with no need to change the other lines because of the :ref:`variable<what is a variable?>`
 
 * I add a note about floats_
 

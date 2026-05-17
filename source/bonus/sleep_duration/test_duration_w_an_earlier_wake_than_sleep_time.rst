@@ -272,7 +272,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: ValueError not raised
 
-  the `assertRaisesRegex`_ works as expected. I remove the comments the test is green again again
+  the `assertRaisesRegex`_ works as expected. I remove the comments the test is green again
 
 * I remove ``test_duration_w_an_earlier_wake_than_sleep_time`` because it is now covered by ``test_duration_w_hours_and_minutes``
 * then add an ``else`` block for the rest of the code from ``test_duration_w_hours_and_minutes``
