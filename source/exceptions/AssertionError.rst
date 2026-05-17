@@ -3732,20 +3732,26 @@ how to test if two things are Equal
 
 ----
 
-* I add calls to the `assertEqual method`_ in :ref:`test_what_is_an_assertion`
+* I use the `assertNotEqual method`_ in :ref:`test_what_is_an_assertion`
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 6
     :emphasize-lines: 5
-
-    class TestAssertionError(unittest.TestCase):
+    :emphasize-text: not
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            self.assertEqual(1+1, 3)
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
 
-            assert '1' + '1' == '11'
-            assert 'I am' + ' alive' == 'I am alive'
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
 
         def test_assertion_error_w_none(self):
 
@@ -3753,39 +3759,62 @@ how to test if two things are Equal
 
   .. code-block:: python
 
-    AssertionError: 2 != 3
+    E       AssertionError: 2 == 2
 
-* I change the expectation in the call to the `assertEqual method`_ to make the statement :ref:`True<test_what_is_true>`
+  it shows what the :ref:`True<test_what_is_true>` statement should be
 
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 1
-    :emphasize-text: 2
-
-            self.assertEqual(1+1, 2)
-
-  the test passes
-
-* I add assertEqual_ for the next assertion_
+* I change assertNotEqual_ to assertEqual_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 6
+    :emphasize-lines: 5
 
         def test_what_is_an_assertion(self):
-            assert 1 + 1 == 2
-            self.assertEqual(1+1, 2)
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
 
-            assert '1' + '1' == '11'
-            self.assertEqual('1'+'1', '2')
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
 
-            assert 'I am' + ' alive' == 'I am alive'
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
+
+        def test_assertion_error_w_none(self):
+
+  the test passes
+
+* I call assertNotEqual_ for the next assertion_
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 10
+
+        def test_what_is_an_assertion(self):
+            reality = 1 + 1
+            my_expectation = 2
+            assert reality == my_expectation
+            self.assertEqual(reality, my_expectation)
+
+            reality = '1' + '1'
+            my_expectation = '11'
+            assert reality == my_expectation
+            self.assertNotEqual(reality, my_expectation)
+
+            reality = 'I am' + ' alive'
+            my_expectation = 'I am alive'
+            assert reality == my_expectation
+
+        def test_assertion_error_w_none(self):
 
   the terminal_ is my friend, and shows
 
   .. code-block:: python
 
-    AssertionError: '11' != '2'
+    E       AssertionError: '11' == '11'
 
 * I change the expectation to match reality
 
