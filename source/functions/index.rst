@@ -1004,65 +1004,149 @@ the test passes
     :lineno-start: 4
     :emphasize-lines: 4-5
 
+    import unittest
+
+
+    def add_x(number):
+        return 2 + number
+
+
     class TestFunctions(unittest.TestCase):
 
-        def test_why_use_a_function(self):
-            def add_x(x=2, y=0):
-                return x + y
-
-            self.assertEqual(2+0, 2)
-
-* then I use it in the first :ref:`assertion<what is an assertion?>`
+* I use the new :ref:`function<what is a function?>` for the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 5-6
+    :emphasize-lines: 1-2
     :emphasize-text: add_x
 
         def test_why_use_a_function(self):
-            def add_x(x=2, y=0):
-                return x + y
+            # reality = 2 + 0
+            reality = add_x(0)
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
 
-            # self.assertEqual(2+0, 2)
-            self.assertEqual(add_x(y=0), 2)
-            self.assertEqual(2+1, 3)
 
   the test is still green
 
-* I remove the comment and use the ``add_x`` :ref:`function<what is a function?>` in the other :ref:`assertions<what is an assertion?>`
+* I use the ``add_x`` :ref:`function<what is a function?>` for the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 5-14
+    :emphasize-lines: 7-8, 12-13, 17-18, 22-23, 27-28, 32-33, 37-38, 42-43, 47-48
     :emphasize-text: add_x
 
         def test_why_use_a_function(self):
-            def add_x(x=2, y=0):
-                return x + y
+            # reality = 2 + 0
+            reality = add_x(0)
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
 
-            self.assertEqual(add_x(y=0), 2)
-            self.assertEqual(add_x(y=1), 3)
-            self.assertEqual(add_x(y=2), 4)
-            self.assertEqual(add_x(y=3), 5)
-            self.assertEqual(add_x(y=4), 6)
-            self.assertEqual(add_x(y=5), 7)
-            self.assertEqual(add_x(y=6), 8)
-            self.assertEqual(add_x(y=7), 9)
-            self.assertEqual(add_x(y=8), 10)
-            self.assertEqual(add_x(y=9), 11)
+            # reality = 2 + 1
+            reality = add_x(1)
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 2
+            reality = add_x(2)
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 3
+            reality = add_x(3)
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 4
+            reality = add_x(4)
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 5
+            reality = add_x(5)
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 6
+            reality = add_x(6)
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 7
+            reality = add_x(7)
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 8
+            reality = add_x(8)
+            my_expectation = 10
+            self.assertEqual(reality, my_expectation)
+
+            # reality = 2 + 9
+            reality = add_x(9)
+            my_expectation = 11
+            self.assertEqual(reality, my_expectation)
 
   still green
 
-* Now if I want to test what happens when I add ``3`` to a number, I only have to make that change in one place, then change the results since those will change as well
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 6
+
+        def test_why_use_a_function(self):
+            reality = add_x(0)
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(1)
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(2)
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(3)
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(4)
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(5)
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(6)
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(7)
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(8)
+            my_expectation = 10
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(9)
+            my_expectation = 11
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* Now I only have to make a change in one place if I want to test what happens when I add ``3`` to a number, then change the results since those will change as well
+
+  .. code-block:: python
+    :lineno-start: 4
     :emphasize-lines: 2
     :emphasize-text: 3
 
-        def test_why_use_a_function(self):
-            def add_x(x=3, y=0):
-                return x + y
+    def add_x(number):
+        return 3 + number
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1074,28 +1158,64 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 5-14
+    :emphasize-lines: 3, 7, 11, 15, 19, 23, 27, 31, 35, 39
 
         def test_why_use_a_function(self):
-            def add_x(x=3, y=0):
-                return x + y
+            reality = add_x(0)
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
 
-            self.assertEqual(add_x(y=0), 3)
-            self.assertEqual(add_x(y=1), 4)
-            self.assertEqual(add_x(y=2), 5)
-            self.assertEqual(add_x(y=3), 6)
-            self.assertEqual(add_x(y=4), 7)
-            self.assertEqual(add_x(y=5), 8)
-            self.assertEqual(add_x(y=6), 9)
-            self.assertEqual(add_x(y=7), 10)
-            self.assertEqual(add_x(y=8), 11)
-            self.assertEqual(add_x(y=9), 12)
+            reality = add_x(1)
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(2)
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(3)
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(4)
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(5)
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(6)
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(7)
+            my_expectation = 10
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(8)
+            my_expectation = 11
+            self.assertEqual(reality, my_expectation)
+
+            reality = add_x(9)
+            my_expectation = 12
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
-    # AssertionError
 
-:ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the results changing?<a better way to handle the results changing>`
+  the test passes
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'extract add_x function'
+
+  the terminal_ shows the changes then goes back to the command line
+
+:ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the changing results?<a better way to handle the results changing>`
 
 ----
 
@@ -1113,38 +1233,33 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
 ----
 
-I add a new test
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 16-17
+* I add a new test to ``test_functions.py`` in the :ref:`editor<2 editors>`
 
-      def test_why_use_a_function(self):
-          def add_x(x=3, y=0):
-              return x + y
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 5-8
 
-          self.assertEqual(add_x(y=0), 3)
-          self.assertEqual(add_x(y=1), 4)
-          self.assertEqual(add_x(y=2), 5)
-          self.assertEqual(add_x(y=3), 6)
-          self.assertEqual(add_x(y=4), 7)
-          self.assertEqual(add_x(y=5), 8)
-          self.assertEqual(add_x(y=6), 9)
-          self.assertEqual(add_x(y=7), 10)
-          self.assertEqual(add_x(y=8), 11)
-          self.assertEqual(add_x(y=9), 12)
+            reality = add_x(9)
+            my_expectation = 12
+            self.assertEqual(reality, my_expectation)
 
-      def test_making_a_function_w_pass(self):
-          self.assertIsNone(src.functions.w_pass())
+        def test_making_a_function_w_pass(self):
+            reality = src.functions.w_pass()
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-.. code-block::
+  .. code-block::
 
-  NameError: name 'src' is not defined
+    NameError: name 'src' is not defined
+
+  because Python_ does not know what I mean by ``src`` since I do not have a definition for it in ``test_functions.py``
 
 ----
 
@@ -1154,15 +1269,17 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
 ----
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 7
+    :lineno-start: 51
+    :emphasize-lines: 9
     :emphasize-text: NameError
 
         def test_making_a_function_w_pass(self):
-            self.assertIsNone(src.functions.w_pass())
+            reality = src.functions.w_pass()
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -1181,18 +1298,20 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
     class TestFunctions(unittest.TestCase):
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  - ``import src.functions`` brings in an :ref:`object<what is a class?>` that represents the ``functions.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_functions.py``
+  - I like to sort my `import statements`_ alphabetically
+  - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_pass'
+      AttributeError: module 'src.functions' has no attribute 'w_pass'
 
-  ``functions.py`` in the ``src`` folder_ does not have anything named ``w_pass`` inside it
+    because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_pass`` inside it
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 58
     :emphasize-lines: 4
     :emphasize-text: AttributeError
 
@@ -1201,9 +1320,9 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
 
-* I add a :ref:`function<what is a function?>` definition to ``functions.py``
+* I delete the text in the file_ then add a :ref:`function<what is a function?>` definition to ``functions.py``
 
   .. code-block:: python
     :linenos:
@@ -1214,10 +1333,22 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   the test passes
 
-  * the test checks if the result of the call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is :ref:`None<what is None?>`
+  * the test checks if
+
+    - the ``reality`` :ref:`variable<what is a variable?>`, which represents the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is equal to
+    - the ``my_expectation`` :ref:`variable<what is a variable?>`, which represents :ref:`None<what is None?>`
   * the :ref:`function<what is a function?>` definition simply says pass_ and the test passes
   * pass_ is a special keyword that allows the :ref:`function<what is a function?>` definition to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body)
   * the test passes because all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``, which leads me to the next test
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_making_a_function_w_pass'
+
+  the terminal_ shows the changes then goes back to the command line
 
 :ref:`I can make a function with pass<test_making_a_function_w_pass>`
 
@@ -1227,7 +1358,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 test_making_a_function_w_return
 *********************************************************************************
 
-I can make a function with a `return statement`_
+I can also make a function with a `return statement`_
 
 ----
 
@@ -1237,28 +1368,32 @@ I can make a function with a `return statement`_
 
 ----
 
-I add a new failing test in ``test_functions.py``
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 22
-  :emphasize-lines: 4-5
+* I add a new failing test to ``test_functions.py``
 
-      def test_making_a_function_w_pass(self):
-          self.assertIsNone(src.functions.w_pass())
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 4-7
 
-      def test_making_a_function_w_return(self):
-          self.assertIsNone(src.functions.w_return())
+        def test_making_a_function_w_pass(self):
+            self.assertEqual(src.functions.w_pass(), None)
+
+        def test_making_a_function_w_return(self):
+            self.assertEqual(
+                src.functions.w_return(), None
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.functions' has no attribute 'w_return'
+    AttributeError: module 'src.functions' has no attribute 'w_return'
 
-``functions.py`` in the ``src`` folder_ does not have anything with the name ``w_return`` in it
+  because ``functions.py`` in the ``src`` folder_ does not have anything with the name ``w_return`` in it
 
 ----
 
@@ -1302,7 +1437,14 @@ I change pass_ to a `return statement`_
 
 the test is still green.
 
-I have 2 functions_ with different statements and they both return :ref:`None<what is None?>`, because "all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``", which leads me to the next test
+I have 2 functions_ with different statements, and the tests show that they both return :ref:`None<what is None?>`,
+
+.. code-block:: python
+
+  self.assertEqual(src.function)
+
+
+because "all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``", which leads me to the next test
 
 :ref:`I can make a function with a return statement<test_making_a_function_w_return>`
 
