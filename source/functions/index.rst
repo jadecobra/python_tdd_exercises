@@ -1374,15 +1374,17 @@ I can also make a function with a `return statement`_
 
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 4-7
+    :emphasize-lines: 6-9
 
         def test_making_a_function_w_pass(self):
-            self.assertEqual(src.functions.w_pass(), None)
+            reality = src.functions.w_pass()
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
         def test_making_a_function_w_return(self):
-            self.assertEqual(
-                src.functions.w_return(), None
-            )
+            reality = src.functions._w_return()
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -1426,25 +1428,41 @@ the test passes
 
 ----
 
-I change pass_ to a `return statement`_
+* I change pass_ to a `return statement`_
 
-.. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 2
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2
 
-  def w_return():
-      return
+    def w_return():
+        return
 
-the test is still green.
+  the test is still green.
 
-I have 2 functions_ with different statements, and the tests show that they both return :ref:`None<what is None?>`,
+* I have 2 functions_ with different statements, and the tests show that they both return :ref:`None<what is None?>`,
 
-.. code-block:: python
+  .. code-block:: python
 
-  self.assertEqual(src.function)
+    src.functions.w_pass()
+    src.functions.w_return()
 
+  their contents are different, their results are the same
 
-because "all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``", which leads me to the next test
+  .. code-block:: python
+
+    pass
+    return
+
+  because "all functions_ return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``", which leads me to the next test
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_making_a_function_w_return'
+
+  the terminal_ shows the changes then goes back to the command line
 
 :ref:`I can make a function with a return statement<test_making_a_function_w_return>`
 
