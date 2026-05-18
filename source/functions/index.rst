@@ -164,37 +164,47 @@ start the project
 
   .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/__init__.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/__init__.py`` not ``touch tests/__init__.py``
+        touch tests/__init__.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/__init__.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/__init__.py
 
   the terminal_ goes back to the command line
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
-  .. code-block:: shell
-    :emphasize-lines: 1
+  .. tab-set::
+    :sync-group: os
 
-    touch tests/test_functions.py
+    .. tab-item:: WSL/Linux/Mac
+      :sync: unix
 
-  .. NOTE::
+      .. code-block:: shell
+        :emphasize-lines: 1
 
-    on Windows_ without `Windows Subsystem for Linux`_ use ``New-Item tests/test_functions.py`` not ``touch tests/test_functions.py``
+        touch tests/test_functions.py
 
-    .. code-block:: shell
-      :emphasize-lines: 1
+    .. tab-item:: no WSL
+      :sync: no_wsl
 
-      New-Item tests/test_functions.py
+      .. code-block:: shell
+        :emphasize-lines: 1
+
+        New-Item tests/test_functions.py
 
   the terminal_ goes back to the command line
 
@@ -243,30 +253,6 @@ start the project
 
   the terminal_ goes back to the command line
 
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `functions`
-
-  then goes back to the command line
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line
-
 * I install the `Python packages`_ that I wrote in the requirements file_
 
   .. code-block:: python
@@ -275,6 +261,40 @@ start the project
     uv add --requirement requirements.txt
 
   the terminal_ shows that it installed the `Python packages`_
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'start project'
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    [main (root-commit) a0b12c3] start project
+     9 files changed, 148 insertions(+)
+     create mode 100644 .gitignore
+     create mode 100644 .python-version
+     create mode 100644 README.md
+     create mode 100644 pyproject.toml
+     create mode 100644 requirements.txt
+     create mode 100644 src/functions.py
+     create mode 100644 tests/__init__.py
+     create mode 100644 tests/test_functions.py
+     create mode 100644 uv.lock
+
+  then goes back to the command line
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -344,7 +364,7 @@ start the project
 test_why_use_a_function
 *********************************************************************************
 
-Why use a :ref:`function<what is a function?>` when I can just write code to do the thing I want? Let's see
+Why would I use a :ref:`function<what is a function?>` when I can just write code to do the thing I want?
 
 ----
 
@@ -358,21 +378,30 @@ Why use a :ref:`function<what is a function?>` when I can just write code to do 
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 3-4
+    :emphasize-lines: 3-6
 
     class TestFunctions(unittest.TestCase):
 
         def test_why_use_a_function(self):
-            self.assertEqual(1+0, 0)
+            reality = 1 + 0
+            my_expectation = 0
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
+    # AssertionError
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: 1 != 0
+
+  because ``1`` is NOT equal to ``0``
+
+  - ``reality`` is the name or :ref:`variable<what is a variable?>` I gave to the result of ``1 + 0``
+  - ``my_expectation`` is the name or :ref:`variable<what is a variable?>` I gave to ``0``
+  - ``assertEqual(reality, my_expectation)`` is  asking Python_ if ``1 + 1 is equal to 2``
 
 ----
 
@@ -382,13 +411,20 @@ Why use a :ref:`function<what is a function?>` when I can just write code to do 
 
 ----
 
-I change the expectation to match reality
+I change ``my_expectation`` to match reality
 
 .. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 1
+  :lineno-start: 6
+  :emphasize-lines: 3
 
-          self.assertEqual(1+0, 1)
+      def test_why_use_a_function(self):
+          reality = 1 + 0
+          my_expectation = 1
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+  # AssertionError
 
 the test passes
 
@@ -404,11 +440,19 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 3
+    :emphasize-lines: 6-8
 
         def test_why_use_a_function(self):
-            self.assertEqual(1+0, 1)
-            self.assertEqual(1+1, 1)
+            reality = 1 + 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 1
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -416,13 +460,18 @@ the test passes
 
     AssertionError: 2 != 1
 
-* I change the expectation
+* I change ``my_expectation`` to ``2``
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 1
+    :lineno-start: 11
+    :emphasize-lines: 2
 
-            self.assertEqual(1+1, 2)
+            reality = 1 + 1
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
@@ -430,12 +479,23 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 4
+    :emphasize-lines: 10-12
 
         def test_why_use_a_function(self):
-            self.assertEqual(1+0, 1)
-            self.assertEqual(1+1, 2)
-            self.assertEqual(1+2, 2)
+            reality = 1 + 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 1
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 2
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<What causes AssertionError?>`
 
@@ -443,13 +503,18 @@ the test passes
 
     AssertionError: 3 != 2
 
-* I change the expectation
+* I change ``my_expectation`` to ``3``
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 1
+    :lineno-start: 15
+    :emphasize-lines: 3
 
-            self.assertEqual(1+2, 3)
+            reality = 1 + 2
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
@@ -457,13 +522,27 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 5
+    :emphasize-lines: 14-16
 
         def test_why_use_a_function(self):
-            self.assertEqual(1+0, 1)
-            self.assertEqual(1+1, 2)
-            self.assertEqual(1+2, 3)
-            self.assertEqual(1+3, 3)
+            reality = 1 + 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 1
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 2
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 3
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -471,29 +550,50 @@ the test passes
 
     AssertionError: 4 != 3
 
-* I change the expectation
+* I change ``my_expectation`` to ``4``
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 1
+    :lineno-start: 19
+    :emphasize-lines: 2
 
-            self.assertEqual(1+3, 4)
+            reality = 1 + 3
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3
+    :lineno-start: 6
+    :emphasize-lines: 18-20
 
-            self.assertEqual(1+2, 3)
-            self.assertEqual(1+3, 4)
-            self.assertEqual(1+4, 4)
+        def test_why_use_a_function(self):
+            reality = 1 + 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 1
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 2
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 3
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 4
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
-    # AssertionError
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -501,25 +601,51 @@ the test passes
 
     AssertionError: 5 != 4
 
-* I change the expectation
+* I change ``my_expectation`` to ``5``
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 1
+    :lineno-start: 23
+    :emphasize-lines: 2
 
-            self.assertEqual(1+4, 5)
+            reality = 1 + 4
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 3
+    :lineno-start: 6
+    :emphasize-lines: 22-24
 
-            self.assertEqual(1+3, 4)
-            self.assertEqual(1+4, 5)
-            self.assertEqual(1+5, 5)
+        def test_why_use_a_function(self):
+            reality = 1 + 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 1
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 2
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 3
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 4
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 5
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -530,24 +656,34 @@ the test passes
 
     AssertionError: 6 != 5
 
-* I change the expectation
+* I change ``my_expectation`` to ``6``
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :lineno-start: 27
+    :emphasize-lines: 2
 
-            self.assertEqual(1+5, 6)
+            reality = 1 + 5
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3
+    :lineno-start: 27
+    :emphasize-lines: 5-7
 
-            self.assertEqual(1+4, 5)
-            self.assertEqual(1+5, 6)
-            self.assertEqual(1+6, 6)
+            reality = 1 + 5
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 6
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -558,25 +694,34 @@ the test passes
 
     AssertionError: 7 != 6
 
-* I change the expectation
+* I change ``my_expectation`` to ``7``
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 1
+    :lineno-start: 31
+    :emphasize-lines: 2
 
-            self.assertEqual(1+6, 7)
+            reality = 1 + 6
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 3
+    :lineno-start: 31
+    :emphasize-lines: 5-7
 
-            self.assertEqual(1+5, 6)
-            self.assertEqual(1+6, 7)
-            self.assertEqual(1+7, 7)
+            reality = 1 + 6
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 7
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -587,25 +732,34 @@ the test passes
 
     AssertionError: 8 != 7
 
-* I change the expectation
+* I change ``my_expectation`` to ``8``
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 1
+    :lineno-start: 35
+    :emphasize-lines: 2
 
-            self.assertEqual(1+7, 8)
+            reality = 1 + 7
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 3
+    :lineno-start: 35
+    :emphasize-lines: 5-7
 
-            self.assertEqual(1+6, 7)
-            self.assertEqual(1+7, 8)
-            self.assertEqual(1+8, 8)
+            reality = 1 + 7
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 8
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -616,25 +770,34 @@ the test passes
 
     AssertionError: 9 != 8
 
-* I change the expectation
+* I change ``my_expectation`` to ``9``
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 1
+    :lineno-start: 39
+    :emphasize-lines: 2
 
-            self.assertEqual(1+8, 9)
+            reality = 1 + 8
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 3
+    :lineno-start: 39
+    :emphasize-lines: 5-7
 
-            self.assertEqual(1+7, 8)
-            self.assertEqual(1+8, 9)
-            self.assertEqual(1+9, 9)
+            reality = 1 + 8
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 9
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -645,47 +808,109 @@ the test passes
 
     AssertionError: 10 != 9
 
-* I change the expectation
+* I change ``my_expectation`` to ``10``
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 11
+    :emphasize-lines: 39
 
         def test_why_use_a_function(self):
-            self.assertEqual(1+0, 1)
-            self.assertEqual(1+1, 2)
-            self.assertEqual(1+2, 3)
-            self.assertEqual(1+3, 4)
-            self.assertEqual(1+4, 5)
-            self.assertEqual(1+5, 6)
-            self.assertEqual(1+6, 7)
-            self.assertEqual(1+7, 8)
-            self.assertEqual(1+8, 9)
-            self.assertEqual(1+9, 10)
+            reality = 1 + 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 1
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 2
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 3
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 4
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 5
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 6
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 7
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 8
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+            reality = 1 + 9
+            my_expectation = 10
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
+    # AssertionError
 
   the test passes
 
-* all those :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``, what if I want to test what happens when I add a number to ``2``? I would have to   change ``1`` in 10 places. I change ``1`` to ``2`` in the calculation
+* all those :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``, what if I want to test what happens when I add a number to ``2``? I would have to   change ``1`` in 10 places. I change ``1`` to ``2`` for the ``reality`` :ref:`variables<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 2-11
+    :emphasize-lines: 2, 6, 10, 14, 18, 22, 26, 30, 34, 38
     :emphasize-text: 2
 
         def test_why_use_a_function(self):
-            self.assertEqual(2+0, 1)
-            self.assertEqual(2+1, 2)
-            self.assertEqual(2+2, 3)
-            self.assertEqual(2+3, 4)
-            self.assertEqual(2+4, 5)
-            self.assertEqual(2+5, 6)
-            self.assertEqual(2+6, 7)
-            self.assertEqual(2+7, 8)
-            self.assertEqual(2+8, 9)
-            self.assertEqual(2+9, 10)
+            reality = 2 + 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 1
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 2
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 3
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 4
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 5
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 6
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 7
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 8
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 9
+            my_expectation = 10
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -693,28 +918,87 @@ the test passes
 
     AssertionError: 2 != 1
 
-* I change the expectation of each :ref:`assertion<what is an assertion?>`
+* I change ``my_expectation`` for each :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 2-11
+    :emphasize-lines: 3, 7, 11, 15, 19, 23, 27, 31, 35, 39
     :emphasize-text: 2 3 4 5 6 7 8 9 10 11
 
         def test_why_use_a_function(self):
-            self.assertEqual(2+0, 2)
-            self.assertEqual(2+1, 3)
-            self.assertEqual(2+2, 4)
-            self.assertEqual(2+3, 5)
-            self.assertEqual(2+4, 6)
-            self.assertEqual(2+5, 7)
-            self.assertEqual(2+6, 8)
-            self.assertEqual(2+7, 9)
-            self.assertEqual(2+8, 10)
-            self.assertEqual(2+9, 11)
+            reality = 2 + 0
+            my_expectation = 2
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 1
+            my_expectation = 3
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 2
+            my_expectation = 4
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 3
+            my_expectation = 5
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 4
+            my_expectation = 6
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 5
+            my_expectation = 7
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 6
+            my_expectation = 8
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 7
+            my_expectation = 9
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 8
+            my_expectation = 10
+            self.assertEqual(reality, my_expectation)
+
+            reality = 2 + 9
+            my_expectation = 11
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
-* What if I want to test what happens when I add ``3`` to a number? Wait! No more, please, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat, I add one to the test
+* I open a new terminal_ then change directories to ``functions``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd functions
+
+  the terminal_ shows I am in the ``assertion_error`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/functions
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_why_use_a_function'
+
+  the terminal_ shows the changes then goes back to the command line
+
+
+-----
+
+* I go back to the terminal_ that is running the tests
+
+* What if I want to test what happens when I add ``3`` to a number? Wait! No more, please! I do not want to have to make a change for each new number, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat, I add one to ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 4

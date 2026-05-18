@@ -238,7 +238,7 @@ start the project
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     [main (root-commit) a0b12c3] start project
      8 files changed, 142 insertions(+)
@@ -374,8 +374,8 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
   - ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``reality is equal to my_expectation`` because
 
-    - ``reality`` is the name or variable_ I have given to the result of ``1 + 1``
-    - ``my_expectation`` is the name or variable_ I have given to ``2``
+    - ``reality`` is the name or variable_ I gave to the result of ``1 + 1``
+    - ``my_expectation`` is the name or variable_ I gave to ``2``
     - in other words the statement is ``1 + 1 is equal to 2``
 
 * I change ``my_expectation`` to make the statement :ref:`False<test_what_is_false>`
