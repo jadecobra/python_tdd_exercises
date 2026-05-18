@@ -2045,7 +2045,7 @@ test_functions_w_positional_arguments
 
         def test_functions_w_positional_arguments(self):
             reality = src.functions.w_positional_arguments(
-                'first', 'last'
+                'first', 'last',
             )
             my_expectation = ('first', 'last')
             self.assertEqual(reality, my_expectation)
@@ -2151,13 +2151,13 @@ test_functions_w_positional_arguments
 
         def test_functions_w_positional_arguments(self):
             reality = src.functions.w_positional_arguments(
-                'first', 'last'
+                'first', 'last',
             )
             my_expectation = ('first', 'last')
             self.assertEqual(reality, my_expectation)
 
             reality = src.functions.w_positional_arguments(
-                'last', 'first'
+                'last', 'first',
             )
             my_expectation = ('first', 'last')
             self.assertEqual(reality, my_expectation)
@@ -2181,7 +2181,7 @@ test_functions_w_positional_arguments
     :emphasize-text: last
 
             reality = src.functions.w_positional_arguments(
-                'last', 'first'
+                'last', 'first',
             )
             my_expectation = ('last', 'first')
             self.assertEqual(reality, my_expectation)
@@ -2198,13 +2198,13 @@ test_functions_w_positional_arguments
     :emphasize-lines: 7-11
 
             reality = src.functions.w_positional_arguments(
-                'last', 'first'
+                'last', 'first',
             )
             my_expectation = ('last', 'first')
             self.assertEqual(reality, my_expectation)
 
             reality = src.functions.w_positional_arguments(
-                0, 1
+                0, 1,
             )
             my_expectation = (1, 0)
             self.assertEqual(reality, my_expectation)
@@ -2227,7 +2227,7 @@ test_functions_w_positional_arguments
     :emphasize-lines: 4
 
             reality = src.functions.w_positional_arguments(
-                0, 1
+                0, 1,
             )
             my_expectation = (0, 1)
             self.assertEqual(reality, my_expectation)
@@ -2244,13 +2244,13 @@ test_functions_w_positional_arguments
     :emphasize-lines: 7-11
 
             reality = src.functions.w_positional_arguments(
-                0, 1
+                0, 1,
             )
             my_expectation = (0, 1)
             self.assertEqual(reality, my_expectation)
 
             reality = src.functions.w_positional_arguments(
-                (1, 2, 3, 'n'), [1, 2, 3, 'n']
+                (1, 2, 3, 'n'), [1, 2, 3, 'n'],
             )
             my_expectation = ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
             self.assertEqual(reality, my_expectation)
@@ -2273,7 +2273,7 @@ test_functions_w_positional_arguments
     :emphasize-lines: 4
 
             reality = src.functions.w_positional_arguments(
-                (1, 2, 3, 'n'), [1, 2, 3, 'n']
+                (1, 2, 3, 'n'), [1, 2, 3, 'n'],
             )
             my_expectation = ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
             self.assertEqual(reality, my_expectation)
@@ -2300,9 +2300,9 @@ test_functions_w_positional_arguments
 test_functions_w_keyword_arguments
 *********************************************************************************
 
-There is a problem with using positional arguments - the inputs must always be given in the right order. What if I forget the order the :ref:`function<what is a function?>` expects the inputs? What if I  does something different when it gets input out of order.
+There is a problem with using positional arguments - the inputs must always be given in the right order. What if I forget the order? What if there are many inputs?
 
-I can use `Keyword Arguments`_ to make sure it does what I want even when I send input out of order.
+I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a function?>` always gets the values for the inputs it expects, that way it does what I want even when I send inputs out of order.
 
 ----
 
@@ -2312,40 +2312,37 @@ I can use `Keyword Arguments`_ to make sure it does what I want even when I send
 
 ----
 
-I add a new test to ``test_functions.py``
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 44
-  :emphasize-lines: 11-17
+* I add a new test to ``test_functions.py``
 
-      def test_functions_w_positional_arguments(self):
-          self.assertEqual(
-              src.functions.w_positional_arguments('first', 'last'),
-              ('first', 'last')
-          )
-          self.assertEqual(
-              src.functions.w_positional_arguments('last', 'first'),
-              ('last', 'first')
-          )
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 7-12
 
-      def test_functions_w_keyword_arguments(self):
-          self.assertEqual(
-              src.functions.w_keyword_arguments(
-                  first_input='first', last_input='last',
-              ),
-              ('first', 'last')
-          )
+            reality = src.functions.w_positional_arguments(
+                (1, 2, 3, 'n'), [1, 2, 3, 'n'],
+            )
+            my_expectation = ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+            self.assertEqual(reality, my_expectation)
+
+        def test_functions_w_keyword_arguments(self):
+            reality = src.functions.w_keyword_arguments(
+                first_input='first', last_input='last',
+            )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.functions' has no attribute 'w_keyword_arguments'
+    AttributeError: module 'src.functions' has no attribute 'w_keyword_arguments'
 
-``functions.py`` in the ``src`` folder_ is missing a definition for ``w_keyword_arguments``
+  because ``functions.py`` in the ``src`` folder_ does not have a definition for ``w_keyword_arguments``
 
 ----
 
@@ -2374,6 +2371,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     TypeError: w_keyword_arguments() got an unexpected keyword argument 'first_input'
 
+  because the definition for ``w_keyword_arguments`` does not allow inputs and the test uses two in the call (``first_input`` and ``last_input``)
+
 * I add the name of the unexpected argument_ in parentheses
 
   .. code-block:: python
@@ -2389,7 +2388,26 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     TypeError: w_keyword_arguments() got an unexpected keyword argument 'last_input'. Did you mean
 
-* I add the name for the other unexpected argument_ in parentheses
+  because the definition for ``w_keyword_arguments`` allows one input (``first_input``) and the test uses two in the call (``first_input`` and ``last_input``)
+
+* I add a name for the second argument_ in parentheses
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 1
+
+    def w_keyword_arguments(first_input, second_input):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: w_keyword_arguments() got an unexpected keyword argument 'last_input'. Did you mean 'first_input'?
+
+  because the definition for ``w_keyword_arguments`` allows two inputs with the names ``first_input`` and ``second_input``, and the test calls the :ref:`function<what is a function?>` with ``first_input`` and ``last_input``, the names must match
+
+* I change the name of the second argument to match the name used in the call
 
   .. code-block:: python
     :lineno-start: 30
@@ -2404,7 +2422,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: None != ('first', 'last')
 
-* I change the `return statement`_
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects ``('first', 'last')``
+
+* I change the `return statement`_ to make the :ref:`function<what is a function?>` return its inputs
 
   .. code-block:: python
     :lineno-start: 30
@@ -2423,25 +2443,27 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add another test with the `keyword arguments`_ given out of order in ``test_functions.py``
+* I add another :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order in :ref:`test_function_w_keyword_arguments` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 111
     :emphasize-lines: 8-13
 
         def test_functions_w_keyword_arguments(self):
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    first_input='first', last_input='last',
-                ),
-                ('first', 'last')
+            reality = src.functions.w_keyword_arguments(
+                first_input='first', last_input='last',
             )
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    last_input='last', first_input='first',
-                ),
-                ('last', 'first')
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                last_input='last', first_input='first',
             )
+            my_expectation = ('last', 'first')
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2449,47 +2471,59 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: Tuples differ: ('first', 'last') != ('last', 'first')
 
-  the order stayed the same
-
-* I change the expectation to match
+  the order the :ref:`function<what is a function?>` returns the values stayed the same because it always returns ``first_input, last_input``. Compare this call that uses :ref:`positional arguments<test_functions_w_positional_arguments>` and its result
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 12
+
+    src.functions.w_positional_arguments('last', 'first')
+    ('last', 'first')
+
+  with this call that uses :ref:`keyword arguments<test_functions_w_keyword_arguments>` and its result
+
+  .. code-block:: python
+
+    src.functions.w_keyword_arguments(
+        last_input='last', first_input='first',
+    )
+    ('first', 'last')
+
+  in both cases the :ref:`function<what is a function?>` returns ``first_input, last_input``
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 118
+    :emphasize-lines: 4
     :emphasize-text: last
 
-        def test_functions_w_keyword_arguments(self):
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    first_input='first', last_input='last',
-                ),
-                ('first', 'last')
+            reality = src.functions.w_keyword_arguments(
+                last_input='last', first_input='first',
             )
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    last_input='last', first_input='first',
-                ),
-                ('first', 'last')
-            )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
 
-  the test passes. I can give the input in any order when I use `keyword arguments`_
 
-* I can still call the :ref:`function<what is a function?>` the same way I did in :ref:`test_functions_w_positional_arguments` - without using the names. I add an :ref:`assertion<what is an assertion?>` to show this
+    # Exceptions seen
+
+  the test passes. The order does not matter when I use `keyword arguments`_.
+
+* I can still call the :ref:`function<what is a function?>` the same way I did in :ref:`test_functions_w_positional_arguments` (without using the names). I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 7-10
+    :lineno-start: 118
+    :emphasize-lines: 7-11
 
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    last_input='last', first_input='first',
-                ),
-                ('first', 'last')
+            reality = src.functions.w_keyword_arguments(
+                last_input='last', first_input='first',
             )
-            self.assertEqual(
-                src.functions.w_keyword_arguments('last', 'first'),
-                ('first', 'last')
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                'last', 'first',
             )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -2500,37 +2534,130 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: Tuples differ: ('last', 'first') != ('first', 'last')
 
-  the :ref:`function<what is a function?>` uses the order (positions) when I do not use the names
+  because the :ref:`function<what is a function?>` uses the order (positions) when I do not use the names
 
 * I change the expectation to match
 
   .. code-block:: python
-    :lineno-start: 54
-    :emphasize-lines: 16
+    :lineno-start: 124
+    :emphasize-lines: 4
     :emphasize-text: first
 
-        def test_functions_w_keyword_arguments(self):
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    first_input='first', last_input='last',
-                ),
-                ('first', 'last')
+            reality = src.functions.w_keyword_arguments(
+                'last', 'first',
             )
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    last_input='last', first_input='first',
-                ),
-                ('first', 'last')
-            )
-            self.assertEqual(
-                src.functions.w_keyword_arguments('last', 'first'),
-                ('last', 'first')
-            )
+            my_expectation = ('last', 'first')
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
   the test passes
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 7-11
+
+            reality = src.functions.w_keyword_arguments(
+                'last', 'first',
+            )
+            my_expectation = ('last', 'first')
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                last_input=0, first_input=1,
+            )
+            my_expectation = (0, 1)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: (1, 0) != (0, 1)
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 4
+
+            reality = src.functions.w_keyword_arguments(
+                last_input=0, first_input=1,
+            )
+            my_expectation = (1, 0)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 7-14
+    :emphasize-text: first
+
+            reality = src.functions.w_keyword_arguments(
+                last_input=0, first_input=1,
+            )
+            my_expectation = (1, 0)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                first_input={'key': 'value'},
+                last_input={1, 2, 3, 'n'},
+            )
+            my_expectation = (
+                {1, 2, 3, 'n'}, {'key': 'value'}
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ({'key': 'value'}, {1, 2, 3, 'n'}) != ({1, 2, 3, 'n'}, {'key': 'value'})
+
+* I change ``reality`` to match ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 2-3
+    :emphasize-text: last
+
+            reality = src.functions.w_keyword_arguments(
+                last_input={'key': 'value'},
+                first_input={1, 2, 3, 'n'},
+            )
+            my_expectation = (
+                {'key': 'value'}, {1, 2, 3, 'n'}
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_functions_w_keyword_arguments'
+
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 .. NOTE::
 
@@ -2555,9 +2682,36 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     .. code-block:: python
       :emphasize-text: first
 
-      w_positional_arguments('first', 'last') == return ('first', 'last')
-      w_positional_arguments('last', 'first') == return ('last', 'first')
-         w_keyword_arguments('last', 'first') == return ('last', 'first')
+      w_positional_arguments('first', 'last')
+      return ('first', 'last')
+
+      w_positional_arguments('last', 'first')
+      return ('last', 'first')
+
+      w_positional_arguments(0, 1)
+      return (0, 1)
+
+      w_positional_arguments((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+      return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+
+      w_keyword_arguments(
+          first_input='first', last_input='last',
+      )
+      return ('first', 'last')
+
+      w_keyword_arguments(
+          last_input='last', first_input='first',
+      )
+      return ('first', 'last')
+
+      w_keyword_arguments(last_input=0, first_input=1,)
+      return (1, 0)
+
+      w_keyword_arguments(
+          first_input={'key': 'value'},
+          last_input={1, 2, 3, 'n'},
+      )
+      return ({'key': 'value'}, {1, 2, 3, 'n'})
 
   * I can give the input in any order when I use `keyword arguments`_ because I give values for the names in parentheses from the :ref:`function<what is a function?>` definition when I call it
 
