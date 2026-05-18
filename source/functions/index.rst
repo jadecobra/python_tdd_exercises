@@ -991,7 +991,7 @@ the test passes
 
     git commit --all --message 'add test_why_use_a_function'
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 
 -----
@@ -1213,7 +1213,7 @@ the test passes
 
     git commit --all --message 'extract add_x function'
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 :ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the changing results?<a better way to handle the results changing>`
 
@@ -1348,7 +1348,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
     git commit --all --message 'add test_making_a_function_w_pass'
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 :ref:`I can make a function with pass<test_making_a_function_w_pass>`
 
@@ -1446,7 +1446,7 @@ the test passes
 
     git commit --all --message 'add test_making_a_function_w_return'
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 I have two :ref:`functions<what is a function?>` with different statements, and the tests show that they both return :ref:`None<what is None?>`
 
@@ -1586,7 +1586,7 @@ the test passes
 
     git commit --all --message 'add test_making_a_function_w_return_none'
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 I have three :ref:`functions<what is a function?>` with different statements, and the tests show that they all return :ref:`None<what is None?>`
 
@@ -1754,7 +1754,7 @@ the test passes
 
     git commit --all --message 'add test_what_happens_after_a_function_returns'
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 ----
 
@@ -1849,7 +1849,7 @@ constant functions_ always return the same thing when they are called
 
     git commit --all --message 'add test_constant_function'
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 A constant :ref:`function<what is a function?>` always returns the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times (who's counting?)
 
@@ -2009,7 +2009,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
 
 
-  the terminal_ shows the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send something and get it back, I can start making changes to see how it affects the output.
 
@@ -2133,7 +2133,7 @@ test_functions_w_positional_arguments
     def w_positional_arguments(first_input, last_input):
         return first_input, last_input
 
-  the test passes
+  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in :ref:`assertion<what is an assertion?>` sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input`` which is equal to ``my_expectation``
 
 ----
 
@@ -2146,18 +2146,21 @@ test_functions_w_positional_arguments
 * The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this in  :ref:`test_functions_w_positional_arguments` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 6-9
+    :lineno-start: 86
+    :emphasize-lines: 8-12
 
         def test_functions_w_positional_arguments(self):
-            self.assertEqual(
-                src.functions.w_positional_arguments('first', 'last'),
-                ('first', 'last')
+            reality = src.functions.w_positional_arguments(
+                'first', 'last'
             )
-            self.assertEqual(
-                src.functions.w_positional_arguments('last', 'first'),
-                ('first', 'last')
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_positional_arguments(
+                'last', 'first'
             )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -2168,61 +2171,126 @@ test_functions_w_positional_arguments
 
     AssertionError: Tuples differ: ('last', 'first') != ('first', 'last')
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``
+
+* I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 8
+    :lineno-start: 93
+    :emphasize-lines: 4
     :emphasize-text: last
 
-        def test_functions_w_positional_arguments(self):
-            self.assertEqual(
-                src.functions.w_positional_arguments('first', 'last'),
-                ('first', 'last')
+            reality = src.functions.w_positional_arguments(
+                'last', 'first'
             )
-            self.assertEqual(
-                src.functions.w_positional_arguments('last', 'first'),
-                ('last', 'first')
-            )
+            my_expectation = ('last', 'first')
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
 
-  .. NOTE::
+* I add another :ref:`assertion<what is an assertion?>`
 
-    - ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_ will always
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 7-11
 
-      .. code-block:: python
-        :emphasize-text: first_input last_input
+            reality = src.functions.w_positional_arguments(
+                'last', 'first'
+            )
+            my_expectation = ('last', 'first')
+            self.assertEqual(reality, my_expectation)
 
-        return first_input, last_input
+            reality = src.functions.w_positional_arguments(
+                0, 1
+            )
+            my_expectation = (1, 0)
+            self.assertEqual(reality, my_expectation)
 
-    - ``src.functions.w_positional_arguments('first', 'last')`` calls ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with ``'first'`` and ``'last'`` as input, which is the same as
 
-      .. code-block:: python
+    # Exceptions seen
 
-        return 'first', 'last'
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-      because ``first_input`` is ``'first'`` and ``last_input`` is ``'last'`` in the call to ``w_positional_arguments`` which will always
+  .. code-block:: python
 
-      .. code-block:: python
-        :emphasize-text: first_input last_input
+    AssertionError: Tuples differ: (0, 1) != (1, 0)
 
-        return first_input, last_input
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``0`` as ``first_input`` and ``1`` as ``last_input``
 
-    - ``src.functions.w_positional_arguments('last', 'first')`` calls ``w_positional_arguments`` in ``functions.py`` in the ``src`` folder_, with ``'last'`` and ``'first'`` as input, which is the same as
+* I change ``my_expectation`` to match ``reality``
 
-      .. code-block:: python
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 4
 
-        return 'last', 'first'
+            reality = src.functions.w_positional_arguments(
+                0, 1
+            )
+            my_expectation = (0, 1)
+            self.assertEqual(reality, my_expectation)
 
-      because ``first_input`` is ``'last'`` and ``last_input`` is ``'first'`` in the call to ``w_positional_arguments`` which will always
 
-      .. code-block:: python
-        :emphasize-text: first_input last_input
+    # Exceptions seen
 
-        return first_input, last_input
+  the test passes
 
-    I must give input in the order a :ref:`function<what is a function?>` expects when I use `positional arguments`_, because it uses input in the order it gets them
+* I add one more :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 7-11
+
+            reality = src.functions.w_positional_arguments(
+                0, 1
+            )
+            my_expectation = (0, 1)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_positional_arguments(
+                (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            )
+            my_expectation = ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ((1, 2, 3, 'n'), [1, 2, 3, 'n']) != ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
+
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``(1, 2, 3, 'n')`` as ``first_input`` and ``[1, 2, 3, 'n']`` as ``last_input``
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 105
+    :emphasize-lines: 4
+
+            reality = src.functions.w_positional_arguments(
+                (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            )
+            my_expectation = ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_functions_w_positional_arguments'
+
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 :ref:`I can call functions with positional arguments<test_functions_w_positional_arguments>`
 
@@ -2232,7 +2300,7 @@ test_functions_w_positional_arguments
 test_functions_w_keyword_arguments
 *********************************************************************************
 
-There is a problem with using positional arguments, the inputs must always be given in the right order. This means the :ref:`function<what is a function?>` does something different when it gets input out of order.
+There is a problem with using positional arguments - the inputs must always be given in the right order. What if I forget the order the :ref:`function<what is a function?>` expects the inputs? What if I  does something different when it gets input out of order.
 
 I can use `Keyword Arguments`_ to make sure it does what I want even when I send input out of order.
 
