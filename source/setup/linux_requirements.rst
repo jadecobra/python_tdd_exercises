@@ -30,7 +30,13 @@ Linux/Windows Subsystem for Linux requirements
   .. code-block:: shell
     :emphasize-lines: 1
 
-    sudo apt install python3 python3-venv curl --yes
+    sudo apt install python3 python3-venv --yess
+
+* type this in the terminal_ to install curl_
+
+  .. code-block:: shell
+
+    sudo apt install curl --yes
 
 * type this to install the `uv Python package manager`_
 

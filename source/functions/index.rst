@@ -2742,7 +2742,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 test_functions_w_positional_and_keyword_arguments
 *********************************************************************************
 
-I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>`, which is useful when I want required arguments and optional arguments.
 
 ----
 
@@ -2752,49 +2752,38 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
 ----
 
-I add a failing test to ``test_functions.py``
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 54
-  :emphasize-lines: 19-25
+* I add a failing test to ``test_functions.py``
 
-        def test_functions_w_keyword_arguments(self):
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    first_input='first', last_input='last',
-                ),
-                ('first', 'last')
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 8-13
+
+            reality = src.functions.w_keyword_arguments(
+                first_input={'key': 'value'},
+                last_input={1, 2, 3, 'n'},
             )
-            self.assertEqual(
-                src.functions.w_keyword_arguments(
-                    last_input='last', first_input='first',
-                ),
-                ('first', 'last')
-            )
-            self.assertEqual(
-                src.functions.w_keyword_arguments('last', 'first'),
-                ('last', 'first')
-            )
+            my_expectation = ({'key': 'value'}, {1, 2, 3, 'n'})
+            self.assertEqual(reality, my_expectation)
 
         def test_functions_w_positional_and_keyword_arguments(self):
-            self.assertEqual(
-                src.functions.w_positional_and_keyword_arguments(
-                    last_input='last', 'first',
-                ),
-                ('first', 'last')
+            reality = src.functions.w_positional_and_keyword_arguments(
+                last_input='last', 'first',
             )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
+  the terminal_ is my friend, and shows SyntaxError_
 
-the terminal_ is my friend, and shows SyntaxError_
+  .. code-block:: shell
 
-.. code-block:: shell
+    SyntaxError: positional argument follows keyword argument
 
-  SyntaxError: positional argument follows keyword argument
-
-I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before :ref:`positional arguments<test_functions_w_positional_arguments>`
+  because I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before :ref:`positional arguments<test_functions_w_positional_arguments>`
 
 ----
 
@@ -2804,10 +2793,10 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
 
 ----
 
-* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+* I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 151
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -2821,22 +2810,26 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
 * I change the order of the arguments to follow Python_ rules
 
   .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 4
+    :lineno-start: 143
+    :emphasize-lines: 3
 
         def test_functions_w_positional_and_keyword_arguments(self):
-            self.assertEqual(
-                src.functions.w_positional_and_keyword_arguments(
-                    'first', last_input='last',
-                ),
-                ('first', 'last')
+            reality = src.functions.w_positional_and_keyword_arguments(
+                'first', last_input='last',
             )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
     AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_arguments'
+
+  because ``functions.py`` does not have anything named ``w_positional_and_keyword_arguments``
 
 * I add a :ref:`function<what is a function?>` to ``functions.py``
 
@@ -2857,7 +2850,9 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
 
     TypeError: w_positional_and_keyword_arguments() got an unexpected keyword argument 'last_input'
 
-* I add the name to the :ref:`function<what is a function?>` definition in parentheses in ``functions.py``
+  because the definition for ``w_positional_and_keyword_arguments`` does not allow inputs and the test called the :ref:`function<what is a function>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
+
+* I add the name to the :ref:`function<what is a function?>` definition in parentheses, in ``functions.py``
 
   .. code-block:: python
     :lineno-start: 34
@@ -2872,6 +2867,8 @@ I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before
   .. code-block:: shell
 
     TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last_input'
+
+  because the definition for ``w_positional_and_keyword_arguments`` takes on argument, and the test calls the :ref:`function<what is a function?>`
 
 * I add another name in parentheses
 
