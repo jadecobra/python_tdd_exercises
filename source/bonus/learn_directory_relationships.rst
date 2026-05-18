@@ -1920,15 +1920,6 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
       the terminal_ goes back to the command line
 
-      .. ADMONITION:: on Windows_ without `Windows Subsystem for Linux`_
-
-        use `New-Item`_ in place of ``touch``
-
-        .. code-block:: PowerShell
-          :emphasize-lines: 1
-
-          New-Item a_file_in_doe
-
     * I use touch_ to make an empty hidden file_ in ``doe``
 
       .. code-block:: python
