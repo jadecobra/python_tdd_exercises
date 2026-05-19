@@ -1487,14 +1487,18 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 * I add another failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 4-5
+    :lineno-start: 57
+    :emphasize-lines: 6-9
 
         def test_making_a_function_w_return(self):
-            self.assertIsNone(src.functions.w_return())
+            reality = src.functions.w_return()
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
         def test_making_a_function_w_return_none(self):
-            self.assertIsNone(src.functions.w_return_none())
+            reality = src.functions.w_return_none()
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -1564,7 +1568,7 @@ the test passes
 
   .. code-block:: python
 
-    AssertionError: 'something' is not None
+    AssertionError: 'something' != None
 
   because the test expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
 
@@ -1631,7 +1635,7 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 28
+    :lineno-start: 62
     :emphasize-lines: 6-9
 
         def test_making_a_function_w_return_none(self):
@@ -1861,7 +1865,7 @@ A constant :ref:`function<what is a function?>` always returns the same thing wh
 test_identity_function
 *********************************************************************************
 
-The identity :ref:`function<what is a function?>` returns its input as output, it's also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`
+The identity :ref:`function<what is a function?>` returns its input as output, it is also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`
 
 ----
 
@@ -1898,7 +1902,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 
     AttributeError: module 'src.functions' has no attribute 'identity'
 
-  because ``functions.py`` has no ``identity``?
+  is it because ``functions.py`` has no ``identity``?
 
 ----
 
@@ -1908,7 +1912,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 
 ----
 
-* I add a :ref:`function<what is a function?>` to ``functions.py``
+* I add a :ref:`function<what is a function?>` for ``identity`` to ``functions.py``
 
   .. code-block:: python
     :lineno-start: 18
@@ -1942,7 +1946,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
     # AttributeError
     # TypeError
 
-* I add a name in parentheses for the ``identity`` :ref:`function<what is a function?>` to take input in ``functions.py``
+* I add a name in parentheses for the ``identity`` :ref:`function<what is a function?>` to take input, in ``functions.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -2005,9 +2009,9 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1git commit --all --message 'add test_identity_function'
+    :emphasize-lines: 1
 
-
+    git commit --all --message 'add test_identity_function'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
@@ -2143,23 +2147,63 @@ test_functions_w_positional_arguments
 
 ----
 
-* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this in  :ref:`test_functions_w_positional_arguments` in ``test_functions.py``
+* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'first'`` and ``'last'``
 
   .. code-block:: python
     :lineno-start: 86
-    :emphasize-lines: 8-12
+    :emphasize-lines: 2
 
         def test_functions_w_positional_arguments(self):
+            first, last = 'first', 'last'
+
             reality = src.functions.w_positional_arguments(
                 'first', 'last',
             )
             my_expectation = ('first', 'last')
             self.assertEqual(reality, my_expectation)
 
+
+    # Exceptions seen
+
+* I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 5, 7
+
+        def test_functions_w_positional_arguments(self):
+            first, last = 'first', 'last'
+
             reality = src.functions.w_positional_arguments(
-                'last', 'first',
+                first, last,
             )
-            my_expectation = ('first', 'last')
+            my_expectation = (first, last)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green
+
+* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this in  :ref:`test_functions_w_positional_arguments` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 10-14
+
+        def test_functions_w_positional_arguments(self):
+            first, last = 'first', 'last'
+
+            reality = src.functions.w_positional_arguments(
+                first, last,
+            )
+            my_expectation = (first, last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_positional_arguments(
+                last, first,
+            )
+            my_expectation = (first, last)
             self.assertEqual(reality, my_expectation)
 
 
@@ -2176,14 +2220,14 @@ test_functions_w_positional_arguments
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 93
+    :lineno-start: 95
     :emphasize-lines: 4
     :emphasize-text: last
 
             reality = src.functions.w_positional_arguments(
-                'last', 'first',
+                last, first,
             )
-            my_expectation = ('last', 'first')
+            my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
 
 
@@ -2194,19 +2238,20 @@ test_functions_w_positional_arguments
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 7-11
+    :lineno-start: 95
+    :emphasize-lines: 7-12
 
             reality = src.functions.w_positional_arguments(
-                'last', 'first',
+                last, first,
             )
-            my_expectation = ('last', 'first')
+            my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
 
+            first, last = 0, 1
             reality = src.functions.w_positional_arguments(
-                0, 1,
+                first, last
             )
-            my_expectation = (1, 0)
+            my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
 
 
@@ -2223,13 +2268,14 @@ test_functions_w_positional_arguments
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 99
-    :emphasize-lines: 4
+    :lineno-start: 101
+    :emphasize-lines: 5
 
+            first, last = 0, 1
             reality = src.functions.w_positional_arguments(
-                0, 1,
+                first, last
             )
-            my_expectation = (0, 1)
+            my_expectation = (first, last)
             self.assertEqual(reality, my_expectation)
 
 
@@ -2266,16 +2312,17 @@ test_functions_w_positional_arguments
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``(1, 2, 3, 'n')`` as ``first_input`` and ``[1, 2, 3, 'n']`` as ``last_input``
 
-* I change ``my_expectation`` to match ``reality``
+* I change ``reality`` to match ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 105
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
+            first, last = (1, 2, 3, 'n'), [1, 2, 3, 'n']
             reality = src.functions.w_positional_arguments(
-                (1, 2, 3, 'n'), [1, 2, 3, 'n'],
+                last, first
             )
-            my_expectation = ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+            my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
 
 
