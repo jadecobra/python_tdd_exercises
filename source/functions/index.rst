@@ -3604,7 +3604,7 @@ the test passes
 test_functions_w_unknown_arguments
 *********************************************************************************
 
-I can make functions_ that take any number of :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>` arguments. This means I do not need to know how many inputs are sent to the :ref:`function<what is a function?>` when it is called
+I can make functions_ that take any number of :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>` arguments. This means I do not need to know how many inputs are sent to the :ref:`function<what is a function?>` when it is called.
 
 ----
 
@@ -3619,26 +3619,22 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 * I add a new test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 11-17
+    :lineno-start: 192
+    :emphasize-lines: 8-13
 
-        def test_functions_w_optional_arguments(self):
-            self.assertEqual(
-                src.functions.w_optional_arguments('jane'),
-                ('jane', 'doe')
+            last_name = 'smith'
+            reality = src.functions.w_optional_arguments(
+                last_input=last_name, first_input=first_name,
             )
-            self.assertEqual(
-                src.functions.w_optional_arguments('joe', 'blow'),
-                ('joe', 'blow')
-            )
+            my_expectation = (first_name, last_name)
+            self.assertEqual(reality, my_expectation)
 
         def test_functions_w_unknown_arguments(self):
-            self.assertEqual(
-                src.functions.w_unknown_arguments(
-                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
-                ),
-                None
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3,
             )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -3648,6 +3644,8 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
   .. code-block:: shell
 
     AttributeError: module 'src.functions' has no attribute 'w_unknown_arguments'. Did you mean: 'w_keyword_arguments'?
+
+  because ``functions.py`` does not have ``w_unknown_arguments``
 
 ----
 
@@ -3706,7 +3704,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
   .. code-block:: shell
 
-    TypeError: w_unknown_arguments() takes 0 positional arguments but 4 were given
+    TypeError: w_unknown_arguments() takes 0 positional arguments but 2 were given
 
 * I add a name for the first :ref:`positional argument<test_functions_w_positional_arguments>`
 
@@ -3742,13 +3740,13 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
     TypeError: w_unknown_arguments() takes 1 positional argument but 4 were given
 
-* I can add names for the other :ref:`positional arguments<test_functions_w_positional_arguments>`, or I can use what Python_ has to handle any number of :ref:`positional arguments<test_functions_w_positional_arguments>`
+* I add a name for the other :ref:`positional argument<test_functions_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 42
     :emphasize-lines: 1
 
-    def w_unknown_arguments(*args, **kwargs):
+    def w_unknown_arguments(x, y, **kwargs):
         return None
 
   the test passes
@@ -3761,13 +3759,117 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
 ----
 
-* ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to make it clearer
+* I add an :ref:`assertion<what is an assertion?>` to see what happens if I call the :ref:`function<what is a function?>` with 3 :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 8-12
+
+        def test_functions_w_unknown_arguments(self):
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3,
+            )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3, c=4,
+            )
+            my_expectation = ()
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != ()
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 206
+    :emphasize-lines: 4
+
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3, c=4,
+            )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes because the :ref:`function<what is a function?>` can take any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many are in the call
+
+* I add an :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with 3 :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 206
+    :emphasize-lines: 7-11
+
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3, c=4,
+            )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_unknown_arguments(
+                0, 1, 2, a=3, b=4, c=5,
+            )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: w_unknown_arguments() takes 2 positional arguments but 3 were given
+
+  the :ref:`function<what is a function?>` definition only allows two :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+* I change the definition of the ``w_unknown_arguments`` :ref:`function<what is a function?>` to make it take three :ref:`positional arguments<test_functions_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 42
     :emphasize-lines: 1
 
-    def w_unknown_arguments(*positional_arguments, **keyword_arguments):
+    def w_unknown_arguments(x, y, z, **kwargs):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    TypeError: w_unknown_arguments() missing 1 required positional argument: 'z'
+
+  because the previous :ref:`assertion<what is an assertion?>` calls the :ref:`function<what is a function?>` with two :ref:`positional arguments<test_functions_w_positional_arguments>` and it now takes three
+
+* Python_ has a way to handle any number of :ref:`positional arguments<test_functions_w_positional_arguments>`. I use it
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 1
+
+    def w_unknown_arguments(*args, **kwargs):
+        return None
+
+  the test passes
+
+* ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 42
+    :emphasize-lines: 1-3
+
+    def w_unknown_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
         return None
 
   the test is still green
@@ -3776,34 +3878,377 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 2
+    :emphasize-lines: 4
 
-    def w_unknown_arguments(*positional_arguments, **keyword_arguments):
+    def w_unknown_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
         return positional_arguments, keyword_arguments
 
   the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
-    AssertionError: ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != None
+    AssertionError: ((0, 1), {'a': 2, 'b': 3}) != None
 
   I get a tuple_ that has another tuple_ and a :ref:`dictionary<what is a dictionary?>`
 
-* I copy the tuple_ from the terminal_ and use it to change the expectation in :ref:`test_functions_w_unknown_arguments` in ``test_functions.py``
+* I change ``my_expectation`` to match ``reality`` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 6
+    :lineno-start: 199
+    :emphasize-lines: 5
 
         def test_functions_w_unknown_arguments(self):
-            self.assertEqual(
-                src.functions.w_unknown_arguments(
-                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
-                ),
-                ((0, 1, 2, 3), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3,
             )
+            my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            self.assertEqual(reality, my_expectation)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: ((0, 1), {'a': 2, 'b': 3, 'c': 4}) != None
+
+* I change ``my_expectation`` to match ``reality`` in the second :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 11-13
+
+        def test_functions_w_unknown_arguments(self):
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3,
+            )
+            my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3, c=4,
+            )
+            my_expectation = (
+                (0, 1), {'a': 2, 'b': 3, 'c': 4}
+            )
+            self.assertEqual(reality, my_expectation)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}) != None
+
+* I change ``my_expectation`` to match ``reality`` in the last :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 19-21
+
+        def test_functions_w_unknown_arguments(self):
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3,
+            )
+            my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3, c=4,
+            )
+            my_expectation = (
+                (0, 1), {'a': 2, 'b': 3, 'c': 4}
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_unknown_arguments(
+                0, 1, 2, a=3, b=4, c=5,
+            )
+            my_expectation = (
+                (0, 1, 2), {'a': 3, 'b': 4, 'c': 5}
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test passes
+
+* I add :ref:`variables<what is a variable?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 2
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3,
+            )
+            my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            self.assertEqual(reality, my_expectation)
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the values
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 4-5, 7-8
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3,
+                a_tuple, a_dictionary
+            )
+            # my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: (((0, 1), {'a': '2', 'b': '3'}), {}) != ((0, 1), {'a': '2', 'b': '3'})
+
+  because passing in the values this way means I am sending in two :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+* I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as individual arguments
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 5
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':'2', 'b':'3'}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3,
+                *a_tuple, **a_dictionary
+            )
+            # my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+  the test passes
+
+* I add :ref:`variables<what is a variable?>` to the next :ref:`assertion<what is an assertion?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 11-12
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3,
+                *a_tuple, **a_dictionary
+            )
+            # my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            reality = src.functions.w_unknown_arguments(
+                0, 1, a=2, b=3, c=4,
+            )
+            my_expectation = (
+                (0, 1), {'a': 2, 'b': 3, 'c': 4}
+            )
+            self.assertEqual(reality, my_expectation)
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 14-15, 18-19
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3,
+                *a_tuple, **a_dictionary
+            )
+            # my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3, c=4,
+                a_tuple, a_dictionary
+            )
+            my_expectation = (
+                # (0, 1), {'a': 2, 'b': 3, 'c': 4}
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: (((0, 1), {'a': 2, 'b': 3, 'c': 4}), {}) != ((0, 1), {'a': 2, 'b': 3, 'c': 4})
+
+  because passing in the values this way means I am sending in two :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+* I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as individual arguments
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 15
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3,
+                *a_tuple, **a_dictionary
+            )
+            # my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3, c=4,
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                # (0, 1), {'a': 2, 'b': 3, 'c': 4}
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+  the test passes
+
+* I add :ref:`variables<what is a variable?>` to the third :ref:`assertion<what is an assertion?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 23-24
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3,
+                *a_tuple, **a_dictionary
+            )
+            # my_expectation = ((0, 1), {'a': 2, 'b': 3})
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, a=2, b=3, c=4,
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                # (0, 1), {'a': 2, 'b': 3, 'c': 4}
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            reality = src.functions.w_unknown_arguments(
+                0, 1, 2, a=3, b=4, c=5,
+            )
+            my_expectation = (
+                (0, 1, 2), {'a': 3, 'b': 4, 'c': 5}
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 221
+    :emphasize-lines: 4-5, 8-9
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, 2, a=3, b=4, c=5,
+                a_tuple, a_dictionary
+            )
+            my_expectation = (
+                # (0, 1, 2), {'a': 3, 'b': 4, 'c': 5}
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: (((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}), {}) != ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5})
+
+  because passing in the values this way means I am sending in two :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+* I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as individual arguments
+
+  .. code-block:: python
+    :lineno-start: 221
+    :emphasize-lines: 5
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            reality = src.functions.w_unknown_arguments(
+                # 0, 1, 2, a=3, b=4, c=5,
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                # (0, 1, 2), {'a': 3, 'b': 4, 'c': 5}
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 199
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            reality = src.functions.w_unknown_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            reality = src.functions.w_unknown_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 ----
 
@@ -3811,26 +4256,29 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 how Python reads positional arguments
 *********************************************************************************
 
-I want to see what happens when I call ``w_unknown_arguments`` with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`. I add an :ref:`assertion<what is an assertion?>`
+I add an :ref:`assertion<what is an assertion?>` to see what happens when I call ``w_unknown_arguments`` with ONLY :ref:`positional arguments<test_functions_w_positional_arguments>`.
 
 .. code-block:: python
-  :lineno-start: 90
-  :emphasize-lines: 8-11
+  :lineno-start: 217
+  :emphasize-lines: 11-14
 
-      def test_functions_w_unknown_arguments(self):
-          self.assertEqual(
-              src.functions.w_unknown_arguments(
-                  0, 1, 2, 3, a=4, b=5, c=6, d=7,
-              ),
-              ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
-          )
-          self.assertEqual(
-              src.functions.w_unknown_arguments(0, 1, 2, 3),
-              ()
-          )
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            reality = src.functions.w_unknown_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1, 2, 3)
+            reality = src.functions.w_unknown_arguments(*a_tuple)
+            my_expectation = ()
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -3838,21 +4286,21 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: Tuples differ: ((0, 1, 2, 3), {}) != ()
 
-I change the expectation to match
+I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
   :lineno-start: 97
   :emphasize-lines: 3
 
-          self.assertEqual(
-              src.functions.w_unknown_arguments(0, 1, 2, 3),
-              ((0, 1, 2, 3), {})
-          )
+          a_tuple = (0, 1, 2, 3)
+          reality = src.functions.w_unknown_arguments(*a_tuple)
+          my_expectation = (a_tuple, {})
+          self.assertEqual(reality, my_expectation)
 
 
   # Exceptions seen
 
-the test passes. The :ref:`function<what is a function?>` reads the :ref:`positional arguments<test_functions_w_positional_arguments>` as a tuple_ (things in parentheses (``()``) separated by commas)
+the test passes. The :ref:`function<what is a function?>` gives me back the :ref:`positional arguments<test_functions_w_positional_arguments>` in a tuple_ (things in parentheses (``()``) separated by commas) and gives me an empty :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) for the :ref:`keyword arguments<test_functions_w_keyword_arguments>` because I did not give any in the call
 
 ----
 
@@ -3864,17 +4312,20 @@ how Python reads keyword arguments
 I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
 .. code-block:: python
-  :lineno-start: 97
-  :emphasize-lines: 5-8
+  :lineno-start: 227
+  :emphasize-lines: 6-11
 
-          self.assertEqual(
-              src.functions.w_unknown_arguments(0, 1, 2, 3),
-              ((0, 1, 2, 3), {})
+          a_tuple = (0, 1, 2, 3)
+          reality = src.functions.w_unknown_arguments(*a_tuple)
+          my_expectation = (a_tuple, {})
+          self.assertEqual(reality, my_expectation)
+
+          a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
+          reality = src.functions.w_unknown_arguments(
+              **a_dictionary
           )
-          self.assertEqual(
-              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-              ()
-          )
+          my_expectation = ()
+          self.assertEqual(reality, my_expectation)
 
 
   # Exceptions seen
@@ -3885,21 +4336,23 @@ the terminal_ is my friend, and shows
 
   AssertionError: Tuples differ: ((), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != ()
 
-I change the expectation to match
+I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 101
-  :emphasize-lines: 3
+  :lineno-start: 232
+  :emphasize-lines: 5
 
-          self.assertEqual(
-              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-              ((), dict(a=4, b=5, c=6, d=7))
+          a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
+          reality = src.functions.w_unknown_arguments(
+              **a_dictionary
           )
+          my_expectation = ((), a_dictionary)
+          self.assertEqual(reality, my_expectation)
 
 
   # Exceptions seen
 
-the test passes. The :ref:`function<what is a function?>` reads the :ref:`keyword arguments<test_functions_w_keyword_arguments>` as a :ref:`dictionary<dictionaries>` (:ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces (``{}``) separated by commas)
+the test passes. The :ref:`function<what is a function?>` gives me back the :ref:`positional arguments<test_functions_w_positional_arguments>` as an empty tuple_ (things in parentheses (``()``) separated by commas) because I did not give any in the call, it gives me a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) of the :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
 ----
 
