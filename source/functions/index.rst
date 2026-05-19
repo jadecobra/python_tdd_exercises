@@ -73,7 +73,7 @@ Questions to think about as I go through the chapter
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
 * :ref:`what is a keyword argument?<test_functions_w_keyword_arguments>`
-* :ref:`how can I make arguments a choice in a function?<test_functions_w_default_arguments>`
+* :ref:`how can I make arguments a choice in a function?<test_functions_w_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_functions_w_unknown_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_functions_w_unknown_arguments>`
 * :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
@@ -2937,7 +2937,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 ----
 
 *********************************************************************************
-test_functions_w_default_arguments
+test_functions_w_optional_arguments
 *********************************************************************************
 
 I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a :ref:`function<what is a function?>` to take inputs that are needed and inputs that are optional
@@ -2955,22 +2955,24 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 * I add a failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 9-13
+    :lineno-start: 143
+    :emphasize-lines: 10-15
 
         def test_functions_w_positional_and_keyword_arguments(self):
-            self.assertEqual(
+            reality = (
                 src.functions.w_positional_and_keyword_arguments(
                     'first', last_input='last',
-                ),
-                ('first', 'last')
+                )
             )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
 
-        def test_functions_w_default_arguments(self):
-            self.assertEqual(
-                src.functions.w_default_arguments('jane', last_name='doe'),
-                ('jane', 'doe')
+        def test_functions_w_optional_arguments(self):
+            reality = src.functions.w_optional_arguments(
+                'jane', last_input='doe',
             )
+            my_expectation = ('jane', 'doe')
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -2979,7 +2981,9 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_default_arguments'. Did you mean: 'w_keyword_arguments'?
+    AttributeError: module 'src.functions' has no attribute 'w_optional_arguments'. Did you mean: 'w_positional_arguments'?
+
+  because ``functions.py`` does not have a definition for ``w_optional_arguments``
 
 ----
 
@@ -2989,18 +2993,20 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 
 ----
 
-I add a :ref:`function<what is a function?>` to ``functions.py``
+I add a :ref:`function<what is a function?>` for ``w_optional_arguments`` to ``functions.py``
 
 .. code-block:: python
   :lineno-start: 34
-  :emphasize-lines: 5-6
+  :emphasize-lines: 7-8
 
-  def w_positional_and_keyword_arguments(first_input, last_input):
-      return first_input, last_input
+    def w_positional_and_keyword_arguments(
+            first_input, last_input
+        ):
+        return first_input, last_input
 
 
-  def w_default_arguments(first_name, last_name):
-      return first_name, last_name
+    def w_optional_arguments(first_input, last_input):
+        return first_input, last_input
 
 the test passes
 
@@ -3012,78 +3018,83 @@ the test passes
 
 ----
 
-* I remove ``, last_name='doe'`` from the call to ``w_default_arguments`` in ``test_functions.py``
+* I remove ``, last_input='doe'`` from the call to ``w_optional_arguments`` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 80
+    :lineno-start: 152
     :emphasize-lines: 3
 
-        def test_functions_w_default_arguments(self):
-            self.assertEqual(
-                src.functions.w_default_arguments('jane'),
-                ('jane', 'doe')
+        def test_functions_w_optional_arguments(self):
+            reality = src.functions.w_optional_arguments(
+                'jane',
             )
+            my_expectation = ('jane', 'doe')
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
-    TypeError: w_default_arguments() missing 1 required positional argument: 'last_name'
+    TypeError: w_optional_arguments() missing 1 required positional argument: 'last_input'
 
-  the ``last_name`` argument MUST be given when this :ref:`function<what is a function?>` is called
+  because the ``last_input`` argument MUST be given when this :ref:`function<what is a function?>` is called - it is required.
 
-* I make the argument a choice by giving it a default value in ``functions.py``
+* I make the argument optional by giving it a default value in ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 40
     :emphasize-lines: 1
 
-    def w_default_arguments(first_name, last_name='doe'):
-        return first_name, last_name
+    def w_optional_arguments(first_input, last_input='doe'):
+        return first_input, last_input
 
-  the test passes because the ``last_name`` argument no longer has to be given when this :ref:`function<what is a function?>` is called
+  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.w_optional_arguments`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_input`` parameter of the ``w_optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
 
-  .. NOTE::
+  .. code-block:: python
 
-    If I call the :ref:`function<what is a function?>` without the ``last_name`` argument
+    src.functions.w_optional_arguments('jane')
 
-    .. code-block:: python
+  is the same as
 
-      w_default_arguments('jane')
+  .. code-block:: python
 
-    it is the same as when I call it with the default value
+    src.functions.w_optional_arguments('jane', last_input='doe')
 
-    .. code-block:: python
+  is the same as
 
-      w_default_arguments('jane', last_name='doe')
+  .. code-block:: python
 
-    which is the same as
+    return 'jane', 'doe'
 
-    .. code-block:: python
+  because ``w_optional_arguments`` will always
 
-      return 'jane', 'doe'
+  .. code-block:: python
 
-    because ``w_default_arguments`` will always
+    return first_input, last_input
 
-    .. code-block:: python
-
-      return first_name, last_name
+  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
 
 * I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the :ref:`function<what is a function?>` with different values
 
   .. code-block:: python
     :lineno-start: 80
-    :emphasize-lines: 6-9
+    :emphasize-lines: 8-12
 
-        def test_functions_w_default_arguments(self):
-            self.assertEqual(
-                src.functions.w_default_arguments('jane'),
-                ('jane', 'doe')
+        def test_functions_w_optional_arguments(self):
+            reality = src.functions.w_optional_arguments(
+                'jane',
             )
-            self.assertEqual(
-                src.functions.w_default_arguments('joe', 'blow'),
-                ()
+            my_expectation = ('jane', 'doe')
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_optional_arguments(
+                'joe', 'blow',
             )
+            my_expectation = ()
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -3094,42 +3105,168 @@ the test passes
 
     AssertionError: Tuples differ: ('joe', 'blow') != ()
 
-* I change the expectation to match
+* I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 8
+    :lineno-start: 159
+    :emphasize-lines: 4
 
-        def test_functions_w_default_arguments(self):
-            self.assertEqual(
-                src.functions.w_default_arguments('jane'),
-                ('jane', 'doe')
+            reality = src.functions.w_optional_arguments(
+                'joe', 'blow',
             )
-            self.assertEqual(
-                src.functions.w_default_arguments('joe', 'blow'),
-                ('joe', 'blow')
-            )
+            my_expectation = ('joe', 'blow')
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
   the test passes
 
-.. NOTE::
+* I add an :ref:`assertion<what is an assertion?>`
 
-  ``w_keyword_arguments``, ``w_positional_arguments``,  ``w_positional_and_keyword_arguments`` and ``w_default_arguments`` are the same functions_, they always
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 7-12
+
+            reality = src.functions.w_optional_arguments(
+                'joe', 'blow',
+            )
+            my_expectation = ('joe', 'blow')
+            self.assertEqual(reality, my_expectation)
+
+            first_input = 'john'
+            reality = src.functions.w_optional_arguments(
+                first_input=first_input,
+            )
+            my_expectation = ()
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Tuples differ: ('john', 'doe') != ()
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 165
+    :emphasize-lines: 5
+
+            first_input = 'john'
+            reality = src.functions.w_optional_arguments(
+                first_input=first_input,
+            )
+            my_expectation = (first_input, 'doe')
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.w_optional_arguments`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_input`` parameter of the ``w_optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
+
+  .. code-block:: python
+
+    src.functions.w_optional_arguments(first_input='john')
+
+  is the same as
+
+  .. code-block:: python
+
+    src.functions.w_optional_arguments(
+        first_input='john', last_input='doe',
+    )
+
+  is the same as
+
+  .. code-block:: python
+
+    return 'john', 'doe'
+
+  because ``w_optional_arguments`` will always
 
   .. code-block:: python
 
     return first_input, last_input
 
-  their names are different, ``w_default_arguments`` uses different names for the input and has a default value, it will always
+  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+
+* I add one more :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 165
+    :emphasize-lines: 8-14
+
+            first_name = 'john'
+            reality = src.functions.w_optional_arguments(
+                first_input=first_name,
+            )
+            my_expectation = (first_name, 'doe')
+            self.assertEqual(reality, my_expectation)
+
+            last_name = 'smith'
+            reality = src.functions.w_optional_arguments(
+                last_input=last_name,
+                first_input=first_name,
+            )
+            my_expectation = (last_name, first_name)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    return first_name, last_name
+    AssertionError: Tuples differ: ('john', 'smith') != ('smith', 'john')
 
-  ``first_input``, ``first_name``, ``last_input`` and ``last_name`` are just names, they could be any name
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 172
+    :emphasize-lines: 6
+
+            last_name = 'smith'
+            reality = src.functions.w_optional_arguments(
+                last_input=last_name,
+                first_input=first_name,
+            )
+            my_expectation = (first_name, last_name)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_functions_w_optional_arguments'
+
+  the terminal_ shows a summary of the changes then goes back to the command line
+
+.. NOTE::
+
+  ``w_keyword_arguments``, ``w_positional_arguments``,  ``w_positional_and_keyword_arguments`` and ``w_optional_arguments`` are the same functions_, they always
+
+  .. code-block:: python
+
+    return first_input, last_input
+
+  their names are different, ``w_optional_arguments`` uses different names for the input and has a default value, it will always
+
+  .. code-block:: python
+
+    return first_input, last_input
+
+  ``first_input``, ``first_input``, ``last_input`` and ``last_input`` are just names, they could be any name
 
   .. code-block:: python
     :emphasize-text: positional keyword default
@@ -3137,7 +3274,7 @@ the test passes
     def w_positional_arguments(first_input, last_input):
     def w_keyword_arguments(first_input, last_input):
     def w_positional_and_keyword_arguments(first_input, last_input):
-    def w_default_arguments(first_name, last_name='doe'):
+    def w_optional_arguments(first_input, last_input='doe'):
 
   The difference that matters in the tests is how I call the functions_
 
@@ -3150,9 +3287,9 @@ the test passes
        w_keyword_arguments(last_input='last', first_input='first') == return 'first', 'last'
                               w_keyword_arguments('last', 'first') == return 'last', 'first'
     w_positional_and_keyword_arguments('first', last_input='last') == return 'first', 'last'
-                      w_default_arguments('jane', last_name='doe') == return 'jane', 'doe'
-                                       w_default_arguments('jane') == return 'jane', 'doe'
-                                w_default_arguments('joe', 'blow') == return 'joe', 'blow'
+                      w_optional_arguments('jane', last_input='doe') == return 'jane', 'doe'
+                                       w_optional_arguments('jane') == return 'jane', 'doe'
+                                w_optional_arguments('joe', 'blow') == return 'joe', 'blow'
 
 .. TIP::
 
@@ -3174,38 +3311,40 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
 ----
 
-I add a new test to ``test_functions.py``
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 80
-  :emphasize-lines: 11-17
+* I add a new test to ``test_functions.py``
 
-      def test_functions_w_default_arguments(self):
-          self.assertEqual(
-              src.functions.w_default_arguments('jane'),
-              ('jane', 'doe')
-          )
-          self.assertEqual(
-              src.functions.w_default_arguments('joe', 'blow'),
-              ('joe', 'blow')
-          )
+  .. code-block:: python
+    :lineno-start: 80
+    :emphasize-lines: 11-17
 
-      def test_functions_w_unknown_arguments(self):
-          self.assertEqual(
-              src.functions.w_unknown_arguments(
-                  0, 1, 2, 3, a=4, b=5, c=6, d=7,
-              ),
-              None
-          )
+        def test_functions_w_optional_arguments(self):
+            self.assertEqual(
+                src.functions.w_optional_arguments('jane'),
+                ('jane', 'doe')
+            )
+            self.assertEqual(
+                src.functions.w_optional_arguments('joe', 'blow'),
+                ('joe', 'blow')
+            )
+
+        def test_functions_w_unknown_arguments(self):
+            self.assertEqual(
+                src.functions.w_unknown_arguments(
+                    0, 1, 2, 3, a=4, b=5, c=6, d=7,
+                ),
+                None
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.functions' has no attribute 'w_unknown_arguments'. Did you mean: 'w_keyword_arguments'?
+    AttributeError: module 'src.functions' has no attribute 'w_unknown_arguments'. Did you mean: 'w_keyword_arguments'?
 
 ----
 
@@ -3221,8 +3360,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :lineno-start: 38
     :emphasize-lines: 5-6
 
-    def w_default_arguments(first_name, last_name='doe'):
-        return first_name, last_name
+    def w_optional_arguments(first_input, last_input='doe'):
+        return first_input, last_input
 
 
     def w_unknown_arguments():
@@ -3590,14 +3729,14 @@ I ran tests to show that I can make functions_ with
 * :ref:`positional arguments<test_functions_w_positional_arguments>`
 * :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 * :ref:`positional and keyword arguments<test_functions_w_positional_and_keyword_arguments>`
-* :ref:`default values<test_functions_w_default_arguments>`
+* :ref:`default values<test_functions_w_optional_arguments>`
 * :ref:`can take any number of inputs<test_functions_w_unknown_arguments>`
 
 as a reminder
 
 * :ref:`I can use '*args' when I do not know how many positional arguments the function has to take<test_functions_w_unknown_arguments>`
 * :ref:`positional arguments are taken as a tuple<how Python reads positional arguments>`
-* :ref:`positional arguments must come before keyword arguments<test_functions_w_default_arguments>`
+* :ref:`positional arguments must come before keyword arguments<test_functions_w_optional_arguments>`
 * :ref:`I can use '**kwargs' when I do not know how many keyword arguments the function<test_functions_w_unknown_arguments>`
 * :ref:`keyword arguments are taken as a dictionary<how Python reads keyword arguments>`
 * :ref:`the identity function returns its input<test_identity_function>`

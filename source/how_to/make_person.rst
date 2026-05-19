@@ -1556,7 +1556,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
 ----
 
 *************************************************************************************
-test_factory_w_default_arguments
+test_factory_w_optional_arguments
 *************************************************************************************
 
 I want to see what happens when I try to make a person without a value for the ``last_name`` argument
@@ -1570,7 +1570,7 @@ I want to see what happens when I try to make a person without a value for the `
 ----
 
 * I copy ``test_factory_takes_keyword_arguments`` and paste it below in ``test_person.py``
-* I change the name of the new test to ``test_factory_w_default_arguments``, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+* I change the name of the new test to ``test_factory_w_optional_arguments``, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1587,7 +1587,7 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
@@ -1700,7 +1700,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``
 
-* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_optional_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -1750,19 +1750,19 @@ I want to see what happens when I try to make a person without a value for the `
           last_name='doe',
       )
 
-    see :ref:`test_functions_w_default_arguments` for more
+    see :ref:`test_functions_w_optional_arguments` for more
 
 ----
 
-* I remove the commented line from ``test_factory_w_default_arguments`` in ``test_person.py``
+* I remove the commented line from ``test_factory_w_optional_arguments`` in ``test_person.py``
 
-* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_factory_w_default_arguments`` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
+* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_factory_w_optional_arguments`` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
 
   .. code-block:: python
     :lineno-start: 38
     :emphasize-lines: 7
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
@@ -1783,7 +1783,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``
 
-* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of ``test_factory_w_default_arguments`` in ``test_person.py``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of ``test_factory_w_optional_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -1844,13 +1844,13 @@ I want to see what happens when I try to make a person without a value for the `
           year_of_birth=year_of_birth,
       )
 
-    see :ref:`test_functions_w_default_arguments` for more
+    see :ref:`test_functions_w_optional_arguments` for more
 
 ----
 
-* I remove the commented line ``# sex=choose('F', 'M'),`` from ``test_factory_w_default_arguments`` in ``test_person.py``
+* I remove the commented line ``# sex=choose('F', 'M'),`` from ``test_factory_w_optional_arguments`` in ``test_person.py``
 
-* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_w_default_arguments`` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
+* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_w_optional_arguments`` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1951,7 +1951,7 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: python
     :lineno-start: 38
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
@@ -2065,15 +2065,15 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
 
-* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` in ``test_factory_w_default_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` in ``test_factory_w_optional_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 40
     :emphasize-lines: 2-5
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             # year_of_birth = random.randint(
             #     this_year()-120, this_year()
             # )
@@ -2118,7 +2118,7 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: python
     :lineno-start: 40
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             first_name = choose('jane', 'joe', 'john', 'person')
 
             self.assertEqual(
@@ -2196,17 +2196,17 @@ I want to see what happens when I try to make a person without a value for the `
                 )
             )
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
 
   still green
 
-* I point the ``first_name`` :ref:`variable<what is a variable?>` in ``test_factory_w_default_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I point the ``first_name`` :ref:`variable<what is a variable?>` in ``test_factory_w_optional_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 41
     :emphasize-lines: 2-3
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             # first_name = choose('jane', 'joe', 'john', 'person')
             first_name = self.random_first_name
 
@@ -2250,7 +2250,7 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: python
     :lineno-start: 41
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name=self.random_first_name,

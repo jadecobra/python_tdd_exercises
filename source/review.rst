@@ -123,7 +123,7 @@ Questions to think about as I go through the chapter
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
 * :ref:`what is a keyword argument?<test_functions_w_keyword_arguments>`
-* :ref:`how can I make arguments a choice in a function?<test_functions_w_default_arguments>`
+* :ref:`how can I make arguments a choice in a function?<test_functions_w_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_functions_w_unknown_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_functions_w_unknown_arguments>`
 * :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`

@@ -77,13 +77,13 @@ class TestFunctions(unittest.TestCase):
             ('first', 'last')
         )
 
-    def test_functions_w_default_arguments(self):
+    def test_functions_w_optional_arguments(self):
         self.assertEqual(
-            src.functions.w_default_arguments('jane'),
+            src.functions.w_optional_arguments('jane'),
             ('jane', 'doe')
         )
         self.assertEqual(
-            src.functions.w_default_arguments('joe', 'blow'),
+            src.functions.w_optional_arguments('joe', 'blow'),
             ('joe', 'blow')
         )
 

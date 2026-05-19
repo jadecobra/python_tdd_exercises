@@ -35,7 +35,7 @@ def w_positional_and_keyword_arguments(first_input, last_input):
     return first_input, last_input
 
 
-def w_default_arguments(first_name, last_name='doe'):
+def w_optional_arguments(first_name, last_name='doe'):
     return first_name, last_name
 
 

@@ -940,7 +940,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
   because the tests call the ``microwave`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pushed`` and ``timer_is_set``). I have to make ``timer_is_set`` a choice.
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` to make ``timer_is_set`` a choice
+* I add a :ref:`default value<test_functions_w_optional_arguments>` to make ``timer_is_set`` a choice
 
   .. code-block:: python
     :linenos:
@@ -970,7 +970,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
         timer_is_set=False,
     )
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_default_arguments>` for a parameter when it is called without the parameter.
+  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
 
 ----
 
@@ -1530,7 +1530,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_functions_w_default_arguments>` for the ``too_hot`` parameter in the :ref:`function signature<what is a function?>` to make it a choice, in ``microwave.py``
+* I add a :ref:`default value<test_functions_w_optional_arguments>` for the ``too_hot`` parameter in the :ref:`function signature<what is a function?>` to make it a choice, in ``microwave.py``
 
   .. code-block:: python
     :linenos:

@@ -35,7 +35,7 @@ test_person_factory
 *********************************************************************************
 
 #. :ref:`test_factory_takes_keyword_arguments`
-#. :ref:`test_factory_w_default_arguments`
+#. :ref:`test_factory_w_optional_arguments`
 
 *********************************************************************************
 test_sleep_duration
@@ -213,7 +213,7 @@ test_functions
 #. :ref:`test_functions_w_positional_arguments`
 #. :ref:`test_functions_w_keyword_arguments`
 #. :ref:`test_functions_w_positional_and_keyword_arguments`
-#. :ref:`test_functions_w_default_arguments`
+#. :ref:`test_functions_w_optional_arguments`
 #. :ref:`test_functions_w_unknown_arguments`
 
 *********************************************************************************

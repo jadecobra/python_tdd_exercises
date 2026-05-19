@@ -2193,7 +2193,7 @@ I want to add randomness to the test
                 self.random_factory_person
             )
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
 
   the test is still green
 
@@ -2236,7 +2236,7 @@ I want to add randomness to the test
                 self.random_factory_person
             )
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
 
   green again. Do I still need :ref:`test_factory_takes_keyword_arguments`?
 
@@ -2528,7 +2528,7 @@ I want to add randomness to the test
             self.random_first_name = choose(*self.RANDOM_NAMES)
             self.random_last_name = choose(*self.RANDOM_NAMES)
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_w_default_arguments`
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 54
@@ -2549,7 +2549,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 48
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name=self.random_first_name,
@@ -3390,12 +3390,12 @@ I wonder what red and yellow look like, that was a lot of green.
 ----
 
 *********************************************************************************
-test_class_w_default_arguments
+test_class_w_optional_arguments
 *********************************************************************************
 
 
 
-In :ref:`test_factory_w_default_arguments`, I tested what happens when I call the ``factory`` :ref:`function<what is a function?>` without giving a value for ``last_name`` and ``sex``.
+In :ref:`test_factory_w_optional_arguments`, I tested what happens when I call the ``factory`` :ref:`function<what is a function?>` without giving a value for ``last_name`` and ``sex``.
 
 In those cases the :ref:`functions<what is a function?>` uses default values of ``'doe'`` for ``last_name`` and ``'M'`` for ``sex``.
 
@@ -3423,7 +3423,7 @@ I want to add a test for the ``Person`` :ref:`class<what is a class?>` to make s
                 )
             )
 
-        def test_class_w_default_arguments(self):
+        def test_class_w_optional_arguments(self):
             person = src.person.Person(
                 first_name=self.random_first_name,
                 year_of_birth=self.random_year_of_birth,
@@ -3555,12 +3555,12 @@ the test passes
 
 There is a problem with the ``year_of_birth``, its default value is :ref:`None<what is None?>`, which means if I do not give a value for it when I make a person with the ``factory`` :ref:`function<what is a function?>` or ``Person`` :ref:`class<what is a class?>`, :ref:`TypeError<what causes TypeError?>` will be raised.
 
-* I remove ``year_of_birth`` from the call to the ``Person`` class in ``test_class_w_default_arguments`` in ``test_person.py``
+* I remove ``year_of_birth`` from the call to the ``Person`` class in ``test_class_w_optional_arguments`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 78
 
-        def test_class_w_default_arguments(self):
+        def test_class_w_optional_arguments(self):
             person = src.person.Person(
                 first_name=self.random_first_name,
                 # year_of_birth=self.random_year_of_birth,
@@ -3574,7 +3574,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
     :lineno-start: 78
     :emphasize-lines: 2, 6
 
-        def test_class_w_default_arguments(self):
+        def test_class_w_optional_arguments(self):
             person = src.person.Person(self.random_first_name)
             self.assertEqual(person.first_name, self.random_first_name)
             self.assertEqual(person.last_name, 'doe')
@@ -3623,12 +3623,12 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
 
 ----
 
-* I remove the value for ``year_of_birth`` in the call to ``src.person.factory`` in :ref:`test_factory_w_default_arguments`
+* I remove the value for ``year_of_birth`` in the call to ``src.person.factory`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 64
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name=self.random_first_name,
@@ -3680,7 +3680,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
     E       ?         ^
 
-* I change the expectation in :ref:`test_factory_w_default_arguments` in ``test_person.py``
+* I change the expectation in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 70
@@ -3701,7 +3701,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
   .. code-block:: python
     :lineno-start: 64
 
-        def test_factory_w_default_arguments(self):
+        def test_factory_w_optional_arguments(self):
             self.assertEqual(
                 src.person.factory(self.random_first_name),
                 dict(
@@ -3712,7 +3712,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
                 )
             )
 
-        def test_class_w_default_arguments(self):
+        def test_class_w_optional_arguments(self):
 
   the tests are still green
 

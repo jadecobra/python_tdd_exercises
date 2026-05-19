@@ -61,7 +61,7 @@ class TestPerson(unittest.TestCase):
             self.random_factory_person
         )
 
-    def test_factory_w_default_arguments(self):
+    def test_factory_w_optional_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name=self.random_first_name,
