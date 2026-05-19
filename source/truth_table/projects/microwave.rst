@@ -1514,7 +1514,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_arguments>`
+  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_microwave.py``
 

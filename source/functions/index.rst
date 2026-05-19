@@ -1442,9 +1442,10 @@ the test passes
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_making_a_function_w_return'
+    git commit --all --message \
+    'add test_making_a_function_w_return'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
@@ -1576,7 +1577,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 2
+    :emphasize-lines: 1-2
 
     def w_return_none():
         return None
@@ -1586,9 +1587,10 @@ the test passes
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_making_a_function_w_return_none'
+    git commit --all --message \
+    'add test_making_a_function_w_return_none'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
@@ -1754,9 +1756,10 @@ the test passes
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_what_happens_after_a_function_returns'
+    git commit --all --message \
+    'add test_what_happens_after_a_function_returns'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
@@ -2335,9 +2338,10 @@ test_functions_w_positional_arguments
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_functions_w_positional_arguments'
+    git commit --all --message \
+    'add test_functions_w_positional_arguments'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
@@ -2897,9 +2901,10 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_functions_w_keyword_arguments'
+    git commit --all --message \
+    'add test_functions_w_keyword_arguments'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
@@ -2909,10 +2914,10 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 ----
 
 *********************************************************************************
-test_functions_w_positional_and_keyword_arguments
+test_functions_w_positional_and_keyword_args
 *********************************************************************************
 
-I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>`, which is useful when I want required arguments and optional arguments.
+I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>`, which is useful when I want some arguments to be required arguments and some arguments to be optional.
 
 ----
 
@@ -2927,19 +2932,22 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 * I add a failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 8-13
+    :lineno-start: 152
+    :emphasize-lines: 9-16
 
-            reality = src.functions.w_keyword_arguments(
-                first_input={'key': 'value'},
-                last_input={1, 2, 3, 'n'},
+            a_tuple, a_list = (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            reality = src.functions.w_positional_arguments(
+                first_input=a_list,
+                last_input=a_tuple,
             )
-            my_expectation = ({'key': 'value'}, {1, 2, 3, 'n'})
+            my_expectation = (a_list, a_tuple)
             self.assertEqual(reality, my_expectation)
 
-        def test_functions_w_positional_and_keyword_arguments(self):
-            reality = src.functions.w_positional_and_keyword_arguments(
-                last_input='last', 'first',
+        def test_functions_w_positional_and_keyword_args(self):
+            reality = (
+                src.functions.w_positional_and_keyword_args(
+                    last_input='last', 'first',
+                )
             )
             my_expectation = ('first', 'last')
             self.assertEqual(reality, my_expectation)
@@ -2953,7 +2961,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
     SyntaxError: positional argument follows keyword argument
 
-  because I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before :ref:`positional arguments<test_functions_w_positional_arguments>`
+  because I cannot put :ref:`keyword arguments<test_functions_w_keyword_arguments>` before :ref:`positional arguments<test_functions_w_positional_arguments>`. The `Integrated Development Environment (IDE)`_ also shows the error with a red squiggly line under ``'first'``.
 
 ----
 
@@ -2966,7 +2974,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 151
+    :lineno-start: 170
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -2981,11 +2989,13 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
   .. code-block:: python
     :lineno-start: 143
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
-        def test_functions_w_positional_and_keyword_arguments(self):
-            reality = src.functions.w_positional_and_keyword_arguments(
-                'first', last_input='last',
+        def test_functions_w_positional_and_keyword_args(self):
+            reality = (
+                src.functions.w_positional_and_keyword_args(
+                    'first', last_input='last',
+                )
             )
             my_expectation = ('first', 'last')
             self.assertEqual(reality, my_expectation)
@@ -2997,9 +3007,9 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_arguments'
+    AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_args'
 
-  because ``functions.py`` does not have anything named ``w_positional_and_keyword_arguments``
+  because ``functions.py`` does not have anything named ``w_positional_and_keyword_args``
 
 * I add a :ref:`function<what is a function?>` to ``functions.py``
 
@@ -3007,20 +3017,20 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     :lineno-start: 30
     :emphasize-lines: 5-6
 
-      def w_keyword_arguments(first_input, last_input):
-          return first_input, last_input
+    def w_keyword_arguments(first_input, last_input):
+        return first_input, last_input
 
 
-      def w_positional_and_keyword_arguments():
-          return None
+    def w_positional_and_keyword_args():
+        return None
 
   the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
-    TypeError: w_positional_and_keyword_arguments() got an unexpected keyword argument 'last_input'
+    TypeError: w_positional_and_keyword_args() got an unexpected keyword argument 'last_input'
 
-  because the definition for ``w_positional_and_keyword_arguments`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
+  because the definition for ``w_positional_and_keyword_args`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
 
 * I add the name to the :ref:`function<what is a function?>` definition in parentheses, in ``functions.py``
 
@@ -3029,34 +3039,32 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     :emphasize-lines: 1
     :emphasize-text: last_input
 
-    def w_positional_and_keyword_arguments(last_input):
+    def w_positional_and_keyword_args(last_input):
         return None
 
   the terminal_ is my friend, and shows
 
   .. code-block:: shell
 
-    TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last_input'
+    TypeError: w_positional_and_keyword_args() got multiple values for argument 'last_input'
 
-  because the definition for ``w_positional_and_keyword_arguments`` takes one argument, and the test calls the :ref:`function<what is a function?>` with two arguments ('first', last_input='last'). How does Python_ know which value to use for ``last_input`` if the arguments it gets are both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>`?
+  because the definition for ``w_positional_and_keyword_args`` takes one argument, and the test calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if what it gets are both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>` arguments?
 
 * I add another name in parentheses to make it clearer
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 1-3
+    :emphasize-lines: 1
     :emphasize-text: first_input
 
-    def w_positional_and_keyword_arguments(
-            last_input, first_input
-        ):
+    def w_positional_and_keyword_args(last_input, first_input):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
-    TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last_input'
+    TypeError: w_positional_and_keyword_args() got multiple values for argument 'last_input'
 
   because I gave confusing values in the call. Python_ cannot tell the difference between the 2 values because I gave a positional value which according to the :ref:`function<what is a function?>` definition is ``last_input`` and I gave a value with the name. How does it know what value to use for ``last_input``?
 
@@ -3064,12 +3072,10 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 2
+    :emphasize-lines: 1
     :emphasize-text: first_input
 
-    def w_positional_and_keyword_arguments(
-            first_input, last_input
-        ):
+    def w_positional_and_keyword_args(first_input, last_input):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -3086,23 +3092,85 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     :lineno-start: 34
     :emphasize-lines: 4
 
-    def w_positional_and_keyword_arguments(
-            first_input, last_input
-        ):
+    def w_positional_and_keyword_args(first_input, last_input):
         return first_input, last_input
 
-  the test passes.
+  the test passes
+
+* I add :ref:`variables<what is a variable?>` to use to remove the repetition of ``'first'`` and ``'last'`` in :ref:`test_functions_w_positional_and_keyword_args` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 160
+    :emphasize-lines: 2
+
+        def test_functions_w_positional_and_keyword_args(self):
+            first, last = 'first', 'last'
+
+            reality = (
+                src.functions.w_positional_and_keyword_args(
+                    'first', last_input='last',
+                )
+            )
+            my_expectation = ('first', 'last')
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
+
+  .. code-block:: python
+    :lineno-start: 160
+    :emphasize-lines: 6-7, 10-11
+
+        def test_functions_w_positional_and_keyword_args(self):
+            first, last = 'first', 'last'
+
+            reality = (
+                src.functions.w_positional_and_keyword_args(
+                    # 'first', last_input='last',
+                    first, last_input=last,
+                )
+            )
+            # my_expectation = ('first', 'last')
+            my_expectation = (first, last)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 160
+
+        def test_functions_w_positional_and_keyword_args(self):
+            first, last = 'first', 'last'
+
+            reality = (
+                src.functions.w_positional_and_keyword_args(
+                    first, last_input=last,
+                )
+            )
+            my_expectation = (first, last)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_functions_w_positional_and_keyword_arguments'
+    git commit --all --message \
+    'add test_functions_w_positional_and_keyword_args'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
-:ref:`I can call a function with positional and keyword arguments<test_functions_w_positional_and_keyword_arguments>`
+:ref:`I can call a function with positional and keyword arguments<test_functions_w_positional_and_keyword_args>`
 
 ----
 
@@ -3110,7 +3178,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 test_functions_w_optional_arguments
 *********************************************************************************
 
-I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a :ref:`function<what is a function?>` to take inputs that are needed and inputs that are optional
+I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want some arguments to be required arguments and some arguments to be optional.
 
 ----
 
@@ -3128,9 +3196,9 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
     :lineno-start: 143
     :emphasize-lines: 10-15
 
-        def test_functions_w_positional_and_keyword_arguments(self):
+        def test_functions_w_positional_and_keyword_args(self):
             reality = (
-                src.functions.w_positional_and_keyword_arguments(
+                src.functions.w_positional_and_keyword_args(
                     'first', last_input='last',
                 )
             )
@@ -3169,7 +3237,7 @@ I add a :ref:`function<what is a function?>` for ``w_optional_arguments`` to ``f
   :lineno-start: 34
   :emphasize-lines: 7-8
 
-    def w_positional_and_keyword_arguments(
+    def w_positional_and_keyword_args(
             first_input, last_input
         ):
         return first_input, last_input
@@ -3416,15 +3484,16 @@ the test passes
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_functions_w_optional_arguments'
+    git commit --all --message \
+    'add test_functions_w_optional_arguments'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
 .. NOTE::
 
-  ``w_keyword_arguments``, ``w_positional_arguments``,  ``w_positional_and_keyword_arguments`` and ``w_optional_arguments`` are the same functions_, they always
+  ``w_keyword_arguments``, ``w_positional_arguments``,  ``w_positional_and_keyword_args`` and ``w_optional_arguments`` are the same functions_, they always
 
   .. code-block:: python
 
@@ -3443,7 +3512,7 @@ the test passes
 
     def w_positional_arguments(first_input, last_input):
     def w_keyword_arguments(first_input, last_input):
-    def w_positional_and_keyword_arguments(first_input, last_input):
+    def w_positional_and_keyword_args(first_input, last_input):
     def w_optional_arguments(first_input, last_input='doe'):
 
   The difference that matters in the tests is how I call the functions_
@@ -3456,7 +3525,7 @@ the test passes
        w_keyword_arguments(first_input='first', last_input='last') == return 'first', 'last'
        w_keyword_arguments(last_input='last', first_input='first') == return 'first', 'last'
                               w_keyword_arguments('last', 'first') == return 'last', 'first'
-    w_positional_and_keyword_arguments('first', last_input='last') == return 'first', 'last'
+    w_positional_and_keyword_args('first', last_input='last') == return 'first', 'last'
                       w_optional_arguments('jane', last_input='doe') == return 'jane', 'doe'
                                        w_optional_arguments('jane') == return 'jane', 'doe'
                                 w_optional_arguments('joe', 'blow') == return 'joe', 'blow'
@@ -3558,7 +3627,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
     TypeError: w_unknown_arguments() got multiple values for argument 'a'
 
-  I had this same problem in :ref:`test_functions_w_positional_and_keyword_arguments`. Python_ cannot tell if ``a`` is a :ref:`positional<test_functions_w_positional_arguments>` or :ref:`keyword argument<test_functions_w_keyword_arguments>` in this case
+  I had this same problem in :ref:`test_functions_w_positional_and_keyword_args`. Python_ cannot tell if ``a`` is a :ref:`positional<test_functions_w_positional_arguments>` or :ref:`keyword argument<test_functions_w_keyword_arguments>` in this case
 
 * Python_ has a way for a :ref:`function<what is a function?>` to get any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many they are. I use it to replace ``a`` in the parentheses
 
@@ -3898,7 +3967,7 @@ I ran tests to show that I can make functions_ with
 * the def_ keyword
 * :ref:`positional arguments<test_functions_w_positional_arguments>`
 * :ref:`keyword arguments<test_functions_w_keyword_arguments>`
-* :ref:`positional and keyword arguments<test_functions_w_positional_and_keyword_arguments>`
+* :ref:`positional and keyword arguments<test_functions_w_positional_and_keyword_args>`
 * :ref:`default values<test_functions_w_optional_arguments>`
 * :ref:`can take any number of inputs<test_functions_w_unknown_arguments>`
 

@@ -31,7 +31,7 @@ def w_keyword_arguments(first_input, last_input):
     return first_input, last_input
 
 
-def w_positional_and_keyword_arguments(first_input, last_input):
+def w_positional_and_keyword_args(first_input, last_input):
     return first_input, last_input
 
 
