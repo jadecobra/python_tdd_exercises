@@ -24,3 +24,8 @@ dev = [
     "sniffer>=0.4.1",
     "watchdog>=6.0.0",
 ]
+
+[tool.uv.workspace]
+members = [
+    "functions",
+]

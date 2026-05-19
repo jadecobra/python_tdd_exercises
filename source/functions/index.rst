@@ -15,17 +15,17 @@
 what is a function?
 #################################################################################
 
-A function_ is code that is callable_, this means I can write code to do something one time, and use it to do the thing at a different time from when I write it, by calling the name.
+A function_ is code that is callable_, this means I can write code to do something one time, and use it to do that thing at a different time from when I write it, by calling the name.
 
 Using a function_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
 
-Part of `Computer Programming`_ is sending input data to a process and getting output data back, you can think of it like this
+Part of `Computer Programming`_ is sending input data to a process and getting output data back
 
 .. code-block:: python
 
     input_data -> process -> output_data
 
-Where ``process`` is the function_. I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
+where ``process`` is the function_. I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
 
 .. math::
 
@@ -40,7 +40,7 @@ in other words
 
 the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and returns ``output_data`` as the result.
 
-functions_ are made with the def_ keyword in Python_, a name, parentheses and a colon at the end. The code that makes up the :ref:`function<what is a function?>` is indented to the right on the line after the colon.
+functions_ are made with the def_ keyword in Python_, a name, parentheses and a colon at the end. The code that makes up the :ref:`function<what is a function?>` (its body) is indented to the right on the line after the colon.
 
 .. code-block:: python
 
@@ -276,13 +276,13 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'start project'
+    git commit --all --message 'initialize project'
 
   the terminal_ shows
 
   .. code-block:: python
 
-    [main (root-commit) a0b12c3] start project
+    [main (root-commit) a0b12c3] initialize project
      9 files changed, 148 insertions(+)
      create mode 100644 .gitignore
      create mode 100644 .python-version
@@ -507,7 +507,7 @@ the test passes
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 3
+    :emphasize-lines: 2
 
             reality = 1 + 2
             my_expectation = 3

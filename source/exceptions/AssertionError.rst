@@ -234,13 +234,13 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'start project'
+    git commit --all --message 'initialize project'
 
   the terminal_ shows
 
   .. code-block:: python
 
-    [main (root-commit) a0b12c3] start project
+    [main (root-commit) a0b12c3] initialize project
      8 files changed, 142 insertions(+)
      create mode 100644 .gitignore
      create mode 100644 .python-version
