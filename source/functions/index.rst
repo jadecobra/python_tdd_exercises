@@ -1337,6 +1337,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
     - the ``reality`` :ref:`variable<what is a variable?>`, which represents the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is equal to
     - the ``my_expectation`` :ref:`variable<what is a variable?>`, which represents :ref:`None<what is None?>`
+
   * the :ref:`function<what is a function?>` definition simply says pass_ and the test passes
   * pass_ is a special keyword that allows the :ref:`function<what is a function?>` definition to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body)
   * the test passes because all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``, which leads me to the next test
@@ -2798,14 +2799,26 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
       w_positional_arguments('first', 'last')
       return ('first', 'last')
 
+    .. code-block:: python
+      :emphasize-text: first
+
       w_positional_arguments('last', 'first')
       return ('last', 'first')
+
+    .. code-block:: python
+      :emphasize-text: first
 
       w_positional_arguments(0, 1)
       return (0, 1)
 
+    .. code-block:: python
+      :emphasize-text: first
+
       w_positional_arguments((1, 2, 3, 'n'), [1, 2, 3, 'n'])
       return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+
+    .. code-block:: python
+      :emphasize-text: first
 
       w_keyword_arguments('last', 'first')
       return ('last', 'first')
@@ -2820,13 +2833,22 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
       )
       return ('first', 'last')
 
+    .. code-block:: python
+      :emphasize-text: first
+
       w_keyword_arguments(
           last_input='last', first_input='first',
       )
       return ('first', 'last')
 
+    .. code-block:: python
+      :emphasize-text: first
+
       w_keyword_arguments(last_input=0, first_input=1,)
       return (1, 0)
+
+    .. code-block:: python
+      :emphasize-text: first
 
       w_keyword_arguments(
           first_input={'key': 'value'},
@@ -2917,7 +2939,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 test_functions_w_positional_and_keyword_args
 *********************************************************************************
 
-I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>`, which is useful when I want some arguments to be required arguments and some arguments to be optional.
+I can write functions_ that take both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>`, which is useful when I want some arguments to be required and some to be optional.
 
 ----
 
@@ -3105,7 +3127,6 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
         def test_functions_w_positional_and_keyword_args(self):
             first, last = 'first', 'last'
-
             reality = (
                 src.functions.w_positional_and_keyword_args(
                     'first', last_input='last',
@@ -3121,11 +3142,10 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
   .. code-block:: python
     :lineno-start: 160
-    :emphasize-lines: 6-7, 10-11
+    :emphasize-lines: 5-6, 9-10
 
         def test_functions_w_positional_and_keyword_args(self):
             first, last = 'first', 'last'
-
             reality = (
                 src.functions.w_positional_and_keyword_args(
                     # 'first', last_input='last',
@@ -3148,7 +3168,6 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
         def test_functions_w_positional_and_keyword_args(self):
             first, last = 'first', 'last'
-
             reality = (
                 src.functions.w_positional_and_keyword_args(
                     first, last_input=last,
@@ -3178,7 +3197,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 test_functions_w_optional_arguments
 *********************************************************************************
 
-I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want some arguments to be required arguments and some arguments to be optional.
+I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want some arguments to be required and some to be optional.
 
 ----
 
@@ -3193,23 +3212,25 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 * I add a failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 10-15
+    :lineno-start: 160
+    :emphasize-lines: 11-17
 
         def test_functions_w_positional_and_keyword_args(self):
+            first, last = 'first', 'last'
             reality = (
                 src.functions.w_positional_and_keyword_args(
-                    'first', last_input='last',
+                    first, last_input=last,
                 )
             )
-            my_expectation = ('first', 'last')
+            my_expectation = (first, last)
             self.assertEqual(reality, my_expectation)
 
         def test_functions_w_optional_arguments(self):
+            first_name, last_name = 'jane', 'doe'
             reality = src.functions.w_optional_arguments(
-                'jane', last_input='doe',
+                first_name, last_input=last_name,
             )
-            my_expectation = ('jane', 'doe')
+            my_expectation = (first_name, last_name)
             self.assertEqual(reality, my_expectation)
 
 
@@ -3231,15 +3252,13 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 
 ----
 
-I add a :ref:`function<what is a function?>` for ``w_optional_arguments`` to ``functions.py``
+I add a :ref:`function<what is a function?>` named ``w_optional_arguments`` to ``functions.py``
 
 .. code-block:: python
   :lineno-start: 34
-  :emphasize-lines: 7-8
+  :emphasize-lines: 5-6
 
-    def w_positional_and_keyword_args(
-            first_input, last_input
-        ):
+    def w_positional_and_keyword_args(first_input, last_input):
         return first_input, last_input
 
 
@@ -3256,17 +3275,18 @@ the test passes
 
 ----
 
-* I remove ``, last_input='doe'`` from the call to ``w_optional_arguments`` in ``test_functions.py``
+* I remove ``last_input=last_name`` from the call to ``w_optional_arguments`` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 152
-    :emphasize-lines: 3
+    :lineno-start: 170
+    :emphasize-lines: 4
 
         def test_functions_w_optional_arguments(self):
+            first_name, last_name = 'jane', 'doe'
             reality = src.functions.w_optional_arguments(
-                'jane',
+                first_name,
             )
-            my_expectation = ('jane', 'doe')
+            my_expectation = (first_name, last_name)
             self.assertEqual(reality, my_expectation)
 
 
@@ -3278,18 +3298,18 @@ the test passes
 
     TypeError: w_optional_arguments() missing 1 required positional argument: 'last_input'
 
-  because the ``last_input`` argument MUST be given when this :ref:`function<what is a function?>` is called - it is required.
+  because the ``last_input`` argument MUST be given when this :ref:`function<what is a function?>` is called, it is required.
 
 * I make the argument optional by giving it a default value in ``functions.py``
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 38
     :emphasize-lines: 1
 
     def w_optional_arguments(first_input, last_input='doe'):
         return first_input, last_input
 
-  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.w_optional_arguments`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_input`` parameter of the ``w_optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
+  the test passes because I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.w_optional_arguments`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``. This means that
 
   .. code-block:: python
 
@@ -3318,18 +3338,20 @@ the test passes
 * I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the :ref:`function<what is a function?>` with different values
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 8-12
+    :lineno-start: 170
+    :emphasize-lines: 9-14
 
         def test_functions_w_optional_arguments(self):
+            first_name, last_name = 'jane', 'doe'
             reality = src.functions.w_optional_arguments(
-                'jane',
+                first_name,
             )
-            my_expectation = ('jane', 'doe')
+            my_expectation = (first_name, last_name)
             self.assertEqual(reality, my_expectation)
 
+            first_name, blow = 'joe', 'blow'
             reality = src.functions.w_optional_arguments(
-                'joe', 'blow',
+                first_name, blow,
             )
             my_expectation = ()
             self.assertEqual(reality, my_expectation)
@@ -3346,13 +3368,14 @@ the test passes
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 159
-    :emphasize-lines: 4
+    :lineno-start: 178
+    :emphasize-lines: 5
 
+            first_name, blow = 'joe', 'blow'
             reality = src.functions.w_optional_arguments(
-                'joe', 'blow',
+                first_name, blow,
             )
-            my_expectation = ('joe', 'blow')
+            my_expectation = (first_name, blow)
             self.assertEqual(reality, my_expectation)
 
 
@@ -3360,21 +3383,22 @@ the test passes
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>`
+* I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 159
+    :lineno-start: 178
     :emphasize-lines: 7-12
 
+            first_name, blow = 'joe', 'blow'
             reality = src.functions.w_optional_arguments(
-                'joe', 'blow',
+                first_name, blow,
             )
-            my_expectation = ('joe', 'blow')
+            my_expectation = (first_name, blow)
             self.assertEqual(reality, my_expectation)
 
-            first_input = 'john'
+            first_name = 'john'
             reality = src.functions.w_optional_arguments(
-                first_input=first_input,
+                first_input=first_name
             )
             my_expectation = ()
             self.assertEqual(reality, my_expectation)
@@ -3391,14 +3415,14 @@ the test passes
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 165
+    :lineno-start: 185
     :emphasize-lines: 5
 
-            first_input = 'john'
+            first_name = 'john'
             reality = src.functions.w_optional_arguments(
-                first_input=first_input,
+                first_input=first_name
             )
-            my_expectation = (first_input, 'doe')
+            my_expectation = (first_name, last_name)
             self.assertEqual(reality, my_expectation)
 
 
@@ -3435,20 +3459,19 @@ the test passes
 * I add one more :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 165
+    :lineno-start: 185
     :emphasize-lines: 8-14
 
             first_name = 'john'
             reality = src.functions.w_optional_arguments(
-                first_input=first_name,
+                first_input=first_name
             )
-            my_expectation = (first_name, 'doe')
+            my_expectation = (first_name, last_name)
             self.assertEqual(reality, my_expectation)
 
             last_name = 'smith'
             reality = src.functions.w_optional_arguments(
-                last_input=last_name,
-                first_input=first_name,
+                last_input=last_name, first_input=first_name,
             )
             my_expectation = (last_name, first_name)
             self.assertEqual(reality, my_expectation)
@@ -3465,13 +3488,12 @@ the test passes
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 172
-    :emphasize-lines: 6
+    :lineno-start: 192
+    :emphasize-lines: 5
 
             last_name = 'smith'
             reality = src.functions.w_optional_arguments(
-                last_input=last_name,
-                first_input=first_name,
+                last_input=last_name, first_input=first_name,
             )
             my_expectation = (first_name, last_name)
             self.assertEqual(reality, my_expectation)
@@ -3493,19 +3515,20 @@ the test passes
 
 .. NOTE::
 
-  ``w_keyword_arguments``, ``w_positional_arguments``,  ``w_positional_and_keyword_args`` and ``w_optional_arguments`` are the same functions_, they always
+  * ``w_keyword_arguments``
+  * ``w_positional_arguments``,
+  * ``w_positional_and_keyword_args`` and
+  * ``w_optional_arguments``
+
+  are the same functions_, they always
 
   .. code-block:: python
 
     return first_input, last_input
 
-  their names are different, ``w_optional_arguments`` uses different names for the input and has a default value, it will always
+  their names are different
 
-  .. code-block:: python
-
-    return first_input, last_input
-
-  ``first_input``, ``first_input``, ``last_input`` and ``last_input`` are just names, they could be any name
+  ``first_input`` and ``last_input`` names, they could be any name
 
   .. code-block:: python
     :emphasize-text: positional keyword default
@@ -3520,15 +3543,56 @@ the test passes
   .. code-block:: python
     :emphasize-text: last
 
-                           w_positional_arguments('first', 'last') == return 'first', 'last'
-                           w_positional_arguments('last', 'first') == return 'last',  'first'
-       w_keyword_arguments(first_input='first', last_input='last') == return 'first', 'last'
-       w_keyword_arguments(last_input='last', first_input='first') == return 'first', 'last'
-                              w_keyword_arguments('last', 'first') == return 'last', 'first'
-    w_positional_and_keyword_args('first', last_input='last') == return 'first', 'last'
-                      w_optional_arguments('jane', last_input='doe') == return 'jane', 'doe'
-                                       w_optional_arguments('jane') == return 'jane', 'doe'
-                                w_optional_arguments('joe', 'blow') == return 'joe', 'blow'
+    w_positional_arguments('first', 'last')
+    return 'first', 'last'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_positional_arguments('last', 'first')
+    return 'last',  'first'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_keyword_arguments(first_input='first', last_input='last')
+    return 'first', 'last'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_keyword_arguments(last_input='last', first_input='first')
+    return 'first', 'last'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_keyword_arguments('last', 'first')
+    return 'last', 'first'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_positional_and_keyword_args('first', last_input='last')
+    return 'first', 'last'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_optional_arguments('jane', last_input='doe')
+    return 'jane', 'doe'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_optional_arguments('jane')
+    return 'jane', 'doe'
+
+  .. code-block:: python
+    :emphasize-text: last
+
+    w_optional_arguments('joe', 'blow')
+    return 'joe', 'blow'
 
 .. TIP::
 
