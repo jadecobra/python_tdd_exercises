@@ -1669,7 +1669,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 

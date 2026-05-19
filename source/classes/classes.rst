@@ -1824,7 +1824,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
             self.assertEqual(person.get_age(), 446)
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
     :emphasize-lines: 2, 4
