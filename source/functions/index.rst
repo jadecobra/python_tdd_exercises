@@ -4360,60 +4360,96 @@ the test passes. The :ref:`function<what is a function?>` gives me back the :ref
 how Python reads positional and keyword arguments
 *********************************************************************************
 
-I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
+* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
 
-.. code-block:: python
-  :lineno-start: 101
-  :emphasize-lines: 5-8
+  .. code-block:: python
+    :lineno-start: 232
+    :emphasize-lines: 8-10
 
-          self.assertEqual(
-              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-              ((), dict(a=4, b=5, c=6, d=7))
-          )
-          self.assertEqual(
-              src.functions.w_unknown_arguments(),
-              ()
-          )
+            a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
+            reality = src.functions.w_unknown_arguments(
+                **a_dictionary
+            )
+            my_expectation = ((), a_dictionary)
+            self.assertEqual(reality, my_expectation)
 
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows
-
-.. code-block:: shell
-
-  AssertionError: Tuples differ: ((), {}) != ()
-
-I change the expectation to match
-
-.. code-block:: python
-  :lineno-start: 90
-  :emphasize-lines: 18
-
-      def test_functions_w_unknown_arguments(self):
-          self.assertEqual(
-              src.functions.w_unknown_arguments(
-                  0, 1, 2, 3, a=4, b=5, c=6, d=7,
-              ),
-              ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
-          )
-          self.assertEqual(
-              src.functions.w_unknown_arguments(0, 1, 2, 3),
-              ((0, 1, 2, 3), {})
-          )
-          self.assertEqual(
-              src.functions.w_unknown_arguments(a=4, b=5, c=6, d=7),
-              ((), dict(a=4, b=5, c=6, d=7))
-          )
-          self.assertEqual(
-              src.functions.w_unknown_arguments(),
-              ((), {})
-          )
+            reality = src.functions.w_unknown_arguments()
+            my_expectation = ()
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the test passes
+  the terminal_ is my friend, and shows
+
+  .. code-block:: shell
+
+    AssertionError: Tuples differ: ((), {}) != ()
+
+* I change the ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 199
+    :emphasize-lines: 42
+
+        def test_functions_w_unknown_arguments(self):
+            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            reality = src.functions.w_unknown_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (a_tuple, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1)
+            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+            reality = src.functions.w_unknown_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1, 2)
+            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+            reality = src.functions.w_unknown_arguments(
+                *a_tuple, **a_dictionary
+            )
+            my_expectation = (
+                a_tuple, a_dictionary
+            )
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (0, 1, 2, 3)
+            reality = src.functions.w_unknown_arguments(*a_tuple)
+            my_expectation = (a_tuple, {})
+            self.assertEqual(reality, my_expectation)
+
+            a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
+            reality = src.functions.w_unknown_arguments(
+                **a_dictionary
+            )
+            my_expectation = ((), a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_unknown_arguments()
+            my_expectation = ((), {})
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_functions_w_unknown_arguments'
+
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 .. NOTE::
 
@@ -4422,9 +4458,9 @@ the test passes
   .. code-block:: python
 
     w_unknown_arguments(0, 1, 2, 3, a=4, b=5, c=6, d=7)
-    w_unknown_arguments(*(0, 1, 2, 3), **dict(a=4, b=5, c=6, d=7))
-    w_unknown_arguments(*(0, 1, 2, 3), **{'a': 4, 'b': 5, 'c': 6, 'd': 7})
-    ((0, 1, 2, 3, ), {'a': 4, 'b': 5, 'c': 6, 'd': 7})
+    w_unknown_arguments(
+        *(0, 1, 2, 3), **{'a': 4, 'b': 5, 'c': 6, 'd': 7}
+    )
 
   because ``w_unknown_arguments`` in ``functions.py`` in the ``src`` folder will always
 
@@ -4444,10 +4480,11 @@ the test passes
   .. code-block:: python
 
     a=4, b=5, c=6, d=7
-    **dict(a=4, b=5, c=6, d=7)
     **{'a': 4, 'b': 5, 'c': 6, 'd': 7}
 
-  are :ref:`keyword arguments<test_functions_w_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`. The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`. Is this why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input?
+  are :ref:`keyword arguments<test_functions_w_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`.
+
+  The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`. Is this why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input?
 
 ----
 
