@@ -2401,7 +2401,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: python
+  .. code-block:: none
 
     TypeError: w_keyword_arguments() got an unexpected keyword argument 'last_input'. Did you mean 'first_input'?
 
@@ -2443,7 +2443,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order in :ref:`test_function_w_keyword_arguments` in ``test_functions.py``
+* I add another :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order in :ref:`test_functions_w_keyword_arguments` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 111
@@ -2850,7 +2850,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
     TypeError: w_positional_and_keyword_arguments() got an unexpected keyword argument 'last_input'
 
-  because the definition for ``w_positional_and_keyword_arguments`` does not allow inputs and the test called the :ref:`function<what is a function>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
+  because the definition for ``w_positional_and_keyword_arguments`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
 
 * I add the name to the :ref:`function<what is a function?>` definition in parentheses, in ``functions.py``
 
@@ -2868,16 +2868,18 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
     TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last_input'
 
-  because the definition for ``w_positional_and_keyword_arguments`` takes on argument, and the test calls the :ref:`function<what is a function?>`
+  because the definition for ``w_positional_and_keyword_arguments`` takes one argument, and the test calls the :ref:`function<what is a function?>` with two arguments ('first', last_input='last'). How does Python_ know which value to use for ``last_input`` if the arguments it gets are both :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword<test_functions_w_keyword_arguments>`?
 
-* I add another name in parentheses
+* I add another name in parentheses to make it clearer
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 1
+    :emphasize-lines: 1-3
     :emphasize-text: first_input
 
-    def w_positional_and_keyword_arguments(last_input, first_input):
+    def w_positional_and_keyword_arguments(
+            last_input, first_input
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError`
@@ -2886,16 +2888,18 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
     TypeError: w_positional_and_keyword_arguments() got multiple values for argument 'last_input'
 
-  because I gave confusing values in the call. Python_ cannot tell the difference between the 2 values because I gave a positional value which according to the function_ definition is ``last_input`` and I gave a value with the name. How does it know what value to use for ``last_input``?
+  because I gave confusing values in the call. Python_ cannot tell the difference between the 2 values because I gave a positional value which according to the :ref:`function<what is a function?>` definition is ``last_input`` and I gave a value with the name. How does it know what value to use for ``last_input``?
 
 * I change the order of the names in parentheses
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 1
+    :emphasize-lines: 2
     :emphasize-text: first_input
 
-    def w_positional_and_keyword_arguments(first_input, last_input):
+    def w_positional_and_keyword_arguments(
+            first_input, last_input
+        ):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2904,16 +2908,29 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
     AssertionError: None != ('first', 'last')
 
-* I change the `return statement`_
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects ``('first', 'last')``
+
+* I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 34
-    :emphasize-lines: 2
+    :emphasize-lines: 4
 
-    def w_positional_and_keyword_arguments(first_input, last_input):
+    def w_positional_and_keyword_arguments(
+            first_input, last_input
+        ):
         return first_input, last_input
 
   the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_functions_w_positional_and_keyword_arguments'
+
+  the terminal_ shows a summary of the changes then goes back to the command line
 
 :ref:`I can call a function with positional and keyword arguments<test_functions_w_positional_and_keyword_arguments>`
 
@@ -2923,7 +2940,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 test_functions_w_default_arguments
 *********************************************************************************
 
-I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a :ref:`function<what is a function?>` to take inputs that are needed and inputs that are not
+I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I want a :ref:`function<what is a function?>` to take inputs that are needed and inputs that are optional
 
 ----
 
@@ -2933,34 +2950,36 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 
 ----
 
-I add a failing test to ``test_functions.py``
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 72
-  :emphasize-lines: 9-13
+* I add a failing test to ``test_functions.py``
 
-      def test_functions_w_positional_and_keyword_arguments(self):
-          self.assertEqual(
-              src.functions.w_positional_and_keyword_arguments(
-                  'first', last_input='last',
-              ),
-              ('first', 'last')
-          )
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 9-13
 
-      def test_functions_w_default_arguments(self):
-          self.assertEqual(
-              src.functions.w_default_arguments('jane', last_name='doe'),
-              ('jane', 'doe')
-          )
+        def test_functions_w_positional_and_keyword_arguments(self):
+            self.assertEqual(
+                src.functions.w_positional_and_keyword_arguments(
+                    'first', last_input='last',
+                ),
+                ('first', 'last')
+            )
+
+        def test_functions_w_default_arguments(self):
+            self.assertEqual(
+                src.functions.w_default_arguments('jane', last_name='doe'),
+                ('jane', 'doe')
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.functions' has no attribute 'w_default_arguments'. Did you mean: 'w_keyword_arguments'?
+    AttributeError: module 'src.functions' has no attribute 'w_default_arguments'. Did you mean: 'w_keyword_arguments'?
 
 ----
 
