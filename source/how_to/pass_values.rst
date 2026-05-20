@@ -334,6 +334,8 @@ start the project
 test_passing_a_string
 *********************************************************************************
 
+I can pass a string_ from a test to a :ref:`function<what is a function?>`
+
 ----
 
 =================================================================================
@@ -569,8 +571,6 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
   it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input it gets as part of the output.
 
-:ref:`I can pass a string to a function<test_passing_a_string>`
-
 ----
 
 *********************************************************************************
@@ -619,11 +619,15 @@ what is string interpolation?
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
+:ref:`I can pass a string from a test to a function<test_passing_a_string>`
+
 ----
 
 *********************************************************************************
 test_passing_a_class
 *********************************************************************************
+
+I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -633,38 +637,38 @@ test_passing_a_class
 
 ----
 
-I add a failing test in ``test_telephone.py`` to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 11-15
+* I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
-      def test_passing_a_string(self):
-          self.assertEqual(
-              src.telephone.text("hello"),
-              "I got: hello"
-          )
-          self.assertEqual(
-              src.telephone.text("yes"),
-              "I got: yes"
-          )
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 10-13
 
-      def test_passing_a_class(self):
-          self.assertEqual(
-              src.telephone.text(object),
-              "I got: object"
-          )
+        def test_passing_a_string(self):
+            reality = src.telephone.text('hello')
+            my_expectation = 'I got: hello'
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text('yes')
+            my_expectation = 'I got: yes'
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_class(self):
+            reality = src.telephone.text(object)
+            my_expectation = 'I got: object'
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: "I got: <class 'object'>" != 'I got: object'
+    AssertionError: "I got: <class 'object'>" != 'I got: object'
 
-:ref:`object<what is a class?>` is the mother :ref:`class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from
+  :ref:`object<what is a class?>` is the:ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from and everything in Python_ is an :ref:`object<what is a class?>`
 
 ----
 
@@ -674,17 +678,19 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the expectation in the test to match the result
+I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 17
+  :lineno-start: 16
   :emphasize-lines: 4
 
       def test_passing_a_class(self):
-          self.assertEqual(
-              src.telephone.text(object),
-              "I got: <class 'object'>"
-          )
+          reality = src.telephone.text(object)
+          my_expectation = "I got: <class 'object'>"
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
 
 the test passes.
 
@@ -699,32 +705,96 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 6-9
+    :lineno-start: 5
+    :emphasize-lines: 1, 17-19
+    :emphasize-text: TestTelephone
+
+    class TestTelephone(unittest.TestCase):
+
+        def test_passing_a_string(self):
+            reality = src.telephone.text('hello')
+            my_expectation = 'I got: hello'
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text('yes')
+            my_expectation = 'I got: yes'
+            self.assertEqual(reality, my_expectation)
 
         def test_passing_a_class(self):
-            self.assertEqual(
-                src.telephone.text(object),
-                "I got: <class 'object'>"
-            )
-            self.assertEqual(
-                src.telephone.text(TestTelephone),
-                "I got: <class 'object'>"
-            )
+            reality = src.telephone.text(object)
+            my_expectation = "I got: <class 'object'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(TestTelephone)
+            my_expectation = "I got: <class 'object'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: "I got: <class 'tests.test_telephone.TestTelephone'>" != "I got: <class 'object'>"
+    AssertionError: "I got: <class 'tests.test_telephone.TestTelephone'>"
+                 != "I got: <class 'object'>"
 
-  even though they are both :ref:`classes<what is a class?>`, :ref:`object<what is a class?>` and ``TestTelephone`` are different
+  - even though they are both :ref:`classes<what is a class?>`, :ref:`object<what is a class?>` and ``TestTelephone`` are different
+  - ``TestTelephone`` is the :ref:`class<what is a class?>` that has the tests I am writing
 
-* I change the expectation
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 2-5
+
+            reality = src.telephone.text(TestTelephone)
+            my_expectation = (
+                "I got: <class "
+                "'tests.test_telephone.TestTelephone'>"
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_passing_a_class'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can pass an object from a test to a function<test_passing_a_class>`
+
+----
+
+*********************************************************************************
+test_passing_none
+*********************************************************************************
+
+I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a function?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a failing test for :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) to ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 17
-    :emphasize-lines: 8
+    :emphasize-lines: 11-15
+    :emphasize-text: '
 
         def test_passing_a_class(self):
             self.assertEqual(
@@ -736,53 +806,20 @@ the test passes.
                 "I got: <class 'tests.test_telephone.TestTelephone'>"
             )
 
-  the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
-
-----
-
-*********************************************************************************
-test_passing_none
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a new failing test for :ref:`None<what is None?>` (it is the simplest :ref:`Python data structure<data structures>`) in ``test_telephone.py``
-
-.. code-block:: python
-  :lineno-start: 17
-  :emphasize-lines: 11-15
-  :emphasize-text: '
-
-      def test_passing_a_class(self):
-          self.assertEqual(
-              src.telephone.text(object),
-              "I got: <class 'object'>"
-          )
-          self.assertEqual(
-              src.telephone.text(TestTelephone),
-              "I got: <class 'tests.test_telephone.TestTelephone'>"
-          )
-
-      def test_passing_none(self):
-          self.assertEqual(
-              src.telephone.text(None),
-              "I got: 'None'"
-          )
+        def test_passing_none(self):
+            self.assertEqual(
+                src.telephone.text(None),
+                "I got: 'None'"
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: 'I got: None' != "I got: 'None'"
+    AssertionError: 'I got: None' != "I got: 'None'"
 
 ----
 
