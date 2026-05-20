@@ -239,7 +239,7 @@ how to change directory to the project
   - the ``-L`` option tells tree_ how deep to go when showing the folders_ and files_, I use ``2`` to make it show only the first level of contents of the child folders_
   - Here is what uv_ made for me
 
-    - ``.git`` this folder_ makes the project a git_ repository, it makes it easy to keep track of changes I make, and if I publish the repository I can work on the project from any computer anywhere
+    - ``.git`` this folder_ makes the project a git_ repository, it makes it easy to keep track of changes I make, and if I publish the repository I can work on the project from any computer anywhere (as long as it is has access to the repository)
     - ``.gitignore`` is a file_ that tells git_ what files_ in the project to not keep track of, this is useful for things that I do not want or need to share
     - ``.python-version`` is a file_ that has the version of Python_ I am using, this helps if I do projects with different Python_ versions
     - ``README.md`` is a file_ that is used to describe the project
@@ -307,6 +307,8 @@ how to see what is inside a file
   .. code-block:: python
 
     3.XY
+
+  where ``XY`` are numbers like ``13`` depending on what version of Python_ you have installed
 
 * I use cat_ to show what is inside ``README.md``
 

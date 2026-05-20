@@ -12,7 +12,7 @@ def w_return_none():
 
 def return_is_last():
     return None
-    return 'will not run'
+    return 'will never run'
 
 
 def constant():
@@ -35,9 +35,11 @@ def w_positional_and_keyword_args(first_input, last_input):
     return first_input, last_input
 
 
-def w_optional_arguments(first_name, last_name='doe'):
-    return first_name, last_name
+def w_optional_arguments(first_input, last_input='doe'):
+    return first_input, last_input
 
 
-def w_unknown_arguments(*positional_arguments, **keyword_arguments):
+def w_unknown_arguments(
+        *positional_arguments, **keyword_arguments
+    ):
     return positional_arguments, keyword_arguments

@@ -15,11 +15,11 @@
 what is a function?
 #################################################################################
 
-A function_ is code that is callable_, this means I can write code to do something one time, and use it to do that thing at a different time from when I write it, by calling the name.
+A function_ is code that is callable_, this means I can write code to do something one time, and call the name of the for it to do that thing at a different time from when I write it.
 
-Using a function_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
+functions_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
 
-Part of `Computer Programming`_ is sending input data to a process and getting output data back
+Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
 
 .. code-block:: python
 
@@ -40,7 +40,18 @@ in other words
 
 the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and returns ``output_data`` as the result.
 
-functions_ are made with the def_ keyword in Python_, a name, parentheses and a colon at the end. The code that makes up the :ref:`function<what is a function?>` (its body) is indented to the right on the line after the colon.
+----
+
+*********************************************************************************
+how to make a function
+*********************************************************************************
+
+functions_ are made with
+
+* the def_ keyword
+* a name
+* parentheses and a colon at the end
+* the code that makes up the :ref:`function<what is a function?>` (its body) comes after the colon
 
 .. code-block:: python
 
@@ -262,7 +273,7 @@ start the project
 
   the terminal_ shows that it installed the `Python packages`_
 
-* I add the new files_ and folder_ to git_ for tracking
+* I add the new files_ and folders_ to git_ for tracking
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -401,7 +412,7 @@ Why would I use a :ref:`function<what is a function?>` when I can just write cod
 
   - ``reality`` is the name or :ref:`variable<what is a variable?>` I gave to the result of ``1 + 0``
   - ``my_expectation`` is the name or :ref:`variable<what is a variable?>` I gave to ``0``
-  - ``assertEqual(reality, my_expectation)`` is  asking Python_ if ``1 + 1 is equal to 2``
+  - ``assertEqual(reality, my_expectation)`` is  asking Python_ if ``1 + 0 is equal to 0``
 
 ----
 
@@ -978,7 +989,7 @@ the test passes
 
     cd functions
 
-  the terminal_ shows I am in the ``assertion_error`` folder_
+  the terminal_ shows I am in the ``functions`` folder_
 
   .. code-block:: python
 
@@ -987,21 +998,22 @@ the test passes
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_why_use_a_function'
+    git commit --all --message \
+    'add test_why_use_a_function'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
+* I go back to the terminal_ that is running the tests
 
 -----
 
-* I go back to the terminal_ that is running the tests
 
 * What if I want to test what happens when I add ``3`` to a number? Wait! No more, please! I do not want to have to make a change for each new number, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat, I add one to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
     :emphasize-lines: 4-5
 
     import unittest
@@ -1016,9 +1028,11 @@ the test passes
 * I use the new :ref:`function<what is a function?>` for the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 1-2
+    :lineno-start: 8
+    :emphasize-lines: 4-5
     :emphasize-text: add_x
+
+    class TestFunctions(unittest.TestCase):
 
         def test_why_use_a_function(self):
             # reality = 2 + 0
@@ -1032,7 +1046,7 @@ the test passes
 * I use the ``add_x`` :ref:`function<what is a function?>` for the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 8
     :emphasize-lines: 7-8, 12-13, 17-18, 22-23, 27-28, 32-33, 37-38, 42-43, 47-48
     :emphasize-text: add_x
 
@@ -1138,7 +1152,7 @@ the test passes
 
     # Exceptions seen
 
-* Now I only have to make a change in one place if I want to test what happens when I add ``3`` to a number, then change the results since those will change as well
+* Now I only have to make a change in one place if I want to test what happens when I add ``3`` to a number
 
   .. code-block:: python
     :lineno-start: 4
@@ -1304,7 +1318,8 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
     .. code-block:: shell
 
-      AttributeError: module 'src.functions' has no attribute 'w_pass'
+      AttributeError: module 'src.functions'
+                    has no attribute 'w_pass'
 
     because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_pass`` inside it
 
@@ -1345,9 +1360,10 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_making_a_function_w_pass'
+    git commit --all --message \
+    'add test_making_a_function_w_pass'
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
@@ -1394,7 +1410,8 @@ I can also make a function with a `return statement`_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_return'
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_return'
 
   because ``functions.py`` in the ``src`` folder_ does not have anything with the name ``w_return`` in it
 
@@ -1455,16 +1472,14 @@ I have two :ref:`functions<what is a function?>` with different statements, and 
 .. code-block:: python
 
   src.functions.w_pass()
-  src.functions.w_return()
-
-their contents are different, their results are the same
+  pass
 
 .. code-block:: python
 
-  pass
+  src.functions.w_return()
   return
 
-because "all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``", which leads me to the next test
+their contents are different, their results are the same because "all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``", which leads me to the next test
 
 :ref:`I can make a function with a return statement<test_making_a_function_w_return>`
 
@@ -1509,7 +1524,8 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_return_none'
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_return_none'
 
   because ``w_return_none`` is not defined in ``functions.py`` in the ``src`` folder_
 
@@ -1556,7 +1572,7 @@ the test passes
 
   the test is still green
 
-* I change :ref:`None<what is None?>` to ``something``
+* I change :ref:`None<what is None?>` to ``'something'``
 
   .. code-block:: python
     :lineno-start: 9
@@ -1600,20 +1616,21 @@ I have three :ref:`functions<what is a function?>` with different statements, an
 .. code-block:: python
 
   src.functions.w_pass()
-  src.functions.w_return()
-  src.functions.w_return_none()
-
-their contents are different, their results are the same
+  pass
 
 .. code-block:: python
 
-  pass
+  src.functions.w_return()
   return
+
+.. code-block:: python
+
+  src.functions.w_return_none()
   return None
 
-because "all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ..." ah, the last :ref:`function<what is a function?>` has a line that says ``return None`` for everyone to see.
+their contents are different, their results are the same because "all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ..."
 
-I like to write my :ref:`functions<what is a function?>` this way, so that anyone can see what the :ref:`function<what is a function?>` returns.
+I like to write my :ref:`functions<what is a function?>` with ``return None``, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
 
 :ref:`I can make a function with return None<test_making_a_function_w_return_none>`
 
@@ -1658,7 +1675,8 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
   .. code-block:: python
 
-    AttributeError: module 'src.functions' has no attribute 'return_is_last'
+    AttributeError: module 'src.functions'
+                    has no attribute 'return_is_last'
 
   because ``functions.py`` does not have a definition for it, yet
 
@@ -1720,7 +1738,7 @@ the test passes
         return 'something'
         return None
 
-  the terminal_ still shows the same :ref:`AssertionError<what causes AssertionError?>` because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code)
+  the terminal_ still shows the same :ref:`AssertionError<what causes AssertionError?>` because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code).
 
   .. TIP::
 
@@ -1805,7 +1823,8 @@ constant functions_ always return the same thing when they are called
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'constant'
+    AttributeError: module 'src.functions'
+                    has no attribute 'constant'
 
   because I have not added a definition for ``constant`` in ``functions.py`` in the ``src`` folder_
 
@@ -1904,7 +1923,8 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'identity'
+    AttributeError: module 'src.functions'
+                    has no attribute 'identity'
 
   is it because ``functions.py`` has no ``identity``?
 
@@ -1933,9 +1953,10 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 
   .. code-block:: shell
 
-    TypeError: identity() takes 0 positional arguments but 1 was given
+    TypeError: identity() takes 0 positional arguments
+               but 1 was given
 
-  because the definition for ``identity`` does not allow inputs and the test sends :ref:`None<what is None?>` as input
+  because the definition for ``identity`` does not allow calling it with inputs and the test sends :ref:`None<what is None?>` as input
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
@@ -2065,7 +2086,8 @@ test_functions_w_positional_arguments
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_positional_arguments'
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_positional_arguments'
 
   because ...
 
@@ -2395,7 +2417,8 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_keyword_arguments'
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_keyword_arguments'
 
   because ``functions.py`` in the ``src`` folder_ does not have a definition for ``w_keyword_arguments``
 
@@ -3029,7 +3052,8 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_positional_and_keyword_args'
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_positional_and_keyword_args'
 
   because ``functions.py`` does not have anything named ``w_positional_and_keyword_args``
 
@@ -3240,7 +3264,8 @@ I can use :ref:`positional<test_functions_w_positional_arguments>` and :ref:`key
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_optional_arguments'. Did you mean: 'w_positional_arguments'?
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_optional_arguments'. Did you mean: 'w_positional_arguments'?
 
   because ``functions.py`` does not have a definition for ``w_optional_arguments``
 
@@ -3643,7 +3668,8 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.functions' has no attribute 'w_unknown_arguments'. Did you mean: 'w_keyword_arguments'?
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_unknown_arguments'. Did you mean: 'w_keyword_arguments'?
 
   because ``functions.py`` does not have ``w_unknown_arguments``
 
@@ -4007,7 +4033,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: (((0, 1), {'a': '2', 'b': '3'}), {}) != ((0, 1), {'a': '2', 'b': '3'})
+    AssertionError: Tuples differ: (((0, 1), {'a': 2, 'b': 3}), {}) != ((0, 1), {'a': 2, 'b': 3})
 
   because passing in the values this way means I am sending in two :ref:`positional arguments<test_functions_w_positional_arguments>`
 
