@@ -48,7 +48,7 @@ start the project
 
     Initialized project `calculator` at `.../pumping_python/calculator`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I make a directory_ for the source code
 
@@ -390,7 +390,7 @@ test_addition
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add the name
+* I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add the name
 
   .. code-block:: python
     :linenos:
@@ -467,7 +467,7 @@ test_addition
 
     AssertionError: None != 1
 
-  the ``add`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, the test expects ``1``
+  the ``add`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, the :ref:`assertion<what is an assertion?>` expects ``1``
 
 * I make the `return statement`_ give the test what it wants
 
@@ -507,7 +507,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
     AssertionError: 1 != 2
 
-  the :ref:`function<what is a function?>` returns ``1``, the test expects ``2``
+  the :ref:`function<what is a function?>` returns ``1``, the :ref:`assertion<what is an assertion?>` expects ``2``
 
 * I change the `return statement`_ in ``calculator.py``
 
@@ -1455,7 +1455,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMNOP
 
-  ``subtract`` returns :ref:`None<what is None?>`, the test expects
+  ``subtract`` returns :ref:`None<what is None?>`, the :ref:`assertion<what is an assertion?>` expects
 
   - ``random_first_number-random_second_number`` which is
   - ``first_input-second_input``
@@ -2120,7 +2120,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     AssertionError: (XYZ.ABCDEFGHIJKLMN, YZA.BCDEFGHIJKLMNO) != ZAB.CDEFGHIJKLMNOP
 
-  the name of the :ref:`function<what is a function?>` is ``subtract`` and the test expects the difference between the 2 inputs
+  the name of the :ref:`function<what is a function?>` is ``subtract`` and the :ref:`assertion<what is an assertion?>` expects the difference between the 2 inputs
 
 * I make the `return statement`_ match the expectation
 

@@ -565,7 +565,7 @@ the test passes.
     AssertionError: Tuples differ: ('06:00', '11:00') != (['06', '00'], ['11', '00'])
     AssertionError: Tuples differ: ('13:00', '13:00') != (['13', '00'], ['13', '00'])
 
-  the ``duration`` :ref:`function<what is a function?>` returns ``wake_time`` and ``sleep_time`` and the test expects the result of splitting them. I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns ``wake_time`` and ``sleep_time`` and the :ref:`assertion<what is an assertion?>` expects the result of splitting them. I change it to match the expectation
 
   .. code-block:: python
 
@@ -652,7 +652,7 @@ the test passes.
     AssertionError: Tuples differ: (['05', '00'], ['08', '00']) != ('05', '08')
     AssertionError: Tuples differ: (['23', '00'], ['04', '00']) != ('23', '04')
 
-  the ``duration`` :ref:`function<what is a function?>` returns the result of splitting the timestamps and the test expects the hours, I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns the result of splitting the timestamps and the :ref:`assertion<what is an assertion?>` expects the hours, I change it to match the expectation
 
   .. code-block:: python
 
@@ -740,7 +740,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     AssertionError: Tuples differ: ('04', '04') != (4, 4)
     AssertionError: Tuples differ: ('16', '14') != (16, 14)
 
-  the ``duration`` :ref:`function<what is a function?>` returns the hours as a string_ and the test expects them as numbers, I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns the hours as a string_ and the :ref:`assertion<what is an assertion?>` expects them as numbers, I change it to match the expectation
 
   .. code-block:: python
 
@@ -776,7 +776,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
     AssertionError: (12, 21) != -9
     AssertionError: (14, 2) != 12
 
-  the ``duration`` :ref:`function<what is a function?>` returns the hours from the timestamps and the test expects the difference between them. I change the ``duration`` :ref:`function<what is a function?>` to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns the hours from the timestamps and the :ref:`assertion<what is an assertion?>` expects the difference between them. I change the ``duration`` :ref:`function<what is a function?>` to match the expectation
 
   .. code-block:: python
 

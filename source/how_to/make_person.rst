@@ -176,7 +176,7 @@ test_factory_takes_keyword_arguments
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` to ``person.py``
 
@@ -1723,7 +1723,7 @@ I want to see what happens when I try to make a person without a value for the `
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?                                          ^^  +
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the test expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -1807,7 +1807,7 @@ I want to see what happens when I try to make a person without a value for the `
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
     E       ?                                                    ^^^
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the test expects ``'M'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
 
 * I change the default value for ``sex`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -2466,7 +2466,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
     E       ?         ^
 
-  the :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned for the ``age`` :ref:`key<test_keys_of_a_dictionary>` has 4 digits (a year), and the test expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
+  the :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned for the ``age`` :ref:`key<test_keys_of_a_dictionary>` has 4 digits (a year), and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
 
 * I add an `import statement`_ for the `datetime module`_ at the top of the file_
 
@@ -2610,7 +2610,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
     E       ?                                                    ^^^
 
-  the test expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
+  the :ref:`assertion<what is an assertion?>` expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
 * I change the default value of ``sex`` to ``'M'``
 
@@ -2662,7 +2662,7 @@ I want to write the solution without looking at the tests
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?                                          ^^  +
 
-  the test expects ``'doe'`` as the :ref:`value<test_values_of_a_dictionary>` of ``last_name`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
+  the :ref:`assertion<what is an assertion?>` expects ``'doe'`` as the :ref:`value<test_values_of_a_dictionary>` of ``last_name`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
 * I change the default value for ``last_name`` to match the expectation
 

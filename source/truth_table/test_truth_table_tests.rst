@@ -84,7 +84,7 @@ continue the project
 :red:`RED`: make it fail
 *********************************************************************************
 
-  I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_
+* I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_
 * I delete everything in ``truth_table.py``, the terminal_ is my friend, and shows 20 failures, I start with the last one
 
   .. code-block:: shell
@@ -140,7 +140,8 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: logical_negation() takes 0 positional arguments but 1 was given
+    TypeError: logical_negation() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
 * I add a name in parentheses
 
@@ -157,7 +158,7 @@ continue the project
 
     AssertionError: None is not true
 
-  the test expects :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
 * I change :ref:`None<what is None?>` in the `return statement`_ to give the test what it wants
 
@@ -174,7 +175,7 @@ continue the project
 
     AssertionError: True is not false
 
-  the test expects :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
 
 * I change the `return statement`_
 
@@ -191,12 +192,12 @@ continue the project
 
     AssertionError: False is not true
 
-  the test expects
+  the :ref:`assertion<what is an assertion?>` expects
 
   - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
   - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
 
-* I change the `return statement`_ to see the difference between the input and what the test expects
+* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :linenos:
@@ -211,7 +212,7 @@ continue the project
 
     AssertionError: True is not false
 
-  the test expects
+  the :ref:`assertion<what is an assertion?>` expects
 
   - the :ref:`opposite<test_logical_negation>` of the input
   - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
@@ -249,7 +250,8 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: logical_identity() takes 0 positional arguments but 1 was given
+    TypeError: logical_identity() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
 * I add a name in parentheses
 
@@ -281,7 +283,7 @@ continue the project
 
     AssertionError: True is not false
 
-  the test expects :green:`True` if the :ref:`function<what is a function?>` returns :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :green:`True` if the :ref:`function<what is a function?>` returns :green:`True`
 
 * I change the `return statement`_
 
@@ -298,12 +300,12 @@ continue the project
 
     AssertionError: False is not true
 
-  the test expects
+  the :ref:`assertion<what is an assertion?>` expects
 
   - :red:`False` if the :ref:`function<what is a function?>` returns :red:`False`
   - :green:`True` if the :ref:`function<what is a function?>` returns :green:`True`
 
-* I change the `return statement`_ to see the difference between the input and what the test expects
+* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 5
@@ -469,7 +471,7 @@ continue the project
 
     AssertionError: False is not true
 
-  the test expects :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
+  the :ref:`assertion<what is an assertion?>` expects :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
 
 * I change the `return statement`_
 
@@ -486,12 +488,12 @@ continue the project
 
     AssertionError: True is not false
 
-  the test expects
+  the :ref:`assertion<what is an assertion?>` expects
 
   - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
   - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
 
-* I change the `return statement`_ to see the difference between the input and what the test expects
+* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 21
@@ -572,7 +574,7 @@ continue the project
 
     AssertionError: True is not false
 
-  the test expects :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
 
 * I change the `return statement`_
 
@@ -589,12 +591,12 @@ continue the project
 
     AssertionError: False is not true
 
-  the test expects
+  the :ref:`assertion<what is an assertion?>` expects
 
   - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
   - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
 
-* I change the `return statement`_ to see the difference between the input and what the test expects
+* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 41
@@ -624,7 +626,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_second'
 
-* I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` with a `return statement`_ to see the difference between the input and what the test expects
+* I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 41
@@ -676,7 +678,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'negate_first'
 
-* I add a :ref:`function<what is a function?>` for it with a `return statement`_ to see the difference between the input and what the test expects
+* I add a :ref:`function<what is a function?>` for it with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 29
@@ -730,7 +732,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>` with a `return statement`_ to see the difference between the input and what the test expects
+* I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 35
@@ -802,7 +804,7 @@ continue the project
 
     AttributeError: module 'src.truth_table' has no attribute 'material_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` with a `return statement`_ to see the difference between the input and what the test expects
+* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 41

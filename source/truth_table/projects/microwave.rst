@@ -65,7 +65,7 @@ start the project
 
     Initialized project `microwave` at `.../pumping_python/microwave`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I make a directory_ for the source code
 
@@ -413,7 +413,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``microwave.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``microwave.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` named ``microwave`` to ``microwave.py``
 
@@ -477,7 +477,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: None != 'OFF'
 
-  the ``microwave`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the test expects :red:`'OFF'`
+  the ``microwave`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -589,7 +589,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'OFF' != 'HEATING'
 
-because the ``microwave`` :ref:`function<what is a function?>` returns :red:`'OFF'` and the test expects :green:`'HEATING'`
+because the ``microwave`` :ref:`function<what is a function?>` returns :red:`'OFF'` and the :ref:`assertion<what is an assertion?>` expects :green:`'HEATING'`
 
 ----
 
@@ -1272,7 +1272,7 @@ door           timer           start button       output
 
     AssertionError: 'HEATING' != 'OFF'
 
-  because the ``microwave`` :ref:`function<what is a function?>` returns :green:`'HEATING'` and the test expects :red:`'OFF'`
+  because the ``microwave`` :ref:`function<what is a function?>` returns :green:`'HEATING'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
 ----
 
@@ -2434,7 +2434,7 @@ door           timer           start button       too hot             output
 
     AssertionError: 'HEATING' != 'OFF'
 
-  because the ``microwave`` :ref:`function<what is a function?>` returned :green:`'HEATING'` and the test expects :red:`'OFF'`
+  because the ``microwave`` :ref:`function<what is a function?>` returned :green:`'HEATING'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
 * I add an :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py``
 

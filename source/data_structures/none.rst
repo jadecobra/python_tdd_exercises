@@ -203,7 +203,7 @@ requirements
 
     Initialized project `none`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I remove ``main.py`` from the project because I do not use it
 

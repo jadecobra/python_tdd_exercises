@@ -65,7 +65,7 @@ start the project
 
     Initialized project `car` at `.../pumping_python/car`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I make a directory_ for the source code
 
@@ -412,7 +412,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``car.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``car.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` named ``starter`` to ``car.py``
 
@@ -476,7 +476,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: None != 'ON'
 
-  the ``starter`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the test expects :green:`'ON'`
+  the ``starter`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`'ON'`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -534,7 +534,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: 'ON' != 'OFF'
 
-  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the test expects :red:`'OFF'`
+  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
 * I add an :ref:`if statement<if statements>` to the ``starter`` :ref:`function<what is a function?>` in ``car.py``
 
@@ -656,7 +656,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'ON' != 'OFF'
 
-because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the test expects :red:`'OFF'`
+because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
 ----
 
@@ -1215,7 +1215,7 @@ key             brake               start button        output
 
     AssertionError: 'ON' != 'OFF'
 
-  because the ``starter`` :ref:`function<what is a function?>` returned :green:`'ON'` and the test expects :red:`'OFF'`
+  because the ``starter`` :ref:`function<what is a function?>` returned :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
 * I add an :ref:`if statement<if statements>` to the ``starter`` :ref:`function<what is a function?>` in ``car.py``
 
@@ -2084,7 +2084,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
     AssertionError: 'ON' != 'OFF'
 
-  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the test expects :red:`'OFF'`
+  because the ``starter`` :ref:`function<what is a function?>` returns :green:`'ON'` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
 * I add an :ref:`if statement<if statements>` to the ``starter`` :ref:`function<what is a function?>` in ``car.py``
 

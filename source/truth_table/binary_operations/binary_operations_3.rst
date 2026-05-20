@@ -353,7 +353,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returned :green:`True` and the test expects :red:`False`
+  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I add an :ref:`if statement<if statements>` for this case, to the one for when the first input is :red:`False` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
 

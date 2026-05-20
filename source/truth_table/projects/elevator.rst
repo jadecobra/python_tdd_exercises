@@ -67,7 +67,7 @@ number the project
 
     Initialized project `elevator` at `.../pumping_python/elevator`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I make a directory_ for the source code
 
@@ -405,7 +405,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``elevator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``elevator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` named ``elevator`` to ``elevator.py``
 
@@ -469,7 +469,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: None != 'MOVE'
 
-  the ``elevator`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the test expects :green:`'MOVE'`
+  the ``elevator`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`'MOVE'`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -533,7 +533,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'MOVE' != 'NOT MOVE'
 
-because the ``elevator`` :ref:`function<what is a function?>` returns :green:`'MOVE'` and the test expects :red:`'NOT MOVE'`
+because the ``elevator`` :ref:`function<what is a function?>` returns :green:`'MOVE'` and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
 
 ----
 
@@ -698,7 +698,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'MOVE' != 'NOT MOVE'
 
-because the ``elevator`` :ref:`function<what is a function?>` returns :green:`'MOVE'` and the test expects :red:`'NOT MOVE'`
+because the ``elevator`` :ref:`function<what is a function?>` returns :green:`'MOVE'` and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
 
 ----
 
@@ -1158,7 +1158,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
       AssertionError: 'MOVE' != 'NOT MOVE'
 
-    because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'` when it was called with the ``above_weight_limit`` parameter and the test expects :red:`'NOT MOVE'`
+    because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'` when it was called with the ``above_weight_limit`` parameter and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
 
 * I add a :ref:`default value<test_functions_w_optional_arguments>` to make ``above_weight_limit`` a choice
 
@@ -1198,7 +1198,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
     AssertionError: 'MOVE' != 'NOT MOVE'
 
-  because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'`  and the test expects :red:`'NOT MOVE'`
+  because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'`  and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
 
 * I add an :ref:`if statement<if statements>` to the :ref:`function<what is a function?>` in ``elevator.py``
 
@@ -2154,7 +2154,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
     AssertionError: 'MOVE' != 'NOT MOVE'
 
-  because the ``elevator`` :ref:`function<what is a function?>` returns :green:`'MOVE'` and the test expects :red:`'NOT MOVE'`
+  because the ``elevator`` :ref:`function<what is a function?>` returns :green:`'MOVE'` and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
 
 * I add an :ref:`if statement<if statements>` to the ``elevator`` :ref:`function<what is a function?>` in ``elevator.py``
 

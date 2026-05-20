@@ -67,7 +67,7 @@ start the project
 
     Initialized project `atm` at `.../pumping_python/atm`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I change directory_ to the project
 
@@ -418,7 +418,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``atm.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``atm.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` to ``atm.py``
 
@@ -482,7 +482,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: None != 'CASH'
 
-  the ``withdraw`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the test expects ``'CASH'``
+  the ``withdraw`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'CASH'``
 
 * I change the `return statement`_ to give me ``'CASH'``
 
@@ -546,7 +546,7 @@ test_right_pin_not_enough_money
 
     AssertionError: 'CASH' != 'DENIED'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the test expects :red:`'DENIED'`
+  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`'DENIED'`
 
 ----
 
@@ -715,7 +715,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'CASH' != 'DENIED'
 
-because the ``withdraw`` :ref:`function<what is a function?>` returned :green:`'CASH'` and the test expects :red:`DENIED`. Why is this ATM giving :green:`'CASH'` when the :red:`wrong PIN` is entered?
+because the ``withdraw`` :ref:`function<what is a function?>` returned :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`DENIED`. Why is this ATM giving :green:`'CASH'` when the :red:`wrong PIN` is entered?
 
 ----
 
@@ -1153,7 +1153,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
     AssertionError: 'CASH' != 'DENIED'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the test expects :red:`'DENIED'`
+  because the ``withdraw`` :ref:`function<what is a function?>` returns :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`'DENIED'`
 
 * I add an :ref:`if statement<if statements>` for this case
 
@@ -2105,7 +2105,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
 
     AssertionError: 'CASH' != 'DENIED'
 
-  because the ``withdraw`` :ref:`function<what is a function?>` gives me :green:`'CASH'` and the test expects :red:`'DENIED'`
+  because the ``withdraw`` :ref:`function<what is a function?>` gives me :green:`'CASH'` and the :ref:`assertion<what is an assertion?>` expects :red:`'DENIED'`
 
 * I add an :ref:`if statement<if statements>` to the ``withdraw`` :ref:`function<what is a function?>` in ``atm.py``
 

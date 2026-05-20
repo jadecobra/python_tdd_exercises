@@ -445,7 +445,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
     AssertionError: Tuples differ: ('1999/12/31 20:50', '1999/12/31 14:22') != (datetime.datetime(1999, 12, 31, 20, 50), [35 chars] 22))
     AssertionError: Tuples differ: ('1999/12/31 16:40', '1999/12/31 13:39') != (datetime.datetime(1999, 12, 31, 16, 40), [35 chars] 39))
 
-  ``duration_a`` returns the timestamps as strings_ and the test expects them as `datetime.datetime`_ objects. I change the `return statement`_ to match
+  ``duration_a`` returns the timestamps as strings_ and the :ref:`assertion<what is an assertion?>` expects them as `datetime.datetime`_ objects. I change the `return statement`_ to match
 
   .. code-block:: python
 
@@ -674,7 +674,7 @@ and the test is still green.
     AssertionError: (datetime.datetime(1999, 12, 31, 23, 59),[35 chars], 1)) != datetime.timedelta(seconds=7080)
     AssertionError: (datetime.datetime(1999, 12, 31, 16, 1), [35 chars] 55)) != datetime.timedelta(seconds=7560)
 
-  the ``duration_a`` :ref:`function<what is a function?>` returns `datetime.datetime`_ objects and the test expects a `datetime.timedelta`_ object. I change it to match the expectation
+  the ``duration_a`` :ref:`function<what is a function?>` returns `datetime.datetime`_ objects and the :ref:`assertion<what is an assertion?>` expects a `datetime.timedelta`_ object. I change it to match the expectation
 
   .. code-block:: python
 

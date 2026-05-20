@@ -242,7 +242,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
 
 ----
 
-  I use the :ref:`Explorer<explorer on left>` to open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
+* I use the :ref:`Explorer<explorer on left>` to open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -816,7 +816,8 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
 
   .. code-block:: shell
 
-    TypeError: function_00() takes 0 positional arguments but 1 was given
+    TypeError: function_00() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
   because ``function_00`` is called with ``'a'`` as input and the definition does not allow any inputs
 

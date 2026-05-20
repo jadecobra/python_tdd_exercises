@@ -109,9 +109,10 @@ start the project
 
   .. code-block:: shell
 
-    Initialized project `functions` at `.../pumping_python/functions`
+    Initialized project `functions`
+    at `.../pumping_python/functions`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I change directory_ to the project
 
@@ -305,7 +306,7 @@ start the project
      create mode 100644 tests/test_functions.py
      create mode 100644 uv.lock
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -1003,7 +1004,7 @@ the test passes.
     git commit --all --message \
     'add test_why_use_a_function'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 * I go back to the terminal_ that is running the tests
 
@@ -1227,7 +1228,7 @@ the test passes.
 
     git commit --all --message 'extract add_x function'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the changing results?<a better way to handle the results changing>`
 
@@ -1365,7 +1366,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
     git commit --all --message \
     'add test_making_a_function_w_pass'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can make a function with pass<test_making_a_function_w_pass>`
 
@@ -1465,7 +1466,7 @@ the test passes.
     git commit --all --message \
     'add test_making_a_function_w_return'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 I have two :ref:`functions<what is a function?>` with different statements, and the tests show that they both return :ref:`None<what is None?>`
 
@@ -1588,7 +1589,7 @@ the test passes.
 
     AssertionError: 'something' != None
 
-  because the test expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
+  because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
 
 * I undo the change
 
@@ -1609,7 +1610,7 @@ the test passes.
     git commit --all --message \
     'add test_making_a_function_w_return_none'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 I have three :ref:`functions<what is a function?>` with different statements, and the tests show that they all return :ref:`None<what is None?>`
 
@@ -1726,7 +1727,7 @@ the test passes.
 
     AssertionError: 'something' is not None
 
-  because the test expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
+  because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
 
 * I add another `return statement`_
 
@@ -1780,7 +1781,7 @@ the test passes.
     git commit --all --message \
     'add test_what_happens_after_a_function_returns'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -1856,7 +1857,7 @@ constant functions_ always return the same thing when they are called
 
     AssertionError: None != 'the same thing'
 
-  because the test expects ``'the same thing'`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
+  because the :ref:`assertion<what is an assertion?>` expects ``'the same thing'`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -1876,7 +1877,7 @@ constant functions_ always return the same thing when they are called
 
     git commit --all --message 'add test_constant_function'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 A constant :ref:`function<what is a function?>` always returns the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times (who's counting?)
 
@@ -2038,7 +2039,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
     git commit --all --message 'add test_identity_function'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send something and get it back, I can start making changes to see how it affects the output.
 
@@ -2154,7 +2155,7 @@ test_functions_w_positional_arguments
 
     AssertionError: None != ('first', 'last')
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects ``('first', 'last')``
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``('first', 'last')``
 
 * I change the `return statement`_ to make the :ref:`function<what is a function?>` return its inputs as output
 
@@ -2398,7 +2399,7 @@ test_functions_w_positional_arguments
     git commit --all --message \
     'add test_functions_w_positional_arguments'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can call functions with positional arguments<test_functions_w_positional_arguments>`
 
@@ -2536,7 +2537,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
     AssertionError: None != ('first', 'last')
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects ``('first', 'last')``
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``('first', 'last')``
 
 * I change the `return statement`_ to make the :ref:`function<what is a function?>` return its inputs
 
@@ -2993,7 +2994,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
     git commit --all --message \
     'add test_functions_w_keyword_arguments'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 
 :ref:`I can call a function with keyword arguments<test_functions_w_keyword_arguments>`
@@ -3193,7 +3194,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
     AssertionError: None != ('first', 'last')
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects ``('first', 'last')``
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``('first', 'last')``
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -3274,7 +3275,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     git commit --all --message \
     'add test_functions_w_positional_and_keyword_args'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can call a function with positional and keyword arguments<test_functions_w_positional_and_keyword_args>`
 
@@ -3602,7 +3603,7 @@ the test passes.
     git commit --all --message \
     'add test_functions_w_optional_arguments'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 .. note::
 
@@ -4560,7 +4561,7 @@ how Python reads positional and keyword arguments
     git commit --all --message \
     'add test_functions_w_unknown_arguments'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 .. note::
 

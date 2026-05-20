@@ -217,7 +217,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     AssertionError: "BOOM!!!" does not match ""
 
-  the `assertRaisesRegex method`_ checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the test expects ``"BOOM!!!"``
+  the `assertRaisesRegex method`_ checks that the code in its context raises_ the :ref:`Exception<errors>` it is given, with the message it is given. The default message of the :ref:`Exception<errors>` is the empty string_ (``''``) and the :ref:`assertion<what is an assertion?>` expects ``"BOOM!!!"``
 
 * the :ref:`Exception<errors>` is right, the message is not, I add the expected message in ``exceptions.py``
 
@@ -323,7 +323,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: shell
 
-    TypeError: an_exception_handler() takes 0 positional arguments but 1 was given
+    TypeError: an_exception_handler() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
 * I make the :ref:`function<what is a function?>` take input
 
@@ -340,7 +341,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: None != 'failed'
 
-  the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None<what is None?>` and the test expects ``'failed'``
+  the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'failed'``
 
 * I change the `return statement`_ to match the expectation
 
@@ -441,7 +442,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: 'failed' != 'succeeded'
 
-  ``src.exceptions.an_exception_handler`` still returns ``'failed'``, the test expects ``'succeeded'``
+  ``src.exceptions.an_exception_handler`` still returns ``'failed'``, the :ref:`assertion<what is an assertion?>` expects ``'succeeded'``
 
 * I make ``an_exception_handler``, remember the :ref:`identity function<test_identity_function>`
 

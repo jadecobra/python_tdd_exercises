@@ -71,7 +71,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
     AssertionError: 8 != '08:00'
     AssertionError: 16 != '16:00'
 
-  the ``duration`` :ref:`function<what is a function?>` returns a number and the test expects a string_. I change it to match the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns a number and the :ref:`assertion<what is an assertion?>` expects a string_. I change it to match the expectation
 
   .. code-block:: python
 
@@ -134,7 +134,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
     AssertionError: '-2:00' != '-2:-26'
     AssertionError: '16:00' != '16:-25'
 
-  the ``duration`` :ref:`function<what is a function?>` returns ``00`` for the minutes part of the duration, and the test expects the difference between the minutes of ``wake_time`` and ``sleep_time``
+  the ``duration`` :ref:`function<what is a function?>` returns ``00`` for the minutes part of the duration, and the :ref:`assertion<what is an assertion?>` expects the difference between the minutes of ``wake_time`` and ``sleep_time``
 
 *********************************************************************************
 :green:`GREEN`: make it pass

@@ -95,7 +95,8 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   .. code-block:: shell
 
-    TypeError: get_datetime() takes 0 positional arguments but 1 was given
+    TypeError: get_datetime() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
   then I add a name to the :ref:`function's<what is a function?>` definition
 
@@ -276,7 +277,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: "wake_time: "5602/08/29 05:06" is earlier than sleep_time: "8373/05/08 05:29"" does not match "('8373/05/08 05:29', '5602/08/29 05:06')"
     AssertionError: "wake_time: "7413/05/24 15:04" is earlier than sleep_time: "8720/08/18 01:02"" does not match ""
 
-  this tells me that the test expects a message with the ValueError_, or I get ValueError_ that looks like this
+  this tells me that the :ref:`assertion<what is an assertion?>` expects a message with the ValueError_, or I get ValueError_ that looks like this
 
   .. code-block:: shell
 
@@ -413,7 +414,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: ('1583/06/02 07:48', '3962/03/06 17:07') != '868824 days, 9:19:00'
     AssertionError: ('1820/06/12 16:07', '8786/05/18 04:27') != '2544253 days, 12:20:00'
 
-  it looks like the test expects the difference between the timestamps
+  it looks like the :ref:`assertion<what is an assertion?>` expects the difference between the timestamps
 
 * I return the difference between ``wake_time`` and ``sleep_time``
 
@@ -463,7 +464,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: datetime.timedelta(days=-744003, seconds=22500) != '744002 days, 17:45:00'
     AssertionError: datetime.timedelta(days=-1226280, seconds=76800) != '1226279 days, 2:40:00'
 
-  the test expects a string_ and the :ref:`function<what is a function?>` returns a `datetime.timedelta`_ object. The values for days are also negative and the test expects positive numbers for the days, I did something wrong
+  the :ref:`assertion<what is an assertion?>` expects a string_ and the :ref:`function<what is a function?>` returns a `datetime.timedelta`_ object. The values for days are also negative and the :ref:`assertion<what is an assertion?>` expects positive numbers for the days, I did something wrong
 
 * I use ``str()`` to match the format of the expectation
 
@@ -491,7 +492,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     AssertionError: '-398812 days, 16:44:00' != '398811 days, 7:16:00'
     AssertionError: '-1209690 days, 0:49:00' != '1209689 days, 23:11:00'
 
-  the ``duration`` :ref:`function<what is a function?>` returns negative timestamps and the test expects positive timestamps, and the negative days all look like they are one number less than the expectation
+  the ``duration`` :ref:`function<what is a function?>` returns negative timestamps and the :ref:`assertion<what is an assertion?>` expects positive timestamps, and the negative days all look like they are one number less than the expectation
 
 * I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
 

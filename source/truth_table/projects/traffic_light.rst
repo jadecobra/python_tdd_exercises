@@ -69,7 +69,7 @@ start the project
 
     Initialized project `traffic-light` at `.../pumping_python/traffic_light`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I make a directory_ for the source code
 
@@ -414,7 +414,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``traffic_light.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``traffic_light.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` to ``traffic_light.py``
 
@@ -478,7 +478,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: None != 'GREEN'
 
-  the ``show`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the test expects ``'GREEN'``
+  the ``show`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'GREEN'``
 
 * I change the `return statement`_ to give the test what it expects
 
@@ -536,7 +536,7 @@ because I do not have a definition for ``src`` in this file_
 
     AssertionError: 'GREEN' != 'RED'
 
-  because the ``show`` :ref:`function<what is a function?>` returns ``'GREEN'`` and the test expects ``'RED'``
+  because the ``show`` :ref:`function<what is a function?>` returns ``'GREEN'`` and the :ref:`assertion<what is an assertion?>` expects ``'RED'``
 
 * I add an :ref:`if statement<if statements>` for this case, to ``traffic_light.py``
 
@@ -695,7 +695,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'GREEN' != 'RED'
 
-because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the test expects ``'RED'``
+because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the :ref:`assertion<what is an assertion?>` expects ``'RED'``
 
 ----
 
@@ -774,7 +774,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
     AssertionError: 'RED' != 'YELLOW'
 
-  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the test expects ``'YELLOW'``
+  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'YELLOW'``
 
 * I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done`, in ``traffic_light.py``
 
@@ -874,7 +874,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'GREEN' != 'YELLOW'
 
-because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the test expects ``'YELLOW'``
+because the ``show`` :ref:`function<what is a function?>` returned ``'GREEN'`` and the :ref:`assertion<what is an assertion?>` expects ``'YELLOW'``
 
 ----
 
@@ -962,7 +962,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
     AssertionError: 'RED' != 'GREEN'
 
-  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the test expects ``'GREEN'``
+  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'GREEN'``
 
 * I add an :ref:`if statement<if statements>` to the one for when the timer is :red:`NOT done` in ``traffic_light.py``
 
@@ -1539,7 +1539,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
     AssertionError: 'RED' != 'BOOM'
 
-  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the test expects ``'BOOM'``
+  because the ``show`` :ref:`function<what is a function?>` returned ``'RED'`` and the :ref:`assertion<what is an assertion?>` expects ``'BOOM'``
 
 * I change the expectation back
 

@@ -215,7 +215,7 @@ start the project
 
     Initialized project `attribute_error`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I remove ``main.py`` from the project because I do not use it
 
@@ -367,7 +367,7 @@ test_attribute_error_w_variables
 
 ----
 
-  I use the :ref:`Explorer<explorer on left>` to open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
+* I use the :ref:`Explorer<explorer on left>` to open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
 
 * I add the name to ``attribute_error.py``
 

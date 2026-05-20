@@ -448,7 +448,8 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   .. code-block:: python
 
-    TypeError: a_for_loop() takes 0 positional arguments but 1 was given
+    TypeError: a_for_loop() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
 
@@ -751,7 +752,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 
     AssertionError: Lists differ: [0, 1, 2, 3, ... XYZ, 0, 1, 2, 3, ...XYZ] != [0, 1, 2, 3, ...XYZ]
 
-  the values in ``a_list`` are double what the test expects. I broke something by using the :ref:`class attributes<test_attribute_error_w_class_attributes>`
+  the values in ``a_list`` are double what the :ref:`assertion<what is an assertion?>` expects. I broke something by using the :ref:`class attributes<test_attribute_error_w_class_attributes>`
 
 * I change ``a_list`` back
 

@@ -14,7 +14,13 @@ how to pass values
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QEiyAO7aEVQ?si=gN_vRO0VrSyWR7R6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-One of the things that happens when testing a program_, is I send things (data) to the program_ and I check if what I think will happen is the same as the results I get back. Testing helps me answer 2 questions
+Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
+
+.. code-block:: python
+
+    input_data -> process -> output_data
+
+I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results (reality) I get. This helps me answer two questions
 
 * what is the same?
 * what is different?
@@ -32,7 +38,7 @@ where
 * ``reality`` is what happens when I do something with code
 * ``my_expectation`` is what I think will happen when I do something with code
 
-I use :ref:`the identity function<test_identity_function>` in this chapter to show how something is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`
+I use :ref:`the identity function<test_identity_function>` in this chapter to show how :ref:`input data<data structures>` is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`
 
 ----
 
@@ -54,14 +60,21 @@ start the project
 
 * I name this project ``telephone``
 * I open a terminal_
-* I make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir telephone
+    uv init telephone
 
-  the terminal_ goes back to the command line.
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    Initialized project `telephone`
+    at `.../pumping_python/telephone`
+
+  then goes back to the command line.
 
 * I change directory_ to the project
 
@@ -85,7 +98,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``telephone.py`` and move it to the ``src`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -96,7 +109,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch src/telephone.py
+        mv main.py src/telephone.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -104,7 +117,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item src/telephone.py
+        Move-Item main.py src/telephone.py
 
   the terminal_ goes back to the command line.
 
@@ -210,30 +223,6 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `telephone`
-
-  then goes back to the command line
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line.
-
 * I install the `Python packages`_ that I wrote in the requirements file_
 
   .. code-block:: python
@@ -242,6 +231,40 @@ start the project
     uv add --requirement requirements.txt
 
   the terminal_ shows that it installed the `Python packages`_
+
+* I add the new files_ and folders_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'initialize project'
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    [main (root-commit) a0b12c3] initialize project
+     9 files changed, 148 insertions(+)
+     create mode 100644 .gitignore
+     create mode 100644 .python-version
+     create mode 100644 README.md
+     create mode 100644 pyproject.toml
+     create mode 100644 requirements.txt
+     create mode 100644 src/telephone.py
+     create mode 100644 tests/__init__.py
+     create mode 100644 tests/test_telephone.py
+     create mode 100644 uv.lock
+
+  then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -322,22 +345,19 @@ test_passing_a_string
 I change ``test_failure`` to ``test_passing_a_string``
 
 .. code-block:: python
-  :linenos:
-  :emphasize-lines: 6-10
-
-  import unittest
-
+  :lineno-start: 4
+  :emphasize-lines: 3-6
 
   class TestTelephone(unittest.TestCase):
 
       def test_passing_a_string(self):
-          self.assertEqual(
-              src.telephone.text("hello"),
-              "I got: hello"
-          )
+          reality = src.telephone.text('hello')
+          my_expectation = 'I got: hello'
+          self.assertEqual(reality, my_expectation)
 
 
   # Exceptions seen
+  # AssertionError
 
 the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -345,7 +365,7 @@ the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_i
 
   NameError: name 'src' is not defined
 
-there is no definition for ``src`` in ``test_telephone.py``
+because there is no definition for ``src`` in ``test_telephone.py``
 
 ----
 
@@ -358,7 +378,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 12
     :emphasize-lines: 3
     :emphasize-text: NameError
 
@@ -378,18 +398,21 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     class TestTelephone(unittest.TestCase):
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  - ``import src.functions`` brings in an :ref:`object<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
+  - I like to sort my `import statements`_ alphabetically
+  - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    AttributeError: module 'src.telephone' has no attribute 'text'
+      AttributeError: module 'src.telephone'
+                      has no attribute 'text'
 
-  there is no definition for ``text`` in ``telephone.py`` in the ``src`` folder_
+    because there is no definition for ``text`` in ``telephone.py`` in the ``src`` folder_
 
-* I :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
+* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 13
     :emphasize-lines: 4
     :emphasize-text: AttributeError
 
@@ -398,7 +421,9 @@ there is no definition for ``src`` in ``test_telephone.py``
     # NameError
     # AttributeError
 
-  I use the :ref:`Explorer<explorer on left>` to open ``telephone.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add a name
+* I use the :ref:`Explorer<explorer on left>` to open ``telephone.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+
+* I delete the text in the file_ then add a name
 
   .. code-block:: python
     :linenos:
@@ -433,7 +458,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 13
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -456,11 +481,12 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   .. code-block:: shell
 
-    TypeError: text() takes 0 positional arguments but 1 was given
+    TypeError: text() takes 0 positional arguments
+               but 1 was given
 
-  ``src.telephone.text`` was called with ``"hello"`` as input. The definition of the :ref:`function<what is a function?>` does not allow it take any input - the parentheses are empty
+  because the definition for ``src.telephone.text`` does not allow calling it with inputs and the test sends ``'hello'`` as input - the parentheses are empty
 
-* I make the :ref:`function<what is a function?>` take input and call it ``the_input``
+* I make the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
     :linenos:
@@ -475,9 +501,9 @@ there is no definition for ``src`` in ``test_telephone.py``
 
     AssertionError: None != 'I got: hello'
 
-  the test expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
+  because the :ref:`assertion<what is an assertion?>` expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-  .. note:: ``the_input`` is just the name I used for the input, I can use any name I want
+  .. tip:: ``the_input`` is just the name I used for the input, I can use any name I want
 
 * I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None<what is None?>`
 
@@ -507,14 +533,13 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
     :emphasize-lines: 6-9
 
         def test_passing_a_string(self):
-            self.assertEqual(
-                src.telephone.text("hello"),
-                "I got: hello"
-            )
-            self.assertEqual(
-                src.telephone.text("yes"),
-                "I got: yes"
-            )
+            reality = src.telephone.text('hello')
+            my_expectation = 'I got: hello'
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text('yes')
+            my_expectation = 'I got: yes'
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -525,7 +550,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
     AssertionError: 'I got: hello' != 'I got: yes'
 
-  the ``text`` :ref:`function<what is a function?>` always returns ``'I got: hello'``, the test expects ``'I got: yes'``
+  because the ``text`` :ref:`function<what is a function?>` always returns ``'I got: hello'`` and this :ref:`assertion<what is an assertion?>` expects ``'I got: yes'``
 
 * I change the `return statement`_ in ``telephone.py`` to match
 
@@ -542,33 +567,57 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
     AssertionError: 'I got: yes' != 'I got: hello'
 
-  it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input
+  it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input it gets as part of the output.
+
+:ref:`I can pass a string to a function<test_passing_a_string>`
 
 ----
 
 *********************************************************************************
-string interpolation
+what is string interpolation?
 *********************************************************************************
 
-I use an `f-string`_ which lets me add any values I want to a string_
+* I use an `f-string`_ which lets me add any :ref:`variables<what is a variable?>` I want to a string_
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 2
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2
 
-  def text(the_input):
-      return f'I got: {the_input}'
+    def text(the_input):
+        return f'I got: {the_input}'
 
-the test passes.
+  the test passes.
 
-This is called `string interpolation`_, I can use it to put values in strings_.
+  This is called `string interpolation`_, I can use it to put values in strings_.
 
-A string_ is anything inside :ref:`quotes` e.g.
+  A string_ is anything inside :ref:`quotes` e.g.
 
-- ``'single quotes'``
-- ``'''triple single quotes'''``
-- ``"double quotes"``
-- ``"""triple double quotes"""``
+  - ``'single quotes'``
+  - ``'''triple single quotes'''``
+  - ``"double quotes"``
+  - ``"""triple double quotes"""``
+
+* I open a new terminal_ then change directories to ``functions``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd functions
+
+  the terminal_ shows I am in the ``functions`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/functions
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_passing_a_string'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -1279,7 +1328,8 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: shell
 
-    TypeError: text() takes 0 positional arguments but 1 was given
+    TypeError: text() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
 * I make the :ref:`function<what is a function?>` take input
 
@@ -1379,7 +1429,7 @@ close the project
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass :ref:`Python basic data structures<data structures>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation`
+Here are the tests I ran to see what happens when I pass :ref:`Python basic data structures<data structures>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation<what is string interpolation?>`
 
 * `test_passing_a_string`_
 * `test_passing_a_class`_

@@ -121,7 +121,7 @@ test_logical_true
     # AssertionError
     # AttributeError
 
-*  I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
+** I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
 
 * I add a :ref:`function<what is a function?>` to ``truth_table.py``
 
@@ -138,7 +138,7 @@ test_logical_true
 
     AssertionError: None is not true
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the test expects :green:`True`
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
 * I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the `return statement`_
 
@@ -219,7 +219,7 @@ because I have not added a definition for :ref:`logical_false<test_logical_false
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :green:`True` and the test expects :red:`False`
+  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
 
@@ -330,7 +330,8 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
   .. code-block:: shell
 
-    TypeError: logical_identity() takes 0 positional arguments but 1 was given
+    TypeError: logical_identity() TypeError: text() takes 0 positional arguments
+               but 1 was given
 
   because the test called the :ref:`logical_identity function<test_logical_identity>` with 1 argument and this definition only takes calls with 0 arguments
 
@@ -361,7 +362,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returns :red:`False` and the test expects :green:`True`
+  because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
 * I change the `return statement`_ to give the test what it wants
 
@@ -409,7 +410,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :green:`True` and the test expects :red:`False`
+  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I change the `return statement`_ of :ref:`logical_identity<test_logical_identity>` in ``truth_table.py``
 
@@ -530,7 +531,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returned :ref:`True<test_what_is_true>` and the test expects :red:`False`
+  because the :ref:`function<what is a function?>` returned :ref:`True<test_what_is_true>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I change the `return statement`_ to give the test what it wants
 

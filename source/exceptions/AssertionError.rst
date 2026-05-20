@@ -85,7 +85,7 @@ start the project
 
     Initialized project `assertion-error` at `.../pumping_python/assertion_error`
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I change directory_ to the project
 
@@ -251,7 +251,7 @@ start the project
      create mode 100644 tests/test_assertion_error.py
      create mode 100644 uv.lock
 
-  then goes back to the command line
+  then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -630,7 +630,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
     git commit --all --message 'add test_what_is_an_assertion'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -1377,7 +1377,7 @@ the test passes.
 
     git commit --all --message 'add test_assertion_error_w_none'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can use assertions to test if something is None<what is None?>`
 
@@ -2100,7 +2100,7 @@ the test passes.
 
     git commit --all --message 'add test_assertion_error_w_false'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can use assertions to test if something is False or NOT<test_assertion_error_w_false>`
 
@@ -2923,7 +2923,7 @@ the test passes.
 
     git commit --all --message 'add test_assertion_error_w_true'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can use assertions to test if something is True or NOT<test_assertion_error_w_true>`
 
@@ -3435,7 +3435,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 
     git commit --all --message 'add test_assertion_error_w_equality'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -3846,7 +3846,7 @@ how I test if two things are Equal
 
     git commit --all --message 'add assert methods'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -4052,7 +4052,7 @@ how I test if two things are Equal
 
     git commit --all --message 'add assertEqual'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can use assertions to test if 2 things are equal<test_assertion_error_w_equality>`
 

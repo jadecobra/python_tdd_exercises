@@ -234,7 +234,7 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return None
 
-  the test passes because :ref:`None is False<is None False or True?>` and the test expects :red:`False`
+  the test passes because :ref:`None is False<is None False or True?>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 ----
 
@@ -566,7 +566,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :green:`True` and the test expects :red:`False`
+  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>`
 
@@ -1308,7 +1308,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :green:`True` and the test expects
+  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects
 
   - :red:`False`, if the first input is :green:`True` and the second input is :red:`False`
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
