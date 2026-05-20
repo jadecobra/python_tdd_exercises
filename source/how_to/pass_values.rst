@@ -977,13 +977,15 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 
-:ref:`I can pass None from a test to a function`<test_passing_none>`
+:ref:`I can pass a float from a test to a function<test_passing_a_float>`
 
 ----
 
 *********************************************************************************
 test_passing_a_tuple
 *********************************************************************************
+
+I can pass a tuple_ from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -994,34 +996,33 @@ test_passing_a_tuple
 ----
 
 * I go back to the terminal_ that is running the tests
-*
-I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
 
-.. code-block:: python
-  :lineno-start: 49
-  :emphasize-lines: 7-11
-  :emphasize-text: "
+* I add a test for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
-      def test_passing_a_float(self):
-          self.assertEqual(
-              src.telephone.text(1.234),
-              "I got: 1.234"
-          )
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 7-11
+    :emphasize-text: "
 
-      def test_passing_a_tuple(self):
-          self.assertEqual(
-              src.telephone.text((1, 2, 3, "n")),
-              "I got: '(1, 2, 3, n)'"
-          )
+        def test_passing_a_float(self):
+            reality = src.telephone.text(1.234)
+            my_expectation = 'I got: 1.234'
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_tuple(self):
+            reality = src.telephone.text((1, 2, 3, 'n'))
+            my_expectation = 'I got: "(1, 2, 3, n)"'
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: "I got: (1, 2, 3, 'n')" != "I got: '(1, 2, 3, n)'"
+    AssertionError: "I got: (1, 2, 3, 'n')"
+                 != 'I got: "(1, 2, 3, n)"'
 
 ----
 
@@ -1031,22 +1032,34 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the expectation
+* I change ``my_expectation`` to match ``reality``
 
-.. code-block:: python
-  :lineno-start: 55
-  :emphasize-lines: 4
-  :emphasize-text: "
+  .. code-block:: python
+    :lineno-start: 40
+    :emphasize-lines: 3
+    :emphasize-text: "
 
-      def test_passing_a_tuple(self):
-          self.assertEqual(
-              src.telephone.text((1, 2, 3, "n")),
-              "I got: (1, 2, 3, 'n')"
-          )
+        def test_passing_a_tuple(self):
+            reality = src.telephone.text((1, 2, 3, 'n'))
+            my_expectation = "I got: (1, 2, 3, 'n')"
+            self.assertEqual(reality, my_expectation)
 
-the test passes.
 
-:ref:`I can pass None from a test to a function`<test_passing_none>`
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_passing_a_tuple'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+
+:ref:`I can pass a tuple from a test to a function<test_passing_a_tuple>`
 
 ----
 
@@ -1062,6 +1075,7 @@ test_passing_a_list
 
 ----
 
+* I go back to the terminal_ that is running the tests
 I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), separated by a comma)
 
 .. code-block:: python
