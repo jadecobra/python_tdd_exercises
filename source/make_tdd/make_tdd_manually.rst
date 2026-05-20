@@ -85,7 +85,7 @@ how to setup the project
 
 * I `change directory`_ to where I will put all the projects from this book. I type cd_ in the terminal_
 
-  .. NOTE:: skip this step if you are already in the ``pumping_python`` directory_ or made it earlier
+  .. note:: skip this step if you are already in the ``pumping_python`` directory_ or made it earlier
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -105,7 +105,7 @@ how to setup the project
 
       mkdir pumping_python
 
-    the terminal_ goes back to the command line
+    the terminal_ goes back to the command line.
 
   - I try `changing directory`_ again
 
@@ -143,7 +143,7 @@ how to setup the project
 
       0 directories, 0 files
 
-    .. NOTE:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
+    .. note:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
@@ -316,7 +316,7 @@ how to see what is inside a file
 
     cat README.md
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
   .. code-block:: python
 
@@ -362,7 +362,7 @@ how to make a directory for the source code
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use tree_ to see what changed in the ``magic`` directory_
 
@@ -417,7 +417,7 @@ how to change the name of a file
 
     mv main.py src/magic.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use tree_ to see what folders_ and files_ I now have
 
@@ -537,7 +537,7 @@ how to make a directory for the tests
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use tree_ to see what my project looks like
 
@@ -584,7 +584,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     touch tests/magic.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use tree_ to see what the project looks like now
 
@@ -640,7 +640,7 @@ how to make a Python file for the tests in the 'tests' directory
 
 * I use the `Integrated Development Environment (IDE)`_ to open ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ when I type this in the terminal_
 
@@ -655,7 +655,7 @@ how to make a Python file for the tests in the 'tests' directory
 
 * I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
 
-  .. NOTE:: the line numbers below are a guide, no need to copy them
+  .. note:: the line numbers below are a guide, no need to copy them
 
   .. code-block:: python
     :linenos:
@@ -677,7 +677,7 @@ how to make a Python file for the tests in the 'tests' directory
     * ``class`` is the Python_ keyword for making :ref:`classes<what is a class?>` - a group of :ref:`attributes (values)<what causes AttributeError?>` and :ref:`methods (functions)<what is a function?>` that belong together, :ref:`see the classes chapter for more<what is a class?>`
     * ``TestMagic`` is the name I gave this :ref:`class <what is a class?>` and will hold the test
 
-      .. TIP:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
+      .. tip:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for , this is the tool that contains the :ref:`methods<what is a function?>` I will use to test code in this book
     * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>` of the `unittest.TestCase class`_, I do not have to make them because someone else already did
@@ -687,11 +687,11 @@ how to make a Python file for the tests in the 'tests' directory
     * def_ is the Python_ keyword for making :ref:`methods (functions) <what is a function?>`, see :ref:`functions<what is a function?>` for more
     * ``test_failure`` is the name of the :ref:`method<what is a function?>` I used for :ref:`this first test<test_failure>`
 
-      .. TIP:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
+      .. tip:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
     * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().`` when I want to use something from the `unittest.TestCase class`_
 
-      .. TIP:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name though it is easier to stick with convention for this one
+      .. tip:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name though it is easier to stick with convention for this one
 
     * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>` (a way to make sure something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`)
 
@@ -702,7 +702,7 @@ how to make a Python file for the tests in the 'tests' directory
 
 * I turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_ to automatically save files when I make a change so that `I do not repeat myself`_. I do not want to use :kbd:`ctrl+s` ((Windows_/Linux_) or :kbd:`command+s` (MacOS_)) on the keyboard every time I make a change, I want the computer to do that for me
 
-  .. ATTENTION:: Turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_
+  .. attention:: Turn on the ``Auto Save`` feature in the `Integrated Development Environment (IDE)`_
 
     In `Visual Studio Code`_ it is under ``File`` in the menu
 
@@ -731,14 +731,14 @@ how to make the tests a Python package
 
 * I use touch_ to add an empty file_ with the name ``__init__.py`` to the ``tests`` folder
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. code-block:: shell
     :emphasize-lines: 1
 
     touch tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I run the tree_ command to see what changed
 
@@ -789,7 +789,7 @@ how to make the tests a Python package
 
 * I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. DANGER:: if you do not close ``magic.py`` in the :ref:`editor<2 editors>`, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the :ref:`editor<2 editors>` after you change its name
+  .. danger:: if you do not close ``magic.py`` in the :ref:`editor<2 editors>`, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the :ref:`editor<2 editors>` after you change its name
 
 * I use the `mv program`_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
@@ -798,7 +798,7 @@ how to make the tests a Python package
 
     mv tests/magic.py tests/test_magic.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use tree_ with the ``-L`` option to see what I have so far
 
@@ -833,7 +833,7 @@ how to make the tests a Python package
         ├── __pycache__
         └── test_magic.py
 
-  .. ADMONITION:: if you do not see ``__pycache__`` in the tree do not worry,
+  .. admonition:: if you do not see ``__pycache__`` in the tree do not worry,
 
     the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
 
@@ -864,7 +864,7 @@ how to make the tests a Python package
 
     FAILED (failures=1)
 
-  .. TIP:: I can use any name for the test file_. It must start with ``test_`` or unittest_ will NOT run the tests in the file_
+  .. tip:: I can use any name for the test file_. It must start with ``test_`` or unittest_ will NOT run the tests in the file_
 
   This is the :red:`RED` part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development cycle?>`. The message in the terminal_ is about the failure, I like to read these from the bottom up. Here is an explanation of each line, starting from the last line on the screen
 
@@ -952,7 +952,7 @@ I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ 
   # Exceptions seen
   # AssertionError
 
-.. NOTE::
+.. note::
 
   comments in Python_ are written with ``#`` at the beginning, they do not do anything, they are notes for me
 
@@ -1329,7 +1329,7 @@ how to stop the automated tests
 
 ----
 
-I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line
+I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line.
 
 .. code-block:: python
 

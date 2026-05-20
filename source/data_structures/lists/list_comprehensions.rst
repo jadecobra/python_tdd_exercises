@@ -68,7 +68,7 @@ start the project
 * I name this project ``list_comprehensions``
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -109,7 +109,7 @@ start the project
     # AssertionError
     " > tests/test_list_comprehensions.py
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -143,7 +143,7 @@ start the project
 
     ./makePythonTdd.sh
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -182,7 +182,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -244,7 +244,7 @@ I change the expectation to match
 
           self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-the test passes
+the test passes.
 
 ----
 
@@ -286,7 +286,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
             self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines. This `for loop`_ removed 10 lines of code and I can use it for any number of items, the other way gets busy very quickly once I have to add more numbers
 
@@ -319,7 +319,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
             self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -359,7 +359,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
             self.assertEqual(list(range(0, 10)), a_list)
 
-  the test passes
+  the test passes.
 
 * I add a :ref:`variable<what is a variable?>` to remove the repetition of the `range object`_
 
@@ -377,7 +377,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
             self.assertEqual(a_list, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
             self.assertEqual(list(iterable), a_list)
 
-  the test is still green
+  the test is still green.
 
 * I add another :ref:`assertion<what is an assertion?>` to practice writing a `for loop`_
 
@@ -525,7 +525,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
             self.assertEqual(a_list, list(iterable))
             self.assertEqual(list(iterable), a_list)
 
-  the test passes
+  the test passes.
 
 * I remove the second line because it is now a duplicate
 
@@ -572,7 +572,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
         return result
         return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  the test passes
+  the test passes.
 
 * I remove the second `return statement`_
 
@@ -695,7 +695,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
             a_list = self.a_list
             iterable = self.iterable
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines and use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly
 
@@ -716,7 +716,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
                 self.a_list
             )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -808,7 +808,7 @@ The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_li
             a_list = self.a_list
             iterable = self.iterable
 
-  still green
+  still green.
 
 * I remove the commented lines and use the :ref:`class attributes<test_attribute_error_w_class_attributes>` directly
 
@@ -822,7 +822,7 @@ The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_li
             self.assertIsNone(self.a_list.extend(self.iterable))
             self.assertEqual(self.a_list, list(self.iterable))
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -899,7 +899,7 @@ I add a `list comprehension`_ as the expectation
 
 the test passes.
 
-.. NOTE::
+.. note::
 
   The `list comprehension`_ is like the `for loop`_ without the :ref:`append<test_append_adds_item_to_end_of_a_list>` line
 
@@ -973,7 +973,7 @@ the test passes.
     def a_list_comprehension(a_collection):
         return [element for element in a_collection]
 
-  the test passes
+  the test passes.
 
 * I made 2 :ref:`functions<what is a function?>` that do the same thing - one that uses a `for loop`_ and another that uses a `list comprehension`_
 
@@ -1127,7 +1127,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     def get_even_numbers(numbers):
         return [number for number in numbers if number % 2 == 0]
 
-  the test passes
+  the test passes.
 
 * I wrote the same :ref:`condition<if statements>` in the test 3 times. I have to make the same change everywhere I wrote it if I want to change it. Let us say the new :ref:`condition<if statements>` is that the number should be divisible by ``3``. I make the change in ``test_list_comprehensions.py``
 
@@ -1185,7 +1185,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     def get_even_numbers(numbers):
         return [number for number in iterable if number % 3 == 0]
 
-  the test passes
+  the test passes.
 
 * I add a :ref:`function<what is a function?>` to remove the repetition in ``test_list_comprehensions.py``
 
@@ -1217,7 +1217,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 if condition(item):
                     even_numbers.append(item)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line and use the new :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
 
@@ -1237,7 +1237,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if condition(item)]
             )
 
-  still green
+  still green.
 
 * I remove the commented line and use the new :ref:`function<what is a function?>` in the next :ref:`assertion<what is an assertion?>`
 
@@ -1255,7 +1255,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if condition(item)]
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -1270,7 +1270,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
     # Exceptions seen
 
-  .. NOTE:: ``condition`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
+  .. note:: ``condition`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[item for item in iterable if condition]``
 
 * I change the :ref:`condition<if statements>` in the new :ref:`function<what is a function?>`
 
@@ -1355,7 +1355,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
                 [item for item in self.iterable if not condition(item)]
             )
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -1389,7 +1389,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
     def get_odd_numbers(numbers):
         return [number for number in numbers if number % 2 != 0]
 
-  the test passes
+  the test passes.
 
 * These two conditions look the same
 
@@ -1426,7 +1426,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return [number for number in numbers if is_even(number)]
         return [number for number in numbers if number % 2 == 0]
 
-  the test is still green
+  the test is still green.
 
 * I remove the second `return statement`_ and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in ``get_odd_numbers``
 
@@ -1442,7 +1442,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return [number for number in numbers if not is_even(number)]
         return [number for number in numbers if number % 2 != 0]
 
-  the test is still green
+  the test is still green.
 
 * I remove the second `return statement`_
 
@@ -1513,7 +1513,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return list(filter(lambda number: not is_even(number), numbers))
         return [number for number in numbers if not is_even(number)]
 
-  the test is still green
+  the test is still green.
 
   filterfalse_ returns the items from the :ref:`iterable<what is an iterable?>` that do not meet the :ref:`condition<if statements>` of the :ref:`function<what is a function?>`
 
@@ -1584,7 +1584,7 @@ I add the calculation to the `list comprehension`_
               [item*item for item in self.iterable]
           )
 
-the test passes
+the test passes.
 
 ----
 
@@ -1626,7 +1626,7 @@ the test passes
     def square(numbers):
         return [number**2 for number in numbers]
 
-  the test passes
+  the test passes.
 
   ``x**y`` is how to write ``x`` raised to the power of ``y``
 
@@ -1691,7 +1691,7 @@ the test passes
             # square_club.append(item*item)
             square_club.append(process(item))
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line and call the :ref:`function<what is a function?>` in the first :ref:`assertion<what is an assertion?>`
 
@@ -1708,7 +1708,7 @@ the test passes
                 [process(item) for item in self.iterable]
             )
 
-  still green
+  still green.
 
 * I remove the commented line and call the :ref:`function<what is a function?>` in the second :ref:`assertion<what is an assertion?>`
 
@@ -1725,7 +1725,7 @@ the test passes
                 [process(item) for item in self.iterable]
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -1740,7 +1740,7 @@ the test passes
 
     # Exceptions seen
 
-  .. NOTE:: ``process`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
+  .. note:: ``process`` is NOT a good name for a :ref:`function<what is a function?>` because it is general, it does not tell what it does. I use it to show that I think of a `list comprehension`_ as ``[process(item) for item in iterable]``
 
 :ref:`I know how to process(transform) a list with list comprehensions<test_making_a_list_w_processes>`
 
@@ -1831,7 +1831,7 @@ the numbers on the left are the squares of the even numbers from the right
                 [process(item) for item in self.iterable if condition(item)]
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1892,7 +1892,7 @@ the numbers on the left are the squares of the even numbers from the right
                 [process(item) for item in self.iterable if not condition(item)]
             )
 
-  the test passes
+  the test passes.
 
 * I add a :ref:`variable<what is a variable?>` to the `for loop`_ to remove the repetition of the call to the ``process`` :ref:`function<what is a function?>`
 
@@ -1909,7 +1909,7 @@ the numbers on the left are the squares of the even numbers from the right
                     # odd_squares.append(process(item))
                     odd_squares.append(item)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1923,7 +1923,7 @@ the numbers on the left are the squares of the even numbers from the right
                 else:
                     odd_squares.append(item)
 
-  still green
+  still green.
 
 :ref:`I know how to use list comprehensions to make a list based on conditions (filter) with processes (transform)<test_making_a_list_w_processes_and_conditions>`
 
@@ -1934,7 +1934,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_list_comprehensions.py`` and ``list_comprehensions.py`` in the :ref:`editors<2 editors>`
-I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
   * I `change directory`_ to the parent of ``list_comprehensions``
 

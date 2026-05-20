@@ -181,7 +181,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
             self.assertEqual(self.tester.session_state['number'], '0')
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -205,7 +205,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
     def add_buttons_to_column_1(column_1, display):
 
-  the test passes
+  the test passes.
 
 * I remove the commented line
 
@@ -246,7 +246,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
             self.assertEqual(self.tester.session_state['number'], '01')
 
-  the test passes
+  the test passes.
 
 * I add more button presses and another :ref:`assertion<what is an assertion?>`
 
@@ -279,7 +279,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
                 self.tester.session_state['number'], '01234'
             )
 
-  the test passes
+  the test passes.
 
 * I refresh the browser and click on all the numbers
 
@@ -326,7 +326,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
             streamlit.session_state['number'] += number
         display.write(streamlit.session_state['number'])
 
-  the test passes
+  the test passes.
 
 * I refresh the browser and try all the numbers
 
@@ -582,7 +582,7 @@ what is a while loop?
             )
 
 
-  I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the test is still green
+  I use :kbd:`ctrl+s` on the keyboard to run the tests a few times and the test is still green.
 
 * I remove the commented lines
 
@@ -755,7 +755,7 @@ test_streamlit_calculator_w_decimals
             on_click=handle_decimals, args=[display, '.'],
         )
 
-  the test passes
+  the test passes.
 
 * I remove the commented line
 
@@ -808,7 +808,7 @@ test_streamlit_calculator_w_decimals
             streamlit.session_state['number'] += number
         display.write(streamlit.session_state['number'])
 
-  the test is still green
+  the test is still green.
 
 * I remove the other :ref:`if statement<if statements>`
 
@@ -823,7 +823,7 @@ test_streamlit_calculator_w_decimals
 
     def show(display, number):
 
-  still green
+  still green.
 
   - ``if streamlit.session_state['number'].count('.') == 0:`` checks if ``.`` is in ``session_state['number']``
 
@@ -898,7 +898,7 @@ test_streamlit_calculator_w_decimals
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -951,7 +951,7 @@ test_streamlit_calculator_w_decimals
                 expectation
             )
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the commented lines
 
@@ -1003,7 +1003,7 @@ test_streamlit_calculator_w_decimals
                 '0.2356789'
             )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1130,7 +1130,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
 
     def add_buttons_to_column_2(column_2, display):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1312,7 +1312,7 @@ I want to be able to remove the last digit of a number with the ``<-`` button
                 a_random_number[:-2]
             )
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines
 
@@ -1512,7 +1512,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         display.write(streamlit.session_state['number'])
 
-  the test passes
+  the test passes.
 
 * I use else_ for the second :ref:`if statement<if statements>`
 
@@ -1530,7 +1530,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         display.write(streamlit.session_state['number'])
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -1589,7 +1589,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 self.tester.session_state['number'], a_number
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1647,7 +1647,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.press_button('+/-')
 
-  the test passes
+  the test passes.
 
 * I try a number with all the digits and decimals
 
@@ -1676,7 +1676,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I refresh the browser and try to make a negative number
 
@@ -1865,7 +1865,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         # display.write(streamlit.session_state['number'])
         show_number(display)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -1896,7 +1896,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         # display.write(streamlit.session_state['number'])
         show_number(display)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -1923,7 +1923,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         # display.write(streamlit.session_state['number'])
         show_number(display)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -1952,7 +1952,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         # display.write(streamlit.session_state['number'])
         show_number(display)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -2073,7 +2073,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             on_click=plus_minus, args=[display, '+/-'],
         )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -2136,7 +2136,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             args=[add_number_to_state, display, '0'],
         )
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -2197,7 +2197,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             on_click=handle_decimals, args=[display, '.'],
         )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -2318,7 +2318,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     def add_buttons_to_column_1(column_1, display):
 
-  the test passes
+  the test passes.
 
 * I remove the commented line from the ``add_buttons_to_column_3`` :ref:`function<what is a function?>`
 
@@ -2401,7 +2401,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
         streamlit.session_state['number'] = number
         # show_number(display)
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines from the ``backspace`` :ref:`function<what is a function?>`
 
@@ -2476,7 +2476,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
         # show_number(display)
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines from the ``plus_minus`` :ref:`function<what is a function?>`
 
@@ -2532,7 +2532,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 
@@ -2549,7 +2549,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

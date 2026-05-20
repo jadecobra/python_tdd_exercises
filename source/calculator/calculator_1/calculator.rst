@@ -57,7 +57,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``calculator.py`` and move it to the ``src`` folder_
 
@@ -80,7 +80,7 @@ start the project
 
         Move-Item main.py src/calculator.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -89,11 +89,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -114,7 +114,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -137,11 +137,11 @@ start the project
 
         New-Item tests/test_calculator.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_calculator.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -173,7 +173,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -182,7 +182,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -255,7 +255,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -570,7 +570,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
             self.assertEqual(src.calculator.add(0, 3), 3)
 
-  the test passes
+  the test passes.
 
 * I add another test with a different number for the first input
 
@@ -627,7 +627,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
             self.assertEqual(src.calculator.add(123456, 789012), 912468)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>` with a negative number
 
@@ -657,7 +657,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
             self.assertEqual(src.calculator.add(-1, 0), -1)
 
-  the test passes
+  the test passes.
 
 * I try another :ref:`assertion<what is an assertion?>` with two negative numbers
 
@@ -711,7 +711,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
             self.assertEqual(src.calculator.add(0.1, 1), 1.1)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -838,7 +838,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
             )
             self.assertEqual(src.calculator.add(0, 2), 2)
 
-  the test is still green
+  the test is still green.
 
 * I do the same thing to the next :ref:`assertion<what is an assertion?>`
 
@@ -861,7 +861,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  still green
+  still green.
 
 * I do the next one
 
@@ -883,7 +883,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  green
+  green.
 
 * then the next one
 
@@ -905,7 +905,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  still green
+  still green.
 
 * then the next
 
@@ -927,7 +927,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  the test is still green
+  the test is still green.
 
 * on to the next :ref:`assertion<what is an assertion?>`
 
@@ -949,7 +949,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  still green
+  still green.
 
 * and the next
 
@@ -971,7 +971,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  green
+  green.
 
 * more?
 
@@ -993,7 +993,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  still green
+  still green.
 
 * I add :ref:`variables<what is a variable?>` to the next :ref:`assertion<what is an assertion?>`
 
@@ -1015,7 +1015,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
                 first_number+second_number
             )
 
-  the test is still green
+  the test is still green.
 
 * ah, the last one
 
@@ -1040,7 +1040,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
     # TODO
 
-  still green
+  still green.
 
 ----
 
@@ -1085,7 +1085,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
                 first_number+second_number
             )
 
-  green
+  green.
 
   `random.triangular`_ returns a random float_ that could be any number from ``-0.1`` to ``1.0`` in this case, I can also use `random.randint`_ if I want a random integer_
 
@@ -1136,7 +1136,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
             # second_number = -5.6789
             second_number = random.triangular(-0.1, 1.0)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line and the other :ref:`assertions<what is an assertion?>` because they are covered by the one that uses random numbers. I do not need them anymore
 
@@ -1154,7 +1154,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
 
     # TODO
 
-  still green
+  still green.
 
 * I use the ``Rename Symbol`` feature to change the name of :ref:`variables<what is a variable?>` to say what they are
 
@@ -1174,7 +1174,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
             random_first_number+random_second_number
         )
 
-  green
+  green.
 
 * There is some repetition, If I want to use a different range of random numbers for the test, I have to make a change in more than one place. For example
 
@@ -1186,7 +1186,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
             random_first_number = random.triangular(-10.0, 10.0)
             random_second_number = random.triangular(-10.0, 10.0)
 
-  still green
+  still green.
 
 * I add a :ref:`function<what is a function?>` to remove the repetition
 
@@ -1217,7 +1217,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
             # random_second_number = random.triangular(-10.0, 10.0)
             random_second_number = a_random_number()
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1280,7 +1280,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
     def a_random_number():
         return random.triangular(-10000.0, 10000.0)
 
-  the test is still green
+  the test is still green.
 
 * I can use any range of numbers the computer can handle, for example
 
@@ -1558,7 +1558,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     def multiply(first_input, second_input):
         return first_input * second_input
 
-  the test passes
+  the test passes.
 
 * I remove ``test_multiplication`` from the TODO list in ``test_calculator.py``
 
@@ -1571,7 +1571,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     # Exceptions seen
 
-.. NOTE::
+.. note::
 
   * ``*`` is the symbol for multiplication
   * ``**`` is the symbol for raise to the power (exponent)
@@ -1651,7 +1651,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     def divide(first_input, second_input):
         return first_input / second_input
 
-  the test passes
+  the test passes.
 
 * I remove the TODO list from ``test_calculator.py``
 
@@ -1717,7 +1717,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
             self.assertEqual(
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.add`` in the :ref:`assertion<what is an assertion?>`
 
@@ -1735,7 +1735,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 random_first_number+random_second_number
             )
 
-  still green
+  still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -1754,7 +1754,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 self.random_first_number+self.random_second_number
             )
 
-  green
+  green.
 
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_addition`
 
@@ -1772,7 +1772,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
         def test_subtraction(self):
 
-  still green
+  still green.
 
 ----
 
@@ -1790,7 +1790,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
             self.assertEqual(
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.subtract`` in the :ref:`assertion<what is an assertion?>`
 
@@ -1808,7 +1808,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 random_first_number-random_second_number
             )
 
-  still green
+  still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -1827,7 +1827,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 self.random_first_number-self.random_second_number
             )
 
-  green
+  green.
 
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_subtraction`
 
@@ -1845,7 +1845,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
         def test_multiplication(self):
 
-  still green
+  still green.
 
 ----
 
@@ -1863,7 +1863,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
             self.assertEqual(
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.multiply`` in the :ref:`assertion<what is an assertion?>`
 
@@ -1881,7 +1881,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 random_first_number*random_second_number
             )
 
-  still green
+  still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -1900,7 +1900,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 self.random_first_number*self.random_second_number
             )
 
-  green
+  green.
 
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_multiplication`
 
@@ -1918,7 +1918,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
         def test_division(self):
 
-  still green
+  still green.
 
 ----
 
@@ -1936,7 +1936,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
             self.assertEqual(
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the call to ``src.calculator.divide`` in the :ref:`assertion<what is an assertion?>`
 
@@ -1954,7 +1954,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 random_first_number/random_second_number
             )
 
-  still green
+  still green.
 
 * I use the :ref:`class attributes<test_attribute_error_w_class_attributes>` for the :ref:`variables<what is a variable?>` in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -1973,7 +1973,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 self.random_first_number/self.random_second_number
             )
 
-  green
+  green.
 
 * I remove the commented lines and the ``random_first_number`` and ``random_second_number`` :ref:`variables<what is a variable?>` from :ref:`test_division`
 
@@ -1996,7 +1996,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     # AttributeError
     # TypeError
 
-  still green
+  still green.
 
 ----
 
@@ -2271,7 +2271,7 @@ close the project
 *********************************************************************************
 
 * I close ``calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

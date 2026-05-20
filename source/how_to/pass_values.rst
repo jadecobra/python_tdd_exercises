@@ -61,7 +61,7 @@ start the project
 
     mkdir telephone
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I change directory_ to the project
 
@@ -83,7 +83,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
@@ -106,7 +106,7 @@ start the project
 
         New-Item src/telephone.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -115,11 +115,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -140,7 +140,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -163,11 +163,11 @@ start the project
 
         New-Item tests/test_telephone.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_telephone.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -199,7 +199,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -208,7 +208,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I set up the project with uv_
 
@@ -232,7 +232,7 @@ start the project
 
     rm main.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -303,7 +303,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -477,7 +477,7 @@ there is no definition for ``src`` in ``test_telephone.py``
 
   the test expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-  .. NOTE:: ``the_input`` is just the name I used for the input, I can use any name I want
+  .. note:: ``the_input`` is just the name I used for the input, I can use any name I want
 
 * I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None<what is None?>`
 
@@ -637,7 +637,7 @@ I change the expectation in the test to match the result
               "I got: <class 'object'>"
           )
 
-the test passes
+the test passes.
 
 ----
 
@@ -822,7 +822,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 "I got: True"
             )
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
 
@@ -1356,7 +1356,7 @@ close the project
 *********************************************************************************
 
 * I close ``telephone.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``telephone``
 

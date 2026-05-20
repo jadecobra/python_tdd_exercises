@@ -134,7 +134,7 @@ I change the calculation to ``x+y``
                 with self.subTest(y=y):
                     self.assertEqual(add(x, y), x+y)
 
-the test passes
+the test passes.
 
 ----
 
@@ -206,7 +206,7 @@ the test passes
 
                         self.assertEqual(add(x, y), x+y)
 
-  the test passes
+  the test passes.
 
 * I remove the ``x`` :ref:`variable<what is a variable?>`, then the :ref:`default values<test_functions_w_optional_arguments>` from the ``add`` :ref:`function<what is a function?>`
 
@@ -224,7 +224,7 @@ the test passes
                     with self.subTest(x=x, y=y):
                         self.assertEqual(add(x, y), x+y)
 
-  the test is still green
+  the test is still green.
 
 * I can use a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>` instead of the 2 :ref:`for loops<what is a for loop?>`
 
@@ -301,7 +301,7 @@ the test passes
             numbers = range(-10, 10)
             for y in numbers:
 
-  the test is still green
+  the test is still green.
 
 * I change the expectation in the first :ref:`assertion<what is an assertion?>`
 
@@ -363,7 +363,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``functions``
 

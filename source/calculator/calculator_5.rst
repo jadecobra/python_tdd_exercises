@@ -127,7 +127,7 @@ I change the expectation to match
               'brmph?! Numbers only. Try again...'
           )
 
-the test passes
+the test passes.
 
 ----
 
@@ -211,7 +211,7 @@ the test passes
                 error_message
             )
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -280,7 +280,7 @@ how to multiply a list
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>` in :ref:`test_calculator_sends_message_when_input_is_a_list` to ``test_calculator.py``
 
@@ -336,7 +336,7 @@ how to multiply a list
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I remove the name of the test to move the new :ref:`assertions<what is an assertion?>` to :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
@@ -364,7 +364,7 @@ how to multiply a list
                 error_message
             )
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the repetition of the ``error_message`` :ref:`variable<what is a variable?>`
 
@@ -764,7 +764,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
                 self.random_first_number/self.random_second_number
             )
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
@@ -798,7 +798,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
                 self.random_first_number*self.random_second_number
             )
 
-  the test passes
+  the test passes.
 
 * I add the next :ref:`assertion<what is an assertion?>`
 
@@ -881,7 +881,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -944,7 +944,7 @@ I add the `assertRaises method`_ to handle the :ref:`Exception<errors>`
           with self.assertRaises(TypeError):
               src.calculator.add(*not_two_numbers)
 
-the test passes
+the test passes.
 
 ----
 
@@ -984,7 +984,7 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.divide(*not_two_numbers)
 
-  the test passes
+  the test passes.
 
 * I add a line for :ref:`multiplication<test_multiplication>`
 
@@ -1013,7 +1013,7 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.multiply(*not_two_numbers)
 
-  the test passes
+  the test passes.
 
 * I add the last line
 
@@ -1052,7 +1052,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1061,7 +1061,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

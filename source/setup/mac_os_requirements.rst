@@ -6,7 +6,7 @@
 MacOS requirements
 #################################################################################
 
-.. ATTENTION:: Do this only if you are using a MacOS_ computer. Windows_ users do :ref:`Linux/Windows Subsystem for Linux requirements` or :ref:`Windows without Windows Subsystem Linux requirements`
+.. attention:: Do this only if you are using a MacOS_ computer. Windows_ users do :ref:`Linux/Windows Subsystem for Linux requirements` or :ref:`Windows without Windows Subsystem Linux requirements`
 
 * copy and paste this in a terminal_ to install brew_ (The Missing Package Manager for MacOS), if you do not have it already
 

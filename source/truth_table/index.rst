@@ -65,7 +65,7 @@ start the project
 
     mkdir truth_table
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I change directory_ to the project
 
@@ -87,7 +87,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
@@ -110,7 +110,7 @@ start the project
 
         New-Item src/truth_table.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -119,11 +119,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -144,7 +144,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -167,11 +167,11 @@ start the project
 
         New-Item tests/test_truth_table.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_truth_table.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -203,7 +203,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -212,7 +212,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I set up the project with uv_
 
@@ -236,7 +236,7 @@ start the project
 
     rm main.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -307,7 +307,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 * I add an `import statement`_ at the top of the file_
 

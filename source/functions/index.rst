@@ -1,6 +1,6 @@
 .. meta::
-   :description: Learn Python functions with TDD! Explore arguments, defaults, and testing techniques in this practical guide. Start coding now!
-   :keywords: Jacob Itegboje, Python functions, Test-Driven Development, Python programming, keyword arguments, positional arguments, coding tutorial
+  :description: Master Python functions step-by-step using Test-Driven Development (TDD). Learn positional and keyword arguments, default values, *args, **kwargs, return statements, and argument unpacking with unittest. Perfect for programming beginners and hands-on coders.
+  :keywords: Jacob Itegboje, Python functions for beginners, learn Python functions with TDD, test-driven development Python tutorial, positional vs keyword arguments Python, what does a function return by default, how to write a function in Python, Python *args and **kwargs explained, Python function return None, constant and identity functions Python, Python unittest function examples, argument unpacking python asterisk, beginner Python coding exercises
 
 .. include:: ../links.rst
 
@@ -15,7 +15,7 @@
 what is a function?
 #################################################################################
 
-A function_ is code that is callable_, this means I can write code to do something one time, and call the name of the for it to do that thing at a different time from when I write it.
+A function_ is code that is callable_, this means I can write code to do something one time, and call the name for it to do that thing at a different time from when I write it.
 
 functions_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
 
@@ -133,7 +133,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
   .. code-block:: python
 
@@ -160,7 +160,7 @@ start the project
 
         Move-Item main.py src/functions.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -169,11 +169,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -194,7 +194,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -217,11 +217,11 @@ start the project
 
         New-Item tests/test_functions.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_functions.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -253,7 +253,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -262,7 +262,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -280,7 +280,7 @@ start the project
 
     git add .
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add a git_ commit message
 
@@ -367,7 +367,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -437,7 +437,7 @@ I change ``my_expectation`` to match reality
   # Exceptions seen
   # AssertionError
 
-the test passes
+the test passes.
 
 ----
 
@@ -484,7 +484,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -527,7 +527,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -574,7 +574,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -625,7 +625,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -680,7 +680,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -718,7 +718,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -756,7 +756,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -794,7 +794,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -870,7 +870,7 @@ the test passes
     # Exceptions seen
     # AssertionError
 
-  the test passes
+  the test passes.
 
 * all those :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``, what if I want to test what happens when I add a number to ``2``? I would have to   change ``1`` in 10 places. I change ``1`` to ``2`` for the ``reality`` :ref:`variables<what is a variable?>`
 
@@ -980,7 +980,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I open a new terminal_ then change directories to ``functions``
 
@@ -1041,7 +1041,7 @@ the test passes
             self.assertEqual(reality, my_expectation)
 
 
-  the test is still green
+  the test is still green.
 
 * I use the ``add_x`` :ref:`function<what is a function?>` for the other :ref:`assertions<what is an assertion?>`
 
@@ -1101,7 +1101,7 @@ the test passes
             my_expectation = 11
             self.assertEqual(reality, my_expectation)
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1218,7 +1218,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1346,14 +1346,14 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
     def w_pass():
         pass
 
-  the test passes
+  the test passes.
 
   * the test checks if
 
     - the ``reality`` :ref:`variable<what is a variable?>`, which represents the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is equal to
     - the ``my_expectation`` :ref:`variable<what is a variable?>`, which represents :ref:`None<what is None?>`
 
-  * the :ref:`function definition<how to make a function>` simply says pass_ and the test passes
+  * the :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
   * pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body)
   * the test passes because all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``, which leads me to the next test
 
@@ -1436,7 +1436,7 @@ I add the new :ref:`function<what is a function?>` with the pass_ keyword to ``f
   def w_return():
       pass
 
-the test passes
+the test passes.
 
 ----
 
@@ -1550,7 +1550,7 @@ I add a :ref:`function definition<how to make a function>` to ``functions.py``
   def w_return_none():
       return
 
-the test passes
+the test passes.
 
 ----
 
@@ -1570,7 +1570,7 @@ the test passes
     def w_return_none():
         return None
 
-  the test is still green
+  the test is still green.
 
 * I change :ref:`None<what is None?>` to ``'something'``
 
@@ -1701,7 +1701,7 @@ I add a :ref:`function<what is a function?>` to ``functions.py``
   def return_is_last():
       return None
 
-the test passes
+the test passes.
 
 ----
 
@@ -1740,13 +1740,13 @@ the test passes
 
   the terminal_ still shows the same :ref:`AssertionError<what causes AssertionError?>` because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code).
 
-  .. TIP::
+  .. tip::
 
     The `Integrated Development Environment (IDE)`_ shows that the second return statement will not run by graying it out
 
 * I move ``return None``, to make it the first `return statement`_
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 13
@@ -1867,7 +1867,7 @@ constant functions_ always return the same thing when they are called
     def constant():
         return 'the same thing'
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2029,7 +2029,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
     def identity(the_input):
         return the_input
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2222,7 +2222,7 @@ test_functions_w_positional_arguments
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'first'`` and ``'last'``
 
@@ -2267,7 +2267,7 @@ test_functions_w_positional_arguments
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -2338,7 +2338,7 @@ test_functions_w_positional_arguments
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add one more :ref:`assertion<what is an assertion?>`
 
@@ -2388,7 +2388,7 @@ test_functions_w_positional_arguments
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2547,7 +2547,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
     def w_keyword_arguments(first_input, last_input):
         return first_input, last_input
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -2667,7 +2667,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -2738,7 +2738,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -2784,7 +2784,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -2836,7 +2836,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * ``w_keyword_arguments`` and ``w_positional_arguments`` are the same functions_, they always
 
@@ -2983,7 +2983,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -3204,7 +3204,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     def w_positional_and_keyword_args(first_input, last_input):
         return first_input, last_input
 
-  the test passes
+  the test passes.
 
 * I add :ref:`variables<what is a variable?>` to use to remove the repetition of ``'first'`` and ``'last'`` in :ref:`test_functions_w_positional_and_keyword_args` in ``test_functions.py``
 
@@ -3246,7 +3246,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -3354,7 +3354,7 @@ I add a :ref:`function<what is a function?>` named ``w_optional_arguments`` to `
     def w_optional_arguments(first_input, last_input):
         return first_input, last_input
 
-the test passes
+the test passes.
 
 ----
 
@@ -3471,7 +3471,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -3592,7 +3592,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -3604,7 +3604,7 @@ the test passes
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
-.. NOTE::
+.. note::
 
   these four :ref:`functions<what is a function?>`
 
@@ -3635,7 +3635,7 @@ the test passes
     :emphasize-text: last
 
     w_positional_arguments('last', 'first')
-    return 'last',  'first'
+    return 'last', 'first'
 
   .. code-block:: python
     :emphasize-text: last
@@ -3690,10 +3690,10 @@ the test passes
   .. code-block:: python
     :emphasize-text: last
 
-    w_optional_arguments(first_input='john', last_name='smith')
+    w_optional_arguments(first_input='john', last_input='smith')
     return 'john', 'smith'
 
-.. TIP::
+.. tip::
 
   as a rule of thumb I use :ref:`keyword arguments<test_functions_w_keyword_arguments>` when I have 2 or more inputs so I do not have to remember the order
 
@@ -3854,7 +3854,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     def w_unknown_arguments(x, y, **kwargs):
         return None
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -3966,7 +3966,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     def w_unknown_arguments(*args, **kwargs):
         return None
 
-  the test passes
+  the test passes.
 
 * ``*args, **kwargs`` is :ref:`Python convention<conventions>`. I change the names to make it clearer
 
@@ -3979,7 +3979,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
         ):
         return None
 
-  the test is still green
+  the test is still green.
 
 * I change the `return statement`_ because I want the :ref:`function<what is a function?>` to return its input (remember the :ref:`identity function<test_identity_function>`?)
 
@@ -4078,7 +4078,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add :ref:`variables<what is a variable?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
 
@@ -4087,7 +4087,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     :emphasize-lines: 2
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 0, 1, a=2, b=3,
             )
@@ -4101,7 +4101,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     :emphasize-lines: 4-5, 7-8
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 # 0, 1, a=2, b=3,
                 a_tuple, a_dictionary
@@ -4135,7 +4135,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
             my_expectation = (a_tuple, a_dictionary)
             self.assertEqual(reality, my_expectation)
 
-  the test passes
+  the test passes.
 
 * I add :ref:`variables<what is a variable?>` to the next :ref:`assertion<what is an assertion?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
 
@@ -4144,7 +4144,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     :emphasize-lines: 11-12
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 # 0, 1, a=2, b=3,
                 *a_tuple, **a_dictionary
@@ -4170,7 +4170,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     :emphasize-lines: 14-15, 18-19
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 # 0, 1, a=2, b=3,
                 *a_tuple, **a_dictionary
@@ -4207,7 +4207,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     :emphasize-lines: 15
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 # 0, 1, a=2, b=3,
                 *a_tuple, **a_dictionary
@@ -4228,7 +4228,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
             )
             self.assertEqual(reality, my_expectation)
 
-  the test passes
+  the test passes.
 
 * I add :ref:`variables<what is a variable?>` to the third :ref:`assertion<what is an assertion?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
 
@@ -4237,7 +4237,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     :emphasize-lines: 23-24
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 # 0, 1, a=2, b=3,
                 *a_tuple, **a_dictionary
@@ -4322,7 +4322,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines
 
@@ -4330,7 +4330,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     :lineno-start: 199
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 *a_tuple, **a_dictionary
             )
@@ -4399,7 +4399,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 97
+  :lineno-start: 227
   :emphasize-lines: 3
 
           a_tuple = (0, 1, 2, 3)
@@ -4504,7 +4504,7 @@ how Python reads positional and keyword arguments
     :emphasize-lines: 42
 
         def test_functions_w_unknown_arguments(self):
-            a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+            a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
                 *a_tuple, **a_dictionary
             )
@@ -4550,7 +4550,7 @@ how Python reads positional and keyword arguments
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -4562,7 +4562,7 @@ how Python reads positional and keyword arguments
 
   the terminal_ shows a summary of the changes then goes back to the command line
 
-.. NOTE::
+.. note::
 
   these statements are the same
 
@@ -4606,7 +4606,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``functions``
 
@@ -4643,7 +4643,7 @@ as a reminder
 * :ref:`I can use '*args' when I do not know how many positional arguments the function has to take<test_functions_w_unknown_arguments>`
 * :ref:`positional arguments are taken as a tuple<how Python reads positional arguments>`
 * :ref:`positional arguments must come before keyword arguments<test_functions_w_optional_arguments>`
-* :ref:`I can use '**kwargs' when I do not know how many keyword arguments the function<test_functions_w_unknown_arguments>`
+* :ref:`I can use '**kwargs' when I do not know how many keyword arguments the function has to take<test_functions_w_unknown_arguments>`
 * :ref:`keyword arguments are taken as a dictionary<how Python reads keyword arguments>`
 * :ref:`the identity function returns its input<test_identity_function>`
 * :ref:`constant functions always return the same thing<test_constant_function>`

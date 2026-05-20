@@ -118,7 +118,7 @@ I change the expectation
             self.assertEqual(add_x(x, y), x+y)
             self.assertEqual(add_x(y=1), 4)
 
-the test passes
+the test passes.
 
 ----
 
@@ -238,7 +238,7 @@ the test passes
             self.assertEqual(add_x(x, y), x+y)
             self.assertEqual(add_x(y=5), 8)
 
-  the test passes
+  the test passes.
 
 * I remove the comment, then add a :ref:`variable<what is a variable?>`
 
@@ -270,7 +270,7 @@ the test passes
             self.assertEqual(add_x(x, y), x+y)
             self.assertEqual(add_x(y=6), 9)
 
-  the test passes
+  the test passes.
 
 * I remove the comment then add a :ref:`variable<what is a variable?>`
 
@@ -302,7 +302,7 @@ the test passes
             self.assertEqual(add_x(x, y), x+y)
             self.assertEqual(add_x(y=7), 10)
 
-  the test passes
+  the test passes.
 
 * I remove the comment then add a :ref:`variable<what is a variable?>`
 
@@ -334,7 +334,7 @@ the test passes
             self.assertEqual(add_x(x, y), x+y)
             self.assertEqual(add_x(y=8), 11)
 
-  the test passes
+  the test passes.
 
 * I remove the comment then add one more :ref:`variable<what is a variable?>`
 
@@ -364,7 +364,7 @@ the test passes
             # self.assertEqual(add_x(y=8), 11)
             self.assertEqual(add_x(x, y), x+y)
 
-  the test passes
+  the test passes.
 
 * I remove the comment then use the ``Rename Symbol`` feature to change the name of the ``add_x`` :ref:`function<what is a function?>` to ``add``
 
@@ -413,7 +413,7 @@ the test passes
             y = 0
             self.assertEqual(add(x, y), x+y)
 
-  the test is still green
+  the test is still green.
 
 * I only have to make a change in one place if I want to test what happens when I add ``5`` to a number. I change ``x``
 
@@ -456,7 +456,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``functions``
 

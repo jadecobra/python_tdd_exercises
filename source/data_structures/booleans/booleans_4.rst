@@ -108,7 +108,7 @@ I change assertIsInstance_ to assertNotIsInstance_
 
             self.assertNotIsInstance(bool, int)
 
-the test passes
+the test passes.
 
 ----
 

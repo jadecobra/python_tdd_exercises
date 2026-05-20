@@ -50,7 +50,7 @@ start the project
 
     ./makePythonTdd.sh module_not_found_error
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
@@ -78,7 +78,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 * I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
 
@@ -143,7 +143,7 @@ test_module_not_found_error
 
 ----
 
-I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes
+I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py`` and the test passes.
 
 ----
 
@@ -302,9 +302,9 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
-* I add ``module_08.py`` to the ``src`` folder_, the test passes
+* I add ``module_08.py`` to the ``src`` folder_, the test passes.
 
 * I add the last `import statement`_ to ``test_module_not_found_error.py``
 
@@ -324,7 +324,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 
     ModuleNotFoundError: No module named 'src.module_09'
 
-* I add the file_ to the ``src`` folder_ and the test passes
+* I add the file_ to the ``src`` folder_ and the test passes.
 
 ----
 
@@ -333,7 +333,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_module_not_found_error.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
   * I `change directory`_ to the parent of ``module_not_found_error``
 

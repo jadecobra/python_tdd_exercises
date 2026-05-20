@@ -223,7 +223,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
     def reset_number():
         streamlit.session_state['number'] = '0'
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -306,7 +306,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 
     def add_buttons_to_column_4(column_4):
 
-  the test passes
+  the test passes.
 
 * I refresh the browser, click on number buttons and when I click on ``AC`` it clears the numbers
 
@@ -360,7 +360,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
                         '0'
                     )
 
-  the test passes
+  the test passes.
 
 * I remove the other statements from :ref:`test_streamlit_calculator_reset`
 
@@ -771,7 +771,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
           + float(streamlit.session_state['second_number'])
         )
 
-  the test passes
+  the test passes.
 
 * I refresh the browser and try the same calculation
 
@@ -835,7 +835,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                 str(float(first_number)+float(second_number))
             )
 
-  the test passes
+  the test passes.
 
 * I refresh the browser and try the calculation again
 
@@ -1528,7 +1528,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
                     self.press_button('AC')
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the operation
 
@@ -1658,7 +1658,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def main():
 
-  the test passes
+  the test passes.
 
 * I add a button press for the second number and ``=``, then an :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
 
@@ -1780,7 +1780,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def plus_minus():
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the calculation in ``test_streamlit_calculator.py``
 
@@ -1906,7 +1906,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
                         )
                     )
 
-  the test passes
+  the test passes.
 
 * I remove the other statements from :ref:`test_streamlit_calculator_operations`
 
@@ -2003,7 +2003,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 
@@ -2020,7 +2020,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

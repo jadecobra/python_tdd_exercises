@@ -202,7 +202,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
                   'brmph?! I cannot divide by 0. Try again...'
               )
 
-  the test passes
+  the test passes.
 
 * I remove the `return statement`_ from ``a_random_number`` to go back to testing with a range of random numbers
 
@@ -220,7 +220,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 
     class TestCalculator(unittest.TestCase):
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -229,7 +229,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

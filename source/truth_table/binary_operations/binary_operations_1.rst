@@ -692,7 +692,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   - :red:`False`, if the first input is :red:`False`
   - the second input if the above :ref:`condition<if statements>` is NOT met
 
-  .. NOTE::
+  .. note::
 
     - ``if first_input == False:`` checks if ``first_input`` is equal to :red:`False`
 
@@ -736,7 +736,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * There is only one case where :ref:`logical_conjunction<test_logical_conjunction>` returns :green:`True`, I add an `if statement`_ for it in ``truth_table.py``
 
@@ -790,7 +790,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  green
+  green.
 
 * I add bool_ to the `if statements`_
 
@@ -861,7 +861,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
-  .. TIP::
+  .. tip::
 
     - ``if something == True:`` checks if ``something`` is equal to :ref:`True<test_what_is_true>`
 
@@ -909,7 +909,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  green
+  green.
 
 * I add an else_ clause to make it clearer
 
@@ -935,7 +935,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         else:
             return False
 
-  still green
+  still green.
 
 ----
 
@@ -1121,7 +1121,7 @@ examples of Logical Conjunction
 
 -----
 
-.. NOTE::
+.. note::
 
   All of the statements below have the same result
 
@@ -1345,7 +1345,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`
 
@@ -1689,7 +1689,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  the test passes
+  the test passes.
 
 * I add bool_
 
@@ -1705,7 +1705,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :ref:`True<test_what_is_true>`
 
@@ -1824,7 +1824,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         else:
             return False
 
-  still green
+  still green.
 
 * I add a `conditional expression`_
 
@@ -1851,7 +1851,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
             else False
         )
 
-  green
+  green.
 
 * I remove ``True if`` and ``else False`` to make the simpler `return statement`_
 
@@ -1879,7 +1879,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         # )
         return not first_input and second_input
 
-  still green
+  still green.
 
 * :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
 
@@ -1971,7 +1971,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         )
         return not first_input and second_input
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -2092,7 +2092,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_binary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``
 

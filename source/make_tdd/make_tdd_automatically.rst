@@ -80,13 +80,13 @@ how to make a shell script
 
         New-Item makePythonTdd.ps1
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I name this project ``magic_again``
 
 * I open the file_ I just made in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -211,7 +211,7 @@ how to make a shell script
 
 * I add the text of :ref:`the first failing test<test_failure>` inside the :ref:`quotes ("")<quotes>` I just added to the files_, the way I do when I add ``"pytest"`` as text to ``requirements.txt``
 
-  .. ATTENTION:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
+  .. attention:: Indentation_ is important in Python_, I use 4 spaces as convention in this book, see the :PEP:`Python Style Guide <8>` for more
 
   .. tab-set::
     :sync-group: os
@@ -372,7 +372,7 @@ I go back to the terminal_ to run the program_
 how to view the permissions of a file
 *********************************************************************************
 
-.. ATTENTION::
+.. attention::
 
   This part is only for Computers with MacOS_, Linux_ or `Windows Subsystem for Linux`_. If you have Windows_ without `Windows Subsystem for Linux`_ :ref:`Click Here to skip to How to use makePythonTdd.ps1 to make a different project<how to use makePythonTdd to make a different project>`
 
@@ -391,7 +391,7 @@ the terminal_ is my friend, and shows
 
   -rw-r--r-- 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
 
-.. NOTE:: the first 10 characters above (``-rw-r--r--``) are grouped
+.. note:: the first 10 characters above (``-rw-r--r--``) are grouped
 
   .. code-block:: shell
 
@@ -426,7 +426,7 @@ how to make a shell script run as a command
 
     chmod +x makePythonTdd.sh
 
-  chmod_ is a program_ that changes the mode (permissions) of the given file_, the terminal_ goes back to the command line
+  chmod_ is a program_ that changes the mode (permissions) of the given file_, the terminal_ goes back to the command line.
 
 * I list the permissions again with ls_
 
@@ -441,7 +441,7 @@ how to make a shell script run as a command
 
     -rwxr-xr-x 1 abcdef ghijk XX Month  Y ZA:BC makePythonTdd.sh
 
-  .. NOTE::
+  .. note::
 
     * ``-`` means this is a file_, it is NOT a directory_
     * ``rwx`` means the owner of the file_ can read (``r``), write to (``w``) and execute (``x``) the file_
@@ -497,7 +497,7 @@ how to use makePythonTdd to make a different project
 
 * I want to use ``makePythonTdd`` to make another project with a different name. I change ``magic_again`` to the name of the new project in the :ref:`editor<2 editors>`
 
-  .. NOTE:: The lines that are changing in the code are highlighted
+  .. note:: The lines that are changing in the code are highlighted
 
   .. tab-set::
     :sync-group: os

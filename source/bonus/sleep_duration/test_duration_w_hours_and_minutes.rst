@@ -321,7 +321,7 @@ The ``//`` operator returns a whole number which is how many times the bottom nu
 
     self.assertEqual(150//60, 2)
 
-  the test passes
+  the test passes.
 
 
 test_the_modulo_operation
@@ -352,7 +352,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
 
     self.assertEqual(120%60, 0)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -423,7 +423,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         f'{duration_minutes:02}'
     )
 
-  the test passes
+  the test passes.
 
 * I remove the `unittest.skip decorator`_ from ``test_duration_calculation``
 * and comment it out for ``test_duration_w_hours_and_minutes``

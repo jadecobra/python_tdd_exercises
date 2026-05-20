@@ -305,7 +305,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`negate_second function<test_negate_second>` in ``truth_table.py``
 
@@ -319,7 +319,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
             return True
         return False
 
-  still green
+  still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
 
@@ -334,7 +334,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
             return True
         return False
 
-  green
+  green.
 
 * I remove ``== True``
 
@@ -350,7 +350,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
             return True
         return False
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -385,7 +385,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
         # return False
         return True if not second_input else False
 
-  still green
+  still green.
 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
@@ -682,7 +682,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                 return True
         return False
 
-  the test passes
+  the test passes.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -698,7 +698,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                 return True
         return False
 
-  the test still green
+  the test still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
@@ -716,7 +716,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                 return True
         return False
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -736,7 +736,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                 return True
         return False
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -820,7 +820,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
             else False
         )
 
-  the test is still green
+  the test is still green.
 
 * I remove ``True if`` and ``else False``
 
@@ -848,7 +848,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
             # else False
         )
 
-  still green
+  still green.
 
 * I write the statement in terms of :ref:`not<test_logical_negation>` because it happens 2 times
 
@@ -983,7 +983,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
             # else False
         )
 
-  still green
+  still green.
 
 * I remove the comments
 
@@ -1309,7 +1309,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         return True
 
-  the test passes
+  the test passes.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -1329,7 +1329,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         return True
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statements in terms of :ref:`True<test_what_is_true>`
 
@@ -1352,7 +1352,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         return
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -1378,7 +1378,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         return True
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1471,11 +1471,11 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
         if first_input and second_input:
             return True
 
-  still green
+  still green.
 
 * I put the :ref:`if statements` that return the same thing together
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 116
@@ -1573,7 +1573,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             (not first_input and not second_input)
         ) else False
 
-  still green
+  still green.
 
 * I remove ``True if`` and ``else False``
 
@@ -1592,7 +1592,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             (not first_input and not second_input)
         )
 
-  the test is still green
+  the test is still green.
 
 * I write the second part of the statement in terms of :ref:`not<test_logical_negation>` because it happens twice
 
@@ -1767,7 +1767,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             not (first_input or second_input)
         )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -2090,7 +2090,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
                 return False
         return True
 
-  the test passes
+  the test passes.
 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -2106,7 +2106,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
                 return False
         return True
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -2123,7 +2123,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
                 return False
         return True
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -2142,7 +2142,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
                 return False
         return True
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -2222,7 +2222,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         else:
             return True
 
-  still green
+  still green.
 
 * I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<if statements>` of the :ref:`if statement<if statements>`
 
@@ -2236,7 +2236,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         if not (first_input and not second_input):
             return True
 
-  green
+  green.
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -2255,7 +2255,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
             else False
         )
 
-  still green
+  still green.
 
 * I remove ``True if`` and ``else False`` to make it simpler
 
@@ -2274,7 +2274,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
             # else False
         )
 
-  the test is still green
+  the test is still green.
 
 * I "multiply" :ref:`not<test_logical_negation>` by the symbols in parentheses
 
@@ -2431,7 +2431,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
             # else False
         )
 
-  still green
+  still green.
 
 * I remove the comments
 
@@ -2484,7 +2484,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_truth_table.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``
 

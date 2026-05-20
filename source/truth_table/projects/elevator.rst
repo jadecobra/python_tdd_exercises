@@ -76,7 +76,7 @@ number the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``elevator.py`` and move it to the ``src`` folder_
 
@@ -99,7 +99,7 @@ number the project
 
         Move-Item main.py src/elevator.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -108,11 +108,11 @@ number the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -133,7 +133,7 @@ number the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -156,11 +156,11 @@ number the project
 
         New-Item tests/test_elevator.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_elevator.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -192,7 +192,7 @@ number the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -201,7 +201,7 @@ number the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -296,7 +296,7 @@ number the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -555,7 +555,7 @@ I add an :ref:`if statement<if statements>` to the ``elevator`` :ref:`function<w
 
       return 'MOVE'
 
-the test passes
+the test passes.
 
 ----
 
@@ -578,7 +578,7 @@ the test passes
 
         return 'MOVE'
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
@@ -594,7 +594,7 @@ the test passes
 
         return 'MOVE'
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -611,7 +611,7 @@ the test passes
 
         return 'MOVE'
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -723,7 +723,7 @@ I add an :ref:`if statement<if statements>` to ``elevator.py``
 
       return 'MOVE'
 
-the test passes
+the test passes.
 
 ----
 
@@ -749,7 +749,7 @@ the test passes
 
         return 'MOVE'
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -768,7 +768,7 @@ the test passes
 
     return 'MOVE'
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -788,7 +788,7 @@ the test passes
 
         return 'MOVE'
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -845,7 +845,7 @@ the test passes
 
         return 'MOVE'
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -908,7 +908,7 @@ doors             floor button        output
 
   # Exceptions seen
 
-the test is still green
+the test is still green.
 
 ----
 
@@ -952,7 +952,7 @@ the test is still green
 
         def test_doors_not_clear_number_pushed(self):
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -985,7 +985,7 @@ the test is still green
 
         def test_doors_not_clear_number_not_pushed(self):
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -1019,7 +1019,7 @@ the test is still green
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1223,7 +1223,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
         return 'MOVE'
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1243,7 +1243,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         if bool(above_weight_limit) == True:
             return not_move
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -1256,7 +1256,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         if bool(above_weight_limit):
             return not_move
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1383,7 +1383,7 @@ doors           floor number        weight limit        output
 
         def test_doors_not_clear_number_pushed(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
 
@@ -1492,7 +1492,7 @@ doors             floor number        weight limit        output
 
         def test_doors_not_clear_number_not_pushed(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_doors_not_clear_number_pushed`, for when the doors are :red:`NOT clear`, the button for the floor is :green:`pushed` and the elevator is :red:`NOT above` the weight limit
 
@@ -1601,7 +1601,7 @@ doors             floor number        weight limit        output
 
     # Exceptions seen
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear`, the button for the floor is :red:`NOT pushed` and the elevator is :red:`NOT above` the weight limit
 
@@ -1712,7 +1712,7 @@ doors             floor number        weight limit        output
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>`
 
@@ -1778,7 +1778,7 @@ doors             floor number        weight limit        output
 
         def test_weight_w_doors_not_clear_number_not_pushed(self):
 
-  still green
+  still green.
 
 * I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_weight_w_doors_not_clear_number_pushed`
 
@@ -1842,7 +1842,7 @@ doors             floor number        weight limit        output
 
         def test_weight_w_doors_not_clear_number_pushed(self):
 
-  green
+  green.
 
 * I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_weight_w_doors_clear_number_not_pushed`
 
@@ -1895,7 +1895,7 @@ doors             floor number        weight limit        output
 
         def test_weight_w_doors_clear_number_not_pushed(self):
 
-  still green
+  still green.
 
 ----
 
@@ -2040,7 +2040,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
             above_weight_limit=False, emergency=False,
         ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -2093,7 +2093,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
         def test_weight_w_doors_clear_number_not_pushed(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_weight_w_doors_clear_number_pushed` for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit and the emergency button is :green:`pushed`, in :ref:`test_weight_w_doors_clear_number_pushed` in ``test_elevator.py``
 
@@ -2182,7 +2182,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
         return 'MOVE'
 
-  the test passes
+  the test passes.
 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -2194,7 +2194,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         if bool(emergency) == True:
             return not_move
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -2207,7 +2207,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         if bool(emergency):
             return not_move
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -2311,7 +2311,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
         def test_weight_w_doors_clear_number_not_pushed(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_weight_w_doors_clear_number_pushed` to :ref:`test_doors_clear_number_pushed_w_emergency`
 
@@ -2372,7 +2372,7 @@ doors           floor number        weight limit        emergency button      ou
                 NOT_MOVE
             )
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for a floor is :red:`NOT pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
 
@@ -2417,7 +2417,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_weight_w_doors_not_clear_number_pushed(self):
 
-  the test is still green
+  the test is still green.
 
 * I add values for the ``above_weight_limit`` and ``emergency`` parameters, even though I do not need to because they have :ref:`default values<test_functions_w_optional_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>`, for when the doors are :green:`clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
 
@@ -2464,7 +2464,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_weight_w_doors_not_clear_number_pushed(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`
 
@@ -2521,7 +2521,7 @@ doors           floor number        weight limit        emergency button      ou
 
         def test_weight_w_doors_not_clear_number_pushed(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_weight_w_doors_clear_number_not_pushed` to :ref:`test_doors_clear_number_not_pushed_w_emergency`
 
@@ -2590,7 +2590,7 @@ doors             floor number      weight limit        emergency button      ou
                 NOT_MOVE
             )
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear`, the button for a floor is :green:`pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
 
@@ -2635,7 +2635,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_weight_w_doors_not_clear_number_not_pushed(self):
 
-  still green
+  still green.
 
 * I add a value for the ``above_weight_limit``, even though I do not need to because it has a :ref:`default value<test_functions_w_optional_arguments>`. I also add a value for the ``emergency`` parameter. This will make things clearer in the third :ref:`assertion<what is an assertion?>` which is for when the doors are :red:`NOT clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
 
@@ -2682,7 +2682,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_weight_w_doors_not_clear_number_not_pushed(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :red:`NOT pushed`
 
@@ -2739,7 +2739,7 @@ doors             floor number      weight limit        emergency button      ou
 
         def test_weight_w_doors_not_clear_number_not_pushed(self):
 
-  still green
+  still green.
 
 * I change the name of the test from :ref:`test_weight_w_doors_not_clear_number_pushed` to :ref:`test_doors_not_clear_number_pushed_w_emergency`
 
@@ -2808,7 +2808,7 @@ doors             floor number        weight limit        emergency button      
                 NOT_MOVE
             )
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear`, the button for a floor is :red:`NOT pushed`, the elevator is :green:`above` the weight limit, and the emergency button is :red:`NOT pushed`
 
@@ -2854,7 +2854,7 @@ doors             floor number        weight limit        emergency button      
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I add values for the ``above_weight_limit`` parameter, even though I do not need to because it has a :ref:`default value<test_functions_w_optional_arguments>`. I also add a value for the ``emergency`` parameter. This will make things clearer in the third :ref:`assertion<what is an assertion?>`, which is for when the doors are :red:`NOT clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
 
@@ -2902,7 +2902,7 @@ doors             floor number        weight limit        emergency button      
 
     # Exceptions seen
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the doors are :red:`NOT clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is :red:`NOT pushed`
 
@@ -2960,7 +2960,7 @@ doors             floor number        weight limit        emergency button      
 
     # Exceptions seen
 
-  all the tests are still green
+  all the tests are still green.
 
 * I change the name of the test from :ref:`test_weight_w_doors_not_clear_number_not_pushed` to :ref:`test_doors_not_clear_number_not_pushed_w_emergency`
 
@@ -3040,7 +3040,7 @@ doors             floor number        weight limit        emergency button      
 
         return 'MOVE'
 
-  the tests are still green
+  the tests are still green.
 
 * I rewrite the statement in terms of :ref:`NOT<test_logical_negation>` because it happens two times
 
@@ -3148,7 +3148,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_elevator.py`` and ``elevator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_, then use :kbd:`q` on the doorsboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_, then use :kbd:`q` on the doorsboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``elevator``
 

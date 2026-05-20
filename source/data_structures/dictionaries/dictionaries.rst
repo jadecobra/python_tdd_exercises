@@ -49,7 +49,7 @@ start the project
 * I name this project ``dictionaries``
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -90,7 +90,7 @@ start the project
     # AssertionError
     " > tests/test_dictionaries.py
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -124,7 +124,7 @@ start the project
 
     ./makePythonTdd.sh
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -163,7 +163,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -920,7 +920,7 @@ It also gives me a message about how to show the full difference between the two
                 ]
             )
 
-  the test passes
+  the test passes.
 
 * I copy the names that do NOT have double underscores (__) and paste them below the test to make a TODO list that I use to test what I can do with :ref:`dictionaries<what is a dictionary?>`
 
@@ -949,7 +949,7 @@ It also gives me a message about how to show the full difference between the two
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -1023,7 +1023,7 @@ I change the values to match
           self.assertIsNone(a_dictionary.clear())
           self.assertEqual(a_dictionary, {})
 
-the test passes
+the test passes.
 
 ----
 
@@ -1146,7 +1146,7 @@ I change assertIsNone_ to assertEqual_
               {'key': 'value'}
           )
 
-the test passes
+the test passes.
 
 ----
 
@@ -1304,7 +1304,7 @@ the terminal_ is my friend, and shows :ref:`TypeError`
                 {0: None, 1: None}
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1353,7 +1353,7 @@ the terminal_ is my friend, and shows :ref:`TypeError`
 
     'fromkeys',
 
-  the test is still green
+  the test is still green.
 
 * I remove ``a_dictionary`` since it is not used
 
@@ -1369,7 +1369,7 @@ the terminal_ is my friend, and shows :ref:`TypeError`
 
     'fromkeys',
 
-  still green
+  still green.
 
 * the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a function?>` without inputs the terminal_ showed :ref:`TypeError`
 
@@ -1388,7 +1388,7 @@ the terminal_ is my friend, and shows :ref:`TypeError`
                 {0: None, 1: None}
             )
 
-  the test is still green
+  the test is still green.
 
 * I change the second input, I think this will fail
 
@@ -1512,7 +1512,7 @@ I add a value to the call
 
           self.assertIsNone(a_dictionary.get(0))
 
-the test passes
+the test passes.
 
 ----
 
@@ -1530,7 +1530,7 @@ the test passes
 
             self.assertIsNone(a_dictionary.get(0, None))
 
-  the test is still green
+  the test is still green.
 
 * I change the second argument, I think this will fail
 
@@ -1576,7 +1576,7 @@ the test passes
                 'default'
             )
 
-  the test passes
+  the test passes.
 
 * I change ``0`` in the call to make it clearer
 
@@ -1590,7 +1590,7 @@ the test passes
                 'default'
             )
 
-  the test is still green
+  the test is still green.
 
 * I want to see what happens when I use the `get method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`, I add another :ref:`assertion<what is an assertion?>`
 
@@ -1629,9 +1629,9 @@ the test passes
                 'value'
             )
 
-  the test passes
+  the test passes.
 
-  .. NOTE::
+  .. note::
 
     The `get method`_ has a :ref:`condition<if statements>`
 
@@ -1658,7 +1658,7 @@ the test passes
 
     'get',
 
-  the test is still green
+  the test is still green.
 
 * I remove get_ from the TODO list
 
@@ -1857,7 +1857,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
                 ]
             )
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -2025,7 +2025,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
                 ['key']
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -2068,7 +2068,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
                 ['key1', 'keyN']
             )
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -2238,7 +2238,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
                 a_dictionary.pop('not_in_dictionary')
             self.assertIsNone(a_dictionary.pop('not_in_dictionary', None))
 
-  the test is still green
+  the test is still green.
 
 * I change the second argument, I think this will fail
 
@@ -2283,7 +2283,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
                 'default'
             )
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the `pop method`_ with a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`
 
@@ -2319,7 +2319,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
                 'value'
             )
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>` to see what the `pop method`_ did to the :ref:`dictionary<what is a dictionary?>`
 
@@ -2349,7 +2349,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
             self.assertEqual(a_dictionary, {})
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -2464,7 +2464,7 @@ I change assertIsNone_ to assertEqual_
               ('key', 'value')
           )
 
-the test passes
+the test passes.
 
 ----
 
@@ -2502,7 +2502,7 @@ the test passes
 
             self.assertEqual(a_dictionary, {})
 
-  the test passes
+  the test passes.
 
 * this operation does not take input, I change the :ref:`dictionary<what is a dictionary?>` to see what happens
 
@@ -2554,7 +2554,7 @@ the test passes
 
             self.assertEqual(a_dictionary, {'key1': 'value1'})
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -2641,7 +2641,7 @@ I pass a value in the call
 
           self.assertIsNone(a_dictionary.setdefault(0))
 
-the test passes
+the test passes.
 
 ----
 
@@ -2659,7 +2659,7 @@ the test passes
 
             self.assertIsNone(a_dictionary.setdefault(0, None))
 
-  the test is still green
+  the test is still green.
 
 * I change the second argument, I think this will fail
 
@@ -2704,7 +2704,7 @@ the test passes
                 'default'
             )
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` to see what setdefault_ did to the :ref:`dictionary<what is a dictionary?>`
 
@@ -2746,7 +2746,7 @@ the test passes
                 }
             )
 
-  the test passes
+  the test passes.
 
 * I change the ``0`` given in the call to the `setdefault method`_ be clearer
 
@@ -2824,9 +2824,9 @@ the test passes
                 'value'
             )
 
-  the test passes
+  the test passes.
 
-  .. NOTE::
+  .. note::
 
     setdefault_ has a :ref:`condition<if statements>`
 
@@ -2952,7 +2952,7 @@ I change the values in the expectation to match the terminal_
 
           self.assertEqual(a_dictionary, {'key': 'value'})
 
-the test passes
+the test passes.
 
 ----
 
@@ -3024,7 +3024,7 @@ the test passes
                 }
             )
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` to see what happens when I give a :ref:`key<test_keys_of_a_dictionary>` that is already in the :ref:`dictionary<what is a dictionary?>`
 
@@ -3060,7 +3060,7 @@ the test passes
                 }
             )
 
-  the test passes
+  the test passes.
 
 * since the `update method`_ takes :ref:`keyword arguments<test_functions_w_keyword_arguments>`, I can give it a :ref:`dictionary<what is a dictionary?>` as input. I add another :ref:`assertion<what is an assertion?>`
 
@@ -3100,7 +3100,7 @@ the test passes
                 }
             )
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -3127,7 +3127,7 @@ the test passes
 
     'update',
 
-  the test is still green
+  the test is still green.
 
 * I remove update_ from the TODO list
 
@@ -3264,7 +3264,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
                 ['value']
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -3310,7 +3310,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
                 ]
             )
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -3413,7 +3413,7 @@ I change the value in the expectation to match the terminal_
 
           self.assertEqual(a_dictionary['key'], 'value')
 
-the test passes
+the test passes.
 
 ----
 
@@ -3449,7 +3449,7 @@ the test passes
             with self.assertRaises(KeyError):
                 a_dictionary['not_in_dictionary']
 
-  the test passes
+  the test passes.
 
 * I can use the `get method`_ when I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a :ref:`dictionary<what is a dictionary?>`
 
@@ -3516,7 +3516,7 @@ the test passes
             with self.assertRaises(KeyError):
                 a_dictionary.pop('not_in_dictionary')
 
-  the test passes
+  the test passes.
 
 * I can give a second argument when I do not want the `pop method`_ to raise :ref:`KeyError<test_key_error>` when the :ref:`key<test_keys_of_a_dictionary>` is not in the :ref:`dictionary<what is a dictionary?>`. I add an :ref:`assertion<what is an assertion?>`
 
@@ -3548,7 +3548,7 @@ the test passes
                 'default'
             )
 
-  the test passes
+  the test passes.
 
 * The `popitem method`_ also raises :ref:`KeyError<test_key_error>` when called on an empty :ref:`dictionary<what is a dictionary?>`
 
@@ -3605,7 +3605,7 @@ the test passes
     # NameError
     # KeyError
 
-  the test passes
+  the test passes.
 
 :ref:`I know what causes KeyError<test_key_error>`
 
@@ -3617,7 +3617,7 @@ close the project
 
 * I close ``test_dictionaries.py`` in the :ref:`editor<2 editors>`
 
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``dictionaries``
 

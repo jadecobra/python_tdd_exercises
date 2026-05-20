@@ -86,7 +86,7 @@ start the project
 * I name this project ``lists``
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -127,7 +127,7 @@ start the project
     # AssertionError
     " > tests/test_lists.py
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -161,7 +161,7 @@ start the project
 
     ./makePythonTdd.sh
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -200,7 +200,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -569,7 +569,7 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
 
             self.assertEqual(a_list, [0, 1, 2, 'n', 0])
 
-  the test passes
+  the test passes.
 
 * I change the value given to append_
 
@@ -593,7 +593,7 @@ the test is green again, the `append method`_ returns :ref:`None<what is None?>`
 
             self.assertEqual(a_list, [0, 1, 2, 'n', 'n+1'])
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -691,7 +691,7 @@ I change the values to match
 
           self.assertEqual(a_list, [])
 
-the test passes
+the test passes.
 
 ----
 
@@ -803,7 +803,7 @@ the :ref:`method<what is a function?>` returns a copy of the list_
             a_list = [0, 1, 2, 'n']
             self.assertEqual(a_list.copy(), [0, 1, 2, 'n'])
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -923,7 +923,7 @@ I change assertIsNone_ to assertEqual_
 
           self.assertEqual(a_list.count(0), 1)
 
-the test passes
+the test passes.
 
 ----
 
@@ -958,7 +958,7 @@ the test passes
 
             self.assertEqual(a_list.count(1), 3)
 
-  the test passes
+  the test passes.
 
 * I want to see what happens when I try to count something that is not in the list_
 
@@ -985,7 +985,7 @@ the test passes
 
             self.assertEqual(a_list.count('not in list'), 0)
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -1116,7 +1116,7 @@ the test passes. The `extend method`_ returns :ref:`None<what is None?>` when ca
 
             self.assertEqual(a_list, [0, 1, 2, 'n', 0, 1])
 
-  the test passes
+  the test passes.
 
 * I change the values given to the `extend method`_
 
@@ -1256,7 +1256,7 @@ I change assertIsNone_ to assertEqual_
           a_list = [0, 1, 2, 'n']
           self.assertEqual(a_list.index(0), 0)
 
-the test passes
+the test passes.
 
 ----
 
@@ -1379,7 +1379,7 @@ the test passes
 
         self.assertEqual(a_list.index('3rd'), 2)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -1443,7 +1443,7 @@ the test passes
         def test_index(self):
             a_list = ['1st', '2nd', '3rd', '...last', '1st']
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -1509,7 +1509,7 @@ the test passes
             with self.assertRaises(ValueError):
                 a_list.index('not in list')
 
-  the test is still green
+  the test is still green.
 
 * I change the name of the test
 
@@ -1796,7 +1796,7 @@ I change assertIsNone_ to assertEqual_
           a_list = [0, 1, 2, 'n']
           self.assertEqual(a_list.pop(), 'n')
 
-the test passes
+the test passes.
 
 ----
 
@@ -1829,7 +1829,7 @@ the test passes
 
             self.assertEqual(a_list, [0, 1, 2])
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>` with the `pop method`_
 
@@ -1854,7 +1854,7 @@ the test passes
 
             self.assertEqual(a_list.pop(), 2)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>` to see what changed in the list_
 
@@ -1879,7 +1879,7 @@ the test passes
 
             self.assertEqual(a_list, [0, 1])
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -1996,7 +1996,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
             self.assertEqual(a_list, [1, 2, 'n'])
 
-  the test passes
+  the test passes.
 
 * I change the values in the list_ to see what happens when an item is in there more than one time
 
@@ -2054,7 +2054,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
     'remove',
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -2152,7 +2152,7 @@ I change the expectation
 
           self.assertEqual(a_list, ['n', 2, 1, 0])
 
-the test passes
+the test passes.
 
 ----
 
@@ -2247,7 +2247,7 @@ I remove the things around the call then add assertRaises_
           with self.assertRaises(TypeError):
               a_list.sort()
 
-the test passes
+the test passes.
 
 ----
 
@@ -2268,7 +2268,7 @@ the test passes
           with self.assertRaises(TypeError):
               [0, 1, 2, 'n'].sort()
 
-  the test is still green
+  the test is still green.
 
 * I remove the :ref:`variable<what is a variable?>` because it is no longer used
 
@@ -2280,7 +2280,7 @@ the test passes
             with self.assertRaises(TypeError):
                 [0, 1, 2, 'n'].sort()
 
-  still green
+  still green.
 
 * I add a new list_ where all the items are numbers and another :ref:`assertion<what is an assertion?>`
 
@@ -2351,7 +2351,7 @@ the test passes
 
             self.assertEqual(a_list, [-3, -2, -1, 0, 1, 2, 3])
 
-  the test passes
+  the test passes.
 
 * I change the name of the test
 
@@ -2440,7 +2440,7 @@ I change the value in the test
 
           self.assertEqual(a_list[0], '1st')
 
-the test passes
+the test passes.
 
 ----
 
@@ -2501,7 +2501,7 @@ the test passes
 
             self.assertEqual(a_list[-4], '1st')
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -2551,7 +2551,7 @@ the test passes
 
             self.assertEqual(a_list[-2], '3rd')
 
-  the test passes
+  the test passes.
 
 * I add another line
 
@@ -2599,7 +2599,7 @@ the test passes
 
             self.assertEqual(a_list[-3], '2nd')
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -2624,7 +2624,7 @@ the test passes
 
             self.assertEqual(a_list[3], '...last')
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -2662,7 +2662,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 :ref:`I know how to get things that are in a list<test_getting_items_of_a_list>`
 
@@ -2837,7 +2837,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
             self.assertEqual(a_list[1:4], ['b', 'c', 'd'])
 
-  the test passes
+  the test passes.
 
 * I can skip the second number when it is bigger than or the same as the number of things in the list_
 
@@ -2887,7 +2887,7 @@ I give two values in square brackets(``[]``), separated by a ``:``, the first va
 
             self.assertEqual(a_list[0:3], ['a', 'b', 'c'])
 
-  the test passes
+  the test passes.
 
 * I add another
 
@@ -3019,7 +3019,7 @@ I add assertRaises_
       with self.assertRaises(IndexError):
           a_list[4]
 
-the test passes
+the test passes.
 
 ----
 
@@ -3071,7 +3071,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * IndexError_ is also raised when I call the `pop method`_ with an empty list_
 
@@ -3142,7 +3142,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_lists.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``lists``
 

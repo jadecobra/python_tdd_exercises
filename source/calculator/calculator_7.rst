@@ -238,7 +238,7 @@ this means
                 self.random_first_number/self.random_second_number
             )
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
@@ -281,7 +281,7 @@ this means
                 self.random_second_number*self.random_second_number
             )
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
@@ -353,7 +353,7 @@ this means
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -525,7 +525,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number+self.random_second_number
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines then make the same change for :ref:`division<test_division>`
 
@@ -550,7 +550,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number/self.random_second_number
             )
 
-  still green
+  still green.
 
 * I do the same thing for the :ref:`multiply function<test_multiplication>`
 
@@ -575,7 +575,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_second_number*self.random_second_number
             )
 
-  green
+  green.
 
 * I do it in the :ref:`assertions<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
@@ -600,7 +600,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number-self.random_first_number
             )
 
-  still green
+  still green.
 
 * I remove the ``x`` and ``y`` :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
@@ -646,7 +646,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
             #     self.random_first_number-self.random_second_number
             # )
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the comments from the :ref:`assertion<what is an assertion?>` with ``**two_numbers``
 
@@ -675,7 +675,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number+self.random_second_number
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -717,7 +717,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number/self.random_second_number
             )
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`multiply function<test_multiplication>`
 
@@ -751,7 +751,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
                 self.random_first_number*self.random_second_number
             )
 
-  the test passes
+  the test passes.
 
 * I add the next :ref:`assertion<what is an assertion?>`
 
@@ -833,7 +833,7 @@ the names of the :ref:`keys<test_keys_of_a_dictionary>` in the ``two_numbers`` :
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1152,7 +1152,7 @@ I change the expectation to the error message
                       'brmph?! Numbers only. Try again...'
                   )
 
-the test passes
+the test passes.
 
 ----
 
@@ -1514,7 +1514,7 @@ this means all these statements are the same
                         arithmetic_tests[operation]['expectation']
                     )
 
-  the test passes
+  the test passes.
 
 * I remove the other :ref:`dictionaries<what is a dictionary?>` and :ref:`for loop<what is a for loop?>`
 
@@ -1715,7 +1715,7 @@ this means all these statements are the same
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -1772,7 +1772,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         arithmetic_tests[operation]['expectation']
                     )
 
-  the test is still green
+  the test is still green.
 
 * I use it in the :ref:`assertion<what is an assertion?>`
 
@@ -1788,7 +1788,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         arithmetic_tests[operation]['expectation']
                     )
 
-  still green
+  still green.
 
 * I use it for the expectation
 
@@ -1805,7 +1805,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-  the test is still green
+  the test is still green.
 
 * I comment out the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_calculator_functions`
 
@@ -1838,7 +1838,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
             # for operation in arithmetic_tests:
 
-  still green
+  still green.
 
 * I comment out the :ref:`exception handler<how to use try...except...else>`
 
@@ -1854,7 +1854,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
             # except ZeroDivisionError:
             #     division_result = 'brmph?! I cannot divide by 0. Try again...'
 
-  green
+  green.
 
 * I comment out the ``x`` and ``y`` :ref:`variables<what is a variable?>`
 
@@ -1902,7 +1902,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-  the test is still green
+  the test is still green.
 
 * I comment out ``x`` and ``y`` again
 
@@ -1914,7 +1914,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
             # x = self.random_first_number
             # y = self.random_second_number
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -1935,7 +1935,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -1977,7 +1977,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_functions(self):
 
-  still green
+  still green.
 
 * I use it in the :ref:`assertion<what is an assertion?>`
 
@@ -1993,7 +1993,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                             'brmph?! Numbers only. Try again...'
                         )
 
-  green
+  green.
 
 * I remove the commented lines and the ``arithmetic`` :ref:`variable<what is a variable?>` because it is no longer used
 
@@ -2076,7 +2076,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                             **not_two_numbers
                         )
 
-  the test passes
+  the test passes.
 
 * I remove the other :ref:`assertions<what is an assertion?>`
 
@@ -2095,7 +2095,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`list<what is a list?>` for the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>`
 
@@ -2108,7 +2108,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                             [0, 1, 2]
                         )
 
-  still green
+  still green.
 
 * I put the two `with statements`_ together
 
@@ -2128,7 +2128,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         [0, 1, 2]
                     )
 
-  green
+  green.
 
 * I remove the commented lines and ``not_two_numbers`` :ref:`variable<what is a variable?>`
 
@@ -2147,7 +2147,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-  still green
+  still green.
 
 ----
 
@@ -2241,7 +2241,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-  the test passes
+  the test passes.
 
 * I remove all the :ref:`assertions<what is an assertion?>` that have ``**two_numbers``
 
@@ -2294,7 +2294,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_raises_type_error_when_given_more_than_two_inputs(self):
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -2393,7 +2393,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
                         self.arithmetic_tests[operation]['expectation']
                     )
 
-  the test passes
+  the test passes.
 
 * I remove all the other :ref:`assertions<what is an assertion?>` that have ``*two_numbers``
 
@@ -2451,7 +2451,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
 
         def test_calculator_w_dictionary_items(self):
 
-  the test is still green
+  the test is still green.
 
 I think it is time to take nap. That was a lot.
 

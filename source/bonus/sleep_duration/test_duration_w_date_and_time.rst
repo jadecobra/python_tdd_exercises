@@ -216,7 +216,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
         else:
             return (wake_time, sleep_time)
 
-  the test passes
+  the test passes.
 
 *********************************************************************************
 :yellow:`REFACTOR`: make it better
@@ -364,7 +364,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
             )
         )
 
-  the test passes
+  the test passes.
 
 * I change the year to four digits
 
@@ -482,7 +482,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
     def read_timestamp(timestamp=None, index=0):
     ...
 
-  the test passes
+  the test passes.
 
 * I just called `datetime.datetime.strptime`_ 5 times in a row with the same pattern, time to add a :ref:`function<what is a function?>` to remove some repetition
 
@@ -631,7 +631,7 @@ I change the calls to `datetime.datetime.strptime`_ to ``src.sleep_duration.get_
               )
           )
 
-and the test is still green
+and the test is still green.
 
 ----
 
@@ -691,7 +691,7 @@ and the test is still green
               - get_datetime(sleep_time)
             )
 
-  the test passes
+  the test passes.
 
 * I add ``str()`` to the expectation in the test because I want the result as a string_ not a `datetime.timedelta`_ object
 
@@ -749,7 +749,7 @@ and the test is still green
               - get_datetime(sleep_time)
             )
 
-  the test passes
+  the test passes.
 
 * I remove ``duration`` because ``duration_a`` is a better solution
 * which means I can remove ``read_timestamp`` because no one calls it anymore. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -850,7 +850,7 @@ and the test is still green
             f'{random_number(0,59)}'
         )
 
-  all tests are still green
+  all tests are still green.
 * I change ``test_duration_w_date_and_time`` to ``test_duration`` the terminal_ is my friend, and shows all tests are still passing
 
 .. _sleep_duration_review:

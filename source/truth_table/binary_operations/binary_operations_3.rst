@@ -370,7 +370,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             return True
         return False
 
-  the test passes
+  the test passes.
 
 * there are two cases where :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` and two cases where it returns :green:`True`. I add an :ref:`if statement<if statements>` for the other case where it returns :red:`False`, to make it clearer
 
@@ -388,7 +388,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
                 return True
             return False
 
-  the test is still green
+  the test is still green.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -410,7 +410,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
                 return True
             return False
 
-  still green
+  still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write three of the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
@@ -435,7 +435,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
                 return True
             return False
 
-  green
+  green.
 
 * I remove ``== True``
 
@@ -465,7 +465,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             return False
 
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -505,7 +505,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
 * I move the :ref:`if statements` to put them together
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 62
@@ -536,7 +536,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
                 return True
             return False
 
-  still green
+  still green.
 
 * I add :ref:`if statements` for the other two cases to make it clearer
 
@@ -571,7 +571,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             if second_input:
                 return False
 
-  green
+  green.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to write the :ref:`if statements` for all the cases
 
@@ -660,7 +660,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
         if first_input and second_input:
             return False
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Disjunction (OR)<test_logical_conjunction>` to put the :ref:`if statements` that return the same thing together
 
@@ -733,7 +733,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
         else:
             return False
 
-  green
+  green.
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -764,7 +764,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         ) else False
 
-  still green
+  still green.
 
 * I remove ``True if`` and ``else False`` to make it simpler
 
@@ -800,7 +800,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  the test is still green
+  the test is still green.
 
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns ``((not first_input and second_input) or (first_input and not second_input))``
 
@@ -949,7 +949,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
         (first_input and not second_input)
     )
 
-  the test is still green
+  the test is still green.
 
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` when ``first_input`` and ``second_input`` are the same and returns :green:`True`, if they are NOT. I add an :ref:`if statement<if statements>` to show this with the equality symbol (2 equal signs together :kbd:`=+=` on the keyboard)
 
@@ -978,7 +978,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  still green
+  still green.
 
 * :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` when the two inputs are equal, it returns :green:`True` when the two inputs are NOT equal. I add an :ref:`if statement<if statements>` to show this
 
@@ -1011,7 +1011,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  green
+  green.
 
 * I change the :ref:`else clause<if statements>` to the :ref:`Logical Negation (NOT)<test_logical_negation>` of the new :ref:`if statement<if statements>` so I can write a :ref:`conditional expression<conditional expressions>`
 
@@ -1040,7 +1040,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  still green
+  still green.
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -1074,7 +1074,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  the test is still green
+  the test is still green.
 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
@@ -1109,7 +1109,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  still green
+  still green.
 
 * I can also write the :ref:`conditional expression<conditional expressions>` with the NOT equal symbol (``!=``) (exclamation mark and equal symbol :kbd:`!+=` on the keyboard)
 
@@ -1191,7 +1191,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -1577,7 +1577,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
                 return True
         return False
 
-  the test passes
+  the test passes.
 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -1593,7 +1593,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
                 return True
         return False
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the second :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -1610,7 +1610,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
                 return True
         return False
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -1629,7 +1629,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
                 return True
         return False
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1713,7 +1713,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
             else False
         )
 
-  still green
+  still green.
 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
@@ -1731,7 +1731,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         # )
         return first_input and not second_input
 
-  green
+  green.
 
 * :ref:`material_non_implication<test_material_non_implication>` returns ``first_input and not second_input``
 
@@ -1829,7 +1829,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         )
         return first_input and not second_input
 
-  still green
+  still green.
 
 * I remove the comments
 
@@ -2176,7 +2176,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``truth_table.py``
 
@@ -2190,7 +2190,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
             return False
         return True
 
-  still green
+  still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
@@ -2205,7 +2205,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
             return False
         return True
 
-  green
+  green.
 
 * I remove ``== True``
 
@@ -2221,7 +2221,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
             return False
         return True
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -2256,7 +2256,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
         else:
             return True
 
-  still green
+  still green.
 
 * I use :ref:`Logical Negation (NOT)<if statements>` for the :ref:`else clause<if statements>`
 
@@ -2275,7 +2275,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
         if not (not first_input):
             return True
 
-  green
+  green.
 
 * I remove the :ref:`nots<test_logical_negation>` because they cancel out
 
@@ -2295,7 +2295,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
         if first_input:
             return True
 
-  still green
+  still green.
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -2316,7 +2316,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
         #     return True
         return True if first_input else False
 
-  the test is still green
+  the test is still green.
 
 * I remove ``True if`` and ``else False``
 
@@ -2338,7 +2338,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
         # return True if first_input else False
         return first_input
 
-  still green
+  still green.
 
 * I remove the other statements
 
@@ -2541,7 +2541,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * time for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
 
@@ -2650,7 +2650,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
                 return False
         return True
 
-  the test passes
+  the test passes.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -2666,7 +2666,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
                 return False
         return True
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -2683,7 +2683,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
                 return False
         return True
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -2702,7 +2702,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
                 return False
         return True
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -2782,7 +2782,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         else:
             return True
 
-  still green
+  still green.
 
 * I use the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`if statement<if statements>` for the :ref:`else clause<if statements>`
 
@@ -2796,7 +2796,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         if not (not first_input and second_input):
             return True
 
-  green
+  green.
 
 * I "multiply" the :ref:`not<test_logical_negation>` by every symbol in the parentheses
 
@@ -2871,7 +2871,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
             else False
         )
 
-  still green
+  still green.
 
 * I remove ``True if`` and ``else False``
 
@@ -2893,7 +2893,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         # )
         return first_input or not second_input
 
-  green
+  green.
 
 * :ref:`converse_implication<test_converse_implication>` returns ``first_input or not second_input``
 
@@ -2995,7 +2995,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         )
         return first_input or not second_input
 
-  still green
+  still green.
 
 * I remove the comments
 
@@ -3075,7 +3075,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_binary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``
 

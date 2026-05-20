@@ -49,7 +49,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I open ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tip:: Here is a quick way to open ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -78,7 +78,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I change every where I have ``dictionaries`` in the program, to use the :ref:`variable<what is a variable?>` I just added so that I only have to make a change in one place
 
-  .. NOTE:: The lines that are changing in the code are highlighted
+  .. note:: The lines that are changing in the code are highlighted
 
   .. code-block:: shell
     :linenos:
@@ -154,9 +154,9 @@ this program_ does not make the class names in the :ref:`CapWords format<CapWord
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 * I deactivate the `virtual environment`_
 
   .. code-block:: PowerShell
@@ -164,7 +164,7 @@ this program_ does not make the class names in the :ref:`CapWords format<CapWord
 
     deactivate
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I leave the ``pro_magic`` folder to go back to the ``pumping_python`` folder_
 
@@ -268,7 +268,7 @@ Here are a few other examples
 
     deactivate
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I leave the ``pro_magic_plus`` folder to go back to the ``pumping_python`` folder_
 

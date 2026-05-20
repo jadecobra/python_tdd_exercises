@@ -74,7 +74,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``car.py`` and move it to the ``src`` folder_
 
@@ -97,7 +97,7 @@ start the project
 
         Move-Item main.py src/car.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -106,11 +106,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -131,7 +131,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -154,11 +154,11 @@ start the project
 
         New-Item tests/test_car.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_car.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -190,7 +190,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -199,7 +199,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -294,7 +294,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -548,7 +548,7 @@ because I do not have a definition for ``src`` in this file_
 
         return 'ON'
 
-  the test passes
+  the test passes.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
@@ -563,7 +563,7 @@ because I do not have a definition for ``src`` in this file_
 
         return 'ON'
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -681,7 +681,7 @@ I add an :ref:`if statement<if statements>` to ``car.py``
 
       return 'ON'
 
-the test passes
+the test passes.
 
 ----
 
@@ -707,7 +707,7 @@ the test passes
 
         return 'ON'
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -746,7 +746,7 @@ the test passes
 
         return 'ON'
 
-  the test is still green
+  the test is still green.
 
 * I rewrite the statement in terms of :ref:`Logical Negation (NOT)<test_logical_negation>` because it happens two times
 
@@ -865,7 +865,7 @@ the test passes
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
   - I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (:red:`'OFF'`)
 
@@ -908,7 +908,7 @@ the test passes
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -956,7 +956,7 @@ the test passes
 
     # Exceptions seen
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -1152,7 +1152,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
         def test_key_far(self):
 
-  the test is still green
+  the test is still green.
 
 * I change the name of the test from :ref:`test_key_close` to :ref:`test_key_close_brake_pressed`
 
@@ -1235,7 +1235,7 @@ key             brake               start button        output
 
         return 'ON'
 
-  the test passes
+  the test passes.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the new :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -1256,7 +1256,7 @@ key             brake               start button        output
 
         return 'ON'
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -1305,7 +1305,7 @@ key             brake               start button        output
 
         return 'ON'
 
-  green
+  green.
 
 * I write the statement in terms of :ref:`NOT<test_logical_negation>`
 
@@ -1435,7 +1435,7 @@ key             brake               start button        output
 
         def test_key_far(self):
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -1479,7 +1479,7 @@ key             brake               start button        output
             )
             self.assertEqual(reality, OFF)
 
-  the test is still green
+  the test is still green.
 
 * I add a value for ``brake_is_pressed`` to the next :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the brake is being :green:`pressed` and the start button is :red:`NOT pressed`
 
@@ -1512,7 +1512,7 @@ key             brake               start button        output
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I change the name of the test from :ref:`test_key_far` to :ref:`test_key_far_brake_pressed`
 
@@ -1580,7 +1580,7 @@ key             brake               start button        output
 
     # Exceptions seen
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed` and the start button is :red:`NOT pressed`
 
@@ -1613,7 +1613,7 @@ key             brake               start button        output
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I call the ``starter`` :ref:`function<what is a function?>` directly in :ref:`test_key_far_brake_not_pressed`, I do not need the ``reality`` :ref:`variable<what is a variable?>` because it is only used once in each :ref:`assertion<what is an assertion?>`
 
@@ -1652,7 +1652,7 @@ key             brake               start button        output
                 OFF
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>`
 
@@ -1720,7 +1720,7 @@ key             brake               start button        output
 
         def test_key_far_brake_not_pressed(self):
 
-  still green
+  still green.
 
 * I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_key_far_brake_pressed`
 
@@ -1787,7 +1787,7 @@ key             brake               start button        output
 
         def test_key_far_brake_pressed(self):
 
-  green
+  green.
 
 * I remove the commented lines and ``reality`` :ref:`variables<what is a variable?>` from :ref:`test_key_close_brake_not_pressed`
 
@@ -1855,7 +1855,7 @@ key             brake               start button        output
 
         def test_key_close_brake_not_pressed(self):
 
-  still green
+  still green.
 
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_key_close_brake_pressed`
 
@@ -2025,7 +2025,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
         brake_is_pressed=False, in_park=False,
     ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -2108,7 +2108,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
         return 'ON'
 
-  the test passes
+  the test passes.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
@@ -2120,7 +2120,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
         if not in_park == True:
             return 'OFF'
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -2320,7 +2320,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
         def test_key_close_brake_not_pressed(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is being :green:`pressed`, the start button is :red:`NOT pressed` and the car gear is  :red:`NOT in park`
 
@@ -2380,7 +2380,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
         def test_key_close_brake_not_pressed(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_key_close_brake_pressed` to :ref:`test_key_close_brake_pressed_w_gear`
 
@@ -2441,7 +2441,7 @@ key             brake               start               gear                outp
                 OFF
             )
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
 
@@ -2488,7 +2488,7 @@ key             brake               start               gear                outp
 
         def test_key_far_brake_pressed(self):
 
-  the test is still green
+  the test is still green.
 
 * I add a value for ``in_park`` to the next :ref:`assertion<what is an assertion?>`, for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` and the car gear is :green:`in park`
 
@@ -2537,7 +2537,7 @@ key             brake               start               gear                outp
 
         def test_key_far_brake_pressed(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close`, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed` and the car gear is :red:`NOT in park`
 
@@ -2597,7 +2597,7 @@ key             brake               start               gear                outp
 
         def test_key_far_brake_pressed(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_key_close_brake_not_pressed` to :ref:`test_key_close_brake_not_pressed_w_gear`
 
@@ -2666,7 +2666,7 @@ key         brake             start               gear                output
                 OFF
             )
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :green:`pressed` and the car gear is :red:`NOT in park`
 
@@ -2713,7 +2713,7 @@ key         brake             start               gear                output
 
         def test_key_far_brake_not_pressed(self):
 
-  still green
+  still green.
 
 * I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, and the car gear is :green:`in park`
 
@@ -2762,7 +2762,7 @@ key         brake             start               gear                output
 
         def test_key_far_brake_not_pressed(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is being :green:`pressed`, the start button is :red:`NOT pressed`, and the car gear is :red:`NOT in park`
 
@@ -2822,7 +2822,7 @@ key         brake             start               gear                output
 
         def test_key_far_brake_not_pressed(self):
 
-  still green
+  still green.
 
 * I change the name of the test from :ref:`test_key_far_brake_pressed` to :ref:`test_key_far_brake_pressed_w_gear`
 
@@ -2891,7 +2891,7 @@ key         brake               start               gear                output
                 OFF
             )
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :green:`pressed`, and the car gear is :red:`NOT in park`
 
@@ -2939,7 +2939,7 @@ key         brake               start               gear                output
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I add a value for the ``in_park`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, and the car gear is :green:`in park`
 
@@ -2986,7 +2986,7 @@ key         brake               start               gear                output
                 OFF
             )
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the key is :red:`far` from the starter, the brake is :red:`NOT pressed`, the start button is :red:`NOT pressed`, and the car gear is :red:`NOT in park`
 
@@ -3047,7 +3047,7 @@ key         brake               start               gear                output
 
     # Exceptions seen
 
-  all the tests are still green
+  all the tests are still green.
 
 * I change the name of the test from :ref:`test_key_far_brake_not_pressed` to :ref:`test_key_far_brake_not_pressed_w_gear`
 
@@ -3081,7 +3081,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_car.py`` and ``car.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``car``
 

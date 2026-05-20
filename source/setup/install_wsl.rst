@@ -12,7 +12,7 @@ This is one way to install `Windows Subsystem for Linux`_ on a Windows computer 
 install Windows Subsystem for Linux
 *********************************************************************************
 
-.. NOTE::
+.. note::
 
   `Microsoft stopped supporting Windows 10, Windows 8.1 and Windows 7 <https://www.microsoft.com/en-us/Windows/end-of-support?r=1>`_ on October 14th, 2025
 
@@ -43,7 +43,7 @@ Make sure your computer runs `Windows 11`_. If you cannot upgrade to `Windows 11
     :align: center
     :alt: Debian in Microsoft Store
 
-  .. TIP:: You can use any Linux Distribution you want, `Windows Subsystem for Linux`_ installs Ubuntu_ by default
+  .. tip:: You can use any Linux Distribution you want, `Windows Subsystem for Linux`_ installs Ubuntu_ by default
 
 * Click ``Get`` to install
 

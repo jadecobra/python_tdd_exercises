@@ -313,7 +313,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statement<if statements>` in the :ref:`negate_first function<test_negate_first>` in ``truth_table.py``
 
@@ -327,7 +327,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
             return True
         return False
 
-  still green
+  still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
@@ -342,7 +342,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
             return True
         return False
 
-  green
+  green.
 
 * I remove ``== True``
 
@@ -358,7 +358,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
             return True
         return False
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -393,7 +393,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
         else:
             return False
 
-  still green
+  still green.
 
 * I use a :ref:`conditional expression (ternary operator)<conditional expressions>` for the :ref:`if statements`
 
@@ -412,7 +412,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
         #     return False
         return True if not first_input else False
 
-  still green
+  still green.
 
 * I remove ``True if`` and ``else False``
 
@@ -432,7 +432,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
         # return True if not first_input else False
         return not first_input
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -758,7 +758,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` I add :ref:`if statements` for it, in ``truth_table.py``
 
@@ -801,7 +801,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
                 return False
         return True
 
-  green
+  green.
 
 * I remove ``== True``
 
@@ -824,7 +824,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
                 return False
         return True
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -914,7 +914,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         else:
             return True
 
-  green
+  green.
 
 * I rewrite the :ref:`else clause<if statements>` with the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input and second_input`` so I can write the statements with a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
@@ -928,11 +928,11 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         if not (first_input and second_input):
             return True
 
-  still green
+  still green.
 
 * I move the first :ref:`if statement<if statements>` below this new one
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 55
@@ -944,7 +944,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         if first_input and second_input:
             return False
 
-  the test is still green
+  the test is still green.
 
 * I change it to an :ref:`else clause<if statements>`
 
@@ -959,7 +959,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         else:
             return False
 
-  still green
+  still green.
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -978,7 +978,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
             else False
         )
 
-  green
+  green.
 
 * I remove ``True if`` and ``else False`` to make the statement simpler
 
@@ -1086,7 +1086,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         )
         return not (first_input and second_input)
 
-  the test is still green
+  the test is still green.
 
 * I remove the comments
 
@@ -1203,7 +1203,7 @@ examples of Logical NAND
 
 ----
 
-.. NOTE::
+.. note::
 
   When there is only one :ref:`if statement<if statements>` that returns :red:`False` with an `else clause`_
 
@@ -1752,7 +1752,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  the test passes
+  the test passes.
 
 * I add the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -1768,7 +1768,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
@@ -1786,7 +1786,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -1806,7 +1806,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1886,7 +1886,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         else:
             return True
 
-  green
+  green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to change the :ref:`else clause<if statements>` to the opposite of the :ref:`if statement<if statements>`
 
@@ -1900,11 +1900,11 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         if not (not first_input and not second_input):
             return True
 
-  still green
+  still green.
 
 * I move the first :ref:`if statement<if statements>` below the new one
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 52
@@ -1927,7 +1927,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         if not first_input and not second_input:
             return False
 
-  the test is still green
+  the test is still green.
 
 * I change it to an :ref:`else clause<if statements>`
 
@@ -1942,7 +1942,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         else:
             return False
 
-  still green
+  still green.
 
 * I add a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
@@ -1962,7 +1962,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
             else False
         )
 
-  green
+  green.
 
 * I remove ``True if`` and ``else False`` to make it simpler
 
@@ -1983,7 +1983,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         # )
         return not (not first_input and not second_input)
 
-  still green
+  still green.
 
 * :ref:`not<test_logical_negation>` happens 3 times in this statement. I "multiply" it by every symbol in the statement to try to make it simpler
 
@@ -2182,7 +2182,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
             second_input
         )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -2292,7 +2292,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_binary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``
 

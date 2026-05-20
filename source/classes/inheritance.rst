@@ -153,7 +153,7 @@ to review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what
 
         pass
 
-  the test passes
+  the test passes.
 
 pass_ is a placeholder, it makes sure I am following Python_ rules and :ref:`I can make a class with pass<test_making_a_class_w_pass>`
 
@@ -218,7 +218,7 @@ I add a class definition like ``WPass`` to ``classes.py``
 
       pass
 
-the test passes
+the test passes.
 
 ----
 
@@ -304,7 +304,7 @@ I add a class definition to ``classes.py``
 
       pass
 
-the test passes
+the test passes.
 
 ----
 
@@ -548,7 +548,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
         def __init__(self, first_name):
             return None
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -616,7 +616,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     class TestClasses(unittest.TestCase):
 
-  the test is still green
+  the test is still green.
 
 * I can remove the ``__init__`` :ref:`method<what is a function?>` from the ``Doe`` :ref:`class<what is a class?>`
 
@@ -626,7 +626,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     class Doe(src.person.Person): pass
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -732,7 +732,7 @@ I change the expectation
 
             self.assertEqual(jane.last_name, 'doe')
 
-  the test passes
+  the test passes.
 
 * I add one more :ref:`assertion<what is an assertion?>`
 
@@ -791,7 +791,7 @@ I change the expectation
     class Doe(src.person.Person): pass
     class Smith(src.person.Person): pass
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` of ``mary``
 
@@ -888,7 +888,7 @@ I change the expectation
 
     class Blow(src.person.Person): pass
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the last name of ``joe``
 
@@ -935,7 +935,7 @@ I change the expectation
         def __init__(self, first_name, last_name='blow'):
             super().__init__(first_name, last_name)
 
-  the test passes
+  the test passes.
 
 * I add a new person who is a child of ``jane`` named ``baby`` in ``test_classes.py``
 
@@ -968,7 +968,7 @@ I change the expectation
 
     class Baby(Doe): pass
 
-  the test passes
+  the test passes.
 
 * ``baby`` is also the child of ``joe``. I add an :ref:`assertion<what is an assertion?>` for the last name of ``baby`` in ``test_classes.py``
 
@@ -997,7 +997,7 @@ I change the expectation
 
     class Baby(Blow, Doe): pass
 
-  the test passes
+  the test passes.
 
 * I add another person, a child of ``john`` in ``test_classes.py``
 
@@ -1028,7 +1028,7 @@ I change the expectation
 
     class Lil(Doe): pass
 
-  the test passes
+  the test passes.
 
 * ``lil`` is also the child of ``mary``. I add an :ref:`assertion<what is an assertion?>` for the last name of ``lil``
 
@@ -1110,7 +1110,7 @@ I change the expectation
 
             self.assertEqual(lil.last_name, 'doe')
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1131,7 +1131,7 @@ close the project
 *********************************************************************************
 
 * I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``person``
 

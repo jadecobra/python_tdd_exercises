@@ -125,7 +125,7 @@ note
     command argument --option
     command --option
 
-  .. NOTE::
+  .. note::
 
     the space is important, it is how the computer knows what command you mean and what arguments or options you are giving, for example
 
@@ -238,7 +238,7 @@ how to install tree on Linux/Windows Subsystem for Linux
 
 ----
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_ and tree_ is not installed.
+.. attention:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_ and tree_ is not installed.
 
   :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
 
@@ -271,7 +271,7 @@ how to install tree on Windows without Windows Subsystem for Linux
 
 ----
 
-.. ATTENTION:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
+.. attention:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
 
   :ref:`Click here if you have MacOS<how to install tree on Mac OS>`
 
@@ -318,7 +318,7 @@ how to install tree on Mac OS
 
 ----
 
-.. ATTENTION:: Do this only if you have MacOS_ and tree_ is not installed.
+.. attention:: Do this only if you have MacOS_ and tree_ is not installed.
 
   If you have Windows_
 
@@ -391,7 +391,7 @@ if I am in the ``pumping_python`` folder_
       * ``C:\`` is for ``root`` which is the first folder_ on the computer
       * ``C:\`` is the highest level
 
-  .. ADMONITION:: do you want to see every file_ and folder_ on your computer as a tree?
+  .. admonition:: do you want to see every file_ and folder_ on your computer as a tree?
 
     Type this in the terminal_
 
@@ -416,7 +416,7 @@ if I am in the ``pumping_python`` folder_
 
     Use :kbd:`ctrl+c` on the keyboard to stop it.
 
-.. NOTE::
+.. note::
 
   - If you see ``pumping_python`` when you type ``pwd``, :ref:`click here to make 'doe'<the part where I make doe>`
   - If you see a different name, go to the next step - :ref:`how to change directory`
@@ -524,7 +524,7 @@ how to make a directory
         ----
         C:\...\pumping_python
 
-  .. TIP:: I open the ``pumping_python`` folder_ to make sure I can see it in my `Integrated Development Environment (IDE)`_. Here is how to do that with `Visual Studio Code`_ from the terminal_
+  .. tip:: I open the ``pumping_python`` folder_ to make sure I can see it in my `Integrated Development Environment (IDE)`_. Here is how to do that with `Visual Studio Code`_ from the terminal_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -839,7 +839,7 @@ how to look at directory relationships
 
     mkdir jane
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use ls_ to see what is now in ``doe``
 
@@ -978,7 +978,7 @@ how to look at directory relationships
 
     mkdir john
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use ls_ to see what is in ``doe``
 
@@ -1087,7 +1087,7 @@ how to look at directory relationships
 
     mkdir .a_hidden_folder_in_doe
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use ls_ to see what is in ``doe``
 
@@ -1289,7 +1289,7 @@ how to look at directory relationships
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
       - I use ls_ with the short form of the ``--all`` option
 
@@ -1307,7 +1307,7 @@ how to look at directory relationships
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
   ``jane`` has no children
 
@@ -1350,7 +1350,7 @@ how to look at directory relationships
 
     mkdir mary
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I try to `change directory`_ to ``mary`` again
 
@@ -1423,7 +1423,7 @@ how to look at directory relationships
 
     mkdir .a_hidden_folder_in_jane
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I try to `change directory`_ to ``.a_hidden_folder_in_jane`` again
 
@@ -1570,7 +1570,7 @@ how to look at directory relationships
     .. tab-item:: WSL/Linux/Mac
       :sync: unix
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
       - I use ls_ with the short form of the ``--all`` option
 
@@ -1588,7 +1588,7 @@ how to look at directory relationships
     .. tab-item:: no WSL
       :sync: no_wsl
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
   ``john`` has no children
 
@@ -1631,7 +1631,7 @@ how to look at directory relationships
 
     mkdir lil
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I try to `change directory`_ to ``lil`` again
 
@@ -1704,7 +1704,7 @@ how to look at directory relationships
 
     mkdir .a_hidden_folder_in_john
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I try to `change directory`_ to ``.a_hidden_folder_in_john`` again
 
@@ -1918,7 +1918,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         touch a_file_in_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use touch_ to make an empty hidden file_ in ``doe``
 
@@ -1969,7 +1969,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
         New-Item a_file_in_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use `New-Item`_ to make an empty hidden file_ in ``doe``
 
@@ -2025,7 +2025,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           touch aka_jane_doe
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use touch_ to make an empty hidden file_ in ``jane``
 
@@ -2034,7 +2034,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           touch .a_hidden_file_in_jane
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use ls_ to show what is in ``jane``
 
@@ -2064,7 +2064,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           New-Item aka_jane_doe
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use `New-Item`_ to make an empty hidden file_ in ``jane``
 
@@ -2073,7 +2073,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           New-Item .a_hidden_file_in_jane
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use ls_ to show what is in ``jane``
 
@@ -2138,7 +2138,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           touch aka_john_doe
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use touch_ to make an empty hidden file_ in ``john``
 
@@ -2147,7 +2147,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           touch .a_hidden_file_in_john
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use ls_ to show what is in ``john``
 
@@ -2177,7 +2177,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           New-Item aka_john_doe
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use `New-Item`_ to make an empty hidden file_ in ``john``
 
@@ -2186,7 +2186,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
           New-Item .a_hidden_file_in_john
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use ls_ to show what is in ``john``
 
@@ -2225,7 +2225,7 @@ I can use the touch_ or `New-Item`_ program to make empty files_ in a folder_
 
 * I use tree_ to show the files_ and folders_ related to ``doe``
 
-  .. TIP:: Your terminal_ may use colors to show the difference between directories_ and files_
+  .. tip:: Your terminal_ may use colors to show the difference between directories_ and files_
 
   .. tab-set::
     :sync-group: os
@@ -2591,7 +2591,7 @@ how to use directory relationships
   - ``..`` from ``lil`` is ``john``
   - ``..`` from ``john`` is ``doe``
 
-.. NOTE::
+.. note::
 
   * I can go right to folders_ that are where I am
   * I can go right from parent to child
@@ -2690,7 +2690,7 @@ how to use touch with directory relationships
 
           touch aka_mary_jane_doe
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use touch_ to make an empty hidden file_ in ``mary``
 
@@ -2699,7 +2699,7 @@ how to use touch with directory relationships
 
           touch .a_hidden_file_in_mary
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -2711,7 +2711,7 @@ how to use touch with directory relationships
 
           New-Item aka_mary_jane_doe
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
       * I use `New-Item`_ to make an empty hidden file_ in ``mary``
 
@@ -2720,7 +2720,7 @@ how to use touch with directory relationships
 
           New-Item .a_hidden_file_in_mary
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
 * I use mkdir_ to make a hidden directory_ in ``mary``
 
@@ -2729,7 +2729,7 @@ how to use touch with directory relationships
 
     mkdir .a_hidden_folder_in_mary
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use ls_ to show what is in ``mary``
 
@@ -2762,7 +2762,7 @@ how to use touch with directory relationships
 
         ls
 
-      .. TIP:: I can also use ``dir``
+      .. tip:: I can also use ``dir``
 
       the terminal_ shows
 
@@ -2881,7 +2881,7 @@ how to use touch with directory relationships
 
         ls
 
-      .. TIP:: I can also use ``dir``
+      .. tip:: I can also use ``dir``
 
       the terminal_ shows
 
@@ -3028,7 +3028,7 @@ how to use touch with directory relationships
 
         touch jane/child_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use touch_ to make an empty file_ in ``mary`` from inside ``doe``
 
@@ -3037,7 +3037,7 @@ how to use touch with directory relationships
 
         touch jane/mary/grandchild_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use touch_ to make an empty file_ in ``john`` from inside ``doe``
 
@@ -3046,7 +3046,7 @@ how to use touch with directory relationships
 
         touch john/child_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use touch_ to make an empty file_ in ``lil`` from inside ``doe``
 
@@ -3055,7 +3055,7 @@ how to use touch with directory relationships
 
         touch john/lil/grandchild_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
   .. tab-item:: no WSL
     :sync: no_wsl
@@ -3067,7 +3067,7 @@ how to use touch with directory relationships
 
         New-Item jane/child_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use `New-Item`_ to make an empty file_ in ``mary`` from inside ``doe``
 
@@ -3076,7 +3076,7 @@ how to use touch with directory relationships
 
         New-Item jane/mary/grandchild_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use `New-Item`_ to make an empty file_ in ``john`` from inside ``doe``
 
@@ -3085,7 +3085,7 @@ how to use touch with directory relationships
 
         New-Item john/child_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
     * I use `New-Item`_ to make an empty file_ in ``lil`` from inside ``doe``
 
@@ -3094,7 +3094,7 @@ how to use touch with directory relationships
 
         New-Item john/lil/grandchild_of_doe
 
-      the terminal_ goes back to the command line
+      the terminal_ goes back to the command line.
 
 * I use tree_ to show the files_ and folders_ related to ``doe``
 
@@ -3281,9 +3281,9 @@ I can use the `mv program`_ to move a file_ and rename it at the same time.
     mv child_of_sibling_of_john \
     child_of_sibling_of_jane
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
-  .. TIP::
+  .. tip::
 
     I can also rename the file_ with one line from inside ``jane`` without cd_ (it is a long line)
 
@@ -3510,9 +3510,9 @@ mv_ means move, it takes two arguments
     mv child_of_sibling_of_jane \
     child_of_sibling_of_john
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
-  .. TIP::
+  .. tip::
 
     I can also rename the file_ with one line from inside ``john`` without cd_ (it is a long line)
 
@@ -4029,7 +4029,7 @@ I can see what is in any folder_ when I know its path or relation to where I am.
 
         ls doe
 
-      .. TIP:: I can also use ``dir``
+      .. tip:: I can also use ``dir``
 
         .. code-block:: python
           :emphasize-lines: 1
@@ -4677,14 +4677,14 @@ how to remove a directory and all the things in it
 
       * I remove ``doe`` and all its children and their children with the ``-r/--recursive`` option
 
-        .. DANGER:: This is a destructive operation that takes a lot of work and time to undo on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
+        .. danger:: This is a destructive operation that takes a lot of work and time to undo on MacOS_ or Linux_/`Windows Subsystem for Linux`_. Do you want to do it?
 
         .. code-block:: python
           :emphasize-lines: 1
 
           rm --recursive doe
 
-        the terminal_ goes back to the command line
+        the terminal_ goes back to the command line.
 
         - ``rm`` means ``remove``
         - ``--recursive`` or ``-r`` means remove child directories_ and what is in them until there is nothing left. It goes through every directory_ in the tree and removes everything

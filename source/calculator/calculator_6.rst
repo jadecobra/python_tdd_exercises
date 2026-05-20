@@ -303,7 +303,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -358,7 +358,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the test is still green
+  the test is still green.
 
 * I remove the other :ref:`if statements`
 
@@ -375,7 +375,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  still green
+  still green.
 
 ----
 
@@ -469,7 +469,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def add(first_input, second_input):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -556,7 +556,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def divide(first_input, second_input):
 
-  the test passes
+  the test passes.
 
 * I add a new :ref:`if statement<if statements>` to put the two statements together
 
@@ -586,7 +586,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
 
-  the test is still green
+  the test is still green.
 
 * I remove the other :ref:`if statements`
 
@@ -607,7 +607,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def divide(first_input, second_input):
 
-  still green
+  still green.
 
 ----
 
@@ -736,7 +736,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def subtract(first_input, second_input):
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the :ref:`if statement<if statements>` from the :ref:`subtract function<test_subtraction>`
 
@@ -751,7 +751,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def multiply(first_input, second_input):
 
-  still green
+  still green.
 
 * I remove the :ref:`if statement<if statements>` from the :ref:`multiply function<test_multiplication>`
 
@@ -766,7 +766,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def divide(first_input, second_input):
 
-  green
+  green.
 
 * I remove the :ref:`if statement<if statements>` from the :ref:`divide function<test_division>`
 
@@ -784,7 +784,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     @numbers_only
     def add(first_input, second_input):
 
-  still green
+  still green.
 
 * I remove the :ref:`if statement<if statements>` from the :ref:`add function<test_addition>`
 
@@ -795,7 +795,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     def add(first_input, second_input):
         return first_input + second_input
 
-  the tests are still green
+  the tests are still green.
 
 ----
 
@@ -829,7 +829,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
             ):
                 return error_message
 
-  still green
+  still green.
 
 * I remove the commented lines then use a :ref:`for loop<what is a for loop?>` with the :ref:`if statements`
 
@@ -863,7 +863,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                 return error_message
         return decorator
 
-  green
+  green.
 
 * I remove the commented lines then put the two :ref:`if statements` together with :ref:`logical disjunction<test_logical_disjunction>`
 
@@ -895,7 +895,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
                 return error_message
         return decorator
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -944,7 +944,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
     def add(first_input, second_input):
         return first_input + second_input
 
-  the tests are still green
+  the tests are still green.
 
 * I remove :ref:`test_calculator_sends_message_when_input_is_not_a_number` because it tests :ref:`None<what is None?>`, strings_  and :ref:`lists<what is a list?>`, while :ref:`test_calculator_w_a_for_loop` tests :ref:`None<what is None?>`, :ref:`booleans<what are booleans?>`, strings_, tuples_, :ref:`lists<what is a list?>`, sets_ and :ref:`dictionaries<what is a dictionary?>`
 
@@ -1041,7 +1041,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
             ):
                 with self.subTest(data_type=data_type):
 
-  the test is still green
+  the test is still green.
 
 * I can also write the test with a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`, though it looks ugly
 
@@ -1118,7 +1118,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

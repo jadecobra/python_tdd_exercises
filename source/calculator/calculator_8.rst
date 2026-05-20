@@ -192,7 +192,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 )
             )
 
-  the test passes
+  the test passes.
 
 * I add a :ref:`variables<what is a variable?>` and a :ref:`dictionary<what is a dictionary?>`
 
@@ -226,7 +226,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['add']
             )
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`variables<what is a variable?>` for ``self.random_first_number`` and ``self.random_second_number`` in the :ref:`assertion<what is an assertion?>`
 
@@ -247,7 +247,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['add']
             )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -264,7 +264,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['add']
             )
 
-  green
+  green.
 
 ----
 
@@ -314,7 +314,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['subtract']
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -365,7 +365,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                 calculator_tests['multiply']
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -442,7 +442,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -499,7 +499,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         calculator_tests[operation]
                     )
 
-  the test passes
+  the test passes.
 
 * I remove the other :ref:`assertions<what is an assertion?>`
 
@@ -578,7 +578,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
             for operation in calculator_tests:
 
-  the test is still green
+  the test is still green.
 
 * I use ``self.calculator_tests`` in the :ref:`for loop<what is a for loop?>`
 
@@ -596,7 +596,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         calculator_tests[operation]
                     )
 
-  still green
+  still green.
 
 * I use it in the expectation of the :ref:`assertion<what is an assertion?>`
 
@@ -612,7 +612,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         self.calculator_tests[operation]
                     )
 
-  green
+  green.
 
 * I use ``self.random_first_number`` for ``x`` and ``self.random_second_number`` for ``y`` in the :ref:`assertion<what is an assertion?>`
 
@@ -630,7 +630,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         self.calculator_tests[operation]
                     )
 
-  still green
+  still green.
 
 * I remove the commented lines and the :ref:`variables<what is a variable?>` because they are no longer used
 
@@ -651,7 +651,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -696,7 +696,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
     # Exceptions seen
 
-  the tests are still green
+  the tests are still green.
 
 * I change the name of :ref:`test_calculator_w_getattribute` to :ref:`test_calculator_functions`
 
@@ -759,7 +759,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                             'brmph?! Numbers only. Try again...'
                         )
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines
 
@@ -824,7 +824,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         [0, 1, 2]
                     )
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines
 
@@ -843,7 +843,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
         def test_calculator_sends_message_when_input_is_not_a_number(self):
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -896,7 +896,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         self.calculator_tests[operation]
                     )
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines
 
@@ -1005,7 +1005,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
                         self.calculator_tests[operation]
                     )
 
-  the test passes
+  the test passes.
 
 * I remove the new commented lines
 
@@ -1111,7 +1111,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
         def test_calculator_w_list_items(self):
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the commented lines
 
@@ -1196,7 +1196,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
         def setUp(self):
 
-  the test passes
+  the test passes.
 
 * I remove the commented line and the :ref:`exception handler<how to use try...except...else>` from the `setUp method`_
 
@@ -2083,7 +2083,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input + second_input
 
-  the test is still green
+  the test is still green.
 
 * I remove the :ref:`if statement<if statements>`
 
@@ -2097,7 +2097,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     def divide(first_input, second_input):
 
-  still green
+  still green.
 
 * I do the same thing to the :ref:`divide function<test_division>`
 
@@ -2114,7 +2114,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
             return 'brmph?! Numbers only. Try again...'
         return first_input / second_input
 
-  green
+  green.
 
 * I remove the :ref:`if statement<if statements>`
 
@@ -2128,7 +2128,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     def multiply(first_input, second_input):
 
-  the test is still green
+  the test is still green.
 
 * I make the same change to the other 2 :ref:`functions<what is a function?>`
 
@@ -2169,7 +2169,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
     def subtract(first_input, second_input):
         return first_input - second_input
 
-  still green
+  still green.
 
 ----
 
@@ -2187,7 +2187,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

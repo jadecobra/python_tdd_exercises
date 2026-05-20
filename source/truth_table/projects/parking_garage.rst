@@ -74,7 +74,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
 
@@ -97,7 +97,7 @@ start the project
 
         Move-Item main.py src/parking_garage.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -106,11 +106,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -131,7 +131,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -154,11 +154,11 @@ start the project
 
         New-Item tests/test_parking_garage.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_parking_garage.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -190,7 +190,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -199,7 +199,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -292,7 +292,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -527,7 +527,7 @@ because I do not have a definition for ``src`` in this file_
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -609,7 +609,7 @@ I add an :ref:`if statement<if statements>` to ``parking garage.py``
               return 'HEATING'
       return 'OFF'
 
-the test passes
+the test passes.
 
 ----
 
@@ -633,7 +633,7 @@ the test passes
                 return 'HEATING'
         return 'OFF'
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -650,7 +650,7 @@ the test passes
                 return 'HEATING'
         return 'OFF'
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -669,7 +669,7 @@ the test passes
                 return 'HEATING'
         return 'OFF'
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -715,7 +715,7 @@ the test passes
             return 'HEATING'
         return 'OFF'
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -766,7 +766,7 @@ the test passes
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -941,7 +941,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
 
         def test_closed_door(self):
 
-  the test is still green
+  the test is still green.
 
 * I change the name of the test from :ref:`test_open_door` to :ref:`test_open_door_timer_set`
 
@@ -1000,7 +1000,7 @@ door           timer           start button       output
 
         def test_closed_door(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
 
@@ -1034,7 +1034,7 @@ door           timer           start button       output
 
         def test_closed_door(self):
 
-  green
+  green.
 
 ----
 
@@ -1080,7 +1080,7 @@ door           timer           start button       output
             )
             self.assertEqual(reality, my_expectation)
 
-  the test is still green
+  the test is still green.
 
 * I do not need to add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pushed`
 
@@ -1219,7 +1219,7 @@ I add a :ref:`if statement<if statements>` to the ``parking garage`` :ref:`funct
           return 'HEATING'
       return 'OFF'
 
-the test passes
+the test passes.
 
 
 ----
@@ -1247,7 +1247,7 @@ the test passes
             return 'HEATING'
         return 'OFF'
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation(NOT)<test_logical_negation>` to write it in terms of :ref:`True<test_what_is_true>`
 
@@ -1267,7 +1267,7 @@ the test passes
             return 'HEATING'
         return 'OFF'
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -1288,7 +1288,7 @@ the test passes
             return 'HEATING'
         return 'OFF'
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1361,7 +1361,7 @@ the test passes
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I add another clause to the :ref:`if statement<if statements>` for when the timer is :green:`set`, in the ``parking garage`` :ref:`function<what is a function?>` in ``parking garage.py``
 
@@ -1383,7 +1383,7 @@ the test passes
             return 'HEATING'
         return 'OFF'
 
-  the test is still green
+  the test is still green.
 
 * I remove the :ref:`if statement<if statements>` for when the timer is :red:`NOT set` because I do not need it anymore
 
@@ -1531,7 +1531,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
             timer_is_set=False, too_hot=False,
         ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1580,7 +1580,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
             )
             self.assertEqual(reality, my_expectation)
 
-  the test is still green
+  the test is still green.
 
 * I add a value for the ``too_hot`` parameter in the next :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the parking garage temperature is :green:`too hot`
 
@@ -1625,7 +1625,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
 
         def test_open_door_timer_not_set(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the parking garage temperature is  :red:`NOT too hot`
 
@@ -1679,7 +1679,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
 
         def test_open_door_timer_not_set(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_open_door_timer_set` to :ref:`test_too_hot_open_door_timer_set`
 
@@ -1754,7 +1754,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-  still green
+  still green.
 
 * I remove the ``reality`` :ref:`variables<what is a variable?>`, I do not need them because they are called only once in every :ref:`assertion<what is an assertion?>`, I can call the ``parking garage`` :ref:`function<what is a function?>` directly without the middle man
 
@@ -1925,7 +1925,7 @@ door           timer           start button       too hot             output
             )
             self.assertEqual(reality, my_expectation)
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the parking garage temperature is :red:`NOT too hot`
 
@@ -1968,7 +1968,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_set(self):
 
-  the test is still green
+  the test is still green.
 
 * I add a value for ``too_hot`` to the next :ref:`assertion<what is an assertion?>`, for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the parking garage temperature is :green:`too hot`
 
@@ -2013,7 +2013,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_set(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the parking garage temperature is :red:`NOT too hot`
 
@@ -2067,7 +2067,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_set(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_open_door_timer_not_set` to :ref:`test_too_hot_open_door_timer_not_set`
 
@@ -2133,7 +2133,7 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-  still green
+  still green.
 
 * I call the ``parking garage`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>` because I only use the ``reality`` :ref:`variable<what is a variable?>` once for each :ref:`assertion<what is an assertion?>`
 
@@ -2301,7 +2301,7 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-  the test is still green
+  the test is still green.
 
 * I call the ``parking garage`` :ref:`function<what is a function?>` directly without the ``reality`` :ref:`variables<what is a variable?>`
 
@@ -2340,7 +2340,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  still green
+  still green.
 
 * I remove the commented lines and :ref:`variables<what is a variable?>` that are not used anymore
 
@@ -2399,7 +2399,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  green
+  green.
 
 * I add a value for the ``too_hot`` parameter to the first :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :green:`pushed` and the parking garage temperature is :red:`NOT too hot`
 
@@ -2435,7 +2435,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the parking garage temperature is :green:`too hot`
 
@@ -2482,7 +2482,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the parking garage temperature is :red:`NOT too hot`
 
@@ -2542,7 +2542,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-  the test is still green
+  the test is still green.
 
 * I change the name of the test from :ref:`test_closed_door_timer_set` to :ref:`test_too_hot_closed_door_timer_set`
 
@@ -2613,7 +2613,7 @@ door           timer           start button       too hot             output
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-  still green
+  still green.
 
 * I call the ``parking garage`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>`, I do not need the ``reality`` :ref:`variables<what is a variable?>` because they are only used once in each :ref:`assertion<what is an assertion?>`
 
@@ -2739,7 +2739,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the parking garage temperature is :red:`NOT too hot`
 
@@ -2784,7 +2784,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  still green
+  still green.
 
 * I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the parking garage temperature is :green:`too hot`
 
@@ -2831,7 +2831,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the parking garage temperature is :red:`NOT too hot`
 
@@ -2892,14 +2892,14 @@ door           timer           start button       too hot             output
 
       # Exceptions seen
 
-  all the tests are still green
+  all the tests are still green.
 
 *********************************************************************************
 close the project
 *********************************************************************************
 
 * I close ``test_parking_garage.py`` and ``parking garage.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``parking garage``
 

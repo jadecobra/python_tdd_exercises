@@ -558,7 +558,7 @@ test_home_page
 
     app = flask.Flask(__name__)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -684,7 +684,7 @@ test_home_page
 * I add a new folder_ to the ``src`` folder_ named ``templates``, the terminal_ still shows the same :ref:`Exception<errors>`
 * I add a new file_ in the ``templates`` folder named ``index.html``, the terminal_ still shows the same :ref:`Exception<errors>`
 
-* I go back to ``test_calculator_website.py`` then use :kbd:`ctrl+s` on the keyboard to save the file_ which makes `pytest-watcher`_ run the tests again, and the test passes
+* I go back to ``test_calculator_website.py`` then use :kbd:`ctrl+s` on the keyboard to save the file_ which makes `pytest-watcher`_ run the tests again, and the test passes.
 
 ----
 
@@ -783,7 +783,7 @@ how to view the website
                 b'<h1>Calculator</h1>'
             )
 
-  the test passes
+  the test passes.
 
 * I go back to the browser and click ``refresh``, it shows ``Calculator``
 
@@ -1097,7 +1097,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
                 b'<h2>0.0 + 1.0 = 1.0</h2>'
             )
 
-  the test passes
+  the test passes.
 
 * I want to use random numbers in the test. I add an `import statement`_ for the ``test_calculator`` :ref:`module<what is a module?>`
 
@@ -1213,7 +1213,7 @@ how to change a bytes object to a string
                 f'<h2>{x} + 1.0 = {x+1}</h2>'
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1261,7 +1261,7 @@ how to change a bytes object to a string
                 f'<h2>{x} + {y} = {x+y}</h2>'
             )
 
-  the test passes
+  the test passes.
 
 * I remove the comments
 
@@ -1285,7 +1285,7 @@ how to change a bytes object to a string
                 f'<h2>{x} + {y} = {x+y}</h2>'
             )
 
-  the test is still green
+  the test is still green.
 
 * I want to test the other operations. I add a :ref:`dictionary<what is a dictionary?>` for the operations
 
@@ -1464,7 +1464,7 @@ how to change a bytes object to a string
             f'= {result}</h2>'
         )
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines
 
@@ -1494,7 +1494,7 @@ how to change a bytes object to a string
             f'= {result}</h2>'
         )
 
-  the test is still green
+  the test is still green.
 
 * I remove the comments from :ref:`test_calculations` in ``test_calculator_website.py``
 
@@ -1632,7 +1632,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
     :align: left
     :alt: Calculator form with first input
 
-* I use :kbd:`ctrl+s` on the keyboard in ``test_calculator_website.py`` to run the tests, still green
+* I use :kbd:`ctrl+s` on the keyboard in ``test_calculator_website.py`` to run the tests, still green.
 
 * I add another input for the second number in ``index.html``
 
@@ -1675,7 +1675,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
     :align: left
     :alt: Calculator form with first operation
 
-* I use :kbd:`ctrl+s` on the keyboard in ``website.py`` to run the tests, they are still green
+* I use :kbd:`ctrl+s` on the keyboard in ``website.py`` to run the tests, they are still green.
 
 * I want the operation to show up between the 2 numbers, I change the order in ``index.html``
 
@@ -1918,7 +1918,7 @@ good
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1951,7 +1951,7 @@ good
             client = self.client
             response = client.get('/')
 
-  the test is still green
+  the test is still green.
 
 * I use it directly in the response
 
@@ -1961,7 +1961,7 @@ good
 
             response = self.client.get('/')
 
-  still green
+  still green.
 
 * I remove the ``client`` :ref:`variable<what is a variable?>` and the commented line
 
@@ -1978,7 +1978,7 @@ good
 
         def test_calculations(self):
 
-  green
+  green.
 
 ----
 
@@ -2000,7 +2000,7 @@ good
                         }
                     )
 
-  still green
+  still green.
 
 * I remove the commented line and the ``client`` :ref:`variable<what is a variable?>`
 
@@ -2044,7 +2044,7 @@ good
 
         def test_website_handling_zero_division_error(self):
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -2068,7 +2068,7 @@ good
                 }
             )
 
-  still green
+  still green.
 
 * I remove the commented line and ``client`` :ref:`variable<what is a variable?>`
 
@@ -2096,7 +2096,7 @@ good
 
     # Exceptions seen
 
-  green
+  green.
 
 ----
 
@@ -2123,7 +2123,7 @@ good
             x = self.x
             y = tests.test_calculator.a_random_number()
 
-  still green
+  still green.
 
 * I use the ``Rename Symbol`` to change ``x`` to ``self.x``
 
@@ -2167,7 +2167,7 @@ good
                         )
                     )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line and ``self.x = self.x``
 
@@ -2234,7 +2234,7 @@ good
                 )
             )
 
-  still green
+  still green.
 
 * I remove ``self.x = tests.test_calculator.a_random_number()``
 
@@ -2363,7 +2363,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
             return function(first_input, second_input)
         return wrapper
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -2440,7 +2440,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
             return function(first_input, second_input)
         return wrapper
 
-  the test is still green
+  the test is still green.
 
 * I add a :ref:`for loop<what is a for loop?>`
 
@@ -2459,7 +2459,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
             return function(first_input, second_input)
         return wrapper
 
-  still green
+  still green.
 
 * I remove the other :ref:`if statements`
 
@@ -2479,7 +2479,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
             return function(first_input, second_input)
         return wrapper
 
-  green
+  green.
 
 
 ----
@@ -2489,7 +2489,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py``, ``test_calculator_website.py``, ``calculator.py``, ``website.py`` and ``index.html`` in the :ref:`editor<2 editors>`
-* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 
@@ -2506,7 +2506,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
 
 ----

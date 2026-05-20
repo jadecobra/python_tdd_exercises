@@ -170,7 +170,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
     def raise_exception():
         return None
 
-  the test passes
+  the test passes.
 
 * I want the :ref:`function<what is a function?>` to raise :ref:`Exception<errors>` when it is called, I add assertRaises_ to the test in ``test_exceptions.py``
 
@@ -197,7 +197,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
     def raise_exception():
         raise Exception
 
-  the test passes
+  the test passes.
 
 * I can be more specific when testing for an :ref:`Exception<errors>`, I add assertRaisesRegex_ in ``test_exceptions.py``
 
@@ -653,7 +653,7 @@ close the project
 *********************************************************************************
 
 * I close ``exceptions.py`` and ``test_exceptions.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``exceptions``
 

@@ -6,7 +6,7 @@ Linux/Windows Subsystem for Linux requirements
 
 ----
 
-.. ATTENTION:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. :ref:`MacOS users go here instead<MacOS requirements>`
+.. attention:: Do this only if you are using Linux_ or `Windows Subsystem for Linux`_. :ref:`MacOS users go here instead<MacOS requirements>`
 
 * Open a terminal_ then type this to update the `Linux package manager`_
 

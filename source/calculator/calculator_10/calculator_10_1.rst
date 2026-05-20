@@ -213,7 +213,7 @@ test_streamlit_calculator_title
     import streamlit.testing.v1
     import unittest
 
-  the test passes
+  the test passes.
 
   ``streamlit.testing.v1.AppTest.from_file`` tests the website I am making with streamlit_
 
@@ -240,7 +240,7 @@ test_streamlit_calculator_title
             )
             tester.run()
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for the title of the application
 
@@ -545,7 +545,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 {0: tester.title[0]}
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -804,7 +804,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 1
             )
 
-  the test passes
+  the test passes.
 
 * I remove ``self.maxDiff``
 
@@ -862,7 +862,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
                 display.gap_config.gap_size, 1
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -895,7 +895,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
             self.assertEqual(display.direction, 1)
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<what is a class?>`
 
@@ -921,7 +921,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
             self.assertEqual(display.justify, 1)
 
-  the test passes
+  the test passes.
 
 * I add the last :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<what is a class?>`
 
@@ -986,7 +986,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
             self.assertFalse(display.border)
 
-  the test passes
+  the test passes.
 
 * I change the assertFalse_ to assertTrue_
 
@@ -1030,7 +1030,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
         streamlit.title('Calculator')
         streamlit.container(border=True)
 
-  the test passes
+  the test passes.
 
 * I go to the browser and click refresh
 
@@ -1048,7 +1048,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 
@@ -1065,7 +1065,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

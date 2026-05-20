@@ -232,7 +232,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     def hello(person):
         return None
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -343,7 +343,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
             f'and I am {person.get("age")}'
         )
 
-  the test passes
+  the test passes.
 
 The solution works, it needs different :ref:`functions<what is a function?>` - one to make the person and one to make the message.
 
@@ -512,7 +512,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             ):
             return
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -598,7 +598,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
         ):
         return None
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -622,7 +622,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I copy the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_greeting` and paste it in ``test_classy_person_greeting``
 
@@ -962,7 +962,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                 f'{person.last_name} and I am None'
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1108,7 +1108,7 @@ I change the expectation
 
           self.assertEqual(person.get('age'), 446)
 
-the test passes
+the test passes.
 
 ----
 
@@ -1168,7 +1168,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add a new :ref:`value<test_values_of_a_dictionary>` for ``year_of_birth`` with the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
@@ -1236,7 +1236,7 @@ the test passes
 
     self.assertEqual(person.get('age'), 446)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1325,7 +1325,7 @@ the test passes
 
     class Person:
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1340,7 +1340,7 @@ the test passes
 
             person = src.person.factory(
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory``
 
@@ -1357,7 +1357,7 @@ the test passes
                 year_of_birth=original_year_of_birth,
             )
 
-  still green
+  still green.
 
 * I use the :ref:`variable<what is a variable?>` in the first :ref:`assertion<what is an assertion?>` for the age
 
@@ -1379,7 +1379,7 @@ the test passes
 
             with self.assertRaises(KeyError):
 
-  green
+  green.
 
 * I use the :ref:`variable<what is a variable?>` in the second :ref:`assertion<what is an assertion?>` for the age
 
@@ -1401,7 +1401,7 @@ the test passes
 
             self.assertEqual(
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1445,7 +1445,7 @@ the test passes
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -1461,7 +1461,7 @@ the test passes
 
             person = src.person.factory(
 
-  still green
+  still green.
 
 * I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
@@ -1479,7 +1479,7 @@ the test passes
               )
               self.assertEqual(
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`variable<what is a variable?>`  in the last :ref:`assertion<what is an assertion?>`
 
@@ -1505,7 +1505,7 @@ the test passes
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1553,7 +1553,7 @@ the test passes
 
     # Exceptions seen
 
-  green
+  green.
 
 ----
 
@@ -1585,7 +1585,7 @@ the test passes
                 original_age
             )
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`variable<what is a variable?>` in the second :ref:`assertion<what is an assertion?>` for the age
 
@@ -1605,7 +1605,7 @@ the test passes
                 original_age
             )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1848,7 +1848,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
                 f'{self.last_name} and I am {self.get_age()}'
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1876,7 +1876,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
             'age': this_year() - year_of_birth,
         }
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1970,7 +1970,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1995,9 +1995,9 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
     # Exceptions seen
 
-  still green
+  still green.
 
-.. NOTE::
+.. note::
 
   - Classes_ have :ref:`attributes<test_attribute_error_w_class_attributes>` that can be changed.
   - Since the age calculation uses the ``year_of_birth``, and is done when I call it, not when the person is made, it will always calculate the right age.
@@ -2087,7 +2087,7 @@ I want to add randomness to the test
                 sex=choose('F', 'M'),
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -2101,7 +2101,7 @@ I want to add randomness to the test
                 sex=choose('F', 'M'),
             )
 
-  still green
+  still green.
 
 ----
 
@@ -2135,7 +2135,7 @@ I want to add randomness to the test
                 sex=self.random_sex,
             )
 
-  green
+  green.
 
 * I remove the commented line
 
@@ -2149,7 +2149,7 @@ I want to add randomness to the test
                 sex=self.random_sex,
             )
 
-  still green
+  still green.
 
 ----
 
@@ -2195,7 +2195,7 @@ I want to add randomness to the test
 
         def test_factory_w_optional_arguments(self):
 
-  the test is still green
+  the test is still green.
 
 * I no longer need the ``a_person`` :ref:`variable<what is a variable?>`, I can use the :ref:`class attributes<test_attribute_error_w_class_attributes>`
 
@@ -2218,7 +2218,7 @@ I want to add randomness to the test
                 self.random_factory_person
             )
 
-  green
+  green.
 
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
@@ -2265,7 +2265,7 @@ I want to add randomness to the test
 
             for person in (joe, jane, john):
 
-  the test is still green
+  the test is still green.
 
 * I remove the 3 people I made with the ``factory`` :ref:`function<what is a function?>` and the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers all their cases and more
 
@@ -2302,7 +2302,7 @@ I want to add randomness to the test
             # original_year_of_birth = 1580
             original_year_of_birth = self.random_year_of_birth
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the calculation
 
@@ -2317,7 +2317,7 @@ I want to add randomness to the test
             original_age = this_year() - self.random_year_of_birth
             new_year_of_birth = 1980
 
-  still green
+  still green.
 
 * I point ``person`` to the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
@@ -2335,7 +2335,7 @@ I want to add randomness to the test
             person = self.random_factory_person
             self.assertEqual(
 
-  still green
+  still green.
 
 * I use the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the first :ref:`assertion<what is an assertion?>`
 
@@ -2352,7 +2352,7 @@ I want to add randomness to the test
 
             with self.assertRaises(KeyError):
 
-  still green
+  still green.
 
 * I remove the commented lines and the ``original_year_of_birth`` :ref:`variable<what is a variable?>`
 
@@ -2382,7 +2382,7 @@ I want to add randomness to the test
                 self.random_factory_person['year_of_birth']
             self.assertEqual(
 
-  still green
+  still green.
 
 * I use the ``self.random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>` for the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
@@ -2399,7 +2399,7 @@ I want to add randomness to the test
                 new_year_of_birth
             )
 
-  still green
+  still green.
 
 * I use ``self.random_factory_person`` in the second :ref:`assertion<what is an assertion?>` for the age
 
@@ -2413,7 +2413,7 @@ I want to add randomness to the test
                 original_age
             )
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -2433,7 +2433,7 @@ I want to add randomness to the test
                 original_age
             )
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.update_year_of_birth`` in the :ref:`assertion<what is an assertion?>` for the ``year_of_birth`` update
 
@@ -2448,7 +2448,7 @@ I want to add randomness to the test
                     new_year_of_birth
                 ),
 
-  still green
+  still green.
 
 * I use the other :ref:`class attributes<test_attribute_error_w_class_attributes>` in the expected :ref:`dictionary<what is a dictionary?>` of the :ref:`assertion<what is an assertion?>`
 
@@ -2466,7 +2466,7 @@ I want to add randomness to the test
                     age=this_year()-new_year_of_birth,
                 )
 
-  green
+  green.
 
 * I remove the commented lines and the ``person`` :ref:`variable<what is a variable?>`
 
@@ -2510,7 +2510,7 @@ I want to add randomness to the test
 
         def test_update_classy_person_year_of_birth(self):
 
-  still green
+  still green.
 
 ----
 
@@ -2542,7 +2542,7 @@ I want to add randomness to the test
                     age=self.original_age,
                 )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -2565,7 +2565,7 @@ I want to add randomness to the test
 
         def test_factory_person_greeting(self):
 
-  green
+  green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_person_greeting``
 
@@ -2580,7 +2580,7 @@ I want to add randomness to the test
                     f'and I am {self.original_age}'
                 )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -2599,7 +2599,7 @@ I want to add randomness to the test
 
         def test_classy_person_greeting(self):
 
-  still green
+  still green.
 
 * I use ``self.original_age`` in ``test_update_factory_person_year_of_birth``
 
@@ -2612,7 +2612,7 @@ I want to add randomness to the test
             original_age = self.original_age
             new_year_of_birth = 1980
 
-  the test is still green
+  the test is still green.
 
 * I use ``self.original_age`` in the first :ref:`assertion<what is an assertion?>`
 
@@ -2628,7 +2628,7 @@ I want to add randomness to the test
                 self.original_age
             )
 
-  green
+  green.
 
 * I use it in the second :ref:`assertion<what is an assertion?>` for the age
 
@@ -2650,7 +2650,7 @@ I want to add randomness to the test
 
             self.assertEqual(
 
-  still green
+  still green.
 
 * I remove the commented line and the ``original_age`` :ref:`variable<what is a variable?>`
 
@@ -2739,7 +2739,7 @@ I want to add randomness to the test
 
             for person in (joe, jane, john):
 
-  still green
+  still green.
 
 * I remove the 3 people I made with the ``Person`` :ref:`class<what is a class?>` and the :ref:`for loop<what is a for loop?>` with its :ref:`assertion<what is an assertion?>` because they are no longer needed, the random person covers those cases and more
 
@@ -2758,7 +2758,7 @@ I want to add randomness to the test
 
         def test_update_factory_person_year_of_birth(self):
 
-  still green
+  still green.
 
 * the expected message in ``test_classy_person_greeting`` and ``test_factory_person_greeting`` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
 
@@ -2802,7 +2802,7 @@ I want to add randomness to the test
 
         def test_classy_person_greeting(self):
 
-  the test is still green
+  the test is still green.
 
 * I use it in ``test_classy_person_greeting``
 
@@ -2823,7 +2823,7 @@ I want to add randomness to the test
 
         def test_update_factory_person_year_of_birth(self):
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -2851,7 +2851,7 @@ I want to add randomness to the test
 
         def test_update_factory_person_year_of_birth(self):
 
-  green
+  green.
 
 * I use the ``random_classy_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_classy_person_year_of_birth``
 
@@ -2904,7 +2904,7 @@ I want to add randomness to the test
 
             new_year_of_birth = 1980
 
-  the test is still green
+  the test is still green.
 
 * I use the new year of birth as the value for the ``year_of_birth`` :ref:`attribute<test_attribute_error_w_class_attributes>` of ``self.random_classy_person``
 
@@ -2920,7 +2920,7 @@ I want to add randomness to the test
                 this_year()-new_year_of_birth
             )
 
-  green
+  green.
 
 * I use ``self.random_classy_person`` in the second :ref:`assertion<what is an assertion?>`
 
@@ -2940,7 +2940,7 @@ I want to add randomness to the test
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines and the ``person`` :ref:`variable<what is a variable?>`
 
@@ -2963,7 +2963,7 @@ I want to add randomness to the test
 
     # Exceptions seen
 
-  still green
+  still green.
 
 ----
 
@@ -3015,7 +3015,7 @@ I want to add randomness to the test
             self.random_year_of_birth = random_year_of_birth()
             self.random_new_year_of_birth = random.randint(
 
-  the test is still green
+  the test is still green.
 
 * I call the :ref:`function<what is a function?>` for the ``new_year_of_birth`` :ref:`attribute<test_attribute_error_w_class_attributes>`
 
@@ -3034,7 +3034,7 @@ I want to add randomness to the test
             self.random_new_year_of_birth = random_year_of_birth()
             self.original_age = this_year() - self.random_year_of_birth
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -3057,7 +3057,7 @@ I want to add randomness to the test
             # new_year_of_birth = 1980
             new_year_of_birth = self.random_new_year_of_birth
 
-  still green
+  still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
@@ -3073,7 +3073,7 @@ I want to add randomness to the test
                 new_year_of_birth
             )
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the expectation of the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
 
@@ -3090,7 +3090,7 @@ I want to add randomness to the test
                 self.random_new_year_of_birth
             )
 
-  still green
+  still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.update_year_of_birth``
 
@@ -3105,7 +3105,7 @@ I want to add randomness to the test
                     self.random_new_year_of_birth
                 ),
 
-  still green
+  still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the calculation for the new age
 
@@ -3121,7 +3121,7 @@ I want to add randomness to the test
                     age=this_year()-self.random_new_year_of_birth,
                 )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines and the ``new_year_of_birth`` :ref:`variable<what is a variable?>`
 
@@ -3180,7 +3180,7 @@ I want to add randomness to the test
             new_year_of_birth = self.random_new_year_of_birth
             self.random_classy_person.year_of_birth = new_year_of_birth
 
-  the test is still green
+  the test is still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the assignment of the new value
 
@@ -3194,7 +3194,7 @@ I want to add randomness to the test
             self.random_classy_person.year_of_birth = self.random_new_year_of_birth
             self.assertEqual(
 
-  still green
+  still green.
 
 * I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the :ref:`assertion<what is an assertion?>`
 
@@ -3213,7 +3213,7 @@ I want to add randomness to the test
             )
 
 
-  green
+  green.
 
 * I remove the commented lines and the ``new_year_of_birth`` :ref:`variable<what is a variable?>`
 
@@ -3235,7 +3235,7 @@ I want to add randomness to the test
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -3277,7 +3277,7 @@ I want to add randomness to the test
             self.original_age = get_age(self.random_year_of_birth)
             self.random_first_name = choose(*self.RANDOM_NAMES)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line then add a new :ref:`class attribute<test_attribute_error_w_class_attributes>` for the calculation of the new age
 
@@ -3307,7 +3307,7 @@ I want to add randomness to the test
                     age=self.new_age,
                 )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -3348,7 +3348,7 @@ I want to add randomness to the test
 
         def test_update_classy_person_year_of_birth(self):
 
-  green
+  green.
 
 * use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_update_classy_person_year_of_birth``
 
@@ -3362,7 +3362,7 @@ I want to add randomness to the test
                 self.new_age
             )
 
-  still green
+  still green.
 
 * I remove the commented line
 
@@ -3454,7 +3454,7 @@ I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` for ``
 
             self.assertEqual(person.first_name, self.random_first_name)
 
-the test passes
+the test passes.
 
 ----
 
@@ -3494,7 +3494,7 @@ the test passes
                 year_of_birth=None, sex=None,
             ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -3549,7 +3549,7 @@ the test passes
                 year_of_birth=None, sex='M',
             ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -3566,7 +3566,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
                 # year_of_birth=self.random_year_of_birth,
             )
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line then add an :ref:`assertion<what is an assertion?>` for the age
 
@@ -3619,7 +3619,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
 
         def expected_greeting(self):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -3694,7 +3694,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
                     age=0
                 )
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines
 
@@ -3714,7 +3714,7 @@ There is a problem with the ``year_of_birth``, its default value is :ref:`None<w
 
         def test_class_w_optional_arguments(self):
 
-  the tests are still green
+  the tests are still green.
 
 ----
 
@@ -3820,7 +3820,7 @@ I copy and paste the values from the terminal_ and remove the extra characters I
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 The attributes I defined in the ``__init__`` :ref:`method<what is a function?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>` definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<test_attribute_error_w_class_attributes>`.
 
@@ -3841,7 +3841,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_person.py`` and ``person.py`` in the :ref:`editors<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``person``
 
@@ -3877,7 +3877,7 @@ review
 * classes_ can be an easier way to manage data than :ref:`functions<what is a function?>`
 * classes_ make it easier to write tests for something
 
-.. TIP::
+.. tip::
 
   * when I find myself writing or doing the same thing two times, I write a :ref:`function<what is a function?>`
   * when I find I have two :ref:`functions<what is a function?>` that use the same information, I write a :ref:`class<what is a class?>`

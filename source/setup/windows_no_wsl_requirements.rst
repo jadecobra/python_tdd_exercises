@@ -6,7 +6,7 @@
 Windows without Windows Subsystem Linux requirements
 #################################################################################
 
-.. ATTENTION:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
+.. attention:: Do this only if you are using Windows_ and could not install `Windows Subsystem for Linux`_
 
 * `download and install Python`_
 

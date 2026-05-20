@@ -103,7 +103,7 @@ I change assertNotIsInstance_ to assertIsInstance_
 
           self.assertIsInstance(False, int)
 
-the test passes
+the test passes.
 
 ----
 
@@ -158,7 +158,7 @@ the test passes
             self.assertNotIsInstance(False, float)
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -200,7 +200,7 @@ the test passes
 
             self.assertIsInstance(False, (bool, int))
 
-  the test passes
+  the test passes.
 
 * I remove the first two :ref:`assertions<what is an assertion?>` in the test since they are covered by the new one
 
@@ -357,7 +357,7 @@ I change assertNotIsInstance_ to assertIsInstance_
 
           self.assertIsInstance(True, int)
 
-the test passes
+the test passes.
 
 ----
 
@@ -445,7 +445,7 @@ the test passes
 
             self.assertIsInstance(True, (bool, int))
 
-  the test passes
+  the test passes.
 
 * I remove the first two :ref:`assertions<what is an assertion?>` in the test since they are covered by the new one
 
@@ -613,7 +613,7 @@ I change the expectation to match
 
             self.assertEqual(False+1, 1)
 
-the test passes
+the test passes.
 
 ----
 
@@ -649,7 +649,7 @@ the test passes
 
             self.assertEqual(False-1, -1)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -678,7 +678,7 @@ the test passes
 
             self.assertEqual(False*1, 0)
 
-  the test passes
+  the test passes.
 
 * what happens if I divide a number by :ref:`False?<test_what_is_false>`
 
@@ -710,7 +710,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -786,7 +786,7 @@ I change the expectation
 
           self.assertEqual(True+1, 2)
 
-the test passes
+the test passes.
 
 ----
 
@@ -822,7 +822,7 @@ the test passes
 
             self.assertEqual(True-1, 0)
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -851,7 +851,7 @@ the test passes
 
             self.assertEqual(True*1, 1)
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`division<test_division>`
 
@@ -888,7 +888,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -934,7 +934,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``booleans``
 

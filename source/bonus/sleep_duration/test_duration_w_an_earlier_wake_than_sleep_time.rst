@@ -323,7 +323,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 )
             )
 
-  still green
+  still green.
 
 * I add a `staticmethod decorator`_ to calculate the difference between ``wake_time`` and ``sleep_time``
 
@@ -389,7 +389,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
                 )
             )
 
-  the test passes
+  the test passes.
 
 * I also add an ``assert`` :ref:`method<what is a function?>` for the `assertRaisesRegex`_ block
 

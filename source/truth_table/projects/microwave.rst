@@ -74,7 +74,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``microwave.py`` and move it to the ``src`` folder_
 
@@ -97,7 +97,7 @@ start the project
 
         Move-Item main.py src/microwave.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -106,11 +106,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -131,7 +131,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -154,11 +154,11 @@ start the project
 
         New-Item tests/test_microwave.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_microwave.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -190,7 +190,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -199,7 +199,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -294,7 +294,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -529,7 +529,7 @@ because I do not have a definition for ``src`` in this file_
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -611,7 +611,7 @@ I add an :ref:`if statement<if statements>` to ``microwave.py``
 
         return 'OFF'
 
-the test passes
+the test passes.
 
 ----
 
@@ -634,7 +634,7 @@ the test passes
 
         return 'OFF'
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -721,7 +721,7 @@ the test passes
 
         return 'OFF'
 
-  the test passes
+  the test passes.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
 
@@ -733,7 +733,7 @@ the test passes
         if not start_is_pushed == True:
             return 'OFF'
 
-  the test are still green
+  the test are still green.
 
 * I remove ``== True``
 
@@ -768,7 +768,7 @@ the test passes
 
         return 'OFF'
 
-  green
+  green.
 
 * I use :ref:`Logical Disjunction (OR)<test_logical_disjunction>` to put the two :ref:`if statements` that return :red:`'OFF'` together
 
@@ -791,7 +791,7 @@ the test passes
 
         return 'OFF'
 
-  still green
+  still green.
 
 * I add an :ref:`else clause<if statements>`
 
@@ -816,7 +816,7 @@ the test passes
 
         return 'OFF'
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the other :ref:`if statements` and the commented lines, because they are no longer used
 
@@ -1012,7 +1012,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
         def test_closed_door(self):
 
-  the test is still green
+  the test is still green.
 
 * I change the name of the test from :ref:`test_open_door` to :ref:`test_open_door_timer_set`
 
@@ -1071,7 +1071,7 @@ door           timer           start button       output
 
         def test_closed_door(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set` and the start button is :red:`NOT pushed`
 
@@ -1105,7 +1105,7 @@ door           timer           start button       output
 
         def test_closed_door(self):
 
-  green
+  green.
 
 ----
 
@@ -1151,7 +1151,7 @@ door           timer           start button       output
             )
             self.assertEqual(reality, my_expectation)
 
-  the test is still green
+  the test is still green.
 
 * I add a value for ``timer_is_set`` to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set` and the start button is :red:`NOT pushed`
 
@@ -1187,7 +1187,7 @@ door           timer           start button       output
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I change the name of the test from :ref:`test_closed_door` to :ref:`test_closed_door_timer_set`
 
@@ -1300,7 +1300,7 @@ I add an :ref:`if statement<if statements>` to the ``microwave`` :ref:`function<
       else:
           return 'HEATING'
 
-the test passes
+the test passes.
 
 ----
 
@@ -1320,7 +1320,7 @@ the test passes
         if not timer_is_set == True:
             return 'OFF'
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -1397,7 +1397,7 @@ the test passes
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -1541,7 +1541,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
             timer_is_set=False, too_hot=False,
         ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1592,7 +1592,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
         def test_open_door_timer_not_set(self):
 
-  the test is still green
+  the test is still green.
 
 * I add a value for the ``too_hot`` parameter in the next :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the microwave temperature is :green:`too hot`
 
@@ -1635,7 +1635,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
             )
             self.assertEqual(reality, my_expectation)
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :green:`set`, the start button is :red:`NOT pushed` and the microwave temperature is  :red:`NOT too hot`
 
@@ -1689,7 +1689,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
 
         def test_open_door_timer_not_set(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_open_door_timer_set` to :ref:`test_too_hot_open_door_timer_set`
 
@@ -1764,7 +1764,7 @@ because the test called the ``microwave`` :ref:`function<what is a function?>` w
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, OFF)
 
-  still green
+  still green.
 
 * I remove the ``reality`` :ref:`variables<what is a variable?>`, I do not need them because they are called only once in every :ref:`assertion<what is an assertion?>`, I can call the ``microwave`` :ref:`function<what is a function?>` directly without the middle man
 
@@ -1935,7 +1935,7 @@ door           timer           start button       too hot             output
             )
             self.assertEqual(reality, my_expectation)
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :green:`pushed` and the microwave temperature is :red:`NOT too hot`
 
@@ -1976,7 +1976,7 @@ door           timer           start button       too hot             output
             )
             self.assertEqual(reality, my_expectation)
 
-  the test is still green
+  the test is still green.
 
 * I add a value for ``too_hot`` to the next :ref:`assertion<what is an assertion?>`, for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the microwave temperature is :green:`too hot`
 
@@ -2019,7 +2019,7 @@ door           timer           start button       too hot             output
             )
             self.assertEqual(reality, my_expectation)
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed` and the microwave temperature is :red:`NOT too hot`
 
@@ -2073,7 +2073,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_set(self):
 
-  green
+  green.
 
 * I change the name of the test from :ref:`test_open_door_timer_not_set` to :ref:`test_too_hot_open_door_timer_not_set`
 
@@ -2141,7 +2141,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_set(self):
 
-  still green
+  still green.
 
 * I call the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertions<what is an assertion?>` because I only use the ``reality`` :ref:`variable<what is a variable?>` once for each :ref:`assertion<what is an assertion?>`
 
@@ -2314,7 +2314,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-  the test is still green
+  the test is still green.
 
 * I call the ``microwave`` :ref:`function<what is a function?>` directly without the ``reality`` :ref:`variables<what is a variable?>`
 
@@ -2357,7 +2357,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-  still green
+  still green.
 
 * I remove the commented lines and :ref:`variables<what is a variable?>` that are not used anymore
 
@@ -2457,7 +2457,7 @@ door           timer           start button       too hot             output
         else:
             return 'HEATING'
 
-  the test passes
+  the test passes.
 
 * I remove ``== True``
 
@@ -2572,7 +2572,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-  the test is still green
+  the test is still green.
 
 * I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the microwave temperature is :green:`too hot`
 
@@ -2621,7 +2621,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :green:`set`, the start button is :red:`NOT pushed`, and the microwave temperature is :red:`NOT too hot`
 
@@ -2681,7 +2681,7 @@ door           timer           start button       too hot             output
 
         def test_closed_door_timer_not_set(self):
 
-  still green
+  still green.
 
 * I change the name of the test from :ref:`test_closed_door_timer_set` to :ref:`test_too_hot_closed_door_timer_set`
 
@@ -2755,7 +2755,7 @@ door           timer           start button       too hot             output
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I call the ``microwave`` :ref:`function<what is a function?>` directly in the :ref:`assertion<what is an assertion?>`, I do not need the ``reality`` :ref:`variables<what is a variable?>` because they are only used once in each :ref:`assertion<what is an assertion?>`
 
@@ -2875,7 +2875,7 @@ door           timer           start button       too hot             output
                 OFF
             )
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :green:`pushed`, and the microwave temperature is :red:`NOT too hot`
 
@@ -2923,7 +2923,7 @@ door           timer           start button       too hot             output
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I add a value for the ``too_hot`` parameter to the next :ref:`assertion<what is an assertion?>`, for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the microwave temperature is :green:`too hot`
 
@@ -2973,7 +2973,7 @@ door           timer           start button       too hot             output
 
     # Exceptions seen
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the door is :red:`closed`, the timer is :red:`NOT set`, the start button is :red:`NOT pushed`, and the microwave temperature is :red:`NOT too hot`
 
@@ -3034,7 +3034,7 @@ door           timer           start button       too hot             output
 
     # Exceptions seen
 
-  all the tests are still green
+  all the tests are still green.
 
 * The :ref:`condition<if statements>` of the ``microwave`` :ref:`function<what is a function?>` in ``microwave.py`` can be written with :ref:`Logical Conjunction (AND)<test_logical_conjunction>` for the one case where it returns :green:`'HEATING'`
 
@@ -3106,7 +3106,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_microwave.py`` and ``microwave.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``microwave``
 

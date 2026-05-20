@@ -73,7 +73,7 @@ requirements
 
     mkdir none
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I change directory_ to the project
 
@@ -95,11 +95,11 @@ requirements
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -120,7 +120,7 @@ requirements
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -143,11 +143,11 @@ requirements
 
         New-Item tests/test_none.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_none.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -179,7 +179,7 @@ requirements
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -188,7 +188,7 @@ requirements
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I set up the project with uv_
 
@@ -212,7 +212,7 @@ requirements
 
     rm main.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -283,7 +283,7 @@ requirements
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -428,7 +428,7 @@ I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>
 
   # NOTES
 
-the test passes
+the test passes.
 
 ----
 
@@ -484,7 +484,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -541,7 +541,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
             self.assertIsInstance(False, bool)
 
-  the test passes
+  the test passes.
 
 * I add a failing line for the other :ref:`boolean<what are booleans?>` with assertNotIsInstance_
 
@@ -575,7 +575,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
             self.assertIsInstance(True, bool)
 
-  the test passes
+  the test passes.
 
 * I add assertIsInstance_ to test if None_ is a child (instance) of the `bool class`_
 
@@ -617,7 +617,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can u
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * Since this is about None_, I change the last 2 comments I added
 
@@ -636,7 +636,7 @@ I know two new `assert methods`_
 * assertIsInstance_ to see if something is an instance of a :ref:`class<what is a class?>`
 * assertNotIsInstance_ to see if something is NOT an instance of a :ref:`class<what is a class?>`
 
-.. CAUTION:: the names of the `assert methods`_ can be confusing, there is
+.. caution:: the names of the `assert methods`_ can be confusing, there is
 
                   assertIsNotNone_
 
@@ -705,7 +705,7 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
           self.assertIsNotNone(-1)
 
-the test passes
+the test passes.
 
 ----
 
@@ -739,7 +739,7 @@ the test passes
 
             self.assertIsNotNone(0)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -766,7 +766,7 @@ the test passes
 
             self.assertIsNotNone(1)
 
-  the test passes
+  the test passes.
 
 * I add a new failing line with assertNotIsInstance_
 
@@ -796,7 +796,7 @@ the test passes
 
             self.assertIsInstance(-1, int)
 
-  the test passes
+  the test passes.
 
 * I add another failing line with assertNotIsInstance_
 
@@ -827,7 +827,7 @@ the test passes
 
             self.assertIsInstance(0, int)
 
-  the test passes
+  the test passes.
 
 * I add another failing line with assertNotIsInstance_
 
@@ -860,7 +860,7 @@ the test passes
 
             self.assertIsInstance(1, int)
 
-  the test passes
+  the test passes.
 
 * I add one more failing line to test if None_ is an integer_ with assertIsInstance_
 
@@ -897,7 +897,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a new comment
 
@@ -973,7 +973,7 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
           self.assertIsNotNone(-0.1)
 
-the test passes
+the test passes.
 
 ----
 
@@ -1007,7 +1007,7 @@ the test passes
 
             self.assertIsNotNone(0.0)
 
-  the test passes
+  the test passes.
 
 * I add a failing line with assertIsNone_
 
@@ -1034,7 +1034,7 @@ the test passes
 
             self.assertIsNotNone(0.1)
 
-  the test passes
+  the test passes.
 
 * time for instance tests. I add a failing line with assertNotIsInstance_
 
@@ -1064,7 +1064,7 @@ the test passes
 
             self.assertIsInstance(-0.1, float)
 
-  the test passes
+  the test passes.
 
 * I add the next instance test with assertNotIsInstance_
 
@@ -1095,7 +1095,7 @@ the test passes
 
             self.assertIsInstance(0.0, float)
 
-  the test passes
+  the test passes.
 
 * I add a failing line with assertNotIsInstance_
 
@@ -1126,7 +1126,7 @@ the test passes
 
             self.assertIsInstance(0.1, float)
 
-  the test passes
+  the test passes.
 
 * I add one more failing line with the `assertIsInstance method`_
 
@@ -1166,7 +1166,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a new comment
 
@@ -1245,7 +1245,7 @@ I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
 
           self.assertIsNotNone('')
 
-the test passes
+the test passes.
 
 ----
 
@@ -1279,7 +1279,7 @@ the test passes
 
             self.assertIsNotNone("text")
 
-  the test passes
+  the test passes.
 
 * I add a failing line with assertNotIsInstance_
 
@@ -1308,7 +1308,7 @@ the test passes
 
             self.assertIsInstance('', str)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -1338,7 +1338,7 @@ the test passes
 
             self.assertIsInstance("text", str)
 
-  the test passes
+  the test passes.
 
 * I add another failing line with assertIsInstance_
 
@@ -1375,7 +1375,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1452,7 +1452,7 @@ I make the statement :ref:`True<test_what_is_true>`
 
           self.assertIsNotNone(())
 
-the test passes
+the test passes.
 
 ----
 
@@ -1487,7 +1487,7 @@ the test passes
 
             self.assertIsNotNone((1, 2, 3, 'n'))
 
-  the test passes
+  the test passes.
 
 * I add a failing line with assertNotIsInstance_
 
@@ -1516,7 +1516,7 @@ the test passes
 
             self.assertIsInstance((), tuple)
 
-  the test passes
+  the test passes.
 
 * I add another failing line
 
@@ -1546,7 +1546,7 @@ the test passes
 
             self.assertIsInstance((1, 2, 3, 'n'), tuple)
 
-  the test passes
+  the test passes.
 
 * I add one more instance test
 
@@ -1583,7 +1583,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1659,7 +1659,7 @@ I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:
 
           self.assertIsNotNone([])
 
-the test passes
+the test passes.
 
 ----
 
@@ -1694,7 +1694,7 @@ the test passes
 
             self.assertIsNotNone([1, 2, 3, 'n'])
 
-  the test passes
+  the test passes.
 
 * I add a failing instance test
 
@@ -1723,7 +1723,7 @@ the test passes
 
             self.assertIsInstance([], list)
 
-  the test passes
+  the test passes.
 
 * I add another failing line with assertNotIsInstance_
 
@@ -1753,7 +1753,7 @@ the test passes
 
             self.assertIsInstance([1, 2, 3, 'n'], list)
 
-  the test passes
+  the test passes.
 
 * I add one more failing line with the `assertIsInstance method`_
 
@@ -1790,7 +1790,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a new comment
 
@@ -1865,7 +1865,7 @@ I make the statement :ref:`True<test_what_is_true>`
 
               self.assertIsNotNone(set())
 
-the test passes
+the test passes.
 
 ----
 
@@ -1900,7 +1900,7 @@ the test passes
 
             self.assertIsNotNone({1, 2, 3, 'n'})
 
-  the test passes
+  the test passes.
 
 * I add an instance test
 
@@ -1927,7 +1927,7 @@ the test passes
 
             self.assertIsInstance({1, 2, 3, 'n'}, set)
 
-  the test passes
+  the test passes.
 
 * I add another instance test
 
@@ -1962,7 +1962,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -2039,7 +2039,7 @@ I make the statement :ref:`True<test_what_is_true>`
 
           self.assertIsNotNone(dict())
 
-the test passes
+the test passes.
 
 ----
 
@@ -2074,7 +2074,7 @@ the test passes
 
             self.assertIsNotNone({'key': 'value'})
 
-  the test passes
+  the test passes.
 
 * I add a failing instance test
 
@@ -2103,7 +2103,7 @@ the test passes
 
             self.assertIsInstance({}, dict)
 
-  the test passes
+  the test passes.
 
 * I add another instance test
 
@@ -2123,7 +2123,7 @@ the test passes
 
     AssertionError: {'key': 'value'} is an instance of <class 'dict'>
 
-  .. NOTE::
+  .. note::
 
     ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
 
@@ -2150,7 +2150,7 @@ the test passes
 
             self.assertIsInstance({'key': 'value'}, dict)
 
-  the test passes
+  the test passes.
 
 * I add the last failing instance test with assertIsInstance_
 
@@ -2187,7 +2187,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add the last comment
 
@@ -2219,7 +2219,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_none.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``none``
 

@@ -78,7 +78,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``traffic_light.py`` and move it to the ``src`` folder_
 
@@ -101,7 +101,7 @@ start the project
 
         Move-Item main.py src/traffic_light.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -110,11 +110,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -135,7 +135,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -158,11 +158,11 @@ start the project
 
         New-Item tests/test_traffic_light.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_traffic_light.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -194,7 +194,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -203,7 +203,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -296,7 +296,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -549,7 +549,7 @@ because I do not have a definition for ``src`` in this file_
             return 'RED'
         return 'GREEN'
 
-  the test passes
+  the test passes.
 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -563,7 +563,7 @@ because I do not have a definition for ``src`` in this file_
             return 'RED'
         return 'GREEN'
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`logical_negation (NOT)<test_logical_negation>` to write the statement in terms of :ref:`True<test_what_is_true>`
 
@@ -578,7 +578,7 @@ because I do not have a definition for ``src`` in this file_
             return 'RED'
         return 'GREEN'
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -594,7 +594,7 @@ because I do not have a definition for ``src`` in this file_
             return 'RED'
         return 'GREEN'
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1049,7 +1049,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         return 'GREEN'
 
-  still green
+  still green.
 
 * I remove the other :ref:`if statements<if statements>` from the one for when the timer is :red:`NOT done` (lines 4-9) because they are no longer used
 
@@ -1112,7 +1112,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
         # return 'GREEN'
         return green
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1316,7 +1316,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         return green
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1338,7 +1338,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         return green
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -1353,7 +1353,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         return green
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1414,7 +1414,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         return green
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1523,7 +1523,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-  green
+  green.
 
 * I change the expectation to make sure the test works
 
@@ -1688,7 +1688,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1843,7 +1843,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-  the test is still green
+  the test is still green.
 
 * I remove the ``timer_done`` parameter when it is :ref:`False<test_what_is_false>` from :ref:`test_red_traffic_light_w_walk_button`
 
@@ -1883,7 +1883,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -1915,7 +1915,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-  green
+  green.
 
 .. admonition:: REMINDER
 
@@ -2001,7 +2001,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
@@ -2040,7 +2040,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
 
-  still green
+  still green.
 
   * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'RED'``)
   * I do not need to give a value for the ``walk_button`` parameter because
@@ -2103,7 +2103,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :yellow:`YELLOW`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
@@ -2150,7 +2150,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
 
-  still green
+  still green.
 
   * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'YELLOW'``)
   * I do not need to give a value for the ``walk_button`` and ``timer_done`` parameters because
@@ -2248,7 +2248,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light(self):
 
-  the test is still green
+  the test is still green.
 
 * I add a :ref:`variable<what is a variable?>` for :red:`RED` (a repetition of the :ref:`variable<what is a variable?>` in :ref:`test_red_traffic_light_w_walk_button`, oh boy)
 
@@ -2288,7 +2288,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, red)
 
-  still green
+  still green.
 
 * I make a :ref:`global variable<what is a variable?>` to use to remove repetition of ``'RED'`` from :ref:`test_yellow_traffic_light_w_walk_button` and :ref:`test_red_traffic_light_w_walk_button`
 
@@ -2339,7 +2339,7 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light_w_walk_button(self):
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -2399,7 +2399,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, red)
             self.assertEqual(reality, RED)
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -2474,7 +2474,7 @@ current light     timer            walk button        show
             )
             self.assertEqual(reality, my_expectation)
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is :green:`done` and the walk button is :red:`NOT pushed`
 
@@ -2575,7 +2575,7 @@ current light     timer            walk button        show
 
     # Exceptions seen
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the light is :green:`GREEN`, the timer is :red:`NOT done` and the walk button is :red:`NOT pushed`
 
@@ -2623,7 +2623,7 @@ current light     timer            walk button        show
 
     # Exceptions seen
 
-  still green
+  still green.
 
   * I do not need to make a new ``my_expectation`` :ref:`variable<what is a variable?>` because the expectation for the new :ref:`assertion<what is an assertion?>` is the same as the last one (``'GREEN'``)
   * I do not need to give a value for the ``walk_button`` and ``timer_done`` parameters because
@@ -2803,7 +2803,7 @@ current light     timer            walk button        show
 
         def test_yellow_traffic_light_w_walk_button(self):
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -2872,7 +2872,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, GREEN)
 
-  still green
+  still green.
 
 * I use the :yellow:`YELLOW` :ref:`global variable<what is a variable?>` to remove repetition from :ref:`test_green_traffic_light_w_walk_button`
 
@@ -2899,7 +2899,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, my_expectation)
             self.assertEqual(reality, YELLOW)
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -2971,7 +2971,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, GREEN)
             self.assertEqual(
                 reality,
-                GREEN
+                green.
             )
 
             reality = src.traffic_light.show(
@@ -2980,7 +2980,7 @@ current light     timer            walk button        show
             # self.assertEqual(reality, GREEN)
             self.assertEqual(
                 reality,
-                GREEN
+                green.
             )
 
 * I remove the ``reality`` :ref:`variable<what is a variable?>` from the :ref:`assertions<what is an assertion?>` :ref:`test_green_traffic_light_w_walk_button`, I no longer need it to be a middle man
@@ -3033,7 +3033,7 @@ current light     timer            walk button        show
                     timer_done=False,
                     walk_button=True,
                 ),
-                GREEN
+                green.
             )
 
             reality = src.traffic_light.show(
@@ -3045,10 +3045,10 @@ current light     timer            walk button        show
                 src.traffic_light.show(
                     current_light=GREEN,
                 ),
-                GREEN
+                green.
             )
 
-  green
+  green.
 
 * I remove the commented lines and ``reality`` :ref:`variable<what is a variable?>` from :ref:`test_green_traffic_light_w_walk_button`
 
@@ -3079,20 +3079,20 @@ current light     timer            walk button        show
                     timer_done=False,
                     walk_button=True,
                 ),
-                GREEN
+                green.
             )
 
             self.assertEqual(
                 src.traffic_light.show(
                     current_light=GREEN,
                 ),
-                GREEN
+                green.
             )
 
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I do the same thing with :ref:`test_yellow_traffic_light_w_walk_button`
 
@@ -3203,7 +3203,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light_w_walk_button(self):
 
-  the test is still green
+  the test is still green.
 
 * I remove the ``reality`` :ref:`variable<what is a variable?>` and comments from :ref:`test_yellow_traffic_light_w_walk_button`
 
@@ -3267,7 +3267,7 @@ current light     timer            walk button        show
             )
             self.assertEqual(
                 reality,
-                GREEN
+                green.
             )
 
             reality = src.traffic_light.show(
@@ -3312,7 +3312,7 @@ current light     timer            walk button        show
                 src.traffic_light.show(
                     timer_done=True,
                 ),
-                GREEN
+                green.
             )
 
             reality = src.traffic_light.show(
@@ -3333,7 +3333,7 @@ current light     timer            walk button        show
                 RED
             )
 
-  still green
+  still green.
 
 * I remove the ``reality`` :ref:`variable<what is a variable?>` and the comments from :ref:`test_red_traffic_light_w_walk_button`
 
@@ -3353,7 +3353,7 @@ current light     timer            walk button        show
                 src.traffic_light.show(
                     timer_done=True,
                 ),
-                GREEN
+                green.
             )
 
             self.assertEqual(
@@ -4471,7 +4471,7 @@ current light     timer           walk button       show
                 GREEN_NO_WALK
             )
 
-  the test is still green
+  the test is still green.
 
 * I use the ``WALK`` :ref:`global variable<what is a variable?>` for ``(RED, 'WALK')`` in :ref:`test_red_traffic_light_w_walk`
 
@@ -4522,7 +4522,7 @@ current light     timer           walk button       show
 
         def test_yellow_traffic_light_w_walk(self):
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -4595,7 +4595,7 @@ current light     timer           walk button       show
                 WALK
             )
 
-  green
+  green.
 
 * I use the ``YELLOW_NO_WALK`` :ref:`global variable<what is a variable?>` for ``(YELLOW, 'NO WALK')`` in :ref:`test_yellow_traffic_light_w_walk`
 
@@ -4644,7 +4644,7 @@ current light     timer           walk button       show
                 YELLOW_NO_WALK
             )
 
-  still green
+  still green.
 
 * I remove the commented lines from :ref:`test_yellow_traffic_light_w_walk`
 
@@ -4717,7 +4717,7 @@ current light     timer           walk button       show
                 YELLOW_NO_WALK
             )
 
-  green
+  green.
 
 * I use the ``GREEN_NO_WALK`` :ref:`global variable<what is a variable?>` for ``(GREEN, 'NO WALK')`` in :ref:`test_green_traffic_light_w_walk`
 
@@ -4766,7 +4766,7 @@ current light     timer           walk button       show
                 GREEN_NO_WALK
             )
 
-  still green
+  still green.
 
 * I remove the commented lines from :ref:`test_green_traffic_light_w_walk`
 
@@ -4872,7 +4872,7 @@ current light     timer           walk button       show
         # return green, 'NO WALK'
         return green, no_walk
 
-  the tests are still green
+  the tests are still green.
 
 * I write a new :ref:`if statement with an else clause<if statements>`, that covers the 3 cases when the timer is :red:`NOT done`
 
@@ -4894,7 +4894,7 @@ current light     timer           walk button       show
             # return current_light, 'NO WALK'
             return current_light, no_walk
 
-  still green
+  still green.
 
 * I write out the :ref:`if statement<if statements>` for when the light is :red:`RED` and the timer is :green:`done`, to make it clearer
 
@@ -4923,7 +4923,7 @@ current light     timer           walk button       show
             else:
                 return walk
 
-  green
+  green.
 
 * the ``walk`` :ref:`variable<what is a variable?>` which is ``'RED', 'WALK'``, happens 3 times in the :ref:`function<what is a function?>`, I add a `return statement`_ to make it the default state of the light
 
@@ -4955,7 +4955,7 @@ current light     timer           walk button       show
 
         return walk
 
-  the tests are still green
+  the tests are still green.
 
 * I rewrite the :ref:`if statement<if statements>` for when the current light is :red:`red` AND the timer is :green:`done` AND the walk button is :green:`pushed` with :ref:`Logical Conjunction(AND)<test_logical_conjunction>`
 
@@ -4971,7 +4971,7 @@ current light     timer           walk button       show
 
         return walk
 
-  still green
+  still green.
 
 * I no longer need the :ref:`if statement<if statements>` for :yellow:`YELLOW` because it returns the default state (``'RED', 'WALK'``) when the timer is :green:`done`. I comment it out
 
@@ -5035,7 +5035,7 @@ current light     timer           walk button       show
 
         return walk
 
-  still green
+  still green.
 
 * I no longer need the :ref:`else clause<if statements>` for when the current light is NOT :red:`RED` and the timer is :red:`NOT done` because it returns the default state (``'RED', 'WALK'``) . I comment it out and the other :ref:`if statements` below it to make sure they are not run
 
@@ -5061,7 +5061,7 @@ current light     timer           walk button       show
             # return red, 'WALK'
             # return walk
 
-  the tests are still green
+  the tests are still green.
 
 * I use  :ref:`Logical Conjunction(AND)<test_logical_conjunction>` to change the :ref:`if statement<if statements>` for when the current light is NOT :red:`red` AND the timer is :red:`NOT done`
 
@@ -5083,7 +5083,7 @@ current light     timer           walk button       show
             return current_light, no_walk
             # else:
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -5138,7 +5138,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_traffic_light.py`` and ``traffic_light.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``traffic_light``
 

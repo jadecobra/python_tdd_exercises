@@ -1413,7 +1413,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I change the statement with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
@@ -1427,7 +1427,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  green
+  green.
 
 * I remove ``== True``
 
@@ -1441,7 +1441,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I use a `return statement`_ because ``if something: return False`` is the same as ``return not (something)``
 
@@ -1455,7 +1455,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove the other statements then "multiply :ref:`not<test_logical_negation>`" by the things in the parentheses
 
@@ -1495,7 +1495,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return first or not second
         return (not not first) or (not second)
 
-  the test is still green
+  the test is still green.
 
 * I remove the other statement in :ref:`converse_implication<test_converse_implication>`
 
@@ -1524,7 +1524,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I break the statement up then add an `else clause`_ for the other 3 statements
 
@@ -1543,7 +1543,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  still green
+  still green.
 
 * I remove the commented line and other statements, then change the :ref:`if statement<if statements>` with :ref:`True<test_what_is_true>`
 
@@ -1558,7 +1558,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         else:
             return False
 
-  green
+  green.
 
 * I remove ``== True``
 
@@ -1573,7 +1573,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         else:
             return False
 
-  still green
+  still green.
 
 * I add a `return statement`_ because ``if something: return True`` is the same as ``return something``
 
@@ -1588,7 +1588,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         else:
             return False
 
-  the test is still green
+  the test is still green.
 
 * I remove the other statements in :ref:`converse_non_implication<test_converse_non_implication>`
 
@@ -1619,7 +1619,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove the first two :ref:`if statements` then change the new second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
@@ -1635,7 +1635,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -1652,7 +1652,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  green
+  green.
 
 * I write everything in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line, I might as well make it three
 
@@ -1705,7 +1705,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines, then add a `return statement`_ because ``if something: return False`` is the same as ``return not (something)``
 
@@ -1723,7 +1723,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I remove the other statements then multiply :ref:`not<test_logical_negation>` by everything in the parentheses because it happens two times in the line
 
@@ -1783,7 +1783,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             (not (first or second))
         )
 
-  green
+  green.
 
 * I remove the other statements in :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
@@ -1812,7 +1812,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove the other statements and break up the :ref:`if statement<if statements>` to make it simpler
 
@@ -1838,7 +1838,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if first and second:
             return True
 
-  still green
+  still green.
 
 * I use a `return statement`_ because ``if something: return True`` is the same as ``return something``
 
@@ -1851,7 +1851,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if first and second:
             return True
 
-  green
+  green.
 
 * I remove the other statements in :ref:`logical_conjunction<test_logical_conjunction>`
 
@@ -1879,7 +1879,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove the comment then change the :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
@@ -1893,7 +1893,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -1907,7 +1907,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  green
+  green.
 
 * I change the statement with :ref:`not<test_logical_negation>` because it happens two times
 
@@ -1954,7 +1954,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I remove ``not not``
 
@@ -1966,7 +1966,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return first or second
         return not (not (first or second))
 
-  the test is still green
+  the test is still green.
 
 * I remove the other statement in :ref:`logical_disjunction<test_logical_disjunction>`
 
@@ -1997,7 +1997,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove the comments then change the :ref:`if statements` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
@@ -2014,7 +2014,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -2031,7 +2031,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  green
+  green.
 
 * I put the two :ref:`if statements` together to make one
 
@@ -2047,7 +2047,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I use a `return statement`_ because ...
 
@@ -2065,7 +2065,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I multiply :ref:`not<test_logical_negation>` by all the symbols in parentheses
 
@@ -2161,7 +2161,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             (not (not first and second))
         )
 
-  still green
+  still green.
 
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the second part of the statement
 
@@ -2198,7 +2198,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             ((not not first) or (not second))
         )
 
-  the test is still green
+  the test is still green.
 
 * I remove ``not not``
 
@@ -2214,7 +2214,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             (first or not second)
         )
 
-  still green
+  still green.
 
 * I remove the comment
 
@@ -2242,7 +2242,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -2256,7 +2256,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  still green
+  still green.
 
 * I use I use a `return statement`_ because ...
 
@@ -2270,7 +2270,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
             return False
         return first, second
 
-  green
+  green.
 
 * I remove the other lines in :ref:`logical_nand<test_logical_nand>`
 
@@ -2302,7 +2302,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, True): return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove the other lines, then use :ref:`not<test_logical_negation>` and remove ``== False``
 
@@ -2317,7 +2317,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         else:
             return False
 
-  still green
+  still green.
 
 * I use a `return statement`_
 
@@ -2332,7 +2332,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         else:
             return False
 
-  green
+  green.
 
 * I write the statement with :ref:`not<test_logical_negation>` because it happens 2 times
 
@@ -2388,7 +2388,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (True, False): return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I break up the `return statement`_ to make it simpler
 
@@ -2400,7 +2400,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return not (first == True and second == False)
         return not ((first, second) == (True, False))
 
-  still green
+  still green.
 
 * I use :ref:`not<test_logical_negation>` and remove ``== True`` and ``== False``
 
@@ -2412,7 +2412,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return not (first and not second)
         return not (first == True and second == False)
 
-  green
+  green.
 
 * I multiply :ref:`not<test_logical_negation>` by everything in the parentheses
 
@@ -2453,7 +2453,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return (not first) or (not not second)
         return not (first and not second)
 
-  still green
+  still green.
 
 * I remove the other statements in :ref:`material_implication<test_material_implication>`
 
@@ -2482,7 +2482,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, False): return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I make the `return statement`_ simpler
 
@@ -2494,7 +2494,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return first == True and second == False
         return (first, second) == (True, False)
 
-  still green
+  still green.
 
 * I use :ref:`not<test_logical_negation>` and remove ``== True`` and ``== False``
 
@@ -2506,7 +2506,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return first and not second
         return first == True and second == False
 
-  green
+  green.
 
 * I remove the other statement in :ref:`material_non_implication<test_material_non_implication>`
 
@@ -2534,7 +2534,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (True, False): return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -2549,7 +2549,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (True, False): return False
         return first, second
 
-  still green
+  still green.
 
 * I add a `return statement`_ because ...
 
@@ -2564,7 +2564,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (True, False): return False
         return first, second
 
-  green
+  green.
 
 * I remove the other statements from :ref:`negate_first<test_negate_first>`
 
@@ -2593,7 +2593,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         if (first, second) == (False, True): return False
         return first, second
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -2605,7 +2605,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
         return not second
         return not second == True
 
-  green
+  green.
 
 * I remove the other statement in :ref:`negate_second<test_negate_second>`
 
@@ -2700,7 +2700,7 @@ close the project
 *********************************************************************************
 
 * I close ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``
 

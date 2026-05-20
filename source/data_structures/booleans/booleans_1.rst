@@ -83,7 +83,7 @@ start the project
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -104,7 +104,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -127,11 +127,11 @@ start the project
 
         New-Item tests/test_booleans.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_booleans.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -256,7 +256,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -333,7 +333,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertIsInstance(False, bool)
 
-  the test passes
+  the test passes.
 
 :ref:`False is a boolean<test_what_is_false>`
 
@@ -461,7 +461,7 @@ the test passes. :ref:`True is a boolean<test_what_is_true>`
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -480,7 +480,7 @@ the test passes. :ref:`True is a boolean<test_what_is_true>`
 
 * I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_true` to the :ref:`test_what_is_false method<test_what_is_false>`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 4
@@ -550,7 +550,7 @@ the test passes. :ref:`True is a boolean<test_what_is_true>`
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -652,7 +652,7 @@ I change the :ref:`method<what is a function?>`
 
           self.assertFalse(None)
 
-the test passes
+the test passes.
 
 ----
 
@@ -683,7 +683,7 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_true` to :ref:`test_what_is_false`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -756,7 +756,7 @@ I change the :ref:`method<what is a function?>`
 
           self.assertTrue(-1)
 
-the test passes
+the test passes.
 
 ----
 
@@ -784,7 +784,7 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_false` to :ref:`test_what_is_true`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -834,7 +834,7 @@ the test passes
 
             self.assertFalse(0)
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -855,7 +855,7 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -902,7 +902,7 @@ the test passes
 
             self.assertTrue(1)
 
-  the test passes
+  the test passes.
 
 * I add to the comment about negative integers
 
@@ -923,7 +923,7 @@ the test passes
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -999,7 +999,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
             self.assertTrue(-0.1)
 
-  the test passes
+  the test passes.
 
 * I add comments
 
@@ -1021,7 +1021,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 9
@@ -1081,7 +1081,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
             self.assertFalse(0.0)
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1104,7 +1104,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -1153,7 +1153,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
             self.assertTrue(0.1)
 
-  the test passes
+  the test passes.
 
 * I add to the comment about negative floats
 
@@ -1269,7 +1269,7 @@ I change the :ref:`method<what is a function?>`
 
           self.assertFalse(str())
 
-the test passes
+the test passes.
 
 ----
 
@@ -1337,7 +1337,7 @@ the test passes
 
             self.assertTrue("text")
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1438,7 +1438,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertFalse(tuple())
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1514,7 +1514,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertTrue((1, 2, 3, 'n'))
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1539,7 +1539,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 12
@@ -1621,7 +1621,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertFalse(list())
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1698,7 +1698,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertTrue([1, 2, 3, 'n'])
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1800,7 +1800,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertFalse(set())
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1883,7 +1883,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertTrue({1, 2, 3, 'n'})
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -1997,7 +1997,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertFalse(dict())
 
-  the test passes
+  the test passes.
 
 * I add a comment
 
@@ -2027,7 +2027,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I move the :ref:`assertion<what is an assertion?>` to the :ref:`test_what_is_false method<test_what_is_false>`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -2084,7 +2084,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
             self.assertTrue({'key': 'value'})
 
-  the test passes
+  the test passes.
 
 * I add the last comment
 
@@ -2119,7 +2119,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I move the :ref:`assertion<what is an assertion?>` to the :ref:`test_what_is_true method<test_what_is_true>`
 
-  .. TIP:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or  :kbd:`alt/option+Down` to move lines down
+  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
 
   .. code-block:: python
     :lineno-start: 6
@@ -2162,7 +2162,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``booleans``
 

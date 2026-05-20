@@ -99,7 +99,7 @@ I want to add buttons for the numbers and operations.
 
 * I add a new test with an :ref:`assertion<what is an assertion?>` for the first button, in ``test_streamlit_calculator.py``
 
-  .. NOTE:: ``<-`` is :kbd:`<+-` on the keyboard
+  .. note:: ``<-`` is :kbd:`<+-` on the keyboard
 
   .. code-block:: python
     :lineno-start: 14
@@ -229,7 +229,7 @@ I want to add buttons for the numbers and operations.
 
             self.assertEqual(tester.button('<-').label, '<-')
 
-  the test passes
+  the test passes.
 
 * I go to the browser, click refresh
 
@@ -261,7 +261,7 @@ I want to add buttons for the numbers and operations.
 
         streamlit.button(label='<-', key='<-')
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for the next button, in ``test_streamlit_calculator.py``
 
@@ -293,7 +293,7 @@ I want to add buttons for the numbers and operations.
         streamlit.button(label='<-', key='<-')
         streamlit.button(label='7', key='7')
 
-  the test passes
+  the test passes.
 
 * I click refresh in the browser
 
@@ -371,7 +371,7 @@ I want to add buttons for the numbers and operations.
 
     if __name__ == '__main__':
 
-  the test passes
+  the test passes.
 
 * I make a :ref:`function<what is a function?>` to make the buttons
 
@@ -463,7 +463,7 @@ I want to add buttons for the numbers and operations.
     if __name__ == '__main__':
         main()
 
-  the test is still green
+  the test is still green.
 
 * The second terminal_ still shows ``streamlit.errors.StreamlitDuplicateElementKey``
 
@@ -532,7 +532,7 @@ I want to add buttons for the numbers and operations.
             # self.assertEqual(tester.title[0].value, 'Calculator')
             self.assertEqual(self.tester.title[0].value, 'Calculator')
 
-  the test is still green
+  the test is still green.
 
 * I remove the other lines from :ref:`test_streamlit_calculator_title`
 
@@ -564,7 +564,7 @@ I want to add buttons for the numbers and operations.
             )
             self.assertEqual(display.gap_config.gap_size, 1)
 
-  still green
+  still green.
 
 * I remove the commented line, ``tester`` :ref:`variable<what is a variable?>` and call to ``tester.run()`` from :ref:`test_streamlit_calculator_display`
 
@@ -607,7 +607,7 @@ I want to add buttons for the numbers and operations.
                     # self.assertEqual(tester.button(key).label, key)
                     self.assertEqual(self.tester.button(key).label, key)
 
-  green
+  green.
 
 * I remove the commented line, ``tester`` :ref:`variable<what is a variable?>` and call to ``tester.run()`` from :ref:`test_streamlit_calculator_buttons`
 
@@ -694,7 +694,7 @@ I add columns to the ``main`` :ref:`function<what is a function?>` in ``streamli
   if __name__ == '__main__':
       main()
 
-the test passes
+the test passes.
 
 ----
 
@@ -743,7 +743,7 @@ the test passes
                 self.tester.columns[0].children, {}
             )
 
-  the test passes
+  the test passes.
 
 * I name the columns because I want to put buttons in them, in ``streamlit_calculator.py``
 
@@ -758,7 +758,7 @@ the test passes
 
         column_1, column_2, column_3, operations = streamlit.columns(4)
 
-  the test is still green
+  the test is still green.
 
 * I move the columns to the ``add_buttons`` :ref:`function<what is a function?>`
 
@@ -775,7 +775,7 @@ the test passes
         streamlit.button('1', key='1')
         streamlit.button('+/-', key='+/-')
 
-  still green
+  still green.
 
 * I add the button for ``<-`` to the first column
 
@@ -833,7 +833,7 @@ the test passes
                 '<-'
             )
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -904,7 +904,7 @@ the test passes
 
         streamlit.button('C', key='C')
 
-  the test passes
+  the test passes.
 
 * I add a :ref:`function<what is a function?>` for the buttons in the first column
 
@@ -1036,7 +1036,7 @@ the test passes
                         key
                     )
 
-  the test passes
+  the test passes.
 
 * I check the browser
 
@@ -1174,7 +1174,7 @@ the test passes
 
         streamlit.button(label='/', key='/')
 
-  the test passes
+  the test passes.
 
 * I check the browser
 
@@ -1295,7 +1295,7 @@ the test passes
 
     def main():
 
-  the test passes
+  the test passes.
 
 * I look in the browser
 
@@ -1381,7 +1381,7 @@ the test passes
         add_buttons_to_column_3(column_3)
         add_buttons_to_column_4(operations)
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented line
 
@@ -1547,7 +1547,7 @@ the test passes
                             key
                         )
 
-  the test passes
+  the test passes.
 
 * I remove the other :ref:`for loops<what is a for loop?>`
 
@@ -1599,7 +1599,7 @@ I want all the buttons to be the same size.
         column_1.button(label='1', key='1')
         column_1.button(label='+/-', key='+/-')
 
-  the test is still green
+  the test is still green.
 
 * I refresh the browser
 
@@ -1627,7 +1627,7 @@ I want all the buttons to be the same size.
 
     def add_buttons_to_column_2(column_2):
 
-  still green
+  still green.
 
 * I check the browser
 
@@ -1654,7 +1654,7 @@ I want all the buttons to be the same size.
 
     def add_buttons_to_column_3(column_3):
 
-  green
+  green.
 
 * I stretch the buttons in the third column
 
@@ -1672,7 +1672,7 @@ I want all the buttons to be the same size.
 
     def add_buttons_to_column_4(column_4):
 
-  still green
+  still green.
 
 * I stretch the buttons in the fourth column
 
@@ -1690,7 +1690,7 @@ I want all the buttons to be the same size.
 
     def main():
 
-  the tests are still green
+  the tests are still green.
 
 * I refresh the browser
 
@@ -1744,7 +1744,7 @@ how to use raw strings and escape characters
             ):
                 for key in keys:
 
-  the test passes
+  the test passes.
 
   - ``r`` makes this a raw string_ which means the characters are taken as they are, not what they stand for
   - ``\`` escapes the character  so that ``-`` is taken exactly as it is to show the character on the button. ``'-'`` means something different in streamlit_ so it does not show up as a label for the button
@@ -1787,7 +1787,7 @@ how to use raw strings and escape characters
             ):
                 for key in keys:
 
-  the test passes
+  the test passes.
 
   - ``r`` makes this a raw string_ which means the characters are taken as they are, not what they stand for
   - ``\`` escapes the character  so that ``+`` is taken exactly as it is to show the character on the button. ``'+'`` means something different in streamlit_ so it does not show up as a label for the button
@@ -1903,7 +1903,7 @@ I change the expectation
                 'secondary'
             )
 
-the test passes
+the test passes.
 
 ----
 
@@ -1946,7 +1946,7 @@ the test passes
         column_4.button(label=r'\+', key=r'\+', width='stretch')
         column_4.button(label='=', key='=', width='stretch')
 
-  the test passes
+  the test passes.
 
 * I refresh the browser
 
@@ -2007,7 +2007,7 @@ the test passes
 
     def main():
 
-  the test passes
+  the test passes.
 
 * I want the ``C`` and ``AC`` buttons to have the same colors as the buttons for the operations. I add them to the tuple_ in ``test_streamlit_calculator.py``
 
@@ -2071,7 +2071,7 @@ the test passes
         column_2.button(label='2', key='2', width='stretch')
         column_2.button(label='0', key='0', width='stretch')
 
-  the test passes
+  the test passes.
 
 * I check the browser
 
@@ -2180,7 +2180,7 @@ I want the calculator to show the number when I press a button
         add_buttons_to_column_3(column_3)
         add_buttons_to_column_4(operations)
 
-  the test passes
+  the test passes.
 
 * I go to the browser and click on the ``7`` button
 
@@ -2213,7 +2213,7 @@ I want the calculator to show the number when I press a button
             on_click=show, args=[display, '1'],
         )
 
-  the test is still green
+  the test is still green.
 
 * I do the same thing for the numbers in the second column
 
@@ -2275,7 +2275,7 @@ I want the calculator to show the number when I press a button
         add_buttons_to_column_3(column_3)
         add_buttons_to_column_4(operations)
 
-  the test passes
+  the test passes.
 
 * I make the same change for the numbers in the third column
 
@@ -2359,7 +2359,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 
@@ -2376,7 +2376,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line
+* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

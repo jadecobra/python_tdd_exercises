@@ -25,7 +25,7 @@ An Infinite Learning Model
 
     ./makePythonTdd.sh learning
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
@@ -53,7 +53,7 @@ An Infinite Learning Model
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 * I change the text in ``test_learning.py`` with
 

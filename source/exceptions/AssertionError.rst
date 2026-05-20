@@ -107,7 +107,7 @@ start the project
 
     rm main.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -116,11 +116,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -141,7 +141,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -164,11 +164,11 @@ start the project
 
         New-Item tests/test_assertion_error.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_assertion_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -200,7 +200,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -209,7 +209,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -227,7 +227,7 @@ start the project
 
     git add .
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add a git_ commit message
 
@@ -320,7 +320,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -370,7 +370,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
     # Exceptions seen
     # AssertionError
 
-  the test is still green
+  the test is still green.
 
   - ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``reality is equal to my_expectation`` because
 
@@ -608,7 +608,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I open a new terminal_ then change directories to ``assertion_error``
 
@@ -750,7 +750,7 @@ I change the statement to make it :ref:`True<test_what_is_true>`
       def test_assertion_error_w_none(self):
           assert None is None
 
-the test passes
+the test passes.
 
 ----
 
@@ -812,7 +812,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`False<test_what_is_false>`
 
@@ -870,7 +870,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`True<test_what_is_true>`
 
@@ -932,7 +932,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about integers_
 
@@ -998,7 +998,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about floats_
 
@@ -1068,7 +1068,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about strings_
 
@@ -1133,7 +1133,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about tuples_
 
@@ -1201,7 +1201,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -1272,7 +1272,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about sets_
 
@@ -1346,7 +1346,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
@@ -1440,7 +1440,7 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
 
     # NOTES
 
-the test passes
+the test passes.
 
 ----
 
@@ -1503,7 +1503,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`False<test_what_is_false>`
 
@@ -1562,7 +1562,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`True<test_what_is_true>`
 
@@ -1624,7 +1624,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about integers_
 
@@ -1689,7 +1689,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about floats_
 
@@ -1757,7 +1757,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about strings_
 
@@ -1828,7 +1828,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about tuples_
 
@@ -1902,7 +1902,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -1979,7 +1979,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about sets_
 
@@ -2059,7 +2059,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
@@ -2163,7 +2163,7 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
 
     # NOTES
 
-the test passes
+the test passes.
 
 ----
 
@@ -2237,7 +2237,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`False<test_what_is_false>`
 
@@ -2305,7 +2305,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`True<test_what_is_true>`
 
@@ -2377,7 +2377,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about integers_
 
@@ -2452,7 +2452,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about floats_
 
@@ -2530,7 +2530,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about strings_
 
@@ -2611,7 +2611,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about tuples_
 
@@ -2695,7 +2695,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -2782,7 +2782,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about sets_
 
@@ -2872,7 +2872,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
@@ -2950,7 +2950,7 @@ I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal
 
 * I add a new test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is NOT equal to :ref:`None<what is None?>`, in ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
 
-  .. NOTE::
+  .. note::
 
     ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal``
 
@@ -2982,7 +2982,7 @@ I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal
 
 ----
 
-.. NOTE::
+.. note::
 
   ``==`` is :kbd:`=+=` on the keyboard and is the symbol for ``is equal``
 
@@ -3078,7 +3078,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add to the ``False is not None`` and ``None is not False`` notes because equality goes both ways
 
@@ -3152,7 +3152,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add to the ``False is not True`` and ``True is not False`` notes because equality goes both ways
 
@@ -3228,7 +3228,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add to the ``False is False`` note
 
@@ -3308,7 +3308,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add to the ``True is not None`` and ``None is not True`` notes because equality goes both ways
 
@@ -3388,7 +3388,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add to the ``True is True`` note
 
@@ -3575,7 +3575,7 @@ how I test if two things are Equal
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I use assertEqual_ to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
 
@@ -3635,7 +3635,7 @@ how I test if two things are Equal
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I use assertNotEqual_ to compare :ref:`False<test_what_is_false>` with itself
 
@@ -3699,7 +3699,7 @@ how I test if two things are Equal
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I use assertEqual_ to compare :ref:`True<test_what_is_true>` with :ref:`None<what is None?>`
 
@@ -3767,7 +3767,7 @@ how I test if two things are Equal
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I use assertNotEqual_ to compare :ref:`True<test_what_is_true>` with itself
 
@@ -3837,7 +3837,7 @@ how I test if two things are Equal
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -3909,7 +3909,7 @@ how I test if two things are Equal
 
         def test_assertion_error_w_none(self):
 
-  the test passes
+  the test passes.
 
 * I add a call to assertNotEqual_ for the next assertion_
 
@@ -3973,7 +3973,7 @@ how I test if two things are Equal
 
         def test_assertion_error_w_none(self):
 
-  the test passes
+  the test passes.
 
 * I add a call to  assertNotEqual_ for the last :ref:`assertion<what is an assertion?>` in :ref:`test_what_is_an_assertion`
 
@@ -4043,7 +4043,7 @@ how I test if two things are Equal
 
         def test_assertion_error_w_none(self):
 
-  the test passes
+  the test passes.
 
 * I add a git_ commit message in the other terminal_
 
@@ -4063,7 +4063,7 @@ close the project
 *********************************************************************************
 
 * I close ``assertion_error.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``assertion_error``
 

@@ -131,7 +131,7 @@ I add assertRaises_
           with self.assertRaises(TypeError):
               src.calculator.add(None, None)
 
-the test passes
+the test passes.
 
 ----
 
@@ -169,7 +169,7 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.divide(self.random_first_number, None)
 
-  the test passes
+  the test passes.
 
 * I add another failing line, this time for :ref:`multiplication<test_multiplication>`
 
@@ -198,7 +198,7 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.multiply(None, None)
 
-  the test passes
+  the test passes.
 
 * I add another one for :ref:`subtraction<test_subtraction>`
 
@@ -235,7 +235,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 :ref:`The calculator raises TypeError when None is given as input<test_calculator_raises_type_error_w_none>`.
 
@@ -292,7 +292,7 @@ I change the expectation to match reality
 
           self.assertEqual(src.calculator.add('1', '1'), '11')
 
-the test passes
+the test passes.
 
 ----
 
@@ -329,7 +329,7 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.divide('1', '1')
 
-  the test passes
+  the test passes.
 
 * I try it with the :ref:`multiply function<test_multiplication>`
 
@@ -358,7 +358,7 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.multiply('1', '1')
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
 
@@ -391,7 +391,7 @@ the test passes
             with self.assertRaises(TypeError):
                 src.calculator.subtract('1', '1')
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -437,9 +437,9 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
         else:
             return first_input + second_input
 
-  the test passes
+  the test passes.
 
-  .. NOTE::
+  .. note::
 
     - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
     - the :ref:`if statement<if statements>` ``if isinstance(first_input, str) or isinstance(second_input, str):`` is :ref:`True<test_what_is_true>` if
@@ -538,7 +538,7 @@ I add an :ref:`exception handler<how to use try...except...else>` to the `else c
           except TypeError:
               return 'brmph?! Numbers only. Try again...'
 
-the test passes
+the test passes.
 
 ----
 
@@ -610,7 +610,7 @@ the test passes
 
     def add(first_input, second_input):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -653,7 +653,7 @@ the test passes
 
     def divide(first_input, second_input):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -694,7 +694,7 @@ the test passes
 
     def multiply(first_input, second_input):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -740,7 +740,7 @@ the test passes
 
         def test_calculator_raises_type_error_w_strings(self):
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -802,7 +802,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             return 'brmph?! Numbers only. Try again...'
         return first_input - second_input
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the :ref:`if statement<if statements>` from the :ref:`subtract function<test_subtraction>`
 
@@ -816,7 +816,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
     def multiply(first_input, second_input):
 
-  still green
+  still green.
 
 * I use ``input_is_not_none`` with the :ref:`multiply function<test_multiplication>`
 
@@ -830,7 +830,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             return 'brmph?! Numbers only. Try again...'
         return first_input * second_input
 
-  green
+  green.
 
 * I remove the :ref:`if statement<if statements>` from the :ref:`multiply function<test_multiplication>`
 
@@ -844,7 +844,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
     def divide(first_input, second_input):
 
-  still green
+  still green.
 
 * I wrap the :ref:`divide function<test_division>` with ``input_is_not_none``
 
@@ -861,7 +861,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except ZeroDivisionError:
             return 'brmph?! I cannot divide by 0. Try again...'
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the :ref:`if statement<if statements>`
 
@@ -878,7 +878,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
     def add(first_input, second_input):
 
-  still green
+  still green.
 
 * I try it with the :ref:`add function<test_addition>`
 
@@ -900,7 +900,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             except TypeError:
                 return 'brmph?! Numbers only. Try again...'
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`add function<test_addition>`
 
@@ -946,7 +946,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             return first_input + second_input
 
 
-  still green
+  still green.
 
 ----
 
@@ -988,7 +988,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         else:
             return first_input + second_input
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1030,7 +1030,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except TypeError:
             return 'brmph?! Numbers only. Try again...'
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1075,7 +1075,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except TypeError:
             return 'brmph?! Numbers only. Try again...'
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1125,7 +1125,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except TypeError:
             return 'brmph?! Numbers only. Try again...'
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1184,7 +1184,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except TypeError:
             return 'brmph?! Numbers only. Try again...'
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`subtract function<test_subtraction>`
 
@@ -1200,7 +1200,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     @input_is_not_none
     def multiply(first_input, second_input):
 
-  still green
+  still green.
 
 * I wrap the :ref:`multiply function<test_multiplication>`
 
@@ -1216,7 +1216,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except TypeError:
             return 'brmph?! Numbers only. Try again...'
 
-  green
+  green.
 
 * I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`multiply function<test_multiplication>`
 
@@ -1232,7 +1232,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     @input_is_not_none
     def divide(first_input, second_input):
 
-  still green
+  still green.
 
 * I wrap the :ref:`divide function<test_division>`
 
@@ -1250,7 +1250,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except TypeError:
             return 'brmph?! Numbers only. Try again...'
 
-  the test is still green
+  the test is still green.
 
 * I remove the second :ref:`except clause<how to use try...except...else>`
 
@@ -1269,7 +1269,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     @input_is_not_none
     def add(first_input, second_input):
 
-  still green
+  still green.
 
 ----
 
@@ -1324,7 +1324,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     def subtract(first_input, second_input):
         return first_input - second_input
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`subtract function<test_subtraction>`
 
@@ -1340,7 +1340,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     @input_is_not_none
     def multiply(first_input, second_input):
 
-  still green
+  still green.
 
 * I :ref:`wrap<what is a decorator function?>` the :ref:`multiply function<test_multiplication>`
 
@@ -1354,7 +1354,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     def multiply(first_input, second_input):
         return first_input * second_input
 
-  green
+  green.
 
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`multiply function<test_multiplication>`
 
@@ -1370,7 +1370,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     @input_is_not_none
     def divide(first_input, second_input):
 
-  still green
+  still green.
 
 * I :ref:`wrap<what is a decorator function?>` the :ref:`divide function<test_division>`
 
@@ -1387,7 +1387,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         except ZeroDivisionError:
             return 'brmph?! I cannot divide by 0. Try again...'
 
-  the tests are still green
+  the tests are still green.
 
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`divide function<test_division>`
 
@@ -1406,7 +1406,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     @input_is_not_none
     def add(first_input, second_input):
 
-  still green
+  still green.
 
 * I :ref:`wrap<what is a decorator function?>` the :ref:`add function<test_addition>`
 
@@ -1427,7 +1427,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         else:
             return first_input + second_input
 
-  green
+  green.
 
 * I remove the other :ref:`wrappers<what is a decorator function?>` from the :ref:`add function<test_addition>`
 
@@ -1445,7 +1445,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
         else:
             return first_input + second_input
 
-  still green
+  still green.
 
 * I remove ``type_error_handler`` and ``input_is_not_none`` because they are no longer used
 
@@ -1468,7 +1468,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
     @numbers_only
     def subtract(first_input, second_input):
 
-  all tests are still green
+  all tests are still green.
 
 ----
 
@@ -1515,7 +1515,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I remove the name of :ref:`test_calculator_raises_type_error_w_strings` to make its :ref:`assertions<what is an assertion?>` part of  :ref:`test_calculator_raises_type_error_w_none`
 
@@ -1784,7 +1784,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

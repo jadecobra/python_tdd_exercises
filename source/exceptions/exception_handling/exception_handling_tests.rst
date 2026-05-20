@@ -72,18 +72,18 @@ start the project
 
     pwd
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
   .. code-block:: shell
 
     .../pumping_python
 
-  .. NOTE:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
+  .. note:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
 
 * I name this project ``exceptions``
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -132,7 +132,7 @@ start the project
 
     ./makePythonTdd.sh
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -171,7 +171,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -597,7 +597,7 @@ test_catching_index_error_in_tests
             a_list = [1, 2, 3, 'n']
             a_list[0]
 
-  the test is still green
+  the test is still green.
 
 * The :ref:`index<test_index_returns_first_position_of_item_in_a_list>` for the last item is the total number of items minus ``1``, which is ``3`` in this case
 
@@ -609,7 +609,7 @@ test_catching_index_error_in_tests
             a_list = [1, 2, 3, 'n']
             a_list[3]
 
-  still green
+  still green.
 
 * When I use a number that is bigger than the index for the last item
 
@@ -698,7 +698,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
                 a_list[4]
             a_list[-4]
 
-  still green
+  still green.
 
 * When I use a negative number that is outside the range
 
@@ -1088,7 +1088,7 @@ the terminal_ is my friend, and shows all tests are passing. The `assertRaises m
             with self.assertRaises(KeyError):
                 {'key': 'value'}['not_in_dictionary']
 
-  the test passes
+  the test passes.
 
 * I cannot use children :ref:`Exceptions<errors>` to catch parent :ref:`Exceptions<errors>`
 
@@ -1116,7 +1116,7 @@ the terminal_ is my friend, and shows all tests are passing. The `assertRaises m
             with self.assertRaises(Exception):
                 raise Exception
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1200,7 +1200,7 @@ close the exceptions project
 
 * I close ``test_exceptions.py`` in the :ref:`editor<2 editors>`
 
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``exceptions``
 

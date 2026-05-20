@@ -53,7 +53,7 @@ start the project
 
     mkdir attribute_error
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I change directory_ to the project
 
@@ -75,7 +75,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
 
@@ -98,7 +98,7 @@ start the project
 
         New-Item src/attribute_error.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -107,11 +107,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -132,7 +132,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -155,11 +155,11 @@ start the project
 
         New-Item tests/test_attribute_error.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_attribute_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -191,7 +191,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -200,7 +200,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I set up the project with uv_
 
@@ -224,7 +224,7 @@ start the project
 
     rm main.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -295,7 +295,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -457,7 +457,7 @@ test_attribute_error_w_variables
     variable_00 = None
     variable_01 = None
 
-  the test passes
+  the test passes.
 
 * I add another statement to ``test_attribute_error.py``
 
@@ -487,7 +487,7 @@ test_attribute_error_w_variables
     variable_01 = None
     variable_02 = None
 
-  the test passes
+  the test passes.
 
 * one more line in ``test_attribute_error.py``
 
@@ -519,9 +519,9 @@ test_attribute_error_w_variables
     variable_02 = None
     variable_03 = None
 
-  the test passes
+  the test passes.
 
-.. NOTE::
+.. note::
 
   :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
@@ -662,7 +662,7 @@ the terminal_ is my friend, and shows AttributeError_
     def function_01():
         return None
 
-  the test passes
+  the test passes.
 
 * I add another line to ``test_attribute_error.py``
 
@@ -698,7 +698,7 @@ the terminal_ is my friend, and shows AttributeError_
     def function_02():
         return None
 
-  the test passes
+  the test passes.
 
 * I add another failing line in ``test_attribute_error.py``
 
@@ -744,7 +744,7 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-.. NOTE::
+.. note::
 
   * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
   * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
@@ -917,7 +917,7 @@ the terminal_ is my friend, and shows AttributeError_
         attribute_00 = None
         attribute_01 = None
 
-  the test passes
+  the test passes.
 
 * I add another line to ``test_attribute_error.py``
 
@@ -948,7 +948,7 @@ the terminal_ is my friend, and shows AttributeError_
         attribute_01 = None
         attribute_02 = None
 
-  the test passes
+  the test passes.
 
 * I add another line to ``test_attribute_error.py``
 
@@ -986,7 +986,7 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-.. NOTE::
+.. note::
 
   * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
   * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
@@ -1124,7 +1124,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
         def method_01():
             return None
 
-  the test passes
+  the test passes.
 
 * I add another failing line to ``test_attribute_error.py``
 
@@ -1158,7 +1158,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
         def method_02():
             return None
 
-  the test passes
+  the test passes.
 
 * I add the last line to ``test_attribute_error.py``
 
@@ -1208,7 +1208,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
   the test passes.
 
-.. NOTE::
+.. note::
 
   * :ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
   * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
@@ -1223,7 +1223,7 @@ close the project
 *********************************************************************************
 
 * I close ``attribute_error.py`` and ``test_attribute_error.py``  in the :ref:`editors<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``attribute_error``
 

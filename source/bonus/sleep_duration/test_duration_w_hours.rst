@@ -30,7 +30,7 @@ requirements
 
     ./makePythonTdd.sh sleep_duration
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
 
@@ -57,7 +57,7 @@ requirements
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 * I change the name of the :ref:`class<what is a class?>` to match the :ref:`CapWords format<CapWords>` to follow :ref:`Python convention<conventions>`
 
@@ -291,7 +291,7 @@ requirements
     def duration(wake_time=None, sleep_time=None):
         return ('08:00', '07:00')
 
-  the test passes
+  the test passes.
 
 
 *********************************************************************************
@@ -335,7 +335,7 @@ requirements
     def duration(wake_time=None, sleep_time=None):
         return ('09:00', '07:00')
 
-  the test passes
+  the test passes.
 
 * I change ``sleep_time``
 
@@ -358,7 +358,7 @@ requirements
     def duration(wake_time=None, sleep_time=None):
         return ('09:00', '06:00')
 
-  the test passes
+  the test passes.
 
 * I do not want to change the values of ``wake_time`` and ``sleep_time`` in the tests every time I have an ideand then change the ``duration`` :ref:`function<what is a function?>` to match. It would be better to test the :ref:`function<what is a function?>` with random numbers. I add an `import statement`_ for the `random module`_  at the top of ``test_sleep_duration.py``
 
@@ -410,7 +410,7 @@ requirements
     def duration(wake_time=None, sleep_time=None):
         return (wake_time, sleep_time)
 
-  the test passes
+  the test passes.
 
 * I change the expectation of the test to ``wake_time-sleep_time``
 
@@ -512,7 +512,7 @@ I copy the :ref:`list <lists>` from the terminal_ and paste it in the test to ma
       '01:23'.split(), ['01:23']
   )
 
-the test passes
+the test passes.
 
 :yellow:`REFACTOR`: make it better
 ---------------------------------------------------------------------------------
@@ -626,7 +626,7 @@ the test passes
 
     self.assertEqual(split[1], '23')
 
-  the test passes
+  the test passes.
 
 * I change the expectation of ``test_duration_w_hours`` to the hours from ``wake_time`` and ``sleep_time``
 
@@ -662,7 +662,7 @@ the test passes
             sleep_time.split(':')[0]
         )
 
-  the test passes
+  the test passes.
 
 
 test_converting_strings_to_numbers
@@ -692,7 +692,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
 
     self.assertEqual(int('01'), 1)
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>` to test a bigger number
 
@@ -750,7 +750,7 @@ The hours part of the timestamp after calling `str.split`_ is still a string_ an
             int(sleep_time.split(':')[0])
         )
 
-  the test passes
+  the test passes.
 
 * I change the expectation in ``test_duration_w_hours`` to the difference between the hours
 

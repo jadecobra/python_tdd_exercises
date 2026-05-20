@@ -53,18 +53,18 @@ start the project
 
     pwd
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
   .. code-block:: shell
 
     .../pumping_python
 
-  .. NOTE:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
+  .. note:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
 
 * I name this project ``type_error``
 * I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
+  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
     .. code-block:: shell
       :emphasize-lines: 1
@@ -105,7 +105,7 @@ start the project
     # AssertionError
     " > tests/test_type_error.py
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -139,7 +139,7 @@ start the project
 
     ./makePythonTdd.sh
 
-  .. NOTE::
+  .. note::
 
     on Windows_ without `Windows Subsystem for Linux`_ use ``makePythonTdd.ps1`` NOT ``makePythonTdd.sh``
 
@@ -178,7 +178,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -281,7 +281,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
     def none():
         return None
 
-  the test passes
+  the test passes.
 
 I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test_type_error_w_the_uncallables>`
 
@@ -829,7 +829,7 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
     def function_00(the_input):
         return None
 
-  the test passes
+  the test passes.
 
 I have to call a :ref:`function<what is a function?>` in a way that matches its definition or I get TypeError_
 
@@ -886,7 +886,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
     def function_01(first, second):
         return None
 
-  the test passes
+  the test passes.
 
 * I add another failing line to ``test_type_error.py``
 
@@ -933,7 +933,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
     def function_02(first, second, third):
         return None
 
-  the test passes
+  the test passes.
 
 * I add one more failing line to ``test_type_error.py``
 
@@ -981,7 +981,7 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
     def function_03(first, second, third, fourth):
         return None
 
-  the test passes
+  the test passes.
 
 I have to call a :ref:`function<what is a function?>` with the same number of inputs its definition expects
 
@@ -1041,7 +1041,7 @@ I add the `assertRaises method`_
           with self.assertRaises(TypeError):
               None + False
 
-the test passes
+the test passes.
 
 ----
 
@@ -1080,7 +1080,7 @@ the test passes
             with self.assertRaises(TypeError):
                 True - 'text'
 
-  the test passes
+  the test passes.
 
 * I add another failing line
 
@@ -1117,7 +1117,7 @@ the test passes
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
 * I add another failing line
 
@@ -1167,7 +1167,7 @@ close the project
 
 * I close ``test_type_error.py``  and ``type_error.py`` in the :ref:`editor<2 editors>`
 
-* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ goes back to the command line
+* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``type_error``
 

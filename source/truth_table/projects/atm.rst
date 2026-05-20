@@ -89,7 +89,7 @@ start the project
 
     mkdir src
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``atm.py`` and move it to the ``src`` folder_
 
@@ -112,7 +112,7 @@ start the project
 
         Move-Item main.py src/atm.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I `make a directory`_ for the tests
 
@@ -121,11 +121,11 @@ start the project
 
     mkdir tests
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make the ``tests`` directory_ a `Python package`_
 
-  .. DANGER:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+  .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
   .. tab-set::
     :sync-group: os
@@ -146,7 +146,7 @@ start the project
 
         New-Item tests/__init__.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
 
@@ -169,11 +169,11 @@ start the project
 
         New-Item tests/test_atm.py
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I open ``test_atm.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. TIP::
+  .. tip::
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
 
@@ -205,7 +205,7 @@ start the project
 
     echo "pytest" > requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I add `pytest-watcher`_ to the requirements file_
 
@@ -214,7 +214,7 @@ start the project
 
     echo "pytest-watcher" >> requirements.txt
 
-  the terminal_ goes back to the command line
+  the terminal_ goes back to the command line.
 
 * I install the `Python packages`_ that I wrote in the requirements file_
 
@@ -309,7 +309,7 @@ start the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -568,7 +568,7 @@ I add an :ref:`if statement<if statements>` to ``atm.py``
 
       return 'CASH'
 
-the test passes
+the test passes.
 
 ----
 
@@ -591,7 +591,7 @@ the test passes
 
         return 'CASH'
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -607,7 +607,7 @@ the test passes
 
         return 'CASH'
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -624,7 +624,7 @@ the test passes
 
         return 'CASH'
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -740,7 +740,7 @@ I add an :ref:`if statement<if statements>` for this case to ``atm.py``
 
       return 'CASH'
 
-the test passes
+the test passes.
 
 ----
 
@@ -766,7 +766,7 @@ the test passes
 
         return 'CASH'
 
-  the test is still green
+  the test is still green.
 
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :ref:`True<test_what_is_true>`
 
@@ -785,7 +785,7 @@ the test passes
 
         return 'CASH'
 
-  still green
+  still green.
 
 * I remove ``== True``
 
@@ -805,7 +805,7 @@ the test passes
 
         return 'CASH'
 
-  green
+  green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -885,7 +885,7 @@ PIN                 money                   withdrawal
 
   # Exceptions seen
 
-the test is still green
+the test is still green.
 
 ----
 
@@ -930,7 +930,7 @@ the test is still green
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines
 
@@ -964,7 +964,7 @@ the test is still green
 
         def test_right_pin_not_enough_money_w_limit(self):
 
-  still green
+  still green.
 
 * I remove the commented lines
 
@@ -997,7 +997,7 @@ the test is still green
 
         def test_wrong_pin_enough_money(self):
 
-  green
+  green.
 
 * I remove the commented lines
 
@@ -1176,7 +1176,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
         return 'CASH'
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -1196,7 +1196,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
         if bool(above_daily_limit) == True:
             return 'DENIED'
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -1209,7 +1209,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
         if bool(above_daily_limit):
             return 'DENIED'
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -1385,7 +1385,7 @@ PIN                 money                   daily limit             withdrawal
 
         def test_wrong_pin_enough_money(self):
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :red:`NOT enough money` in the account, and it is :red:`NOT above limit` for daily withdrawals
 
@@ -1494,7 +1494,7 @@ PIN                 money                   daily limit             withdrawal
 
         def test_wrong_pin_not_enough_money(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, there is :green:`enough money` in the account, and it is :red:`NOT above limit` for daily withdrawals
 
@@ -1603,7 +1603,7 @@ PIN                 money                   daily limit             withdrawal
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, there is :red:`NOT enough money` in the account, and it is :red:`NOT above limit` for daily withdrawals
 
@@ -1710,7 +1710,7 @@ PIN                 money                   daily limit             withdrawal
                 DENIED
             )
 
-  still green
+  still green.
 
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_wrong_pin_not_enough_money_w_limit`
 
@@ -1775,7 +1775,7 @@ PIN                 money                   daily limit             withdrawal
 
         def test_wrong_pin_not_enough_money_w_limit(self):
 
-  green
+  green.
 
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_wrong_pin_enough_money_w_limit`
 
@@ -1828,7 +1828,7 @@ PIN                 money                   daily limit             withdrawal
 
         def test_wrong_pin_enough_money_w_limit(self):
 
-  still green
+  still green.
 
 * I also change :ref:`test_right_pin_enough_money_w_limit`
 
@@ -1856,7 +1856,7 @@ PIN                 money                   daily limit             withdrawal
 
         def test_right_pin_not_enough_money_w_limit(self):
 
-  the test is still green
+  the test is still green.
 
 ----
 
@@ -1993,7 +1993,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
             above_daily_limit=False, card_expired=False,
         ):
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -2133,7 +2133,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
 
         return 'CASH'
 
-  the test passes
+  the test passes.
 
 * I use the :ref:`bool built-in function<booleans 2: test with bool>`
 
@@ -2145,7 +2145,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
         if bool(card_expired) == True:
             return denied
 
-  the test is still green
+  the test is still green.
 
 * I remove ``== True``
 
@@ -2158,7 +2158,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
         if bool(card_expired):
             return denied
 
-  still green
+  still green.
 
 * I remove :ref:`bool<booleans 2: test with bool>`
 
@@ -2262,7 +2262,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
 
         def test_right_pin_not_enough_money_w_limit(self):
 
-  still green
+  still green.
 
 * I change the name of the test from :ref:`test_right_pin_enough_money_w_limit` to :ref:`test_right_pin_enough_money_w_card`
 
@@ -2324,7 +2324,7 @@ PIN                 money                   daily limit             card expired
                 DENIED
             )
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :red:`NOT enough money` in the account, it is :green:`above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
@@ -2369,7 +2369,7 @@ PIN                 money                   daily limit             card expired
 
         def test_wrong_pin_enough_money_w_limit(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :red:`NOT enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :green:`expired`
 
@@ -2424,7 +2424,7 @@ PIN                 money                   daily limit             card expired
 
         def test_wrong_pin_enough_money_w_limit(self):
 
-  green
+  green.
 
 * I add values for the ``above_daily_limit`` and ``card_expired`` parameters to the :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :red:`NOT enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
@@ -2481,7 +2481,7 @@ PIN                 money                   daily limit             card expired
 
         def test_wrong_pin_enough_money_w_limit(self):
 
-  still green
+  still green.
 
 * I change the name of the test from :ref:`test_right_pin_not_enough_money_w_limit` to :ref:`test_right_pin_not_enough_money_w_card`
 
@@ -2550,7 +2550,7 @@ PIN                 money                   daily limit             card expired
                 DENIED
             )
 
-  the test is still green
+  the test is still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for the case where the :red:`wrong PIN` is entered, there is :green:`enough money` in the account, it is :green:`above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
@@ -2595,7 +2595,7 @@ PIN                 money                   daily limit             card expired
 
         def test_wrong_pin_not_enough_money_w_limit(self):
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :green:`expired`
 
@@ -2650,7 +2650,7 @@ PIN                 money                   daily limit             card expired
 
         def test_wrong_pin_not_enough_money_w_limit(self):
 
-  still green
+  still green.
 
 * I add values for the ``card_expired`` and ``above_daily_limit`` parameters to the last :ref:`assertion<what is an assertion?>` to make it clearer, for when the :red:`wrong PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
@@ -2707,7 +2707,7 @@ PIN                 money                   daily limit             card expired
 
         def test_wrong_pin_not_enough_money_w_limit(self):
 
-  the test is still green
+  the test is still green.
 
 * I change the name of :ref:`test_wrong_pin_enough_money_w_limit` to :ref:`test_wrong_pin_enough_money_w_card`
 
@@ -2776,7 +2776,7 @@ PIN                 money                   daily limit             card expired
                 DENIED
             )
 
-  still green
+  still green.
 
 * I add an :ref:`assertion<what is an assertion?>`, for when the :red:`wrong PIN` is entered, there is :red:`NOT enough money` in the account, it is :green:`above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
@@ -2822,7 +2822,7 @@ PIN                 money                   daily limit             card expired
 
     # Exceptions seen
 
-  green
+  green.
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :red:`wrong PIN` is entered, there is :red:`NOT enough money` in the account, it is :red:`NOT above limit` for daily withdrawals and the card has :green:`expired`
 
@@ -2878,7 +2878,7 @@ PIN                 money                   daily limit             card expired
 
     # Exceptions seen
 
-  still green
+  still green.
 
 * I add values for the ``above_daily_limit`` and ``card_expired`` parameters to make it clearer, for when the :red:`wrong PIN` is entered, there is :red:`NOT enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`
 
@@ -2945,7 +2945,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_atm.py`` and ``atm.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``atm``
 

@@ -129,7 +129,7 @@ I change assertTrue_ to assertFalse_
 
           self.assertFalse(bool(None))
 
-the test passes
+the test passes.
 
 ----
 
@@ -178,7 +178,7 @@ the test passes
 
             self.assertFalse(bool(0))
 
-  the test passes
+  the test passes.
 
 * I add a failing :ref:`assertion<what is an assertion?>`
 
@@ -220,7 +220,7 @@ the test passes
 
             self.assertFalse(bool(0.0))
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -263,7 +263,7 @@ the test passes
 
             self.assertFalse(bool(str()))
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -298,7 +298,7 @@ the test passes
 
             self.assertFalse(bool(tuple()))
 
-  the test passes
+  the test passes.
 
 * I add another failing :ref:`assertion<what is an assertion?>`
 
@@ -334,7 +334,7 @@ the test passes
 
             self.assertFalse(bool(list()))
 
-  the test passes
+  the test passes.
 
 * I add another failing :ref:`assertion<what is an assertion?>`
 
@@ -367,7 +367,7 @@ the test passes
 
             self.assertFalse(bool(set()))
 
-  the test passes
+  the test passes.
 
 * One more
 
@@ -421,7 +421,7 @@ the test passes
 
         def test_what_is_true(self):
 
-  the test passes
+  the test passes.
 
 * The `assertFalse method`_ uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
 
@@ -526,7 +526,7 @@ I change assertFalse_ to assertTrue_
 
           self.assertTrue(bool(-1))
 
-the test passes
+the test passes.
 
 ----
 
@@ -568,7 +568,7 @@ the test passes
 
             self.assertTrue(bool(1))
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
@@ -612,7 +612,7 @@ the test passes
 
             self.assertTrue(bool(-0.1))
 
-  the test passes
+  the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>`
 
@@ -649,7 +649,7 @@ the test passes
 
             self.assertTrue(bool(0.1))
 
-  the test passes
+  the test passes.
 
 * I add another one
 
@@ -688,7 +688,7 @@ the test passes
 
             self.assertTrue(bool("text"))
 
-  the test passes
+  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`, when is this going to end?
 
@@ -724,7 +724,7 @@ the test passes
 
             self.assertTrue(bool((1, 2, 3, 'n')))
 
-  the test passes
+  the test passes.
 
 * another :ref:`assertion<what is an assertion?>`
 
@@ -761,7 +761,7 @@ the test passes
 
             self.assertTrue(bool([1, 2, 3, 'n']))
 
-  the test passes
+  the test passes.
 
 * I add the next :ref:`assertion<what is an assertion?>`
 
@@ -795,7 +795,7 @@ the test passes
 
             self.assertTrue(bool({1, 2, 3, 'n'}))
 
-  the test passes
+  the test passes.
 
 * I add the last one. Finally!
 
@@ -853,7 +853,7 @@ the test passes
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * The `assertTrue method`_ uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
 
@@ -901,7 +901,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``booleans``
 

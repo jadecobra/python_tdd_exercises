@@ -149,7 +149,7 @@ test_logical_true
     def logical_true():
         return True
 
-  the test passes
+  the test passes.
 
 :ref:`logical_true does not take any input and always returns True<test_logical_true>`
 
@@ -230,9 +230,9 @@ because I have not added a definition for :ref:`logical_false<test_logical_false
     def logical_false():
         return False
 
-  the test passes
+  the test passes.
 
-.. NOTE::
+.. note::
 
   * :ref:`logical_true<test_logical_true>` always returns :green:`True`
   * :ref:`logical_false<test_logical_false>` always returns :red:`False`
@@ -372,7 +372,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
     def logical_identity(the_input):
         return True
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -439,7 +439,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
   the test passes.
 
-  .. TIP::
+  .. tip::
 
     ``the_input`` is a name, I can use any name.
 
@@ -541,7 +541,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
     def logical_negation(the_input):
         return False
 
-  the test passes
+  the test passes.
 
 ----
 
@@ -697,7 +697,7 @@ input           output
 
     # Exceptions seen
 
-  the test is still green
+  the test is still green.
 
 * I remove the commented lines and unused :ref:`variables<what is a variable?>`
 
@@ -727,7 +727,7 @@ input           output
 
         def test_logical_negation_aka_not(self):
 
-  still green
+  still green.
 
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_logical_identity`
 
@@ -747,7 +747,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_nullary_unary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``
 

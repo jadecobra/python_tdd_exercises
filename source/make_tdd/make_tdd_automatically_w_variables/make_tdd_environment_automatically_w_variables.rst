@@ -48,7 +48,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
 
-  .. TIP:: Here is a quick way to open ``makePythonTdd.sh`` if you are using `Visual Studio Code`_
+  .. tip:: Here is a quick way to open ``makePythonTdd.sh`` if you are using `Visual Studio Code`_
 
     .. code-block:: python
       :emphasize-lines: 1
@@ -78,7 +78,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I change every where I have ``dictionaries`` in the program_, to use the :ref:`variable<what is a variable?>` I just added so that I only have to make a change in one place
 
-  .. NOTE:: The lines that are changing in the code are highlighted
+  .. note:: The lines that are changing in the code are highlighted
 
   .. code-block:: shell
     :linenos:
@@ -158,9 +158,9 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
             self.assertFalse(False)
 
-  the test passes
+  the test passes.
 
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line
+* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I run tree_ to see what I have in the ``pro_magic`` folder_
 
