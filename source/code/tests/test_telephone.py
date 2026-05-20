@@ -26,7 +26,7 @@ class TestTelephone(unittest.TestCase):
             "I got: None"
         )
 
-    def test_passing_a_boolean(self):
+    def test_passing_booleans(self):
         self.assertEqual(
             src.telephone.text(True),
             "I got: True"

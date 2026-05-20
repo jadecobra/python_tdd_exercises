@@ -23,7 +23,7 @@ test_telephone
 #. :ref:`test_passing_a_string`
 #. :ref:`test_passing_a_class`
 #. :ref:`test_passing_none`
-#. :ref:`test_passing_a_boolean`
+#. :ref:`test_passing_booleans`
 #. :ref:`test_passing_an_integer`
 #. :ref:`test_passing_a_float`
 #. :ref:`test_passing_a_tuple`

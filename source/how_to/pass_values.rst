@@ -624,7 +624,573 @@ what is string interpolation?
 ----
 
 *********************************************************************************
-test_passing_a_class
+test_passing_none
+*********************************************************************************
+
+I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a function?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a failing test for :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) to ``test_telephone.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 10-13
+
+        def test_passing_a_string(self):
+            reality = src.telephone.text('hello')
+            my_expectation = 'I got: hello'
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text('yes')
+            my_expectation = 'I got: yes'
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_none(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: "None"'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: 'I got: None' != "I got: 'None'"
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I remove the :ref:`quotes` around :ref:`None<what is None?>` in ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 3
+
+        def test_passing_none(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_passing_none'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can pass None from a test to a function<test_passing_none>`
+
+----
+
+*********************************************************************************
+test_passing_booleans
+*********************************************************************************
+
+I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<what is a function?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6-9
+    :emphasize-text: "
+
+        def test_passing_none(self):
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_booleans(self):
+            reality = src.telephone.text(False)
+            my_expectation = 'I got: "False"'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: 'I got: False' != 'I got: "False"'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4
+
+        def test_passing_booleans(self):
+            reality = src.telephone.text(False)
+            my_expectation = 'I got: False'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 6-8
+    :emphasize-text: "
+
+        def test_passing_booleans(self):
+            reality = src.telephone.text(False)
+            my_expectation = 'I got: False'
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: "True"'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: 'I got: True' != 'I got: "True"'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 2
+
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_passing_booleans'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can pass booleans from a test to a function<test_passing_booleans>`
+
+----
+
+*********************************************************************************
+test_passing_an_integer
+*********************************************************************************
+
+I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`function<what is a function?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test for an integer_
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 5-9
+    :emphasize-text: "
+
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_an_integer(self):
+            reality = src.telephone.text(1234)
+            my_expectation = 'I got: "1234"'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: 'I got: 1234' != "I got: '1234'"
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I remove the :ref:`quotes` from ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 3
+
+        def test_passing_an_integer(self):
+            reality = src.telephone.text(1234)
+            my_expectation = 'I got: 1234'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_passing_an_integer'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can pass an integer from a test to a function<test_passing_an_integer>`
+
+----
+
+*********************************************************************************
+test_passing_a_float
+*********************************************************************************
+
+I can pass a float_ (binary floating point decimal number) from a test to a :ref:`function<what is a function?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+* I add a test for a float_ (binary floating point decimal numbers)
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 6-9
+    :emphasize-text: "
+
+        def test_passing_an_integer(self):
+            reality = src.telephone.text(1234)
+            my_expectation = 'I got: 1234'
+            self.assertEqual(reality, my_expectation)
+
+        def test_passing_a_float(self):
+            reality = src.telephone.text(1.234)
+            my_expectation = 'I got: "1.234"'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: 'I got: 1.234' != 'I got: "1.234"'
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I remove the :ref:`quotes` from the number
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 3
+
+          def test_passing_a_float(self):
+              reality = src.telephone.text(1.234)
+              my_expectation = 'I got: 1.234'
+              self.assertEqual(reality, my_expectation)
+
+
+      # Exceptions seen
+
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_passing_a_float'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+
+:ref:`I can pass None from a test to a function`<test_passing_none>`
+
+----
+
+*********************************************************************************
+test_passing_a_tuple
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+*
+I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
+
+.. code-block:: python
+  :lineno-start: 49
+  :emphasize-lines: 7-11
+  :emphasize-text: "
+
+      def test_passing_a_float(self):
+          self.assertEqual(
+              src.telephone.text(1.234),
+              "I got: 1.234"
+          )
+
+      def test_passing_a_tuple(self):
+          self.assertEqual(
+              src.telephone.text((1, 2, 3, "n")),
+              "I got: '(1, 2, 3, n)'"
+          )
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError: "I got: (1, 2, 3, 'n')" != "I got: '(1, 2, 3, n)'"
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation
+
+.. code-block:: python
+  :lineno-start: 55
+  :emphasize-lines: 4
+  :emphasize-text: "
+
+      def test_passing_a_tuple(self):
+          self.assertEqual(
+              src.telephone.text((1, 2, 3, "n")),
+              "I got: (1, 2, 3, 'n')"
+          )
+
+the test passes.
+
+:ref:`I can pass None from a test to a function`<test_passing_none>`
+
+----
+
+*********************************************************************************
+test_passing_a_list
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), separated by a comma)
+
+.. code-block:: python
+  :lineno-start: 55
+  :emphasize-lines: 7-11
+  :emphasize-text: "
+
+      def test_passing_a_tuple(self):
+          self.assertEqual(
+              src.telephone.text((1, 2, 3, "n")),
+              "I got: (1, 2, 3, 'n')"
+          )
+
+      def test_passing_a_list(self):
+          self.assertEqual(
+              src.telephone.text([1, 2, 3, "n"]),
+              "I got: '[1, 2, 3, n]'"
+          )
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError: "I got: [1, 2, 3, 'n']" != "I got: '[1, 2, 3, n]'"
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation to match reality
+
+.. code-block:: python
+  :lineno-start: 61
+  :emphasize-lines: 4
+  :emphasize-text: "
+
+      def test_passing_a_list(self):
+          self.assertEqual(
+              src.telephone.text([1, 2, 3, "n"]),
+              "I got: [1, 2, 3, 'n']"
+          )
+
+the test passes.
+
+----
+
+*********************************************************************************
+test_passing_a_dictionary
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly braces (``{}``), separated by a comma)
+
+.. code-block:: python
+  :lineno-start: 61
+  :emphasize-lines: 7-14
+  :emphasize-text: "
+
+      def test_passing_a_list(self):
+          self.assertEqual(
+              src.telephone.text([1, 2, 3, "n"]),
+              "I got: [1, 2, 3, 'n']"
+          )
+
+      def test_passing_a_dictionary(self):
+          self.assertEqual(
+              src.telephone.text({
+                  "key1": "value1",
+                  "keyN": [0, 1, 2, "n"],
+              }),
+              "I got: '{key1: value1, keyN: [0, 1, 2, n]}'"
+          )
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: shell
+
+  AssertionError: "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I got: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the expectation
+
+.. code-block:: python
+  :lineno-start: 67
+  :emphasize-lines: 7
+  :emphasize-text: "
+
+      def test_passing_a_dictionary(self):
+          self.assertEqual(
+              src.telephone.text({
+                  "key1": "value1",
+                  "keyN": [0, 1, 2, "n"],
+              }),
+              "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+          )
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows all tests are passing.
+
+----
+
+*********************************************************************************
+test_passing_a_function
 *********************************************************************************
 
 I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<what is a function?>`
@@ -774,10 +1340,10 @@ the test passes.
 ----
 
 *********************************************************************************
-test_passing_none
+test_passing_a_class
 *********************************************************************************
 
-I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a function?>`
+I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -789,28 +1355,25 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
 * I go back to the terminal_ that is running the tests
 
-* I add a failing test for :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) to ``test_telephone.py``
+* I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 11-15
-    :emphasize-text: '
+    :lineno-start: 7
+    :emphasize-lines: 10-13
+
+        def test_passing_a_string(self):
+            reality = src.telephone.text('hello')
+            my_expectation = 'I got: hello'
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text('yes')
+            my_expectation = 'I got: yes'
+            self.assertEqual(reality, my_expectation)
 
         def test_passing_a_class(self):
-            self.assertEqual(
-                src.telephone.text(object),
-                "I got: <class 'object'>"
-            )
-            self.assertEqual(
-                src.telephone.text(TestTelephone),
-                "I got: <class 'tests.test_telephone.TestTelephone'>"
-            )
-
-        def test_passing_none(self):
-            self.assertEqual(
-                src.telephone.text(None),
-                "I got: 'None'"
-            )
+            reality = src.telephone.text(object)
+            my_expectation = 'I got: object'
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -819,7 +1382,9 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
   .. code-block:: shell
 
-    AssertionError: 'I got: None' != "I got: 'None'"
+    AssertionError: "I got: <class 'object'>" != 'I got: object'
+
+  :ref:`object<what is a class?>` is the:ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from and everything in Python_ is an :ref:`object<what is a class?>`
 
 ----
 
@@ -829,17 +1394,16 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
 ----
 
-I remove the :ref:`quotes` from around :ref:`None<what is None?>` in the expectation
+I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 27
+  :lineno-start: 16
   :emphasize-lines: 4
 
-      def test_passing_none(self):
-          self.assertEqual(
-              src.telephone.text(None),
-              "I got: None"
-          )
+      def test_passing_a_class(self):
+          reality = src.telephone.text(object)
+          my_expectation = "I got: <class 'object'>"
+          self.assertEqual(reality, my_expectation)
 
 
   # Exceptions seen
@@ -848,453 +1412,80 @@ the test passes.
 
 ----
 
-*********************************************************************************
-test_passing_a_boolean
-*********************************************************************************
-
-----
-
 =================================================================================
-:red:`RED`: make it fail
+:yellow:`REFACTOR`: make it better
 =================================================================================
 
 ----
 
-I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
-
-.. code-block:: python
-  :lineno-start: 27
-  :emphasize-lines: 7-11
-  :emphasize-text: '
-
-      def test_passing_none(self):
-          self.assertEqual(
-              src.telephone.text(None),
-              "I got: None"
-          )
-
-      def test_passing_a_boolean(self):
-          self.assertEqual(
-              src.telephone.text(True),
-              "I got: 'True'"
-          )
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-  AssertionError: "I got: True" != "I got: 'True'"
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I change the expectation
+* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 4
+    :lineno-start: 5
+    :emphasize-lines: 1, 17-19
+    :emphasize-text: TestTelephone
 
-        def test_passing_a_boolean(self):
-            self.assertEqual(
-                src.telephone.text(True),
-                "I got: True"
-            )
+    class TestTelephone(unittest.TestCase):
 
-  the test passes.
+        def test_passing_a_string(self):
+            reality = src.telephone.text('hello')
+            my_expectation = 'I got: hello'
+            self.assertEqual(reality, my_expectation)
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
+            reality = src.telephone.text('yes')
+            my_expectation = 'I got: yes'
+            self.assertEqual(reality, my_expectation)
 
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 6-9
-    :emphasize-text: '
+        def test_passing_a_class(self):
+            reality = src.telephone.text(object)
+            my_expectation = "I got: <class 'object'>"
+            self.assertEqual(reality, my_expectation)
 
-        def test_passing_a_boolean(self):
-            self.assertEqual(
-                src.telephone.text(True),
-                "I got: True"
-            )
-            self.assertEqual(
-                src.telephone.text(False),
-                "I got: 'False'"
-            )
+            reality = src.telephone.text(TestTelephone)
+            my_expectation = "I got: <class 'object'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: "I got: False" != "I got: 'False'"
+    AssertionError: "I got: <class 'tests.test_telephone.TestTelephone'>"
+                 != "I got: <class 'object'>"
 
-* I change the expectation
+  - even though they are both :ref:`classes<what is a class?>`, :ref:`object<what is a class?>` and ``TestTelephone`` are different
+  - ``TestTelephone`` is the :ref:`class<what is a class?>` that has the tests I am writing
+
+* I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 8
+    :lineno-start: 21
+    :emphasize-lines: 2-5
 
-        def test_passing_a_boolean(self):
-            self.assertEqual(
-                src.telephone.text(True),
-                "I got: True"
+            reality = src.telephone.text(TestTelephone)
+            my_expectation = (
+                "I got: <class "
+                "'tests.test_telephone.TestTelephone'>"
             )
-            self.assertEqual(
-                src.telephone.text(False),
-                "I got: False"
-            )
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-  the test passes.
+  the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
 
-----
+* I add a git_ commit message in the other terminal_
 
-*********************************************************************************
-test_passing_an_integer
-*********************************************************************************
+  .. code-block:: python
+    :emphasize-lines: 1
 
-----
+    git commit --all --message 'add test_passing_a_class'
 
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
-----
-
-I add a test for an integer_ (a whole number)
-
-.. code-block:: python
-  :lineno-start: 33
-  :emphasize-lines: 11-15
-  :emphasize-text: '
-
-      def test_passing_a_boolean(self):
-          self.assertEqual(
-              src.telephone.text(True),
-              "I got: True"
-          )
-          self.assertEqual(
-              src.telephone.text(False),
-              "I got: False"
-          )
-
-      def test_passing_an_integer(self):
-          self.assertEqual(
-              src.telephone.text(1234),
-              "I got: '1234'"
-          )
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-  AssertionError: 'I got: 1234' != "I got: '1234'"
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I remove the :ref:`quotes` from the expectation
-
-.. code-block:: python
-  :lineno-start: 43
-  :emphasize-lines: 4
-
-      def test_passing_an_integer(self):
-          self.assertEqual(
-              src.telephone.text(1234),
-              "I got: 1234"
-          )
-
-
-  # Exceptions seen
-
-the test passes.
-
-----
-
-*********************************************************************************
-test_passing_a_float
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a test for a float_ (binary floating point decimal numbers)
-
-.. code-block:: python
-  :lineno-start: 43
-  :emphasize-lines: 7-11
-  :emphasize-text: '
-
-      def test_passing_an_integer(self):
-          self.assertEqual(
-              src.telephone.text(1234),
-              "I got: 1234"
-          )
-
-      def test_passing_a_float(self):
-          self.assertEqual(
-              src.telephone.text(1.234),
-              "I got: '1.234'"
-          )
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-  AssertionError: 'I got: 1.234' != "I got: '1.234'"
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I remove the :ref:`quotes` from the number
-
-.. code-block:: python
-  :lineno-start: 49
-  :emphasize-lines: 4
-
-      def test_passing_a_float(self):
-          self.assertEqual(
-              src.telephone.text(1.234),
-              "I got: 1.234"
-          )
-
-
-  # Exceptions seen
-
-the test passes.
-
-----
-
-*********************************************************************************
-test_passing_a_tuple
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a test for a tuple_ (things in parentheses (``()``), separated by a comma)
-
-.. code-block:: python
-  :lineno-start: 49
-  :emphasize-lines: 7-11
-  :emphasize-text: '
-
-      def test_passing_a_float(self):
-          self.assertEqual(
-              src.telephone.text(1.234),
-              "I got: 1.234"
-          )
-
-      def test_passing_a_tuple(self):
-          self.assertEqual(
-              src.telephone.text((1, 2, 3, "n")),
-              "I got: '(1, 2, 3, n)'"
-          )
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-  AssertionError: "I got: (1, 2, 3, 'n')" != "I got: '(1, 2, 3, n)'"
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I change the expectation
-
-.. code-block:: python
-  :lineno-start: 55
-  :emphasize-lines: 4
-  :emphasize-text: '
-
-      def test_passing_a_tuple(self):
-          self.assertEqual(
-              src.telephone.text((1, 2, 3, "n")),
-              "I got: (1, 2, 3, 'n')"
-          )
-
-the test passes.
-
-----
-
-*********************************************************************************
-test_passing_a_list
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a test for a :ref:`list <lists>` (things in square brackets (``[]``), separated by a comma)
-
-.. code-block:: python
-  :lineno-start: 55
-  :emphasize-lines: 7-11
-  :emphasize-text: '
-
-      def test_passing_a_tuple(self):
-          self.assertEqual(
-              src.telephone.text((1, 2, 3, "n")),
-              "I got: (1, 2, 3, 'n')"
-          )
-
-      def test_passing_a_list(self):
-          self.assertEqual(
-              src.telephone.text([1, 2, 3, "n"]),
-              "I got: '[1, 2, 3, n]'"
-          )
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-  AssertionError: "I got: [1, 2, 3, 'n']" != "I got: '[1, 2, 3, n]'"
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I change the expectation to match reality
-
-.. code-block:: python
-  :lineno-start: 61
-  :emphasize-lines: 4
-  :emphasize-text: '
-
-      def test_passing_a_list(self):
-          self.assertEqual(
-              src.telephone.text([1, 2, 3, "n"]),
-              "I got: [1, 2, 3, 'n']"
-          )
-
-the test passes.
-
-----
-
-*********************************************************************************
-test_passing_a_dictionary
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly braces (``{}``), separated by a comma)
-
-.. code-block:: python
-  :lineno-start: 61
-  :emphasize-lines: 7-14
-  :emphasize-text: '
-
-      def test_passing_a_list(self):
-          self.assertEqual(
-              src.telephone.text([1, 2, 3, "n"]),
-              "I got: [1, 2, 3, 'n']"
-          )
-
-      def test_passing_a_dictionary(self):
-          self.assertEqual(
-              src.telephone.text({
-                  "key1": "value1",
-                  "keyN": [0, 1, 2, "n"],
-              }),
-              "I got: '{key1: value1, keyN: [0, 1, 2, n]}'"
-          )
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-  AssertionError: "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I got: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I change the expectation
-
-.. code-block:: python
-  :lineno-start: 67
-  :emphasize-lines: 7
-  :emphasize-text: '
-
-      def test_passing_a_dictionary(self):
-          self.assertEqual(
-              src.telephone.text({
-                  "key1": "value1",
-                  "keyN": [0, 1, 2, "n"],
-              }),
-              "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-          )
-
-
-  # Exceptions seen
-
-the terminal_ is my friend, and shows all tests are passing.
+:ref:`I can pass an object from a test to a function<test_passing_a_class>`
 
 ----
 
@@ -1471,7 +1662,7 @@ Here are the tests I ran to see what happens when I pass :ref:`Python basic data
 * `test_passing_a_string`_
 * `test_passing_a_class`_
 * `test_passing_none`_
-* `test_passing_a_boolean`_
+* `test_passing_booleans`_
 * `test_passing_an_integer`_
 * `test_passing_a_float`_
 * `test_passing_a_tuple`_
