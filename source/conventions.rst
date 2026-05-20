@@ -155,7 +155,7 @@ quotes
 *********************************************************************************
 
 
-Quotes are for strings_ and bytes_ can be
+Quotes are for strings_ and bytes_. They can be
 
 * single quotes
 
