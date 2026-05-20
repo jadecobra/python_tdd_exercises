@@ -100,16 +100,16 @@ class TestFunctions(unittest.TestCase):
 
         first_number, second_number = 0, 1
         reality = src.functions.w_positional_arguments(
-            first_number, second_number
+            first_number, second_number,
         )
         my_expectation = (first_number, second_number)
         self.assertEqual(reality, my_expectation)
 
         a_tuple, a_list = (1, 2, 3, 'n'), [1, 2, 3, 'n']
         reality = src.functions.w_positional_arguments(
-            a_list, a_tuple
+            a_tuple, a_list,
         )
-        my_expectation = (a_list, a_tuple)
+        my_expectation = (a_tuple, a_list)
         self.assertEqual(reality, my_expectation)
 
     def test_functions_w_keyword_arguments(self):
@@ -140,8 +140,8 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (one, zero)
         self.assertEqual(reality, my_expectation)
 
-        a_dictionary = {'key': 'value'}
         a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
         reality = src.functions.w_keyword_arguments(
             first_input=a_set,
             last_input=a_dictionary,
@@ -197,7 +197,7 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_functions_w_unknown_arguments(self):
-        a_tuple, a_dictionary = (0, 1), {'a':2, 'b': 3}
+        a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
         reality = src.functions.w_unknown_arguments(
             *a_tuple, **a_dictionary
         )
