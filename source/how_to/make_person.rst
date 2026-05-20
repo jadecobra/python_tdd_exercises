@@ -265,7 +265,7 @@ test_factory_takes_keyword_arguments
   the test calls the ``factory`` :ref:`function<what is a function?>` with 2 inputs. The definition in ``person.py`` only takes 1 input
 
 
-* I add ``last_name`` to the :ref:`function<what is a function?>` definition in ``person.py``
+* I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -367,7 +367,7 @@ test_factory_takes_keyword_arguments
 
   the test calls the ``factory`` :ref:`function<what is a function?>` with 4 inputs. The definition in ``person.py`` only takes 3 inputs
 
-* I add the name to the :ref:`function<what is a function?>` definition in ``person.py``
+* I add the name to the :ref:`function definition<how to make a function>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -1738,7 +1738,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test passes
 
-  .. NOTE:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``last_name='doe'``
+  .. NOTE:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function definition<how to make a function>`, it is the same as calling it with ``last_name='doe'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -1822,7 +1822,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test passes
 
-  .. NOTE:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function<what is a function?>` definition, it is the same as calling it with ``sex='M'``
+  .. NOTE:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function definition<how to make a function>`, it is the same as calling it with ``sex='M'``
 
     .. code-block:: python
       :emphasize-lines: 5
@@ -2349,7 +2349,7 @@ I want to write the solution without looking at the tests
 
   the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>`
 
-* I add ``first_name`` to the :ref:`function<what is a function?>` definition
+* I add ``first_name`` to the :ref:`function definition<how to make a function>`
 
   .. code-block:: python
     :linenos:
@@ -2366,7 +2366,7 @@ I want to write the solution without looking at the tests
 
   the test called the :ref:`function<what is a function?>` with another :ref:`keyword argument<test_functions_w_keyword_arguments>`
 
-* I add ``year_of_birth`` to the :ref:`function<what is a function?>` definition
+* I add ``year_of_birth`` to the :ref:`function definition<how to make a function>`
 
   .. code-block:: python
     :linenos:

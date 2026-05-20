@@ -101,9 +101,9 @@ table of contents
   make TDD project 1<make_tdd/make_tdd_manually>
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions/index>
-  what causes AttributeError?<exceptions/AttributeError>
   pass values<how_to/pass_values>
   data_structures/none
+  what causes AttributeError?<exceptions/AttributeError>
   what is a boolean?<data_structures/booleans/booleans_1>
   truth table<truth_table/index>
   make a calculator<calculator/calculator_1/index>

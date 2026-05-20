@@ -820,7 +820,7 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
 
   because ``function_00`` is called with ``'a'`` as input and the definition does not allow any inputs
 
-* I add a name in parentheses to the :ref:`function<what is a function?>` definition
+* I add a name in parentheses to the :ref:`function definition<how to make a function>`
 
   .. code-block:: python
     :lineno-start: 41
