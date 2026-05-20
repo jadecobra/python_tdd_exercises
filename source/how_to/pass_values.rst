@@ -1129,7 +1129,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # Exceptions seen
 
-  the test passes. Python_ changed :ref:`double quote<quotes>` (`"`) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>`.
+  the test passes. Python_ changed :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
 
 * I add a git_ commit message in the other terminal_
 
@@ -1147,6 +1147,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 *********************************************************************************
 test_passing_a_dictionary
 *********************************************************************************
+
+I can pass a :ref:`dictionary<what is a dictionary?>` from a test to a `function<what is a function?>`
 
 ----
 
