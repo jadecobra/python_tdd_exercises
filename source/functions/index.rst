@@ -1010,7 +1010,6 @@ the test passes.
 
 -----
 
-
 * What if I want to test what happens when I add ``3`` to a number? Wait! No more, please! I do not want to have to make a change for each new number, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat, I add one to ``test_functions.py``
 
   .. code-block:: python
@@ -3795,6 +3794,14 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
   I had this same problem in :ref:`test_functions_w_positional_and_keyword_args`. Python_ cannot tell if ``a`` is a :ref:`positional<test_functions_w_positional_arguments>` or :ref:`keyword argument<test_functions_w_keyword_arguments>` based on my :ref:`function definition<how to make a function>`
 
+----
+
+=================================================================================
+double starred expressions
+=================================================================================
+
+----
+
 * Python_ has a way for a :ref:`function<what is a function?>` to take any number of :ref:`keyword arguments<test_functions_w_keyword_arguments>` without knowing how many they are. I use it to replace ``a`` in the parentheses
 
   .. code-block:: python
@@ -3957,6 +3964,14 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
                1 required positional argument: 'z'
 
   because the previous :ref:`assertion<what is an assertion?>` calls the :ref:`function<what is a function?>` with two :ref:`positional arguments<test_functions_w_positional_arguments>` and it now requires three
+
+----
+
+=================================================================================
+starred expressions
+=================================================================================
+
+----
 
 * Python_ also has a way to handle any number of :ref:`positional arguments<test_functions_w_positional_arguments>`. I use it
 
@@ -4418,7 +4433,6 @@ the test passes. The :ref:`function<what is a function?>` gives me back the :ref
 *********************************************************************************
 how Python reads keyword arguments
 *********************************************************************************
-
 
 I add another :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with ONLY :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
