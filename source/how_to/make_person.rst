@@ -718,20 +718,22 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I change the value for ``first_name`` to ``'jane'`` in ``reality`` and ``my_expectation``
+* I change the value for ``first_name`` to ``'jane'`` in ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 3, 9
+    :emphasize-lines: 3-4, 10-11
 
         def test_factor_w_keyword_arguments(self):
             reality = src.person.factory(
+                # first_name='first_name',
                 first_name='jane',
                 last_name='last_name',
                 sex='M',
                 year_of_birth=this_year(),
             )
             my_expectation = dict(
+                # first_name='first_name',
                 first_name='jane',
             )
             self.assertEqual(reality, my_expectation)
@@ -760,9 +762,9 @@ test_factory_w_keyword_arguments
         ):
         return {'first_name': 'jane'}
 
-  the test passes. I typed ``'first_name'`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+  the test passes. I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
 
-* I add a :ref:`variable<what is a variable?>` to use remove the repetition of ``'jane'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -772,12 +774,14 @@ test_factory_w_keyword_arguments
             first_name = 'jane'
 
             reality = src.person.factory(
+                # first_name='first_name',
                 first_name='jane',
                 last_name='last_name',
                 sex='M',
                 year_of_birth=this_year(),
             )
             my_expectation = dict(
+                # first_name='first_name',
                 first_name='jane',
             )
             self.assertEqual(reality, my_expectation)
@@ -789,12 +793,13 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 14
-    :emphasize-lines: 5-6, 12-13
+    :emphasize-lines: 6-7, 14-15
 
         def test_factor_w_keyword_arguments(self):
             first_name = 'jane'
 
             reality = src.person.factory(
+                # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
                 last_name='last_name',
@@ -802,6 +807,7 @@ test_factory_w_keyword_arguments
                 year_of_birth=this_year(),
             )
             my_expectation = dict(
+                # first_name='first_name',
                 # first_name='jane',
                 first_name=first_name,
             )
@@ -865,7 +871,6 @@ test_factory_w_keyword_arguments
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 2
 
     AssertionError: {'first_name': 'jane'}
                  != {'first_name': 'jane', 'last_name': 'last_name'}
@@ -887,21 +892,26 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I change the value for ``first_name`` to ``'jane'`` in ``reality`` and ``my_expectation``
+* I change the value for ``last_name`` to ``'doe'`` in ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 3, 9
+    :emphasize-lines: 6-7, 13-14
 
         def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+
             reality = src.person.factory(
-                first_name='jane',
-                last_name='last_name',
+                first_name=first_name,
+                # last_name='last_name',
+                last_name='doe',
                 sex='M',
                 year_of_birth=this_year(),
             )
             my_expectation = dict(
-                first_name='jane',
+                first_name=first_name,
+                # last_name='last_name',
+                last_name='doe',
             )
             self.assertEqual(reality, my_expectation)
 
@@ -912,67 +922,78 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'first_name'}
-                 != {'first_name': 'jane'}
+    AssertionError: {'first_name': 'jane', 'last_name': 'last_name'}
+                 != {'first_name': 'jane', 'last_name': 'doe'}
 
   because I changed the value in ``my_expectation``
 
-* I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 7
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
-        return {'first_name': 'jane'}
+        return {
+            'first_name': 'jane',
+            'last_name': 'doe',
+        }
 
-  the test passes. I typed ``'first_name'`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+  the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
 
-* I add a :ref:`variable<what is a variable?>` to use remove the repetition of ``'jane'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 2
+    :emphasize-lines: 3
 
         def test_factor_w_keyword_arguments(self):
             first_name = 'jane'
+            last_name = 'doe'
 
             reality = src.person.factory(
-                first_name='jane',
-                last_name='last_name',
+                first_name=first_name,
+                # last_name='last_name',
+                last_name='doe',
                 sex='M',
                 year_of_birth=this_year(),
             )
             my_expectation = dict(
-                first_name='jane',
+                first_name=first_name,
+                # last_name='last_name',
+                last_name='doe',
             )
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
 
   .. code-block:: python
     :lineno-start: 14
-    :emphasize-lines: 5-6, 12-13
+    :emphasize-lines: 8-9, 16-17
 
         def test_factor_w_keyword_arguments(self):
             first_name = 'jane'
+            last_name = 'doe'
 
             reality = src.person.factory(
-                # first_name='jane',
                 first_name=first_name,
-                last_name='last_name',
+                # last_name='last_name',
+                # last_name='doe',
+                last_name=last_name,
                 sex='M',
                 year_of_birth=this_year(),
             )
             my_expectation = dict(
-                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
+                last_name=last_name,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -988,15 +1009,17 @@ test_factory_w_keyword_arguments
 
         def test_factor_w_keyword_arguments(self):
             first_name = 'jane'
+            last_name = 'doe'
 
             reality = src.person.factory(
                 first_name=first_name,
-                last_name='last_name',
+                last_name=last_name,
                 sex='M',
                 year_of_birth=this_year(),
             )
             my_expectation = dict(
                 first_name=first_name,
+                last_name=last_name,
             )
             self.assertEqual(reality, my_expectation)
 
