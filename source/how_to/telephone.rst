@@ -5,7 +5,7 @@
 .. include:: ../links.rst
 
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
-.. _f-strings: `f-string`_
+.. _f-strings: `f-string`_git config
 .. _string interpolation: https://peps.python.org/pep-0498/
 
 #################################################################################
@@ -2026,8 +2026,9 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
 * I add the name to ``telephone.py``
 
-  .. code-block:: pyth7on
+  .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     text
 
@@ -2041,6 +2042,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1
 
     text = None
 
@@ -2054,6 +2056,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1-2
 
     def text():
         return None
@@ -2093,7 +2096,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: shell
 
-    AssertionError: 'I got: None' != 'I got: 1234'
+    AssertionError: 'I got: None' != 'I got: False'
 
 * I add a `return statement`_ to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
@@ -2112,15 +2115,23 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     AssertionError:
         <class 'object'> != "I got: <class 'object'>"
-    AssertionError: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}
-         != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-    AssertionError: 1.234 != 'I got: 1.234'
-    AssertionError: [1, 2, 3, 'n'] != "I got: [1, 2, 3, 'n']"
-    AssertionError: 'hello' != 'I got: hello'
-    AssertionError: (1, 2, 3, 'n') != "I got: (1, 2, 3, 'n')"
-    AssertionError: 1234 != 'I got: 1234'
-    AssertionError: False != 'I got: False'
-    AssertionError: None != 'I got: None'
+    AssertionError:
+                 {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}
+      != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+    AssertionError:
+        1.234 != 'I got: 1.234'
+    AssertionError:
+        [1, 2, 3, 'n'] != "I got: [1, 2, 3, 'n']"
+    AssertionError:
+        'hello' != 'I got: hello'
+    AssertionError:
+        (1, 2, 3, 'n') != "I got: (1, 2, 3, 'n')"
+    AssertionError:
+        1234 != 'I got: 1234'
+    AssertionError:
+        False != 'I got: False'
+    AssertionError:
+        None != 'I got: None'
 
   they all expect the input (``value``) as part of the message
 
