@@ -861,13 +861,14 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 * I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 6-9
+    :lineno-start: 18
+    :emphasize-lines: 7-10
     :emphasize-text: "
 
         def test_passing_none(self):
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
+            none = None
+            reality = src.telephone.text(none)
+            my_expectation = f'I got: {none}'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_booleans(self):
@@ -892,26 +893,34 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
 ----
 
-* I change ``my_expectation`` to match ``reality``
+I remove the :ref:`quotes` around :ref:`False<test_what_is_false>` in ``my_expectation``
 
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 3
+.. code-block:: python
+  :lineno-start: 24
+  :emphasize-lines: 3
 
-        def test_passing_booleans(self):
-            reality = src.telephone.text(False)
-            my_expectation = 'I got: False'
-            self.assertEqual(reality, my_expectation)
+      def test_passing_booleans(self):
+          reality = src.telephone.text(False)
+          my_expectation = 'I got: False'
+          self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test passes.
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 24
     :emphasize-lines: 6-8
     :emphasize-text: "
 
@@ -933,10 +942,10 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
     AssertionError: 'I got: True' != 'I got: "True"'
 
-* I change ``my_expectation`` to match ``reality``
+I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 29
     :emphasize-lines: 2
 
             reality = src.telephone.text(True)
@@ -947,6 +956,90 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
     # Exceptions seen
 
   the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 2
+
+        def test_passing_booleans(self):
+            false = False
+            reality = src.telephone.text(False)
+            my_expectation = 'I got: False'
+            self.assertEqual(reality, my_expectation)
+
+* I use the :ref:`variable<what is a variable?>` with a `string interpolation`_ to remove repetition of :ref:`False<test_what_is_false>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3-6
+
+        def test_passing_booleans(self):
+            false = False
+            # reality = src.telephone.text(False)
+            reality = src.telephone.text(false)
+            # my_expectation = 'I got: False'
+            my_expectation = f'I got: {false}'
+            self.assertEqual(reality, my_expectation)
+
+  the test is still green.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 9
+
+        def test_passing_booleans(self):
+            false = False
+            # reality = src.telephone.text(False)
+            reality = src.telephone.text(false)
+            # my_expectation = 'I got: False'
+            my_expectation = f'I got: {false}'
+            self.assertEqual(reality, my_expectation)
+
+            true = True
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
+            self.assertEqual(reality, my_expectation)
+
+* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 3-6
+
+            true = True
+            # reality = src.telephone.text(True)
+            reality = src.telephone.text(true)
+            # my_expectation = 'I got: True'
+            my_expectation = f'I got: {true}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  still green.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 24
+
+        def test_passing_booleans(self):
+            false = False
+            reality = src.telephone.text(false)
+            my_expectation = f'I got: {false}'
+            self.assertEqual(reality, my_expectation)
+
+            true = True
+            reality = src.telephone.text(true)
+            my_expectation = f'I got: {true}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -980,12 +1073,13 @@ I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`
 * I add a test for an integer_
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 5-9
+    :lineno-start: 30
+    :emphasize-lines: 6-9
     :emphasize-text: "
 
-            reality = src.telephone.text(True)
-            my_expectation = 'I got: True'
+            true = True
+            reality = src.telephone.text(true)
+            my_expectation = f'I got: {true}'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_an_integer(self):
@@ -1010,13 +1104,38 @@ I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`
 
 ----
 
-* I remove the :ref:`quotes` from ``my_expectation``
+I remove the :ref:`quotes` around the integer_ in ``my_expectation``
+
+.. code-block:: python
+  :lineno-start: 35
+  :emphasize-lines: 3
+
+      def test_passing_an_integer(self):
+          reality = src.telephone.text(1234)
+          my_expectation = 'I got: 1234'
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1234``
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 3
+    :lineno-start: 35
+    :emphasize-lines: 2
 
         def test_passing_an_integer(self):
+            an_integer = 1234
             reality = src.telephone.text(1234)
             my_expectation = 'I got: 1234'
             self.assertEqual(reality, my_expectation)
@@ -1024,14 +1143,46 @@ I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`
 
     # Exceptions seen
 
-  the test passes.
+* I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of ``1234``
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 3-6
+
+        def test_passing_an_integer(self):
+            an_integer = 1234
+            # reality = src.telephone.text(1234)
+            reality = src.telephone.text(an_integer)
+            # my_expectation = 'I got: 1234'
+            my_expectation = f'I got: {an_integer}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 35
+
+        def test_passing_an_integer(self):
+            an_integer = 1234
+            reality = src.telephone.text(an_integer)
+            my_expectation = f'I got: {an_integer}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_passing_an_integer'
+    git commit --all --message \
+    'add test_passing_an_integer'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1057,13 +1208,14 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
 * I add a test for a float_ (binary floating point decimal numbers)
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 6-9
+    :lineno-start: 35
+    :emphasize-lines: 7-10
     :emphasize-text: "
 
         def test_passing_an_integer(self):
-            reality = src.telephone.text(1234)
-            my_expectation = 'I got: 1234'
+            an_integer = 1234
+            reality = src.telephone.text(an_integer)
+            my_expectation = f'I got: {an_integer}'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_float(self):
@@ -1088,21 +1240,77 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
 
 ----
 
-* I remove the :ref:`quotes` from the number
+I remove the :ref:`quotes` around the float_ in ``my_expectation``
+
+.. code-block:: python
+  :lineno-start: 41
+  :emphasize-lines: 3
+
+      def test_passing_a_float(self):
+          reality = src.telephone.text(1.234)
+          my_expectation = 'I got: 1.234'
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1.234``
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 3
+    :lineno-start: 41
+    :emphasize-lines: 2
 
         def test_passing_a_float(self):
+            a_float = 1.234
             reality = src.telephone.text(1.234)
-            my_expectation = 'I got: 1.234'
+            my_expectation = 'I got: "1.234"'
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-  the test passes.
+* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ``1.234``
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3-6
+
+        def test_passing_a_float(self):
+            a_float = 1.234
+            # reality = src.telephone.text(1.234)
+            reality = src.telephone.text(a_float)
+            # my_expectation = 'I got: "1.234"'
+            my_expectation = f'I got: {a_float}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 41
+
+        def test_passing_a_float(self):
+            a_float = 1.234
+            reality = src.telephone.text(a_float)
+            my_expectation = f'I got: {a_float}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1137,18 +1345,19 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
 * I add a test for a tuple_
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 6-9
+    :lineno-start: 41
+    :emphasize-lines: 7-10
     :emphasize-text: "
 
         def test_passing_a_float(self):
-            reality = src.telephone.text(1.234)
-            my_expectation = 'I got: 1.234'
+            a_float = 1.234
+            reality = src.telephone.text(a_float)
+            my_expectation = f'I got: {a_float}'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_tuple(self):
             reality = src.telephone.text((1, 2, 3, 'n'))
-            my_expectation = 'I got: "(1, 2, 3, n)"'
+            my_expectation = 'I got: (1, 2, 3, n)'
             self.assertEqual(reality, my_expectation)
 
 
@@ -1169,22 +1378,53 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
 
 ----
 
-* I change ``my_expectation`` to match ``reality``
+I change the tuple_ in ``my_expectation`` to match ``reality``
+
+.. code-block:: python
+  :lineno-start: 47
+  :emphasize-lines: 3
+  :emphasize-text: "
+
+      def test_passing_a_tuple(self):
+          reality = src.telephone.text((1, 2, 3, 'n'))
+          my_expectation = "I got: (1, 2, 3, 'n')"
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the tuple_
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 3
-    :emphasize-text: "
-
-        def test_passing_a_tuple(self):
-            reality = src.telephone.text((1, 2, 3, 'n'))
-            my_expectation = "I got: (1, 2, 3, 'n')"
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 47
+    :emphasize-lines: 2
 
 
-    # Exceptions seen
+* I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of the tuple_
 
-  the test passes.
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 3-6
+
+
+  the test is still green.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 47
+
+
 
 * I add a git_ commit message in the other terminal_
 
@@ -1219,7 +1459,7 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 * I add a test for a :ref:`list <lists>`
 
 .. code-block:: python
-  :lineno-start: 40
+  :lineno-start: 47
   :emphasize-lines: 6-9
   :emphasize-text: '
 
