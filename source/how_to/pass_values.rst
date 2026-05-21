@@ -1962,18 +1962,18 @@ the test passes.
 
     # Exceptions seen
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`object<what is a class?>`
+* I use an `f-string` with :ref:`object<what is a class?>` in ``my_expectation`` for the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 2
+    :lineno-start: 68
+    :emphasize-lines: 3
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`object<what is a class?>`
+        def test_passing_a_class(self):
+            reality = src.telephone.text(object)
+            my_expectation = f"I got: {object}"
+            self.assertEqual(reality, my_expectation)
 
-  .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 2
-
+  the test is still green
 
 * I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ``TestTelephone``
 
