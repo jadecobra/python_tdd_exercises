@@ -95,7 +95,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   .. code-block:: shell
 
-    TypeError: get_datetime() TypeError: text() takes 0 positional arguments
+    TypeError: get_datetime() takes 0 positional arguments
                but 1 was given
 
   then I add a name to the :ref:`function's<what is a function?>` definition

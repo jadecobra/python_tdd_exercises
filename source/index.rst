@@ -102,6 +102,7 @@ table of contents
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions/index>
   pass values<how_to/pass_values>
+  make a person<how_to/make_person>
   data_structures/none
   what causes AttributeError?<exceptions/AttributeError>
   what is a boolean?<data_structures/booleans/booleans_1>
@@ -113,7 +114,6 @@ table of contents
   data_structures/lists/index
   data_structures/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
-  make a person<how_to/make_person>
   classes/index
   what is a module?<exceptions/ModuleNotFoundError>
   questions the book answers<review>

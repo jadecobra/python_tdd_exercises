@@ -448,7 +448,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   .. code-block:: python
 
-    TypeError: a_for_loop() TypeError: text() takes 0 positional arguments
+    TypeError: a_for_loop() takes 0 positional arguments
                but 1 was given
 
 * I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``

@@ -330,7 +330,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
 
   .. code-block:: shell
 
-    TypeError: logical_identity() TypeError: text() takes 0 positional arguments
+    TypeError: logical_identity() takes 0 positional arguments
                but 1 was given
 
   because the test called the :ref:`logical_identity function<test_logical_identity>` with 1 argument and this definition only takes calls with 0 arguments

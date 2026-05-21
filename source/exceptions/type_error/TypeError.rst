@@ -816,7 +816,7 @@ When I call a :ref:`function<what is a function?>` I have to match its definitio
 
   .. code-block:: shell
 
-    TypeError: function_00() TypeError: text() takes 0 positional arguments
+    TypeError: function_00() takes 0 positional arguments
                but 1 was given
 
   because ``function_00`` is called with ``'a'`` as input and the definition does not allow any inputs

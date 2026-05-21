@@ -1244,7 +1244,7 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
 ----
 
 *********************************************************************************
-test_passing_a_function
+test_passing_a_class
 *********************************************************************************
 
 I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<what is a function?>`
@@ -1402,12 +1402,30 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
 ----
 
-* I close ``test_telephone.py``
-* then delete all the text in ``telephone.py``, the terminal_ is my friend, and shows 9 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I close ``test_telephone.py`` in the :ref:`editor<2 editors>`
 
-  .. code-block:: shell
+* I delete the text in ``telephone.py`` and the terminal_ shows 9 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
-    AttributeError: module 'src.telephone' has no attribute 'text'
+  .. code-block:: python
+
+    FAILED ...test_passing_a_class - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_a_dictionary - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_a_float - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_a_list - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_a_string - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_a_tuple - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_an_integer - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_booleans - AttributeError:
+            module 'src.telephone' has no attribute 'text'
+    FAILED ...test_passing_none - AttributeError:
+            module 'src.telephone' has no attribute 'text'
 
 ----
 
@@ -1443,7 +1461,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     TypeError: 'NoneType' object is not callable
 
-* I make ``text`` a :ref:`function<what is a function?>`
+* I make ``text`` a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
     :linenos:
@@ -1455,7 +1473,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: shell
 
-    TypeError: text() TypeError: text() takes 0 positional arguments
+    TypeError: text() takes 0 positional arguments
                but 1 was given
 
 * I make the :ref:`function<what is a function?>` take input
@@ -1488,7 +1506,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     AssertionError: 'I got: None' != 'I got: 1234'
 
-* I add a `return statement`_ to see the difference between the input and the expected output
+* I add a `return statement`_ to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :linenos:
@@ -1503,17 +1521,19 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
   .. code-block:: shell
     :emphasize-text: I got:
 
-    AssertionError: True != 'I got: True'
-    AssertionError: <class 'object'> != "I got: <class 'object'>"
-    AssertionError: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']} != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+    AssertionError:
+        <class 'object'> != "I got: <class 'object'>"
+    AssertionError: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}
+         != "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
     AssertionError: 1.234 != 'I got: 1.234'
     AssertionError: [1, 2, 3, 'n'] != "I got: [1, 2, 3, 'n']"
-    AssertionError: "hello" != 'I got: hello'
+    AssertionError: 'hello' != 'I got: hello'
     AssertionError: (1, 2, 3, 'n') != "I got: (1, 2, 3, 'n')"
     AssertionError: 1234 != 'I got: 1234'
+    AssertionError: False != 'I got: False'
     AssertionError: None != 'I got: None'
 
-  they all expect the input as part of the message
+  they all expect the input (``value``) as part of the message
 
 * I remove the first `return statement`_ then make the second one use an `f-string`_
 
@@ -1559,7 +1579,6 @@ review
 Here are the tests I ran to see what happens when I pass :ref:`Python basic data structures<data structures>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation<what is string interpolation?>`
 
 * `test_passing_a_string`_
-* `test_passing_a_class`_
 * `test_passing_none`_
 * `test_passing_booleans`_
 * `test_passing_an_integer`_
@@ -1567,6 +1586,7 @@ Here are the tests I ran to see what happens when I pass :ref:`Python basic data
 * `test_passing_a_tuple`_
 * `test_passing_a_list`_
 * `test_passing_a_dictionary`_
+* `test_passing_a_class`_
 
 I also saw these :ref:`Exceptions<errors>`
 
@@ -1594,10 +1614,9 @@ you have covered a bit so far and know
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<how to pass values>`
 
-:ref:`Would you like to use some of the assert methods from AssertionError to test Python's data structures?<data structures>`
+:ref:`would you like to test using dictionaries and functions to make a person?<how to make a person>`
 
 ----
 

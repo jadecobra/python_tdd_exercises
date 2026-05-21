@@ -221,7 +221,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    TypeError: hello() TypeError: text() takes 0 positional arguments
+    TypeError: hello() takes 0 positional arguments
                but 1 was given
 
 * I add a name to the definition
@@ -762,7 +762,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    TypeError: Person.hello() TypeError: text() takes 0 positional arguments
+    TypeError: Person.hello() takes 0 positional arguments
                but 1 was given
 
 * I add a name to the definition
@@ -885,7 +885,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    TypeError: Person.get_age() TypeError: text() takes 0 positional arguments
+    TypeError: Person.get_age() takes 0 positional arguments
                but 1 was given
 
 * I add the `staticmethod decorator`_

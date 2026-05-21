@@ -140,7 +140,7 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: logical_negation() TypeError: text() takes 0 positional arguments
+    TypeError: logical_negation() takes 0 positional arguments
                but 1 was given
 
 * I add a name in parentheses
@@ -250,7 +250,7 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: logical_identity() TypeError: text() takes 0 positional arguments
+    TypeError: logical_identity() takes 0 positional arguments
                but 1 was given
 
 * I add a name in parentheses

@@ -323,7 +323,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: shell
 
-    TypeError: an_exception_handler() TypeError: text() takes 0 positional arguments
+    TypeError: an_exception_handler() takes 0 positional arguments
                but 1 was given
 
 * I make the :ref:`function<what is a function?>` take input
