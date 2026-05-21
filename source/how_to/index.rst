@@ -26,7 +26,7 @@ how to
 
   setup my computer<../setup/index>
   make TDD manually<../make_tdd/index>
-  pass values<pass_values>
+  pass values<telephone>
   make a calculator<../calculator/index>
   handle Exceptions<../exceptions/exception_handling/index>
   make a person<make_person>

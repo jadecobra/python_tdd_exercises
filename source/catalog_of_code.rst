@@ -15,7 +15,7 @@ Here are the tests and solutions in the book
   None<code/code_none>
   booleans<code/code_booleans>
   truth table<code/code_truth_table>
-  how to pass values<code/code_pass_values>
+  how to pass values<code/code_telephone>
   functions<code/code_functions>
   how to make a calculator<code/code_calculator>
   how to test/handle exceptions<code/code_exception_handling>

@@ -102,7 +102,7 @@ table of contents
   what is an assertion?<exceptions/AssertionError>
   what is a function?<functions/index>
   what causes AttributeError?<exceptions/AttributeError>
-  pass values<how_to/pass_values>
+  pass values<how_to/telephone>
   data_structures/none
   data_structures/booleans/index
   truth table<truth_table/index>

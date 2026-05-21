@@ -159,7 +159,7 @@ class TestStrings(unittest.TestCase):
             'Hi, my name is joe'
         )
 
-    def test_format_map_uses_a_dictionary_to_pass_values_to_a_string(self):
+    def test_format_map_uses_a_dictionary_to_telephone_to_a_string(self):
         a_dictionary = {
             'first_name': 'Jane',
             'last_name': 'Doe',
