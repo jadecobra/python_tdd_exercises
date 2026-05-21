@@ -1483,30 +1483,31 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
 * I add a test for a :ref:`list <lists>`
 
-.. code-block:: python
-  :lineno-start: 47
-  :emphasize-lines: 6-9
-  :emphasize-text: '
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 7-10
+    :emphasize-text: '
 
         def test_passing_a_tuple(self):
-            reality = src.telephone.text((1, 2, 3, 'n'))
-            my_expectation = "I got: (1, 2, 3, 'n')"
+            a_tuple = (1, 2, 3, 'n')
+            reality = src.telephone.text(a_tuple)
+            my_expectation = f"I got: {a_tuple}"
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_list(self):
-            reality = src.telephone.text([1, 2, 3, "n"])
+            reality = src.telephone.text([1, 2, 3, 'n'])
             my_expectation = 'I got: [1, 2, 3, "n"]'
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: "I got: [1, 2, 3, 'n']"
-               != "I got: '[1, 2, 3, n]'"
+    AssertionError: "I got: [1, 2, 3, 'n']"
+                 != "I got: '[1, 2, 3, n]'"
 
 ----
 
@@ -1516,22 +1517,78 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change ``my_expectation`` to match ``reality``
+I change the :ref:`list<what is a list?>` in ``my_expectation`` to match ``reality``
+
+.. code-block:: python
+  :lineno-start: 45
+  :emphasize-lines: 3
+  :emphasize-text: " '
+
+      def test_passing_a_list(self):
+          reality = src.telephone.text([1, 2, 3, "n"])
+          my_expectation = "I got: [1, 2, 3, 'n']"
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 3
-    :emphasize-text: "
+    :lineno-start: 53
+    :emphasize-lines: 2
 
         def test_passing_a_list(self):
-            reality = src.telephone.text([1, 2, 3, "n"])
+            a_list = [1, 2, 3, 'n']
+            reality = src.telephone.text([1, 2, 3, 'n'])
             my_expectation = "I got: [1, 2, 3, 'n']"
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-  the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
+* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of the :ref:`list<what is a list?>`
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 3-6
+
+        def test_passing_a_list(self):
+            a_list = [1, 2, 3, 'n']
+            # reality = src.telephone.text([1, 2, 3, 'n'])
+            reality = src.telephone.text(a_list)
+            # my_expectation = "I got: [1, 2, 3, 'n']"
+            my_expectation = f"I got: {a_list}"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 53
+
+        def test_passing_a_list(self):
+            a_list = [1, 2, 3, 'n']
+            reality = src.telephone.text(a_list)
+            my_expectation = f"I got: {a_list}"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
