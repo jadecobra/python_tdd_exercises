@@ -84,7 +84,7 @@ I would love to see your solutions, please send them to `jacobitegboje@gmail.com
 rate pumping python
 *********************************************************************************
 
-If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too
+If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too.
 
 ----
 

@@ -224,7 +224,7 @@ start the project
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
-    * if your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again

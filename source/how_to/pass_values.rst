@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master TDD in Python to pass any data type, from strings to classes, and eliminate TypeError. Watch the full tutorial to fix errors in 15 minutes.
-  :keywords: Jacob Itegboje, python pass multiple data types to function, python tdd tutorial for beginners, TypeError: 'NoneType' is not callable fix, how to handle different data types as function arguments in python, python pass by reference vs value, python tdd practical example, python unit testing tutorial, python f-string formatting, python NameError resolution, python AttributeError fix
+  :description: Learn Python TDD by building a project with uv and pytest-watcher. Master passing 9 data types—strings, None, booleans, integers, floats, tuples, lists, dictionaries, and classes—to functions, and learn to debug AssertionError, NameError, AttributeError, and TypeError step-by-step.
+  :keywords: Jacob Itegboje, Python TDD tutorial, red green refactor practical example, uv init python project, pytest-watcher automatic testing, passing arguments in python, python pass None to function, python pass list to function, python pass dictionary to function, python pass tuple vs list, python pass class as argument, TypeError: 'NoneType' object is not callable, TypeError: takes 0 positional arguments but 1 was given, NameError: name is not defined python, AttributeError: module has no attribute, assertEqual reality vs expectation, python string interpolation f-string, python unit testing for beginners, python project structure src tests, how to write a failing test first, test driven development python step by step
 
 .. include:: ../links.rst
 
@@ -20,7 +20,7 @@ Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to
 
     input_data -> process -> output_data
 
-I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results (reality) I get. This helps me answer two questions
+I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results (reality) I get. This helps me answer two questions:
 
 * what is the same?
 * what is different?
@@ -297,7 +297,7 @@ start the project
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
-    * if your ``tests/__init__.py`` have 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
+    * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
     * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
@@ -400,7 +400,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     class TestTelephone(unittest.TestCase):
 
-  - ``import src.functions`` brings in an :ref:`object<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
+  - ``import src.telephone`` brings in an :ref:`object<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
   - I like to sort my `import statements`_ alphabetically
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -439,7 +439,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     NameError: name 'text' is not defined
 
-  the name is in the file_, I have not told Python_ what it means
+  the name is in the file_, and I have not told Python_ what it means
 
 * I point ``text`` to :ref:`None<what is None?>`
 
@@ -486,7 +486,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
     TypeError: text() takes 0 positional arguments
                but 1 was given
 
-  because the definition for ``src.telephone.text`` does not allow calling it with inputs and the test sends ``'hello'`` as input - the parentheses are empty
+  because the definition for ``src.telephone.text`` does not allow calling it with inputs and the test sends ``'hello'`` as input - the parentheses are empty.
 
 * I make the :ref:`function<what is a function?>` take input
 
@@ -505,7 +505,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
   because the :ref:`assertion<what is an assertion?>` expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-  .. tip:: ``the_input`` is just the name I used for the input, I can use any name I want
+  .. tip:: ``the_input`` is the name I used for the input, I can use any name I want.
 
 * I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None<what is None?>`
 
@@ -597,18 +597,18 @@ what is string interpolation?
   - ``"double quotes"``
   - ``"""triple double quotes"""``
 
-* I open a new terminal_ then change directories to ``functions``
+* I open a new terminal_ then change directories to ``telephone``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd functions
+    cd telephone
 
-  the terminal_ shows I am in the ``functions`` folder_
+  the terminal_ shows I am in the ``telephone`` folder_
 
   .. code-block:: python
 
-    .../pumping_python/functions
+    .../pumping_python/telephone
 
 * I add a git_ commit message in the other terminal_
 
@@ -619,7 +619,7 @@ what is string interpolation?
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a string from a test to a function<test_passing_a_string>`
+:ref:`I can pass a string from a test to a function<test_passing_a_string>`.
 
 ----
 
@@ -701,7 +701,7 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass None from a test to a function<test_passing_none>`
+:ref:`I can pass None from a test to a function<test_passing_none>`.
 
 ----
 
@@ -820,7 +820,7 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass booleans from a test to a function<test_passing_booleans>`
+:ref:`I can pass booleans from a test to a function<test_passing_booleans>`.
 
 ----
 
@@ -898,7 +898,7 @@ I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass an integer from a test to a function<test_passing_an_integer>`
+:ref:`I can pass an integer from a test to a function<test_passing_an_integer>`.
 
 ----
 
@@ -957,13 +957,13 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
     :lineno-start: 35
     :emphasize-lines: 3
 
-          def test_passing_a_float(self):
-              reality = src.telephone.text(1.234)
-              my_expectation = 'I got: 1.234'
-              self.assertEqual(reality, my_expectation)
+        def test_passing_a_float(self):
+            reality = src.telephone.text(1.234)
+            my_expectation = 'I got: 1.234'
+            self.assertEqual(reality, my_expectation)
 
 
-      # Exceptions seen
+    # Exceptions seen
 
   the test passes.
 
@@ -977,7 +977,7 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 
-:ref:`I can pass a float from a test to a function<test_passing_a_float>`
+:ref:`I can pass a float from a test to a function<test_passing_a_float>`.
 
 ----
 
@@ -1059,7 +1059,7 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 
-:ref:`I can pass a tuple from a test to a function<test_passing_a_tuple>`
+:ref:`I can pass a tuple from a test to a function<test_passing_a_tuple>`.
 
 ----
 
@@ -1140,7 +1140,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a list from a test to a function<test_passing_a_list>`
+:ref:`I can pass a list from a test to a function<test_passing_a_list>`.
 
 ----
 
@@ -1239,7 +1239,7 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass a dictionary from a test to a function<test_passing_a_dictionary>`
+:ref:`I can pass a dictionary from a test to a function<test_passing_a_dictionary>`.
 
 ----
 
@@ -1293,7 +1293,7 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
     AssertionError: "I got: <class 'object'>"
                  != 'I got:         object'
 
-  :ref:`object<what is a class?>` is the:ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and everything in Python_ is an :ref:`object<what is a class?>`
+  :ref:`object<what is a class?>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and everything in Python_ is an :ref:`object<what is a class?>`
 
 ----
 
@@ -1356,7 +1356,7 @@ the test passes.
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 68
     :emphasize-lines: 2-5
 
             reality = src.telephone.text(TestTelephone)
@@ -1384,7 +1384,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can pass an object from a test to a function<test_passing_a_class>`
+:ref:`I can pass an object from a test to a function<test_passing_a_class>`.
 
 ----
 
@@ -1404,7 +1404,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
 * I close ``test_telephone.py`` in the :ref:`editor<2 editors>`
 
-* I delete the text in ``telephone.py`` and the terminal_ shows 9 failures, I start with the last :ref:`AttributeError<what causes AttributeError?>`
+* I delete the text in ``telephone.py`` and the terminal_ shows 9 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1609,7 +1609,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you have covered a bit so far and know
+You now know:
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
@@ -1624,7 +1624,7 @@ you have covered a bit so far and know
 rate pumping python
 *********************************************************************************
 
-If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too
+If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too.
 
 ----
 

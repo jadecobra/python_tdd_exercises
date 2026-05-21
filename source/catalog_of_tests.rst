@@ -232,7 +232,7 @@ test_classes
 rate pumping python
 *********************************************************************************
 
-If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too
+If this has been a 7 star experience for you, please `CLICK HERE to leave a 5 star review of pumping python`_. It helps other people get into the book too.
 
 ----
 
