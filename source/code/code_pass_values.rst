@@ -7,7 +7,7 @@ how to pass values: tests and solution
 tests
 *********************************************************************************
 
-the code from ``telephone/tests/test_telephone.py`` from :ref:`how to pass values`
+the code from ``telephone/tests/test_telephone.py`` from :ref:`how to pass values<telephone>`
 
 .. literalinclude:: tests/test_telephone.py
   :language: python
@@ -17,7 +17,7 @@ the code from ``telephone/tests/test_telephone.py`` from :ref:`how to pass value
 solution
 *********************************************************************************
 
-the solution in ``telephone.py`` from :ref:`how to pass values`
+the solution in ``telephone.py`` from :ref:`how to pass values<telephone>`
 
 .. literalinclude:: solutions/telephone.py
   :language: python

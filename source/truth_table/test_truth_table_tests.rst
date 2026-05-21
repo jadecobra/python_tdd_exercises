@@ -2862,7 +2862,7 @@ you now know
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
-* :ref:`how to pass values from tests to functions<how to pass values>`
+* :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`

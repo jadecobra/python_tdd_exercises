@@ -245,7 +245,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 I want the ``hello`` :ref:`function<what is a function?>` to return a message for the person I give as input
 
-* I change the expectation in ``test_factory_person_greeting`` in ``test_person.py`` with an :ref:`f-string<how to pass values>` like I did in :ref:`how to pass values`
+* I change the expectation in ``test_factory_person_greeting`` in ``test_person.py`` with an :ref:`f-string<what is string interpolation?>` like I did in :ref:`how to pass values<telephone>`
 
   .. code-block:: python
     :lineno-start: 72
@@ -286,7 +286,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
 
   the first name, last name and ages are different
 
-* I change the string_ to an :ref:`f-string<how to pass values>` with the value for ``first_name``
+* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the value for ``first_name``
 
   .. code-block:: python
     :lineno-start: 16
@@ -930,7 +930,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the value for first name and last name are different
 
-* I change the string_ in the `return statement`_ to an :ref:`f-string<how to pass values>` with the value for ``first_name``
+* I change the string_ in the `return statement`_ to an :ref:`f-string<what is string interpolation?>` with the value for ``first_name``
 
   .. code-block:: python
     :lineno-start: 34
@@ -952,7 +952,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the values for the last name are different
 
-* I add it to the :ref:`f-string<how to pass values>`
+* I add it to the :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -3897,7 +3897,7 @@ you have gone through a lot of things and know
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
-* :ref:`how to pass values from tests to functions<how to pass values>`
+* :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`what is None and NOT None<what is None?>`
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`

@@ -4,10 +4,12 @@
 
 .. include:: ../links.rst
 
+.. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
+.. _f-strings: `f-string`_
 .. _string interpolation: https://peps.python.org/pep-0498/
 
 #################################################################################
-how to pass values
+telephone
 #################################################################################
 
 .. raw:: html
@@ -1962,60 +1964,6 @@ the test passes.
 
     # Exceptions seen
 
-* I use an `f-string` with :ref:`object<what is a class?>` in ``my_expectation`` for the first :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 3
-
-        def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = f"I got: {object}"
-            self.assertEqual(reality, my_expectation)
-
-  the test is still green
-
-* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ``TestTelephone``
-
-  .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 3-6
-
-
-  still green.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``TestTelephone``
-
-  .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 2
-
-
-* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ____
-
-  .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 3-6
-
-
-  green.
-
-* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ____
-
-  .. code-block:: python
-    :lineno-start:
-    :emphasize-lines: 3-6
-
-
-  the terminal_ is my friend, and shows all tests are passing.
-
-* I remove the comments
-
-  .. code-block:: python
-    :lineno-start:
-
-
-
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2255,7 +2203,7 @@ You now know:
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<how to pass values>`
+* :ref:`how to pass values from tests to functions<telephone>`
 
 :ref:`would you like to test using dictionaries and functions to make a person?<how to make a person>`
 

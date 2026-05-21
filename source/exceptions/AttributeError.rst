@@ -1281,7 +1281,7 @@ you know
 * :ref:`how to make functions<what is a function?>` and
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 
-:ref:`Would you like to test how to pass values from tests to functions with assert methods?<how to pass values>`
+:ref:`Would you like to test how to pass values from tests to functions with assert methods?<telephone>`
 
 ----
 

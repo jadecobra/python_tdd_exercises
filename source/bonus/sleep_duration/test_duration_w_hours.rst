@@ -382,7 +382,7 @@ requirements
 
   `random.randint`_ gives me a random number from ``0`` up to and including ``23`` for the 24 hours in a day
 
-* I :ref:`interpolate<how to pass values>` them as hours for ``wake_time`` and ``sleep_time``
+* I :ref:`interpolate<what is string interpolation?>` them as hours for ``wake_time`` and ``sleep_time``
 
   .. code-block:: python
 
@@ -855,7 +855,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 
 * :ref:`test_duration_w_hours <how to measure sleep duration: test_duration_w_hours>` where I
 
-  - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values` them in the timestamps
+  - used `random.randint`_ to generate random numbers from the 24 hours in a day and :ref:`how to pass values<telephone>` them in the timestamps
   - then test that the ``duration`` :ref:`function<what is a function?>` subtracts the hour for ``sleep_time`` from the hour for ``wake_time``
 
 I also saw these :ref:`Exceptions<errors>`

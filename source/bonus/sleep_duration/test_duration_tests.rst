@@ -359,7 +359,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   the terminal_ is my friend, and shows the :ref:`AssertionError<what causes AssertionError?>` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError<what causes AssertionError?>` that the ValueError_ messages do not match
 
-* I :ref:`interpolate<how to pass values>` ``wake_time`` and ``sleep_time`` in the message
+* I :ref:`interpolate<what is string interpolation?>` ``wake_time`` and ``sleep_time`` in the message
 
   .. code-block:: python
 

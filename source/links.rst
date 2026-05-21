@@ -68,8 +68,6 @@
 .. _floats: float_
 .. _floor (integer) division: https://grokipedia.com/page/Division_(mathematics)#Division_in_different_contexts
 .. _for loop: https://docs.python.org/3/tutorial/controlflow.html#for-statements
-.. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
-.. _f-strings: `f-string`_
 .. _git: https://grokipedia.com/page/Git
 .. _help system: https://docs.python.org/3/library/functions.html?highlight=dir#help
 .. _hashable: https://docs.python.org/3/glossary.html#term-hashable

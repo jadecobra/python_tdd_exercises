@@ -519,7 +519,7 @@ The challenge is to write a program_ that calculates the difference between a gi
     * from the ``24`` hours in a day
     * and the ``60`` minutes in an hour
 
-  - then :ref:`how to pass values` them in the timestamp strings that are given to the :ref:`function<what is a function?>`
+  - then :ref:`how to pass values<telephone>` them in the timestamp strings that are given to the :ref:`function<what is a function?>`
   - and `test_duration_calculation`_ to make sure that the ``duration`` :ref:`function<what is a function?>` returns the right difference between ``wake_time`` and ``sleep_time``
   - and changes it to a timestamp format
 
