@@ -336,19 +336,15 @@ test_factory_w_keyword_arguments
 * I change ``test_failure`` to ``test_factory_w_keyword_arguments``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6-10
-
-    import unittest
-
+    :lineno-start: 4
+    :emphasize-lines: 3-6
 
     class TestPerson(unittest.TestCase):
 
-        def test_factory_w_keyword_arguments(self):
-            self.assertEqual(
-                src.person.factory(),
-                None
-            )
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory()
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -360,10 +356,12 @@ test_factory_w_keyword_arguments
 
     NameError: name 'src' is not defined
 
+  because there is no definition for ``src`` in ``test_person.py``
+
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 12
     :emphasize-lines: 3
     :emphasize-text: NameError
 
@@ -388,18 +386,21 @@ test_factory_w_keyword_arguments
     import src.person
     import unittest
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  - ``import src.telephone`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
+  - I like to sort my `import statements`_ alphabetically
+  - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    AttributeError: module 'src.person' has no attribute 'factory'
+      AttributeError: module 'src.person'
+                      has no attribute 'factory'
 
-  there is nothing in ``person.py`` with that name
+    because there is nothing in ``person.py`` with that name
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 13
     :emphasize-lines: 4
     :emphasize-text: AttributeError
 
@@ -410,10 +411,11 @@ test_factory_w_keyword_arguments
 
 * I use the :ref:`Explorer<explorer on left>` to open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
 
-* I add a :ref:`function<what is a function?>` to ``person.py``
+* I delete the text, then add a :ref:`function<what is a function?>` to ``person.py``
 
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 1-2
 
     def factory():
         return None
@@ -422,19 +424,24 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``first_name``. I add it to the test in ``test_person.py``
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``first_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 3-5
+    :emphasize-lines: 2-4
 
-        def test_factory_w_keyword_arguments(self):
-            self.assertEqual(
-                src.person.factory(
-                    first_name='first_name',
-                ),
-                None
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='first_name',
             )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -443,14 +450,15 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'first_name'
+    TypeError: factory() got an
+               unexpected keyword argument 'first_name'
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with input. The definition in ``person.py`` does not take any input
+  because the definition for ``src.telephone.factory`` does not allow calling it with inputs and the test sends ``'first_name'`` as input - the parentheses are empty.
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
+* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 15
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -473,29 +481,32 @@ test_factory_w_keyword_arguments
 
 -----
 
-* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``last_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``last_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 5
+    :emphasize-lines: 4
 
-        def test_factory_w_keyword_arguments(self):
-            self.assertEqual(
-                src.person.factory(
-                    first_name='first_name',
-                    last_name='last_name',
-                ),
-                None
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='first_name',
+                last_name='last_name',
             )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: shell
 
-    TypeError: factory() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+    TypeError: factory() got an
+               unexpected keyword argument 'last_name'.
+               Did you mean 'first_name'?
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with 2 inputs. The definition in ``person.py`` only takes 1 input
-
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a keyword argument (``last_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -510,29 +521,32 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``sex``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_functions_w_keyword_arguments>` called ``sex``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 6
+    :emphasize-lines: 5
 
-        def test_factory_w_keyword_arguments(self):
-            self.assertEqual(
-                src.person.factory(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                ),
-                None
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
             )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError`
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'sex'
+    TypeError: factory() got an
+               unexpected keyword argument 'sex'
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with 3 inputs. The definition in ``person.py`` only takes 2 inputs
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a keyword argument (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``sex`` as an input parameter to the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -550,22 +564,24 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take in a :ref:`keyword argument<test_functions_w_keyword_arguments>` for ``year_of_birth`` and give it the result of calling another :ref:`function<what is a function?>`. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_functions_w_keyword_arguments>` for ``year_of_birth``. I add it to the call in the test, with the result of calling another :ref:`function<what is a function?>`, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 7
+    :emphasize-lines: 6
 
-        def test_factory_w_keyword_arguments(self):
-            self.assertEqual(
-                src.person.factory(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-                None
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
             )
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -573,9 +589,9 @@ test_factory_w_keyword_arguments
 
     NameError: name 'this_year' is not defined
 
-  there is nothing with that name in this file_
+  because there is nothing with that name in this file_
 
-* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition in ``test_person.py``
+* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition
 
   .. code-block:: python
     :linenos:
@@ -595,9 +611,10 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'year_of_birth'
+    TypeError: factory() got
+               an unexpected keyword argument 'year_of_birth'
 
-  the test calls the ``factory`` :ref:`function<what is a function?>` with 4 inputs. The definition in ``person.py`` only takes 3 inputs
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a keyword argument (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add the name to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -615,28 +632,32 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<what is a dictionary?>` as output, I change the expectation of the :ref:`assertion<what is an assertion?>` in ``test_person.py``
+* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) as output when it is called. I change ``my_expectation`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
     :emphasize-lines: 9
 
-        def test_factory_w_keyword_arguments(self):
-            self.assertEqual(
-                src.person.factory(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-                dict()
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
             )
+            my_expectation = dict()
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: None != {}
+
+  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``{}``
 
 * I change :ref:`None<what is None?>` to a :ref:`dictionary<what is a dictionary?>` in the `return statement`_ in ``person.py``
 
@@ -658,20 +679,22 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 10
+    :emphasize-lines: 9
 
-        def test_factory_w_keyword_arguments(self):
-            self.assertEqual(
-                src.person.factory(
-                    first_name='first_name',
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-                dict(
-                    first_name='first_name',
-                )
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='first_name',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
             )
+            my_expectation = dict(
+                first_name='first_name',
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -679,7 +702,9 @@ test_factory_w_keyword_arguments
 
     AssertionError: {} != {'first_name': 'first_name'}
 
-* I change the `return statement`_ in ``person.py``
+  because the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the test expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`
+
+* I change the `return statement`_ to give the test what it wants, in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -693,92 +718,37 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I typed ``'first_name'`` two times in the test, which means I have to make a change in 2 places when I want a different :ref:`value<test_values_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` to remove the repetition in ``test_person.py``
+* I change the value for ``first_name`` to ``'jane'`` in ``reality`` and ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 2
+    :emphasize-lines: 3, 9
 
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'first_name'
-
-            self.assertEqual(
-
-* I use the :ref:`variable<what is a variable?>` as the value for ``first_name`` in the call to ``src.person.factory`` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 3-4
-
-            self.assertEqual(
-                src.person.factory(
-                    # first_name='first_name',
-                    first_name=first_name,
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-                dict(
-                    first_name='first_name',
-                )
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='jane',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
             )
-
-  the test is still green.
-
-* I use the :ref:`variable<what is a variable?>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the expected :ref:`dictionary<what is a dictionary?>`
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 2-3
-
-                dict(
-                    # first_name='first_name',
-                    first_name=first_name,
-                )
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 11
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'first_name'
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-                dict(
-                    first_name=first_name,
-                )
+            my_expectation = dict(
+                first_name='jane',
             )
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
-
-  I now only need to change the value of ``first_name`` in one place
-
-* I change ``'first_name'`` to ``'jane'``
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 2
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'first_name'} != {'first_name': 'jane'}
+    AssertionError: {'first_name': 'first_name'}
+                 != {'first_name': 'jane'}
 
-* I change the `return statement`_ in ``person.py``
+  because I changed the value in ``my_expectation``
+
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -790,36 +760,115 @@ test_factory_w_keyword_arguments
         ):
         return {'first_name': 'jane'}
 
-  and the test is green again
+  the test passes. I typed ``'first_name'`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
 
-----
+* I add a :ref:`variable<what is a variable?>` to use remove the repetition of ``'jane'`` from ``test_person.py``
 
-* I want the expected :ref:`dictionary<what is a dictionary?>` to have a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 2
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+
+            reality = src.person.factory(
+                first_name='jane',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name='jane',
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
 
   .. code-block:: python
     :lineno-start: 14
-    :emphasize-lines: 10
+    :emphasize-lines: 5-6, 12-13
 
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    last_name='last_name',
-                    sex='M',
-                    year_of_birth=this_year()
-                ),
-                dict(
-                    first_name=first_name,
-                    last_name='last_name',
-                )
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+
+            reality = src.person.factory(
+                # first_name='jane',
+                first_name=first_name,
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
             )
+            my_expectation = dict(
+                # first_name='jane',
+                first_name=first_name,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 11
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name=first_name,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  I now only need to change the value of ``first_name`` in one place in the test
+
+----
+
+* I want the expected :ref:`dictionary<what is a dictionary?>` to have a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to ``my_expectation`` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 12
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name='last_name',
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 2
 
-    E       - {'first_name': 'jane'}
-    E       + {'first_name': 'jane', 'last_name': 'last_name'}
+    AssertionError: {'first_name': 'jane'}
+                 != {'first_name': 'jane', 'last_name': 'last_name'}
 
 * I change the `return statement`_ in ``person.py``
 
@@ -838,115 +887,123 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* ``'last_name'`` happens two times in the test, I add a :ref:`variable<what is a variable?>` to remove the repetition like I did with ``'first_name'`` in ``test_person.py``
+* I change the value for ``first_name`` to ``'jane'`` in ``reality`` and ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 3
+    :emphasize-lines: 3, 9
 
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'last_name'
-
-            self.assertEqual(
-
-* I use the new :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` in the  :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 4-5
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    # last_name='last_name',
-                    last_name=last_name,
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-
-  the test is still green.
-
-* I use the :ref:`variable<what is a variable?>` in the expected :ref:`dictionary<what is a dictionary?>`
-
-  .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 3-4
-
-                dict(
-                    first_name=first_name,
-                    # last_name='last_name',
-                    last_name=last_name,
-                )
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 11
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'last_name'
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-                dict(
-                    first_name=first_name,
-                    last_name=last_name,
-                )
+        def test_factor_w_keyword_arguments(self):
+            reality = src.person.factory(
+                first_name='jane',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
             )
+            my_expectation = dict(
+                first_name='jane',
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {'first_name': 'first_name'}
+                 != {'first_name': 'jane'}
+
+  because I changed the value in ``my_expectation``
+
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        return {'first_name': 'jane'}
+
+  the test passes. I typed ``'first_name'`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+
+* I add a :ref:`variable<what is a variable?>` to use remove the repetition of ``'jane'`` from ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 2
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+
+            reality = src.person.factory(
+                first_name='jane',
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name='jane',
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 5-6, 12-13
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+
+            reality = src.person.factory(
+                # first_name='jane',
+                first_name=first_name,
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                # first_name='jane',
+                first_name=first_name,
+            )
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
   the test is still green.
 
-* I change the value from ``'last_name'`` to ``'doe'``
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 3
 
-        def test_factory_w_keyword_arguments(self):
+        def test_factor_w_keyword_arguments(self):
             first_name = 'jane'
-            last_name = 'doe'
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name='last_name',
+                sex='M',
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name=first_name,
+            )
+            self.assertEqual(reality, my_expectation)
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
 
-    E       - {'first_name': 'jane', 'last_name': 'last_name'}
-    E       ?                                      ^^^^^^^^
-    E
-    E       + {'first_name': 'jane', 'last_name': 'doe'}
-    E       ?                                      ^^
+    # Exceptions seen
 
-  the :ref:`values<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` are different in the 2 :ref:`dictionaries<what is a dictionary?>`
-
-* I change the `return statement`_ in ``person.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7
-
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
-        return {
-            'first_name': 'jane',
-            'last_name': 'doe',
-        }
-
-  the test passes.
+  I now only need to change the value of ``first_name`` in one place in the test
 
 ----
 
@@ -2522,7 +2579,8 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    AttributeError: module 'src.person' has no attribute 'factory'
+    AttributeError: module 'src.person'
+                    has no attribute 'factory'
 
   there is nothing in ``person.py`` with the name ``factory``
 

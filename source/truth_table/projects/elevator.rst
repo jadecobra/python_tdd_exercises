@@ -422,7 +422,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: elevator() got an unexpected keyword argument 'doors_clear'
 
-  because the test called the ``elevator`` :ref:`function<what is a function?>` with 2 keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only takes calls with 0 arguments
+  because the test called the ``elevator`` :ref:`function<what is a function?>` with two keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_elevator.py``
 
@@ -452,7 +452,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: elevator() got an unexpected keyword argument 'number_pushed'
 
-  because the test called the ``elevator`` :ref:`function<what is a function?>` with 2 keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only takes calls with 1 input
+  because the test called the ``elevator`` :ref:`function<what is a function?>` with two keyword arguments (``doors_clear`` and ``number_pushed``) and this definition only takes calls with 1 input
 
 * I add ``number_pushed`` to the :ref:`function signature<what is a function?>`
 

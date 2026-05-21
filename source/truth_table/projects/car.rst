@@ -429,7 +429,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: starter() got an unexpected keyword argument 'key_is_close'
 
-  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 0 arguments
+  because the test called the ``starter`` :ref:`function<what is a function?>` with two keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_car.py``
 
@@ -459,7 +459,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: starter() got an unexpected keyword argument 'start_is_pressed'
 
-  because the test called the ``starter`` :ref:`function<what is a function?>` with 2 keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 1 input
+  because the test called the ``starter`` :ref:`function<what is a function?>` with two keyword arguments (``key_is_close`` and ``start_is_pressed``) and this definition only takes calls with 1 input
 
 * I add ``start_is_pressed`` to the :ref:`function signature<what is a function?>`
 

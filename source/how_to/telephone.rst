@@ -401,7 +401,6 @@ because there is no definition for ``src`` in ``test_telephone.py``
     class TestTelephone(unittest.TestCase):
 
   - ``import src.telephone`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
-  - I like to sort my `import statements`_ alphabetically
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: shell

@@ -428,7 +428,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: parking garage() got an unexpected keyword argument 'door_is_open'
 
-  because the test called the ``parking garage`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only takes calls with 0 arguments
+  because the test called the ``parking garage`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 0 arguments
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_parking_garage.py``
 
@@ -458,7 +458,7 @@ because I do not have a definition for ``src`` in this file_
 
     TypeError: parking garage() got an unexpected keyword argument 'start_is_pushed'
 
-  because the test called the ``parking garage`` :ref:`function<what is a function?>` with 2 keyword arguments and this definition only takes calls with 1 input
+  because the test called the ``parking garage`` :ref:`function<what is a function?>` with two keyword arguments and this definition only takes calls with 1 input
 
 * I add ``start_is_pushed`` to the :ref:`function signature<what is a function?>`
 
