@@ -89,7 +89,7 @@ the terminal_ to show results of the tests
     :align: center
     :alt: terminal_ Window at the bottom
 
-* to the right - when the results I am looking at in the terminal_ are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries`
+* to the right - when the results I am looking at in the terminal_ are too long to see in the bottom, for example when working with documentation, JSON_ or :ref:`dictionaries<what is a dictionary?>`
 
   .. image:: /_static/setup_my_ide/terminal_on_right.png
     :width: 600

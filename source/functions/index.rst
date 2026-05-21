@@ -4596,9 +4596,9 @@ how Python reads positional and keyword arguments
 
   are :ref:`keyword arguments<test_functions_w_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`.
 
-  The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries`.
+  The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_functions_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_functions_w_keyword_arguments>` as :ref:`dictionaries<what is a dictionary?>`.
 
-  Is this why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<dictionaries>` as input?
+  Is this why the :ref:`update method of dictionaries<test_update_a_dictionary>` can take a :ref:`dictionary<what is a dictionary?>` as input?
 
 ----
 

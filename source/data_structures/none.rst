@@ -1996,7 +1996,7 @@ test_is_none_a_dictionary
 
 ----
 
-One last test, this one is to see if None_ is a :ref:`dictionary<dictionaries>`
+One last test, this one is to see if None_ is a :ref:`dictionary<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 55
@@ -2020,7 +2020,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: {} is not None
 
-wait a minute! Python_ uses ``{}`` for sets_. It also uses them for :ref:`dictionaries` with a difference.
+wait a minute! Python_ uses ``{}`` for sets_. It also uses them for :ref:`dictionaries<what is a dictionary?>` with a difference.
 
 ----
 
@@ -2087,13 +2087,13 @@ the test passes.
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
 
-  :ref:`dict<dictionaries>` is the :ref:`class<what is a class?>` for :ref:`dictionaries`, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  :ref:`dict<dictionaries>` is the :ref:`class<what is a class?>` for :ref:`dictionaries<what is a dictionary?>`, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
     AssertionError: {} is an instance of <class 'dict'>
 
-  ``{}`` is the empty :ref:`dictionary<dictionaries>`
+  ``{}`` is the empty :ref:`dictionary<what is a dictionary?>`
 
 * I change the `assert method`_
 
@@ -2125,7 +2125,7 @@ the test passes.
 
   .. note::
 
-    ``{'key': 'value'}`` is a :ref:`dictionary<dictionaries>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
+    ``{'key': 'value'}`` is a :ref:`dictionary<what is a dictionary?>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
 
     I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas, for example
 

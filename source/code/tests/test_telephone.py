@@ -5,69 +5,72 @@ import unittest
 class TestTelephone(unittest.TestCase):
 
     def test_passing_a_string(self):
-        self.assertEqual(
-            src.telephone.text("hello"),
-            "I got: hello"
-        )
-        self.assertEqual(
-            src.telephone.text("yes"),
-            "I got: yes"
-        )
+        reality = src.telephone.text('hello')
+        my_expectation = 'I got: hello'
+        self.assertEqual(reality, my_expectation)
 
-    def test_passing_a_class(self):
-        self.assertEqual(
-            src.telephone.text(object),
-            "I got: <class 'object'>"
-        )
+        reality = src.telephone.text('yes')
+        my_expectation = 'I got: yes'
+        self.assertEqual(reality, my_expectation)
 
     def test_passing_none(self):
-        self.assertEqual(
-            src.telephone.text(None),
-            "I got: None"
-        )
+        reality = src.telephone.text(None)
+        my_expectation = 'I got: None'
+        self.assertEqual(reality, my_expectation)
 
     def test_passing_booleans(self):
-        self.assertEqual(
-            src.telephone.text(True),
-            "I got: True"
-        )
-        self.assertEqual(
-            src.telephone.text(False),
-            "I got: False"
-        )
+        reality = src.telephone.text(False)
+        my_expectation = 'I got: False'
+        self.assertEqual(reality, my_expectation)
+
+        reality = src.telephone.text(True)
+        my_expectation = 'I got: True'
+        self.assertEqual(reality, my_expectation)
 
     def test_passing_an_integer(self):
-        self.assertEqual(
-            src.telephone.text(1234),
-            "I got: 1234"
-        )
+        reality = src.telephone.text(1234)
+        my_expectation = 'I got: 1234'
+        self.assertEqual(reality, my_expectation)
 
     def test_passing_a_float(self):
-        self.assertEqual(
-            src.telephone.text(1.234),
-            "I got: 1.234"
-        )
+        reality = src.telephone.text(1.234)
+        my_expectation = 'I got: 1.234'
+        self.assertEqual(reality, my_expectation)
 
     def test_passing_a_tuple(self):
-        self.assertEqual(
-            src.telephone.text((1, 2, 3, "n")),
-            "I got: (1, 2, 3, 'n')"
-        )
+        reality = src.telephone.text((1, 2, 3, 'n'))
+        my_expectation = "I got: (1, 2, 3, 'n')"
+        self.assertEqual(reality, my_expectation)
 
     def test_passing_a_list(self):
-        self.assertEqual(
-            src.telephone.text([1, 2, 3, "n"]),
-            "I got: [1, 2, 3, 'n']"
-        )
+        reality = src.telephone.text([1, 2, 3, "n"])
+        my_expectation = "I got: [1, 2, 3, 'n']"
+        self.assertEqual(reality, my_expectation)
 
     def test_passing_a_dictionary(self):
-        self.assertEqual(
-            src.telephone.text({
+        reality = src.telephone.text(
+            {
                 'key1': 'value1',
-                'keyN': [1, 2, 3, 'n'],
-            }),
-            "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+                'keyN': [0, 1, 2, 'n'],
+            }
         )
+        my_expectation = (
+            "I got: "
+            "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+        )
+        self.assertEqual(reality, my_expectation)
+
+    def test_passing_a_class(self):
+        reality = src.telephone.text(object)
+        my_expectation = "I got: <class 'object'>"
+        self.assertEqual(reality, my_expectation)
+
+        reality = src.telephone.text(TestTelephone)
+        my_expectation = (
+            "I got: <class "
+            "'tests.test_telephone.TestTelephone'>"
+        )
+        self.assertEqual(reality, my_expectation)
 
 
 # Exceptions seen

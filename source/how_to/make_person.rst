@@ -22,7 +22,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries` with :ref:`functions<what is a function?>`. I think they are the 2 most important things in Python_
+This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`. I think they are the 2 most important things in Python_
 
 ----
 
@@ -383,7 +383,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<dictionaries>` as output, I change the expectation of the :ref:`assertion<what is an assertion?>` in ``test_person.py``
+* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<what is a dictionary?>` as output, I change the expectation of the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -422,7 +422,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want the expected :ref:`dictionary<dictionaries>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
+* I want the expected :ref:`dictionary<what is a dictionary?>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -562,7 +562,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I want the expected :ref:`dictionary<dictionaries>` to have a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
+* I want the expected :ref:`dictionary<what is a dictionary?>` to have a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to the expectation in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 14
@@ -718,7 +718,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<dictionaries>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -951,7 +951,7 @@ test_factory_takes_keyword_arguments
     E       + {'age': 0, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
     E       ?  ++++++++++
 
-  the new :ref:`dictionary<dictionaries>` has a :ref:`value<test_values_of_a_dictionary>` for the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`.
+  the new :ref:`dictionary<what is a dictionary?>` has a :ref:`value<test_values_of_a_dictionary>` for the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`.
 
   Here is what ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` means
 
@@ -1723,7 +1723,7 @@ I want to see what happens when I try to make a person without a value for the `
     E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
     E       ?                                          ^^  +
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -1807,7 +1807,7 @@ I want to see what happens when I try to make a person without a value for the `
     E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
     E       ?                                                    ^^^
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<dictionaries>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
 
 * I change the default value for ``sex`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -2740,7 +2740,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary <dictionaries>` as output
+I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
 
 I also saw these :ref:`Exceptions<errors>`
 

@@ -1148,7 +1148,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 test_passing_a_dictionary
 *********************************************************************************
 
-I can pass a :ref:`dictionary<what is a dictionary?>` from a test to a `function<what is a function?>`
+I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }`` separated by a comma) from a test to a `function<what is a function?>`
 
 ----
 
@@ -1160,37 +1160,41 @@ I can pass a :ref:`dictionary<what is a dictionary?>` from a test to a `function
 
 * I go back to the terminal_ that is running the tests
 
+* I add a test for a :ref:`dictionary<what is a dictionary?>`
 
-I add a test for a :ref:`dictionary <dictionaries>` (key-value pairs in curly braces (``{}``), separated by a comma)
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 6-17
+    :emphasize-text: "
 
-.. code-block:: python
-  :lineno-start: 61
-  :emphasize-lines: 7-14
-  :emphasize-text: "
+        def test_passing_a_list(self):
+            reality = src.telephone.text([1, 2, 3, "n"])
+            my_expectation = "I got: [1, 2, 3, 'n']"
+            self.assertEqual(reality, my_expectation)
 
-      def test_passing_a_list(self):
-          self.assertEqual(
-              src.telephone.text([1, 2, 3, "n"]),
-              "I got: [1, 2, 3, 'n']"
-          )
-
-      def test_passing_a_dictionary(self):
-          self.assertEqual(
-              src.telephone.text({
-                  "key1": "value1",
-                  "keyN": [0, 1, 2, "n"],
-              }),
-              "I got: '{key1: value1, keyN: [0, 1, 2, n]}'"
-          )
+        def test_passing_a_dictionary(self):
+            reality = src.telephone.text(
+                {
+                    'key1': 'value1',
+                    'keyN': [0, 1, 2, 'n'],
+                }
+            )
+            my_expectation = (
+                "I got: "
+                "{key1: value1, keyN: [0, 1, 2, n]}"
+            )
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}" != "I got: '{key1: value1, keyN: [0, 1, 2, 'n']}'"
+    AssertionError:
+        "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+     != 'I got: { key1:   value1 ,  keyN : [0, 1, 2,  n ]}'
 
 ----
 
@@ -1200,26 +1204,42 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the expectation
+* I change ``my_expectation`` to match ``reality``
 
-.. code-block:: python
-  :lineno-start: 67
-  :emphasize-lines: 7
-  :emphasize-text: "
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 10-11
+    :emphasize-text: "
 
-      def test_passing_a_dictionary(self):
-          self.assertEqual(
-              src.telephone.text({
-                  "key1": "value1",
-                  "keyN": [0, 1, 2, "n"],
-              }),
-              "I got: {'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-          )
+        def test_passing_a_dictionary(self):
+            reality = src.telephone.text(
+                {
+                    'key1': 'value1',
+                    'keyN': [0, 1, 2, 'n'],
+                }
+            )
+            my_expectation = (
+                "I got: "
+                "{'key1': 'value1', "
+                "'keyN': [0, 1, 2, 'n']}"
+            )
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows all tests are passing.
+  the terminal_ is my friend, and shows all tests are passing.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_passing_a_dictionary'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can pass a dictionary from a test to a function<test_passing_a_dictionary>`
 
 ----
 
@@ -1242,16 +1262,20 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
 * I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 10-13
+    :lineno-start: 50
+    :emphasize-lines: 14-17
 
-        def test_passing_a_string(self):
-            reality = src.telephone.text('hello')
-            my_expectation = 'I got: hello'
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text('yes')
-            my_expectation = 'I got: yes'
+        def test_passing_a_dictionary(self):
+            reality = src.telephone.text(
+                {
+                    'key1': 'value1',
+                    'keyN': [0, 1, 2, 'n'],
+                }
+            )
+            my_expectation = (
+                "I got: "
+                "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+            )
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_class(self):
@@ -1266,9 +1290,10 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
 
   .. code-block:: shell
 
-    AssertionError: "I got: <class 'object'>" != 'I got: object'
+    AssertionError: "I got: <class 'object'>"
+                 != 'I got:         object'
 
-  :ref:`object<what is a class?>` is the:ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from and everything in Python_ is an :ref:`object<what is a class?>`
+  :ref:`object<what is a class?>` is the:ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and everything in Python_ is an :ref:`object<what is a class?>`
 
 ----
 
@@ -1281,8 +1306,8 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
 I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 4
+  :lineno-start: 63
+  :emphasize-lines: 3
 
       def test_passing_a_class(self):
           reality = src.telephone.text(object)
@@ -1305,20 +1330,8 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 1, 17-19
-    :emphasize-text: TestTelephone
-
-    class TestTelephone(unittest.TestCase):
-
-        def test_passing_a_string(self):
-            reality = src.telephone.text('hello')
-            my_expectation = 'I got: hello'
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text('yes')
-            my_expectation = 'I got: yes'
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 63
+    :emphasize-lines: 6-8
 
         def test_passing_a_class(self):
             reality = src.telephone.text(object)
@@ -1336,11 +1349,9 @@ the test passes.
 
   .. code-block:: shell
 
-    AssertionError: "I got: <class 'tests.test_telephone.TestTelephone'>"
-                 != "I got: <class 'object'>"
-
-  - even though they are both :ref:`classes<what is a class?>`, :ref:`object<what is a class?>` and ``TestTelephone`` are different
-  - ``TestTelephone`` is the :ref:`class<what is a class?>` that has the tests I am writing
+    AssertionError:
+        "I got: <class 'tests.test_telephone.TestTelephone'>"
+     != "I got: <class 'object'>"
 
 * I change ``my_expectation`` to match ``reality``
 
@@ -1360,155 +1371,9 @@ the test passes.
 
   the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
 
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit --all --message 'add test_passing_a_class'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-:ref:`I can pass an object from a test to a function<test_passing_a_class>`
-
-----
-
-*********************************************************************************
-test_passing_a_class
-*********************************************************************************
-
-I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<what is a function?>`
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ that is running the tests
-
-* I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 10-13
-
-        def test_passing_a_string(self):
-            reality = src.telephone.text('hello')
-            my_expectation = 'I got: hello'
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text('yes')
-            my_expectation = 'I got: yes'
-            self.assertEqual(reality, my_expectation)
-
-        def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = 'I got: object'
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: "I got: <class 'object'>" != 'I got: object'
-
-  :ref:`object<what is a class?>` is the:ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from and everything in Python_ is an :ref:`object<what is a class?>`
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I change ``my_expectation`` to match ``reality``
-
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 4
-
-      def test_passing_a_class(self):
-          reality = src.telephone.text(object)
-          my_expectation = "I got: <class 'object'>"
-          self.assertEqual(reality, my_expectation)
-
-
-  # Exceptions seen
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 1, 17-19
-    :emphasize-text: TestTelephone
-
-    class TestTelephone(unittest.TestCase):
-
-        def test_passing_a_string(self):
-            reality = src.telephone.text('hello')
-            my_expectation = 'I got: hello'
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text('yes')
-            my_expectation = 'I got: yes'
-            self.assertEqual(reality, my_expectation)
-
-        def test_passing_a_class(self):
-            reality = src.telephone.text(object)
-            my_expectation = "I got: <class 'object'>"
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.telephone.text(TestTelephone)
-            my_expectation = "I got: <class 'object'>"
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: "I got: <class 'tests.test_telephone.TestTelephone'>"
-                 != "I got: <class 'object'>"
-
-  - even though they are both :ref:`classes<what is a class?>`, :ref:`object<what is a class?>` and ``TestTelephone`` are different
-  - ``TestTelephone`` is the :ref:`class<what is a class?>` that has the tests I am writing
-
-* I change ``my_expectation`` to match ``reality``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2-5
-
-            reality = src.telephone.text(TestTelephone)
-            my_expectation = (
-                "I got: <class "
-                "'tests.test_telephone.TestTelephone'>"
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes. What does ``tests.test_telephone.TestTelephone`` point to?
+  - ``tests`` is the folder_
+  - ``test_telephone`` is ``test_telephone.py`` in the ``tests`` folder_
+  - ``TestTelephone`` is the :ref:`class (object)<what is a class?>` that is defined on line 5 of ``test_telephone.py`` in the ``tests`` folder_
 
 * I add a git_ commit message in the other terminal_
 

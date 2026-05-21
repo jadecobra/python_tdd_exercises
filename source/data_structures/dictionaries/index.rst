@@ -69,7 +69,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-* :ref:`dictionaries`
+* :ref:`dictionaries<what is a dictionary?>`
 * :ref:`how to make a calculator 7`
 
 -----

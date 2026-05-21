@@ -772,7 +772,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 test_catching_key_error_in_tests
 *********************************************************************************
 
-:ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<dictionaries>`
+:ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`
 
 ----
 
@@ -782,7 +782,7 @@ test_catching_key_error_in_tests
 
 ----
 
-* I add a :ref:`dictionary<dictionaries>` to a new test for :ref:`KeyError<test_key_error>`
+* I add a :ref:`dictionary<what is a dictionary?>` to a new test for :ref:`KeyError<test_key_error>`
 
   .. code-block:: python
     :lineno-start: 23
@@ -798,7 +798,7 @@ test_catching_key_error_in_tests
         def test_catching_key_error_in_tests(self):
             {'key': 'value'}
 
-* when I try to get the value of a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<dictionaries>`
+* when I try to get the value of a :ref:`key<test_keys_of_a_dictionary>` that is in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -809,7 +809,7 @@ test_catching_key_error_in_tests
 
   the test is green again
 
-* when I use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in the :ref:`dictionary<dictionaries>`
+* when I use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -860,7 +860,7 @@ I add assertRaises_ to the test
 the test passes, showing that
 
 * assertRaises_ checks that the code in its context (``{'key': 'value'}['not_in_dictionary']``), raises the :ref:`Exception<errors>` (:ref:`KeyError<test_key_error>`) it is given in parentheses.
-* :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<dictionaries>`
+* :ref:`KeyError<test_key_error>` is raised when I try to use a :ref:`key<test_keys_of_a_dictionary>` that is NOT in a :ref:`dictionary<what is a dictionary?>`
 
 *********************************************************************************
 test_catching_zero_division_error_in_tests

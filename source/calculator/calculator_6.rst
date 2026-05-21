@@ -150,7 +150,7 @@ The `setUp method`_ runs before every test, giving ``random_first_number`` and `
 test_calculator_w_a_for_loop
 *************************************************************************************
 
-I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries`.
+I tested the :ref:`calculator functions<how to make a calculator>` with :ref:`None<what is None?>`, strings_ and :ref:`lists`, I want to test them with the other :ref:`basic Python data types<data structures>`: :ref:`booleans<what are booleans?>`, tuples_, sets_ and :ref:`dictionaries<what is a dictionary?>`.
 
 Since I know how to use a :ref:`for loop<what is a for loop?>` and :ref:`list comprehensions`, I can do this with one test for all of them instead of a different test with 4 or more :ref:`assertions<what is an assertion?>` for each :ref:`data type<data structures>`
 
@@ -1162,7 +1162,7 @@ I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making
       if condition/not condition
   ]
 
-I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of these
+I can also do this with :ref:`dictionaries<what is a dictionary?>`, it is called a dict comprehension and the syntax is any mix of these
 
 .. code-block:: python
 

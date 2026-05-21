@@ -1979,7 +1979,7 @@ I can use :ref:`functions<what is a function?>` and :ref:`conditions<test_making
       if condition/not condition
   ]
 
-I can also do this with :ref:`dictionaries`, it is called a dict comprehension and the syntax is any mix of these
+I can also do this with :ref:`dictionaries<what is a dictionary?>`, it is called a dict comprehension and the syntax is any mix of these
 
 .. code-block:: python
 

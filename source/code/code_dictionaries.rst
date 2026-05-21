@@ -6,7 +6,7 @@ data structures: dictionaries: tests
 dictionaries tests
 *********************************************************************************
 
-the code from ``dictionaries/tests/test_dictionaries.py`` from :ref:`dictionaries`
+the code from ``dictionaries/tests/test_dictionaries.py`` from :ref:`dictionaries<what is a dictionary?>`
 
 .. literalinclude:: tests/test_dictionaries.py
   :language: python
