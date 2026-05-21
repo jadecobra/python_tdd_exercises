@@ -20,7 +20,7 @@ class TestPerson(unittest.TestCase):
         )
         self.random_first_name = choose('jane', 'joe', 'john', 'person')
 
-    def test_factory_takes_keyword_arguments(self):
+    def test_factory_w_keyword_arguments(self):
         a_person = dict(
             first_name=self.random_first_name,
             last_name=choose('doe', 'smith', 'blow', 'public'),

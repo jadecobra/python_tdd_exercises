@@ -50,7 +50,7 @@ class TestPerson(unittest.TestCase):
             year_of_birth=self.random_year_of_birth,
         )
 
-    def test_factory_takes_keyword_arguments(self):
+    def test_factory_w_keyword_arguments(self):
         self.assertEqual(
             src.person.factory(
                 first_name=self.random_first_name,

@@ -2028,7 +2028,7 @@ I want to add randomness to the test
             self.random_first_name = choose('jane', 'joe', 'john', 'person')
             self.random_last_name = choose('doe', 'smith', 'blow', 'public')
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
 
 * ``self.random_first_name`` and ``self.random_last_name`` look the same. I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for the values of the names passed to the ``choose`` :ref:`function<what is a function?>`
 
@@ -2074,15 +2074,15 @@ I want to add randomness to the test
             self.random_first_name = choose(*self.RANDOM_NAMES)
             self.random_last_name = choose(*self.RANDOM_NAMES)
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
 
-* I use ``self.random_last_name`` in :ref:`test_factory_takes_keyword_arguments`
+* I use ``self.random_last_name`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 29
     :emphasize-lines: 4-5
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=self.random_first_name,
                 # last_name=choose('doe', 'smith', 'blow', 'public'),
@@ -2097,7 +2097,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 29
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
@@ -2122,15 +2122,15 @@ I want to add randomness to the test
             self.random_last_name = choose(*self.RANDOM_NAMES)
             self.random_sex = choose('M', 'F')
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_takes_keyword_arguments`
+* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 30
     :emphasize-lines: 5-6
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
@@ -2145,7 +2145,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 30
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
@@ -2176,9 +2176,9 @@ I want to add randomness to the test
                 year_of_birth=self.random_year_of_birth,
             )
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
 
-* I use the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_factory_takes_keyword_arguments`
+* I use the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 43
@@ -2228,7 +2228,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 36
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name=self.random_first_name,
@@ -2241,7 +2241,7 @@ I want to add randomness to the test
 
         def test_factory_w_optional_arguments(self):
 
-  green again. Do I still need :ref:`test_factory_takes_keyword_arguments`?
+  green again. Do I still need :ref:`test_factory_w_keyword_arguments`?
 
 ----
 
@@ -2717,7 +2717,7 @@ I want to add randomness to the test
                 year_of_birth=self.random_year_of_birth,
             )
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
 
 * I add an :ref:`assertion<what is an assertion?>` with the new :ref:`class attribute<test_attribute_error_w_class_attributes>` to ``test_classy_person_greeting``
 

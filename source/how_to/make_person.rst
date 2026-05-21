@@ -322,7 +322,7 @@ start the project
 ----
 
 *********************************************************************************
-test_factory_takes_keyword_arguments
+test_factory_w_keyword_arguments
 *********************************************************************************
 
 ----
@@ -333,7 +333,7 @@ test_factory_takes_keyword_arguments
 
 ----
 
-* I change ``test_failure`` to ``test_factory_takes_keyword_arguments``
+* I change ``test_failure`` to ``test_factory_w_keyword_arguments``
 
   .. code-block:: python
     :linenos:
@@ -344,7 +344,7 @@ test_factory_takes_keyword_arguments
 
     class TestPerson(unittest.TestCase):
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(),
                 None
@@ -428,7 +428,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 3-5
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -479,7 +479,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 5
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -516,7 +516,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 6
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -556,7 +556,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 7
     :emphasize-lines: 7
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -621,7 +621,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 9
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -660,7 +660,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 10
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             self.assertEqual(
                 src.person.factory(
                     first_name='first_name',
@@ -699,7 +699,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 2
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'first_name'
 
             self.assertEqual(
@@ -743,7 +743,7 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
     :lineno-start: 11
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'first_name'
 
             self.assertEqual(
@@ -769,7 +769,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 2
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -844,7 +844,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 3
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'last_name'
 
@@ -886,7 +886,7 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
     :lineno-start: 11
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'last_name'
 
@@ -914,7 +914,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 3
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
@@ -1003,7 +1003,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 4
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'M'
@@ -1047,7 +1047,7 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
     :lineno-start: 11
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'M'
@@ -1075,7 +1075,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 11
     :emphasize-lines: 4
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -1220,7 +1220,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 12
     :emphasize-lines: 5
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -1266,7 +1266,7 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
     :lineno-start: 12
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -1304,7 +1304,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 12
     :emphasize-lines: 6-10
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -1374,7 +1374,7 @@ test_factory_takes_keyword_arguments
     :lineno-start: 12
     :emphasize-lines: 7-12
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
@@ -1395,7 +1395,7 @@ test_factory_takes_keyword_arguments
   .. code-block:: python
     :lineno-start: 12
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             year_of_birth = this_year()
             a_person = dict(
                 first_name='jane',
@@ -1452,7 +1452,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
     :lineno-start: 13
     :emphasize-lines: 2-5
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             # year_of_birth = this_year()
             year_of_birth = random.randint(
                 this_year()-120, this_year()
@@ -1563,7 +1563,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
     :emphasize-lines: 8-9
     :emphasize-text: ) ,
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
@@ -1759,7 +1759,7 @@ random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`
   .. code-block:: python
     :lineno-start: 17
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             year_of_birth = random.randint(
                 this_year()-120, this_year()
             )
@@ -1801,7 +1801,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I copy ``test_factory_takes_keyword_arguments`` and paste it below in ``test_person.py``
+* I copy ``test_factory_w_keyword_arguments`` and paste it below in ``test_person.py``
 * I change the name of the new test to ``test_factory_w_optional_arguments``, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
@@ -2226,17 +2226,17 @@ I want to see what happens when I try to make a person without a value for the `
                 this_year()-120, this_year()
             )
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
 
   I can use the :ref:`class attribute<test_attribute_error_w_class_attributes>` directly
 
-* I point ``year_of_birth`` in ``test_factory_takes_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I point ``year_of_birth`` in ``test_factory_w_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 22
     :emphasize-lines: 2-5
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             # year_of_birth = random.randint(
             #     this_year()-120, this_year()
             # )
@@ -2279,7 +2279,7 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: python
     :lineno-start: 22
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=choose('jane', 'joe', 'john', 'person'),
                 last_name=choose('doe', 'smith', 'blow', 'public'),
@@ -2385,17 +2385,17 @@ I want to see what happens when I try to make a person without a value for the `
             )
             self.random_first_name = choose('jane', 'joe', 'john', 'person')
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
 
   I can use the :ref:`class attribute<test_attribute_error_w_class_attributes>` directly
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_takes_keyword_arguments``
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_w_keyword_arguments``
 
   .. code-block:: python
     :lineno-start: 23
     :emphasize-lines: 3-4
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 # first_name=choose('jane', 'joe', 'john', 'person'),
                 first_name=self.random_first_name,
@@ -2410,7 +2410,7 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: python
     :lineno-start: 23
 
-        def test_factory_takes_keyword_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=self.random_first_name,
                 last_name=choose('doe', 'smith', 'blow', 'public'),
