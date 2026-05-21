@@ -20,14 +20,12 @@ Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to
 
     input_data -> process -> output_data
 
-I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results (reality) I get. This helps me answer two questions:
+I send things (:ref:`input data<data structures>`) to a program_ to test it, and check if what I think will happen (my expectation) is the same as the results I get (reality). This helps me answer two questions:
 
 * what is the same?
 * what is different?
 
-The difference helps me know what to change to get what I want.
-
-This is the job of the `assertEqual method`_, which takes 2 inputs and checks if they are the same
+The difference helps me know what to change to get what I want. I do this with the `assertEqual method`_, which takes 2 inputs and checks if they are the same
 
 .. code-block:: python
 
@@ -38,7 +36,7 @@ where
 * ``reality`` is what happens when I do something with code
 * ``my_expectation`` is what I think will happen when I do something with code
 
-I use :ref:`the identity function<test_identity_function>` in this chapter to show how :ref:`input data<data structures>` is passed from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`
+The exercises in this chapter to show how I can pass :ref:`input data<data structures>` from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`.
 
 ----
 
@@ -388,7 +386,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
     # AssertionError
     # NameError
 
-* I add an `import statement`_ for the ``telephone`` :ref:`module<what is a module?>` which is in the ``src`` folder_, at the top of the file_
+* I add an `import statement`_ for the ``telephone`` :ref:`module<what is a module?>` from the ``src`` folder_, at the top of the file_
 
   .. code-block:: python
     :linenos:
@@ -400,7 +398,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     class TestTelephone(unittest.TestCase):
 
-  - ``import src.telephone`` brings in an :ref:`object<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
+  - ``import src.telephone`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
   - I like to sort my `import statements`_ alphabetically
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -425,7 +423,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
 * I use the :ref:`Explorer<explorer on left>` to open ``telephone.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
 
-* I delete the text in the file_ then add a name
+* I delete the text, then add a name to ``telephone.py``
 
   .. code-block:: python
     :linenos:
@@ -439,7 +437,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     NameError: name 'text' is not defined
 
-  the name is in the file_, and I have not told Python_ what it means
+  because the name is in the file_, and I have not told Python_ what it means
 
 * I point ``text`` to :ref:`None<what is None?>`
 
@@ -455,7 +453,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     TypeError: 'NoneType' object is not callable
 
-  :ref:`I cannot call None the way I can call a function<test_type_error_w_the_uncallables>`
+  because :ref:`I cannot call None the way I can call a function<test_type_error_w_the_uncallables>`
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
@@ -497,15 +495,14 @@ because there is no definition for ``src`` in ``test_telephone.py``
     def text(the_input):
         return None
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  - ``the_input`` is the name I used for the input, I can use any name I want.
+  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    AssertionError: None != 'I got: hello'
+      AssertionError: None != 'I got: hello'
 
-  because the :ref:`assertion<what is an assertion?>` expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
-
-  .. tip:: ``the_input`` is the name I used for the input, I can use any name I want.
+    because the :ref:`assertion<what is an assertion?>` expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`.
 
 * I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None<what is None?>`
 
@@ -532,7 +529,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 6-9
+    :emphasize-lines: 6-8
 
         def test_passing_a_string(self):
             reality = src.telephone.text('hello')
@@ -569,7 +566,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
     AssertionError: 'I got: yes' != 'I got: hello'
 
-  it did not work, my change broke the test that was passing before. The `return statement`_ has to use the input it gets as part of the output.
+  it did not work, my change broke the :ref:`assertion<what is an assertion?>` that was passing before. The `return statement`_ has to use the input it gets as part of the output.
 
 ----
 
@@ -588,14 +585,96 @@ what is string interpolation?
 
   the test passes.
 
-  This is called `string interpolation`_, I can use it to put values in strings_.
-
-  A string_ is anything inside :ref:`quotes` e.g.
+  This is called `string interpolation`_, I can use it to put values in strings_. A string_ is anything inside :ref:`quotes` e.g.
 
   - ``'single quotes'``
   - ``'''triple single quotes'''``
   - ``"double quotes"``
   - ``"""triple double quotes"""``
+
+* I add a :ref:`variable<what is a variable?>` to use the remove repetition of ``'hello'`` from the test in ``test_telephone.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 2
+
+        def test_passing_a_string(self):
+            a_string = 'hello'
+            reality = src.telephone.text('hello')
+            my_expectation = 'I got: hello'
+            self.assertEqual(reality, my_expectation)
+
+* I use the new :ref:`variable<what is a variable?>` and `string interpolation`_ to remove repetition of ``'hello'`` from the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 3-6
+
+        def test_passing_a_string(self):
+            a_string = 'hello'
+            # reality = src.telephone.text('hello')
+            reality = src.telephone.text(a_string)
+            # my_expectation = 'I got: hello'
+            my_expectation = f'I got: {a_string}'
+            self.assertEqual(reality, my_expectation)
+
+  the test is still green.
+
+* I add a :ref:`variable<what is a variable?>` to use the remove repetition of ``'yes'`` from the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 9
+
+        def test_passing_a_string(self):
+            a_string = 'hello'
+            # reality = src.telephone.text('hello')
+            reality = src.telephone.text(a_string)
+            # my_expectation = 'I got: hello'
+            my_expectation = f'I got: {a_string}'
+            self.assertEqual(reality, my_expectation)
+
+            a_string = 'yes'
+            reality = src.telephone.text('yes')
+            my_expectation = 'I got: yes'
+            self.assertEqual(reality, my_expectation)
+
+* I use the new :ref:`variable<what is a variable?>` and `string interpolation`_ to remove repetition of ``'yes'`` from the test
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 2-5
+
+            a_string = 'yes'
+            # reality = src.telephone.text('yes')
+            reality = src.telephone.text(a_string)
+            # my_expectation = 'I got: yes'
+            my_expectation = f'I got: {a_string}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 7
+
+        def test_passing_a_string(self):
+            a_string = 'hello'
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
+            self.assertEqual(reality, my_expectation)
+
+            a_string = 'yes'
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I open a new terminal_ then change directories to ``telephone``
 
@@ -610,7 +689,7 @@ what is string interpolation?
 
     .../pumping_python/telephone
 
-* I add a git_ commit message in the other terminal_
+* I add a git_ commit message in the new terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -643,15 +722,17 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 10-13
+    :emphasize-lines: 12-15
 
         def test_passing_a_string(self):
-            reality = src.telephone.text('hello')
-            my_expectation = 'I got: hello'
+            a_string = 'hello'
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
             self.assertEqual(reality, my_expectation)
 
-            reality = src.telephone.text('yes')
-            my_expectation = 'I got: yes'
+            a_string = 'yes'
+            reality = src.telephone.text(a_string)
+            my_expectation = f'I got: {a_string}'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_none(self):
@@ -676,13 +757,38 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
 ----
 
-* I remove the :ref:`quotes` around :ref:`None<what is None?>` in ``my_expectation``
+I remove the :ref:`quotes` around :ref:`None<what is None?>` in ``my_expectation``
+
+.. code-block:: python
+  :lineno-start: 18
+  :emphasize-lines: 3
+
+      def test_passing_none(self):
+          reality = src.telephone.text(None)
+          my_expectation = 'I got: None'
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3
+    :lineno-start: 18
+    :emphasize-lines: 2
 
         def test_passing_none(self):
+            none = None
             reality = src.telephone.text(None)
             my_expectation = 'I got: None'
             self.assertEqual(reality, my_expectation)
@@ -690,7 +796,38 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
     # Exceptions seen
 
-  the test passes.
+* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 3-6
+
+        def test_passing_none(self):
+            none = None
+            # reality = src.telephone.text(None)
+            reality = src.telephone.text(none)
+            # my_expectation = 'I got: None'
+            my_expectation = f'I got: {none}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 18
+
+        def test_passing_none(self):
+            none = None
+            reality = src.telephone.text(none)
+            my_expectation = f'I got: {none}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -759,7 +896,7 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 4
+    :emphasize-lines: 3
 
         def test_passing_booleans(self):
             reality = src.telephone.text(False)
@@ -1001,7 +1138,7 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
 
   .. code-block:: python
     :lineno-start: 35
-    :emphasize-lines: 7-11
+    :emphasize-lines: 6-9
     :emphasize-text: "
 
         def test_passing_a_float(self):
@@ -1129,7 +1266,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # Exceptions seen
 
-  the test passes. Python_ changed :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
+  the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the :ref:`list<what is a list?>` to a :ref:`single quote<quotes>` (``'``).
 
 * I add a git_ commit message in the other terminal_
 
@@ -1148,7 +1285,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 test_passing_a_dictionary
 *********************************************************************************
 
-I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }`` separated by a comma) from a test to a `function<what is a function?>`
+I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }`` separated by a comma) from a test to a :ref:`function<what is a function?>`
 
 ----
 
