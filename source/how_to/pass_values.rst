@@ -1409,6 +1409,14 @@ the test passes.
     :lineno-start: 47
     :emphasize-lines: 2
 
+        def test_passing_a_tuple(self):
+            a_tuple = (1, 2, 3, 'n')
+            reality = src.telephone.text((1, 2, 3, 'n'))
+            my_expectation = "I got: (1, 2, 3, 'n')"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of the tuple_
 
@@ -1416,6 +1424,16 @@ the test passes.
     :lineno-start: 47
     :emphasize-lines: 3-6
 
+        def test_passing_a_tuple(self):
+            a_tuple = (1, 2, 3, 'n')
+            # reality = src.telephone.text((1, 2, 3, 'n'))
+            reality = src.telephone.text(a_tuple)
+            # my_expectation = "I got: (1, 2, 3, 'n')"
+            my_expectation = f"I got: {a_tuple}"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the test is still green.
 
@@ -1424,7 +1442,14 @@ the test passes.
   .. code-block:: python
     :lineno-start: 47
 
+        def test_passing_a_tuple(self):
+            a_tuple = (1, 2, 3, 'n')
+            reality = src.telephone.text(a_tuple)
+            my_expectation = f"I got: {a_tuple}"
+            self.assertEqual(reality, my_expectation)
 
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
