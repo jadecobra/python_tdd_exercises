@@ -718,7 +718,7 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I change the value for ``first_name`` to ``'jane'`` in ``reality`` and ``my_expectation``, in ``test_person.py``
+* I change the value of ``first_name`` to ``'jane'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -748,7 +748,7 @@ test_factory_w_keyword_arguments
     AssertionError: {'first_name': 'first_name'}
                  != {'first_name': 'jane'}
 
-  because I changed the value in ``my_expectation``
+  because I changed the value for ``first_name`` in ``my_expectation``
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
@@ -892,7 +892,7 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I change the value for ``last_name`` to ``'doe'`` in ``reality`` and ``my_expectation``, in ``test_person.py``
+* I change the value of ``last_name`` to ``'doe'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -925,7 +925,7 @@ test_factory_w_keyword_arguments
     AssertionError: {'first_name': 'jane', 'last_name': 'last_name'}
                  != {'first_name': 'jane', 'last_name': 'doe'}
 
-  because I changed the value in ``my_expectation``
+  because I changed the value for ``last_name`` in ``my_expectation``
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
@@ -1033,31 +1033,36 @@ test_factory_w_keyword_arguments
 * I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 11
+    :lineno-start: 11
+    :emphasize-lines: 14
 
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex='M',
-                    year_of_birth=this_year(),
-                ),
-                dict(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex='M',
-                )
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex='M',
+                year_of_birth=this_year(),
             )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex='M',
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines: 3
 
-    E       - {'first_name': 'jane', 'last_name': 'doe'}
-    E       + {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
-    E       ?                                          ++++++++++++
+    AssertionError: {'first_name': 'jane', 'last_name': 'doe'}
+                 != {'first_name': 'jane', 'last_name': 'doe',
+                     'sex': 'M'}
 
 * I add a new :ref:`key<test_keys_of_a_dictionary>` to the `return statement`_ in ``person.py``
 
@@ -1077,101 +1082,45 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to remove the repetition of the value for ``sex`` in ``test_person.py``
+* I change the value of ``sex`` to ``'F'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 4
+    :emphasize-lines: 8-9, 15-16
 
-        def test_factory_w_keyword_arguments(self):
+        def test_factor_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
-            sex = 'M'
 
-            self.assertEqual(
-
-* I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5-6
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    last_name=last_name,
-                    # sex='M',
-                    sex=sex,
-                    year_of_birth=this_year(),
-                ),
-
-  the test is still green.
-
-* I use the :ref:`variable<what is a variable?>` in the expected :ref:`dictionary<what is a dictionary?>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 4-5
-
-                dict(
-                    first_name=first_name,
-                    last_name=last_name,
-                    # sex='M',
-                    sex=sex,
-                )
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 11
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'M'
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
-                    year_of_birth=this_year(),
-                ),
-                dict(
-                    first_name=first_name,
-                    last_name=last_name,
-                    sex=sex,
-                )
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                # sex='M',
+                sex='F',
+                year_of_birth=this_year(),
             )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                # sex='M',
+                sex='F',
+            )
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-* I change the value of the ``sex`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 4
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
+  .. code-block:: python
 
-    E       - {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
-    E       ?                                                    ^
-    E
-    E       + {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
-    E       ?                                                    ^
+    AssertionError:
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
+     != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
-* I change the `return statement`_ in ``person.py``
+  because I changed the value for ``sex`` in ``my_expectation``
+
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -1187,7 +1136,97 @@ test_factory_w_keyword_arguments
             'sex': 'F',
         }
 
-  and the test is green again
+  the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 4
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                # sex='M',
+                sex='F',
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                # sex='M',
+                sex='F',
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 10-11, 18-19
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                # sex='M',
+                # sex='F',
+                sex=sex,
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                # sex='M',
+                # sex='F',
+                sex=sex,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 11
+
+        def test_factor_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=this_year(),
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  I now only need to change the value of ``sex`` in one place in the test
 
 ----
 
