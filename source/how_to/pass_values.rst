@@ -1520,7 +1520,7 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 I change the :ref:`list<what is a list?>` in ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 45
+  :lineno-start: 53
   :emphasize-lines: 3
   :emphasize-text: " '
 
@@ -1622,13 +1622,14 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
 * I add a test for a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 6-17
+    :lineno-start: 53
+    :emphasize-lines: 7-18
     :emphasize-text: "
 
         def test_passing_a_list(self):
-            reality = src.telephone.text([1, 2, 3, "n"])
-            my_expectation = "I got: [1, 2, 3, 'n']"
+            a_list = [1, 2, 3, 'n']
+            reality = src.telephone.text(a_list)
+            my_expectation = f"I got: {a_list}"
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_dictionary(self):
@@ -1663,14 +1664,51 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
 
 ----
 
-* I change ``my_expectation`` to match ``reality``
+I change ``my_expectation`` to match ``reality``
+
+.. code-block:: python
+  :lineno-start: 59
+  :emphasize-lines: 10-11
+  :emphasize-text: '
+
+      def test_passing_a_dictionary(self):
+          reality = src.telephone.text(
+              {
+                  'key1': 'value1',
+                  'keyN': [0, 1, 2, 'n'],
+              }
+          )
+          my_expectation = (
+              "I got: "
+              "{'key1': 'value1', "
+              "'keyN': [0, 1, 2, 'n']}"
+          )
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 10-11
-    :emphasize-text: "
+    :lineno-start: 59
+    :emphasize-lines: 2-5
 
         def test_passing_a_dictionary(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
             reality = src.telephone.text(
                 {
                     'key1': 'value1',
@@ -1679,15 +1717,59 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
             )
             my_expectation = (
                 "I got: "
-                "{'key1': 'value1', "
-                "'keyN': [0, 1, 2, 'n']}"
+                "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
             )
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows all tests are passing.
+* I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of the :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 6-17
+
+        def test_passing_a_dictionary(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            # reality = src.telephone.text(
+            #     {
+            #         'key1': 'value1',
+            #         'keyN': [0, 1, 2, 'n'],
+            #     }
+            # )
+            reality = src.telephone.text(a_dictionary)
+            # my_expectation = (
+            #     "I got: "
+            #     "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
+            # )
+            my_expectation = f'I got: {a_dictionary}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 59
+
+        def test_passing_a_dictionary(self):
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            reality = src.telephone.text(a_dictionary)
+            my_expectation = f'I got: {a_dictionary}'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1721,20 +1803,16 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
 * I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 14-17
+    :lineno-start: 59
+    :emphasize-lines: 10-13
 
         def test_passing_a_dictionary(self):
-            reality = src.telephone.text(
-                {
-                    'key1': 'value1',
-                    'keyN': [0, 1, 2, 'n'],
-                }
-            )
-            my_expectation = (
-                "I got: "
-                "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
-            )
+            a_dictionary = {
+                'key1': 'value1',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            reality = src.telephone.text(a_dictionary)
+            my_expectation = f'I got: {a_dictionary}'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_a_class(self):
@@ -1765,8 +1843,9 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
 I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 63
+  :lineno-start: 68
   :emphasize-lines: 3
+  :emphasize-text: " '
 
       def test_passing_a_class(self):
           reality = src.telephone.text(object)
@@ -1789,7 +1868,7 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 68
     :emphasize-lines: 6-8
 
         def test_passing_a_class(self):
@@ -1815,8 +1894,9 @@ the test passes.
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 73
     :emphasize-lines: 2-5
+    :emphasize-text: '
 
             reality = src.telephone.text(TestTelephone)
             my_expectation = (
@@ -1833,6 +1913,108 @@ the test passes.
   - ``tests`` is the folder_
   - ``test_telephone`` is ``test_telephone.py`` in the ``tests`` folder_
   - ``TestTelephone`` is the :ref:`class (object)<what is a class?>` that is defined on line 5 of ``test_telephone.py`` in the ``tests`` folder_
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 8-10
+
+            reality = src.telephone.text(TestTelephone)
+            my_expectation = (
+                "I got: <class "
+                "'tests.test_telephone.TestTelephone'>"
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(self)
+            my_expectation = "I got: self"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'I got: test_passing_a_class (
+            tests.test_telephone
+                 .TestTelephone.test_passing_a_class
+        )'
+        != 'I got: self'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 80
+    :emphasize-lines: 2-6
+
+            reality = src.telephone.text(self)
+            my_expectation = (
+                "I got: test_passing_a_class "
+                "(tests.test_telephone.TestTelephone"
+                ".test_passing_a_class)"
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+
+* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ``TestTelephone``
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 3-6
+
+
+  still green.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``TestTelephone``
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 2
+
+
+* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ____
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 3-6
+
+
+  green.
+
+* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ____
+
+  .. code-block:: python
+    :lineno-start:
+    :emphasize-lines: 3-6
+
+
+  the terminal_ is my friend, and shows all tests are passing.
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start:
+
+
 
 * I add a git_ commit message in the other terminal_
 
@@ -1896,7 +2078,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
 * I add the name to ``telephone.py``
 
-  .. code-block:: python
+  .. code-block:: pyth7on
     :linenos:
 
     text
