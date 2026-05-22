@@ -564,7 +564,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_functions_w_keyword_arguments>` for ``year_of_birth``. I add it to the call in the test, with the result of calling another :ref:`function<what is a function?>`, in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_functions_w_keyword_arguments>` for ``year_of_birth``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -575,37 +575,13 @@ test_factory_w_keyword_arguments
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=2026,
             )
             my_expectation = None
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'this_year' is not defined
-
-  because there is nothing with that name in this file_
-
-* I add a definition for the ``this_year`` :ref:`function<what is a function?>` above the :ref:`class<what is a class?>` definition
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 5-6
-
-    import src.person
-    import unittest
-
-
-    def this_year():
-        return None
-
-
-    class TestPerson(unittest.TestCase):
 
   the terminal_ is my friend, and shows :ref:`TypeError`
 
