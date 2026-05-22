@@ -837,7 +837,7 @@ how to make the tests a Python package
 
     the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test
 
-* I run the tests again
+* I run the test again
 
   .. code-block:: shell
     :emphasize-lines: 1

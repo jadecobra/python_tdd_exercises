@@ -575,7 +575,7 @@ test_factory_w_keyword_arguments
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=2026,
+                year_of_birth=1996,
             )
             my_expectation = None
             self.assertEqual(reality, my_expectation)
@@ -611,7 +611,7 @@ test_factory_w_keyword_arguments
 * I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) as output when it is called. I change ``my_expectation`` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 9
 
         def test_factory_w_keyword_arguments(self):
@@ -619,7 +619,7 @@ test_factory_w_keyword_arguments
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict()
             self.assertEqual(reality, my_expectation)
@@ -654,7 +654,7 @@ test_factory_w_keyword_arguments
 * I want the expected :ref:`dictionary<what is a dictionary?>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 9
 
         def test_factory_w_keyword_arguments(self):
@@ -662,7 +662,7 @@ test_factory_w_keyword_arguments
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name='first_name',
@@ -697,7 +697,7 @@ test_factory_w_keyword_arguments
 * I change the value of ``first_name`` to ``'jane'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 3-4, 10-11
 
         def test_factory_w_keyword_arguments(self):
@@ -706,7 +706,7 @@ test_factory_w_keyword_arguments
                 first_name='jane',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 # first_name='first_name',
@@ -743,7 +743,7 @@ test_factory_w_keyword_arguments
 * I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 2
 
         def test_factory_w_keyword_arguments(self):
@@ -754,7 +754,7 @@ test_factory_w_keyword_arguments
                 first_name='jane',
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 # first_name='first_name',
@@ -780,7 +780,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 # first_name='first_name',
@@ -797,7 +797,7 @@ test_factory_w_keyword_arguments
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -806,7 +806,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -823,7 +823,7 @@ test_factory_w_keyword_arguments
 * I want the expected :ref:`dictionary<what is a dictionary?>` to have a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to ``my_expectation`` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 12
 
         def test_factory_w_keyword_arguments(self):
@@ -833,7 +833,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name='last_name',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -871,7 +871,7 @@ test_factory_w_keyword_arguments
 * I change the value of ``last_name`` to ``'doe'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 6-7, 13-14
 
         def test_factory_w_keyword_arguments(self):
@@ -882,7 +882,7 @@ test_factory_w_keyword_arguments
                 # last_name='last_name',
                 last_name='doe',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -923,7 +923,7 @@ test_factory_w_keyword_arguments
 * I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 3
 
         def test_factory_w_keyword_arguments(self):
@@ -935,7 +935,7 @@ test_factory_w_keyword_arguments
                 # last_name='last_name',
                 last_name='doe',
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -963,7 +963,7 @@ test_factory_w_keyword_arguments
                 # last_name='doe',
                 last_name=last_name,
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -981,7 +981,7 @@ test_factory_w_keyword_arguments
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -991,7 +991,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name=last_name,
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1009,7 +1009,7 @@ test_factory_w_keyword_arguments
 * I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 14
 
         def test_factory_w_keyword_arguments(self):
@@ -1020,7 +1020,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name=last_name,
                 sex='M',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1061,7 +1061,7 @@ test_factory_w_keyword_arguments
 * I change the value of ``sex`` to ``'F'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 8-9, 15-16
 
         def test_factory_w_keyword_arguments(self):
@@ -1073,7 +1073,7 @@ test_factory_w_keyword_arguments
                 last_name=last_name,
                 # sex='M',
                 sex='F',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1117,7 +1117,7 @@ test_factory_w_keyword_arguments
 * I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 4
 
         def test_factory_w_keyword_arguments(self):
@@ -1130,7 +1130,7 @@ test_factory_w_keyword_arguments
                 last_name=last_name,
                 # sex='M',
                 sex='F',
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1160,7 +1160,7 @@ test_factory_w_keyword_arguments
                 # sex='M',
                 # sex='F',
                 sex=sex,
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1179,7 +1179,7 @@ test_factory_w_keyword_arguments
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1190,7 +1190,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1209,7 +1209,7 @@ test_factory_w_keyword_arguments
 * I want the ``factory`` :ref:`function<what is a function?>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` to ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 7
     :emphasize-lines: 16
 
         def test_factory_w_keyword_arguments(self):
@@ -1221,7 +1221,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1334,7 +1334,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                year_of_birth=this_year(),
+                year_of_birth=1996,
             )
             my_expectation = dict(
                 first_name=first_name,
@@ -1363,7 +1363,7 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                # year_of_birth=this_year(),
+                # year_of_birth=1996,
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
