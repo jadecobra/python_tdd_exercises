@@ -28,7 +28,7 @@ preview
 
 This is one way to make a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. I walk through making the `folders (directories)`_ and files_ for the environment, including setting up :ref:`the first test<test_failure>`. By the end of the chapter you will know these commands better
 
-.. code-block:: shell
+.. code-block:: python
 
   mkdir
   cd
@@ -87,20 +87,20 @@ how to setup the project
 
   .. note:: skip this step if you are already in the ``pumping_python`` directory_ or made it earlier
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd pumping_python
 
   - if the terminal_ shows
 
-    .. code-block:: shell
+    .. code-block:: python
 
       cd: no such file or directory: pumping_python
 
     the `folder (directory)`_ does NOT exist. I need to make it. I use the `mkdir program`_ to make the ``pumping_python`` `folder (directory)`_
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       mkdir pumping_python
@@ -109,27 +109,27 @@ how to setup the project
 
   - I try `changing directory`_ again
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       cd pumping_python
 
     the terminal_ shows I am in the ``pumping_python`` `folder (directory)`_
 
-    .. code-block:: shell
+    .. code-block:: python
 
       .../pumping_python
 
 * I type tree_ in the terminal_ to see what files_ and folders_ are in the ``pumping_python`` directory_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     tree
 
   - if tree_ is not installed on the computer, the terminal_ shows
 
-    .. code-block:: shell
+    .. code-block:: python
 
       tree: command not found
 
@@ -137,7 +137,7 @@ how to setup the project
 
   - if tree_ is installed on the computer, the terminal_ shows
 
-    .. code-block:: shell
+    .. code-block:: python
 
       .
 
@@ -147,14 +147,14 @@ how to setup the project
 
 * I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd magic
 
   the terminal_ is my friend, and shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     cd: no such file or directory: magic
 
@@ -170,7 +170,7 @@ how to setup a project with uv
 
 * I use the `uv Python Package Manager`_ to setup the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     uv init magic
@@ -334,7 +334,7 @@ how to run a Python program
 
 I use Python_ to run the ``magic`` program_
 
-.. code-block:: shell
+.. code-block:: python
   :emphasize-lines: 1
 
   python3 src/magic.py
@@ -357,7 +357,7 @@ how to make a directory for the source code
 
 * I make a child folder_ in the ``magic`` directory_ for the program_ because I want to keep the files_ separate from the other files_ in the project
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir src
@@ -366,7 +366,7 @@ how to make a directory for the source code
 
 * I use tree_ to see what changed in the ``magic`` directory_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     tree -a -L 1
@@ -395,7 +395,7 @@ how to make a directory for the source code
 
 * I try to run the ``magic`` program_ again
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 src/magic.py
@@ -412,7 +412,7 @@ how to change the name of a file
 
 * I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mv main.py src/magic.py
@@ -421,7 +421,7 @@ how to change the name of a file
 
 * I use tree_ to see what folders_ and files_ I now have
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     tree -a -L 2
@@ -452,14 +452,14 @@ how to change the name of a file
 
 * I try to run the ``magic`` program_ again
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 src/magic.py
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     Hello from magic!
 
@@ -501,14 +501,14 @@ how to manually run tests
 
 * I use the `unittest module`_ from `The Python Standard Library`_ that comes with Python_ to run tests. I type this in the terminal_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m unittest
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     ------------------------------------------------------
     Ran 0 tests in 0.000s
@@ -532,7 +532,7 @@ how to make a directory for the tests
 
 * I make a child folder_ to keep the tests in a different place from the actual program_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mkdir tests
@@ -541,7 +541,7 @@ how to make a directory for the tests
 
 * I use tree_ to see what my project looks like
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     tree -a -L 2
@@ -579,7 +579,7 @@ how to make a Python file for the tests in the 'tests' directory
 
 * I use touch_ to add an empty file_ to the ``tests`` directory_ for the actual test
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch tests/magic.py
@@ -588,7 +588,7 @@ how to make a Python file for the tests in the 'tests' directory
 
 * I use tree_ to see what the project looks like now
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 18
 
     tree -a -L 2
@@ -619,14 +619,14 @@ how to make a Python file for the tests in the 'tests' directory
 
 * I run the test again
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m unittest
 
   the terminal_ is my friend, and shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NO TESTS RAN
 
@@ -644,7 +644,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ by typing the name of the program and the name of the file_, for example with `Visual Studio Code`_ when I type this in the terminal_
 
-    .. code-block:: shell
+    .. code-block:: python
       :emphasize-lines: 1
 
       code tests/magic.py
@@ -708,14 +708,14 @@ how to make a Python file for the tests in the 'tests' directory
 
 * I try the command again to run the tests in the terminal_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m unittest
 
   the terminal_ is my friend, and shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NO TESTS RAN
 
@@ -733,7 +733,7 @@ how to make the tests a Python package
 
   .. danger:: use 2 underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     touch tests/__init__.py
@@ -742,7 +742,7 @@ how to make the tests a Python package
 
 * I run the tree_ command to see what changed
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     tree -a -L 2
@@ -772,16 +772,16 @@ how to make the tests a Python package
         ├── __init__.py
         └── magic.py
 
-* I try to run the tests again
+* I try to run the test again
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m unittest
 
   the terminal_ does not feel like my friend, and shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     NO TESTS RAN
 
@@ -793,7 +793,7 @@ how to make the tests a Python package
 
 * I use the `mv program`_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     mv tests/magic.py tests/test_magic.py
@@ -802,7 +802,7 @@ how to make the tests a Python package
 
 * I use tree_ with the ``-L`` option to see what I have so far
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     tree -a -L 2
@@ -839,14 +839,14 @@ how to make the tests a Python package
 
 * I run the test again
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     python3 -m unittest
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 9
 
     F
@@ -910,7 +910,7 @@ I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on l
 
 I run the test again in the terminal_
 
-.. code-block:: shell
+.. code-block:: python
   :emphasize-lines: 1
 
   python3 -m unittest
@@ -978,7 +978,7 @@ pytest_ is a `Python package`_ like unittest_ that is used for testing. It is no
 
 I use uv_ to run `pytest-watcher`_ in the terminal_
 
-.. code-block:: shell
+.. code-block:: python
   :emphasize-lines: 1
 
   uv run pytest-watcher
@@ -1006,20 +1006,20 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
 * I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example, if I type this in the terminal_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     echo "pytest"
 
   it shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     pytest
 
 * I can also use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     echo "pytest" > requirements.txt
@@ -1030,7 +1030,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
 * I add `pytest-watcher`_ to the requirements file_ as well
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     echo "pytest-watcher" >> requirements.txt
@@ -1040,7 +1040,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
 * I use tree_ to see what the project looks like now
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     tree -a -L 2
@@ -1076,14 +1076,14 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
 * I use cat_ to make sure ``requirements.txt`` has ``pytest`` and ``pytest-watcher`` inside it
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cat requirements.txt
 
   the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     pytest
     pytest-watcher
@@ -1100,7 +1100,7 @@ how to install Python packages with uv
 
 * I use uv_ to install `pytest-watcher`_ from the requirements file
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
@@ -1199,14 +1199,14 @@ how to activate a virtual environment
 
 * When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     source .venv/bin/activate
 
   the terminal_ is my friend, and shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     (magic) .../magic
 
@@ -1241,9 +1241,9 @@ how to run the tests automatically with uv and pytest-watcher
 
 ----
 
-* I try to run the tests again, this time with uv_
+* I try to run the test again, this time with uv_
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
     :emphasize-text: .
 
@@ -1251,7 +1251,7 @@ how to run the tests automatically with uv and pytest-watcher
 
   the terminal_ is my friend, and shows results without going back to the command line
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 10
 
     pytest-watcher version X.Y.Z
@@ -1280,7 +1280,7 @@ how to open the test file in the editor from the terminal
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
-  .. code-block:: shell
+  .. code-block:: python
     :linenos:
     :emphasize-lines: 7
 
@@ -1294,7 +1294,7 @@ how to open the test file in the editor from the terminal
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 10
 
     ======================== FAILURES ==========================
@@ -1313,7 +1313,7 @@ how to open the test file in the editor from the terminal
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
-  .. code-block:: shell
+  .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 1
 
@@ -1345,14 +1345,14 @@ close the project
 
 * I click in the terminal and `change directory`_ to the parent of ``magic``
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     cd ..
 
   ``..`` is for the parent of any directory_ I am in. the terminal_ shows
 
-  .. code-block:: shell
+  .. code-block:: python
 
     .../pumping_python
 
@@ -1381,7 +1381,7 @@ how to view all the commands typed in a terminal
 
 * I type history_ in the terminal_ to see all the commands I have typed so far
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
     history
@@ -1396,7 +1396,7 @@ how to view all the commands typed in a terminal
 
 * these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     uv init NAME_OF_THE_PROJECT
     cd NAME_OF_THE_PROJECT

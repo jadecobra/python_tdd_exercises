@@ -736,7 +736,7 @@ test_factory_w_keyword_arguments
         ):
         return {'first_name': 'jane'}
 
-  the test passes. I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+  the test passes. I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
 * I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
 
@@ -766,7 +766,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 7
     :emphasize-lines: 6-7, 14-15
 
         def test_factory_w_keyword_arguments(self):
@@ -916,7 +916,7 @@ test_factory_w_keyword_arguments
             'last_name': 'doe',
         }
 
-  the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+  the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
 * I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
 
@@ -931,16 +931,14 @@ test_factory_w_keyword_arguments
             reality = src.person.factory(
                 first_name=first_name,
                 # last_name='last_name',
-                # last_name='doe',
-                last_name=last_name,
+                last_name='doe',
                 sex='M',
                 year_of_birth=2000,
             )
             my_expectation = dict(
                 first_name=first_name,
                 # last_name='last_name',
-                # last_name='doe',
-                last_name=last_name,
+                last_name='doe',
             )
             self.assertEqual(reality, my_expectation)
 
@@ -950,7 +948,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 7
     :emphasize-lines: 8-9, 16-17
 
         def test_factory_w_keyword_arguments(self):
@@ -1112,7 +1110,7 @@ test_factory_w_keyword_arguments
             'sex': 'F',
         }
 
-  the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+  the test passes. I typed the value for ``sex`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
 * I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
 
@@ -1146,7 +1144,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 7
     :emphasize-lines: 10-11, 18-19
 
         def test_factory_w_keyword_arguments(self):
@@ -1321,7 +1319,7 @@ test_factory_w_keyword_arguments
             'age': 30,
         }
 
-  the test passes. I typed the year of birth value two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+  the test passes. I typed the year of birth two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
 * I add a :ref:`variable<what is a variable?>` to use to remove the repetition of the year of birth from ``test_person.py``
 
@@ -1357,7 +1355,7 @@ test_factory_w_keyword_arguments
 * I use the :ref:`variable<what is a variable?>` to remove repetition of the year of birth
 
   .. code-block:: python
-    :lineno-start: 14
+    :lineno-start: 7
     :emphasize-lines: 12-13, 20-21
 
         def test_factory_w_keyword_arguments(self):
@@ -1508,7 +1506,7 @@ I want the value of the age to be a calculation based on the current year so tha
 ----
 
 *********************************************************************************
-test factory with random values
+test factory with random year_of_birth
 *********************************************************************************
 
 I want to use random values in the test to make sure the ``factory`` :ref:`function<what is a function?>` can handle different values and always calculates the right age
@@ -1542,7 +1540,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 2-5
+    :emphasize-lines: 5-9
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1591,7 +1589,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
 ----
 
-* I add the age calculation from ``test_person.py`` to the `return statement`_ in ``person.py``
+* I add calculation for the age with the `today method`_ to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -1606,7 +1604,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             'last_name': 'doe',
             'sex': 'F',
             # 'age': 30,
-            'age': datetime.datetime.now().year-year_of_birth,
+            'age': datetime.datetime.today().year-year_of_birth,
         }
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -1656,7 +1654,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             'first_name': 'jane',
             'last_name': 'doe',
             'sex': 'F',
-            'age': datetime.datetime.now().year-year_of_birth,
+            'age': datetime.datetime.today().year-year_of_birth,
         }
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
@@ -1756,6 +1754,18 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
 ----
 
+*********************************************************************************
+test factory with random sex
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
 * I go back to the terminal_ that is running the tests
 
 * I add randomness to the ``sex`` :ref:`variable<what is a variable?>` in ``test_person.py``
@@ -1792,11 +1802,19 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   where ``X`` is the random age
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 * I add the ``sex`` input parameter instead of a value that does not change to the `return statement`_ in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 4
+    :lineno-start: 4
+    :emphasize-lines: 8-9
 
     def factory(
             first_name, last_name,
@@ -1820,6 +1838,18 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
     git commit -am 'use random values for sex'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+*********************************************************************************
+test factory with random last name
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
 
 ----
 
@@ -1854,6 +1884,14 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   where ``Z`` and ``A`` are the different random last names, ``X`` is the random age, and ``Y`` is the random sex.
 
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 * I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` in the `return statement`_ in ``person.py``
 
   .. code-block:: python
@@ -1886,6 +1924,18 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
 ----
 
+*********************************************************************************
+test factory with random first name
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
 * I go back to the terminal_ that is running the tests
 
 * I add randomness to the ``first_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
@@ -1893,7 +1943,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
   .. code-block:: python
     :lineno-start: 9
     :emphasize-lines: 2-5
-    :emphasize-text: ) ,
+
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
@@ -1966,14 +2016,20 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
------
+----
+
+*********************************************************************************
+extract choose function
+*********************************************************************************
+
+----
 
 * I go back to the terminal_ that is running the tests
 
 * I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments`, to use to remove repetition of ``random.choice`` from the test in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
     :emphasize-lines: 7-8
 
     import datetime
@@ -1988,25 +2044,27 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
     class TestPerson(unittest.TestCase):
 
+        def test_factory_w_keyword_arguments(self):
+
 * I use the new :ref:`function<what is a function?>` to remove repetition of ``random.choice`` from the test
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 3-5, 7-9, 11-14
+    :emphasize-lines: 3-6, 8-11, 13-14
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
             # first_name = random.choice((
             #     'jane', 'joe', 'john', 'person',
             # ))
+            first_name = choose('jane', 'joe', 'john', 'person')
             # last_name = 'doe'
             # last_name = random.choice((
             #     'doe', 'smith', 'blow', 'public',
             # ))
+            last_name = choose('doe', 'smith', 'blow', 'public')
             # sex = 'F'
             # sex = random.choice(('F', 'M'))
-            first_name = choose('jane', 'joe', 'john', 'person')
-            last_name = choose('doe', 'smith', 'blow', 'public')
             sex = choose('F', 'M')
 
             this_year = datetime.datetime.now().year
@@ -2024,16 +2082,41 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
 ----
 
+*********************************************************************************
+test factory with a dictionary
+*********************************************************************************
+
+----
+
+The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is - one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
 * I go back to the terminal_ that is running the tests
 
-* The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is - one has a year of birth and the other does a calculation with the year of birth. The other things are the same. I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
+* I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 5-9
+    :lineno-start: 13
+    :emphasize-lines: 16-20
 
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            # first_name = random.choice((
+            #     'jane', 'joe', 'john', 'person',
+            # ))
             first_name = choose('jane', 'joe', 'john', 'person')
+            # last_name = 'doe'
+            # last_name = random.choice((
+            #     'doe', 'smith', 'blow', 'public',
+            # ))
             last_name = choose('doe', 'smith', 'blow', 'public')
+            # sex = 'F'
+            # sex = random.choice(('F', 'M'))
             sex = choose('F', 'M')
 
             a_person = dict(
@@ -2043,16 +2126,14 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             )
 
             this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
-            )
 
 * I use the new :ref:`variable<what is a variable?>` with a :ref:`double starred expression<double starred expressions>` to remove the repeating parts
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 5-9, 13-16
+    :lineno-start: 34
+    :emphasize-lines: 7-10, 14-17
 
+            this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
                 this_year-120, this_year
             )
@@ -2081,11 +2162,22 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 * I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 1-3, 6-11
+    :lineno-start: 13
+    :emphasize-lines: 6, 11, 14, 17-22
 
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            # first_name = random.choice((
+            #     'jane', 'joe', 'john', 'person',
+            # ))
             # first_name = choose('jane', 'joe', 'john', 'person')
+            # last_name = 'doe'
+            # last_name = random.choice((
+            #     'doe', 'smith', 'blow', 'public',
+            # ))
             # last_name = choose('doe', 'smith', 'blow', 'public')
+            # sex = 'F'
+            # sex = random.choice(('F', 'M'))
             # sex = choose('F', 'M')
 
             a_person = dict(
@@ -2094,7 +2186,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
                 # sex=sex,
                 first_name=choose('jane', 'joe', 'john', 'person'),
                 last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M')
+                sex=choose('F', 'M'),
             )
 
   still green.
@@ -2156,12 +2248,10 @@ I want to see what happens when I try to make a person without a value for the `
 
 * I go back to the terminal_ that is running the tests
 * I make a copy of :ref:`test_factory_w_keyword_arguments` and paste it below in ``test_person.py``
-* I change the name of the new test to :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 11-16, 18-21, 23-31
-    :emphasize-text: test_factory_w_optional_arguments
 
             reality = src.person.factory(
                 **a_person,
@@ -2173,7 +2263,7 @@ I want to see what happens when I try to make a person without a value for the `
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_factory_w_optional_arguments(self):
+        def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=choose('jane', 'joe', 'john', 'person'),
                 last_name=choose('doe', 'smith', 'blow', 'public'),
@@ -2198,10 +2288,35 @@ I want to see what happens when I try to make a person without a value for the `
 
     # Exceptions seen
 
+* I change the name of the new test to :ref:`test_factory_w_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 11
+    :emphasize-text: test_factory_w_optional_arguments
+
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_w_optional_arguments(self):
+            a_person = dict(
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
+            )
+
 * I comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 35
+    :emphasize-lines: 4
 
         def test_factory_w_optional_arguments(self):
             a_person = dict(
@@ -2488,7 +2603,7 @@ I want to see what happens when I try to make a person without a value for the `
                 # sex=choose('F', 'M')
             )
 
-* I use the :ref:`variable<what is a variable?>` in ``reality`` and ``my_expectation``
+* I use the :ref:`variable<what is a variable?>` for ``reality`` and ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 48
