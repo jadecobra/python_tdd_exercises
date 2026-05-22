@@ -1026,7 +1026,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
   - ``>`` is an operator that is used to send output from a program_ to the given file_
   - pytest_ is a `Python package`_ like unittest_, that is used for testing
-  - ``requirements.txt`` is the name of the file_ where I am adding `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file
+  - ``requirements.txt`` is the name of the file_ where I am adding `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file_
 
 * I add `pytest-watcher`_ to the requirements file_ as well
 
@@ -1098,7 +1098,7 @@ how to install Python packages with uv
 
 ----
 
-* I use uv_ to install `pytest-watcher`_ from the requirements file
+* I use uv_ to install `pytest-watcher`_ from the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -1439,7 +1439,7 @@ how to view all the commands typed in a terminal
 what is next?
 *************************************************************************************
 
-You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, MacOS_ and Windows_computers. :ref:`Would you like to test AssertionError next?<what causes AssertionError?>`
+You have seen me make a :ref:`Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called ``magic`` on any Linux_, MacOS_ and Windows_computers. :ref:`Would you like to test AssertionError next?<what is an assertion?>`
 
 -----
 
