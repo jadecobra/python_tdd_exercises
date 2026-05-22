@@ -333,7 +333,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I change ``test_failure`` to ``test_factory_w_keyword_arguments``
+* I change ``test_failure`` to :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 4
@@ -1746,45 +1746,52 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
     # Exceptions seen
 
-----
-
-* I add randomness to the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 8-9
-    :emphasize-text: ) ,
+    :emphasize-lines: 1
+
+    git commit -am 'use random values for age'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add randomness to the ``sex`` :ref:`variable<what is a variable?>` in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 4-5
 
         def test_factory_w_keyword_arguments(self):
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
-            a_person = dict(
-                first_name='jane',
-                last_name='doe',
-                # sex='F',
-                sex=random.choice(('F', 'M')),
-            )
+            first_name = 'jane'
+            last_name = 'doe'
+            # sex = 'F'
+            sex = random.choice(('F', 'M'))
 
-            self.assertEqual(
+            this_year = datetime.datetime.now().year
 
   - ``random`` is the `random module`_
-  - ``.choice`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the :ref:`iterable<what is an iterable?>` it is given in parentheses
+  - ``random.choice()`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the :ref:`iterable<what is an iterable?>` it is given in parentheses
   - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``sex`` is randomly ``'F'``.
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
 
-  When ``sex`` is randomly ``'M'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  If ``sex`` is randomly ``'M'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
+  .. code-block:: python
+    :emphasize-text: M F
 
-    E       - {'age': X, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
-    E       ?                                                              ^
-    E
-    E       + {'age': X, 'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
-    E       ?                                                              ^
+    AssertionError:
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+         'age': X}
+     != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M',
+         'age': X}
+
+  where ``X`` is the random age
 
 * I add the ``sex`` input parameter instead of a value that does not change to the `return statement`_ in ``person.py``
 
@@ -1792,105 +1799,153 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
     :lineno-start: 8
     :emphasize-lines: 4
 
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
         return {
             'first_name': 'jane',
             'last_name': 'doe',
+            # 'sex': 'F',
             'sex': sex,
-            'age': datetime.datetime.now().year - year_of_birth,
+            'age': datetime.datetime.now().year-year_of_birth,
         }
 
-  the test passes with no more random failures
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
 
-* I remove ``# sex = 'F'`` from ``test_person.py``
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'use random values for sex'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
-* I use `random.choice`_ with the ``last_name`` :ref:`key<test_keys_of_a_dictionary>`
+* I go back to the terminal_ that is running the tests
+
+* I use `random.choice`_ with the ``last_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 9
     :emphasize-lines: 3-6
-    :emphasize-text: ) ,
 
-            a_person = dict(
-                first_name='jane',
-                # last_name='doe',
-                last_name=random.choice((
-                    'doe', 'smith', 'blow', 'public',
-                )),
-                sex=random.choice(('F', 'M')),
-            )
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            # last_name = 'doe'
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            # sex = 'F'
+            sex = random.choice(('F', 'M'))
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``last_name`` is ``'doe'``.
+* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``last_name`` is ``'doe'``.
 
-  When ``last_name`` is not ``doe``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  If ``last_name`` is NOT ``doe``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines: 2, 5
 
-    E       - {'age': X, 'first_name': 'jane', 'last_name': 'doe', 'sex': A}
-    E       ?                                                ^^^
-    E
-    E       + {'age': X, 'first_name': 'jane', 'last_name': Z, 'sex': A}
-    E       ?                                               ^
+    AssertionError:
+        {'first_name': 'jane', 'last_name': Z, 'sex': Y,
+         'age': X}
+     != {'first_name': 'jane', 'last_name': A, 'sex': Y,
+         'age': X}
 
-  .. note:: ``Z`` is for the random last name and ``A`` is for the random sex value
+  where ``Z`` and ``A`` are the different random last names, ``X`` is the random age, and ``Y`` is the random sex.
 
 * I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` in the `return statement`_ in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 3
+    :lineno-start: 4
+    :emphasize-lines: 7-8
 
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
         return {
             'first_name': 'jane',
+            # 'last_name': 'doe',
             'last_name': last_name,
+            # 'sex': 'F',
             'sex': sex,
-            'age': datetime.datetime.today().year - year_of_birth,
+            'age': datetime.datetime.now().year-year_of_birth,
         }
 
-  and the test is green again
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'use random values for last_name'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
-* I remove ``# last_name = 'doe'`` then add randomness to the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
+* I go back to the terminal_ that is running the tests
+
+* I add randomness to the ``first_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 9
     :emphasize-lines: 2-5
     :emphasize-text: ) ,
 
-            a_person = dict(
-                # first_name='jane',
-                first_name=random.choice((
-                    'jane', 'joe', 'john', 'person',
-                )),
-                last_name=random.choice((
-                    'doe', 'smith', 'blow', 'public',
-                )),
-                sex=random.choice(('F', 'M')),
-            )
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            # last_name = 'doe'
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            # sex = 'F'
+            sex = random.choice(('F', 'M'))
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes when ``first_name`` is ``'jane'``.
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``first_name`` is ``'jane'``.
 
-  When ``first_name`` is not ``'jane'`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  If ``first_name`` is not ``'jane'`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines: 2, 5
 
-    E       - {'age': X, 'first_name': 'jane', 'last_name': Z, 'sex': A}
-    E       ?                          ^^^^^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': A}
-    E       ?                          ^
+    AssertionError:
+        {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
+     != {'first_name': B, 'last_name': Z, 'sex': Y, 'age': X}
 
-  .. note:: ``Y`` is for the random first name
+  where ``A`` and ``B`` are the different random first names, ``X`` is the random age, ``Y`` is the random sex, and ``Z`` is the random last name
 
 * I add the ``first_name`` input parameter to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 6
+    :emphasize-lines: 6-7
+
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        return {
+            # 'first_name': 'jane',
+            'first_name': first_name,
+            # 'last_name': 'doe',
+            'last_name': last_name,
+            # 'sex': 'F',
+            'sex': sex,
+            'age': datetime.datetime.now().year-year_of_birth,
+        }
+
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 4
 
     def factory(
             first_name, last_name,
@@ -1900,19 +1955,31 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
-            'age': datetime.datetime.today().year - year_of_birth,
+            'age': datetime.datetime.now().year-year_of_birth,
         }
 
-  the test passes.
+* I add a git_ commit message in the other terminal_
 
-* I remove the commented line ``# first_name = 'jane'`` from ``test_person.py``
+  .. code-block:: python
+    :emphasize-lines: 1
 
-* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a starred expression like in :ref:`test_functions_w_unknown_arguments`
+    git commit -am 'use random values for first_name'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+-----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments`, to use to remove repetition of ``random.choice`` from the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 4-5
+    :emphasize-lines: 7-8
 
+    import datetime
+    import random
+    import src.person
     import unittest
 
 
@@ -1920,62 +1987,157 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
         return random.choice(choices)
 
 
-    def this_year():
+    class TestPerson(unittest.TestCase):
 
-* I use the new :ref:`function<what is a function?>` in the test
+* I use the new :ref:`function<what is a function?>` to remove repetition of ``random.choice`` from the test
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2-11
-    :emphasize-text: ) ,
+    :lineno-start: 13
+    :emphasize-lines: 3-5, 7-9, 11-14
 
-            a_person = dict(
-                # first_name=random.choice((
-                #     'jane', 'joe', 'john', 'person',
-                # )),
-                # last_name=random.choice((
-                #     'doe', 'smith', 'blow', 'public',
-                # )),
-                # sex=random.choice(('F', 'M')),
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
-            )
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            # first_name = random.choice((
+            #     'jane', 'joe', 'john', 'person',
+            # ))
+            # last_name = 'doe'
+            # last_name = random.choice((
+            #     'doe', 'smith', 'blow', 'public',
+            # ))
+            # sex = 'F'
+            # sex = random.choice(('F', 'M'))
+            first_name = choose('jane', 'joe', 'john', 'person')
+            last_name = choose('doe', 'smith', 'blow', 'public')
+            sex = choose('F', 'M')
 
-            self.assertEqual(
+            this_year = datetime.datetime.now().year
 
   the test is still green.
 
-* I remove the commented lines
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :lineno-start: 17
+    :emphasize-lines: 1
 
-        def test_factory_w_keyword_arguments(self):
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
+    git commit -am 'extract choose function'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is - one has a year of birth and the other does a calculation with the year of birth. The other things are the same. I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 5-9
+
+            first_name = choose('jane', 'joe', 'john', 'person')
+            last_name = choose('doe', 'smith', 'blow', 'public')
+            sex = choose('F', 'M')
+
             a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
             )
 
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    year_of_birth=year_of_birth,
-                ),
-                dict(
-                    **a_person,
-                    age=this_year()-year_of_birth,
-                )
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
             )
+
+* I use the new :ref:`variable<what is a variable?>` with a :ref:`double starred expression<double starred expressions>` to remove the repeating parts
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 5-9, 13-16
+
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                **a_person,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
   still green.
+
+* I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 1-3, 6-11
+
+            # first_name = choose('jane', 'joe', 'john', 'person')
+            # last_name = choose('doe', 'smith', 'blow', 'public')
+            # sex = choose('F', 'M')
+
+            a_person = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M')
+            )
+
+  still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 13
+
+        def test_factory_w_keyword_arguments(self):
+            a_person = dict(
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M')
+            )
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract a_person dictionary'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -1993,11 +2155,12 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I copy ``test_factory_w_keyword_arguments`` and paste it below in ``test_person.py``
-* I change the name of the new test to ``test_factory_w_optional_arguments``, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+* I go back to the terminal_ that is running the tests
+* I make a copy of :ref:`test_factory_w_keyword_arguments` and paste it below in ``test_person.py``
+* I change the name of the new test to :ref:`test_factory_w_optional_arguments`, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 25
     :emphasize-lines: 12-20, 22-31
 
             self.assertEqual(
@@ -2124,7 +2287,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``
 
-* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` in the expectation of ``test_factory_w_optional_arguments`` in ``test_person.py``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` in the expectation of :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 57
@@ -2178,9 +2341,9 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I remove the commented line from ``test_factory_w_optional_arguments`` in ``test_person.py``
+* I remove the commented line from :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
-* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_factory_w_optional_arguments`` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
+* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
 
   .. code-block:: python
     :lineno-start: 38
@@ -2207,7 +2370,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``
 
-* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of ``test_factory_w_optional_arguments`` in ``test_person.py``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 52
@@ -2272,9 +2435,9 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I remove the commented line ``# sex=choose('F', 'M'),`` from ``test_factory_w_optional_arguments`` in ``test_person.py``
+* I remove the commented line ``# sex=choose('F', 'M'),`` from :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
-* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_w_optional_arguments`` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
+* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -2422,7 +2585,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   I can use the :ref:`class attribute<test_attribute_error_w_class_attributes>` directly
 
-* I point ``year_of_birth`` in ``test_factory_w_keyword_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I point ``year_of_birth`` in :ref:`test_factory_w_keyword_arguments` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -2491,7 +2654,7 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
 
-* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` in ``test_factory_w_optional_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` in :ref:`test_factory_w_optional_arguments` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -2581,7 +2744,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   I can use the :ref:`class attribute<test_attribute_error_w_class_attributes>` directly
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` in ``test_factory_w_keyword_arguments``
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 23
@@ -2624,7 +2787,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   still green.
 
-* I point the ``first_name`` :ref:`variable<what is a variable?>` in ``test_factory_w_optional_arguments`` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I point the ``first_name`` :ref:`variable<what is a variable?>` in :ref:`test_factory_w_optional_arguments` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 41
