@@ -2157,52 +2157,68 @@ I want to see what happens when I try to make a person without a value for the `
 
 * I go back to the terminal_ that is running the tests
 * I make a copy of :ref:`test_factory_w_keyword_arguments` and paste it below in ``test_person.py``
-* I change the name of the new test to :ref:`test_factory_w_optional_arguments`, then comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+* I change the name of the new test to :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 12-20, 22-31
+    :emphasize-lines: 11-16, 18-21, 23-31
+    :emphasize-text: test_factory_w_optional_arguments
 
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    year_of_birth=year_of_birth,
-                ),
-                dict(
-                    **a_person,
-                    age=this_year()-year_of_birth,
-                )
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
             )
+            my_expectation = dict(
+                **a_person,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
 
         def test_factory_w_optional_arguments(self):
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
             a_person = dict(
                 first_name=choose('jane', 'joe', 'john', 'person'),
-                # last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M')
             )
 
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    year_of_birth=year_of_birth,
-                ),
-                dict(
-                    **a_person,
-                    age=this_year()-year_of_birth,
-                )
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
             )
+
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
+
+* I comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 35
+
+        def test_factory_w_optional_arguments(self):
+            a_person = dict(
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                # last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M')
+            )
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() missing 1 required positional argument: 'last_name'
+    TypeError: factory() missing 1
+               required positional argument: 'last_name'
+
+  because this test does not provide a value for ``last_name`` when it calls the ``factory`` :ref:`function<what is a function?>`, I have to make it a choice
 
 ----
 
@@ -2227,14 +2243,15 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    SyntaxError: parameter without a default follows parameter with a default
+    SyntaxError: parameter without a default follows
+                 parameter with a default
 
-  :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
+  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 58
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -2260,7 +2277,10 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    SyntaxError: parameter without a default follows parameter with a default
+    SyntaxError: parameter without a default follows
+                 parameter with a default
+
+  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
 
 * I add a default value for ``year_of_birth``
 
@@ -2276,41 +2296,45 @@ I want to see what happens when I try to make a person without a value for the `
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
-    :emphasize-lines: 2
 
-    E       - {'age': X, 'first_name': Y, 'last_name': None, 'sex': 'F'}
-    E       ?                           -------------------
-    E
-    E       + {'age': X, 'first_name': Y, 'sex': 'F'
+    AssertionError:
+        {'first_name': Z, 'last_name': None, 'sex': Y,
+         'age': X}
+     != {'first_name': Z, 'sex': Y, 'age': X}
 
-  .. note:: ``X`` is for the random age, ``Y`` is for the random first name
+  - where ``X`` is the random age, ``Y`` is the random sex and ``Z`` is the random first name
+  - the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'last_name'``
-
-* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` in the expectation of :ref:`test_factory_w_optional_arguments` in ``test_person.py``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` of :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 3
+    :lineno-start: 47
+    :emphasize-lines: 7
 
-                dict(
-                    **a_person,
-                    last_name='doe',
-                    age=this_year()-year_of_birth,
-                )
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                last_name='doe',
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block::
-    :emphasize-lines: 2, 5
+    :emphasize-text: doe None
 
-    E       - {'age': X, 'first_name': Y, 'last_name': None, 'sex': A}
-    E       ?                                          ^ -
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
-    E       ?                                          ^^  +
+    AssertionError:
+        {'first_name': Z, 'last_name': None, 'sex': Y, 'age': X}
+     != {'first_name': Z, 'sex': Y, 'last_name': 'doe', 'age': X}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``
+  because the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -2323,39 +2347,42 @@ I want to see what happens when I try to make a person without a value for the `
             sex=None, year_of_birth=None,
         ):
 
-  the test passes.
+  the test passes because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_name`` parameter of the :ref:`function<what is a function?>` is ``doe``. This means that
 
-  .. note:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``last_name`` argument, it uses ``'doe'`` because that is the default value in the :ref:`function definition<how to make a function>`, it is the same as calling it with ``last_name='doe'``
+  .. code-block:: python
 
-    .. code-block:: python
-      :emphasize-lines: 5
+    src.person.factory(
+        first_name=first_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+    )
 
-      src.person.factory(
-          first_name=first_name,
-          sex=sex,
-          year_of_birth=year_of_birth,
-          last_name='doe',
-      )
+  is the same as
 
-    see :ref:`test_functions_w_optional_arguments` for more
+  .. code-block:: python
+
+    src.person.factory(
+        first_name=first_name,
+        sex=sex,
+        year_of_birth=year_of_birth,
+        last_name='doe',
+    )
+
+  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
 
 ----
-
-* I remove the commented line from :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
 * I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 7
+    :lineno-start: 35
+    :emphasize-lines: 5
 
         def test_factory_w_optional_arguments(self):
-            year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
             a_person = dict(
                 first_name=choose('jane', 'joe', 'john', 'person'),
-                # sex=choose('F', 'M'),
+                # last_name=choose('doe', 'smith', 'blow', 'public'),
+                # sex=choose('F', 'M')
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2363,10 +2390,9 @@ I want to see what happens when I try to make a person without a value for the `
   .. code-block:: shell
     :emphasize-lines: 2
 
-    E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': None}
-    E       ?                                               -------------
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': 'doe'}
+    AssertionError:
+        {'first_name': Z, 'last_name': Y, 'sex': None, 'age': X}
+     != {'first_name': Z, 'last_name': Y, 'age': X}
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``
 
