@@ -15,7 +15,7 @@ preview
 
 These are the tests I have by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_person.py
+.. literalinclude:: ../code/tests/test_person_classes.py
   :language: python
   :linenos:
 
@@ -57,15 +57,15 @@ open the project
   the terminal_ is my friend, and shows
 
   .. code-block:: python
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     rootdir: .../pumping_python/person
     configfile: pyproject.toml
     collected 2 items
 
-    tests/test_person.py ..                                             [100%]
+    tests/test_person.py ..                               [100%]
 
-    ======================== 2 passed in X.YZs =========================
+    ==================== 2 passed in X.YZs =====================
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_person.py`` to open it in the :ref:`editor<2 editors>`
 
@@ -75,79 +75,9 @@ open the project
 test_factory_person_greeting
 *********************************************************************************
 
-I have a :ref:`function<what is a function?>` that takes in first name, last name, sex and year of birth for a person and returns a :ref:`dictionary<what is a dictionary?>` with the first name, last name, sex and age based on the year of birth.
+I have a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` for a person and returns a :ref:`dictionary<what is a dictionary?>` with the first name, last name, sex and age based on the year of birth.
 
 What if I want the person to send a message about themselves. How would I do that? I can write a :ref:`function<what is a function?>` that takes in a person and returns a message
-
-* I add a new test where I make a person
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 9-14
-
-
-                dict(
-                    first_name=self.random_first_name,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-self.random_year_of_birth,
-                )
-            )
-
-        def test_factory_person_greeting(self):
-            joe = src.person.factory(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
-            )
-
-
-    # Exceptions seen
-
-  the ``factory`` :ref:`function<what is a function?>` will give ``joe`` a default value of ``'M'``   for ``sex`` because I did not give a value for it
-
-* I add another person
-
-  .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 7-11
-
-        def test_factory_person_greeting(self):
-            joe = src.person.factory(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
-            )
-            jane = src.person.factory(
-                first_name='jane',
-                sex='F',
-                year_of_birth=1991,
-            )
-
-
-    # Exceptions
-
-  the ``factory`` :ref:`function<what is a function?>` will give ``jane`` a default value of ``doe`` for ``last_name`` because I did not give a value for it
-
-* I add one more person
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 6-10
-
-            jane = src.person.factory(
-                first_name='jane',
-                sex='F',
-                year_of_birth=1991,
-            )
-            john = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
-
-
-    # Exceptions seen
 
 ----
 
@@ -157,35 +87,53 @@ What if I want the person to send a message about themselves. How would I do tha
 
 ----
 
-I add a :ref:`for loop<what is a for loop?>` with the `subTest method`_ and an :ref:`assertion<what is an assertion?>`
+* I add a new test to ``test_person.py``
 
-.. code-block:: python
-  :lineno-start: 66
-  :emphasize-lines: 7-12
-
-          john = src.person.factory(
-              first_name='john',
-              last_name='smith',
-              year_of_birth=1580,
-          )
-
-          for person in (joe, jane, john):
-              with self.subTest(name=person.get('first_name')):
-                  self.assertEqual(
-                      src.person.hello(person),
-                      None
-                  )
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 21-29
 
 
-  # Exceptions seen
+        def test_factory_w_optional_arguments(self):
+            first_name = choose('jane', 'joe', 'john', 'person')
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>` for each one of the people
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
 
-.. code-block:: python
+            reality = src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                sex='M',
+                last_name='doe',
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
 
-  AttributeError: module 'src.person' has no attribute 'hello'
+        def test_factory_person_greeting(self):
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+            reality = src.person.hello(joe)
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
-``person.py`` does not have a :ref:`function<what is a function?>` named ``hello``
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.person' has no attribute 'hello'
+
+  because ``person.py`` does not have a :ref:`function<what is a function?>` named ``hello``
 
 ----
 
@@ -210,7 +158,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
-            'age': datetime.datetime.today().year - year_of_birth,
+            'age': datetime.datetime.today().year-year_of_birth,
         }
 
 

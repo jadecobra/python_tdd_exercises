@@ -1956,7 +1956,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
     TypeError: identity() takes 0 positional arguments
                but 1 was given
 
-  because the definition for ``identity`` does not allow calling it with inputs and the test sends :ref:`None<what is None?>` as input
+  because the :ref:`definition<how to make a function>` for ``identity`` does not allow calling it with inputs and the test sends :ref:`None<what is None?>` as input
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
@@ -2119,7 +2119,7 @@ test_functions_w_positional_arguments
     TypeError: w_positional_arguments() takes 0 positional arguments
                but 2 were given
 
-  because the definition for ``w_positional_arguments`` does not allow inputs and the test sends two in the call (``'first'`` and ``'last'``)
+  because the :ref:`definition<how to make a function>` for ``w_positional_arguments`` does not allow inputs and the test sends two in the call (``'first'`` and ``'last'``)
 
 * I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
@@ -2137,7 +2137,7 @@ test_functions_w_positional_arguments
     TypeError: w_positional_arguments() takes 1 positional argument
                but 2 were given
 
-  because the definition for ``w_positional_arguments`` now allows only one input and the test sends two in the call (``'first'`` and ``'last'``)
+  because the :ref:`definition<how to make a function>` for ``w_positional_arguments`` now allows only one input and the test sends two in the call (``'first'`` and ``'last'``)
 
 * I make ``w_positional_arguments`` take another input by adding another name in parentheses
 
@@ -2482,7 +2482,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
     TypeError: w_keyword_arguments() got an
                unexpected keyword argument 'first_input'
 
-  because the definition for ``w_keyword_arguments`` does not allow inputs and the test uses two in the call (``first_input`` and ``last_input``)
+  because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` does not allow inputs and the test uses two in the call (``first_input`` and ``last_input``)
 
 * I add the name of the unexpected argument_ in parentheses
 
@@ -2501,7 +2501,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
                unexpected keyword argument 'last_input'.
                Did you mean 'first_input'?
 
-  because the definition for ``w_keyword_arguments`` allows one input (``first_input``) and the test uses two in the call (``first_input`` and ``last_input``)
+  because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` allows one input (``first_input``) and the test uses two in the call (``first_input`` and ``last_input``)
 
 * I add a name for the second argument_ in parentheses
 
@@ -2518,7 +2518,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
     TypeError: w_keyword_arguments() got an unexpected keyword argument 'last_input'. Did you mean 'first_input'?
 
-  because the definition for ``w_keyword_arguments`` allows two inputs with the names ``first_input`` and ``second_input``, and the test calls the :ref:`function<what is a function?>` with ``first_input`` and ``last_input``, the names must match when I am using :ref:`keyword arguments<test_functions_w_keyword_arguments>`
+  because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` allows two inputs with the names ``first_input`` and ``second_input``, and the test calls the :ref:`function<what is a function?>` with ``first_input`` and ``last_input``, the names must match when I am using :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
 * I change the name of the second argument to match the name used in the call
 
@@ -3121,7 +3121,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     TypeError: w_positional_and_keyword_args() got an
                unexpected keyword argument 'last_input'
 
-  because the definition for ``w_positional_and_keyword_args`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
+  because the :ref:`definition<how to make a function>` for ``w_positional_and_keyword_args`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
 
 * I add the name to the :ref:`function definition<how to make a function>` in parentheses, in ``functions.py``
 
@@ -3140,7 +3140,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     TypeError: w_positional_and_keyword_args() got
                multiple values for argument 'last_input'
 
-  because the definition for ``w_positional_and_keyword_args`` takes one argument, and the test calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_functions_w_positional_arguments>` and the :ref:`keyword<test_functions_w_keyword_arguments>`?
+  because the :ref:`definition<how to make a function>` for ``w_positional_and_keyword_args`` takes one argument, and the test calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_functions_w_positional_arguments>` and the :ref:`keyword<test_functions_w_keyword_arguments>`?
 
 * I add another name in parentheses to make it clearer
 
