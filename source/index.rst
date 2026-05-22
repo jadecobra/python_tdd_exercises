@@ -103,6 +103,7 @@ table of contents
   what is a function?<functions/index>
   telephone<how_to/telephone>
   make a person<how_to/make_person>
+  classes/index
   data_structures/none
   what causes AttributeError?<exceptions/AttributeError>
   what is a boolean?<data_structures/booleans/booleans_1>
@@ -114,7 +115,6 @@ table of contents
   data_structures/lists/index
   data_structures/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
-  classes/index
   what is a module?<exceptions/ModuleNotFoundError>
   questions the book answers<review>
   make TDD project 1<make_tdd/make_tdd_manually/index>

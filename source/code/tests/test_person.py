@@ -14,7 +14,7 @@ class TestPerson(unittest.TestCase):
         a_person = dict(
             first_name=choose('jane', 'joe', 'john', 'person'),
             last_name=choose('doe', 'smith', 'blow', 'public'),
-            sex=choose('F', 'M')
+            sex=choose('F', 'M'),
         )
 
         this_year = datetime.datetime.now().year
@@ -45,10 +45,9 @@ class TestPerson(unittest.TestCase):
             year_of_birth=year_of_birth,
         )
         my_expectation = dict(
-
             first_name=first_name,
-            last_name='doe',
             sex='M',
+            last_name='doe',
             age=this_year-year_of_birth,
         )
         self.assertEqual(reality, my_expectation)

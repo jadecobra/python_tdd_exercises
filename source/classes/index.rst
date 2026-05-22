@@ -13,9 +13,23 @@ A class_ is a definition for something. I think of it as :ref:`attributes (varia
 how to make a class in Python
 *********************************************************************************
 
-* use the class_ keyword
-* use :ref:`CapWords format<CapWords>` for the name
-* use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do - naming things is its own challenge
+classes_ are made with
+
+* the class_ keyword
+* a name in :ref:`CapWords format<CapWords>` (use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do - naming things is its own challenge)
+* parentheses and the parent class (optional) with a colon at the end
+* :ref:`attributes<test_attribute_error_w_class_attributes>` (optional)
+* :ref:`methods<what is a function?>` (optional)
+
+.. code-block:: python
+
+  class NameOfClass(object):
+
+      attribute = SOMETHING
+
+      def method():
+          the body of the method
+          ...
 
 ----
 
@@ -49,7 +63,7 @@ what is next?
 *************************************************************************************
 
 
-* :ref:`what is a class?`
+* :ref:`<classes>?`
 * :ref:`inheritance<family ties>`
 
 -----

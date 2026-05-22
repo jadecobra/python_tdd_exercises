@@ -3239,7 +3239,7 @@ you know
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 
-:ref:`Would you like to put it all together in classes?<what is a class?>`
+:ref:`Would you like to see another way to make a person with a class?<what is a class?>`
 
 ----
 
