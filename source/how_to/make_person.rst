@@ -1428,7 +1428,7 @@ test_factory_w_keyword_arguments
 
     cd person
 
-* I add a git_ commit message
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
@@ -1461,11 +1461,11 @@ I want the value of the age to be a calculation based on the current year so tha
 
   ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``
 
-* I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a function>` from the `datetime module`_
+* I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a function?>` from the `datetime module`_
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 17-21
+    :emphasize-lines: 17-18
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1484,10 +1484,7 @@ I want the value of the age to be a calculation based on the current year so tha
                 last_name=last_name,
                 sex=sex,
                 # age=2026-year_of_birth,
-                age=(
-                    datetime.datetime.now().year
-                   -year_of_birth
-                ),
+                age=datetime.datetime.now().year-,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1512,125 +1509,11 @@ I want the value of the age to be a calculation based on the current year so tha
 
 ----
 
-* the only difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is that one has a year of birth and the other does a calculation with the year of birth. The other things are the same. I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 7-11
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = this_year()
-
-            a_person = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-            )
-
-            reality = src.person.factory(
-
-* I use the new :ref:`variable<what is a variable?>` with a :ref:`double starred expression<double starred expressions>` to remove the repeating parts
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 14-17, 21-24
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = this_year()
-
-            a_person = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-            )
-
-            reality = src.person.factory(
-                # first_name=first_name,
-                # last_name=last_name,
-                # sex=sex,
-                **a_person,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = dict(
-                # first_name=first_name,
-                # last_name=last_name,
-                # sex=sex,
-                **a_person,
-                age=this_year()-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test is still green.
-
-* I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 2-4, 8-13
-
-        def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
-            # last_name = 'doe'
-            # sex = 'F'
-            year_of_birth = this_year()
-
-            a_person = dict(
-                # first_name=first_name,
-                # last_name=last_name,
-                # sex=sex,
-                first_name='jane',
-                last_name='doe',
-                sex='F',
-            )
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 12
-
-        def test_factory_w_keyword_arguments(self):
-            year_of_birth = this_year()
-
-            a_person = dict(
-                first_name='jane',
-                last_name='doe',
-                sex='F',
-            )
-
-            reality = src.person.factory(
-                **a_person,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = dict(
-                **a_person,
-                age=this_year()-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-
-
-
-----
-
 *********************************************************************************
 test factory with random values
 *********************************************************************************
 
-I want to use random values in the test.
+I want to use random values in the test to make sure the ``factory`` :ref:`function<what is a function?>` can handle different values and always calculates the right age
 
 ----
 
@@ -1659,41 +1542,47 @@ I want to use random values in the test.
 * I use a random integer_ (a whole number with no decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 9
     :emphasize-lines: 2-5
 
         def test_factory_w_keyword_arguments(self):
-            # year_of_birth = this_year()
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            # year_of_birth = 1996
             year_of_birth = random.randint(
-                this_year()-120, this_year()
+                datetime.datetime.now().year-120,
+                datetime.datetime.now().year
             )
 
-            a_person = dict(
-                first_name='jane',
-                last_name='doe',
-                sex='F',
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
             )
-
-  Here is what the new line means
 
   - ``random`` is the `random module`_
-  - ``.randint`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name again
-  - ``this_year()-120`` returns this year minus ``120``
-  - ``this_year()`` returns ``datetime.datetime.now().year`` which is the value for the current year
-  - ``random.randint(this_year()-120, this_year())`` gives me a random number from 120 years ago, up to and also the current year which is returned by the call to ``this_year()``
-
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_ a few times, this makes the tests run so I can see the random :ref:`values<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`. When the age is not ``0``, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  - ``random.randint()`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name again
+  - ``datetime.datetime.now().year`` gives me this year
+  - ``datetime.datetime.now().year-120`` gives me this year minus ``120``
+  - ``random.randint(datetime.datetime.now().year-120, datetime.datetime.now().year)`` gives me a random number from 120 years ago, up to and including the current year
+  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-lines: 3, 5
 
     AssertionError:
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
-         'age': 0}
+         'age': 30}
      != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
          'age': X}
 
   where ``X`` is a random age
+
+  .. tip::
+
+    Anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`.
 
 ----
 
@@ -1717,35 +1606,7 @@ I want to use random values in the test.
             'first_name': 'jane',
             'last_name': 'doe',
             'sex': 'F',
-            # 'age': 0,
-            'age': this_year()-year_of_birth,
-        }
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'this_year' is not defined
-
-  because I used a name that is not defined in ``person.py``
-
-* I use the `return statement`_ of the ``this_year()`` :ref:`function<what is a function?>` from ``test_person.py`` to change ``this_year()`` in ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 10-11
-    :emphasize-text: datetime now
-
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
-        return {
-            'first_name': 'jane',
-            'last_name': 'doe',
-            'sex': 'F',
-            # 'age': 0,
-            # 'age': this_year()-year_of_birth,
+            # 'age': 30,
             'age': datetime.datetime.now().year-year_of_birth,
         }
 
@@ -1769,8 +1630,8 @@ I want to use random values in the test.
 
     def factory(
 
-  - the test passes.
   - ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``person.py``
+  - the test passes.
 
 ----
 
@@ -1780,7 +1641,7 @@ I want to use random values in the test.
 
 ----
 
-* I remove the commented lines
+* I remove the commented line
 
   .. code-block:: python
     :linenos:
@@ -1799,25 +1660,93 @@ I want to use random values in the test.
             'age': datetime.datetime.now().year-year_of_birth,
         }
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``this_year()`` from the test in ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2
+    :lineno-start: 9
+    :emphasize-lines: 6
 
         def test_factory_w_keyword_arguments(self):
-            current_year = this_year()
-            # year_of_birth = this_year()
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            # year_of_birth = 1996
+            this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
-                this_year()-120, this_year()
+                datetime.datetime.now().year-120,
+                datetime.datetime.now().year
             )
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``this_year()`` from the test
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``datetime.datetime.now().year`` from the test
 
   .. code-block:: python
-    :emphasize-lines:
+    :lineno-start: 9
+    :emphasize-lines: 8-10, 24-25
 
-* I remove the commented ``# year_of_birth = this_year()`` line from ``test_person.py``
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            # year_of_birth = 1996
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # age=2026-year_of_birth,
+                # age=datetime.datetime.now().year-year_of_birth,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I remove the comments
+
+  .. code-block:: python
+    :lineno-start: 9
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+----
 
 * I add randomness to the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
 
