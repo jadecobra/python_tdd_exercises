@@ -2917,7 +2917,7 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 7-8
+    :emphasize-lines: 8-9
 
     def factory(first_name, year_of_birth):
         return {
@@ -2926,6 +2926,7 @@ I want to write the solution without looking at the tests
             'last_name': 'doe',
             'sex': 'M',
             # 'age': 55,
+            # 'age': year_of_birth,
             'age': datetime.datetime.today().year-year_of_birth,
         }
 
@@ -3039,6 +3040,7 @@ I want to write the solution without looking at the tests
             # 'sex': 'M',
             'sex': sex,
             # 'age': 55,
+            # 'age': year_of_birth,
             'age': datetime.datetime.today().year-year_of_birth,
         }
 
@@ -3095,6 +3097,7 @@ I want to write the solution without looking at the tests
             # 'sex': 'M',
             'sex': sex,
             # 'age': 55,
+            # 'age': year_of_birth,
             'age': datetime.datetime.today().year-year_of_birth,
         }
 
@@ -3162,7 +3165,7 @@ This solution only has two parameters with :ref:`default values<test_functions_w
             last_name='doe', sex='M',
         ):
 
-which is a little bit different from the first solution where I had three parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
+the first solution where had three parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
 
 .. code-block:: python
   :emphasize-text: None
@@ -3172,7 +3175,7 @@ which is a little bit different from the first solution where I had three parame
           sex='M', year_of_birth=None,
       ):
 
-new things can be learned from repetition
+I can learn new things from repetition.
 
 ----
 
