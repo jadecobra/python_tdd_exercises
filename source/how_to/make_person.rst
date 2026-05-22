@@ -506,7 +506,7 @@ test_factory_w_keyword_arguments
                unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a keyword argument (``last_name``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -546,7 +546,7 @@ test_factory_w_keyword_arguments
     TypeError: factory() got an
                unexpected keyword argument 'sex'
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a keyword argument (``sex``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``sex`` as an input parameter to the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -590,7 +590,7 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'year_of_birth'
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a keyword argument (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add the name to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -678,7 +678,7 @@ test_factory_w_keyword_arguments
 
     AssertionError: {} != {'first_name': 'first_name'}
 
-  because the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the test expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`
+  because the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the :ref:`assertion<what is an assertion?>` expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`
 
 * I change the `return statement`_ to give the test what it wants, in ``person.py``
 
@@ -1036,7 +1036,7 @@ test_factory_w_keyword_arguments
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: {'first_name': 'jane', 'last_name': 'doe'}
                  != {'first_name': 'jane', 'last_name': 'doe',
@@ -1845,7 +1845,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   If ``last_name`` is NOT ``doe``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError:
         {'first_name': 'jane', 'last_name': Z, 'sex': Y,
@@ -1912,7 +1912,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   If ``first_name`` is not ``'jane'`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: pythoncode-block:: shell
 
     AssertionError:
         {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
@@ -2303,7 +2303,7 @@ I want to see what happens when I try to make a person without a value for the `
      != {'first_name': Z, 'sex': Y, 'age': X}
 
   - where ``X`` is the random age, ``Y`` is the random sex and ``Z`` is the random first name
-  - the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  - the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
@@ -2393,14 +2393,14 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 2
 
     AssertionError:
         {'first_name': Z, 'last_name': Y, 'sex': None, 'age': X}
      != {'first_name': Z, 'last_name': Y, 'age': X}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
@@ -2663,9 +2663,10 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'first_name'
+    TypeError: factory() got an
+               unexpected keyword argument 'first_name'
 
-  the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>`
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``first_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``first_name`` to the :ref:`function definition<how to make a function>`
 
@@ -2680,9 +2681,10 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'year_of_birth'
+    TypeError: factory() got an
+               unexpected keyword argument 'year_of_birth'
 
-  the test called the :ref:`function<what is a function?>` with another :ref:`keyword argument<test_functions_w_keyword_arguments>`
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``year_of_birth`` to the :ref:`function definition<how to make a function>`
 
@@ -2697,11 +2699,13 @@ I want to write the solution without looking at the tests
 
   .. code-block:: shell
 
-    AssertionError: None != {'first_name': X, 'last_name': 'doe', 'sex': 'M', 'age': A}
+    AssertionError: None != {'first_name': Y,
+                             'last_name': 'doe',
+                             'sex': 'M', 'age': X}
 
-  the tests expect a :ref:`dictionary<what is a dictionary?>` and the ``factory`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
+  because the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` and the ``factory`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-* I make the :ref:`function<what is a function?>` return a :ref:`dictionary<what is a dictionary?>` instead of :ref:`None<what is None?>`
+* I copy and paste the :ref:`dictionary<what is a dictionary?>` from the terminal_ to make the :ref:`function<what is a function?>` return a :ref:`dictionary<what is a dictionary?>` instead of :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -2719,13 +2723,11 @@ I want to write the solution without looking at the tests
 
   .. attention:: Some of your values will be different because the test uses random values
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    E       - {'age': 55, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?         ^^                  ^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
-    E       ?         ^                ^
+    AssertionError:
+        {'first_name': A, 'last_name': 'doe', 'sex': 'M', 'age': Y}
+     != {'first_name': Z, 'last_name': 'doe', 'sex': 'M', 'age': X}
 
   the :ref:`values<test_values_of_a_dictionary>` of the ``age`` and ``first_name`` :ref:`keys<test_keys_of_a_dictionary>` change randomly
 
@@ -2733,58 +2735,58 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3
+    :emphasize-lines: 3-4
 
     def factory(first_name, year_of_birth):
         return {
+            # 'first_name': 'john',
             'first_name': first_name,
             'last_name': 'doe',
             'sex': 'M',
             'age': 55,
         }
 
-  the first name matches and when the ages are different, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the first name matches and if the ages are different, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        {'first_name': Z, 'last_name': 'doe', 'sex': 'M', 'age': Y}
+     != {'first_name': Z, 'last_name': 'doe', 'sex': 'M', 'age': X}
+
+  and :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
-    E       - {'age': 55, 'first_name': Y, 'last_name': 'doe', 'sex': A}
-    E       ?         ^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
-    E       ?         ^
-
-  sometimes the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-
-    TypeError: factory() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+    TypeError: factory() got an
+               unexpected keyword argument 'last_name'.
+               Did you mean 'first_name'?
 
 * I use the ``year_of_birth`` input parameter in the `return statement`_ for the :ref:`value<test_values_of_a_dictionary>` of ``age``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6
+    :emphasize-lines: 7-8
 
     def factory(first_name, year_of_birth):
         return {
+            # 'first_name': 'john',
             'first_name': first_name,
             'last_name': 'doe',
             'sex': 'M',
+            # 'age': 55,
             'age': year_of_birth,
         }
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
+  .. code-block:: python
 
-    E       - {'age': ABCD, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?         ^^^^
-    E
-    E       + {'age': X, 'first_name': 'john', 'last_name': 'doe', 'sex': 'M'}
-    E       ?         ^
+    AssertionError:
+        {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': ABCD}
+     != {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': X}
 
-  the :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned for the ``age`` :ref:`key<test_keys_of_a_dictionary>` has 4 digits (a year), and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
+  because the :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned for the ``age`` :ref:`key<test_keys_of_a_dictionary>` has 4 digits (a year), and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
 
 * I add an `import statement`_ for the `datetime module`_ at the top of the file_
 
@@ -2795,7 +2797,7 @@ I want to write the solution without looking at the tests
     import datetime
 
 
-    def factory(
+    def factory(first_name, year_of_birth):
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2803,22 +2805,27 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 5
+    :emphasize-lines: 7-8
 
+    def factory(first_name, year_of_birth):
         return {
+            # 'first_name': 'john',
             'first_name': first_name,
             'last_name': 'doe',
             'sex': 'M',
-            'age': datetime.datetime.today().year - year_of_birth,
+            # 'age': 55,
+            'age': datetime.datetime.today().year-year_of_birth,
         }
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
-    TypeError: factory() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+    TypeError: factory() got an
+               unexpected keyword argument 'last_name'.
+               Did you mean 'first_name'?
 
-  the test called the :ref:`function<what is a function?>` with another :ref:`keyword argument<test_functions_w_keyword_arguments>`
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add a new input parameter to the :ref:`function<what is a function?>`
 
@@ -2831,15 +2838,15 @@ I want to write the solution without looking at the tests
             first_name, year_of_birth,
             last_name,
         ):
-        return {
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() missing 1 required positional argument: 'last_name'
+    TypeError: factory() missing 1
+               required positional argument: 'last_name'
 
-  the test called the :ref:`function<what is a function?>` with another argument and Python_ took it is a positional argument for ``last_name``
+  because the test called the :ref:`function<what is a function?>` with another argument and Python_ took that argument as a :ref:`positional argument<test_functions_w_positional_arguments>` for ``last_name``
 
 * I add a default value for ``last_name`` so Python_ does not take it is a :ref:`positional argument<test_functions_w_positional_arguments>` when a name is not given
 
@@ -2851,17 +2858,17 @@ I want to write the solution without looking at the tests
             first_name, year_of_birth,
             last_name=None,
         ):
-        return {
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: factory() got an unexpected keyword argument 'sex'
+    TypeError: factory() got an
+               unexpected keyword argument 'sex'
 
-  another :ref:`keyword argument<test_functions_w_keyword_arguments>`
+  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
-* I add the name to the definition of the :ref:`function<what is a function?>`
+* I add the name to the :ref:`definition of the function<how to make a function>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -2877,9 +2884,10 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    SyntaxError: parameter without a default follows parameter with a default
+    SyntaxError: parameter without a default follows
+                 parameter with a default
 
-  :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
+  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
 
 * I add a default value for ``sex``
 
@@ -2894,41 +2902,44 @@ I want to write the solution without looking at the tests
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
-    E       ?                                           ^^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': A}
-    E       ?                                          ^         ^
+    AssertionError:
+        {'first_name': C, 'last_name': B, 'sex': Z, 'age': X}
+     != {'first_name': C, 'last_name': A, 'sex': Y, 'age': X}
 
-  the values for ``last_name`` and ``sex`` change  every time the tests run
+  because the :ref:`values<test_values_of_a_dictionary>` for ``last_name`` and ``sex`` change  every time the tests run
 
 * I use the ``sex`` input parameter in the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 4
+    :lineno-start: 4
+    :emphasize-lines: 9-10
 
+    def factory(
+            first_name, year_of_birth,
+            last_name=None, sex=None,
+        ):
         return {
+            # 'first_name': 'john',
             'first_name': first_name,
             'last_name': 'doe',
+            # 'sex': 'M',
             'sex': sex,
-            'age': datetime.datetime.today().year - year_of_birth,
+            # 'age': 55,
+            'age': datetime.datetime.today().year-year_of_birth,
         }
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
+  .. code-block:: python
+    :emphasize-text: None M
 
-    E       - {'age': X, 'first_name': Y, 'last_name': Z, 'sex': None}
-    E       ?                                                    ^^^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
-    E       ?                                                    ^^^
+    AssertionError:
+        {'first_name': Y, 'last_name': 'doe', 'sex': None, 'age': X}
+     != {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': X}
 
-  the :ref:`assertion<what is an assertion?>` expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
+  because the :ref:`assertion<what is an assertion?>` expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
 * I change the default value of ``sex`` to ``'M'``
 
@@ -2941,52 +2952,68 @@ I want to write the solution without looking at the tests
             last_name=None, sex='M',
         ):
 
-  the test passes when the ``last_name`` is randomly ``'doe'``.
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if the ``last_name`` is randomly ``'doe'``.
 
-  When the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  If the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
+  .. code-block:: python
+    :emphasize-text: doe
 
-    E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
-    E       ?                                          ^^^^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': A}
-    E       ?                                          ^
+    AssertionError:
+        {'first_name': A, 'last_name': 'doe', 'sex': Y, 'age': X}
+     != {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
 
-  the ``last_name`` :ref:`value<test_values_of_a_dictionary>` is different between the two :ref:`dictionaries<what is a dictionary?>`
+  because the ``last_name`` :ref:`value<test_values_of_a_dictionary>` is different between the two :ref:`dictionaries<what is a dictionary?>`
 
 * I use the ``last_name`` input parameter in the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 3
+    :lineno-start: 4
+    :emphasize-lines: 8-9
 
+    def factory(
+            first_name, year_of_birth,
+            last_name=None, sex='M',
+        ):
         return {
+            # 'first_name': 'john',
             'first_name': first_name,
+            # 'last_name': 'doe',
             'last_name': last_name,
+            # 'sex': 'M',
             'sex': sex,
-            'age': datetime.datetime.today().year - year_of_birth,
+            # 'age': 55,
+            'age': datetime.datetime.today().year-year_of_birth,
         }
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block::
-    :emphasize-lines: 2, 5
+  .. code-block:: python
+    :emphasize-text: None doe
 
-    E       - {'age': X, 'first_name': Y, 'last_name': None, 'sex': A}
-    E       ?                                          ^ -
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': A}
-    E       ?                                          ^^  +
+    AssertionError:
+        {'first_name': Z, 'last_name': None, 'sex': Y, 'age': X}
+     != {'first_name': Z, 'last_name': 'doe', 'sex': Y, 'age': X}
 
-  the :ref:`assertion<what is an assertion?>` expects ``'doe'`` as the :ref:`value<test_values_of_a_dictionary>` of ``last_name`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
+  because the :ref:`assertion<what is an assertion?>` expects ``'doe'`` as the :ref:`value<test_values_of_a_dictionary>` of ``last_name`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
 * I change the default value for ``last_name`` to match the expectation
 
   .. code-block:: python
     :linenos:
     :emphasize-lines: 6
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures. I am getting pretty good at this.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
 
     import datetime
 
@@ -2999,24 +3026,31 @@ I want to write the solution without looking at the tests
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
-            'age': datetime.datetime.today().year - year_of_birth,
+            'age': datetime.datetime.today().year-year_of_birth,
         }
 
-  the test passes with no more random failures. I am getting pretty good at this.
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'refactor factory function'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
-This solution only has 2 parameters with default values
+This solution only has two parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name`` and ``sex``)
 
 .. code-block:: python
   :emphasize-text: None
 
-  def factory(
-          first_name, year_of_birth,
-          last_name='doe', sex='M',
-      ):
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
 
-which is a little bit different from the first solution where I had 3 parameters with default values
+which is a little bit different from the first solution where I had three parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
 
 .. code-block:: python
   :emphasize-text: None
@@ -3037,20 +3071,20 @@ close the project
 * I close ``person.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
-  * I `change directory`_ to the parent of ``person``
+* I `change directory`_ to the parent of ``person``
 
-    .. code-block:: python
-      :emphasize-lines: 1
+  .. code-block:: python
+    :emphasize-lines: 1
 
-      cd ..
+    cd ..
 
-    the terminal_ is my friend, and shows
+  the terminal_ shows
 
-    .. code-block:: python
+  .. code-block:: python
 
-      ...\pumping_python
+    ...\pumping_python
 
-    I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_
 
 ----
 
@@ -3058,7 +3092,7 @@ close the project
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has default values for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
+I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has :ref:`default values<test_functions_w_optional_arguments>` for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
 
 I also saw these :ref:`Exceptions<errors>`
 
@@ -3085,20 +3119,9 @@ what is next?
 you know
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
-* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
+* :ref:`how to raise AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
-* :ref:`how to raise TypeError<TypeError>`
-* :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<list comprehensions>`
-* :ref:`what you can do with Dictionaries<dictionaries>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 
 :ref:`Would you like to put it all together in classes?<what is a class?>`

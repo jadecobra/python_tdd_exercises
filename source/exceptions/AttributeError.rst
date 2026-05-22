@@ -1277,7 +1277,7 @@ what is next?
 you know
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
-* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
+* :ref:`how to raise AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>` and
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 

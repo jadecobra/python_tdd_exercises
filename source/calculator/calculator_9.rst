@@ -2201,7 +2201,7 @@ what is next?
 Your magic powers are growing. You know
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
-* :ref:`how to raise AssertionError with assert methods<what causes AssertionError?>`
+* :ref:`how to raise AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`what is None and NOT None<what is None?>`
