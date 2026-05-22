@@ -125,7 +125,7 @@ continue the project
 
     TypeError: 'NoneType' object is not callable
 
-  :ref:`I cannot call None the way I can call a function<test_type_error_w_the_uncallables>`
+  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
 * I make it a :ref:`function<what is a function?>`
 

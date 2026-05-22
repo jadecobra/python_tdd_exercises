@@ -2601,14 +2601,16 @@ I want to write the solution without looking at the tests
 
 * I go back to the terminal_ that is running the tests
 * I close ``test_person.py`` in the :ref:`editor<2 editors>`
-* then I delete all the text in ``person.py``. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+* then I delete all the text in ``person.py``, the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.person'
-                    has no attribute 'factory'
+    FAILED ...::test_factory_w_keyword_arguments - AttributeError:
+        module 'src.person' has no attribute 'factory'
+    FAILED ...::test_factory_w_optional_arguments - AttributeError:
+        module 'src.person' has no attribute 'factory'
 
-  there is nothing in ``person.py`` with the name ``factory``
+  because there is nothing in ``person.py`` with the name ``factory``
 
 ----
 
@@ -2646,7 +2648,7 @@ I want to write the solution without looking at the tests
 
     TypeError: 'NoneType' object is not callable
 
-  ``factory`` points to :ref:`None<what is None?>` which is not callable_ like a :ref:`function<what is a function?>`
+  because ``factory`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
 * I make ``factory`` a :ref:`function<what is a function?>`
 
