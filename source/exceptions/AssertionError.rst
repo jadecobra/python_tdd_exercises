@@ -487,14 +487,8 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
     :emphasize-text: 2 11
 
     E       AssertionError: assert '11' == '2'
-    E
-    E         - 2
-    E         + 11
 
   because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'1' + '1' == '2'" is False``
-
-  - ``- 2`` shows my expectation - what I wrote as the result, which is what is missing from the actual result
-  - ``+ 11`` shows reality - what the actual result is, which is what is missing from my expectation
 
 * I change ``my_expectation`` to match ``reality``
 
@@ -575,14 +569,8 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
     :emphasize-lines: 3-4
 
     E       AssertionError: assert 'I am alive' == '11'
-    E
-    E         - 11
-    E         + I am alive
 
   because when I added assert_ before the statement it became a command to Python_ - ``DO NOT CONTINUE if "'I am' + ' alive' == '11'" is False``
-
-  - the ``- 11`` shows my expectation - what I wrote as the result, which is what is missing from the actual result
-  - the ``+ I am alive`` shows reality - what the actual result is, which is what is missing from my expectation
 
   .. attention:: If your result is different, check that you added a space before ``alive``, it should be ``' alive'`` not ``'alive'``.
 

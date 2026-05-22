@@ -386,7 +386,6 @@ test_factory_w_keyword_arguments
     import unittest
 
   - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
-  - I like to sort my `import statements`_ alphabetically
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -452,7 +451,7 @@ test_factory_w_keyword_arguments
     TypeError: factory() got an
                unexpected keyword argument 'first_name'
 
-  because the definition for ``src.person.factory`` does not allow calling it with inputs and the test sends ``'first_name'`` as input - the parentheses are empty.
+  because the :ref:`function definition<how to make a function>` for ``src.person.factory`` does not allow calling it with inputs (the parentheses are empty) and the test sends ``'first_name'`` as input.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -611,7 +610,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 9
+    :emphasize-lines: 8
 
         def test_factory_w_keyword_arguments(self):
             reality = src.person.factory(
@@ -1537,6 +1536,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   - random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used to make fake random numbers
   - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `random module`_ so I can use it in ``test_person.py``
+  - I like to sort my `import statements`_ alphabetically
 
 * I use a random integer_ (a whole number with no decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
