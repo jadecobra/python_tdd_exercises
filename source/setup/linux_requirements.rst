@@ -71,7 +71,25 @@ Linux/Windows Subsystem for Linux requirements
 
     sudo apt install git --yes
 
-  git_ is a program for keeping track of changes I make in a project, it might already be installed
+  git_ is a program for keeping track of changes I make in a project, it might already be
+
+* configure git_ so it knows who you are
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git config --global user.email EMAIL_ADDRESS@DOMAIN.com
+
+  where ``EMAIL_ADDRESS@DOMAIN.com`` is your email
+
+* configure name that git_ should use for you
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git config --global user.name USERNAME
+
+  where ``USERNAME`` is the name you want git_ to use
 
 ----
 
