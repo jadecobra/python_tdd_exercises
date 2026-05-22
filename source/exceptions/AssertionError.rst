@@ -83,7 +83,8 @@ start the project
 
   .. code-block:: shell
 
-    Initialized project `assertion-error` at `.../pumping_python/assertion_error`
+    Initialized project `assertion-error`
+    at `.../pumping_python/assertion_error`
 
   then goes back to the command line.
 

@@ -2585,7 +2585,7 @@ I want to see what happens when I try to make a person without a value for the `
         sex='M',
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter. See :ref:`test_functions_w_optional_arguments` for more
+  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
 
 ----
 
@@ -2834,8 +2834,6 @@ I want to write the solution without looking at the tests
         }
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. attention:: Some of your values will be different because the test uses random values
 
   .. code-block:: python
 
