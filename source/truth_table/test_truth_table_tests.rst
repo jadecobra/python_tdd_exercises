@@ -386,7 +386,7 @@ continue the project
     def tautology():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 

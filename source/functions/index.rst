@@ -1949,7 +1949,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
     def identity():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2112,7 +2112,7 @@ test_functions_w_positional_arguments
     def w_positional_arguments():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2130,7 +2130,7 @@ test_functions_w_positional_arguments
     def w_positional_arguments(first_input):
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2475,7 +2475,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
     def w_keyword_arguments():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2493,7 +2493,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
     def w_keyword_arguments(first_input):
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -3114,7 +3114,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     def w_positional_and_keyword_args():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -3152,7 +3152,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     def w_positional_and_keyword_args(last_input, first_input):
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -3381,7 +3381,7 @@ the test passes.
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -3769,7 +3769,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     def w_unknown_arguments():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -3785,7 +3785,7 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
     def w_unknown_arguments(a):
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -3811,7 +3811,7 @@ double starred expressions
     def w_unknown_arguments(**kwargs):
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -3846,7 +3846,7 @@ double starred expressions
     def w_unknown_arguments(x, **kwargs):
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 

@@ -387,7 +387,7 @@ I use ``**`` like I did for the :ref:`keyword arguments<test_functions_w_keyword
               self.random_first_number-self.random_second_number
           )
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -2052,7 +2052,7 @@ I can put the ``arithmetic_tests`` :ref:`dictionary<what is a dictionary?>` from
             with self.assertRaises(TypeError):
                 src.calculator.subtract(*not_two_numbers)
 
-  the terminal_ is my friend, and shows :ref:`TypeError` for all 4 cases
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>` for all 4 cases
 
   .. code-block:: python
 

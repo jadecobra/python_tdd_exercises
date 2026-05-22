@@ -448,7 +448,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     text = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -478,7 +478,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
     def text():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2045,7 +2045,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     text = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2060,7 +2060,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     def text():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -2192,7 +2192,7 @@ I also saw these :ref:`Exceptions<errors>`
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`TypeError`
+* :ref:`TypeError<what causes TypeError?>`
 
 ----
 

@@ -444,14 +444,14 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
     def a_for_loop():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError: a_for_loop() takes 0 positional arguments
                but 1 was given
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_list_comprehensions.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -614,7 +614,7 @@ I add a new test
 
     # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -1485,7 +1485,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
         return list(filter(not is_even, numbers))
         return [number for number in numbers if not is_even(number)]
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 

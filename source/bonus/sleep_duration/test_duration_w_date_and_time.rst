@@ -879,7 +879,7 @@ The challenge was to write a program_ that calculates the difference between a g
 I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`TypeError`
+* :ref:`TypeError<what causes TypeError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
 * ValueError_

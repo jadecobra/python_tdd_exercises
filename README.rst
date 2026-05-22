@@ -41,7 +41,7 @@ who is this for?
   - :ref:`KeyError<test_key_error>`
   - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
-  - :ref:`TypeError`
+  - :ref:`TypeError<what causes TypeError?>`
   - ValueError_
 
 *********************************************************************************

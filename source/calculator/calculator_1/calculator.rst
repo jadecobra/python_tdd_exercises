@@ -414,7 +414,7 @@ test_addition
 
     add = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -422,7 +422,7 @@ test_addition
 
   because the ``add`` :ref:`variable<what is a variable?>` is now a name for :ref:`None<what is None?>`, and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 18
@@ -444,7 +444,7 @@ test_addition
     def add():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1417,7 +1417,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     subtract = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1434,7 +1434,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     def subtract():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2069,7 +2069,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     subtract = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2084,7 +2084,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def subtract():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2152,7 +2152,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
     def multiply():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 

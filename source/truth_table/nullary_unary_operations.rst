@@ -326,7 +326,7 @@ because I need to add a definition for :ref:`logical_identity<test_logical_ident
     def logical_identity():
         return False
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 

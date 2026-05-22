@@ -69,7 +69,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     get_datetime = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -91,7 +91,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def get_datetime():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -207,7 +207,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     duration = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -220,7 +220,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     def duration():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -232,7 +232,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
     def duration(sleep_time):
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -430,7 +430,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
         else:
             return (sleep_time - wake_time)
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -538,7 +538,7 @@ The challenge was to write a program_ that makes the tests in ``test_sleep_durat
 
 * :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`TypeError`
+* :ref:`TypeError<what causes TypeError?>`
 * :ref:`AssertionError<what causes AssertionError?>`
 * SyntaxError_
 * ValueError_

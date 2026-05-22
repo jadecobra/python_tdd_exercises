@@ -269,13 +269,13 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
             self.assertEqual(list(), [])
             self.assertEqual(list(0), [])
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
     TypeError: 'int' object is not iterable
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -512,7 +512,7 @@ I add a test for the `append method`_
 
     'append',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -871,7 +871,7 @@ I add a test for the next :ref:`method<what is a function?>`
 
   'count',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -1047,7 +1047,7 @@ time for another test
 
   'extend',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -1069,7 +1069,7 @@ I pass a value to the call
 
           self.assertIsNone(a_list.extend(0))
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -1202,7 +1202,7 @@ I add a test for the `index method`_
 
   'index',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -1460,7 +1460,7 @@ the test passes.
 
     AssertionError: 0 != 4
 
-  when I first called the `index method`_, the terminal_ showed :ref:`TypeError`
+  when I first called the `index method`_, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -1567,7 +1567,7 @@ I add a test for the next :ref:`method<what is a function?>`
 
   'insert',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -1939,7 +1939,7 @@ time for the next :ref:`method<what is a function?>`
 
   'remove',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -2220,7 +2220,7 @@ I add a test for the last :ref:`method<what is a function?>` in the TODO list
 
   'sort'
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 

@@ -414,7 +414,7 @@ the test passes, showing that
 test_catching_type_error_in_tests
 *********************************************************************************
 
-:ref:`TypeError` is raised when I call something in a way that it should NOT be called
+:ref:`TypeError<what causes TypeError?>` is raised when I call something in a way that it should NOT be called
 
 ----
 
@@ -424,7 +424,7 @@ test_catching_type_error_in_tests
 
 ----
 
-* I add a failing test for :ref:`TypeError`
+* I add a failing test for :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -467,7 +467,7 @@ test_catching_type_error_in_tests
 
     function_name = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -475,7 +475,7 @@ test_catching_type_error_in_tests
 
   a reminder that :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen in ``test_exceptions.py``
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_exceptions.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -506,7 +506,7 @@ I use assertRaises_ to take care of the :ref:`Exception<errors>`
           with self.assertRaises(TypeError):
               src.exceptions.function_name('the input')
 
-the test passes, showing that assertRaises_ checks that the code in its context (``src.exceptions.function_name('the input')``), raises the :ref:`Exception<errors>` (:ref:`TypeError`) it is given in parentheses
+the test passes, showing that assertRaises_ checks that the code in its context (``src.exceptions.function_name('the input')``), raises the :ref:`Exception<errors>` (:ref:`TypeError<what causes TypeError?>`) it is given in parentheses
 
 ----
 
@@ -525,7 +525,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
     def function_name():
         return None
 
-  the test is still green because :ref:`TypeError` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the :ref:`function<what is a function?>` does not take input
+  the test is still green because :ref:`TypeError<what causes TypeError?>` is raised since the call from the test - ``src.exceptions.function_name('the input')`` sends ``'the input'`` as input and the :ref:`function<what is a function?>` does not take input
 
 * when I add a parameter to the definition
 
@@ -542,7 +542,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
     AssertionError: TypeError not raised
 
-  because :ref:`TypeError` is NOT raised since the :ref:`function<what is a function?>` call matches the definition. I undo the change
+  because :ref:`TypeError<what causes TypeError?>` is NOT raised since the :ref:`function<what is a function?>` call matches the definition. I undo the change
 
   .. code-block:: python
     :linenos:
@@ -553,7 +553,7 @@ the test passes, showing that assertRaises_ checks that the code in its context 
 
   the test is green again
 
-:ref:`TypeError` is raised when I call something in a way that it should NOT be called
+:ref:`TypeError<what causes TypeError?>` is raised when I call something in a way that it should NOT be called
 
 ----
 
@@ -1228,7 +1228,7 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`TypeError`
+* :ref:`TypeError<what causes TypeError?>`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`
 * ZeroDivisionError_ and

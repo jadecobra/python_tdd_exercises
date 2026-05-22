@@ -587,7 +587,7 @@ the terminal_ is my friend, and shows AttributeError_
 
     function_00 = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -1060,7 +1060,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
         method_00 = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 

@@ -155,7 +155,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     raise_exception = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -304,7 +304,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     an_exception_handler = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -319,7 +319,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     def an_exception_handler():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -487,7 +487,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
         return a_function()
         return 'failed'
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -685,7 +685,7 @@ I ran tests to show that
   - :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
   - :ref:`NameError<test_catching_name_error_in_tests>`
   - :ref:`AttributeError<what causes AttributeError?>`
-  - :ref:`TypeError`
+  - :ref:`TypeError<what causes TypeError?>`
   - :ref:`IndexError<test_index_error>`
   - :ref:`KeyError<test_key_error>`
   - :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`

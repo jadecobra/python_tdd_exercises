@@ -162,7 +162,7 @@ I can use assertRaises_ to catch :ref:`Exceptions<errors>` in tests and tested t
 * :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`TypeError`
+* :ref:`TypeError<what causes TypeError?>`
 * :ref:`IndexError<test_index_error>`
 * :ref:`KeyError<test_key_error>`
 * :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` and

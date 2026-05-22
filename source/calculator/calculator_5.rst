@@ -70,7 +70,7 @@ open the project
 test_calculator_sends_message_when_input_is_a_list
 *********************************************************************************
 
-I want to see what happens when I send a :ref:`list<lists>` as input to the :ref:`calculator program<how to make a calculator>`, will it send a message or raise :ref:`TypeError`?
+I want to see what happens when I send a :ref:`list<lists>` as input to the :ref:`calculator program<how to make a calculator>`, will it send a message or raise :ref:`TypeError<what causes TypeError?>`?
 
 ----
 
@@ -918,7 +918,7 @@ I add a new test to show the problem when I have more than 2 inputs and use a `s
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: shell
 
@@ -967,7 +967,7 @@ the test passes.
                 src.calculator.add(*not_two_numbers)
             src.calculator.divide(*not_two_numbers)
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -996,7 +996,7 @@ the test passes.
                 src.calculator.divide(*not_two_numbers)
             src.calculator.multiply(*not_two_numbers)
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -1025,7 +1025,7 @@ the test passes.
                 src.calculator.multiply(*not_two_numbers)
             src.calculator.subtract(*not_two_numbers)
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 

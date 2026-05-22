@@ -86,7 +86,7 @@ requirements
 
             )
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -204,7 +204,7 @@ requirements
         None
     )
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -228,7 +228,7 @@ requirements
         None
     )
 
-  then get :ref:`TypeError`
+  then get :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -253,7 +253,7 @@ requirements
         None
     )
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -424,7 +424,7 @@ requirements
         (wake_time-sleep_time)
     )
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -668,7 +668,7 @@ the test passes.
 test_converting_strings_to_numbers
 #################################################################################
 
-The hours part of the timestamp after calling `str.split`_ is still a string_ and I got :ref:`TypeError` when I tried to subtract one from another earlier. I want to see if I can use ``int()`` to change a string_ to a number
+The hours part of the timestamp after calling `str.split`_ is still a string_ and I got :ref:`TypeError<what causes TypeError?>` when I tried to subtract one from another earlier. I want to see if I can use ``int()`` to change a string_ to a number
 
 * I add a new failing test to test numbers that have a ``0`` in front of them
 
@@ -861,7 +861,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`TypeError`
+* :ref:`TypeError<what causes TypeError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
 

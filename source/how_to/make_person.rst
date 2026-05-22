@@ -446,7 +446,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -455,7 +455,7 @@ test_factory_w_keyword_arguments
 
   because the definition for ``src.person.factory`` does not allow calling it with inputs and the test sends ``'first_name'`` as input - the parentheses are empty.
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 15
@@ -498,7 +498,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
@@ -539,7 +539,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -583,7 +583,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -933,14 +933,16 @@ test_factory_w_keyword_arguments
             reality = src.person.factory(
                 first_name=first_name,
                 # last_name='last_name',
-                last_name='doe',
+                # last_name='doe',
+                last_name=last_name,
                 sex='M',
                 year_of_birth=2000,
             )
             my_expectation = dict(
                 first_name=first_name,
                 # last_name='last_name',
-                last_name='doe',
+                # last_name='doe',
+                last_name=last_name,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1227,21 +1229,221 @@ test_factory_w_keyword_arguments
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year()-this_year(),
+                age=2026-2000,
             )
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    TypeError: unsupported operand type(s) for -:
-               'NoneType' and 'NoneType'
+    AssertionError:
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+     != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+         'age': 26}
 
-  :ref:`I cannot do arithmetic with None<test_calculator_raises_type_error_w_none>` and I want the value for this year
+* I add a new :ref:`key<test_keys_of_a_dictionary>` to the `return statement`_ in ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 9
+
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        return {
+            'first_name': 'jane',
+            'last_name': 'doe',
+            'sex': 'F',
+            'age': 26,
+        }
+
+  the test passes.
+
+* I change ``2000`` to ``1996`` for ``reality`` and ``my_expectation``, in ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 10-11, 17-18
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # year_of_birth=2000,
+                year_of_birth=1996,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # age=2026-2000,
+                age=2026-1996,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+         'age': 26}
+     != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+         'age': 30}
+
+  because I changed ``2000`` in ``my_expectation``
+
+* I change the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 9
+
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        return {
+            'first_name': 'jane',
+            'last_name': 'doe',
+            'sex': 'F',
+            'age': 30,
+        }
+
+  the test passes. I typed the year of birth value two times in the test, which means I have to make a change in two places every time I want a different :ref:`value<test_values_of_a_dictionary>`.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of the year of birth from ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1996
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # year_of_birth=2000,
+                year_of_birth=1996,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # age=2026-2000,
+                age=2026-1996,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of the year of birth
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 12-13, 20-21
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1996
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # year_of_birth=2000,
+                # year_of_birth=1996,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # age=2026-2000,
+                # age=2026-1996,
+                age=2026-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 7
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1996
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=2026-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  I now only need to change the value of ``sex`` in one place in the test, though I have a problem with the calculation for the age, it will be wrong if this program_ is run after 2026.
+
+* I open a new terminal_ then change directories to ``person``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd person
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am 'add test_factory_w_keyword_arguments'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+*********************************************************************************
+test factory with datetime
+*********************************************************************************
+
+I want the value of the age to be a calculation based on the current year so that it will always be . I can do that with the `datetime module`_ from `The Python Standard Library`_ which is used for dates and times
 
 * I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
 
@@ -1257,156 +1459,56 @@ test_factory_w_keyword_arguments
     def this_year():
         return None
 
-  - datetime_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used for dates and times
-  - ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``
+  ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``
 
-* I change the `return statement`_ of the ``this_year`` :ref:`function <what is a function?>`
+* I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a function>` from the `datetime module`_
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2
+    :lineno-start: 8
+    :emphasize-lines: 17-21
 
-    def this_year():
-        return datetime.datetime.now().year
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+            year_of_birth = 1996
 
-  .. tip:: I can also use the `today method`_ to get the same value
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # age=2026-year_of_birth,
+                age=(
+                    datetime.datetime.now().year
+                   -year_of_birth
+                ),
+            )
+            self.assertEqual(reality, my_expectation)
 
-    .. code-block:: python
-      :lineno-start: 6
-      :emphasize-lines: 2
 
-      def this_year():
-          return datetime.datetime.today().year
+    # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  I can also use the `today method`_ to get the same value
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError:
-        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
-     != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
-         'age': 0}
+    datetime.datetime.today().year
 
-  the new :ref:`dictionary<what is a dictionary?>` has a :ref:`value<test_values_of_a_dictionary>` for the ``'age'`` :ref:`key<test_keys_of_a_dictionary>`.
-
-  Here is what ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` means
+  the test is still green
 
   - ``datetime`` is the `datetime module`_
-  - ``.datetime`` is a call to the `datetime object`_ inof the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
-  - ``.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy!
-  - ``.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
-  - ``.year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
+  - ``datetime.datetime`` is a call to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
+  - ``datetime.datetime.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy!
+  - ``datetime.datetime.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
+  - ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
   that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`
-
-* I add a :ref:`key<test_keys_of_a_dictionary>` for ``age`` to the `return statement`_ in ``person.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 9
-
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
-        return {
-            'first_name': 'jane',
-            'last_name': 'doe',
-            'sex': 'F',
-            'age': 0,
-        }
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``this_year()`` from ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 5
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = this_year()
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=2000,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                age=this_year()-this_year(),
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``this_year()`` from the test
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 11-12, 18-19
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = this_year()
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                # year_of_birth=2000,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                # age=this_year()-this_year(),
-                age=this_year()-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 12
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-            year_of_birth = this_year()
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                age=this_year()-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
 
 ----
 
@@ -1519,21 +1621,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-* I open a new terminal_ then change directories to ``person``
 
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd person
-
-* I add a git_ commit message
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am 'add test_factory_w_keyword_arguments'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
 
 
 ----
@@ -2732,7 +2820,7 @@ I want to write the solution without looking at the tests
 
     factory = None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2749,7 +2837,7 @@ I want to write the solution without looking at the tests
     def factory():
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2766,7 +2854,7 @@ I want to write the solution without looking at the tests
     def factory(first_name):
         return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -3155,7 +3243,7 @@ I also saw these :ref:`Exceptions<errors>`
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
 * :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`TypeError`
+* :ref:`TypeError<what causes TypeError?>`
 * SyntaxError_
 
 ----

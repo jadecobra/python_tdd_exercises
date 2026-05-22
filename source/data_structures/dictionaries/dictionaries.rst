@@ -239,13 +239,13 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
             self.assertEqual(dict(), {})
             self.assertEqual(dict(0), {})
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
     TypeError: 'int' object is not iterable
 
-* I add :ref:`TypeError` to the list of :ref:`Exceptions<errors>` seen
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
     :lineno-start: 11
@@ -265,7 +265,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
             self.assertEqual(dict(), {})
             self.assertEqual(dict((0, 1)), {})
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: none
 
@@ -633,7 +633,7 @@ I add a test for :ref:`lists` (anything in square brackets (``[]``))
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -658,7 +658,7 @@ the terminal_ is my friend, and shows :ref:`TypeError`
             {[3, 2, 1]: 'BOOM!!!'}
 
 
-  the terminal_ still shows :ref:`TypeError`
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
 
 * I add assertRaises_
 
@@ -701,7 +701,7 @@ I add another test with a set_ (single items in curly braces (``{}``)) as a :ref
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -757,7 +757,7 @@ I add another test, this time for a :ref:`dictionary<what is a dictionary?>`
 
   # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -1228,7 +1228,7 @@ I add a test for the next :ref:`method<what is a function?>` from the TODO list
 
   'fromkeys',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -1252,7 +1252,7 @@ the terminal_ is my friend, and shows :ref:`TypeError`
             a_dictionary = {'key': 'value'}
             self.assertIsNone(a_dictionary.fromkeys(0))
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1371,7 +1371,7 @@ the terminal_ is my friend, and shows :ref:`TypeError`
 
   still green.
 
-* the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a function?>` without inputs the terminal_ showed :ref:`TypeError`
+* the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a function?>` without inputs the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1490,7 +1490,7 @@ I add a test for the `get method`_
 
   'get',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -2140,7 +2140,7 @@ I wonder if the `pop method`_ of :ref:`dictionaries<what is a dictionary?>` beha
 
   'pop',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -2222,7 +2222,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
 ----
 
-* When I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError`
+* When I called the `pop method`_ without input, the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2619,7 +2619,7 @@ I add a test for the `setdefault method`_
 
   'setdefault',
 
-the terminal_ is my friend, and shows :ref:`TypeError`
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
 .. code-block:: python
 
@@ -2973,7 +2973,7 @@ the test passes.
             self.assertIsNone(a_dictionary.update(0))
             self.assertEqual(a_dictionary, {'key': 'value'})
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -2987,7 +2987,7 @@ the test passes.
 
             self.assertIsNone(a_dictionary.update((0, 1)))
 
-  the terminal_ is my friend, and shows :ref:`TypeError`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
