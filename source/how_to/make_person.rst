@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn to build a Python person dictionary with a factory function using TDD. This tutorial covers keyword arguments, default values, and exception handling.
-  :keywords: Jacob Itegboje, python dictionary from function, python factory function tutorial, python tdd with pytest, create person object in python, python function with default :ref:`keyword argument<test_functions_w_keyword_arguments>`s, python test driven development example, handling exceptions in python unit tests, python dictionary with random values
+  :description: A complete, beginner-friendly Python Test-Driven Development (TDD) tutorial walking step-by-step through building a person dictionary factory function. Learn project setup with uv and git, writing failing tests with unittest and pytest-watcher, resolving AttributeError/TypeError/NameError/SyntaxError, dynamic age calculation using the datetime module, generating random test parameters using random.choice and random.randint, and refactoring with starred parameter lists and double-star (**) dictionary unpacking.
+  :keywords: Python TDD tutorial for beginners, test driven development python dictionary, python factory function returning dict, step by step pytest tutorial, how to use uv python package manager, pytest-watcher automatic test runner, unittest assertEqual AssertionError, datetime.datetime.now year calculation python, how to use random.choice in tests, python unexpected keyword argument TypeError, python parameters without default values order, python double star dictionary unpacking, red green refactor example, python functions with optional keyword arguments, catching NameError and AttributeError in python tests
 
 .. include:: ../links.rst
 
@@ -22,7 +22,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`. I think they are the two important :ref:`objects<what is a class?>` to know in .
+This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`. I think they are the two important :ref:`objects<what is a class?>` to know in Python_.
 
 Imagine I want to make a contact list or database of people. I can use a :ref:`function<what is a function?>` to represent filling out information for a person, for example
 
@@ -1443,7 +1443,7 @@ test_factory_w_keyword_arguments
 test factory with datetime
 *********************************************************************************
 
-I want the value of the age to be a calculation based on the current year so that it will always be . I can do that with the `datetime module`_ from `The Python Standard Library`_ which is used for dates and times
+I want the value of the age to be a calculation based on the current year so that it will always be correct. I can do that with the `datetime module`_ from `The Python Standard Library`_ which is used for dates and times
 
 * I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
 
@@ -1484,7 +1484,7 @@ I want the value of the age to be a calculation based on the current year so tha
                 last_name=last_name,
                 sex=sex,
                 # age=2026-year_of_birth,
-                age=datetime.datetime.now().year-,
+                age=datetime.datetime.now().year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1497,7 +1497,7 @@ I want the value of the age to be a calculation based on the current year so tha
 
     datetime.datetime.today().year
 
-  the test is still green
+  the test is still green.
 
   - ``datetime`` is the `datetime module`_
   - ``datetime.datetime`` is a call to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
@@ -1912,7 +1912,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   If ``first_name`` is not ``'jane'`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: pythoncode-block:: shell
+  .. code-block:: python
 
     AssertionError:
         {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
@@ -2295,7 +2295,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block::
+  .. code-block:: python
 
     AssertionError:
         {'first_name': Z, 'last_name': None, 'sex': Y,
@@ -2327,7 +2327,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block::
+  .. code-block:: python
     :emphasize-text: doe None
 
     AssertionError:
@@ -2425,7 +2425,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block::
+  .. code-block:: python
     :emphasize-text: M None
 
     AssertionError:
