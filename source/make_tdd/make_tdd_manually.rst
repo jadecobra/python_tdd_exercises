@@ -459,7 +459,7 @@ how to change the name of a file
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     Hello from magic!
 
