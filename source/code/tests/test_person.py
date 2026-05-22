@@ -8,49 +8,50 @@ def choose(*choices):
     return random.choice(choices)
 
 
-def this_year():
-    return datetime.datetime.now().year
-
-
 class TestPerson(unittest.TestCase):
-
-    def setUp(self):
-        self.random_year_of_birth = random.randint(
-            this_year()-120, this_year()
-        )
-        self.random_first_name = choose('jane', 'joe', 'john', 'person')
 
     def test_factory_w_keyword_arguments(self):
         a_person = dict(
-            first_name=self.random_first_name,
+            first_name=choose('jane', 'joe', 'john', 'person'),
             last_name=choose('doe', 'smith', 'blow', 'public'),
-            sex=choose('F', 'M'),
+            sex=choose('F', 'M')
         )
 
-        self.assertEqual(
-            src.person.factory(
-                **a_person,
-                year_of_birth=self.random_year_of_birth,
-            ),
-            dict(
-                **a_person,
-                age=this_year()-self.random_year_of_birth,
-            )
+        this_year = datetime.datetime.now().year
+        year_of_birth = random.randint(
+            this_year-120, this_year
         )
+
+        reality = src.person.factory(
+            **a_person,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = dict(
+            **a_person,
+            age=this_year-year_of_birth,
+        )
+        self.assertEqual(reality, my_expectation)
 
     def test_factory_w_optional_arguments(self):
-        self.assertEqual(
-            src.person.factory(
-                first_name=self.random_first_name,
-                year_of_birth=self.random_year_of_birth,
-            ),
-            dict(
-                first_name=self.random_first_name,
-                last_name='doe',
-                sex='M',
-                age=this_year()-self.random_year_of_birth,
-            )
+        first_name = choose('jane', 'joe', 'john', 'person')
+
+        this_year = datetime.datetime.now().year
+        year_of_birth = random.randint(
+            this_year-120, this_year
         )
+
+        reality = src.person.factory(
+            first_name=first_name,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = dict(
+
+            first_name=first_name,
+            last_name='doe',
+            sex='M',
+            age=this_year-year_of_birth,
+        )
+        self.assertEqual(reality, my_expectation)
 
 
 # Exceptions seen
