@@ -692,7 +692,7 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I change the value of ``first_name`` to ``'jane'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
+* I change the value of ``first_name`` to ``'jane'`` to use a real name for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -866,7 +866,7 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I change the value of ``last_name`` to ``'doe'`` for ``reality`` and ``my_expectation``, in ``test_person.py``
+* I change the value of ``last_name`` to ``'doe'`` to use a real name for ``reality`` and ``my_expectation``, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7

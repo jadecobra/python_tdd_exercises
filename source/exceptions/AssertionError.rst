@@ -577,7 +577,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 * I change ``my_expectation`` to match ``reality`` and make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 4
+    :lineno-start: 6
     :emphasize-lines: 11
 
         def test_what_is_an_assertion(self):
