@@ -2305,7 +2305,7 @@ I want to see what happens when I try to make a person without a value for the `
   - where ``X`` is the random age, ``Y`` is the random sex and ``Z`` is the random first name
   - the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
-* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` of :ref:`test_factory_w_optional_arguments` in ``test_person.py``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 47
@@ -2372,7 +2372,13 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 35
@@ -2394,33 +2400,39 @@ I want to see what happens when I try to make a person without a value for the `
         {'first_name': Z, 'last_name': Y, 'sex': None, 'age': X}
      != {'first_name': Z, 'last_name': Y, 'age': X}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``, the test does not expect a :ref:`dictionary<what is a dictionary?>` with a :ref:`key<test_keys_of_a_dictionary>` called ``'sex'``
+  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the test expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
-* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` in the expectation of :ref:`test_factory_w_optional_arguments` in ``test_person.py``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 4
+    :lineno-start: 47
+    :emphasize-lines: 8
 
-                dict(
-                    **a_person,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-year_of_birth,
-                )
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                last_name='doe',
+                sex='M',
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
+  .. code-block::
+    :emphasize-text: M None
 
-    E       - {'age': X, 'first_name': Y, 'last_name': Z, 'sex': None}
-    E       ?                                                    ^^^^
-    E
-    E       + {'age': X, 'first_name': Y, 'last_name': Z, 'sex': 'M'}
-    E       ?                                                    ^^^
+    AssertionError:
+        {'first_name': Y, 'last_name': 'doe', 'sex': None, 'age': X}
+     != {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': X}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
+  because the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
 
 * I change the default value for ``sex`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -2432,455 +2444,147 @@ I want to see what happens when I try to make a person without a value for the `
             first_name, last_name='doe',
             sex='M', year_of_birth=None,
         ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': datetime.datetime.now().year-year_of_birth,
+        }
 
-  the test passes.
+  the test passes because the :ref:`default value<test_functions_w_optional_arguments>` for the ``sex`` parameter of the :ref:`function<what is a function?>` is ``'M'``. This means that
 
-  .. note:: When the ``factory`` :ref:`function<what is a function?>` is called with no value for the ``sex`` argument, it uses ``'M'`` because that is the default value in the :ref:`function definition<how to make a function>`, it is the same as calling it with ``sex='M'``
+  .. code-block:: python
 
-    .. code-block:: python
-      :emphasize-lines: 5
+    src.person.factory(
+        first_name=first_name,
+        year_of_birth=year_of_birth,
+    )
 
-      src.person.factory(
-          first_name=first_name,
-          year_of_birth=year_of_birth,
-          last_name='doe',
-          sex='M',
-      )
+  is the same as
 
-    since the values are the same as the default values, I can call the :ref:`function<what is a function?>` without them
+  .. code-block:: python
 
-    .. code-block:: python
-      :emphasize-lines: 2-3
+    src.person.factory(
+        first_name=first_name,
+        year_of_birth=year_of_birth,
+        last_name='doe',
+        sex='M',
+    )
 
-      src.person.factory(
-          first_name=first_name,
-          year_of_birth=year_of_birth,
-      )
-
-    see :ref:`test_functions_w_optional_arguments` for more
+  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter. See :ref:`test_functions_w_optional_arguments` for more
 
 ----
 
-* I remove the commented line ``# sex=choose('F', 'M'),`` from :ref:`test_factory_w_optional_arguments` in ``test_person.py``
-
-* I do not need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I can use a :ref:`variable<what is a variable?>`
+* I no longer need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` for ``first_name``
 
   .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 4
-
-            a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-            )
-            first_name = choose('jane', 'joe', 'john', 'person')
-
-            self.assertEqual(
-
-* I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` in the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 4
-
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    first_name=first_name,
-                    year_of_birth=year_of_birth,
-                ),
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: src.person.factory() got multiple values for keyword argument 'first_name'
-
-  because the ``**a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
-
-* I comment out ``a_person,`` in the call to ``src.person.factory``
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 3
-
-            self.assertEqual(
-                src.person.factory(
-                    # **a_person,
-                    first_name=first_name,
-                    year_of_birth=year_of_birth,
-                ),
-
-  the terminal_ randomly shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-    :emphasize-lines: 2, 5
-
-    E       - {'age': X, 'first_name': Y, 'last_name': 'doe', 'sex': 'M'}
-    E       ?                          ^
-    E
-    E       + {'age': X, 'first_name': B, 'last_name': 'doe', 'sex': 'M'}
-    E       ?                          ^
-
-  because the :ref:`values<test_values_of_a_dictionary>` for ``first_name`` randomly change in both :ref:`dictionaries<what is a dictionary?>`
-
-* I use the ``first_name`` :ref:`variable<what is a variable?>` in the expectation
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 3
-
-                dict(
-                    **a_person,
-                    first_name=first_name,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-year_of_birth,
-                )
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: dict() got multiple values for keyword argument 'first_name'
-
-* I comment out ``**a_person,`` in the :ref:`dictionary<what is a dictionary?>`
-
-  .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 35
     :emphasize-lines: 2
 
-                  dict(
-                      # **a_person,
-                      first_name=first_name,
-                      last_name='doe',
-                      sex='M',
-                      age=this_year()-year_of_birth,
-                  )
+        def test_factory_w_optional_arguments(self):
+            first_name = choose('jane', 'joe', 'john', 'person')
+            a_person = dict(
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                # last_name=choose('doe', 'smith', 'blow', 'public'),
+                # sex=choose('F', 'M')
+            )
 
-  the test passes.
+* I use the :ref:`variable<what is a variable?>` in ``reality`` and ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 3, 8
+
+            reality = src.person.factory(
+                **a_person,
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                first_name=first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: src.person.factory() got multiple values
+               for keyword argument 'first_name'
+
+  because the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
+
+* I comment out ``**a_person,``
+
+  .. code-block:: python
+    :lineno-start: 48
+    :emphasize-lines: 2, 7
+
+            reality = src.person.factory(
+                # **a_person,
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                # **a_person,
+                first_name=first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
 
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 35
 
         def test_factory_w_optional_arguments(self):
+            first_name = choose('jane', 'joe', 'john', 'person')
+
+            this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
-                this_year()-120, this_year()
+                this_year-120, this_year
             )
-            first_name = choose('jane', 'joe', 'john', 'person')
 
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    year_of_birth=year_of_birth,
-                ),
-                dict(
-                    first_name=first_name,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-year_of_birth,
-                )
+            reality = src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
             )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* ``first_name`` and ``year_of_birth`` are made the same way in both tests. I add  the `setUp method`_ to the ``TestPerson`` :ref:`class<what is a class?>` with a :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` to remove the repetition of the ``year_of_birth`` :ref:`variable<what is a variable?>`
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 3-6
+    :emphasize-lines: 1
 
-    class TestPerson(unittest.TestCase):
+    git commit -am 'add test_factory_w_optional_arguments'
 
-        def setUp(self):
-            self.random_year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
-
-        def test_factory_w_keyword_arguments(self):
-
-  I can use the :ref:`class attribute<test_attribute_error_w_class_attributes>` directly
-
-* I point ``year_of_birth`` in :ref:`test_factory_w_keyword_arguments` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 2-5
-
-        def test_factory_w_keyword_arguments(self):
-            # year_of_birth = random.randint(
-            #     this_year()-120, this_year()
-            # )
-            year_of_birth = self.random_year_of_birth
-            a_person = dict(
-
-  the test is still green.
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.factory`` in  the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 4-5
-
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    # year_of_birth=year_of_birth,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-
-  still green.
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation
-
-  .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 3-4
-
-                dict(
-                    **a_person,
-                    # age=this_year()-year_of_birth,
-                    age=this_year()-self.random_year_of_birth,
-                )
-
-  green.
-
-* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 22
-
-        def test_factory_w_keyword_arguments(self):
-            a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
-            )
-
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-                dict(
-                    **a_person,
-                    age=this_year()-self.random_year_of_birth,
-                )
-            )
-
-        def test_factory_w_optional_arguments(self):
-
-* I point the ``year_of_birth`` :ref:`variable<what is a variable?>` in :ref:`test_factory_w_optional_arguments` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
-
-  .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 2-5
-
-        def test_factory_w_optional_arguments(self):
-            # year_of_birth = random.randint(
-            #     this_year()-120, this_year()
-            # )
-            year_of_birth = self.random_year_of_birth
-            first_name = choose('jane', 'joe', 'john', 'person')
-
-  the test is still green.
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.factory`` in  the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 4-5
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    # year_of_birth=year_of_birth,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-
-  still green.
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 5-6
-
-                dict(
-                    first_name=first_name,
-                    last_name='doe',
-                    sex='M',
-                    # age=this_year()-year_of_birth,
-                    age=this_year()-self.random_year_of_birth,
-                )
-
-  green.
-
-* I remove the commented lines and the ``year_of_birth`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 40
-
-        def test_factory_w_optional_arguments(self):
-            first_name = choose('jane', 'joe', 'john', 'person')
-
-            self.assertEqual(
-                src.person.factory(
-                    first_name=first_name,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-                dict(
-                    first_name=first_name,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-self.random_year_of_birth,
-                )
-            )
-
-
-    # Exceptions seen
-
-  the tests are still green.
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
-* I add a :ref:`class attribute (variable)<test_attribute_error_w_class_attributes>` for ``first_name`` to the `setUp method`_ to remove repetition of the :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 5
-
-        def setUp(self):
-            self.random_year_of_birth = random.randint(
-                this_year()-120, this_year()
-            )
-            self.random_first_name = choose('jane', 'joe', 'john', 'person')
-
-        def test_factory_w_keyword_arguments(self):
-
-  I can use the :ref:`class attribute<test_attribute_error_w_class_attributes>` directly
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` as the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_keyword_arguments`
-
-  .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 3-4
-
-        def test_factory_w_keyword_arguments(self):
-            a_person = dict(
-                # first_name=choose('jane', 'joe', 'john', 'person'),
-                first_name=self.random_first_name,
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
-            )
-
-  the test is still green.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 23
-
-        def test_factory_w_keyword_arguments(self):
-            a_person = dict(
-                first_name=self.random_first_name,
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
-            )
-
-            self.assertEqual(
-                src.person.factory(
-                    **a_person,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-                dict(
-                    **a_person,
-                    age=this_year()-self.random_year_of_birth,
-                )
-            )
-
-        def test_factory_w_optional_arguments(self):
-
-  still green.
-
-* I point the ``first_name`` :ref:`variable<what is a variable?>` in :ref:`test_factory_w_optional_arguments` to the :ref:`class attribute<test_attribute_error_w_class_attributes>`
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2-3
-
-        def test_factory_w_optional_arguments(self):
-            # first_name = choose('jane', 'joe', 'john', 'person')
-            first_name = self.random_first_name
-
-            self.assertEqual(
-
-  green.
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the call to ``src.person.factory`` in  the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 3-4
-
-            self.assertEqual(
-                src.person.factory(
-                    # first_name=first_name,
-                    first_name=self.random_first_name,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-
-  still green.
-
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in the expectation of the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 2-3
-
-                dict(
-                    # first_name=first_name,
-                    first_name=self.random_first_name,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-self.random_year_of_birth,
-                )
-
-  the test is still green.
-
-* I remove the commented lines and the ``first_name`` :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 41
-
-        def test_factory_w_optional_arguments(self):
-            self.assertEqual(
-                src.person.factory(
-                    first_name=self.random_first_name,
-                    year_of_birth=self.random_year_of_birth,
-                ),
-                dict(
-                    first_name=self.random_first_name,
-                    last_name='doe',
-                    sex='M',
-                    age=this_year()-self.random_year_of_birth,
-                )
-            )
-
-
-    # Exceptions seen
-
-  the tests are still green.
 
 ----
 
@@ -2898,6 +2602,7 @@ I want to write the solution without looking at the tests
 
 ----
 
+* I go back to the terminal_ that is running the tests
 * I close ``test_person.py`` in the :ref:`editor<2 editors>`
 * then I delete all the text in ``person.py``. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
