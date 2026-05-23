@@ -1589,11 +1589,11 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
 ----
 
-* I add calculation for the age with the `today method`_ to the `return statement`_ in ``person.py``
+* I add a calculation for the age with the `today method`_ to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9-10
+    :emphasize-lines: 9-13
 
     def factory(
             first_name, last_name,
@@ -1604,7 +1604,10 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             'last_name': 'doe',
             'sex': 'F',
             # 'age': 30,
-            'age': datetime.datetime.today().year-year_of_birth,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
@@ -1654,7 +1657,10 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             'first_name': 'jane',
             'last_name': 'doe',
             'sex': 'F',
-            'age': datetime.datetime.today().year-year_of_birth,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
@@ -2917,7 +2923,7 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 8-9
+    :emphasize-lines: 8-12
 
     def factory(first_name, year_of_birth):
         return {
@@ -2927,7 +2933,10 @@ I want to write the solution without looking at the tests
             'sex': 'M',
             # 'age': 55,
             # 'age': year_of_birth,
-            'age': datetime.datetime.today().year-year_of_birth,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -3041,7 +3050,10 @@ I want to write the solution without looking at the tests
             'sex': sex,
             # 'age': 55,
             # 'age': year_of_birth,
-            'age': datetime.datetime.today().year-year_of_birth,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -3098,7 +3110,10 @@ I want to write the solution without looking at the tests
             'sex': sex,
             # 'age': 55,
             # 'age': year_of_birth,
-            'age': datetime.datetime.today().year-year_of_birth,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -3141,7 +3156,10 @@ I want to write the solution without looking at the tests
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
-            'age': datetime.datetime.today().year-year_of_birth,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
 
 * I add a git_ commit message in the other terminal_
