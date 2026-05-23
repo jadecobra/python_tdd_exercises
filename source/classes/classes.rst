@@ -91,7 +91,7 @@ What if I want the person to send a message about themselves. How would I do tha
 
   .. code-block:: python
     :lineno-start: 35
-    :emphasize-lines: 21-29
+    :emphasize-lines: 21-26, 28-30
 
 
         def test_factory_w_optional_arguments(self):
@@ -120,7 +120,8 @@ What if I want the person to send a message about themselves. How would I do tha
                 last_name='blow',
                 year_of_birth=1996,
             )
-            reality = src.person.hello(joe)
+
+            reality = src.person.say_hello(joe)
             my_expectation = None
             self.assertEqual(reality, my_expectation)
 
@@ -156,7 +157,7 @@ What if I want the person to send a message about themselves. How would I do tha
 
     AttributeError: module 'src.person' has no attribute 'hello'
 
-  because ``person.py`` does not have a :ref:`function<what is a function?>` named ``hello``
+  because ``person.py`` does not have a :ref:`function<what is a function?>` named ``say_hello``
 
 ----
 
@@ -185,7 +186,7 @@ What if I want the person to send a message about themselves. How would I do tha
         }
 
 
-    def hello():
+    def say_hello():
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -195,7 +196,7 @@ What if I want the person to send a message about themselves. How would I do tha
     TypeError: hello() takes 0 positional arguments
                but 1 was given
 
-  because the :ref:`definition<how to make a function>` for ``hello`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`positional argument<test_functions_w_positional_arguments>` (``person``)
+  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`positional argument<test_functions_w_positional_arguments>` (``person``)
 
 * I add a name to the definition
 
@@ -203,7 +204,7 @@ What if I want the person to send a message about themselves. How would I do tha
     :lineno-start: 16
     :emphasize-lines: 1
 
-    def hello(person):
+    def say_hello(person):
         return None
 
   the test passes.
@@ -216,13 +217,13 @@ What if I want the person to send a message about themselves. How would I do tha
 
 ----
 
-I want the ``hello`` :ref:`function<what is a function?>` to return a message for the person I give as input
+I want the ``say_hello`` :ref:`function<what is a function?>` to return a message for the person I give as input
 
 * I change ``my_expectation`` in :ref:`test_factory_person_greeting` in ``test_person.py`` to an :ref:`f-string<what is string interpolation?>` like I did with :ref:`telephone`
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 8-11
+    :emphasize-lines: 9-12
 
         def test_factory_person_greeting(self):
             joe = src.person.factory(
@@ -230,7 +231,8 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
                 last_name='blow',
                 year_of_birth=1996,
             )
-            reality = src.person.hello(joe)
+
+            reality = src.person.say_hello(joe)
             my_expectation = (
                 f'Hi, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
@@ -252,7 +254,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
     :lineno-start: 16
     :emphasize-lines: 2
 
-    def hello(person):
+    def say_hello(person):
         return 'Hi, my name is joe blow and I am 30'
 
   the test passes.
@@ -261,7 +263,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 14-24
+    :emphasize-lines: 15-19, 21-26
 
         def test_factory_person_greeting(self):
             joe = src.person.factory(
@@ -269,7 +271,8 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
                 last_name='blow',
                 year_of_birth=1996,
             )
-            reality = src.person.hello(joe)
+
+            reality = src.person.say_hello(joe)
             my_expectation = (
                 f'Hi, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
@@ -281,7 +284,8 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
                 sex='F',
                 year_of_birth=1991
             )
-            reality = src.person.hello(jane)
+
+            reality = src.person.say_hello(jane)
             my_expectation = (
                 f'Hi, my name is jane doe and I am'
                 f' {datetime.datetime.now().year-1991}'
@@ -299,15 +303,15 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
           'Hi, my name is joe blow and I am 30'
        != 'Hi, my name is jane doe and I am 35'
 
-  I have to make sure the ``hello`` :ref:`function<what is a function?>` uses the :ref:`values<test_values_of_a_dictionary>` of the ``person`` :ref:`dictionary<what is a dictionary?>` to make the message. I can do that with the :ref:`get method of dictionaries<test_get_value_of_a_key_in_a_dictionary>`
+  I have to make sure the ``say_hello`` :ref:`function<what is a function?>` uses the :ref:`values<test_values_of_a_dictionary>` of the ``person`` :ref:`dictionary<what is a dictionary?>` to make the message. I can do that with the :ref:`get method of dictionaries<test_get_value_of_a_key_in_a_dictionary>`.
 
-* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` the ``hello`` :ref:`function<what is a function?>` receives, in ``person.py``
+* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` the ``say_hello`` :ref:`function<what is a function?>` receives, in ``person.py``
 
   .. code-block:: python
     :lineno-start: 16
     :emphasize-lines: 2,4
 
-    def hello(person):
+    def say_hello(person):
         first_name = person.get('first_name')
 
         return f'Hi, my name is {first_name} blow and I am 30'
@@ -315,6 +319,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :emphasize-text: doe blow 30 35
 
     AssertionError:
         'Hi, my name is jane blow and I am 30'
@@ -328,7 +333,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
     :lineno-start: 16
     :emphasize-lines: 3, 5-8
 
-    def hello(person):
+    def say_hello(person):
         first_name = person.get('first_name')
         last_name = person.get('last_name')
 
@@ -340,12 +345,13 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
+    :emphasize-text: 30 35
 
     AssertionError:
         'Hi, my name is jane doe and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
-  the age is the only thing that is different now
+  the age is the only thing that is different
 
 * I add the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
@@ -353,7 +359,7 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
     :lineno-start: 16
     :emphasize-lines: 4, 8
 
-    def hello(person):
+    def say_hello(person):
         first_name = person.get('first_name')
         last_name = person.get('last_name')
         age = person.get('age')
@@ -364,6 +370,145 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
         )
 
   the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for one more person
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 14-18, 20-22
+
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991
+            )
+
+            reality = src.person.say_hello(jane)
+            my_expectation = (
+                f'Hi, my name is jane doe and I am'
+                f' {datetime.datetime.now().year-1991}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+            reality = src.person.say_hello(john)
+            my_expectation = ''
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'Hi, my name is john smith and I am 446' != ''
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 8-11
+
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+            reality = src.person.say_hello(john)
+            my_expectation = (
+                f'Hi, my name is john smith and I am'
+                f' {datetime.datetime.now().year-1580}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+----
+
+* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 14-20
+
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991
+            )
+
+            reality = src.person.say_hello(jane)
+            my_expectation = (
+                f'Hi, my name is jane doe and I am'
+                f' {datetime.datetime.now().year-1991}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 10-15, 20-23
+
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            john = src.person.factory(
+                # first_name='john',
+                first_name=first_name,
+                # last_name='smith',
+                last_name=last_name,
+                # year_of_birth=1580,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(john)
+            my_expectation = (
+                # f'Hi, my name is john smith and I am'
+                f'Hi, my name is {first_name} {last_name}'
+                # f' {datetime.datetime.now().year-1580}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green
+
+* I add the same :ref:`variable names<what is a variable?>` to use to remove repetition of ``'jane'``, ``1991`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 69
 
 The solution works, it needs different :ref:`functions<what is a function?>` - one to make the person and one to make the message.
 
@@ -392,7 +537,7 @@ I add a new test to ``test_person.py``
           for person in (joe, jane, john):
               with self.subTest(name=person.get('first_name')):
                   self.assertEqual(
-                      src.person.hello(person),
+                      src.person.say_hello(person),
                       (
                           f'Hi, my name is {person.get("first_name")} '
                           f'{person.get("last_name")} '
@@ -430,7 +575,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :lineno-start: 16
     :emphasize-lines: 9, 11
 
-    def hello(person):
+    def say_hello(person):
         return (
             f'Hi, my name is {person.get("first_name")} '
             f'{person.get("last_name")} '
@@ -659,7 +804,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             for person in (joe, jane, john):
                 with self.subTest(name=person.get('first_name')):
                     self.assertEqual(
-                        src.person.hello(person),
+                        src.person.say_hello(person),
                         (
                             f'Hi, my name is {person.get("first_name")} '
                             f'{person.get("last_name")} '
@@ -713,7 +858,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AttributeError: 'Person' object has no attribute 'get'
 
-  the test calls the ``hello`` :ref:`function<what is a function?>` which takes in a :ref:`dictionary<what is a dictionary?>` and calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`, the ``Person`` object_ does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
+  the test calls the ``say_hello`` :ref:`function<what is a function?>` which takes in a :ref:`dictionary<what is a dictionary?>` and calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`, the ``Person`` object_ does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
 
 * I can call :ref:`methods<what is a function?>` from outside a :ref:`class<what is a class?>` the way I use a :ref:`class attribute<test_attribute_error_w_class_attributes>`. I change the call in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
@@ -749,7 +894,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             self.first_name = first_name
             return None
 
-        def hello():
+        def say_hello():
             return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -774,7 +919,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             return None
 
         @staticmethod
-        def hello():
+        def say_hello():
             return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -791,7 +936,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :emphasize-lines: 2
 
         @staticmethod
-        def hello(person):
+        def say_hello(person):
             return None
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -857,7 +1002,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             return None
 
         @staticmethod
-        def hello(person):
+        def say_hello(person):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -894,7 +1039,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 
         @staticmethod
-        def hello(person):
+        def say_hello(person):
             return None
 
         def get_age():
@@ -914,7 +1059,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :emphasize-lines: 5-7
 
         @staticmethod
-        def hello(person):
+        def say_hello(person):
             return None
 
         @staticmethod
@@ -927,14 +1072,14 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AssertionError: None != 'Hi, my name is john smith and I am None'
 
-* I copy and paste the string_ in the `return statement`_ of the ``hello`` :ref:`method<what is a function?>`
+* I copy and paste the string_ in the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 3
 
         @staticmethod
-        def hello(person):
+        def say_hello(person):
             return 'Hi, my name is john smith and I am None'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -956,7 +1101,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :emphasize-lines: 3
 
         @staticmethod
-        def hello(person):
+        def say_hello(person):
             return f'Hi, my name is {person.first_name} smith and I am None'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -978,7 +1123,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :emphasize-lines: 3-6
 
         @staticmethod
-        def hello(person):
+        def say_hello(person):
             return (
                 f'Hi, my name is {person.first_name} '
                 f'{person.last_name} and I am None'
@@ -988,7 +1133,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I can call a :ref:`method<what is a function?>` that belongs to a :ref:`class<what is a class?>` without the need to pass in the :ref:`class<what is a class?>` as input since I can use the :ref:`class<what is a class?>` with ``self``. I remove the repetition of the ``Person`` object_ in the call to the ``hello`` :ref:`method<what is a function?>` in ``test_person.py``
+* I can call a :ref:`method<what is a function?>` that belongs to a :ref:`class<what is a class?>` without the need to pass in the :ref:`class<what is a class?>` as input since I can use the :ref:`class<what is a class?>` with ``self``. I remove the repetition of the ``Person`` object_ in the call to the ``say_hello`` :ref:`method<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 100
@@ -1015,7 +1160,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     TypeError: Person.hello() missing 1 required positional argument: 'person'
 
-* I remove the `staticmethod decorator`_ from the ``hello`` :ref:`method<what is a function?>` in ``person.py``
+* I remove the `staticmethod decorator`_ from the ``say_hello`` :ref:`method<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 26
@@ -1028,7 +1173,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             self.last_name = last_name
             return None
 
-        def hello(person):
+        def say_hello(person):
             return (
                 f'Hi, my name is {person.first_name} '
                 f'{person.last_name} and I am None'
@@ -1036,9 +1181,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-  This works because ``person`` in the parentheses is for the ``Person`` :ref:`class<what is a class?>` that the ``hello`` :ref:`method<what is a function?>` is part of.
+  This works because ``person`` in the parentheses is for the ``Person`` :ref:`class<what is a class?>` that the ``say_hello`` :ref:`method<what is a function?>` is part of.
 
-  When I wrapped the ``hello`` :ref:`function<what is a function?>` with the `staticmethod decorator`_, it was a :ref:`function<what is a function?>` that did not use other parts (:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`) of the :ref:`class<what is a class?>` it belongs to.
+  When I wrapped the ``say_hello`` :ref:`function<what is a function?>` with the `staticmethod decorator`_, it was a :ref:`function<what is a function?>` that did not use other parts (:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>`) of the :ref:`class<what is a class?>` it belongs to.
 
 * I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change the name of the input parameter from ``person`` to ``self`` to match :ref:`Python convention<how to use class methods and attributes>`
 
@@ -1047,7 +1192,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :emphasize-lines: 1, 3, 4
     :emphasize-text: self
 
-        def hello(self):
+        def say_hello(self):
             return (
                 f'Hi, my name is {self.first_name} '
                 f'{self.last_name} and I am None'
@@ -1295,7 +1440,7 @@ the test passes.
     :lineno-start: 16
     :emphasize-lines: 9-10
 
-    def hello(person):
+    def say_hello(person):
         return (
             f'Hi, my name is {person.get("first_name")} '
             f'{person.get("last_name")} '
@@ -1791,7 +1936,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
   .. code-block:: python
     :lineno-start: 47
 
-        def hello(self):
+        def say_hello(self):
             return (
                 f'Hi, my name is {self.first_name} '
                 f'{self.last_name} and I am None'
@@ -1823,7 +1968,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
             self.year_of_birth = year_of_birth
             return None
 
-        def hello(self):
+        def say_hello(self):
             return (
                 f'Hi, my name is {self.first_name} '
                 f'{self.last_name} and I am {self.get_age()}'
@@ -1856,15 +2001,15 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
     E               + Hi, my name is john smith and I am 446
     E               ?                                    ^^^
 
-  ``test_update_factory_person_year_of_birth`` expects a number, the ``hello`` :ref:`method<what is a function?>` returns :ref:`None<what is None?>`
+  ``test_update_factory_person_year_of_birth`` expects a number, the ``say_hello`` :ref:`method<what is a function?>` returns :ref:`None<what is None?>`
 
-* I add a call to the ``get_age`` :ref:`method<what is a function?>` in the ``hello`` :ref:`method<what is a function?>` in ``person.py``
+* I add a call to the ``get_age`` :ref:`method<what is a function?>` in the ``say_hello`` :ref:`method<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 48
     :emphasize-lines: 4
 
-        def hello(self):
+        def say_hello(self):
             return (
                 f'Hi, my name is {self.first_name} '
                 f'{self.last_name} and I am {self.get_age()}'
@@ -2277,7 +2422,7 @@ I want to add randomness to the test
             )
 
             self.assertEqual(
-                src.person.hello(self.random_factory_person),
+                src.person.say_hello(self.random_factory_person),
                 (
                     f'Hi, my name is {self.random_first_name} '
                     f'{self.random_last_name} '
@@ -2296,7 +2441,7 @@ I want to add randomness to the test
 
         def test_factory_person_greeting(self):
             self.assertEqual(
-                src.person.hello(self.random_factory_person),
+                src.person.say_hello(self.random_factory_person),
                 (
                     f'Hi, my name is {self.random_first_name} '
                     f'{self.random_last_name} '
@@ -2611,7 +2756,7 @@ I want to add randomness to the test
 
         def test_factory_person_greeting(self):
             self.assertEqual(
-                src.person.hello(self.random_factory_person),
+                src.person.say_hello(self.random_factory_person),
                 (
                     f'Hi, my name is {self.random_first_name} '
                     f'{self.random_last_name} '
@@ -2813,7 +2958,7 @@ I want to add randomness to the test
 
         def test_factory_person_greeting(self):
             self.assertEqual(
-                src.person.hello(self.random_factory_person),
+                src.person.say_hello(self.random_factory_person),
                 # (
                 #     f'Hi, my name is {self.random_first_name} '
                 #     f'{self.random_last_name} '
@@ -2861,7 +3006,7 @@ I want to add randomness to the test
 
         def test_factory_person_greeting(self):
             self.assertEqual(
-                src.person.hello(self.random_factory_person),
+                src.person.say_hello(self.random_factory_person),
                 self.expected_greeting()
             )
 
