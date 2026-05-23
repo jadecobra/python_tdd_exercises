@@ -4254,7 +4254,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`function<what is function?>` to use to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` in ``test_person.py``
+* I add a :ref:`function<what is a function?>` to use to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 11
@@ -4281,8 +4281,8 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 27
+    :emphasize-lines: 12-16
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
@@ -4311,15 +4311,53 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 27
 
+        def test_factory_w_keyword_arguments(self):
+            a_person = dict(
+                first_name=choose(
+                    'jane', 'joe', 'john', 'person',
+                ),
+                last_name=choose(
+                    'doe', 'smith', 'blow', 'public',
+                ),
+                sex=choose('F', 'M'),
+            )
+            year_of_birth = random_year_of_birth()
 
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
 
-* I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_keyword_arguments`
+        def test_factory_w_optional_arguments(self):
+
+* I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 49
+    :emphasize-lines: 6-10
+
+        def test_factory_w_optional_arguments(self):
+            first_name = choose(
+                'jane', 'joe', 'john', 'person'
+            )
+
+            # this_year = datetime.datetime.now().year
+            # year_of_birth = random.randint(
+            #     this_year-120, this_year
+            # )
+            year_of_birth = random_year_of_birth()
+
+            reality = src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
 
 
   the test is still green.
@@ -4327,30 +4365,99 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 49
 
+        def test_factory_w_optional_arguments(self):
+            first_name = choose(
+                'jane', 'joe', 'john', 'person'
+            )
+            year_of_birth = random_year_of_birth()
 
+            reality = src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                sex='M',
+                last_name='doe',
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
 
-* I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_keyword_arguments`
+* I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_person_say_hello`
 
   .. code-block:: python
-    :lineno-start:
-    :emphasize-lines:
+    :lineno-start: 67
+    :emphasize-lines: 9-13
 
+        def test_factory_person_say_hello(self):
+            first_name = choose(
+                'jane', 'joe', 'john', 'person',
+            )
+            last_name = choose(
+                'doe', 'smith', 'blow', 'public',
+            )
+            sex = choose('F', 'M')
+            # this_year = datetime.datetime.now().year
+            # year_of_birth = random.randint(
+            #     this_year-120, this_year
+            # )
+            year_of_birth = random_year_of_birth()
+
+            a_random_person = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
 
   the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start:
+    :lineno-start: 67
+
+        def test_factory_person_say_hello(self):
+            first_name = choose(
+                'jane', 'joe', 'john', 'person',
+            )
+            last_name = choose(
+                'doe', 'smith', 'blow', 'public',
+            )
+            sex = choose('F', 'M')
+            year_of_birth = random_year_of_birth()
+
+            a_random_person = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(a_random_person)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {calculate_age(year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+    # SyntaxError
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'refactor factory function'
+    git commit -am \
+    'extract random_year_of_birth function'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
