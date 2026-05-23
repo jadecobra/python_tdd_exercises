@@ -4484,10 +4484,15 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    FAILED ...::test_factory_w_keyword_arguments - AttributeError:
-        module 'src.person' has no attribute 'factory'
-    FAILED ...::test_factory_w_optional_arguments - AttributeError:
-        module 'src.person' has no attribute 'factory'
+    FAILED ...test_factory_person_say_hello -
+        AttributeError: module 'src.person' has
+                        no attribute 'factory'
+    FAILED ...test_factory_w_keyword_arguments -
+        AttributeError: module 'src.person' has
+                        no attribute 'factory'
+    FAILED ...test_factory_w_optional_arguments -
+        AttributeError: module 'src.person' has
+                        no attribute 'factory'
 
   because there is nothing in ``person.py`` with the name ``factory``
 
@@ -4603,8 +4608,10 @@ I want to write the solution without looking at the tests
   .. code-block:: python
 
     AssertionError:
-        {'first_name': A, 'last_name': 'doe', 'sex': 'M', 'age': Y}
-     != {'first_name': Z, 'last_name': 'doe', 'sex': 'M', 'age': X}
+        {'first_name': A, 'last_name': 'doe',
+         'sex': 'M', 'age': Y}
+     != {'first_name': Z, 'last_name': 'doe',
+         'sex': 'M', 'age': X}
 
   the :ref:`values<test_values_of_a_dictionary>` of the ``age`` and ``first_name`` :ref:`keys<test_keys_of_a_dictionary>` change randomly
 
@@ -4628,8 +4635,10 @@ I want to write the solution without looking at the tests
   .. code-block:: python
 
     AssertionError:
-        {'first_name': Z, 'last_name': 'doe', 'sex': 'M', 'age': Y}
-     != {'first_name': Z, 'last_name': 'doe', 'sex': 'M', 'age': X}
+        {'first_name': Z, 'last_name': 'doe',
+         'sex': 'M', 'age': Y}
+     != {'first_name': Z, 'last_name': 'doe',
+         'sex': 'M', 'age': X}
 
   and :ref:`TypeError<what causes TypeError?>`
 
@@ -4660,8 +4669,10 @@ I want to write the solution without looking at the tests
   .. code-block:: python
 
     AssertionError:
-        {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': ABCD}
-     != {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': X}
+        {'first_name': Y, 'last_name': 'doe',
+         'sex': 'M', 'age': ABCD}
+     != {'first_name': Y, 'last_name': 'doe',
+         'sex': 'M', 'age': X}
 
   because the :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned for the ``age`` :ref:`key<test_keys_of_a_dictionary>` has 4 digits (a year), and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
 
@@ -4782,14 +4793,21 @@ I want to write the solution without looking at the tests
         ):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  ``first_name`` and ``age`` match. If the last names are different, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-text: B A
 
     AssertionError:
         {'first_name': C, 'last_name': B, 'sex': Z, 'age': X}
      != {'first_name': C, 'last_name': A, 'sex': Y, 'age': X}
 
-  because the :ref:`values<test_values_of_a_dictionary>` for ``last_name`` and ``sex`` change  every time the tests run
+  and :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.person'
+                    has no attribute 'say_hello'
 
 * I use the ``sex`` input parameter in the `return statement`_
 
@@ -4821,8 +4839,10 @@ I want to write the solution without looking at the tests
     :emphasize-text: None M
 
     AssertionError:
-        {'first_name': Y, 'last_name': 'doe', 'sex': None, 'age': X}
-     != {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': X}
+        {'first_name': Y, 'last_name': 'doe',
+         'sex': None, 'age': X}
+     != {'first_name': Y, 'last_name': 'doe',
+         'sex': 'M', 'age': X}
 
   because the :ref:`assertion<what is an assertion?>` expects ``'M'`` as the :ref:`value<test_values_of_a_dictionary>` of ``sex`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
@@ -4837,9 +4857,7 @@ I want to write the solution without looking at the tests
             last_name=None, sex='M',
         ):
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if the ``last_name`` is randomly ``'doe'``.
-
-  If the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and if the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-text: doe
@@ -4848,7 +4866,12 @@ I want to write the solution without looking at the tests
         {'first_name': A, 'last_name': 'doe', 'sex': Y, 'age': X}
      != {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
 
-  because the ``last_name`` :ref:`value<test_values_of_a_dictionary>` is different between the two :ref:`dictionaries<what is a dictionary?>`
+  because the ``last_name`` :ref:`value<test_values_of_a_dictionary>` is different between the two :ref:`dictionaries<what is a dictionary?>`. It still shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.person'
+                    has no attribute 'say_hello'
 
 * I use the ``last_name`` input parameter in the `return statement`_
 
@@ -4897,8 +4920,47 @@ I want to write the solution without looking at the tests
             last_name='doe', sex='M',
         ):
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures. I am getting pretty good at this.
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
+  .. code-block:: shell
+
+    AttributeError: module 'src.person'
+                    has no attribute 'say_hello'
+
+  because I do not have a definition for ``say_hello``
+
+* I add ``say_hello``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4
+
+    import datetime
+
+
+    say_hello
+
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'say_hello' is not defined
+
+* I point it to :ref:`None<what is None?>` to define it
+
+
+
+----
+----
+----
+----
+----
 * I remove the commented lines
 
   .. code-block:: python

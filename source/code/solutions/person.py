@@ -14,3 +14,14 @@ def factory(
            -year_of_birth
         ),
     }
+
+
+def say_hello(person):
+    first_name = person.get('first_name')
+    last_name = person.get('last_name')
+    age = person.get('age')
+
+    return (
+        f'Hi, my name is {first_name} {last_name}'
+        f' and I am {age}'
+    )
