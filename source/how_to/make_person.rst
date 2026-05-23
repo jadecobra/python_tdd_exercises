@@ -5019,7 +5019,7 @@ I want to write the solution without looking at the tests
 
     AssertionError: None != 'Hi, my name is Z Y and I am Z'
 
-  because the test expects a string_ and the ``say_hello`` :ref:`function<what is a function?>` returns :ref:`None<what is None>`
+  because the test expects a string_ and the ``say_hello`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
 * I copy the string_ from the terminal_ and paste it to replace the `return statement`
 
