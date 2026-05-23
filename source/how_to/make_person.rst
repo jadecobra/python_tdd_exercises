@@ -738,7 +738,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of ``'jane'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -918,7 +918,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of ``'doe'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1112,7 +1112,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the value for ``sex`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of ``'F'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1321,7 +1321,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the year of birth two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of the year of birth from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of the year of birth from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1663,7 +1663,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             ),
         }
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -2032,7 +2032,7 @@ extract choose function
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments`, to use them to remove repetition of ``random.choice`` from the test in ``test_person.py``
+* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments`, to use to remove repetition of ``random.choice`` from the test in ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -2104,7 +2104,7 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`dictionary<what is a dictionary?>` to use them to remove the repeating parts
+* I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
 
   .. code-block:: python
     :lineno-start: 13
@@ -3527,14 +3527,18 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 ----
 
 *********************************************************************************
-extract get_current_age function
+extract calculate_age function
 *********************************************************************************
 
-* Each :ref:`assertion<what is an assertion?>` in every test has calculation for the age, I add a :ref:`function<what is a function?>` to use to remove repetition of the calculation
+Each :ref:`assertion<what is an assertion?>` in every test has calculation for the age
+
+* I go back to the terminal_ that is running the tests
+
+* I add a :ref:`function<what is a function?>` to use to remove repetition of the age calculation
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 5-6
+    :emphasize-lines: 5-9
 
     def choose(*choices):
         return random.choice(choices)
@@ -3549,8 +3553,55 @@ extract get_current_age function
 
     class TestPerson(unittest.TestCase):
 
+        def test_factory_w_keyword_arguments(self):
 
-The solution works, it needs different :ref:`functions<what is a function?>` - one to make the person and one to make the message.
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 3-4
+
+            my_expectation = dict(
+                **a_person,
+                # age=this_year-year_of_birth,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_w_optional_arguments(self):
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_factory_w_keyword_arguments(self):
+            a_person = dict(
+                first_name=choose('jane', 'joe', 'john', 'person'),
+                last_name=choose('doe', 'smith', 'blow', 'public'),
+                sex=choose('F', 'M'),
+            )
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_w_optional_arguments(self):
+
+  the test is still green.
+
+* I 
 
 ----
 

@@ -782,7 +782,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of :ref:`None<what is None?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 18
@@ -958,7 +958,7 @@ I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in ``my_expecta
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of :ref:`False<test_what_is_false>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -986,7 +986,7 @@ I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in ``my_expecta
 
   the test is still green.
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of :ref:`True<test_what_is_true>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -1129,7 +1129,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``1234``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1234``
 
   .. code-block:: python
     :lineno-start: 35
@@ -1265,7 +1265,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``1.234``
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1.234``
 
   .. code-block:: python
     :lineno-start: 41
@@ -1404,7 +1404,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of the tuple_
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the tuple_
 
   .. code-block:: python
     :lineno-start: 47
@@ -1543,7 +1543,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of the :ref:`list<what is a list?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`list<what is a list?>`
 
   .. code-block:: python
     :lineno-start: 53
@@ -1699,7 +1699,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of the :ref:`dictionary<what is a dictionary?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 59
