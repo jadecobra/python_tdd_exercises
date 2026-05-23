@@ -261,63 +261,106 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
 
   .. code-block:: python
     :lineno-start: 55
+    :emphasize-lines: 14-24
 
-* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the value for ``first_name``
+        def test_factory_person_greeting(self):
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+            reality = src.person.hello(joe)
+            my_expectation = (
+                f'Hi, my name is joe blow and I am'
+                f' {datetime.datetime.now().year-1996}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991
+            )
+            reality = src.person.hello(jane)
+            my_expectation = (
+                f'Hi, my name is jane doe and I am'
+                f' {datetime.datetime.now().year-1991}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+          'Hi, my name is joe blow and I am 30'
+       != 'Hi, my name is jane doe and I am 35'
+
+  I have to make sure the ``hello`` :ref:`function<what is a function?>` uses the :ref:`values<test_values_of_a_dictionary>` of the ``person`` :ref:`dictionary<what is a dictionary?>` to make the message. I can do that with the :ref:`get method of dictionaries<test_get_value_of_a_key_in_a_dictionary>`
+
+* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` the ``hello`` :ref:`function<what is a function?>` receives, in ``person.py``
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 2
+    :emphasize-lines: 2,4
 
     def hello(person):
-        return f'Hi, my name is {person.get("first_name")} smith and I am 446'
+        first_name = person.get('first_name')
+
+        return f'Hi, my name is {first_name} blow and I am 30'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines: 2, 4
 
-    E               - Hi, my name is jane smith and I am 446
-    E               ?                     ^^^^^          ^^^
-    E               + Hi, my name is jane doe and I am 35
-    E               ?                     ^^^          ^^
+    AssertionError:
+        'Hi, my name is jane blow and I am 30'
+     != 'Hi, my name is jane doe and I am 35'
 
-  the first name is the same, the last name and ages are different
+  the first names are the same, the last name and ages are different
 
-* I change the `return statement`_
+* I add the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 2-5
+    :emphasize-lines: 3, 5-8
 
     def hello(person):
+        first_name = person.get('first_name')
+        last_name = person.get('last_name')
+
         return (
-            f'Hi, my name is {person.get("first_name")} '
-            f'{person.get("last_name")} and I am 446'
+            f'Hi, my name is {first_name} {last_name}'
+            ' and I am 30'
         )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-lines:  2, 4
 
-    E               - Hi, my name is jane doe and I am 446
-    E               ?                                  ^^^
-    E               + Hi, my name is jane doe and I am 35
-    E               ?                                  ^^
+    AssertionError:
+        'Hi, my name is jane doe and I am 30'
+     != 'Hi, my name is jane doe and I am 35'
 
   the age is the only thing that is different now
 
-* I add the age to the `return statement`_
+* I add the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 5
+    :emphasize-lines: 4, 8
 
     def hello(person):
+        first_name = person.get('first_name')
+        last_name = person.get('last_name')
+        age = person.get('age')
+
         return (
-            f'Hi, my name is {person.get("first_name")} '
-            f'{person.get("last_name")} '
-            f'and I am {person.get("age")}'
+            f'Hi, my name is {first_name} {last_name}'
+            f' and I am {age}'
         )
 
   the test passes.
