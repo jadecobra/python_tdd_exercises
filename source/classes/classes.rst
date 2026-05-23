@@ -346,7 +346,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test is still green.
 
-* I copy the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_greeting` and paste it in ``test_classy_person_greeting``
+* I copy the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_say_hello` and paste it in ``test_classy_person_greeting``
 
   .. code-block:: python
     :lineno-start: 94
@@ -764,7 +764,7 @@ test_update_factory_person_year_of_birth
 *********************************************************************************
 
 
-I made a person named ``john`` in :ref:`test_factory_person_greeting` and :ref:`test_classy_person_greeting` with a year of birth of ``1580``.
+I made a person named ``john`` in :ref:`test_factory_person_say_hello` and :ref:`test_classy_person_greeting` with a year of birth of ``1580``.
 
 Maybe I made a mistake when typing his age and typed ``5`` instead of ``9``. How would I change the year of birth of a person made with the ``factory`` :ref:`function<what is a function?>` if I cannot change the original year of birth?
 
@@ -1969,7 +1969,7 @@ I want to add randomness to the test
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to :ref:`test_factory_person_greeting`
+* I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to :ref:`test_factory_person_say_hello`
 
   .. code-block:: python
     :lineno-start: 72
@@ -1999,7 +1999,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 61
 
-        def test_factory_person_greeting(self):
+        def test_factory_person_say_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 (
@@ -2290,11 +2290,11 @@ I want to add randomness to the test
                 )
             )
 
-        def test_factory_person_greeting(self):
+        def test_factory_person_say_hello(self):
 
   green.
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_person_greeting`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_person_say_hello`
 
   .. code-block:: python
     :lineno-start: 65
@@ -2314,7 +2314,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 62
 
-        def test_factory_person_greeting(self):
+        def test_factory_person_say_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 (
@@ -2487,7 +2487,7 @@ I want to add randomness to the test
 
   still green.
 
-* the expected message in ``test_classy_person_greeting`` and :ref:`test_factory_person_greeting` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
+* the expected message in ``test_classy_person_greeting`` and :ref:`test_factory_person_say_hello` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 60
@@ -2508,15 +2508,15 @@ I want to add randomness to the test
                 f'and I am {self.original_age}'
             )
 
-        def test_factory_person_greeting(self):
+        def test_factory_person_say_hello(self):
 
-* I use the new :ref:`method<what is a function?>` in :ref:`test_factory_person_greeting`
+* I use the new :ref:`method<what is a function?>` in :ref:`test_factory_person_say_hello`
 
   .. code-block:: python
     :lineno-start: 75
     :emphasize-lines: 4-9
 
-        def test_factory_person_greeting(self):
+        def test_factory_person_say_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 # (
@@ -2564,7 +2564,7 @@ I want to add randomness to the test
                 f'and I am {self.original_age}'
             )
 
-        def test_factory_person_greeting(self):
+        def test_factory_person_say_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 self.expected_greeting()

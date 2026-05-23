@@ -117,7 +117,7 @@ table of contents
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   what is a module?<exceptions/ModuleNotFoundError>
   questions the book answers<review>
-  make TDD project 1<make_tdd/make_tdd_manually/index>
+  make TDD project 1<make_tdd/make_tdd_manually>
 
   connect the dots<dot_notation>
   exceptions/index

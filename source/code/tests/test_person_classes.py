@@ -82,7 +82,7 @@ class TestPerson(unittest.TestCase):
             f'and I am {self.original_age}'
         )
 
-    def test_factory_person_greeting(self):
+    def test_factory_person_say_hello(self):
         self.assertEqual(
             src.person.hello(self.random_factory_person),
             self.expected_greeting()
