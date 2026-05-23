@@ -3164,8 +3164,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person'
-            last_name = 'public'
+            first_name = 'person',
+            last_name = 'public',
             year_of_birth = 2000
             age = (
                 datetime.datetime.now().year
@@ -3185,8 +3185,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
     :lineno-start: 95
     :emphasize-lines: 10-15, 21-24
 
-            first_name = 'person'
-            last_name = 'public'
+            first_name = 'person',
+            last_name = 'public',
             year_of_birth = 2000
             age = (
                 datetime.datetime.now().year
@@ -3490,8 +3490,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person'
-            last_name = 'public'
+            first_name = 'person',
+            last_name = 'public',
             year_of_birth = 2000
             age = (
                 datetime.datetime.now().year
@@ -3558,7 +3558,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 * I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 40
     :emphasize-lines: 3-4
 
             my_expectation = dict(
@@ -3571,6 +3571,185 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
         def test_factory_w_optional_arguments(self):
 
 * I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_factory_w_keyword_arguments(self):
+            a_person = dict(
+                first_name=choose(
+                    'jane', 'joe', 'john', 'person',
+                ),
+                last_name=choose(
+                    'doe', 'smith', 'blow', 'public',
+                ),
+                sex=choose('F', 'M'),
+            )
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_w_optional_arguments(self):
+
+  the test is still green.
+
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 5-6
+
+            my_expectation = dict(
+                first_name=first_name,
+                sex='M',
+                last_name='doe',
+                # age=this_year-year_of_birth,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_person_greeting(self):
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 46
+
+        def test_factory_w_optional_arguments(self):
+            first_name = choose(
+                'jane', 'joe', 'john', 'person',
+            )
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                sex='M',
+                last_name='doe',
+                # age=this_year-year_of_birth,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_person_greeting(self):
+
+  the test is still green.
+
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``joe`` in :ref:`test_factory_person_greeting`
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 5-8, 19-20
+
+        def test_factory_person_greeting(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            year_of_birth = 1996
+            # age = (
+            #     datetime.datetime.now().year
+            #   - year_of_birth
+            # )
+
+            joe = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(joe)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                # f' and I am {age}'
+                f' and I am {calculate_age(year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+* * I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``jane`` in :ref:`test_factory_person_greeting`
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 12-15, 26-27
+
+            reality = src.person.say_hello(joe)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                # f' and I am {age}'
+                f' and I am {calculate_age(year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'jane'
+            last_name = 'doe'
+            year_of_birth = 1991
+            # age = (
+            #     datetime.datetime.now().year
+            #   - year_of_birth
+            # )
+
+            jane = src.person.factory(
+                first_name=first_name,
+                sex='F',
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(jane)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                # f' and I am {age}'
+                f' and I am {calculate_age(year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+* * I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``john`` in :ref:`test_factory_person_greeting`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 12-15, 26-27
+
+            my_expectation = dict(
+                **a_person,
+                # age=this_year-year_of_birth,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_w_optional_arguments(self):
+
+* * I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``a_person`` in :ref:`test_factory_person_greeting`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 5-8, 19-20
+
+            my_expectation = dict(
+                **a_person,
+                # age=this_year-year_of_birth,
+                age=calculate_age(year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_w_optional_arguments(self):
+
+* I remove the commented lines
 
   .. code-block:: python
     :lineno-start: 20
@@ -3601,7 +3780,16 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 
   the test is still green.
 
-* I 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_factory_person_greeting'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+* I go back to the terminal_ that is running the tests
 
 ----
 
