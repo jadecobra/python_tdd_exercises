@@ -3421,9 +3421,138 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 
   the test is still green.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 55
+
+        def test_factory_person_greeting(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            year_of_birth = 1996
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            joe = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(joe)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'jane'
+            last_name = 'doe'
+            year_of_birth = 1991
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            jane = src.person.factory(
+                first_name=first_name,
+                sex='F',
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(jane)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            john = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(john)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'person'
+            last_name = 'public'
+            year_of_birth = 2000
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            a_person = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+                sex='F',
+            )
+
+            reality = src.person.say_hello(a_person)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_factory_person_greeting'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+*********************************************************************************
+extract get_current_age function
+*********************************************************************************
+
+* Each :ref:`assertion<what is an assertion?>` in every test has calculation for the age, I add a :ref:`function<what is a function?>` to use to remove repetition of the calculation
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5-6
+
+    def choose(*choices):
+        return random.choice(choices)
+
+
+    def calculate_age(year_of_birth):
+        return (
+            datetime.datetime.now().year
+          - year_of_birth
+        )
+
+
+    class TestPerson(unittest.TestCase):
 
 
 The solution works, it needs different :ref:`functions<what is a function?>` - one to make the person and one to make the message.
+
+----
 
 *********************************************************************************
 test_person_tests
