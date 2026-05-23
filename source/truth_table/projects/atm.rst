@@ -1225,7 +1225,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
   green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'DENIED'``
+* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``'DENIED'``
 
   .. code-block:: python
     :linenos:

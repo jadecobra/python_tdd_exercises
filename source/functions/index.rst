@@ -2224,7 +2224,7 @@ test_functions_w_positional_arguments
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'first'`` and ``'last'``
+* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'first'`` and ``'last'``
 
   .. code-block:: python
     :lineno-start: 86
@@ -2624,7 +2624,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   the test passes. The order does not matter when I use `keyword arguments`_.
 
-* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'first'`` and ``'last'`` from the test
+* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'first'`` and ``'last'`` from the test
 
   .. code-block:: python
     :lineno-start: 115
@@ -3206,7 +3206,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` to use to remove the repetition of ``'first'`` and ``'last'`` in :ref:`test_functions_w_positional_and_keyword_args` in ``test_functions.py``
+* I add :ref:`variables<what is a variable?>` to use them to remove the repetition of ``'first'`` and ``'last'`` in :ref:`test_functions_w_positional_and_keyword_args` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 160
@@ -4096,7 +4096,7 @@ starred expressions
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+* I add :ref:`variables<what is a variable?>` to use them to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 199
@@ -4153,7 +4153,7 @@ starred expressions
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` to the next :ref:`assertion<what is an assertion?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+* I add :ref:`variables<what is a variable?>` to the next :ref:`assertion<what is an assertion?>` to use them to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 199
@@ -4246,7 +4246,7 @@ starred expressions
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` to the third :ref:`assertion<what is an assertion?>` to use to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
+* I add :ref:`variables<what is a variable?>` to the third :ref:`assertion<what is an assertion?>` to use them to remove repetition of the tuple_ and :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 199

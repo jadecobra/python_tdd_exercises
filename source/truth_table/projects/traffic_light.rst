@@ -1068,7 +1068,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
         return 'GREEN'
 
-* I add :ref:`variables<what is a variable?>` for the colors to use to remove the repetition of ``'YELLOW'`` and ``'GREEN'``
+* I add :ref:`variables<what is a variable?>` for the colors to use them to remove the repetition of ``'YELLOW'`` and ``'GREEN'``
 
   .. code-block:: python
     :linenos:
@@ -1369,7 +1369,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   green because ``if bool(something) == True`` is the same as ``if something``
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'RED'``
+* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``'RED'``
 
   .. code-block:: python
     :linenos:
@@ -1630,7 +1630,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
     since the :ref:`default value<test_functions_w_optional_arguments>` for the ``walk_button`` parameter is :ref:`False<test_what_is_false>`. A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'RED'`` from the test
+* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``'RED'`` from the test
 
   .. code-block:: python
     :lineno-start: 7
@@ -2193,7 +2193,7 @@ current light     timer            walk button        show
             )
             self.assertEqual(reality, my_expectation)
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'YELLOW'`` from the test
+* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``'YELLOW'`` from the test
 
   .. code-block:: python
     :lineno-start: 30
@@ -2290,7 +2290,7 @@ current light     timer            walk button        show
 
   still green.
 
-* I make a :ref:`global variable<what is a variable?>` to use to remove repetition of ``'RED'`` from :ref:`test_yellow_traffic_light_w_walk_button` and :ref:`test_red_traffic_light_w_walk_button`
+* I make a :ref:`global variable<what is a variable?>` to use them to remove repetition of ``'RED'`` from :ref:`test_yellow_traffic_light_w_walk_button` and :ref:`test_red_traffic_light_w_walk_button`
 
   .. code-block:: python
     :linenos:
@@ -2668,7 +2668,7 @@ current light     timer            walk button        show
             )
             self.assertEqual(reality, my_expectation)
 
-* I add a :ref:`global variable<what is a variable?>` to use to remove repetition of ``'YELLOW'`` from :ref:`test_green_traffic_light_w_walk_button` and :ref:`test_yellow_traffic_light_w_walk_button`
+* I add a :ref:`global variable<what is a variable?>` to use them to remove repetition of ``'YELLOW'`` from :ref:`test_green_traffic_light_w_walk_button` and :ref:`test_yellow_traffic_light_w_walk_button`
 
   .. code-block:: python
     :linenos:
@@ -2758,7 +2758,7 @@ current light     timer            walk button        show
 
         def test_green_traffic_light_w_walk_button(self):
 
-* I add a :ref:`global variable<what is a variable?>` to use to remove repetition of ``'GREEN'`` from :ref:`test_green_traffic_light_w_walk_button` and :ref:`test_red_traffic_light_w_walk_button`
+* I add a :ref:`global variable<what is a variable?>` to use them to remove repetition of ``'GREEN'`` from :ref:`test_green_traffic_light_w_walk_button` and :ref:`test_red_traffic_light_w_walk_button`
 
   .. code-block:: python
     :linenos:
@@ -4425,7 +4425,7 @@ current light     timer           walk button       show
 
 ----
 
-* I add more :ref:`global variables<what is a variable?>` to ``test_traffic_light.py`` to use to remove repetition from the tests
+* I add more :ref:`global variables<what is a variable?>` to ``test_traffic_light.py`` to use them to remove repetition from the tests
 
   .. code-block:: python
     :linenos:

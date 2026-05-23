@@ -738,7 +738,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of ``'jane'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -918,7 +918,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of ``'doe'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1112,7 +1112,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the value for ``sex`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of ``'F'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1321,7 +1321,7 @@ test_factory_w_keyword_arguments
 
   the test passes. I typed the year of birth two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of the year of birth from ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use them to remove the repetition of the year of birth from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1663,7 +1663,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             ),
         }
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
+* I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -2032,7 +2032,7 @@ extract choose function
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments`, to use to remove repetition of ``random.choice`` from the test in ``test_person.py``
+* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments`, to use them to remove repetition of ``random.choice`` from the test in ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -2104,7 +2104,7 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
+* I add a :ref:`dictionary<what is a dictionary?>` to use them to remove the repeating parts
 
   .. code-block:: python
     :lineno-start: 13
@@ -3145,7 +3145,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 
 ----
 
-* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'person'``, ``'public'``, ``2000`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
+* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'person'``, ``'public'``, ``2000`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 82
@@ -3217,7 +3217,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 
   the test is still green.
 
-* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
+* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the :ref:`assertion<what is an assertion?>` before the one for ``a_person``
 
   .. code-block:: python
     :lineno-start: 69
@@ -3249,6 +3249,13 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
                 last_name='smith',
                 year_of_birth=1580,
             )
+
+            reality = src.person.say_hello(john)
+            my_expectation = (
+                f'Hi, my name is john smith and I am'
+                f' {datetime.datetime.now().year-1580}'
+            )
+            self.assertEqual(reality, my_expectation)
 
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation
 
@@ -3282,16 +3289,20 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             )
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen
-
   still green.
 
-* I add the same :ref:`variable names<what is a variable?>` to use to remove repetition of ``'jane'``, ``1991`` and the age calculation from the previous :ref:`assertion<what is an assertion?>`
+* I add the same :ref:`variable names<what is a variable?>` to use them to remove repetition of ``'jane'``, ``1991`` and the age calculation from the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 8-14
+    :lineno-start: 55
+    :emphasize-lines: 15-21
+
+        def test_factory_person_greeting(self):
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
 
             reality = src.person.say_hello(joe)
             my_expectation = (
@@ -3313,6 +3324,13 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
                 sex='F',
                 year_of_birth=1991,
             )
+
+            reality = src.person.say_hello(jane)
+            my_expectation = (
+                f'Hi, my name is jane doe and I am'
+                f' {datetime.datetime.now().year-1991}'
+            )
+            self.assertEqual(reality, my_expectation)
 
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'jane'``, ``1991`` and the age calculation
 
@@ -3347,7 +3365,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 
   green.
 
-* I add the :ref:`variable names<what is a variable?>` to use to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation from the first :ref:`assertion<what is an assertion?>`
+* I add the :ref:`variable names<what is a variable?>` to use them to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation from the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 55
