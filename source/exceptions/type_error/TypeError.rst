@@ -478,7 +478,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     TypeError: 'float' object is not callable
 
-* I make ``a_float`` a :ref:`function<what is a function?>`
+* I make ``a_float`` a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
     :lineno-start: 13

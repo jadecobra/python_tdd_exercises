@@ -161,7 +161,7 @@ I can use the `assertRaisesRegex method`_ to test the message that is included w
 
     TypeError: 'NoneType' object is not callable
 
-* when I make ``raise_exception`` a :ref:`function<what is a function?>`
+* when I make ``raise_exception`` a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
     :lineno-start: 5

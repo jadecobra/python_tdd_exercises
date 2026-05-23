@@ -4534,7 +4534,7 @@ I want to write the solution without looking at the tests
 
   because ``factory`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
-* I make ``factory`` a :ref:`function<what is a function?>`
+* I make ``factory`` a :ref:`function<what is a function?>` to make it callable_
 
   .. code-block:: python
     :linenos:
@@ -4954,20 +4954,177 @@ I want to write the solution without looking at the tests
 
 * I point it to :ref:`None<what is None?>` to define it
 
-
-
-----
-----
-----
-----
-----
-* I remove the commented lines
-
   .. code-block:: python
     :linenos:
+    :emphasize-lines: 4
 
     import datetime
 
+
+    say_hello = None
+
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because ``say_hello`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
+
+* I make ``say_hello`` a :ref:`function<what is a function?>` to make it callable_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
+
+    import datetime
+
+
+    def say_hello():
+        return None
+
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: say_hello() takes 0 positional arguments
+               but 1 was given
+
+  because the :ref:`function definition<how to make a function>` for ``say_hello`` does not allow calling it with inputs (the parentheses are empty) and the test sends as input.
+
+* I add a name to the :ref:`function definition<how to make a function>`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 1
+
+    def say_hello(argument):
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None != 'Hi, my name is Z Y and I am Z'
+
+  because the test expects a string_ and the ``say_hello`` :ref:`function<what is a function?>` returns :ref:`None<what is None>`
+
+* I copy the string_ from the terminal_ and paste it to replace the `return statement`
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2
+
+    def say_hello(argument):
+        return 'Hi, my name is jane doe and I am 66'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is Z Y and I am X'
+     != 'Hi, my name is A B and I am C'
+
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and the names and age change
+
+* I return the input to compare it with what the test expects
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2
+
+    def say_hello(argument):
+        return argument
+        return 'Hi, my name is jane doe and I am 66'
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-lines: X Z A
+
+    AssertionError:
+        {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
+    != 'Hi, my name is A Z and I am X'
+
+  the test sends a :ref:`dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` in it
+
+* I remove the first `return statement`_ and change the second one to an :ref:`f-string<what is string interpolation?>` with the the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 2-6
+    :emphasize-text: get
+
+    def say_hello(argument):
+        return (
+            f'Hi, my name is {argument.get("first_name")}'
+            f' {argument.get("last_name")} '
+            f'and I am {argument.get("age")}'
+        )
+        return argument
+        return 'Hi, my name is jane doe and I am 66'
+
+  the test passes. Okay!
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change ``argument`` to make it clearer
+
+  .. code-block:: python
+    :lineno-start: 4
+    :emphasize-lines: 3-5, 6
+    :emphasize-text: a_dictionary
+
+    def say_hello(a_dictionary):
+        return (
+            f'Hi, my name is {a_dictionary.get("first_name")}'
+            f' {a_dictionary.get("last_name")} '
+            f'and I am {a_dictionary.get("age")}'
+        )
+        return a_dictionary
+        return 'Hi, my name is jane doe and I am 66'
+
+* I remove the other `return statements`_
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    def say_hello(a_dictionary):
+        return (
+            f'Hi, my name is {a_dictionary.get("first_name")}'
+            f' {a_dictionary.get("last_name")} '
+            f'and I am {a_dictionary.get("age")}'
+        )
+
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+
+* I remove the commented lines from the ``factory`` :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 12
 
     def factory(
             first_name, year_of_birth,
@@ -4980,43 +5137,41 @@ I want to write the solution without looking at the tests
             'age': (
                 datetime.datetime.today().year
                -year_of_birth
-            ),
+            )
         }
+
+  This ``factory`` :ref:`function<what is a function?>` only has two parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name`` and ``sex``)
+
+  .. code-block:: python
+    :emphasize-text: None
+
+      def factory(
+              first_name, year_of_birth,
+              last_name='doe', sex='M',
+          ):
+
+  the first solution had three parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
+
+  .. code-block:: python
+    :emphasize-text: None
+
+    def factory(
+            first_name, last_name='doe',
+            sex='M', year_of_birth=None,
+        ):
+
+  I can learn new things from repetition.
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'refactor factory function'
+    git commit -am 'refactor factory and say_hello'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 * I go back to the terminal_ that is running the tests
-
-----
-
-This solution only has two parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name`` and ``sex``)
-
-.. code-block:: python
-  :emphasize-text: None
-
-    def factory(
-            first_name, year_of_birth,
-            last_name='doe', sex='M',
-        ):
-
-the first solution where had three parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
-
-.. code-block:: python
-  :emphasize-text: None
-
-  def factory(
-          first_name, last_name='doe',
-          sex='M', year_of_birth=None,
-      ):
-
-I can learn new things from repetition.
 
 ----
 
@@ -5048,7 +5203,11 @@ close the project
 review
 *************************************************************************************
 
-I ran tests to make a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has :ref:`default values<test_functions_w_optional_arguments>` for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
+I ran tests to make
+
+* a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_functions_w_keyword_arguments>` as input, has :ref:`default values<test_functions_w_optional_arguments>` for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
+
+* a :ref:`function<what is a function?>` that takes in a :ref:`dictionary<what is a dictionary?>` and returns a string_ as output with :ref:`values<test_values_of_a_dictionary>` of :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
 I also saw these :ref:`Exceptions<errors>`
 
@@ -5072,7 +5231,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you know
+you know:
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError<what causes AssertionError?>`
@@ -5080,7 +5239,7 @@ you know
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 
-:ref:`Would you like to see another way to make a person with a class?<what is a class?>`
+:ref:`Would you like to see another way to make a person?<what is a class?>`
 
 ----
 

@@ -1,6 +1,14 @@
 import datetime
 
 
+def say_hello(a_dictionary):
+    return (
+        f'Hi, my name is {a_dictionary.get("first_name")}'
+        f' {a_dictionary.get("last_name")} '
+        f'and I am {a_dictionary.get("age")}'
+    )
+
+
 def factory(
         first_name, year_of_birth,
         last_name='doe', sex='M',
@@ -12,16 +20,5 @@ def factory(
         'age': (
             datetime.datetime.today().year
            -year_of_birth
-        ),
+        )
     }
-
-
-def say_hello(person):
-    first_name = person.get('first_name')
-    last_name = person.get('last_name')
-    age = person.get('age')
-
-    return (
-        f'Hi, my name is {first_name} {last_name}'
-        f' and I am {age}'
-    )
