@@ -371,11 +371,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for one more person
+* I add an :ref:`assertion<what is an assertion?>` for a new person
 
   .. code-block:: python
     :lineno-start: 69
-    :emphasize-lines: 14-18, 20-22
+    :emphasize-lines: 14-18, 20-25
 
             jane = src.person.factory(
                 first_name='jane',
@@ -397,7 +397,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             )
 
             reality = src.person.say_hello(john)
-            my_expectation = ''
+            my_expectation = (
+                f'Hi, my name is jane doe and I am'
+                f' {datetime.datetime.now().year-1991}'
+            )
             self.assertEqual(reality, my_expectation)
 
 
@@ -407,13 +410,15 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 
   .. code-block:: python
 
-    AssertionError: 'Hi, my name is john smith and I am 446' != ''
+    AssertionError:
+        'Hi, my name is john smith and I am 446'
+     != 'Hi, my name is jane doe and I am 35'
 
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
     :lineno-start: 82
-    :emphasize-lines: 8-11
+    :emphasize-lines: 9-10
 
             john = src.person.factory(
                 first_name='john',
@@ -425,6 +430,75 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             my_expectation = (
                 f'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for one more person
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 14-19, 21-26
+
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+            reality = src.person.say_hello(john)
+            my_expectation = (
+                f'Hi, my name is john smith and I am'
+                f' {datetime.datetime.now().year-1580}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            a_person = src.person.factory(
+                first_name='person',
+                last_name='public',
+                year_of_birth=2000,
+                sex='F',
+            )
+
+            reality = src.person.say_hello(a_person)
+            my_expectation = (
+                f'Hi, my name is john smith and I am'
+                f' {datetime.datetime.now().year-1580}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is person public and I am 26'
+     != 'Hi, my name is john smith and I am 446'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 10-11
+
+            a_person = src.person.factory(
+                first_name='person',
+                last_name='public',
+                year_of_birth=2000,
+                sex='F',
+            )
+
+            reality = src.person.say_hello(a_person)
+            my_expectation = (
+                f'Hi, my name is person public and I am'
+                f' {datetime.datetime.now().year-2000}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -503,7 +577,77 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 
     # Exceptions seen
 
-  the test is still green.
+  still green.
+
+* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 14-20
+
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+
+            reality = src.person.say_hello(jane)
+            my_expectation = (
+                f'Hi, my name is jane doe and I am'
+                f' {datetime.datetime.now().year-1991}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation
+
+  .. code-block:: python
+    :lineno-start: 82
+    :emphasize-lines: 10-15, 20-23
+
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            john = src.person.factory(
+                # first_name='john',
+                first_name=first_name,
+                # last_name='smith',
+                last_name=last_name,
+                # year_of_birth=1580,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(john)
+            my_expectation = (
+                # f'Hi, my name is john smith and I am'
+                f'Hi, my name is {first_name} {last_name}'
+                # f' {datetime.datetime.now().year-1580}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  still green.
 
 * I add the same :ref:`variable names<what is a variable?>` to use to remove repetition of ``'jane'``, ``1991`` and the age calculation from the previous :ref:`assertion<what is an assertion?>`
 
@@ -563,7 +707,63 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             )
             self.assertEqual(reality, my_expectation)
 
-  still green.
+  green.
+
+* I add the :ref:`variable names<what is a variable?>` to use to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation from the first :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 2-8
+
+        def test_factory_person_greeting(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            year_of_birth = 1996
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 11-16, 21-24
+
+        def test_factory_person_greeting(self):
+            first_name = 'joe'
+            last_name = 'blow'
+            year_of_birth = 1996
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
+
+            joe = src.person.factory(
+                # first_name='joe',
+                first_name=first_name,
+                # last_name='blow',
+                last_name=last_name,
+                # year_of_birth=1996,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = src.person.say_hello(joe)
+            my_expectation = (
+                # f'Hi, my name is joe blow and I am'
+                f'Hi, my name is {first_name} {last_name}'
+                # f' {datetime.datetime.now().year-1996}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+  the test is still green.
 
 
 
