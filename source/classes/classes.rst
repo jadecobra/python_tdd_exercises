@@ -127,7 +127,30 @@ What if I want the person to send a message about themselves. How would I do tha
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  - I do not need to give a value for the ``sex`` parameter in the call to ``src.person.factory`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``sex`` parameter of the :ref:`function<what is a function?>` is ``'M'``. This means that
+
+    .. code-block:: python
+
+      src.person.factory(
+          first_name='joe',
+          last_name='blow',
+          year_of_birth=1996,
+      )
+
+    is the same as
+
+    .. code-block:: python
+
+      src.person.factory(
+          first_name='joe',
+          last_name='blow',
+          year_of_birth=1996,
+          sex='M'
+      )
+
+    A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+
+  - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -172,6 +195,8 @@ What if I want the person to send a message about themselves. How would I do tha
     TypeError: hello() takes 0 positional arguments
                but 1 was given
 
+  because the :ref:`definition<how to make a function>` for ``hello`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`positional argument<test_functions_w_positional_arguments>` (``person``)
+
 * I add a name to the definition
 
   .. code-block:: python
@@ -193,28 +218,33 @@ What if I want the person to send a message about themselves. How would I do tha
 
 I want the ``hello`` :ref:`function<what is a function?>` to return a message for the person I give as input
 
-* I change the expectation in ``test_factory_person_greeting`` in ``test_person.py`` with an :ref:`f-string<what is string interpolation?>` like I did in :ref:`how to pass values<telephone>`
+* I change ``my_expectation`` in :ref:`test_factory_person_greeting` in ``test_person.py`` to an :ref:`f-string<what is string interpolation?>` like I did with :ref:`telephone`
 
   .. code-block:: python
-    :lineno-start: 72
-    :emphasize-lines: 6-8
+    :lineno-start: 55
+    :emphasize-lines: 8-11
 
-            for person in (joe, jane, john):
-                with self.subTest(name=person.get('first_name')):
-                    self.assertEqual(
-                        src.person.hello(person),
-                        (
-                            f'Hi, my name is {person.get("first_name")} '
-                            f'{person.get("last_name")} '
-                            f'and I am {person.get("age")}'
-                        )
-                    )
+        def test_factory_person_greeting(self):
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+            reality = src.person.hello(joe)
+            my_expectation = (
+                f'Hi, my name is joe blow and I am'
+                f' {datetime.datetime.now().year-1996}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: None != 'Hi, my name is john smith and I am 446'
+    AssertionError: None != 'Hi, my name is joe blow and I am 30'
 
 * I copy the value from the terminal_ and paste it in the `return statement`_ in ``person.py``
 
@@ -223,16 +253,14 @@ I want the ``hello`` :ref:`function<what is a function?>` to return a message fo
     :emphasize-lines: 2
 
     def hello(person):
-        return 'Hi, my name is john smith and I am 446'
+        return 'Hi, my name is joe blow and I am 30'
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the test passes.
 
-  .. code-block:: shell
+* I add an :ref:`assertion<what is an assertion?>` for another person
 
-    E               - Hi, my name is john smith and I am 446
-    E               + Hi, my name is jane doe and I am 35
-
-  the first name, last name and ages are different
+  .. code-block:: python
+    :lineno-start: 55
 
 * I change the string_ to an :ref:`f-string<what is string interpolation?>` with the value for ``first_name``
 
@@ -2193,7 +2221,7 @@ I want to add randomness to the test
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to ``test_factory_person_greeting``
+* I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to :ref:`test_factory_person_greeting`
 
   .. code-block:: python
     :lineno-start: 72
@@ -2518,7 +2546,7 @@ I want to add randomness to the test
 
   green.
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in ``test_factory_person_greeting``
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_person_greeting`
 
   .. code-block:: python
     :lineno-start: 65
@@ -2711,7 +2739,7 @@ I want to add randomness to the test
 
   still green.
 
-* the expected message in ``test_classy_person_greeting`` and ``test_factory_person_greeting`` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
+* the expected message in ``test_classy_person_greeting`` and :ref:`test_factory_person_greeting` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 60
@@ -2734,7 +2762,7 @@ I want to add randomness to the test
 
         def test_factory_person_greeting(self):
 
-* I use the new :ref:`method<what is a function?>` in ``test_factory_person_greeting``
+* I use the new :ref:`method<what is a function?>` in :ref:`test_factory_person_greeting`
 
   .. code-block:: python
     :lineno-start: 75

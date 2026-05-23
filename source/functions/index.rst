@@ -3121,7 +3121,7 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
     TypeError: w_positional_and_keyword_args() got an
                unexpected keyword argument 'last_input'
 
-  because the :ref:`definition<how to make a function>` for ``w_positional_and_keyword_args`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``'last_input'``)
+  because the :ref:`definition<how to make a function>` for ``w_positional_and_keyword_args`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_input``)
 
 * I add the name to the :ref:`function definition<how to make a function>` in parentheses, in ``functions.py``
 
