@@ -7,6 +7,8 @@
 classes
 #################################################################################
 
+I made a :ref:`functions<what is a function?>` that make :ref:`dictionaries<what is a dictionary?>` and strings_ in :ref:`how to make a person`. I can also do the same thing with a :ref:`class<what is a class?>` since it is a group of :ref:`attributes (variables)<what causes AttributeError?>` and :ref:`methods (functions) <what is a function?>` that belong together.
+
 ----
 
 *********************************************************************************
@@ -61,21 +63,21 @@ open the project
 
     rootdir: .../pumping_python/person
     configfile: pyproject.toml
-    collected 2 items
+    collected 3 items
 
-    tests/test_person.py ..                               [100%]
+    tests/test_person.py ...                              [100%]
 
-    ==================== 2 passed in X.YZs =====================
+    ==================== 3 passed in X.YZs =====================
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_person.py`` to open it in the :ref:`editor<2 editors>`
 
 ----
 
 *********************************************************************************
-test_classy_person_greeting
+test_classy_person_says_hello
 *********************************************************************************
 
-I can also make a person with a :ref:`class<what is a class?>`
+I made a person say hello with a :ref:`function<what is a function?>`. How would I do that with a :ref:`class?<what is a class?>`
 
 ----
 
@@ -88,35 +90,39 @@ I can also make a person with a :ref:`class<what is a class?>`
 I add a new test to ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 72
-  :emphasize-lines: 12-17
+  :lineno-start: 81
+  :emphasize-lines: 8-13
 
-          for person in (joe, jane, john):
-              with self.subTest(name=person.get('first_name')):
-                  self.assertEqual(
-                      src.person.say_hello(person),
-                      (
-                          f'Hi, my name is {person.get("first_name")} '
-                          f'{person.get("last_name")} '
-                          f'and I am {person.get("age")}'
-                      )
-                  )
+            reality = src.person.say_hello(a_random_person)
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {calculate_age(year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
 
-      def test_classy_person_greeting(self):
-          joe = src.person.Person(
-              first_name='joe',
-              last_name='blow',
-              year_of_birth=1996,
-          )
+        def test_classy_person_says_hello(self):
+            joe = src.person.Person(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+
+            reality = src.person.say_hello(joe)
+            my_expectation = (
+                'Hi, my name is joe blow and I am 30'
+            )
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
 .. code-block:: python
 
   AttributeError: module 'src.person' has no attribute 'Person'
+
+because there is no definition for ``Person`` in ``person.py`` in the ``src`` folder_
 
 ----
 
@@ -129,15 +135,22 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 * I add a :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 9, 11
+    :lineno-start: 12
+    :emphasize-lines: 16, 18
 
-    def say_hello(person):
-        return (
-            f'Hi, my name is {person.get("first_name")} '
-            f'{person.get("last_name")} '
-            f'and I am {person.get("age")}'
-        )
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
+        }
 
 
     class Person:
@@ -150,10 +163,12 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     TypeError: Person() takes no arguments
 
-* classes_ have a `constructor method`_ that is used to make copies of the :ref:`class<what is a class?>`. I add it
+  because :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a function?>` that handles those arguments
+
+* I add a `constructor method`_ to the ``Person`` :ref:`class<what is a class?>` so it can take arguments
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 27
     :emphasize-lines: 3-4
 
     class Person:
@@ -165,12 +180,17 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    TypeError: Person.__init__() got an unexpected keyword argument 'first_name'
+    TypeError:
+        Person.__init__() got an
+        unexpected keyword argument 'first_name'
 
-* I add the name
+  - because the :ref:`definition<how to make a function>` for ``__init__`` does not allow calling it with inputs (the parentheses are empty) and the test sends ``'first_name'`` as input.
+  - a `constructor method`_ is used to make copies of a :ref:`class<what is a class?>`
+
+* I add the name in parentheses so that the ``__init__`` `constructor method`_ can take input
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 27
     :emphasize-lines: 3
 
     class Person:
@@ -182,12 +202,16 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    TypeError: Person.__init__() got multiple values for argument 'first_name'
+    TypeError:
+        Person.__init__() got
+        multiple values for argument 'first_name'
 
-* The ``__init__`` :ref:`method<what is a function?>` takes the :ref:`class<what is a class?>` as the first argument. I add ``self`` the way I do with all the tests in the book
+  because ``__init__`` :ref:`method<what is a function?>` takes the :ref:`class<what is a class?>` it belongs to as the first argument
+
+* I add ``self`` as the first argument the way I do with all the test :ref:`methods<what is a function?>` in the book
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 27
     :emphasize-lines: 3
 
     class Person:
@@ -199,7 +223,10 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: shell
 
-    TypeError: Person.__init__() got an unexpected keyword argument 'last_name'. Did you mean 'first_name'?
+    TypeError:
+        Person.__init__() got
+        an unexpected keyword argument 'last_name'.
+        Did you mean 'first_name'?
 
   I have seen this before, so far it is the same as making the ``factory`` :ref:`function<what is a function?>`
 
@@ -216,14 +243,16 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    TypeError: Person.__init__() got an unexpected keyword argument 'year_of_birth'
+    TypeError:
+        Person.__init__() got
+        an unexpected keyword argument 'year_of_birth'
 
   still the same as making the ``factory`` :ref:`function<what is a function?>`
 
-* I add ``year_of_birth`` to the definition
+* I add ``year_of_birth`` to the definition for the ``__init__`` :ref:`method<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 27
     :emphasize-lines: 3-6
 
     class Person:
@@ -234,7 +263,97 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             ):
             return
 
-  the test passes.
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Person' object has no attribute 'get'
+
+  because the :ref:`class definition<how to make a class>` for ``Person`` does not have anything named ``get`` in it, and the ``say_hello`` :ref:`function<what is a function?>` calls the ``get method`` on whatever it receives to get the :ref:`values<test_values_of_a_dictionary>` of ``first_name``, ``last_name`` and ``age``
+
+* I add the name to the :ref:`class definition<how to make a class>`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3
+
+    class Person:
+
+        get
+
+        def __init__(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            return None
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'get' is not defined
+
+  because I have not told Python_ what ``get`` means in this :ref:`object<what is a class?>`
+
+* I point it to :ref:`None<what is None?>` to define it
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3
+
+    class Person:
+
+        get = None
+
+        def __init__(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because ``get`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
+
+* I make ``get`` a :ref:`method<what is a function?>` to make it callable_
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 9-10
+
+    class Person:
+
+        def __init__(
+                self, first_name, last_name,
+                year_of_birth,
+            ):
+            return None
+
+        def get():
+            return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError:
+        Person.get() takes 0 positional arguments
+        but 2 were given
+
+  because the :ref:`definition<how to make a function>` for ``get`` does not allow inputs and the ``say_hello`` :ref:`function<what is a function?>` called the :ref:`method<what is a function?>` with a :ref:`positional argument<test_functions_w_positional_arguments>` (``person``)
+
+* I add ``first_name`` to the :ref:`function definition<how to make a function>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def factory(first_name):
+        return None
 
 ----
 
@@ -244,13 +363,15 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add the next person to ``test_classy_person_greeting``
+* I add
+
+* I add the next person to ``test_classy_person_says_hello``
 
   .. code-block:: python
     :lineno-start: 83
     :emphasize-lines: 7-11
 
-        def test_classy_person_greeting(self):
+        def test_classy_person_says_hello(self):
             joe = src.person.Person(
                 first_name='joe',
                 last_name='blow',
@@ -346,7 +467,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test is still green.
 
-* I copy the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_say_hello` and paste it in ``test_classy_person_greeting``
+* I copy the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_says_hello` and paste it in ``test_classy_person_says_hello``
 
   .. code-block:: python
     :lineno-start: 94
@@ -502,7 +623,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     AttributeError: 'Person' object has no attribute 'get'
 
-* I change the :ref:`assertion<what is an assertion?>` in ``test_classy_person_greeting`` in ``test_person.py`` to use the ``first_name`` :ref:`class attribute<test_attribute_error_w_class_attributes>`
+* I change the :ref:`assertion<what is an assertion?>` in ``test_classy_person_says_hello`` in ``test_person.py`` to use the ``first_name`` :ref:`class attribute<test_attribute_error_w_class_attributes>`
 
   .. code-block:: python
     :lineno-start: 102
@@ -756,629 +877,6 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
             )
 
   the test is still green, and there is a problem with the last name and age.
-
-----
-
-*********************************************************************************
-test_update_factory_person_year_of_birth
-*********************************************************************************
-
-
-I made a person named ``john`` in :ref:`test_factory_person_say_hello` and :ref:`test_classy_person_greeting` with a year of birth of ``1580``.
-
-Maybe I made a mistake when typing his age and typed ``5`` instead of ``9``. How would I change the year of birth of a person made with the ``factory`` :ref:`function<what is a function?>` if I cannot change the original year of birth?
-
-* I could try updating the ``year_of_birth``
-* I could try making a :ref:`function<what is a function?>` that takes a person and a new year of birth as inputs, and returns the person with the correct age
-* I could make a new ``factory`` :ref:`function<what is a function?>` that returns a :ref:`dictionary<what is a dictionary?>` with ``year_of_birth`` as a :ref:`key<test_keys_of_a_dictionary>` which allows me to change it, then make another :ref:`function<what is a function?>` that calculates the age from the returned :ref:`dictionary<what is a dictionary?>` - this sounds like a lot of work, I would also have to rewrite the tests. No, thank you
-* I could make a :ref:`class<what is a class?>`
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I cannot update the ``year_of_birth`` :ref:`key<test_keys_of_a_dictionary>` because the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` that does not have a ``year_of_birth`` :ref:`key<test_keys_of_a_dictionary>`. I add a new test
-
-.. code-block:: python
-  :lineno-start: 100
-  :emphasize-lines: 12-18
-
-
-            for person in (joe, jane, john):
-                with self.subTest(name=person.first_name):
-                    self.assertEqual(
-                        person.hello(),
-                        (
-                            f'Hi, my name is {person.first_name} '
-                            f'{person.last_name} '
-                            f'and I am {person.get_age()}'
-                        )
-                    )
-
-        def test_update_factory_person_year_of_birth(self):
-            person = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
-            self.assertEqual(person.get('age'), 0)
-
-
-    # Exceptions seen
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  AssertionError: 446 != 0
-
-----
-
-=================================================================================
-:green:`GREEN`: make it passs
-=================================================================================
-
-----
-
-I change the expectation
-
-.. code-block:: python
-  :lineno-start: 117
-  :emphasize-lines: 1
-
-          self.assertEqual(person.get('age'), 446)
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I try to use the ``year_of_birth`` :ref:`key<test_keys_of_a_dictionary>`
-
-  .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 3
-
-            self.assertEqual(person.get('age'), 446)
-
-            person['year_of_birth']
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>`
-
-  .. code-block:: python
-
-    KeyError: 'year_of_birth'
-
-  there is no ``year_of_birth`` :ref:`key<test_keys_of_a_dictionary>` in the :ref:`dictionary<what is a dictionary?>` returned by the ``factory`` :ref:`function<what is a function?>`
-
-* I add :ref:`KeyError<test_key_error>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 7
-    :emphasize-text: KeyError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # SyntaxError
-    # KeyError
-
-* I add assertRaises_
-
-  .. code-block:: python
-    :lineno-start: 117
-    :emphasize-lines: 3-4
-
-            self.assertEqual(person.get('age'), 446)
-
-            with self.assertRaises(KeyError):
-                person['year_of_birth']
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add a new :ref:`value<test_values_of_a_dictionary>` for ``year_of_birth`` with the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
-
-  .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 3-6
-
-            with self.assertRaises(KeyError):
-                person['year_of_birth']
-            self.assertEqual(
-                person.setdefault('year_of_birth', 1980),
-                None
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 1980 != None
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 121
-
-            self.assertEqual(
-                person.setdefault('year_of_birth', 1980),
-                1980
-            )
-
-  the test passes because the :ref:`dictionary<what is a dictionary?>` now has a :ref:`key<test_keys_of_a_dictionary>` named ``year_of_birth`` with the new value
-
-* I add an :ref:`assertion<what is an assertion?>` for the age of ``john smith`` again
-
-  .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 5
-
-            self.assertEqual(
-                person.setdefault('year_of_birth', 1980),
-                1980
-            )
-            self.assertEqual(person.get('age'), 46)
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 446 != 46
-
-  the ``factory`` :ref:`function<what is a function?>` uses the value for ``year_of_birth`` to calculate the age when it makes the :ref:`dictionary<what is a dictionary?>`.
-
-  When I change the value or add the :ref:`key<test_keys_of_a_dictionary>`, it does not do anything to the age. :ref:`There has to be a better way<test_update_classy_person_year_of_birth>`
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 125
-    :emphasize-lines: 1
-
-    self.assertEqual(person.get('age'), 446)
-
-  the test passes.
-
-----
-
-* I can make a :ref:`function<what is a function?>` that takes a person and a new year of birth as inputs, and returns the person with the correct age. I add an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 125
-    :emphasize-lines: 3-11
-
-            self.assertEqual(person.get('age'), 446)
-
-            self.assertEqual(
-                src.person.update_year_of_birth(person, 1980),
-                dict(
-                    first_name=person.get('first_name'),
-                    last_name=person.get('last_name'),
-                    sex=person.get('sex'),
-                    age=this_year()-1980,
-                )
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.person' has no attribute 'update_year_of_birth'
-
-* I add the :ref:`function<what is a function?>` to ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 9-10
-
-    def say_hello(person):
-        return (
-            f'Hi, my name is {person.get("first_name")} '
-            f'{person.get("last_name")} '
-            f'and I am {person.get("age")}'
-        )
-
-
-    def update_year_of_birth():
-        return None
-
-
-    class Person:
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: update_year_of_birth() takes 0 positional arguments but 2 were given
-
-* I add the two names in parentheses
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 1
-
-    def update_year_of_birth(person, new_year_of_birth):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: None != {'first_name': 'john', 'last_name': 'smith', 'sex': 'M', 'age': 46}
-
-* I change the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 2-7
-
-    def update_year_of_birth(person, new_year_of_birth):
-        return factory(
-            first_name=person.get('first_name'),
-            last_name=person.get('last_name'),
-            sex=person.get('sex'),
-            year_of_birth=new_year_of_birth,
-        )
-
-
-    class Person:
-
-  the test passes.
-
-----
-
-* time to remove some repetition. I add a :ref:`variable<what is a variable?>` for the original year of birth in ``test_update_factory_person_year_of_birth`` in ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 2
-
-        def test_update_factory_person_year_of_birth(self):
-            original_year_of_birth = 1580
-
-            person = src.person.factory(
-
-  the test is still green.
-
-* I use the :ref:`variable<what is a variable?>` in the call to ``src.person.factory``
-
-  .. code-block:: python
-    :lineno-start: 112
-    :emphasize-lines: 6-7
-
-            original_year_of_birth = 1580
-
-            person = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                # year_of_birth=1580,
-                year_of_birth=original_year_of_birth,
-            )
-
-  still green.
-
-* I use the :ref:`variable<what is a variable?>` in the first :ref:`assertion<what is an assertion?>` for the age
-
-  .. code-block:: python
-    :lineno-start: 114
-    :emphasize-lines: 7-11
-
-            person = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                # year_of_birth=1580,
-                year_of_birth=original_year_of_birth,
-            )
-            # self.assertEqual(person.get('age'), 446)
-            self.assertEqual(
-                person.get('age'),
-                this_year()-original_year_of_birth
-            )
-
-            with self.assertRaises(KeyError):
-
-  green.
-
-* I use the :ref:`variable<what is a variable?>` in the second :ref:`assertion<what is an assertion?>` for the age
-
-  .. code-block:: python
-    :lineno-start: 126
-    :emphasize-lines: 7-11
-
-            with self.assertRaises(KeyError):
-                person['year_of_birth']
-            self.assertEqual(
-                person.setdefault('year_of_birth', 1980),
-                1980
-            )
-            # self.assertEqual(person.get('age'), 446)
-            self.assertEqual(
-                person.get('age'),
-                this_year()-original_year_of_birth
-            )
-
-            self.assertEqual(
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 111
-
-        def test_update_factory_person_year_of_birth(self):
-            original_year_of_birth = 1580
-
-            person = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=original_year_of_birth,
-            )
-            self.assertEqual(
-                person.get('age'),
-                this_year()-original_year_of_birth
-            )
-
-            with self.assertRaises(KeyError):
-                person['year_of_birth']
-            self.assertEqual(
-                person.setdefault('year_of_birth', 1980),
-                1980
-            )
-            self.assertEqual(
-                person.get('age'),
-                this_year()-original_year_of_birth
-            )
-
-            self.assertEqual(
-                src.person.update_year_of_birth(person, 1980),
-                dict(
-                    first_name=person.get('first_name'),
-                    last_name=person.get('last_name'),
-                    sex=person.get('sex'),
-                    age=this_year()-1980,
-                )
-            )
-
-
-    # Exceptions seen
-
-  the test is still green.
-
-----
-
-* I add a :ref:`variable<what is a variable?>` for the new year of birth
-
-  .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 3
-
-        def test_update_factory_person_year_of_birth(self):
-            original_year_of_birth = 1580
-            new_year_of_birth = 1980
-
-            person = src.person.factory(
-
-  still green.
-
-* I use the :ref:`variable<what is a variable?>` in the :ref:`assertion<what is an assertion?>` for the call to the :ref:`setdefault method<test_setdefault_adds_given_key_to_a_dictionary>`
-
-  .. code-block:: python
-    :lineno-start: 125
-    :emphasize-lines: 4-7
-
-              with self.assertRaises(KeyError):
-                  person['year_of_birth']
-              self.assertEqual(
-                  # person.setdefault('year_of_birth', 1980),
-                  person.setdefault('year_of_birth', new_year_of_birth),
-                  # 1980
-                  new_year_of_birth
-              )
-              self.assertEqual(
-
-  the test is still green.
-
-* I use the :ref:`variable<what is a variable?>`  in the last :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 138
-    :emphasize-lines: 2-6, 11-12
-
-            self.assertEqual(
-                # src.person.update_year_of_birth(person, 1980),
-                src.person.update_year_of_birth(
-                    person,
-                    new_year_of_birth
-                ),
-                dict(
-                    first_name=person.get('first_name'),
-                    last_name=person.get('last_name'),
-                    sex=person.get('sex'),
-                    # age=this_year()-1980,
-                    age=this_year()-new_year_of_birth,
-                )
-            )
-
-
-    # Exceptions seen
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 111
-
-        def test_update_factory_person_year_of_birth(self):
-            original_year_of_birth = 1580
-            new_year_of_birth = 1980
-
-            person = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=original_year_of_birth,
-            )
-            self.assertEqual(
-                person.get('age'),
-                this_year()-original_year_of_birth
-            )
-
-            with self.assertRaises(KeyError):
-                person['year_of_birth']
-            self.assertEqual(
-                person.setdefault('year_of_birth', new_year_of_birth),
-                new_year_of_birth
-            )
-            self.assertEqual(
-                person.get('age'),
-                this_year()-original_year_of_birth
-            )
-
-            self.assertEqual(
-                src.person.update_year_of_birth(
-                    person,
-                    new_year_of_birth
-                ),
-                dict(
-                    first_name=person.get('first_name'),
-                    last_name=person.get('last_name'),
-                    sex=person.get('sex'),
-                    age=this_year()-new_year_of_birth,
-                )
-            )
-
-
-    # Exceptions seen
-
-  green.
-
-----
-
-* I add a :ref:`variable<what is a variable?>` for the original age calculation
-
-  .. code-block:: python
-    :lineno-start: 111
-    :emphasize-lines: 3
-
-        def test_update_factory_person_year_of_birth(self):
-            original_year_of_birth = 1580
-            original_age = this_year() - original_year_of_birth
-            new_year_of_birth = 1980
-
-* I use the :ref:`variable<what is a variable?>` in the first :ref:`assertion<what is an assertion?>` for the age
-
-  .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 8-9
-
-            person = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=original_year_of_birth,
-            )
-            self.assertEqual(
-                person.get('age'),
-                # this_year()-original_year_of_birth
-                original_age
-            )
-
-  the test is still green.
-
-* I use the :ref:`variable<what is a variable?>` in the second :ref:`assertion<what is an assertion?>` for the age
-
-  .. code-block:: python
-    :lineno-start: 127
-    :emphasize-lines: 9-10
-
-            with self.assertRaises(KeyError):
-                person['year_of_birth']
-            self.assertEqual(
-                person.setdefault('year_of_birth', new_year_of_birth),
-                new_year_of_birth
-            )
-            self.assertEqual(
-                person.get('age'),
-                # this_year()-original_year_of_birth
-                original_age
-            )
-
-  still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 111
-
-        def test_update_factory_person_year_of_birth(self):
-            original_year_of_birth = 1580
-            original_age = this_year() - original_year_of_birth
-            new_year_of_birth = 1980
-
-            person = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=original_year_of_birth,
-            )
-            self.assertEqual(
-                person.get('age'),
-                original_age
-            )
-
-            with self.assertRaises(KeyError):
-                person['year_of_birth']
-            self.assertEqual(
-                person.setdefault('year_of_birth', new_year_of_birth),
-                new_year_of_birth
-            )
-            self.assertEqual(
-                person.get('age'),
-                original_age
-            )
-
-            self.assertEqual(
-                src.person.update_year_of_birth(
-                    person,
-                    new_year_of_birth
-                ),
-                dict(
-                    first_name=person.get('first_name'),
-                    last_name=person.get('last_name'),
-                    sex=person.get('sex'),
-                    age=this_year()-new_year_of_birth,
-                )
-            )
-
-
-    # Exceptions seen
-
-I had to make a new person with the same first name, last name, sex and the new year of birth to change the year of birth. How would I solve this problem with a :ref:`class<what is a class?>`?
 
 ----
 
@@ -1726,7 +1224,7 @@ the ``get_age`` :ref:`method<what is a function?>` returns :ref:`None<what is No
 
 .. note::
 
-  - Classes_ have :ref:`attributes<test_attribute_error_w_class_attributes>` that can be changed.
+  - :ref:`classes<what is a class?>` have :ref:`attributes<test_attribute_error_w_class_attributes>` that can be changed.
   - Since the age calculation uses the ``year_of_birth``, and is done when I call it, not when the person is made, it will always calculate the right age.
   - It is easier to make changes to a person when I use a :ref:`class<what is a class?>` than when I use only :ref:`functions<what is a function?>`
 
@@ -1969,7 +1467,7 @@ I want to add randomness to the test
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to :ref:`test_factory_person_say_hello`
+* I add an :ref:`assertion<what is an assertion?>` with the ``random_factory_person`` :ref:`class attribute<test_attribute_error_w_class_attributes>` to :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 72
@@ -1999,7 +1497,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 61
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 (
@@ -2009,13 +1507,13 @@ I want to add randomness to the test
                 )
             )
 
-        def test_classy_person_greeting(self):
+        def test_classy_person_says_hello(self):
 
   still
 
 ----
 
-* I have to make a random person with the ``Person`` :ref:`class<what is a class?>` to do the same thing for ``test_classy_person_greeting``. I will come back to it
+* I have to make a random person with the ``Person`` :ref:`class<what is a class?>` to do the same thing for ``test_classy_person_says_hello``. I will come back to it
 
 ----
 
@@ -2290,11 +1788,11 @@ I want to add randomness to the test
                 )
             )
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
 
   green.
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_person_say_hello`
+* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 65
@@ -2314,7 +1812,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 62
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 (
@@ -2324,7 +1822,7 @@ I want to add randomness to the test
                 )
             )
 
-        def test_classy_person_greeting(self):
+        def test_classy_person_says_hello(self):
 
   still green.
 
@@ -2443,7 +1941,7 @@ I want to add randomness to the test
 
         def test_factory_w_keyword_arguments(self):
 
-* I add an :ref:`assertion<what is an assertion?>` with the new :ref:`class attribute<test_attribute_error_w_class_attributes>` to ``test_classy_person_greeting``
+* I add an :ref:`assertion<what is an assertion?>` with the new :ref:`class attribute<test_attribute_error_w_class_attributes>` to ``test_classy_person_says_hello``
 
   .. code-block:: python
     :lineno-start: 89
@@ -2473,7 +1971,7 @@ I want to add randomness to the test
   .. code-block:: python
     :lineno-start: 78
 
-        def test_classy_person_greeting(self):
+        def test_classy_person_says_hello(self):
             self.assertEqual(
                 self.random_classy_person.hello(),
                 (
@@ -2487,7 +1985,7 @@ I want to add randomness to the test
 
   still green.
 
-* the expected message in ``test_classy_person_greeting`` and :ref:`test_factory_person_say_hello` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
+* the expected message in ``test_classy_person_says_hello`` and :ref:`test_factory_person_says_hello` are now the same. I add a :ref:`method<what is a function?>` to remove the repetition
 
   .. code-block:: python
     :lineno-start: 60
@@ -2508,15 +2006,15 @@ I want to add randomness to the test
                 f'and I am {self.original_age}'
             )
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
 
-* I use the new :ref:`method<what is a function?>` in :ref:`test_factory_person_say_hello`
+* I use the new :ref:`method<what is a function?>` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 75
     :emphasize-lines: 4-9
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 # (
@@ -2527,17 +2025,17 @@ I want to add randomness to the test
                 self.expected_greeting()
             )
 
-        def test_classy_person_greeting(self):
+        def test_classy_person_says_hello(self):
 
   the test is still green.
 
-* I use it in ``test_classy_person_greeting``
+* I use it in ``test_classy_person_says_hello``
 
   .. code-block:: python
     :lineno-start: 86
     :emphasize-lines: 4-9
 
-        def test_classy_person_greeting(self):
+        def test_classy_person_says_hello(self):
             self.assertEqual(
                 self.random_classy_person.hello(),
                 # (
@@ -2564,13 +2062,13 @@ I want to add randomness to the test
                 f'and I am {self.original_age}'
             )
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             self.assertEqual(
                 src.person.say_hello(self.random_factory_person),
                 self.expected_greeting()
             )
 
-        def test_classy_person_greeting(self):
+        def test_classy_person_says_hello(self):
             self.assertEqual(
                 self.random_classy_person.hello(),
                 self.expected_greeting()
@@ -3601,8 +3099,8 @@ review
 
 * A :ref:`class<what is a class?>` is :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` that belong together
 * A :ref:`class<what is a class?>` can be used to represent something
-* classes_ can be an easier way to manage data than :ref:`functions<what is a function?>`
-* classes_ make it easier to write tests for something
+* :ref:`classes<what is a class?>` can be an easier way to manage data than :ref:`functions<what is a function?>`
+* :ref:`classes<what is a class?>` make it easier to write tests for something
 
 .. tip::
 

@@ -9,8 +9,10 @@ what is a class?
 
 A class_ is a definition for something. I think of it as :ref:`attributes (variables)<what causes AttributeError?>` and :ref:`methods (functions) <what is a function?>` that belong together.
 
+Everything in Python_ is an object_, which is a class_. This means that everything in Python_ has a class_ definition somewhere. Knowing how classes_ work and how to make them shows how everything in Python_ works.
+
 *********************************************************************************
-how to make a class in Python
+how to make a class
 *********************************************************************************
 
 classes_ are made with
@@ -23,7 +25,7 @@ classes_ are made with
 
 .. code-block:: python
 
-  class NameOfClass(object):
+  class NameOfClass(ParentClass):
 
       attribute = SOMETHING
 
@@ -43,8 +45,6 @@ the chapters
 
   classes
   inheritance
-  ../../data_structures/booleans/booleans_4
-  make a calculator 8<../../calculator/calculator_8>
 
 ----
 

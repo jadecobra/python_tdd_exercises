@@ -4464,7 +4464,6 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-
 ----
 
 *********************************************************************************
@@ -4520,6 +4519,8 @@ I want to write the solution without looking at the tests
   .. code-block:: python
 
     NameError: name 'factory' is not defined
+
+  because I have not told Python_ what ``factory`` means
 
 * I point it to :ref:`None<what is None?>` to define it
 
