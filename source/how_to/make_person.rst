@@ -2188,42 +2188,52 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
   still green.
 
-* I make a :ref:`variable<what is a variable?>` with a tuple_ of all the names for the test to have more random names to pick from
+* I make a :ref:`function<what is a function?>` with a tuple_ of all the names for the test to have more random names to pick from
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 3-6
+    :lineno-start: 7
+    :emphasize-lines: 5-9
 
+    def pick_one(*choices):
+        return random.choice(choices)
+
+
+    def get_random_name():
+        return pick_one(
+            'jane', 'joe', 'john', 'person',
+            'doe', 'smith', 'blow', 'public',
+        )
+
+
+    class TestPerson(unittest.TestCase):
+
+        def test_factory_w_keyword_arguments(self):
+
+* I use the :ref:`function<what is a function?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 25-32
+
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            # first_name = random.choice((
+            #     'jane', 'joe', 'john', 'person',
+            # ))
+            # first_name = pick_one(
+            #     'jane', 'joe', 'john', 'person',
+            # )
+            # last_name = 'doe'
+            # last_name = random.choice((
+            #     'doe', 'smith', 'blow', 'public',
+            # ))
+            # last_name = pick_one(
+            #     'doe', 'smith', 'blow', 'public',
+            # )
+            # sex = 'F'
+            # sex = random.choice(('F', 'M'))
+            # sex = pick_one('F', 'M')
             # year_of_birth = 1996
-
-            names = (
-                'jane', 'joe', 'john', 'person',
-                'doe', 'smith', 'blow', 'public',
-            )
-
-            a_person = dict(
-                # first_name=first_name,
-                # last_name=last_name,
-                # sex=sex,
-                first_name=pick_one(
-                    'jane', 'joe', 'john', 'person',
-                ),
-                last_name=pick_one(
-                    'doe', 'smith', 'blow', 'public',
-                ),
-                sex=pick_one('F', 'M'),
-            )
-
-* I use the :ref:`variable<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 10-17
-
-            names = (
-                'jane', 'joe', 'john', 'person',
-                'doe', 'smith', 'blow', 'public',
-            )
 
             a_person = dict(
                 # first_name=first_name,
@@ -2232,11 +2242,11 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
                 # first_name=pick_one(
                 #     'jane', 'joe', 'john', 'person',
                 # ),
-                first_name=pick_one(*names),
                 # last_name=pick_one(
                 #     'doe', 'smith', 'blow', 'public',
                 # ),
-                last_name=pick_one(*names),
+                first_name=get_random_name(),
+                last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
 
@@ -2245,17 +2255,12 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 20
 
         def test_factory_w_keyword_arguments(self):
-            names = (
-                'jane', 'joe', 'john', 'person',
-                'doe', 'smith', 'blow', 'public',
-            )
-
             a_person = dict(
-                first_name=pick_one(*names),
-                last_name=pick_one(*names),
+                first_name=get_random_name(),
+                last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
 
@@ -2274,8 +2279,7 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
             )
             self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen
+        def test_factory_w_optional_arguments(self):
 
 * I add a git_ commit message in the other terminal_
 
@@ -2306,8 +2310,8 @@ I want to see what happens when I try to make a person without a value for the `
 * I make a copy of :ref:`test_factory_w_keyword_arguments` and paste it below in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 11-15, 17-21, 23-26, 28-36
+    :lineno-start: 32
+    :emphasize-lines: 11-16, 18-21, 23-31
 
             reality = src.person.factory(
                 **a_person,
@@ -2320,14 +2324,9 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(reality, my_expectation)
 
         def test_factory_w_keyword_arguments(self):
-            names = (
-                'jane', 'joe', 'john', 'person',
-                'doe', 'smith', 'blow', 'public',
-            )
-
             a_person = dict(
-                first_name=pick_one(*names),
-                last_name=pick_one(*names),
+                first_name=get_random_name(),
+                last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
 
@@ -2352,7 +2351,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I change the name of the new test to :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 32
     :emphasize-lines: 11
     :emphasize-text: test_factory_w_optional_arguments
 
@@ -2367,26 +2366,22 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(reality, my_expectation)
 
         def test_factory_w_optional_arguments(self):
-            names = (
-                'jane', 'joe', 'john', 'person',
-                'doe', 'smith', 'blow', 'public',
+            a_person = dict(
+                first_name=get_random_name(),
+                last_name=get_random_name(),
+                sex=pick_one('F', 'M'),
             )
 
 * I comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 9
+    :lineno-start: 42
+    :emphasize-lines: 4
 
         def test_factory_w_optional_arguments(self):
-            names = (
-                'jane', 'joe', 'john', 'person',
-                'doe', 'smith', 'blow', 'public',
-            )
-
             a_person = dict(
-                first_name=pick_one(*names),
-                # last_name=pick_one(*names),
+                first_name=get_random_name(),
+                # last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
 
@@ -2397,7 +2392,7 @@ I want to see what happens when I try to make a person without a value for the `
     TypeError: factory() missing 1
                required positional argument: 'last_name'
 
-  because this test no longer gives a value for ``last_name`` when it calls the ``factory`` :ref:`function<what is a function?>`, I have to make it a choice
+  because this test no longer gives a value for ``last_name`` when it calls the ``factory`` :ref:`function<what is a function?>`, I have to make it a choice.
 
 ----
 
@@ -2430,7 +2425,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 65
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -2487,7 +2482,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 54
     :emphasize-lines: 7
 
             reality = src.person.factory(
@@ -2560,18 +2555,13 @@ I want to see what happens when I try to make a person without a value for the `
 * I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 10
+    :lineno-start: 42
+    :emphasize-lines: 5
 
         def test_factory_w_optional_arguments(self):
-            names = (
-                'jane', 'joe', 'john', 'person',
-                'doe', 'smith', 'blow', 'public',
-            )
-
             a_person = dict(
-                first_name=pick_one(*names),
-                # last_name=pick_one(*names),
+                first_name=get_random_name(),
+                # last_name=get_random_name(),
                 # sex=pick_one('F', 'M'),
             )
 
@@ -2589,7 +2579,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 54
     :emphasize-lines: 8
 
             reality = src.person.factory(
@@ -2613,8 +2603,10 @@ I want to see what happens when I try to make a person without a value for the `
     :emphasize-text: M None
 
     AssertionError:
-        {'first_name': Y, 'last_name': 'doe', 'sex': None, 'age': X}
-     != {'first_name': Y, 'last_name': 'doe', 'sex': 'M', 'age': X}
+        {'first_name': Y, 'last_name': 'doe',
+         'sex': None, 'age': X}
+     != {'first_name': Y, 'last_name': 'doe',
+         'sex': 'M', 'age': X}
 
   because the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
 
@@ -2662,21 +2654,21 @@ I want to see what happens when I try to make a person without a value for the `
 * I no longer need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` for ``first_name``
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 42
     :emphasize-lines: 2
 
         def test_factory_w_optional_arguments(self):
-            first_name = pick_one('jane', 'joe', 'john', 'person')
+            first_name = get_random_name()
             a_person = dict(
-                first_name=pick_one('jane', 'joe', 'john', 'person'),
-                # last_name=pick_one('doe', 'smith', 'blow', 'public'),
-                # sex=pick_one('F', 'M')
+                first_name=get_random_name(),
+                # last_name=get_random_name(),
+                # sex=pick_one('F', 'M'),
             )
 
 * I use the :ref:`variable<what is a variable?>` for ``reality`` and ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 55
     :emphasize-lines: 3, 8
 
             reality = src.person.factory(
@@ -2703,12 +2695,12 @@ I want to see what happens when I try to make a person without a value for the `
     TypeError: src.person.factory() got multiple values
                for keyword argument 'first_name'
 
-  because the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
+  because the ``a_person`` :ref:`dictionary<what is a dictionary?>` already has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
 
 * I comment out ``**a_person,``
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 55
     :emphasize-lines: 2, 7
 
             reality = src.person.factory(
@@ -2733,10 +2725,10 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 42
 
         def test_factory_w_optional_arguments(self):
-            first_name = pick_one('jane', 'joe', 'john', 'person')
+            first_name = get_random_name()
 
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
@@ -2775,7 +2767,7 @@ test_factory_person_say_hello
 
 I have a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` for a person and returns a :ref:`dictionary<what is a dictionary?>` with the first name, last name, sex and age based on the year of birth.
 
-What if I want the person to send a message about themselves. How would I do that? I can write a :ref:`function<what is a function?>` that takes in a person and returns a message
+What if I want the person to say hello, How would I do that? I can write a :ref:`function<what is a function?>` that takes in a person (:ref:`dictionary<what is a dictionary?>`) and returns a message (string_).
 
 ----
 
@@ -2788,17 +2780,8 @@ What if I want the person to send a message about themselves. How would I do tha
 * I add a new test to ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 21-26, 28-30
-
-
-        def test_factory_w_optional_arguments(self):
-            first_name = pick_one('jane', 'joe', 'john', 'person')
-
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
-            )
+    :lineno-start: 52
+    :emphasize-lines: 13-18, 20-22
 
             reality = src.person.factory(
                 first_name=first_name,
@@ -2806,8 +2789,8 @@ What if I want the person to send a message about themselves. How would I do tha
             )
             my_expectation = dict(
                 first_name=first_name,
-                sex='M',
                 last_name='doe',
+                sex='M',
                 age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
@@ -2826,30 +2809,7 @@ What if I want the person to send a message about themselves. How would I do tha
 
     # Exceptions seen
 
-  - I do not need to give a value for the ``sex`` parameter in the call to ``src.person.factory`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``sex`` parameter of the :ref:`function<what is a function?>` is ``'M'``. This means that
-
-    .. code-block:: python
-
-      src.person.factory(
-          first_name='joe',
-          last_name='blow',
-          year_of_birth=1996,
-      )
-
-    is the same as
-
-    .. code-block:: python
-
-      src.person.factory(
-          first_name='joe',
-          last_name='blow',
-          year_of_birth=1996,
-          sex='M'
-      )
-
-    A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
-
-  - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -2872,8 +2832,8 @@ What if I want the person to send a message about themselves. How would I do tha
     :emphasize-lines: 16-17
 
     def factory(
-            first_name, year_of_birth,
-            last_name='doe', sex='M',
+            first_name, last_name='doe',
+            sex='M', year_of_birth=None,
         ):
         return {
             'first_name': first_name,
@@ -2917,12 +2877,12 @@ What if I want the person to send a message about themselves. How would I do tha
 
 ----
 
-I want the ``say_hello`` :ref:`function<what is a function?>` to return a message for the person I give as input
+I want the ``say_hello`` :ref:`function<what is a function?>` to return a string_ for the person I give as input
 
-* I change ``my_expectation`` in :ref:`test_factory_person_say_hello` in ``test_person.py`` to an :ref:`f-string<what is string interpolation?>` like I did with :ref:`telephone`
+* I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_factory_person_say_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 64
     :emphasize-lines: 9-12
 
         def test_factory_person_say_hello(self):
@@ -2962,7 +2922,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 * I add an :ref:`assertion<what is an assertion?>` for another person
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 64
     :emphasize-lines: 15-19, 21-26
 
         def test_factory_person_say_hello(self):
@@ -3358,7 +3318,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 * I add the same :ref:`variable names<what is a variable?>` to use them to remove repetition of ``'jane'``, ``1991`` and the age calculation from the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 64
     :emphasize-lines: 15-21
 
         def test_factory_person_say_hello(self):
@@ -3432,7 +3392,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 * I add the :ref:`variable names<what is a variable?>` to use them to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation from the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 64
     :emphasize-lines: 2-8
 
         def test_factory_person_say_hello(self):
@@ -3453,7 +3413,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 64
     :emphasize-lines: 11-16, 21-24
 
         def test_factory_person_say_hello(self):
@@ -3488,7 +3448,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 64
 
         def test_factory_person_say_hello(self):
             first_name = 'joe'
