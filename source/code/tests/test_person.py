@@ -4,8 +4,15 @@ import src.person
 import unittest
 
 
-def choose(*choices):
+def pick_one(*choices):
     return random.choice(choices)
+
+
+def get_random_name():
+    return pick_one(
+        'jane', 'joe', 'john', 'person',
+        'doe', 'smith', 'blow', 'public',
+    )
 
 
 def calculate_age(year_of_birth):
@@ -15,7 +22,7 @@ def calculate_age(year_of_birth):
     )
 
 
-def random_year_of_birth():
+def get_random_year_of_birth():
     this_year = datetime.datetime.now().year
     return random.randint(
         this_year-120, this_year
@@ -26,15 +33,11 @@ class TestPerson(unittest.TestCase):
 
     def test_factory_w_keyword_arguments(self):
         a_person = dict(
-            first_name=choose(
-                'jane', 'joe', 'john', 'person',
-            ),
-            last_name=choose(
-                'doe', 'smith', 'blow', 'public',
-            ),
-            sex=choose('F', 'M'),
+            first_name=get_random_name(),
+            last_name=get_random_name(),
+            sex=pick_one('F', 'M'),
         )
-        year_of_birth = random_year_of_birth()
+        year_of_birth = get_random_year_of_birth()
 
         reality = src.person.factory(
             **a_person,
@@ -47,10 +50,8 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_factory_w_optional_arguments(self):
-        first_name = choose(
-            'jane', 'joe', 'john', 'person'
-        )
-        year_of_birth = random_year_of_birth()
+        first_name = get_random_name()
+        year_of_birth = get_random_year_of_birth()
 
         reality = src.person.factory(
             first_name=first_name,
@@ -58,21 +59,17 @@ class TestPerson(unittest.TestCase):
         )
         my_expectation = dict(
             first_name=first_name,
-            sex='M',
             last_name='doe',
+            sex='M',
             age=calculate_age(year_of_birth),
         )
         self.assertEqual(reality, my_expectation)
 
-    def test_factory_person_say_hello(self):
-        first_name = choose(
-            'jane', 'joe', 'john', 'person',
-        )
-        last_name = choose(
-            'doe', 'smith', 'blow', 'public',
-        )
-        sex = choose('F', 'M')
-        year_of_birth = random_year_of_birth()
+    def test_factory_person_says_hello(self):
+        first_name = get_random_name()
+        last_name = get_random_name()
+        sex = pick_one('F', 'M')
+        year_of_birth = get_random_year_of_birth()
 
         a_random_person = src.person.factory(
             first_name=first_name,

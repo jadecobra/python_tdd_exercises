@@ -2762,10 +2762,10 @@ I want to see what happens when I try to make a person without a value for the `
 ----
 
 *********************************************************************************
-test_factory_person_say_hello
+test_factory_person_says_hello
 *********************************************************************************
 
-I have a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` for a person and returns a :ref:`dictionary<what is a dictionary?>` with the first name, last name, sex and age based on the year of birth.
+I have a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` for a person and returns a :ref:`dictionary<what is a dictionary?>` with ``first_name``, ``last_name``, ``sex`` and ``age`` (based on the ``year_of_birth``) as :ref:`keys<test_keys_of_a_dictionary>`.
 
 What if I want the person to say hello, How would I do that? I can write a :ref:`function<what is a function?>` that takes in a person (:ref:`dictionary<what is a dictionary?>`) and returns a message (string_).
 
@@ -2780,7 +2780,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 * I add a new test to ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 50
     :emphasize-lines: 13-18, 20-22
 
             reality = src.person.factory(
@@ -2795,7 +2795,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             joe = src.person.factory(
                 first_name='joe',
                 last_name='blow',
@@ -2877,15 +2877,15 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 
 ----
 
-I want the ``say_hello`` :ref:`function<what is a function?>` to return a string_ for the person I give as input
+I want the ``say_hello`` :ref:`function<what is a function?>` to return a string_ for the person (:ref:`dictionary<what is a dictionary?>`) I give as input
 
-* I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_factory_person_say_hello` in ``test_person.py``
+* I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 62
     :emphasize-lines: 9-12
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             joe = src.person.factory(
                 first_name='joe',
                 last_name='blow',
@@ -2922,10 +2922,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for another person
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 62
     :emphasize-lines: 15-19, 21-26
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             joe = src.person.factory(
                 first_name='joe',
                 last_name='blow',
@@ -2969,11 +2969,12 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2,4
+    :emphasize-lines: 2, 4-5
 
     def say_hello(person):
         first_name = person.get('first_name')
 
+        # return 'Hi, my name is joe blow and I am 30'
         return f'Hi, my name is {first_name} blow and I am 30'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2991,15 +2992,17 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 3, 5-8
+    :emphasize-lines: 3, 6-10
 
     def say_hello(person):
         first_name = person.get('first_name')
         last_name = person.get('last_name')
 
+        # return 'Hi, my name is joe blow and I am 30'
+        # return f'Hi, my name is {first_name} blow and I am 30'
         return (
             f'Hi, my name is {first_name} {last_name}'
-            ' and I am 30'
+            f' and I am 30'
         )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -3017,7 +3020,27 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 4, 8
+    :emphasize-lines: 4, 10-11
+
+    def say_hello(person):
+        first_name = person.get('first_name')
+        last_name = person.get('last_name')
+        age = person.get('age')
+
+        # return 'Hi, my name is joe blow and I am 30'
+        # return f'Hi, my name is {first_name} blow and I am 30'
+        return (
+            f'Hi, my name is {first_name} {last_name}'
+            # f' and I am 30'
+            f' and I am {age}'
+        )
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
 
     def say_hello(person):
         first_name = person.get('first_name')
@@ -3029,12 +3052,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             f' and I am {age}'
         )
 
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` for a new person
+* I add an :ref:`assertion<what is an assertion?>` for a new person in :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 76
     :emphasize-lines: 14-18, 20-25
 
             jane = src.person.factory(
@@ -3059,7 +3080,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(john)
             my_expectation = (
                 f'Hi, my name is jane doe and I am'
-                f' {datetime.datetime.now().year-1991}'
+                f'{datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -3077,7 +3098,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 89
     :emphasize-lines: 9-10
 
             john = src.person.factory(
@@ -3101,7 +3122,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for one more person
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 89
     :emphasize-lines: 14-19, 21-26
 
             john = src.person.factory(
@@ -3145,7 +3166,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 103
+    :lineno-start: 102
     :emphasize-lines: 10-11
 
             a_person = src.person.factory(
@@ -3172,7 +3193,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'person'``, ``'public'``, ``2000`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 89
     :emphasize-lines: 14-20
 
             john = src.person.factory(
@@ -3206,7 +3227,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'person'``, ``'public'``, ``2000`` and the age calculation
 
   .. code-block:: python
-    :lineno-start: 95
+    :lineno-start: 102
     :emphasize-lines: 10-15, 21-24
 
             first_name = 'person'
@@ -3219,10 +3240,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             a_person = src.person.factory(
                 # first_name='person',
-                first_name=first_name,
                 # last_name='public',
-                last_name=last_name,
                 # year_of_birth=2000,
+                first_name=first_name,
+                last_name=last_name,
                 year_of_birth=year_of_birth,
                 sex='F',
             )
@@ -3230,8 +3251,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(a_person)
             my_expectation = (
                 # f'Hi, my name is person public and I am'
-                f'Hi, my name is {first_name} {last_name}'
                 # f' {datetime.datetime.now().year-2000}'
+                f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3244,7 +3265,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the :ref:`assertion<what is an assertion?>` before the one for ``a_person``
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 76
     :emphasize-lines: 14-20
 
             jane = src.person.factory(
@@ -3274,17 +3295,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
                 year_of_birth=1580,
             )
 
-            reality = src.person.say_hello(john)
-            my_expectation = (
-                f'Hi, my name is john smith and I am'
-                f' {datetime.datetime.now().year-1580}'
-            )
-            self.assertEqual(reality, my_expectation)
-
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 89
     :emphasize-lines: 10-15, 20-23
 
             first_name = 'john'
@@ -3297,31 +3311,39 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             john = src.person.factory(
                 # first_name='john',
-                first_name=first_name,
                 # last_name='smith',
-                last_name=last_name,
                 # year_of_birth=1580,
+                first_name=first_name,
+                last_name=last_name,
                 year_of_birth=year_of_birth,
             )
 
             reality = src.person.say_hello(john)
             my_expectation = (
                 # f'Hi, my name is john smith and I am'
-                f'Hi, my name is {first_name} {last_name}'
                 # f' {datetime.datetime.now().year-1580}'
+                f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
+
+            first_name = 'person'
+            last_name = 'public'
+            year_of_birth = 2000
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
 
   still green.
 
 * I add the same :ref:`variable names<what is a variable?>` to use them to remove repetition of ``'jane'``, ``1991`` and the age calculation from the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 62
     :emphasize-lines: 15-21
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             joe = src.person.factory(
                 first_name='joe',
                 last_name='blow',
@@ -3349,18 +3371,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
                 year_of_birth=1991,
             )
 
-            reality = src.person.say_hello(jane)
-            my_expectation = (
-                f'Hi, my name is jane doe and I am'
-                f' {datetime.datetime.now().year-1991}'
-            )
-            self.assertEqual(reality, my_expectation)
-
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'jane'``, ``1991`` and the age calculation
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 10-14, 19-22
+    :lineno-start: 76
+    :emphasize-lines: 10, 12-14, 19-22
 
             first_name = 'jane'
             last_name = 'doe'
@@ -3372,20 +3387,28 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             jane = src.person.factory(
                 # first_name='jane',
-                first_name=first_name,
                 sex='F',
                 # year_of_birth=1991,
+                first_name=first_name,
                 year_of_birth=year_of_birth,
             )
 
             reality = src.person.say_hello(jane)
             my_expectation = (
                 # f'Hi, my name is jane doe and I am'
-                f'Hi, my name is {first_name} {last_name}'
                 # f' {datetime.datetime.now().year-1991}'
+                f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
+
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
 
   green.
 
@@ -3395,7 +3418,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :lineno-start: 64
     :emphasize-lines: 2-8
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             first_name = 'joe'
             last_name = 'blow'
             year_of_birth = 1996
@@ -3413,10 +3436,10 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I use the :ref:`variables<what is a variable?>` to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 62
     :emphasize-lines: 11-16, 21-24
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             first_name = 'joe'
             last_name = 'blow'
             year_of_birth = 1996
@@ -3427,30 +3450,38 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             joe = src.person.factory(
                 # first_name='joe',
-                first_name=first_name,
                 # last_name='blow',
-                last_name=last_name,
                 # year_of_birth=1996,
+                first_name=first_name,
+                last_name=last_name,
                 year_of_birth=year_of_birth,
             )
 
             reality = src.person.say_hello(joe)
             my_expectation = (
                 # f'Hi, my name is joe blow and I am'
-                f'Hi, my name is {first_name} {last_name}'
                 # f' {datetime.datetime.now().year-1996}'
+                f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
+
+            first_name = 'jane'
+            last_name = 'doe'
+            year_of_birth = 1991
+            age = (
+                datetime.datetime.now().year
+              - year_of_birth
+            )
 
   the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 62
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             first_name = 'joe'
             last_name = 'blow'
             year_of_birth = 1996
@@ -3481,8 +3512,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
 
             jane = src.person.factory(
-                first_name=first_name,
                 sex='F',
+                first_name=first_name,
                 year_of_birth=year_of_birth,
             )
 
@@ -3544,7 +3575,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_factory_person_say_hello'
+    git commit -am 'add test_factory_person_says_hello'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -3554,18 +3585,21 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 extract calculate_age function
 *********************************************************************************
 
-Each :ref:`assertion<what is an assertion?>` in every test has calculation for the age
+Each :ref:`assertion<what is an assertion?>` in every test has a calculation for the age
 
 * I go back to the terminal_ that is running the tests
 
 * I add a :ref:`function<what is a function?>` to use to remove repetition of the age calculation
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5-9
+    :lineno-start: 11
+    :emphasize-lines: 8-12
 
-    def pick_one(*choices):
-        return random.choice(choices)
+    def get_random_name():
+        return pick_one(
+            'jane', 'joe', 'john', 'person',
+            'doe', 'smith', 'blow', 'public',
+        )
 
 
     def calculate_age(year_of_birth):
@@ -3582,9 +3616,13 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 * I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 3-4
+    :lineno-start: 39
+    :emphasize-lines: 7-8
 
+            reality = src.person.factory(
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
             my_expectation = dict(
                 **a_person,
                 # age=this_year-year_of_birth,
@@ -3592,21 +3630,15 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_factory_w_optional_arguments(self):
-
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 27
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
-                first_name=pick_one(
-                    'jane', 'joe', 'john', 'person',
-                ),
-                last_name=pick_one(
-                    'doe', 'smith', 'blow', 'public',
-                ),
+                first_name=get_random_name(),
+                last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
 
@@ -3632,29 +3664,31 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 * I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 5-6
+    :lineno-start: 57
+    :emphasize-lines: 9-10
 
+            reality = src.person.factory(
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
             my_expectation = dict(
                 first_name=first_name,
-                sex='M',
                 last_name='doe',
+                sex='M',
                 # age=this_year-year_of_birth,
                 age=calculate_age(year_of_birth),
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
 
 * I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 49
 
         def test_factory_w_optional_arguments(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person',
-            )
+            first_name = get_random_name()
 
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
@@ -3667,23 +3701,23 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
             )
             my_expectation = dict(
                 first_name=first_name,
-                sex='M',
                 last_name='doe',
+                sex='M',
                 age=calculate_age(year_of_birth),
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
 
   the test is still green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``joe`` in :ref:`test_factory_person_say_hello`
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``joe`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 69
     :emphasize-lines: 5-8, 19-20
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             first_name = 'joe'
             last_name = 'blow'
             year_of_birth = 1996
@@ -3708,10 +3742,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 
   the test is still green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``jane`` in :ref:`test_factory_person_say_hello`
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``jane`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 84
     :emphasize-lines: 12-15, 26-27
 
             reality = src.person.say_hello(joe)
@@ -3731,8 +3765,8 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
             # )
 
             jane = src.person.factory(
-                first_name=first_name,
                 sex='F',
+                first_name=first_name,
                 year_of_birth=year_of_birth,
             )
 
@@ -3746,10 +3780,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 
   still green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``john`` in :ref:`test_factory_person_say_hello`
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``john`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 105
+    :lineno-start: 106
     :emphasize-lines: 12-15, 26-27
 
             reality = src.person.say_hello(jane)
@@ -3784,10 +3818,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 
   green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``a_person`` in :ref:`test_factory_person_say_hello`
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``a_person`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 135
+    :lineno-start: 136
     :emphasize-lines: 4-7, 19-20
 
             first_name = 'person'
@@ -3821,9 +3855,9 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 69
 
-        def test_factory_person_say_hello(self):
+        def test_factory_person_says_hello(self):
             first_name = 'joe'
             last_name = 'blow'
             year_of_birth = 1996
@@ -3846,8 +3880,8 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
             year_of_birth = 1991
 
             jane = src.person.factory(
-                first_name=first_name,
                 sex='F',
+                first_name=first_name,
                 year_of_birth=year_of_birth,
             )
 
@@ -3914,23 +3948,19 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 test say_hello with random values
 *********************************************************************************
 
-I want to use random values in :ref:`test_factory_person_say_hello`
+I want to use random values in :ref:`test_factory_person_says_hello`
 
 * I go back to the terminal_ that is running the tests
 
 * I add random values to use for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`variables<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 2-12
+    :lineno-start: 69
+    :emphasize-lines: 2-8
 
-        def test_factory_person_say_hello(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person',
-            )
-            last_name = pick_one(
-                'doe', 'smith', 'blow', 'public',
-            )
+        def test_factory_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
             sex = pick_one('F', 'M')
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
@@ -3944,16 +3974,12 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I comment out the ``first_name``, ``last_name`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``joe`` in the first :ref:`assertion<what is an assertion?>`, so it uses the ones with random values
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 14-16
+    :lineno-start: 69
+    :emphasize-lines: 10-12
 
-        def test_factory_person_say_hello(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person',
-            )
-            last_name = pick_one(
-                'doe', 'smith', 'blow', 'public',
-            )
+        def test_factory_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
             sex = pick_one('F', 'M')
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
@@ -3975,14 +4001,14 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I add a random value for the ``sex`` parameter with the ``sex`` :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` for ``joe``
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 82
     :emphasize-lines: 5
 
             joe = src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
-                sex=sex,
+                sex=sex
             )
 
   still green.
@@ -3990,7 +4016,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I comment out the ``first_name``, ``last_name`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``jane`` in the second :ref:`assertion<what is an assertion?>`, so it uses the ones with random values
 
   .. code-block:: python
-    :lineno-start: 92
+    :lineno-start: 89
     :emphasize-lines: 8-10
 
             reality = src.person.say_hello(joe)
@@ -4005,8 +4031,8 @@ I want to use random values in :ref:`test_factory_person_say_hello`
             # year_of_birth = 1991
 
             jane = src.person.factory(
-                first_name=first_name,
                 sex='F',
+                first_name=first_name,
                 year_of_birth=year_of_birth,
             )
 
@@ -4044,15 +4070,15 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 
   A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
 
-* I add ``last_name`` to the call to ``src.person.factory`` for ``jane``
+* I add ``last_name`` to the call to ``src.person.factory`` for ``jane`` to use the :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 103
+    :lineno-start: 100
     :emphasize-lines: 5
 
             jane = src.person.factory(
-                first_name=first_name,
                 sex='F',
+                first_name=first_name,
                 year_of_birth=year_of_birth,
                 last_name=last_name,
             )
@@ -4062,15 +4088,15 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I change the value for the ``sex`` parameter to the ``sex`` :ref:`variable<what is a variable?>` so it uses a random value in the call to ``src.person.factory`` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 3-4
+    :lineno-start: 100
+    :emphasize-lines: 2, 6
 
             jane = src.person.factory(
-                first_name=first_name,
                 # sex='F',
-                sex=sex,
+                first_name=first_name,
                 year_of_birth=year_of_birth,
                 last_name=last_name,
+                sex=sex,
             )
 
   the test is still green.
@@ -4078,7 +4104,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I comment out the ``first_name``, ``last_name`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``john`` in the third :ref:`assertion<what is an assertion?>`, so it uses the ones with random values
 
   .. code-block:: python
-    :lineno-start: 111
+    :lineno-start: 108
     :emphasize-lines: 8-10
 
             reality = src.person.say_hello(jane)
@@ -4098,12 +4124,13 @@ I want to use random values in :ref:`test_factory_person_say_hello`
                 year_of_birth=year_of_birth,
             )
 
+
   still green.
 
 * I add a random value for the ``sex`` parameter with the ``sex`` :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` for ``john``
 
   .. code-block:: python
-    :lineno-start: 122
+    :lineno-start: 119
     :emphasize-lines: 5
 
             john = src.person.factory(
@@ -4118,7 +4145,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I comment out the ``first_name``, ``last_name`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``a_person`` in the last :ref:`assertion<what is an assertion?>`, so it uses the ones with random values
 
   .. code-block:: python
-    :lineno-start: 129
+    :lineno-start: 126
     :emphasize-lines: 8-10
 
             reality = src.person.say_hello(john)
@@ -4144,7 +4171,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I add a random value for the ``sex`` parameter with the ``sex`` :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` for ``a_person``
 
   .. code-block:: python
-    :lineno-start: 140
+    :lineno-start: 137
     :emphasize-lines: 5-6
 
             a_person = src.person.factory(
@@ -4157,19 +4184,11 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 
   still green.
 
-* I add a random person that covers all the possible cases because the four people I made in :ref:`test_factory_person_say_hello` all use random values, and the :ref:`assertions<what is an assertion?>` is the same for each case because it uses the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.factory``
+* I add a random person that covers all the possible cases because the four people I made in :ref:`test_factory_person_says_hello` now all use random values, and the :ref:`assertions<what is an assertion?>` are the same for each case because they use the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.factory``
 
   .. code-block:: python
-    :lineno-start: 140
+    :lineno-start: 145
     :emphasize-lines: 16-21, 23-25
-
-            a_person = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
-                # sex='F',
-                sex=sex,
-            )
 
             reality = src.person.say_hello(a_person)
             my_expectation = (
@@ -4190,7 +4209,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
             self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions
+    # Exceptions seen
 
   the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -4201,7 +4220,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 155
+    :lineno-start: 152
     :emphasize-lines: 10
 
             a_random_person = src.person.factory(
@@ -4223,18 +4242,14 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 
   the test is green
 
-* I remove the commented lines and the other people from :ref:`test_factory_person_say_hello` because they are now all the same
+* I remove the commented lines and the other people from :ref:`test_factory_person_says_hello` because they are now all the same
 
   .. code-block:: python
-    :lineno-start: 140
+    :lineno-start: 69
 
-        def test_factory_person_say_hello(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person',
-            )
-            last_name = pick_one(
-                'doe', 'smith', 'blow', 'public',
-            )
+        def test_factory_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
             sex = pick_one('F', 'M')
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
@@ -4263,15 +4278,14 @@ I want to use random values in :ref:`test_factory_person_say_hello`
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am \
-    'test say_hello with random values'
+    git commit -am 'test say_hello with random values'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
 *********************************************************************************
-extract random_year_of_birth function
+extract get_random_year_of_birth function
 *********************************************************************************
 
 I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` the same way in all three tests.
@@ -4281,7 +4295,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I add a :ref:`function<what is a function?>` to use to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 11
+    :lineno-start: 18
     :emphasize-lines: 8-12
 
     def calculate_age(year_of_birth):
@@ -4291,7 +4305,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
         )
 
 
-    def random_year_of_birth():
+    def get_random_year_of_birth():
         this_year = datetime.datetime.now().year
         return random.randint(
             this_year-120, this_year
@@ -4302,20 +4316,16 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
         def test_factory_w_keyword_arguments(self):
 
-* I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_keyword_arguments`
+* I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 12-16
+    :lineno-start: 34
+    :emphasize-lines: 8-12
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
-                first_name=pick_one(
-                    'jane', 'joe', 'john', 'person',
-                ),
-                last_name=pick_one(
-                    'doe', 'smith', 'blow', 'public',
-                ),
+                first_name=get_random_name(),
+                last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
 
@@ -4323,31 +4333,22 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             # year_of_birth = random.randint(
             #     this_year-120, this_year
             # )
-            year_of_birth = random_year_of_birth()
-
-            reality = src.person.factory(
-                **a_person,
-                year_of_birth=year_of_birth,
-            )
+            year_of_birth = get_random_year_of_birth()
 
   the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 34
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
-                first_name=pick_one(
-                    'jane', 'joe', 'john', 'person',
-                ),
-                last_name=pick_one(
-                    'doe', 'smith', 'blow', 'public',
-                ),
+                first_name=get_random_name(),
+                last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
-            year_of_birth = random_year_of_birth()
+            year_of_birth = get_random_year_of_birth()
 
             reality = src.person.factory(
                 **a_person,
@@ -4361,27 +4362,20 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
         def test_factory_w_optional_arguments(self):
 
-* I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_optional_arguments`
+* I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 49
-    :emphasize-lines: 6-10
+    :lineno-start: 52
+    :emphasize-lines: 4-8
 
         def test_factory_w_optional_arguments(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person'
-            )
+            first_name = get_random_name()
 
             # this_year = datetime.datetime.now().year
             # year_of_birth = random.randint(
             #     this_year-120, this_year
             # )
-            year_of_birth = random_year_of_birth()
-
-            reality = src.person.factory(
-                first_name=first_name,
-                year_of_birth=year_of_birth,
-            )
+            year_of_birth = get_random_year_of_birth()
 
 
   the test is still green.
@@ -4389,13 +4383,11 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 52
 
         def test_factory_w_optional_arguments(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person'
-            )
-            year_of_birth = random_year_of_birth()
+            first_name = get_random_name()
+            year_of_birth = get_random_year_of_birth()
 
             reality = src.person.factory(
                 first_name=first_name,
@@ -4403,38 +4395,29 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
             )
             my_expectation = dict(
                 first_name=first_name,
-                sex='M',
                 last_name='doe',
+                sex='M',
                 age=calculate_age(year_of_birth),
             )
             self.assertEqual(reality, my_expectation)
 
-* I use the ``random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_person_say_hello`
+        def test_factory_person_says_hello(self):
+
+* I use the ``get_random_year_of_birth`` :ref:`function<what is a function?>` to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 67
-    :emphasize-lines: 9-13
+    :lineno-start: 68
+    :emphasize-lines: 5-9
 
-        def test_factory_person_say_hello(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person',
-            )
-            last_name = pick_one(
-                'doe', 'smith', 'blow', 'public',
-            )
+        def test_factory_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
             sex = pick_one('F', 'M')
             # this_year = datetime.datetime.now().year
             # year_of_birth = random.randint(
             #     this_year-120, this_year
             # )
-            year_of_birth = random_year_of_birth()
-
-            a_random_person = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
+            year_of_birth = get_random_year_of_birth()
 
   the test is still green.
 
@@ -4443,15 +4426,11 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
   .. code-block:: python
     :lineno-start: 67
 
-        def test_factory_person_say_hello(self):
-            first_name = pick_one(
-                'jane', 'joe', 'john', 'person',
-            )
-            last_name = pick_one(
-                'doe', 'smith', 'blow', 'public',
-            )
+        def test_factory_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
             sex = pick_one('F', 'M')
-            year_of_birth = random_year_of_birth()
+            year_of_birth = get_random_year_of_birth()
 
             a_random_person = src.person.factory(
                 first_name=first_name,
@@ -4481,7 +4460,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
     :emphasize-lines: 1-2
 
     git commit -am \
-    'extract random_year_of_birth function'
+    'extract get_random_year_of_birth function'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -4508,7 +4487,7 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    FAILED ...test_factory_person_say_hello -
+    FAILED ...test_factory_person_says_hello -
         AttributeError: module 'src.person' has
                         no attribute 'factory'
     FAILED ...test_factory_w_keyword_arguments -
