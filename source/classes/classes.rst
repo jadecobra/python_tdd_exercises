@@ -1053,10 +1053,10 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 ----
 
 *********************************************************************************
-extract class attributes
+extract random_first_name class attribute
 *********************************************************************************
 
-I make the values for ``first_name`` in the tests the same way each time, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use :ref:`class attributes<what is a class attribute?>` to remove repetition of how I make it, then have all the :ref:`methods<what is a method?>` reference it
+I make the values for ``first_name`` in the tests the same way each time, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use a :ref:`class attribute<what is a class attribute?>` to remove repetition of how I make it, then have all the :ref:`methods<what is a method?>` reference it
 
 * I go back to the terminal_ that is running the tests
 
@@ -1189,9 +1189,187 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
   the test is still green.
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract random_first_name class attribute'
+
 ----
 
+*********************************************************************************
+extract random_year_of_birth class attribute
+*********************************************************************************
 
+I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for ``year_of_birth`` in each test, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use a :ref:`class attribute<what is a class attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value
+
+* I go back to the terminal_ that is running the tests
+
+* I add a :ref:`class attribute<what is a class attribute?>` called ``random_year_of_birth`` to the ``TestPerson`` :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 4
+
+    class TestPerson(unittest.TestCase):
+
+        random_first_name = get_random_name()
+        random_year_of_birth = get_random_year_of_birth()
+
+        def test_factory_w_keyword_arguments(self):
+
+* I use ``self.random_year_of_birth`` in :ref:`test_factory_w_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 8-9, 13-14, 18-19
+
+        def test_factory_w_keyword_arguments(self):
+            a_person = dict(
+                # first_name=get_random_name(),
+                first_name=self.random_first_name,
+                last_name=get_random_name(),
+                sex=pick_one('F', 'M'),
+            )
+            # year_of_birth = get_random_year_of_birth()
+            year_of_birth = self.random_year_of_birth
+
+            reality = src.person.factory(
+                **a_person,
+                # year_of_birth=year_of_birth,
+                year_of_birth=self.random_year_of_birth,
+            )
+            my_expectation = dict(
+                **a_person,
+                # age=calculate_age(year_of_birth),
+                age=calculate_age(self.random_year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_w_optional_arguments(self):
+
+  still green.
+
+* I use ``self.random_year_of_birth`` in :ref:`test_factory_w_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 4-5, 10-11, 18-19
+
+        def test_factory_w_optional_arguments(self):
+            # first_name = get_random_name()
+            first_name = self.random_first_name
+            # year_of_birth = get_random_year_of_birth()
+            year_of_birth = self.random_year_of_birth
+
+            reality = src.person.factory(
+                # first_name=first_name,
+                first_name=self.random_first_name,
+                # year_of_birth=year_of_birth,
+                year_of_birth=self.random_year_of_birth,
+            )
+            my_expectation = dict(
+                # first_name=first_name,
+                first_name=self.random_first_name,
+                last_name='doe',
+                sex='M',
+                # age=calculate_age(year_of_birth),
+                age=calculate_age(self.random_year_of_birth),
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_factory_person_says_hello(self):
+
+  still green.
+
+* I use ``self.random_year_of_birth`` in :ref:`test_factory_person_says_hello`
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 6-7, 14-15, 22-25
+
+        def test_factory_person_says_hello(self):
+            # first_name = get_random_name()
+            first_name = self.random_first_name
+            last_name = get_random_name()
+            sex = pick_one('F', 'M')
+            # year_of_birth = get_random_year_of_birth()
+            year_of_birth = self.random_year_of_birth
+
+            a_random_person = src.person.factory(
+                # first_name=first_name,
+                first_name=self.random_first_name,
+                last_name=last_name,
+                sex=sex,
+                # year_of_birth=year_of_birth,
+                year_of_birth=self.random_year_of_birth,
+            )
+
+            reality = src.person.say_hello(a_random_person)
+            my_expectation = (
+                # f'Hi, my name is {first_name} {last_name}'
+                f'Hi, my name is {self.random_first_name}'
+                # f' {last_name}'
+                # f' and I am {calculate_age(year_of_birth)}'
+                f' {last_name} and I am'
+                f' {calculate_age(self.random_year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+        def test_classy_person_says_hello(self):
+
+  still green.
+
+* I use ``self.random_year_of_birth`` in :ref:`test_classy_person_says_hello`
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 6-7, 14-15, 24-27
+
+        def test_classy_person_says_hello(self):
+            # first_name = get_random_name()
+            first_name = self.random_first_name
+            last_name = get_random_name()
+            sex = pick_one('F', 'M')
+            # year_of_birth = get_random_year_of_birth()
+            year_of_birth = self.random_year_of_birth
+
+            a_random_person = src.person.Person(
+                # first_name=first_name,
+                first_name=self.random_first_name,
+                last_name=last_name,
+                sex=sex,
+                # year_of_birth=year_of_birth,
+                year_of_birth=self.random_year_of_birth,
+            )
+
+            reality = a_random_person.say_hello(
+                a_random_person
+            )
+            my_expectation = (
+                # f'Hi, my name is {first_name} {last_name}'
+                f'Hi, my name is {self.random_first_name}'
+                # f' {last_name}'
+                # f' and I am {calculate_age(year_of_birth)}'
+                f' {last_name} and I am'
+                f' {calculate_age(self.random_year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  still green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract random_year_of_birth class attribute'
 
 *********************************************************************************
 extract get_age method
