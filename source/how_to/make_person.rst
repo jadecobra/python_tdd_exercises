@@ -1411,10 +1411,12 @@ test_factory_w_keyword_arguments
 ----
 
 *********************************************************************************
-test factory with datetime
+test factory with random year_of_birth
 *********************************************************************************
 
-I want the value of the age to be a calculation based on the current year so that it will always be correct. I can do that with the `datetime module`_ from `The Python Standard Library`_ which is used for dates and times
+I want the value of the age to be a calculation based on the current year so that it will always be correct (at least most of the time). I can do that with the `datetime module`_ from `The Python Standard Library`_ which is used for dates and times
+
+* I go back to the terminal_ that is running the tests
 
 * I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
 
@@ -1432,7 +1434,7 @@ I want the value of the age to be a calculation based on the current year so tha
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 17-18
+    :emphasize-lines: 17-21
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1451,7 +1453,10 @@ I want the value of the age to be a calculation based on the current year so tha
                 last_name=last_name,
                 sex=sex,
                 # age=2026-year_of_birth,
-                age=datetime.datetime.now().year-year_of_birth,
+                age=(
+                    datetime.datetime.now().year
+                   -year_of_birth
+                ),
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1474,12 +1479,6 @@ I want the value of the age to be a calculation based on the current year so tha
 
   that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`
 
-----
-
-*********************************************************************************
-test factory with random year_of_birth
-*********************************************************************************
-
 I want to use random values in the test to make sure the ``factory`` :ref:`function<what is a function?>` can handle different values and always calculates the right age
 
 ----
@@ -1490,7 +1489,6 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
 ----
 
-* I go back to the terminal_ that is running the tests
 
 * I add an `import statement`_ for the `random module`_ at the top of ``test_person.py``
 
@@ -1600,6 +1598,9 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
 
     def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
 
   - ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``person.py``
   - the test passes.
@@ -1611,28 +1612,6 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 =================================================================================
 
 ----
-
-* I remove the commented line
-
-  .. code-block:: python
-    :linenos:
-
-    import datetime
-
-
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
-        return {
-            'first_name': 'jane',
-            'last_name': 'doe',
-            'sex': 'F',
-            'age': (
-                datetime.datetime.today().year
-               -year_of_birth
-            ),
-        }
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
 
@@ -1655,7 +1634,7 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 8-10, 24-25
+    :emphasize-lines: 8-10, 24-28
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1680,39 +1659,10 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
                 last_name=last_name,
                 sex=sex,
                 # age=2026-year_of_birth,
-                # age=datetime.datetime.now().year-year_of_birth,
-                age=this_year-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-* I remove the comments
-
-  .. code-block:: python
-    :lineno-start: 9
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
-            )
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
+                # age=(
+                #     datetime.datetime.now().year
+                #    -year_of_birth
+                # ),
                 age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
@@ -1756,12 +1706,17 @@ test factory with random sex
             last_name = 'doe'
             # sex = 'F'
             sex = random.choice(('F', 'M'))
-
+            # year_of_birth = 1996
             this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
 
   - ``random`` is the `random module`_
   - ``random.choice()`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the :ref:`iterable<what is an iterable?>` it is given in parentheses
-  - ``('F', 'M')`` is a tuple_ with values for the `random.choice method`_ to choose from randomly
+  - ``('F', 'M')`` is a :ref:`tuple (an iterable)<what is an iterable?>` with values for the `random.choice method`_ to pick from randomly
   - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
@@ -1802,8 +1757,13 @@ test factory with random sex
             'last_name': 'doe',
             # 'sex': 'F',
             'sex': sex,
-            'age': datetime.datetime.now().year-year_of_birth,
+            # 'age': 30,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
+
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
 
@@ -1846,6 +1806,13 @@ test factory with random last name
             ))
             # sex = 'F'
             sex = random.choice(('F', 'M'))
+            # year_of_birth = 1996
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
 
 * I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``last_name`` is ``'doe'``.
 
@@ -1885,7 +1852,11 @@ test factory with random last name
             'last_name': last_name,
             # 'sex': 'F',
             'sex': sex,
-            'age': datetime.datetime.now().year-year_of_birth,
+            # 'age': 30,
+            'age': (
+                datetime.datetime.today().year
+              -year_of_birth
+            ),
         }
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
@@ -1921,7 +1892,6 @@ test factory with random first name
     :lineno-start: 9
     :emphasize-lines: 2-5
 
-
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
             first_name = random.choice((
@@ -1933,6 +1903,13 @@ test factory with random first name
             ))
             # sex = 'F'
             sex = random.choice(('F', 'M'))
+            # year_of_birth = 1996
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``first_name`` is ``'jane'``.
 
@@ -1963,8 +1940,13 @@ test factory with random first name
             'last_name': last_name,
             # 'sex': 'F',
             'sex': sex,
-            'age': datetime.datetime.now().year-year_of_birth,
+            # 'age': 30,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
+
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
 
@@ -1981,7 +1963,10 @@ test factory with random first name
             'first_name': first_name,
             'last_name': last_name,
             'sex': sex,
-            'age': datetime.datetime.now().year-year_of_birth,
+            'age': (
+                datetime.datetime.today().year
+               -year_of_birth
+            ),
         }
 
 * I add a git_ commit message in the other terminal_
@@ -1996,7 +1981,7 @@ test factory with random first name
 ----
 
 *********************************************************************************
-extract choose function
+extract pick_one function
 *********************************************************************************
 
 ----
@@ -2015,7 +2000,7 @@ extract choose function
     import unittest
 
 
-    def choose(*choices):
+    def pick_one(*choices):
         return random.choice(choices)
 
 
@@ -2027,24 +2012,33 @@ extract choose function
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 3-6, 8-11, 13-14
+    :emphasize-lines: 3-8, 10-15, 17-18
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
             # first_name = random.choice((
             #     'jane', 'joe', 'john', 'person',
             # ))
-            first_name = choose('jane', 'joe', 'john', 'person')
+            first_name = pick_one(
+                'jane', 'joe', 'john', 'person',
+            )
             # last_name = 'doe'
             # last_name = random.choice((
             #     'doe', 'smith', 'blow', 'public',
             # ))
-            last_name = choose('doe', 'smith', 'blow', 'public')
+            last_name = pick_one(
+                'doe', 'smith', 'blow', 'public',
+            )
             # sex = 'F'
             # sex = random.choice(('F', 'M'))
-            sex = choose('F', 'M')
-
+            sex = pick_one('F', 'M')
+            # year_of_birth = 1996
             this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
 
   the test is still green.
 
@@ -2053,7 +2047,7 @@ extract choose function
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'extract choose function'
+    git commit -am 'extract pick_one function'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2065,7 +2059,7 @@ test factory with a dictionary
 
 ----
 
-The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is - one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
+The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is, one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2079,22 +2073,27 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 16-20
+    :emphasize-lines: 21-25
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
             # first_name = random.choice((
             #     'jane', 'joe', 'john', 'person',
             # ))
-            first_name = choose('jane', 'joe', 'john', 'person')
+            first_name = pick_one(
+                'jane', 'joe', 'john', 'person',
+            )
             # last_name = 'doe'
             # last_name = random.choice((
             #     'doe', 'smith', 'blow', 'public',
             # ))
-            last_name = choose('doe', 'smith', 'blow', 'public')
+            last_name = pick_one(
+                'doe', 'smith', 'blow', 'public',
+            )
             # sex = 'F'
             # sex = random.choice(('F', 'M'))
-            sex = choose('F', 'M')
+            sex = pick_one('F', 'M')
+            # year_of_birth = 1996
 
             a_person = dict(
                 first_name=first_name,
@@ -2103,15 +2102,22 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
             )
 
             this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
 
 * I use the new :ref:`variable<what is a variable?>` with a :ref:`double starred expression<double starred expressions>` to remove the repeating parts
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 7-10, 14-17
+    :lineno-start: 39
+    :emphasize-lines: 9-12, 16-19
 
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
                 this_year-120, this_year
             )
 
@@ -2127,6 +2133,11 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
                 # last_name=last_name,
                 # sex=sex,
                 **a_person,
+                # age=2026-year_of_birth,
+                # age=(
+                #     datetime.datetime.now().year
+                #    -year_of_birth
+                # ),
                 age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
@@ -2140,33 +2151,96 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 6, 11, 14, 17-22
+    :emphasize-lines: 6-8, 13-15, 18, 22-31
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
             # first_name = random.choice((
             #     'jane', 'joe', 'john', 'person',
             # ))
-            # first_name = choose('jane', 'joe', 'john', 'person')
+            # first_name = pick_one(
+            #     'jane', 'joe', 'john', 'person',
+            # )
             # last_name = 'doe'
             # last_name = random.choice((
             #     'doe', 'smith', 'blow', 'public',
             # ))
-            # last_name = choose('doe', 'smith', 'blow', 'public')
+            # last_name = pick_one(
+            #     'doe', 'smith', 'blow', 'public',
+            # )
             # sex = 'F'
             # sex = random.choice(('F', 'M'))
-            # sex = choose('F', 'M')
+            # sex = pick_one('F', 'M')
+            # year_of_birth = 1996
 
             a_person = dict(
                 # first_name=first_name,
                 # last_name=last_name,
                 # sex=sex,
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
+                first_name=pick_one(
+                    'jane', 'joe', 'john', 'person',
+                ),
+                last_name=pick_one(
+                    'doe', 'smith', 'blow', 'public',
+                ),
+                sex=pick_one('F', 'M'),
             )
 
   still green.
+
+* I make a :ref:`variable<what is a variable?>` with a tuple_ of all the names for the test to have more random names to pick from
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 3-6
+
+            # year_of_birth = 1996
+
+            names = (
+                'jane', 'joe', 'john', 'person',
+                'doe', 'smith', 'blow', 'public',
+            )
+
+            a_person = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                first_name=pick_one(
+                    'jane', 'joe', 'john', 'person',
+                ),
+                last_name=pick_one(
+                    'doe', 'smith', 'blow', 'public',
+                ),
+                sex=pick_one('F', 'M'),
+            )
+
+* I use the :ref:`variable<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 10-17
+
+            names = (
+                'jane', 'joe', 'john', 'person',
+                'doe', 'smith', 'blow', 'public',
+            )
+
+            a_person = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                # first_name=pick_one(
+                #     'jane', 'joe', 'john', 'person',
+                # ),
+                first_name=pick_one(names),
+                # last_name=pick_one(
+                #     'doe', 'smith', 'blow', 'public',
+                # ),
+                last_name=pick_one(names),
+                sex=pick_one('F', 'M'),
+            )
+
+  green.
 
 * I remove the commented lines
 
@@ -2174,10 +2248,15 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
     :lineno-start: 13
 
         def test_factory_w_keyword_arguments(self):
+            names = (
+                'jane', 'joe', 'john', 'person',
+                'doe', 'smith', 'blow', 'public',
+            )
+
             a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M')
+                first_name=pick_one(names),
+                last_name=pick_one(names),
+                sex=pick_one('F', 'M'),
             )
 
             this_year = datetime.datetime.now().year
@@ -2242,9 +2321,9 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M')
+                first_name=pick_one('jane', 'joe', 'john', 'person'),
+                last_name=pick_one('doe', 'smith', 'blow', 'public'),
+                sex=pick_one('F', 'M')
             )
 
             this_year = datetime.datetime.now().year
@@ -2284,9 +2363,9 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
             a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M'),
+                first_name=pick_one('jane', 'joe', 'john', 'person'),
+                last_name=pick_one('doe', 'smith', 'blow', 'public'),
+                sex=pick_one('F', 'M'),
             )
 
 * I comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
@@ -2297,9 +2376,9 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
             a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                # last_name=choose('doe', 'smith', 'blow', 'public'),
-                sex=choose('F', 'M')
+                first_name=pick_one('jane', 'joe', 'john', 'person'),
+                # last_name=pick_one('doe', 'smith', 'blow', 'public'),
+                sex=pick_one('F', 'M')
             )
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -2477,9 +2556,9 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
             a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                # last_name=choose('doe', 'smith', 'blow', 'public'),
-                # sex=choose('F', 'M')
+                first_name=pick_one('jane', 'joe', 'john', 'person'),
+                # last_name=pick_one('doe', 'smith', 'blow', 'public'),
+                # sex=pick_one('F', 'M')
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2573,11 +2652,11 @@ I want to see what happens when I try to make a person without a value for the `
     :emphasize-lines: 2
 
         def test_factory_w_optional_arguments(self):
-            first_name = choose('jane', 'joe', 'john', 'person')
+            first_name = pick_one('jane', 'joe', 'john', 'person')
             a_person = dict(
-                first_name=choose('jane', 'joe', 'john', 'person'),
-                # last_name=choose('doe', 'smith', 'blow', 'public'),
-                # sex=choose('F', 'M')
+                first_name=pick_one('jane', 'joe', 'john', 'person'),
+                # last_name=pick_one('doe', 'smith', 'blow', 'public'),
+                # sex=pick_one('F', 'M')
             )
 
 * I use the :ref:`variable<what is a variable?>` for ``reality`` and ``my_expectation``
@@ -2643,7 +2722,7 @@ I want to see what happens when I try to make a person without a value for the `
     :lineno-start: 35
 
         def test_factory_w_optional_arguments(self):
-            first_name = choose('jane', 'joe', 'john', 'person')
+            first_name = pick_one('jane', 'joe', 'john', 'person')
 
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
@@ -2700,7 +2779,7 @@ What if I want the person to send a message about themselves. How would I do tha
 
 
         def test_factory_w_optional_arguments(self):
-            first_name = choose('jane', 'joe', 'john', 'person')
+            first_name = pick_one('jane', 'joe', 'john', 'person')
 
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
@@ -3511,7 +3590,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
     :lineno-start: 7
     :emphasize-lines: 5-9
 
-    def choose(*choices):
+    def pick_one(*choices):
         return random.choice(choices)
 
 
@@ -3548,13 +3627,13 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
-                first_name=choose(
+                first_name=pick_one(
                     'jane', 'joe', 'john', 'person',
                 ),
-                last_name=choose(
+                last_name=pick_one(
                     'doe', 'smith', 'blow', 'public',
                 ),
-                sex=choose('F', 'M'),
+                sex=pick_one('F', 'M'),
             )
 
             this_year = datetime.datetime.now().year
@@ -3599,7 +3678,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has calculation for t
     :lineno-start: 46
 
         def test_factory_w_optional_arguments(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             )
 
@@ -3872,13 +3951,13 @@ I want to use random values in :ref:`test_factory_person_say_hello`
     :emphasize-lines: 2-12
 
         def test_factory_person_say_hello(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             )
-            last_name = choose(
+            last_name = pick_one(
                 'doe', 'smith', 'blow', 'public',
             )
-            sex = choose('F', 'M')
+            sex = pick_one('F', 'M')
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
                 this_year-120, this_year
@@ -3895,13 +3974,13 @@ I want to use random values in :ref:`test_factory_person_say_hello`
     :emphasize-lines: 14-16
 
         def test_factory_person_say_hello(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             )
-            last_name = choose(
+            last_name = pick_one(
                 'doe', 'smith', 'blow', 'public',
             )
-            sex = choose('F', 'M')
+            sex = pick_one('F', 'M')
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
                 this_year-120, this_year
@@ -4176,13 +4255,13 @@ I want to use random values in :ref:`test_factory_person_say_hello`
     :lineno-start: 140
 
         def test_factory_person_say_hello(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             )
-            last_name = choose(
+            last_name = pick_one(
                 'doe', 'smith', 'blow', 'public',
             )
-            sex = choose('F', 'M')
+            sex = pick_one('F', 'M')
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
                 this_year-120, this_year
@@ -4257,13 +4336,13 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
-                first_name=choose(
+                first_name=pick_one(
                     'jane', 'joe', 'john', 'person',
                 ),
-                last_name=choose(
+                last_name=pick_one(
                     'doe', 'smith', 'blow', 'public',
                 ),
-                sex=choose('F', 'M'),
+                sex=pick_one('F', 'M'),
             )
 
             # this_year = datetime.datetime.now().year
@@ -4286,13 +4365,13 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
-                first_name=choose(
+                first_name=pick_one(
                     'jane', 'joe', 'john', 'person',
                 ),
-                last_name=choose(
+                last_name=pick_one(
                     'doe', 'smith', 'blow', 'public',
                 ),
-                sex=choose('F', 'M'),
+                sex=pick_one('F', 'M'),
             )
             year_of_birth = random_year_of_birth()
 
@@ -4315,7 +4394,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
     :emphasize-lines: 6-10
 
         def test_factory_w_optional_arguments(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person'
             )
 
@@ -4339,7 +4418,7 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
     :lineno-start: 49
 
         def test_factory_w_optional_arguments(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person'
             )
             year_of_birth = random_year_of_birth()
@@ -4363,13 +4442,13 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
     :emphasize-lines: 9-13
 
         def test_factory_person_say_hello(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             )
-            last_name = choose(
+            last_name = pick_one(
                 'doe', 'smith', 'blow', 'public',
             )
-            sex = choose('F', 'M')
+            sex = pick_one('F', 'M')
             # this_year = datetime.datetime.now().year
             # year_of_birth = random.randint(
             #     this_year-120, this_year
@@ -4391,13 +4470,13 @@ I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variabl
     :lineno-start: 67
 
         def test_factory_person_say_hello(self):
-            first_name = choose(
+            first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             )
-            last_name = choose(
+            last_name = pick_one(
                 'doe', 'smith', 'blow', 'public',
             )
-            sex = choose('F', 'M')
+            sex = pick_one('F', 'M')
             year_of_birth = random_year_of_birth()
 
             a_random_person = src.person.factory(
