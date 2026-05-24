@@ -2402,7 +2402,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I add a default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py`` to make it a choice
+* I add a default value for ``last_name`` to make it optional, in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2436,7 +2436,7 @@ I want to see what happens when I try to make a person without a value for the `
     # TypeError
     # SyntaxError
 
-* I add a default value for ``sex`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+* I add a default value for ``sex`` to make it optional, in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2456,7 +2456,7 @@ I want to see what happens when I try to make a person without a value for the `
 
   because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
 
-* I add a default value for ``year_of_birth``
+* I add a default value for ``year_of_birth`` to make it optional
 
   .. code-block:: python
     :lineno-start: 4
@@ -2894,7 +2894,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is joe blow and I am'
+                'Hi, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
             )
             self.assertEqual(reality, my_expectation)
@@ -2919,7 +2919,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for another person
+* I add an :ref:`assertion<what is an assertion?>` for another person to :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -2934,7 +2934,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is joe blow and I am'
+                'Hi, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
             )
             self.assertEqual(reality, my_expectation)
@@ -2947,7 +2947,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is jane doe and I am'
+                'Hi, my name is jane doe and I am'
                 f' {datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3052,7 +3052,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             f' and I am {age}'
         )
 
-* I add an :ref:`assertion<what is an assertion?>` for a new person in :ref:`test_factory_person_says_hello` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for a new person to :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 76
@@ -3066,7 +3066,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is jane doe and I am'
+                'Hi, my name is jane doe and I am'
                 f' {datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3079,7 +3079,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is jane doe and I am'
+                'Hi, my name is jane doe and I am'
                 f'{datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3109,7 +3109,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is john smith and I am'
+                'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3133,7 +3133,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is john smith and I am'
+                'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3147,7 +3147,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(a_person)
             my_expectation = (
-                f'Hi, my name is john smith and I am'
+                'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3178,7 +3178,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(a_person)
             my_expectation = (
-                f'Hi, my name is person public and I am'
+                'Hi, my name is person public and I am'
                 f' {datetime.datetime.now().year-2000}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3204,7 +3204,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is john smith and I am'
+                'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3250,7 +3250,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(a_person)
             my_expectation = (
-                # f'Hi, my name is person public and I am'
+                # 'Hi, my name is person public and I am'
                 # f' {datetime.datetime.now().year-2000}'
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
@@ -3276,7 +3276,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is jane doe and I am'
+                'Hi, my name is jane doe and I am'
                 f' {datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3320,7 +3320,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                # f'Hi, my name is john smith and I am'
+                # 'Hi, my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
@@ -3352,7 +3352,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is joe blow and I am'
+                'Hi, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
             )
             self.assertEqual(reality, my_expectation)
@@ -3395,7 +3395,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                # f'Hi, my name is jane doe and I am'
+                # 'Hi, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
@@ -3459,7 +3459,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                # f'Hi, my name is joe blow and I am'
+                # 'Hi, my name is joe blow and I am'
                 # f' {datetime.datetime.now().year-1996}'
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
@@ -4785,7 +4785,7 @@ I want to write the solution without looking at the tests
 
   because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
 
-* I add a default value for ``sex``
+* I add a default value for ``sex`` to make it optional
 
   .. code-block:: python
     :linenos:
