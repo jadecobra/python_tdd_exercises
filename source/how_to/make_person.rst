@@ -3095,7 +3095,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         'Hi, my name is john smith and I am 446'
      != 'Hi, my name is jane doe and I am 35'
 
-* I change ``my_expectation`` to match ``reality``
+* I change ``my_expectation`` to match ``reality`` for ``john``
 
   .. code-block:: python
     :lineno-start: 89
@@ -3163,7 +3163,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         'Hi, my name is person public and I am 26'
      != 'Hi, my name is john smith and I am 446'
 
-* I change ``my_expectation`` to match ``reality``
+* I change ``my_expectation`` to match ``reality`` for ``a_person``
 
   .. code-block:: python
     :lineno-start: 102
@@ -4217,7 +4217,7 @@ I want to use random values in :ref:`test_factory_person_says_hello`
 
     AssertionError: 'Hi, my name is Z Y and I am X' != ''
 
-* I change ``my_expectation`` to match ``reality``
+* I change ``my_expectation`` to match ``reality`` for ``a_random_person``
 
   .. code-block:: python
     :lineno-start: 152

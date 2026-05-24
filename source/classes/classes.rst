@@ -277,6 +277,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
   .. code-block:: python
     :lineno-start: 88
     :emphasize-lines: 8-9
+    :emphasize-text: joe
 
         def test_classy_person_says_hello(self):
             joe = src.person.Person(
@@ -431,7 +432,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 9-13, 15-20
-    :emphasize-text: Person
+    :emphasize-text: Person jane
 
             # reality = src.person.say_hello(joe)
             reality = joe.say_hello(joe)
@@ -786,33 +787,33 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 * I add an :ref:`assertion<what is an assertion?>` for the next person in :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 109
     :emphasize-lines: 14-18, 20-25
-    :emphasize-text: Person
+    :emphasize-text: Person john
 
-            jane = src.person.factory(
+            jane = src.person.Person(
                 first_name='jane',
                 sex='F',
                 year_of_birth=1991,
             )
 
-            reality = src.person.say_hello(jane)
+            reality = jane.say_hello(jane)
             my_expectation = (
                 'Hi, my name is jane doe and I am'
-                f' {datetime.datetime.now().year-1991}'
+                f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
 
-            john = src.person.factory(
+            john = src.person.Person(
                 first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
             )
 
-            reality = src.person.say_hello(john)
+            reality = john.say_hello(john)
             my_expectation = (
                 'Hi, my name is jane doe and I am'
-                f'{datetime.datetime.now().year-1991}'
+                f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -827,22 +828,22 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
         'Hi, my name is john smith and I am 446'
      != 'Hi, my name is jane doe and I am 35'
 
-* I change ``my_expectation`` to match ``reality``
+* I change ``my_expectation`` to match ``reality`` for ``john``
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 116
     :emphasize-lines: 9-10
 
-            john = src.person.factory(
+            john = src.person.Person(
                 first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
             )
 
-            reality = src.person.say_hello(john)
+            reality = john.say_hello(john)
             my_expectation = (
                 'Hi, my name is john smith and I am'
-                f' {datetime.datetime.now().year-1580}'
+                f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -851,36 +852,37 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for one more person
+* I add an :ref:`assertion<what is an assertion?>` for ``a_person``
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 116
     :emphasize-lines: 14-19, 21-26
+    :emphasize-text: Person a_person
 
-            john = src.person.factory(
+            john = src.person.Person(
                 first_name='john',
                 last_name='smith',
                 year_of_birth=1580,
             )
 
-            reality = src.person.say_hello(john)
+            reality = john.say_hello(john)
             my_expectation = (
                 'Hi, my name is john smith and I am'
-                f' {datetime.datetime.now().year-1580}'
+                f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
 
-            a_person = src.person.factory(
+            a_person = src.person.Person(
                 first_name='person',
                 last_name='public',
                 year_of_birth=2000,
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = a_person.say_hello(a_person)
             my_expectation = (
                 'Hi, my name is john smith and I am'
-                f' {datetime.datetime.now().year-1580}'
+                f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -895,23 +897,23 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
         'Hi, my name is person public and I am 26'
      != 'Hi, my name is john smith and I am 446'
 
-* I change ``my_expectation`` to match ``reality``
+* I change ``my_expectation`` to match ``reality`` for ``a_person``
 
   .. code-block:: python
-    :lineno-start: 102
+    :lineno-start: 129
     :emphasize-lines: 10-11
 
-            a_person = src.person.factory(
+            a_person = src.person.Person(
                 first_name='person',
                 last_name='public',
                 year_of_birth=2000,
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = a_person.say_hello(a_person)
             my_expectation = (
                 'Hi, my name is person public and I am'
-                f' {datetime.datetime.now().year-2000}'
+                f' {calculate_age(2000)}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -920,341 +922,27 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 
   the test passes.
 
-* I add the next person to :ref:`test_classy_person_says_hello` in ``test_person.py``
+* I open a new terminal_ then change directories to ``person``
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 7-11
+    :emphasize-lines: 1
 
-        def test_classy_person_says_hello(self):
-            joe = src.person.Person(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
-            )
-            jane = src.person.Person(
-                first_name='jane',
-                sex='F',
-                year_of_birth=1991,
-            )
+    cd person
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+* I add a git_ commit message in the other terminal_
 
   .. code-block:: python
+    :emphasize-lines: 1-2
 
-    TypeError: Person.__init__() got an unexpected keyword argument 'sex'
-
-* I add ``sex`` to the ``__init__`` :ref:`method<functions>` in ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 3
-
-        def __init__(
-                self, first_name, last_name,
-                year_of_birth, sex,
-            ):
-            return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Person.__init__() missing 1 required positional argument: 'sex'
-
-  I did not provide a value for ``sex`` when I made ``joe``, and the ``factory`` :ref:`function<what is a function?>` has a default value of ``'M'`` for it
-
-* I add a default value for ``sex`` in the  ``__init__`` :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 3
-
-        def __init__(
-                self, first_name, last_name,
-                year_of_birth, sex=None,
-            ):
-            return None
-
-  the terminal_ is my friend, and shows SyntaxError_
-
-  .. code-block:: python
-
-    SyntaxError: parameter without a default follows parameter with a default
-
-  :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
-
-* I add a default value for ``year_of_birth``
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 3
-
-    def __init__(
-            self, first_name, last_name=None,
-            year_of_birth=None, sex=None,
-        ):
-        return None
-
-  the test passes.
+    git commit -am 'add test_classy_person_says_hello'
 
 ----
 
-* I add the next person
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 6-10
-
-            jane = src.person.Person(
-                first_name='jane',
-                sex='F',
-                year_of_birth=1991,
-            )
-            john = src.person.Person(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
-
-
-    # Exceptions seen
-
-  the test is still green.
-
-* I copy the :ref:`for loop<what is a for loop?>` with the :ref:`assertion<what is an assertion?>` from :ref:`test_factory_person_says_hello` and paste it in :ref:`test_classy_person_says_hello`
-
-  .. code-block:: python
-    :lineno-start: 94
-    :emphasize-lines: 7-16
-
-            john = src.person.Person(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
-
-            for person in (joe, jane, john):
-                with self.subTest(name=person.get('first_name')):
-                    self.assertEqual(
-                        src.person.say_hello(person),
-                        (
-                            f'Hi, my name is {person.get("first_name")} '
-                            f'{person.get("last_name")} '
-                            f'and I am {person.get("age")}'
-                        )
-                    )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Person' object has no attribute 'get'
-
-  the ``Person`` :ref:`class<what is a class?>` does not have a :ref:`method<what is a method?>` named ``get``
-
-* I can use :ref:`class attributes<test_attribute_error_w_class_attributes>` directly with no need for a ``get`` :ref:`method<what is a method?>`. I change the line for the `subTest method`_
-
-  .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 2
-
-            for person in (joe, jane, john):
-                with self.subTest(name=person.first_name):
-                    self.assertEqual(
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Person' object has no attribute 'first_name'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Person' object has no attribute 'get'
-
-  the test calls the ``say_hello`` :ref:`function<what is a function?>` which takes in a :ref:`dictionary<what is a dictionary?>` and calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`, the ``Person`` object_ does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
-
-* I can call :ref:`methods<what is a method?>` from outside a :ref:`class<what is a class?>` the way I use a :ref:`class attribute<test_attribute_error_w_class_attributes>`. I change the call in the :ref:`assertion<what is an assertion?>` in ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 2
-
-                    self.assertEqual(
-                        person.hello(person),
-                        (
-                            f'Hi, my name is {person.get("first_name")} '
-                            f'{person.get("last_name")} '
-                            f'and I am {person.get("age")}'
-                        )
-                    )
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Person' object has no attribute 'hello'
-
-* I add the :ref:`method<what is a method?>` to the ``Person`` :ref:`class<what is a class?>` in ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 8-9
-
-        def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
-            self.first_name = first_name
-            return None
-
-        def say_hello():
-            return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Person.hello() takes 0 positional arguments but 2 were given
-
-  the test calls the :ref:`method<what is a method?>` with one input and the definition takes no input
-
-* I add the `staticmethod decorator`_ to the :ref:`method<what is a method?>` because it does not use anything in the :ref:`class<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 8-10
-
-        def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
-            self.first_name = first_name
-            return None
-
-        @staticmethod
-        def say_hello():
-            return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Person.hello() takes 0 positional arguments
-               but 1 was given
-
-* I add a name to the definition
-
-  .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 2
-
-        @staticmethod
-        def say_hello(person):
-            return None
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Person' object has no attribute 'get'
-
-* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_classy_person_says_hello` in ``test_person.py`` to use the ``first_name`` :ref:`class attribute<test_attribute_error_w_class_attributes>`
-
-  .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 4
-
-                    self.assertEqual(
-                        person.hello(person),
-                        (
-                            f'Hi, my name is {person.first_name} '
-                            f'{person.get("last_name")} '
-                            f'and I am {person.get("age")}'
-                        )
-                    )
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Person' object has no attribute 'get'
-
-* I make the same change for the last name
-
-  .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 5
-
-                    self.assertEqual(
-                        person.hello(person),
-                        (
-                            f'Hi, my name is {person.first_name} '
-                            f'{person.last_name} '
-                            f'and I am {person.get("age")}'
-                        )
-                    )
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: 'Person' object has no attribute 'last_name'. Did you mean: 'first_name'?
-
-* I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for ``last_name`` to the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 6
-
-        def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
-            self.first_name = first_name
-            self.last_name = last_name
-            return None
-
-        @staticmethod
-        def say_hello(person):
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Person' object has no attribute 'get'
+*********************************************************************************
+extract get_age method
+*********************************************************************************
+
+* I go back to the terminal_ that is running the tests
 
 * I want to use a :ref:`method<what is a method?>` to calculate the age. I change the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
