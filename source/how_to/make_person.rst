@@ -1,6 +1,6 @@
 .. meta::
-  :description: A complete, beginner-friendly Python Test-Driven Development (TDD) tutorial walking step-by-step through building a person dictionary factory function. Learn project setup with uv and git, writing failing tests with unittest and pytest-watcher, resolving AttributeError/TypeError/NameError/SyntaxError, dynamic age calculation using the datetime module, generating random test parameters using random.choice and random.randint, and refactoring with starred parameter lists and double-star (**) dictionary unpacking.
-  :keywords: Python TDD tutorial for beginners, test driven development python dictionary, python factory function returning dict, step by step pytest tutorial, how to use uv python package manager, pytest-watcher automatic test runner, unittest assertEqual AssertionError, datetime.datetime.now year calculation python, how to use random.choice in tests, python unexpected keyword argument TypeError, python parameters without default values order, python double star dictionary unpacking, red green refactor example, python functions with optional keyword arguments, catching NameError and AttributeError in python tests
+  :description: A step-by-step Python Test-Driven Development (TDD) tutorial for beginners building a person dictionary factory function. Learn modern project setup with uv init and git; automate testing with pytest-watcher and unittest; and systematically resolve AssertionError, NameError, AttributeError, TypeError, and SyntaxError. Covers advanced refactoring using datetime.datetime.now(), random.choice, random.randint, starred parameter lists (*args), and double-star (**) dictionary unpacking.
+  :keywords: Jacob Itegboje, Python TDD tutorial for beginners, step by step python test driven development, how to use uv python package manager, pytest-watcher automatic test runner, unittest assertEqual AssertionError, datetime.datetime.now year calculation, how to use random.choice in tests, random.randint test parameters, python unexpected keyword argument TypeError, python parameters without default values order, python double star dictionary unpacking, red green refactor example, catching NameError and AttributeError in python tests, how to fix TypeError: 'NoneType' object is not callable, why does my test show NameError: name 'src' is not defined, python SyntaxError: parameter without a default follows parameter with a default, testing python factory function returning dict, starred expression
 
 .. include:: ../links.rst
 
@@ -22,14 +22,14 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`. I think they are the two important :ref:`objects<what is a class?>` to know in Python_.
+This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`, the two important :ref:`objects<what is a class?>` to know in Python_.
 
 Imagine I want to make a contact list or database of people. I can use a :ref:`function<what is a function?>` to represent filling out information for a person, for example
 
 * First Name
 * Last Name (Surname)
 * Sex
-* Date of Birth
+* Year of Birth
 
 ----
 
@@ -645,11 +645,11 @@ test_factory_w_keyword_arguments
         ):
         return {}
 
-  the test passes because ``{}`` and ``dict()`` are two ways to :ref:`make the empty dictionary<test_making_a_dictionary>`
+  the test passes because ``{}`` and ``dict()`` are two ways to :ref:`make the empty dictionary<test_making_a_dictionary>`.
 
 ----
 
-* I want the expected :ref:`dictionary<what is a dictionary?>` in the test to have a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given when the ``factory`` :ref:`function<what is a function?>` is called. I add the :ref:`key<test_keys_of_a_dictionary>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -728,17 +728,18 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 5-6
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return {'first_name': 'first_name'}
         return {'first_name': 'jane'}
 
-  the test passes. I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
+  the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
+* I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -748,20 +749,6 @@ test_factory_w_keyword_arguments
             first_name = 'jane'
 
             reality = src.person.factory(
-                # first_name='first_name',
-                first_name='jane',
-                last_name='last_name',
-                sex='M',
-                year_of_birth=2000,
-            )
-            my_expectation = dict(
-                # first_name='first_name',
-                first_name='jane',
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
 
@@ -790,50 +777,30 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 7
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name='last_name',
-                sex='M',
-                year_of_birth=2000,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  I now only need to change the value of ``first_name`` in one place in the test
+  the test is still green. I now only need to change the value of ``first_name`` in one place in the test.
 
 ----
 
-* I want the expected :ref:`dictionary<what is a dictionary?>` to have a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>`. I add it to ``my_expectation`` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 12
+    :emphasize-lines: 16
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
                 last_name='last_name',
                 sex='M',
                 year_of_birth=2000,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
                 last_name='last_name',
             )
@@ -846,19 +813,22 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane'}
-                 != {'first_name': 'jane', 'last_name': 'last_name'}
+    AssertionError:
+        {'first_name': 'jane'}
+     != {'first_name': 'jane', 'last_name': 'last_name'}
 
 * I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-8
+    :emphasize-lines: 6-10
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return {'first_name': 'first_name'}
+        # return {'first_name': 'jane'}
         return {
             'first_name': 'jane',
             'last_name': 'last_name',
@@ -870,12 +840,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 6-7, 13-14
+    :emphasize-lines: 8-9, 17-18
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
                 # last_name='last_name',
                 last_name='doe',
@@ -883,6 +855,8 @@ test_factory_w_keyword_arguments
                 year_of_birth=2000,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
                 # last_name='last_name',
                 last_name='doe',
@@ -896,8 +870,9 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    AssertionError: {'first_name': 'jane', 'last_name': 'last_name'}
-                 != {'first_name': 'jane', 'last_name': 'doe'}
+    AssertionError:
+        {'first_name': 'jane', 'last_name': 'last_name'}
+     != {'first_name': 'jane', 'last_name': 'doe'}
 
   because I changed the value for ``last_name`` in ``my_expectation``
 
@@ -905,20 +880,24 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7
+    :emphasize-lines: 9-10
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return {'first_name': 'first_name'}
+        # return {'first_name': 'jane'}
         return {
             'first_name': 'jane',
+            # 'last_name': 'last_name',
             'last_name': 'doe',
         }
 
-  the test passes. I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
+  the test passes.
+
+* I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -929,33 +908,20 @@ test_factory_w_keyword_arguments
             last_name = 'doe'
 
             reality = src.person.factory(
-                first_name=first_name,
-                # last_name='last_name',
-                last_name='doe',
-                sex='M',
-                year_of_birth=2000,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                # last_name='last_name',
-                last_name='doe',
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 8-9, 16-17
+    :emphasize-lines: 10-11, 20-21
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
                 # last_name='last_name',
                 # last_name='doe',
@@ -964,6 +930,8 @@ test_factory_w_keyword_arguments
                 year_of_birth=2000,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
                 # last_name='last_name',
                 # last_name='doe',
@@ -974,54 +942,36 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 7
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex='M',
-                year_of_birth=2000,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  I now only need to change the value of ``first_name`` in one place in the test
+  the test is still green. I now only need to change the value of ``first_name`` in one place in the test.
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>` with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 14
+    :emphasize-lines: 22
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
                 sex='M',
                 year_of_birth=2000,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
                 sex='M',
             )
@@ -1042,14 +992,17 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 8
+    :emphasize-lines: 11
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return {'first_name': 'first_name'}
+        # return {'first_name': 'jane'}
         return {
             'first_name': 'jane',
+            # 'last_name': 'last_name',
             'last_name': 'doe',
             'sex': 'M',
         }
@@ -1060,21 +1013,29 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 8-9, 15-16
+    :emphasize-lines: 12-13, 23-24
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
                 # sex='M',
                 sex='F',
                 year_of_birth=2000,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
                 # sex='M',
                 sex='F',
@@ -1098,21 +1059,26 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 8
+    :emphasize-lines: 11-12
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return {'first_name': 'first_name'}
+        # return {'first_name': 'jane'}
         return {
             'first_name': 'jane',
+            # 'last_name': 'last_name',
             'last_name': 'doe',
+            # 'sex': 'M',
             'sex': 'F',
         }
 
-  the test passes. I typed the value for ``sex`` two times in the test, which means I have to make a change in two places every time I want a different value for it.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
+  the test passes.
+
+* I typed the value for ``sex`` two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1124,28 +1090,12 @@ test_factory_w_keyword_arguments
             sex = 'F'
 
             reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                # sex='M',
-                sex='F',
-                year_of_birth=2000,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                # sex='M',
-                sex='F',
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 10-11, 18-19
+    :emphasize-lines: 14-15, 26-27
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1153,7 +1103,11 @@ test_factory_w_keyword_arguments
             sex = 'F'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
                 # sex='M',
                 # sex='F',
@@ -1161,7 +1115,11 @@ test_factory_w_keyword_arguments
                 year_of_birth=2000,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
                 # sex='M',
                 # sex='F',
@@ -1172,35 +1130,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 7
-
-        def test_factory_w_keyword_arguments(self):
-            first_name = 'jane'
-            last_name = 'doe'
-            sex = 'F'
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=2000,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  I now only need to change the value of ``sex`` in one place in the test
+  the test is still green. I now only need to change the value of ``sex`` in one place in the test.
 
 ----
 
@@ -1208,7 +1138,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 16
+    :emphasize-lines: 28
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1216,14 +1146,26 @@ test_factory_w_keyword_arguments
             sex = 'F'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
+                # sex='M',
+                # sex='F',
                 sex=sex,
                 year_of_birth=2000,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
+                # sex='M',
+                # sex='F',
                 sex=sex,
                 age=2026-2000,
             )
@@ -1245,18 +1187,23 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9
+    :emphasize-lines: 13
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return {'first_name': 'first_name'}
+        # return {'first_name': 'jane'}
         return {
             'first_name': 'jane',
+            # 'last_name': 'last_name',
             'last_name': 'doe',
+            # 'sex': 'M',
             'sex': 'F',
             'age': 26,
         }
+
 
   the test passes.
 
@@ -1264,7 +1211,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 10-11, 17-18
+    :emphasize-lines: 16-17, 29-30
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1272,15 +1219,27 @@ test_factory_w_keyword_arguments
             sex = 'F'
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
+                # sex='M',
+                # sex='F',
                 sex=sex,
                 # year_of_birth=2000,
                 year_of_birth=1996,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
+                # sex='M',
+                # sex='F',
                 sex=sex,
                 # age=2026-2000,
                 age=2026-1996,
@@ -1306,7 +1265,30 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9
+    :emphasize-lines: 13-14
+
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        # return {'first_name': 'first_name'}
+        # return {'first_name': 'jane'}
+        return {
+            'first_name': 'jane',
+            # 'last_name': 'last_name',
+            'last_name': 'doe',
+            # 'sex': 'M',
+            'sex': 'F',
+            # 'age': 26,
+            'age': 30,
+        }
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
 
     def factory(
             first_name, last_name,
@@ -1319,9 +1301,7 @@ test_factory_w_keyword_arguments
             'age': 30,
         }
 
-  the test passes. I typed the year of birth two times in the test, which means I have to make a change in two places every time I want a different value for it.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove the repetition of the year of birth from ``test_person.py``
+* I typed the year of birth two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of the year of birth from ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1334,29 +1314,12 @@ test_factory_w_keyword_arguments
             year_of_birth = 1996
 
             reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                # year_of_birth=2000,
-                year_of_birth=1996,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                # age=2026-2000,
-                age=2026-1996,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of the year of birth
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 12-13, 20-21
+    :emphasize-lines: 18-19, 32-33
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1365,16 +1328,28 @@ test_factory_w_keyword_arguments
             year_of_birth = 1996
 
             reality = src.person.factory(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
+                # sex='M',
+                # sex='F',
                 sex=sex,
                 # year_of_birth=2000,
                 # year_of_birth=1996,
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
+                # first_name='first_name',
+                # first_name='jane',
                 first_name=first_name,
+                # last_name='last_name',
+                # last_name='doe',
                 last_name=last_name,
+                # sex='M',
+                # sex='F',
                 sex=sex,
                 # age=2026-2000,
                 # age=2026-1996,
@@ -1450,10 +1425,6 @@ I want the value of the age to be a calculation based on the current year so tha
     import datetime
     import src.person
     import unittest
-
-
-    def this_year():
-        return None
 
   ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``
 
@@ -3164,8 +3135,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person',
-            last_name = 'public',
+            first_name = 'person'
+            last_name = 'public'
             year_of_birth = 2000
             age = (
                 datetime.datetime.now().year
@@ -3185,8 +3156,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
     :lineno-start: 95
     :emphasize-lines: 10-15, 21-24
 
-            first_name = 'person',
-            last_name = 'public',
+            first_name = 'person'
+            last_name = 'public'
             year_of_birth = 2000
             age = (
                 datetime.datetime.now().year
@@ -3490,8 +3461,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a messag
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person',
-            last_name = 'public',
+            first_name = 'person'
+            last_name = 'public'
             year_of_birth = 2000
             age = (
                 datetime.datetime.now().year
@@ -4003,7 +3974,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 
     src.person.factory(
         first_name=first_name,
-        sex='F'
+        sex='F',
         year_of_birth=year_of_birth,
     )
 
@@ -4013,7 +3984,7 @@ I want to use random values in :ref:`test_factory_person_say_hello`
 
     src.person.factory(
         first_name=first_name,
-        sex='F'
+        sex='F',
         year_of_birth=year_of_birth,
         last_name='doe'
     )
@@ -5002,7 +4973,7 @@ I want to write the solution without looking at the tests
     TypeError: say_hello() takes 0 positional arguments
                but 1 was given
 
-  because the :ref:`function definition<how to make a function>` for ``say_hello`` does not allow calling it with inputs (the parentheses are empty) and the test sends as input.
+  because the :ref:`function definition<how to make a function>` for ``say_hello`` does not allow calling it with inputs (the parentheses are empty) and the test sends input.
 
 * I add a name to the :ref:`function definition<how to make a function>`
 
@@ -5061,7 +5032,7 @@ I want to write the solution without looking at the tests
 
   the test sends a :ref:`dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` in it
 
-* I remove the first `return statement`_ and change the second one to an :ref:`f-string<what is string interpolation?>` with the the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
+* I remove the first `return statement`_ and change the second one to an :ref:`f-string<what is string interpolation?>` with the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
 
   .. code-block:: python
     :lineno-start: 4
