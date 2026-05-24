@@ -4677,7 +4677,7 @@ I want to write the solution without looking at the tests
      != {'first_name': Y, 'last_name': 'doe',
          'sex': 'M', 'age': X}
 
-  because the :ref:`value<test_values_of_a_dictionary>` the ``factory`` :ref:`function<what is a function?>` returned for the ``age`` :ref:`key<test_keys_of_a_dictionary>` has 4 digits (a year), and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
+  because the ``factory`` :ref:`function<what is a function?>` returned 4 digits (a year) as the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
 
 * I add an `import statement`_ for the `datetime module`_ at the top of the file_
 
@@ -5064,7 +5064,7 @@ I want to write the solution without looking at the tests
 
   the test sends a :ref:`dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` in it
 
-* I remove the first `return statement`_ and change the second one to an :ref:`f-string<what is string interpolation?>` with the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
+* I return an :ref:`f-string<what is string interpolation?>` with the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
 
   .. code-block:: python
     :lineno-start: 4
@@ -5074,8 +5074,8 @@ I want to write the solution without looking at the tests
     def say_hello(argument):
         return (
             f'Hi, my name is {argument.get("first_name")}'
-            f' {argument.get("last_name")} '
-            f'and I am {argument.get("age")}'
+            f' {argument.get("last_name")}'
+            f' and I am {argument.get("age")}'
         )
         return argument
         return 'Hi, my name is jane doe and I am 66'
@@ -5100,8 +5100,8 @@ I want to write the solution without looking at the tests
     def say_hello(a_dictionary):
         return (
             f'Hi, my name is {a_dictionary.get("first_name")}'
-            f' {a_dictionary.get("last_name")} '
-            f'and I am {a_dictionary.get("age")}'
+            f' {a_dictionary.get("last_name")}'
+            f' and I am {a_dictionary.get("age")}'
         )
         return a_dictionary
         return 'Hi, my name is jane doe and I am 66'
@@ -5109,13 +5109,16 @@ I want to write the solution without looking at the tests
 * I remove the other `return statements`_
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
+
+    import datetime
+
 
     def say_hello(a_dictionary):
         return (
             f'Hi, my name is {a_dictionary.get("first_name")}'
-            f' {a_dictionary.get("last_name")} '
-            f'and I am {a_dictionary.get("age")}'
+            f' {a_dictionary.get("last_name")}'
+            f' and I am {a_dictionary.get("age")}'
         )
 
 
@@ -5140,7 +5143,7 @@ I want to write the solution without looking at the tests
             'age': (
                 datetime.datetime.today().year
                -year_of_birth
-            )
+            ),
         }
 
   This ``factory`` :ref:`function<what is a function?>` only has two parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name`` and ``sex``)
