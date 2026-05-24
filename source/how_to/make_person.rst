@@ -3945,10 +3945,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 ----
 
 *********************************************************************************
-test say_hello with random values
+test_factory_person_says_hello with random values
 *********************************************************************************
 
-I want to use random values in :ref:`test_factory_person_says_hello`
+I want to use random values to :ref:`test_factory_person_says_hello`
 
 * I go back to the terminal_ that is running the tests
 
@@ -4278,7 +4278,8 @@ I want to use random values in :ref:`test_factory_person_says_hello`
   .. code-block:: python
     :emphasize-lines: 1-2
 
-    git commit -am 'test say_hello with random values'
+    git commit -am \
+    'test_factory_person_says_hello with random values'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 

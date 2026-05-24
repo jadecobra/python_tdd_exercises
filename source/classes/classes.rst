@@ -939,12 +939,132 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 ----
 
 *********************************************************************************
-extract get_age method
+test_classy_person_says_hello with random values
 *********************************************************************************
+
+I want to use random values to :ref:`test_classy_person_says_hello`
 
 * I go back to the terminal_ that is running the tests
 
-* I want to use a :ref:`method<what is a method?>` to calculate the age. I change the :ref:`assertion<what is an assertion?>` in ``test_person.py``
+* I add a random person with random values for the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.Person``
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 2-5, 7-12, 14-18
+
+        def test_classy_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
+            sex = pick_one('F', 'M')
+            year_of_birth = get_random_year_of_birth()
+
+            a_random_person = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = a_random_person.say_hello(
+                a_random_person
+            )
+            my_expectation = ''
+            self.assertEqual(reality, my_expectation)
+
+            joe = src.person.Person(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+
+  the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'Hi, my name is Z Y and I am X' != ''
+
+* I change ``my_expectation`` to match ``reality`` for ``a_random_person``
+
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 11-14
+
+            a_random_person = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = a_random_person.say_hello(
+                a_random_person
+            )
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {calculate_age(year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+  the test passes
+
+* I remove the commented lines and the other people from :ref:`test_classy_person_says_hello` because ``a_random_person`` covers their cases
+
+  .. code-block:: python
+    :lineno-start: 88
+
+        def test_classy_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
+            sex = pick_one('F', 'M')
+            year_of_birth = get_random_year_of_birth()
+
+            a_random_person = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = a_random_person.say_hello(
+                a_random_person
+            )
+            my_expectation = (
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {calculate_age(year_of_birth)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'test_classy_person_says_hello with random values'
+
+----
+
+*********************************************************************************
+extract get_age method
+*********************************************************************************
+
+I make the values for ``first_name`` in the tests the same way each time, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use :ref:`class attributes<what is a class attribute?>` to remove repetition of how I make it, then have all the :ref:`methods<what is a method?>` reference it
+
+* I go back to the terminal_ that is running the tests
+
+
+*********************************************************************************
+extract get_age method
+*********************************************************************************
+
+I want to use a :ref:`method<what is a method?>` to calculate the age.
+
+* I go back to the terminal_ that is running the tests
+
+* I change the :ref:`assertion<what is an assertion?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 102
