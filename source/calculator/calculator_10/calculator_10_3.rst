@@ -902,7 +902,7 @@ test_streamlit_calculator_w_decimals
 
 ----
 
-* I keep writing ``self.tester.button(key).click().run()``, time to add a :ref:`method<what is a function?>` for button presses
+* I keep writing ``self.tester.button(key).click().run()``, time to add a :ref:`method<what is a method?>` for button presses
 
   .. code-block:: python
     :lineno-start: 6
@@ -915,7 +915,7 @@ test_streamlit_calculator_w_decimals
 
         def setUp(self):
 
-* I use the new :ref:`method<what is a function?>` in :ref:`test_streamlit_session_state`
+* I use the new :ref:`method<what is a method?>` in :ref:`test_streamlit_session_state`
 
   .. code-block:: python
     :lineno-start: 59
@@ -984,7 +984,7 @@ test_streamlit_calculator_w_decimals
 
         def test_streamlit_calculator_w_decimals(self):
 
-* I use the ``press_button`` :ref:`method<what is a function?>` in :ref:`test_streamlit_calculator_w_decimals`
+* I use the ``press_button`` :ref:`method<what is a method?>` in :ref:`test_streamlit_calculator_w_decimals`
 
   .. code-block:: python
     :lineno-start: 83

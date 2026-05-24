@@ -11,6 +11,26 @@ A class_ is a definition for something. I think of it as :ref:`attributes (varia
 
 Everything in Python_ is an object_, which is a class_. This means that everything in Python_ has a class_ definition somewhere. Knowing how classes_ work and how to make them shows how everything in Python_ works.
 
+----
+
+*********************************************************************************
+what is a class attribute?
+*********************************************************************************
+
+A :ref:`class attribute<test_attribute_error_w_class_attributes>` is a :ref:`variable<what is a variable?>` that belongs to a class_
+
+
+----
+
+*********************************************************************************
+what is a method?
+*********************************************************************************
+
+A :ref:`method<what is a method?>` is a :ref:`function<what is a function?>` that belongs to a class_
+
+
+----
+
 *********************************************************************************
 how to make a class
 *********************************************************************************
@@ -18,10 +38,10 @@ how to make a class
 classes_ are made with
 
 * the class_ keyword
-* a name in :ref:`CapWords format<CapWords>` (use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` do - naming things is its own challenge)
+* a name in :ref:`CapWords format<CapWords>` (use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` do - naming things is its own challenge)
 * parentheses and the parent class (optional) with a colon at the end
 * :ref:`attributes<test_attribute_error_w_class_attributes>` (optional)
-* :ref:`methods<what is a function?>` (optional)
+* :ref:`methods<what is a method?>` (optional)
 
 .. code-block:: python
 

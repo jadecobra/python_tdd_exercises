@@ -679,23 +679,23 @@ how to make a Python file for the tests in the 'tests' directory
 
       .. tip:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
-    * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a function?>` for , this is the tool that contains the :ref:`methods<what is a function?>` I will use to test code in this book
-    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a function?>` and :ref:`attributes<test_attribute_error_w_class_attributes>` of the `unittest.TestCase class`_, I do not have to make them because someone else already did
+    * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a method?>` for , this is the tool that contains the :ref:`methods<what is a method?>` I will use to test code in this book
+    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a method?>` and :ref:`attributes<test_attribute_error_w_class_attributes>` of the `unittest.TestCase class`_, I do not have to make them because someone else already did
 
   - ``def test_failure``
 
     * def_ is the Python_ keyword for making :ref:`methods (functions) <what is a function?>`, see :ref:`functions<what is a function?>` for more
-    * ``test_failure`` is the name of the :ref:`method<what is a function?>` I used for :ref:`this first test<test_failure>`
+    * ``test_failure`` is the name of the :ref:`method<what is a method?>` I used for :ref:`this first test<test_failure>`
 
       .. tip:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
-    * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().`` when I want to use something from the `unittest.TestCase class`_
+    * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().`` when I want to use something from the `unittest.TestCase class`_
 
       .. tip:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name though it is easier to stick with convention for this one
 
     * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>` (a way to make sure something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`)
 
-      - assertFalse_ is a :ref:`method<what is a function?>` in the `unittest.TestCase class`_ that checks if its input is :ref:`False<test_what_is_false>`
+      - assertFalse_ is a :ref:`method<what is a method?>` in the `unittest.TestCase class`_ that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem

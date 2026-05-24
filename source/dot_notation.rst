@@ -112,7 +112,7 @@ module.AClass.attribute
     child = module.AClass()
     child.attribute
 
-- defined in ``module.py`` with ``__init__()`` :ref:`method<what is a function?>`
+- defined in ``module.py`` with ``__init__()`` :ref:`method<what is a method?>`
 
   .. code-block:: python
 

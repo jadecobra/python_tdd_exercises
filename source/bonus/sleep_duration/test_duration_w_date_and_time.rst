@@ -168,7 +168,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 
     ValueError: invalid literal for int() with base 10: '1999/12/31 22'
 
-  because the test calls the ``get_difference`` :ref:`method<what is a function?>` in the expectation which uses ``int()``
+  because the test calls the ``get_difference`` :ref:`method<what is a method?>` in the expectation which uses ``int()``
 
 * I change it to return ``wake_time`` and ``sleep_time``
 
@@ -315,7 +315,7 @@ I copy the value from the left side of the :ref:`AssertionError<what causes Asse
 
 and it passes
 
-The `datetime.datetime.strptime`_ :ref:`method<what is a function?>` returns a `datetime.datetime`_ object, if given 2 strings_ as inputs - a timestamp and a pattern that is for the timestamp. The pattern provided is
+The `datetime.datetime.strptime`_ :ref:`method<what is a method?>` returns a `datetime.datetime`_ object, if given 2 strings_ as inputs - a timestamp and a pattern that is for the timestamp. The pattern provided is
 
 - ``%d`` for days
 - ``%m`` for months
@@ -404,7 +404,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
 
   the test is green again
 
-* I add calls to the `datetime.datetime.strptime`_ :ref:`method<what is a function?>` in ``test_duration_w_date_and_time``
+* I add calls to the `datetime.datetime.strptime`_ :ref:`method<what is a method?>` in ``test_duration_w_date_and_time``
 
   .. code-block:: python
 
@@ -523,7 +523,7 @@ test_get_datetime
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I want a test for the ``get_datetime`` :ref:`function<what is a function?>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it call ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<what is a function?>`
+I want a test for the ``get_datetime`` :ref:`function<what is a function?>` so I change the name of ``test_datetime_objects`` to ``test_get_datetime`` and make it call ``src.sleep_duration.get_datetime`` which calls the `datetime.datetime.strptime`_ :ref:`method<what is a method?>`
 
 .. code-block:: python
 
@@ -869,7 +869,7 @@ The challenge was to write a program_ that calculates the difference between a g
 * :ref:`test_duration_calculation`
 * :ref:`test_duration_w_an_earlier_wake_than_sleep_time <how to measure sleep duration: test_duration_w_an_earlier_wake_than_sleep_time>`
 * :ref:`test_duration_w_hours_and_minutes<how to measure sleep duration: test_duration_w_hours_and_minutes>`
-* `test_datetime_objects`_ where I used `Python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<what is a function?>` which I used to change a string_ to a `datetime.datetime`_ object
+* `test_datetime_objects`_ where I used `Python's online documentation`_ to read about the `datetime.datetime.strptime`_ :ref:`method<what is a method?>` which I used to change a string_ to a `datetime.datetime`_ object
 * `test_get_datetime`_
 * :ref:`test_duration_w_date_and_time <how to measure sleep duration: test_duration_w_date_and_time>` where I used
 

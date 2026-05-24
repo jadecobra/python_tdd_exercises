@@ -391,7 +391,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test passes.
 
-* I also add an ``assert`` :ref:`method<what is a function?>` for the `assertRaisesRegex`_ block
+* I also add an ``assert`` :ref:`method<what is a method?>` for the `assertRaisesRegex`_ block
 
   .. code-block:: python
 

@@ -172,7 +172,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   I need a way to change a string_ that has a date and time to a `datetime.datetime`_ object
 
-* I use the `datetime.datetime.strptime`_ :ref:`method<what is a function?>` to make it happen
+* I use the `datetime.datetime.strptime`_ :ref:`method<what is a method?>` to make it happen
 
   .. code-block:: python
 

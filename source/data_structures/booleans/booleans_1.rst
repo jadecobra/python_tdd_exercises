@@ -17,7 +17,7 @@ booleans 1
 
 ----
 
-There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a function?>` to test if any of the :ref:`Python basic data structures<data structures>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries<what is a dictionary?>`, are False_ or True_.
+There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and `assertTrue`_ :ref:`methods<what is a method?>` to test if any of the :ref:`Python basic data structures<data structures>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries<what is a dictionary?>`, are False_ or True_.
 
 *********************************************************************************
 preview
@@ -644,7 +644,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the :ref:`method<what is a function?>`
+I change the :ref:`method<what is a method?>`
 
 .. code-block:: python
   :lineno-start: 13
@@ -748,7 +748,7 @@ I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
 
 ----
 
-I change the :ref:`method<what is a function?>`
+I change the :ref:`method<what is a method?>`
 
 .. code-block:: python
   :lineno-start: 10
@@ -826,7 +826,7 @@ the test passes.
 
     AssertionError: 0 is not true
 
-* I change the :ref:`method<what is a function?>` to assertFalse_
+* I change the :ref:`method<what is a method?>` to assertFalse_
 
   .. code-block:: python
     :lineno-start: 15
@@ -894,7 +894,7 @@ the test passes.
 
   I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -991,7 +991,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 ----
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1073,7 +1073,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
     AssertionError: 0.0 is not true
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 18
@@ -1145,7 +1145,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
   I use ``0.1`` for all the `binary floating point numbers`_ that are bigger than ``0.0``.
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -1261,7 +1261,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the :ref:`method<what is a function?>`
+I change the :ref:`method<what is a method?>`
 
 .. code-block:: python
   :lineno-start: 20
@@ -1329,7 +1329,7 @@ the test passes.
 
     AssertionError: 'text' is not false
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 13
@@ -1506,7 +1506,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   :ref:`a tuple with things is NOT False<is a tuple False or True?>`
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 14
@@ -1613,7 +1613,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -1690,7 +1690,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: [1, 2, 3, 'n'] is not false
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 15
@@ -1792,7 +1792,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1875,7 +1875,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   :ref:`a set with things is NOT False<is a set False or True?>`
 
-* I change the :ref:`method<what is a function?>`
+* I change the :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 16

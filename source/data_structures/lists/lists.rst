@@ -332,7 +332,7 @@ how to see the attributes and methods of an object
 
 ----
 
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of :ref:`objects<what is a class?>`, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` of :ref:`objects<what is a class?>`, it is part of `Python's Built-in Functions`_
 
 ----
 
@@ -767,7 +767,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: [0, 1, 2, 'n'] is not None
 
-the :ref:`method<what is a function?>` returns a copy of the list_
+the :ref:`method<what is a method?>` returns a copy of the list_
 
 ----
 
@@ -856,7 +856,7 @@ test_count_number_of_times_item_is_in_a_list
 
 ----
 
-I add a test for the next :ref:`method<what is a function?>`
+I add a test for the next :ref:`method<what is a method?>`
 
 .. code-block:: python
   :lineno-start: 78
@@ -1266,7 +1266,7 @@ the test passes.
 
 ----
 
-* maybe the :ref:`method<what is a function?>` returned the same value I gave, I change the list_ to find out
+* maybe the :ref:`method<what is a method?>` returned the same value I gave, I change the list_ to find out
 
   .. code-block:: python
     :lineno-start: 91
@@ -1490,7 +1490,7 @@ the test passes.
 
     self.assertEqual(a_list.index('1st', 1), 4)
 
-  the test passes, the second input is the position I want the :ref:`method<what is a function?>` to start from
+  the test passes, the second input is the position I want the :ref:`method<what is a method?>` to start from
 
 * I try the same thing with the other :ref:`assertions<what is an assertion?>`
 
@@ -1551,7 +1551,7 @@ test_insert_item_at_position_in_a_list
 
 ----
 
-I add a test for the next :ref:`method<what is a function?>`
+I add a test for the next :ref:`method<what is a method?>`
 
 .. code-block:: python
   :lineno-start: 99
@@ -1924,7 +1924,7 @@ test_remove_first_time_item_is_in_a_list
 
 ----
 
-time for the next :ref:`method<what is a function?>`
+time for the next :ref:`method<what is a method?>`
 
 .. code-block:: python
   :lineno-start: 114
@@ -1986,7 +1986,7 @@ the test is green again. The `remove method`_ returns :ref:`None<what is None?>`
 
     AssertionError: Lists differ: [1, 2, 'n'] != [0, 1, 2, 'n']
 
-  the :ref:`method<what is a function?>` removes the item given as input from the list_
+  the :ref:`method<what is a method?>` removes the item given as input from the list_
 
 * I change the expectation
 
@@ -2205,7 +2205,7 @@ test_sort_a_list
 
 ----
 
-I add a test for the last :ref:`method<what is a function?>` in the TODO list
+I add a test for the last :ref:`method<what is a method?>` in the TODO list
 
 .. code-block:: python
   :lineno-start: 127
@@ -2323,7 +2323,7 @@ the test passes.
 
             self.assertEqual(a_list, [0, 1, 2, 3])
 
-  the test passes. The name of the :ref:`method<what is a function?>` is sort_ and I gave it a list_ that is sorted
+  the test passes. The name of the :ref:`method<what is a method?>` is sort_ and I gave it a list_ that is sorted
 
 * I change the list_ to see what happens when it is NOT sorted
 

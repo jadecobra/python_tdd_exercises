@@ -801,7 +801,7 @@ test_attributes_and_methods_of_dictionaries
 
 ----
 
-I add a new test with the `dir built-in function`_ to see the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` of :ref:`dictionaries<what is a dictionary?>`
+I add a new test with the `dir built-in function`_ to see the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` of :ref:`dictionaries<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 41
@@ -965,7 +965,7 @@ test_clear_empties_a_dictionary
 
 ----
 
-* I add a test for the first :ref:`method<what is a function?>`
+* I add a test for the first :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 93
@@ -1104,7 +1104,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: {'key': 'value'} is not None
 
-this :ref:`method<what is a function?>` returns a copy of the :ref:`dictionary<what is a dictionary?>`, :ref:`same as with lists<test_copy_a_list>`
+this :ref:`method<what is a method?>` returns a copy of the :ref:`dictionary<what is a dictionary?>`, :ref:`same as with lists<test_copy_a_list>`
 
 ----
 
@@ -1210,7 +1210,7 @@ test_fromkeys_makes_a_dictionary_from_an_iterable
 
 ----
 
-I add a test for the next :ref:`method<what is a function?>` from the TODO list
+I add a test for the next :ref:`method<what is a method?>` from the TODO list
 
 .. code-block:: python
   :lineno-start: 105
@@ -1371,7 +1371,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   still green.
 
-* the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a function?>` without inputs the terminal_ showed :ref:`TypeError<what causes TypeError?>`
+* the :ref:`dictionary<what is a dictionary?>` made with the `fromkeys method`_ has :ref:`None<what is None?>` as the default values. When I called the :ref:`method<what is a method?>` without inputs the terminal_ showed :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -1818,7 +1818,7 @@ This works because the `items method`_ returns an :ref:`iterable<what is an iter
 
 ----
 
-* I add another key-value pair to the :ref:`dictionary<what is a dictionary?>` to see what the :ref:`method<what is a function?>` does when there is more than one
+* I add another key-value pair to the :ref:`dictionary<what is a dictionary?>` to see what the :ref:`method<what is a method?>` does when there is more than one
 
   .. code-block:: python
     :lineno-start: 127
@@ -2651,7 +2651,7 @@ the test passes.
 
 ----
 
-* The error message showed that the :ref:`method<what is a function?>` expects at least 1 argument, I add a second argument
+* The error message showed that the :ref:`method<what is a method?>` expects at least 1 argument, I add a second argument
 
   .. code-block:: python
     :lineno-start: 178
@@ -2894,7 +2894,7 @@ test_update_a_dictionary
 
 ----
 
-* I add a test for the next :ref:`method<what is a function?>` from the TODO list
+* I add a test for the next :ref:`method<what is a method?>` from the TODO list
 
   .. code-block:: python
     :lineno-start: 186
@@ -3162,7 +3162,7 @@ test_values_of_a_dictionary
 
 ----
 
-I add a test for the last :ref:`method<what is a function?>` in my TODO list
+I add a test for the last :ref:`method<what is a method?>` in my TODO list
 
 .. code-block:: python
   :lineno-start: 201

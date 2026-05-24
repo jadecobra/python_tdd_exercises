@@ -40,7 +40,7 @@ how to use class methods and attributes
 
 ----
 
-:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a function?>` can be used inside a :ref:`class<what is a class?>` with ``self``
+:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` can be used inside a :ref:`class<what is a class?>` with ``self``
 
 for example
 
@@ -58,7 +58,7 @@ for example
           return self.a_method()
 
 * ``a_method`` can use the ``an_attribute`` :ref:`class attribute<test_attribute_error_w_class_attributes>` with ``self.an_attribute`` instead of ``AClass.an_attribute``
-* ``another_method`` can use the ``a_method`` :ref:`method<what is a function?>` with ``self.method`` instead of ``AClass.a_method()``
+* ``another_method`` can use the ``a_method`` :ref:`method<what is a method?>` with ``self.method`` instead of ``AClass.a_method()``
 
 .. note:: ``self`` is Python_ convention, I can use any name I want
 

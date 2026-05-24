@@ -442,7 +442,7 @@ requirements
         (wake_time, sleep_time)
     )
 
-* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to see which :ref:`methods<what is a function?>` of strings_ can help me break one apart or get specific parts from it
+* I want to get the hours part of ``wake_time`` and ``sleep_time`` which are the characters before ``:``. I add a call to the `help system`_ to see which :ref:`methods<what is a method?>` of strings_ can help me break one apart or get specific parts from it
 
   .. code-block:: python
 
@@ -450,7 +450,7 @@ requirements
         self.assertEqual(help(str))
     ...
 
-  the terminal_ is my friend, and shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<what is a function?>` that looks like what I am looking for
+  the terminal_ is my friend, and shows `Python documentation for strings`_ and I read the descriptions until I see a :ref:`method<what is a method?>` that looks like what I am looking for
 
   .. code-block:: shell
 
@@ -481,7 +481,7 @@ test_string_splitting
 :red:`RED`: make it fail
 ---------------------------------------------------------------------------------
 
-I add a failing test for the `str.split`_ :ref:`method<what is a function?>` to see what it does
+I add a failing test for the `str.split`_ :ref:`method<what is a method?>` to see what it does
 
 .. code-block:: python
 
@@ -541,7 +541,7 @@ the test passes.
 
   the test passes which means I know how to get the different parts of ``wake_time`` and ``sleep_time``
 
-* I add calls to the `str.split`_ :ref:`method<what is a function?>` in ``test_duration_w_hours``
+* I add calls to the `str.split`_ :ref:`method<what is a method?>` in ``test_duration_w_hours``
 
   .. code-block:: python
 
@@ -848,7 +848,7 @@ The challenge is to write a program_ that calculates the difference between a gi
 
 * `test_string_splitting`_ where I
 
-  - used the `str.split`_ :ref:`method<what is a function?>` I found by calling the `help system`_ to split a string_ on a separator
+  - used the `str.split`_ :ref:`method<what is a method?>` I found by calling the `help system`_ to split a string_ on a separator
   - and indexed the :ref:`list <lists>` from the split to get specific items
 
 * `test_converting_strings_to_numbers`_ with ``int()``

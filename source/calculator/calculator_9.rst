@@ -272,8 +272,8 @@ test_home_page
   the test passes.
 
   - ``client = src.website.app.test_client()`` points the name ``client`` to the Flask_ app in ``website.py``
-  - ``response = client.get('/')`` points the name ``response`` to the result of the call to the ``get`` :ref:`method<what is a function?>` of the :ref:`client object<what is a class?>`
-  - the ``get`` :ref:`method<what is a function?>` calls the `GET request method`_ which is an `HTTP request method`_ to get information from a server
+  - ``response = client.get('/')`` points the name ``response`` to the result of the call to the ``get`` :ref:`method<what is a method?>` of the :ref:`client object<what is a class?>`
+  - the ``get`` :ref:`method<what is a method?>` calls the `GET request method`_ which is an `HTTP request method`_ to get information from a server
   - ``client.get('/')`` returns a :ref:`response object<what is a class?>`
   - ``'/'`` is short for root or home in this case, the homepage of the website I am making also known as ``index.html``
   - ``response.status_code`` gets the ``status_code`` :ref:`attribute<test_attribute_error_w_class_attributes>` or the :ref:`response object<what is a class?>`
@@ -508,9 +508,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 this is like :ref:`AttributeError<what causes AttributeError?>`, the address for ``calculate`` does not exist yet.
 
-* ``client.post`` calls the ``post`` :ref:`method<what is a function?>`
+* ``client.post`` calls the ``post`` :ref:`method<what is a method?>`
 * which calls the `POST request method`_, an `HTTP request method`_ that sends information to a server. I am using it to test sending numbers to the website to do a calculation
-* the ``post`` :ref:`method<what is a function?>` is called with 2 inputs in this case
+* the ``post`` :ref:`method<what is a method?>` is called with 2 inputs in this case
 
   - ``'/calculate'`` - the path to the :ref:`function<what is a function?>` in ``website.py``
   - ``data`` - a :ref:`dictionary<what is a dictionary?>` with the inputs I want the :ref:`function<what is a function?>` to process
@@ -1100,7 +1100,7 @@ how to change a bytes object to a string
 
         result = calculator.add(first_input, second_input)
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` for the result
+* I use the ``__getattribute__`` :ref:`method<what is a method?>` for the result
 
   .. code-block:: python
     :lineno-start: 34

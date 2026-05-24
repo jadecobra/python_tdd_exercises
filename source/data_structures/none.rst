@@ -505,7 +505,7 @@ the test passes.
 how to test if something is an instance of a class
 *********************************************************************************
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a function?>` I can use to test if an :ref:`object<what is a class?>` is a child (instance) of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can use to test if an :ref:`object<what is a class?>` is a child (instance) of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
 
 * I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 

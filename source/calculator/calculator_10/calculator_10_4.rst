@@ -1154,7 +1154,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
     def plus_minus():
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` to get the :ref:`add function<test_addition>` from the :ref:`calculator module<how to make a calculator>`
+* I use the ``__getattribute__`` :ref:`method<what is a method?>` to get the :ref:`add function<test_addition>` from the :ref:`calculator module<how to make a calculator>`
 
   .. code-block:: python
     :lineno-start: 19

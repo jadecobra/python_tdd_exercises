@@ -10,7 +10,7 @@
 how to make a calculator 8
 #################################################################################
 
-I can use the ``__getattribute__`` :ref:`method<what is a function?>` that comes with every :ref:`Python object<what is a class?>` in the :ref:`calculator tests<how to make a calculator>`
+I can use the ``__getattribute__`` :ref:`method<what is a method?>` that comes with every :ref:`Python object<what is a class?>` in the :ref:`calculator tests<how to make a calculator>`
 
 ----
 
@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.calculator' has no attribute 'BOOM!!!'
 
-* ``__getattribute__`` is a :ref:`method<what is a function?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<what is a class?>`
+* ``__getattribute__`` is a :ref:`method<what is a method?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<what is a class?>`
 
   - if the name is NOT an :ref:`attribute<what is an attribute?>` it raises :ref:`AttributeError<what causes AttributeError?>`
   - if the name is an :ref:`attribute<what is an attribute?>` it returns the object it points to
@@ -745,7 +745,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for all 52 sub tests
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
+* I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 169
@@ -813,7 +813,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for all 4 sub tests
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
+* I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 150
@@ -865,7 +865,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for the 4 tests
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
+* I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 108
@@ -974,7 +974,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` for the 4 sub tests
 
-* I use the ``__getattribute__`` :ref:`method<what is a function?>` in the :ref:`assertion<what is an assertion?>`
+* I use the ``__getattribute__`` :ref:`method<what is a method?>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 64

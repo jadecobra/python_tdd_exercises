@@ -1003,7 +1003,7 @@ I know that :ref:`variables<what is a variable?>`, :ref:`functions<what is a fun
 
 I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is a class?>` are attributes of the :ref:`class<what is a class?>`.
 
-:ref:`functions<what is a function?>` in a :ref:`class<what is a class?>` are also attributes, they are called :ref:`methods<what is a function?>`
+:ref:`functions<what is a function?>` in a :ref:`class<what is a class?>` are also attributes, they are called :ref:`methods<what is a method?>`
 
 ----
 
@@ -1068,7 +1068,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
   ``method_00`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
 
-* I make it a :ref:`method<what is a function?>` with the def_ keyword
+* I make it a :ref:`method<what is a method?>` with the def_ keyword
 
   .. code-block:: python
     :lineno-start: 23
@@ -1143,7 +1143,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
     AttributeError: type object 'AClass' has no attribute 'method_02'. Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a function?>` to ``AClass`` in ``attribute_error.py``
+* I add the :ref:`method<what is a method?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 30
@@ -1181,7 +1181,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
     AttributeError: type object 'AClass' has no attribute 'method_03'. Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a function?>` to ``AClass`` in ``attribute_error.py``
+* I add the :ref:`method<what is a method?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 23

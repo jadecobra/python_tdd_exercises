@@ -1430,7 +1430,7 @@ I want the value of the age to be a calculation based on the current year so tha
 
   ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``
 
-* I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a function?>` from the `datetime module`_
+* I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a method?>` from the `datetime module`_
 
   .. code-block:: python
     :lineno-start: 8

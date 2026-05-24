@@ -83,7 +83,7 @@ bool at work
 
 ----
 
-I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`` :ref:`method<what is a function?>`
+I add a new :ref:`assertion<what is an assertion?>` to the ``test_what_is_false`` :ref:`method<what is a method?>`
 
 .. code-block:: python
   :lineno-start: 6

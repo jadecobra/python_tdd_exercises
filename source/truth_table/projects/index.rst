@@ -6,7 +6,7 @@
 truth table: projects
 #################################################################################
 
-You have seen the `Truth Table`_ from Mathematics_ and I used the assertFalse_ and assertTrue_ :ref:`methods<what is a function?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>` to go through each operation.
+You have seen the `Truth Table`_ from Mathematics_ and I used the assertFalse_ and assertTrue_ :ref:`methods<what is a method?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>` to go through each operation.
 
 Time to write programs that use the truth table
 

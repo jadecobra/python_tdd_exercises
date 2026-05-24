@@ -76,7 +76,7 @@ test_logical_true
 
 * I right click on ``test_truth_table.py`` select ``Rename`` then change it to ``test_nullary_unary.py``
 
-* I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a function?>` in ``test_nullary_unary.py``
+* I change the names of the :ref:`class<what is a class?>` and :ref:`method<what is a method?>` in ``test_nullary_unary.py``
 
   .. code-block:: python
     :linenos:
