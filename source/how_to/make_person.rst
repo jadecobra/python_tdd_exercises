@@ -2232,11 +2232,11 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
                 # first_name=pick_one(
                 #     'jane', 'joe', 'john', 'person',
                 # ),
-                first_name=pick_one(names),
+                first_name=pick_one(*names),
                 # last_name=pick_one(
                 #     'doe', 'smith', 'blow', 'public',
                 # ),
-                last_name=pick_one(names),
+                last_name=pick_one(*names),
                 sex=pick_one('F', 'M'),
             )
 
@@ -2254,8 +2254,8 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
             )
 
             a_person = dict(
-                first_name=pick_one(names),
-                last_name=pick_one(names),
+                first_name=pick_one(*names),
+                last_name=pick_one(*names),
                 sex=pick_one('F', 'M'),
             )
 
@@ -2306,8 +2306,8 @@ I want to see what happens when I try to make a person without a value for the `
 * I make a copy of :ref:`test_factory_w_keyword_arguments` and paste it below in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 11-16, 18-21, 23-31
+    :lineno-start: 30
+    :emphasize-lines: 11-15, 17-21, 23-26, 28-36
 
             reality = src.person.factory(
                 **a_person,
@@ -2320,10 +2320,15 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(reality, my_expectation)
 
         def test_factory_w_keyword_arguments(self):
+            names = (
+                'jane', 'joe', 'john', 'person',
+                'doe', 'smith', 'blow', 'public',
+            )
+
             a_person = dict(
-                first_name=pick_one('jane', 'joe', 'john', 'person'),
-                last_name=pick_one('doe', 'smith', 'blow', 'public'),
-                sex=pick_one('F', 'M')
+                first_name=pick_one(*names),
+                last_name=pick_one(*names),
+                sex=pick_one('F', 'M'),
             )
 
             this_year = datetime.datetime.now().year
@@ -2347,7 +2352,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I change the name of the new test to :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 30
     :emphasize-lines: 11
     :emphasize-text: test_factory_w_optional_arguments
 
@@ -2362,23 +2367,27 @@ I want to see what happens when I try to make a person without a value for the `
             self.assertEqual(reality, my_expectation)
 
         def test_factory_w_optional_arguments(self):
-            a_person = dict(
-                first_name=pick_one('jane', 'joe', 'john', 'person'),
-                last_name=pick_one('doe', 'smith', 'blow', 'public'),
-                sex=pick_one('F', 'M'),
+            names = (
+                'jane', 'joe', 'john', 'person',
+                'doe', 'smith', 'blow', 'public',
             )
 
 * I comment out the ``last_name`` :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 4
+    :lineno-start: 40
+    :emphasize-lines: 9
 
         def test_factory_w_optional_arguments(self):
+            names = (
+                'jane', 'joe', 'john', 'person',
+                'doe', 'smith', 'blow', 'public',
+            )
+
             a_person = dict(
-                first_name=pick_one('jane', 'joe', 'john', 'person'),
-                # last_name=pick_one('doe', 'smith', 'blow', 'public'),
-                sex=pick_one('F', 'M')
+                first_name=pick_one(*names),
+                # last_name=pick_one(*names),
+                sex=pick_one('F', 'M'),
             )
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -2388,7 +2397,7 @@ I want to see what happens when I try to make a person without a value for the `
     TypeError: factory() missing 1
                required positional argument: 'last_name'
 
-  because this test does not provide a value for ``last_name`` when it calls the ``factory`` :ref:`function<what is a function?>`, I have to make it a choice
+  because this test no longer gives a value for ``last_name`` when it calls the ``factory`` :ref:`function<what is a function?>`, I have to make it a choice
 
 ----
 
@@ -2421,7 +2430,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 68
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -2478,7 +2487,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 57
     :emphasize-lines: 7
 
             reality = src.person.factory(
@@ -2551,14 +2560,19 @@ I want to see what happens when I try to make a person without a value for the `
 * I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 5
+    :lineno-start: 40
+    :emphasize-lines: 10
 
         def test_factory_w_optional_arguments(self):
+            names = (
+                'jane', 'joe', 'john', 'person',
+                'doe', 'smith', 'blow', 'public',
+            )
+
             a_person = dict(
-                first_name=pick_one('jane', 'joe', 'john', 'person'),
-                # last_name=pick_one('doe', 'smith', 'blow', 'public'),
-                # sex=pick_one('F', 'M')
+                first_name=pick_one(*names),
+                # last_name=pick_one(*names),
+                # sex=pick_one('F', 'M'),
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -2575,7 +2589,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 57
     :emphasize-lines: 8
 
             reality = src.person.factory(
@@ -2648,7 +2662,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I no longer need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` for ``first_name``
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 40
     :emphasize-lines: 2
 
         def test_factory_w_optional_arguments(self):
@@ -2719,7 +2733,7 @@ I want to see what happens when I try to make a person without a value for the `
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 40
 
         def test_factory_w_optional_arguments(self):
             first_name = pick_one('jane', 'joe', 'john', 'person')
@@ -2774,7 +2788,7 @@ What if I want the person to send a message about themselves. How would I do tha
 * I add a new test to ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 40
     :emphasize-lines: 21-26, 28-30
 
 
