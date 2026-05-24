@@ -771,7 +771,7 @@ the test is green again, the :ref:`extend method<test_extend_adds_items_from_an_
 ----
 
 ****************************************************************************************
-how to use the setUp method to reset class attributes for every test
+use the setUp method
 ****************************************************************************************
 
 The problem is that both tests :ref:`append<test_append_adds_item_to_end_of_a_list>` to ``self.a_list``. I was making an empty :ref:`list<lists>` for each test before, I need a better way. The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can use to make sure the :ref:`class attributes<test_attribute_error_w_class_attributes>` are always reset at the beginning of the test, so that the values are new for each test.
