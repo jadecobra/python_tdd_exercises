@@ -104,8 +104,8 @@ table of contents
   telephone<how_to/telephone>
   make a person<how_to/make_person>
   classes/index
-  data_structures/none
   what causes AttributeError?<exceptions/AttributeError>
+  data_structures/none
   what is a boolean?<data_structures/booleans/booleans_1>
   truth table<truth_table/index>
   make a calculator<calculator/calculator_1/index>
