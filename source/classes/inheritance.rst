@@ -7,7 +7,7 @@
 family ties
 #################################################################################
 
-In :ref:`test_attributes_and_methods_of_classes` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is a class?>` and also saw a lot of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` that I did not add, which led to the question of where they came from.
+In :ref:`test_attributes_and_methods_of_classes` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is a class?>` and also saw a lot of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that I did not add, which led to the question of where they came from.
 
 In object oriented programming there is a concept called Inheritance_, it allows me to define new :ref:`objects<what is a class?>` that inherit from other :ref:`objects<what is a class?>`.
 
@@ -89,7 +89,7 @@ test_making_a_class_w_pass
 *********************************************************************************
 
 
-to review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what is a class?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` do
+to review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what is a class?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` do
 
 ----
 
@@ -338,7 +338,7 @@ the test is still green. pass_ is a placeholder, it makes sure I am following Py
 test_attributes_and_methods_of_objects
 *********************************************************************************
 
-I add a test to show the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` of object_
+I add a test to show the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of object_
 
 ----
 
@@ -558,7 +558,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-* I add a test for the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<what is a class?>`
+* I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 47

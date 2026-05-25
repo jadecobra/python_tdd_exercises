@@ -1,3 +1,7 @@
+.. meta::
+  :description: Learn how to transition from dictionary factories to Python classes using Test-Driven Development (TDD). This beginner-friendly tutorial covers the class keyword, __init__ constructor methods, self parameters, instance attributes, unittest.TestCase.setUp fixtures, and inspecting objects with the dir() function. Systematically debug common errors like TypeError, AttributeError, and SyntaxError.
+  :keywords: Jacob Itegboje, Pumping Python, Python class tutorial, TDD Python class, __init__ constructor method, self parameter Python, unittest setUp method, dir function class, factory function vs class, TypeError Person takes no arguments, AttributeError module has no attribute, unexpected keyword argument, multiple values for argument, SyntaxError parameter without default, staticmethod decorator, class attributes and methods, Red Green Refactor
+
 .. include:: ../links.rst
 
 .. _constructor: https://grokipedia.com/page/Constructor_(object-oriented_programming)
@@ -9,7 +13,7 @@
 classes
 #################################################################################
 
-I made a :ref:`functions<what is a function?>` that make :ref:`dictionaries<what is a dictionary?>` and strings_ in :ref:`how to make a person`. I can also do the same thing with a :ref:`class<what is a class?>` since it is a group of :ref:`attributes (variables)<what causes AttributeError?>` and :ref:`methods (functions) <what is a function?>` that belong together.
+I made :ref:`functions<what is a function?>` that make :ref:`dictionaries<what is a dictionary?>` and strings_ in :ref:`how to make a person`. I can also do the same thing with a :ref:`class<what is a class?>` since it is a group of :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a function?>` that belong together.
 
 ----
 
@@ -22,6 +26,17 @@ These are the tests I have by the end of the chapter
 .. literalinclude:: ../code/tests/test_person_classes.py
   :language: python
   :linenos:
+
+*********************************************************************************
+questions about classes
+*********************************************************************************
+
+Questions to think about as I go through the chapter
+
+* :ref:`what is a class?`
+* :ref:`what is a class attribute?`
+* :ref:`what is a method?`
+* :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset class attributes for every test>`
 
 ----
 
@@ -207,7 +222,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
         Person.__init__() got
         multiple values for argument 'first_name'
 
-  because the ``__init__`` `constructor method`_ takes the :ref:`class<what is a class?>` it belongs to as the first argument
+  because the ``__init__`` `constructor method`_ takes the instance it belongs to as the first argument
 
 * I add ``self`` as the first argument the way I do with all the test :ref:`methods<what is a method?>` in the book
 
@@ -351,7 +366,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
   .. code-block:: python
 
     TypeError:
-        Person.get() takes 1 positional argument
+        Person.say_hello() takes 1 positional argument
         but 2 were given
 
   because :ref:`methods<what is a method?>` take the :ref:`class<what is a class?>` they belong to as the first argument.
@@ -610,7 +625,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 
   because I do not have a definition for ``first_name`` in the ``Person`` :ref:`object<what is a class?>`
 
-* I add the :ref:`class attribute<test_attribute_error_w_class_attributes>` to the ``__init__`` :ref:`method<what is a method?>` so that the ``say_hello`` :ref:`method<what is a function?>` can use it
+* I add the :ref:`class attribute<what is a class attribute?>` to the ``__init__`` :ref:`method<what is a method?>` so that the ``say_hello`` :ref:`method<what is a function?>` can use it
 
   .. code-block:: python
     :lineno-start: 29
@@ -784,7 +799,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
                 f' {self.last_name} and I am {age}'
             )
 
-* I add an :ref:`assertion<what is an assertion?>` for the next person in :ref:`test_factory_person_says_hello` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for the next person in :ref:`test_classy_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 109
@@ -2175,6 +2190,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
             self.random_first_name = get_random_name()
             self.random_last_name = get_random_name()
             self.random_sex = pick_one('F', 'M')
+
             this_year = datetime.datetime.now().year
             self.random_year_of_birth = random.randint(
                 this_year-120, this_year
@@ -2207,81 +2223,20 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 
     class TestPerson(unittest.TestCase):
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am 'move class attributes to setUp method'
+
 ----
-
-* I can call a :ref:`method<what is a method?>` that belongs to a :ref:`class<what is a class?>` without the need to pass in the :ref:`class<what is a class?>` as input since I can use the :ref:`class<what is a class?>` with ``self``. I remove the repetition of the ``Person`` object_ in the call to the ``say_hello`` :ref:`method<what is a method?>` in ``test_person.py``
-
-  .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 4
-    :emphasize-text: ( )
-
-            for person in (joe, jane, john):
-                with self.subTest(name=person.first_name):
-                    self.assertEqual(
-                        person.hello(),
-                        (
-                            f'Hi, my name is {person.first_name} '
-                            f'{person.last_name} '
-                            f'and I am {person.get_age()}'
-                        )
-                    )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Person.hello() missing 1 required positional argument: 'person'
-
-* I remove the `staticmethod decorator`_ from the ``say_hello`` :ref:`method<what is a method?>` in ``person.py``
-
-  .. code-block:: python
-    :lineno-start: 26
-
-        def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
-            self.first_name = first_name
-            self.last_name = last_name
-            return None
-
-        def say_hello(person):
-            return (
-                f'Hi, my name is {person.first_name} '
-                f'{person.last_name} and I am None'
-            )
-
-  the test passes.
-
-  This works because ``person`` in the parentheses is for the ``Person`` :ref:`class<what is a class?>` that the ``say_hello`` :ref:`method<what is a method?>` is part of.
-
-  When I wrapped the ``say_hello`` :ref:`function<what is a function?>` with the `staticmethod decorator`_, it was a :ref:`function<what is a function?>` that did not use other parts (:ref:`class attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>`) of the :ref:`class<what is a class?>` it belongs to.
-
-* I use the ``Rename Symbol`` feature of the `Integrated Development Environment (IDE)`_ to change the name of the input parameter from ``person`` to ``self`` to match :ref:`Python convention<how to use class methods and attributes>`
-
-  .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 1, 3, 4
-    :emphasize-text: self
-
-        def say_hello(self):
-            return (
-                f'Hi, my name is {self.first_name} '
-                f'{self.last_name} and I am None'
-            )
-
-  the test is still green, and there is a problem with the last name and age.
 
 *********************************************************************************
 test_attributes_and_methods_of_classes
 *********************************************************************************
 
-
-I used the `dir built-in function`_ in :ref:`lists<what is a list?>` and :ref:`dictionaries<what is a dictionary?>` to show their :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>`. I can also use it with the ``Person`` :ref:`class<what is a class?>`
+Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<what is a class?>` it is given in parentheses. This allows me to explore what an :ref:`object<what is a class?>` contains without looking at the code or reading the documentation, I can then run tests to see what each thing does.
 
 ----
 
@@ -2291,31 +2246,41 @@ I used the `dir built-in function`_ in :ref:`lists<what is a list?>` and :ref:`d
 
 ----
 
-I add a new test
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 140
-  :emphasize-lines: 6-10
+* I add a new test with the `dir built-in function`_ in ``test_person.py``
 
-            self.assertEqual(
-                self.random_classy_person.get_age(),
-                self.new_age
-            )
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 11-14
 
-        def test_attributes_and_methods_of_a_class(self):
-            self.assertEqual(
-                dir(src.person.Person),
-                []
-            )
+              reality = a_random_person.say_hello(
+                  a_random_person
+              )
+              my_expectation = (
+                  f'Hi, my name is {self.random_first_name}'
+                  f' {self.random_last_name} '
+                  f'and I am {self.age}'
+              )
+              self.assertEqual(reality, my_expectation)
+
+          def test_attributes_and_methods_of_a_class(self):
+              reality = dir(src.person.Person)
+              my_expectation = None
+              self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen
+      # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: Lists differ: ['__class__', '__delattr__', '__dict__', '[377 chars]llo'] != []
+    AssertionError: Lists differ:
+        ['__class__', '__delattr__', '__dict__', '[377 chars]llo']
+     != None
+
+  because dir_ returned a :ref:`list <what is a list?>` (anything in square brackets ``[ ]``) and ``my_expectation`` is :ref:`None<what is None?>`
 
 ----
 
@@ -2325,66 +2290,175 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I copy and paste the values from the terminal_ and remove the extra characters I do not need with the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_
+* I copy (:kbd:`ctrl+c`) the values from the terminal_ and paste (:kbd:`ctrl+v`) them as ``my_expectation``
 
-.. code-block:: python
-  :lineno-start: 145
-  :emphasize-lines: 4-36
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 3-6
 
         def test_attributes_and_methods_of_a_class(self):
-            self.assertEqual(
-                dir(src.person.Person),
-                [
-                    '__class__',
-                    '__delattr__',
-                    '__dict__',
-                    '__dir__',
-                    '__doc__',
-                    '__eq__',
-                    '__firstlineno__',
-                    '__format__',
-                    '__ge__',
-                    '__getattribute__',
-                    '__getstate__',
-                    '__gt__',
-                    '__hash__',
-                    '__init__',
-                    '__init_subclass__',
-                    '__le__',
-                    '__lt__',
-                    '__module__',
-                    '__ne__',
-                    '__new__',
-                    '__reduce__',
-                    '__reduce_ex__',
-                    '__repr__',
-                    '__setattr__',
-                    '__sizeof__',
-                    '__static_attributes__',
-                    '__str__',
-                    '__subclasshook__',
-                    '__weakref__',
-                    'get_age',
-                    'hello'
-                ]
-            )
+            reality = dir(src.person.Person)
+            my_expectation = [
+                '__class__', '__delattr__', '__dict__',
+                [371 chars]llo'
+            ]
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows SyntaxError_
+
+  .. code-block:: python
+
+    SyntaxError: unterminated string literal (detected at line 99)
+
+  because I have a closing :ref:`quote<quotes>` (``'``) without a matching opening one
+
+* I add the opening :ref:`quote<quotes>`
+
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 5
+
+        def test_attributes_and_methods_of_a_class(self):
+            reality = dir(src.person.Person)
+            my_expectation = [
+                '__class__', '__delattr__', '__dict__',
+                '[371 chars]llo'
+            ]
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ:
+        ['__c[32 chars]_', '__dir__', '__doc__', '__eq__',
+         '__firstli[329 chars]llo']
+     != ['__c[32 chars]_', '[371 chars]llo']
+
+  it shows me the entire :ref:`list<what is a list?>` below the message
+
+* I copy (:kbd:`ctrl+c`) the values from the terminal_ and paste (:kbd:`ctrl+v`) them as ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 3-32
+    :emphasize-text: __init__ say_hello
+
+        def test_attributes_and_methods_of_a_class(self):
+            reality = dir(src.person.Person)
+            my_expectation = ['__class__',
+    E       -  '__delattr__',
+    E       -  '__dict__',
+    E       -  '__dir__',
+    E       -  '__doc__',
+    E       -  '__eq__',
+    E       -  '__firstlineno__',
+    E       -  '__format__',
+    E       -  '__ge__',
+    E       -  '__getattribute__',
+    E       -  '__getstate__',
+    E       -  '__gt__',
+    E       -  '__hash__',
+    E       -  '__init__',
+    E       -  '__init_subclass__',
+    E       -  '__le__',
+    E       -  '__lt__',
+    E       -  '__module__',
+    E       -  '__ne__',
+    E       -  '__new__',
+    E       -  '__reduce__',
+    E       -  '__reduce_ex__',
+    E       -  '__repr__',
+    E       -  '__setattr__',
+    E       -  '__sizeof__',
+    E       -  '__static_attributes__',
+    E       -  '__str__',
+    E       -  '__subclasshook__',
+    E       -  '__weakref__',
+    E       -  'say_hello']
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'E' is not defined
+
+* I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters
+
+.. code-block:: python
+  :lineno-start: 95
+  :emphasize-lines: 3-34
+  :emphasize-text: __init__ say_hello
+
+        def test_attributes_and_methods_of_a_class(self):
+            reality = dir(src.person.Person)
+            my_expectation = [
+                '__class__',
+                '__delattr__',
+                '__dict__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__firstlineno__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__le__',
+                '__lt__',
+                '__module__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__setattr__',
+                '__sizeof__',
+                '__static_attributes__',
+                '__str__',
+                '__subclasshook__',
+                '__weakref__',
+                'say_hello',
+            ]
+            self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
 
   the test passes.
 
-The attributes I defined in the ``__init__`` :ref:`method<what is a method?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>` definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<test_attribute_error_w_class_attributes>`.
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am \
+    'add test_attributes_and_methods_of_a_class'
+
+The attributes I defined in the ``__init__`` :ref:`method<what is a method?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>` definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<what is a class attribute?>`.
 
 What is the difference between ``dir(src.person.Person)`` and ``dir(src.person.Person('jane'))``?
 
-The 3 :ref:`methods<what is a method?>` I defined in the ``Person`` :ref:`class<what is a class?>` in ``person.py``
+The :ref:`methods<what is a method?>` I defined in the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
 * __init__
-* get_age
-* hello
+* :ref:`say_hello<test_classy_person_says_hello>`
 
-are in the list, and there are others which I never defined, which leads to the question of :ref:`where did they come from?<family ties>`
+are in the :ref:`list<what is a list?>`, and there are others which I did not define, which leads to the question of :ref:`where did they come from?<family ties>`
 
 ----
 
@@ -2424,8 +2498,10 @@ code from the chapter
 review
 *************************************************************************************
 
-* A :ref:`class<what is a class?>` is :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` that belong together
+* A :ref:`class<what is a class?>` is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together
 * A :ref:`class<what is a class?>` can be used to represent something
+* A :ref:`class attributes<what is a class attribute?>` is a :ref:`variable<what is a variable?>` that belongs to a :ref:`class<what is a class?>`
+* A :ref:`method<what is a function?>` is a :ref:`function<what is a function?>` that belongs to a :ref:`class<what is a class?>`
 * :ref:`classes<what is a class?>` can be an easier way to manage data than :ref:`functions<what is a function?>`
 * :ref:`classes<what is a class?>` make it easier to write tests for something
 
@@ -2434,33 +2510,27 @@ review
   * when I find myself writing or doing the same thing two times, I write a :ref:`function<what is a function?>`
   * when I find I have two :ref:`functions<what is a function?>` that use the same information, I write a :ref:`class<what is a class?>`
 
+:ref:`How many questions can you answer about classes?<questions about classes>`
+
 ----
 
 *************************************************************************************
 what is next?
 *************************************************************************************
 
-you have gone through a lot of things and know
+You have gone through a lot of things and know:
+
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`how to raise AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
-* :ref:`how to raise TypeError<TypeError>`
-* :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<list comprehensions>`
-* :ref:`what you can do with dictionaries<dictionaries>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`what you can do with classes<what is a class?>`
+* :ref:`how to make classes<classes>`
 
-:ref:`Would you like to know where the extra attributes and methods of the Person class came from?<family ties>`
+:ref:`Would you like to test what causes AttributeError<what causes AttributeError?>` or :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<family ties>`
+
+You know enough to go into the world and use Python_. If you stopped going through the book at this point you would be fine because you know how to make :ref:`classes<what is a class?>`, :ref:`functions<what is a function?>` and can make :ref:`dictionaries<what is a dictionary>`
 
 ----
 

@@ -1475,7 +1475,7 @@ I want the value of the age to be a calculation based on the current year so tha
   - ``datetime.datetime`` is a call to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
   - ``datetime.datetime.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy!
   - ``datetime.datetime.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
-  - ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` asks for the value of the ``year`` :ref:`class attribute<test_attribute_error_w_class_attributes>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
+  - ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` asks for the value of the ``year`` :ref:`class attribute<what is a class attribute?>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
   that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`
 

@@ -517,7 +517,7 @@ I want to add buttons for the numbers and operations.
             )
             self.tester.run()
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_title`
+* I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_streamlit_calculator_title`
 
   .. code-block:: python
     :lineno-start: 13
@@ -544,7 +544,7 @@ I want to add buttons for the numbers and operations.
 
         def test_streamlit_calculator_display(self):
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_streamlit_calculator_display`
+* I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_streamlit_calculator_display`
 
   .. code-block:: python
     :lineno-start: 16

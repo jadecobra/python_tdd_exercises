@@ -680,7 +680,7 @@ how to make a Python file for the tests in the 'tests' directory
       .. tip:: I can use any name for the :ref:`test class<what is a class?>`, it MUST start with ``Test`` or unittest_ will NOT run the tests in it
 
     * `unittest.TestCase`_ is a :ref:`class <what is a class?>` from the `unittest module`_ that has :ref:`methods<what is a method?>` for , this is the tool that contains the :ref:`methods<what is a method?>` I will use to test code in this book
-    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a method?>` and :ref:`attributes<test_attribute_error_w_class_attributes>` of the `unittest.TestCase class`_, I do not have to make them because someone else already did
+    * ``class TestMagic(unittest.TestCase)`` defines ``TestMagic`` as a "child" of `unittest.TestCase`_ which means I can use the :ref:`methods<what is a method?>` and :ref:`attributes<what is a class attribute?>` of the `unittest.TestCase class`_, I do not have to make them because someone else already did
 
   - ``def test_failure``
 
@@ -689,7 +689,7 @@ how to make a Python file for the tests in the 'tests' directory
 
       .. tip:: I can use any name for the :ref:`test method<what is a function?>`, it MUST start with ``test_`` or unittest_ will NOT run the tests in it
 
-    * ``self.`` lets me use :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().`` when I want to use something from the `unittest.TestCase class`_
+    * ``self.`` lets me use :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``TestMagic`` :ref:`class<what is a class?>` which is a "child" of the `unittest.TestCase class`_, instead of using ``TestMagic().`` or ``unittest.TestCase().`` when I want to use something from the `unittest.TestCase class`_
 
       .. tip:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name though it is easier to stick with convention for this one
 

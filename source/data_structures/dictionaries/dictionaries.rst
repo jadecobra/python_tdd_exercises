@@ -801,7 +801,7 @@ test_attributes_and_methods_of_dictionaries
 
 ----
 
-I add a new test with the `dir built-in function`_ to see the :ref:`attributes<test_attribute_error_w_class_attributes>` and :ref:`methods<what is a method?>` of :ref:`dictionaries<what is a dictionary?>`
+I add a new test with the `dir built-in function`_ to see the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`dictionaries<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 41
@@ -831,7 +831,7 @@ It also gives me a message about how to show the full difference between the two
 
   Diff is 720 characters long. Set self.maxDiff to None to see it.
 
-`unittest.TestCase.maxDiff`_ is a :ref:`class attribute<test_attribute_error_w_class_attributes>` that is used to set the maximum length of differences between 2 items that the terminal_ is my friend, and shows
+`unittest.TestCase.maxDiff`_ is a :ref:`class attribute<what is a class attribute?>` that is used to set the maximum length of differences between 2 items that the terminal_ is my friend, and shows
 
 ----
 

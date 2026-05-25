@@ -1591,7 +1591,7 @@ good
 
 ----
 
-* I made the same client in each test. I add a :ref:`class attribute<test_attribute_error_w_class_attributes>` for it in the `setUp method`_
+* I made the same client in each test. I add a :ref:`class attribute<what is a class attribute?>` for it in the `setUp method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -1604,7 +1604,7 @@ good
 
         def test_home_page(self):
 
-* I use the new :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_home_page`
+* I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_home_page`
 
   .. code-block:: python
     :lineno-start: 11
@@ -1645,7 +1645,7 @@ good
 
 ----
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_calculations`
+* I use the :ref:`class attribute<what is a class attribute?>` in :ref:`test_calculations`
 
   .. code-block:: python
     :lineno-start: 32
@@ -1711,7 +1711,7 @@ good
 
 ----
 
-* I use the :ref:`class attribute<test_attribute_error_w_class_attributes>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
+* I use the :ref:`class attribute<what is a class attribute?>` in :ref:`test_website_handling_zero_division_error<fix handling ZeroDivisionError in division>`
 
   .. code-block:: python
     :lineno-start: 54
