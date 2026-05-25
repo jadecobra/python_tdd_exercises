@@ -1599,14 +1599,6 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
   - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `random module`_ so I can use it in ``test_person.py``
   - I like to sort my `import statements`_ alphabetically
 
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
 * I add a calculation for the age with the `today method`_ to the `return statement`_ in ``person.py``
 
   .. code-block:: python
@@ -1654,14 +1646,6 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
   the test passes.
 
   ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``person.py``.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
 
@@ -1973,31 +1957,47 @@ test factory with random first name
 
   where ``A`` and ``B`` are the different random first names, ``X`` is the random age, ``Y`` is the random sex, and ``Z`` is the random last name
 
-* I add the ``first_name`` input parameter instead of a value that does not change, to the `return statement`_ in ``person.py``
+----
 
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 6-7
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
-        return {
-            # 'first_name': 'jane',
-            'first_name': first_name,
-            # 'last_name': 'doe',
-            'last_name': last_name,
-            # 'sex': 'F',
-            'sex': sex,
-            # 'age': 30,
-            'age': (
-                datetime.datetime.today().year
-              - year_of_birth
-            ),
-        }
+----
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+I add the ``first_name`` input parameter instead of a value that does not change, to the `return statement`_ in ``person.py``
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 6-7
+
+  def factory(
+          first_name, last_name,
+          sex, year_of_birth,
+      ):
+      return {
+          # 'first_name': 'jane',
+          'first_name': first_name,
+          # 'last_name': 'doe',
+          'last_name': last_name,
+          # 'sex': 'F',
+          'sex': sex,
+          # 'age': 30,
+          'age': (
+              datetime.datetime.today().year
+            - year_of_birth
+          ),
+      }
+
+I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I remove the commented lines
 
@@ -2126,9 +2126,9 @@ extract pick_one function
 test factory with a dictionary
 *********************************************************************************
 
-----
-
 The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is that one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
+
+----
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2245,37 +2245,53 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
   I want the :ref:`function<what is a function?>` to take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` (``a_person``) as :ref:`keyword arguments<test_functions_w_keyword_arguments>`.
 
-* I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_functions_w_unknown_arguments`
+----
 
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 5, 12
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-            reality = src.person.factory(
-                # first_name=first_name,
-                # last_name=last_name,
-                # sex=sex,
-                **a_person,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = dict(
-                # first_name=first_name,
-                # last_name=last_name,
-                # sex=sex,
-                **a_person,
-                # age=2026-year_of_birth,
-                # age=(
-                #     datetime.datetime.today().year
-                #   - year_of_birth
-                # ),
-                age=this_year-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
+----
+
+I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_functions_w_unknown_arguments`
+
+.. code-block:: python
+  :lineno-start: 45
+  :emphasize-lines: 5, 12
+
+          reality = src.person.factory(
+              # first_name=first_name,
+              # last_name=last_name,
+              # sex=sex,
+              **a_person,
+              year_of_birth=year_of_birth,
+          )
+          my_expectation = dict(
+              # first_name=first_name,
+              # last_name=last_name,
+              # sex=sex,
+              **a_person,
+              # age=2026-year_of_birth,
+              # age=(
+              #     datetime.datetime.today().year
+              #   - year_of_birth
+              # ),
+              age=this_year-year_of_birth,
+          )
+          self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test is green again, because :ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``*choices``).
+the test is green again, because :ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``*choices``).
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` because they are now only used once, by ``a_person``
 
