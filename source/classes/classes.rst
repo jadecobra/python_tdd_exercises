@@ -2530,7 +2530,7 @@ You have gone through a lot of things and know:
 
 :ref:`Would you like to test what causes AttributeError<what causes AttributeError?>` or :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<family ties>`
 
-You know enough to go into the world and use Python_. If you stopped going through the book at this point you would be fine because you know how to make :ref:`classes<what is a class?>`, :ref:`functions<what is a function?>` and can make :ref:`dictionaries<what is a dictionary?>`
+You know enough to go into the world and use Python_. If you stopped going through the book at this point, you would be fine because you know how to make :ref:`classes<what is a class?>`, :ref:`functions<what is a function?>` and can make :ref:`dictionaries<what is a dictionary?>` which is what is behind a lot of the things you will encounter.
 
 ----
 

@@ -4,139 +4,129 @@ import src.person
 import unittest
 
 
-def choose(*choices):
+def pick_one(*choices):
     return random.choice(choices)
 
 
-def this_year():
-    return datetime.datetime.now().year
-
-
-def random_year_of_birth():
-    return random.randint(
-        this_year()-120, this_year()
-    )
-
-
-def get_age(year_of_birth):
-    return this_year() - year_of_birth
-
-
-class TestPerson(unittest.TestCase):
-
-    RANDOM_NAMES = (
+def get_random_name():
+    return pick_one(
         'jane', 'joe', 'john', 'person',
         'doe', 'smith', 'blow', 'public',
     )
 
+
+class TestPerson(unittest.TestCase):
+
     def setUp(self):
-        self.random_year_of_birth = random_year_of_birth()
-        self.random_new_year_of_birth = random_year_of_birth()
-        self.original_age = get_age(self.random_year_of_birth)
-        self.new_age = get_age(self.random_new_year_of_birth)
-        self.random_first_name = choose(*self.RANDOM_NAMES)
-        self.random_last_name = choose(*self.RANDOM_NAMES)
-        self.random_sex = choose('M', 'F')
-        self.random_factory_person = src.person.factory(
-            first_name=self.random_first_name,
-            last_name=self.random_last_name,
-            sex=self.random_sex,
-            year_of_birth=self.random_year_of_birth,
+        self.random_first_name = get_random_name()
+        self.random_last_name = get_random_name()
+        self.random_sex = pick_one('F', 'M')
+
+        this_year = datetime.datetime.now().year
+        self.random_year_of_birth = random.randint(
+            this_year-120, this_year
         )
-        self.random_classy_person = src.person.Person(
-            first_name=self.random_first_name,
-            last_name=self.random_last_name,
-            sex=self.random_sex,
-            year_of_birth=self.random_year_of_birth,
-        )
+        self.age = this_year - self.random_year_of_birth
 
     def test_factory_w_keyword_arguments(self):
-        self.assertEqual(
-            src.person.factory(
-                first_name=self.random_first_name,
-                last_name=self.random_last_name,
-                sex=self.random_sex,
-                year_of_birth=self.random_year_of_birth,
-            ),
-            self.random_factory_person
+        a_person = dict(
+            first_name=self.random_first_name,
+            last_name=self.random_last_name,
+            sex=self.random_sex,
         )
+
+        reality = src.person.factory(
+            **a_person,
+            year_of_birth=self.random_year_of_birth,
+        )
+        my_expectation = dict(
+            **a_person,
+            age=self.age,
+        )
+        self.assertEqual(reality, my_expectation)
 
     def test_factory_w_optional_arguments(self):
-        self.assertEqual(
-            src.person.factory(
-                first_name=self.random_first_name,
-                year_of_birth=self.random_year_of_birth,
-            ),
-            dict(
-                first_name=self.random_first_name,
-                last_name='doe',
-                sex='M',
-                age=self.original_age,
-            )
+        reality = src.person.factory(
+            first_name=self.random_first_name,
+            year_of_birth=self.random_year_of_birth,
         )
-
-    def expected_greeting(self):
-        return (
-            f'Hi, my name is {self.random_first_name} '
-            f'{self.random_last_name} '
-            f'and I am {self.original_age}'
+        my_expectation = dict(
+            first_name=self.random_first_name,
+            last_name='doe',
+            sex='M',
+            age=self.age,
         )
+        self.assertEqual(reality, my_expectation)
 
     def test_factory_person_says_hello(self):
-        self.assertEqual(
-            src.person.hello(self.random_factory_person),
-            self.expected_greeting()
+        a_random_person = src.person.factory(
+            first_name=self.random_first_name,
+            last_name=self.random_last_name,
+            sex=self.random_sex,
+            year_of_birth=self.random_year_of_birth,
         )
+
+        reality = src.person.say_hello(a_random_person)
+        my_expectation = (
+            f'Hi, my name is {self.random_first_name}'
+            f' {self.random_last_name} '
+            f'and I am {self.age}'
+        )
+        self.assertEqual(reality, my_expectation)
 
     def test_classy_person_says_hello(self):
-        self.assertEqual(
-            self.random_classy_person.hello(),
-            self.expected_greeting()
+        a_random_person = src.person.Person(
+            first_name=self.random_first_name,
+            last_name=self.random_last_name,
+            sex=self.random_sex,
+            year_of_birth=self.random_year_of_birth,
         )
 
-    def test_update_factory_person_year_of_birth(self):
-        self.assertEqual(
-            self.random_factory_person.get('age'),
-            self.original_age
+        reality = a_random_person.say_hello(
+            a_random_person
         )
+        my_expectation = (
+            f'Hi, my name is {self.random_first_name}'
+            f' {self.random_last_name} '
+            f'and I am {self.age}'
+        )
+        self.assertEqual(reality, my_expectation)
 
-        with self.assertRaises(KeyError):
-            self.random_factory_person['year_of_birth']
-        self.assertEqual(
-            self.random_factory_person.setdefault(
-                'year_of_birth', self.random_new_year_of_birth
-            ),
-            self.random_new_year_of_birth
-        )
-        self.assertEqual(
-            self.random_factory_person.get('age'),
-            self.original_age
-        )
-
-        self.assertEqual(
-            src.person.update_year_of_birth(
-                self.random_factory_person,
-                self.random_new_year_of_birth
-            ),
-            dict(
-                first_name=self.random_first_name,
-                last_name=self.random_last_name,
-                sex=self.random_sex,
-                age=self.new_age
-            )
-        )
-
-    def test_update_classy_person_year_of_birth(self):
-        self.assertEqual(
-            self.random_classy_person.get_age(),
-            self.original_age
-        )
-
-        self.random_classy_person.year_of_birth = self.random_new_year_of_birth
-        self.assertEqual(
-            self.random_classy_person.get_age(),
-            self.new_age
-        )
+    def test_attributes_and_methods_of_a_class(self):
+        reality = dir(src.person.Person)
+        my_expectation = [
+            '__class__',
+            '__delattr__',
+            '__dict__',
+            '__dir__',
+            '__doc__',
+            '__eq__',
+            '__firstlineno__',
+            '__format__',
+            '__ge__',
+            '__getattribute__',
+            '__getstate__',
+            '__gt__',
+            '__hash__',
+            '__init__',
+            '__init_subclass__',
+            '__le__',
+            '__lt__',
+            '__module__',
+            '__ne__',
+            '__new__',
+            '__reduce__',
+            '__reduce_ex__',
+            '__repr__',
+            '__setattr__',
+            '__sizeof__',
+            '__static_attributes__',
+            '__str__',
+            '__subclasshook__',
+            '__weakref__',
+            'say_hello',
+        ]
+        self.assertEqual(reality, my_expectation)
 
 
 # Exceptions seen
