@@ -32,12 +32,13 @@ def get_random_year_of_birth():
 class TestPerson(unittest.TestCase):
 
     def test_factory_w_keyword_arguments(self):
+        year_of_birth = get_random_year_of_birth()
+
         a_person = dict(
             first_name=get_random_name(),
             last_name=get_random_name(),
             sex=pick_one('F', 'M'),
         )
-        year_of_birth = get_random_year_of_birth()
 
         reality = src.person.factory(
             **a_person,
@@ -69,7 +70,9 @@ class TestPerson(unittest.TestCase):
         first_name = get_random_name()
         last_name = get_random_name()
         sex = pick_one('F', 'M')
+
         year_of_birth = get_random_year_of_birth()
+        age = calculate_age(year_of_birth)
 
         a_random_person = src.person.factory(
             first_name=first_name,
@@ -81,7 +84,7 @@ class TestPerson(unittest.TestCase):
         reality = src.person.say_hello(a_random_person)
         my_expectation = (
             f'Hi, my name is {first_name} {last_name}'
-            f' and I am {calculate_age(year_of_birth)}'
+            f' and I am {age}'
         )
         self.assertEqual(reality, my_expectation)
 
