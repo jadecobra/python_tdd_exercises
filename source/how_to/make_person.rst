@@ -4740,8 +4740,9 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # factory
     factory = None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -4756,8 +4757,10 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-2
+    :emphasize-lines: 2-4
 
+    # factory
+    # factory = None
     def factory():
         return None
 
@@ -4774,8 +4777,11 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 3-4
 
+    # factory
+    # factory = None
+    # def factory():
     def factory(first_name):
         return None
 
@@ -4792,8 +4798,12 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 4-5
 
+    # factory
+    # factory = None
+    # def factory():
+    # def factory(first_name):
     def factory(first_name, year_of_birth):
         return None
 
@@ -4811,9 +4821,14 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-7
+    :emphasize-lines: 6-12
 
+    # factory
+    # factory = None
+    # def factory():
+    # def factory(first_name):
     def factory(first_name, year_of_birth):
+        # return None
         return {
             'first_name': 'john',
             'last_name': 'doe',
@@ -4821,7 +4836,7 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -4837,9 +4852,14 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3-4
+    :emphasize-lines: 8-9
 
+    # factory
+    # factory = None
+    # def factory():
+    # def factory(first_name):
     def factory(first_name, year_of_birth):
+        # return None
         return {
             # 'first_name': 'john',
             'first_name': first_name,
@@ -4848,7 +4868,7 @@ I want to write the solution without looking at the tests
             'age': 55,
         }
 
-  the first name matches and if the ages are different, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the first name matches and if the ages are different, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -4870,9 +4890,14 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-8
+    :emphasize-lines: 12-13
 
+    # factory
+    # factory = None
+    # def factory():
+    # def factory(first_name):
     def factory(first_name, year_of_birth):
+        # return None
         return {
             # 'first_name': 'john',
             'first_name': first_name,
@@ -4903,17 +4928,23 @@ I want to write the solution without looking at the tests
     import datetime
 
 
+
+    # factory
+    # factory = None
+    # def factory():
+    # def factory(first_name):
     def factory(first_name, year_of_birth):
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I use the `datetime module`_ to get the current year for the ``age`` calculation
+* I use the `datetime module`_ to get the current year, then use it for the ``age`` calculation
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 8-12
+    :lineno-start: 9
+    :emphasize-lines: 10-13
 
     def factory(first_name, year_of_birth):
+        # return None
         return {
             # 'first_name': 'john',
             'first_name': first_name,
@@ -4940,10 +4971,11 @@ I want to write the solution without looking at the tests
 * I add a new input parameter to the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 1-4
+    :lineno-start: 9
+    :emphasize-lines: 1-5
     :emphasize-text: last_name
 
+    # def factory(first_name, year_of_birth):
     def factory(
             first_name, year_of_birth,
             last_name,
@@ -4961,11 +4993,12 @@ I want to write the solution without looking at the tests
 * I add a default value for ``last_name`` so Python_ does not take it is a :ref:`positional argument<test_functions_w_positional_arguments>` when a name is not given
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3
+    :lineno-start: 10
+    :emphasize-lines: 3-4
 
     def factory(
             first_name, year_of_birth,
+            # last_name,
             last_name=None,
         ):
 
@@ -4981,12 +5014,14 @@ I want to write the solution without looking at the tests
 * I add the name to the :ref:`definition of the function<how to make a function>`
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3
+    :lineno-start: 10
+    :emphasize-lines: 4-5
     :emphasize-text: sex
 
     def factory(
             first_name, year_of_birth,
+            # last_name,
+            # last_name=None,
             last_name=None, sex,
         ):
 
@@ -5002,11 +5037,14 @@ I want to write the solution without looking at the tests
 * I add a default value for ``sex`` to make it optional
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
+    :lineno-start: 10
+    :emphasize-lines: 5-6
 
     def factory(
             first_name, year_of_birth,
+            # last_name,
+            # last_name=None,
+            # last_name=None, sex,
             last_name=None, sex=None,
         ):
 
@@ -5030,13 +5068,17 @@ I want to write the solution without looking at the tests
 * I use the ``sex`` input parameter in the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 9-10
+    :lineno-start: 10
+    :emphasize-lines: 13-14
 
     def factory(
             first_name, year_of_birth,
+            # last_name,
+            # last_name=None,
+            # last_name=None, sex,
             last_name=None, sex=None,
         ):
+        # return None
         return {
             # 'first_name': 'john',
             'first_name': first_name,
@@ -5067,13 +5109,17 @@ I want to write the solution without looking at the tests
 * I change the default value of ``sex`` to ``'M'``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3
+    :lineno-start: 10
+    :emphasize-lines: 6-7
 
     def factory(
-            first_name, year_of_birth,
-            last_name=None, sex='M',
-        ):
+        first_name, year_of_birth,
+        # last_name,
+        # last_name=None,
+        # last_name=None, sex,
+        # last_name=None, sex=None,
+        last_name=None, sex='M',
+    ):
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and if the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5095,12 +5141,17 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 8-9
+    :emphasize-lines: 13-14
 
     def factory(
             first_name, year_of_birth,
+            # last_name,
+            # last_name=None,
+            # last_name=None, sex,
+            # last_name=None, sex=None,
             last_name=None, sex='M',
         ):
+        # return None
         return {
             # 'first_name': 'john',
             'first_name': first_name,
@@ -5119,22 +5170,29 @@ I want to write the solution without looking at the tests
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-text: None doe
+    :emphasize-text: doe
 
     AssertionError:
-        {'first_name': Z, 'last_name': None, 'sex': Y, 'age': X}
-     != {'first_name': Z, 'last_name': 'doe', 'sex': Y, 'age': X}
+        {'first_name': Z, 'last_name': None,
+         'sex': Y, 'age': X}
+     != {'first_name': Z, 'last_name': 'doe',
+         'sex': Y, 'age': X}
 
   because the :ref:`assertion<what is an assertion?>` expects ``'doe'`` as the :ref:`value<test_values_of_a_dictionary>` of ``last_name`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` which is its default value
 
 * I change the default value for ``last_name`` to match the expectation
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 6
+    :lineno-start: 10
+    :emphasize-lines: 7-8
 
     def factory(
             first_name, year_of_birth,
+            # last_name,
+            # last_name=None,
+            # last_name=None, sex,
+            # last_name=None, sex=None,
+            # last_name=None, sex='M',
             last_name='doe', sex='M',
         ):
 
@@ -5159,10 +5217,12 @@ I want to write the solution without looking at the tests
     say_hello
 
 
+    # factory
+    # factory = None
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, year_of_birth):
     def factory(
-            first_name, year_of_birth,
-            last_name='doe', sex='M',
-        ):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -5174,18 +5234,16 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4
+    :emphasize-lines: 4-5
 
     import datetime
 
 
+    # say_hello
     say_hello = None
 
 
-    def factory(
-            first_name, year_of_birth,
-            last_name='doe', sex='M',
-        ):
+    # factory
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -5199,19 +5257,18 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4-5
+    :emphasize-lines: 5-7
 
     import datetime
 
 
+    # say_hello
+    # say_hello = None
     def say_hello():
         return None
 
 
-    def factory(
-            first_name, year_of_birth,
-            last_name='doe', sex='M',
-        ):
+    # factory
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -5225,9 +5282,12 @@ I want to write the solution without looking at the tests
 * I add a name to the :ref:`function definition<how to make a function>`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 1
+    :lineno-start: 4
+    :emphasize-lines: 3-4
 
+    # say_hello
+    # say_hello = None
+    # def say_hello():
     def say_hello(argument):
         return None
 
@@ -5239,16 +5299,23 @@ I want to write the solution without looking at the tests
 
   because the test expects a string_ and the ``say_hello`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
 
-* I copy the string_ from the terminal_ and paste it to replace the `return statement`
+* I copy (:kbd:`ctrl/command+c`) the string_ from the terminal_ and paste it (:kbd:`ctrl/command+v`) to replace the `return statement`_
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2
+    :emphasize-lines: 5-6
 
+    # say_hello
+    # say_hello = None
+    # def say_hello():
     def say_hello(argument):
-        return 'Hi, my name is jane doe and I am 66'
+        # return None
+        return 'Hi, my name is jade doe and I am 66'
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+    # factory
+
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -5256,44 +5323,52 @@ I want to write the solution without looking at the tests
         'Hi, my name is Z Y and I am X'
      != 'Hi, my name is A B and I am C'
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and the names and age change
+  the names and ages change
 
 * I return the input to compare it with what the test expects
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2
+    :emphasize-lines: 6
 
+    # say_hello
+    # say_hello = None
+    # def say_hello():
     def say_hello(argument):
+        # return None
         return argument
-        return 'Hi, my name is jane doe and I am 66'
+        return 'Hi, my name is jade doe and I am 66'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: X Z A
+    :emphasize-text: X Z A
 
     AssertionError:
         {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
     != 'Hi, my name is A Z and I am X'
 
-  the test sends a :ref:`dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` in it
+  the test sends a :ref:`dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` it receives
 
 * I return an :ref:`f-string<what is string interpolation?>` with the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2-6
+    :emphasize-lines: 6-10
     :emphasize-text: get
 
+    # say_hello
+    # say_hello = None
+    # def say_hello():
     def say_hello(argument):
+        # return None
         return (
             f'Hi, my name is {argument.get("first_name")}'
             f' {argument.get("last_name")}'
             f' and I am {argument.get("age")}'
         )
         return argument
-        return 'Hi, my name is jane doe and I am 66'
+        return 'Hi, my name is jade doe and I am 66'
 
   the test passes. Okay!
 
@@ -5309,19 +5384,23 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 3-5, 6
+    :emphasize-lines: 4, 7-9
     :emphasize-text: a_dictionary
 
+    # say_hello
+    # say_hello = None
+    # def say_hello():
     def say_hello(a_dictionary):
+        # return None
         return (
             f'Hi, my name is {a_dictionary.get("first_name")}'
             f' {a_dictionary.get("last_name")}'
             f' and I am {a_dictionary.get("age")}'
         )
         return a_dictionary
-        return 'Hi, my name is jane doe and I am 66'
+        return 'Hi, my name is jade doe and I am 66'
 
-* I remove the other `return statements`_
+* I remove the commented lines and other `return statements`_
 
   .. code-block:: python
     :linenos:
@@ -5336,16 +5415,6 @@ I want to write the solution without looking at the tests
             f' and I am {a_dictionary.get("age")}'
         )
 
-
-    def factory(
-            first_name, year_of_birth,
-            last_name='doe', sex='M',
-        ):
-
-* I remove the commented lines from the ``factory`` :ref:`function<what is a function?>`
-
-  .. code-block:: python
-    :lineno-start: 12
 
     def factory(
             first_name, year_of_birth,
@@ -5366,10 +5435,10 @@ I want to write the solution without looking at the tests
   .. code-block:: python
     :emphasize-text: None
 
-      def factory(
-              first_name, year_of_birth,
-              last_name='doe', sex='M',
-          ):
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
 
   the first solution had three parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
 
@@ -5388,11 +5457,10 @@ I want to write the solution without looking at the tests
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'refactor factory and say_hello'
+    git commit -am \
+    'refactor factory and say_hello functions'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
-
-* I go back to the terminal_ that is running the tests
 
 ----
 
