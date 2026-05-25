@@ -20,7 +20,7 @@ TypeError
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_type_error.py
   :language: python
@@ -1168,7 +1168,7 @@ close the project
 
 * I close ``test_type_error.py``  and ``type_error.py`` in the :ref:`editor<2 editors>`
 
-* then I click in the terminal_ and exit the tests with :kbd:`ctrl+c` on the keyboard, the terminal_ goes back to the command line.
+* then I click in the terminal_ and exit the tests with :kbd:`ctrl/command+c` on the keyboard, the terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``type_error``
 

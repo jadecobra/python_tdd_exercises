@@ -16,7 +16,7 @@ I want to use the things I know to make the :ref:`tests for the calculator progr
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/calculator/tests/test_calculator_6.py
   :language: python

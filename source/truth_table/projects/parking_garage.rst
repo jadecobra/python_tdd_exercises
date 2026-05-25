@@ -899,7 +899,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
         timer_is_set=False,
     )
 
-  a :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 ----
 

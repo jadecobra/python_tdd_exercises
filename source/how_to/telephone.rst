@@ -46,7 +46,7 @@ The exercises in this chapter to show how I can pass :ref:`input data<data struc
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_telephone.py
   :language: python

@@ -18,7 +18,7 @@ I want to use TypeError_ with :ref:`exception handlers<how to use try...except..
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/calculator/tests/test_calculator_4.py
   :language: python

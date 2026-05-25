@@ -16,7 +16,7 @@ how to handle Exceptions (Errors) in programs
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_exceptions.py
   :language: python

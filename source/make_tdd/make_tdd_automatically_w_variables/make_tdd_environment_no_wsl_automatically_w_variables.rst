@@ -260,7 +260,7 @@ Here are a few other examples
 
 * I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_pro_magic_plus.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
 
-* I use :kbd:`ctrl+c` on the keyboard in the terminal_ to stop the tests
+* I use :kbd:`ctrl/command+c` on the keyboard in the terminal_ to stop the tests
 * I deactivate the `virtual environment`_
 
   .. code-block:: PowerShell

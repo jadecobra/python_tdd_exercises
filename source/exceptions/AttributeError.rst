@@ -32,7 +32,7 @@ An :ref:`attribute<what causes AttributeError?>` is a name for something that be
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_attribute_error.py
   :language: python

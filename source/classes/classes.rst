@@ -21,7 +21,7 @@ I made :ref:`functions<what is a function?>` that make :ref:`dictionaries<what i
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_person_classes.py
   :language: python
@@ -2290,7 +2290,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
 ----
 
-* I copy (:kbd:`ctrl+c`) the values from the terminal_ and paste (:kbd:`ctrl+v`) them as ``my_expectation``
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 95
@@ -2343,7 +2343,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
   it shows me the entire :ref:`list<what is a list?>` below the message
 
-* I copy (:kbd:`ctrl+c`) the values from the terminal_ and paste (:kbd:`ctrl+v`) them as ``my_expectation``
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 95

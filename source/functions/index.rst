@@ -65,7 +65,7 @@ functions_ are made with
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/functions/test_functions.py
   :language: python
@@ -2479,8 +2479,8 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: shell
 
-    TypeError: w_keyword_arguments() got an
-               unexpected keyword argument 'first_input'
+    TypeError: w_keyword_arguments() got
+               an unexpected keyword argument 'first_input'
 
   because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` does not allow inputs and the test uses two in the call (``first_input`` and ``last_input``)
 
@@ -2497,8 +2497,8 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: shell
 
-    TypeError: w_keyword_arguments() got an
-               unexpected keyword argument 'last_input'.
+    TypeError: w_keyword_arguments() got
+               an unexpected keyword argument 'last_input'.
                Did you mean 'first_input'?
 
   because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` allows one input (``first_input``) and the test uses two in the call (``first_input`` and ``last_input``)
@@ -3118,8 +3118,8 @@ I can write functions_ that take both :ref:`positional<test_functions_w_position
 
   .. code-block:: shell
 
-    TypeError: w_positional_and_keyword_args() got an
-               unexpected keyword argument 'last_input'
+    TypeError: w_positional_and_keyword_args() got
+               an unexpected keyword argument 'last_input'
 
   because the :ref:`definition<how to make a function>` for ``w_positional_and_keyword_args`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_input``)
 
@@ -3423,7 +3423,7 @@ the test passes.
 
     return first_input, last_input
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 * I add another :ref:`assertion<what is an assertion?>` to ``test_functions.py`` to show that I can still call the :ref:`function<what is a function?>` with different values
 
@@ -3544,7 +3544,7 @@ the test passes.
 
     return first_input, last_input
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 * I add one more :ref:`assertion<what is an assertion?>`
 
@@ -3773,8 +3773,8 @@ I can make functions_ that take any number of :ref:`positional<test_functions_w_
 
   .. code-block:: shell
 
-    TypeError: w_unknown_arguments() got an
-               unexpected keyword argument 'a'
+    TypeError: w_unknown_arguments() got
+               an unexpected keyword argument 'a'
 
 * I add the name to the :ref:`function definition<how to make a function>`
 

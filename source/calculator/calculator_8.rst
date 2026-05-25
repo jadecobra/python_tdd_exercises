@@ -18,7 +18,7 @@ I can use the ``__getattribute__`` :ref:`method<what is a method?>` that comes w
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/calculator/tests/test_calculator_8.py
   :language: python

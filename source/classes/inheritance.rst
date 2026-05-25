@@ -21,7 +21,7 @@ To use inheritance I specify the "parent" in parentheses when I define the new o
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_classes.py
   :language: python

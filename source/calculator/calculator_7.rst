@@ -16,7 +16,7 @@ I want to test the :ref:`calculator<how to make a calculator>` with a :ref:`dict
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/calculator/tests/test_calculator_7.py
   :language: python

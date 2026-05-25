@@ -37,7 +37,7 @@ A `List Comprehension`_ is a simple way to make a :ref:`list <lists>` from an :r
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/tests/test_list_comprehensions.py
   :language: python

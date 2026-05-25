@@ -35,7 +35,7 @@ I want to make a website for the :ref:`calculator<how to make a calculator>` so 
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/calculator/tests/test_calculator_website.py
   :language: python
@@ -2169,7 +2169,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
+* I click in the second terminal_, then use :kbd:`ctrl/command+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
 
 ----

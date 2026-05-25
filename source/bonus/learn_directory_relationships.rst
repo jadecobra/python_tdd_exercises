@@ -414,7 +414,7 @@ if I am in the ``pumping_python`` folder_
 
     it runs for a while because there are many files_ and folders_.
 
-    Use :kbd:`ctrl+c` on the keyboard to stop it.
+    Use :kbd:`ctrl/command+c` on the keyboard to stop it.
 
 .. note::
 
@@ -4711,7 +4711,7 @@ how to remove a directory and all the things in it
 
       I could use :kbd:`A` on the keyboard to answer ``Yes to All`` or give one command to delete all the files_ and folders_ and ask me no questions.
 
-      I use :kbd:`ctrl+c` on the keyboard to go back to the command line then use `Remove-Item`_ with the ``-Recurse`` and ``-Force`` options
+      I use :kbd:`ctrl/command+c` on the keyboard to go back to the command line then use `Remove-Item`_ with the ``-Recurse`` and ``-Force`` options
 
       .. code-block:: PowerShell
         :emphasize-lines: 1

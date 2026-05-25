@@ -22,7 +22,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`, the two important :ref:`objects<what is a class?>` to know in Python_.
+This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`, two important :ref:`objects<what is a class?>` to know in Python_.
 
 Imagine I want to make a contact list or database of people. I can use a :ref:`function<what is a function?>` to represent filling out information for a person, for example
 
@@ -37,7 +37,7 @@ Imagine I want to make a contact list or database of people. I can use a :ref:`f
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_person.py
   :language: python
@@ -448,8 +448,8 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    TypeError: factory() got an
-               unexpected keyword argument 'first_name'
+    TypeError: factory() got
+               an unexpected keyword argument 'first_name'
 
   because the :ref:`function definition<how to make a function>` for ``src.person.factory`` does not allow calling it with inputs (the parentheses are empty) and the test sends ``'first_name'`` as input.
 
@@ -500,8 +500,8 @@ test_factory_w_keyword_arguments
 
   .. code-block:: shell
 
-    TypeError: factory() got an
-               unexpected keyword argument 'last_name'.
+    TypeError: factory() got
+               an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
   because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
@@ -541,8 +541,8 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
 
-    TypeError: factory() got an
-               unexpected keyword argument 'sex'
+    TypeError: factory() got
+               an unexpected keyword argument 'sex'
 
   because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
@@ -637,12 +637,13 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 5-6
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
         return {}
 
   the test passes because ``{}`` and ``dict()`` are two ways to :ref:`make the empty dictionary<test_making_a_dictionary>`.
@@ -682,12 +683,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5
+    :emphasize-lines: 6-7
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         return {'first_name': 'first_name'}
 
   the test passes.
@@ -728,12 +731,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 7-8
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         # return {'first_name': 'first_name'}
         return {'first_name': 'jane'}
 
@@ -821,12 +826,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-10
+    :emphasize-lines: 8-12
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         # return {'first_name': 'first_name'}
         # return {'first_name': 'jane'}
         return {
@@ -880,12 +887,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 9-10
+    :emphasize-lines: 11-12
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         # return {'first_name': 'first_name'}
         # return {'first_name': 'jane'}
         return {
@@ -992,12 +1001,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 11
+    :emphasize-lines: 13
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         # return {'first_name': 'first_name'}
         # return {'first_name': 'jane'}
         return {
@@ -1059,12 +1070,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 11-12
+    :emphasize-lines: 13-14
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         # return {'first_name': 'first_name'}
         # return {'first_name': 'jane'}
         return {
@@ -1074,7 +1087,6 @@ test_factory_w_keyword_arguments
             # 'sex': 'M',
             'sex': 'F',
         }
-
 
   the test passes.
 
@@ -1187,12 +1199,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 13
+    :emphasize-lines: 15
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         # return {'first_name': 'first_name'}
         # return {'first_name': 'jane'}
         return {
@@ -1203,7 +1217,6 @@ test_factory_w_keyword_arguments
             'sex': 'F',
             'age': 26,
         }
-
 
   the test passes.
 
@@ -1265,12 +1278,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 13-14
+    :emphasize-lines: 15-16
 
     def factory(
             first_name, last_name,
             sex, year_of_birth,
         ):
+        # return None
+        # return {}
         # return {'first_name': 'first_name'}
         # return {'first_name': 'jane'}
         return {
@@ -1390,7 +1405,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  I now only need to change the value of ``sex`` in one place in the test, though I have a problem with the calculation for the age, it will be wrong if this program_ is run after 2026.
+  I now only need to change the value of ``sex`` in one place in the test.
 
 * I open a new terminal_ then change directories to ``person``
 
@@ -1414,26 +1429,26 @@ test_factory_w_keyword_arguments
 test factory with random year_of_birth
 *********************************************************************************
 
-I want the value of the age to be a calculation based on the current year so that it will always be correct (at least most of the time). I can do that with the `datetime module`_ from `The Python Standard Library`_ which is used for dates and times
+There is a problem with the calculation for the age, it will be wrong if this program_ is run after 2026.
+
+I want the value of the age to be a calculation based on the current year so that it will always be correct (at least most of the time).
+
+I can do that with the `datetime module`_ from `The Python Standard Library`_ which is used for dates and times.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
 
 * I go back to the terminal_ that is running the tests
-
-* I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import datetime
-    import src.person
-    import unittest
-
-  ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``
 
 * I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a method?>` from the `datetime module`_
 
   .. code-block:: python
-    :lineno-start: 8
+    :lineno-start: 7
     :emphasize-lines: 17-21
 
         def test_factory_w_keyword_arguments(self):
@@ -1454,8 +1469,8 @@ I want the value of the age to be a calculation based on the current year so tha
                 sex=sex,
                 # age=2026-year_of_birth,
                 age=(
-                    datetime.datetime.now().year
-                   -year_of_birth
+                    datetime.datetime.today().year
+                  - year_of_birth
                 ),
             )
             self.assertEqual(reality, my_expectation)
@@ -1463,13 +1478,18 @@ I want the value of the age to be a calculation based on the current year so tha
 
     # Exceptions seen
 
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: shell
+
+    NameError: name 'datetime' is not defined.
+               Did you forget to import 'datetime'?
+
   I can also use the `today method`_ to get the same value
 
   .. code-block:: python
 
     datetime.datetime.today().year
-
-  the test is still green.
 
   - ``datetime`` is the `datetime module`_
   - ``datetime.datetime`` is a call to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
@@ -1477,33 +1497,39 @@ I want the value of the age to be a calculation based on the current year so tha
   - ``datetime.datetime.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
   - ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` asks for the value of the ``year`` :ref:`class attribute<what is a class attribute?>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
 
-  that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`
-
-I want to use random values in the test to make sure the ``factory`` :ref:`function<what is a function?>` can handle different values and always calculates the right age
+  that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`.
 
 ----
 
 =================================================================================
-:red:`RED`: make it fail
+:green:`GREEN`: make it pass
 =================================================================================
 
 ----
 
+I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
 
-* I add an `import statement`_ for the `random module`_ at the top of ``test_person.py``
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 1
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 2
+  import datetime
+  import src.person
+  import unittest
 
-    import datetime
-    import random
-    import src.person
-    import unittest
+the test passes.
 
-  - random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used to make fake random numbers
-  - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `random module`_ so I can use it in ``test_person.py``
-  - I like to sort my `import statements`_ alphabetically
+``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+I want to use random values in the test to make sure the ``factory`` :ref:`function<what is a function?>` can handle different values and always calculates the right age.
 
 * I use a random integer_ (a whole number with no decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
@@ -1528,27 +1554,50 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
                 year_of_birth=year_of_birth,
             )
 
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: shell
+
+    NameError: name 'random' is not defined.
+               Did you forget to import 'random'?
+
   - ``random`` is the `random module`_
   - ``random.randint()`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name again
   - ``datetime.datetime.now().year`` gives me this year
   - ``datetime.datetime.now().year-120`` gives me this year minus ``120``
   - ``random.randint(datetime.datetime.now().year-120, datetime.datetime.now().year)`` gives me a random number from 120 years ago, up to and including the current year
-  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I add an `import statement`_ for the `random module`_ at the top of ``test_person.py``
 
   .. code-block:: python
-    :emphasize-lines: 3, 5
+    :linenos:
+    :emphasize-lines: 2
 
-    AssertionError:
-        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
-         'age': 30}
-     != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
-         'age': X}
+    import datetime
+    import random
+    import src.person
+    import unittest
 
-  where ``X`` is a random age
+  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. tip::
+    .. code-block:: python
+      :emphasize-lines: 3, 5
 
-    Anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`.
+      AssertionError:
+          {'first_name': 'jane', 'last_name': 'doe',
+           'sex': 'F', 'age': 30}
+       != {'first_name': 'jane', 'last_name': 'doe',
+           'sex': 'F', 'age': X}
+
+    where ``X`` is a random age
+
+    .. tip::
+
+      Anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`.
+
+  - random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used to make fake random numbers
+  - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `random module`_ so I can use it in ``test_person.py``
+  - I like to sort my `import statements`_ alphabetically
 
 ----
 
@@ -1575,16 +1624,16 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             # 'age': 30,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     NameError: name 'datetime' is not defined.
-               Did you forget to import 'datetime'
+               Did you forget to import 'datetime'?
 
   because datetime_ is not defined in this file_
 
@@ -1602,8 +1651,9 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
             sex, year_of_birth,
         ):
 
-  - ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``person.py``
-  - the test passes.
+  the test passes.
+
+  ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``person.py``.
 
 ----
 
@@ -1660,8 +1710,8 @@ I want to use random values in the test to make sure the ``factory`` :ref:`funct
                 sex=sex,
                 # age=2026-year_of_birth,
                 # age=(
-                #     datetime.datetime.now().year
-                #    -year_of_birth
+                #     datetime.datetime.today().year
+                #   - year_of_birth
                 # ),
                 age=this_year-year_of_birth,
             )
@@ -1714,12 +1764,7 @@ test factory with random sex
                 this_year-120, this_year
             )
 
-  - ``random`` is the `random module`_
-  - ``random.choice()`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the :ref:`iterable<what is an iterable?>` it is given in parentheses
-  - ``('F', 'M')`` is a :ref:`tuple (an iterable)<what is an iterable?>` with values for the `random.choice method`_ to pick from randomly
-  - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
-
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
+  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
 
   If ``sex`` is randomly ``'M'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1734,6 +1779,11 @@ test factory with random sex
 
   where ``X`` is the random age
 
+  - ``random`` is the `random module`_
+  - ``random.choice()`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the :ref:`iterable<what is an iterable?>` it is given in parentheses
+  - ``('F', 'M')`` is a :ref:`tuple (an iterable)<what is an iterable?>` with values for the `random.choice method`_ to pick from randomly
+  - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
+
 ----
 
 =================================================================================
@@ -1742,7 +1792,7 @@ test factory with random sex
 
 ----
 
-* I add the ``sex`` input parameter instead of a value that does not change to the `return statement`_ in ``person.py``
+* I add the ``sex`` input parameter instead of a value that does not change, to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1760,7 +1810,7 @@ test factory with random sex
             # 'age': 30,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -1792,7 +1842,7 @@ test factory with random last name
 
 * I go back to the terminal_ that is running the tests
 
-* I use `random.choice`_ with the ``last_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
+* I use `random.choice`_ for the ``last_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -1855,7 +1905,7 @@ test factory with random last name
             # 'age': 30,
             'age': (
                 datetime.datetime.today().year
-              -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -1923,7 +1973,7 @@ test factory with random first name
 
   where ``A`` and ``B`` are the different random first names, ``X`` is the random age, ``Y`` is the random sex, and ``Z`` is the random last name
 
-* I add the ``first_name`` input parameter to the `return statement`_ in ``person.py``
+* I add the ``first_name`` input parameter instead of a value that does not change, to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1943,10 +1993,9 @@ test factory with random first name
             # 'age': 30,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
-
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
 
@@ -1965,7 +2014,7 @@ test factory with random first name
             'sex': sex,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -1988,7 +2037,7 @@ extract pick_one function
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments`, to use to remove repetition of ``random.choice`` from the test in ``test_person.py``
+* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ to use to remove repetition of ``random.choice`` from the test in ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -2000,7 +2049,7 @@ extract pick_one function
     import unittest
 
 
-    def pick_one(*choices):
+    def pick_one(choices):
         return random.choice(choices)
 
 
@@ -2040,7 +2089,27 @@ extract pick_one function
                 this_year-120, this_year
             )
 
-  the test is still green.
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: pick_one() takes 1 positional argument
+               but 4 were given
+
+  because the :ref:`function definition<how to make a function>` only takes one input and the test sends four for ``first_name``, four for ``last_name`` and two for ``sex``.
+
+  I want the :ref:`function<what is a function?>` to be able to take any number of arguments I send, without it knowing how many I will send.
+
+* I change the :ref:`definition<how to make a function>` of the ``pick_one`` :ref:`function<what is a function?>` with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_functions_w_unknown_arguments` so that it can take any number of :ref:`positional arguments<test_functions_w_positional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 1
+
+    def pick_one(*choices):
+        return random.choice(choices)
+
+  the test is green again, because :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``)
 
 * I add a git_ commit message in the other terminal_
 
@@ -2059,7 +2128,7 @@ test factory with a dictionary
 
 ----
 
-The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is, one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
+The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is that one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
 
 =================================================================================
 :red:`RED`: make it fail
@@ -2073,7 +2142,7 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 21-25
+    :emphasize-lines: 27-31
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
@@ -2094,6 +2163,12 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
             # sex = random.choice(('F', 'M'))
             sex = pick_one('F', 'M')
             # year_of_birth = 1996
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
 
             a_person = dict(
                 first_name=first_name,
@@ -2101,25 +2176,80 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
                 sex=sex,
             )
 
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
             )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                # age=2026-year_of_birth,
+                # age=(
+                #     datetime.datetime.today().year
+                #   - year_of_birth
+                # ),
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
 
-* I use the new :ref:`variable<what is a variable?>` with a :ref:`double starred expression<double starred expressions>` to remove the repeating parts
+
+    # Exceptions seen
+
+* I use the new :ref:`variable<what is a variable?>` to remove the repeating parts
 
   .. code-block:: python
     :lineno-start: 39
-    :emphasize-lines: 9-12, 16-19
+    :emphasize-lines: 8-11, 15-18
 
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
+            a_person = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
             )
+
+            reality = src.person.factory(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                a_person,
+                # age=2026-year_of_birth,
+                # age=(
+                #     datetime.datetime.today().year
+                #   - year_of_birth
+                # ),
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: factory() missing 2 required
+               positional arguments: 'last_name' and 'sex'
+
+  because the ``factory`` :ref:`function<what is a function?>` now takes ``a_person`` as the first :ref:`positional argument<test_functions_w_positional_arguments>` (``first_name``), and wants the other required arguments.
+
+  I want the :ref:`function<what is a function?>` to take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` (``a_person``) as :ref:`keyword arguments<test_functions_w_keyword_arguments>`.
+
+* I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_functions_w_unknown_arguments`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 5, 12
 
             reality = src.person.factory(
                 # first_name=first_name,
@@ -2135,8 +2265,8 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
                 **a_person,
                 # age=2026-year_of_birth,
                 # age=(
-                #     datetime.datetime.now().year
-                #    -year_of_birth
+                #     datetime.datetime.today().year
+                #   - year_of_birth
                 # ),
                 age=this_year-year_of_birth,
             )
@@ -2145,13 +2275,13 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
     # Exceptions seen
 
-  still green.
+  the test is green again, because :ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``*choices``).
 
-* I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
+* I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` because they are now only used once, by ``a_person``
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 6-8, 13-15, 18, 22-31
+    :emphasize-lines: 6-8, 13-15, 18, 28-37
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
@@ -2172,6 +2302,12 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
             # sex = random.choice(('F', 'M'))
             # sex = pick_one('F', 'M')
             # year_of_birth = 1996
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                # datetime.datetime.now().year-120,
+                # datetime.datetime.now().year
+                this_year-120, this_year
+            )
 
             a_person = dict(
                 # first_name=first_name,
@@ -2212,28 +2348,8 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 * I use the :ref:`function<what is a function?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 25-32
-
-        def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
-            # first_name = random.choice((
-            #     'jane', 'joe', 'john', 'person',
-            # ))
-            # first_name = pick_one(
-            #     'jane', 'joe', 'john', 'person',
-            # )
-            # last_name = 'doe'
-            # last_name = random.choice((
-            #     'doe', 'smith', 'blow', 'public',
-            # ))
-            # last_name = pick_one(
-            #     'doe', 'smith', 'blow', 'public',
-            # )
-            # sex = 'F'
-            # sex = random.choice(('F', 'M'))
-            # sex = pick_one('F', 'M')
-            # year_of_birth = 1996
+    :lineno-start: 46
+    :emphasize-lines: 5-12
 
             a_person = dict(
                 # first_name=first_name,
@@ -2256,17 +2372,18 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 
   .. code-block:: python
     :lineno-start: 20
+    :emphasize-text: get_random_name pick_one a_person
 
         def test_factory_w_keyword_arguments(self):
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
             a_person = dict(
                 first_name=get_random_name(),
                 last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
-            )
-
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
             )
 
             reality = src.person.factory(
@@ -2279,7 +2396,8 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_factory_w_optional_arguments(self):
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -2296,7 +2414,7 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
 test_factory_w_optional_arguments
 *************************************************************************************
 
-I want to see what happens when I try to make a person without a value for the ``last_name`` argument
+I want to see what happens when I try to make a person without a value for the ``last_name`` argument.
 
 ----
 
@@ -2376,9 +2494,14 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 4
+    :emphasize-lines: 9
 
         def test_factory_w_optional_arguments(self):
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
             a_person = dict(
                 first_name=get_random_name(),
                 # last_name=get_random_name(),
@@ -2389,8 +2512,8 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
 
-    TypeError: factory() missing 1
-               required positional argument: 'last_name'
+    TypeError: factory() missing 1 required
+               positional argument: 'last_name'
 
   because this test no longer gives a value for ``last_name`` when it calls the ``factory`` :ref:`function<what is a function?>`, I have to make it a choice.
 
@@ -2470,6 +2593,7 @@ I want to see what happens when I try to make a person without a value for the `
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-text: last_name
 
     AssertionError:
         {'first_name': Z, 'last_name': None, 'sex': Y,
@@ -2505,10 +2629,12 @@ I want to see what happens when I try to make a person without a value for the `
     :emphasize-text: doe None
 
     AssertionError:
-        {'first_name': Z, 'last_name': None, 'sex': Y, 'age': X}
-     != {'first_name': Z, 'sex': Y, 'last_name': 'doe', 'age': X}
+        {'first_name': Z, 'last_name': None,
+         'sex': Y, 'age': X}
+     != {'first_name': Z, 'sex': Y,
+         'last_name': 'doe', 'age': X}
 
-  because the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``
+  because the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``.
 
 * I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
 
@@ -2521,7 +2647,7 @@ I want to see what happens when I try to make a person without a value for the `
             sex=None, year_of_birth=None,
         ):
 
-  the test passes because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_name`` parameter of the :ref:`function<what is a function?>` is ``doe``. This means that
+  the test passes because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_name`` parameter of the :ref:`function<what is a function?>` is ``'doe'``. This means that
 
   .. code-block:: python
 
@@ -2542,7 +2668,7 @@ I want to see what happens when I try to make a person without a value for the `
         last_name='doe',
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 ----
 
@@ -2556,9 +2682,14 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 5
+    :emphasize-lines: 10
 
         def test_factory_w_optional_arguments(self):
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
             a_person = dict(
                 first_name=get_random_name(),
                 # last_name=get_random_name(),
@@ -2568,10 +2699,11 @@ I want to see what happens when I try to make a person without a value for the `
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-text: sex
 
     AssertionError:
-        {'first_name': Z, 'last_name': Y, 'sex': None, 'age': X}
+        {'first_name': Z, 'last_name': Y,
+         'sex': None, 'age': X}
      != {'first_name': Z, 'last_name': Y, 'age': X}
 
   the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
@@ -2647,11 +2779,11 @@ I want to see what happens when I try to make a person without a value for the `
         sex='M',
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 ----
 
-* I no longer need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it has only one :ref:`key<test_keys_of_a_dictionary>`. I add a :ref:`variable<what is a variable?>` for ``first_name``
+* I no longer need the ``a_person`` :ref:`dictionary<what is a dictionary?>` in :ref:`test_factory_w_optional_arguments` because it only has one :ref:`key<test_keys_of_a_dictionary>`, I can use a :ref:`variable<what is a variable?>` for ``first_name`` instead
 
   .. code-block:: python
     :lineno-start: 42
@@ -2659,10 +2791,9 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
             first_name = get_random_name()
-            a_person = dict(
-                first_name=get_random_name(),
-                # last_name=get_random_name(),
-                # sex=pick_one('F', 'M'),
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
             )
 
 * I use the :ref:`variable<what is a variable?>` for ``reality`` and ``my_expectation``
@@ -2695,9 +2826,13 @@ I want to see what happens when I try to make a person without a value for the `
     TypeError: src.person.factory() got multiple values
                for keyword argument 'first_name'
 
-  because the ``a_person`` :ref:`dictionary<what is a dictionary?>` already has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same name two times
+  because the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same :ref:`keyword argument<test_functions_w_keyword_arguments>` twice.
 
 * I comment out ``**a_person,``
+
+  .. tip::
+
+    I can comment out a line in `Visual Studio Code`_ with :kbd:`ctrl/command+/` anywhere on the line
 
   .. code-block:: python
     :lineno-start: 55
@@ -2729,7 +2864,6 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
             first_name = get_random_name()
-
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
                 this_year-120, this_year
@@ -2753,9 +2887,10 @@ I want to see what happens when I try to make a person without a value for the `
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_factory_w_optional_arguments'
+    git commit -am \
+    'add test_factory_w_optional_arguments'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2780,7 +2915,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 * I add a new test to ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 49
     :emphasize-lines: 13-18, 20-22
 
             reality = src.person.factory(
@@ -2813,9 +2948,10 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 
   .. code-block:: python
 
-    AttributeError: module 'src.person' has no attribute 'hello'
+    AttributeError: module 'src.person'
+                    has no attribute 'hello'
 
-  because ``person.py`` does not have a :ref:`function<what is a function?>` named ``say_hello``
+  because ``person.py`` does not have a :ref:`function<what is a function?>` named ``say_hello``, yet.
 
 ----
 
@@ -2841,7 +2977,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
             'sex': sex,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -2883,7 +3019,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 9-12
+    :emphasize-lines: 9-13
 
         def test_factory_person_says_hello(self):
             joe = src.person.factory(
@@ -2893,6 +3029,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
 
             reality = src.person.say_hello(joe)
+            # my_expectation = None
             my_expectation = (
                 'Hi, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
@@ -2906,15 +3043,17 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
 
-    AssertionError: None != 'Hi, my name is joe blow and I am 30'
+    AssertionError:
+        None != 'Hi, my name is joe blow and I am 30'
 
-* I copy the value from the terminal_ and paste it in the `return statement`_ in ``person.py``
+* I copy (:kbd:`ctrl/command+c`) the value from the terminal_ and paste it (:kbd:`ctrl/command+v`) in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
     def say_hello(person):
+        # return None
         return 'Hi, my name is joe blow and I am 30'
 
   the test passes.
@@ -2922,17 +3061,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for another person to :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 15-19, 21-26
-
-        def test_factory_person_says_hello(self):
-            joe = src.person.factory(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
-            )
+    :lineno-start: 68
+    :emphasize-lines: 9-13, 15-20
 
             reality = src.person.say_hello(joe)
+            # my_expectation = None
             my_expectation = (
                 'Hi, my name is joe blow and I am'
                 f' {datetime.datetime.now().year-1996}'
@@ -2965,17 +3098,21 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   I have to make sure the ``say_hello`` :ref:`function<what is a function?>` uses the :ref:`values<test_values_of_a_dictionary>` of the ``person`` :ref:`dictionary<what is a dictionary?>` to make the message. I can do that with the :ref:`get method of dictionaries<test_get_value_of_a_key_in_a_dictionary>`.
 
-* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` the ``say_hello`` :ref:`function<what is a function?>` receives, in ``person.py``
+* I change the string_ to an :ref:`f-string<what is string interpolation?>` with the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2, 4-5
+    :emphasize-lines: 2, 5-9
 
     def say_hello(person):
         first_name = person.get('first_name')
 
+        # return None
         # return 'Hi, my name is joe blow and I am 30'
-        return f'Hi, my name is {first_name} blow and I am 30'
+        return (
+            f'Hi, my name is {first_name}'
+            ' blow and I am 30'
+        )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2986,23 +3123,26 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         'Hi, my name is jane blow and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
-  the first names are the same, the last name and ages are different
+  - the first names are the same because ``person.get('first_name')`` uses the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>`
+  - the last names and ages are different
 
-* I add the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+* I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>`, then add it to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 3, 6-10
+    :emphasize-lines: 3, 8-11
 
     def say_hello(person):
         first_name = person.get('first_name')
         last_name = person.get('last_name')
 
+        # return None
         # return 'Hi, my name is joe blow and I am 30'
-        # return f'Hi, my name is {first_name} blow and I am 30'
         return (
+            # f'Hi, my name is {first_name}'
+            # ' blow and I am 30'
             f'Hi, my name is {first_name} {last_name}'
-            f' and I am 30'
+            ' and I am 30'
         )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -3016,22 +3156,24 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the age is the only thing that is different
 
-* I add the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+* I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` , then add it to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 4, 10-11
+    :emphasize-lines: 4, 12-13
 
     def say_hello(person):
         first_name = person.get('first_name')
         last_name = person.get('last_name')
         age = person.get('age')
 
+        # return None
         # return 'Hi, my name is joe blow and I am 30'
-        # return f'Hi, my name is {first_name} blow and I am 30'
         return (
+            # f'Hi, my name is {first_name}'
+            # ' blow and I am 30'
             f'Hi, my name is {first_name} {last_name}'
-            # f' and I am 30'
+            # ' and I am 30'
             f' and I am {age}'
         )
 
@@ -3041,6 +3183,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 19
+    :emphasize-text: get
 
     def say_hello(person):
         first_name = person.get('first_name')
@@ -3080,7 +3223,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             reality = src.person.say_hello(john)
             my_expectation = (
                 'Hi, my name is jane doe and I am'
-                f'{datetime.datetime.now().year-1991}'
+                f' {datetime.datetime.now().year-1991}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -3099,7 +3242,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 89
-    :emphasize-lines: 9-10
+    :emphasize-lines: 9-12
 
             john = src.person.factory(
                 first_name='john',
@@ -3109,6 +3252,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(john)
             my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {datetime.datetime.now().year-1991}'
                 'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
@@ -3122,17 +3267,13 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for one more person
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 14-19, 21-26
-
-            john = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
+    :lineno-start: 95
+    :emphasize-lines: 10-15, 17-22
 
             reality = src.person.say_hello(john)
             my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {datetime.datetime.now().year-1991}'
                 'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
             )
@@ -3166,8 +3307,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change ``my_expectation`` to match ``reality`` for ``a_person``
 
   .. code-block:: python
-    :lineno-start: 102
-    :emphasize-lines: 10-11
+    :lineno-start: 104
+    :emphasize-lines: 10-13
 
             a_person = src.person.factory(
                 first_name='person',
@@ -3178,6 +3319,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
             reality = src.person.say_hello(a_person)
             my_expectation = (
+                # 'Hi, my name is john smith and I am'
+                # f' {datetime.datetime.now().year-1580}'
                 'Hi, my name is person public and I am'
                 f' {datetime.datetime.now().year-2000}'
             )
@@ -4068,7 +4211,7 @@ I want to use random values to :ref:`test_factory_person_says_hello`
         last_name='doe'
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 * I add ``last_name`` to the call to ``src.person.factory`` for ``jane`` to use the :ref:`variable<what is a variable?>`
 
@@ -4552,8 +4695,8 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    TypeError: factory() got an
-               unexpected keyword argument 'first_name'
+    TypeError: factory() got
+               an unexpected keyword argument 'first_name'
 
   because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``first_name``) that is not in the :ref:`function definition<how to make a function>`
 
@@ -4570,8 +4713,8 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    TypeError: factory() got an
-               unexpected keyword argument 'year_of_birth'
+    TypeError: factory() got
+               an unexpected keyword argument 'year_of_birth'
 
   because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
 
@@ -4649,8 +4792,8 @@ I want to write the solution without looking at the tests
 
   .. code-block:: shell
 
-    TypeError: factory() got an
-               unexpected keyword argument 'last_name'.
+    TypeError: factory() got
+               an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
 * I use the ``year_of_birth`` input parameter in the `return statement`_ for the :ref:`value<test_values_of_a_dictionary>` of ``age``
@@ -4710,7 +4853,7 @@ I want to write the solution without looking at the tests
             # 'age': year_of_birth,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -4718,8 +4861,8 @@ I want to write the solution without looking at the tests
 
   .. code-block:: shell
 
-    TypeError: factory() got an
-               unexpected keyword argument 'last_name'.
+    TypeError: factory() got
+               an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
   because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
@@ -4740,8 +4883,8 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    TypeError: factory() missing 1
-               required positional argument: 'last_name'
+    TypeError: factory() missing 1 required
+               positional argument: 'last_name'
 
   because the test called the :ref:`function<what is a function?>` with another argument and Python_ took that argument as a :ref:`positional argument<test_functions_w_positional_arguments>` for ``last_name``
 
@@ -4760,8 +4903,8 @@ I want to write the solution without looking at the tests
 
   .. code-block:: python
 
-    TypeError: factory() got an
-               unexpected keyword argument 'sex'
+    TypeError: factory() got
+               an unexpected keyword argument 'sex'
 
   because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
@@ -4834,7 +4977,7 @@ I want to write the solution without looking at the tests
             # 'age': year_of_birth,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -4899,7 +5042,7 @@ I want to write the solution without looking at the tests
             # 'age': year_of_birth,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -5144,7 +5287,7 @@ I want to write the solution without looking at the tests
             'sex': sex,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 

@@ -32,7 +32,7 @@ I want to use `assert methods`_ to compare None_ with the other :ref:`Python dat
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_none.py
   :language: python

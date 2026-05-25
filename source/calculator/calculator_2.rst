@@ -16,7 +16,7 @@ I want to use assertRaises_ to make sure :ref:`test_division` from the :ref:`cal
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/calculator/tests/test_calculator_2.py
   :language: python

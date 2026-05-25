@@ -21,7 +21,7 @@ how to make a calculator 1
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/calculator/tests/test_calculator_1.py
   :language: python

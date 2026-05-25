@@ -31,7 +31,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ given in an `i
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../code/tests/test_module_not_found_error.py
   :language: python

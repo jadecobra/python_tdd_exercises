@@ -23,7 +23,7 @@ There are only 2 booleans_ - True_ and False_. I can use the `assertFalse`_ and 
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/booleans/test_booleans.py
   :language: python

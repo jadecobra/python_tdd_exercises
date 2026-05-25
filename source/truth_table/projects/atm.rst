@@ -1330,7 +1330,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
         above_daily_limit=False,
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_right_pin_enough_money` to :ref:`test_right_pin_enough_money_w_limit`
 
@@ -1434,7 +1434,7 @@ PIN                 money                   daily limit             withdrawal
         above_daily_limit=False,
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_right_pin_not_enough_money` to :ref:`test_right_pin_not_enough_money_w_limit`
 
@@ -1543,7 +1543,7 @@ PIN                 money                   daily limit             withdrawal
         above_daily_limit=False,
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_wrong_pin_enough_money` to :ref:`test_wrong_pin_enough_money_w_limit`
 
@@ -1653,7 +1653,7 @@ PIN                 money                   daily limit             withdrawal
         above_daily_limit=False,
     )
 
-  A :ref:`function<what is a function?>` uses the :ref:`default value<test_functions_w_optional_arguments>` for a parameter when it is called without the parameter.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_wrong_pin_not_enough_money` to :ref:`test_wrong_pin_not_enough_money_w_limit`
 

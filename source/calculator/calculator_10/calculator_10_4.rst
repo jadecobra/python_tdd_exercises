@@ -10,7 +10,7 @@ how to make a calculator 10: part 4
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_4.py
   :language: python
@@ -2020,7 +2020,7 @@ close the project
 
   I am back in the ``pumping_python`` directory_
 
-* I click in the second terminal_, then use :kbd:`ctrl+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
+* I click in the second terminal_, then use :kbd:`ctrl/command+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``
 

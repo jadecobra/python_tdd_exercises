@@ -22,7 +22,7 @@ I want to try another way to make a website for the :ref:`Calculator<how to make
 preview
 *********************************************************************************
 
-These are the tests I have by the end of the chapter
+I have these tests by the end of the chapter
 
 .. literalinclude:: ../../code/calculator/tests/test_streamlit_calculator_1.py
   :language: python
