@@ -1657,23 +1657,24 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
   .. code-block:: python
     :lineno-start: 36
-    :emphasize-lines: 3-4
+    :emphasize-lines: 5-6
 
         def test_factory_w_keyword_arguments(self):
+            year_of_birth = get_random_year_of_birth()
+
             a_person = dict(
                 # first_name=get_random_name(),
                 first_name=self.random_first_name,
                 last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
-            year_of_birth = get_random_year_of_birth()
 
   the test is still green.
 
 * I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 56
     :emphasize-lines: 2-3, 7-8, 12-13
 
         def test_factory_w_optional_arguments(self):
@@ -1702,15 +1703,17 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 74
-    :emphasize-lines: 2-3, 9-10, 18-20
+    :lineno-start: 75
+    :emphasize-lines: 2-3, 11-12, 20-22
 
         def test_factory_person_says_hello(self):
             # first_name = get_random_name()
             first_name = self.random_first_name
             last_name = get_random_name()
             sex = pick_one('F', 'M')
+
             year_of_birth = get_random_year_of_birth()
+            age = calculate_age(year_of_birth)
 
             a_random_person = src.person.factory(
                 # first_name=first_name,
@@ -1725,7 +1728,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
                 # f'Hi, my name is {first_name} {last_name}'
                 f'Hi, my name is {self.random_first_name}'
                 f' {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1736,32 +1739,30 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 * I use the new :ref:`class attribute<what is a class attribute?>` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 2-3, 9-10, 20-22
+    :lineno-start: 101
+    :emphasize-lines: 2-3, 10-11, 18-20
 
         def test_classy_person_says_hello(self):
             # first_name = get_random_name()
             first_name = self.random_first_name
             last_name = get_random_name()
-            sex = pick_one('F', 'M')
+
             year_of_birth = get_random_year_of_birth()
+            age = calculate_age(year_of_birth)
 
             a_random_person = src.person.Person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 last_name=last_name,
-                sex=sex,
                 year_of_birth=year_of_birth,
             )
 
-            reality = a_random_person.say_hello(
-                a_random_person
-            )
+            reality = a_random_person.say_hello()
             my_expectation = (
                 # f'Hi, my name is {first_name} {last_name}'
                 f'Hi, my name is {self.random_first_name}'
                 f' {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1805,17 +1806,18 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 
   .. code-block:: python
     :lineno-start: 37
-    :emphasize-lines: 8-9, 13-14, 18-19
+    :emphasize-lines: 2-3, 14-15, 19-22
 
         def test_factory_w_keyword_arguments(self):
+            # year_of_birth = get_random_year_of_birth()
+            year_of_birth = self.random_year_of_birth
+
             a_person = dict(
                 # first_name=get_random_name(),
                 first_name=self.random_first_name,
                 last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
             )
-            # year_of_birth = get_random_year_of_birth()
-            year_of_birth = self.random_year_of_birth
 
             reality = src.person.factory(
                 **a_person,
@@ -1825,7 +1827,9 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
             my_expectation = dict(
                 **a_person,
                 # age=calculate_age(year_of_birth),
-                age=calculate_age(self.random_year_of_birth),
+                age=calculate_age(
+                    self.random_year_of_birth
+                ),
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1836,8 +1840,8 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I use ``self.random_year_of_birth`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 4-5, 10-11, 18-19
+    :lineno-start: 62
+    :emphasize-lines: 4-5, 10-11, 18-21
 
         def test_factory_w_optional_arguments(self):
             # first_name = get_random_name()
@@ -1857,7 +1861,9 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
                 last_name='doe',
                 sex='M',
                 # age=calculate_age(year_of_birth),
-                age=calculate_age(self.random_year_of_birth),
+                age=calculate_age(
+                    self.random_year_of_birth
+                ),
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1868,16 +1874,19 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I use ``self.random_year_of_birth`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 6-7, 14-15, 22-25
+    :lineno-start: 86
+    :emphasize-lines: 7-10, 17-18
 
         def test_factory_person_says_hello(self):
             # first_name = get_random_name()
             first_name = self.random_first_name
             last_name = get_random_name()
             sex = pick_one('F', 'M')
+
             # year_of_birth = get_random_year_of_birth()
             year_of_birth = self.random_year_of_birth
+            # age = calculate_age(year_of_birth)
+            age = calculate_age(self.random_year_of_birth)
 
             a_random_person = src.person.factory(
                 # first_name=first_name,
@@ -1892,10 +1901,8 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
             my_expectation = (
                 # f'Hi, my name is {first_name} {last_name}'
                 f'Hi, my name is {self.random_first_name}'
-                # f' {last_name}'
-                # f' and I am {calculate_age(year_of_birth)}'
-                f' {last_name} and I am'
-                f' {calculate_age(self.random_year_of_birth)}'
+                f' {last_name}'
+                f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
