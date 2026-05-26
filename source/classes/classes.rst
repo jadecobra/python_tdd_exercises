@@ -94,7 +94,7 @@ open the project
 test_classy_person_says_hello
 *********************************************************************************
 
-I made a person say hello with a :ref:`function<what is a function?>`. How would I do that with a :ref:`class?<what is a class?>`
+I made a person :ref:`say hello with a function<test_factory_person_says_hello>`, I can also do the same thing with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>`that belong together.
 
 ----
 
@@ -107,30 +107,45 @@ I made a person say hello with a :ref:`function<what is a function?>`. How would
 I add a new test to ``test_person.py``
 
 .. code-block:: python
-  :lineno-start: 81
-  :emphasize-lines: 8-13, 15-17
+  :lineno-start: 69
+  :emphasize-lines: 23-28, 30-32
   :emphasize-text: Person
 
-            reality = src.person.say_hello(a_random_person)
-            my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
-            )
-            self.assertEqual(reality, my_expectation)
+      def test_factory_person_says_hello(self):
+          first_name = get_random_name()
+          last_name = get_random_name()
+          sex = pick_one('F', 'M')
 
-        def test_classy_person_says_hello(self):
-            joe = src.person.Person(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
-            )
+          year_of_birth = get_random_year_of_birth()
+          age = calculate_age(year_of_birth)
 
-            reality = src.person.say_hello(joe)
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+          a_random_person = src.person.factory(
+              first_name=first_name,
+              last_name=last_name,
+              sex=sex,
+              year_of_birth=year_of_birth,
+          )
+
+          reality = src.person.say_hello(a_random_person)
+          my_expectation = (
+              f'Hi, my name is {first_name} {last_name}'
+              f' and I am {age}'
+          )
+          self.assertEqual(reality, my_expectation)
+
+      def test_classy_person_says_hello(self):
+          joe = src.person.Person(
+              first_name='joe',
+              last_name='blow',
+              year_of_birth=1996,
+          )
+
+          reality = src.person.say_hello(joe)
+          my_expectation = None
+          self.assertEqual(reality, my_expectation)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -164,7 +179,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
             'sex': sex,
             'age': (
                 datetime.datetime.today().year
-               -year_of_birth
+              - year_of_birth
             ),
         }
 
@@ -173,22 +188,24 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
         pass
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  - I can :ref:`make a class with the pass keyword<test_making_a_class_w_pass>`
+  - the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    TypeError: Person() takes no arguments
+      TypeError: Person() takes no arguments
 
-  because :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments
+    because :ref:`classes<what is a class?>` do not take arguments like a :ref:`function<what is a function?>` without a :ref:`method<what is a method?>` that handles those arguments
 
-* I add a `constructor method`_ to the ``Person`` :ref:`class<what is a class?>` so it can take arguments
+* I add a `constructor method`_ to the ``Person`` :ref:`class<what is a class?>` so it can take arguments, it is used to define how copies of the :ref:`class<what is a class?>` are made
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 3-4
+    :emphasize-lines: 3-5
 
     class Person:
 
+        # pass
         def __init__():
             return None
 
@@ -207,10 +224,12 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 3
+    :emphasize-lines: 4-5
 
     class Person:
 
+        # pass
+        # def __init__():
         def __init__(first_name):
             return None
 
@@ -228,30 +247,40 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 3
+    :emphasize-lines: 5-6
 
     class Person:
 
+        # pass
+        # def __init__():
+        # def __init__(first_name):
         def __init__(self, first_name):
             return None
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  - ``self`` is Python_ convention, I can use any name I want
+  - the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: shell
+    .. code-block:: shell
 
-    TypeError:
-        Person.__init__() got
-        an unexpected keyword argument 'last_name'.
-        Did you mean 'first_name'?
+      TypeError:
+          Person.__init__() got
+          an unexpected keyword argument 'last_name'.
+          Did you mean 'first_name'?
 
-  I have seen this before, so far it is the same as making the ``factory`` :ref:`function<what is a function?>`
+    I have seen this before, so far it is the same as making the ``factory`` :ref:`function<what is a function?>`
 
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of ``__init__``
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 1
+    :lineno-start: 27
+    :emphasize-lines: 6-7
 
+    class Person:
+
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
         def __init__(self, first_name, last_name):
             return None
 
@@ -269,15 +298,20 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 3-6
+    :emphasize-lines: 7-8
 
     class Person:
 
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
         def __init__(
-                self, first_name, last_name,
-                year_of_birth,
-            ):
-            return
+            self, first_name, last_name,
+            year_of_birth,
+        ):
+            return None
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -285,12 +319,17 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
     AttributeError: 'Person' object has no attribute 'get'
 
-  because the test calls the ``say_hello`` :ref:`function<what is a function?>` expects a :ref:`dictionary<what is a dictionary?>` and calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` on it. The ``Person`` :ref:`object<what is a class?>` does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`.
+  because
 
-* I change ``reality`` in :ref:`test_classy_person_says_hello` to use a :ref:`method<what is a method?>` that belongs to ``Person``, in ``test_person.py``
+  - the test calls the ``say_hello`` :ref:`function<what is a function?>`
+  - the ``say_hello`` :ref:`function<what is a function?>` expects a :ref:`dictionary<what is a dictionary?>`
+  - the ``say_hello`` :ref:`function<what is a function?>` calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` on what it receives and
+  - the ``Person`` :ref:`object<what is a class?>` it receives is not a :ref:`dictionary<what is a dictionary?>` and does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
+
+* I change ``reality`` in :ref:`test_classy_person_says_hello` to use a :ref:`method<what is a method?>` I can add to ``Person``, in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 91
     :emphasize-lines: 8-9
     :emphasize-text: joe
 
@@ -302,7 +341,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
             )
 
             # reality = src.person.say_hello(joe)
-            reality = joe.say_hello(joe)
+            reality = src.person.Person.say_hello(joe)
             my_expectation = None
             self.assertEqual(reality, my_expectation)
 
@@ -317,18 +356,23 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   because the test calls the ``say_hello`` :ref:`function<what is a function?>` which does not yet exist in the ``Person`` :ref:`class<what is a class?>`
 
-* I add a :ref:`method definition<how to make a function>` for it in ``person.py``
+* I add a :ref:`method definition<how to make a function>` for it to the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 9-10
+    :emphasize-lines: 14-15
 
     class Person:
 
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
         def __init__(
-                self, first_name, last_name,
-                year_of_birth,
-            ):
+            self, first_name, last_name,
+            year_of_birth,
+        ):
             return None
 
         def say_hello():
@@ -342,22 +386,28 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
         Person.say_hello() takes 0 positional arguments
         but 2 were given
 
-  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`method<what is a method?>` with one :ref:`positional argument<test_functions_w_positional_arguments>` (``person``) and the error says two were given
+  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`method<what is a method?>` with one :ref:`positional argument<test_functions_w_positional_arguments>` (``person``). Why did the error say two were given when the test only sends one?
 
 * I add ``person`` to the :ref:`method definition<how to make a function>`
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 9
+    :emphasize-lines: 14-15
 
     class Person:
 
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
         def __init__(
-                self, first_name, last_name,
-                year_of_birth,
-            ):
+            self, first_name, last_name,
+            year_of_birth,
+        ):
             return None
 
+        # def say_hello():
         def say_hello(person):
             return None
 
@@ -369,27 +419,36 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
         Person.say_hello() takes 1 positional argument
         but 2 were given
 
-  because :ref:`methods<what is a method?>` take the :ref:`class<what is a class?>` they belong to as the first argument.
+  because :ref:`methods<what is a method?>` take the copy of the :ref:`class<what is a class?>` (``self``) they belong to as the first argument.
 
-* I can also add the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` because it does not use anything in the :ref:`class<what is a class?>`
+* I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<what is a class?>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to ``say_hello``
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 9
+    :emphasize-lines: 15
 
     class Person:
 
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
         def __init__(
-                self, first_name, last_name,
-                year_of_birth,
-            ):
+            self, first_name, last_name,
+            year_of_birth,
+        ):
             return None
 
+        # def say_hello():
         @staticmethod
         def say_hello(person):
             return None
 
   the test passes. I can call :ref:`methods<what is a method?>` from outside the :ref:`class<what is a class?>` they belong to.
+
+  * I made a copy of the ``Person`` :ref:`class<what is a class?>` named ``joe``
+  * I called the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` with ``joe`` (which is a copy of the ``Person`` :ref:`class<what is a class?>`) as input. Confused? It is confusing and there is a better way.
 
 ----
 
@@ -399,13 +458,13 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
 ----
 
-I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ for the person it belongs to, the same way the ``say_hello`` :ref:`function<what is a function?>` returns a string_ for the person it receives as input
+I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` to return a string_ for the person it receives, the same way the ``say_hello`` :ref:`function<what is a function?>` returns a string_ for the person (:ref:`dictionary<what is a dictionary?>`) it receives as input
 
 * I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_classy_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 10-13
+    :lineno-start: 91
+    :emphasize-lines: 10-14
 
         def test_classy_person_says_hello(self):
             joe = src.person.Person(
@@ -415,7 +474,8 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
             )
 
             # reality = src.person.say_hello(joe)
-            reality = joe.say_hello(joe)
+            reality = src.person.Person.say_hello(joe)
+            # my_expectation = None
             my_expectation = (
                 'Hi, my name is joe blow and I am'
                 f' {calculate_age(1996)}'
@@ -434,23 +494,27 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 * I copy the value from the terminal_ and paste it in the `return statement`_ for the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 2
+    :lineno-start: 40
+    :emphasize-lines: 4-5
 
-    def say_hello(person):
-        return 'Hi, my name is joe blow and I am 30'
+        # def say_hello():
+        @staticmethod
+        def say_hello(person):
+            # return None
+            return 'Hi, my name is joe blow and I am 30'
 
   the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the next person to :ref:`test_classy_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 9-13, 15-20
+    :lineno-start: 98
+    :emphasize-lines: 10-14, 16-21
     :emphasize-text: Person jane
 
             # reality = src.person.say_hello(joe)
-            reality = joe.say_hello(joe)
+            reality = src.person.Person.say_hello(joe)
+            # my_expectation = None
             my_expectation = (
                 'Hi, my name is joe blow and I am'
                 f' {calculate_age(1996)}'
@@ -463,7 +527,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
                 year_of_birth=1991,
             )
 
-            reality = jane.say_hello(jane)
+            reality = src.person.Person.say_hello(jane)
             my_expectation = (
                 'Hi, my name is jane doe and I am'
                 f' {calculate_age(1991)}'
@@ -487,15 +551,21 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 
   .. code-block:: python
     :lineno-start: 27
-    :emphasize-lines: 5
+    :emphasize-lines: 10-11
     :emphasize-text: sex
 
     class Person:
 
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
         def __init__(
-                self, first_name, last_name,
-                year_of_birth, sex,
-            ):
+            self, first_name, last_name,
+            # year_of_birth,
+            year_of_birth, sex,
+        ):
             return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -511,13 +581,15 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 * I add a default value for ``sex`` to make it optional
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 3
+    :lineno-start: 34
+    :emphasize-lines: 4-5
 
         def __init__(
-                self, first_name, last_name,
-                year_of_birth, sex=None,
-            ):
+            self, first_name, last_name,
+            # year_of_birth,
+            # year_of_birth, sex,
+            year_of_birth, sex=None,
+        ):
             return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -528,18 +600,21 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
         Person.__init__() missing
         1 required positional argument: 'last_name'
 
-  because when the test calls the ``Person`` :ref:`object<what is a class?>` to make ``jane`` it does not provide a value for ``last_name`` which is a required argument, I have to make it a choice
+  because when the test calls the ``Person`` :ref:`object<what is a class?>` to make ``jane`` it does not provide a value for ``last_name`` which is a required argument, I have to make it a choice as well
 
 * I add a default value for ``last_name`` to make it optional
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2
+    :lineno-start: 34
+    :emphasize-lines: 2-3
 
         def __init__(
-                self, first_name, last_name=None,
-                year_of_birth, sex=None,
-            ):
+            # self, first_name, last_name,
+            self, first_name, last_name=None,
+            # year_of_birth,
+            # year_of_birth, sex,
+            year_of_birth, sex=None,
+        ):
             return None
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -554,13 +629,17 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 * I add a default value for ``year_of_birth`` to make it optional
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 3
+    :lineno-start: 34
+    :emphasize-lines: 6-7
 
         def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
+            # self, first_name, last_name,
+            self, first_name, last_name=None,
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
             return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -571,49 +650,21 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
           'Hi, my name is joe blow and I am 30'
        != 'Hi, my name is jane doe and I am 35'
 
-  the ``say_hello`` :ref:`function<what is a function?>` should use the ``Person`` :ref:`object<what is a class?>` to make the message. I can do that with the :ref:`class attributes<what is a class attribute?>`.
+  Progress. I can make the ``say_hello`` :ref:`function<what is a function?>` use :ref:`attributes<what is a class attribute?>` of the person it receives as input to make the message.
 
-* I change the string_ to an :ref:`f-string<what is string interpolation?>` with :ref:`class attributes<what is a class attribute?>` for the ``first_name``, in ``person.py``
+* I change the string_ in the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is a class attribute?>` of the person it receives, in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 11-15
+    :lineno-start: 44
+    :emphasize-lines: 5-9
 
-    class Person:
-
-        def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
-            return None
-
+        # def say_hello():
         @staticmethod
         def say_hello(person):
+            # return None
             # return 'Hi, my name is joe blow and I am 30'
             return (
-                f'Hi, my name is {self.first_name} blow'
-                ' and I am 30'
-            )
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'self' is not defined
-
-  because I made ``say_hello`` a `staticmethod`_ when it was not using anything in the :ref:`class<what is a class?>`
-
-* I remove the `staticmethod decorator` then add ``self`` in the parentheses
-
-  .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 1-2
-
-        # @staticmethod
-        def say_hello(self, person):
-            # return 'Hi, my name is joe blow and I am 30'
-            return (
-                f'Hi, my name is {self.first_name} blow'
+                f'Hi, my name is {person.first_name} blow'
                 ' and I am 30'
             )
 
@@ -623,18 +674,78 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
 
     AttributeError: 'Person' object has no attribute 'first_name'
 
-  because I do not have a definition for ``first_name`` in the ``Person`` :ref:`object<what is a class?>`
+  because there is no definition for ``first_name`` in the ``Person`` :ref:`class defintion<how to make a class>`
 
-* I add the :ref:`class attribute<what is a class attribute?>` to the ``__init__`` :ref:`method<what is a method?>` so that the ``say_hello`` :ref:`method<what is a function?>` can use it
+* I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<what is a class?>` for ``first_name``
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 5
+    :lineno-start: 27
+    :emphasize-lines: 3
+
+    class Person:
+
+        first_name = 'jane'
+
+        # pass
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is jane blow and I am 30'
+     != 'Hi, my name is joe blow and I am 30'
+
+  because I used a fixed value (``jane``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``joe``. I have to get the value from the :ref:`object<what is a class?>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
+
+* I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``first_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<what is a class?>` is made
+
+  .. code-block:: python
+    :lineno-start: 27
+
+    class Person:
+
+        first_name = 'jane'
+
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
+        def __init__(
+            # self, first_name, last_name,
+            self, first_name, last_name=None,
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            first_name = first_name
+            return None
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is jane blow and I am 30'
+     != 'Hi, my name is joe blow and I am 30'
+
+* I change the :ref:`variable<what is a variable?>` to a :ref:`class attribute<what is a class attribute?>` by adding ``self.`` before it
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 10
 
         def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
+            # self, first_name, last_name,
+            self, first_name, last_name=None,
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            # first_name = first_name
             self.first_name = first_name
             return None
 
@@ -647,7 +758,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` to return a string_ fo
         'Hi, my name is jane blow and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
-  the first names are the same, the last name and ages are different
+  the first names are the same, the last names and ages are different
 
 * I add a reference to the ``last_name`` in the `return statement`_ of the ``say_hello`` :ref:`method<what is a method?>`
 
