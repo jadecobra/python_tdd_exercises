@@ -702,6 +702,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   .. code-block:: python
     :lineno-start: 27
+    :emphasize-lines: 18
 
     class Person:
 
@@ -735,7 +736,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   .. code-block:: python
     :lineno-start: 36
-    :emphasize-lines: 10
+    :emphasize-lines: 9-10
 
         def __init__(
             # self, first_name, last_name,
@@ -760,19 +761,21 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   the first names are the same, the last names and ages are different
 
-* I add a reference to the ``last_name`` in the `return statement`_ of the ``say_hello`` :ref:`method<what is a method?>`
+* I add the ``last_name`` attribute to the string_ in the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 36
-    :emphasize-lines: 5-7
+    :lineno-start: 48
+    :emphasize-lines: 7-9
 
-        # @staticmethod
-        def say_hello(self, person):
+        # def say_hello():
+        @staticmethod
+        def say_hello(person):
+            # return None
             # return 'Hi, my name is joe blow and I am 30'
             return (
-                # f'Hi, my name is {self.first_name} blow'
-                f'Hi, my name is {self.first_name}'
-                f' {self.last_name}'
+                # f'Hi, my name is {person.first_name} blow'
+                f'Hi, my name is {person.first_name}'
+                f' {person.last_name}'
                 ' and I am 30'
             )
 
@@ -780,51 +783,134 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   .. code-block:: shell
 
-    AttributeError:
-        'Person' object has no attribute 'last_name'.
-        Did you mean: 'first_name'?
+    AttributeError: 'Person' object has no attribute 'last_name'.
+                     Did you mean: 'first_name'?
 
-  because I do not have a definition for ``first_name`` in the ``Person`` :ref:`object<what is a class?>`
+  because there is no definition for ``last_name`` in the ``Person`` :ref:`class defintion<how to make a class>`
 
-* I add ``self.last_name`` to the ``__init__`` :ref:`method<what is a method?>` so that the ``say_hello`` :ref:`method<what is a function?>` can use it
+* I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<what is a class?>` for ``last_name``
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 6
+    :lineno-start: 27
+    :emphasize-lines: 4
+
+    class Person:
+
+        first_name = 'jane'
+        last_name = 'doe'
+
+        # pass
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is joe doe and I am 30'
+     != 'Hi, my name is joe blow and I am 30'
+
+  because I used a fixed value (``doe``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``blow``. I have to get the value from the :ref:`object<what is a class?>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
+
+* I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``last_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<what is a class?>` is made
+
+  .. code-block:: python
+    :lineno-start: 32
+    :emphasize-lines: 16
+
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
+        def __init__(
+            # self, first_name, last_name,
+            self, first_name, last_name=None,
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            # first_name = first_name
+            self.first_name = first_name
+            last_name = last_name
+            return None
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is joe doe and I am 30'
+     != 'Hi, my name is joe blow and I am 30'
+
+* I change ``last_name`` to a :ref:`class attribute<what is a class attribute?>` in the ``__init__`` :ref:`method<what is a method?>` by adding ``self.`` before it
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 11-12
 
         def __init__(
-                self, first_name, last_name=None,
-                year_of_birth=None, sex=None,
-            ):
+            # self, first_name, last_name,
+            self, first_name, last_name=None,
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            # first_name = first_name
             self.first_name = first_name
+            # last_name = last_name
             self.last_name = last_name
             return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
-    :emphasize-text: None
-
+    :emphasize-text: doe blow 30 35
 
     AssertionError:
         'Hi, my name is jane None and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
-  because the default value for ``last_name`` is :ref:`None<what is None?>`
+  - the first names are the same and last names and ages are different
+  - the ``__init__`` :ref:`method<what is a method?>` used :ref:`None<what is None?>` for the value of ``self.last_name`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_name`` parameter of the :ref:`method<what is a method?>` is :ref:`None<what is None?>`. This means that
 
-* I change the default value for ``last_name`` in the ``__init__`` :ref:`method<what is a method?>` to ``'doe'`` to give the test what it wants
+    .. code-block:: python
+
+      src.person.Person(
+          first_name='jane',
+          sex='F',
+          year_of_birth=1991,
+      )
+
+    is the same as
+
+    .. code-block:: python
+
+      src.person.Person.__init__(
+          first_name='jane',
+          sex='F',
+          year_of_birth=1991,
+          last_name=None,
+      )
+
+    because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+
+* I change the :ref:`default value<test_functions_w_optional_arguments>` for ``last_name`` in the ``__init__`` :ref:`method<what is a method?>` to ``'doe'`` to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 2
+    :lineno-start: 37
+    :emphasize-lines: 3-4
 
         def __init__(
-                self, first_name, last_name='doe',
-                year_of_birth=None, sex=None,
-            ):
-            self.first_name = first_name
-            self.last_name = last_name
-            return None
+            # self, first_name, last_name,
+            # self, first_name, last_name=None,
+            self, first_name, last_name='doe',
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
