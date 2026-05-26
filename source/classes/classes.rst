@@ -1042,7 +1042,79 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   the test passes. What a beautiful life.
 
+* ``self.first_name``, ``self.last_name`` and ``self.year_of_birth`` are now defined twice in the :ref:`class<what is a class?>`. I remove the first definition since the :ref:`attributes<what is a class attribute?>` are also made in the ``__init__`` :ref:`method<what is a method?>` and that gets called when copies of the ``Person`` :ref:`class<what is a class?>` are made, no need to have a default person be ``jane doe`` born in ``1991``
 
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 3-5
+
+    class Person:
+
+        # first_name = 'jane'
+        # last_name = 'doe'
+        # year_of_birth = 1991
+
+        # pass
+
+  the test is still green.
+
+* The ``say_hello`` :ref:`method<what is a method?>` is in the ``Person`` :ref:`class<what is a class?>`, there is no need for it to take a copy of the ``Person`` :ref:`class<what is a class?>` as input since it should be able to access the :ref:`attributes<what is a class attribute?>` of the :ref:`class<what is a class?>` it belongs to. I change ``person.`` to ``self.`` to use :ref:`class attributes<what is a class attribute?>` instead
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 5-6, 13-14, 16-17
+
+        # def say_hello():
+        @staticmethod
+        def say_hello(person):
+            age = (
+                datetime.datetime.today().year
+              # - person.year_of_birth
+              - self.year_of_birth
+            )
+            # return None
+            # return 'Hi, my name is joe blow and I am 30'
+            return (
+                # f'Hi, my name is {person.first_name} blow'
+                # f'Hi, my name is {person.first_name}'
+                # f' {person.last_name}'
+                # f' and I am 30'
+                f'Hi, my name is {self.first_name}'
+                f' {self.last_name}'
+                f' and I am {age}'
+            )
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'self' is not defined
+
+* I change the name of the input parameter from ``person`` to ``self``
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 4
+
+    # def say_hello():
+    @staticmethod
+    # def say_hello(person):
+    def say_hello(self):
+
+  the test is green again.
+
+* I remove the `staticmethod decorator`_ because I no longer need it since the ``say_hello`` :ref:`method<what is a method?>` is using :ref:`class attributes<what is a class attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 2
+
+    # def say_hello():
+    # @staticmethod
+    # def say_hello(person):
+    def say_hello(self):
+
+  the test is still green.
 
 * I remove the commented lines
 
@@ -1052,30 +1124,40 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
     class Person:
 
         def __init__(
-                self, first_name, last_name='doe',
-                year_of_birth=None, sex=None,
-            ):
+            self, first_name, last_name='doe',
+            year_of_birth=None, sex=None,
+        ):
             self.first_name = first_name
             self.last_name = last_name
             self.year_of_birth = year_of_birth
             return None
 
-        def say_hello(self, person):
+        def say_hello(self):
             age = (
                 datetime.datetime.today().year
               - self.year_of_birth
             )
             return (
                 f'Hi, my name is {self.first_name}'
-                f' {self.last_name} and I am {age}'
+                f' {self.last_name}'
+                f' and I am {age}'
             )
 
-* I add an :ref:`assertion<what is an assertion?>` for the next person in :ref:`test_classy_person_says_hello` in ``test_person.py``
+* I change the call to ``src.person.say_hello(joe)`` for ``joe`` because I can call :ref:`methods<what is a method?>` directly from a copy of a :ref:`class<what is a class?>`, in :ref:`test_classy_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 109
-    :emphasize-lines: 14-18, 20-25
-    :emphasize-text: Person john
+    :lineno-start: 98
+    :emphasize-lines: 3-4
+
+            # reality = src.person.say_hello(joe)
+            # reality = src.person.Person.say_hello(joe)
+            reality = joe.say_hello()
+            # my_expectation = None
+            my_expectation = (
+                'Hi, my name is joe blow and I am'
+                f' {calculate_age(1996)}'
+            )
+            self.assertEqual(reality, my_expectation)
 
             jane = src.person.Person(
                 first_name='jane',
@@ -1083,7 +1165,42 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
                 year_of_birth=1991,
             )
 
-            reality = jane.say_hello(jane)
+  still green.
+
+* I change the call to ``src.person.say_hello(joe)`` for ``jane`` as well
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 7-8
+
+            jane = src.person.Person(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+
+            # reality = src.person.Person.say_hello(jane)
+            reality = jane.say_hello()
+            my_expectation = (
+                'Hi, my name is jane doe and I am'
+                f' {calculate_age(1991)}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  green.
+
+* I add an :ref:`assertion<what is an assertion?>` for the next person
+
+  .. code-block:: python
+    :lineno-start: 114
+    :emphasize-lines: 9-13, 15-20
+    :emphasize-text: Person john
+
+            # reality = src.person.Person.say_hello(jane)
+            reality = jane.say_hello()
             my_expectation = (
                 'Hi, my name is jane doe and I am'
                 f' {calculate_age(1991)}'
@@ -1096,7 +1213,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
                 year_of_birth=1580,
             )
 
-            reality = john.say_hello(john)
+            reality = john.say_hello()
             my_expectation = (
                 'Hi, my name is jane doe and I am'
                 f' {calculate_age(1991)}'
@@ -1117,42 +1234,31 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
   .. code-block:: python
-    :lineno-start: 116
-    :emphasize-lines: 9-10
+    :lineno-start: 128
+    :emphasize-lines: 3-6
 
-            john = src.person.Person(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
-
-            reality = john.say_hello(john)
+            reality = john.say_hello()
             my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {calculate_age(1991)}'
                 'Hi, my name is john smith and I am'
                 f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
 
   the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for ``a_person``
 
   .. code-block:: python
-    :lineno-start: 116
-    :emphasize-lines: 14-19, 21-26
+    :lineno-start: 128
+    :emphasize-lines: 10-15, 17-22
     :emphasize-text: Person a_person
 
-            john = src.person.Person(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
-
-            reality = john.say_hello(john)
+            reality = john.say_hello()
             my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {calculate_age(1991)}'
                 'Hi, my name is john smith and I am'
                 f' {calculate_age(1580)}'
             )
@@ -1165,7 +1271,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
                 sex='F',
             )
 
-            reality = a_person.say_hello(a_person)
+            reality = a_person.say_hello()
             my_expectation = (
                 'Hi, my name is john smith and I am'
                 f' {calculate_age(1580)}'
@@ -1232,36 +1338,235 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
 * I go back to the terminal_ that is running the tests
 
-* I add a random person with random values for the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.Person``
+* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'joe'``, ``'blow'`` and ``1996`` from :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 2-5, 7-12, 14-18
+    :lineno-start: 91
+    :emphasize-lines: 2-3, 5-6
 
         def test_classy_person_says_hello(self):
-            first_name = get_random_name()
-            last_name = get_random_name()
-            sex = pick_one('F', 'M')
-            year_of_birth = get_random_year_of_birth()
+            first_name = 'joe'
+            last_name = 'blow'
 
-            a_random_person = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = a_random_person.say_hello(
-                a_random_person
-            )
-            my_expectation = ''
-            self.assertEqual(reality, my_expectation)
+            year_of_birth = 1996
+            age = calculate_age(year_of_birth)
 
             joe = src.person.Person(
                 first_name='joe',
                 last_name='blow',
                 year_of_birth=1996,
             )
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'joe'``, ``'blow'`` and ``1996``
+
+  .. code-block:: python
+    :lineno-start: 96
+    :emphasize-lines: 2-7, 15-18
+
+            joe = src.person.Person(
+                # first_name='joe',
+                # last_name='blow',
+                # year_of_birth=1996,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            # reality = src.person.say_hello(joe)
+            # reality = src.person.Person.say_hello(joe)
+            reality = joe.say_hello()
+            # my_expectation = None
+            my_expectation = (
+                # 'Hi, my name is joe blow and I am'
+                # f' {calculate_age(1996)}'
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+  the test is still green.
+
+* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'jane'`` and ``1991`` from :ref:`test_classy_person_says_hello`
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 13-14, 16-17
+
+            # reality = src.person.say_hello(joe)
+            # reality = src.person.Person.say_hello(joe)
+            reality = joe.say_hello()
+            # my_expectation = None
+            my_expectation = (
+                # 'Hi, my name is joe blow and I am'
+                # f' {calculate_age(1996)}'
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'jane'
+            last_name = 'doe'
+
+            year_of_birth = 1991
+            age = calculate_age(year_of_birth)
+
+            jane = src.person.Person(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'jane'`` and ``1991``
+
+  .. code-block:: python
+    :lineno-start: 126
+    :emphasize-lines: 2, 4-6, 12-15
+
+            jane = src.person.Person(
+                # first_name='jane',
+                sex='F',
+                # year_of_birth=1991,
+                first_name='jane',
+                year_of_birth=1991,
+            )
+
+            # reality = src.person.Person.say_hello(jane)
+            reality = jane.say_hello()
+            my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {calculate_age(1991)}'
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            john = src.person.Person(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
+
+  the test is still green.
+
+* I do the same thing with ``john``
+
+  .. code-block:: python
+    :lineno-start: 134
+    :emphasize-lines: 11-12, 14-15, 18-23, 30-33
+
+            # reality = src.person.Person.say_hello(jane)
+            reality = jane.say_hello()
+            my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {calculate_age(1991)}'
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'john'
+            last_name = 'smith'
+
+            year_of_birth = 1580
+            age = calculate_age(year_of_birth)
+
+            john = src.person.Person(
+                # first_name='john',
+                # last_name='smith',
+                # year_of_birth=1580,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = john.say_hello()
+            my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {calculate_age(1991)}'
+                # 'Hi, my name is john smith and I am'
+                # f' {calculate_age(1580)}'
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+  the test is still green.
+
+* I do the same thing with ``a_person``
+
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 12-13, 15-16, 19-24, 32-35
+
+            reality = john.say_hello()
+            my_expectation = (
+                # 'Hi, my name is jane doe and I am'
+                # f' {calculate_age(1991)}'
+                # 'Hi, my name is john smith and I am'
+                # f' {calculate_age(1580)}'
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'person'
+            last_name = 'public'
+
+            year_of_birth = 2000
+            age = calculate_age(year_of_birth)
+
+            a_person = src.person.Person(
+                # first_name='person',
+                # last_name='public',
+                # year_of_birth=2000,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+                sex='F',
+            )
+
+            reality = a_person.say_hello()
+            my_expectation = (
+                # 'Hi, my name is john smith and I am'
+                # f' {calculate_age(1580)}'
+                # 'Hi, my name is person public and I am'
+                # f' {calculate_age(2000)}'
+                f'Hi, my name is {first_name} {last_name}'
+                f' and I am {age}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green
+
+* I can add a random person with random values for the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.Person`` to replace ``joe``, ``jane``, ``john`` and ``a_person`` since they are all made the same way
+
+  .. code-block:: python
+    :lineno-start: 91
+    :emphasize-lines: 2-3, 5-6, 8-12, 14-16
+
+        def test_classy_person_says_hello(self):
+            first_name = get_random_name()
+            last_name = get_random_name()
+
+            year_of_birth = get_random_year_of_birth()
+            age = calculate_age(year_of_birth)
+
+            a_random_person = src.person.Person(
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
+            )
+
+            reality = a_random_person.say_hello()
+            my_expectation = ''
+            self.assertEqual(reality, my_expectation)
+
+            first_name = 'joe'
+            last_name = 'blow'
 
   the terminal_ is my friend and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1272,51 +1577,41 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 * I change ``my_expectation`` to match ``reality`` for ``a_random_person``
 
   .. code-block:: python
-    :lineno-start: 94
-    :emphasize-lines: 11-14
+    :lineno-start: 104
+    :emphasize-lines: 2-6
 
-            a_random_person = src.person.Person(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-
-            reality = a_random_person.say_hello(
-                a_random_person
-            )
+            reality = a_random_person.say_hello()
+            # my_expectation = ''
             my_expectation = (
                 f'Hi, my name is {first_name} {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
-  the test passes
+  the test passes.
 
 * I remove the commented lines and the other people from :ref:`test_classy_person_says_hello` because ``a_random_person`` covers their cases
 
   .. code-block:: python
-    :lineno-start: 88
+    :lineno-start: 91
 
         def test_classy_person_says_hello(self):
             first_name = get_random_name()
             last_name = get_random_name()
-            sex = pick_one('F', 'M')
+
             year_of_birth = get_random_year_of_birth()
+            age = calculate_age(year_of_birth)
 
             a_random_person = src.person.Person(
                 first_name=first_name,
                 last_name=last_name,
-                sex=sex,
                 year_of_birth=year_of_birth,
             )
 
-            reality = a_random_person.say_hello(
-                a_random_person
-            )
+            reality = a_random_person.say_hello()
             my_expectation = (
                 f'Hi, my name is {first_name} {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
