@@ -317,7 +317,8 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   .. code-block:: python
 
-    AttributeError: 'Person' object has no attribute 'get'
+    AttributeError:
+        'Person' object has no attribute 'get'
 
   because
 
@@ -352,7 +353,8 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
   .. code-block:: python
 
-    AttributeError: 'Person' object has no attribute 'say_hello'
+    AttributeError:
+        'Person' object has no attribute 'say_hello'
 
   because the test calls the ``say_hello`` :ref:`function<what is a function?>` which does not yet exist in the ``Person`` :ref:`class<what is a class?>`
 
@@ -672,7 +674,8 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   .. code-block:: python
 
-    AttributeError: 'Person' object has no attribute 'first_name'
+    AttributeError:
+        'Person' object has no attribute 'first_name'
 
   because there is no definition for ``first_name`` in the ``Person`` :ref:`class defintion<how to make a class>`
 
@@ -761,7 +764,9 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   the first names are the same, the last names and ages are different
 
-* I add the ``last_name`` attribute to the string_ in the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>`
+----
+
+* I add the ``last_name`` :ref:`attribute<what is a class attribute?>` to the string_ in the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -783,8 +788,9 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   .. code-block:: shell
 
-    AttributeError: 'Person' object has no attribute 'last_name'.
-                     Did you mean: 'first_name'?
+    AttributeError:
+        'Person' object has no attribute 'last_name'.
+        Did you mean: 'first_name'?
 
   because there is no definition for ``last_name`` in the ``Person`` :ref:`class defintion<how to make a class>`
 
@@ -923,25 +929,29 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   the age is the only thing that is different
 
-* I add a calculation for the age with the ``year_of_birth`` in the `return statement`_ of the ``say_hello`` :ref:`method<what is a method?>`
+----
+
+* I add a calculation for the age with the ``year_of_birth`` :ref:`attribute<what is a class attribute?>` to the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 4-6, 11-13
+    :lineno-start: 52
+    :emphasize-lines: 4-7, 14-15
 
-        # @staticmethod
-        def say_hello(self, person):
+        # def say_hello():
+        @staticmethod
+        def say_hello(person):
             age = (
                 datetime.datetime.today().year
-              - self.year_of_birth
+              - person.year_of_birth
             )
+            # return None
             # return 'Hi, my name is joe blow and I am 30'
             return (
-                # f'Hi, my name is {self.first_name} blow'
-                f'Hi, my name is {self.first_name}'
-                # f' {self.last_name}'
-                # ' and I am 30'
-                f' {self.last_name} and I am {age}'
+                # f'Hi, my name is {person.first_name} blow'
+                f'Hi, my name is {person.first_name}'
+                f' {person.last_name}'
+                # f' and I am 30'
+                f' and I am {age}'
             )
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
@@ -951,24 +961,88 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
     AttributeError:
         'Person' object has no attribute 'year_of_birth'
 
-  because I do not have a definition for ``year_of_birth`` in the ``Person`` :ref:`object<what is a class?>`
+  because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`class defintion<how to make a class>`
 
-* I add ``self.year_of_birth`` to the ``__init__`` :ref:`method<what is a method?>` so that the ``say_hello`` :ref:`method<what is a function?>` can use it
+* I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<what is a class?>` for ``year_of_birth``
 
   .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 7
+    :lineno-start: 27
+    :emphasize-lines: 5
+
+    class Person:
+
+        first_name = 'jane'
+        last_name = 'doe'
+        year_of_birth = 1991
+
+        # pass
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is joe blow and I am 35'
+     != 'Hi, my name is joe blow and I am 30'
+
+  because I used a fixed value (``1991``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``datetime.datetime.now().year-1996``. I have to get the value from the :ref:`object<what is a class?>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
+
+* I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``year_of_birth`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<what is a class?>` is made
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 16
 
         def __init__(
-                self, first_name, last_name='doe',
-                year_of_birth=None, sex=None,
-            ):
+            # self, first_name, last_name,
+            # self, first_name, last_name=None,
+            self, first_name, last_name='doe',
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            # first_name = first_name
             self.first_name = first_name
+            # last_name = last_name
             self.last_name = last_name
+            year_of_birth = year_of_birth
+            return None
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        'Hi, my name is joe blow and I am 35'
+     != 'Hi, my name is joe blow and I am 30'
+
+* I change ``year_of_birth`` to a :ref:`class attribute<what is a class attribute?>` in the ``__init__`` :ref:`method<what is a method?>` by adding ``self.`` before it
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 14-15
+
+        def __init__(
+            # self, first_name, last_name,
+            # self, first_name, last_name=None,
+            self, first_name, last_name='doe',
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            # first_name = first_name
+            self.first_name = first_name
+            # last_name = last_name
+            self.last_name = last_name
+            # year_of_birth = year_of_birth
             self.year_of_birth = year_of_birth
             return None
 
   the test passes. What a beautiful life.
+
+
 
 * I remove the commented lines
 
