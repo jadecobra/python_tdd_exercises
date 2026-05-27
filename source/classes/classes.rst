@@ -1109,7 +1109,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     :emphasize-lines: 4-8
 
         # def say_hello():
-        # @staticmethod
+        @staticmethod
         def say_hello(person):
             # age = (
             #     datetime.datetime.today().year
@@ -1132,16 +1132,17 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 5-6, 13-14, 16-17
+    :emphasize-lines: 8-9, 14-15, 17-18
 
         # def say_hello():
         @staticmethod
         def say_hello(person):
-            age = (
-                datetime.datetime.today().year
-              # - person.year_of_birth
-              - self.year_of_birth
-            )
+            # age = (
+            #     datetime.datetime.today().year
+            #   - person.year_of_birth
+            # )
+            # age = calculate_age(person.year_of_birth)
+            age = calculate_age(self.year_of_birth)
             # return None
             # return 'Hi, my name is joe blow and I am 30'
             return (
@@ -1163,26 +1164,26 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the name of the input parameter from ``person`` to ``self``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 4
+    :lineno-start: 64
+    :emphasize-lines: 3-4
 
-    # def say_hello():
-    @staticmethod
-    # def say_hello(person):
-    def say_hello(self):
+        # def say_hello():
+        @staticmethod
+        # def say_hello(person):
+        def say_hello(self):
 
   the test is green again.
 
 * I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<test_classy_person_says_hello>` is using :ref:`class attributes<what is a class attribute?>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 64
     :emphasize-lines: 2
 
-    # def say_hello():
-    # @staticmethod
-    # def say_hello(person):
-    def say_hello(self):
+        # def say_hello():
+        # @staticmethod
+        # def say_hello(person):
+        def say_hello(self):
 
   the test is still green.
 
