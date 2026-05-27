@@ -1884,8 +1884,8 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
             sex = pick_one('F', 'M')
 
             # year_of_birth = get_random_year_of_birth()
-            year_of_birth = self.random_year_of_birth
             # age = calculate_age(year_of_birth)
+            year_of_birth = self.random_year_of_birth
             age = calculate_age(self.random_year_of_birth)
 
             a_random_person = src.person.factory(
@@ -1913,41 +1913,26 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 * I use ``self.random_year_of_birth`` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 6-7, 14-15, 24-27
+    :lineno-start: 115
+    :emphasize-lines: 6-9, 15-16
 
         def test_classy_person_says_hello(self):
             # first_name = get_random_name()
             first_name = self.random_first_name
             last_name = get_random_name()
-            sex = pick_one('F', 'M')
+
             # year_of_birth = get_random_year_of_birth()
+            # age = calculate_age(year_of_birth)
             year_of_birth = self.random_year_of_birth
+            age = calculate_age(self.random_year_of_birth)
 
             a_random_person = src.person.Person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 last_name=last_name,
-                sex=sex,
                 # year_of_birth=year_of_birth,
                 year_of_birth=self.random_year_of_birth,
             )
-
-            reality = a_random_person.say_hello(
-                a_random_person
-            )
-            my_expectation = (
-                # f'Hi, my name is {first_name} {last_name}'
-                f'Hi, my name is {self.random_first_name}'
-                # f' {last_name}'
-                # f' and I am {calculate_age(year_of_birth)}'
-                f' {last_name} and I am'
-                f' {calculate_age(self.random_year_of_birth)}'
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
 
   still green.
 
@@ -1987,9 +1972,12 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 
   .. code-block:: python
     :lineno-start: 38
-    :emphasize-lines: 5-6
+    :emphasize-lines: 8-9
 
         def test_factory_w_keyword_arguments(self):
+            # year_of_birth = get_random_year_of_birth()
+            year_of_birth = self.random_year_of_birth
+
             a_person = dict(
                 # first_name=get_random_name(),
                 first_name=self.random_first_name,
@@ -1997,16 +1985,14 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
                 last_name=self.random_last_name,
                 sex=pick_one('F', 'M'),
             )
-            # year_of_birth = get_random_year_of_birth()
-            year_of_birth = self.random_year_of_birth
 
   green.
 
 * I use ``self.random_last_name`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 4-5, 13-14, 26-27
+    :lineno-start: 88
+    :emphasize-lines: 4-5, 16-17, 27-28
 
         def test_factory_person_says_hello(self):
             # first_name = get_random_name()
@@ -2014,8 +2000,11 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
             # last_name = get_random_name()
             last_name = self.random_last_name
             sex = pick_one('F', 'M')
+
             # year_of_birth = get_random_year_of_birth()
             year_of_birth = self.random_year_of_birth
+            # age = calculate_age(year_of_birth)
+            age = calculate_age(self.random_year_of_birth)
 
             a_random_person = src.person.factory(
                 # first_name=first_name,
@@ -2032,10 +2021,8 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
                 # f'Hi, my name is {first_name} {last_name}'
                 f'Hi, my name is {self.random_first_name}'
                 # f' {last_name}'
-                # f' and I am {calculate_age(year_of_birth)}'
-                # f' {last_name} and I am'
-                f' {self.random_last_name} and I am'
-                f' {calculate_age(self.random_year_of_birth)}'
+                f' {self.random_last_name}'
+                f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2046,39 +2033,36 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 * I use ``self.random_last_name`` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 114
-    :emphasize-lines: 4-5, 13-14, 28-29
+    :lineno-start: 120
+    :emphasize-lines: 4-5, 15-16, 25-26
 
         def test_classy_person_says_hello(self):
             # first_name = get_random_name()
             first_name = self.random_first_name
             # last_name = get_random_name()
             last_name = self.random_last_name
-            sex = pick_one('F', 'M')
+
             # year_of_birth = get_random_year_of_birth()
+            # age = calculate_age(year_of_birth)
             year_of_birth = self.random_year_of_birth
+            age = calculate_age(self.random_year_of_birth)
 
             a_random_person = src.person.Person(
                 # first_name=first_name,
                 first_name=self.random_first_name,
                 # last_name=last_name,
                 last_name=self.random_last_name,
-                sex=sex,
                 # year_of_birth=year_of_birth,
                 year_of_birth=self.random_year_of_birth,
             )
 
-            reality = a_random_person.say_hello(
-                a_random_person
-            )
+            reality = a_random_person.say_hello()
             my_expectation = (
                 # f'Hi, my name is {first_name} {last_name}'
                 f'Hi, my name is {self.random_first_name}'
                 # f' {last_name}'
-                # f' and I am {calculate_age(year_of_birth)}'
-                # f' {last_name} and I am'
-                f' {self.random_last_name} and I am'
-                f' {calculate_age(self.random_year_of_birth)}'
+                f' {self.random_last_name}'
+                f' and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2098,121 +2082,10 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 ----
 
 *********************************************************************************
-extract random_sex class attribute
-*********************************************************************************
-
-The ``sex`` :ref:`variable<what is a variable?>` is made the same way in three of the four tests, I can use a :ref:`class attribute<what is a class attribute?>` to remove its repetition then have all the :ref:`methods<what is a method?>` reference the value
-
-* I go back to the terminal_ that is running the tests
-
-* I add a :ref:`class attribute<what is a class attribute?>` called ``random_sex`` to the ``TestPerson`` :ref:`object<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 5
-
-    class TestPerson(unittest.TestCase):
-
-        random_first_name = get_random_name()
-        random_last_name = get_random_name()
-        random_sex = pick_one('F', 'M')
-        random_year_of_birth = get_random_year_of_birth()
-
-        def test_factory_w_keyword_arguments(self):
-
-* I use ``self.random_sex`` in :ref:`test_factory_w_keyword_arguments`
-
-  .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 7-8
-
-        def test_factory_w_keyword_arguments(self):
-            a_person = dict(
-                # first_name=get_random_name(),
-                first_name=self.random_first_name,
-                # last_name=get_random_name(),
-                last_name=self.random_last_name,
-                # sex=pick_one('F', 'M'),
-                sex=self.random_sex,
-            )
-            # year_of_birth = get_random_year_of_birth()
-            year_of_birth = self.random_year_of_birth
-
-  the test is still green.
-
-* I use ``self.random_sex`` in :ref:`test_factory_person_says_hello`
-
-  .. code-block:: python
-    :lineno-start: 85
-    :emphasize-lines: 6-7, 16-17
-
-        def test_factory_person_says_hello(self):
-            # first_name = get_random_name()
-            first_name = self.random_first_name
-            # last_name = get_random_name()
-            last_name = self.random_last_name
-            # sex = pick_one('F', 'M')
-            sex = self.random_sex
-            # year_of_birth = get_random_year_of_birth()
-            year_of_birth = self.random_year_of_birth
-
-            a_random_person = src.person.factory(
-                # first_name=first_name,
-                first_name=self.random_first_name,
-                # last_name=last_name,
-                last_name=self.random_last_name,
-                # sex=sex,
-                sex=self.random_sex,
-                # year_of_birth=year_of_birth,
-                year_of_birth=self.random_year_of_birth,
-            )
-
-  the test is still green.
-
-* I use ``self.random_sex`` in :ref:`test_classy_person_says_hello`
-
-  .. code-block:: python
-    :lineno-start: 118
-    :emphasize-lines: 4-5, 13-14, 28-29
-
-        def test_classy_person_says_hello(self):
-            # first_name = get_random_name()
-            first_name = self.random_first_name
-            # last_name = get_random_name()
-            last_name = self.random_last_name
-            # sex = pick_one('F', 'M')
-            sex = self.random_sex
-            # year_of_birth = get_random_year_of_birth()
-            year_of_birth = self.random_year_of_birth
-
-            a_random_person = src.person.Person(
-                # first_name=first_name,
-                first_name=self.random_first_name,
-                # last_name=last_name,
-                last_name=self.random_last_name,
-                # sex=sex,
-                sex=self.random_sex,
-                # year_of_birth=year_of_birth,
-                year_of_birth=self.random_year_of_birth,
-            )
-
-  the test is still green.
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit -am \
-    'extract random_sex class attribute'
-
-----
-
-*********************************************************************************
 extract age class attribute
 *********************************************************************************
 
-I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``year_of_birth`` :ref:`variable<what is a variable?>` in each test, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use a :ref:`class attribute<what is a class attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value  it returns
+I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``self.random_year_of_birth`` :ref:`attribute<what is a class attribute?>` in each test, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use a :ref:`class attribute<what is a class attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value  it returns
 
 * I go back to the terminal_ that is running the tests
 
@@ -2220,13 +2093,12 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 
   .. code-block:: python
     :lineno-start: 32
-    :emphasize-lines: 7
+    :emphasize-lines: 6
 
     class TestPerson(unittest.TestCase):
 
         random_first_name = get_random_name()
         random_last_name = get_random_name()
-        random_sex = pick_one('F', 'M')
         random_year_of_birth = get_random_year_of_birth()
         age = calculate_age(random_year_of_birth)
 
@@ -2235,8 +2107,8 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 * I use ``self.age`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 9-10
+    :lineno-start: 51
+    :emphasize-lines: 9-12
 
             reality = src.person.factory(
                 **a_person,
@@ -2246,7 +2118,9 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
             my_expectation = dict(
                 **a_person,
                 # age=calculate_age(year_of_birth),
-                # age=calculate_age(self.random_year_of_birth),
+                # age=calculate_age(
+                #     self.random_year_of_birth
+                # ),
                 age=self.age,
             )
             self.assertEqual(reality, my_expectation)
@@ -2258,13 +2132,13 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 39
 
         def test_factory_w_keyword_arguments(self):
             a_person = dict(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
-                sex=self.random_sex,
+                sex=pick_one('F', 'M'),
             )
 
             reality = src.person.factory(
@@ -2282,8 +2156,8 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 * I use ``self.age`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 13-14
+    :lineno-start: 62
+    :emphasize-lines: 13-16
 
             reality = src.person.factory(
                 # first_name=first_name,
@@ -2297,7 +2171,9 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
                 last_name='doe',
                 sex='M',
                 # age=calculate_age(year_of_birth),
-                # age=calculate_age(self.random_year_of_birth),
+                # age=calculate_age(
+                #     self.random_year_of_birth
+                # ),
                 age=self.age,
             )
             self.assertEqual(reality, my_expectation)
@@ -2309,7 +2185,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 56
 
         def test_factory_w_optional_arguments(self):
             reality = src.person.factory(
@@ -2326,23 +2202,44 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 
         def test_factory_person_says_hello(self):
 
+
 * I use ``self.age`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 91
-    :emphasize-lines: 8-11
+    :lineno-start: 69
+    :emphasize-lines: 11-12, 30-31
+
+        def test_factory_person_says_hello(self):
+            # first_name = get_random_name()
+            first_name = self.random_first_name
+            # last_name = get_random_name()
+            last_name = self.random_last_name
+            sex = pick_one('F', 'M')
+
+            # year_of_birth = get_random_year_of_birth()
+            year_of_birth = self.random_year_of_birth
+            # age = calculate_age(year_of_birth)
+            # age = calculate_age(self.random_year_of_birth)
+            age = self.age
+
+            a_random_person = src.person.factory(
+                # first_name=first_name,
+                first_name=self.random_first_name,
+                # last_name=last_name,
+                last_name=self.random_last_name,
+                sex=sex,
+                # year_of_birth=year_of_birth,
+                year_of_birth=self.random_year_of_birth,
+            )
 
             reality = src.person.say_hello(a_random_person)
             my_expectation = (
                 # f'Hi, my name is {first_name} {last_name}'
                 f'Hi, my name is {self.random_first_name}'
                 # f' {last_name}'
-                # f' and I am {calculate_age(year_of_birth)}'
-                # f' {last_name} and I am'
-                # f' {self.random_last_name} and I am'
-                # f' {calculate_age(self.random_year_of_birth)}'
-                f' {self.random_last_name} '
-                f'and I am {self.age}'
+                f' {self.random_last_name}'
+                # f' and I am {age}'
+                f' and I am {self.age}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2353,45 +2250,56 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 69
 
         def test_factory_person_says_hello(self):
             a_random_person = src.person.factory(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
-                sex=self.random_sex,
                 year_of_birth=self.random_year_of_birth,
             )
 
             reality = src.person.say_hello(a_random_person)
             my_expectation = (
                 f'Hi, my name is {self.random_first_name}'
-                f' {self.random_last_name} '
-                f'and I am {self.age}'
+                f' {self.random_last_name}'
+                f' and I am {self.age}'
             )
             self.assertEqual(reality, my_expectation)
 
         def test_classy_person_says_hello(self):
 
+  I remove the ``sex`` :ref:`variable<what is a variable?>` and parameter because it is not used in this test. I guess ``a_random_person`` is not all that random since it will always have ``'M'`` as ``sex`` in this test.
+
 * I use ``self.age`` in :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 10-13
+    :lineno-start: 90
+    :emphasize-lines: 4-5, 22-23
 
-            reality = a_random_person.say_hello(
-                a_random_person
+            # year_of_birth = get_random_year_of_birth()
+            # age = calculate_age(year_of_birth)
+            year_of_birth = self.random_year_of_birth
+            # age = calculate_age(self.random_year_of_birth)
+            age = self.age
+
+            a_random_person = src.person.Person(
+                # first_name=first_name,
+                first_name=self.random_first_name,
+                # last_name=last_name,
+                last_name=self.random_last_name,
+                # year_of_birth=year_of_birth,
+                year_of_birth=self.random_year_of_birth,
             )
+
+            reality = a_random_person.say_hello()
             my_expectation = (
                 # f'Hi, my name is {first_name} {last_name}'
                 f'Hi, my name is {self.random_first_name}'
                 # f' {last_name}'
-                # f' and I am {calculate_age(year_of_birth)}'
-                # f' {last_name} and I am'
-                # f' {self.random_last_name} and I am'
-                # f' {calculate_age(self.random_year_of_birth)}'
-                f' {self.random_last_name} '
-                f'and I am {self.age}'
+                f' {self.random_last_name}'
+                # f' and I am {age}'
+                f' and I am {self.age}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2403,33 +2311,27 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 * I remove the commented lines and unused :ref:`variables<what is a variable?>` from :ref:`test_classy_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 84
 
         def test_classy_person_says_hello(self):
             a_random_person = src.person.Person(
                 first_name=self.random_first_name,
                 last_name=self.random_last_name,
-                sex=self.random_sex,
                 year_of_birth=self.random_year_of_birth,
             )
 
-            reality = a_random_person.say_hello(
-                a_random_person
-            )
+            reality = a_random_person.say_hello()
             my_expectation = (
                 f'Hi, my name is {self.random_first_name}'
-                f' {self.random_last_name} '
-                f'and I am {self.age}'
+                f' {self.random_last_name}'
+                f' and I am {self.age}'
             )
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-    # SyntaxError
+
+  I also do not need the ``sex`` :ref:`variable<what is a variable?>` and parameter in this test.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2448,53 +2350,9 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``yea
 how to use the setUp method to reset class attributes for every test
 ****************************************************************************************
 
-There are problems with the current setup with the :ref:`class attributes<what is a class attribute?>`
+A problem with the current setup with the :ref:`class attributes<what is a class attribute?>` that they are made once when the :ref:`class<what is a class?>` is initialized. This means that even though they all use random values, those values are created once and every test that references the values after that is using the exact same values for each test.
 
-* anyone seeing the tests for the first time has to read the :ref:`class attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    class TestPerson(unittest.TestCase):
-
-        random_first_name = get_random_name()
-        random_last_name = get_random_name()
-        random_sex = pick_one('F', 'M')
-        random_year_of_birth = get_random_year_of_birth()
-        age = calculate_age(random_year_of_birth)
-
-        def test_factory_w_keyword_arguments(self):
-
-  to know how they are created then referenced in each test
-
-* :ref:`test_factory_w_keyword_arguments` needs the person reading the test to know about :ref:`double starred expressions`
-
-  .. code-block:: python
-
-    src.person.factory(
-        **a_person,
-        year_of_birth=self.random_year_of_birth,
-    )
-
-  .. code-block:: python
-
-    dict(
-        **a_person,
-        age=self.age,
-    )
-
-  to know why using the :ref:`dictionary<what is a dictionary?>` works in the call to ``src.person.factory`` and inside another :ref:`dictionary<what is a dictionary?>`
-
-* :ref:`test_factory_person_says_hello` and :ref:`test_classy_person_says_hello` need the person reading the test to know about :ref:`f-strings<what is string interpolation?>`
-
-  .. code-block:: python
-
-    f'Hi, my name is {self.random_first_name}'
-    f' {self.random_last_name} '
-    f'and I am {self.age}'
-
-* the other problem is :ref:`class attributes<what is a class attribute?>` are made once when the :ref:`class<what is a class?>` is initialized. This means that even though they all use random values, those values are created once and every test that references the values is using the exact same values for each test.
-
-  I want the test to get new random values every time they run and the `unittest.TestCase class`_ has a way to do that - the `setUp method`_. It makes sure that whatever setup I want runs before each test
+I want each test to get new random values every time they run and the `unittest.TestCase class`_ has a way to do that - the `setUp method`_, it runs before every test is run.
 
 ----
 
@@ -2510,20 +2368,18 @@ There are problems with the current setup with the :ref:`class attributes<what i
 
   .. code-block:: python
     :lineno-start: 32
-    :emphasize-lines: 3-7, 9-14
+    :emphasize-lines: 3-6, 8-12
 
     class TestPerson(unittest.TestCase):
 
         # random_first_name = get_random_name()
         # random_last_name = get_random_name()
-        # random_sex = pick_one('F', 'M')
         # random_year_of_birth = get_random_year_of_birth()
         # age = calculate_age(random_year_of_birth)
 
         def setUp(self):
             random_first_name = get_random_name()
             random_last_name = get_random_name()
-            random_sex = pick_one('F', 'M')
             random_year_of_birth = get_random_year_of_birth()
             age = calculate_age(random_year_of_birth)
 
@@ -2533,16 +2389,20 @@ There are problems with the current setup with the :ref:`class attributes<what i
 
   .. code-block:: python
 
-    FAILED ...test_classy_person_says_hello - AttributeError:
-        'TestPerson' object has no attribute 'random_first_name'
-    FAILED ...test_factory_person_says_hello - AttributeError:
-        'TestPerson' object has no attribute 'random_first_name'
-    FAILED ...test_factory_w_keyword_arguments - AttributeError:
-        'TestPerson' object has no attribute 'random_first_name'
-    FAILED ...test_factory_w_optional_arguments - AttributeError:
-        'TestPerson' object has no attribute 'random_first_name'
+    FAILED ...test_classy_person_says_hello -
+        AttributeError: 'TestPerson' object has
+        no attribute 'random_first_name'
+    FAILED ...test_factory_person_says_hello -
+        AttributeError: 'TestPerson' object has
+        no attribute 'random_first_name'
+    FAILED ...test_factory_w_keyword_arguments -
+        AttributeError: 'TestPerson' object has
+        no attribute 'random_first_name'
+    FAILED ...test_factory_w_optional_arguments -
+        AttributeError: 'TestPerson' object has
+        no attribute 'random_first_name'
 
-  because the ``first_name`` :ref:`variable<what is a variable?>` now belongs to the `setUp method`_, the other tests have no way to reach it. I have to make it a :ref:`class attribute<what is a class attribute?>`
+  because the ``first_name`` :ref:`variable<what is a variable?>` now belongs to the `setUp method`_, the other :ref:`methods<what is a method?>` have no way to reach it. I have to make it a :ref:`class attribute<what is a class attribute?>`.
 
 ----
 
@@ -2552,22 +2412,21 @@ There are problems with the current setup with the :ref:`class attributes<what i
 
 ----
 
-* I change the ``first_name`` :ref:`variable<what is a variable?>` to a :ref:`class attribute<what is a class attribute?>` in the `setUp method`_ for the other tests to be able to use it
+* I change the ``first_name`` :ref:`variable<what is a variable?>` to a :ref:`class attribute<what is a class attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use it
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 39
     :emphasize-lines: 2-3
     :emphasize-text: self
 
-        def setUp(self):
-            # random_first_name = get_random_name()
-            self.random_first_name = get_random_name()
-            random_last_name = get_random_name()
-            random_sex = pick_one('F', 'M')
-            random_year_of_birth = get_random_year_of_birth()
-            age = calculate_age(random_year_of_birth)
+      def setUp(self):
+          # random_first_name = get_random_name()
+          self.random_first_name = get_random_name()
+          random_last_name = get_random_name()
+          random_year_of_birth = get_random_year_of_birth()
+          age = calculate_age(random_year_of_birth)
 
-        def test_factory_w_keyword_arguments(self):
+      def test_factory_w_keyword_arguments(self):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -2582,16 +2441,17 @@ There are problems with the current setup with the :ref:`class attributes<what i
     FAILED ...test_factory_w_keyword_arguments - AttributeError:
         'TestPerson' object has no attribute 'random_last_name'.
         Did you mean: 'random_first_name'?
-    FAILED ...test_factory_w_optional_arguments - AttributeError:
-        'TestPerson' object has no attribute 'random_year_of_birth'.
+    FAILED ...test_factory_w_optional_arguments -
+        AttributeError: 'TestPerson' object has
+        no attribute 'random_year_of_birth'.
 
-  because the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` now belong to the `setUp method`_, the other tests have no way to reach them. I have to make them :ref:`class attributes<what is a class attribute?>`
+  because the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` now belong to the `setUp method`_, the other :ref:`methods<what is a method?>` have no way to reach them. I have to make them :ref:`class attributes<what is a class attribute?>`
 
-* I change the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` to :ref:`class attributes<what is a class attribute?>` in the `setUp method`_ for the other tests to be able to use them
+* I change the ``year_of_birth`` and ``last_name`` :ref:`variables<what is a variable?>` to :ref:`class attributes<what is a class attribute?>` in the `setUp method`_ for the test :ref:`methods<what is a method?>` to be able to use them as well
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 4-5, 7-10
+    :lineno-start: 39
+    :emphasize-lines: 4-13
     :emphasize-text: self
 
         def setUp(self):
@@ -2599,34 +2459,41 @@ There are problems with the current setup with the :ref:`class attributes<what i
             self.random_first_name = get_random_name()
             # random_last_name = get_random_name()
             self.random_last_name = get_random_name()
-            random_sex = pick_one('F', 'M')
             # random_year_of_birth = get_random_year_of_birth()
-            self.random_year_of_birth = get_random_year_of_birth()
             # age = calculate_age(random_year_of_birth)
-            age = calculate_age(self.random_year_of_birth)
+            self.random_year_of_birth = (
+                get_random_year_of_birth()
+            )
+            age = calculate_age(
+                self.random_year_of_birth
+            )
 
         def test_factory_w_keyword_arguments(self):
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    FAILED ...test_classy_person_says_hello - AttributeError:
-        'TestPerson' object has no attribute 'random_sex'
-    FAILED ...test_factory_person_says_hello - AttributeError:
-        'TestPerson' object has no attribute 'random_sex'
-    FAILED ...test_factory_w_keyword_arguments - AttributeError:
-        'TestPerson' object has no attribute 'random_sex'
-    FAILED ...test_factory_w_optional_arguments - AttributeError:
-        'TestPerson' object has no attribute 'age'
+    FAILED ...test_classy_person_says_hello -
+        AttributeError: 'TestPerson' object has
+        no attribute 'age'
+    FAILED ...test_factory_person_says_hello -
+        AttributeError: 'TestPerson' object has
+        no attribute 'age'
+    FAILED ...test_factory_w_keyword_arguments -
+        AttributeError: 'TestPerson' object has
+        no attribute 'age'
+    FAILED ...test_factory_w_optional_arguments -
+        AttributeError: 'TestPerson' object has
+        no attribute 'age'
 
-  because the ``age`` and ``random_sex`` :ref:`variables<what is a variable?>` now belong to the `setUp method`_, the other tests have no way to reach them. I have to make them :ref:`class attributes<what is a class attribute?>`
+  because the ``age`` belongs to the `setUp method`_, and the other :ref:`methods<what is a method?>` have no way to reach them. I have to make them :ref:`class attributes<what is a class attribute?>`
 
-* I change the ``age`` and ``random_sex`` :ref:`variables<what is a variable?>` to :ref:`class attributes<what is a class attribute?>` in the `setUp method`_ for the other tests to be able to use them
+* I change the ``age`` :ref:`variable<what is a variable?>` to :ref:`class attributes<what is a class attribute?>` in the `setUp method`_ for the other :ref:`methods<what is a method?>` to be able to use it
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 4-5, 7-10
+    :lineno-start: 39
+    :emphasize-lines: 11-12
     :emphasize-text: self
 
         def setUp(self):
@@ -2634,13 +2501,15 @@ There are problems with the current setup with the :ref:`class attributes<what i
             self.random_first_name = get_random_name()
             # random_last_name = get_random_name()
             self.random_last_name = get_random_name()
-            # random_sex = pick_one('F', 'M')
-            self.random_sex = pick_one('F', 'M')
             # random_year_of_birth = get_random_year_of_birth()
-            self.random_year_of_birth = get_random_year_of_birth()
             # age = calculate_age(random_year_of_birth)
-            # age = calculate_age(self.random_year_of_birth)
-            self.age = calculate_age(self.random_year_of_birth)
+            self.random_year_of_birth = (
+                get_random_year_of_birth()
+            )
+            # age = calculate_age(
+            self.age = calculate_age(
+                self.random_year_of_birth
+            )
 
         def test_factory_w_keyword_arguments(self):
 
@@ -2650,7 +2519,6 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 
 - ``self.random_first_name`` to the result of calling the ``get_random_name`` :ref:`function<what is a function?>`, which returns a random name
 - ``self.random_last_name`` to the result of calling the ``get_random_name`` :ref:`function<what is a function?>`, which returns a random name
-- ``self.random_sex`` to a random sex value between ``'F'`` and ``'M'``
 - ``self.random_year_of_birth`` to the result of calling the ``get_random_year_of_birth`` :ref:`function<what is a function?>` which returns a random year between 120 years ago and the current year
 - ``self.age`` to the result of calling the ``calculate_age`` :ref:`function<what is a function?>`, which returns the current year minus ``self.random_year_of_birth``
 
@@ -3070,6 +2938,50 @@ code from the chapter
 *************************************************************************************
 review
 *************************************************************************************
+
+* anyone seeing the tests for the first time has to read the :ref:`class attributes<what is a class attribute?>`
+
+  .. code-block:: python
+
+    class TestPerson(unittest.TestCase):
+
+        random_first_name = get_random_name()
+        random_last_name = get_random_name()
+        random_sex = pick_one('F', 'M')
+        random_year_of_birth = get_random_year_of_birth()
+        age = calculate_age(random_year_of_birth)
+
+        def test_factory_w_keyword_arguments(self):
+
+  to know how they are created then referenced in each test
+
+* :ref:`test_factory_w_keyword_arguments` needs the person reading the test to know about :ref:`double starred expressions`
+
+  .. code-block:: python
+
+    src.person.factory(
+        **a_person,
+        year_of_birth=self.random_year_of_birth,
+    )
+
+  .. code-block:: python
+
+    dict(
+        **a_person,
+        age=self.age,
+    )
+
+  to know why using the :ref:`dictionary<what is a dictionary?>` works in the call to ``src.person.factory`` and inside another :ref:`dictionary<what is a dictionary?>`
+
+* :ref:`test_factory_person_says_hello` and :ref:`test_classy_person_says_hello` need the person reading the test to know about :ref:`f-strings<what is string interpolation?>`
+
+  .. code-block:: python
+
+    f'Hi, my name is {self.random_first_name}'
+    f' {self.random_last_name} '
+    f'and I am {self.age}'
+
+* the other problem
 
 * A :ref:`class<what is a class?>` is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together
 * A :ref:`class<what is a class?>` can be used to represent something
