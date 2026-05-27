@@ -267,7 +267,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
           an unexpected keyword argument 'last_name'.
           Did you mean 'first_name'?
 
-    I have seen this before, so far it is the same as making the ``factory`` :ref:`function<what is a function?>`
+    I have seen this before, so far it is the same as making the :ref:`factory function<test_factory_w_keyword_arguments>`
 
 * I add ``last_name`` to the :ref:`definition<how to make a function>` of ``__init__``
 
@@ -292,7 +292,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
         Person.__init__() got
         an unexpected keyword argument 'year_of_birth'
 
-  still the same as making the ``factory`` :ref:`function<what is a function?>`
+  still the same as making the :ref:`factory function<test_factory_w_keyword_arguments>`
 
 * I add ``year_of_birth`` to the :ref:`definition<how to make a function>` of the ``__init__`` :ref:`method<what is a method?>`
 
@@ -450,7 +450,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
   the test passes. I can call :ref:`methods<what is a method?>` from outside the :ref:`class<what is a class?>` they belong to.
 
   * I made a copy of the ``Person`` :ref:`class<what is a class?>` named ``joe``
-  * I called the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` with ``joe`` (which is a copy of the ``Person`` :ref:`class<what is a class?>`) as input. Confused? It is confusing and there is a better way.
+  * I called the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` with ``joe`` (which is a copy of the ``Person`` :ref:`class<what is a class?>`) as input. Confused? It is confusing and there is a better way.
 
 ----
 
@@ -460,7 +460,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
 
 ----
 
-I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` to return a string_ for the person it receives, the same way the ``say_hello`` :ref:`function<what is a function?>` returns a string_ for the person (:ref:`dictionary<what is a dictionary?>`) it receives as input
+I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` to return a string_ for the person it receives, the same way the ``say_hello`` :ref:`function<what is a function?>` returns a string_ for the person (:ref:`dictionary<what is a dictionary?>`) it receives as input
 
 * I change ``my_expectation`` to an :ref:`f-string<what is string interpolation?>` in :ref:`test_classy_person_says_hello` in ``test_person.py``
 
@@ -493,7 +493,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
     AssertionError: None != 'Hi, my name is joe blow and I am 30'
 
-* I copy the value from the terminal_ and paste it in the `return statement`_ for the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
+* I copy the value from the terminal_ and paste it in the `return statement`_ for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -1058,7 +1058,77 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   the test is still green.
 
-* The ``say_hello`` :ref:`method<what is a method?>` is in the ``Person`` :ref:`class<what is a class?>`, there is no need for it to take a copy of the ``Person`` :ref:`class<what is a class?>` as input since it should be able to access the :ref:`attributes<what is a class attribute?>` of the :ref:`class<what is a class?>` it belongs to. I change ``person.`` to ``self.`` to use :ref:`class attributes<what is a class attribute?>` instead
+* ``datetime.datetime.today().year`` gets used to calculate the age in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` and the `return statement`_ of the :ref:`factory function<test_factory_w_keyword_arguments>`. I make a helper :ref:`function<what is a function?>` to calculate the age, the same way I do in the tests
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-8
+
+    import datetime
+
+
+    def calculate_age(year_of_birth):
+        return (
+            datetime.datetime.today().year
+          - year_of_birth
+        )
+
+
+    def say_hello(a_dictionary):
+
+* I use the new :ref:`function<what is a function?>` for the age calculation in the :ref:`factory function<test_factory_w_keyword_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 9-13
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            # 'age': (
+            #     datetime.datetime.today().year
+            #   - year_of_birth
+            # ),
+            'age': calculate_age(year_of_birth),
+        }
+
+
+    class Person:
+
+  still green.
+
+* I use the new :ref:`function<what is a function?>` for the age calculation in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 4-8
+
+        # def say_hello():
+        # @staticmethod
+        def say_hello(person):
+            # age = (
+            #     datetime.datetime.today().year
+            #   - person.year_of_birth
+            # )
+            age = calculate_age(person.year_of_birth)
+            # return None
+            # return 'Hi, my name is joe blow and I am 30'
+            return (
+                # f'Hi, my name is {person.first_name} blow'
+                f'Hi, my name is {person.first_name}'
+                f' {person.last_name}'
+                # f' and I am 30'
+                f' and I am {age}'
+            )
+
+  green.
+
+* The :ref:`say_hello method<test_classy_person_says_hello>` is in the ``Person`` :ref:`class<what is a class?>`, there is no need for it to take a copy of the ``Person`` :ref:`class<what is a class?>` as input since it should be able to access the :ref:`attributes<what is a class attribute?>` of the :ref:`class<what is a class?>` it belongs to. I change ``person.`` to ``self.`` to use :ref:`class attributes<what is a class attribute?>` instead
 
   .. code-block:: python
     :lineno-start: 55
@@ -1103,7 +1173,7 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
 
   the test is green again.
 
-* I remove the `staticmethod decorator`_ because I no longer need it since the ``say_hello`` :ref:`method<what is a method?>` is using :ref:`class attributes<what is a class attribute?>`
+* I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<test_classy_person_says_hello>` is using :ref:`class attributes<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 55
@@ -1115,33 +1185,6 @@ I want the ``say_hello`` :ref:`method<what is a method?>` of the ``Person`` :ref
     def say_hello(self):
 
   the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 27
-
-    class Person:
-
-        def __init__(
-            self, first_name, last_name='doe',
-            year_of_birth=None, sex=None,
-        ):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.year_of_birth = year_of_birth
-            return None
-
-        def say_hello(self):
-            age = (
-                datetime.datetime.today().year
-              - self.year_of_birth
-            )
-            return (
-                f'Hi, my name is {self.first_name}'
-                f' {self.last_name}'
-                f' and I am {age}'
-            )
 
 * I change the call to ``src.person.say_hello(joe)`` for ``joe`` because I can call :ref:`methods<what is a method?>` directly from a copy of a :ref:`class<what is a class?>`, in :ref:`test_classy_person_says_hello` in ``test_person.py``
 
@@ -2530,24 +2573,26 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 
 ----
 
-* I no longer need the :ref:`calculate_age function<extract calculate_age function>` because it is only called once by the `setUp method`_
+* I no longer need the :ref:`calculate_age function<extract calculate_age function>` because it is only called by the `setUp method`_. I use `datetime.datetime.now`_ directly
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 13-16
+    :lineno-start: 39
+    :emphasize-lines: 12-18
 
         def setUp(self):
             # random_first_name = get_random_name()
             self.random_first_name = get_random_name()
             # random_last_name = get_random_name()
             self.random_last_name = get_random_name()
-            # random_sex = pick_one('F', 'M')
-            self.random_sex = pick_one('F', 'M')
             # random_year_of_birth = get_random_year_of_birth()
-            self.random_year_of_birth = get_random_year_of_birth()
             # age = calculate_age(random_year_of_birth)
-            # age = calculate_age(self.random_year_of_birth)
-            # self.age = calculate_age(self.random_year_of_birth)
+            self.random_year_of_birth = (
+                get_random_year_of_birth()
+            )
+            # age = calculate_age(
+            # self.age = calculate_age(
+            #     self.random_year_of_birth
+            # )
             self.age = (
                 datetime.datetime.now().year
               - self.random_year_of_birth
@@ -2557,28 +2602,30 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 
   the test is still green.
 
-* I no longer need the :ref:`get_random_year_of_birth function<extract get_random_year_of_birth function>` because it is only called once by the `setUp method`_
+* I no longer need the :ref:`get_random_year_of_birth function<extract get_random_year_of_birth function>` because it is only called by the `setUp method`_. I use `random.randint`_ directly
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 9-13
+    :lineno-start: 39
+    :emphasize-lines: 8-14
 
         def setUp(self):
             # random_first_name = get_random_name()
             self.random_first_name = get_random_name()
             # random_last_name = get_random_name()
             self.random_last_name = get_random_name()
-            # random_sex = pick_one('F', 'M')
-            self.random_sex = pick_one('F', 'M')
             # random_year_of_birth = get_random_year_of_birth()
-            # self.random_year_of_birth = get_random_year_of_birth()
+            # age = calculate_age(random_year_of_birth)
+            # self.random_year_of_birth = (
+            #     get_random_year_of_birth()
+            # )
             this_year = datetime.datetime.now().year
             self.random_year_of_birth = random.randint(
                 this_year-120, this_year
             )
-            # age = calculate_age(random_year_of_birth)
-            # age = calculate_age(self.random_year_of_birth)
-            # self.age = calculate_age(self.random_year_of_birth)
+            # age = calculate_age(
+            # self.age = calculate_age(
+            #     self.random_year_of_birth
+            # )
             self.age = (
                 datetime.datetime.now().year
               - self.random_year_of_birth
@@ -2588,28 +2635,30 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 
   still green.
 
-* I can use the ``this_year`` :ref:`variable<what is a variable?>` in the calculation for ``self.age``
+* I use the ``this_year`` :ref:`variable<what is a variable?>` in the calculation for ``self.age``
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 17-21
+    :lineno-start: 39
+    :emphasize-lines: 19-23
 
         def setUp(self):
             # random_first_name = get_random_name()
             self.random_first_name = get_random_name()
             # random_last_name = get_random_name()
             self.random_last_name = get_random_name()
-            # random_sex = pick_one('F', 'M')
-            self.random_sex = pick_one('F', 'M')
             # random_year_of_birth = get_random_year_of_birth()
-            # self.random_year_of_birth = get_random_year_of_birth()
+            # age = calculate_age(random_year_of_birth)
+            # self.random_year_of_birth = (
+            #     get_random_year_of_birth()
+            # )
             this_year = datetime.datetime.now().year
             self.random_year_of_birth = random.randint(
                 this_year-120, this_year
             )
-            # age = calculate_age(random_year_of_birth)
-            # age = calculate_age(self.random_year_of_birth)
-            # self.age = calculate_age(self.random_year_of_birth)
+            # age = calculate_age(
+            # self.age = calculate_age(
+            #     self.random_year_of_birth
+            # )
             # self.age = (
             #     datetime.datetime.now().year
             #   - self.random_year_of_birth
@@ -2618,7 +2667,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 
         def test_factory_w_keyword_arguments(self):
 
-  green. ``datetime.datetime.now().year`` is now called only once each time the `setUp method`_ runs
+  green. ``datetime.datetime.now().year`` is now called once each time the `setUp method`_ runs
 
 * I remove the commented lines
 
@@ -2630,8 +2679,6 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
         def setUp(self):
             self.random_first_name = get_random_name()
             self.random_last_name = get_random_name()
-            self.random_sex = pick_one('F', 'M')
-
             this_year = datetime.datetime.now().year
             self.random_year_of_birth = random.randint(
                 this_year-120, this_year
@@ -2677,7 +2724,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 test_attributes_and_methods_of_classes
 *********************************************************************************
 
-Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<what is a class?>` it is given in parentheses. This allows me to explore what an :ref:`object<what is a class?>` contains without looking at the code or reading the documentation, I can then run tests to see what each thing does.
+Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<what is a class?>` it is given in parentheses. It allows me to see what makes up an :ref:`object<what is a class?>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
 
 ----
 
@@ -2692,33 +2739,32 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I add a new test with the `dir built-in function`_ in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 85
+    :lineno-start: 81
     :emphasize-lines: 11-14
 
-              reality = a_random_person.say_hello(
-                  a_random_person
-              )
-              my_expectation = (
-                  f'Hi, my name is {self.random_first_name}'
-                  f' {self.random_last_name} '
-                  f'and I am {self.age}'
-              )
-              self.assertEqual(reality, my_expectation)
+            reality = a_random_person.say_hello()
+            my_expectation = (
+                f'Hi, my name is {self.random_first_name}'
+                f' {self.random_last_name}'
+                f' and I am {self.age}'
+            )
+            self.assertEqual(reality, my_expectation)
 
-          def test_attributes_and_methods_of_a_class(self):
-              reality = dir(src.person.Person)
-              my_expectation = None
-              self.assertEqual(reality, my_expectation)
+        def test_attributes_and_methods_of_classes(self):
+            reality = dir(src.person.Person)
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
 
 
-      # Exceptions seen
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: Lists differ:
-        ['__class__', '__delattr__', '__dict__', '[377 chars]llo']
+        ['__class__', '__delattr__', '__dict__',
+         '[377 chars]llo']
      != None
 
   because dir_ returned a :ref:`list <what is a list?>` (anything in square brackets ``[ ]``) and ``my_expectation`` is :ref:`None<what is None?>`
@@ -2734,11 +2780,12 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 3-6
+    :lineno-start: 89
+    :emphasize-lines: 3-7
 
-        def test_attributes_and_methods_of_a_class(self):
+        def test_attributes_and_methods_of_classes(self):
             reality = dir(src.person.Person)
+            # my_expectation = None
             my_expectation = [
                 '__class__', '__delattr__', '__dict__',
                 [371 chars]llo'
@@ -2752,18 +2799,22 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
   .. code-block:: python
 
-    SyntaxError: unterminated string literal (detected at line 99)
+    E       [371 chars]llo'
+    E                     ^
+    E   SyntaxError: unterminated string literal
+                     (detected at line 94)
 
-  because I have a closing :ref:`quote<quotes>` (``'``) without a matching opening one
+  because I have a closing :ref:`quote<quotes>` (``'``) without a matching opening one and :ref:`enclosures must be closed once open<enclosures>`
 
 * I add the opening :ref:`quote<quotes>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 5
+    :lineno-start: 89
+    :emphasize-lines: 6
 
-        def test_attributes_and_methods_of_a_class(self):
+        def test_attributes_and_methods_of_classes(self):
             reality = dir(src.person.Person)
+            # my_expectation = None
             my_expectation = [
                 '__class__', '__delattr__', '__dict__',
                 '[371 chars]llo'
@@ -2787,13 +2838,18 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 3-32
+    :lineno-start: 89
+    :emphasize-lines: 4-37
     :emphasize-text: __init__ say_hello
 
-        def test_attributes_and_methods_of_a_class(self):
+        def test_attributes_and_methods_of_classes(self):
             reality = dir(src.person.Person)
-            my_expectation = ['__class__',
+            # my_expectation = None
+            # my_expectation = [
+            #     '__class__', '__delattr__', '__dict__',
+            #     '[371 chars]llo'
+            # ]
+            my_expectation = E       - ['__class__',
     E       -  '__delattr__',
     E       -  '__dict__',
     E       -  '__dir__',
@@ -2834,14 +2890,14 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
     NameError: name 'E' is not defined
 
-* I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters
+* I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
 
-.. code-block:: python
-  :lineno-start: 95
-  :emphasize-lines: 3-34
-  :emphasize-text: __init__ say_hello
+  .. code-block:: python
+    :lineno-start: 89
+    :emphasize-lines: 3-34
+    :emphasize-text: __init__ say_hello
 
-        def test_attributes_and_methods_of_a_class(self):
+        def test_attributes_and_methods_of_classes(self):
             reality = dir(src.person.Person)
             my_expectation = [
                 '__class__',
@@ -2880,7 +2936,251 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
     # Exceptions seen
 
-  the test passes.
+  - the test passes.
+  - the ``__init__`` and ``say_hello`` :ref:`methods<what is a method?>` I defined are in the list
+  - there are names in the list that I did not define, which leads to the question of :ref:`where did they come from?<family ties>`
+  - The attributes I defined in the ``__init__`` :ref:`method<what is a method?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>`, not an instance (copy) of the class
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_attributes_and_methods_of_classes'
+
+
+----
+
+*********************************************************************************
+test_attributes_and_methods_of_classes
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of an instance/copy of the ``Person`` :ref:`class<what is a class?>` to see the difference between it and the original
+
+.. code-block:: python
+  :lineno-start: 118
+  :emphasize-lines: 8-14, 16-49
+
+              '__str__',
+              '__subclasshook__',
+              '__weakref__',
+              'say_hello',
+          ]
+          self.assertEqual(reality, my_expectation)
+
+      def test_attributes_and_methods_of_instances(self):
+          an_instance_of_person = src.person.Person(
+              first_name=self.random_first_name,
+              last_name=self.random_last_name,
+              year_of_birth=self.random_year_of_birth,
+              sex=pick_one('F', 'M')
+          )
+
+          reality = dir(an_instance_of_person)
+          my_expectation = [
+              '__class__',
+              '__delattr__',
+              '__dict__',
+              '__dir__',
+              '__doc__',
+              '__eq__',
+              '__firstlineno__',
+              '__format__',
+              '__ge__',
+              '__getattribute__',
+              '__getstate__',
+              '__gt__',
+              '__hash__',
+              '__init__',
+              '__init_subclass__',
+              '__le__',
+              '__lt__',
+              '__module__',
+              '__ne__',
+              '__new__',
+              '__reduce__',
+              '__reduce_ex__',
+              '__repr__',
+              '__setattr__',
+              '__sizeof__',
+              '__static_attributes__',
+              '__str__',
+              '__subclasshook__',
+              '__weakref__',
+              'say_hello',
+          ]
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: Lists differ:
+      ['__c[393 chars]ef__', 'first_name', 'last_name',
+        'say_hello', 'year_of_birth']
+   != ['__c[393 chars]ef__', 'say_hello']
+
+because ``first_name``, ``last_name`` and ``year_of_birth`` are missing. Why is there no ``sex``?
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add the missing :ref:`attributes<what is an attribute?>` to ``my_expectation``
+
+.. code-block:: python
+  :lineno-start: 133
+  :emphasize-lines: 32-33, 35
+
+          reality = dir(an_instance_of_person)
+          my_expectation = [
+              '__class__',
+              '__delattr__',
+              '__dict__',
+              '__dir__',
+              '__doc__',
+              '__eq__',
+              '__firstlineno__',
+              '__format__',
+              '__ge__',
+              '__getattribute__',
+              '__getstate__',
+              '__gt__',
+              '__hash__',
+              '__init__',
+              '__init_subclass__',
+              '__le__',
+              '__lt__',
+              '__module__',
+              '__ne__',
+              '__new__',
+              '__reduce__',
+              '__reduce_ex__',
+              '__repr__',
+              '__setattr__',
+              '__sizeof__',
+              '__static_attributes__',
+              '__str__',
+              '__subclasshook__',
+              '__weakref__',
+              'first_name',
+              'last_name',
+              'say_hello',
+              'year_of_birth',
+          ]
+          self.assertEqual(reality, my_expectation)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add ``sex`` to the list
+
+  .. code-block:: python
+    :lineno-start: 133
+    :emphasize-lines: 35
+
+            reality = dir(an_instance_of_person)
+            my_expectation = [
+                '__class__',
+                '__delattr__',
+                '__dict__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__firstlineno__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__le__',
+                '__lt__',
+                '__module__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__setattr__',
+                '__sizeof__',
+                '__static_attributes__',
+                '__str__',
+                '__subclasshook__',
+                '__weakref__',
+                'first_name',
+                'last_name',
+                'say_hello',
+                'sex',
+                'year_of_birth',
+            ]
+            self.assertEqual(reality, my_expectation)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ:
+        ['__c[400 chars]'first_name', 'last_name',
+         'say_hello', 'year_of_birth']
+     != ['__c[400 chars]'first_name', 'last_name',
+         'say_hello', 'sex', 'year_of_birth']
+
+  the ``sex`` :ref:`attribute<what is a class attribute?>` is not defined anywhere in the ``Person`` :ref:`class<what is a class?>`
+
+* I add ``self.sex`` to the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 16
+
+        def __init__(
+            # self, first_name, last_name,
+            # self, first_name, last_name=None,
+            self, first_name, last_name='doe',
+            # year_of_birth,
+            # year_of_birth, sex,
+            # year_of_birth, sex=None,
+            year_of_birth=None, sex=None,
+        ):
+            # first_name = first_name
+            self.first_name = first_name
+            # last_name = last_name
+            self.last_name = last_name
+            # year_of_birth = year_of_birth
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            return None
+
+  the test passes
 
 * I add a git_ commit message in the other terminal_
 
@@ -2888,18 +3188,10 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :emphasize-lines: 1
 
     git commit -am \
-    'add test_attributes_and_methods_of_a_class'
+    'add test_attributes_and_methods_of_classes'
 
-The attributes I defined in the ``__init__`` :ref:`method<what is a method?>` are not in the list, because the test called dir_ on ``src.person.Person`` which is the :ref:`class<what is a class?>` definition, not on an instance (copy) of the class where I would have to provide values for the ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` :ref:`attributes<what is a class attribute?>`.
 
-What is the difference between ``dir(src.person.Person)`` and ``dir(src.person.Person('jane'))``?
 
-The :ref:`methods<what is a method?>` I defined in the ``Person`` :ref:`class<what is a class?>` in ``person.py``
-
-* __init__
-* :ref:`say_hello<test_classy_person_says_hello>`
-
-are in the :ref:`list<what is a list?>`, and there are others which I did not define, which leads to the question of :ref:`where did they come from?<family ties>`
 
 ----
 

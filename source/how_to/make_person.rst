@@ -504,7 +504,7 @@ test_factory_w_keyword_arguments
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -544,9 +544,9 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'sex'
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
-* I add ``sex`` as an input parameter to the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+* I add ``sex`` as an input parameter to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -588,7 +588,7 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'year_of_birth'
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add the name to the :ref:`function definition<how to make a function>` in ``person.py``
 
@@ -606,7 +606,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the ``factory`` :ref:`function<what is a function?>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) as output when it is called. I change ``my_expectation`` in ``test_person.py``
+* I want the :ref:`factory function<test_factory_w_keyword_arguments>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) as output when it is called. I change ``my_expectation`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -650,7 +650,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``first_name`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -786,7 +786,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -955,7 +955,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the ``factory`` :ref:`function<what is a function?>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1146,7 +1146,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the ``factory`` :ref:`function<what is a function?>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` to ``my_expectation``
+* I want the :ref:`factory function<test_factory_w_keyword_arguments>` to return the age of the person it makes. I add a :ref:`key<test_keys_of_a_dictionary>` to ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1529,7 +1529,7 @@ the test passes.
 
 ----
 
-I want to use random values in the test to make sure the ``factory`` :ref:`function<what is a function?>` can handle different values and always calculates the right age.
+I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values and always calculates the right age.
 
 * I use a random integer_ (a whole number with no decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
@@ -2126,7 +2126,7 @@ extract pick_one function
 test factory with a dictionary
 *********************************************************************************
 
-The difference between the call to the ``factory`` :ref:`function<what is a function?>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is that one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
+The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is that one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
 
 ----
 
@@ -2241,7 +2241,7 @@ The difference between the call to the ``factory`` :ref:`function<what is a func
     TypeError: factory() missing 2 required
                positional arguments: 'last_name' and 'sex'
 
-  because the ``factory`` :ref:`function<what is a function?>` now takes ``a_person`` as the first :ref:`positional argument<test_functions_w_positional_arguments>` (``first_name``), and wants the other required arguments.
+  because the :ref:`factory function<test_factory_w_keyword_arguments>` now takes ``a_person`` as the first :ref:`positional argument<test_functions_w_positional_arguments>` (``first_name``), and wants the other required arguments.
 
   I want the :ref:`function<what is a function?>` to take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` (``a_person``) as :ref:`keyword arguments<test_functions_w_keyword_arguments>`.
 
@@ -2531,7 +2531,7 @@ I want to see what happens when I try to make a person without a value for the `
     TypeError: factory() missing 1 required
                positional argument: 'last_name'
 
-  because this test no longer gives a value for ``last_name`` when it calls the ``factory`` :ref:`function<what is a function?>`, I have to make it a choice.
+  because this test no longer gives a value for ``last_name`` when it calls the :ref:`factory function<test_factory_w_keyword_arguments>`, I have to make it a choice.
 
 ----
 
@@ -2541,7 +2541,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I add a default value for ``last_name`` to make it optional, in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+* I add a default value for ``last_name`` to make it optional, in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2575,7 +2575,7 @@ I want to see what happens when I try to make a person without a value for the `
     # TypeError
     # SyntaxError
 
-* I add a default value for ``sex`` to make it optional, in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+* I add a default value for ``sex`` to make it optional, in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2617,7 +2617,7 @@ I want to see what happens when I try to make a person without a value for the `
      != {'first_name': Z, 'sex': Y, 'age': X}
 
   - where ``X`` is the random age, ``Y`` is the random sex and ``Z`` is the random first name
-  - the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  - the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
@@ -2650,9 +2650,9 @@ I want to see what happens when I try to make a person without a value for the `
      != {'first_name': Z, 'sex': Y,
          'last_name': 'doe', 'age': X}
 
-  because the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``.
+  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``.
 
-* I change the default value for ``last_name`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+* I change the default value for ``last_name`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2694,7 +2694,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the ``factory`` :ref:`function<what is a function?>` without it, in ``test_person.py``
+* I comment out the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in :ref:`test_factory_w_optional_arguments` to see what happens when I call the :ref:`factory function<test_factory_w_keyword_arguments>` without it, in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 42
@@ -2722,7 +2722,7 @@ I want to see what happens when I try to make a person without a value for the `
          'sex': None, 'age': X}
      != {'first_name': Z, 'last_name': Y, 'age': X}
 
-  the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
@@ -2756,9 +2756,9 @@ I want to see what happens when I try to make a person without a value for the `
      != {'first_name': Y, 'last_name': 'doe',
          'sex': 'M', 'age': X}
 
-  because the ``factory`` :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
+  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
 
-* I change the default value for ``sex`` in the ``factory`` :ref:`function<what is a function?>` in ``person.py``
+* I change the default value for ``sex`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -4787,7 +4787,7 @@ I want to write the solution without looking at the tests
     TypeError: factory() got
                an unexpected keyword argument 'first_name'
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``first_name``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``first_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``first_name`` to the :ref:`function definition<how to make a function>`
 
@@ -4808,7 +4808,7 @@ I want to write the solution without looking at the tests
     TypeError: factory() got
                an unexpected keyword argument 'year_of_birth'
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add ``year_of_birth`` to the :ref:`function definition<how to make a function>`
 
@@ -4831,7 +4831,7 @@ I want to write the solution without looking at the tests
                              'last_name': 'doe',
                              'sex': 'M', 'age': X}
 
-  because the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` and the ``factory`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
+  because the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` and the :ref:`factory function<test_factory_w_keyword_arguments>` returns :ref:`None<what is None?>`
 
 * I copy and paste the :ref:`dictionary<what is a dictionary?>` from the terminal_ to make the :ref:`function<what is a function?>` return a :ref:`dictionary<what is a dictionary?>` instead of :ref:`None<what is None?>`
 
@@ -4933,7 +4933,7 @@ I want to write the solution without looking at the tests
      != {'first_name': Y, 'last_name': 'doe',
          'sex': 'M', 'age': X}
 
-  because the ``factory`` :ref:`function<what is a function?>` returned 4 digits (a year) as the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
+  because the :ref:`factory function<test_factory_w_keyword_arguments>` returned 4 digits (a year) as the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects the difference between that :ref:`value<test_values_of_a_dictionary>` and the current year
 
 * I add an `import statement`_ for the `datetime module`_ at the top of the file_
 
@@ -4982,7 +4982,7 @@ I want to write the solution without looking at the tests
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add a new input parameter to the :ref:`function<what is a function?>`
 
@@ -5025,7 +5025,7 @@ I want to write the solution without looking at the tests
     TypeError: factory() got
                an unexpected keyword argument 'sex'
 
-  because the test called the ``factory`` :ref:`function<what is a function?>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_functions_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
 
 * I add the name to the :ref:`definition of the function<how to make a function>`
 
@@ -5446,7 +5446,7 @@ I want to write the solution without looking at the tests
             ),
         }
 
-  This ``factory`` :ref:`function<what is a function?>` only has two parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name`` and ``sex``)
+  This :ref:`factory function<test_factory_w_keyword_arguments>` only has two parameters with :ref:`default values<test_functions_w_optional_arguments>` (``last_name`` and ``sex``)
 
   .. code-block:: python
     :emphasize-text: None
