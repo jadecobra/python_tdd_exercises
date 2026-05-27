@@ -2348,12 +2348,16 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 6
+    :emphasize-lines: 10
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
             assert 0.0 is False
 
@@ -2370,14 +2374,19 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 6
+    :emphasize-lines: 10-11
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
 
 
@@ -2388,7 +2397,7 @@ the test passes.
 * I add a note about floats_
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 89
     :emphasize-lines: 7
 
     # NOTES
@@ -2414,13 +2423,18 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 7
+    :emphasize-lines: 12
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
             assert 'a string' is False
 
@@ -2437,15 +2451,21 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 7
+    :emphasize-lines: 12-13
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
 
 
@@ -2456,7 +2476,7 @@ the test passes.
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 91
     :emphasize-lines: 6
 
     # NOTES
@@ -2483,14 +2503,20 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 8
+    :emphasize-lines: 14
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
             assert (1, 2, 3, 'n') is False
 
@@ -2507,16 +2533,23 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 8
+    :emphasize-lines: 14-15
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
+            # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
 
 
@@ -2527,7 +2560,7 @@ the test passes.
 * I add a note about tuples_
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 93
     :emphasize-lines: 5
 
     # NOTES
