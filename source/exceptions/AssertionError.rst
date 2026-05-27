@@ -2588,15 +2588,22 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 9
+    :emphasize-lines: 16
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
+            # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
             assert [1, 2, 3, 'n'] is False
 
@@ -2613,17 +2620,25 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 9
+    :emphasize-lines: 16-17
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
+            # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
+            # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
 
 
@@ -2634,7 +2649,7 @@ the test passes.
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 95
     :emphasize-lines: 4
 
     # NOTES
@@ -2659,20 +2674,28 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a set_ is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 10
+    :emphasize-lines: 18
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
+            # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
+            # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
             assert {1, 2, 3, 'n'} is False
 
@@ -2689,18 +2712,27 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 10
+    :emphasize-lines: 18-19
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
+            # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
+            # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
+            # assert {1, 2, 3, 'n'} is False
             assert {1, 2, 3, 'n'} is not False
 
 
@@ -2711,7 +2743,7 @@ the test passes.
 * I add a note about sets_
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 97
     :emphasize-lines: 3
 
     # NOTES
@@ -2741,17 +2773,26 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 11
+    :emphasize-lines: 20
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
+            # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
+            # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
+            # assert {1, 2, 3, 'n'} is False
             assert {1, 2, 3, 'n'} is not False
             assert {'key': 'value'} is False
 
@@ -2768,19 +2809,29 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 76
-    :emphasize-lines: 11
+    :emphasize-lines: 20-21
     :emphasize-text: not
 
         def test_assertion_error_w_false(self):
+            # assert None is False
             assert None is not False
+            # assert False is not False
             assert False is False
+            # assert True is False
             assert True is not False
+            # assert 0 is False
             assert 0 is not False
+            # assert 0.0 is False
             assert 0.0 is not False
+            # assert 'a string' is False
             assert 'a string' is not False
+            # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
+            # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
+            # assert {1, 2, 3, 'n'} is False
             assert {1, 2, 3, 'n'} is not False
+            # assert {'key': 'value'} is False
             assert {'key': 'value'} is not False
 
 
@@ -2791,7 +2842,7 @@ the test passes.
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 99
     :emphasize-lines: 2
 
     # NOTES
