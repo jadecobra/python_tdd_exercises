@@ -1105,7 +1105,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I use the new :ref:`function<what is a function?>` for the age calculation in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 63
     :emphasize-lines: 4-8
 
         # def say_hello():
@@ -1131,7 +1131,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * The :ref:`say_hello method<test_classy_person_says_hello>` is in the ``Person`` :ref:`class<what is a class?>`, there is no need for it to take a copy of the ``Person`` :ref:`class<what is a class?>` as input since it should be able to access the :ref:`attributes<what is a class attribute?>` of the :ref:`class<what is a class?>` it belongs to. I change ``person.`` to ``self.`` to use :ref:`class attributes<what is a class attribute?>` instead
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 63
     :emphasize-lines: 8-9, 14-15, 17-18
 
         # def say_hello():
@@ -1164,7 +1164,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I change the name of the input parameter from ``person`` to ``self``
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 63
     :emphasize-lines: 3-4
 
         # def say_hello():
@@ -1177,7 +1177,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 * I remove the `staticmethod decorator`_ because I no longer need it since the :ref:`say_hello method<test_classy_person_says_hello>` is using :ref:`class attributes<what is a class attribute?>`
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 63
     :emphasize-lines: 2
 
         # def say_hello():
@@ -3160,9 +3160,14 @@ the test passes.
 * I add ``self.sex`` to the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 16
+    :lineno-start: 41
+    :emphasize-lines: 21
 
+        # pass
+        # def __init__():
+        # def __init__(first_name):
+        # def __init__(self, first_name):
+        # def __init__(self, first_name, last_name):
         def __init__(
             # self, first_name, last_name,
             # self, first_name, last_name=None,
@@ -3183,16 +3188,68 @@ the test passes.
 
   the test passes
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    import datetime
+
+
+    def calculate_age(year_of_birth):
+        return (
+            datetime.datetime.today().year
+          - year_of_birth
+        )
+
+
+    def say_hello(a_dictionary):
+        return (
+            f'Hi, my name is {a_dictionary.get("first_name")}'
+            f' {a_dictionary.get("last_name")}'
+            f' and I am {a_dictionary.get("age")}'
+        )
+
+
+    def factory(
+            first_name, year_of_birth,
+            last_name='doe', sex='M',
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': calculate_age(year_of_birth),
+        }
+
+
+    class Person:
+
+        def __init__(
+            self, first_name, last_name='doe',
+            year_of_birth=None, sex=None,
+        ):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.year_of_birth = year_of_birth
+            self.sex = sex
+            return None
+
+        def say_hello(self):
+            age = calculate_age(self.year_of_birth)
+            return (
+                f'Hi, my name is {self.first_name}'
+                f' {self.last_name}'
+                f' and I am {age}'
+            )
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_classes'
-
-
-
+    'add test_attributes_and_methods_of_instances'
 
 ----
 
@@ -3232,17 +3289,22 @@ code from the chapter
 review
 *************************************************************************************
 
+There are few problems with what I have now
+
 * anyone seeing the tests for the first time has to read the :ref:`class attributes<what is a class attribute?>`
 
   .. code-block:: python
 
     class TestPerson(unittest.TestCase):
 
-        random_first_name = get_random_name()
-        random_last_name = get_random_name()
-        random_sex = pick_one('F', 'M')
-        random_year_of_birth = get_random_year_of_birth()
-        age = calculate_age(random_year_of_birth)
+        def setUp(self):
+            self.random_first_name = get_random_name()
+            self.random_last_name = get_random_name()
+            this_year = datetime.datetime.now().year
+            self.random_year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+            self.age = this_year - self.random_year_of_birth
 
         def test_factory_w_keyword_arguments(self):
 
@@ -3274,7 +3336,7 @@ review
     f' {self.random_last_name} '
     f'and I am {self.age}'
 
-* the other problem
+To review
 
 * A :ref:`class<what is a class?>` is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together
 * A :ref:`class<what is a class?>` can be used to represent something
