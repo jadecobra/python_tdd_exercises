@@ -1672,205 +1672,283 @@ another way to test if something is None
 
   the test passes.
 
-* I use assertIs_ to compare :ref:`False<test_what_is_false>` with itself
+* I use assertIs_ to compare an integer_ (a whole number with no decimals) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 12
+    :lineno-start: 36
+    :emphasize-lines: 8
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+            # assert True is None
+            assert True is not None
+            # self.assertIs(True, None)
+            self.assertIsNot(True, None)
 
-            assert False != None
-            self.assertNotEqual(False, None)
+            # assert 0 is None
+            assert 0 is not None
+            self.assertIs(0, None)
 
-            assert False != True
-            self.assertNotEqual(False, True)
-
-            assert False == False
-            self.assertNotEqual(False, False)
-
-            assert True != None
-            assert True == True
-
-
-    # NOTES
+            # assert 0.0 is None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    E       AssertionError: False == False
+    AssertionError: 0 is not None
 
-  compare this error message with the one for ``assert False != False``
-
-  .. code-block:: python
-
-    E    assert False != False
-
-* I change assertNotEqual_ to assertEqual_ to make the statement :ref:`True<test_what_is_true>`
+  compare this error message with the one for ``assert 0 is None``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 12
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+    E    assert 0 is None
 
-            assert False != None
-            self.assertNotEqual(False, None)
+* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
-            assert False != True
-            self.assertNotEqual(False, True)
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3-4
 
-            assert False == False
-            self.assertEqual(False, False)
+            # assert 0 is None
+            assert 0 is not None
+            # self.assertIs(0, None)
+            self.assertIsNot(0, None)
 
-            assert True != None
-            assert True == True
-
-
-    # NOTES
+            # assert 0.0 is None
 
   the test passes.
 
-* I use assertEqual_ to compare :ref:`True<test_what_is_true>` with :ref:`None<what is None?>`
+* I use assertIs_ to compare a float_ (binary floating point decimal number) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 15
+    :lineno-start: 25
+    :emphasize-lines: 24
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+        def test_assertion_error_w_none(self):
+            # assert None is not None
+            assert None is None
+            # self.assertIsNot(None, None)
+            self.assertIs(None, None)
 
-            assert False != None
-            self.assertNotEqual(False, None)
+            # assert False is None
+            assert False is not None
+            # self.assertIs(False, None)
+            self.assertIsNot(False, None)
 
-            assert False != True
-            self.assertNotEqual(False, True)
+            # assert True is None
+            assert True is not None
+            # self.assertIs(True, None)
+            self.assertIsNot(True, None)
 
-            assert False == False
-            self.assertEqual(False, False)
+            # assert 0 is None
+            assert 0 is not None
+            # self.assertIs(0, None)
+            self.assertIsNot(0, None)
 
-            assert True != None
-            self.assertEqual(True, None)
+            # assert 0.0 is None
+            assert 0.0 is not None
+            self.assertIs(0.0, None)
 
-            assert True == True
-
-
-    # NOTES
+            # assert 'a string' is None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    E       AssertionError: True != None
+    E       AssertionError: 0.0 is not None
 
-  compare this error message with the one for ``assert True == None``
-
-  .. code-block:: python
-
-    E    assert True == None
-
-* I change assertEqual_ to assertNotEqual_ to make the statement :ref:`True<test_what_is_true>`
+  compare this error message with the one for ``assert 0.0 is None``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 15
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+    E    assert 0.0 is None
 
-            assert False != None
-            self.assertNotEqual(False, None)
+* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
-            assert False != True
-            self.assertNotEqual(False, True)
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 3-4
 
-            assert False == False
-            self.assertEqual(False, False)
+            # assert 0.0 is None
+            assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            self.assertIsNot(0.0, None)
 
-            assert True != None
-            self.assertNotEqual(True, None)
-
-            assert True == True
-
-
-    # NOTES
+            # assert 'a string' is None
 
   the test passes.
 
-* I use assertNotEqual_ to compare :ref:`True<test_what_is_true>` with itself
+* I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 18
+    :lineno-start: 46
+    :emphasize-lines: 8
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+            # assert 0.0 is None
+            assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            self.assertIsNot(0.0, None)
 
-            assert False != None
-            self.assertNotEqual(False, None)
+            # assert 'a string' is None
+            assert 'a string' is not None
+            self.assertIs('a string', None)
 
-            assert False != True
-            self.assertNotEqual(False, True)
-
-            assert False == False
-            self.assertEqual(False, False)
-
-            assert True != None
-            self.assertNotEqual(True, None)
-
-            assert True == True
-            self.assertNotEqual(True, True)
-
-
-    # NOTES
+            # assert (1, 2, 3, 'n') is None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    E       AssertionError: True == True
+    E       AssertionError: 'a string' is not None
 
-  compare this error message with the one for ``assert True != True``
+  compare this error message with the one for ``assert 'a string' is None``
+
+  .. code-block:: python
+
+    E    assert 'a string' is None
+
+* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 3-4
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+            # self.assertIs('a string', None)
+            self.assertIsNot('a string', None)
+
+            # assert (1, 2, 3, 'n') is None
+
+  the test passes.
+
+* I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 8
+
+            # assert 0.0 is None
+            assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            self.assertIsNot(0.0, None)
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+            self.assertIs('a string', None)
+
+            # assert (1, 2, 3, 'n') is None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    E    assert True != True
+    E       AssertionError: 'a string' is not None
 
-* I change assertNotEqual_ to assertEqual_ to make the statement :ref:`True<test_what_is_true>`
+  compare this error message with the one for ``assert 'a string' is None``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 18
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
-            self.assertEqual(None, None)
+    E    assert 'a string' is None
 
-            assert False != None
-            self.assertNotEqual(False, None)
+* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
-            assert False != True
-            self.assertNotEqual(False, True)
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 3-4
 
-            assert False == False
-            self.assertEqual(False, False)
+            # assert 'a string' is None
+            assert 'a string' is not None
+            # self.assertIs('a string', None)
+            self.assertIsNot('a string', None)
 
-            assert True != None
-            self.assertNotEqual(True, None)
+            # assert (1, 2, 3, 'n') is None
 
-            assert True == True
-            self.assertEqual(True, True)
+  the test passes.
 
+* I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`None<what is None?>`
 
-    # NOTES
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 8
+
+            # assert 0.0 is None
+            assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            self.assertIsNot(0.0, None)
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+            self.assertIs('a string', None)
+
+            # assert (1, 2, 3, 'n') is None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: 'a string' is not None
+
+  compare this error message with the one for ``assert 'a string' is None``
+
+  .. code-block:: python
+
+    E    assert 'a string' is None
+
+* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 3-4
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+            # self.assertIs('a string', None)
+            self.assertIsNot('a string', None)
+
+            # assert (1, 2, 3, 'n') is None
+
+  the test passes.
+
+* I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 46
+    :emphasize-lines: 8
+
+            # assert 0.0 is None
+            assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            self.assertIsNot(0.0, None)
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+            self.assertIs('a string', None)
+
+            # assert (1, 2, 3, 'n') is None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: 'a string' is not None
+
+  compare this error message with the one for ``assert 'a string' is None``
+
+  .. code-block:: python
+
+    E    assert 'a string' is None
+
+* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 3-4
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+            # self.assertIs('a string', None)
+            self.assertIsNot('a string', None)
+
+            # assert (1, 2, 3, 'n') is None
 
   the test passes.
 
