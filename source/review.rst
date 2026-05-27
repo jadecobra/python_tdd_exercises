@@ -105,8 +105,8 @@ AssertionError review
 * :ref:`how can I test if something is NOT False?<how to test if something is True>`
 * :ref:`how can I test if something is True?<how to test if something is True>`
 * :ref:`how can I test if something is NOT True?<how to test if something is False>`
-* :ref:`how can I test if 2 things are NOT Equal?<how I test if two things are NOT Equal>`
-* :ref:`how can I test if 2 things are Equal?<how I test if two things are Equal>`
+* :ref:`how can I test if 2 things are NOT Equal?<another way to test if two things are NOT Equal>`
+* :ref:`how can I test if 2 things are Equal?<another way to test if two things are Equal>`
 
 ----
 

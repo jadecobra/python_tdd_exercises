@@ -1,10 +1,6 @@
 .. _and: https://docs.python.org/3/reference/expressions.html#and
 .. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
 .. _assert methods: `assert method`_
-.. _assertEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual
-.. _assertEqual method: assertEqual_
-.. _assertNotEqual: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotEqual
-.. _assertNotEqual method: assertNotEqual_
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
 .. _assertFalse method: assertFalse_
 .. _assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
@@ -166,8 +162,6 @@
 .. _unittest: https://docs.python.org/3/library/unittest.html
 .. _unittest module: unittest_
 .. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
-.. _unittest.TestCase.assertEqual: assertEqual_
-.. _unittest.TestCase.assertNotEqual: assertNotEqual_
 .. _unittest.TestCase.assertFalse: assertFalse_
 .. _unittest.TestCase.assertIsNone: assertIsNone_
 .. _unittest.TestCase.assertIsNotNone: assertIsNotNone_
