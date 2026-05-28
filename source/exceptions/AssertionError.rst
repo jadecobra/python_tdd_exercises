@@ -4792,7 +4792,7 @@ another way to test if something is NOT the same object as True
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'test_assertion_error_w_false with assert methods'
+    'test_assertion_error_w_true with assert methods'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -4806,7 +4806,7 @@ test_assertion_error_w_equality
 
 All the :ref:`assertions<what is an assertion?>` I have typed so far show that :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different. They give me a basic expectation of Python_ because I can compare things with them.
 
-I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal, like I did in :ref:`test_what_is_an_assertion`
+I can also use :ref:`assertions<what is an assertion?>` to test if 2 things are equal, like I did in :ref:`test_what_is_an_assertion`.
 
 ----
 
@@ -4826,10 +4826,13 @@ I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal
     ``!=`` is :kbd:`!+=` on the keyboard and is the symbol for ``NOT equal``
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 3-4
+    :lineno-start: 173
+    :emphasize-lines: 6-7
 
+            # assert {'key': 'value'} is True
             assert {'key': 'value'} is not True
+            # self.assertIs({'key': 'value'}, True)
+            self.assertIsNot({'key': 'value'}, True)
 
         def test_assertion_error_w_equality(self):
             assert None != None
@@ -4860,14 +4863,15 @@ I can use :ref:`assertions<what is an assertion?>` to test if 2 things are equal
 I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 55
-  :emphasize-lines: 2
+  :lineno-start: 178
+  :emphasize-lines: 2-3
 
-        def test_assertion_error_w_equality(self):
-            assert None == None
+      def test_assertion_error_w_equality(self):
+          # assert None != None
+          assert None == None
 
 
-    # NOTES
+  # NOTES
 
 the test passes because ``None is equal to None`` is :ref:`True<test_what_is_true>`
 
@@ -4882,7 +4886,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 * I add to the ``None is None`` note
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 183
     :emphasize-lines: 31
 
     # NOTES
@@ -4920,10 +4924,11 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 3
+    :lineno-start: 178
+    :emphasize-lines: 4
 
         def test_assertion_error_w_equality(self):
+            # assert None != None
             assert None == None
             assert False == None
 
@@ -4939,11 +4944,13 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 3
+    :lineno-start: 178
+    :emphasize-lines: 4-5
 
         def test_assertion_error_w_equality(self):
+            # assert None != None
             assert None == None
+            # assert False == None
             assert False != None
 
 
@@ -4954,7 +4961,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 * I add to the ``False is not None`` and ``None is not False`` notes because equality goes both ways
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 185
     :emphasize-lines: 28, 30
 
     # NOTES
@@ -4992,11 +4999,13 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 4
+    :lineno-start: 178
+    :emphasize-lines: 6
 
         def test_assertion_error_w_equality(self):
+            # assert None != None
             assert None == None
+            # assert False == None
             assert False != None
             assert False == True
 
@@ -5013,11 +5022,14 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 4
+    :emphasize-lines: 6-7
 
         def test_assertion_error_w_equality(self):
+            # assert None != None
             assert None == None
+            # assert False == None
             assert False != None
+            # assert False == True
             assert False != True
 
 
@@ -5970,6 +5982,8 @@ and to test if 2 things are
 * :ref:`Equal<test_assertion_error_w_equality>` with assertEqual_
 
 The tests show that :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different.
+
+What is the difference between ``is`` and ``equal``?
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 
