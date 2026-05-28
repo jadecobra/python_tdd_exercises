@@ -999,7 +999,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
         )
         return not (first_input or second_input)
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 :ref:`Logical NOR<test_logical_nor>` returns
 
@@ -1782,7 +1782,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             not (first_input or second_input)
         )
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 :ref:`Logical Equality<test_logical_equality>` returns
 
@@ -2445,7 +2445,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         )
         return not first_input or second_input
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
+  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 :ref:`Material Implication also known as Logical Implication<test_material_implication>` returns
 

@@ -92,7 +92,7 @@ Questions to think about as I go through the chapter
 
 * :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
-* :ref:`what happens after a function returns?<test_what_happens_after_a_function_returns>`
+* :ref:`what happens after a function returns?<test_what_happens_after_functions_return>`
 * :ref:`what is a constant function?<test_constant_function>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`

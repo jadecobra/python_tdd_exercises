@@ -287,9 +287,10 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 I change the expectation to match reality
 
 .. code-block:: python
-  :lineno-start: 68
-  :emphasize-lines: 1
+  :lineno-start: 67
+  :emphasize-lines: 2
 
+      def test_calculator_with_strings(self):
           self.assertEqual(src.calculator.add('1', '1'), '11')
 
 the test passes.
@@ -321,7 +322,7 @@ the test passes.
 * I change assertEqual_ to assertRaises_
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 67
     :emphasize-lines: 3-4
 
         def test_calculator_with_strings(self):
@@ -334,9 +335,11 @@ the test passes.
 * I try it with the :ref:`multiply function<test_multiplication>`
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 3
+    :lineno-start: 67
+    :emphasize-lines: 5
 
+        def test_calculator_with_strings(self):
+            self.assertEqual(src.calculator.add('1', '1'), '11')
             with self.assertRaises(TypeError):
                 src.calculator.divide('1', '1')
             src.calculator.multiply('1', '1')
@@ -350,9 +353,11 @@ the test passes.
 * I add assertRaises_
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 3-4
+    :lineno-start: 67
+    :emphasize-lines: 5-6
 
+        def test_calculator_with_strings(self):
+            self.assertEqual(src.calculator.add('1', '1'), '11')
             with self.assertRaises(TypeError):
                 src.calculator.divide('1', '1')
             with self.assertRaises(TypeError):
@@ -360,12 +365,16 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the :ref:`subtract function<test_subtraction>`
+* I try it with the :ref:`subtract function<test_subtraction>`
 
   .. code-block:: python
-    :lineno-start: 71
-    :emphasize-lines: 3
+    :lineno-start: 67
+    :emphasize-lines: 7
 
+        def test_calculator_with_strings(self):
+            self.assertEqual(src.calculator.add('1', '1'), '11')
+            with self.assertRaises(TypeError):
+                src.calculator.divide('1', '1')
             with self.assertRaises(TypeError):
                 src.calculator.multiply('1', '1')
             src.calculator.subtract('1', '1')

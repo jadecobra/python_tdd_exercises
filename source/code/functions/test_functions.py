@@ -64,7 +64,7 @@ class TestFunctions(unittest.TestCase):
         my_expectation = None
         self.assertEqual(reality, my_expectation)
 
-    def test_what_happens_after_a_function_returns(self):
+    def test_what_happens_after_functions_return(self):
         reality = src.functions.return_is_last()
         my_expectation = None
         self.assertEqual(reality, my_expectation)

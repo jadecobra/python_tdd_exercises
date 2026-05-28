@@ -1099,7 +1099,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         )
         return not (first_input and second_input)
 
-  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
+  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 :ref:`Logical NAND<test_logical_nand>`
 
@@ -2198,7 +2198,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         )
         return first_input or second_input
 
-  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`.
+  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 :ref:`Logical Disjunction<test_logical_disjunction>` also known as "OR_" returns
 

@@ -10,6 +10,7 @@
 .. _arguments: argument_
 .. _keyword arguments: arguments_
 .. _positional arguments: arguments_
+.. _return: `return statement`_
 
 #################################################################################
 what is a function?
@@ -79,7 +80,7 @@ Questions to think about as I go through the chapter
 
 * :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
-* :ref:`what happens after a function returns?<test_what_happens_after_a_function_returns>`
+* :ref:`what happens after a function returns?<test_what_happens_after_functions_return>`
 * :ref:`what is a constant function?<test_constant_function>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_functions_w_positional_arguments>`
@@ -1057,18 +1058,21 @@ the test passes.
 
     class TestFunctions(unittest.TestCase):
 
-* I use the new :ref:`function<what is a function?>` for the first :ref:`assertion<what is an assertion?>`
+* I use the new :ref:`function<what is a function?>` for ``reality`` in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 4-5
+    :emphasize-lines: 5-6
     :emphasize-text: add_x
 
     class TestFunctions(unittest.TestCase):
 
         def test_why_use_a_function(self):
+            # reality = 1 + 0
             # reality = 2 + 0
             reality = add_x(0)
+            # my_expectation = 0
+            # my_expectation = 1
             my_expectation = 2
             self.assertEqual(reality, my_expectation)
 
@@ -1078,121 +1082,84 @@ the test passes.
 * I use the ``add_x`` :ref:`function<what is a function?>` for the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 7-8, 12-13, 17-18, 22-23, 27-28, 32-33, 37-38, 42-43, 47-48
+    :lineno-start: 10
+    :emphasize-lines: 11-12, 19-20, 27-28, 35-36, 43-44, 51-52
     :emphasize-text: add_x
 
         def test_why_use_a_function(self):
+            # reality = 1 + 0
             # reality = 2 + 0
             reality = add_x(0)
+            # my_expectation = 0
+            # my_expectation = 1
             my_expectation = 2
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 1
             # reality = 2 + 1
             reality = add_x(1)
+            # my_expectation = 1
+            # my_expectation = 2
             my_expectation = 3
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 2
             # reality = 2 + 2
             reality = add_x(2)
+            # my_expectation = 2
+            # my_expectation = 3
             my_expectation = 4
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 3
             # reality = 2 + 3
             reality = add_x(3)
+            # my_expectation = 3
+            # my_expectation = 4
             my_expectation = 5
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 4
             # reality = 2 + 4
             reality = add_x(4)
+            # my_expectation = 4
+            # my_expectation = 5
             my_expectation = 6
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 5
             # reality = 2 + 5
             reality = add_x(5)
+            # my_expectation = 5
+            # my_expectation = 6
             my_expectation = 7
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 6
             # reality = 2 + 6
             reality = add_x(6)
+            # my_expectation = 6
+            # my_expectation = 7
             my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 2 + 7
-            reality = add_x(7)
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 2 + 8
-            reality = add_x(8)
-            my_expectation = 10
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 2 + 9
-            reality = add_x(9)
-            my_expectation = 11
-            self.assertEqual(reality, my_expectation)
 
   still green.
 
-* I remove the commented lines
+* Now I only have to make a change in one place if I want to test what happens if I add ``3`` to a number
 
   .. code-block:: python
-    :lineno-start: 6
+    :linenos:
+    :emphasize-lines: 4
+    :emphasize-text: 5-6
 
-        def test_why_use_a_function(self):
-            reality = add_x(0)
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
+    import unittest
 
-            reality = add_x(1)
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(2)
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(3)
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(4)
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(5)
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(6)
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(7)
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(8)
-            my_expectation = 10
-            self.assertEqual(reality, my_expectation)
-
-            reality = add_x(9)
-            my_expectation = 11
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-* Now I only have to make a change in one place if I want to test what happens when I add ``3`` to a number
-
-  .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 2
-    :emphasize-text: 3
 
     def add_x(number):
+        # return 2 + number
         return 3 + number
+
+
+    class TestFunctions(unittest.TestCase):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1203,47 +1170,97 @@ the test passes.
 * I change the expectations for the :ref:`assertions<what is an assertion?>` one at a time
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 3, 7, 11, 15, 19, 23, 27, 31, 35, 39
+    :lineno-start: 11
+    :emphasize-lines: 7-8, 16-17, 25-26, 34-35, 43-44, 52-53, 61-62, 70-71, 79-80, 88-89
 
         def test_why_use_a_function(self):
+            # reality = 1 + 0
+            # reality = 2 + 0
             reality = add_x(0)
+            # my_expectation = 0
+            # my_expectation = 1
+            # my_expectation = 2
             my_expectation = 3
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 1
+            # reality = 2 + 1
             reality = add_x(1)
+            # my_expectation = 1
+            # my_expectation = 2
+            # my_expectation = 3
             my_expectation = 4
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 2
+            # reality = 2 + 2
             reality = add_x(2)
+            # my_expectation = 2
+            # my_expectation = 3
+            # my_expectation = 4
             my_expectation = 5
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 3
+            # reality = 2 + 3
             reality = add_x(3)
+            # my_expectation = 3
+            # my_expectation = 4
+            # my_expectation = 5
             my_expectation = 6
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 4
+            # reality = 2 + 4
             reality = add_x(4)
+            # my_expectation = 4
+            # my_expectation = 5
+            # my_expectation = 6
             my_expectation = 7
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 5
+            # reality = 2 + 5
             reality = add_x(5)
+            # my_expectation = 5
+            # my_expectation = 6
+            # my_expectation = 7
             my_expectation = 8
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 6
+            # reality = 2 + 6
             reality = add_x(6)
+            # my_expectation = 6
+            # my_expectation = 7
+            # my_expectation = 8
             my_expectation = 9
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 7
+            # reality = 2 + 7
             reality = add_x(7)
+            # my_expectation = 7
+            # my_expectation = 8
+            # my_expectation = 9
             my_expectation = 10
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 8
+            # reality = 2 + 8
             reality = add_x(8)
+            # my_expectation = 8
+            # my_expectation = 9
+            # my_expectation = 10
             my_expectation = 11
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 9
+            # reality = 2 + 9
             reality = add_x(9)
+            # my_expectation = 9
+            # my_expectation = 10
+            # my_expectation = 11
             my_expectation = 12
             self.assertEqual(reality, my_expectation)
 
@@ -1284,17 +1301,20 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 * I add a new test to ``test_functions.py`` in the :ref:`editor<2 editors>`
 
   .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 5-8
+    :lineno-start: 93
+    :emphasize-lines: 10-11
 
+            # reality = 1 + 9
+            # reality = 2 + 9
             reality = add_x(9)
+            # my_expectation = 9
+            # my_expectation = 10
+            # my_expectation = 11
             my_expectation = 12
             self.assertEqual(reality, my_expectation)
 
         def test_making_a_function_w_pass(self):
-            reality = src.functions.w_pass()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+            self.assertIs(src.functions.w_pass(), None)
 
 
     # Exceptions seen
@@ -1318,15 +1338,9 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 51
-    :emphasize-lines: 9
+    :lineno-start: 106
+    :emphasize-lines: 3
     :emphasize-text: NameError
-
-        def test_making_a_function_w_pass(self):
-            reality = src.functions.w_pass()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
-
 
     # Exceptions seen
     # AssertionError
@@ -1358,7 +1372,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 107
     :emphasize-lines: 4
     :emphasize-text: AttributeError
 
@@ -1378,16 +1392,11 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
     def w_pass():
         pass
 
-  the test passes.
-
-  * the test checks if
-
-    - the ``reality`` :ref:`variable<what is a variable?>`, which represents the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is equal to
-    - the ``my_expectation`` :ref:`variable<what is a variable?>`, which represents :ref:`None<what is None?>`
+  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_pass(), None)`` checks if the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`
 
   * the :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
   * pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body)
-  * the test passes because all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``, which leads me to the next test
+  * the test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first git_ business
 
 * I add a git_ commit message in the other terminal_
 
@@ -1399,7 +1408,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can make a function with pass<test_making_a_function_w_pass>`
+:ref:`I can make a function with pass.<test_making_a_function_w_pass>`
 
 ----
 
@@ -1422,18 +1431,14 @@ I can also make a function with a `return statement`_
 * I add a new failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 52
-    :emphasize-lines: 6-9
+    :lineno-start: 103
+    :emphasize-lines: 4-5
 
         def test_making_a_function_w_pass(self):
-            reality = src.functions.w_pass()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+            self.assertIs(src.functions.w_pass(), None)
 
         def test_making_a_function_w_return(self):
-            reality = src.functions.w_return()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+            self.assertIs(src.functions.w_return(), None)
 
 
     # Exceptions seen
@@ -1482,12 +1487,24 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
+
+    def w_return():
+        # pass
+        return
+
+  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_return(), None)`` checks if the result of a call to ``w_return`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_return``, is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`
+  * the :ref:`function definition<how to make a function>` simply says return_ and the test passes.
+  * return_ is a special keyword that is used to send output from a :ref:`function<what is a function?>`.
+  * the test is still green because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 5
 
     def w_return():
         return
-
-  the test is still green.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1511,7 +1528,7 @@ I have two :ref:`functions<what is a function?>` with different statements, and 
   src.functions.w_return()
   return
 
-their contents are different, their results are the same because "all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ``return None``", which leads me to the next test
+their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`", which leads me to the next test.
 
 :ref:`I can make a function with a return statement<test_making_a_function_w_return>`
 
@@ -1536,18 +1553,16 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 * I add another failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 6-9
+    :lineno-start: 106
+    :emphasize-lines: 4-7
 
         def test_making_a_function_w_return(self):
-            reality = src.functions.w_return()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+            self.assertIs(src.functions.w_return(), None)
 
         def test_making_a_function_w_return_none(self):
-            reality = src.functions.w_return_none()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
 
 
     # Exceptions seen
@@ -1596,10 +1611,11 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
     :emphasize-text: None
 
     def w_return_none():
+        # return
         return None
 
   the test is still green.
@@ -1608,17 +1624,19 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 2
+    :emphasize-lines: 3-4
     :emphasize-text: something
 
     def w_return_none():
+        # return
+        # return None
         return 'something'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'something' != None
+    AssertionError: 'something' is not None
 
   because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
 
@@ -1626,12 +1644,22 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 1-2
+    :emphasize-lines: 3-4
+
+    def w_return_none():
+        # return
+        return None
+        # return 'something'
+
+  the test is green again.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 9
 
     def w_return_none():
         return None
-
-  the test is green again
 
 * I add a git_ commit message in the other terminal_
 
@@ -1660,19 +1688,19 @@ I have three :ref:`functions<what is a function?>` with different statements, an
   src.functions.w_return_none()
   return None
 
-their contents are different, their results are the same because "all :ref:`functions<what is a function?>` return :ref:`None<what is None?>` by default, as if they have an invisible line that says ..."
+their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says ...<test_making_a_function_w_return_none>`"
 
 I like to write my :ref:`functions<what is a function?>` with ``return None``, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
 
-:ref:`I can make a function with return None<test_making_a_function_w_return_none>`
+:ref:`I can make a function with return None.<test_making_a_function_w_return_none>`
 
 ----
 
 *********************************************************************************
-test_what_happens_after_a_function_returns
+test_what_happens_after_functions_return
 *********************************************************************************
 
-The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`.
+The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`
 
 ----
 
@@ -1687,18 +1715,18 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 109
     :emphasize-lines: 6-9
 
         def test_making_a_function_w_return_none(self):
-            reality = src.functions.w_return_none()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
 
-        def test_what_happens_after_a_function_returns(self):
-            reality = src.functions.return_is_last()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+        def test_what_happens_after_functions_return(self):
+            self.assertIs(
+                src.functions.return_is_last(), None
+            )
 
 
     # Exceptions seen
@@ -1743,14 +1771,15 @@ the test passes.
 
 ----
 
-* I change the `return statement`_
+* I add a `return statement`_
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
     def return_is_last():
         return 'something'
+        return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1758,19 +1787,8 @@ the test passes.
 
     AssertionError: 'something' is not None
 
-  because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
-
-* I add another `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 3
-
-    def return_is_last():
-        return 'something'
-        return None
-
-  the terminal_ still shows the same :ref:`AssertionError<what causes AssertionError?>` because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code).
+  - because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
+  - the :ref:`function<what is a function?>` does not run the second `return statement`_   because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code).
 
   .. tip::
 
@@ -1800,9 +1818,9 @@ the test passes.
 
     def return_is_last():
         return None
-        return 'will never run'
+        return 'will NEVER run'
 
-  the second `return statement`_ is now like a comment, and the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_a_function_returns>`
+  the second `return statement`_ is now like a comment, and the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add a git_ commit message in the other terminal_
 
@@ -1810,7 +1828,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_what_happens_after_a_function_returns'
+    'add test_what_happens_after_functions_return'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1835,13 +1853,13 @@ constant functions_ always return the same thing when they are called
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 67
+    :lineno-start: 114
     :emphasize-lines: 6-9
 
         def test_what_happens_after_a_function_returns(self):
-            reality = src.functions.return_is_last()
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+            self.assertIs(
+                src.functions.return_is_last(), None
+            )
 
         def test_constant_function(self):
             reality = src.functions.constant()
@@ -1894,12 +1912,21 @@ constant functions_ always return the same thing when they are called
 
   .. code-block:: python
     :lineno-start: 18
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
     def constant():
+        # return None
         return 'the same thing'
 
   the test passes.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 18
+
+    def constant():
+        return 'the same thing'
 
 * I add a git_ commit message in the other terminal_
 
@@ -1912,7 +1939,7 @@ constant functions_ always return the same thing when they are called
 
 A constant :ref:`function<what is a function?>` always returns the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times (who's counting?)
 
-:ref:`a constant function always returns the same thing<test_constant_function>`
+:ref:`a constant function always returns the same thing.<test_constant_function>`
 
 ----
 
@@ -4694,7 +4721,7 @@ as a reminder
 * :ref:`keyword arguments are taken as a dictionary<how Python reads keyword arguments>`
 * :ref:`the identity function returns its input<test_identity_function>`
 * :ref:`constant functions always return the same thing<test_constant_function>`
-* :ref:`nothing runs after the return statement in a function<test_what_happens_after_a_function_returns>`
+* :ref:`nothing runs after the return statement in a function<test_what_happens_after_functions_return>`
 * :ref:`functions return None by default<test_making_a_function_w_return_none>`
 
 :ref:`How many questions can you answer about functions?<questions about functions>`

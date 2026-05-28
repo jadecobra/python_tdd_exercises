@@ -32,7 +32,7 @@ class TestFunctions(unittest.TestCase):
     def test_making_a_function_w_return_none(self):
         self.assertIsNone(src.functions.w_return_none())
 
-    def test_what_happens_after_a_function_returns(self):
+    def test_what_happens_after_functions_return(self):
         self.assertIsNone(src.functions.return_is_last())
 
     def test_constant_function(self):
