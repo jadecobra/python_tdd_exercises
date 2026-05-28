@@ -591,15 +591,15 @@ how to use try...except...else
 
   The `try statement`_ is used to catch or handle :ref:`Exceptions<errors>` in Python_. It allows the program_ to choose what to do when it runs into an :ref:`Exception<errors>`. I think of it as
 
-  - ``try`` running **this**
-  - ``except Exception`` - when running **this** raises ``Exception``, run the code in this block
-  - ``else`` - when running **this** does NOT raise ``Exception``, run the code in this block
+  - ``try`` **this**
+  - ``except Exception`` - if **this** raises ``Exception``, run the code in this block
+  - ``else`` - **this** does NOT raise ``Exception``, run the code in this block
 
   In this case
 
   - ``try`` **calling** ``a_function()``
-  - ``except Exception`` - when **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
-  - ``else`` - when **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
+  - ``except Exception`` - if **calling** ``a_function()`` raises ``Exception`` return ``'failed'``
+  - ``else`` - if **calling** ``a_function()`` does NOT raise ``Exception`` return ``'succeeded'``
 
   the `try statement`_ is how I think of `Test Driven Development`_ or the scientific method
 
