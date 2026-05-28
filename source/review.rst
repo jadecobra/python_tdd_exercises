@@ -58,55 +58,29 @@ how to make a python test driven development environment review
 
 ----
 
-****************************************************************************************************************
-how to make a python test driven development environment on Windows without Windows Subsystem for Linux review
-****************************************************************************************************************
-
-* :ref:`what is a Test Driven Development Environment?`
-* :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I make a Python Test Driven Development Environment automatically?<how to make a Python Test Driven Development environment automatically on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I change directories?<how to change directory>`
-* :ref:`how can I make a directory?<how to make a directory>`
-* :ref:`how can I see directory structure?<how to look at directory relationships>`
-* :ref:`how can I make an empty file?<how to make an empty file on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I write text to a file?<how to write text to a file on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I change the name of a file?<how to change the name of a file on Windows without WSL>`
-* :ref:`how can I run a Python Program?<how to run a Python program on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I test for failure?<test_failure on Windows without WSL>`
-* :ref:`how can I make a Python package?<how to make the tests a Python package on Windows without WSL>`
-* :ref:`how can I run tests manually?<how to manually run tests on Windows without WSL>`
-* :ref:`how can I run tests automatically?<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I stop automated Python tests from running?<how to stop the automated tests on Windows without WSL>`
-* :ref:`what is a Virtual Environment?<what is a virtual environment?>`
-* :ref:`how can I make a Virtual Environment?<how to make a virtual environment on Windows without WSL>`
-* :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment on Windows without WSL>`
-* :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment on Windows without WSL>`
-* :ref:`how can I document the Python programs my project needs?<how to write text to a file on Windows without Windows Subsystem for Linux>`
-* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv on Windows without WSL>`
-* :ref:`how can I install Python packages in a Virtual Environment?<how to install Python packages with uv on Windows without WSL>`
-* :ref:`how can I see what Python packages are installed in a Virtual Environment?<how to see what packages are installed in a virtual environment on Windows without WSL>`
-* :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal on Windows without WSL>`
-* :ref:`how can I make a PowerShell script?<how to make a PowerShell script>`
-* :ref:`what is a variable?<how to use a variable in a shell script>`
-* :ref:`how can I use a variable in a PowerShell script<how to use a variable in a PowerShell script>`
-* :ref:`how can I run a PowerShell script?<how to run a PowerShell script>`
-
-----
-
 *********************************************************************************
 AssertionError review
 *********************************************************************************
 
 * :ref:`what is an assertion?<what is an assertion?>`
+* :ref:`what is a variable?`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
-* :ref:`how can I test if something is NOT the same object as None?<how to test if something is NOT None>`
-* :ref:`how can I test if something is the same object as None?<how to test if something is None>`
-* :ref:`how can I test if something is the same object as False?<how to test if something is False>`
-* :ref:`how can I test if something is NOT the same object as False?<how to test if something is True>`
-* :ref:`how can I test if something is the same object as True?<how to test if something is True>`
-* :ref:`how can I test if something is NOT the same object as True?<how to test if something is False>`
-* :ref:`how can I test if 2 things are NOT Equal?<another way to test if two things are NOT Equal>`
-* :ref:`how can I test if 2 things are Equal?<another way to test if two things are Equal>`
+* :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
+* :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
+* :ref:`how can I test if something is the same object as False?<test_assertion_error_w_false>`
+* :ref:`how can I test if something is NOT the same object as False?<test_assertion_error_w_true>`
+* :ref:`how can I test if something is the same object as True?<test_assertion_error_w_true>`
+* :ref:`how can I test if something is NOT the same object as True?<test_assertion_error_w_false>`
+* :ref:`how can I test if 2 things are NOT Equal?<test_assertion_error_w_equality>`
+* :ref:`how can I test if 2 things are Equal?<test_assertion_error_w_equality>`
+* :ref:`what is another way to test if something is the same object as None?<another way to test if something is the same object as None>`
+* :ref:`what is another way to test if something is NOT the same object as None?<another way to test if something is NOT the same object as None>`
+* :ref:`what is another way to test if something is the same object as False?<another way to test if something is the same object as False>`
+* :ref:`what is another way to test if something is NOT the same object as False?<another way to test if something is NOT the same object as False>`
+* :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is the same object as True>`
+* :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is NOT the same object as True>`
+* :ref:`what is another way test if 2 things are NOT Equal?<another way to test if two things are NOT Equal>`
+* :ref:`what is another way test if 2 things are Equal?<another way to test if two things are Equal>`
 
 ----
 
@@ -144,10 +118,12 @@ None review
 * :ref:`Is None a list?<test_is_none_a_list>`
 * :ref:`Is None a set?<test_is_none_a_set>`
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
-* :ref:`how can I test if something is the same object as None?<how to test if something is None>`
-* :ref:`how can I test if something is NOT the same object as None?<how to test if something is None>`
+* :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
+* :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is an instance of a class?<how to test if something is an instance of a class>`
 * :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
+* :ref:`what is another way to test if something is the same object as None?<another way to test if something is the same object as None>`
+* :ref:`what is another way to test if something is NOT the same object as None?<another way to test if something is NOT the same object as None>`
 
 ----
 
@@ -274,7 +250,6 @@ testing
 *********************************************************************************
 
 * :ref:`how can I run automated tests after I exit them in the terminal?<how to run the tests automatically with uv and pytest-watcher>`
-* :ref:`how can I run automated tests after I exit them in the terminal_ on Windows without Windows Subsystem for Linux?<how to run the tests automatically on Windows without Windows Subsystem for Linux>`
 
 ----
 
