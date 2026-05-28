@@ -99,12 +99,12 @@ AssertionError review
 
 * :ref:`what is an assertion?<what is an assertion?>`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
-* :ref:`how can I test if something is NOT None?<how to test if something is NOT None>`
-* :ref:`how can I test if something is None?<how to test if something is None>`
-* :ref:`how can I test if something is False?<how to test if something is False>`
-* :ref:`how can I test if something is NOT False?<how to test if something is True>`
-* :ref:`how can I test if something is True?<how to test if something is True>`
-* :ref:`how can I test if something is NOT True?<how to test if something is False>`
+* :ref:`how can I test if something is NOT the same object as None?<how to test if something is NOT None>`
+* :ref:`how can I test if something is the same object as None?<how to test if something is None>`
+* :ref:`how can I test if something is the same object as False?<how to test if something is False>`
+* :ref:`how can I test if something is NOT the same object as False?<how to test if something is True>`
+* :ref:`how can I test if something is the same object as True?<how to test if something is True>`
+* :ref:`how can I test if something is NOT the same object as True?<how to test if something is False>`
 * :ref:`how can I test if 2 things are NOT Equal?<another way to test if two things are NOT Equal>`
 * :ref:`how can I test if 2 things are Equal?<another way to test if two things are Equal>`
 
@@ -144,8 +144,8 @@ None review
 * :ref:`Is None a list?<test_is_none_a_list>`
 * :ref:`Is None a set?<test_is_none_a_set>`
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
-* :ref:`how can I test if something is None?<how to test if something is None>`
-* :ref:`how can I test if something is NOT None?<how to test if something is None>`
+* :ref:`how can I test if something is the same object as None?<how to test if something is None>`
+* :ref:`how can I test if something is NOT the same object as None?<how to test if something is None>`
 * :ref:`how can I test if something is an instance of a class?<how to test if something is an instance of a class>`
 * :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
 

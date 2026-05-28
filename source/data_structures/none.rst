@@ -53,8 +53,8 @@ Questions to think about as I go through the chapter
 * :ref:`Is None a list?<test_is_none_a_list>`
 * :ref:`Is None a set?<test_is_none_a_set>`
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
-* :ref:`how can I test if something is None?<how to test if something is None>`
-* :ref:`how can I test if something is NOT None?<how to test if something is None>`
+* :ref:`how can I test if something is the same object as None?<how to test if something is None>`
+* :ref:`how can I test if something is NOT the same object as None?<how to test if something is None>`
 * :ref:`how can I test if something is an instance of a class?<how to test if something is an instance of a class>`
 * :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
 
