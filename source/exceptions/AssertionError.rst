@@ -3818,13 +3818,18 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 7
+    :emphasize-lines: 12
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
             assert 'a string' is True
 
@@ -3841,15 +3846,21 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 7
+    :emphasize-lines: 12-13
     :emphasize-text: not
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
 
 
@@ -3860,7 +3871,7 @@ the test passes.
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 142
     :emphasize-lines: 10
 
     # NOTES
@@ -3897,14 +3908,20 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 8
+    :emphasize-lines: 14
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
             assert (1, 2, 3, 'n') is True
 
@@ -3921,16 +3938,23 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 8
+    :emphasize-lines: 14-15
     :emphasize-text: not
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
+            # assert (1, 2, 3, 'n') is True
             assert (1, 2, 3, 'n') is not True
 
 
@@ -3941,7 +3965,7 @@ the test passes.
 * I add a note about tuples_
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 144
     :emphasize-lines: 8
 
     # NOTES
@@ -3979,15 +4003,22 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 9
+    :emphasize-lines: 16
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
+            # assert (1, 2, 3, 'n') is True
             assert (1, 2, 3, 'n') is not True
             assert [1, 2, 3, 'n'] is True
 
@@ -4004,17 +4035,25 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 9
+    :emphasize-lines: 16-17
     :emphasize-text: not
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
+            # assert (1, 2, 3, 'n') is True
             assert (1, 2, 3, 'n') is not True
+            # assert [1, 2, 3, 'n'] is True
             assert [1, 2, 3, 'n'] is not True
 
 
@@ -4025,7 +4064,7 @@ the test passes.
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 146
     :emphasize-lines: 6
 
     # NOTES
@@ -4060,20 +4099,28 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a set_ is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 10
+    :emphasize-lines: 18
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
+            # assert (1, 2, 3, 'n') is True
             assert (1, 2, 3, 'n') is not True
+            # assert [1, 2, 3, 'n'] is True
             assert [1, 2, 3, 'n'] is not True
             assert {1, 2, 3, 'n'} is True
 
@@ -4090,18 +4137,27 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 10
+    :emphasize-lines: 18-19
     :emphasize-text: not
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
+            # assert (1, 2, 3, 'n') is True
             assert (1, 2, 3, 'n') is not True
+            # assert [1, 2, 3, 'n'] is True
             assert [1, 2, 3, 'n'] is not True
+            # assert {1, 2, 3, 'n'} is True
             assert {1, 2, 3, 'n'} is not True
 
 
@@ -4112,7 +4168,7 @@ the test passes.
 * I add a note about sets_
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 148
     :emphasize-lines: 4
 
     # NOTES
@@ -4152,17 +4208,26 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 11
+    :emphasize-lines: 20
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
+            # assert (1, 2, 3, 'n') is True
             assert (1, 2, 3, 'n') is not True
+            # assert [1, 2, 3, 'n'] is True
             assert [1, 2, 3, 'n'] is not True
+            # assert {1, 2, 3, 'n'} is True
             assert {1, 2, 3, 'n'} is not True
             assert {'key': 'value'} is True
 
@@ -4179,19 +4244,29 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 127
-    :emphasize-lines: 11
+    :emphasize-lines: 20-21
     :emphasize-text: not
 
         def test_assertion_error_w_true(self):
+            # assert None is True
             assert None is not True
+            # assert False is True
             assert False is not True
+            # assert True is not True
             assert True is True
+            # assert 0 is True
             assert 0 is not True
+            # assert 0.0 is True
             assert 0.0 is not True
+            # assert 'a string' is True
             assert 'a string' is not True
+            # assert (1, 2, 3, 'n') is True
             assert (1, 2, 3, 'n') is not True
+            # assert [1, 2, 3, 'n'] is True
             assert [1, 2, 3, 'n'] is not True
+            # assert {1, 2, 3, 'n'} is True
             assert {1, 2, 3, 'n'} is not True
+            # assert {'key': 'value'} is True
             assert {'key': 'value'} is not True
 
 
@@ -4202,7 +4277,7 @@ the test passes.
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 150
     :emphasize-lines: 2
 
     # NOTES
