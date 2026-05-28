@@ -925,11 +925,12 @@ I have to call a :ref:`function<what is a function?>` in a way that matches its 
 
     TypeError: function_02() takes 2 positional arguments but 3 were given
 
-* I change the name of the first input, then add another name in parentheses to make the number of inputs match
+* I add another name in parentheses to make the number of inputs match
 
   .. code-block:: python
     :lineno-start: 49
     :emphasize-lines: 1
+    :emphasize-text: third
 
     def function_02(first, second, third):
         return None
