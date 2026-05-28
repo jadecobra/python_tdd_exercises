@@ -1559,7 +1559,7 @@ another way to test if something is the same object as None
 
 ----
 
-* I change the `assertIsNot method`_ to the `assertIs method`_ which checks if the :ref:`object<what is a class?>` on the left is the same as the :ref:`object<what is a class?>` on the right in the parentheses
+* I change the `assertIsNot method`_ to the `assertIs method`_ which checks if the :ref:`object<what is a class?>` in parentheses on the left is the same as the :ref:`object<what is a class?>` on the right
 
   .. code-block:: python
     :lineno-start: 25
@@ -2892,62 +2892,33 @@ I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>`
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`assertion<what is an assertion?>` with the `assertIs method`_ (it checks if the :ref:`object<what is a class?>` on the left is the same as the :ref:`object<what is a class?>` on the right, in parentheses)
+* I add an :ref:`assertion<what is an assertion?>` with the `assertIs method`_ (it checks if the two :ref:`objects<what is a class?>` in parentheses are the same)
 
   .. code-block:: python
     :lineno-start: 76
     :emphasize-lines: 4
     :emphasize-text: Not
 
-        def test_assertion_error_w_none(self):
-            # assert None is not False
-            assert None is False
-            self.assertIsNot(None, None)
+        def test_assertion_error_w_false(self):
+            # assert None is False
+            assert None is not False
+            self.assertIs(None, False)
 
-            # assert False is False
-            assert False is not False
-            # assert True is False
-            assert True is not False
-            # assert 0 is False
-            assert 0 is not False
-            # assert 0.0 is False
-            assert 0.0 is not False
-            # assert 'a string' is False
-            assert 'a string' is not False
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-            # assert {'key': 'value'} is False
-            assert {'key': 'value'} is not False
-
-
-    # NOTES
+            # assert False is not False
 
   the terminal_ is my friend, and shows AssertionError_
 
   .. code-block:: python
 
-    E       AssertionError: unexpectedly identical: None
+    E       AssertionError: None is not False
 
-  because :ref:`False<test_what_is_false>` is :ref:`False<test_what_is_false>`, they are the same :ref:`object<what is a class?>`. Compare this error message with the one for ``assert None is not False``
+  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`. Compare this error message with the one for ``assert None is False``
 
   .. code-block:: python
 
-    E       assert None is not False
+    E       assert None is False
 
   which do you like better?
-
-  .. admonition:: these two statements check the same thing
-
-    .. code-block:: python
-
-      assert None is not False
-      self.assertIsNot(None, None)
-
-    they are asking the same question: ``is False the same object as None?`` or giving Python_ the command ``DO NOT CONTINUE if "None is NOT the same object as None" is False``
 
 ----
 
@@ -2957,37 +2928,37 @@ another way to test if something is NOT the same object as False
 
 ----
 
-* I change the `assertIsNot method`_ to the `assertIs method`_ which checks if the :ref:`object<what is a class?>` on the left is the same as the :ref:`object<what is a class?>` on the right in the parentheses
+* I change the `assertIs method`_ to the `assertIsNot method`_ which checks if the two :ref:`objects<what is a class?>` in parentheses are NOT the same
 
   .. code-block:: python
     :lineno-start: 76
     :emphasize-lines: 4-5
 
-        def test_assertion_error_w_none(self):
-            # assert None is not False
-            assert None is False
-            # self.assertIsNot(None, None)
-            self.assertIs(None, None)
+        def test_assertion_error_w_false(self):
+            # assert None is False
+            assert None is not False
+            # self.assertIs(None, False)
+            self.assertIsNot(None, False)
 
-            # assert False is False
+            # assert False is not False
 
-  the test passes because :ref:`False<test_what_is_false>` is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+  the test passes because :ref:`None<what is None?>` is NOT the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
 
-* I use the `assertIs method`_ to compare :ref:`False<test_what_is_false>` with :ref:`False<test_what_is_false>`
+* I use the `assertIsNot method`_ to compare :ref:`False<test_what_is_false>` with itself
 
   .. code-block:: python
     :lineno-start: 76
     :emphasize-lines: 9
 
-        def test_assertion_error_w_none(self):
-            # assert None is not False
-            assert None is False
-            # self.assertIsNot(None, None)
-            self.assertIs(None, None)
+        def test_assertion_error_w_false(self):
+            # assert None is False
+            assert None is not False
+            # self.assertIs(None, False)
+            self.assertIsNot(None, False)
 
-            # assert False is False
-            assert False is not False
-            self.assertIs(False, None)
+            # assert False is not False
+            assert False is False
+            self.assertIsNot(False, False)
 
             # assert True is False
 
@@ -2995,24 +2966,24 @@ another way to test if something is NOT the same object as False
 
   .. code-block:: python
 
-    E       AssertionError: False is not False
+    E       AssertionError: unexpectedly identical: False
 
-  compare this error message with the one for ``assert False is False``
-
-  .. code-block:: python
-
-    E    assert False is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
+  compare this error message with the one for ``assert False is not False``
 
   .. code-block:: python
-    :lineno-start: 31
+
+    E    assert False is not False
+
+* I change assertIsNot_ to assertIs_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 82
     :emphasize-lines: 3-4
 
-            # assert False is False
-            assert False is not False
-            # self.assertIs(False, None)
-            self.assertIsNot(False, None)
+            # assert False is not False
+            assert False is False
+            # self.assertIsNot(False, False)
+            self.assertIs(False, False)
 
             # assert True is False
 
@@ -3021,23 +2992,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare :ref:`True<test_what_is_true>` with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 14
+    :lineno-start: 82
+    :emphasize-lines: 8
 
-        def test_assertion_error_w_none(self):
-            # assert None is not False
-            assert None is False
-            # self.assertIsNot(None, None)
-            self.assertIs(None, None)
-
-            # assert False is False
-            assert False is not False
-            # self.assertIs(False, None)
-            self.assertIsNot(False, None)
+            # assert False is not False
+            assert False is False
+            # self.assertIsNot(False, False)
+            self.assertIs(False, False)
 
             # assert True is False
             assert True is not False
-            self.assertIs(True, None)
+            self.assertIs(True, False)
 
             # assert 0 is False
 
@@ -3056,13 +3021,13 @@ another way to test if something is NOT the same object as False
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 87
     :emphasize-lines: 3-4
 
             # assert True is False
             assert True is not False
-            # self.assertIs(True, None)
-            self.assertIsNot(True, None)
+            # self.assertIs(True, False)
+            self.assertIsNot(True, False)
 
             # assert 0 is False
 
@@ -3071,17 +3036,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare an integer_ (a whole number with no decimals) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 87
     :emphasize-lines: 8
 
             # assert True is False
             assert True is not False
-            # self.assertIs(True, None)
-            self.assertIsNot(True, None)
+            # self.assertIs(True, False)
+            self.assertIsNot(True, False)
 
             # assert 0 is False
             assert 0 is not False
-            self.assertIs(0, None)
+            self.assertIs(0, False)
 
             # assert 0.0 is False
 
@@ -3100,13 +3065,13 @@ another way to test if something is NOT the same object as False
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 92
     :emphasize-lines: 3-4
 
             # assert 0 is False
             assert 0 is not False
-            # self.assertIs(0, None)
-            self.assertIsNot(0, None)
+            # self.assertIs(0, False)
+            self.assertIsNot(0, False)
 
             # assert 0.0 is False
 
@@ -3115,33 +3080,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare a float_ (binary floating point decimal number) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 76
-    :emphasize-lines: 24
-
-        def test_assertion_error_w_none(self):
-            # assert None is not False
-            assert None is False
-            # self.assertIsNot(None, None)
-            self.assertIs(None, None)
-
-            # assert False is False
-            assert False is not False
-            # self.assertIs(False, None)
-            self.assertIsNot(False, None)
-
-            # assert True is False
-            assert True is not False
-            # self.assertIs(True, None)
-            self.assertIsNot(True, None)
+    :lineno-start: 92
+    :emphasize-lines: 8
 
             # assert 0 is False
             assert 0 is not False
-            # self.assertIs(0, None)
-            self.assertIsNot(0, None)
+            # self.assertIs(0, False)
+            self.assertIsNot(0, False)
 
             # assert 0.0 is False
             assert 0.0 is not False
-            self.assertIs(0.0, None)
+            self.assertIs(0.0, False)
 
             # assert 'a string' is False
 
@@ -3160,13 +3109,13 @@ another way to test if something is NOT the same object as False
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 97
     :emphasize-lines: 3-4
 
             # assert 0.0 is False
             assert 0.0 is not False
-            # self.assertIs(0.0, None)
-            self.assertIsNot(0.0, None)
+            # self.assertIs(0.0, False)
+            self.assertIsNot(0.0, False)
 
             # assert 'a string' is False
 
@@ -3175,17 +3124,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 97
     :emphasize-lines: 8
 
             # assert 0.0 is False
             assert 0.0 is not False
-            # self.assertIs(0.0, None)
-            self.assertIsNot(0.0, None)
+            # self.assertIs(0.0, False)
+            self.assertIsNot(0.0, False)
 
             # assert 'a string' is False
             assert 'a string' is not False
-            self.assertIs('a string', None)
+            self.assertIs('a string', False)
 
             # assert (1, 2, 3, 'n') is False
 
@@ -3204,13 +3153,13 @@ another way to test if something is NOT the same object as False
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 102
     :emphasize-lines: 3-4
 
             # assert 'a string' is False
             assert 'a string' is not False
-            # self.assertIs('a string', None)
-            self.assertIsNot('a string', None)
+            # self.assertIs('a string', False)
+            self.assertIsNot('a string', False)
 
             # assert (1, 2, 3, 'n') is False
 
@@ -3219,17 +3168,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare a tuple_ (anything in parentheses ``( )`` separated by a comma) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 102
     :emphasize-lines: 8
 
             # assert 'a string' is False
             assert 'a string' is not False
-            # self.assertIs('a string', None)
-            self.assertIsNot('a string', None)
+            # self.assertIs('a string', False)
+            self.assertIsNot('a string', False)
 
             # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
-            self.assertIs((1, 2, 3, 'n'), None)
+            self.assertIs((1, 2, 3, 'n'), False)
 
             # assert [1, 2, 3, 'n'] is False
 
@@ -3248,13 +3197,13 @@ another way to test if something is NOT the same object as False
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 107
     :emphasize-lines: 3-4
 
             # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
+            # self.assertIs((1, 2, 3, 'n'), False)
+            self.assertIsNot((1, 2, 3, 'n'), False)
 
             # assert [1, 2, 3, 'n'] is False
 
@@ -3263,17 +3212,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 107
     :emphasize-lines: 8
 
             # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
+            # self.assertIs((1, 2, 3, 'n'), False)
+            self.assertIsNot((1, 2, 3, 'n'), False)
 
             # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
-            self.assertIs([1, 2, 3, 'n'], None)
+            self.assertIs([1, 2, 3, 'n'], False)
 
             # assert {1, 2, 3, 'n'} is False
 
@@ -3292,13 +3241,13 @@ another way to test if something is NOT the same object as False
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 112
     :emphasize-lines: 3-4
 
             # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
-            # self.assertIs([1, 2, 3, 'n'], None)
-            self.assertIsNot([1, 2, 3, 'n'], None)
+            # self.assertIs([1, 2, 3, 'n'], False)
+            self.assertIsNot([1, 2, 3, 'n'], False)
 
             # assert {1, 2, 3, 'n'} is False
 
@@ -3307,17 +3256,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 112
     :emphasize-lines: 8
 
             # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
-            # self.assertIs([1, 2, 3, 'n'], None)
-            self.assertIsNot([1, 2, 3, 'n'], None)
+            # self.assertIs([1, 2, 3, 'n'], False)
+            self.assertIsNot([1, 2, 3, 'n'], False)
 
             # assert {1, 2, 3, 'n'} is False
             assert {1, 2, 3, 'n'} is not False
-            self.assertIs({1, 2, 3, 'n'}, None)
+            self.assertIs({1, 2, 3, 'n'}, False)
 
             # assert {'key': 'value'} is False
 
@@ -3336,13 +3285,13 @@ another way to test if something is NOT the same object as False
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 117
     :emphasize-lines: 3-4
 
             # assert {1, 2, 3, 'n'} is False
             assert {1, 2, 3, 'n'} is not False
-            # self.assertIs({1, 2, 3, 'n'}, None)
-            self.assertIsNot({1, 2, 3, 'n'}, None)
+            # self.assertIs({1, 2, 3, 'n'}, False)
+            self.assertIsNot({1, 2, 3, 'n'}, False)
 
             # assert {'key': 'value'} is False
 
@@ -3351,17 +3300,17 @@ another way to test if something is NOT the same object as False
 * I use assertIs_ to compare a a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 117
     :emphasize-lines: 8
 
             # assert {1, 2, 3, 'n'} is False
             assert {1, 2, 3, 'n'} is not False
-            # self.assertIs({1, 2, 3, 'n'}, None)
-            self.assertIsNot({1, 2, 3, 'n'}, None)
+            # self.assertIs({1, 2, 3, 'n'}, False)
+            self.assertIsNot({1, 2, 3, 'n'}, False)
 
             # assert {'key': 'value'} is False
             assert {'key': 'value'} is not False
-            self.assertIs({'key': 'value'}, None)
+            self.assertIs({'key': 'value'}, False)
 
 
     # NOTES
@@ -3384,56 +3333,56 @@ another way to test if something is NOT the same object as False
     :lineno-start: 76
     :emphasize-lines: 49-50
 
-        def test_assertion_error_w_none(self):
-            # assert None is not False
-            assert None is False
-            # self.assertIsNot(None, None)
-            self.assertIs(None, None)
+        def test_assertion_error_w_false(self):
+            # assert None is False
+            assert None is not False
+            # self.assertIs(None, False)
+            self.assertIsNot(None, False)
 
-            # assert False is False
-            assert False is not False
-            # self.assertIs(False, None)
-            self.assertIsNot(False, None)
+            # assert False is not False
+            assert False is False
+            # self.assertIsNot(False, False)
+            self.assertIs(False, False)
 
             # assert True is False
             assert True is not False
-            # self.assertIs(True, None)
-            self.assertIsNot(True, None)
+            # self.assertIs(True, False)
+            self.assertIsNot(True, False)
 
             # assert 0 is False
             assert 0 is not False
-            # self.assertIs(0, None)
-            self.assertIsNot(0, None)
+            # self.assertIs(0, False)
+            self.assertIsNot(0, False)
 
             # assert 0.0 is False
             assert 0.0 is not False
-            # self.assertIs(0.0, None)
-            self.assertIsNot(0.0, None)
+            # self.assertIs(0.0, False)
+            self.assertIsNot(0.0, False)
 
             # assert 'a string' is False
             assert 'a string' is not False
-            # self.assertIs('a string', None)
-            self.assertIsNot('a string', None)
+            # self.assertIs('a string', False)
+            self.assertIsNot('a string', False)
 
             # assert (1, 2, 3, 'n') is False
             assert (1, 2, 3, 'n') is not False
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
+            # self.assertIs((1, 2, 3, 'n'), False)
+            self.assertIsNot((1, 2, 3, 'n'), False)
 
             # assert [1, 2, 3, 'n'] is False
             assert [1, 2, 3, 'n'] is not False
-            # self.assertIs([1, 2, 3, 'n'], None)
-            self.assertIsNot([1, 2, 3, 'n'], None)
+            # self.assertIs([1, 2, 3, 'n'], False)
+            self.assertIsNot([1, 2, 3, 'n'], False)
 
             # assert {1, 2, 3, 'n'} is False
             assert {1, 2, 3, 'n'} is not False
-            # self.assertIs({1, 2, 3, 'n'}, None)
-            self.assertIsNot({1, 2, 3, 'n'}, None)
+            # self.assertIs({1, 2, 3, 'n'}, False)
+            self.assertIsNot({1, 2, 3, 'n'}, False)
 
             # assert {'key': 'value'} is False
             assert {'key': 'value'} is not False
-            # self.assertIs({'key': 'value'}, None)
-            self.assertIsNot({'key': 'value'}, None)
+            # self.assertIs({'key': 'value'}, False)
+            self.assertIsNot({'key': 'value'}, False)
 
 
     # NOTES
@@ -3446,7 +3395,7 @@ another way to test if something is NOT the same object as False
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'test_assertion_error_w_none with assert methods'
+    'test_assertion_error_w_false with assert methods'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
