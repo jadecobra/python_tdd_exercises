@@ -1962,7 +1962,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 * I add a failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 72
+    :lineno-start: 119
     :emphasize-lines: 6-9
 
         def test_constant_function(self):
@@ -2020,7 +2020,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 130
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -2034,8 +2034,9 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 
   .. code-block:: python
     :lineno-start: 22
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # def identity():
     def identity(the_input):
         return None
 
@@ -2056,7 +2057,7 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I add a new :ref:`assertion<what is an assertion?>` to :ref:`test_identity_function` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 124
     :emphasize-lines: 6-8
 
         def test_identity_function(self):
@@ -2083,12 +2084,22 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
   .. code-block:: python
     :lineno-start: 22
-    :emphasize-lines: 2
+    :emphasize-lines: 3-4
 
+    # def identity():
     def identity(the_input):
+        # return None
         return the_input
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 22
+
+    def identity(the_input):
+        return the_input
 
 * I add a git_ commit message in the other terminal_
 
@@ -2099,9 +2110,9 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send something and get it back, I can start making changes to see how it affects the output.
+I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send something (input) and get it back, I can start making changes to see how it affects the output.
 
-:ref:`The Identity Function returns its input as output<test_identity_function>`
+:ref:`The Identity Function returns its input as output.<test_identity_function>`
 
 So far, the :ref:`functions<what is a function?>` take no input or one input, the next tests use functions_ that take more than one input.
 
