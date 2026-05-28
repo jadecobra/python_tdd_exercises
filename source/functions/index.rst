@@ -427,16 +427,16 @@ I change ``my_expectation`` to match reality
 
 .. code-block:: python
   :lineno-start: 6
-  :emphasize-lines: 3
+  :emphasize-lines: 3-4
 
-      def test_why_use_a_function(self):
-          reality = 1 + 0
-          my_expectation = 1
-          self.assertEqual(reality, my_expectation)
+        def test_why_use_a_function(self):
+            reality = 1 + 0
+            # my_expectation = 0
+            my_expectation = 1
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
-  # AssertionError
+    # Exceptions seen
 
 the test passes.
 
@@ -452,10 +452,11 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 6-8
+    :emphasize-lines: 7-9
 
         def test_why_use_a_function(self):
             reality = 1 + 0
+            # my_expectation = 0
             my_expectation = 1
             self.assertEqual(reality, my_expectation)
 
@@ -476,9 +477,10 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 11
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
             reality = 1 + 1
+            # my_expectation = 1
             my_expectation = 2
             self.assertEqual(reality, my_expectation)
 
@@ -490,15 +492,11 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 10-12
-
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 12
+    :emphasize-lines: 6-8
 
             reality = 1 + 1
+            # my_expectation = 1
             my_expectation = 2
             self.assertEqual(reality, my_expectation)
 
@@ -518,10 +516,11 @@ the test passes.
 * I change ``my_expectation`` to ``3``
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2
+    :lineno-start: 17
+    :emphasize-lines: 2-3
 
             reality = 1 + 2
+            # my_expectation = 2
             my_expectation = 3
             self.assertEqual(reality, my_expectation)
 
@@ -533,19 +532,11 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 14-16
-
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 17
+    :emphasize-lines: 6-8
 
             reality = 1 + 2
+            # my_expectation = 2
             my_expectation = 3
             self.assertEqual(reality, my_expectation)
 
@@ -566,9 +557,10 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
             reality = 1 + 3
+            # my_expectation = 3
             my_expectation = 4
             self.assertEqual(reality, my_expectation)
 
@@ -580,23 +572,11 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 18-20
-
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 22
+    :emphasize-lines: 6-8
 
             reality = 1 + 3
+            # my_expectation = 3
             my_expectation = 4
             self.assertEqual(reality, my_expectation)
 
@@ -616,10 +596,11 @@ the test passes.
 * I change ``my_expectation`` to ``5``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 2
+    :lineno-start: 27
+    :emphasize-lines: 2-3
 
             reality = 1 + 4
+            # my_expectation = 4
             my_expectation = 5
             self.assertEqual(reality, my_expectation)
 
@@ -631,27 +612,11 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 22-24
-
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
+    :lineno-start: 27
+    :emphasize-lines: 6-8
 
             reality = 1 + 4
+            # my_expectation = 4
             my_expectation = 5
             self.assertEqual(reality, my_expectation)
 
@@ -671,10 +636,11 @@ the test passes.
 * I change ``my_expectation`` to ``6``
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 2
+    :lineno-start: 32
+    :emphasize-lines: 2-3
 
             reality = 1 + 5
+            # my_expectation = 5
             my_expectation = 6
             self.assertEqual(reality, my_expectation)
 
@@ -686,10 +652,11 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 5-7
+    :lineno-start: 32
+    :emphasize-lines: 6-8
 
             reality = 1 + 5
+            # my_expectation = 5
             my_expectation = 6
             self.assertEqual(reality, my_expectation)
 
@@ -709,10 +676,11 @@ the test passes.
 * I change ``my_expectation`` to ``7``
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 2
+    :lineno-start: 37
+    :emphasize-lines: 2-3
 
             reality = 1 + 6
+            # my_expectation = 6
             my_expectation = 7
             self.assertEqual(reality, my_expectation)
 
@@ -724,10 +692,11 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 31
-    :emphasize-lines: 5-7
+    :lineno-start: 37
+    :emphasize-lines: 6-8
 
             reality = 1 + 6
+            # my_expectation = 6
             my_expectation = 7
             self.assertEqual(reality, my_expectation)
 
@@ -748,9 +717,10 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 35
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
             reality = 1 + 7
+            # my_expectation = 7
             my_expectation = 8
             self.assertEqual(reality, my_expectation)
 
@@ -762,10 +732,11 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 5-7
+    :lineno-start: 42
+    :emphasize-lines: 6-8
 
             reality = 1 + 7
+            # my_expectation = 7
             my_expectation = 8
             self.assertEqual(reality, my_expectation)
 
@@ -785,10 +756,11 @@ the test passes.
 * I change ``my_expectation`` to ``9``
 
   .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 2
+    :lineno-start: 47
+    :emphasize-lines: 2-3
 
             reality = 1 + 8
+            # my_expectation = 8
             my_expectation = 9
             self.assertEqual(reality, my_expectation)
 
@@ -800,10 +772,11 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 5-7
+    :lineno-start: 47
+    :emphasize-lines: 6-8
 
             reality = 1 + 8
+            # my_expectation = 8
             my_expectation = 9
             self.assertEqual(reality, my_expectation)
 
@@ -824,52 +797,61 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 39
+    :emphasize-lines: 49-50
 
         def test_why_use_a_function(self):
             reality = 1 + 0
+            # my_expectation = 0
             my_expectation = 1
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 1
+            # my_expectation = 1
             my_expectation = 2
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 2
+            # my_expectation = 2
             my_expectation = 3
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 3
+            # my_expectation = 3
             my_expectation = 4
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 4
+            # my_expectation = 4
             my_expectation = 5
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 5
+            # my_expectation = 5
             my_expectation = 6
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 6
+            # my_expectation = 6
             my_expectation = 7
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 7
+            # my_expectation = 7
             my_expectation = 8
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 8
+            # my_expectation = 8
             my_expectation = 9
             self.assertEqual(reality, my_expectation)
 
             reality = 1 + 9
+            # my_expectation = 9
             my_expectation = 10
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
-    # AssertionError
 
   the test passes.
 
@@ -877,47 +859,67 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 2, 6, 10, 14, 18, 22, 26, 30, 34, 38
+    :emphasize-lines: 2-3, 8-9, 14-15, 20-21, 26-27, 32-33, 38-39, 44-45, 50-51, 56-57
     :emphasize-text: 2
 
         def test_why_use_a_function(self):
+            # reality = 1 + 0
             reality = 2 + 0
+            # my_expectation = 0
             my_expectation = 1
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 1
             reality = 2 + 1
+            # my_expectation = 1
             my_expectation = 2
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 2
             reality = 2 + 2
+            # my_expectation = 2
             my_expectation = 3
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 3
             reality = 2 + 3
+            # my_expectation = 3
             my_expectation = 4
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 4
             reality = 2 + 4
+            # my_expectation = 4
             my_expectation = 5
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 5
             reality = 2 + 5
+            # my_expectation = 5
             my_expectation = 6
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 6
             reality = 2 + 6
+            # my_expectation = 6
             my_expectation = 7
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 7
             reality = 2 + 7
+            # my_expectation = 7
             my_expectation = 8
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 8
             reality = 2 + 8
+            # my_expectation = 8
             my_expectation = 9
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 9
             reality = 2 + 9
+            # my_expectation = 9
             my_expectation = 10
             self.assertEqual(reality, my_expectation)
 
@@ -934,47 +936,77 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 3, 7, 11, 15, 19, 23, 27, 31, 35, 39
+    :emphasize-lines: 5-6, 12-13, 19-20, 26-27, 33-34, 40-41, 47-48, 54-55, 61-62, 68-69
     :emphasize-text: 2 3 4 5 6 7 8 9 10 11
 
         def test_why_use_a_function(self):
+            # reality = 1 + 0
             reality = 2 + 0
+            # my_expectation = 0
+            # my_expectation = 1
             my_expectation = 2
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 1
             reality = 2 + 1
+            # my_expectation = 1
+            # my_expectation = 2
             my_expectation = 3
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 2
             reality = 2 + 2
+            # my_expectation = 2
+            # my_expectation = 3
             my_expectation = 4
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 3
             reality = 2 + 3
+            # my_expectation = 3
+            # my_expectation = 4
             my_expectation = 5
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 4
             reality = 2 + 4
+            # my_expectation = 4
+            # my_expectation = 5
             my_expectation = 6
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 5
             reality = 2 + 5
+            # my_expectation = 5
+            # my_expectation = 6
             my_expectation = 7
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 6
             reality = 2 + 6
+            # my_expectation = 6
+            # my_expectation = 7
             my_expectation = 8
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 7
             reality = 2 + 7
+            # my_expectation = 7
+            # my_expectation = 8
             my_expectation = 9
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 8
             reality = 2 + 8
+            # my_expectation = 8
+            # my_expectation = 9
             my_expectation = 10
             self.assertEqual(reality, my_expectation)
 
+            # reality = 1 + 9
             reality = 2 + 9
+            # my_expectation = 9
+            # my_expectation = 10
             my_expectation = 11
             self.assertEqual(reality, my_expectation)
 
