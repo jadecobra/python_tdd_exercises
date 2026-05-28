@@ -428,7 +428,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
   the terminal_ is my friend, and shows TypeError_
 
-* I change the :ref:`variable<what is a variable?>` to a :ref:`funcion<what is a function?>`
+* I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 9
