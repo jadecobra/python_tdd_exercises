@@ -50,7 +50,7 @@ class TestFunctions(unittest.TestCase):
         self.assertIsNone(src.functions.identity(None))
         self.assertEqual(src.functions.identity(object), object)
 
-    def test_functions_w_positional_arguments(self):
+    def test_w_positional_arguments(self):
         self.assertEqual(
             src.functions.w_positional_arguments('first', 'last'),
             ('first', 'last')
@@ -60,7 +60,7 @@ class TestFunctions(unittest.TestCase):
             ('last', 'first')
         )
 
-    def test_functions_w_keyword_arguments(self):
+    def test_w_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
                 first_input='first', last_input='last',
@@ -78,15 +78,15 @@ class TestFunctions(unittest.TestCase):
             ('last', 'first')
         )
 
-    def test_functions_w_positional_and_keyword_args(self):
+    def test_w_positional_and_kwargs(self):
         self.assertEqual(
-            src.functions.w_positional_and_keyword_args(
+            src.functions.w_positional_and_kwargs(
                 'first', last_input='last',
             ),
             ('first', 'last')
         )
 
-    def test_functions_w_optional_arguments(self):
+    def test_w_optional_arguments(self):
         self.assertEqual(
             src.functions.w_optional_arguments('jane'),
             ('jane', 'doe')
@@ -96,7 +96,7 @@ class TestFunctions(unittest.TestCase):
             ('joe', 'blow')
         )
 
-    def test_functions_w_unknown_arguments(self):
+    def test_w_unknown_arguments(self):
         self.assertEqual(
             src.functions.w_unknown_arguments(
                 0, 1, 2, 3, a=4, b=5, c=6, d=7,

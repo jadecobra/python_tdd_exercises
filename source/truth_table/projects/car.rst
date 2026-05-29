@@ -444,7 +444,7 @@ because I do not have a definition for ``src`` in this file_
     # AttributeError
     # TypeError
 
-* I add the :ref:`keyword argument<test_functions_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``car.py``
+* I add the :ref:`keyword argument<test_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``car.py``
 
   .. code-block:: python
     :linenos:
@@ -1081,7 +1081,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
   because the tests call the ``starter`` :ref:`function<what is a function?>` with 2 arguments (``key_is_close`` and ``start_is_pressed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``key_is_close``, ``start_is_pressed`` and ``brake_is_pressed``). I have to make ``brake_is_pressed`` a choice.
 
-* I add a :ref:`default value<test_functions_w_optional_arguments>` to make ``brake_is_pressed`` a choice
+* I add a :ref:`default value<test_w_optional_arguments>` to make ``brake_is_pressed`` a choice
 
   .. code-block:: python
     :linenos:
@@ -1111,7 +1111,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
         brake_is_pressed=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
 ----
 
@@ -2012,9 +2012,9 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
 
-* I add a :ref:`default value<test_functions_w_optional_arguments>` for the ``in_park`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
+* I add a :ref:`default value<test_w_optional_arguments>` for the ``in_park`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
 
   .. code-block:: python
     :linenos:

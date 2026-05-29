@@ -672,7 +672,7 @@ test calculator with * expression
 
 ----
 
-I can use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the :ref:`positional arguments<test_functions_w_positional_arguments>` in :ref:`test_functions_w_unknown_arguments`
+I can use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the :ref:`positional arguments<test_w_positional_arguments>` in :ref:`test_w_unknown_arguments`
 
 .. code-block:: python
   :lineno-start: 139

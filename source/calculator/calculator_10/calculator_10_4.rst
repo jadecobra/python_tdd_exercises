@@ -576,7 +576,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
   the terminal_ is my friend, and shows :ref:`KeyError<test_key_error>` and :ref:`TypeError<what causes TypeError?>`
 
-* I add ``display`` as a :ref:`positional argument<test_functions_w_positional_arguments>` of the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
+* I add ``display`` as a :ref:`positional argument<test_w_positional_arguments>` of the ``add_buttons_to_column_4`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 117

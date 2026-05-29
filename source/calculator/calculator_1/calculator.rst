@@ -2090,7 +2090,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     TypeError: subtract() takes 0 positional arguments but 2 were given
 
-* I add :ref:`positional arguments<test_functions_w_positional_arguments>` to the :ref:`function<what is a function?>`
+* I add :ref:`positional arguments<test_w_positional_arguments>` to the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
@@ -2158,7 +2158,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     TypeError: multiply() takes 0 positional arguments but 2 were given
 
-  I add 2 names for the :ref:`positional arguments<test_functions_w_positional_arguments>`
+  I add 2 names for the :ref:`positional arguments<test_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 5

@@ -208,7 +208,7 @@ the test passes.
 
   the test passes.
 
-* I remove the ``x`` :ref:`variable<what is a variable?>`, then the :ref:`default values<test_functions_w_optional_arguments>` from the ``add`` :ref:`function<what is a function?>`
+* I remove the ``x`` :ref:`variable<what is a variable?>`, then the :ref:`default values<test_w_optional_arguments>` from the ``add`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 7

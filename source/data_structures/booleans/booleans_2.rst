@@ -458,7 +458,7 @@ the test passes.
           message=None,
       )
 
-    :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`
+    :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`
 
   `click here to see the actual code for the assertFalse method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L750>`_
 
@@ -890,7 +890,7 @@ the test passes.
           message=None,
       )
 
-    :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`
+    :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`
 
   `click here to see the actual code for the assertTrue method <https://github.com/python/cpython/blob/2faceeec5c0fb06498a9654d429180ac4610c65a/Lib/unittest/case.py#L756>`_
 

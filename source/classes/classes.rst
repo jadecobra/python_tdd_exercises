@@ -388,7 +388,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
         Person.say_hello() takes 0 positional arguments
         but 2 were given
 
-  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`method<what is a method?>` with one :ref:`positional argument<test_functions_w_positional_arguments>` (``person``). Why did the error say two were given when the test only sends one?
+  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`method<what is a method?>` with one :ref:`positional argument<test_w_positional_arguments>` (``person``). Why did the error say two were given when the test only sends one?
 
 * I add ``person`` to the :ref:`method definition<how to make a function>`
 
@@ -626,7 +626,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
 
 * I add a default value for ``year_of_birth`` to make it optional
 
@@ -879,7 +879,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
      != 'Hi, my name is jane doe and I am 35'
 
   - the first names are the same and last names and ages are different
-  - the ``__init__`` :ref:`method<what is a method?>` used :ref:`None<what is None?>` for the value of ``self.last_name`` because the :ref:`default value<test_functions_w_optional_arguments>` for the ``last_name`` parameter of the :ref:`method<what is a method?>` is :ref:`None<what is None?>`. This means that
+  - the ``__init__`` :ref:`method<what is a method?>` used :ref:`None<what is None?>` for the value of ``self.last_name`` because the :ref:`default value<test_w_optional_arguments>` for the ``last_name`` parameter of the :ref:`method<what is a method?>` is :ref:`None<what is None?>`. This means that
 
     .. code-block:: python
 
@@ -900,9 +900,9 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
           last_name=None,
       )
 
-    because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+    because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
-* I change the :ref:`default value<test_functions_w_optional_arguments>` for ``last_name`` in the ``__init__`` :ref:`method<what is a method?>` to ``'doe'`` to give the test what it wants
+* I change the :ref:`default value<test_w_optional_arguments>` for ``last_name`` in the ``__init__`` :ref:`method<what is a method?>` to ``'doe'`` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 37

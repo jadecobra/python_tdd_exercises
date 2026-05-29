@@ -1445,7 +1445,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     TypeError: divide() missing 2 required positional arguments: 'x' and 'y'
 
-* the test must be calling :ref:`divide<test_division>` with :ref:`positional arguments<test_functions_w_positional_arguments>` in some cases and with :ref:`keyword arguments<test_functions_w_keyword_arguments>` in others. My solution does not work, I remove ``x`` and ``y`` from the parentheses
+* the test must be calling :ref:`divide<test_division>` with :ref:`positional arguments<test_w_positional_arguments>` in some cases and with :ref:`keyword arguments<test_w_keyword_arguments>` in others. My solution does not work, I remove ``x`` and ``y`` from the parentheses
 
   .. code-block:: python
     :lineno-start: 5

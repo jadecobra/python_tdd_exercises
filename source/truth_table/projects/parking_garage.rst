@@ -443,7 +443,7 @@ because I do not have a definition for ``src`` in this file_
     # AttributeError
     # TypeError
 
-* I add the :ref:`keyword argument<test_functions_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``parking garage.py``
+* I add the :ref:`keyword argument<test_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``parking garage.py``
 
   .. code-block:: python
     :linenos:
@@ -869,7 +869,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
 
   because the tests call the ``parking garage`` :ref:`function<what is a function?>` with 2 arguments (``door_is_open`` and ``start_is_pushed``) and I just changed the :ref:`function signature<what is a function?>` to make it take 3 required arguments (``door_is_open``, ``start_is_pushed`` and ``timer_is_set``). I have to make ``timer_is_set`` a choice.
 
-* I add a :ref:`default value<test_functions_w_optional_arguments>` to make ``timer_is_set`` a choice
+* I add a :ref:`default value<test_w_optional_arguments>` to make ``timer_is_set`` a choice
 
   .. code-block:: python
     :linenos:
@@ -899,7 +899,7 @@ because the test called the ``parking garage`` :ref:`function<what is a function
         timer_is_set=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
 ----
 
@@ -1110,7 +1110,7 @@ door           timer           start button       output
         timer_is_set=False,
     )
 
-  the :ref:`default value<test_functions_w_optional_arguments>` for ``timer_is_set`` is :ref:`False<test_what_is_false>`
+  the :ref:`default value<test_w_optional_arguments>` for ``timer_is_set`` is :ref:`False<test_what_is_false>`
 
 * I change the name of the test from :ref:`test_closed_door` to :ref:`test_closed_door_timer_set`
 
@@ -1518,9 +1518,9 @@ because the test called the ``parking garage`` :ref:`function<what is a function
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
 
-* I add a :ref:`default value<test_functions_w_optional_arguments>` for the ``too_hot`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
+* I add a :ref:`default value<test_w_optional_arguments>` for the ``too_hot`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
 
   .. code-block:: python
     :linenos:

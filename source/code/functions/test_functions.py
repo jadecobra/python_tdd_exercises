@@ -83,7 +83,7 @@ class TestFunctions(unittest.TestCase):
         my_expectation = object
         self.assertEqual(reality, my_expectation)
 
-    def test_functions_w_positional_arguments(self):
+    def test_w_positional_arguments(self):
         first, last = 'first', 'last'
 
         reality = src.functions.w_positional_arguments(
@@ -112,7 +112,7 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (a_tuple, a_list)
         self.assertEqual(reality, my_expectation)
 
-    def test_functions_w_keyword_arguments(self):
+    def test_w_keyword_arguments(self):
         first, last = 'first', 'last'
 
         reality = src.functions.w_keyword_arguments(
@@ -157,17 +157,17 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (a_list, a_tuple)
         self.assertEqual(reality, my_expectation)
 
-    def test_functions_w_positional_and_keyword_args(self):
+    def test_w_positional_and_kwargs(self):
         first, last = 'first', 'last'
         reality = (
-            src.functions.w_positional_and_keyword_args(
+            src.functions.w_positional_and_kwargs(
                 first, last_input=last,
             )
         )
         my_expectation = (first, last)
         self.assertEqual(reality, my_expectation)
 
-    def test_functions_w_optional_arguments(self):
+    def test_w_optional_arguments(self):
         first_name, last_name = 'jane', 'doe'
         reality = src.functions.w_optional_arguments(
             first_name,
@@ -196,7 +196,7 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (first_name, last_name)
         self.assertEqual(reality, my_expectation)
 
-    def test_functions_w_unknown_arguments(self):
+    def test_w_unknown_arguments(self):
         a_tuple, a_dictionary = (0, 1), {'a': 2, 'b': 3}
         reality = src.functions.w_unknown_arguments(
             *a_tuple, **a_dictionary

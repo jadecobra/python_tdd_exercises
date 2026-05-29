@@ -437,7 +437,7 @@ because I do not have a definition for ``src`` in this file_
     # AttributeError
     # TypeError
 
-* I add the :ref:`keyword argument<test_functions_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``elevator.py``
+* I add the :ref:`keyword argument<test_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``elevator.py``
 
   .. code-block:: python
     :linenos:
@@ -1160,7 +1160,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
     because the ``elevator`` :ref:`function<what is a function?>` returned :green:`'MOVE'` when it was called with the ``above_weight_limit`` parameter and the :ref:`assertion<what is an assertion?>` expects :red:`'NOT MOVE'`
 
-* I add a :ref:`default value<test_functions_w_optional_arguments>` to make ``above_weight_limit`` a choice
+* I add a :ref:`default value<test_w_optional_arguments>` to make ``above_weight_limit`` a choice
 
   .. code-block:: python
     :linenos:
@@ -1190,7 +1190,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
           above_weight_limit=False,
       )
 
-    :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+    :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
   - the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1328,7 +1328,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         above_weight_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_doors_clear_number_pushed` to :ref:`test_weight_w_doors_clear_number_pushed`
 
@@ -1432,7 +1432,7 @@ doors           floor number        weight limit        output
         above_weight_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_doors_clear_number_not_pushed` to :ref:`test_weight_w_doors_clear_number_not_pushed`
 
@@ -1541,7 +1541,7 @@ doors             floor number        weight limit        output
         above_weight_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_doors_not_clear_number_pushed` to :ref:`test_weight_w_doors_not_clear_number_pushed`
 
@@ -1652,7 +1652,7 @@ doors             floor number        weight limit        output
         above_weight_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_functions_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_doors_not_clear_number_pushed` to :ref:`test_weight_w_doors_not_clear_number_pushed`
 
@@ -2027,9 +2027,9 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_functions_w_positional_and_keyword_args>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
 
-* I add a :ref:`default value<test_functions_w_optional_arguments>` for the ``emergency`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
+* I add a :ref:`default value<test_w_optional_arguments>` for the ``emergency`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
 
   .. code-block:: python
     :linenos:
@@ -2256,7 +2256,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
   - it returns :red:`'NOT MOVE'` if the doors are :red:`NOT clear`
   - it returns :green:`'MOVE'` if the above :ref:`conditions<if statements>` are NOT met
 
-* I add values for the ``above_weight_limit`` and ``emergency`` parameters to :ref:`test_weight_w_doors_clear_number_pushed`, even though I do not need to because they have :ref:`default values<test_functions_w_optional_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>` which is for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is  :red:`NOT pushed`, in ``test_elevator.py``
+* I add values for the ``above_weight_limit`` and ``emergency`` parameters to :ref:`test_weight_w_doors_clear_number_pushed`, even though I do not need to because they have :ref:`default values<test_w_optional_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>` which is for when the doors are :green:`clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit,  and the emergency button is  :red:`NOT pushed`, in ``test_elevator.py``
 
   ==============  ================  ==================  ====================  ================
   doors           floor number      weight limit        emergency button      output
@@ -2419,7 +2419,7 @@ doors           floor number        weight limit        emergency button      ou
 
   the test is still green.
 
-* I add values for the ``above_weight_limit`` and ``emergency`` parameters, even though I do not need to because they have :ref:`default values<test_functions_w_optional_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>`, for when the doors are :green:`clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
+* I add values for the ``above_weight_limit`` and ``emergency`` parameters, even though I do not need to because they have :ref:`default values<test_w_optional_arguments>`. This will make things clearer in the last :ref:`assertion<what is an assertion?>`, for when the doors are :green:`clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
 
   ==============  ==================  ==================  ====================  ===============
   doors           floor number        weight limit        emergency button      output
@@ -2637,7 +2637,7 @@ doors             floor number      weight limit        emergency button      ou
 
   still green.
 
-* I add a value for the ``above_weight_limit``, even though I do not need to because it has a :ref:`default value<test_functions_w_optional_arguments>`. I also add a value for the ``emergency`` parameter. This will make things clearer in the third :ref:`assertion<what is an assertion?>` which is for when the doors are :red:`NOT clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
+* I add a value for the ``above_weight_limit``, even though I do not need to because it has a :ref:`default value<test_w_optional_arguments>`. I also add a value for the ``emergency`` parameter. This will make things clearer in the third :ref:`assertion<what is an assertion?>` which is for when the doors are :red:`NOT clear`, the button for the floor is :green:`pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
 
   ================  ================  ==================  ====================  ===============
   doors             floor number      weight limit        emergency button      output
@@ -2856,7 +2856,7 @@ doors             floor number        weight limit        emergency button      
 
   still green.
 
-* I add values for the ``above_weight_limit`` parameter, even though I do not need to because it has a :ref:`default value<test_functions_w_optional_arguments>`. I also add a value for the ``emergency`` parameter. This will make things clearer in the third :ref:`assertion<what is an assertion?>`, which is for when the doors are :red:`NOT clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
+* I add values for the ``above_weight_limit`` parameter, even though I do not need to because it has a :ref:`default value<test_w_optional_arguments>`. I also add a value for the ``emergency`` parameter. This will make things clearer in the third :ref:`assertion<what is an assertion?>`, which is for when the doors are :red:`NOT clear`, the button for the floor is :red:`NOT pushed`, the elevator is :red:`NOT above` the weight limit, and the emergency button is :green:`pushed`
 
   ================  ==================  ==================  ====================  ===============
   doors             floor number        weight limit        emergency button      output
