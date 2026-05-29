@@ -12,7 +12,7 @@ def w_return_none():
 
 def return_is_last():
     return None
-    return 'will never run'
+    return 'will NEVER run'
 
 
 def constant():
