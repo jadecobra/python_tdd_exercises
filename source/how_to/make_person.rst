@@ -3005,8 +3005,8 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 
   .. code-block:: python
 
-    TypeError: hello() takes 0 positional arguments
-               but 1 was given
+    TypeError: hello() takes
+               0 positional arguments but 1 was given
 
   because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`positional argument<test_w_positional_arguments>` (``person``)
 
