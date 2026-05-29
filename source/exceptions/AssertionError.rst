@@ -6084,7 +6084,7 @@ and to test if 2 things are
 
 The tests show that
 
-* :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different.
+* :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different
 * ``is`` and ``Equal`` are different
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`

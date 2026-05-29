@@ -27,7 +27,7 @@ I send things (:ref:`input data<data structures>`) to a program_ to test it, and
 * what is the same?
 * what is different?
 
-The difference helps me know what to change to get what I want. I do this with the `assertEqual method`_, which takes 2 inputs and checks if they are the same
+The difference helps me know what to change to get what I want. I do this with the :ref:`assertEqual method<another way to test if two things are Equal>`, which takes 2 inputs and checks if they are the same
 
 .. code-block:: python
 
@@ -38,7 +38,7 @@ where
 * ``reality`` is what happens when I do something with code
 * ``my_expectation`` is what I think will happen when I do something with code
 
-The exercises in this chapter to show how I can pass :ref:`input data<data structures>` from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`.
+The exercises in this chapter show how I can pass :ref:`input data<data structures>` from a test to a :ref:`function<what is a function?>` in a :ref:`module<what is a module?>`.
 
 ----
 
@@ -444,8 +444,9 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # text
     text = None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
@@ -473,8 +474,10 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-2
+    :emphasize-lines: 2-4
 
+    # text
+    # text = None
     def text():
         return None
 
@@ -485,14 +488,17 @@ because there is no definition for ``src`` in ``test_telephone.py``
     TypeError: text() takes 0 positional arguments
                but 1 was given
 
-  because the definition for ``src.telephone.text`` does not allow calling it with inputs and the test sends ``'hello'`` as input - the parentheses are empty.
+  because the definition for ``src.telephone.text`` does not allow calling it with inputs and the test sends ``'hello'`` as input (the parentheses are empty).
 
 * I make the :ref:`function<what is a function?>` take input
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 3-4
 
+    # text
+    # text = None
+    # def text():
     def text(the_input):
         return None
 
@@ -509,9 +515,13 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 5-6
 
+    # text
+    # text = None
+    # def text():
     def text(the_input):
+        # return None
         return 'I got: hello'
 
   the test passes!
@@ -556,9 +566,14 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 6-7
 
+    # text
+    # text = None
+    # def text():
     def text(the_input):
+        # return None
+        # return 'I got: hello'
         return 'I got: yes'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -579,12 +594,26 @@ what is string interpolation?
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 7-8
 
+    # text
+    # text = None
+    # def text():
     def text(the_input):
+        # return None
+        # return 'I got: hello'
+        # return 'I got: yes'
         return f'I got: {the_input}'
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def text(the_input):
+        return f'I got: {the_input}'
 
   This is called `string interpolation`_, I can use it to put values in strings_. A string_ is anything inside :ref:`quotes` e.g.
 
@@ -621,7 +650,7 @@ what is string interpolation?
 
   the test is still green.
 
-* I add a :ref:`variable<what is a variable?>` to use the remove repetition of ``'yes'`` from the test
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'yes'`` from the test
 
   .. code-block:: python
     :lineno-start: 7
@@ -724,6 +753,7 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
   .. code-block:: python
     :lineno-start: 7
     :emphasize-lines: 12-15
+    :emphasize-text: "
 
         def test_passing_a_string(self):
             a_string = 'hello'
@@ -762,10 +792,11 @@ I remove the :ref:`quotes` around :ref:`None<what is None?>` in ``my_expectation
 
 .. code-block:: python
   :lineno-start: 18
-  :emphasize-lines: 3
+  :emphasize-lines: 3-4
 
       def test_passing_none(self):
           reality = src.telephone.text(None)
+          # my_expectation = 'I got: "None"'
           my_expectation = 'I got: None'
           self.assertEqual(reality, my_expectation)
 
@@ -782,49 +813,14 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 2
-
-        def test_passing_none(self):
-            none = None
-            reality = src.telephone.text(None)
-            my_expectation = 'I got: None'
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of :ref:`None<what is None?>`
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 3-6
-
-        def test_passing_none(self):
-            none = None
-            # reality = src.telephone.text(None)
-            reality = src.telephone.text(none)
-            # my_expectation = 'I got: None'
-            my_expectation = f'I got: {none}'
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test is still green.
-
 * I remove the comments
 
   .. code-block:: python
     :lineno-start: 18
 
         def test_passing_none(self):
-            none = None
-            reality = src.telephone.text(none)
-            my_expectation = f'I got: {none}'
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
             self.assertEqual(reality, my_expectation)
 
 
@@ -863,13 +859,12 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
   .. code-block:: python
     :lineno-start: 18
-    :emphasize-lines: 7-10
+    :emphasize-lines: 6-9
     :emphasize-text: "
 
         def test_passing_none(self):
-            none = None
-            reality = src.telephone.text(none)
-            my_expectation = f'I got: {none}'
+            reality = src.telephone.text(None)
+            my_expectation = 'I got: None'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_booleans(self):
@@ -897,11 +892,12 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 I remove the :ref:`quotes` around :ref:`False<test_what_is_false>` in ``my_expectation``
 
 .. code-block:: python
-  :lineno-start: 24
-  :emphasize-lines: 3
+  :lineno-start: 23
+  :emphasize-lines: 3-4
 
       def test_passing_booleans(self):
           reality = src.telephone.text(False)
+          # my_expectation = 'I got: "False"'
           my_expectation = 'I got: False'
           self.assertEqual(reality, my_expectation)
 
@@ -921,7 +917,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 23
     :emphasize-lines: 6-8
     :emphasize-text: "
 
@@ -943,13 +939,14 @@ the test passes.
 
     AssertionError: 'I got: True' != 'I got: "True"'
 
-I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in ``my_expectation``
+* I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in ``my_expectation``
 
   .. code-block:: python
     :lineno-start: 29
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
             reality = src.telephone.text(True)
+            # my_expectation = 'I got: "True"'
             my_expectation = 'I got: True'
             self.assertEqual(reality, my_expectation)
 
@@ -958,85 +955,18 @@ I remove the :ref:`quotes` around :ref:`True<test_what_is_true>` in ``my_expecta
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`False<test_what_is_false>`
+* I remove the comments
 
   .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 2
+    :lineno-start: 23
 
         def test_passing_booleans(self):
-            false = False
             reality = src.telephone.text(False)
             my_expectation = 'I got: False'
             self.assertEqual(reality, my_expectation)
 
-* I use the :ref:`variable<what is a variable?>` with a `string interpolation`_ to remove repetition of :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 3-6
-
-        def test_passing_booleans(self):
-            false = False
-            # reality = src.telephone.text(False)
-            reality = src.telephone.text(false)
-            # my_expectation = 'I got: False'
-            my_expectation = f'I got: {false}'
-            self.assertEqual(reality, my_expectation)
-
-  the test is still green.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 9
-
-        def test_passing_booleans(self):
-            false = False
-            # reality = src.telephone.text(False)
-            reality = src.telephone.text(false)
-            # my_expectation = 'I got: False'
-            my_expectation = f'I got: {false}'
-            self.assertEqual(reality, my_expectation)
-
-            true = True
             reality = src.telephone.text(True)
             my_expectation = 'I got: True'
-            self.assertEqual(reality, my_expectation)
-
-* I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 3-6
-
-            true = True
-            # reality = src.telephone.text(True)
-            reality = src.telephone.text(true)
-            # my_expectation = 'I got: True'
-            my_expectation = f'I got: {true}'
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  still green.
-
-* I remove the comments
-
-  .. code-block:: python
-    :lineno-start: 24
-
-        def test_passing_booleans(self):
-            false = False
-            reality = src.telephone.text(false)
-            my_expectation = f'I got: {false}'
-            self.assertEqual(reality, my_expectation)
-
-            true = True
-            reality = src.telephone.text(true)
-            my_expectation = f'I got: {true}'
             self.assertEqual(reality, my_expectation)
 
 
@@ -1074,13 +1004,12 @@ I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`
 * I add a test for an integer_
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 6-9
+    :lineno-start: 28
+    :emphasize-lines: 5-8
     :emphasize-text: "
 
-            true = True
-            reality = src.telephone.text(true)
-            my_expectation = f'I got: {true}'
+            reality = src.telephone.text(True)
+            my_expectation = 'I got: True'
             self.assertEqual(reality, my_expectation)
 
         def test_passing_an_integer(self):
@@ -1108,11 +1037,12 @@ I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`
 I remove the :ref:`quotes` around the integer_ in ``my_expectation``
 
 .. code-block:: python
-  :lineno-start: 35
-  :emphasize-lines: 3
+  :lineno-start: 32
+  :emphasize-lines: 3-4
 
       def test_passing_an_integer(self):
           reality = src.telephone.text(1234)
+          # my_expectation = 'I got: "1234"'
           my_expectation = 'I got: 1234'
           self.assertEqual(reality, my_expectation)
 
@@ -1132,12 +1062,13 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1234``
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 32
     :emphasize-lines: 2
 
         def test_passing_an_integer(self):
             an_integer = 1234
             reality = src.telephone.text(1234)
+            # my_expectation = 'I got: "1234"'
             my_expectation = 'I got: 1234'
             self.assertEqual(reality, my_expectation)
 
@@ -1147,13 +1078,14 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of ``1234``
 
   .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 3-6
+    :lineno-start: 32
+    :emphasize-lines: 2-3, 6-7
 
         def test_passing_an_integer(self):
             an_integer = 1234
             # reality = src.telephone.text(1234)
             reality = src.telephone.text(an_integer)
+            # my_expectation = 'I got: "1234"'
             # my_expectation = 'I got: 1234'
             my_expectation = f'I got: {an_integer}'
             self.assertEqual(reality, my_expectation)
@@ -1166,7 +1098,7 @@ the test passes.
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 32
 
         def test_passing_an_integer(self):
             an_integer = 1234

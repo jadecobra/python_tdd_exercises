@@ -319,7 +319,7 @@ the test passes.
 
     TypeError: unsupported operand type(s) for /: 'str' and 'str'
 
-* I change assertEqual_ to assertRaises_
+* I change :ref:`assertEqual method<another way to test if two things are Equal>` to assertRaises_
 
   .. code-block:: python
     :lineno-start: 67
@@ -410,7 +410,7 @@ how to test if something is an instance of an object in a program
 
 I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a string_, the same way the other :ref:`functions<what is a function?>` raise TypeError_ when one of the inputs is a string_. I can use the `isinstance function`_ which is like the `assertIsInstance method`_ from when I tested :ref:`None<what is None?>`, it checks if one thing is an instance or child of a :ref:`class<what is a class?>`
 
-* I change the assertEqual_ to assertRaises_ in :ref:`test_calculator_with_strings<test_calculator_raises_type_error_w_strings>`
+* I change the :ref:`assertEqual method<another way to test if two things are Equal>` to assertRaises_ in :ref:`test_calculator_with_strings<test_calculator_raises_type_error_w_strings>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -496,7 +496,7 @@ I want the :ref:`calculator functions<how to make a calculator>` to send a messa
 
 ----
 
-I change the assertRaises_ to assertEqual_ for the :ref:`add function<test_addition>` in :ref:`test_calculator_raises_type_error_w_none`
+I change the assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` for the :ref:`add function<test_addition>` in :ref:`test_calculator_raises_type_error_w_none`
 
 .. code-block:: python
   :lineno-start: 57
@@ -557,7 +557,7 @@ the test passes.
 
 ----
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>`
+* I change the assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` for the :ref:`divide function<test_division>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -623,7 +623,7 @@ the test passes.
 
 ----
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
+* I change the assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 62
@@ -666,7 +666,7 @@ the test passes.
 
 ----
 
-* I change the assertRaises_ for the :ref:`subtract function<test_subtraction>` to assertEqual_ in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
+* I change the assertRaises_ for the :ref:`subtract function<test_subtraction>` to :ref:`assertEqual method<another way to test if two things are Equal>` in :ref:`test_calculator_raises_type_error_w_none` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 66
@@ -959,7 +959,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* to continue with the goal that the :ref:`calculator functions<how to make a calculator 1>` send a message when they gets something that is not a number, I change assertRaises_ to assertEqual_ in :ref:`test_calculator_raises_type_error_w_strings` for the :ref:`add function<test_addition>` in ``test_calculator.py``
+* to continue with the goal that the :ref:`calculator functions<how to make a calculator 1>` send a message when they gets something that is not a number, I change assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` in :ref:`test_calculator_raises_type_error_w_strings` for the :ref:`add function<test_addition>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 77
@@ -1001,7 +1001,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I change assertRaises_ to assertEqual_ for the :ref:`divide function<test_division>` in ``test_calculator.py``
+* I change assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` for the :ref:`divide function<test_division>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 77
@@ -1043,7 +1043,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I change assertRaises_ to assertEqual_ for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
+* I change assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` for the :ref:`multiply function<test_multiplication>` in :ref:`test_calculator_raises_type_error_w_strings` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 77
@@ -1088,7 +1088,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 ----
 
-* I change the assertRaises_ to assertEqual_ for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
+* I change the assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` for the :ref:`subtract function<test_subtraction>` in ``test_calculator.py``
 
   .. code-block:: python
     :lineno-start: 77

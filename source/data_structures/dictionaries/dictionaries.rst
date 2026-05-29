@@ -1133,7 +1133,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: {'key': 'value'} is not None : {'key': 'value'}
 
-I change assertIsNone_ to assertEqual_
+I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
 .. code-block:: python
   :lineno-start: 103
@@ -1293,7 +1293,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     AssertionError: {0: None, 1: None} is not None : {0: None, 1: None}
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1565,7 +1565,7 @@ the test passes.
 
     AssertionError: 'default' is not None : default
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 118
@@ -1795,7 +1795,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the values are the same
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 129
@@ -2014,7 +2014,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     AssertionError: ['key'] is not None : ['key']
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 142
@@ -2272,7 +2272,7 @@ this `pop method`_ is different from the :ref:`pop method of lists<test_pop_remo
 
     AssertionError: 'default' is not None : default
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 155
@@ -2453,7 +2453,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: ('key', 'value') is not None : ('key', 'value')
 
-I change assertIsNone_ to assertEqual_
+I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
 .. code-block::
   :lineno-start: 167
@@ -2529,7 +2529,7 @@ the test passes.
 
   popitem_ removes and returns the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a :ref:`dictionary<what is a dictionary?>`
 
-* I change the expectation in the first assertEqual_ to match
+* I change the expectation in the first :ref:`assertEqual method<another way to test if two things are Equal>` to match
 
   .. code-block:: python
     :lineno-start: 170
@@ -2546,7 +2546,7 @@ the test passes.
 
     AssertionError: {'key1': 'value1'} != {'key': 'value'}
 
-* I change the value in the second assertEqual_ to match
+* I change the value in the second :ref:`assertEqual method<another way to test if two things are Equal>` to match
 
   .. code-block:: python
     :lineno-start: 174
@@ -2693,7 +2693,7 @@ the test passes.
 
     AssertionError: 'default' is not None : default
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 178
@@ -3085,7 +3085,7 @@ the test passes.
 
   I can use the `update method`_ to add :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from one :ref:`dictionary<what is a dictionary?>` to another
 
-* I change the expectation in the assertEqual_ to match
+* I change the expectation in the :ref:`assertEqual method<another way to test if two things are Equal>` to match
 
   .. code-block:: python
     :lineno-start: 201
@@ -3253,7 +3253,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     AssertionError: ['value'] is not None : ['value']
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 212
@@ -3438,7 +3438,7 @@ the test passes.
 
     KeyError: 'not_in_dictionary'
 
-* I change the assertEqual_ to assertRaises_
+* I change the :ref:`assertEqual method<another way to test if two things are Equal>` to assertRaises_
 
   .. code-block:: python
     :lineno-start: 225

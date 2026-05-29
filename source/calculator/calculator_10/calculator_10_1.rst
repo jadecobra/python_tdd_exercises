@@ -495,7 +495,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
     AssertionError: {0: Title(tag='h1')} is not None : {}
 
-* I change assertIsNone_ to assertEqual_
+* I change assertIsNone_ to :ref:`assertEqual method<another way to test if two things are Equal>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -978,7 +978,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
     AssertionError: False != ''
 
-* I change the assertEqual_ to assertFalse_ and remove the expectation
+* I change the :ref:`assertEqual method<another way to test if two things are Equal>` to assertFalse_ and remove the expectation
 
   .. code-block:: python
     :lineno-start: 28

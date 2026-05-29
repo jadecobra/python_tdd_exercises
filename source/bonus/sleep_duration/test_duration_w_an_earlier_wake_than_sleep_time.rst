@@ -60,7 +60,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 *********************************************************************************
 
 
-* The ``duration`` :ref:`function<what is a function?>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the assertEqual_ to assertRaisesRegex_ to catch the :ref:`Exception<errors>`, if it is raised by the :ref:`function<what is a function?>`
+* The ``duration`` :ref:`function<what is a function?>` returns a negative timestamp when given an earlier ``wake_time`` than ``sleep_time``, which is not a real duration. I want it to return a difference when ``wake_time`` is later than or the same as ``sleep_time`` and raise ValueError_ with a message when ``wake_time`` is earlier than ``sleep_time``. I change the :ref:`assertEqual method<another way to test if two things are Equal>` to assertRaisesRegex_ to catch the :ref:`Exception<errors>`, if it is raised by the :ref:`function<what is a function?>`
 
   .. code-block:: python
 
