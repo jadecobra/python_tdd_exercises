@@ -2114,13 +2114,13 @@ I sometimes use the :ref:`Identity Function<test_identity_function>` when I am t
 
 :ref:`The Identity Function returns its input as output.<test_identity_function>`
 
-So far, the :ref:`functions<what is a function?>` take no input or one input, the next tests use functions_ that take more than one input.
-
 ----
 
 *********************************************************************************
 test_functions_w_positional_arguments
 *********************************************************************************
+
+So far, the :ref:`functions<what is a function?>` take no input or one input, the next tests use functions_ that take more than one input.
 
 ----
 
@@ -2135,7 +2135,7 @@ test_functions_w_positional_arguments
 * I add a failing test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 129
     :emphasize-lines: 5-10
 
             reality = src.functions.identity(object)
@@ -2169,7 +2169,7 @@ test_functions_w_positional_arguments
 
 ----
 
-* I add a :ref:`function<what is a function?>` to ``functions.py``
+* I add the :ref:`function<what is a function?>` to ``functions.py``
 
   .. code-block:: python
     :lineno-start: 22
@@ -2186,8 +2186,8 @@ test_functions_w_positional_arguments
 
   .. code-block:: shell
 
-    TypeError: w_positional_arguments() takes 0 positional arguments
-               but 2 were given
+    TypeError: w_positional_arguments() takes
+               0 positional arguments but 2 were given
 
   because the :ref:`definition<how to make a function>` for ``w_positional_arguments`` does not allow inputs and the test sends two in the call (``'first'`` and ``'last'``)
 
@@ -2195,8 +2195,9 @@ test_functions_w_positional_arguments
 
   .. code-block:: python
     :lineno-start: 26
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # def w_positional_arguments():
     def w_positional_arguments(first_input):
         return None
 
@@ -2204,8 +2205,8 @@ test_functions_w_positional_arguments
 
   .. code-block:: shell
 
-    TypeError: w_positional_arguments() takes 1 positional argument
-               but 2 were given
+    TypeError: w_positional_arguments() takes
+               1 positional argument but 2 were given
 
   because the :ref:`definition<how to make a function>` for ``w_positional_arguments`` now allows only one input and the test sends two in the call (``'first'`` and ``'last'``)
 
@@ -2213,8 +2214,10 @@ test_functions_w_positional_arguments
 
   .. code-block:: python
     :lineno-start: 26
-    :emphasize-lines: 1
+    :emphasize-lines: 2-3
 
+    # def w_positional_arguments():
+    # def w_positional_arguments(first_input):
     def w_positional_arguments(first_input, last_input):
         return None
 
@@ -2230,9 +2233,12 @@ test_functions_w_positional_arguments
 
   .. code-block:: python
     :lineno-start: 26
-    :emphasize-lines: 2
+    :emphasize-lines: 4-5
 
+    # def w_positional_arguments():
+    # def w_positional_arguments(first_input):
     def w_positional_arguments(first_input, last_input):
+        # return None
         return first_input, last_input
 
   the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``, which is equal to ``my_expectation``
@@ -2245,10 +2251,22 @@ test_functions_w_positional_arguments
 
 ----
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 22
+
+    def identity(the_input):
+        return the_input
+
+
+    def w_positional_arguments(first_input, last_input):
+        return first_input, last_input
+
 * The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this in  :ref:`test_functions_w_positional_arguments` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 133
     :emphasize-lines: 8-12
 
         def test_functions_w_positional_arguments(self):
@@ -2279,13 +2297,14 @@ test_functions_w_positional_arguments
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 4
+    :lineno-start: 140
+    :emphasize-lines: 4-5
     :emphasize-text: last
 
             reality = src.functions.w_positional_arguments(
                 'last', 'first',
             )
+            # my_expectation = ('first', 'last')
             my_expectation = ('last', 'first')
             self.assertEqual(reality, my_expectation)
 
@@ -2297,7 +2316,7 @@ test_functions_w_positional_arguments
 * I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'first'`` and ``'last'``
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 133
     :emphasize-lines: 2
 
         def test_functions_w_positional_arguments(self):
@@ -2313,7 +2332,7 @@ test_functions_w_positional_arguments
 
   .. code-block:: python
     :lineno-start: 86
-    :emphasize-lines: 5-6, 8-9, 13-14, 16-17
+    :emphasize-lines: 5-6, 8-9, 13-14, 18-19
 
         def test_functions_w_positional_arguments(self):
             first, last = 'first', 'last'
@@ -2330,6 +2349,7 @@ test_functions_w_positional_arguments
                 # 'last', 'first',
                 last, first,
             )
+            # my_expectation = ('first', 'last')
             # my_expectation = ('last', 'first')
             my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
@@ -2339,38 +2359,18 @@ test_functions_w_positional_arguments
 
   the test is still green.
 
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 86
-
-        def test_functions_w_positional_arguments(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.w_positional_arguments(
-                first, last,
-            )
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_positional_arguments(
-                last, first,
-            )
-            my_expectation = (last, first)
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 7-12
+    :lineno-start: 144
+    :emphasize-lines: 10-15
 
             reality = src.functions.w_positional_arguments(
+                # 'last', 'first',
                 last, first,
             )
+            # my_expectation = ('first', 'last')
+            # my_expectation = ('last', 'first')
             my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
 
@@ -2395,13 +2395,14 @@ test_functions_w_positional_arguments
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 153
     :emphasize-lines: 5
 
             first_number, second_number = 0, 1
             reality = src.functions.w_positional_arguments(
                 first_number, second_number,
             )
+            # my_expectation = (second_number, first_number)
             my_expectation = (first_number, second_number)
             self.assertEqual(reality, my_expectation)
 
@@ -2413,17 +2414,19 @@ test_functions_w_positional_arguments
 * I add one more :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 8-13
+    :lineno-start: 153
+    :emphasize-lines: 9-15
 
             first_number, second_number = 0, 1
             reality = src.functions.w_positional_arguments(
                 first_number, second_number,
             )
+            # my_expectation = (second_number, first_number)
             my_expectation = (first_number, second_number)
             self.assertEqual(reality, my_expectation)
 
-            a_tuple, a_list = (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
             reality = src.functions.w_positional_arguments(
                 a_list, a_tuple,
             )
@@ -2437,20 +2440,23 @@ test_functions_w_positional_arguments
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
-                                != ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
+    AssertionError: Tuples differ:
+            ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+         != ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
 
   because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``(1, 2, 3, 'n')`` as ``first_input`` and ``[1, 2, 3, 'n']`` as ``last_input``
 
 * I change ``reality`` to match ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 108
-    :emphasize-lines: 3
+    :lineno-start: 161
+    :emphasize-lines: 4-5
 
-            a_tuple, a_list = (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
             reality = src.functions.w_positional_arguments(
-                a_tuple, a_list
+                # a_list, a_tuple,
+                a_tuple, a_list,
             )
             my_expectation = (a_tuple, a_list)
             self.assertEqual(reality, my_expectation)
@@ -2459,6 +2465,44 @@ test_functions_w_positional_arguments
     # Exceptions seen
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 133
+
+        def test_functions_w_positional_arguments(self):
+            first, last = 'first', 'last'
+
+            reality = src.functions.w_positional_arguments(
+                first, last,
+            )
+            my_expectation = (first, last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_positional_arguments(
+                last, first,
+            )
+            my_expectation = (last, first)
+            self.assertEqual(reality, my_expectation)
+
+            first_number, second_number = 0, 1
+            reality = src.functions.w_positional_arguments(
+                first_number, second_number,
+            )
+            my_expectation = (first_number, second_number)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            reality = src.functions.w_positional_arguments(
+                a_tuple, a_list,
+            )
+            my_expectation = (a_tuple, a_list)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -2478,7 +2522,7 @@ test_functions_w_positional_arguments
 test_functions_w_keyword_arguments
 *********************************************************************************
 
-There is a problem with using positional arguments - the inputs must always be given in the right order. What if I forget the order? What if there are many inputs?
+The tests show that positional arguments must always be given in the right order. What if I forget the order? What if there are many inputs?
 
 I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a function?>` always gets the values for the inputs it expects, that way it does what I want even when I send inputs out of order.
 
@@ -2495,12 +2539,13 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I add a new test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 108
-    :emphasize-lines: 8-13
+    :lineno-start: 155
+    :emphasize-lines: 9-14
 
-            a_tuple, a_list = (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
             reality = src.functions.w_positional_arguments(
-                a_tuple, a_list
+                a_tuple, a_list,
             )
             my_expectation = (a_tuple, a_list)
             self.assertEqual(reality, my_expectation)
@@ -2558,8 +2603,9 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: python
     :lineno-start: 30
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # def w_keyword_arguments():
     def w_keyword_arguments(first_input):
         return None
 
@@ -2577,8 +2623,10 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: python
     :lineno-start: 30
-    :emphasize-lines: 1
+    :emphasize-lines: 2-3
 
+    # def w_keyword_arguments():
+    # def w_keyword_arguments(first_input):
     def w_keyword_arguments(first_input, second_input):
         return None
 
@@ -2586,7 +2634,9 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: none
 
-    TypeError: w_keyword_arguments() got an unexpected keyword argument 'last_input'. Did you mean 'first_input'?
+    TypeError: w_keyword_arguments() got
+               an unexpected keyword argument 'last_input'.
+               Did you mean 'first_input'?
 
   because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` allows two inputs with the names ``first_input`` and ``second_input``, and the test calls the :ref:`function<what is a function?>` with ``first_input`` and ``last_input``, the names must match when I am using :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
@@ -2594,9 +2644,12 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: python
     :lineno-start: 30
-    :emphasize-lines: 1
+    :emphasize-lines: 3-4
     :emphasize-text: last
 
+    # def w_keyword_arguments():
+    # def w_keyword_arguments(first_input):
+    # def w_keyword_arguments(first_input, second_input):
     def w_keyword_arguments(first_input, last_input):
         return None
 
@@ -2612,9 +2665,13 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: python
     :lineno-start: 30
-    :emphasize-lines: 2
+    :emphasize-lines: 5-6
 
+    # def w_keyword_arguments():
+    # def w_keyword_arguments(first_input):
+    # def w_keyword_arguments(first_input, second_input):
     def w_keyword_arguments(first_input, last_input):
+        # return None
         return first_input, last_input
 
   the test passes.
@@ -2627,10 +2684,22 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
 ----
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 26
+
+    def w_positional_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+    def w_keyword_arguments(first_input, last_input):
+        return first_input, last_input
+
 * I add another :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order in :ref:`test_functions_w_keyword_arguments` in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 163
     :emphasize-lines: 8-12
 
         def test_functions_w_keyword_arguments(self):
@@ -2656,7 +2725,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
     AssertionError: Tuples differ: ('first', 'last')
                                 != ('last', 'first')
 
-  the order the :ref:`function<what is a function?>` returns the values stayed the same because it always returns ``first_input, last_input``.
+  the order the :ref:`function<what is a function?>` returns the values stayed the same this time, because it always returns ``first_input, last_input``.
 
   Compare this call that uses :ref:`positional arguments<test_functions_w_positional_arguments>` and its result
 
@@ -2679,13 +2748,14 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 4
+    :lineno-start: 170
+    :emphasize-lines: 4-5
     :emphasize-text: last
 
             reality = src.functions.w_keyword_arguments(
                 last_input='last', first_input='first',
             )
+            # my_expectation = ('last', 'first')
             my_expectation = ('first', 'last')
             self.assertEqual(reality, my_expectation)
 
@@ -2697,7 +2767,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'first'`` and ``'last'`` from the test
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 163
     :emphasize-lines: 2
 
         def test_functions_w_keyword_arguments(self):
@@ -2712,8 +2782,8 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'`` from the test
 
   .. code-block:: python
-    :lineno-start: 115
-    :emphasize-lines: 5-6, 8-9, 13-14, 16-17
+    :lineno-start: 163
+    :emphasize-lines: 5-6, 8-9, 13-14, 17-18
 
         def test_functions_w_keyword_arguments(self):
             first, last = 'first', 'last'
@@ -2730,6 +2800,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
                 # last_input='last', first_input='first',
                 last_input=last, first_input=first,
             )
+            # my_expectation = ('last', 'first')
             # my_expectation = ('first', 'last')
             my_expectation = (first, last)
             self.assertEqual(reality, my_expectation)
@@ -2739,38 +2810,18 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   the test is still green.
 
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 115
-
-        def test_functions_w_keyword_arguments(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.w_keyword_arguments(
-                first_input=first, last_input=last,
-            )
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                last_input=last, first_input=first,
-            )
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
 * I can still call the :ref:`function<what is a function?>` the same way I did in :ref:`test_functions_w_positional_arguments` (without using the names). I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 7-11
+    :lineno-start: 174
+    :emphasize-lines: 10-14
 
             reality = src.functions.w_keyword_arguments(
+                # last_input='last', first_input='first',
                 last_input=last, first_input=first,
             )
+            # my_expectation = ('last', 'first')
+            # my_expectation = ('first', 'last')
             my_expectation = (first, last)
             self.assertEqual(reality, my_expectation)
 
@@ -2795,13 +2846,14 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 4
+    :lineno-start: 183
+    :emphasize-lines: 4-5
     :emphasize-text: first
 
             reality = src.functions.w_keyword_arguments(
-                last, first
+                last, first,
             )
+            # my_expectation = (first, last)
             my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
 
@@ -2813,12 +2865,13 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 7-12
+    :lineno-start: 183
+    :emphasize-lines: 8-13
 
             reality = src.functions.w_keyword_arguments(
                 last, first,
             )
+            # my_expectation = (first, last)
             my_expectation = (last, first)
             self.assertEqual(reality, my_expectation)
 
@@ -2841,13 +2894,14 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 5
+    :lineno-start: 190
+    :emphasize-lines: 5-6
 
             zero, one = 0, 1
             reality = src.functions.w_keyword_arguments(
                 last_input=zero, first_input=one,
             )
+            # my_expectation = (zero, one)
             my_expectation = (one, zero)
             self.assertEqual(reality, my_expectation)
 
@@ -2859,13 +2913,14 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 136
-    :emphasize-lines: 8-15
+    :lineno-start: 190
+    :emphasize-lines: 9-16
 
             zero, one = 0, 1
             reality = src.functions.w_keyword_arguments(
                 last_input=zero, first_input=one,
             )
+            # my_expectation = (zero, one)
             my_expectation = (one, zero)
             self.assertEqual(reality, my_expectation)
 
@@ -2885,18 +2940,21 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ({'key': 'value'}, {1, 2, 3, 'n'})
-                                != ({1, 2, 3, 'n'}, {'key': 'value'})
+    AssertionError: Tuples differ:
+            ({'key': 'value'}, {1, 2, 3, 'n'})
+         != ({1, 2, 3, 'n'}, {'key': 'value'})
 
 * I change ``reality`` to match ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 4-5
+    :lineno-start: 198
+    :emphasize-lines: 4-7
 
             a_set = {1, 2, 3, 'n'}
             a_dictionary = {'key': 'value'}
             reality = src.functions.w_keyword_arguments(
+                # first_input=a_dictionary,
+                # last_input=a_set,
                 first_input=a_set,
                 last_input=a_dictionary,
             )
@@ -2992,20 +3050,23 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
   I add another :ref:`assertion<what is an assertion?>` to show that the two :ref:`functions<what is a function?>` are the same, by calling the ``w_positional_arguments`` :ref:`function<what is a function?>` with :ref:`keyword arguments<test_functions_w_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 10-16
+    :lineno-start: 198
+    :emphasize-lines: 12-20
     :emphasize-text: positional
 
-            a_dictionary = {'key': 'value'}
             a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
             reality = src.functions.w_keyword_arguments(
+                # first_input=a_dictionary,
+                # last_input=a_set,
                 first_input=a_set,
                 last_input=a_dictionary,
             )
             my_expectation = (a_set, a_dictionary)
             self.assertEqual(reality, my_expectation)
 
-            a_tuple, a_list = (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
             reality = src.functions.w_positional_arguments(
                 first_input=a_tuple,
                 last_input=a_list,
@@ -3020,8 +3081,9 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
-                                != ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
+    AssertionError: Tuples differ:
+            ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+         != ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
 
   because these two calls are the same
 
@@ -3039,11 +3101,14 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 * I change ``reality`` to match my ``expectation``
 
   .. code-block:: python
-    :lineno-start: 152
-    :emphasize-lines: 3-4
+    :lineno-start: 209
+    :emphasize-lines: 4-7
 
-            a_tuple, a_list = (1, 2, 3, 'n'), [1, 2, 3, 'n']
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
             reality = src.functions.w_positional_arguments(
+                # first_input=a_tuple,
+                # last_input=a_list,
                 first_input=a_list,
                 last_input=a_tuple,
             )
