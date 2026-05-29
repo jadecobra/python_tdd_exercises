@@ -5,10 +5,6 @@
 .. _assertFalse method: assertFalse_
 .. _assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
 .. _assertTrue method: assertTrue_
-.. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
-.. _assertNotIsInstance method: assertNotIsInstance_
-.. _assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
-.. _assertIsInstance method: assertIsInstance_
 .. _assertIsNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone
 .. _assertIsNone method: assertIsNone_
 .. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
@@ -72,8 +68,6 @@
 .. _import statement: https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 .. _import statements: `import statement`_
 .. _int: https://docs.python.org/3/library/functions.html#int
-.. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
-.. _isinstance function: isinstance_
 .. _itertools module: https://docs.python.org/3/library/itertools.html
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
 .. _object: https://docs.python.org/3/glossary.html#term-object
@@ -161,7 +155,6 @@
 .. _types: type_
 .. _unittest: https://docs.python.org/3/library/unittest.html
 .. _unittest module: unittest_
-.. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
 .. _unittest.TestCase.assertFalse: assertFalse_
 .. _unittest.TestCase.assertIsNone: assertIsNone_
 .. _unittest.TestCase.assertIsNotNone: assertIsNotNone_
@@ -170,7 +163,6 @@
 .. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
 .. _unittest.TestCase.setUp: setUp_
 .. _unittest.TestCase.setUp method: setUp_
-.. _unittest.TestCase.assertIsInstance: assertIsInstance_
 .. _unittest.TestCase.maxDiff: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.maxDiff
 .. _unittest.skip decorator: https://docs.python.org/3/library/unittest.html#unittest.skip
 .. _unittest.TestCase: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase
