@@ -1994,6 +1994,86 @@ the test passes.
 
   the test passes
 
+* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_)
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 6-8
+
+            reality = src.telephone.text(int)
+            # my_expectation = 'I got: int'
+            my_expectation = "I got: <class 'int'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(float)
+            my_expectation = "I got: float"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'float'>" != 'I got: float'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(float)
+            # my_expectation = "I got: float"
+            my_expectation = "I got: <class 'float'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for strings_)
+
+  .. code-block:: python
+    :lineno-start: 98
+    :emphasize-lines: 6-8
+
+            reality = src.telephone.text(float)
+            # my_expectation = "I got: float"
+            my_expectation = "I got: <class 'float'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(str)
+            my_expectation = "I got: str"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'str'>" != 'I got: str'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 103
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(str)
+            # my_expectation = "I got: str"
+            my_expectation = "I got: <class 'str'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
