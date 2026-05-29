@@ -81,6 +81,7 @@ Questions to think about as I go through the chapter
 * :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is NOT the same object as True>`
 * :ref:`what is another way test if 2 things are NOT Equal?<another way to test if two things are NOT Equal>`
 * :ref:`what is another way test if 2 things are Equal?<another way to test if two things are Equal>`
+* :ref:`what is the difference between is and equal<test_assertion_error_w_is_vs_equal>`
 
 ----
 
@@ -5826,6 +5827,222 @@ another way to test if two things are Equal
 ----
 
 *********************************************************************************
+test_assertion_error_w_is_vs_equal
+*********************************************************************************
+
+Some of the tests I have written use ``is`` and some use ``==``, if they mean the same thing, why do I use different symbols? What is the difference between ``is`` and ``equal``?
+
+In Python_ they do not mean the same thing
+
+* ``x is y`` states that ``x`` is the same exact :ref:`object<what is a class?>` as ``y``
+* ``x is not y`` states that ``x`` is NOT the same exact :ref:`object<what is a class?>` as ``y``
+* ``x == y`` states that ``x`` is equal to ``y`` according to a rule or instruction programmed in Python_
+* ``x != y`` states that ``x`` is NOT equal to ``y`` according to a rule or instruction programmed in Python_
+
+This means that things can be equal without being the same exact :ref:`object<what is a class?>`. For example, integers_ (a whole number with no decimals) can be equal to a float_ (binary floating point decimal numbers) and they are NOT the same :ref:`object<what is a class?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add a test to show this
+
+.. code-block:: python
+  :lineno-start: 210
+  :emphasize-lines: 6-7
+
+            # assert True != True
+            assert True == True
+            # self.assertNotEqual(True, True)
+            self.assertEqual(True, True)
+
+        def test_assertion_error_w_is_vs_equal(self):
+            assert 0 is 0.0
+
+
+    # NOTES
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+.. code-block:: python
+
+  E       assert 0 is 0.0
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 215
+  :emphasize-lines: 2-3
+
+      def test_assertion_error_w_is_vs_equal(self):
+          # assert 0 is 0.0
+          assert 0 is not 0.0
+
+
+  # NOTES
+
+the test passes
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add another :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 4
+
+        def test_assertion_error_w_is_vs_equal(self):
+            # assert 0 is 0.0
+            assert 0 is not 0.0
+            assert 0 != 0.0
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert 0 != 0.0
+
+* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 4-5
+
+        def test_assertion_error_w_is_vs_equal(self):
+            # assert 0 is 0.0
+            assert 0 is not 0.0
+            # assert 0 != 0.0
+            assert 0 == 0.0
+
+
+    # NOTES
+
+  the test passes
+
+* I add assertIs_ for the first :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 4
+
+        def test_assertion_error_w_is_vs_equal(self):
+            # assert 0 is 0.0
+            assert 0 is not 0.0
+            self.assertIs(0, 0.0)
+
+            # assert 0 != 0.0
+            assert 0 == 0.0
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: 0 is not 0.0
+
+* I change assertIs_ to assertIsNot_
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 4-5
+
+        def test_assertion_error_w_is_vs_equal(self):
+            # assert 0 is 0.0
+            assert 0 is not 0.0
+            # self.assertIs(0, 0.0)
+            self.assertIsNot(0, 0.0)
+
+            # assert 0 != 0.0
+            assert 0 == 0.0
+
+
+    # NOTES
+
+  the test passes
+
+* I add the `assertNotEqual method`_ for the next :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 9
+
+        def test_assertion_error_w_is_vs_equal(self):
+            # assert 0 is 0.0
+            assert 0 is not 0.0
+            # self.assertIs(0, 0.0)
+            self.assertIsNot(0, 0.0)
+
+            # assert 0 != 0.0
+            assert 0 == 0.0
+            self.assertNotEqual(0, 0.0)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: 0 == 0.0
+
+* I change assertNotEqual_ to assertEqual_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 215
+    :emphasize-lines: 9-10
+
+        def test_assertion_error_w_is_vs_equal(self):
+            # assert 0 is 0.0
+            assert 0 is not 0.0
+            # self.assertIs(0, 0.0)
+            self.assertIsNot(0, 0.0)
+
+            # assert 0 != 0.0
+            assert 0 == 0.0
+            # self.assertNotEqual(0, 0.0)
+            self.assertEqual(0, 0.0)
+
+
+    # NOTES
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_assertion_error_w_is_vs_equal'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.q
+
+The tests show that an integer_ can be ``EQUAL`` to a float_ but an integer_ ``IS`` NOT a float_.
+
+----
+
+*********************************************************************************
 close the project
 *********************************************************************************
 
@@ -5865,9 +6082,10 @@ and to test if 2 things are
 * :ref:`NOT Equal<test_assertion_error_w_equality>` with assertNotEqual_
 * :ref:`Equal<test_assertion_error_w_equality>` with assertEqual_
 
-The tests show that :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different.
+The tests show that
 
-What is the difference between ``is`` and ``equal``?
+* :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different.
+* ``is`` and ``Equal`` are different
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 
