@@ -3120,6 +3120,60 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
   the test passes.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 163
+
+        def test_functions_w_keyword_arguments(self):
+            first, last = 'first', 'last'
+
+            reality = src.functions.w_keyword_arguments(
+                first_input=first, last_input=last,
+            )
+            my_expectation = (first, last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                last_input=last, first_input=first,
+            )
+            my_expectation = (first, last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                last, first,
+            )
+            my_expectation = (last, first)
+            self.assertEqual(reality, my_expectation)
+
+            zero, one = 0, 1
+            reality = src.functions.w_keyword_arguments(
+                last_input=zero, first_input=one,
+            )
+            my_expectation = (one, zero)
+            self.assertEqual(reality, my_expectation)
+
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            reality = src.functions.w_keyword_arguments(
+                first_input=a_set,
+                last_input=a_dictionary,
+            )
+            my_expectation = (a_set, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            reality = src.functions.w_positional_arguments(
+                first_input=a_list,
+                last_input=a_tuple,
+            )
+            my_expectation = (a_list, a_tuple)
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -3129,7 +3183,6 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
     'add test_functions_w_keyword_arguments'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
-
 
 :ref:`I can call a function with keyword arguments<test_functions_w_keyword_arguments>`
 
