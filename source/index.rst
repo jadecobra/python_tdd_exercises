@@ -101,7 +101,7 @@ table of contents
   make TDD project 1<make_tdd/make_tdd_manually>
   what is an assertion?<exceptions/AssertionError/index>
   what is a function?<functions/index>
-  telephone<how_to/telephone>
+  telephone<how_to/telephone/index>
   make a person<how_to/make_person>
   classes/index
   what causes AttributeError?<exceptions/AttributeError>
