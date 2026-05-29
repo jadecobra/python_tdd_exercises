@@ -4895,6 +4895,20 @@ how Python reads positional and keyword arguments
 
     # Exceptions seen
 
+* I remove the commented lines from the :ref:`w_unknown_arguments function<test_w_unknown_arguments>` in ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 38
+
+    def w_optional_arguments(first_input, last_input='doe'):
+        return first_input, last_input
+
+
+    def w_unknown_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
+        return positional_arguments, keyword_arguments
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python

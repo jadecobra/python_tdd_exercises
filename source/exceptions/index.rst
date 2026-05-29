@@ -22,7 +22,7 @@ The tests in this chapter cover these Exceptions_
   :titlesonly:
   :maxdepth: 1
 
-  AssertionError
+  exceptions/AssertionError/index
   ModuleNotFoundError
   AttributeError
   type_error/index

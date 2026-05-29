@@ -99,7 +99,7 @@ table of contents
   conventions
   start here<setup/index>
   make TDD project 1<make_tdd/make_tdd_manually>
-  what is an assertion?<exceptions/AssertionError>
+  what is an assertion?<exceptions/AssertionError/index>
   what is a function?<functions/index>
   telephone<how_to/telephone>
   make a person<how_to/make_person>

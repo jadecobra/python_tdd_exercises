@@ -67,6 +67,8 @@ the chapters
 
   classes
   inheritance
+  AssertionError 2<../exceptions/AssertionError/AssertionError2>
+  Telephone 2<../how_to/telephone/telephone2>
 
 ----
 
