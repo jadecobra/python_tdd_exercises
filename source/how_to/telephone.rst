@@ -1786,12 +1786,13 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
 I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 68
-  :emphasize-lines: 3
+  :lineno-start: 65
+  :emphasize-lines: 3-4
   :emphasize-text: " '
 
       def test_passing_a_class(self):
           reality = src.telephone.text(object)
+          # my_expectation = 'I got: object'
           my_expectation = "I got: <class 'object'>"
           self.assertEqual(reality, my_expectation)
 
@@ -1811,11 +1812,12 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>` with the ``TestTelephone`` :ref:`class<what is a class?>` to ``test_passing_a_class`` in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 6-8
+    :lineno-start: 65
+    :emphasize-lines: 7-9
 
         def test_passing_a_class(self):
             reality = src.telephone.text(object)
+            # my_expectation = 'I got: object'
             my_expectation = "I got: <class 'object'>"
             self.assertEqual(reality, my_expectation)
 
@@ -1837,14 +1839,15 @@ the test passes.
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 2-5
+    :lineno-start: 71
+    :emphasize-lines: 2-6
     :emphasize-text: '
 
             reality = src.telephone.text(TestTelephone)
+            # my_expectation = "I got: <class 'object'>"
             my_expectation = (
-                "I got: <class "
-                "'tests.test_telephone.TestTelephone'>"
+                "I got: <class"
+                f" 'tests.test_telephone.TestTelephone'>"
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1860,13 +1863,14 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 8-10
+    :lineno-start: 71
+    :emphasize-lines: 9-11
 
             reality = src.telephone.text(TestTelephone)
+            # my_expectation = "I got: <class 'object'>"
             my_expectation = (
-                "I got: <class "
-                "'tests.test_telephone.TestTelephone'>"
+                "I got: <class"
+                f" 'tests.test_telephone.TestTelephone'>"
             )
             self.assertEqual(reality, my_expectation)
 
@@ -1891,19 +1895,104 @@ the test passes.
 * I change ``my_expectation`` to match ``reality``
 
   .. code-block:: python
-    :lineno-start: 80
-    :emphasize-lines: 2-6
+    :lineno-start: 79
+    :emphasize-lines: 2-7
 
             reality = src.telephone.text(self)
+            # my_expectation = "I got: self"
             my_expectation = (
-                "I got: test_passing_a_class "
-                "(tests.test_telephone.TestTelephone"
+                "I got: test_passing_a_class"
+                " (tests.test_telephone.TestTelephone"
                 ".test_passing_a_class)"
             )
             self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`bool (the class for booleans)<what are booleans?>`
+
+  .. code-block:: python
+    :lineno-start: 79
+    :emphasize-lines: 10-12
+
+            reality = src.telephone.text(self)
+            # my_expectation = "I got: self"
+            my_expectation = (
+                "I got: test_passing_a_class"
+                " (tests.test_telephone.TestTelephone"
+                ".test_passing_a_class)"
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(bool)
+            my_expectation = 'I got: bool'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'bool'>" != 'I got: bool'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(bool)
+            # my_expectation = 'I got: bool'
+            my_expectation = "I got: <class 'bool'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for integers_)
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 6-8
+
+            reality = src.telephone.text(bool)
+            # my_expectation = 'I got: bool'
+            my_expectation = "I got: <class 'bool'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(int)
+            my_expectation = "I got: int"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'int'>" != 'I got: int'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 93
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(int)
+            # my_expectation = "I got: int"
+            my_expectation = "I got: <class 'int'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
 
 * I add a git_ commit message in the other terminal_
 
