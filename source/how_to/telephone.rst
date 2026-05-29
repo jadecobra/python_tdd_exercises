@@ -1608,7 +1608,7 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
 I change ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 59
+  :lineno-start: 56
   :emphasize-lines: 10-11
   :emphasize-text: '
 
@@ -1621,8 +1621,8 @@ I change ``my_expectation`` to match ``reality``
           )
           my_expectation = (
               "I got: "
-              "{'key1': 'value1', "
-              "'keyN': [0, 1, 2, 'n']}"
+              # "{key1: value1, keyN: [0, 1, 2, n]}"
+              "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
           )
           self.assertEqual(reality, my_expectation)
 
@@ -1642,7 +1642,7 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 56
     :emphasize-lines: 2-5
 
         def test_passing_a_dictionary(self):
@@ -1658,6 +1658,7 @@ the test passes.
             )
             my_expectation = (
                 "I got: "
+                # "{key1: value1, keyN: [0, 1, 2, n]}"
                 "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
             )
             self.assertEqual(reality, my_expectation)
@@ -1668,8 +1669,8 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of the :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 6-17
+    :lineno-start: 56
+    :emphasize-lines: 6-18
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
@@ -1685,6 +1686,7 @@ the test passes.
             reality = src.telephone.text(a_dictionary)
             # my_expectation = (
             #     "I got: "
+            #     # "{key1: value1, keyN: [0, 1, 2, n]}"
             #     "{'key1': 'value1', 'keyN': [0, 1, 2, 'n']}"
             # )
             my_expectation = f'I got: {a_dictionary}'
@@ -1698,7 +1700,7 @@ the test passes.
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 56
 
         def test_passing_a_dictionary(self):
             a_dictionary = {
@@ -1717,7 +1719,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_passing_a_dictionary'
+    git commit --all --message 'add test_passing_a_dictionary'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1744,7 +1746,7 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
 * I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 56
     :emphasize-lines: 10-13
 
         def test_passing_a_dictionary(self):
