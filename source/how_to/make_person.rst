@@ -1531,7 +1531,7 @@ the test passes.
 
 I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values and always calculates the right age.
 
-* I use a random integer_ (a whole number with no decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
+* I use a random integer_ (a whole number without decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 9

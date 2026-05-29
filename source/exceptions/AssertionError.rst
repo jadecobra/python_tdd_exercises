@@ -931,7 +931,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ for an integer_ (a whole number with no decimals)
+* I add an `assert statement`_ for an integer_ (a whole number without decimals)
 
   .. code-block:: python
     :lineno-start: 25
@@ -1679,7 +1679,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I use assertIs_ to compare an integer_ (a whole number with no decimals) with :ref:`None<what is None?>`
+* I use assertIs_ to compare an integer_ (a whole number without decimals) with :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -2283,7 +2283,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if an integer_ (a whole number with no decimals) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -3042,7 +3042,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I use assertIs_ to compare an integer_ (a whole number with no decimals) with :ref:`False<test_what_is_false>`
+* I use assertIs_ to compare an integer_ (a whole number without decimals) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 87
@@ -3658,7 +3658,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if an integer_ (a whole number with no decimals) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 127
@@ -4474,7 +4474,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I use assertIs_ to compare an integer_ (a whole number with no decimals) with :ref:`True<test_what_is_true>`
+* I use assertIs_ to compare an integer_ (a whole number without decimals) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 143
@@ -5839,7 +5839,7 @@ In Python_ they do not mean the same thing
 * ``x == y`` states that ``x`` is equal to ``y`` according to a rule or instruction programmed in Python_
 * ``x != y`` states that ``x`` is NOT equal to ``y`` according to a rule or instruction programmed in Python_
 
-This means that things can be equal without being the same exact :ref:`object<what is a class?>`. For example, integers_ (a whole number with no decimals) can be equal to a float_ (binary floating point decimal numbers) and they are NOT the same :ref:`object<what is a class?>`
+This means that things can be equal without being the same exact :ref:`object<what is a class?>`. For example, integers_ (a whole number without decimals) can be equal to a float_ (binary floating point decimal numbers) and they are NOT the same :ref:`object<what is a class?>`
 
 ----
 

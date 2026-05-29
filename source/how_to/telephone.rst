@@ -989,7 +989,7 @@ the test passes.
 test_passing_an_integer
 *********************************************************************************
 
-I can pass an integer_ (a whole number with no decimals) from a test to a :ref:`function<what is a function?>`
+I can pass an integer_ (a whole number without decimals) from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -1954,7 +1954,7 @@ the test passes.
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for integers_)
+* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals)
 
   .. code-block:: python
     :lineno-start: 88
@@ -1994,7 +1994,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_)
+* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers)
 
   .. code-block:: python
     :lineno-start: 93
@@ -2034,7 +2034,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for strings_)
+* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`)
 
   .. code-block:: python
     :lineno-start: 98
@@ -2074,12 +2074,230 @@ the test passes.
 
   the test passes
 
+* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma)
+
+  .. code-block:: python
+    :lineno-start: 103
+    :emphasize-lines: 6-8
+
+            reality = src.telephone.text(str)
+            # my_expectation = "I got: str"
+            my_expectation = "I got: <class 'str'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(tuple)
+            my_expectation = "I got: tuple"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'tuple'>" != 'I got: tuple'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(tuple)
+            # my_expectation = "I got: tuple"
+            my_expectation = "I got: <class 'tuple'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`
+
+  .. code-block:: python
+    :lineno-start: 108
+    :emphasize-lines: 6-8
+
+            reality = src.telephone.text(tuple)
+            # my_expectation = "I got: tuple"
+            my_expectation = "I got: <class 'tuple'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(list)
+            my_expectation = "I got: list"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'list'>" != 'I got: list'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(list)
+            # my_expectation = "I got: list"
+            my_expectation = "I got: <class 'list'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` anything in curly braces ``{ }`` separated by a comma)
+
+  .. code-block:: python
+    :lineno-start: 113
+    :emphasize-lines: 6-8
+
+            reality = src.telephone.text(list)
+            # my_expectation = "I got: list"
+            my_expectation = "I got: <class 'list'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(set)
+            my_expectation = "I got: set"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'set'>" != 'I got: set'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 118
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(set)
+            # my_expectation = "I got: set"
+            my_expectation = "I got: <class 'set'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
+
+  .. code-block:: python
+    :lineno-start: 118
+    :emphasize-lines: 6-8
+
+            reality = src.telephone.text(set)
+            # my_expectation = "I got: set"
+            my_expectation = "I got: <class 'set'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(dict)
+            my_expectation = "I got: dict"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: "I got: <class 'dict'>" != 'I got: dict'
+
+* I change ``my_expectation`` to match ``reality``
+
+  .. code-block:: python
+    :lineno-start: 123
+    :emphasize-lines: 2-3
+
+            reality = src.telephone.text(dict)
+            # my_expectation = "I got: dict"
+            my_expectation = "I got: <class 'dict'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 65
+
+        def test_passing_a_class(self):
+            reality = src.telephone.text(object)
+            my_expectation = "I got: <class 'object'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(TestTelephone)
+            my_expectation = (
+                "I got: <class"
+                f" 'tests.test_telephone.TestTelephone'>"
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(self)
+            my_expectation = (
+                "I got: test_passing_a_class"
+                " (tests.test_telephone.TestTelephone"
+                ".test_passing_a_class)"
+            )
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(bool)
+            my_expectation = "I got: <class 'bool'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(int)
+            my_expectation = "I got: <class 'int'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(float)
+            my_expectation = "I got: <class 'float'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(str)
+            my_expectation = "I got: <class 'str'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(tuple)
+            my_expectation = "I got: <class 'tuple'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(list)
+            my_expectation = "I got: <class 'list'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(set)
+            my_expectation = "I got: <class 'set'>"
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.telephone.text(dict)
+            my_expectation = "I got: <class 'dict'>"
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_passing_a_class'
+    git commit -am 'add test_passing_a_class'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
