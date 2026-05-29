@@ -1141,7 +1141,7 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
 * I add a test for a float_ (binary floating point decimal numbers)
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 32
     :emphasize-lines: 7-10
     :emphasize-text: "
 
@@ -1176,11 +1176,12 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
 I remove the :ref:`quotes` around the float_ in ``my_expectation``
 
 .. code-block:: python
-  :lineno-start: 41
-  :emphasize-lines: 3
+  :lineno-start: 38
+  :emphasize-lines: 3-4
 
       def test_passing_a_float(self):
           reality = src.telephone.text(1.234)
+          # my_expectation = 'I got: "1.234"'
           my_expectation = 'I got: 1.234'
           self.assertEqual(reality, my_expectation)
 
@@ -1200,14 +1201,15 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1.234``
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 38
     :emphasize-lines: 2
 
         def test_passing_a_float(self):
-            a_float = 1.234
-            reality = src.telephone.text(1.234)
-            my_expectation = 'I got: "1.234"'
-            self.assertEqual(reality, my_expectation)
+          a_float = 1.234
+          reality = src.telephone.text(1.234)
+          # my_expectation = 'I got: "1.234"'
+          my_expectation = 'I got: 1.234'
+          self.assertEqual(reality, my_expectation)
 
 
     # Exceptions seen
@@ -1215,14 +1217,15 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of ``1.234``
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 3-6
+    :lineno-start: 38
+    :emphasize-lines: 3-4, 6-7
 
         def test_passing_a_float(self):
             a_float = 1.234
             # reality = src.telephone.text(1.234)
             reality = src.telephone.text(a_float)
             # my_expectation = 'I got: "1.234"'
+            # my_expectation = 'I got: 1.234'
             my_expectation = f'I got: {a_float}'
             self.assertEqual(reality, my_expectation)
 
@@ -1234,7 +1237,7 @@ the test passes.
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 38
 
         def test_passing_a_float(self):
             a_float = 1.234
@@ -1250,7 +1253,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_passing_a_float'
+    git commit -am 'add test_passing_a_float'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1278,9 +1281,8 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
 * I add a test for a tuple_
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 38
     :emphasize-lines: 7-10
-    :emphasize-text: "
 
         def test_passing_a_float(self):
             a_float = 1.234
@@ -1314,12 +1316,13 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
 I change the tuple_ in ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 47
-  :emphasize-lines: 3
+  :lineno-start: 44
+  :emphasize-lines: 3-4
   :emphasize-text: "
 
       def test_passing_a_tuple(self):
           reality = src.telephone.text((1, 2, 3, 'n'))
+          # my_expectation = 'I got: (1, 2, 3, n)'
           my_expectation = "I got: (1, 2, 3, 'n')"
           self.assertEqual(reality, my_expectation)
 
@@ -1339,12 +1342,13 @@ the test passes.
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of the tuple_
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 44
     :emphasize-lines: 2
 
         def test_passing_a_tuple(self):
             a_tuple = (1, 2, 3, 'n')
             reality = src.telephone.text((1, 2, 3, 'n'))
+            # my_expectation = 'I got: (1, 2, 3, n)'
             my_expectation = "I got: (1, 2, 3, 'n')"
             self.assertEqual(reality, my_expectation)
 
@@ -1354,13 +1358,14 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` with `string interpolation`_ to remove repetition of the tuple_
 
   .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 3-6
+    :lineno-start: 44
+    :emphasize-lines: 3-4, 6-7
 
         def test_passing_a_tuple(self):
             a_tuple = (1, 2, 3, 'n')
             # reality = src.telephone.text((1, 2, 3, 'n'))
             reality = src.telephone.text(a_tuple)
+            # my_expectation = 'I got: (1, 2, 3, n)'
             # my_expectation = "I got: (1, 2, 3, 'n')"
             my_expectation = f"I got: {a_tuple}"
             self.assertEqual(reality, my_expectation)
@@ -1373,7 +1378,7 @@ the test passes.
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 44
 
         def test_passing_a_tuple(self):
             a_tuple = (1, 2, 3, 'n')
@@ -1389,7 +1394,7 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_passing_a_tuple'
+    git commit --all --message 'add test_passing_a_tuple'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1417,7 +1422,7 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 * I add a test for a :ref:`list <lists>`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 44
     :emphasize-lines: 7-10
     :emphasize-text: '
 
@@ -1453,12 +1458,13 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 I change the :ref:`list<what is a list?>` in ``my_expectation`` to match ``reality``
 
 .. code-block:: python
-  :lineno-start: 53
-  :emphasize-lines: 3
+  :lineno-start: 50
+  :emphasize-lines: 3-4
   :emphasize-text: " '
 
       def test_passing_a_list(self):
-          reality = src.telephone.text([1, 2, 3, "n"])
+          reality = src.telephone.text([1, 2, 3, 'n'])
+          # my_expectation = 'I got: [1, 2, 3, "n"]'
           my_expectation = "I got: [1, 2, 3, 'n']"
           self.assertEqual(reality, my_expectation)
 
@@ -1478,12 +1484,13 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 50
     :emphasize-lines: 2
 
         def test_passing_a_list(self):
             a_list = [1, 2, 3, 'n']
             reality = src.telephone.text([1, 2, 3, 'n'])
+            # my_expectation = 'I got: [1, 2, 3, "n"]'
             my_expectation = "I got: [1, 2, 3, 'n']"
             self.assertEqual(reality, my_expectation)
 
@@ -1493,13 +1500,14 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 * I use the :ref:`variable<what is a variable?>` with an `f-string`_ to remove repetition of the :ref:`list<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 3-6
+    :lineno-start: 50
+    :emphasize-lines: 3-4, 6-7
 
         def test_passing_a_list(self):
             a_list = [1, 2, 3, 'n']
             # reality = src.telephone.text([1, 2, 3, 'n'])
             reality = src.telephone.text(a_list)
+            # my_expectation = 'I got: [1, 2, 3, "n"]'
             # my_expectation = "I got: [1, 2, 3, 'n']"
             my_expectation = f"I got: {a_list}"
             self.assertEqual(reality, my_expectation)
@@ -1512,7 +1520,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 * I remove the comments
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 50
 
         def test_passing_a_list(self):
             a_list = [1, 2, 3, 'n']
@@ -1528,7 +1536,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'add test_passing_a_list'
+    git commit -am 'add test_passing_a_list'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1555,7 +1563,7 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
 * I add a test for a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 50
     :emphasize-lines: 7-18
     :emphasize-text: "
 
