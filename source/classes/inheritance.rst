@@ -1568,17 +1568,16 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 I add a test to ``test_classes.py``
 
 .. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 4-8
+  :lineno-start: 55
+  :emphasize-lines: 4-7
 
-      def test_making_a_class_w_object(self):
-          self.assertIsInstance(src.classes.WObject, object)
+          assert isinstance(dict, object)
+          self.assertIsInstance(dict, object)
 
       def test_attributes_and_methods_of_objects(self):
-          self.assertEqual(
-              dir(object),
-              []
-          )
+          reality = dir(object)
+          my_expectation = []
+          self.assertEqual(reality, my_expectation)
 
 
   # Exceptions seen
@@ -1587,7 +1586,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 .. code-block:: python
 
-  AssertionError: Lists differ: ['__class__', '__delattr__', '__dir__', '_[272 chars]k__'] != []
+  AssertionError: Lists differ:
+      ['__class__', '__delattr__', '__dir__', '_[272 chars]k__']
+   != []
 
 ----
 
@@ -1597,53 +1598,143 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I copy and paste the values from the terminal_ as the expectation and use the ``Find and Replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
-.. code-block:: python
-  :lineno-start: 16
-  :emphasize-lines: 4-29
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 3-7
 
-      def test_attributes_and_methods_of_objects(self):
-          self.assertEqual(
-              dir(object),
-              [
-                  '__class__',
-                  '__delattr__',
-                  '__dir__',
-                  '__doc__',
-                  '__eq__',
-                  '__format__',
-                  '__ge__',
-                  '__getattribute__',
-                  '__getstate__',
-                  '__gt__',
-                  '__hash__',
-                  '__init__',
-                  '__init_subclass__',
-                  '__le__',
-                  '__lt__',
-                  '__ne__',
-                  '__new__',
-                  '__reduce__',
-                  '__reduce_ex__',
-                  '__repr__',
-                  '__setattr__',
-                  '__sizeof__',
-                  '__str__',
-                  '__subclasshook__'
-              ]
-          )
+        def test_attributes_and_methods_of_objects(self):
+            reality = dir(object)
+            # my_expectation = []
+            my_expectation = [
+                '__class__', '__delattr__', '__dir__',
+                '_[272 chars]k__'
+            ]
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-and it passes. All :ref:`classes<what is a class?>` automatically get these attributes, they inherit them
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: Lists differ:
+        ['__c[32 chars]', '__doc__', '__eq__',
+         '__format__', '__ge__'[231 chars]k__']
+     != ['__c[32 chars]', '_[272 chars]k__']
+
+  it shows me the entire :ref:`list<what is a list?>` below the message
+
+* I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 4-31
+    :emphasize-text: __init__
+
+        def test_attributes_and_methods_of_objects(self):
+            reality = dir(object)
+            # my_expectation = []
+            # my_expectation = [
+            #     '__class__', '__delattr__', '__dir__',
+            #     '_[272 chars]k__'
+            # ]
+            my_expectation = E       - ['__class__',
+    E       -  '__delattr__',
+    E       -  '__dir__',
+    E       -  '__doc__',
+    E       -  '__eq__',
+    E       -  '__format__',
+    E       -  '__ge__',
+    E       -  '__getattribute__',
+    E       -  '__getstate__',
+    E       -  '__gt__',
+    E       -  '__hash__',
+    E       -  '__init__',
+    E       -  '__init_subclass__',
+    E       -  '__le__',
+    E       -  '__lt__',
+    E       -  '__ne__',
+    E       -  '__new__',
+    E       -  '__reduce__',
+    E       -  '__reduce_ex__',
+    E       -  '__repr__',
+    E       -  '__setattr__',
+    E       -  '__sizeof__',
+    E       -  '__str__',
+    E       -  '__subclasshook__']
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'E' is not defined
+
+* I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 3-28
+    :emphasize-text: __init__
+
+        def test_attributes_and_methods_of_objects(self):
+            reality = dir(object)
+            my_expectation = [
+                '__class__',
+                '__delattr__',
+                '__dir__',
+                '__doc__',
+                '__eq__',
+                '__format__',
+                '__ge__',
+                '__getattribute__',
+                '__getstate__',
+                '__gt__',
+                '__hash__',
+                '__init__',
+                '__init_subclass__',
+                '__le__',
+                '__lt__',
+                '__ne__',
+                '__new__',
+                '__reduce__',
+                '__reduce_ex__',
+                '__repr__',
+                '__setattr__',
+                '__sizeof__',
+                '__str__',
+                '__subclasshook__'
+            ]
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes. All :ref:`classes<what is a class?>` automatically get these attributes, they inherit them because :ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`.
+
+  The ``__init__`` :ref:`method<what is a method?>` is also inherited which means when I defined it in :ref:`test_classy_person_says_hello` I overwrote the inherited one.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_attributes_and_methods_of_objects'
 
 ----
 
 *********************************************************************************
 test_making_classes_w_inheritance
 *********************************************************************************
+
+I can make :ref:`classes<what is a class?>` with inheritance
 
 ----
 
@@ -1656,18 +1747,17 @@ test_making_classes_w_inheritance
 I add a new test
 
 .. code-block:: python
-  :lineno-start: 43
-  :emphasize-lines: 5-9
+  :lineno-start: 83
+  :emphasize-lines: 6-8
 
-                  '__subclasshook__'
-              ]
-          )
+              '__str__',
+              '__subclasshook__'
+          ]
+          self.assertEqual(reality, my_expectation)
 
       def test_making_classes_w_inheritance(self):
-          self.assertIsInstance(
-              src.classes.Doe('doe'),
-              src.person.Person
-          )
+          doe = src.classes.Doe
+          assert isinstance(doe, src.person.Person)
 
 
   # Exceptions seen
@@ -1677,6 +1767,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 .. code-block:: python
 
   AttributeError: module 'src.classes' has no attribute 'Doe'
+
+because there is no definition for ``Doe`` in ``classes.py``
 
 ----
 
@@ -1701,45 +1793,32 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
         pass
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Doe() takes no arguments
-
-* I add the ``__init__`` :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3, 4
-
-    class Doe(object):
-
-        def __init__(self):
-            return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: Doe.__init__() takes 1 positional argument but 2 were given
-
-* I add a parameter to the :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3
-
-    class Doe(object):
-
-        def __init__(self, first_name):
-            return None
-
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError: <src.classes.Doe object at 0xffff01a2bc34> is not an instance of <class 'src.person.Person'>
+    AssertionError: assert False
+
+  because even though ``Doe`` and ``Person`` are children of :ref:`object<what is a class?>`, ``Doe`` is not an instance of ``Person``
+
+* I change the parent of ``Doe``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 1-2
+
+    # class Doe(object):
+    class Doe(person.Person):
+
+        pass
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'person' is not defined
+
+  because there is no definition for ``person`` in this file_
 
 * I add an `import statement`_ at the top of ``classes.py``
 
@@ -1747,25 +1826,76 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
     :linenos:
     :emphasize-lines: 1
 
+    import person
+
+
+    class WPass:
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    E   ModuleNotFoundError: No module named 'person'
+
+  because the test cannot find ``person.py`` in the main project folder_ where I run the tests from, so it cannot import the :ref:`Module<what is a module?>`
+
+* I change the `import statement`_ so the path to ``person.py`` from the main project folder_ is correct
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # import person
     import src.person
 
 
     class WPass:
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
-
-* I change the "parent" of ``Doe``
+  the terminal_ does not feel like my friend, it goes back to :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 1
 
+    NameError: name 'person' is not defined
+
+* I add ``src.`` to the parent of ``Doe``
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 1-2
+
+    # class Doe(object):
     class Doe(src.person.Person):
 
-        def __init__(self, first_name):
-            return None
+        pass
+
+  the terminal_ definitely does not feel like my friend, it goes back to :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert False
+
+  because ``Doe`` is still not an instance of ``Person`` even though I defined ``Person`` as the parent of ``Doe``
+
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_classes_w_inheritance` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 3-4
+
+        def test_making_classes_w_inheritance(self):
+            doe = src.classes.Doe
+            # assert isinstance(doe, src.person.Person)
+            assert not isinstance(doe, src.person.Person)
+
+
+    # Exceptions seen
 
   the test passes.
+
+  * ``import src.person`` brings in an :ref:`object<what is a class?>` that represents the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``classes.py``
+  * I have to use ``src.person.Person`` in ``classes.py`` because I am testing from ``test_classes.py`` in the ``tests`` folder_
+  * The test needs to know where ``person.py`` is in relation to where ``test_classes.py`` is
+  * This is a problem because if ``classes.py`` is run from inside ``src`` because the `import statement`_ will not be able to find ``src.person`` from inside ``src``. That is a problem for another time.
 
 ----
 
@@ -1775,16 +1905,140 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
+* I add a call to the `assertIsInstance method`_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 4-5
+
+        def test_making_classes_w_inheritance(self):
+            doe = src.classes.Doe
+            # assert isinstance(doe, src.person.Person)
+            assert not isinstance(doe, src.person.Person)
+            self.assertIsInstance(doe, src.person.Person)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'src.classes.Doe'> is
+        not an instance of <class 'src.person.Person'>
+
+* I change assertIsInstance_ to assertNotIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 5-6
+
+        def test_making_classes_w_inheritance(self):
+            doe = src.classes.Doe
+            # assert isinstance(doe, src.person.Person)
+            assert not isinstance(doe, src.person.Person)
+            # self.assertIsInstance(doe, src.person.Person)
+            self.assertNotIsInstance(doe, src.person.Person)
+
+
+    # Exceptions seen
+
+  the test passes. When is ``Doe`` an instance of ``Person``?
+
+* I add another :ref:`assertion<what is an assertion?>`, this time with an instance of ``Doe``
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 8-9
+
+        def test_making_classes_w_inheritance(self):
+            doe = src.classes.Doe
+            # assert isinstance(doe, src.person.Person)
+            assert not isinstance(doe, src.person.Person)
+            # self.assertIsInstance(doe, src.person.Person)
+            self.assertNotIsInstance(doe, src.person.Person)
+
+            doe = src.classes.Doe('doe')
+            assert not isinstance(doe, src.person.Person)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert not True
+
+  because an instance of ``Doe`` is an instance of ``Person`` since ``Person`` is the parent of ``Doe``
+
+* I change the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 2-3
+
+            doe = src.classes.Doe('doe')
+            # assert not isinstance(doe, src.person.Person)
+            assert isinstance(doe, src.person.Person)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add a call to the `assertNotIsInstance method`_
+
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 4
+
+            doe = src.classes.Doe('doe')
+            # assert not isinstance(doe, src.person.Person)
+            assert isinstance(doe, src.person.Person)
+            self.assertNotIsInstance(doe, src.person.Person)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.Doe object at 0xffff01a2bc34> is
+        an instance of <class 'src.person.Person'>
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 95
+    :emphasize-lines: 4-5
+
+            doe = src.classes.Doe('doe')
+            # assert not isinstance(doe, src.person.Person)
+            assert isinstance(doe, src.person.Person)
+            # self.assertNotIsInstance(doe, src.person.Person)
+            self.assertIsInstance(doe, src.person.Person)
+
+
+    # Exceptions seen
+
+  the test passes.
+
 * I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 95
+    :emphasize-lines: 7-10
 
-        def test_making_classes_w_inheritance(self):
-            self.assertIsInstance(
-                src.classes.Doe('doe'),
-                src.person.Person
-            )
+            doe = src.classes.Doe('doe')
+            # assert not isinstance(doe, src.person.Person)
+            assert isinstance(doe, src.person.Person)
+            # self.assertNotIsInstance(doe, src.person.Person)
+            self.assertIsInstance(doe, src.person.Person)
+
             self.assertEqual(
                 dir(src.classes.Doe),
                 []
@@ -1797,53 +2051,58 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   .. code-block:: python
 
-    AssertionError: Lists differ: ['__class__', '__delattr__', '__dict__', '[377 chars]llo'] != []
+    AssertionError: Lists differ:
+        ['__class__', '__delattr__', '__dict__', '[370 chars]llo']
+     != []
 
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 8
+    :lineno-start: 101
+    :emphasize-lines: 3-4
 
-        def test_making_classes_w_inheritance(self):
-            self.assertIsInstance(
-                src.classes.Doe('doe'),
-                src.person.Person
-            )
             self.assertEqual(
                 dir(src.classes.Doe),
-                dir(src.person.Person)
+                # []
+                dir(src.person.Person),
             )
 
 
     # Exceptions seen
 
-  the test passes. I do not need to add an `import statement`_ because ``classes.py`` imports ``src.person`` and I import ``src.classes`` at the beginning of ``test_person.py``
+  the test passes because ``Doe`` has the same :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` as ``Person`` even though there is nothing in the :ref:`class definition<how to make a class>` for ``Doe`` except stating its parent
 
-* I add the `import statement`_ to make it clearer
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 3
-
-    import unittest
-    import src.classes
-    import src.person
-
-
-    class TestClasses(unittest.TestCase):
-
-  the test is still green.
-
-* I can remove the ``__init__`` :ref:`method<what is a method?>` from the ``Doe`` :ref:`class<what is a class?>`
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 1
+    :lineno-start: 88
 
-    class Doe(src.person.Person): pass
+        def test_making_classes_w_inheritance(self):
+            doe = src.classes.Doe
+            assert not isinstance(doe, src.person.Person)
+            self.assertNotIsInstance(doe, src.person.Person)
 
-  the test is still green.
+            doe = src.classes.Doe('doe')
+            assert isinstance(doe, src.person.Person)
+            self.assertIsInstance(doe, src.person.Person)
+
+            self.assertEqual(
+                dir(src.classes.Doe),
+                dir(src.person.Person),
+            )
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_making_classes_w_inheritance'
+
+:ref:`I can make a class with inheritance<test_making_classes_w_inheritance>`
 
 ----
 
