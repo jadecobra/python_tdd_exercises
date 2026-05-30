@@ -226,7 +226,7 @@ I can test if an :ref:`object<what is a class?>` is a child (instance) of anothe
 
         def test_making_a_class_w_pass(self):
             assert not isinstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
 
 
@@ -267,7 +267,7 @@ I can test if an :ref:`object<what is a class?>` is a child (instance) of anothe
 
     AssertionError: assert not True
 
-  because the statement ``not isinstance(src.classes.WPass(), object)`` is :ref:`False<test_what_is_false>`
+  because the statement ``not isinstance(src.classes.WPass, object)`` is :ref:`False<test_what_is_false>`
 
 ----
 
@@ -286,11 +286,11 @@ how to test if something is an instance of a class
         def test_making_a_class_w_pass(self):
             # assert not isinstance(
             assert isinstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
 
 
-  * the :ref:`assertion<what is an assertion?>` - ``assert isinstance(src.classes.WPass(), object)`` checks if the result of a call to ``WPass`` in ``src.classes.py`` in the ``src`` folder_ also known as ``src.classes.WPass``, is an instance of the :ref:`object class<what is a class?>` which is the mother of all :ref:`classes<what is a class?>`
+  * the :ref:`assertion<what is an assertion?>` - ``assert isinstance(src.classes.WPass, object)`` checks if the result of a call to ``WPass`` in ``src.classes.py`` in the ``src`` folder_ also known as ``src.classes.WPass``, is an instance of the :ref:`object class<what is a class?>` which is the mother of all :ref:`classes<what is a class?>`
 
   * the :ref:`class definition<how to make a class>` simply says pass_ and the test passes.
   * pass_ is a special keyword that allows the :ref:`class definition<how to make a class>` to follow Python_ language rules (the :ref:`class<what is a class?>` must have a body)
@@ -324,10 +324,10 @@ I add the `assertNotIsInstance method`_ to the test
       def test_making_a_class_w_pass(self):
           # assert not isinstance(
           assert isinstance(
-              src.classes.WPass(), object
+              src.classes.WPass, object
           )
           self.assertNotIsInstance(
-              src.classes.WPass(), object
+              src.classes.WPass, object
           )
 
 
@@ -358,11 +358,11 @@ another way to test if something is an instance of a class
         def test_making_a_class_w_pass(self):
             # assert not isinstance(
             assert isinstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
             # self.assertNotIsInstance(
             self.assertIsInstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
 
 
@@ -377,10 +377,10 @@ another way to test if something is an instance of a class
 
         def test_making_a_class_w_pass(self):
             assert isinstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
             self.assertIsInstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
 
 
@@ -422,15 +422,15 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
 
         def test_making_a_class_w_pass(self):
             assert isinstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
             self.assertIsInstance(
-                src.classes.WPass(), object
+                src.classes.WPass, object
             )
 
         def test_making_a_class_w_parentheses(self):
             assert not isinstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
 
 
@@ -472,7 +472,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
 
     AssertionError: assert not True
 
-  because the statement ``not isinstance(src.classes.WParentheses(), object)`` is :ref:`False<test_what_is_false>`
+  because the statement ``not isinstance(src.classes.WParentheses, object)`` is :ref:`False<test_what_is_false>`
 
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
@@ -483,7 +483,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
         def test_making_a_class_w_parentheses(self):
             # assert not isinstance(
             assert isinstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
 
 
@@ -511,14 +511,28 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
 
         pass
 
-  * the :ref:`assertion<what is an assertion?>` - ``assert isinstance(src.classes.WParentheses(), object)`` checks if the result of a call to ``WParentheses`` in ``src.classes.py`` in the ``src`` folder_ also known as ``src.classes.WParentheses``, is an instance of the :ref:`object class<what is a class?>` which is the mother of all :ref:`classes<what is a class?>`
+  * the :ref:`assertion<what is an assertion?>` - ``assert isinstance(src.classes.WParentheses, object)`` checks if the result of a call to ``WParentheses`` in ``src.classes.py`` in the ``src`` folder_ also known as ``src.classes.WParentheses``, is an instance of the :ref:`object class<what is a class?>` which is the mother of all :ref:`classes<what is a class?>`
 
   * this :ref:`class definition<how to make a class>` has parentheses after the name
   * the :ref:`class definition<how to make a class>` simply says pass_ and the test passes
   * pass_ is a special keyword that allows the :ref:`class definition<how to make a class>` to follow Python_ language rules (the :ref:`class<what is a class?>` must have a body)
-  * the test is still passing because :ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`
+  * the test is still green because :ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`
 
-* I add the `assertNotIsInstance method`_ to ``test_classes.py``
+* I remove the commented line
+
+  .. code-block:: python
+    :linenos:
+
+    class WPass:
+
+        pass
+
+
+    class WParentheses():
+
+        pass
+
+* I add the `assertNotIsInstance method`_ to :ref:`test_making_a_class_w_parentheses` in ``test_classes.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -528,10 +542,10 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
         def test_making_a_class_w_parentheses(self):
             # assert not isinstance(
             assert isinstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
             self.assertNotIsInstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
 
 
@@ -554,11 +568,11 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
         def test_making_a_class_w_parentheses(self):
             # assert not isinstance(
             assert isinstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
             # self.assertNotIsInstance(
             self.assertIsInstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
 
 
@@ -573,10 +587,10 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
 
         def test_making_a_class_w_parentheses(self):
             assert isinstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
             self.assertIsInstance(
-                src.classes.WParentheses(), object
+                src.classes.WParentheses, object
             )
 
 
@@ -588,7 +602,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_making_a_function_w_return'
+    'add test_making_a_class_w_parentheses'
 
 :ref:`I can make a function with a return statement<test_making_a_function_w_return>`
 
@@ -600,7 +614,7 @@ I have two :ref:`classes<what is a class?>` with different statements, and the t
 
 .. code-block:: python
 
-  class WParentheses(): pass
+  class WParentheses: pass
 
 because ":ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`", which leads me to the next test.
 
@@ -618,17 +632,17 @@ test_making_a_class_w_object
 
 ----
 
-I add another test to ``TestClasses`` in ``test_classes.py``
+I add a test with an :ref:`assertion<what is an assertion?>`
 
 .. code-block:: python
   :lineno-start: 10
   :emphasize-lines: 4-5
 
       def test_making_a_class_w_parentheses(self):
-          self.assertIsInstance(src.classes.WParentheses(), object)
+          self.assertIsInstance(src.classes.WParentheses, object)
 
       def test_making_a_class_w_object(self):
-          self.assertIsInstance(src.classes.WObject(), object)
+          self.assertIsInstance(src.classes.WObject, object)
 
 
   # Exceptions seen
@@ -647,22 +661,43 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 ----
 
-I add a class definition to ``classes.py``
+* I add the class definition to ``classes.py``
 
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 6, 8
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 6, 8
 
-  class WParentheses():
+    class WParentheses():
 
-      pass
+        pass
 
 
-  class WObject():
+    class WObject():
 
-      pass
+        pass
 
-the test passes.
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert not True
+
+* I change the statement of the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_object` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 2-3
+
+        def test_making_a_class_w_object(self):
+            # assert not isinstance(
+            assert isinstance(
+                src.classes.WObject(), object
+            )
+
+
+    # Exceptions seen
+
+  the test passes
 
 ----
 
@@ -672,7 +707,185 @@ the test passes.
 
 ----
 
-The last two tests pass because everything in Python_ is an object_ also known as a :ref:`class<what is a class?>`. object_ is the mother :ref:`class<what is a class?>` of all :ref:`classes<what is a class?>`. I can use anything in the `assertIsInstance method`_ and the test would pass.
+* I add :ref:`object<what is a class?>` to the parentheses of the :ref:`class definition<how to make a class>` for ``WObject`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1-2
+    :emphasize-text: object
+
+    # class WObject():
+    class WObject(object):
+
+        pass
+
+  the test is still green
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 6
+
+    class WParentheses():
+
+        pass
+
+
+    class WObject(object):
+
+        pass
+
+* I add an :ref:`assertion<what is an assertion?>` with the `assertNotIsInstance method`_ to :ref:`test_making_a_class_w_object` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 6-8
+
+        def test_making_a_class_w_object(self):
+            # assert not isinstance(
+            assert isinstance(
+                src.classes.WObject(), object
+            )
+            self.assertNotIsInstance(
+                src.classes.WObject(), object
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.WObject object at 0xffffcd781234>
+        is an instance of <class 'object'>
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 6-7
+
+        def test_making_a_class_w_object(self):
+            # assert not isinstance(
+            assert isinstance(
+                src.classes.WObject(), object
+            )
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                src.classes.WObject(), object
+            )
+
+
+    # Exceptions
+
+  the test passes. I have three different :ref:`classes<what is a class?>`, and the tests show that they are all instances of the :ref:`object class<what is a class?>`
+
+  .. code-block:: python
+
+    class WPass: pass
+
+  .. code-block:: python
+
+    class WParentheses(): pass
+
+
+
+  .. code-block:: python
+
+    class WObject(object): pass
+
+  their :ref:`definitions<how to make a class>` are different, their results are the same because ":ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`"
+
+  I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that anyone can see what the :ref:`class<what is a class?>` inherits from without having to think about it.
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`None<what is None?>` to show that everything in Python_ is an object_
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 11
+
+        def test_making_a_class_w_object(self):
+            # assert not isinstance(
+            assert isinstance(
+                src.classes.WObject(), object
+            )
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                src.classes.WObject(), object
+            )
+
+            assert not isinstance(None, object)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 23
+    :emphasize-lines: 11-12
+
+        def test_making_a_class_w_object(self):
+            # assert not isinstance(
+            assert isinstance(
+                src.classes.WObject(), object
+            )
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                src.classes.WObject(), object
+            )
+
+            # assert not isinstance(None, object)
+            assert isinstance(None, object)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I use assertNotIsInstance_ to show that :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 3
+
+            # assert not isinstance(None, object)
+            assert isinstance(None, object)
+            self.assertNotIsInstance(None, object)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    E       AssertionError: None is an instance of <class 'object'>
+
+  because :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 3-4
+
+            # assert not isinstance(None, object)
+            assert isinstance(None, object)
+            # self.assertNotIsInstance(None, object)
+            self.assertIsInstance(None, object)
+
+
+    # Exceptions seen
+
+  the test passes
 
 I use the examples to show different ways to make a :ref:`class<what is a class?>`. I can also say who the parent of a :ref:`class<what is a class?>` is when I define it. I add object_ to the definition
 
@@ -713,7 +926,7 @@ I add a test to ``test_classes.py``
   :emphasize-lines: 4-8
 
       def test_making_a_class_w_object(self):
-          self.assertIsInstance(src.classes.WObject(), object)
+          self.assertIsInstance(src.classes.WObject, object)
 
       def test_attributes_and_methods_of_objects(self):
           self.assertEqual(
