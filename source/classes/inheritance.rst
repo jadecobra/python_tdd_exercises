@@ -1267,6 +1267,82 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in '[ ]')<what is a list?>`, to show that everything in Python_ is an object_
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 6
+
+            # assert not isinstance(tuple, object)
+            assert isinstance(tuple, object)
+            # self.assertNotIsInstance(tuple, object)
+            self.assertIsInstance(tuple, object)
+
+            assert not isinstance(list, object)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because :ref:`list<what is a list?>` is an :ref:`object<what is a class?>`
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 1-2
+
+            # assert not isinstance(list, object)
+            assert isinstance(list, object)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I use assertNotIsInstance_ to show that :ref:`list<what is a list?>` is an :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 3
+
+            # assert not isinstance(list, object)
+            assert isinstance(list, object)
+            self.assertNotIsInstance(list, object)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'list'> is an instance of <class 'object'>
+
+  because :ref:`list<what is a list?>` is an :ref:`object<what is a class?>`
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 63
+    :emphasize-lines: 3-4
+
+            # assert not isinstance(list, object)
+            assert isinstance(list, object)
+            # self.assertNotIsInstance(list, object)
+            self.assertIsInstance(list, object)
+
+
+    # Exceptions seen
+
+  the test passes.
+
 I use the examples to show different ways to make a :ref:`class<what is a class?>`. I can also say who the parent of a :ref:`class<what is a class?>` is when I define it. I add object_ to the definition
 
 .. code-block:: python
