@@ -224,7 +224,7 @@ test_classes
 #. :ref:`test_factory_person_says_hello`
 #. :ref:`test_update_factory_person_year_of_birth`
 #. :ref:`test_update_classy_person_year_of_birth`
-#. :ref:`test_attributes_and_methods_of_classes`
+#. :ref:`test_attributes_and_methods_of_person_class`
 
 ----
 

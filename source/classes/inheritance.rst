@@ -15,8 +15,6 @@
 family ties
 #################################################################################
 
-In :ref:`test_attributes_and_methods_of_classes` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is a class?>` and also names that I did not add, which led to the question of where they came from.
-
 In object oriented programming there is a concept called Inheritance_, it allows me to define new :ref:`objects<what is a class?>` that get their magic powers from other :ref:`objects<what is a class?>`.
 
 Making new :ref:`objects<what is a class?>` can be easier with Inheritance_ because I do not have to rewrite things that have already been written, I can inherit them instead and change the new :ref:`objects<what is a class?>` to do what I want.
@@ -1495,6 +1493,56 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 23
+
+        def test_making_a_class_w_object(self):
+            assert isinstance(
+                src.classes.WObject(), object
+            )
+            self.assertIsInstance(
+                src.classes.WObject(), object
+            )
+
+            assert isinstance(None, object)
+            self.assertIsInstance(None, object)
+
+            assert isinstance(bool, object)
+            self.assertIsInstance(bool, object)
+
+            assert isinstance(int, object)
+            self.assertIsInstance(int, object)
+
+            assert isinstance(float, object)
+            self.assertIsInstance(float, object)
+
+            assert isinstance(str, object)
+            self.assertIsInstance(str, object)
+
+            assert isinstance(tuple, object)
+            self.assertIsInstance(tuple, object)
+
+            assert isinstance(list, object)
+            self.assertIsInstance(list, object)
+
+            assert isinstance(set, object)
+            self.assertIsInstance(set, object)
+
+            assert isinstance(dict, object)
+            self.assertIsInstance(dict, object)
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_making_a_class_w_object'
+
 :ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`
 
 ----
@@ -1503,7 +1551,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 test_attributes_and_methods_of_objects
 *********************************************************************************
 
-I add a test to show the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of object_
+In :ref:`test_attributes_and_methods_of_person_class` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is a class?>` and also names that I did not add, which led to the question of where they came from.
+
+I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object class<what is a class?>`
 
 ----
 
@@ -1512,6 +1562,8 @@ I add a test to show the :ref:`attributes<what is a class attribute?>` and :ref:
 =================================================================================
 
 ----
+
+* I go back to the terminal_ that is running the tests
 
 I add a test to ``test_classes.py``
 

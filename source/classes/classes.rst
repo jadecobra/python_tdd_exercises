@@ -2722,7 +2722,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_classes
+test_attributes_and_methods_of_person_class
 *********************************************************************************
 
 Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<what is a class?>` it is given in parentheses. It allows me to see what makes up an :ref:`object<what is a class?>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
@@ -2741,7 +2741,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
   .. code-block:: python
     :lineno-start: 81
-    :emphasize-lines: 11-14
+    :emphasize-lines: 9-12
 
             reality = a_random_person.say_hello()
             my_expectation = (
@@ -2751,7 +2751,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
             )
             self.assertEqual(reality, my_expectation)
 
-        def test_attributes_and_methods_of_classes(self):
+        def test_attributes_and_methods_of_person_class(self):
             reality = dir(src.person.Person)
             my_expectation = None
             self.assertEqual(reality, my_expectation)
@@ -2784,7 +2784,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :lineno-start: 89
     :emphasize-lines: 3-7
 
-        def test_attributes_and_methods_of_classes(self):
+        def test_attributes_and_methods_of_person_class(self):
             reality = dir(src.person.Person)
             # my_expectation = None
             my_expectation = [
@@ -2813,7 +2813,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :lineno-start: 89
     :emphasize-lines: 6
 
-        def test_attributes_and_methods_of_classes(self):
+        def test_attributes_and_methods_of_person_class(self):
             reality = dir(src.person.Person)
             # my_expectation = None
             my_expectation = [
@@ -2843,7 +2843,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :emphasize-lines: 4-37
     :emphasize-text: __init__ say_hello
 
-        def test_attributes_and_methods_of_classes(self):
+        def test_attributes_and_methods_of_person_class(self):
             reality = dir(src.person.Person)
             # my_expectation = None
             # my_expectation = [
@@ -2898,7 +2898,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :emphasize-lines: 3-34
     :emphasize-text: __init__ say_hello
 
-        def test_attributes_and_methods_of_classes(self):
+        def test_attributes_and_methods_of_person_class(self):
             reality = dir(src.person.Person)
             my_expectation = [
                 '__class__',
@@ -2948,13 +2948,13 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_classes'
+    'add test_attributes_and_methods_of_person_class'
 
 
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_classes
+test_attributes_and_methods_of_person_class
 *********************************************************************************
 
 ----
@@ -2978,7 +2978,7 @@ I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`met
           ]
           self.assertEqual(reality, my_expectation)
 
-      def test_attributes_and_methods_of_instances(self):
+      def test_attributes_and_methods_of_person_instance(self):
           an_instance_of_person = src.person.Person(
               first_name=self.random_first_name,
               last_name=self.random_last_name,
@@ -3249,7 +3249,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_attributes_and_methods_of_instances'
+    'add test_attributes_and_methods_of_person_instance'
 
 ----
 
