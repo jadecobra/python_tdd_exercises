@@ -1419,6 +1419,82 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }', separated by a comma)<what is a dictionary?>`, to show that everything in Python_ is an object_
+
+  .. code-block:: python
+    :lineno-start: 68
+    :emphasize-lines: 6
+
+            # assert not isinstance(set, object)
+            assert isinstance(set, object)
+            # self.assertNotIsInstance(set, object)
+            self.assertIsInstance(set, object)
+
+            assert not isinstance(dict, object)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because :ref:`dict<what is a dictionary?>` is an :ref:`object<what is a class?>`
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 1-2
+
+            # assert not isinstance(dict, object)
+            assert isinstance(dict, object)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I use assertNotIsInstance_ to show that :ref:`dict<what is a dictionary?>` is an :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 3
+
+            # assert not isinstance(dict, object)
+            assert isinstance(dict, object)
+            self.assertNotIsInstance(dict, object)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'dict'> is an instance of <class 'object'>
+
+  because :ref:`dict<what is a dictionary?>` is an :ref:`object<what is a class?>`
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 73
+    :emphasize-lines: 3-4
+
+            # assert not isinstance(dict, object)
+            assert isinstance(dict, object)
+            # self.assertNotIsInstance(dict, object)
+            self.assertIsInstance(dict, object)
+
+
+    # Exceptions seen
+
+  the test passes.
+
 I use the examples to show different ways to make a :ref:`class<what is a class?>`. I can also say who the parent of a :ref:`class<what is a class?>` is when I define it. I add object_ to the definition
 
 .. code-block:: python
