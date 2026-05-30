@@ -885,7 +885,84 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is an object_
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 6
+
+            # assert not isinstance(None, object)
+            assert isinstance(None, object)
+            # self.assertNotIsInstance(None, object)
+            self.assertIsInstance(None, object)
+
+            assert not isinstance(bool, object)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert not True
+
+  because :ref:`bool<what are booleans?>` is an :ref:`object<what is a class?>`
+
+* I change the statement to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 1-2
+
+            # assert not isinstance(bool, object)
+            assert isinstance(bool, object)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I use assertNotIsInstance_ to show that :ref:`bool<what are booleans?>` is an :ref:`object<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 3
+
+            # assert not isinstance(bool, object)
+            assert isinstance(bool, object)
+            self.assertNotIsInstance(bool, object)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    E       AssertionError: bool is an instance of <class 'object'>
+
+  because :ref:`bool<what are booleans?>` is an :ref:`object<what is a class?>`
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 3-4
+
+            # assert not isinstance(bool, object)
+            assert isinstance(bool, object)
+            # self.assertNotIsInstance(bool, object)
+            self.assertIsInstance(bool, object)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+
 
 I use the examples to show different ways to make a :ref:`class<what is a class?>`. I can also say who the parent of a :ref:`class<what is a class?>` is when I define it. I add object_ to the definition
 
