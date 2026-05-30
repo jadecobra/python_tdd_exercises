@@ -604,7 +604,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses.
     git commit -am \
     'add test_making_a_class_w_parentheses'
 
-:ref:`I can make a function with a return statement<test_making_a_function_w_return>`
+:ref:`I can make a class with parentheses<test_making_a_class_w_parentheses>`
 
 I have two :ref:`classes<what is a class?>` with different statements, and the tests show that they are both instances of the :ref:`object class<what is a class?>`
 
@@ -719,7 +719,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
         pass
 
-  the test is still green
+  the test is still green. :ref:`I can make a class with object<test_making_a_class_w_object>`
 
 * I remove the commented line
 
@@ -1495,21 +1495,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the test passes.
 
-I use the examples to show different ways to make a :ref:`class<what is a class?>`. I can also say who the parent of a :ref:`class<what is a class?>` is when I define it. I add object_ to the definition
-
-.. code-block:: python
-  :lineno-start: 11
-  :emphasize-lines: 1
-
-  class WObject(object):
-
-      pass
-
-the test is still green. pass_ is a placeholder, it makes sure I am following Python_ rules, I can make a :ref:`class<what is a class?>` with
-
-* :ref:`pass<test_making_a_class_w_pass>`
-* :ref:`parentheses<test_making_a_class_w_parentheses>`
-* :ref:`its parent<test_making_a_class_w_object>`
+:ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`
 
 ----
 
