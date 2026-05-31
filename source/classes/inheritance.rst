@@ -239,6 +239,18 @@ I can test if an :ref:`object<what is a class?>` is a child (instance) of anothe
 
   because there is no definition for ``WPass`` in ``classes.py``
 
+* I add :ref:`AttributeError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+    :emphasize-text: AttributeError
+
+    # Exceptions seen
+    # AssertionError
+    # AttributeError
+
+
 ----
 
 =================================================================================
@@ -1676,6 +1688,18 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     NameError: name 'E' is not defined
 
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 92
+    :emphasize-lines: 4
+    :emphasize-text: NameError
+
+    # Exceptions seen
+    # AssertionError
+    # AttributeError
+    # NameError
+
 * I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
 
   .. code-block:: python
@@ -2208,6 +2232,7 @@ the test passes
   .. code-block:: python
     :lineno-start: 102
     :emphasize-lines: 6-7
+    :emphasize-text: joe
 
         def test_family_ties(self):
             doe = src.classes.Doe('doe')
@@ -2215,193 +2240,6 @@ the test passes
             self.assertEqual(doe.last_name, 'doe')
 
             joe = src.classes.Doe('joe')
-            self.assertEqual(doe.last_name, 'blow')
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'doe' != 'blow'
-
-* I add a new :ref:`class<what is a class?>` to ``classes.py``
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 1
-
-            self.assertEqual(jane.last_name, 'doe')
-
-  the test passes.
-
-* I add one more :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 2
-
-            self.assertEqual(jane.last_name, 'doe')
-            self.assertEqual(john.last_name, '')
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'doe' != ''
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 1
-
-            self.assertEqual(john.last_name, 'doe')
-
-  the test passes. All 3 people made with the ``Doe`` :ref:`class<what is a class?>` have the same last name, they are related.
-
-* I add a person from another family
-
-  .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 5
-
-        def test_family_ties(self):
-            doe = src.classes.Doe('doe')
-            jane = src.classes.Doe('jane')
-            john = src.classes.Doe('john')
-            mary = src.classes.Smith('mary')
-
-            self.assertEqual(doe.last_name, 'doe')
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.classes' has no attribute 'Smith'
-
-* I add a :ref:`class<what is a class?>` to ``classes.py``
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 2
-
-    class Doe(src.person.Person): pass
-    class Smith(src.person.Person): pass
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` of ``mary``
-
-  .. code-block:: python
-    :lineno-start: 66
-
-            self.assertEqual(john.last_name, 'doe')
-            self.assertEqual(mary.last_name, '')
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'doe' != ''
-
-* ``mary`` should have a last name of ``smith`` not ``doe``. I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 67
-    :emphasize-lines: 1
-
-            self.assertEqual(mary.last_name, 'smith')
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'doe' != 'smith'
-
-* I add a value for ``last_name`` to the ``Smith`` :ref:`class<what is a class?>` in ``classes.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 1, 3-4
-
-    class Smith(src.person.Person):
-
-        def __init__(self, first_name, last_name='smith'):
-            pass
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: 'Smith' object has no attribute 'last_name'
-
-* I need to add the :ref:`class attributes<test_attribute_error_w_class_attributes>`. I can do that by calling the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>`. Python_ has a way for me to do that, I add it
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 4
-
-    class Smith(src.person.Person):
-
-        def __init__(self, first_name, last_name='smith'):
-            super().__init__(first_name, last_name)
-
-  the test passes.
-
-  the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a method?>` of the parent :ref:`class<what is a class?>` with the values I pass in parentheses.
-
-  In this case it calls the ``Person`` :ref:`class<what is a class?>` with values for ``first_name`` and ``last_name``
-
-* I add another person to ``test_classes.py``
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 3
-
-            john = src.classes.Doe('john')
-            mary = src.classes.Smith('mary')
-            joe = src.classes.Blow('joe')
-
-            self.assertEqual(doe.last_name, 'doe')
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.classes' has no attribute 'Blow'
-
-* I add the :ref:`class<what is a class?>` to ``classes.py``
-
-  .. code-block:: python
-    :lineno-start: 21
-
-    class Smith(src.person.Person):
-
-        def __init__(self, first_name, last_name='smith'):
-            super().__init__(first_name, last_name)
-
-    class Blow(src.person.Person): pass
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` for the last name of ``joe``
-
-  .. code-block:: python
-    :lineno-start: 67
-    :emphasize-lines: 3
-
-            self.assertEqual(john.last_name, 'doe')
-            self.assertEqual(mary.last_name, 'smith')
             self.assertEqual(joe.last_name, 'blow')
 
 
@@ -2413,33 +2251,303 @@ the test passes
 
     AssertionError: 'doe' != 'blow'
 
-* I add the ``__init__`` :ref:`method<what is a method?>` to the class
+* I add a new :ref:`class definition<how to make a class>` to ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 19
+
+    class Doe(src.person.Person):
+
+        pass
+
 
     class Blow(src.person.Person):
 
-        def __init__(self, first_name, last_name='blow'):
-            pass
+        pass
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
-
-    AttributeError: 'Blow' object has no attribute 'last_name'
-
-* I use the `super built-in function`_
+* I change ``joe`` to use the new ``Blow`` :ref:`class<what is a class?>`, in :ref:`test_family_ties` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 107
+    :emphasize-lines: 1-2
+    :emphasize-text: joe
+
+            # joe = src.classes.Doe('joe')
+            joe = src.classes.Blow('joe')
+            self.assertEqual(joe.last_name, 'blow')
+
+
+    # Exceptions seen
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` in the ``Blow`` :ref:`class<what is a class?>` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 3-4
 
     class Blow(src.person.Person):
 
+        # pass
+        last_name = 'blow'
+
+  the terminal_ does not feel like my friend, it still shows :ref:`AssertionError<what causes AssertionError?>`
+
+* I add the ``__init__`` :ref:`method<what is a method?>` to customize the last name
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 4, 6-8
+
+    class Blow(src.person.Person):
+
+        # pass
+        # last_name = 'blow'
+
         def __init__(self, first_name, last_name='blow'):
-            super().__init__(first_name, last_name)
+            self.last_name = last_name
+            return None
+
+  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`, this is not working
+
+----
+
+=================================================================================
+how to call the parent from the child
+=================================================================================
+
+----
+
+* I need to call the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` so I can pass a value for ``last_name``. I do that with the `super built-in function`_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 7-8
+
+    class Blow(src.person.Person):
+
+        # pass
+        # last_name = 'blow'
+
+        def __init__(self, first_name, last_name='blow'):
+            # self.last_name = last_name
+            super().__init__(first_name, last_name=last_name)
+            return None
 
   the test passes.
+
+  - the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a method?>` of the parent :ref:`class<what is a class?>` with the values I pass in parentheses.
+  - In this case it calls the ``Person`` :ref:`class<what is a class?>` with values for ``first_name`` and ``last_name``
+  - this shows that I can define :ref:`classes<what is a class?>` that are related and have their own defaults. In this case the ``Doe`` :ref:`class<what is a class?>` has a default ``last_name`` that is the same as the default last name for ``Person`` and the ``Blow`` :ref:`class<what is a class?>` has a different default ``last_name``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 24
+
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name, last_name='blow'):
+            super().__init__(first_name, last_name=last_name)
+            return None
+
+* In this case there is a simpler way to make ``joe`` and ``doe``. I could directly pass the values to the ``Person`` :ref:`class<what is a class?>` since all the ``Blow`` :ref:`class<what is a class?>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<what is a class?>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_family_ties` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 5-6
+    :emphasize-text: person
+
+            # joe = src.classes.Doe('joe')
+            joe = src.classes.Blow('joe')
+            self.assertEqual(joe.last_name, 'blow')
+
+            blow = src.person.Person('joe')
+            self.assertEqual(blow.last_name, joe.last_name)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != 'blow'
+
+* I add ``last_name='blow'`` to the call
+
+  .. code-block:: python
+    :lineno-start: 107
+    :emphasize-lines: 5-6
+
+            # joe = src.classes.Doe('joe')
+            joe = src.classes.Blow('joe')
+            self.assertEqual(joe.last_name, 'blow')
+
+            # blow = src.person.Person('joe')
+            blow = src.person.Person('joe', last_name='blow')
+            self.assertEqual(blow.last_name, joe.last_name)
+
+
+    # Exceptions seen
+
+  the test passes. I can make instances of :ref:`classes<what is a class?>` by customizing its :ref:`attributes<what is a class attribute?>` without having to make a new :ref:`class<what is a class?>`.
+
+* I add an :ref:`assertion<what is an assertion?>` for ``jane``
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 5-6
+
+            # blow = src.person.Person('joe')
+            blow = src.person.Person('joe', last_name='blow')
+            self.assertEqual(blow.last_name, joe.last_name)
+
+            jane = src.person.Person('jane')
+            self.assertEqual(jane.last_name, blow.last_name)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != 'blow'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 115
+    :emphasize-lines: 2-3
+
+            jane = src.person.Person('jane')
+            # self.assertEqual(jane.last_name, blow.last_name)
+            self.assertEqual(jane.last_name, doe.last_name)
+
+
+    # Exceptions seen
+
+  the test passes
+
+* I add an :ref:`assertion<what is an assertion?>` for ``john``
+
+  .. code-block:: python
+    :lineno-start: 115
+    :emphasize-lines: 5-6
+
+            jane = src.person.Person('jane')
+            # self.assertEqual(jane.last_name, blow.last_name)
+            self.assertEqual(jane.last_name, doe.last_name)
+
+            john = src.classes.Smith('john')
+            self.assertEqual(john.last_name, 'smith')
+
+
+    # Exceptions seen
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.classes' has no attribute 'Smith'
+
+* I add a new :ref:`class definition<how to make a class>` with a call to the `super built-in function`_ to ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 8, 10-12
+
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name, last_name='blow'):
+            super().__init__(first_name, last_name=last_name)
+            return None
+
+
+    class Smith(src.person.Person):
+
+        def __init__(self, first_name, last_name='smith'):
+            super().__init__(first_name, last_name=last_name)
+            return None
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_family_ties` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 4-5
+    :emphasize-text: person
+
+            john = src.classes.Smith('john')
+            self.assertEqual(john.last_name, 'smith')
+
+            smith = src.person.Person('john', 'smith')
+            self.assertEqual(smith.last_name, doe.last_name)
+
+
+    # Exceptions
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'smith' != 'doe'
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 122
+    :emphasize-lines: 2-3
+
+            smith = src.person.Person('john', 'smith')
+            # self.assertEqual(smith.last_name, doe.last_name)
+            self.assertEqual(smith.last_name, john.last_name)
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 102
+
+        def test_family_ties(self):
+            doe = src.classes.Doe('doe')
+            self.assertEqual(doe.last_name, 'doe')
+
+            joe = src.classes.Blow('joe')
+            self.assertEqual(joe.last_name, 'blow')
+
+            blow = src.person.Person('joe', last_name='blow')
+            self.assertEqual(blow.last_name, joe.last_name)
+
+            jane = src.person.Person('jane')
+            self.assertEqual(jane.last_name, doe.last_name)
+
+            john = src.classes.Smith('john')
+            self.assertEqual(john.last_name, 'smith')
+
+            smith = src.person.Person('john', 'smith')
+            self.assertEqual(smith.last_name, john.last_name)
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_family_ties'
+
+
 
 * I add a new person who is a child of ``jane`` named ``baby`` in ``test_classes.py``
 
