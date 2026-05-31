@@ -2094,6 +2094,33 @@ because there is no definition for ``Doe`` in ``classes.py``
 
     # Exceptions seen
 
+* I remove the commented lines from ``classes.py``
+
+  .. code-block:: python
+    :linenos:
+
+    import src.person
+
+
+    class WPass:
+
+        pass
+
+
+    class WParentheses():
+
+        pass
+
+
+    class WObject(object):
+
+        pass
+
+
+    class Doe(src.person.Person):
+
+        pass
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2118,33 +2145,19 @@ test_family_ties
 
 ----
 
-* I add a new test for Inheritance_
+* I add a new test for Inheritance_ with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 6-9
+    :lineno-start: 97
+    :emphasize-lines: 6-8
 
             self.assertEqual(
                 dir(src.classes.Doe),
-                dir(src.person.Person)
+                dir(src.person.Person),
             )
 
         def test_family_ties(self):
             doe = src.classes.Doe('doe')
-            jane = src.classes.Doe('jane')
-            john = src.classes.Doe('john')
-
-
-    # Exceptions seen
-
-* I add an :ref:`assertion<what is an assertion?>` for the last name of ``doe``
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 3
-
-            john = src.classes.Doe('john')
-
             self.assertEqual(doe.last_name, '')
 
 
@@ -2155,6 +2168,8 @@ test_family_ties
   .. code-block:: python
 
     AssertionError: 'doe' != ''
+
+  because ``Doe`` is an instance of ``Person`` it gets all the :ref:`attributes<what is a class?>` and :ref:`methods<what is a method?>` of ``Person``. I do not need to rewrite an ``__init__`` :ref:`method<what is a method?>` to handle creation of copies of the ``Doe`` :ref:`class<what is a class?>`.
 
 ----
 
@@ -2167,10 +2182,18 @@ test_family_ties
 I change the expectation
 
 .. code-block:: python
-  :lineno-start: 63
-  :emphasize-lines: 1
+  :lineno-start: 102
+  :emphasize-lines: 3-4
 
-            self.assertEqual(doe.last_name, 'doe')
+      def test_family_ties(self):
+          doe = src.classes.Doe('doe')
+          # self.assertEqual(doe.last_name, '')
+          self.assertEqual(doe.last_name, 'doe')
+
+
+  # Exceptions seen
+
+the test passes
 
 ----
 
@@ -2183,13 +2206,16 @@ I change the expectation
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 4
+    :lineno-start: 102
+    :emphasize-lines: 6-7
 
-            john = src.classes.Doe('john')
-
+        def test_family_ties(self):
+            doe = src.classes.Doe('doe')
+            # self.assertEqual(doe.last_name, '')
             self.assertEqual(doe.last_name, 'doe')
-            self.assertEqual(jane.last_name, '')
+
+            joe = src.classes.Doe('joe')
+            self.assertEqual(doe.last_name, 'blow')
 
 
     # Exceptions seen
@@ -2198,7 +2224,9 @@ I change the expectation
 
   .. code-block:: python
 
-    AssertionError: 'doe' != ''
+    AssertionError: 'doe' != 'blow'
+
+* I add a new :ref:`class<what is a class?>` to ``classes.py``
 
 * I change the expectation
 
