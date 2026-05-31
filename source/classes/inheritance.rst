@@ -2547,50 +2547,228 @@ how to call the parent from the child
 
     git commit -am 'add test_family_ties'
 
+----
 
+*********************************************************************************
+test_classes_w_multiple_parents
+*********************************************************************************
 
-* I add a new person who is a child of ``jane`` named ``baby`` in ``test_classes.py``
+A :ref:`class<what is a class?>` can have more than one parent.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test with an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
     :lineno-start: 63
     :emphasize-lines: 2
+    :emphasize-text: Jane
 
-            joe = src.classes.Blow('joe')
-            baby = src.classes.Baby('baby')
+        def test_classes_w_multiple_parents(self):
+            jane = src.classes.Jane()
+            self.assertEqual(jane.first_name, 'jane')
 
-            self.assertEqual(doe.last_name, 'doe')
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.classes' has no attribute 'Baby'
+    AttributeError: module 'src.classes' has no attribute 'Jane'
 
-* I add a :ref:`class<what is a class?>` for ``baby`` in ``classes.py``
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a :ref:`class<what is a class?>` for ``Jane`` to ``classes.py``
+
+.. code-block:: python
+  :lineno-start: 31
+  :emphasize-lines: 7, 9-10
+
+  class Smith(src.person.Person):
+
+      def __init__(self, first_name, last_name='smith'):
+          super().__init__(first_name, last_name=last_name)
+
+
+  class Jane(src.person.Person):
+
+      def __init__(self, first_name='jane'):
+          super().__init__(first_name=first_name)
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` for the last name of ``jane`` for fun
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 7
+    :lineno-start: 121
+    :emphasize-lines: 4
 
-    class Blow(src.person.Person):
+        def test_classes_w_multiple_parents(self):
+            jane = src.classes.Jane()
+            self.assertEqual(jane.first_name, 'jane')
+            self.assertEqual(jane.last_name, '')
 
-        def __init__(self, first_name, last_name='blow'):
-            super().__init__(first_name, last_name)
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != ''
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 121
+    :emphasize-lines: 3-4
+
+        def test_classes_w_multiple_parents(self):
+            jane = src.classes.Jane()
+            self.assertEqual(jane.first_name, 'jane')
+            # self.assertEqual(jane.last_name, '')
+            self.assertEqual(jane.last_name, 'doe')
 
 
-    class Baby(Doe): pass
+    # Exceptions seen
 
   the test passes.
 
-* ``baby`` is also the child of ``joe``. I add an :ref:`assertion<what is an assertion?>` for the last name of ``baby`` in ``test_classes.py``
+* I add an :ref:`assertion<what is an assertion?>` for ``mary`` who is a child of ``jane``
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 3
+    :lineno-start: 121
+    :emphasize-lines: 7-8
 
-            self.assertEqual(mary.last_name, 'smith')
+        def test_classes_w_multiple_parents(self):
+            jane = src.classes.Jane()
+            self.assertEqual(jane.first_name, 'jane')
+            # self.assertEqual(jane.last_name, '')
+            self.assertEqual(jane.last_name, 'doe')
+
+            mary = src.classes.Jane('mary')
+            self.assertEqual(mary.first_name, '')
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'mary' != ''
+
+* I change the expectation
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 2-3
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for ``joe``
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 5-6
+    :emphasize-text: Joe
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+
+            joe = src.classes.Joe()
+            self.assertEqual(joe.first_name, 'mary')
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError:
+        module 'src.classes' has no attribute 'Joe'.
+        Did you mean: 'Doe'?
+
+* I add the ``Joe`` :ref:`class<what is a class?>` to ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 7, 9-10
+
+    class Jane(src.person.Person):
+
+        def __init__(self, first_name='jane'):
+            super().__init__(first_name=first_name)
+
+
+    class Joe(src.person.Person):
+
+        def __init__(self, first_name='joe'):
+            super().__init__(first_name=first_name)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'joe' != 'mary'
+
+* I change the expectation in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 2-3
+
+            joe = src.classes.Joe()
+            # self.assertEqual(joe.first_name, 'mary')
+            self.assertEqual(joe.first_name, 'joe')
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to make sure that ``joe`` is a ``Blow``
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 4
+
+            joe = src.classes.Joe()
+            # self.assertEqual(joe.first_name, 'mary')
+            self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
-            self.assertEqual(baby.last_name, 'blow')
 
 
     # Exceptions seen
@@ -2601,13 +2779,398 @@ how to call the parent from the child
 
     AssertionError: 'doe' != 'blow'
 
-* I add another parent to the ``Baby`` :ref:`class<what is a class?>` in ``classes.py``
+* I add a value for ``last_name`` to ``Joe`` in ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 1
+    :lineno-start: 43
+    :emphasize-lines:
 
-    class Baby(Blow, Doe): pass
+    class Joe(src.person.Person):
+
+        def __init__(self, first_name='joe', last_name='blow'):
+            # super().__init__(first_name=first_name)
+            super().__init__(
+                first_name=first_name, last_name=last_name
+            )
+
+  the test passes. I cheated, which means I need a better test.
+
+* I add assertIsInstance_ to :ref:`test_classes_w_multiple_parents` to make sure ``joe`` is a ``Blow``, in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 5
+
+            joe = src.classes.Joe()
+            # self.assertEqual(joe.first_name, 'mary')
+            self.assertEqual(joe.first_name, 'joe')
+            self.assertEqual(joe.last_name, 'blow')
+            self.assertIsInstance(joe, src.classes.Blow)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.Joe object at 0xffffabcdef80>
+        is not an instance of <class 'src.classes.Blow'>
+
+  better
+
+* I change the parent of ``Joe`` to ``Blow``, in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 1-2
+
+    # class Joe(src.person.Person):
+    class Joe(Blow):
+
+        def __init__(self, first_name='joe', last_name='blow'):
+            # super().__init__(first_name=first_name)
+            super().__init__(
+                first_name=first_name, last_name=last_name
+            )
+
+  the test passes.
+
+* I can remove ``last_name`` from the call to the parent
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 5-8
+
+    # class Joe(src.person.Person):
+    class Joe(Blow):
+
+        def __init__(self, first_name='joe', last_name='blow'):
+            super().__init__(first_name=first_name)
+            # super().__init__(
+            #    first_name=first_name, last_name=last_name
+            # )
+
+  the test is still green
+
+* I can remove ``last_name`` from the definition of the ``__init__`` :ref:`method<what is a method?>` because it is a repetition
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 4-5
+
+    # class Joe(src.person.Person):
+    class Joe(Blow):
+
+        # def __init__(self, first_name='joe', last_name='blow'):
+        def __init__(self, first_name='joe'):
+            super().__init__(first_name=first_name)
+            # super().__init__(
+            #    first_name=first_name, last_name=last_name
+            # )
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 37
+
+    class Jane(src.person.Person):
+
+        def __init__(self, first_name='jane'):
+            super().__init__(first_name=first_name)
+
+
+    class Joe(Blow):
+
+        def __init__(self, first_name='joe'):
+            super().__init__(first_name=first_name)
+
+* I add assertIsInstance_ to :ref:`test_classes_w_multiple_parents` for ``jane`` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 121
+    :emphasize-lines: 6
+
+        def test_classes_w_multiple_parents(self):
+            jane = src.classes.Jane()
+            self.assertEqual(jane.first_name, 'jane')
+            # self.assertEqual(jane.last_name, '')
+            self.assertEqual(jane.last_name, 'doe')
+            self.assertIsInstance(jane, src.classes.Doe)
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            self.assertNotIsInstance(mary, src.classes.Jane)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.Jane object at 0xffffa8b7c6d5>
+        is not an instance of <class 'src.classes.Doe'>
+
+* I change the parent of ``Jane`` to ``Doe``, in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1-2
+
+    # class Jane(src.person.Person):
+    class Jane(Doe):
+
+        def __init__(self, first_name='jane'):
+            super().__init__(first_name=first_name)
+
+  the test passes.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 37
+
+    class Jane(Doe):
+
+        def __init__(self, first_name='jane'):
+            super().__init__(first_name=first_name)
+
+* I add assertNotIsInstance_ to :ref:`test_classes_w_multiple_parents` for ``mary`` to make sure she is a child of ``Jane``, in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 4
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            self.assertNotIsInstance(mary, src.classes.Jane)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.Jane object at 0xffff0e1d2c3b>
+        is an instance of <class 'src.classes.Jane'>
+
+* I change assertNotIsInstance_ to assertIsInstance_ to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 4-5
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertNotIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Jane)
+
+  the test passes.
+
+* I add another :ref:`assertion<what is an assertion?>` to show that ``mary`` is a child of ``Doe``
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 6
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertNotIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Jane)
+            self.assertNotIsInstance(mary, src.classes.Doe)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.Jane object at 0xffff12e3dc45>
+        is an instance of <class 'src.classes.Doe'>
+
+  because ``mary`` is a ``Jane`` and the parent of ``Jane`` is a ``Doe``
+
+* I change assertNotIsInstance_ to assertIsInstance_
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 6-7
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertNotIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Jane)
+            # self.assertNotIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Doe)
+
+  the test passes. I can follow the parents all the way back to :ref:`object<what is a class?>`
+
+  - ``mary`` is a ``Jane``
+  - the parent of ``Jane`` is ``Doe``
+  - the parent of ``Doe`` is ``Person``
+  - the parent of ``Person`` is :ref:`object<what is a class?>`
+  - ``mary`` is an :ref:`object<what is a class?>` because :ref:`all classes inherit from 'object' by default<test_making_a_class_w_object>`
+
+* What if ``mary`` is also a child of ``joe``? I add an :ref:`assertion<what is an assertion?>` to test it
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 8
+
+            mary = src.classes.Jane('mary')
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertNotIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Jane)
+            # self.assertNotIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Joe)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.Jane object at 0xffff87a65cb43>
+        is not an instance of <class 'src.classes.Joe'>
+
+  ``mary`` is not a child of ``joe``, yet
+
+* I change the way I make ``mary`` to use a :ref:`class<what is a class?>`
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 1-2
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertNotIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Jane)
+            # self.assertNotIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Joe)
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.classes' has no attribute 'Mary'
+
+* I add a :ref:`class definition<how to make a class>` for ``Mary`` to ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 7, 9-10
+
+    class Joe(Blow):
+
+        def __init__(self, first_name='joe'):
+            super().__init__(first_name=first_name)
+
+
+    class Mary(Jane):
+
+        def __init__(self, first_name='mary'):
+            super().__init__(first_name=first_name)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <src.classes.Jane object at 0xffffb4c5d6e7>
+        is not an instance of <class 'src.classes.Joe'>
+
+* I add ``Joe`` as a parent to ``Mary``
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 1-2
+
+    # class Mary(Jane):
+    class Mary(Joe, Jane):
+
+        def __init__(self, first_name='mary'):
+            super().__init__(first_name=first_name)
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError:
+        Jane.__init__() got an
+        unexpected keyword argument 'last_name'.
+        Did you mean 'first_name'?
+
+* I add a :ref:`double starred expression<double starred expressions>` so that ``Jane`` can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 3-6
+
+    class Jane(Doe):
+
+        # def __init__(self, first_name='jane'):
+        def __init__(self, first_name='jane', **kwargs):
+            # super().__init__(first_name=first_name)
+            super().__init__(first_name=first_name, **kwargs)
+
+  the test passes because ``mary`` is an instance of ``Mary`` which is a child of ``Joe`` and ``Jane``
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` for the ``last_name`` of ``mary``, in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 10
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertNotIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Jane)
+            # self.assertNotIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Joe)
+            self.assertEqual(mary.last_name, jane.last_name)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'blow' != 'doe'
+
+* I change the expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 10, 17
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            # self.assertEqual(mary.first_name, '')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertNotIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Jane)
+            # self.assertNotIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Joe)
+            # self.assertEqual(mary.last_name, jane.last_name)
+
+            joe = src.classes.Joe()
+            # self.assertEqual(joe.first_name, 'mary')
+            self.assertEqual(joe.first_name, 'joe')
+            self.assertEqual(joe.last_name, 'blow')
+            self.assertIsInstance(joe, src.classes.Blow)
+            self.assertEqual(mary.last_name, joe.last_name)
+
+
+    # Exceptions seen
 
   the test passes.
 
@@ -2618,7 +3181,7 @@ how to call the parent from the child
     :emphasize-lines: 3
 
             joe = src.classes.Blow('joe')
-            baby = src.classes.Baby('baby')
+            mary = src.classes.mary('mary')
             lil = src.classes.Lil('lil')
 
             self.assertEqual(doe.last_name, 'doe')
@@ -2635,7 +3198,7 @@ how to call the parent from the child
     :lineno-start: 33
     :emphasize-lines: 4
 
-    class Baby(Blow, Doe): pass
+    class mary(Blow, Doe): pass
 
 
     class Lil(Doe): pass
@@ -2649,7 +3212,7 @@ how to call the parent from the child
     :emphasize-lines: 3
 
             self.assertEqual(joe.last_name, 'blow')
-            self.assertEqual(baby.last_name, 'blow')
+            self.assertEqual(mary.last_name, 'blow')
             self.assertEqual(lil.last_name, '')
 
 
@@ -2675,7 +3238,7 @@ how to call the parent from the child
 
     AssertionError: 'smith' != ''
 
-  this is a problem. When I made ``Baby``, it took the last name of the first parent, and when I try the same thing with ``Lil`` it has the last name of the second parent
+  this is a problem. When I made ``mary``, it took the last name of the first parent, and when I try the same thing with ``Lil`` it has the last name of the second parent
 
 * I add a call to the `super built-in function`_ in the ``Doe`` :ref:`class<what is a class?>`
 
@@ -2697,7 +3260,7 @@ how to call the parent from the child
 
     TypeError: Doe.__init__() takes 2 positional arguments but 3 were given
 
-  because the ``Baby`` class passes a value for ``last_name``
+  because the ``mary`` class passes a value for ``last_name``
 
 * I add ``last_name`` to the call to ``__init__`` :ref:`method<what is a method?>`
 
