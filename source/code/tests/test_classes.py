@@ -1,77 +1,178 @@
-import unittest
 import src.classes
-import src.person
+import unittest
 
 
 class TestClasses(unittest.TestCase):
 
     def test_making_a_class_w_pass(self):
-        self.assertIsInstance(src.classes.WPass(), object)
+        assert isinstance(
+            src.classes.WPass, object
+        )
+        self.assertIsInstance(
+            src.classes.WPass, object
+        )
 
     def test_making_a_class_w_parentheses(self):
-        self.assertIsInstance(src.classes.WParentheses(), object)
+        assert isinstance(
+            src.classes.WParentheses, object
+        )
+        self.assertIsInstance(
+            src.classes.WParentheses, object
+        )
 
     def test_making_a_class_w_object(self):
-        self.assertIsInstance(src.classes.WObject(), object)
+        assert isinstance(
+            src.classes.WObject, object
+        )
+        self.assertIsInstance(
+            src.classes.WObject, object
+        )
+
+        assert isinstance(None, object)
+        self.assertIsInstance(None, object)
+
+        assert isinstance(bool, object)
+        self.assertIsInstance(bool, object)
+
+        assert isinstance(int, object)
+        self.assertIsInstance(int, object)
+
+        assert isinstance(float, object)
+        self.assertIsInstance(float, object)
+
+        assert isinstance(str, object)
+        self.assertIsInstance(str, object)
+
+        assert isinstance(tuple, object)
+        self.assertIsInstance(tuple, object)
+
+        assert isinstance(list, object)
+        self.assertIsInstance(list, object)
+
+        assert isinstance(set, object)
+        self.assertIsInstance(set, object)
+
+        assert isinstance(dict, object)
+        self.assertIsInstance(dict, object)
 
     def test_attributes_and_methods_of_objects(self):
-        self.assertEqual(
-            dir(object),
-            [
-                '__class__',
-                '__delattr__',
-                '__dir__',
-                '__doc__',
-                '__eq__',
-                '__format__',
-                '__ge__',
-                '__getattribute__',
-                '__getstate__',
-                '__gt__',
-                '__hash__',
-                '__init__',
-                '__init_subclass__',
-                '__le__',
-                '__lt__',
-                '__ne__',
-                '__new__',
-                '__reduce__',
-                '__reduce_ex__',
-                '__repr__',
-                '__setattr__',
-                '__sizeof__',
-                '__str__',
-                '__subclasshook__'
-            ]
-        )
+        reality = dir(object)
+        my_expectation = [
+            '__class__',
+            '__delattr__',
+            '__dir__',
+            '__doc__',
+            '__eq__',
+            '__format__',
+            '__ge__',
+            '__getattribute__',
+            '__getstate__',
+            '__gt__',
+            '__hash__',
+            '__init__',
+            '__init_subclass__',
+            '__le__',
+            '__lt__',
+            '__ne__',
+            '__new__',
+            '__reduce__',
+            '__reduce_ex__',
+            '__repr__',
+            '__setattr__',
+            '__sizeof__',
+            '__str__',
+            '__subclasshook__'
+        ]
+        self.assertEqual(reality, my_expectation)
 
     def test_making_classes_w_inheritance(self):
-        self.assertIsInstance(
-            src.classes.Doe('doe'),
-            src.person.Person
+        a_class = src.classes.Doe
+
+        assert not isinstance(a_class, src.person.Person)
+        self.assertNotIsInstance(
+            a_class, src.person.Person
         )
+
+        assert not isinstance(a_class, a_class)
+        self.assertNotIsInstance(a_class, a_class)
+
+        an_instance = src.classes.Doe('doe')
+        assert isinstance(
+            an_instance, src.person.Person
+        )
+        self.assertIsInstance(
+            an_instance, src.person.Person
+        )
+
         self.assertEqual(
-            dir(src.classes.Doe),
+            dir(a_class),
             dir(src.person.Person)
         )
 
     def test_family_ties(self):
-        doe = src.classes.Doe('doe')
-        jane = src.classes.Doe('jane')
-        john = src.classes.Doe('john')
-        mary = src.classes.Smith('mary')
-        joe = src.classes.Blow('joe')
-        baby = src.classes.Baby('baby')
-        lil = src.classes.Lil('lil')
-
+        doe = src.classes.Doe('first')
         self.assertEqual(doe.last_name, 'doe')
-        self.assertEqual(jane.last_name, 'doe')
-        self.assertEqual(john.last_name, 'doe')
-        self.assertEqual(mary.last_name, 'smith')
+
+        joe = src.classes.Blow('joe')
         self.assertEqual(joe.last_name, 'blow')
-        self.assertEqual(baby.last_name, 'blow')
-        self.assertEqual(lil.last_name, 'doe')
+
+        blow = src.person.Person('joe', last_name='blow')
+        self.assertEqual(blow.last_name, joe.last_name)
+
+        jane = src.person.Person('jane')
+        self.assertEqual(jane.last_name, doe.last_name)
+
+        john = src.classes.Smith('john')
+        self.assertEqual(john.last_name, 'smith')
+
+        smith = src.person.Person('john', 'smith')
+        self.assertEqual(smith.last_name, john.last_name)
+
+    def test_classes_w_multiple_parents(self):
+        jane = src.classes.Jane()
+        self.assertEqual(jane.first_name, 'jane')
+        # self.assertEqual(jane.last_name, '')
+        self.assertEqual(jane.last_name, 'doe')
+        self.assertIsInstance(jane, src.classes.Doe)
+
+        joe = src.classes.Joe()
+        # self.assertEqual(joe.first_name, 'mary')
+        self.assertEqual(joe.first_name, 'joe')
+        self.assertEqual(joe.last_name, 'blow')
+        self.assertIsInstance(joe, src.classes.Blow)
+
+        # mary = src.classes.Jane('mary')
+        mary = src.classes.Mary('mary')
+        # self.assertEqual(mary.first_name, '')
+        self.assertEqual(mary.first_name, 'mary')
+        # self.assertEqual(mary.last_name, '')
+        # self.assertEqual(mary.last_name, jane.last_name)
+        self.assertEqual(mary.last_name, joe.last_name)
+        # self.assertNotIsInstance(mary, src.classes.Jane)
+        self.assertIsInstance(mary, src.classes.Jane)
+        # self.assertNotIsInstance(mary, src.classes.Doe)
+        self.assertIsInstance(mary, src.classes.Doe)
+        self.assertIsInstance(mary, src.classes.Joe)
+
+        john = src.classes.John()
+        # self.assertEqual(john.first_name, 'mary')
+        self.assertEqual(john.first_name, 'john')
+        # self.assertEqual(john.last_name, 'john')
+        self.assertEqual(john.last_name, 'smith')
+        self.assertIsInstance(john, src.classes.Smith)
+
+        lil = src.classes.Lil()
+        # self.assertEqual(lil.first_name, 'john')
+        self.assertEqual(lil.first_name, 'lil')
+        # self.assertEqual(lil.last_name, lil.first_name)
+        self.assertEqual(lil.last_name, john.last_name)
+        # self.assertNotIsInstance(lil, src.classes.John)
+        self.assertIsInstance(lil, src.classes.John)
+        self.assertIsInstance(lil, src.classes.Mary)
 
 
 # Exceptions seen
 # AssertionError
+# NameError
+# AttributeError
+# TypeError
