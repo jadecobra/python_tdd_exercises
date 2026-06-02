@@ -972,7 +972,7 @@ I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that a
 test_is_none_an_object
 *********************************************************************************
 
-All classes inherit from :ref:`object (the mother of all classes)<what is a class?>`, they are :ref:`subclasses (children)<what is a class?>` of :ref:`object<what is a class?>`
+I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
 
 ----
 
@@ -984,7 +984,7 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`None<what is None?>` to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -995,7 +995,7 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
             assert isinstance(an_instance, object)
             self.assertIsInstance(an_instance, object)
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
             assert not isinstance(None, object)
 
 
@@ -1009,20 +1009,36 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   because :ref:`None<what is None?>` is an :ref:`object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
 
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 2-3
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-        def test_making_a_class_w_object(self):
-            # assert not isinstance(None, object)
-            assert isinstance(None, object)
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 22
+  :emphasize-lines: 2-3
+
+      def test_is_none_an_object(self):
+          # assert not isinstance(None, object)
+          assert isinstance(None, object)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test passes.
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
 
 * I use assertNotIsInstance_ to show that :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
 
@@ -1030,7 +1046,7 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
     :lineno-start: 22
     :emphasize-lines: 4
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
             # assert not isinstance(None, object)
             assert isinstance(None, object)
             self.assertNotIsInstance(None, object)
@@ -1049,9 +1065,10 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 * I change assertNotIsInstance_ to assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 3-4
+    :lineno-start: 22
+    :emphasize-lines: 4-5
 
+        def test_is_none_an_object(self):
             # assert not isinstance(None, object)
             assert isinstance(None, object)
             # self.assertNotIsInstance(None, object)
@@ -1062,7 +1079,46 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 22
+
+        def test_is_none_an_object(self):
+            assert isinstance(None, object)
+            self.assertIsInstance(None, object)
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_none_an_object'
+
+----
+
+*********************************************************************************
+test_is_a_boolean_an_object
+*********************************************************************************
+
+I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 33
@@ -1138,7 +1194,34 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_none_an_object'
+
+----
+
+*********************************************************************************
+test_is_an_integer_an_object
+*********************************************************************************
+
+I want to test if an integer_ (a whole number without decimals) is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for integers_), to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 38
@@ -1214,7 +1297,34 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_an_integer_an_object'
+
+----
+
+*********************************************************************************
+test_is_a_float_an_object
+*********************************************************************************
+
+I want to test if a float_ (a binary floating point decimal number) is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* * I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_), to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -1290,7 +1400,34 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_a_float_an_object'
+
+----
+
+*********************************************************************************
+test_is_a_string_an_object
+*********************************************************************************
+
+I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* * I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for strings_), to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1366,7 +1503,34 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_a_string_an_object'
+
+----
+
+*********************************************************************************
+test_is_a_tuple_an_object
+*********************************************************************************
+
+I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for tuples_), to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 53
@@ -1442,7 +1606,34 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_a_tuple_an_object'
+
+----
+
+*********************************************************************************
+test_is_a_list_an_object
+*********************************************************************************
+
+I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for lists`, to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1518,7 +1709,34 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_a_list_an_object'
+
+----
+
+*********************************************************************************
+test_is_a_set_an_object
+*********************************************************************************
+
+I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for sets_), to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1594,7 +1812,34 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }', separated by a comma)<what is a dictionary?>`, to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_a_set_an_object'
+
+----
+
+*********************************************************************************
+test_is_a_dictionary_an_object
+*********************************************************************************
+
+I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`
+
+----
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for dictionaries)<what is a dictionary?>`, to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 68
@@ -1718,7 +1963,7 @@ All classes inherit from :ref:`object (the mother of all classes)<what is a clas
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_making_a_class_w_object'
+    git commit -am 'add test_is_a_dictionary_an_object'
 
 * :ref:`I can make a class with object<test_making_a_class_w_object>`
 * :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
