@@ -976,7 +976,7 @@ I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that a
 test_is_none_an_object
 *********************************************************************************
 
-I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
+I want to test if :ref:`None<what is None?>` is an :ref:`object.<what is a class?>`
 
 ----
 
@@ -1108,7 +1108,7 @@ the test passes.
 test_is_a_boolean_an_object
 *********************************************************************************
 
-I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<what is a class?>`
+I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object.<what is a class?>`
 
 ----
 
@@ -1287,7 +1287,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals), to show that everything in Python_ is a :ref:`child of object.<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1422,7 +1422,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers), to show that everything in Python_ is a :ref:`child of object.<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 30
@@ -1544,7 +1544,7 @@ the test passes.
 test_is_a_string_an_object
 *********************************************************************************
 
-I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what is a class?>`
+I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object.<what is a class?>`
 
 ----
 
@@ -1678,9 +1678,7 @@ the test passes.
 test_is_a_tuple_an_object
 *********************************************************************************
 
-I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object<what is a class?>`
-
-----
+I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object.<what is a class?>`
 
 ----
 
