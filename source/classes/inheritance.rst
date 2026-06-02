@@ -1044,7 +1044,7 @@ the test passes.
 
 ----
 
-* I use assertNotIsInstance_ to show that :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that :ref:`None<what is None?>` is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1108,7 +1108,7 @@ the test passes.
 test_is_a_boolean_an_object
 *********************************************************************************
 
-I want to test if a :ref:`boolean<what are booleans>` is an :ref:`object<what is a class?>`
+I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<what is a class?>`
 
 ----
 
@@ -1128,7 +1128,7 @@ I can test if an :ref:`object<what is a class?>` is a :ref:`subclass (child) <wh
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1189,7 +1189,7 @@ the test passes.
 
 ----
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is a :ref:`subclass (child)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is a :ref:`subclass (child)<how to test if something is a subclass of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsSubclass_ and assertNotIsSubclass_
 
 ----
 
@@ -1199,27 +1199,28 @@ another way to test if something is NOT a subclass of a class
 
 ----
 
-* I use assertNotIsInstance_ to show that :ref:`bool<what are booleans?>` is an :ref:`object<what is a class?>`
+I use `unittest.TestCase.assertNotIsSubclass`_ to show that :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`
 
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 3
+.. code-block:: python
+  :lineno-start: 26
+  :emphasize-lines: 4
 
-            # assert not isinstance(bool, object)
-            assert isinstance(bool, object)
-            self.assertNotIsInstance(bool, object)
+      def test_is_a_boolean_an_object(self):
+          # assert not issubclass(bool, object)
+          assert issubclass(bool, object)
+          self.assertNotIsSubclass(bool, object)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
 
-  .. code-block:: shell
+.. code-block:: shell
 
-    AssertionError:
-        <class 'bool'> is an instance of <class 'object'>
+  AssertionError:
+      <class 'bool'> is a subclass of <class 'object'>
 
-  because :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`.
+because :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`.
 
 ----
 
@@ -1229,28 +1230,44 @@ another way to test if something is a subclass of a class
 
 ----
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 3-4
+    :lineno-start: 26
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(bool, object)
-            assert isinstance(bool, object)
-            # self.assertNotIsInstance(bool, object)
-            self.assertIsInstance(bool, object)
+        def test_is_a_boolean_an_object(self):
+            # assert not issubclass(bool, object)
+            assert issubclass(bool, object)
+            # self.assertNotIsSubclass(bool, object)
+            self.assertIsSubclass(bool, object)
 
 
     # Exceptions seen
 
   the test passes.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 26
+
+        def test_is_a_boolean_an_object(self):
+            assert issubclass(bool, object)
+            self.assertIsSubclass(bool, object)
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_is_none_an_object'
+    git commit -am \
+    'add test_is_a_boolean_an_object'
+
+:ref:`A boolean is an object.<test_is_a_boolean_an_object>`
 
 ----
 
@@ -1262,8 +1279,6 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
 ----
 
-----
-
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1272,7 +1287,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for integers_), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for integers_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 38
@@ -1310,7 +1325,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that int_ is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that int_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -1375,7 +1390,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
 * I go back to the terminal_ that is running the tests
 
-* * I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* * I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -1413,7 +1428,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that float_ is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that float_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1478,7 +1493,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
 * I go back to the terminal_ that is running the tests
 
-* * I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for strings_), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* * I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for strings_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1516,7 +1531,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that str_ is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that str_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 53
@@ -1581,7 +1596,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for tuples_), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for tuples_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 53
@@ -1619,7 +1634,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that tuple_ is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that tuple_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1684,7 +1699,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for lists`, to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for lists)<what is a list?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1722,7 +1737,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that :ref:`list<what is a list?>` is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1787,7 +1802,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for sets_), to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for sets_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1825,7 +1840,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that set_ is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that set_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 68
@@ -1890,7 +1905,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for dictionaries)<what is a dictionary?>`, to show that everything in Python_ is an :ref:`object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for dictionaries)<what is a dictionary?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 68
@@ -1928,7 +1943,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that :ref:`dict<what is a dictionary?>` is an :ref:`object<what is a class?>`
+* I use assertNotIsInstance_ to show that :ref:`dict<what is a dictionary?>` is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 73
