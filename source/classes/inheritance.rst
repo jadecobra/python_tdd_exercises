@@ -1532,10 +1532,9 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1
 
-    git commit -am \
-    'add test_is_a_float_an_object'
+    git commit -am 'add test_is_a_float_an_object'
 
 :ref:`A float is an object.<test_is_a_float_an_object>`
 
@@ -1546,8 +1545,6 @@ test_is_a_string_an_object
 *********************************************************************************
 
 I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what is a class?>`
-
-----
 
 ----
 
@@ -1562,15 +1559,15 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 * I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 6
+    :lineno-start: 34
+    :emphasize-lines: 5-6
 
-            # assert not isinstance(float, object)
-            assert isinstance(float, object)
-            # self.assertNotIsInstance(float, object)
-            self.assertIsInstance(float, object)
+        def test_is_a_float_an_object(self):
+            assert issubclass(float, object)
+            self.assertIsSubclass(float, object)
 
-            assert not isinstance(str, object)
+        def test_is_a_string_an_object(self):
+            assert not issubclass(str, object)
 
 
     # Exceptions seen
@@ -1583,29 +1580,47 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
   because str_ is a :ref:`child of object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 38
+  :emphasize-lines: 2-3
+
+      def test_is_a_string_an_object(self):
+          # assert not issubclass(str, object)
+          assert issubclass(str, object)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use assertNotIsSubclass_ to show that str_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 1-2
+    :lineno-start: 38
+    :emphasize-lines: 4
 
-            # assert not isinstance(str, object)
-            assert isinstance(str, object)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I use assertNotIsInstance_ to show that str_ is a :ref:`child of object<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 3
-
-            # assert not isinstance(str, object)
-            assert isinstance(str, object)
-            self.assertNotIsInstance(str, object)
+        def test_is_a_string_an_object(self):
+            # assert not issubclass(str, object)
+            assert issubclass(str, object)
+            self.assertNotIsSubclass(str, object)
 
 
     # Exceptions seen
@@ -1615,25 +1630,38 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
   .. code-block:: shell
 
     AssertionError:
-        <class 'str'> is an instance of <class 'object'>
+        <class 'str'> is a subclass of <class 'object'>
 
   because str_ is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 3-4
+    :lineno-start: 38
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(str, object)
-            assert isinstance(str, object)
-            # self.assertNotIsInstance(str, object)
-            self.assertIsInstance(str, object)
+        def test_is_a_string_an_object(self):
+            # assert not issubclass(str, object)
+            assert issubclass(str, object)
+            # self.assertNotIsSubclass(str, object)
+            self.assertIsSubclass(str, object)
 
 
     # Exceptions seen
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 38
+
+        def test_is_a_string_an_object(self):
+            assert issubclass(str, object)
+            self.assertIsSubclass(str, object)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1642,7 +1670,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
     git commit -am 'add test_is_a_string_an_object'
 
-:ref:`An integer is an object.<test_is_an_integer_an_object>`
+:ref:`A float is an object.<test_is_a_float_an_object>`
 
 ----
 
