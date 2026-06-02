@@ -450,7 +450,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   .. note::
 
-    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
+    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an :ref:`child (instance)<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
     - the :ref:`if statement<if statements>` ``if isinstance(first_input, str) or isinstance(second_input, str):`` is :ref:`True<test_what_is_true>` if
 
       * ``first_input`` is a string_ and ``second_input`` is NOT a string_

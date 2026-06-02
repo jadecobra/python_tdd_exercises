@@ -6,6 +6,8 @@
 
 .. _class: https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes
 .. _classes: class_
+.. _object: https://docs.python.org/3/glossary.html#term-object
+.. _objects: object_
 
 #################################################################################
 what is a class?

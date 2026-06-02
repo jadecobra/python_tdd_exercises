@@ -70,8 +70,6 @@
 .. _int: https://docs.python.org/3/library/functions.html#int
 .. _itertools module: https://docs.python.org/3/library/itertools.html
 .. _other Integrated Development Environment (IDE) options: https://wiki.python.org/moin/IntegratedDevelopmentEnvironments
-.. _object: https://docs.python.org/3/glossary.html#term-object
-.. _objects: object_
 .. _integer: int_
 .. _integers: int_
 .. _apt: https://grokipedia.com/page/APT_(software)
