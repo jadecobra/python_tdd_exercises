@@ -1290,15 +1290,15 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 * I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for integers_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 6
+    :lineno-start: 26
+    :emphasize-lines: 5-6
 
-            # assert not isinstance(bool, object)
-            assert isinstance(bool, object)
-            # self.assertNotIsInstance(bool, object)
-            self.assertIsInstance(bool, object)
+        def test_is_a_boolean_an_object(self):
+            assert issubclass(bool, object)
+            self.assertIsSubclass(bool, object)
 
-            assert not isinstance(int, object)
+        def test_is_an_integer_an_object(self):
+            assert not issubclass(int, object)
 
 
     # Exceptions seen
@@ -1311,29 +1311,47 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
   because int_ is a :ref:`child of object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 30
+  :emphasize-lines: 2-3
+
+      def test_is_an_integer_an_object(self):
+          # assert not issubclass(int, object)
+          assert issubclass(int, object)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use assertNotIsSubclass_ to show that int_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 1-2
+    :lineno-start: 30
+    :emphasize-lines: 4
 
-            # assert not isinstance(int, object)
-            assert isinstance(int, object)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I use assertNotIsInstance_ to show that int_ is a :ref:`child of object<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 3
-
-            # assert not isinstance(int, object)
-            assert isinstance(int, object)
-            self.assertNotIsInstance(int, object)
+        def test_is_an_integer_an_object(self):
+            # assert not issubclass(int, object)
+            assert issubclass(int, object)
+            self.assertNotIsSubclass(int, object)
 
 
     # Exceptions seen
@@ -1343,32 +1361,46 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
   .. code-block:: shell
 
     AssertionError:
-        <class 'int'> is an instance of <class 'object'>
+        <class 'int'> is a subclass of <class 'object'>
 
   because int_ is a :ref:`child of object<what is a class?>`.
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
     :lineno-start: 43
-    :emphasize-lines: 3-4
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(int, object)
-            assert isinstance(int, object)
-            # self.assertNotIsInstance(int, object)
-            self.assertIsInstance(int, object)
+        def test_is_an_integer_an_object(self):
+            # assert not issubclass(int, object)
+            assert issubclass(int, object)
+            # self.assertNotIsSubclass(int, object)
+            self.assertIsSubclass(int, object)
 
 
     # Exceptions seen
 
   the test passes.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 30
+
+        def test_is_an_integer_an_object(self):
+            assert issubclass(int, object)
+            self.assertIsSubclass(int, object)
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_is_an_integer_an_object'
+    git commit -am \
+    'add test_is_an_integer_an_object'
 
 ----
 
@@ -1380,8 +1412,6 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
 ----
 
-----
-
 =================================================================================
 :red:`RED`: make it fail
 =================================================================================
@@ -1390,7 +1420,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
 * I go back to the terminal_ that is running the tests
 
-* * I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 43
