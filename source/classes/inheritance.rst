@@ -2080,7 +2080,7 @@ the test passes.
 test_is_a_dictionary_an_object
 *********************************************************************************
 
-I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`
+I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object.<what is a class?>`
 
 ----
 
@@ -2097,15 +2097,15 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 50
     :emphasize-lines: 6
 
-            # assert not isinstance(set, object)
-            assert isinstance(set, object)
-            # self.assertNotIsInstance(set, object)
-            self.assertIsInstance(set, object)
+        def test_is_a_set_an_object(self):
+            assert issubclass(set, object)
+            self.assertIsSubclass(set, object)
 
-            assert not isinstance(dict, object)
+        def test_is_a_dictionary_an_object(self):
+            assert not issubclass(dict, object)
 
 
     # Exceptions seen
@@ -2121,26 +2121,28 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 1-2
+    :lineno-start: 54
+    :emphasize-lines: 2-3
 
-            # assert not isinstance(dict, object)
-            assert isinstance(dict, object)
+        def test_is_a_dictionary_an_object(self):
+            # assert not issubclass(dict, object)
+            assert issubclass(dict, object)
 
 
     # Exceptions seen
 
   the test passes.
 
-* I use assertNotIsInstance_ to show that :ref:`dict<what is a dictionary?>` is a :ref:`child of object<what is a class?>`
+* I use assertNotIsSubclass_ to show that :ref:`dict<what is a dictionary?>` is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 3
+    :lineno-start: 54
+    :emphasize-lines: 4
 
-            # assert not isinstance(dict, object)
-            assert isinstance(dict, object)
-            self.assertNotIsInstance(dict, object)
+        def test_is_a_dictionary_an_object(self):
+            # assert not issubclass(dict, object)
+            assert issubclass(dict, object)
+            self.assertNotIsSubclass(dict, object)
 
 
     # Exceptions seen
@@ -2150,14 +2152,14 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
   .. code-block:: shell
 
     AssertionError:
-        <class 'dict'> is an instance of <class 'object'>
+        <class 'dict'> is a subclass of <class 'object'>
 
   because :ref:`dict<what is a dictionary?>` is a :ref:`child of object<what is a class?>`.
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 73
+    :lineno-start: 54
     :emphasize-lines: 3-4
 
             # assert not isinstance(dict, object)
@@ -2173,42 +2175,11 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 54
 
-        def test_making_a_class_w_object(self):
-            assert isinstance(
-                src.classes.WObject(), object
-            )
-            self.assertIsInstance(
-                src.classes.WObject(), object
-            )
-
-            assert isinstance(None, object)
-            self.assertIsInstance(None, object)
-
-            assert isinstance(bool, object)
-            self.assertIsInstance(bool, object)
-
-            assert isinstance(int, object)
-            self.assertIsInstance(int, object)
-
-            assert isinstance(float, object)
-            self.assertIsInstance(float, object)
-
-            assert isinstance(str, object)
-            self.assertIsInstance(str, object)
-
-            assert isinstance(tuple, object)
-            self.assertIsInstance(tuple, object)
-
-            assert isinstance(list, object)
-            self.assertIsInstance(list, object)
-
-            assert isinstance(set, object)
-            self.assertIsInstance(set, object)
-
-            assert isinstance(dict, object)
-            self.assertIsInstance(dict, object)
+        def test_is_a_dictionary_an_object(self):
+            assert issubclass(dict, object)
+            self.assertIsSubclass(dict, object)
 
 
     # Exceptions seen
@@ -2216,11 +2187,12 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_is_a_dictionary_an_object'
+    git commit -am \
+    'add test_is_a_dictionary_an_object'
 
-:ref:`An integer is an object.<test_is_an_integer_an_object>`
+:ref:`A dictionary is an object.<test_is_a_dictionary_an_object>`
 
 ----
 
