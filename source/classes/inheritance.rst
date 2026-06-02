@@ -1199,7 +1199,7 @@ another way to test if something is NOT a subclass of a class
 
 ----
 
-I use `unittest.TestCase.assertNotIsSubclass`_ to show that :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`
+I use `unittest.TestCase.assertNotIsSubclass`_ to show that :ref:`bool (the class for booleans)<what are booleans?>` is a :ref:`child of object<what is a class?>`
 
 .. code-block:: python
   :lineno-start: 26
@@ -1287,7 +1287,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for integers_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1402,6 +1402,8 @@ the test passes.
     git commit -am \
     'add test_is_an_integer_an_object'
 
+:ref:`An integer is an object.<test_is_an_integer_an_object>`
+
 ----
 
 *********************************************************************************
@@ -1420,18 +1422,18 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for floats_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 6
+    :lineno-start: 30
+    :emphasize-lines: 5-6
 
-            # assert not isinstance(int, object)
-            assert isinstance(int, object)
-            # self.assertNotIsInstance(int, object)
-            self.assertIsInstance(int, object)
+        def test_is_an_integer_an_object(self):
+            assert issubclass(int, object)
+            self.assertIsSubclass(int, object)
 
-            assert not isinstance(float, object)
+        def test_is_a_float_an_object(self):
+            assert not issubclass(float, object)
 
 
     # Exceptions seen
@@ -1444,29 +1446,47 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
   because float_ is a :ref:`child of object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 34
+  :emphasize-lines: 2-3
+
+      def test_is_a_float_an_object(self):
+          # assert not issubclass(float, object)
+          assert issubclass(float, object)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use assertNotIsSubclass_ to show that float_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 1-2
+    :lineno-start: 34
+    :emphasize-lines: 4
 
-            # assert not isinstance(float, object)
-            assert isinstance(float, object)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I use assertNotIsInstance_ to show that float_ is a :ref:`child of object<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 3
-
-            # assert not isinstance(float, object)
-            assert isinstance(float, object)
-            self.assertNotIsInstance(float, object)
+        def test_is_a_float_an_object(self):
+            # assert not issubclass(float, object)
+            assert issubclass(float, object)
+            self.assertNotIsSubclass(float, object)
 
 
     # Exceptions seen
@@ -1476,32 +1496,48 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
   .. code-block:: shell
 
     AssertionError:
-        <class 'float'> is an instance of <class 'object'>
+        <class 'float'> is a subclass of <class 'object'>
 
   because float_ is a :ref:`child of object<what is a class?>`.
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 3-4
+    :lineno-start: 34
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(float, object)
-            assert isinstance(float, object)
-            # self.assertNotIsInstance(float, object)
-            self.assertIsInstance(float, object)
+        def test_is_a_float_an_object(self):
+            # assert not issubclass(float, object)
+            assert issubclass(float, object)
+            # self.assertNotIsSubclass(float, object)
+            self.assertIsSubclass(float, object)
 
 
     # Exceptions seen
 
   the test passes.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 34
+
+        def test_is_a_float_an_object(self):
+            assert issubclass(float, object)
+            self.assertIsSubclass(float, object)
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_is_a_float_an_object'
+    git commit -am \
+    'add test_is_a_float_an_object'
+
+:ref:`A float is an object.<test_is_a_float_an_object>`
 
 ----
 
@@ -1523,7 +1559,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
 * I go back to the terminal_ that is running the tests
 
-* * I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for strings_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -1606,6 +1642,8 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
     git commit -am 'add test_is_a_string_an_object'
 
+:ref:`An integer is an object.<test_is_an_integer_an_object>`
+
 ----
 
 *********************************************************************************
@@ -1626,7 +1664,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for tuples_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 53
@@ -1709,6 +1747,8 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
     git commit -am 'add test_is_a_tuple_an_object'
 
+:ref:`An integer is an object.<test_is_an_integer_an_object>`
+
 ----
 
 *********************************************************************************
@@ -1729,7 +1769,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for lists)<what is a list?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -1812,6 +1852,8 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
     git commit -am 'add test_is_a_list_an_object'
 
+:ref:`An integer is an object.<test_is_an_integer_an_object>`
+
 ----
 
 *********************************************************************************
@@ -1832,7 +1874,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for sets_), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 63
@@ -1915,6 +1957,8 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
     git commit -am 'add test_is_a_set_an_object'
 
+:ref:`An integer is an object.<test_is_an_integer_an_object>`
+
 ----
 
 *********************************************************************************
@@ -1935,7 +1979,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for dictionaries)<what is a dictionary?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 68
@@ -2061,8 +2105,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
     git commit -am 'add test_is_a_dictionary_an_object'
 
-* :ref:`I can make a class with object<test_making_a_class_w_object>`
-* :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+:ref:`An integer is an object.<test_is_an_integer_an_object>`
 
 ----
 
@@ -4697,6 +4740,8 @@ I can make a :ref:`class<what is a class?>` with
 * :ref:`object<test_making_a_class_w_object>`
 * :ref:`its parent<test_making_a_class_w_inheritance>`
 * :ref:`multiple parents<test_classes_w_multiple_parents>`
+* :ref:`I can make a class with object<test_making_a_class_w_object>`
+* :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
 
 ----
 
