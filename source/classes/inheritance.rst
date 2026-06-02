@@ -10,6 +10,7 @@
 .. _isinstance built-in function: isinstance_
 .. _unittest.TestCase.assertIsInstance:
 .. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
+.. _Method Resolution Order: https://docs.python.org/3/howto/mro.html#python-2-3-mro
 
 #################################################################################
 family ties
@@ -1755,7 +1756,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 ----
 
 *********************************************************************************
-test_making_classes_w_inheritance
+test_making_a_class_w_inheritance
 *********************************************************************************
 
 I can make :ref:`classes<what is a class?>` with inheritance
@@ -1779,7 +1780,7 @@ I add a new test
           ]
           self.assertEqual(reality, my_expectation)
 
-      def test_making_classes_w_inheritance(self):
+      def test_making_a_class_w_inheritance(self):
           a_class = src.classes.Doe
           assert isinstance(a_class, src.person.Person)
 
@@ -1893,13 +1894,13 @@ because there is no definition for ``Doe`` in ``classes.py``
 
   because ``Doe`` is still not an instance of ``Person`` even though I defined ``Person`` as the parent of ``Doe``
 
-* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_classes_w_inheritance` in ``test_classes.py``
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_inheritance` in ``test_classes.py``
 
   .. code-block:: python
     :lineno-start: 88
     :emphasize-lines: 3-4
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -1928,7 +1929,7 @@ because there is no definition for ``Doe`` in ``classes.py``
     :lineno-start: 88
     :emphasize-lines: 5
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -1953,7 +1954,7 @@ because there is no definition for ``Doe`` in ``classes.py``
     :lineno-start: 88
     :emphasize-lines: 5-8
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -1973,7 +1974,7 @@ because there is no definition for ``Doe`` in ``classes.py``
     :lineno-start: 88
     :emphasize-lines: 9
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -2001,7 +2002,7 @@ because there is no definition for ``Doe`` in ``classes.py``
     :emphasize-lines: 9-10
 
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -2023,7 +2024,7 @@ because there is no definition for ``Doe`` in ``classes.py``
     :lineno-start: 88
     :emphasize-lines: 11
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -2054,7 +2055,7 @@ because there is no definition for ``Doe`` in ``classes.py``
     :lineno-start: 88
     :emphasize-lines: 11-12
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -2083,7 +2084,7 @@ what is the difference between an instance and a class?
     :lineno-start: 88
     :emphasize-lines: 14-17
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
             # assert isinstance(a_class, src.person.Person)
             assert not isinstance(a_class, src.person.Person)
@@ -2274,7 +2275,7 @@ what is the difference between an instance and a class?
   .. code-block:: python
     :lineno-start: 88
 
-        def test_making_classes_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
 
             assert not isinstance(a_class, src.person.Person)
@@ -2326,9 +2327,9 @@ what is the difference between an instance and a class?
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_making_classes_w_inheritance'
+    'add test_making_a_class_w_inheritance'
 
-:ref:`I can make a class with inheritance<test_making_classes_w_inheritance>`
+:ref:`I can make a class with inheritance<test_making_a_class_w_inheritance>`
 
 ----
 
@@ -2748,7 +2749,7 @@ what happens when the child calls the parent?
     joe = src.classes.Blow('joe')
           Blow.__init__('joe')
           super().__init__(first_name, last_name='blow')
-        = Person().__init__('joe', last_name='blow')
+        = Person.__init__('joe', last_name='blow')
           joe.first_name = 'joe'
           joe.last_name = 'blow'
 
@@ -2759,32 +2760,18 @@ what happens when the child calls the parent?
     john = src.classes.Smith('john')
            Smith.__init__('john')
            super().__init__(first_name, last_name='smith')
-         = Person().__init__('john', last_name='smith')
+         = Person.__init__('john', last_name='smith')
            self.first_name = 'john'
            self.last_name = 'smith'
 
-* Python_ makes the following calls to resolve a call to make instances of the ``Person`` :ref:`class<what is a class?>`
+* Python_ makes this following call to make instances of the ``Person`` :ref:`class<what is a class?>`
 
   .. code-block:: python
 
-    blow = src.person.Person('joe', last_name='blow')
-           Person.__init__('joe', last_name='blow')
-           self.first_name = 'joe'
-           self.last_name = 'blow'
-
-  .. code-block:: python
-
-    jane = src.person.Person('jane')
-           Person.__init__('jane', last_name='doe')
-           self.first_name = 'jane'
-           self.last_name = 'doe'
-
-  .. code-block:: python
-
-    smith = src.person.Person('john', 'smith')
-          = Person.__init__('john', 'smith')
-            self.first_name = 'john'
-            self.last_name = 'smith'
+    a_name = src.person.Person(first_name, last_name=last_name)
+             Person.__init__(first_name, last_name=last_name)
+             self.first_name = first_name
+             self.last_name = last_name
 
 ----
 
@@ -3149,9 +3136,9 @@ the test passes.
     joe = src.classes.Joe()
           Joe.__init__(first_name='joe')
           super().__init__(first_name=first_name)
-        = Blow().__init__('joe')
+        = Blow.__init__('joe')
           super().__init__(first_name, last_name='blow')
-        = Person().__init__('joe', last_name='blow')
+        = Person.__init__('joe', last_name='blow')
           self.first_name = 'joe'
           self.last_name = 'blow'
 
@@ -3220,7 +3207,7 @@ the test passes.
            Jane.__init__(first_name='jane')
            super().__init__(first_name=first_name)
          = Doe # Doe has no __init__, skip to Person
-         = Person().__init__(first_name='jane', last_name='doe')
+         = Person.__init__(first_name='jane', last_name='doe')
            self.first_name = 'jane'
            self.last_name = 'doe'
 
@@ -3328,7 +3315,7 @@ the test passes.
            Jane.__init__(first_name='jane')
            super().__init__(first_name=first_name)
          = Doe # Doe has no __init__, skip to Person
-         = Person().__init__(first_name='mary', last_name='doe')
+         = Person.__init__(first_name='mary', last_name='doe')
            self.first_name = 'mary'
            self.last_name = 'doe'
 
@@ -3411,6 +3398,14 @@ the test passes.
         <src.classes.Mary object at 0xffffb4c5d6e7>
         is not an instance of <class 'src.classes.Joe'>
 
+----
+
+=================================================================================
+what happens when the child calls more than one parent?
+=================================================================================
+
+----
+
 * I add ``Joe`` as a parent of ``Mary``
 
   .. code-block:: python
@@ -3431,20 +3426,17 @@ the test passes.
 
   because Python_ makes the following calls to resolve the call to make an instance of the ``Mary`` :ref:`class<what is a class?>` if the parents are ``(Joe, Jane)``
 
-  I get the following calls for the ``Joe`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+  first it makes these calls for the ``Joe`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
 
     mary = src.classes.Mary() # Mary has no __init__, skip to Joe
            Joe.__init__()
            super().__init__(first_name=first_name)
-         = Blow().__init__(first_name='joe')
+         = Blow.__init__(first_name='joe')
            super().__init__(first_name, last_name='blow')
-         = Person().__init__('joe', last_name='blow')
-           self.first_name = 'joe'
-           self.last_name = 'blow'
 
-  then I get the following calls for the ``Jane`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+  then it makes this call for the ``Jane`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
 
@@ -3487,29 +3479,26 @@ the test passes.
 
   the test passes because Python_ makes the following calls to resolve the call to make an instance of the ``Mary`` :ref:`class<what is a class?>` if the parents are ``(Joe, Jane)``
 
-  I get the following calls for the ``Joe`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+  first it makes these calls for the ``Joe`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
 
     mary = src.classes.Mary()
            Mary.__init__(first_name='mary')
-           super().__init__(first_name='mary')
+           super().__init__(first_name=first_name)
          = Joe.__init__(first_name='mary')
            super().__init__(first_name=first_name)
-         = Blow().__init__(first_name='mary')
+         = Blow.__init__(first_name='mary')
            super().__init__(first_name, last_name='blow')
-         = Person().__init__('mary', last_name='blow')
-           self.first_name = 'mary'
-           self.last_name = 'blow'
 
-  then I get the following calls for the ``Jane`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+  then it makes these calls for the ``Jane`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
 
     mary = Jane.__init__(first_name='mary', last_name='blow')
            super().__init__(first_name=first_name)
          = Doe # Doe has no __init__, skip to Person
-         = Person().__init__(first_name='mary', last_name='doe')
+         = Person.__init__(first_name='mary', last_name='doe')
            self.first_name = 'mary'
            self.last_name = 'doe'
 
@@ -3539,6 +3528,7 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 144
+    :emphasize-lines: 6-7
 
             # mary = src.classes.Jane('mary')
             mary = src.classes.Mary()
@@ -3558,7 +3548,7 @@ the test passes.
 
   the test passes because Python_ makes the following calls to resolve the call to make an instance of the ``Mary`` :ref:`class<what is a class?>` if the parents are ``(Jane, Joe)``
 
-  I get the following calls for the ``Jane`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+  first it makes these calls for the ``Jane`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
 
@@ -3566,20 +3556,17 @@ the test passes.
            super().__init__(first_name=first_name)
          = Jane.__init__(first_name='mary', **kwargs)
            super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, skip to Person
-         = Person().__init__(first_name='mary', last_name='doe')
-           self.first_name = 'mary'
-           self.last_name = 'doe'
+         = Doe # Doe has no __init__, skip to Joe
 
-  then I get the following calls for the ``Joe`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+  then it makes these calls for the ``Joe`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
 
     mary = Joe.__init__(first_name='mary')
            super().__init__(first_name=first_name)
-         = Blow().__init__(first_name='mary')
+         = Blow.__init__(first_name='mary')
            super().__init__(first_name, last_name='blow')
-         = Person().__init__('mary', last_name='blow')
+         = Person.__init__('mary', last_name='blow')
            self.first_name = 'mary'
            self.last_name = 'blow'
 
@@ -3622,7 +3609,7 @@ the test passes.
 * I add a :ref:`class definition<how to make a class>` for ``John`` to ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 41
     :emphasize-lines: 10, 12-13
 
     # class Mary(Jane): pass
@@ -3687,7 +3674,7 @@ the test passes.
 * I change the parent of ``John`` to ``Smith`` in ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 50
     :emphasize-lines: 1-2
 
     # class John(src.person.Person):
@@ -3737,25 +3724,6 @@ the test passes.
 
   the test passes.
 
-* I remove the commented line from ``John`` in ``classes.py``
-
-  .. code-block:: python
-    :lineno-start: 42
-
-    # class Mary(Jane): pass
-    # class Mary(Joe, Jane): pass
-    # class Mary(Joe, Jane):
-    class Mary(Jane, Joe):
-
-        def __init__(self, first_name='mary'):
-            super().__init__(first_name=first_name)
-
-
-    class John(Smith):
-
-        def __init__(self, first_name='john'):
-            super().__init__(first_name=first_name)
-
 ----
 
 * I add another person, a child of ``john`` to :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
@@ -3786,9 +3754,10 @@ the test passes.
 * I add a :ref:`class definition<how to make a class>` for ``Lil`` to ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 7
+    :lineno-start: 50
+    :emphasize-lines: 8
 
+    # class John(src.person.Person):
     class John(Smith):
 
         def __init__(self, first_name='john'):
@@ -3867,7 +3836,20 @@ the test passes.
 
     # Exceptions seen
 
-  the test passes.
+  the test passes because Python_ makes the following calls to resolve the call to make an instance of the ``Lil`` :ref:`class<what is a class?>` when ``John`` is the parent
+
+  .. code-block:: python
+
+    lil = src.classes.Lil()
+          Lil.__init__(first_name='lil')
+          super().__init__(first_name=first_name)
+        = John.__init__(first_name='lil')
+          super().__init__(first_name=first_name)
+        = Smith.__init__('lil')
+          super().__init__(first_name, last_name='smith')
+        = Person.__init__('lil', last_name='smith')
+          self.first_name = 'joe'
+          self.last_name = 'blow'
 
 * I add assertIsInstance_ to test if ``Lil`` is an instance of ``Mary``
 
@@ -3877,7 +3859,7 @@ the test passes.
 
             lil = src.classes.Lil()
             self.assertIsInstance(lil, src.classes.John)
-            self.assertNotIsInstance(lil, src.classes.Mary)
+            self.assertIsInstance(lil, src.classes.Mary)
             self.assertEqual(lil.first_name, 'lil')
             # self.assertEqual(lil.last_name, lil.first_name)
             self.assertEqual(lil.last_name, john.last_name)
@@ -3916,49 +3898,69 @@ the test passes.
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
+  because Python_ makes the following calls to resolve the call to make an instance of the ``Lil`` :ref:`class<what is a class?>` if the parents are ``(Mary, John)``
+
+  first it makes these calls for the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+
+  .. code-block:: python
+
+    lil = src.classes.Lil()
+          Lil.__init__(first_name='lil')
+          super().__init__(first_name=first_name)
+        = Mary.__init__(first_name='lil')
+          super().__init__(first_name=first_name)
+        = Jane.__init__(first_name='lil', **kwargs)
+          super().__init__(first_name=first_name)
+        = Doe # Doe has no __init__, skip to Joe
+        = Person.__init__(first_name='lil', last_name='doe')
+        = Joe.__init__(first_name='lil')
+          super().__init__(first_name=first_name)
+        = Blow.__init__('lil')
+          super().__init__(first_name, last_name='blow')
+
+  then it makes this call for the ``John`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+
+  .. code-block:: python
+
+    lil = John.__init__(first_name='lil', last_name='blow')
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` of ``John`` only takes one :ref:`keyword_argument<test_w_keyword_arguments>` (``first_name``) and the call provides two (``first_name`` and ``last_name``)
+
 * I add a :ref:`double starred expression<double starred expressions>` to ``John`` so it can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 3-6
+    :lineno-start: 50
+    :emphasize-lines: 4-5
 
+    # class John(src.person.Person):
     class John(Smith):
 
         # def __init__(self, first_name='john'):
         def __init__(self, first_name='john', **kwargs):
-            # super().__init__(first_name=first_name)
-            super().__init__(first_name=first_name, **kwargs)
+            super().__init__(first_name=first_name)
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-
-    TypeError: Smith.__init__() got
-               an unexpected keyword argument 'last_name'.
-               Did you mean 'first_name'?
-
-  same problem, same solution
-
-* I add a :ref:`double starred expression<double starred expressions>` to ``Smith`` so it can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
+  the test passes Python_ makes this call for the ``John`` parent after it gets values from the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 3-4
 
-    class Smith(src.person.Person):
+    lil = John.__init__(first_name='lil', last_name='blow')
+          super().__init__(first_name=first_name)
+        = Smith.__init__(first_name='lil')
+          super().__init__(first_name, last_name='smith')
+        = Person.__init__('lil', last_name='smith')
+          self.first_name = 'lil'
+          self.last_name = 'smith'
 
-        # def __init__(self, first_name):
-        def __init__(self, first_name, **kwargs):
-            super().__init__(first_name, last_name='smith')
-
-  the test passes.
+----
 
 * I change the order of the parents of ``Lil``
 
   .. code-block:: python
-    :lineno-start: 56
-    :emphasize-lines: 1-2
+    :lineno-start: 58
+    :emphasize-lines: 3-4
 
+    # class Lil(John): pass
+    # class Lil(John):
     # class Lil(Mary, John):
     class Lil(John, Mary):
 
@@ -3969,198 +3971,221 @@ the test passes.
 
   .. code-block:: shell
 
-    TypeError: Joe.__init__() got
+    TypeError: Mary.__init__() got
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
   same problem, same solution
 
-* I add a :ref:`double starred expression<double starred expressions>` to ``Joe`` so it can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
+* I add a :ref:`double starred expression<double starred expressions>` to ``Mary`` so it can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 3-6
+    :lineno-start: 41
+    :emphasize-lines: 6-7
 
-    class Joe(Blow):
+    # class Mary(Jane): pass
+    # class Mary(Joe, Jane): pass
+    # class Mary(Joe, Jane):
+    class Mary(Jane, Joe):
 
-        # def __init__(self, first_name='joe'):
-        def __init__(self, first_name='joe', **kwargs):
-            # super().__init__(first_name=first_name)
-            super().__init__(first_name=first_name, **kwargs)
+        # def __init__(self, first_name='mary'):
+        def __init__(self, first_name='mary', **kwargs):
+            super().__init__(first_name=first_name)
 
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    TypeError: Blow.__init__() got
-               an unexpected keyword argument 'last_name'.
-               Did you mean 'first_name'?
-
-  same problem, ...
-
-* I add a :ref:`double starred expression<double starred expressions>` to ``Blow`` so it can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 3-4
-
-    class Blow(src.person.Person):
-
-        # def __init__(self, first_name):
-        def __init__(self, first_name, **kwargs):
-            super().__init__(first_name, last_name='blow')
-
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
     AssertionError: 'blow' != 'smith'
 
-  okay! It looks like the order of the parents matter when a call to ``super().__init__`` is made in the ``__init__`` :ref:`method<what is an assertion>`
+  the order of the parents matters because Python_ makes the following calls to resolve the call to make an instance of the ``Lil`` :ref:`class<what is a class?>` if the parents are ``(John, Mary)``
 
-* I change the order of the parents of ``Lil`` back to ``Mary, John``
+  first it makes these calls for the ``John`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+
+  .. code-block:: python
+
+    lil = src.classes.Lil()
+          Lil.__init__(first_name='lil')
+          super().__init__(first_name=first_name)
+        = John.__init__(first_name='lil', **kwargs)
+          super().__init__(first_name=first_name)
+        = Smith.__init__(first_name='lil')
+          super().__init__(first_name, last_name='smith')
+
+  then it makes these calls for the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+
+  .. code-block:: python
+
+    lil = Mary.__init__(first_name='lil', **kwargs)
+          super().__init__(first_name=first_name)
+        = Jane.__init__(first_name='lil', **kwargs)
+          super().__init__(first_name=first_name)
+        = Doe # Doe has no __init__, skip to Joe
+        = Joe.__init__(first_name='lil')
+          super().__init__(first_name=first_name)
+        = Blow.__init__('lil')
+          super().__init__(first_name, last_name='blow')
+        = Person.__init__(first_name='lil', last_name='blow')
+          self.first_name = 'mary'
+          self.last_name = 'blow'
+
+  - ``Jane`` and ``Mary`` do not pass on the value they receive for ``last_name`` to their parents when they call  ``super().__init__`` which means :ref:`the method uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`
+  - ``Blow`` always calls ``Person`` with ``blow`` as the value for ``last_name`` it does not matter if I send a different value
+  - ``Smith`` always calls ``Person`` with ``smith`` as the value for ``last_name`` it does not matter if I send a different value
+  - whichever parent calls ``Person`` last will be the values that the instance gets
+
+* I change the order of the parents of ``Lil`` back to ``(Mary, John)``
 
   .. code-block:: python
     :lineno-start: 59
-    :emphasize-lines: 1-2
+    :emphasize-lines: 3-4
 
+    # class Lil(John): pass
+    # class Lil(John):
     class Lil(Mary, John):
     # class Lil(John, Mary):
 
         def __init__(self, first_name='lil'):
             super().__init__(first_name=first_name)
 
-  the test passes. The test shows that
+  the test is green again. The test shows that
 
   - if the parents of ``Lil`` are defined as ``(Mary, John)`` the default value for ``last_name`` is the value for ``last_name`` of ``John``
   - if the parents of ``Lil`` are defined as ``(John, Mary)`` the default value for ``last_name`` is the value for the ``last_name`` of ``Mary``
 
-----
-
----------------------------------------------------------------------------------
-what happens when the child calls the parent?
----------------------------------------------------------------------------------
-
-----
-
-* if the order of the parents of ``Lil`` is ``(Mary, John)`` then we get the following calls for the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
+* I remove the commented lines
 
   .. code-block:: python
+    :lineno-start: 13
 
-    lil = src.classes.Lil()
-          super().__init__(first_name='lil')
-        = Mary.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = Joe.__init__(first_name='lil', **kwargs)
-          super().__init__(first_name=first_name, **kwargs)
-        = Blow().__init__(first_name='lil', **kwargs)
-          super().__init__(first_name, last_name='blow')
-        = Person().__init__(first_name='lil', last_name='blow')
-          self.first_name = 'lil'
-          self.last_name = 'blow'
-
-  this resolves the ``Mary`` parent.
-
-  We get the following calls for the ``John`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = John.__init__(first_name='lil', last_name='blow')
-          super().__init__(first_name=first_name, **kwargs)
-        = Smith.__init(first_name='lil', last_name='blow')
-          super().__init__(first_name, last_name='smith')
-        = Person().__init__('lil', last_name='smith')
-          self.first_name = 'lil'
-          self.last_name = 'smith'
-
-  this resolves the ``John`` parent. If the order of the parents is ``(Mary, John)`` the value for ``last_name`` is the value of ``John.last_name``
-
-* if the order of the parents of ``Lil`` is ``(John, Mary)`` then we get the following calls for the ``John`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = src.classes.Lil()
-          super().__init__(first_name='lil')
-        = John.__init__(first_name='lil', **kwargs)
-          super().__init__(first_name=first_name, **kwargs)
-        = Smith.__init__(first_name='lil', **kwargs)
-          super().__init__(first_name, last_name='smith')
-        = Person().__init__(first_name='lil', last_name='smith')
-          self.first_name = 'lil'
-          self.last_name = 'smith'
-
-  this resolves the ``John`` parent.
-
-  We get the following calls for the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = Mary.__init__(first_name='lil', last_name='smith')
-          super().__init__(first_name=first_name)
-        = Smith.__init(first_name='lil', last_name='blow')
-          super().__init__(first_name, last_name='smith')
-        = Person().__init__('lil', last_name='smith')
-          self.first_name = 'lil'
-          self.last_name = 'smith'
-
-  this resolves the ``Mary`` parent. If the order of the parents is ``(John, Mary)`` the value for ``last_name`` is the value of ``Mary.last_name``
+    class Doe(src.person.Person): pass
 
 
+    class Blow(src.person.Person):
 
-* I change the order of the parents of ``Mary`` to ``(Jane, Joe)`` to see if there is a difference now
+        def __init__(self, first_name):
+            super().__init__(first_name, last_name='blow')
 
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 2-3
 
-    # class Mary(Jane): pass
-    # class Mary(Joe, Jane): pass
-    class Mary(Jane, Joe): pass
+    class Smith(src.person.Person):
 
-  the test is still green
+        def __init__(self, first_name):
+            super().__init__(first_name, last_name='smith')
 
-* I change the order back to ``(Joe, Jane)``
 
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 2-3
+    class Jane(Doe):
 
-    # class Mary(Jane): pass
-    class Mary(Joe, Jane): pass
-    # class Mary(Jane, Joe): pass
-
-* I add a call to the `super built-in function`_ in ``Mary``
-
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 2, 4, 6-7
-
-    # class Mary(Jane): pass
-    # class Mary(Joe, Jane): pass
-    # class Mary(Jane, Joe): pass
-    class Mary(Joe, Jane):
-
-        def __init__(self, first_name='mary'):
+        def __init__(self, first_name='jane', **kwargs):
             super().__init__(first_name=first_name)
 
-  the test is still green
 
-* I add a call to the `super built-in function`_ in ``Doe``
+    class Joe(Blow):
 
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 2, 4, 6-7
-
-    # class Mary(Jane): pass
-    # class Mary(Joe, Jane): pass
-    # class Mary(Jane, Joe): pass
-    class Mary(Joe, Jane):
-
-        def __init__(self, first_name='mary'):
+        def __init__(self, first_name='joe'):
             super().__init__(first_name=first_name)
 
-  the test is still green
 
+    class Mary(Jane, Joe):
+
+        def __init__(self, first_name='mary', **kwargs):
+            super().__init__(first_name=first_name)
+
+
+    class John(Smith):
+
+        def __init__(self, first_name='john', **kwargs):
+            super().__init__(first_name=first_name)
+
+
+    class Lil(Mary, John):
+
+        def __init__(self, first_name='lil'):
+            super().__init__(first_name=first_name)
+
+----
+
+* I remove the commented lines from :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 131
+
+        def test_classes_w_multiple_parents(self):
+            joe = src.classes.Joe()
+            self.assertEqual(joe.first_name, 'joe')
+            self.assertEqual(joe.last_name, 'blow')
+            self.assertIsInstance(joe, src.classes.Blow)
+
+            jane = src.classes.Jane()
+            self.assertEqual(jane.first_name, 'jane')
+            self.assertEqual(jane.last_name, 'doe')
+            self.assertIsInstance(jane, src.classes.Doe)
+
+            mary = src.classes.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            self.assertEqual(mary.last_name, joe.last_name)
+            self.assertIsInstance(mary, src.classes.Jane)
+            self.assertIsInstance(mary, src.classes.Doe)
+            self.assertIsInstance(mary, src.classes.Joe)
+
+            john = src.classes.John()
+            self.assertEqual(john.first_name, 'john')
+            self.assertEqual(john.last_name, 'smith')
+            self.assertIsInstance(john, src.classes.Smith)
+
+            lil = src.classes.Lil()
+            self.assertIsInstance(lil, src.classes.John)
+            self.assertIsInstance(lil, src.classes.Mary)
+            self.assertEqual(lil.first_name, 'lil')
+            self.assertEqual(lil.last_name, john.last_name)
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_classes_w_multiple_parents'
+
+.. NOTE:: All the instances could have been made with only the ``Person`` :ref:`class<what is a class?>` because there was nothing unique about the :ref:`classes<what is a class?>` I made it ``classes.py`` and it would not have given me the chance to practice making classes with multiple parents and seeing how Python_ resolves the order - this is called `Method Resolution Order`_
+
+  .. code-block:: python
+
+    joe = src.classes.Joe()
+    joe = src.person.Person('joe', last_name='blow')
+
+  .. code-block:: python
+
+    jane = src.classes.Jane()
+    jane = src.person.Person('jane')
+
+  .. code-block:: python
+
+    mary = src.classes.Mary()
+    mary = src.person.Person('mary', 'blow')
+
+  .. code-block:: python
+
+    john = src.classes.John()
+    john = src.person.Person('john', 'smith')
+
+  .. code-block:: python
+
+    lil = src.person.Lil()
+    lil = src.person.Person('lil', 'smith')
+
+  which would have just been Python_ making this call to make instances of the ``Person`` :ref:`class<what is a class?>`
+
+  .. code-block:: python
+
+    a_name = src.person.Person(first_name, last_name=last_name)
+             Person.__init__(first_name, last_name=last_name)
+             self.first_name = first_name
+             self.last_name = last_name
+
+:ref:`I can make classes with multiple parents<test_classes_w_multiple_parents>`
 
 ----
 
@@ -4172,7 +4197,9 @@ I can make a :ref:`class<what is a class?>` with
 
 * :ref:`pass<test_making_a_class_w_pass>`
 * :ref:`parentheses<test_making_a_class_w_parentheses>`
-* :ref:`its parent<test_making_a_class_w_object>`
+* :ref:`object<test_making_a_class_w_object>`
+* :ref:`its parent<test_making_a_class_w_inheritance>`
+* :ref:`multiple parents<test_classes_w_multiple_parents>`
 
 ----
 
