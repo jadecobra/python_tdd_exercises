@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn how to transition from dictionary factories to Python classes using Test-Driven Development (TDD). This beginner-friendly tutorial covers the class keyword, __init__ constructor methods, self parameters, instance attributes, unittest.TestCase.setUp fixtures, and inspecting objects with the dir() function. Systematically debug common errors like TypeError, AttributeError, and SyntaxError.
-  :keywords: Jacob Itegboje, Pumping Python, Python class tutorial, TDD Python class, __init__ constructor method, self parameter Python, unittest setUp method, dir function class, factory function vs class, TypeError Person takes no arguments, AttributeError module has no attribute, unexpected keyword argument, multiple values for argument, SyntaxError parameter without default, staticmethod decorator, class attributes and methods, Red Green Refactor
+  :description: Step-by-step TDD tutorial for transitioning from dictionary factories to Python classes. Learn the class keyword, __init__ constructor, self parameter, instance attributes, and unittest.TestCase.setUp. Learn how to systematically diagnose and fix common beginner bugs: TypeError: Person() takes no arguments, TypeError: got multiple values for argument 'first_name', NameError: name 'self' is not defined, SyntaxError: parameter without a default follows parameter with a default, and AttributeError: object has no attribute. Master object inspection using the dir() function.
+  :keywords: Jacob Itegboje, Pumping Python, python class tutorial for beginners, test-driven development classes python, dictionary factory vs class python, when to write a class in python, __init__ constructor method self parameter, why use self in python class, how does unittest setUp method work, reset class attributes before every test python, using dir() function to inspect python objects, how to call instance methods directly, TypeError Person takes no arguments, TypeError Person.__init__ got multiple values for argument, TypeError say_hello takes 0 positional arguments but 2 were given, NameError name self is not defined, AttributeError object has no attribute get, SyntaxError parameter without default follows parameter with default, staticmethod decorator vs instance method, when to remove staticmethod python, python red green refactor class tutorial, cooperative multiple inheritance python, MRO method resolution order python
 
 .. include:: ../links.rst
 
@@ -94,7 +94,7 @@ open the project
 test_classy_person_says_hello
 *********************************************************************************
 
-I made a person :ref:`say hello with a function<test_factory_person_says_hello>`, I can also do the same thing with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>`that belong together.
+I made a person :ref:`say hello with a function<test_factory_person_says_hello>`, I can also do the same thing with a :ref:`class<what is a class?>` because it is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together.
 
 ----
 
@@ -677,7 +677,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     AttributeError:
         'Person' object has no attribute 'first_name'
 
-  because there is no definition for ``first_name`` in the ``Person`` :ref:`class defintion<how to make a class>`
+  because there is no definition for ``first_name`` in the ``Person`` :ref:`class definition<how to make a class>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<what is a class?>` for ``first_name``
 
@@ -792,7 +792,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Person' object has no attribute 'last_name'.
         Did you mean: 'first_name'?
 
-  because there is no definition for ``last_name`` in the ``Person`` :ref:`class defintion<how to make a class>`
+  because there is no definition for ``last_name`` in the ``Person`` :ref:`class definition<how to make a class>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<what is a class?>` for ``last_name``
 
@@ -961,7 +961,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     AttributeError:
         'Person' object has no attribute 'year_of_birth'
 
-  because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`class defintion<how to make a class>`
+  because there is no definition for ``year_of_birth`` in the ``Person`` :ref:`class definition<how to make a class>`
 
 * I add an :ref:`attribute<what is a class attribute?>` to the ``Person`` :ref:`class<what is a class?>` for ``year_of_birth``
 
@@ -1346,7 +1346,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
                 sex='F',
             )
 
-            reality = a_person.say_hello(a_person)
+            reality = a_person.say_hello()
             my_expectation = (
                 'Hi, my name is person public and I am'
                 f' {calculate_age(2000)}'
@@ -1471,8 +1471,8 @@ I want to use random values to :ref:`test_classy_person_says_hello`
                 # first_name='jane',
                 sex='F',
                 # year_of_birth=1991,
-                first_name='jane',
-                year_of_birth=1991,
+                first_name=first_name,
+                year_of_birth=year_of_birth,
             )
 
             # reality = src.person.Person.say_hello(jane)
@@ -2394,7 +2394,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 how to use the setUp method to reset class attributes for every test
 ****************************************************************************************
 
-A problem with the current setup with the :ref:`class attributes<what is a class attribute?>` that they are made once when the :ref:`class<what is a class?>` is initialized. This means that even though they all use random values, those values are created once and every test that references the values after that is using the exact same values for each test.
+A problem with the current setup with the :ref:`class attributes<what is a class attribute?>` is that they are made once when the :ref:`class<what is a class?>` is initialized. This means that even though they all use random values, those values are created once and every test that references the values after that is using the exact same values for each test.
 
 I want each test to get new random values every time they run and the `unittest.TestCase class`_ has a way to do that - the `setUp method`_, it runs before every test is run.
 
@@ -2531,7 +2531,7 @@ I want each test to get new random values every time they run and the `unittest.
         AttributeError: 'TestPerson' object has
         no attribute 'age'
 
-  because the ``age`` belongs to the `setUp method`_, and the other :ref:`methods<what is a method?>` have no way to reach them. I have to make them :ref:`class attributes<what is a class attribute?>`
+  because the ``age`` belongs to the `setUp method`_, and the other :ref:`methods<what is a method?>` have no way to reach it. I have to make it a :ref:`class attribute<what is a class attribute?>`
 
 * I change the ``age`` :ref:`variable<what is a variable?>` to :ref:`class attributes<what is a class attribute?>` in the `setUp method`_ for the other :ref:`methods<what is a method?>` to be able to use it
 
@@ -2722,7 +2722,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 ----
 
 *********************************************************************************
-test_attributes_and_methods_of_person_class
+test_attributes_and_methods_of_person_instance
 *********************************************************************************
 
 Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<what is a class?>` it is given in parentheses. It allows me to see what makes up an :ref:`object<what is a class?>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
@@ -3341,7 +3341,7 @@ To review
 * A :ref:`class<what is a class?>` is :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` that belong together
 * A :ref:`class<what is a class?>` can be used to represent something
 * A :ref:`class attributes<what is a class attribute?>` is a :ref:`variable<what is a variable?>` that belongs to a :ref:`class<what is a class?>`
-* A :ref:`method<what is a function?>` is a :ref:`function<what is a function?>` that belongs to a :ref:`class<what is a class?>`
+* A :ref:`method<what is a method?>` is a :ref:`function<what is a function?>` that belongs to a :ref:`class<what is a class?>`
 * :ref:`classes<what is a class?>` can be an easier way to manage data than :ref:`functions<what is a function?>`
 * :ref:`classes<what is a class?>` make it easier to write tests for something
 
