@@ -6,14 +6,20 @@
 
 .. _super: https://docs.python.org/3/library/functions.html#super
 .. _super built-in function: super_
-.. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
-.. _assertNotIsInstance method: assertNotIsInstance_
-.. _assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
-.. _assertIsInstance method: assertIsInstance_
 .. _isinstance: https://docs.python.org/3/library/functions.html#isinstance
 .. _isinstance built-in function: isinstance_
-.. _unittest.TestCase.assertIsInstance:
-.. _unittest.TestCase.assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
+.. _assertNotIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertNotIsInstance
+.. _unittest.TestCase.assertNotIsInstance: assertNotIsInstance_
+.. _assertNotIsInstance method: assertNotIsInstance_
+.. _assertIsInstance: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsInstance
+.. _unittest.TestCase.assertIsInstance: assertIsInstance_
+.. _assertIsInstance method: assertIsInstance_
+.. _issubclass: https://docs.python.org/3/library/functions.html#issubclass
+.. _issubclass built-in function: issubclass_
+.. _assertNotIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotIsSubclass
+.. _unittest.TestCase.assertNotIsSubclass: assertNotIsSubclass_
+.. _assertIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIsSubclass
+.. _unittest.TestCase.assertIsSubclass: assertIsSubclass_
 .. _MRO: https://docs.python.org/3/howto/mro.html#python-2-3-mro
 .. _Method Resolution Order: MRO_
 .. _Python's Method Resolution Order: MRO_
@@ -205,15 +211,13 @@ To review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what
 
 ----
 
-----
-
-=================================================================================
+---------------------------------------------------------------------------------
 how to test if something is NOT an instance of a class
-=================================================================================
+---------------------------------------------------------------------------------
 
 ----
 
-I can test if an :ref:`object<what is a class?>` is a :ref:`child (instance)<how to test if something is an instance of a class>` of another :ref:`object<what is a class?>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_, it checks if the thing in the parentheses on the left is an :ref:`instance<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parenthesess
+I can test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how to test if something is an instance of a class>` of another :ref:`object<what is a class?>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_, it checks if the thing in the parentheses on the left is an :ref:`instance<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses
 
 * I change ``test_failure`` to :ref:`test_making_a_class_w_pass` then add an :ref:`assertion<what is an assertion?>` with isinstance_
 
@@ -312,9 +316,9 @@ I can test if an :ref:`object<what is a class?>` is a :ref:`child (instance)<how
 
 ----
 
-=================================================================================
+---------------------------------------------------------------------------------
 how to test if something is an instance of a class
-=================================================================================
+---------------------------------------------------------------------------------
 
 ----
 
@@ -348,13 +352,13 @@ how to test if something is an instance of a class
 
 ----
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is a :ref:`child (instance)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
 
 ----
 
-=================================================================================
+---------------------------------------------------------------------------------
 another way to test if something is NOT an instance of a class
-=================================================================================
+---------------------------------------------------------------------------------
 
 ----
 
@@ -387,9 +391,9 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-=================================================================================
+---------------------------------------------------------------------------------
 another way to test if something is an instance of a class
-=================================================================================
+---------------------------------------------------------------------------------
 
 ----
 
@@ -1104,9 +1108,7 @@ the test passes.
 test_is_a_boolean_an_object
 *********************************************************************************
 
-I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?>`
-
-----
+I want to test if a :ref:`boolean<what are booleans>` is an :ref:`object<what is a class?>`
 
 ----
 
@@ -1116,20 +1118,28 @@ I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?
 
 ----
 
+---------------------------------------------------------------------------------
+how to test if something is NOT a subclass of a class
+---------------------------------------------------------------------------------
+
+----
+
+I can test if an :ref:`object<what is a class?>` is a :ref:`subclass (child) <what is a class?>` of another :ref:`object<what is a class?>` or NOT with the `issubclass built-in function`_ from `The Python Standard Library`_, it checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses
+
 * I go back to the terminal_ that is running the tests
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is an :ref:`object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 6
+    :lineno-start: 22
+    :emphasize-lines: 5-6
 
-            # assert not isinstance(None, object)
+        def test_is_none_an_object(self):
             assert isinstance(None, object)
-            # self.assertNotIsInstance(None, object)
             self.assertIsInstance(None, object)
 
-            assert not isinstance(bool, object)
+        def test_is_a_boolean_an_object(self):
+            assert not issubclass(bool, object)
 
 
     # Exceptions seen
@@ -1140,21 +1150,54 @@ I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?
 
     E       assert not True
 
-  because :ref:`bool<what are booleans?>` is an :ref:`object<what is a class?>`.
+  because :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
 
-  .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 1-2
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-            # assert not isinstance(bool, object)
-            assert isinstance(bool, object)
+----
+
+---------------------------------------------------------------------------------
+how to test if something is a subclass of a class
+---------------------------------------------------------------------------------
+
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 26
+  :emphasize-lines: 2-3
+
+      def test_is_a_boolean_an_object(self):
+          # assert not issubclass(bool, object)
+          assert issubclass(bool, object)
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test passes.
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is a :ref:`subclass (child)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
+
+----
+
+---------------------------------------------------------------------------------
+another way to test if something is NOT a subclass of a class
+---------------------------------------------------------------------------------
+
+----
 
 * I use assertNotIsInstance_ to show that :ref:`bool<what are booleans?>` is an :ref:`object<what is a class?>`
 
@@ -1176,7 +1219,15 @@ I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?
     AssertionError:
         <class 'bool'> is an instance of <class 'object'>
 
-  because :ref:`bool<what are booleans?>` is an :ref:`object<what is a class?>`.
+  because :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`.
+
+----
+
+---------------------------------------------------------------------------------
+another way to test if something is a subclass of a class
+---------------------------------------------------------------------------------
+
+----
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1243,7 +1294,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
     E       assert not True
 
-  because int_ is an :ref:`object<what is a class?>`.
+  because int_ is a :ref:`child of object<what is a class?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1279,7 +1330,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
     AssertionError:
         <class 'int'> is an instance of <class 'object'>
 
-  because int_ is an :ref:`object<what is a class?>`.
+  because int_ is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1346,7 +1397,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
     E       assert not True
 
-  because float_ is an :ref:`object<what is a class?>`.
+  because float_ is a :ref:`child of object<what is a class?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1382,7 +1433,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
     AssertionError:
         <class 'float'> is an instance of <class 'object'>
 
-  because float_ is an :ref:`object<what is a class?>`.
+  because float_ is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1449,7 +1500,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
     E       assert not True
 
-  because str_ is an :ref:`object<what is a class?>`.
+  because str_ is a :ref:`child of object<what is a class?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1485,7 +1536,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
     AssertionError:
         <class 'str'> is an instance of <class 'object'>
 
-  because str_ is an :ref:`object<what is a class?>`.
+  because str_ is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1552,7 +1603,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
     E       assert not True
 
-  because tuple_ is an :ref:`object<what is a class?>`.
+  because tuple_ is a :ref:`child of object<what is a class?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1588,7 +1639,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
     AssertionError:
         <class 'tuple'> is an instance of <class 'object'>
 
-  because tuple_ is an :ref:`object<what is a class?>`.
+  because tuple_ is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1655,7 +1706,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
     E       assert not True
 
-  because :ref:`list<what is a list?>` is an :ref:`object<what is a class?>`.
+  because :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1691,7 +1742,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
     AssertionError:
         <class 'list'> is an instance of <class 'object'>
 
-  because :ref:`list<what is a list?>` is an :ref:`object<what is a class?>`.
+  because :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1758,7 +1809,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
     E       assert not True
 
-  because set_ is an :ref:`object<what is a class?>`.
+  because set_ is a :ref:`child of object<what is a class?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1794,7 +1845,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
     AssertionError:
         <class 'set'> is an instance of <class 'object'>
 
-  because set_ is an :ref:`object<what is a class?>`.
+  because set_ is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1861,7 +1912,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
     E       assert not True
 
-  because :ref:`dict<what is a dictionary?>` is an :ref:`object<what is a class?>`.
+  because :ref:`dict<what is a dictionary?>` is a :ref:`child of object<what is a class?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1897,7 +1948,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
     AssertionError:
         <class 'dict'> is an instance of <class 'object'>
 
-  because :ref:`dict<what is a dictionary?>` is an :ref:`object<what is a class?>`.
+  because :ref:`dict<what is a dictionary?>` is a :ref:`child of object<what is a class?>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 

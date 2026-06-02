@@ -272,7 +272,7 @@ test_what_is_false
 
 ----
 
-I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ I learned from :ref:`testing None<what is None?>` to check if False_ is a :ref:`child (instance)<how to test if something is an instance of a class>` of the `bool class`_. I think this will fail
+I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ I learned from :ref:`testing None<what is None?>` to check if False_ is an :ref:`instance (copy)<how to test if something is an instance of a class>` of the `bool class`_. I think this will fail
 
 .. code-block:: python
   :linenos:
