@@ -1693,15 +1693,15 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 * I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 6
+    :lineno-start: 38
+    :emphasize-lines: 5-6
 
-            # assert not isinstance(str, object)
-            assert isinstance(str, object)
-            # self.assertNotIsInstance(str, object)
-            self.assertIsInstance(str, object)
+        def test_is_a_string_an_object(self):
+            assert issubclass(str, object)
+            self.assertIsSubclass(str, object)
 
-            assert not isinstance(tuple, object)
+        def test_is_a_tuple_an_object(self):
+            assert not issubclass(tuple, object)
 
 
     # Exceptions seen
@@ -1714,29 +1714,47 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
   because tuple_ is a :ref:`child of object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 42
+  :emphasize-lines: 2-3
+
+      def test_is_a_tuple_an_object(self):
+          # assert not issubclass(tuple, object)
+          assert issubclass(tuple, object)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use assertNotIsSubclass_ to show that tuple_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 1-2
+    :lineno-start: 42
+    :emphasize-lines: 4
 
-            # assert not isinstance(tuple, object)
-            assert isinstance(tuple, object)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I use assertNotIsInstance_ to show that tuple_ is a :ref:`child of object<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 3
-
-            # assert not isinstance(tuple, object)
-            assert isinstance(tuple, object)
-            self.assertNotIsInstance(tuple, object)
+        def test_is_a_tuple_an_object(self):
+            # assert not issubclass(tuple, object)
+            assert issubclass(tuple, object)
+            self.assertNotIsSubclass(tuple, object)
 
 
     # Exceptions seen
@@ -1746,25 +1764,38 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
   .. code-block:: shell
 
     AssertionError:
-        <class 'tuple'> is an instance of <class 'object'>
+        <class 'tuple'> is a subclass of <class 'object'>
 
   because tuple_ is a :ref:`child of object<what is a class?>`.
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 3-4
+    :lineno-start: 42
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(tuple, object)
-            assert isinstance(tuple, object)
-            # self.assertNotIsInstance(tuple, object)
-            self.assertIsInstance(tuple, object)
+        def test_is_a_tuple_an_object(self):
+            # assert not issubclass(tuple, object)
+            assert issubclass(tuple, object)
+            # self.assertNotIsSubclass(tuple, object)
+            self.assertIsSubclass(tuple, object)
 
 
     # Exceptions seen
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 42
+
+        def test_is_a_tuple_an_object(self):
+            assert issubclass(tuple, object)
+            self.assertIsSubclass(tuple, object)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1773,7 +1804,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
     git commit -am 'add test_is_a_tuple_an_object'
 
-:ref:`An integer is an object.<test_is_an_integer_an_object>`
+:ref:`A tuple is an object.<test_is_a_tuple_an_object>`
 
 ----
 
@@ -1782,8 +1813,6 @@ test_is_a_list_an_object
 *********************************************************************************
 
 I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<what is a class?>`
-
-----
 
 ----
 
@@ -1798,15 +1827,15 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 6
+    :lineno-start: 42
+    :emphasize-lines: 5-6
 
-            # assert not isinstance(tuple, object)
-            assert isinstance(tuple, object)
-            # self.assertNotIsInstance(tuple, object)
-            self.assertIsInstance(tuple, object)
+        def test_is_a_tuple_an_object(self):
+            assert issubclass(tuple, object)
+            self.assertIsSubclass(tuple, object)
 
-            assert not isinstance(list, object)
+        def test_is_a_list_an_object(self):
+            assert not issubclass(list, object)
 
 
     # Exceptions seen
@@ -1819,29 +1848,47 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
   because :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
 
-  .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 1-2
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
 
-            # assert not isinstance(list, object)
-            assert isinstance(list, object)
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 46
+  :emphasize-lines: 2-3
+
+        def test_is_a_list_an_object(self):
+            # assert not issubclass(list, object)
+            assert issubclass(list, object)
 
 
     # Exceptions seen
 
-  the test passes.
+the test passes.
 
-* I use assertNotIsInstance_ to show that :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use assertNotIsSubclass_ to show that :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 3
+    :lineno-start: 46
+    :emphasize-lines: 4
 
-            # assert not isinstance(list, object)
-            assert isinstance(list, object)
-            self.assertNotIsInstance(list, object)
+        def test_is_a_list_an_object(self):
+            # assert not issubclass(list, object)
+            assert issubclass(list, object)
+            self.assertNotIsSubclass(list, object)
 
 
     # Exceptions seen
@@ -1851,25 +1898,38 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
   .. code-block:: shell
 
     AssertionError:
-        <class 'list'> is an instance of <class 'object'>
+        <class 'list'> is a subclass of <class 'object'>
 
   because :ref:`list<what is a list?>` is a :ref:`child of object<what is a class?>`.
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 3-4
+    :lineno-start: 46
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(list, object)
-            assert isinstance(list, object)
-            # self.assertNotIsInstance(list, object)
-            self.assertIsInstance(list, object)
+        def test_is_a_list_an_object(self):
+            # assert not issubclass(list, object)
+            assert issubclass(list, object)
+            # self.assertNotIsSubclass(list, object)
+            self.assertIsSubclass(list, object)
 
 
     # Exceptions seen
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 46
+
+        def test_is_a_list_an_object(self):
+            assert issubclass(list, object)
+            self.assertIsSubclass(list, object)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1878,7 +1938,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
     git commit -am 'add test_is_a_list_an_object'
 
-:ref:`An integer is an object.<test_is_an_integer_an_object>`
+:ref:`A list is an object.<test_is_a_list_an_object>`
 
 ----
 
@@ -1886,9 +1946,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 test_is_a_set_an_object
 *********************************************************************************
 
-I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`
-
-----
+I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma) is an :ref:`object.<what is a class?>`
 
 ----
 
@@ -1903,15 +1961,15 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 * I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 6
+    :lineno-start: 46
+    :emphasize-lines: 5-6
 
-            # assert not isinstance(list, object)
-            assert isinstance(list, object)
-            # self.assertNotIsInstance(list, object)
-            self.assertIsInstance(list, object)
+        def test_is_a_list_an_object(self):
+            assert issubclass(list, object)
+            self.assertIsSubclass(list, object)
 
-            assert not isinstance(set, object)
+        def test_is_a_set_an_object(self):
+            assert not issubclass(set, object)
 
 
     # Exceptions seen
@@ -1924,29 +1982,47 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
   because set_ is a :ref:`child of object<what is a class?>`.
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the statement to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 50
+  :emphasize-lines: 2-3
+
+      def test_is_a_set_an_object(self):
+          # assert not issubclass(set, object)
+          assert issubclass(set, object)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I use assertNotIsSubclass_ to show that set_ is a :ref:`child of object<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 1-2
+    :lineno-start: 50
+    :emphasize-lines: 4
 
-            # assert not isinstance(set, object)
-            assert isinstance(set, object)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I use assertNotIsInstance_ to show that set_ is a :ref:`child of object<what is a class?>`
-
-  .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 3
-
-            # assert not isinstance(set, object)
-            assert isinstance(set, object)
-            self.assertNotIsInstance(set, object)
+        def test_is_a_set_an_object(self):
+            # assert not issubclass(set, object)
+            assert issubclass(set, object)
+            self.assertNotIsSubclass(set, object)
 
 
     # Exceptions seen
@@ -1956,25 +2032,38 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
   .. code-block:: shell
 
     AssertionError:
-        <class 'set'> is an instance of <class 'object'>
+        <class 'set'> is a subclass of <class 'object'>
 
   because set_ is a :ref:`child of object<what is a class?>`.
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 3-4
+    :lineno-start: 50
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(set, object)
-            assert isinstance(set, object)
-            # self.assertNotIsInstance(set, object)
-            self.assertIsInstance(set, object)
+        def test_is_a_set_an_object(self):
+            # assert not issubclass(set, object)
+            assert issubclass(set, object)
+            # self.assertNotIsSubclass(set, object)
+            self.assertIsSubclass(set, object)
 
 
     # Exceptions seen
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 50
+
+        def test_is_a_set_an_object(self):
+            assert issubclass(set, object)
+            self.assertIsSubclass(set, object)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1983,7 +2072,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
     git commit -am 'add test_is_a_set_an_object'
 
-:ref:`An integer is an object.<test_is_an_integer_an_object>`
+:ref:`A set is an object.<test_is_a_set_an_object>`
 
 ----
 
