@@ -109,7 +109,7 @@ class TestClasses(unittest.TestCase):
             dir(src.person.Person)
         )
 
-    def test_family_ties(self):
+    def test_classes_w_one_parent(self):
         doe = src.classes.Doe('first')
         self.assertEqual(doe.last_name, 'doe')
 

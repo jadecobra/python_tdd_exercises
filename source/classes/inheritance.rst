@@ -34,7 +34,7 @@ In object oriented programming there is a concept called Inheritance_, it allows
 
 Making new :ref:`objects<what is a class?>` can be easier with Inheritance_ because I do not have to rewrite things that have already been written, I can inherit them instead and change the new :ref:`objects<what is a class?>` to do what I want.
 
-It can also be more complicated because I can make new instances to inherit from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Ordefr`_.
+It can also be more complicated because I can make new instances to inherit from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Order`_.
 
 ----
 
@@ -2913,7 +2913,8 @@ how to call the parent from the child
         def __init__(self):
             super().__init__()
 
-  the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
+  - the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
+  - the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a method?>` of the parent :ref:`class<what is a class?>`
 
 * I add a value to ``src.classes.Doe`` in :ref:`test_making_a_class_w_inheritance` in ``test_classes.py``
 
@@ -2934,15 +2935,15 @@ how to call the parent from the child
 
   .. code-block:: python
 
-    TypeError: Doe.__init__() takes 1 positional argument
-               but 2 were given
+    TypeError: Doe.__init__() takes
+               1 positional argument but 2 were given
 
   because this is what happens when ``an_instance = src.classes.Doe('first_name')`` runs
 
   .. code-block:: python
 
     an_instance = src.classes.Doe('first_name')
-                = Doe.__init__('first_name')
+                  Doe.__init__('first_name')
 
   which raises :ref:`TypeError<what causes TypeError?>` because the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Doe`` only takes one argument (``self``) and it was called with two (``self`` and ``first_name``)
 
@@ -3206,7 +3207,7 @@ how to call the parent from the child
 ----
 
 *********************************************************************************
-test_family_ties
+test_classes_w_one_parent
 *********************************************************************************
 
 ----
@@ -3229,7 +3230,7 @@ test_family_ties
                 dir(src.person.Person)
             )
 
-        def test_family_ties(self):
+        def test_classes_w_one_parent(self):
             doe = src.classes.Doe('doe')
             self.assertEqual(doe.last_name, '')
 
@@ -3242,16 +3243,6 @@ test_family_ties
 
     AssertionError: 'doe' != ''
 
-  because this happens when ``doe = src.classes.Doe('doe')`` runs
-
-    .. code-block:: python
-
-      doe = src.classes.Doe('doe')
-          = Doe.__init__('first_name')
-            super().__init__('first_name')
-                  = Person.__init__('first_name')
-``Doe`` is an instance of ``Person`` it gets all the :ref:`attributes<what is a class?>` and :ref:`methods<what is a method?>` of ``Person``. I do not need to rewrite an ``__init__`` :ref:`method<what is a method?>` to handle creation of copies of the ``Doe`` :ref:`class<what is a class?>`.
-
 ----
 
 =================================================================================
@@ -3263,18 +3254,29 @@ test_family_ties
 I change the expectation
 
 .. code-block:: python
-  :lineno-start: 112
+  :lineno-start: 117
   :emphasize-lines: 3-4
 
-      def test_family_ties(self):
-          doe = src.classes.Doe('first')
+      def test_classes_w_one_parent(self):
+          doe = src.classes.Doe('doe')
           # self.assertEqual(doe.last_name, '')
           self.assertEqual(doe.last_name, 'doe')
 
 
   # Exceptions seen
 
-the test passes.
+the test passes because this happens when ``doe = src.classes.Doe('doe')`` runs
+
+.. code-block:: python
+
+  doe = src.classes.Doe('doe')
+        Doe.__init__('doe')
+        super().__init__('doe')
+        Person.__init__('first_name')
+        Person.__init__('first_name', last_name='doe')
+        self.last_name = 'doe' # use default value
+
+the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
 ----
 
@@ -3287,12 +3289,12 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 117
     :emphasize-lines: 6-7
     :emphasize-text: joe
 
-        def test_family_ties(self):
-            doe = src.classes.Doe('first')
+        def test_classes_w_one_parent(self):
+            doe = src.classes.Doe('doe')
             # self.assertEqual(doe.last_name, '')
             self.assertEqual(doe.last_name, 'doe')
 
@@ -3312,21 +3314,24 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 4
+    :emphasize-lines: 7
 
-    class Doe(src.person.Person): pass
+    class Doe(src.person.Person):
+
+        def __init__(self, first_name):
+            super().__init__(first_name)
 
 
     class Blow(src.person.Person): pass
 
   the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
 
-* I change ``joe`` to use the new ``Blow`` :ref:`class<what is a class?>`, in :ref:`test_family_ties` in ``test_classes.py``
+* I change ``joe`` to use the new ``Blow`` :ref:`class<what is a class?>`, in :ref:`test_classes_w_one_parent` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 122
     :emphasize-lines: 1-2
-    :emphasize-text: joe
+    :emphasize-text: joe Blow
 
             # joe = src.classes.Doe('joe')
             joe = src.classes.Blow('joe')
@@ -3340,7 +3345,7 @@ the test passes.
 * I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` in the ``Blow`` :ref:`class<what is a class?>` in ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 19
     :emphasize-lines: 1-2, 4
 
     # class Blow(src.person.Person): pass
@@ -3353,7 +3358,7 @@ the test passes.
 * I add the ``__init__`` :ref:`method<what is a method?>` to customize the last name
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 19
     :emphasize-lines: 4, 6-7
 
     # class Blow(src.person.Person): pass
@@ -3371,6 +3376,15 @@ the test passes.
     TypeError: Blow.__init__() takes
                1 positional argument but 2 were given
 
+  because this happens when ``joe = src.classes.Blow('joe')`` runs
+
+  .. code-block:: python
+
+    joe = src.classes.Blow('joe')
+          Blow.__init__('joe')
+
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` o of ``Blow`` only takes one argument (``self``) and it got called with two (``self`` and ``first_name``)
+
 * I add ``first_name`` to the parentheses for the ``__init__`` :ref:`method<what is a method?>`
 
   .. code-block:: python
@@ -3386,52 +3400,40 @@ the test passes.
         def __init__(self, first_name):
             self.last_name = 'blow'
 
-  the test passes.
-
-----
-
-=================================================================================
-how to call the parent from the child
-=================================================================================
-
-----
-
-* I can also call the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` with the values for ``first_name`` and ``last_name`` directly with the `super built-in function`_
+  the test passes because this happens when ``joe = src.classes.Blow('joe')`` runs
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 8-9
 
-    # class Blow(src.person.Person): pass
-    class Blow(src.person.Person):
+    joe = src.classes.Blow('joe')
+          Blow.__init__('joe')
+          self.last_name = 'joe'
 
-        # last_name = 'blow'
+  I can define :ref:`classes<what is a class?>` that are related and have their own defaults. In this test
 
-        # def __init__(self):
-        def __init__(self, first_name):
-            # self.last_name = 'blow'
-            super().__init__(first_name, last_name='blow')
-
-  the test passes.
-
-  - the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a method?>` of the parent :ref:`class<what is a class?>` with the values I pass in parentheses.
-  - In this case it calls the ``Person`` :ref:`class<what is a class?>` with values for ``first_name`` and ``last_name``
-  - this shows that I can define :ref:`classes<what is a class?>` that are related and have their own defaults. In this case the ``Doe`` :ref:`class<what is a class?>` has a default ``last_name`` that is the same as the default last name for ``Person`` and the ``Blow`` :ref:`class<what is a class?>` has a different default ``last_name``
+  - the ``Doe`` :ref:`class<what is a class?>` has a default ``last_name`` that is the same as the default last name for ``Person``
+  - the ``Blow`` :ref:`class<what is a class?>` has a different default ``last_name``
+  - ``Doe`` and ``Blow`` are :ref:`children (subclasses)<how to test if something is a subclass of a class>` of ``Person``
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 13
+
+    class Doe(src.person.Person):
+
+        def __init__(self, first_name):
+            super().__init__(first_name)
+
 
     class Blow(src.person.Person):
 
         def __init__(self, first_name):
-            super().__init__(first_name, last_name='blow')
+            self.last_name = 'blow'
 
-* In this case there is a simpler way to make ``joe`` and ``doe``. I could directly pass the values to the ``Person`` :ref:`class<what is a class?>` since all the ``Blow`` :ref:`class<what is a class?>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<what is a class?>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_family_ties` in ``test_classes.py``
+* In this case there is a simpler way to make ``joe`` and ``doe``. I could directly pass the values to the ``Person`` :ref:`class<what is a class?>` since all the ``Blow`` :ref:`class<what is a class?>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<what is a class?>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 122
     :emphasize-lines: 5-6
     :emphasize-text: person
 
@@ -3454,7 +3456,7 @@ how to call the parent from the child
 * I add ``last_name='blow'`` to the call
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 126
     :emphasize-lines: 1-2
 
             # blow = src.person.Person('joe')
@@ -3469,7 +3471,7 @@ how to call the parent from the child
 * I add an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 126
     :emphasize-lines: 5-6
 
             # blow = src.person.Person('joe')
@@ -3491,7 +3493,7 @@ how to call the parent from the child
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 125
+    :lineno-start: 130
     :emphasize-lines: 2-3
 
             jane = src.person.Person('jane')
@@ -3506,7 +3508,7 @@ how to call the parent from the child
 * I add an :ref:`assertion<what is an assertion?>` for ``john``
 
   .. code-block:: python
-    :lineno-start: 125
+    :lineno-start: 130
     :emphasize-lines: 5-6
 
             jane = src.person.Person('jane')
@@ -3525,29 +3527,107 @@ how to call the parent from the child
 
     AttributeError: module 'src.classes' has no attribute 'Smith'
 
-* I add a new :ref:`class definition<how to make a class>` with a call to the `super built-in function`_ to ``classes.py``
+* I add a :ref:`class definition<how to make a class>` for ``Smith`` to ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 7, 9-10
+    :lineno-start: 19
+    :emphasize-lines: 7
 
     class Blow(src.person.Person):
 
         def __init__(self, first_name):
-            super().__init__(first_name, last_name='blow')
+            self.last_name = 'blow'
+
+
+    class Smith(src.person.Person): pass
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'doe' != 'smith'
+
+  because this happens when ``john = src.classes.Smith('john')`` runs
+
+  .. code-block:: python
+
+    john = src.classes.Smith('john')
+           Smith # Smith has no __init__, go to Person
+           Person.__init__('john')
+           Person.__init__('john', last_name='doe')
+           self.last_name = 'doe' # use default value
+
+* I add the ``__init__`` :ref:`method<what is a method?>` in ``Smith``
+
+  .. code-block:: Python
+    :lineno-start: 25
+    :emphasize-lines: 1-2, 4-5
+
+    # class Smith(src.person.Person): pass
+    class Smith(src.person.Person):
+
+        def __init__(self):
+            self.last_name = 'smith'
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Smith.__init__()
+               takes 1 positional argument but 2 were given
+
+  because this happens when ``john = src.classes.Smith('john')`` runs
+
+  .. code-block:: python
+
+    john = src.classes.Smith('john')
+           Smith.__init__('john')
+
+  the definition for the ``__init__`` :ref:`method<what is a method?>` only allows one input (``self``) and it got called with two (``self`` and ``first_name``)
+
+* I add ``first_name`` in parentheses
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4-5
+
+    # class Smith(src.person.Person): pass
+    class Smith(src.person.Person):
+
+        # def __init__(self):
+        def __init__(self, first_name):
+            self.last_name = 'smith'
+
+  the test passes because this happens when ``john = src.classes.Smith('john')`` runs
+
+  .. code-block:: python
+
+    john = src.classes.Smith('john')
+           Smith.__init__('john')
+           self.last_name = 'smith'
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name):
+            self.last_name = 'blow'
 
 
     class Smith(src.person.Person):
 
         def __init__(self, first_name):
-            super().__init__(first_name, last_name='smith')
+            self.last_name = 'smith'
 
   the test passes.
 
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_family_ties` in ``test_classes.py``
+* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 129
+    :lineno-start: 134
     :emphasize-lines: 4-5
     :emphasize-text: person
 
@@ -3569,7 +3649,7 @@ how to call the parent from the child
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 132
+    :lineno-start: 137
     :emphasize-lines: 2-3
 
             smith = src.person.Person('john', 'smith')
@@ -3586,8 +3666,8 @@ how to call the parent from the child
   .. code-block:: python
     :lineno-start: 112
 
-        def test_family_ties(self):
-            doe = src.classes.Doe('first')
+        def test_classes_w_one_parent(self):
+            doe = src.classes.Doe('doe')
             self.assertEqual(doe.last_name, 'doe')
 
             joe = src.classes.Blow('joe')
@@ -3608,45 +3688,43 @@ how to call the parent from the child
 
     # Exceptions seen
 
+  * this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Doe`` is made
+
+    .. code-block:: python
+
+      instance = src.classes.Doe('first_name')
+                 Doe.__init__('first_name')
+                 super().__init__(first_name)
+                 Person.__init__('first_name')
+                 Person.__init__('first_name', last_name='doe')
+                 self.last_name = 'doe' # use default value
+
+  * this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Smith`` and ``Blow`` are made
+
+    .. code-block:: python
+
+      instance = src.classes.ClassName('first_name')
+                 ClassName.__init__('first_name')
+                 self.last_name = 'last_name'
+
+
+  * this happens when instances of the ``Person`` :ref:`class<what is a class?>` are made
+
+    .. code-block:: python
+
+      instance = src.person.Person(first_name, last_name=last_name)
+                 Person.__init__(first_name, last_name=last_name)
+                 self.first_name = first_name
+                 self.last_name = last_name
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add test_family_ties'
+    git commit -am 'add test_classes_w_one_parent'
 
-
-
-* Python_ makes the following calls to resolve a call to make an instance of the ``Blow`` :ref:`class<what is a class?>`
-
-  .. code-block:: python
-
-    joe = src.classes.Blow('joe')
-          Blow.__init__('joe')
-          super().__init__(first_name, last_name='blow')
-        = Person.__init__('joe', last_name='blow')
-          joe.first_name = 'joe'
-          joe.last_name = 'blow'
-
-* Python_ makes the following calls to resolve a call to make an instance of the ``Smith`` :ref:`class<what is a class?>`
-
-  .. code-block:: python
-
-    john = src.classes.Smith('john')
-           Smith.__init__('john')
-           super().__init__(first_name, last_name='smith')
-         = Person.__init__('john', last_name='smith')
-           self.first_name = 'john'
-           self.last_name = 'smith'
-
-* Python_ makes this following call to make instances of the ``Person`` :ref:`class<what is a class?>`
-
-  .. code-block:: python
-
-    a_name = src.person.Person(first_name, last_name=last_name)
-             Person.__init__(first_name, last_name=last_name)
-             self.first_name = first_name
-             self.last_name = last_name
+:ref:`I can customize child classes with the __init__ method<test_classes_w_one_parent>`
 
 ----
 
@@ -4081,7 +4159,7 @@ the test passes.
     jane = src.classes.Jane()
            Jane.__init__(first_name='jane')
            super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, skip to Person
+         = Doe # Doe has no __init__, go to Person
          = Person.__init__(first_name='jane', last_name='doe')
            self.first_name = 'jane'
            self.last_name = 'doe'
@@ -4189,7 +4267,7 @@ the test passes.
     mary = src.classes.Jane('mary')
            Jane.__init__(first_name='jane')
            super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, skip to Person
+         = Doe # Doe has no __init__, go to Person
          = Person.__init__(first_name='mary', last_name='doe')
            self.first_name = 'mary'
            self.last_name = 'doe'
@@ -4372,7 +4450,7 @@ what happens when the child calls more than one parent?
 
     mary = Jane.__init__(first_name='mary', last_name='blow')
            super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, skip to Person
+         = Doe # Doe has no __init__, go to Person
          = Person.__init__(first_name='mary', last_name='doe')
            self.first_name = 'mary'
            self.last_name = 'doe'
