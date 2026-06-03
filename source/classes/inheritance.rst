@@ -4237,45 +4237,46 @@ the test passes.
   because this happens when ``joe = src.classes.Joe()`` runs
 
   .. code-block:: python
-    :emphasize-lines: jane
 
-    joe = src.classes.Joe(
+    joe = src.classes.Joe()
           Person.__init__()
 
   which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` takes one required :ref:`positional argument<test_w_positional_arguments>` (``first_name``) and it was called with zero
 
-----
+* I add the ``__init__`` :ref:`method<what is a method?>` to ``Joe``
 
-----
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 1-2, 4-5
 
-----
+    # class Joe(src.person.Person): pass
+    class Joe(src.person.Person):
 
-----
+        def __init__(self):
+            return None
 
-----
-
-
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AssertionError: 'joe' != 'mary'
+    AttributeError: 'Joe' object has no attribute 'first_name'
 
-* I change the expectation in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+* I add ``self.first_name`` to ``Joe`` with a value
 
   .. code-block:: python
-    :lineno-start: 131
-    :emphasize-lines: 3-4
+    :lineno-start: 37
+    :emphasize-lines: 5
 
-        def test_classes_w_multiple_parents(self):
-            joe = src.classes.Joe()
-            # self.assertEqual(joe.first_name, 'mary')
-            self.assertEqual(joe.first_name, 'joe')
+    # class Joe(src.person.Person): pass
+    class Joe(src.person.Person):
+
+        def __init__(self):
+            self.first_name = 'joe'
+            return None
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to make sure that ``joe`` is a ``Blow``
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure that ``joe`` is a ``Blow``, in ``test_classes.py``
 
   .. code-block:: python
     :lineno-start: 131
@@ -4287,40 +4288,50 @@ the test passes.
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
 
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError:
+        'Joe' object has no attribute 'last_name'.
+        Did you mean: 'first_name'?
+
+* I add ``last_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 6
+
+    # class Joe(src.person.Person): pass
+    class Joe(src.person.Person):
+
+        def __init__(self):
+            self.first_name = 'joe'
+            self.last_name = 'blow'
+            return None
+
+  the test passes. I cheated, which means I need a better test.
+
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: 'doe' != 'blow'
 
-* I add a value for ``last_name`` to ``Joe`` in ``classes.py``
-
-  .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 4-7
-
-    class Joe(src.person.Person):
-
-        def __init__(self, first_name='joe'):
-            # super().__init__(first_name=first_name)
-            super().__init__(
-                first_name=first_name, last_name='blow',
-            )
-
-  the test passes. I cheated, which means I need a better test.
-
-* I add assertIsInstance_ to :ref:`test_classes_w_multiple_parents` to make sure ``joe`` is a ``Blow``, in ``test_classes.py``
+* I add issubclass_ to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Blow``, in ``test_classes.py``
 
   .. code-block:: python
     :lineno-start: 131
-    :emphasize-lines: 6
+    :emphasize-lines: 5-7
 
         def test_classes_w_multiple_parents(self):
             joe = src.classes.Joe()
-            # self.assertEqual(joe.first_name, 'mary')
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
-            self.assertIsInstance(joe, src.classes.Blow)
+            assert not issubclass(
+                src.classes.Joe, src.classes.Blow
+            )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -4331,6 +4342,21 @@ the test passes.
         is not an instance of <class 'src.classes.Blow'>
 
   better
+
+
+----
+
+----
+
+----
+
+----
+
+----
+
+
+
+
 
 * I change the parent of ``Joe`` to ``Blow``, in ``classes.py``
 
