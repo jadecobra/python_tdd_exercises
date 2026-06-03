@@ -3903,13 +3903,13 @@ the test passes.
     :emphasize-text: last
 
     w_positional_arguments('first', 'last')
-    return 'first', 'last'
+                    return 'first', 'last'
 
   .. code-block:: python
     :emphasize-text: last
 
     w_positional_arguments('last', 'first')
-    return 'last', 'first'
+                    return 'last', 'first'
 
   .. code-block:: python
     :emphasize-text: last
@@ -3917,49 +3917,49 @@ the test passes.
     w_positional_arguments(
         first_input=[1, 2, 3, 'n'], last_input=(1, 2, 3, 'n')
     )
-    return [1, 2, 3, 'n'], (1, 2, 3, 'n')
+        return [1, 2, 3, 'n'], (1, 2, 3, 'n')
 
   .. code-block:: python
     :emphasize-text: last
 
     w_keyword_arguments(first_input='first', last_input='last')
-    return 'first', 'last'
+                return 'first', 'last'
 
   .. code-block:: python
     :emphasize-text: last
 
     w_keyword_arguments(last_input='last', first_input='first')
-    return 'first', 'last'
+                return 'first', 'last'
 
   .. code-block:: python
     :emphasize-text: last
 
     w_keyword_arguments('last', 'first')
-    return 'last', 'first'
+                 return 'last', 'first'
 
   .. code-block:: python
     :emphasize-text: last
 
     w_positional_and_kwargs('first', last_input='last')
-    return 'first', 'last'
+                     return 'first', 'last'
 
   .. code-block:: python
     :emphasize-text: last
 
     w_optional_arguments('jane', last_input='doe')
-    return 'jane', 'doe'
+                  return 'jane', 'doe'
 
   .. code-block:: python
     :emphasize-text: last
 
     w_optional_arguments('jane')
-    return 'jane', 'doe'
+                  return 'jane', 'doe'
 
   .. code-block:: python
     :emphasize-text: last
 
     w_optional_arguments('joe', 'blow')
-    return 'joe', 'blow'
+                  return 'joe', 'blow'
 
   .. code-block:: python
     :emphasize-text: last
@@ -3967,7 +3967,7 @@ the test passes.
     w_optional_arguments(
         first_input='john', last_input='smith'
     )
-    return 'john', 'smith'
+        return 'john', 'smith'
 
 .. tip::
 
@@ -4067,8 +4067,8 @@ I can make functions_ that take any number of :ref:`positional<test_w_positional
 
   .. code-block:: shell
 
-    TypeError: w_unknown_arguments() got multiple values
-               for argument 'a'
+    TypeError: w_unknown_arguments() got
+               multiple values for argument 'a'
 
   I had this same problem in :ref:`test_w_positional_and_kwargs`. Python_ cannot tell if ``a`` is a :ref:`positional<test_w_positional_arguments>` or :ref:`keyword argument<test_w_keyword_arguments>` based on my :ref:`function definition<how to make a function>`.
 
