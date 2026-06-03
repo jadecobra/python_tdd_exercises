@@ -4084,55 +4084,73 @@ the test passes.
             # self.last_name = 'doe'
             return None
 
-
-
-
-
-
-
-
-----
-
-----
-
-----
-
-----
-
-----
-
-
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'mary' != 'jane'
+    AssertionError: 'jane' != 'mary'
 
-* I change the expectation
+  because this happens when ``mary = src.classes.Jane('mary')`` runs
 
   .. code-block:: python
-    :lineno-start: 137
-    :emphasize-lines: 2-3
+    :emphasize-lines: jane
 
-            mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, '')
-            self.assertEqual(mary.first_name, 'mary')
+    mary = src.classes.Jane('mary')
+           Jane.__init__('mary')
+               super().__init__('jane')
+           Doe.__init__('jane')
+               super().__init__('jane')
+           Person.__init__('jane')
+               Person.__init__('jane', last_name='doe')
+               self.first_name = 'jane'
+               self.last_name = 'doe'
 
+* I change the call to the `super built-in function`_ to use the name instead of a fixed value
 
-    # Exceptions seen
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 9-10
+
+    # class Jane(src.person.Person): pass
+    # class Jane(src.person.Person):
+    class Jane(Doe):
+
+        # def __init__(self):
+        # def __init__(self, first_name):
+        def __init__(self, first_name='jane'):
+            # super().__init__()
+            # super().__init__('jane')
+            super().__init__(first_name)
+            # self.first_name = 'jane'
+            # self.last_name = 'doe'
+            return
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the last name of ``mary``
+* I remove the commented lines and ``return None``
 
   .. code-block:: python
-    :lineno-start: 137
-    :emphasize-lines: 4
+    :lineno-start: 25
+
+    class Smith(src.person.Person):
+
+        def __init__(self, first_name):
+            self.last_name = 'smith'
+
+
+    class Jane(Doe):
+
+        def __init__(self, first_name='jane'):
+            super().__init__(first_name)
+
+* I add an :ref:`assertion<what is an assertion?>` that will fail, for the last name of ``mary`` in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 144
 
             mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, 'jane')
             self.assertEqual(mary.first_name, 'mary')
-            self.assertEqual(mary.last_name, 'mary')
+            self.assertEqual(mary.last_name, mary.first_name)
 
 
     # Exceptions seen
@@ -4146,35 +4164,46 @@ the test passes.
 * I change the expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 137
-    :emphasize-lines: 4-5
+    :lineno-start: 144
+    :emphasize-lines: 3-4
 
             mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, 'jane')
             self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
             self.assertEqual(mary.last_name, jane.last_name)
 
 
     # Exceptions seen
 
-  the test passes because ``mary`` like ``jane`` is an instance of ``src.classes.Jane``
+  the test passes because ``mary`` and ``jane`` are :ref:`instances<how to test if something is an instance of a class>` of ``Jane``
+
+----
 
 * I add an :ref:`assertion<what is an assertion?>` for ``joe``
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 136
     :emphasize-lines: 2-3
     :emphasize-text: Joe
 
         def test_classes_w_multiple_parents(self):
             joe = src.classes.Joe()
-            self.assertEqual(joe.first_name, 'mary')
+            self.assertEqual(joe.first_name, 'joe')
 
             jane = src.classes.Jane()
             self.assertEqual(jane.first_name, 'jane')
-            # self.assertEqual(jane.last_name, 'jane')
             self.assertEqual(jane.last_name, 'doe')
+            self.assertIsSubclass(
+                src.classes.Jane, src.classes.Doe
+            )
+
+            mary = src.classes.Jane('mary')
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            self.assertEqual(mary.last_name, jane.last_name)
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -4184,22 +4213,48 @@ the test passes.
         module 'src.classes' has no attribute 'Joe'.
         Did you mean: 'Doe'?
 
-* I add the ``Joe`` :ref:`class<what is a class?>` to ``classes.py``
+* I add a :ref:`definition<how to make a class>` for the ``Joe`` :ref:`class<what is a class?>` to ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 7, 9-10
+    :lineno-start: 31
+    :emphasize-lines: 7
 
-    class Jane(src.person.Person):
+    class Jane(Doe):
 
         def __init__(self, first_name='jane'):
-            super().__init__(first_name=first_name)
+            super().__init__(first_name)
 
 
-    class Joe(src.person.Person):
+    class Joe(src.person.Person): pass
 
-        def __init__(self, first_name='joe'):
-            super().__init__(first_name=first_name)
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() missing 1
+               required positional argument: 'first_name'
+
+  because this happens when ``joe = src.classes.Joe()`` runs
+
+  .. code-block:: python
+    :emphasize-lines: jane
+
+    joe = src.classes.Joe(
+          Person.__init__()
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` takes one required :ref:`positional argument<test_w_positional_arguments>` (``first_name``) and it was called with zero
+
+----
+
+----
+
+----
+
+----
+
+----
+
+
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 

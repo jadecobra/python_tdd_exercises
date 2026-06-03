@@ -2988,31 +2988,31 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
       :emphasize-text: first
 
       w_positional_arguments('first', 'last')
-      return ('first', 'last')
+                     return ('first', 'last')
 
     .. code-block:: python
       :emphasize-text: first
 
       w_positional_arguments('last', 'first')
-      return ('last', 'first')
+                     return ('last', 'first')
 
     .. code-block:: python
       :emphasize-text: first
 
       w_positional_arguments(0, 1)
-      return (0, 1)
+                     return (0, 1)
 
     .. code-block:: python
       :emphasize-text: first
 
       w_positional_arguments((1, 2, 3, 'n'), [1, 2, 3, 'n'])
-      return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+                     return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
 
     .. code-block:: python
       :emphasize-text: first
 
       w_keyword_arguments('last', 'first')
-      return ('last', 'first')
+                  return ('last', 'first')
 
   - I can give the input in any order when I use `keyword arguments`_ because I use the names from the :ref:`function definition<how to make a function>` when I call it
 
@@ -3022,7 +3022,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
       w_keyword_arguments(
           first_input='first', last_input='last',
       )
-      return ('first', 'last')
+          return ('first', 'last')
 
     .. code-block:: python
       :emphasize-text: first
@@ -3030,13 +3030,13 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
       w_keyword_arguments(
           last_input='last', first_input='first',
       )
-      return ('first', 'last')
+          return ('first', 'last')
 
     .. code-block:: python
       :emphasize-text: first
 
       w_keyword_arguments(last_input=0, first_input=1,)
-      return (1, 0)
+                  return (1, 0)
 
     .. code-block:: python
       :emphasize-text: first
@@ -3045,7 +3045,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
           first_input={'key': 'value'},
           last_input={1, 2, 3, 'n'},
       )
-      return ({'key': 'value'}, {1, 2, 3, 'n'})
+          return ({'key': 'value'}, {1, 2, 3, 'n'})
 
   I add another :ref:`assertion<what is an assertion?>` to show that the two :ref:`functions<what is a function?>` are the same, by calling the ``w_positional_arguments`` :ref:`function<what is a function?>` with :ref:`keyword arguments<test_w_keyword_arguments>`
 
@@ -3600,8 +3600,8 @@ the test passes.
 
   .. code-block:: shell
 
-    TypeError: w_optional_arguments() missing
-               1 required positional argument: 'last_input'
+    TypeError: w_optional_arguments() missing 1
+               required positional argument: 'last_input'
 
   because the ``last_input`` argument MUST be given when this :ref:`function<what is a function?>` is called (it is required).
 
@@ -4260,8 +4260,8 @@ double starred expressions
 
   .. code-block:: python
 
-    TypeError: w_unknown_arguments() missing 1 required
-               positional argument: 'z'
+    TypeError: w_unknown_arguments() missing 1
+               required positional argument: 'z'
 
   because the previous :ref:`assertion<what is an assertion?>` calls the :ref:`function<what is a function?>` with two :ref:`positional arguments<test_w_positional_arguments>` and it now requires three.
 
