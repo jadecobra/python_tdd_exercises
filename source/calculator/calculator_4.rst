@@ -876,7 +876,6 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 32
 
     def input_is_not_none(function):
         def wrapper(first_input, second_input):
@@ -919,48 +918,6 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 
   still green.
-
-----
-
-* to continue with the goal that the :ref:`calculator functions<how to make a calculator 1>` send a message when they gets something that is not a number, I change assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` in :ref:`test_calculator_raises_type_error_w_strings` for the :ref:`add function<test_addition>` in ``test_calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 77
-    :emphasize-lines: 2, 4-5
-
-        def test_calculator_raises_type_error_w_strings(self):
-            self.assertEqual(
-                src.calculator.add('1', '1'),
-                'brmph?! Numbers only! Try again...'
-            )
-            with self.assertRaises(TypeError):
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError
-
-  I could have added a message to the `raise statement`_ for that :ref:`Exception<errors>`
-
-* I change the `raise statement`_ to a `return statement`_ with a message in ``calculator.py``
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 8
-
-    @input_is_not_none
-    def add(first_input, second_input):
-        if (
-            isinstance(first_input, str)
-            or
-            isinstance(second_input, str)
-        ):
-            return 'brmph?! Numbers only. Try again...'
-        else:
-            return first_input + second_input
-
-  the test passes.
 
 ----
 
