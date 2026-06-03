@@ -902,7 +902,7 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             or
             isinstance(second_input, str)
         ):
-            raise TypeError
+            return 'brmph?! Numbers only. Try again...'
         else:
             try:
                 return first_input + second_input

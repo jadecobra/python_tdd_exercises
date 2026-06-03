@@ -2872,7 +2872,7 @@ what happens when the child calls the parent?
   .. code-block:: python
 
     an_instance = src.classes.Doe()
-                  Doe # is empty, call Person
+                  Doe # has no __init__, call Person
                   Person.__init__()
 
   which raises :ref:`TypeError<what causes TypeError?>`
@@ -3271,7 +3271,7 @@ the test passes because this happens when ``doe = src.classes.Doe('doe')`` runs
 
   doe = src.classes.Doe('doe')
         Doe.__init__('doe')
-            super().__init__('doe')
+            super().__init__(first_name)
         Person.__init__('first_name')
             Person.__init__('first_name', last_name='doe')
             self.last_name = 'doe' # use the default value
@@ -3406,7 +3406,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     joe = src.classes.Blow('joe')
           Blow.__init__('joe')
-          self.last_name = 'joe'
+              self.last_name = 'joe'
 
   I can define :ref:`classes<what is a class?>` that are related and have their own defaults. In this test
 
@@ -3552,7 +3552,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   .. code-block:: python
 
     john = src.classes.Smith('john')
-           Smith # Smith has no __init__, callPerson
+           Smith # Smith has no __init__, call Person
            Person.__init__('john')
                Person.__init__('john', last_name='doe')
                self.last_name = 'doe' # use the default value
@@ -3801,7 +3801,7 @@ Can a :ref:`class<what is a class?>` have more than one parent?
   .. code-block:: python
 
     jane = src.classes.Jane()
-           Jane # Jane has no __init__, callPerson
+           Jane # Jane has no __init__, call Person
            Person.__init__()
 
   which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires one positional argument (``first_name``) and it got called with zero
@@ -3962,7 +3962,7 @@ the test passes.
                super().__init__()
            Doe.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` requires one positional argument (``first_name``) and it got called with zero
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` requires two positional arguments (``self`` and ``first_name``) and it got called with one (``self``)
 
 * I add ``jane`` as the value for ``first_name`` in the call to the parent
 
@@ -3989,7 +3989,7 @@ the test passes.
            Jane.__init__()
                super().__init__('jane')
            Doe.__init__('jane')
-               super().__init__('jane')
+               super().__init__(first_name)
            Person.__init__('jane')
                Person.__init__('jane', last_name='doe')
                self.first_name = 'jane'
@@ -4099,7 +4099,7 @@ the test passes.
            Jane.__init__('mary')
                super().__init__('jane')
            Doe.__init__('jane')
-               super().__init__('jane')
+               super().__init__(first_name)
            Person.__init__('jane')
                Person.__init__('jane', last_name='doe')
                self.first_name = 'jane'
@@ -4241,7 +4241,7 @@ the test passes.
     joe = src.classes.Joe()
           Person.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` takes one required :ref:`positional argument<test_w_positional_arguments>` (``first_name``) and it was called with zero
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional argument<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
 
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``Joe``
 
@@ -4312,13 +4312,6 @@ the test passes.
 
   the test passes. I cheated, which means I need a better test.
 
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'doe' != 'blow'
-
 * I add issubclass_ to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Blow``, in ``test_classes.py``
 
   .. code-block:: python
@@ -4329,7 +4322,122 @@ the test passes.
             joe = src.classes.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
-            assert not issubclass(
+            assert issubclass(
+                src.classes.Joe, src.classes.Blow
+            )
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert False
+
+* I change the parent of ``Joe`` to ``Blow`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 2-3
+
+    # class Joe(src.person.Person): pass
+    # class Joe(src.person.Person):
+    class Joe(Blow):
+
+        def __init__(self):
+            self.first_name = 'joe'
+            self.last_name = 'blow'
+            return None
+
+  the test passes.
+
+* I no longer need ``self.last_name = 'blow'`` because it is a repetition. I add a call to the `super built-in function`_
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 6-8
+
+    # class Joe(src.person.Person): pass
+    # class Joe(src.person.Person):
+    class Joe(Blow):
+
+        def __init__(self):
+            super().__init__('joe')
+            # self.first_name = 'joe'
+            # self.last_name = 'blow'
+            return None
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError:
+        'Joe' object has no attribute 'first_name'.
+        Did you mean: 'last_name'?
+
+  because this happens when ``joe = src.classes.Joe()`` runs
+
+  .. code-block:: python
+
+    joe = src.classes.Joe()
+          Joe.__init__()
+              super().__init__('joe')
+          Blow.__init__('joe')
+              self.last_name = 'blow'
+
+  there is no assignment of a value to the ``first_name`` :ref:`attribute<what is a class attribute?>` in ``Blow``
+
+* I add ``self.first_name`` to ``Blow``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 4
+
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name):
+            self.first_name = first_name
+            self.last_name = 'blow'
+
+  the test passes because this happens when ``joe = src.classes.Joe()`` runs
+
+  .. code-block:: python
+
+    joe = src.classes.Joe()
+          Joe.__init__()
+              super().__init__('joe')
+          Blow.__init__('joe')
+              self.first_name = 'joe'
+              self.last_name = 'blow'
+
+* I remove the commented lines and ``return None`` from ``Joe``
+
+  .. code-block:: python
+    :lineno-start: 32
+
+    class Jane(Doe):
+
+        def __init__(self, first_name='jane'):
+            super().__init__(first_name)
+
+
+    class Joe(Blow):
+
+        def __init__(self):
+            super().__init__('joe')
+
+* I add a call to the `assertNotIsSubclass method`_ in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 131
+    :emphasize-lines: 8-10
+
+        def test_classes_w_multiple_parents(self):
+            joe = src.classes.Joe()
+            self.assertEqual(joe.first_name, 'joe')
+            self.assertEqual(joe.last_name, 'blow')
+            assert issubclass(
+                src.classes.Joe, src.classes.Blow
+            )
+            self.assertNotIsSubclass(
                 src.classes.Joe, src.classes.Blow
             )
 
@@ -4339,312 +4447,39 @@ the test passes.
 
     AssertionError:
         <src.classes.Joe object at 0xffffabcdef80>
-        is not an instance of <class 'src.classes.Blow'>
+        is a subclass of <class 'src.classes.Blow'>
 
-  better
-
-
-----
-
-----
-
-----
-
-----
-
-----
-
-
-
-
-
-* I change the parent of ``Joe`` to ``Blow``, in ``classes.py``
+* I change assertNotIsSubclass_ to assertIsSubclass_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 34
-    :emphasize-lines: 1-2
+    :lineno-start: 136
+    :emphasize-lines: 8-9
 
-    # class Joe(src.person.Person):
-    class Joe(Blow):
-
-        def __init__(self, first_name='joe'):
-            # super().__init__(first_name=first_name)
-            super().__init__(
-                first_name=first_name, last_name='blow',
+        def test_classes_w_multiple_parents(self):
+            joe = src.classes.Joe()
+            self.assertEqual(joe.first_name, 'joe')
+            self.assertEqual(joe.last_name, 'blow')
+            assert issubclass(
+                src.classes.Joe, src.classes.Blow
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.Joe, src.classes.Blow
             )
 
   the test passes.
 
-* I can remove ``last_name`` from the call to the parent
+* I change ``mary`` to be an :ref:`instance<how to test if something is an instance of a class>` of ``Mary``, a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Jane``
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 5-8
-
-    # class Joe(src.person.Person):
-    class Joe(Blow):
-
-        def __init__(self, first_name='joe'):
-            super().__init__(first_name=first_name)
-            # super().__init__(
-            #     first_name=first_name, last_name='blow',
-            # )
-
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 28
-
-    class Jane(src.person.Person):
-
-        def __init__(self, first_name='jane'):
-            super().__init__(first_name=first_name)
-
-
-    class Joe(Blow):
-
-        def __init__(self, first_name='joe'):
-            super().__init__(first_name=first_name)
-
-  Python_ makes the following calls to resolve the call to make an instance of the ``Joe`` :ref:`class<what is a class?>`
-
-  .. code-block:: python
-
-    joe = src.classes.Joe()
-          Joe.__init__(first_name='joe')
-          super().__init__(first_name=first_name)
-        = Blow.__init__('joe')
-          super().__init__(first_name, last_name='blow')
-        = Person.__init__('joe', last_name='blow')
-          self.first_name = 'joe'
-          self.last_name = 'blow'
-
-* I add assertIsInstance_ to :ref:`test_classes_w_multiple_parents` for ``jane`` in ``test_classes.py``
-
-  .. code-block:: python
-    :lineno-start: 131
-    :emphasize-lines: 12
-
-        def test_classes_w_multiple_parents(self):
-            joe = src.classes.Joe()
-            # self.assertEqual(joe.first_name, 'mary')
-            self.assertEqual(joe.first_name, 'joe')
-            self.assertEqual(joe.last_name, 'blow')
-            self.assertIsInstance(joe, src.classes.Blow)
-
-            jane = src.classes.Jane()
-            self.assertEqual(jane.first_name, 'jane')
-            # self.assertEqual(jane.last_name, 'jane')
-            self.assertEqual(jane.last_name, 'doe')
-            self.assertIsInstance(jane, src.classes.Doe)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.classes.Jane object at 0xffffa8b7c6d5>
-        is not an instance of <class 'src.classes.Doe'>
-
-* I change the parent of ``Jane`` to ``Doe``, in ``classes.py``
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 1-2
-
-    # class Jane(src.person.Person):
-    class Jane(Doe):
-
-        def __init__(self, first_name='jane'):
-            super().__init__(first_name=first_name)
-
-  the test passes.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 22
-
-    class Smith(src.person.Person):
-
-        def __init__(self, first_name):
-            super().__init__(first_name, last_name='smith')
-
-
-    class Jane(Doe):
-
-        def __init__(self, first_name='jane'):
-            super().__init__(first_name=first_name)
-
-  Python_ makes the following calls to resolve the call to make an instance of the ``Jane`` :ref:`class<what is a class?>`
-
-  .. code-block:: python
-
-    jane = src.classes.Jane()
-           Jane.__init__(first_name='jane')
-           super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, call Person
-         = Person.__init__(first_name='jane', last_name='doe')
-           self.first_name = 'jane'
-           self.last_name = 'doe'
-
-* I add assertNotIsInstance_ to :ref:`test_classes_w_multiple_parents` for ``mary`` to make sure she is a child of ``Jane``, in ``test_classes.py``
-
-  .. code-block:: python
-    :lineno-start: 138
-    :emphasize-lines: 12
-
-            jane = src.classes.Jane()
-            self.assertEqual(jane.first_name, 'jane')
-            # self.assertEqual(jane.last_name, 'jane')
-            self.assertEqual(jane.last_name, 'doe')
-            self.assertIsInstance(jane, src.classes.Doe)
-
-            mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, 'jane')
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, 'mary')
-            self.assertEqual(mary.last_name, jane.last_name)
-            self.assertNotIsInstance(mary, src.classes.Jane)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.classes.Jane object at 0xffff0e1d2c3b>
-        is an instance of <class 'src.classes.Jane'>
-
-* I change assertNotIsInstance_ to assertIsInstance_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 144
-    :emphasize-lines: 6-7
-
-            mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, 'jane')
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, 'mary')
-            self.assertEqual(mary.last_name, jane.last_name)
-            # self.assertNotIsInstance(mary, src.classes.Jane)
-            self.assertIsInstance(mary, src.classes.Jane)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add another :ref:`assertion<what is an assertion?>` to show that ``mary`` is a child of ``Doe``
-
-  .. code-block:: python
-    :lineno-start: 144
-    :emphasize-lines: 8
-
-            mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, 'jane')
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, 'mary')
-            self.assertEqual(mary.last_name, jane.last_name)
-            # self.assertNotIsInstance(mary, src.classes.Jane)
-            self.assertIsInstance(mary, src.classes.Jane)
-            self.assertNotIsInstance(mary, src.classes.Doe)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.classes.Jane object at 0xffff12e3dc45>
-        is an instance of <class 'src.classes.Doe'>
-
-  because ``mary`` is an instance of ``Jane`` and the parent of ``Jane`` is ``Doe``
-
-* I change assertNotIsInstance_ to assertIsInstance_
-
-  .. code-block:: python
-    :lineno-start: 144
-    :emphasize-lines: 8-9
-
-            mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, 'jane')
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, 'mary')
-            self.assertEqual(mary.last_name, jane.last_name)
-            # self.assertNotIsInstance(mary, src.classes.Jane)
-            self.assertIsInstance(mary, src.classes.Jane)
-            # self.assertNotIsInstance(mary, src.classes.Doe)
-            self.assertIsInstance(mary, src.classes.Doe)
-
-
-    # Exceptions seen
-
-  the test passes. I can follow the parents all the way back to :ref:`object<what is a class?>` because Python_ makes the following calls to resolve the call to make an instance of the ``Jane`` :ref:`class<what is a class?>`
-
-  .. code-block:: python
-
-    mary = src.classes.Jane('mary')
-           Jane.__init__(first_name='jane')
-           super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, callPerson
-         = Person.__init__(first_name='mary', last_name='doe')
-           self.first_name = 'mary'
-           self.last_name = 'doe'
-
-* What if ``mary`` is also a child of ``joe``? I add an :ref:`assertion<what is an assertion?>` to test it
-
-  .. code-block:: python
-    :lineno-start: 144
-    :emphasize-lines: 10
-
-            mary = src.classes.Jane('mary')
-            # self.assertEqual(mary.first_name, 'jane')
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, 'mary')
-            self.assertEqual(mary.last_name, jane.last_name)
-            # self.assertNotIsInstance(mary, src.classes.Jane)
-            self.assertIsInstance(mary, src.classes.Jane)
-            # self.assertNotIsInstance(mary, src.classes.Doe)
-            self.assertIsInstance(mary, src.classes.Doe)
-            self.assertIsInstance(mary, src.classes.Joe)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.classes.Jane object at 0xffff87a65cb43>
-        is not an instance of <class 'src.classes.Joe'>
-
-  ``mary`` is not a child of ``joe``, yet
-
-* I change ``mary`` to be an instance of ``Mary``, a child of ``Jane``
-
-  .. code-block:: python
-    :lineno-start: 144
+    :lineno-start: 155
     :emphasize-lines: 1-2
 
             # mary = src.classes.Jane('mary')
             mary = src.classes.Mary()
-            # self.assertEqual(mary.first_name, 'jane')
             self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
             self.assertEqual(mary.last_name, jane.last_name)
-            # self.assertNotIsInstance(mary, src.classes.Jane)
-            self.assertIsInstance(mary, src.classes.Jane)
-            # self.assertNotIsInstance(mary, src.classes.Doe)
-            self.assertIsInstance(mary, src.classes.Doe)
-            self.assertIsInstance(mary, src.classes.Joe)
 
 
     # Exceptions seen
@@ -4658,13 +4493,13 @@ the test passes.
 * I add a :ref:`class definition<how to make a class>` for ``Mary`` to ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 34
+    :lineno-start: 38
     :emphasize-lines: 7, 9-10
 
     class Joe(Blow):
 
-        def __init__(self, first_name='joe'):
-            super().__init__(first_name=first_name)
+        def __init__(self):
+            super().__init__('joe')
 
 
     class Mary(Jane): pass
@@ -4673,15 +4508,426 @@ the test passes.
 
   .. code-block:: shell
 
+    AssertionError: 'jane' != 'mary'
+
+  because this happens when ``mary = src.classes.Mary()`` runs
+
+  .. code-block:: python
+
+    mary = src.classes.Mary()
+           Mary # has no __init__ call Jane
+           Jane.__init__()
+               # use the default value
+               Jane.__init__(first_name='jane')
+               super().__init__(first_name)
+           Doe.__init__('jane')
+               super().__init__(first_name)
+           Person.__init__('jane')
+               Person.__init__('jane', last_name='doe')
+               self.first_name = 'jane'
+               self.last_name = 'doe' # use the default value
+
+* I add the ``__init__`` :ref:`method<what is a method?>` to ``Mary``
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 1-2
+
+    # class Mary(Jane): pass
+    class Mary(Jane):
+
+        def __init__(self):
+            self.first_name = 'mary'
+
+  the terminal_ shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError:
+        'Mary' object has no attribute 'last_name'.
+        Did you mean: 'first_name'?
+
+  because this happens when ``mary = src.classes.Mary()`` runs
+
+  .. code-block:: python
+
+    mary = src.classes.Mary()
+           Mary.__init__()
+               self.first_name = 'mary'
+
+* I add a value for ``last_name``
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 6
+
+    # class Mary(Jane): pass
+    class Mary(Jane):
+
+        def __init__(self):
+            self.first_name = 'mary'
+            self.last_name = 'doe'
+
+  the test passes. This is a repetition because
+
+  - ``Mary`` is a ``Jane``
+  - ``Jane`` is a ``Doe``
+  - ``Doe`` is a ``Person``
+  - the :ref:`default value<test_w_optional_arguments>` for ``last_name`` in ``Person`` is ``'doe'``
+
+* I add a call to the `super built-in function`_ to remove the repetition
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 5-7
+
+    # class Mary(Jane): pass
+    class Mary(Jane):
+
+        def __init__(self):
+            super().__init__('mary')
+            # self.first_name = 'mary'
+            # self.last_name = 'doe'
+
+  the test is still green because this happens when ``mary = src.classes.Mary()`` runs
+
+  .. code-block:: python
+
+    mary = src.classes.Mary()
+           Mary.__init__()
+               super().__init__('mary')
+           Jane.__init__('mary')
+                super().__init__(first_name)
+           Doe.__init__('mary')
+                super().__init__(first_name)
+           Person.__init__('jane')
+                Person.__init__('jane', last_name='doe')
+                self.first_name = 'jane'
+                self.last_name = 'doe' # use the default value
+
+* I add an :ref:`assertion<what is an assertion?>` with the `issubclass built-in function`_ to :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 6-8
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            self.assertEqual(mary.last_name, jane.last_name)
+            assert not issubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert not True
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 6-7
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            self.assertEqual(mary.last_name, jane.last_name)
+            # assert not issubclass(
+            assert issubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add a call to assertNotIsSubclass_
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 10-12
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            self.assertEqual(mary.last_name, jane.last_name)
+            # assert not issubclass(
+            assert issubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+            self.assertNotIsSubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
     AssertionError:
-        <src.classes.Mary object at 0xffffb4c5d6e7>
-        is not an instance of <class 'src.classes.Joe'>
+        <class 'src.classes.Mary'> is
+        a subclass of <class 'src.classes.Jane'>
+
+* I change assertNotIsSubclass_ to the `assertIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 10-11
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            self.assertEqual(mary.last_name, jane.last_name)
+            # assert not issubclass(
+            assert issubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+
+
+    # Exceptions seen
+
+  the test passes.
 
 ----
 
 =================================================================================
 what happens when the child calls more than one parent?
 =================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to test if I can make ``Joe`` and ``Jane`` both be parents of ``Mary``?
+
+  .. code-block:: python
+    :lineno-start: 155
+    :emphasize-lines: 14-16
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            self.assertEqual(mary.last_name, jane.last_name)
+            # assert not issubclass(
+            assert issubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+            assert issubclass(
+                src.classes.Mary, src.classes.Joe
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert False
+
+  because ``Mary`` is not a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Joe``
+
+* I add ``Joe`` as a parent of ``Mary`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 2-3
+
+    # class Mary(Jane): pass
+    # class Mary(Jane):
+    class Mary(Jane, Joe):
+
+        def __init__(self):
+            super().__init__('mary')
+            # self.first_name = 'mary'
+            # self.last_name = 'doe'
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Joe.__init__() takes 1
+               positional argument but 2 were
+
+  because this happens when ``mary = src.classes.Mary()`` runs
+
+  .. code-block:: python
+
+    mary = src.classes.Mary()
+           Mary.__init__()
+               super().__init__('mary')
+           Jane.__init__('mary')
+               super().__init__(first_name)
+           Joe.__init__('mary')
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
+
+* I change the ``__init__`` :ref:`method<what is a method?>` in ``Joe`` to take a ``first_name`` argument
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 3-4
+
+    class Joe(Blow):
+
+        # def __init__(self):
+        def __init__(self, first_name):
+            super().__init__('joe')
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Joe.__init__() missing 1
+               required positional argument: 'first_name'
+
+  I broke the call that makes ``joe = src.classes.Joe()`` because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+
+* I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 4-5
+
+    class Joe(Blow):
+
+        # def __init__(self):
+        # def __init__(self, first_name):
+        def __init__(self, first_name='joe'):
+            super().__init__('joe')
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'joe' != 'mary'
+
+  for the first name of ``mary`` because this happens when ``mary = src.classes.Mary()`` runs
+
+  .. code-block:: python
+
+    mary = src.classes.Mary()
+           Mary.__init__()
+               super().__init__('mary')
+           Jane.__init__('mary')
+               super().__init__(first_name)
+           Joe.__init__('mary')
+               super().__init__('joe') # the problem
+           Blow.__init__('joe')
+               self.first_name = 'joe'
+               self.last_name = 'blow'
+
+* I use the parameter name in the call to ``super`` instead of a fixed value in ``Joe``
+
+  .. code-block:: python
+    :lineno-start: 38
+    :emphasize-lines: 6-7
+
+        class Joe(Blow):
+
+            # def __init__(self):
+            # def __init__(self, first_name):
+            def __init__(self, first_name='joe'):
+                # super().__init__('joe')
+                super().__init__(first_name)
+
+  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'blow' != 'doe'
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_classes_w_multiple_parents` for the last name of ``mary`` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 148
+    :emphasize-lines: 5-6
+
+            # mary = src.classes.Jane('mary')
+            mary = src.classes.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            # self.assertEqual(mary.last_name, jane.last_name)
+            self.assertEqual(mary.last_name, joe.last_name)
+            # assert not issubclass(
+            assert issubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.Mary, src.classes.Jane
+            )
+            assert issubclass(
+                src.classes.Mary, src.classes.Joe
+            )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I change the order of the parents of ``Mary`` to see what it does to the value of ``last_name`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 3-4
+
+    # class Mary(Jane): pass
+    # class Mary(Jane):
+    # class Mary(Jane, Joe):
+    class Mary(Joe, Jane):
+
+        def __init__(self):
+            super().__init__('mary')
+            # self.first_name = 'mary'
+            # self.last_name = 'doe'
+
+  the test is still green because this happens when ``mary = src.classes.Mary()`` runs
+
+  .. code-block:: python
+
+    mary = src.classes.Mary()
+           Mary.__init__()
+               super().__init__('mary')
+           Joe.__init__('mary')
+               super().__init__(first_name)
+           Blow.__init__('joe')
+               self.first_name = 'joe'
+               self.last_name = 'blow'
+
+  ``Jane`` never gets called even though it is a parent of ``Mary``
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_with_multiple_parents` in ``classes.py``
+
+  .. code-block
+
+----
+
+----
+
+----
+
+----
 
 ----
 
@@ -4705,11 +4951,32 @@ what happens when the child calls more than one parent?
 
   because Python_ makes the following calls to resolve the call to make an instance of the ``Mary`` :ref:`class<what is a class?>` if the parents are ``(Joe, Jane)``
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   first it makes these calls for the ``Joe`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
 
   .. code-block:: python
 
-    mary = src.classes.Mary() # Mary has no __init__, skip to Joe
+    mary = src.classes.Mary()
+           Mary # Mary has no __init__, skip to Joe
            Joe.__init__()
            super().__init__(first_name=first_name)
          = Blow.__init__(first_name='joe')
