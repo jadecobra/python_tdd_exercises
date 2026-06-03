@@ -889,54 +889,6 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
   still green.
 
-* I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`add function<test_addition>`
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 32
-
-    def input_is_not_none(function):
-        def wrapper(first_input, second_input):
-            if first_input is None or second_input is None:
-                return 'brmph?! Numbers only. Try again...'
-            return function(first_input, second_input)
-        return wrapper
-
-
-    @input_is_not_none
-    def subtract(first_input, second_input):
-        return first_input - second_input
-
-
-    @input_is_not_none
-    def multiply(first_input, second_input):
-        return first_input * second_input
-
-
-    @input_is_not_none
-    def divide(first_input, second_input):
-        try:
-            return first_input / second_input
-        except ZeroDivisionError:
-            return 'brmph?! I cannot divide by 0. Try again...'
-
-
-    def add(first_input, second_input):
-        if (
-            isinstance(first_input, str)
-            or
-            isinstance(second_input, str)
-        ):
-            return 'brmph?! Numbers only. Try again...'
-        else:
-            try:
-                return first_input + second_input
-            except TypeError:
-                return 'brmph?! Numbers only. Try again...'
-
-
-  still green.
-
 ----
 
 * to continue with the goal that the :ref:`calculator functions<how to make a calculator 1>` send a message when they gets something that is not a number, I change assertRaises_ to :ref:`assertEqual method<another way to test if two things are Equal>` in :ref:`test_calculator_raises_type_error_w_strings` for the :ref:`add function<test_addition>` in ``test_calculator.py``
