@@ -875,7 +875,26 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 * I remove the :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :linenos:
+    :emphasize-lines: 32
+
+    def input_is_not_none(function):
+        def wrapper(first_input, second_input):
+            if first_input is None or second_input is None:
+                return 'brmph?! Numbers only. Try again...'
+            return function(first_input, second_input)
+        return wrapper
+
+
+    @input_is_not_none
+    def subtract(first_input, second_input):
+        return first_input - second_input
+
+
+    @input_is_not_none
+    def multiply(first_input, second_input):
+        return first_input * second_input
+
 
     @input_is_not_none
     def divide(first_input, second_input):
@@ -886,6 +905,18 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
 
     def add(first_input, second_input):
+        if (
+            isinstance(first_input, str)
+            or
+            isinstance(second_input, str)
+        ):
+            return 'brmph?! Numbers only. Try again...'
+        else:
+            try:
+                return first_input + second_input
+            except TypeError:
+                return 'brmph?! Numbers only. Try again...'
+
 
   still green.
 
