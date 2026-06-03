@@ -2938,14 +2938,14 @@ how to call the parent from the child
     TypeError: Doe.__init__() takes
                1 positional argument but 2 were given
 
-  because this is what happens when ``an_instance = src.classes.Doe('first_name')`` runs
+  because this happens when ``an_instance = src.classes.Doe('first_name')`` runs
 
   .. code-block:: python
 
     an_instance = src.classes.Doe('first_name')
                   Doe.__init__('first_name')
 
-  which raises :ref:`TypeError<what causes TypeError?>` because the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Doe`` only takes one argument (``self``) and it was called with two (``self`` and ``first_name``)
+  which raises :ref:`TypeError<what causes TypeError?>` because the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``first_name``)
 
 * I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``classes.py``
 
@@ -2969,13 +2969,13 @@ how to call the parent from the child
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
 
-  because this is what happens when ``an_instance = src.classes.Doe('first_name')`` runs
+  because this happens when ``an_instance = src.classes.Doe('first_name')`` runs
 
   .. code-block:: python
 
     an_instance = src.classes.Doe('first_name')
                   Doe.__init__('first_name')
-                  super().__init__()
+                      super().__init__()
                   Person.__init__()
 
   which raises :ref:`TypeError<what causes TypeError?>`
@@ -3012,7 +3012,7 @@ how to call the parent from the child
 
       an_instance = src.classes.Doe('first_name')
                     Doe.__init__('first_name')
-                    super().__init__('first_name')
+                        super().__init__('first_name')
                     Person.__init__('first_name')
 
 * I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_inheritance` in ``test_classes.py``
@@ -3271,10 +3271,10 @@ the test passes because this happens when ``doe = src.classes.Doe('doe')`` runs
 
   doe = src.classes.Doe('doe')
         Doe.__init__('doe')
-        super().__init__('doe')
+            super().__init__('doe')
         Person.__init__('first_name')
-        Person.__init__('first_name', last_name='doe')
-        self.last_name = 'doe' # use default value
+            Person.__init__('first_name', last_name='doe')
+            self.last_name = 'doe' # use the default value
 
 the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
@@ -3383,7 +3383,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     joe = src.classes.Blow('joe')
           Blow.__init__('joe')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` o of ``Blow`` only takes one argument (``self``) and it got called with two (``self`` and ``first_name``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` o of ``Blow`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``)
 
 * I add ``first_name`` to the parentheses for the ``__init__`` :ref:`method<what is a method?>`
 
@@ -3552,10 +3552,10 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   .. code-block:: python
 
     john = src.classes.Smith('john')
-           Smith # Smith has no __init__, go to Person
+           Smith # Smith has no __init__, callPerson
            Person.__init__('john')
-           Person.__init__('john', last_name='doe')
-           self.last_name = 'doe' # use default value
+               Person.__init__('john', last_name='doe')
+               self.last_name = 'doe' # use the default value
 
 * I add the ``__init__`` :ref:`method<what is a method?>` in ``Smith``
 
@@ -3573,8 +3573,8 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   .. code-block:: python
 
-    TypeError: Smith.__init__()
-               takes 1 positional argument but 2 were given
+    TypeError: Smith.__init__() takes 1
+               positional argument but 2 were given
 
   because this happens when ``john = src.classes.Smith('john')`` runs
 
@@ -3697,7 +3697,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
                  super().__init__(first_name)
                  Person.__init__('first_name')
                  Person.__init__('first_name', last_name='doe')
-                 self.last_name = 'doe' # use default value
+                 self.last_name = 'doe' # use the default value
 
   * this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Smith`` and ``Blow`` are made
 
@@ -3747,7 +3747,7 @@ Can a :ref:`class<what is a class?>` have more than one parent?
 * I add a test with an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 128
+    :lineno-start: 133
     :emphasize-lines: 4-6
     :emphasize-text: Jane
 
@@ -3775,22 +3775,67 @@ Can a :ref:`class<what is a class?>` have more than one parent?
 
 ----
 
-I add a :ref:`class<what is a class?>` for ``Jane`` to ``classes.py``
+* I add a :ref:`class<what is a class?>` for ``Jane`` to ``classes.py``
 
-.. code-block:: python
-  :lineno-start: 22
-  :emphasize-lines: 7, 9-10
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 7
 
-  class Smith(src.person.Person):
+    class Smith(src.person.Person):
 
-      def __init__(self, first_name):
-          super().__init__(first_name, last_name='smith')
+        def __init__(self, first_name):
+            self.last_name = 'smith'
 
 
-  class Jane(src.person.Person):
+    class Jane(src.person.Person): pass
 
-      def __init__(self, first_name='jane'):
-          super().__init__(first_name=first_name)
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() missing 1
+               required positional argument: 'first_name'
+
+  because this happens when ``jane = src.classes.Jane()`` runs
+
+  .. code-block:: python
+
+    jane = src.classes.Jane()
+           Jane # Jane has no __init__, callPerson
+           Person.__init__()
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires one positional argument (``first_name``) and it got called with zero
+
+* I add the ``__init__`` :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``Jane``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 1-2, 4-5
+
+    # class Jane(src.person.Person): pass
+    class Jane(src.person.Person):
+
+        def __init__(self):
+            return None
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Jane' object has no attribute 'first_name'
+
+* I add a value for ``first_name`` to the :ref:`definition<how to make a class>`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 5
+
+    # class Jane(src.person.Person): pass
+    class Jane(src.person.Person):
+
+        def __init__(self):
+            self.first_name = 'jane'
+            return None
 
 the test passes.
 
@@ -3805,57 +3850,257 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for the last name of ``jane`` to :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 136
     :emphasize-lines: 4
 
         def test_classes_w_multiple_parents(self):
             jane = src.classes.Jane()
             self.assertEqual(jane.first_name, 'jane')
-            self.assertEqual(jane.last_name, 'jane')
+            self.assertEqual(jane.last_name, 'doe')
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError:
+        'Jane' object has no attribute 'last_name'.
+        Did you mean: 'first_name'?
+
+* I add a value for ``last_name`` to ``Jane`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 6
+
+    # class Jane(src.person.Person): pass
+    class Jane(src.person.Person):
+
+        def __init__(self):
+            self.first_name = 'jane'
+            self.last_name = 'doe'
+            return None
+
+  the test passes. This is a repetition because
+
+  - the :ref:`default value<test_w_optional_arguments>` for ``Person`` is ``doe``
+  - ``Jane`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Person``
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 5-7
+
+        def test_classes_w_multiple_parents(self):
+            jane = src.classes.Jane()
+            self.assertEqual(jane.first_name, 'jane')
+            self.assertEqual(jane.last_name, 'doe')
+            self.assertIsSubclass(
+                src.classes.Jane, src.classes.Doe
+            )
 
 
     # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'src.classes.Jane'> is not
+        a subclass of <class 'src.classes.Doe'>
+
+* I change the parent of ``Jane`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2-3
+
+    # class Jane(src.person.Person): pass
+    # class Jane(src.person.Person):
+    class Jane(Doe):
+
+        def __init__(self):
+            self.first_name = 'jane'
+            self.last_name = 'doe'
+            return None
+
+  the test passes
+
+* I add a call to the `super built-in function`_ to use to remove the repetition of ``last_name``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 6-8
+
+    # class Jane(src.person.Person): pass
+    # class Jane(src.person.Person):
+    class Jane(Doe):
+
+        def __init__(self):
+            super().__init__()
+            # self.first_name = 'jane'
+            # self.last_name = 'doe'
+            return None
+
+  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+
   .. code-block:: python
 
-    AssertionError: 'doe' != 'jane'
+    TypeError: Doe.__init__() missing 1
+               required positional argument: 'first_name'
 
-* I change the expectation
+  because this happens when ``jane = src.classes.Jane()`` runs
 
   .. code-block:: python
-    :lineno-start: 131
-    :emphasize-lines: 4-5
+
+    jane = src.classes.Jane()
+           Jane.__init__()
+               super().__init__()
+           Doe.__init__()
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` requires one positional argument (``first_name``) and it got called with zero
+
+* I add ``jane`` as the value for ``first_name`` in the call to the parent
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 6-7
+
+    # class Jane(src.person.Person): pass
+    # class Jane(src.person.Person):
+    class Jane(Doe):
+
+        def __init__(self):
+            # super().__init__()
+            super().__init__('jane')
+            # self.first_name = 'jane'
+            # self.last_name = 'doe'
+            return None
+
+  the test is green again because this happens when ``jane = src.classes.Jane()`` runs
+
+  .. code-block:: python
+
+    jane = src.classes.Jane()
+           Jane.__init__()
+               super().__init__('jane')
+           Doe.__init__('jane')
+               super().__init__('jane')
+           Person.__init__('jane')
+               Person.__init__('jane', last_name='doe')
+               self.first_name = 'jane'
+               self.last_name = 'doe' # use the default value
+
+* I add an :ref:`assertion<what is an assertion?>` for ``mary``, another instance of ``Jane`` to :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 9-10
 
         def test_classes_w_multiple_parents(self):
             jane = src.classes.Jane()
             self.assertEqual(jane.first_name, 'jane')
-            # self.assertEqual(jane.last_name, 'jane')
             self.assertEqual(jane.last_name, 'doe')
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` for ``mary``, another instance of ``Jane``
-
-  .. code-block:: python
-    :lineno-start: 131
-    :emphasize-lines: 7-8
-
-        def test_classes_w_multiple_parents(self):
-            jane = src.classes.Jane()
-            self.assertEqual(jane.first_name, 'jane')
-            # self.assertEqual(jane.last_name, 'jane')
-            self.assertEqual(jane.last_name, 'doe')
+            self.assertIsSubclass(
+                src.classes.Jane, src.classes.Doe
+            )
 
             mary = src.classes.Jane('mary')
-            self.assertEqual(mary.first_name, 'jane')
+            self.assertEqual(mary.first_name, 'mary')
 
 
     # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Jane.__init__() takes 1
+               positional argument but 2 were given
+
+  because this happens when ``mary = src.classes.Jane('mary')`` runs
+
+  .. code-block:: python
+
+    mary = src.classes.Jane('mary')
+           Jane.__init__('mary')
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'mary'``)
+
+* I add ``first_name`` to the parentheses for the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 6
+
+    # class Jane(src.person.Person): pass
+    # class Jane(src.person.Person):
+    class Jane(Doe):
+
+        # def __init__(self):
+        def __init__(self, first_name):
+            # super().__init__()
+            super().__init__('jane')
+            # self.first_name = 'jane'
+            # self.last_name = 'doe'
+            return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Jane.__init__() missing 1
+               required positional argument: 'first_name'
+
+  I broke the :ref:`assertion<what is an assertion?>` for ``jane`` because this happens when ``jane = src.classes.Jane()`` runs
+
+  .. code-block:: python
+
+    jane = src.classes.Jane()
+           Jane.__init__()
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``)
+
+* I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 6-7
+
+    # class Jane(src.person.Person): pass
+    # class Jane(src.person.Person):
+    class Jane(Doe):
+
+        # def __init__(self):
+        # def __init__(self, first_name):
+        def __init__(self, first_name='jane'):
+            # super().__init__()
+            super().__init__('jane')
+            # self.first_name = 'jane'
+            # self.last_name = 'doe'
+            return None
+
+
+
+
+
+
+
+
+----
+
+----
+
+----
+
+----
+
+----
+
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -4159,7 +4404,7 @@ the test passes.
     jane = src.classes.Jane()
            Jane.__init__(first_name='jane')
            super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, go to Person
+         = Doe # Doe has no __init__, call Person
          = Person.__init__(first_name='jane', last_name='doe')
            self.first_name = 'jane'
            self.last_name = 'doe'
@@ -4267,7 +4512,7 @@ the test passes.
     mary = src.classes.Jane('mary')
            Jane.__init__(first_name='jane')
            super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, go to Person
+         = Doe # Doe has no __init__, callPerson
          = Person.__init__(first_name='mary', last_name='doe')
            self.first_name = 'mary'
            self.last_name = 'doe'
@@ -4450,7 +4695,7 @@ what happens when the child calls more than one parent?
 
     mary = Jane.__init__(first_name='mary', last_name='blow')
            super().__init__(first_name=first_name)
-         = Doe # Doe has no __init__, go to Person
+         = Doe # Doe has no __init__, call Person
          = Person.__init__(first_name='mary', last_name='doe')
            self.first_name = 'mary'
            self.last_name = 'doe'

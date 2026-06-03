@@ -2331,7 +2331,7 @@ So far, the :ref:`functions<what is a function?>` take no input or one input, th
 * I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
 
   .. code-block:: python
-    :lineno-start: 86
+    :lineno-start: 133
     :emphasize-lines: 5-6, 8-9, 13-14, 18-19
 
         def test_w_positional_arguments(self):
