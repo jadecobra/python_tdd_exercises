@@ -450,7 +450,7 @@ I want the :ref:`add function<test_addition>` to raise TypeError_ when it gets a
 
   .. note::
 
-    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an :ref:`child (instance)<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
+    - the `isinstance function`_ like the `assertIsInstance method`_ checks if the first input it is given is an instance (child) of the :ref:`class<what is a class?>` it is given as the second input. It is part of `Python's Built-in Functions`_
     - the :ref:`if statement<if statements>` ``if isinstance(first_input, str) or isinstance(second_input, str):`` is :ref:`True<test_what_is_true>` if
 
       * ``first_input`` is a string_ and ``second_input`` is NOT a string_
@@ -889,28 +889,6 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
 
   still green.
 
-* I try it with the :ref:`add function<test_addition>`
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 1
-
-    @input_is_not_none
-    def add(first_input, second_input):
-        if (
-            isinstance(first_input, str)
-            or
-            isinstance(second_input, str)
-        ):
-            return 'brmph?! Numbers only. Try again...'
-        else:
-            try:
-                return first_input + second_input
-            except TypeError:
-                return 'brmph?! Numbers only. Try again...'
-
-  the tests are still green.
-
 * I remove the :ref:`exception handler<how to use try...except...else>` from the :ref:`add function<test_addition>`
 
   .. code-block:: python
@@ -943,16 +921,18 @@ I can use a decorator/wrapper :ref:`function<what is a function?>` to remove the
             return 'brmph?! I cannot divide by 0. Try again...'
 
 
-    @input_is_not_none
     def add(first_input, second_input):
         if (
             isinstance(first_input, str)
             or
             isinstance(second_input, str)
         ):
-            raise TypeError
+            return 'brmph?! Numbers only. Try again...'
         else:
-            return first_input + second_input
+            try:
+                return first_input + second_input
+            except TypeError:
+                return 'brmph?! Numbers only. Try again...'
 
 
   still green.
