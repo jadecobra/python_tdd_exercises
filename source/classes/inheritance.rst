@@ -17,8 +17,10 @@
 .. _issubclass: https://docs.python.org/3/library/functions.html#issubclass
 .. _issubclass built-in function: issubclass_
 .. _assertNotIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertNotIsSubclass
+.. _assertNotIsSubclass method: assertNotIsSubclass_
 .. _unittest.TestCase.assertNotIsSubclass: assertNotIsSubclass_
 .. _assertIsSubclass: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertIsSubclass
+.. _assertIsSubclass method: assertIsSubclass_
 .. _unittest.TestCase.assertIsSubclass: assertIsSubclass_
 .. _MRO: https://docs.python.org/3/howto/mro.html#python-2-3-mro
 .. _Method Resolution Order: MRO_
@@ -2217,11 +2219,12 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 * I add a test to ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 4-7
+    :lineno-start: 54
+    :emphasize-lines: 5-8
 
-            assert isinstance(dict, object)
-            self.assertIsInstance(dict, object)
+        def test_is_a_dictionary_an_object(self):
+            assert issubclass(dict, object)
+            self.assertIsSubclass(dict, object)
 
         def test_attributes_and_methods_of_objects(self):
             reality = dir(object)
@@ -2385,7 +2388,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 test_making_a_class_w_inheritance
 *********************************************************************************
 
-I can make :ref:`classes<what is a class?>` with inheritance
+I can make :ref:`classes<what is a class?>` with inheritance by stating the parent :ref:`class<what is a class?>`
 
 ----
 
@@ -2447,79 +2450,10 @@ I can make :ref:`classes<what is a class?>` with inheritance
 
     AssertionError: assert False
 
-  because even though ``Doe`` and ``Person`` are children of :ref:`object<what is a class?>`, ``Doe`` is not an instance of ``Person``
+  because
 
-* I change the parent of ``Doe``
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 1-2
-
-    # class Doe(object): pass
-    class Doe(person.Person): pass
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'person' is not defined
-
-  because there is no definition for ``person`` in this file_
-
-* I add an `import statement`_ at the top of ``classes.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import person
-
-
-    class WPass: pass
-
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
-
-  .. code-block:: python
-
-    E   ModuleNotFoundError: No module named 'person'
-
-  because the test cannot find ``person.py`` in the main project folder_ where I run the tests from, so it cannot import the :ref:`Module<what is a module?>`
-
-* I change the `import statement`_ so the path to ``person.py`` from the main project folder_ is correct
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    # import person
-    import src.person
-
-
-    class WPass: pass
-
-  the terminal_ does not feel like my friend, it goes back to :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'person' is not defined
-
-* I add ``src.`` to the parent of ``Doe``
-
-  .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2-3
-
-    # class Doe(object): pass
-    # class Doe(person.Person): pass
-    class Doe(src.person.Person): pass
-
-  the terminal_ definitely does not feel like my friend, it goes back to :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert False
-
-  because ``Doe`` is still not an instance of ``Person`` even though I defined ``Person`` as the parent of ``Doe``
+  - ``doe`` is just a name for the ``Doe`` :ref:`class<what is a class?>`
+  - ``Doe`` and ``Person`` are children of :ref:`object<what is a class?>`
 
 * I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_inheritance` in ``test_classes.py``
 
@@ -2535,12 +2469,7 @@ I can make :ref:`classes<what is a class?>` with inheritance
 
     # Exceptions seen
 
-  the test passes.
-
-  * ``import src.person`` brings in an :ref:`object<what is a class?>` that represents the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``classes.py``
-  * I have to use ``src.person.Person`` in ``classes.py`` because I am testing from the root folder_ of the project
-  * The test needs to know where ``person.py`` is in relation to where I ran the tests from
-  * This is a problem because if ``classes.py`` is run from inside ``src`` the `import statement`_ will not be able to find ``src.person`` from inside ``src``. Same thing if I run the tests from inside ``tests``. That is a problem for another time.
+  the test passes. ``Doe`` is not an :ref:`instance<how to test if something is an instance of a class>` of the ``Person`` :ref:`class.<what is a class?>`
 
 ----
 
@@ -2570,10 +2499,8 @@ I can make :ref:`classes<what is a class?>` with inheritance
   .. code-block:: shell
 
     AssertionError:
-        <class 'src.classes.Doe'> is
-        not an instance of <class 'src.person.Person'>
-
-  because the ``Doe`` :ref:`class<what is a class?>` is not an instance of the ``Person`` :ref:`class<what is a class?>` and ``a_class`` is just a name pointing to the ``Doe`` :ref:`class<what is a class?>`
+        <class 'src.classes.Doe'> is not
+        an instance of <class 'src.person.Person'>
 
 * I change assertIsInstance_ to assertNotIsInstance_
 
@@ -2595,7 +2522,7 @@ I can make :ref:`classes<what is a class?>` with inheritance
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` to show that ``a_class`` which points to ``Doe`` is just a name for the :ref:`class<what is a class?>` not an instance
+* I use the `issubclass built-in function`_ to test if ``Doe`` is a child of ``Person``
 
   .. code-block:: python
     :lineno-start: 88
@@ -2609,6 +2536,176 @@ I can make :ref:`classes<what is a class?>` with inheritance
             self.assertNotIsInstance(
                 a_class, src.person.Person
             )
+            assert issubclass(a_class, src.person.Person)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       AssertionError: assert
+
+  because ``Doe`` is not a child of ``Person``, yet.
+
+* I change the parent of ``Doe`` from ``object`` to ``Person`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 1-2
+
+    # class Doe(object): pass
+    class Doe(person.Person): pass
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'person' is not defined
+
+  because there is no definition for ``person`` in ``classes.py``
+
+* I add an `import statement`_ at the top of ``classes.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    import person
+
+
+    class WPass: pass
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    E   ModuleNotFoundError: No module named 'person'
+
+  because the test cannot find ``person.py`` in the main project folder_ where I run the tests from, so it cannot import the :ref:`Module<what is a module?>`
+
+* I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 99
+    :emphasize-lines: 5
+    :emphasize-text: ModuleNotFoundError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # ModuleNotFoundError
+
+* I change the `import statement`_ so the path to ``person.py`` from the main project folder_ is correct, in ``classes.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # import person
+    import src.person
+
+
+    class WPass: pass
+
+  the terminal_ does not feel like my friend, it goes back to :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'person' is not defined
+
+* I add ``src.`` to the parent of ``Doe``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 2-3
+
+    # class Doe(object): pass
+    # class Doe(person.Person): pass
+    class Doe(src.person.Person): pass
+
+  - the test passes because ``Doe`` is now a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Person``.
+  - ``import src.person`` brings in an :ref:`object<what is a class?>` that represents the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``classes.py``.
+  - I have to use ``src.person.Person`` in ``classes.py`` because I am testing from the root folder_ of the project.
+  - The test needs to know where ``person.py`` is in relation to where I ran the tests from.
+  - This is a problem because if ``classes.py`` is run from inside ``src`` the `import statement`_ will not be able to find ``src.person`` from inside ``src``. Same thing if I run the tests from inside ``tests``. That is a problem for another time.
+
+* I add the `assertNotIsSubclass method`_ to :ref:`test_making_a_class_w_inheritance` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 10-12
+
+        def test_making_a_class_w_inheritance(self):
+            a_class = src.classes.Doe
+            # assert isinstance(a_class, src.person.Person)
+            assert not isinstance(a_class, src.person.Person)
+            # self.assertIsInstance(a_class, src.person.Person)
+            self.assertNotIsInstance(
+                a_class, src.person.Person
+            )
+            assert issubclass(a_class, src.person.Person)
+            self.assertNotIsSubclass(
+                a_class, src.person.Person
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'src.classes.Doe'> is a
+        subclass of <class 'src.person.Person'>
+
+* I change assertNotIsSubclass_ to assertIsSubclass_
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 10-11
+
+        def test_making_a_class_w_inheritance(self):
+            a_class = src.classes.Doe
+            # assert isinstance(a_class, src.person.Person)
+            assert not isinstance(a_class, src.person.Person)
+            # self.assertIsInstance(a_class, src.person.Person)
+            self.assertNotIsInstance(
+                a_class, src.person.Person
+            )
+            assert issubclass(a_class, src.person.Person)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                a_class, src.person.Person
+            )
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to show that ``a_class`` which points to ``Doe`` is just a name for the :ref:`class<what is a class?>` not an :ref:`instance<how to test if something is an instance of a class>`
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 14
+
+        def test_making_a_class_w_inheritance(self):
+            a_class = src.classes.Doe
+            # assert isinstance(a_class, src.person.Person)
+            assert not isinstance(a_class, src.person.Person)
+            # self.assertIsInstance(a_class, src.person.Person)
+            self.assertNotIsInstance(
+                a_class, src.person.Person
+            )
+            assert issubclass(a_class, src.person.Person)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                a_class, src.person.Person
+            )
             assert isinstance(a_class, a_class)
 
 
@@ -2620,13 +2717,13 @@ I can make :ref:`classes<what is a class?>` with inheritance
 
     E       AssertionError: assert False
 
-  because a :ref:`class<what is a class?>` is not an instance
+  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance of a class>`
 
 * I change the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 9-10
+    :emphasize-lines: 14-15
 
 
         def test_making_a_class_w_inheritance(self):
@@ -2637,11 +2734,16 @@ I can make :ref:`classes<what is a class?>` with inheritance
             self.assertNotIsInstance(
                 a_class, src.person.Person
             )
+            assert issubclass(a_class, src.person.Person)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                a_class, src.person.Person
+            )
             # assert isinstance(a_class, a_class)
             assert not isinstance(a_class, a_class)
 
 
-    # Exceptions
+    # Exceptions seen
 
   the test passes.
 
@@ -2649,7 +2751,7 @@ I can make :ref:`classes<what is a class?>` with inheritance
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 11
+    :emphasize-lines: 16
 
         def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
@@ -2657,6 +2759,11 @@ I can make :ref:`classes<what is a class?>` with inheritance
             assert not isinstance(a_class, src.person.Person)
             # self.assertIsInstance(a_class, src.person.Person)
             self.assertNotIsInstance(
+                a_class, src.person.Person
+            )
+            assert issubclass(a_class, src.person.Person)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
                 a_class, src.person.Person
             )
             # assert isinstance(a_class, a_class)
@@ -2671,16 +2778,16 @@ I can make :ref:`classes<what is a class?>` with inheritance
   .. code-block:: shell
 
     AssertionError:
-        <class 'src.classes.Doe'> is
-        not an instance of <class 'src.classes.Doe'>
+        <class 'src.classes.Doe'> is not
+        an instance of <class 'src.classes.Doe'>
 
-  because a :ref:`class<what is a class?>` is not an instance
+  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance of a class>`
 
 * I change assertIsInstance_ to assertNotIsInstance_
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 11-12
+    :emphasize-lines: 16-17
 
         def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
@@ -2690,6 +2797,11 @@ I can make :ref:`classes<what is a class?>` with inheritance
             self.assertNotIsInstance(
                 a_class, src.person.Person
             )
+            assert issubclass(a_class, src.person.Person)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                a_class, src.person.Person
+            )
             # assert isinstance(a_class, a_class)
             assert not isinstance(a_class, a_class)
             # self.assertIsInstance(a_class, a_class)
@@ -2697,6 +2809,7 @@ I can make :ref:`classes<what is a class?>` with inheritance
 
 
     # Exceptions seen
+
 ----
 
 =================================================================================
@@ -2705,11 +2818,11 @@ what is the difference between an instance and a class?
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`, this time with an instance of ``Doe``
+* I add another :ref:`assertion<what is an assertion?>`, this time with an :ref:`instance<how to test if something is an instance of a class>` of ``Doe``
 
   .. code-block:: python
     :lineno-start: 88
-    :emphasize-lines: 14-17
+    :emphasize-lines: 19-22
 
         def test_making_a_class_w_inheritance(self):
             a_class = src.classes.Doe
@@ -2717,6 +2830,11 @@ what is the difference between an instance and a class?
             assert not isinstance(a_class, src.person.Person)
             # self.assertIsInstance(a_class, src.person.Person)
             self.assertNotIsInstance(
+                a_class, src.person.Person
+            )
+            assert issubclass(a_class, src.person.Person)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
                 a_class, src.person.Person
             )
             # assert isinstance(a_class, a_class)
@@ -2739,29 +2857,72 @@ what is the difference between an instance and a class?
     TypeError: Person.__init__() missing 1
                required positional argument: 'first_name'
 
-  I made an instance of the ``Doe`` :ref:`class<what is a class?>` and get :ref:`TypeError<what causes TypeError?>` about the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` because ``Doe`` is a child of ``Person``
+  because the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` takes one required argument for ``first_name`` and I called ``Doe`` to make an :ref:`instance<how to test if something is an instance of a class>`. How did ``Person.__init__`` get called?
+
+----
+
+=================================================================================
+what happens when the child calls the parent?
+=================================================================================
+
+----
+
+* Here is what is happens when ``an_instance = src.class.Doe()`` runs
+
+  .. code-block:: python
+
+    an_instance = src.classes.Doe()
+                  Doe # is empty, call Person
+                  Person.__init__()
+
+  which raises :ref:`TypeError<what causes TypeError?>`
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 5
+    :lineno-start: 112
+    :emphasize-lines: 6
     :emphasize-text: TypeError
 
     # Exceptions seen
     # AssertionError
     # NameError
     # AttributeError
+    # ModuleNotFoundError
     # TypeError
 
-* I add a value for ``first_name``
+----
+
+=================================================================================
+how to call the parent from the child
+=================================================================================
+
+----
+
+* I add the `super built-in function`_ to ``Doe`` to call the parent (``Person``) ``__init__`` :ref:`method<what is a method?>` directly, in ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 14
+    :emphasize-lines: 4, 6-7
+
+    # class Doe(object): pass
+    # class Doe(person.Person): pass
+    # class Doe(src.person.Person): pass
+    class Doe(src.person.Person):
+
+        def __init__(self):
+            super().__init__()
+
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
+
+* I add a value to ``src.classes.Doe`` in :ref:`test_making_a_class_w_inheritance` in ``test_classes.py``
+
+  .. code-block:: python
+    :lineno-start: 106
     :emphasize-lines: 1-2
 
             # an_instance = src.classes.Doe()
-            an_instance = src.classes.Doe('doe')
+            an_instance = src.classes.Doe('first_name')
             assert not isinstance(
                 an_instance, src.person.Person
             )
@@ -2769,22 +2930,98 @@ what is the difference between an instance and a class?
 
     # Exceptions seen
 
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Doe.__init__() takes 1 positional argument
+               but 2 were given
+
+  because this is what happens when ``an_instance = src.classes.Doe('first_name')`` runs
+
+  .. code-block:: python
+
+    an_instance = src.classes.Doe('first_name')
+                = Doe.__init__('first_name')
+
+  which raises :ref:`TypeError<what causes TypeError?>` because the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Doe`` only takes one argument (``self``) and it was called with two (``self`` and ``first_name``)
+
+* I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 6-7
+
+    # class Doe(object): pass
+    # class Doe(person.Person): pass
+    # class Doe(src.person.Person): pass
+    class Doe(src.person.Person):
+
+        # def __init__(self):
+        def __init__(self, first_name):
+            super().__init__()
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: Person.__init__() missing 1
+               required positional argument: 'first_name'
+
+  because this is what happens when ``an_instance = src.classes.Doe('first_name')`` runs
+
+  .. code-block:: python
+
+    an_instance = src.classes.Doe('first_name')
+                  Doe.__init__('first_name')
+                  super().__init__()
+                  Person.__init__()
+
+  which raises :ref:`TypeError<what causes TypeError?>`
+
+* I add the required parameter to ``super().__init__()`` in ``Doe``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 8-9
+
+    # class Doe(object): pass
+    # class Doe(person.Person): pass
+    # class Doe(src.person.Person): pass
+    class Doe(src.person.Person):
+
+        # def __init__(self):
+        def __init__(self, first_name):
+            # super().__init__()
+            super().__init__(first_name)
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
     AssertionError: assert not True
 
-  because an instance of ``Doe`` is an instance of ``Person`` since ``Person`` is the parent of ``Doe``
+  because
 
-* I change the :ref:`assertion<what is an assertion?>`
+  - an instance of ``Doe`` is an instance of ``Person``
+  - ``Person`` is the parent of ``Doe``
+  - the test shows that this happens when ``an_instance = src.classes.Doe('first_name')`` runs
+
+    .. code-block:: python
+
+      an_instance = src.classes.Doe('first_name')
+                    Doe.__init__('first_name')
+                    super().__init__('first_name')
+                    Person.__init__('first_name')
+
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_inheritance` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 106
     :emphasize-lines: 3-4
 
             # an_instance = src.classes.Doe()
-            an_instance = src.classes.Doe('doe')
+            an_instance = src.classes.Doe('first_name')
             # assert not isinstance(
             assert isinstance(
                 an_instance, src.person.Person
@@ -2798,17 +3035,17 @@ what is the difference between an instance and a class?
 * I add a call to the `assertNotIsInstance method`_
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 106
     :emphasize-lines: 7-9
 
-            # instance = src.classes.Doe()
-            instance = src.classes.Doe('doe')
+            # an_instance = src.classes.Doe()
+            an_instance = src.classes.Doe('first_name')
             # assert not isinstance(
             assert isinstance(
-                instance, src.person.Person
+                an_instance, src.person.Person
             )
             self.assertNotIsInstance(
-                instance, src.person.Person
+                an_instance, src.person.Person
             )
 
 
@@ -2827,11 +3064,11 @@ what is the difference between an instance and a class?
 * I change assertNotIsInstance_ to assertIsInstance_
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 106
     :emphasize-lines: 7-8
 
             # an_instance = src.classes.Doe()
-            an_instance = src.classes.Doe('doe')
+            an_instance = src.classes.Doe('first_name')
             # assert not isinstance(
             assert isinstance(
                 an_instance, src.person.Person
@@ -2849,11 +3086,11 @@ what is the difference between an instance and a class?
 * I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 106
     :emphasize-lines: 12-15
 
             # an_instance = src.classes.Doe()
-            an_instance = src.classes.Doe('doe')
+            an_instance = src.classes.Doe('first_name')
             # assert not isinstance(
             assert isinstance(
                 an_instance, src.person.Person
@@ -2883,7 +3120,7 @@ what is the difference between an instance and a class?
 * I change the expectation to the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Person`` :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 117
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -2910,10 +3147,15 @@ what is the difference between an instance and a class?
                 a_class, src.person.Person
             )
 
+            assert issubclass(a_class, src.person.Person)
+            self.assertIsSubclass(
+                a_class, src.person.Person
+            )
+
             assert not isinstance(a_class, a_class)
             self.assertNotIsInstance(a_class, a_class)
 
-            an_instance = src.classes.Doe('doe')
+            an_instance = src.classes.Doe('first_name')
             assert isinstance(
                 an_instance, src.person.Person
             )
@@ -2946,7 +3188,10 @@ what is the difference between an instance and a class?
     class WObject(object): pass
 
 
-    class Doe(src.person.Person): pass
+    class Doe(src.person.Person):
+
+        def __init__(self, first_name):
+            super().__init__(first_name)
 
 * I add a git_ commit message in the other terminal_
 
@@ -2956,7 +3201,7 @@ what is the difference between an instance and a class?
     git commit -am \
     'add test_making_a_class_w_inheritance'
 
-:ref:`I can make a class with inheritance<test_making_a_class_w_inheritance>`
+:ref:`I can make a class with inheritance.<test_making_a_class_w_inheritance>`
 
 ----
 
@@ -2976,7 +3221,7 @@ test_family_ties
 * I add a new test for Inheritance_ with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 107
+    :lineno-start: 112
     :emphasize-lines: 6-8
 
             self.assertEqual(
@@ -2997,7 +3242,15 @@ test_family_ties
 
     AssertionError: 'doe' != ''
 
-  because ``Doe`` is an instance of ``Person`` it gets all the :ref:`attributes<what is a class?>` and :ref:`methods<what is a method?>` of ``Person``. I do not need to rewrite an ``__init__`` :ref:`method<what is a method?>` to handle creation of copies of the ``Doe`` :ref:`class<what is a class?>`.
+  because this happens when ``doe = src.classes.Doe('doe')`` runs
+
+    .. code-block:: python
+
+      doe = src.classes.Doe('doe')
+          = Doe.__init__('first_name')
+            super().__init__('first_name')
+                  = Person.__init__('first_name')
+``Doe`` is an instance of ``Person`` it gets all the :ref:`attributes<what is a class?>` and :ref:`methods<what is a method?>` of ``Person``. I do not need to rewrite an ``__init__`` :ref:`method<what is a method?>` to handle creation of copies of the ``Doe`` :ref:`class<what is a class?>`.
 
 ----
 
@@ -3362,13 +3615,7 @@ how to call the parent from the child
 
     git commit -am 'add test_family_ties'
 
-----
 
-=================================================================================
-what happens when the child calls the parent?
-=================================================================================
-
-----
 
 * Python_ makes the following calls to resolve a call to make an instance of the ``Blow`` :ref:`class<what is a class?>`
 
