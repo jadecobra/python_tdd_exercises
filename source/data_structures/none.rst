@@ -505,7 +505,7 @@ the test passes.
 how to test if something is an instance of a class
 *********************************************************************************
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can use to test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can use to test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or not - assertIsInstance_ and assertNotIsInstance_
 
 * I add the `assertNotIsInstance method`_ to test if :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 
@@ -522,7 +522,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can use
 
     # NOTES
 
-  - assertNotIsInstance_ checks if the first item it is given is NOT an :ref:`instance (copy)<how to test if something is an instance of a class>` of the second item. It is like asking the question, ``"is False NOT a child of the bool class?"`` Okay, this is new, not something from :ref:`the AssertionError chapter<what causes AssertionError?>`
+  - assertNotIsInstance_ checks if the first item it is given is NOT :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the second item. It is like asking the question, ``"is False NOT a child of the bool class?"`` Okay, this is new, not something from :ref:`the AssertionError chapter<what causes AssertionError?>`
   - bool_ is the :ref:`class<what is a class?>` for :ref:`booleans<what are booleans?>`
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -533,7 +533,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can use
 
   :ref:`False<test_what_is_false>` is a :ref:`boolean<what are booleans?>`
 
-* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is an :ref:`instance (copy)<how to test if something is an instance of a class>` of the second item. It is like asking the question ``"is False a child of the bool class?"``
+* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with the `assertIsInstance method`_ which checks if the first item it is given is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the second item. It is like asking the question ``"is False a child of the bool class?"``
 
   .. code-block:: python
     :lineno-start: 12
@@ -577,7 +577,7 @@ The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can use
 
   the test passes.
 
-* I add assertIsInstance_ to test if None_ is an :ref:`instance (copy)<how to test if something is an instance of a class>` of the `bool class`_
+* I add assertIsInstance_ to test if None_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the `bool class`_
 
   .. code-block:: python
     :lineno-start: 9

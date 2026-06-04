@@ -46,7 +46,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_family_ties.py
+.. literalinclude:: ../code/person/tests/test_family_ties.py
   :language: python
   :linenos:
 
@@ -203,7 +203,7 @@ how to test if something is NOT an instance of a class
 
 ----
 
-I can test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how to test if something is an instance of a class>` of another :ref:`object<what is a class?>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_, it checks if the thing in the parentheses on the left is an :ref:`instance<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses
+I can test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of another :ref:`object<what is a class?>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_, it checks if the thing in the parentheses on the left is an :ref:`instance<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses
 
 * I change ``test_failure`` to :ref:`test_making_a_class_w_pass` then add an :ref:`assertion<what is an assertion?>` with isinstance_
 
@@ -338,7 +338,7 @@ how to test if something is an instance of a class
 
 ----
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
 
 ----
 
@@ -1114,7 +1114,7 @@ I can test if an :ref:`object<what is a class?>` is a :ref:`subclass (child) <wh
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1542,7 +1542,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object.<what
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 34
@@ -1676,7 +1676,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 38
@@ -1810,7 +1810,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1944,7 +1944,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 46
@@ -2080,7 +2080,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 50
@@ -6839,7 +6839,7 @@ you have gone through a lot of things and know
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to use classes<classes>`
-* :ref:`how to make classes<inheritance>`
+* :ref:`how to make classes<everything in python is a child of object>`
 
 :ref:`Would you like to use the setUp method in the assertion_error project?<AssertionError 2: use the setUp method>`
 

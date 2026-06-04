@@ -9,7 +9,7 @@ classes tests
 
 the code from ``person/tests/test_person.py`` from :ref:`classes<what is a class?>`
 
-.. literalinclude:: tests/test_person_classes.py
+.. literalinclude:: person/tests/test_person_classes.py
   :language: python
   :linenos:
 
@@ -21,7 +21,7 @@ classes solutions
 
 the solutions in ``person/src/person.py`` from :ref:`classes<what is a class?>`
 
-.. literalinclude:: solutions/person_classes.py
+.. literalinclude:: person/solutions/person_classes.py
   :language: python
   :linenos:
 
@@ -45,7 +45,7 @@ inheritance solutions
 
 the solutions in ``person/src/classes.py`` from :ref:`inheritance<family ties>`
 
-.. literalinclude:: solutions/classes.py
+.. literalinclude:: person/solutions/classes.py
   :language: python
   :linenos:
 

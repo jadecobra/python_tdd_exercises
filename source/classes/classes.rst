@@ -23,7 +23,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_person_classes.py
+.. literalinclude:: ../code/person/tests/test_person_classes.py
   :language: python
   :linenos:
 

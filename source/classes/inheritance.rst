@@ -23,10 +23,33 @@
 
 
 #################################################################################
-everything in Python is an object
+everything in Python is a child of object
 #################################################################################
 
-All :ref:`objects<what is a class?>` are :ref:`children<how to test if something is a subclass of a class>` of the :ref:`object class<what is a class>`
+The :ref:`object class<what is a class?>` is the mother of all things in Python_.
+
+----
+
+*********************************************************************************
+questions about classes
+*********************************************************************************
+
+Questions to think about as I go through the chapter
+
+* :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
+* :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
+* :ref:`how can I make a class with object?<test_making_a_class_w_object>`
+* :ref:`is None an object?<test_is_none_an_object>`
+* :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
+* :ref:`is an integer an object?<test_is_an_integer_an_object>`
+* :ref:`is a float an object?<test_is_a_float_an_object>`
+* :ref:`is a string an object?<test_is_a_string_an_object>`
+* :ref:`is a tuple an object?<test_is_a_tuple_an_object>`
+* :ref:`is a list an object?<test_is_a_list_an_object>`
+* :ref:`is a set an object?<test_is_a_set_an_object>`
+* :ref:`is a dictionary an object?<test_is_a_dictionary_an_object>`
+* :ref:`what is the difference between an instance and a subclass<instance vs subclass>`
+* :ref:`what do all Python objects inherit from?<everything in Python is a child of object>`
 
 ----
 
@@ -36,7 +59,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_classes.py
+.. literalinclude:: ../code/person/tests/test_classes.py
   :language: python
   :linenos:
 
@@ -131,8 +154,8 @@ open the project
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ================================ FAILURES ==============================
-    _______________________ TestClasses.test_failure _______________________
+    ============================ FAILURES ==========================
+    ___________________ TestClasses.test_failure ___________________
 
     self = <tests.test_classes.TestClasses testMethod=test_failure>
 
@@ -141,9 +164,9 @@ open the project
     E       AssertionError: True is not false
 
     tests/test_classes.py:7: AssertionError
-    ======================== short test summary info =========================
+    =================== short test summary info ====================
     FAILED tests/test_classes.py::TestClasses::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    ================= 1 failed, 6 passed in X.YZs ==================
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py`` in the :ref:`editor<2 editors>`
 
@@ -179,6 +202,16 @@ test_making_a_class_w_pass
 
 To review, I can make a :ref:`class<what is a class?>` with the :ref:`class<what is a class?>` keyword, use :ref:`CapWords format<CapWords>` for the name and use a name that tells what the group of :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` do.
 
+.. code-block:: python
+
+  class NameOfClass(ParentClass):
+
+      attribute = SOMETHING
+
+      def method():
+          the body of the method
+          ...
+
 ----
 
 =================================================================================
@@ -193,7 +226,9 @@ how to test if something is NOT an instance of a class
 
 ----
 
-I can test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how to test if something is an instance of a class>` of another :ref:`object<what is a class?>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_, it checks if the thing in the parentheses on the left is an :ref:`instance<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses
+I can test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of another :ref:`object<what is a class?>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_.
+
+isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
 * I change ``test_failure`` to :ref:`test_making_a_class_w_pass` then add an :ref:`assertion<what is an assertion?>` with isinstance_
 
@@ -288,7 +323,7 @@ I can test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how
 
     AssertionError: assert not True
 
-  because the statement ``not isinstance(src.classes.WPass(), object)`` is :ref:`False<test_what_is_false>`
+  because the statement ``not isinstance(src.classes.WPass(), object)`` is :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -328,7 +363,7 @@ how to test if something is an instance of a class
 
 ----
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is an :ref:`instance (copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
 
 ----
 
@@ -418,21 +453,25 @@ another way to test if something is an instance of a class
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 4-6, 8-10
+    :emphasize-lines: 3-4, 6-8, 10-12
 
         def test_making_a_class_w_pass(self):
             an_instance = src.classes.WPass()
-            # assert not isinstance(
             assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+            # assert not isinstance(
+            # assert isinstance(
             #     src.classes.WPass(), object
             # )
             # self.assertNotIsInstance(
-            self.assertIsInstance(an_instance, object)
+            # self.assertIsInstance(
             #     src.classes.WPass(), object
             # )
 
 
     # Exceptions seen
+
+  the test is still green.
 
 * I remove the commented lines
 
@@ -526,9 +565,9 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
 
     AssertionError: assert not True
 
-  because the statement ``not isinstance(src.classes.WParentheses(), object)`` is :ref:`False<test_what_is_false>`
+  because the statement ``not isinstance(src.classes.WParentheses(), object)`` is :ref:`False<test_what_is_false>`.
 
-* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_parentheses` to make the statement :ref:`True<test_what_is_true>`, in ``test_classes.py``
 
   .. code-block:: python
     :lineno-start: 12
@@ -553,7 +592,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
 
 ----
 
-* I add parentheses to the definition
+* I add parentheses to the :ref:`definition<how to make a class>` of ``WParentheses`` in ``classes.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -652,21 +691,25 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
 
   .. code-block:: python
     :lineno-start: 12
-    :emphasize-lines: 4-6, 8-10
+    :emphasize-lines: 3-4, 6-8, 10-12
 
         def test_making_a_class_w_parentheses(self):
             an_instance = src.classes.WParentheses()
-            # assert not isinstance(
             assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+            # assert not isinstance(
+            # assert isinstance(
             #     src.classes.WParentheses(), object
             # )
             # self.assertNotIsInstance(
-            self.assertIsInstance(an_instance, object)
+            # self.assertIsInstance(
             #     src.classes.WParentheses(), object
             # )
 
 
     # Exceptions seen
+
+  the test is still green.
 
 * I remove the commented lines
 
@@ -701,7 +744,7 @@ I have two :ref:`classes<what is a class?>` with different statements, and the t
 
   class WParentheses(): pass
 
-because ":ref:`all classes inherit from 'object'<test_making_a_class_w_object>`", which leads me to the next test.
+because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`, which leads me to the next test.
 
 ----
 
@@ -888,16 +931,18 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 
   .. code-block:: python
     :lineno-start: 17
-    :emphasize-lines: 4-6, 8-10
+    :emphasize-lines: 3-4, 6-8, 10-12
 
         def test_making_a_class_w_object(self):
             an_instance = src.classes.WObject()
-            # assert not isinstance(
             assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+            # assert not isinstance(
+            # assert isinstance(
             #     src.classes.WObject(), object
             # )
             # self.assertNotIsInstance(
-            self.assertIsInstance(an_instance, object)
+            # self.assertIsInstance(
             #     src.classes.WObject(), object
             # )
 
@@ -909,7 +954,17 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 7
+
+        def test_making_a_class_w_pass(self):
+            an_instance = src.classes.WPass()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
 
         def test_making_a_class_w_object(self):
             an_instance = src.classes.WObject()
@@ -922,9 +977,10 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_making_a_class_w_object'
+    git commit -am \
+    'add test_making_a_class_w_object'
 
 I have three different :ref:`classes<what is a class?>`, and the tests show that they are all instances of the :ref:`object class<what is a class?>`
 
@@ -940,11 +996,11 @@ I have three different :ref:`classes<what is a class?>`, and the tests show that
 
   class WObject(object): pass
 
-their :ref:`definitions<how to make a class>` are different, their results are the same because ":ref:`all classes inherit from 'object'<test_making_a_class_w_object>`"
+their :ref:`definitions<how to make a class>` are different, their results are the same because :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
 
 I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that anyone can see what the parent :ref:`class<what is a class?>` is without thinking about it.
 
-:ref:`I can make a class with object<test_making_a_class_w_object>`
+:ref:`I can make a class with object<test_making_a_class_w_object>`.
 
 ----
 
@@ -952,7 +1008,7 @@ I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that a
 test_is_none_an_object
 *********************************************************************************
 
-I want to test if :ref:`None<what is None?>` is an :ref:`object.<what is a class?>`
+I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1084,7 +1140,7 @@ the test passes.
 test_is_a_boolean_an_object
 *********************************************************************************
 
-I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object.<what is a class?>`
+I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1100,11 +1156,13 @@ how to test if something is NOT a subclass of a class
 
 ----
 
-I can test if an :ref:`object<what is a class?>` is a :ref:`subclass (child) <what is a class?>` of another :ref:`object<what is a class?>` or NOT with the `issubclass built-in function`_ from `The Python Standard Library`_, it checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses
+I can test if an :ref:`object<what is a class?>` is a :ref:`subclass (child) <what is a class?>` of another :ref:`object<what is a class?>` or NOT with the `issubclass built-in function`_ from `The Python Standard Library`_.
+
+issubclass_ checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1165,7 +1223,7 @@ the test passes.
 
 ----
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is a :ref:`subclass (child)<how to test if something is a subclass of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsSubclass_ and assertNotIsSubclass_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is a :ref:`subclass (child)<how to test if something is a subclass of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsSubclass_ and assertNotIsSubclass_.
 
 ----
 
@@ -1251,7 +1309,7 @@ another way to test if something is a subclass of a class
 test_is_an_integer_an_object
 *********************************************************************************
 
-I want to test if an integer_ (a whole number without decimals) is an :ref:`object<what is a class?>`
+I want to test if an integer_ (a whole number without decimals) is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1508,9 +1566,10 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_is_a_float_an_object'
+    git commit -am \
+    'add test_is_a_float_an_object'
 
 :ref:`A float is an object.<test_is_a_float_an_object>`
 
@@ -1520,7 +1579,7 @@ the test passes.
 test_is_a_string_an_object
 *********************************************************************************
 
-I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object.<what is a class?>`
+I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1532,7 +1591,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object.<what
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 34
@@ -1610,7 +1669,7 @@ the test passes.
 
   because str_ is a :ref:`child of object<what is a class?>`.
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
     :lineno-start: 38
@@ -1642,9 +1701,10 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_is_a_string_an_object'
+    git commit -am \
+    'add test_is_a_string_an_object'
 
 :ref:`A float is an object.<test_is_a_float_an_object>`
 
@@ -1654,7 +1714,7 @@ the test passes.
 test_is_a_tuple_an_object
 *********************************************************************************
 
-I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object.<what is a class?>`
+I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1666,7 +1726,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 38
@@ -1776,9 +1836,10 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add test_is_a_tuple_an_object'
+    git commit -am \
+    'add test_is_a_tuple_an_object'
 
 :ref:`A tuple is an object.<test_is_a_tuple_an_object>`
 
@@ -1788,7 +1849,7 @@ the test passes.
 test_is_a_list_an_object
 *********************************************************************************
 
-I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<what is a class?>`
+I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1800,7 +1861,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1922,7 +1983,7 @@ the test passes.
 test_is_a_set_an_object
 *********************************************************************************
 
-I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma) is an :ref:`object.<what is a class?>`
+I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1934,7 +1995,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 46
@@ -2056,7 +2117,7 @@ the test passes.
 test_is_a_dictionary_an_object
 *********************************************************************************
 
-I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object.<what is a class?>`
+I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -2070,7 +2131,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that everything in Python_ is a :ref:`child of object<what is a class?>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that :ref:`everything in Python is a child of object`
 
   .. code-block:: python
     :lineno-start: 50
@@ -2169,6 +2230,525 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
     'add test_is_a_dictionary_an_object'
 
 :ref:`A dictionary is an object.<test_is_a_dictionary_an_object>`
+
+----
+
+*********************************************************************************
+instance vs subclass
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_pass` to show that :ref:`an instance (a copy)<how to test if something is an instance of a class>` is different from a :ref:`subclass (child)<how to test if something is a subclass of a class>`
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 5
+
+        def test_making_a_class_w_pass(self):
+            an_instance = src.classes.WPass()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+            assert issubclass(an_instance, object)
+
+        def test_making_a_class_w_parentheses(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: issubclass() arg 1 must be a class
+
+  because the argument I put on the left is an :ref:`instance<how to test if something is an instance of a class>` not a :ref:`subclass<how to test if something is a subclass of a class>`.
+
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 60
+    :emphasize-lines: 5
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 5-6
+
+      def test_making_a_class_w_pass(self):
+          an_instance = src.classes.WPass()
+          assert isinstance(an_instance, object)
+          self.assertIsInstance(an_instance, object)
+          # assert issubclass(an_instance, object)
+          assert issubclass(src.classes.WPass, object)
+
+      def test_making_a_class_w_parentheses(self):
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a call to the `assertNotIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 7-9
+
+        def test_making_a_class_w_pass(self):
+            an_instance = src.classes.WPass()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+            # assert issubclass(an_instance, object)
+            assert issubclass(src.classes.WPass, object)
+            self.assertNotIsSubclass(
+                src.classes.WPass, object
+            )
+
+        def test_making_a_class_w_parentheses(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'src.classes.WPass'> is
+        a subclass of <class 'object'>
+
+* I change assertNotIsSubclass_ to assertIsSubclass_
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6-7
+
+        def test_making_a_class_w_pass(self):
+            an_instance = src.classes.WPass()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+            # assert issubclass(an_instance, object)
+            assert issubclass(src.classes.WPass, object)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.WPass, object
+            )
+
+        def test_making_a_class_w_parentheses(self):
+
+  the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WPass``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6
+
+        def test_making_a_class_w_pass(self):
+            an_instance = src.classes.WPass()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WPass
+            # assert issubclass(an_instance, object)
+            assert issubclass(src.classes.WPass, object)
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.WPass, object
+            )
+
+        def test_making_a_class_w_parentheses(self):
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.classes.WPass``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 7-9, 12-14
+
+        def test_making_a_class_w_pass(self):
+            an_instance = src.classes.WPass()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WPass
+            assert issubclass(a_class, object)
+            self.assertIsSubclass(a_class, object)
+            # assert issubclass(an_instance, object)
+            # assert issubclass(src.classes.WPass, object)
+            # self.assertNotIsSubclass(
+            # self.assertIsSubclass(
+            #     src.classes.WPass, object
+            # )
+
+        def test_making_a_class_w_parentheses(self):
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 7
+
+        def test_making_a_class_w_pass(self):
+            an_instance = src.classes.WPass()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WPass
+            assert issubclass(a_class, object)
+            self.assertIsSubclass(a_class, object)
+
+        def test_making_a_class_w_parentheses(self):
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_parentheses`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            assert issubclass(an_instance, object)
+
+        def test_making_a_class_w_object(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: issubclass() arg 1 must be a class
+
+  because ``src.classes.WParentheses()`` is an :ref:`instance<how to test if something is an instance of a class>` not a :ref:`subclass<how to test if something is a subclass of a class>`.
+
+* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6-9
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WParentheses, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+  the test passes.
+
+* I add a call to the `assertNotIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 10-12
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WParentheses, object
+            )
+            self.assertNotIsSubclass(
+                src.classes.WParentheses, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'src.classes.WParentheses'> is
+        a subclass of <class 'object'>
+
+* I change assertNotIsSubclass_ to the `assertIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 10-11
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WParentheses, object
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.WParentheses, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+  the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WParentheses``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WParentheses
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WParentheses, object
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.WParentheses, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.classes.WParentheses``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 7-8, 10-12, 14-17
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WParentheses
+            assert issubclass(a_class, object)
+            self.assertIsSubclass(a_class, object)
+            # assert issubclass(an_instance, object)
+            # assert issubclass(
+            #     src.classes.WParentheses, object
+            # )
+            # self.assertNotIsSubclass(
+            # self.assertIsSubclass(
+            #     src.classes.WParentheses, object
+            # )
+
+        def test_making_a_class_w_object(self):
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 16
+
+        def test_making_a_class_w_parentheses(self):
+            an_instance = src.classes.WParentheses()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WParentheses
+            assert issubclass(a_class, object)
+            self.assertIsSubclass(a_class, object)
+
+        def test_making_a_class_w_object(self):
+
+----
+
+* I also add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_object`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
+
+        def test_making_a_class_w_object(self):
+            an_instance = src.classes.WObject()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            assert issubclass(an_instance, object)
+
+        def test_making_a_class_w_object(self):
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: issubclass() arg 1 must be a class
+
+  because ``src.classes.WObject()`` is an :ref:`instance<how to test if something is an instance of a class>` not a :ref:`subclass<how to test if something is a subclass of a class>`.
+
+* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6-9
+
+        def test_making_a_class_w_object(self):
+            an_instance = src.classes.WObject()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WObject, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+  the test passes.
+
+* I add a call to the `assertNotIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 10-12
+
+        def test_making_a_class_w_object(self):
+            an_instance = src.classes.WObject()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WObject, object
+            )
+            self.assertNotIsSubclass(
+                src.classes.WObject, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'src.classes.WObject'> is
+        a subclass of <class 'object'>
+
+* I change assertNotIsSubclass_ to the `assertIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 10-11
+
+        def test_making_a_class_w_object(self):
+            an_instance = src.classes.WObject()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WObject, object
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.WObject, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+  the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WObject``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 6
+
+        def test_making_a_class_w_object(self):
+            an_instance = src.classes.WObject()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WObject
+            # assert issubclass(an_instance, object)
+            assert issubclass(
+                src.classes.WObject, object
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.WObject, object
+            )
+
+        def test_making_a_class_w_object(self):
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.classes.WObject``
+
+  .. code-block:: python
+    :lineno-start: 16
+    :emphasize-lines: 7-8, 10-12, 14-17
+
+        def test_making_a_class_w_object(self):
+            an_instance = src.classes.WObject()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WObject
+            assert issubclass(a_class, object)
+            self.assertIsSubclass(a_class, object)
+            # assert issubclass(an_instance, object)
+            # assert issubclass(
+            #     src.classes.WObject, object
+            # )
+            # self.assertNotIsSubclass(
+            # self.assertIsSubclass(
+            #     src.classes.WObject, object
+            # )
+
+        def test_making_a_class_w_object(self):
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 16
+
+        def test_making_a_class_w_object(self):
+            an_instance = src.classes.WObject()
+            assert isinstance(an_instance, object)
+            self.assertIsInstance(an_instance, object)
+
+            a_class = src.classes.WObject
+            assert issubclass(a_class, object)
+            self.assertIsSubclass(a_class, object)
+
+        def test_making_a_class_w_object(self):
 
 ----
 
@@ -2379,6 +2959,9 @@ Everything in Python_ is an :ref:`object<what is a class?>`
 * :ref:`A list is an object<test_is_a_list_an_object>`
 * :ref:`A set is an object<test_is_a_set_an_object>`
 * :ref:`A dictionary is an object<test_is_a_dictionary_an_object>`
+* :ref:`An instance is NOT a subclass<instance vs subclass>`
+
+:ref:`How many questions can you answer about classes?<questions about classes>`
 
 ----
 

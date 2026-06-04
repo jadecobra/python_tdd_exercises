@@ -107,6 +107,29 @@ Questions to think about as I go through the chapter
 ----
 
 *********************************************************************************
+classes review
+*********************************************************************************
+
+Questions to think about as I go through the chapter
+
+* :ref:`how can I make a class with pass<test_making_a_class_w_pass>`
+* :ref:`how can I make a class with parentheses<test_making_a_class_w_parentheses>`
+* :ref:`how can I make a class with object<test_making_a_class_w_object>`
+* :ref:`is None an object?<test_is_none_an_object>`
+* :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
+* :ref:`is an integer an object?<test_is_an_integer_an_object>`
+* :ref:`is a float an object?<test_is_a_float_an_object>`
+* :ref:`is a string an object?<test_is_a_string_an_object>`
+* :ref:`is a tuple an object?<test_is_a_tuple_an_object>`
+* :ref:`is a list an object?<test_is_a_list_an_object>`
+* :ref:`is a set an object?<test_is_a_set_an_object>`
+* :ref:`is a dictionary an object?<test_is_a_dictionary_an_object>`
+* :ref:`what is the difference between an instance and a subclass<instance vs subclass>`
+* :ref:`what do all Python objects inherit from?<everything in Python is a child of object>`
+
+----
+
+*********************************************************************************
 None review
 *********************************************************************************
 
