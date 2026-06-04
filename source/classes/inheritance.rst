@@ -5195,51 +5195,13 @@ what happens when the child calls more than one parent?
 
   .. code-block:: python
     :lineno-start: 179
-    :emphasize-lines: 4
+    :emphasize-lines: 3-5
 
             john = src.classes.John()
-            # self.assertEqual(john.first_name, 'mary')
             self.assertEqual(john.first_name, 'john')
-            self.assertIsInstance(john, src.classes.Smith)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.classes.John object at 0xffffa012b3c4>
-        is not an instance of <class 'src.classes.Smith'>
-
-  no cheating this time.
-
-* I change the parent of ``John`` to ``Smith`` in ``classes.py``
-
-  .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 1-2
-
-    # class John(src.person.Person):
-    class John(Smith):
-
-        def __init__(self, first_name='john'):
-            super().__init__(first_name=first_name)
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` for ``last_name`` to :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
-
-  .. code-block:: python
-    :lineno-start: 179
-    :emphasize-lines: 4
-
-            john = src.classes.John()
-            # self.assertEqual(john.first_name, 'mary')
-            self.assertEqual(john.first_name, 'john')
-            self.assertEqual(john.last_name, 'john')
-            self.assertIsInstance(john, src.classes.Smith)
+            assert issubclass(
+                src.classes.John, src.classes.Smith
+            )
 
 
     # Exceptions seen
@@ -5248,25 +5210,166 @@ what happens when the child calls more than one parent?
 
   .. code-block:: python
 
-    AssertionError: 'smith' != 'john'
+    AssertionError: assert False
 
-* I change the expectation to match reality
+  no cheating this time.
+
+* I change the parent of ``John`` to ``Smith`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 2-3
+
+    # class John(src.person.Person): pass
+    # class John(src.person.Person):
+    class John(Smith):
+
+        def __init__(self):
+            self.first_name = 'john'
+
+  the test passes.
+
+* I add a call to `assertNotIsSubclass`_ in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
 
   .. code-block:: python
     :lineno-start: 179
-    :emphasize-lines: 4-5
+    :emphasize-lines: 6-8
 
             john = src.classes.John()
-            # self.assertEqual(john.first_name, 'mary')
             self.assertEqual(john.first_name, 'john')
-            # self.assertEqual(john.last_name, 'john')
-            self.assertEqual(john.last_name, 'smith')
-            self.assertIsInstance(john, src.classes.Smith)
+            assert issubclass(
+                src.classes.John, src.classes.Smith
+            )
+            self.assertNotIsSubclass(
+                src.classes.John, src.classes.Smith
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError:
+        <class 'src.classes.John'> is
+        a subclass of <class 'src.classes.Smith'>
+
+* I change the call to `assertNotIsSubclass`_ to the `assertIsSubclass method`_
+
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 6-7
+
+            john = src.classes.John()
+            self.assertEqual(john.first_name, 'john')
+            assert issubclass(
+                src.classes.John, src.classes.Smith
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.John, src.classes.Smith
+            )
 
 
     # Exceptions seen
 
   the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is a class attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 179
+    :emphasize-lines: 3
+
+            john = src.classes.John()
+            self.assertEqual(john.first_name, 'john')
+            self.assertEqual(john.last_name, 'smith')
+            assert issubclass(
+                src.classes.John, src.classes.Smith
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.John, src.classes.Smith
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError:
+        'John' object has no attribute 'last_name'.
+        Did you mean: 'first_name'?
+
+* I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` in ``John`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 7
+
+    # class John(src.person.Person): pass
+    # class John(src.person.Person):
+    class John(Smith):
+
+        def __init__(self):
+            self.first_name = 'john'
+            self.last_name = 'smith'
+
+  the test passes. This is a repetition because
+
+  - ``John`` is a ``Smith``
+  - the ``last_name`` :ref:`attribute<what is a class attribute?>` of :ref:`instance<how to test if something is an instance of a class>` of ``Smith`` is ``'smith'``
+
+* I add a call to the `super built-in function`_ so :ref:`instances<how to test if something is an instance of a class>` of ``John`` can inherit the ``last_name`` :ref:`class attribute<what is a class attribute?>`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 6-8
+
+    # class John(src.person.Person): pass
+    # class John(src.person.Person):
+    class John(Smith):
+
+        def __init__(self):
+            super().__init__('john')
+            # self.first_name = 'john'
+            # self.last_name = 'smith'
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError:
+        'John' object has no attribute 'first_name'.
+        Did you mean: 'last_name'?
+
+* I add the :ref:`attribute<what is a class attribute?>` to ``Smith``
+
+  .. code-block:: python
+    :lineno-start: 26
+
+    class Smith(src.person.Person):
+
+        def __init__(self, first_name):
+            self.first_name = first_name
+            self.last_name = 'smith'
+
+  because this happens when ``john = src.classes.John()`` runs
+
+  .. code-block:: python
+
+    john = src.classes.John()
+           John.__init__()
+               super().__init__('john')
+           Smith.__init__('john')
+               self.first_name = 'john'
+               self.last_name = 'smith'
+
+----
+
 
 
 
