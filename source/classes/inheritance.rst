@@ -5350,6 +5350,7 @@ what happens when the child calls more than one parent?
 
   .. code-block:: python
     :lineno-start: 26
+    :emphasize-lines: 5
 
     class Smith(src.person.Person):
 
@@ -5357,7 +5358,7 @@ what happens when the child calls more than one parent?
             self.first_name = first_name
             self.last_name = 'smith'
 
-  because this happens when ``john = src.classes.John()`` runs
+  the test passes because this happens when ``john = src.classes.John()`` runs
 
   .. code-block:: python
 
@@ -5370,41 +5371,28 @@ what happens when the child calls more than one parent?
 
 ----
 
-
-
-
-----
-
-----
-
-----
-
-----
-
-----
-
-
-
-----
-
-* I add another person, a child of ``john`` to :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+* I add another person, a :ref:`child (subclass)` of ``John`` to :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 157
+    :lineno-start: 179
     :emphasize-lines: 8-9
 
             john = src.classes.John()
-            # self.assertEqual(john.first_name, 'mary')
             self.assertEqual(john.first_name, 'john')
-            # self.assertEqual(john.last_name, 'john')
             self.assertEqual(john.last_name, 'smith')
-            self.assertIsInstance(john, src.classes.Smith)
+            assert issubclass(
+                src.classes.John, src.classes.Smith
+            )
+            # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.classes.John, src.classes.Smith
+            )
 
             lil = src.classes.Lil()
-            self.assertIsInstance(lil, src.classes.John)
+            self.assertEqual(lil.first_name, 'lil')
 
 
-    # Exceptions
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -5428,6 +5416,25 @@ what happens when the child calls more than one parent?
     class Lil(John): pass
 
   the test passes.
+
+
+
+
+----
+
+----
+
+----
+
+----
+
+----
+
+
+
+----
+
+
 
 * I add an :ref:`assertion<what is an assertion?>` for the ``first_name``, in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
 
