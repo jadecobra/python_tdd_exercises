@@ -3366,7 +3366,7 @@ You have gone through a lot of things and know:
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to make classes<classes>`
+* :ref:`how to use classes<classes>`
 
 :ref:`Would you like to test what causes AttributeError<what causes AttributeError?>` or :ref:`Would you like to know where the extra attributes and methods of the Person class came from?<family ties>`
 
