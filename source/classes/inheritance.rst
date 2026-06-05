@@ -2591,7 +2591,7 @@ the test passes.
 * I also add an :ref:`assertion<what is an assertion?>` to :ref:`test_making_a_class_w_object`
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 25
     :emphasize-lines: 6
 
         def test_making_a_class_w_object(self):
@@ -2601,7 +2601,7 @@ the test passes.
 
             assert issubclass(an_instance, object)
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2614,7 +2614,7 @@ the test passes.
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 25
     :emphasize-lines: 6-9
 
         def test_making_a_class_w_object(self):
@@ -2627,14 +2627,14 @@ the test passes.
                 src.classes.WObject, object
             )
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
 
   the test passes.
 
 * I add a call to the `assertNotIsSubclass method`_
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 25
     :emphasize-lines: 10-12
 
         def test_making_a_class_w_object(self):
@@ -2650,7 +2650,7 @@ the test passes.
                 src.classes.WObject, object
             )
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?>`
 
@@ -2663,7 +2663,7 @@ the test passes.
 * I change assertNotIsSubclass_ to the `assertIsSubclass method`_
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 25
     :emphasize-lines: 10-11
 
         def test_making_a_class_w_object(self):
@@ -2680,14 +2680,14 @@ the test passes.
                 src.classes.WObject, object
             )
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
 
   the test passes.
 
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WObject``
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 25
     :emphasize-lines: 6
 
         def test_making_a_class_w_object(self):
@@ -2705,13 +2705,13 @@ the test passes.
                 src.classes.WObject, object
             )
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.classes.WObject``
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 7-8, 10-12, 14-17
+    :lineno-start: 25
+    :emphasize-lines: 7-8, 10-12, 14-16
 
         def test_making_a_class_w_object(self):
             an_instance = src.classes.WObject()
@@ -2730,14 +2730,14 @@ the test passes.
             #     src.classes.WObject, object
             # )
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
 
   the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 25
 
         def test_making_a_class_w_object(self):
             an_instance = src.classes.WObject()
@@ -2748,7 +2748,28 @@ the test passes.
             assert issubclass(a_class, object)
             self.assertIsSubclass(a_class, object)
 
-        def test_making_a_class_w_object(self):
+        def test_is_none_an_object(self):
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add instance vs subclass'
+
+The difference between a :ref:`subclass (child)<how to test if something is a subclass of a class>` and an :ref:`an instance (a copy)<how to test if something is an instance of a class>` is the ``()`` after the name
+
+.. code-block:: python
+
+  a_name = ClassName
+
+points the ``a_name`` :ref:`variable<what is a variable?>` to ``ClassName``
+
+.. code-block:: python
+
+  a_name = ClassName()
+
+points the ``a_name`` :ref:`variable<what is a variable?>` to the result of calling ``ClassName()``
 
 ----
 
@@ -2758,7 +2779,7 @@ test_attributes_and_methods_of_objects
 
 In :ref:`test_attributes_and_methods_of_person_class` I saw the :ref:`methods<what is a method?>` I added to the ``Person`` :ref:`class<what is a class?>` and also names that I did not add, which led to the question of where they came from.
 
-I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object class<what is a class?>`.
+I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object class<what is a class?>` because it is the mother of all :ref:`classes<what is a class?>`.
 
 ----
 
@@ -2773,7 +2794,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 * I add a test to ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 54
+    :lineno-start: 66
     :emphasize-lines: 5-8
 
         def test_is_a_dictionary_an_object(self):
@@ -2807,7 +2828,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 70
     :emphasize-lines: 3-7
 
         def test_attributes_and_methods_of_objects(self):
@@ -2836,7 +2857,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 * I copy (:kbd:`ctrl/command+c`) the values from the terminal_ and paste (:kbd:`ctrl/command+v`) them as ``my_expectation``
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 70
     :emphasize-lines: 4-31
     :emphasize-text: __init__
 
@@ -2885,7 +2906,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 * I use the ``find and replace`` feature of the `Integrated Development Environment (IDE)`_ to remove the extra characters, then remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 58
+    :lineno-start: 70
     :emphasize-lines: 3-28
     :emphasize-text: __init__
 
@@ -2954,7 +2975,7 @@ Everything in Python_ is an :ref:`object<what is a class?>`
 * :ref:`A boolean is an object<test_is_a_boolean_an_object>`
 * :ref:`An integer is an object<test_is_an_integer_an_object>`
 * :ref:`A float is an object<test_is_a_float_an_object>`
-* :ref:`A string is an object<test_is_a_string_an_object> `
+* :ref:`A string is an object<test_is_a_string_an_object>`
 * :ref:`A tuple is an object<test_is_a_tuple_an_object>`
 * :ref:`A list is an object<test_is_a_list_an_object>`
 * :ref:`A set is an object<test_is_a_set_an_object>`
@@ -2969,7 +2990,7 @@ Everything in Python_ is an :ref:`object<what is a class?>`
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``test_classes.py`` and ``classes.py`` in the :ref:`editor(s)<2 editors>`
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``person``
@@ -3010,7 +3031,7 @@ You now know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make classes<classes>`
 
-:ref:`Would you like to test classes with parents?<family ties>`
+:ref:`Would you like to use the setUp method with the assertion_error project?<AssertionError 2: use the setUp method>`
 
 ----
 

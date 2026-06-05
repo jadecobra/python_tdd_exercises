@@ -5,55 +5,67 @@ import unittest
 class TestClasses(unittest.TestCase):
 
     def test_making_a_class_w_pass(self):
-        assert isinstance(
-            src.classes.WPass, object
-        )
-        self.assertIsInstance(
-            src.classes.WPass, object
-        )
+        an_instance = src.classes.WPass()
+        assert isinstance(an_instance, object)
+        self.assertIsInstance(an_instance, object)
+
+        a_class = src.classes.WPass
+        assert issubclass(a_class, object)
+        self.assertIsSubclass(a_class, object)
 
     def test_making_a_class_w_parentheses(self):
-        assert isinstance(
-            src.classes.WParentheses, object
-        )
-        self.assertIsInstance(
-            src.classes.WParentheses, object
-        )
+        an_instance = src.classes.WParentheses()
+        assert isinstance(an_instance, object)
+        self.assertIsInstance(an_instance, object)
+
+        a_class = src.classes.WParentheses
+        assert issubclass(a_class, object)
+        self.assertIsSubclass(a_class, object)
 
     def test_making_a_class_w_object(self):
-        assert isinstance(
-            src.classes.WObject, object
-        )
-        self.assertIsInstance(
-            src.classes.WObject, object
-        )
+        an_instance = src.classes.WObject()
+        assert isinstance(an_instance, object)
+        self.assertIsInstance(an_instance, object)
 
+        a_class = src.classes.WObject
+        assert issubclass(a_class, object)
+        self.assertIsSubclass(a_class, object)
+
+    def test_is_none_an_object(self):
         assert isinstance(None, object)
         self.assertIsInstance(None, object)
 
-        assert isinstance(bool, object)
-        self.assertIsInstance(bool, object)
+    def test_is_a_boolean_an_object(self):
+        assert issubclass(bool, object)
+        self.assertIsSubclass(bool, object)
 
-        assert isinstance(int, object)
-        self.assertIsInstance(int, object)
+    def test_is_an_integer_an_object(self):
+        assert issubclass(int, object)
+        self.assertIsSubclass(int, object)
 
-        assert isinstance(float, object)
-        self.assertIsInstance(float, object)
+    def test_is_a_float_an_object(self):
+        assert issubclass(float, object)
+        self.assertIsSubclass(float, object)
 
-        assert isinstance(str, object)
-        self.assertIsInstance(str, object)
+    def test_is_a_string_an_object(self):
+        assert issubclass(str, object)
+        self.assertIsSubclass(str, object)
 
-        assert isinstance(tuple, object)
-        self.assertIsInstance(tuple, object)
+    def test_is_a_tuple_an_object(self):
+        assert issubclass(tuple, object)
+        self.assertIsSubclass(tuple, object)
 
-        assert isinstance(list, object)
-        self.assertIsInstance(list, object)
+    def test_is_a_list_an_object(self):
+        assert issubclass(list, object)
+        self.assertIsSubclass(list, object)
 
-        assert isinstance(set, object)
-        self.assertIsInstance(set, object)
+    def test_is_a_set_an_object(self):
+        assert issubclass(set, object)
+        self.assertIsSubclass(set, object)
 
-        assert isinstance(dict, object)
-        self.assertIsInstance(dict, object)
+    def test_is_a_dictionary_an_object(self):
+        assert issubclass(dict, object)
+        self.assertIsSubclass(dict, object)
 
     def test_attributes_and_methods_of_objects(self):
         reality = dir(object)

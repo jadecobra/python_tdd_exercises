@@ -6841,7 +6841,7 @@ you have gone through a lot of things and know
 * :ref:`how to use classes<classes>`
 * :ref:`how to make classes<everything in python is a child of object>`
 
-:ref:`Would you like to use the setUp method in the assertion_error project?<AssertionError 2: use the setUp method>`
+:ref:`Would you like to use test classes with parents?<family ties>`
 
 ----
 
