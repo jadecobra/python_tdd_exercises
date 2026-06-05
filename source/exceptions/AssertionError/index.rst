@@ -5241,10 +5241,44 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0`` from the test
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 1
+
+            an_integer = 0
+            # assert 0 is True
+            assert 0 is not True
+            # self.assertIs(0, True)
+            self.assertNot(0, True)
+
+            # assert 0.0 is True
+            assert 0.0 is not True
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0`` from the test
+
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 2-3, 5, 7
+
+            an_integer = 0
+            assert an_integer is not True
+            self.assertIsNot(an_integer, True)
+            # assert 0 is True
+            # assert 0 is not True
+            # self.assertIs(0, True)
+            # self.assertIsNot(0, True)
+
+            # assert 0.0 is True
+            assert 0.0 is not True
+
+  the test is still green.
+
 * I use assertIs_ to compare a float_ (binary floating point decimal number) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 148
+    :lineno-start: 119
     :emphasize-lines: 3
 
             # assert 0.0 is True
@@ -5252,6 +5286,7 @@ another way to test if something is NOT the same object as True
             self.assertIs(0.0, True)
 
             # assert 'a string' is True
+            assert 'a string' is not True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5268,7 +5303,7 @@ another way to test if something is NOT the same object as True
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 148
+    :lineno-start: 119
     :emphasize-lines: 3-4
 
             # assert 0.0 is True
@@ -5277,8 +5312,43 @@ another way to test if something is NOT the same object as True
             self.assertIsNot(0.0, True)
 
             # assert 'a string' is True
+            assert 'a string' is not True
 
   the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0.0`` from the test
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 1
+
+            a_float = 0.0
+            # assert 0.0 is True
+            assert 0.0 is not True
+            # self.assertIs(0.0, True)
+            self.assertNot(0.0, True)
+
+            # assert 'a string' is True
+            assert 'a string' is not True
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0`` from the test
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 2-3, 5, 7
+
+            a_float = 0.0
+            assert a_float is not True
+            self.assertIsNot(a_float, True)
+            # assert 0.0 is True
+            # assert 0.0 is not True
+            # self.assertIs(0.0, True)
+            # self.assertIsNot(0.0, True)
+
+            # assert 'a string' is True
+            assert 'a string' is not True
+
+  the test is still green.
 
 * I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`True<test_what_is_true>`
 
