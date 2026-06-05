@@ -124,8 +124,8 @@ Questions to think about as I go through the chapter
 * :ref:`is a list an object?<test_is_a_list_an_object>`
 * :ref:`is a set an object?<test_is_a_set_an_object>`
 * :ref:`is a dictionary an object?<test_is_a_dictionary_an_object>`
-* :ref:`what is the difference between an instance and a subclass<instance vs subclass>`
-* :ref:`what do all Python objects inherit from?<everything in Python is a child of object>`
+* :ref:`what is the difference between an instance and a subclass?<instance vs subclass>`
+* :ref:`what do all Python objects inherit from?<everything is an object>`
 
 ----
 

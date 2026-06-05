@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn what causes Python's AssertionError and how to use the assert statement in this beginner TDD tutorial. Master the Red-Green-Refactor cycle, pytest-watcher, the difference between = and ==, and how to test None, False, True, strings, lists, and dictionaries.
-  :keywords: Jacob Itegboje, Python AssertionError, what causes AssertionError, assert statement Python, Python TDD tutorial, Test-Driven Development beginners, unittest assert examples, pytest-watcher setup, uv init python, difference between = and ==, Python is None vs is not None, testing False in Python, red green refactor cycle, test None type, testing lists and dictionaries python
+  :description: Beginner-friendly step-by-step TDD tutorial explaining Python's AssertionError and how to use the assert statement. Learn how to set up a test environment using uv, pytest, and pytest-watcher. Master the difference between assignment (=) and equality (==), and learn how to test None, False, and True using "is", "is not", assertIs, and assertIsNot. Understand the difference between object identity and value equality (why 0 == 0.0 is True but 0 is 0.0 is False), and how to use assertEqual and assertNotEqual in unittest.TestCase.
+  :keywords: Jacob Itegboje, Pumping Python, python assertionerror tutorial for beginners, what causes AssertionError in python, how to use assert statement python, test driven development python unittest beginners, how to use pytest-watcher, uv init python tutorial, difference between single and double equal python, assignment vs equality operator python, python is None vs is not None, testing None in python unittest, testing False and True in python, unittest assertIs and assertIsNot, unittest assertEqual and assertNotEqual, difference between is and equal python, why is 0 == 0.0 but 0 is not 0.0, python object identity vs value equality, AssertionError True is not false, AssertionError unexpectedly identical None, AssertionError False is not None, AssertionError True is not None, AssertionError 0 == 0.0, python red green refactor cycle beginners, setting up tests directory __init__.py python, common python beginner exceptions assertions
 
 .. include:: ../../links.rst
 
@@ -9,8 +9,6 @@
 .. _assertion: assert_
 .. _assertions: assert_
 .. _assert statements: assert_
-.. _variable: https://grokipedia.com/page/:ref:`variable<what is a variable?>`symbol
-.. _variables: :ref:`variable<what is a variable?>`
 .. _AssertionError: https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError
 .. _unittest.TestCase.assertEqual: assertEqual_
 .. _unittest.TestCase.assertNotEqual: assertNotEqual_
@@ -339,9 +337,9 @@ start the project
 what is a variable?
 *********************************************************************************
 
-A variable_ is a name that is used for values that change. For example, in Mathematics_ we use ``x`` to represent any number.
+A variable is a name that is used for values that change. For example, in Mathematics_ we use ``x`` to represent any number.
 
-I can use variables_ to remove repetition of values that change so that if I have to change a value, I only have to make the change in one place instead of many.
+I can use variables to remove repetition of values that change so that if I have to change a value, I only have to make the change in one place instead of many.
 
 
 ----
@@ -362,7 +360,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
 ----
 
-* I change ``test_failure`` to ``test_what_is_an_assertion`` then add variables_ with a statement
+* I change ``test_failure`` to ``test_what_is_an_assertion`` then add :ref:`variables<what is a variable?>` with a statement
 
   .. code-block:: python
     :linenos:
@@ -386,8 +384,8 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
   - ``==`` is 2 equal signs - :kbd:`=+=` and means ``is equal`` which makes this statement read as ``reality is equal to my_expectation`` because
 
-    - ``reality`` is the name or variable_ I gave to the result of ``1 + 1``
-    - ``my_expectation`` is the name or variable_ I gave to ``2``
+    - ``reality`` is the name or :ref:`variable<what is a variable?>` I gave to the result of ``1 + 1``
+    - ``my_expectation`` is the name or :ref:`variable<what is a variable?>` I gave to ``2``
     - in other words the statement is ``1 + 1 is equal to 2``
 
 * I change ``my_expectation`` to make the statement :ref:`False<test_what_is_false>`
@@ -2586,7 +2584,7 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 57
     :emphasize-lines: 8-9
     :emphasize-text: not
 
@@ -6995,7 +6993,7 @@ the test passes.
 
     # NOTES
 
-  the test passes
+  the test passes.
 
 * I add assertIs_ for the first :ref:`assertion<what is an assertion?>`
 
@@ -7023,7 +7021,7 @@ the test passes.
 * I change assertIs_ to assertIsNot_
 
   .. code-block:: python
-    :lineno-start: 215
+    :lineno-start: 155
     :emphasize-lines: 4-5
 
         def test_assertion_error_w_is_vs_equal(self):
@@ -7043,14 +7041,8 @@ the test passes.
 * I add the `assertNotEqual method`_ for the next :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 9
-
-        def test_assertion_error_w_is_vs_equal(self):
-            # assert 0 is 0.0
-            assert 0 is not 0.0
-            # self.assertIs(0, 0.0)
-            self.assertIsNot(0, 0.0)
+    :lineno-start: 161
+    :emphasize-lines: 3
 
             # assert 0 != 0.0
             assert 0 == 0.0
@@ -7068,14 +7060,8 @@ the test passes.
 * I change assertNotEqual_ to assertEqual_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 9-10
-
-        def test_assertion_error_w_is_vs_equal(self):
-            # assert 0 is 0.0
-            assert 0 is not 0.0
-            # self.assertIs(0, 0.0)
-            self.assertIsNot(0, 0.0)
+    :lineno-start: 161
+    :emphasize-lines: 3-4
 
             # assert 0 != 0.0
             assert 0 == 0.0
@@ -7084,6 +7070,8 @@ the test passes.
 
 
     # NOTES
+
+  the test passes.
 
 * I remove the commented lines
 
@@ -7108,7 +7096,7 @@ the test passes.
     git commit --all --message \
     'add test_assertion_error_w_is_vs_equal'
 
-  the terminal_ shows a summary of the changes then goes back to the command line.q
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 The tests show that an integer_ can be ``EQUAL`` to a float_ but an integer_ ``IS`` NOT a float_.
 
@@ -7118,7 +7106,7 @@ The tests show that an integer_ can be ``EQUAL`` to a float_ but an integer_ ``I
 close the project
 *********************************************************************************
 
-* I close ``assertion_error.py`` in the :ref:`editor<2 editors>`
+* I close ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``assertion_error``
