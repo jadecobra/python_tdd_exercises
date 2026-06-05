@@ -336,9 +336,9 @@ continue the project
             assert self.an_integer is not False
             self.assertIsNot(self.an_integer, False)
 
-            a_float = 0.0
-            assert a_float is not False
-            self.assertIsNot(a_float, False)
+            # a_float = 0.0
+            # assert a_float is not False
+            # self.assertIsNot(a_float, False)
             assert self.a_float is not False
             self.assertIsNot(self.a_float, False)
 
@@ -424,19 +424,20 @@ continue the project
 
   .. code-block:: python
     :lineno-start: 6
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
         def setUp(self):
             self.an_integer = 0
             self.a_float = 0.0
+            self.a_string = 'a string'
 
         def test_what_is_an_assertion(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 17-21
+    :lineno-start: 27
+    :emphasize-lines: 23-27
 
         def test_assertion_error_w_none(self):
             assert None is None
@@ -460,9 +461,11 @@ continue the project
             assert self.a_float is not None
             self.assertIsNot(self.a_float, None)
 
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNot(a_string, None)
+            # a_string = 'a string'
+            # assert a_string is not None
+            # self.assertIsNot(a_string, None)
+            assert self.a_string is not None
+            self.assertIsNot(self.a_string, None)
 
             a_tuple = (1, 2, 3, 'n')
             assert a_tuple is not None
@@ -487,8 +490,8 @@ continue the project
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 17-21
+    :lineno-start: 71
+    :emphasize-lines: 23-27
 
         def test_assertion_error_w_false(self):
             assert None is not False
@@ -506,15 +509,17 @@ continue the project
             assert self.an_integer is not False
             self.assertIsNot(self.an_integer, False)
 
-            a_float = 0.0
-            assert a_float is not False
-            self.assertIsNot(a_float, False)
+            # a_float = 0.0
+            # assert a_float is not False
+            # self.assertIsNot(a_float, False)
             assert self.a_float is not False
             self.assertIsNot(self.a_float, False)
 
-            a_string = 'a string'
-            assert a_string is not False
-            self.assertIsNot(a_string, False)
+            # a_string = 'a string'
+            # assert a_string is not False
+            # self.assertIsNot(a_string, False)
+            assert self.a_string is not False
+            self.assertIsNot(self.a_string, False)
 
             a_tuple = (1, 2, 3, 'n')
             assert a_tuple is not False
@@ -539,8 +544,8 @@ continue the project
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 110
-    :emphasize-lines: 17-21
+    :lineno-start: 115
+    :emphasize-lines: 23-27
 
         def test_assertion_error_w_true(self):
             assert None is not True
@@ -564,9 +569,11 @@ continue the project
             assert self.a_float is not True
             self.assertIsNot(self.a_float, True)
 
-            a_string = 'a string'
-            assert a_string is not True
-            self.assertIsNot(a_string, True)
+            # a_string = 'a string'
+            # assert a_string is not True
+            # self.assertIsNot(a_string, True)
+            assert self.a_string is not True
+            self.assertIsNot(self.a_string, True)
 
             a_tuple = (1, 2, 3, 'n')
             assert a_tuple is not True
