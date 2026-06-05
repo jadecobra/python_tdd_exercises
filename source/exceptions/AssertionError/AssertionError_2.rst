@@ -250,7 +250,7 @@ continue the project
 
 ----
 
-* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_float = 0``
+* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_float = 0.0``
 
   .. code-block:: python
     :lineno-start: 6
@@ -262,7 +262,7 @@ continue the project
 
         def test_what_is_an_assertion(self):
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0`` from :ref:`test_assertion_error_w_none`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
     :lineno-start: 26
@@ -314,7 +314,7 @@ continue the project
 
   still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0`` from :ref:`test_assertion_error_w_false`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
     :lineno-start: 68
@@ -366,7 +366,177 @@ continue the project
 
   the test is still green.
 
-* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0`` from :ref:`test_assertion_error_w_true`
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_true`
+
+  .. code-block:: python
+    :lineno-start: 110
+    :emphasize-lines: 17-21
+
+        def test_assertion_error_w_true(self):
+            assert None is not True
+            self.assertIsNot(None, True)
+
+            assert False is not True
+            self.assertIsNot(False, True)
+
+            assert True is True
+            self.assertIs(True, True)
+
+            # an_integer = 0
+            # assert an_integer is not True
+            # self.assertIsNot(an_integer, True)
+            assert self.an_integer is not True
+            self.assertIsNot(self.an_integer, True)
+
+            # a_float = 0.0
+            # assert a_float is not True
+            # self.assertIsNot(a_float, True)
+            assert self.a_float is not True
+            self.assertIsNot(self.a_float, True)
+
+            a_string = 'a string'
+            assert a_string is not True
+            self.assertIsNot(a_string, True)
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not True
+            self.assertIsNot(a_tuple, True)
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not True
+            self.assertIsNot(a_list, True)
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not True
+            self.assertIsNot(a_set, True)
+
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not True
+            self.assertIsNot(a_dictionary, True)
+
+        def test_assertion_error_w_equality(self):
+
+  still green.
+
+----
+
+* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_string = 'a string'``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 3
+
+        def setUp(self):
+            self.an_integer = 0
+            self.a_float = 0.0
+
+        def test_what_is_an_assertion(self):
+
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_none`
+
+  .. code-block:: python
+    :lineno-start: 26
+    :emphasize-lines: 17-21
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIs(None, None)
+
+            assert False is not None
+            self.assertIsNot(False, None)
+
+            assert True is not None
+            self.assertIsNot(True, None)
+
+            # an_integer = 0
+            # assert an_integer is not None
+            # self.assertIsNot(an_integer, None)
+            assert self.an_integer is not None
+            self.assertIsNot(self.an_integer, None)
+
+            # a_float = 0.0
+            # assert a_float is not None
+            # self.assertIsNot(a_float, None)
+            assert self.a_float is not None
+            self.assertIsNot(self.a_float, None)
+
+            a_string = 'a string'
+            assert a_string is not None
+            self.assertIsNot(a_string, None)
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNot(a_tuple, None)
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNot(a_list, None)
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not None
+            self.assertIsNot(a_set, None)
+
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not None
+            self.assertIsNot(a_dictionary, None)
+
+        def test_assertion_error_w_false(self):
+
+  still green.
+
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 68
+    :emphasize-lines: 17-21
+
+        def test_assertion_error_w_false(self):
+            assert None is not False
+            self.assertIsNot(None, False)
+
+            assert False is False
+            self.assertIs(False, False)
+
+            assert True is not False
+            self.assertIsNot(True, False)
+
+            # an_integer = 0
+            # assert an_integer is not False
+            # self.assertIsNot(an_integer, False)
+            assert self.an_integer is not False
+            self.assertIsNot(self.an_integer, False)
+
+            a_float = 0.0
+            assert a_float is not False
+            self.assertIsNot(a_float, False)
+            assert self.a_float is not False
+            self.assertIsNot(self.a_float, False)
+
+            a_string = 'a string'
+            assert a_string is not False
+            self.assertIsNot(a_string, False)
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not False
+            self.assertIsNot(a_tuple, False)
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not False
+            self.assertIsNot(a_list, False)
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not False
+            self.assertIsNot(a_set, False)
+
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not False
+            self.assertIsNot(a_dictionary, False)
+
+        def test_assertion_error_w_true(self):
+
+  the test is still green.
+
+* I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
     :lineno-start: 110
