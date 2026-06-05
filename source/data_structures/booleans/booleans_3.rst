@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python list comprehensions with this hands-on TDD tutorial. Learn to create lists efficiently with code examples. Start coding now!
-  :keywords: Jacob Itegboje, Python list comprehensions, test-driven development, Python programming, coding tutorials, data structures, Python for beginners
+  :description: Part 3 of the booleans TDD series: advanced truthiness, falsiness, and boolean logic in Python. Continue testing edge cases with unittest.assertTrue/assertFalse for complex expressions, None, numbers, and collections. Builds on booleans_1 and _2 with more red-green-refactor examples.
+  :keywords: Jacob Itegboje, Pumping Python, python booleans advanced, truthiness falsiness part 3, unittest assertTrue assertFalse advanced, TDD booleans continued, python boolean logic tutorial, testing complex booleans, python data structures booleans advanced
 
 .. include:: ../../links.rst
 

@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn Python lists with this TDD tutorial! Master list methods, indexing, and slicing. Start coding now!
-  :keywords: Python lists, Python list methods, Python TDD tutorial, Python list operations, learn Python programming, Python list slicing, Python indexing tutorial, Jacob Itegboje
+  :description: Beginner TDD tutorial for Python dictionaries: key-value pairs, methods, iteration, and testing. Learn to create, access, update, and test dicts with unittest and assertions in a red-green-refactor workflow. Covers dict as a core data structure, difference from lists, and practical examples building on the AssertionError and None/Booleans chapters.
+  :keywords: Jacob Itegboje, Pumping Python, python dictionaries, python dict tutorial beginners, key value pairs python, python dictionary methods, TDD python dict, unittest test dict, python data structures dict, dict vs list python, testing dictionaries python, python dict TDD, red green refactor dict, python dict best practices, python dict tutorial
 
 .. include:: ../../links.rst
 

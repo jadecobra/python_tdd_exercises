@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn Python lists with this TDD tutorial! Master list methods, indexing, and slicing. Start coding now!
-  :keywords: Python lists, Python list methods, Python TDD tutorial, Python list operations, learn Python programming, Python list slicing, Python indexing tutorial, Jacob Itegboje
+  :description: Comprehensive TDD tutorial for Python lists: indexing, slicing, methods, mutation, and testing. Master lists as a fundamental mutable sequence data structure through step-by-step red-green-refactor with unittest and assertions. Connects to earlier coverage of None/booleans/identity testing in the AssertionError chapters.
+  :keywords: Jacob Itegboje, Pumping Python, python lists tutorial, list methods python, python list indexing, python list slicing, TDD lists, unittest test list, python data structures lists, mutable list python, testing lists with assertions, red green refactor lists, python list best practices, python list for beginners, list TDD tutorial, python list operations
 
 .. include:: ../../links.rst
 

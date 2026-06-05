@@ -1,6 +1,6 @@
 .. meta::
-  :description: Learn what causes Python's AssertionError and how to use the assert statement in this beginner TDD tutorial. Master the Red-Green-Refactor cycle, pytest-watcher, the difference between = and ==, and how to test None, False, True, strings, lists, and dictionaries.
-  :keywords: Jacob Itegboje, Python AssertionError, what causes AssertionError, assert statement Python, Python TDD tutorial, Test-Driven Development beginners, unittest assert examples, pytest-watcher setup, uv init python, difference between = and ==, Python is None vs is not None, testing False in Python, red green refactor cycle, test None type, testing lists and dictionaries python
+  :description: Part 2 of the beginner Python TDD AssertionError tutorial: learn to use the unittest.TestCase setUp method to DRY up repeated variable initialization across test methods. Refactor the tests from part 1 (None, True, False, is vs ==, 0 vs 0.0 identity vs equality) by moving an_integer = 0 and a_float = 0.0 into def setUp(self): so self.an_integer and self.a_float are freshly set for every test without duplicating the lines in test_assertion_error_w_none, w_false, w_true etc. See before/after with commented old local variables, updating asserts to use self.xxx, adding setUp to the class, and running the evolved tests with pytest-watcher in the existing uv project. Teaches how setUp provides per-test isolation for instance attributes, reducing repetition while keeping tests focused on the assertions. Continues the red-green-refactor cycle and same core examples from the first AssertionError chapter.
+  :keywords: Jacob Itegboje, Pumping Python, unittest setUp method, setUp python unittest example, python TestCase setUp, refactor tests with setUp, DRY unittest tests setUp, self. in setUp unittest, remove repetition setUp python, an_integer setUp, a_float setUp, AssertionError 2, setUp for None tests, setUp True False tests, unittest setUp beginners, setUp vs local variables in tests, per test setup python unittest, AssertionError setUp method, continuing TDD project setUp, python unittest DRY test data, setUp instance variables, test_assertion_error_2.py
 
 .. include:: ../../links.rst
 
@@ -85,7 +85,7 @@ continue the project
 
 ----
 
-* I add the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute>` to use to remove repetition of ``an_integer = 0``
+* I add the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute?>` to use to remove repetition of ``an_integer = 0``
 
   .. code-block:: python
     :lineno-start: 4
@@ -250,24 +250,23 @@ continue the project
 
 ----
 
-* I add a  :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`  to use to remove repetition of ``a_float = 0``
+* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_float = 0``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-4
-
-    class TestAssertionError(unittest.TestCase):
+    :lineno-start: 6
+    :emphasize-lines: 3
 
         def setUp(self):
             self.an_integer = 0
+            self.a_float = 0.0
 
         def test_what_is_an_assertion(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0`` from :ref:`test_assertion_error_w_none`
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 11-15
+    :lineno-start: 26
+    :emphasize-lines: 17-21
 
         def test_assertion_error_w_none(self):
             assert None is None
@@ -285,9 +284,11 @@ continue the project
             assert self.an_integer is not None
             self.assertIsNot(self.an_integer, None)
 
-            a_float = 0.0
-            assert a_float is not None
-            self.assertIsNot(a_float, None)
+            # a_float = 0.0
+            # assert a_float is not None
+            # self.assertIsNot(a_float, None)
+            assert self.a_float is not None
+            self.assertIsNot(self.a_float, None)
 
             a_string = 'a string'
             assert a_string is not None
@@ -311,13 +312,13 @@ continue the project
 
         def test_assertion_error_w_false(self):
 
-  the test is still green.
+  still green.
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0`` from :ref:`test_assertion_error_w_false`
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 11-15
+    :lineno-start: 68
+    :emphasize-lines: 17-21
 
         def test_assertion_error_w_false(self):
             assert None is not False
@@ -338,6 +339,8 @@ continue the project
             a_float = 0.0
             assert a_float is not False
             self.assertIsNot(a_float, False)
+            assert self.a_float is not False
+            self.assertIsNot(self.a_float, False)
 
             a_string = 'a string'
             assert a_string is not False
@@ -361,13 +364,13 @@ continue the project
 
         def test_assertion_error_w_true(self):
 
-  still green.
+  the test is still green.
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0`` from :ref:`test_assertion_error_w_true`
 
   .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 11-15
+    :lineno-start: 110
+    :emphasize-lines: 17-21
 
         def test_assertion_error_w_true(self):
             assert None is not True
@@ -385,9 +388,11 @@ continue the project
             assert self.an_integer is not True
             self.assertIsNot(self.an_integer, True)
 
-            a_float = 0.0
-            assert a_float is not True
-            self.assertIsNot(a_float, True)
+            # a_float = 0.0
+            # assert a_float is not True
+            # self.assertIsNot(a_float, True)
+            assert self.a_float is not True
+            self.assertIsNot(self.a_float, True)
 
             a_string = 'a string'
             assert a_string is not True
@@ -411,7 +416,7 @@ continue the project
 
         def test_assertion_error_w_equality(self):
 
-  green.
+  still green.
 
 ----
 

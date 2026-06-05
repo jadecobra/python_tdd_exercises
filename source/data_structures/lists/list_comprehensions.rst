@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python list comprehensions with this hands-on TDD tutorial. Learn to create lists efficiently with code examples. Start coding now!
-  :keywords: Jacob Itegboje, Python list comprehensions, test-driven development, Python programming, coding tutorials, data structures, Python for beginners
+  :description: TDD tutorial for Python list comprehensions: concise way to create and transform lists. Learn [x for x in ...] syntax, conditions, nested comprehensions through red-green-refactor testing with unittest. Builds on basic lists chapter and connects to data structures, None, booleans, and assertion testing from earlier chapters.
+  :keywords: Jacob Itegboje, Pumping Python, python list comprehensions, list comprehension tutorial, python list comp TDD, TDD list comprehensions, python [x for x in], list comprehension beginners, testing list comprehensions, python data structures comprehensions, red green refactor list comp, python list comp best practices, list comprehension vs loop, python list comp for beginners, list comp unittest
 
 .. include:: ../../links.rst
 

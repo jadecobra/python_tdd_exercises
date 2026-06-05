@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python dictionaries with TDD! Learn :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`s, methods, and testing techniques in this hands-on guide. Start coding now!
-  :keywords: Jacob Itegboje, Python dictionaries, Test-Driven Development, Python programming, data structures, unit testing, Python tutorial, coding guide
+  :description: In-depth TDD tutorial for Python dictionaries as key-value data structures. Master creating dicts, accessing items, methods like keys/values/items, iteration, and testing with assertions and unittest. Learn through red-green-refactor with examples that distinguish dicts from other structures, building on the AssertionError, None, and booleans chapters. Covers common patterns and beginner gotchas for dicts.
+  :keywords: Jacob Itegboje, Pumping Python, python dictionaries tutorial, python dict key value, dict methods python, testing dictionaries unittest, TDD dict python, python data structures dictionaries, dict vs list, python dict iteration, unittest assert dict, red green refactor dictionaries, python dict best practices, python dict for beginners, key value pair testing, python dict TDD tutorial
 
 .. include:: ../../links.rst
 

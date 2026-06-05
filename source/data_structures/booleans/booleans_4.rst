@@ -1,3 +1,7 @@
+.. meta::
+  :description: Booleans 4: how Python booleans and truthiness interact with class inheritance and custom objects. Learn to control bool() behavior with __bool__ and __len__ through TDD testing. Continues the booleans series with advanced data structure and OOP connections.
+  :keywords: Jacob Itegboje, Pumping Python, python booleans inheritance, __bool__ python, custom bool python, truthiness custom classes, TDD booleans advanced, python bool inheritance tutorial, testing __bool__ and __len__
+
 .. include:: ../../links.rst
 
 #################################################################################
