@@ -1833,16 +1833,45 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I use assertIs_ to compare a float_ (binary floating point decimal number) with :ref:`None<what is None?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0`` from the test
 
   .. code-block:: python
     :lineno-start: 35
-    :emphasize-lines: 8
+    :emphasize-lines: 1
 
+            an_integer = 0
             # assert 0 is None
             assert 0 is not None
             # self.assertIs(0, None)
             self.assertIsNot(0, None)
+
+            # assert 0.0 is None
+            assert 0.0 is not None
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0`` from the test
+
+  .. code-block:: python
+    :lineno-start: 35
+    :emphasize-lines: 2-3, 5, 7
+
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNot(an_integer, None)
+            # assert 0 is None
+            # assert 0 is not None
+            # self.assertIs(0, None)
+            # self.assertIsNot(0, None)
+
+            # assert 0.0 is None
+            assert 0.0 is not None
+
+  the test is still green.
+
+* I use assertIs_ to compare a float_ (binary floating point decimal number) with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 3
 
             # assert 0.0 is None
             assert 0.0 is not None
@@ -1866,7 +1895,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 43
     :emphasize-lines: 3-4
 
             # assert 0.0 is None
@@ -1879,16 +1908,45 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`None<what is None?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0.0`` from the test
 
   .. code-block:: python
-    :lineno-start: 40
-    :emphasize-lines: 8
+    :lineno-start: 43
+    :emphasize-lines: 1
 
+            a_float = 0.0
             # assert 0.0 is None
             assert 0.0 is not None
             # self.assertIs(0.0, None)
             self.assertIsNot(0.0, None)
+
+            # assert 0.0 is None
+            assert 0.0 is not None
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0`` from the test
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 2-3, 5, 7
+
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNot(a_float, None)
+            # assert 0.0 is None
+            # assert 0.0 is not None
+            # self.assertIs(0.0, None)
+            # self.assertIsNot(0.0, None)
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+
+  the test is still green.
+
+* I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 3
 
             # assert 'a string' is None
             assert 'a string' is not None
@@ -1912,7 +1970,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 51
     :emphasize-lines: 3-4
 
             # assert 'a string' is None
@@ -1925,16 +1983,45 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I use assertIs_ to compare a tuple_ (anything in parentheses ``( )`` separated by a comma) with :ref:`None<what is None?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'`` from the test
 
   .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 8
+    :lineno-start: 51
+    :emphasize-lines: 1
 
+            a_string = 'a string'
             # assert 'a string' is None
             assert 'a string' is not None
             # self.assertIs('a string', None)
             self.assertIsNot('a string', None)
+
+            # assert 'a string' is None
+            assert 'a string' is not None
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'a string'`` from the test
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 2-3, 5, 7
+
+            a_string = 'a string'
+            assert a_string is not None
+            self.assertIsNot(a_string, None)
+            # assert 'a string' is None
+            # assert 'a string' is not None
+            # self.assertIs('a string', None)
+            # self.assertIsNot('a string', None)
+
+            # assert (1, 2, 3, 'n') is None
+            assert (1, 2, 3, 'n') is not None
+
+  the test is still green.
+
+* I use assertIs_ to compare a tuple_ (anything in parentheses ``( )`` separated by a comma) with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 3
 
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
@@ -1958,7 +2045,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 50
+    :lineno-start: 59
     :emphasize-lines: 3-4
 
             # assert (1, 2, 3, 'n') is None
@@ -1970,6 +2057,40 @@ another way to test if something is the same object as None
             assert [1, 2, 3, 'n'] is not None
 
   the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the test
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 1
+
+            a_tuple = (1, 2, 3, 'n')
+            # assert (1, 2, 3, 'n') is None
+            assert (1, 2, 3, 'n') is not None
+            # self.assertIs((1, 2, 3, 'n'), None)
+            self.assertIsNot((1, 2, 3, 'n'), None)
+
+            # assert (1, 2, 3, 'n') is None
+            assert (1, 2, 3, 'n') is not None
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(1, 2, 3, 'n')`` from the test
+
+  .. code-block:: python
+    :lineno-start: 59
+    :emphasize-lines: 2-3, 5, 7
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNot(a_tuple, None)
+            # assert (1, 2, 3, 'n') is None
+            # assert (1, 2, 3, 'n') is not None
+            # self.assertIs((1, 2, 3, 'n'), None)
+            # self.assertIsNot((1, 2, 3, 'n'), None)
+
+            # assert [1, 2, 3, 'n'] is None
+            assert [1, 2, 3, 'n'] is not None
+
+  the test is still green.
 
 * I use assertIs_ to compare a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) with :ref:`None<what is None?>`
 
