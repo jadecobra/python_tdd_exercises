@@ -195,22 +195,12 @@ start the project
 
         def test_failure(self):
             self.assertFalse(True)
-
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
+    echo "pytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line.
 

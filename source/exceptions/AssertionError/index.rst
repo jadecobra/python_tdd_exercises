@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner-friendly step-by-step TDD tutorial explaining Python's AssertionError and how to use the assert statement. Learn how to set up a test environment using uv, pytest, and pytest-watcher. Master the difference between assignment (=) and equality (==), and learn how to test None, False, and True using "is", "is not", assertIs, and assertIsNot. Understand the difference between object identity and value equality (why 0 == 0.0 is True but 0 is 0.0 is False), and how to use assertEqual and assertNotEqual in unittest.TestCase.
-  :keywords: Jacob Itegboje, Pumping Python, python assertionerror tutorial for beginners, what causes AssertionError in python, how to use assert statement python, test driven development python unittest beginners, how to use pytest-watcher, uv init python tutorial, difference between single and double equal python, assignment vs equality operator python, python is None vs is not None, testing None in python unittest, testing False and True in python, unittest assertIs and assertIsNot, unittest assertEqual and assertNotEqual, difference between is and equal python, why is 0 == 0.0 but 0 is not 0.0, python object identity vs value equality, AssertionError True is not false, AssertionError unexpectedly identical None, AssertionError False is not None, AssertionError True is not None, AssertionError 0 == 0.0, python red green refactor cycle beginners, setting up tests directory __init__.py python, common python beginner exceptions assertions
+  :description: Step-by-step beginner Python TDD tutorial that teaches AssertionError by deliberately triggering it. See exactly why a bare `reality == my_expectation` line does not fail the test or raise an error (Python just evaluates it and continues), and how `assert` turns a false result into AssertionError. Understand the real error messages beginners hit: "AssertionError: True is not false", "unexpectedly identical: None", "AssertionError: 0 is not 0.0", "assert 0 != 0.0", and "AssertionError: 0 == 0.0". Master the difference between `=` (assignment) and `==` (equality), and especially `is` / `is not` (same object / identity) versus `==` / `!=` (value equality). Extensive practical examples testing None, True, False, 0 vs 0.0, strings, lists, dicts, sets and tuples using both the bare `assert` statement and unittest.TestCase methods (assertIs, assertIsNot, assertEqual, assertNotEqual). Full project setup with `uv init`, proper `tests/__init__.py` package, `uv add` for pytest + pytest-watcher, running via `uv run pytest-watcher . --now`, small git commits after every change, and the complete red-green-refactor cycle. Perfect for absolute beginners learning Python testing, None/True/False identity gotchas, why 0 == 0.0 is True but 0 is not 0.0, and how assertions actually control test outcomes.
+  :keywords: Jacob Itegboje, Pumping Python, python assertionerror, AssertionError python, what causes AssertionError in python, python assert statement, assert statement python for beginners, how does assert work python, python assert tutorial, TDD for beginners python, red green refactor python, red green refactor cycle, uv pytest-watcher, pytest-watcher uv, uv run pytest-watcher . --now, python unittest beginners, difference between = and == python, assignment vs equality python, python is vs ==, object identity vs value equality python, python is not vs !=, is None vs == None python, python None identity, python is not None, assertIsNot None, unittest assertIs, assertIs vs is python, unexpectedly identical None, AssertionError unexpectedly identical, AssertionError True is not false, True is not false python, assert 0 is 0.0, 0 is not 0.0 python, why is 0 == 0.0 but 0 is not 0.0, 0 == 0.0 is True python, python 0 is not False, an integer is not False, python 0 is not True, testing None True False python, bare comparison does not fail test, reality == my_expectation still green, why doesn't == fail my python test, python assert makes test fail, python assert "DO NOT CONTINUE if false", setting up tests directory python, tests __init__.py python, python tests package structure, common python beginner AssertionError, AssertionError 0 == 0.0, assert 0 != 0.0, unittest assertEqual beginners, mixing assert and self.assertEqual, python tdd None, python singleton is, python falsy is not False, a list is not None, a dict is not False, python test driven development assert, how to cause AssertionError, python assertions expectations vs reality, what is an assertion python, common python test gotchas None True False, python 0 == 0.0 identity equality, python why does my test not fail when I write ==, python bare expression vs assert, python assert turns false into error, python tdd uv init, pytest-watcher with unittest, python None is not False, True is not None test, 0.0 is not False python, dictionary is not None, how to write failing test first TDD, common mistakes is vs equal python, AssertionError assert 11 == 2, E assert None is not None, python expectations vs reality testing, what is the same what is different python test
 
 .. include:: ../../links.rst
 
@@ -61,24 +61,24 @@ questions about AssertionError
 Questions to think about as I go through the chapter
 
 * :ref:`what is an assertion?<what is an assertion?>`
-* :ref:`what is a variable?`
+* :ref:`what is a variable?<what is a variable?>`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
 * :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is the same object as False?<test_assertion_error_w_false>`
-* :ref:`how can I test if something is NOT the same object as False?<test_assertion_error_w_true>`
+* :ref:`how can I test if something is NOT the same object as False?<test_assertion_error_w_false>`
 * :ref:`how can I test if something is the same object as True?<test_assertion_error_w_true>`
-* :ref:`how can I test if something is NOT the same object as True?<test_assertion_error_w_false>`
-* :ref:`how can I test if 2 things are NOT Equal?<test_assertion_error_w_equality>`
-* :ref:`how can I test if 2 things are Equal?<test_assertion_error_w_equality>`
+* :ref:`how can I test if something is NOT the same object as True?<test_assertion_error_w_true>`
+* :ref:`how can I test if two things are not equal?<test_assertion_error_w_equality>`
+* :ref:`how can I test if two things are equal?<test_assertion_error_w_equality>`
 * :ref:`what is another way to test if something is the same object as None?<another way to test if something is the same object as None>`
 * :ref:`what is another way to test if something is NOT the same object as None?<another way to test if something is NOT the same object as None>`
 * :ref:`what is another way to test if something is the same object as False?<another way to test if something is the same object as False>`
 * :ref:`what is another way to test if something is NOT the same object as False?<another way to test if something is NOT the same object as False>`
-* :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is the same object as True>`
+* :ref:`what is another way to test if something is the same object as True?<another way to test if something is the same object as True>`
 * :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is NOT the same object as True>`
-* :ref:`what is another way test if 2 things are NOT Equal?<another way to test if two things are NOT Equal>`
-* :ref:`what is another way test if 2 things are Equal?<another way to test if two things are Equal>`
+* :ref:`what is another way to test if two things are not equal?<another way to test if two things are not equal>`
+* :ref:`what is another way to test if two things are equal?<another way to test if two things are equal>`
 * :ref:`what is the difference between is and equal<test_assertion_error_w_is_vs_equal>`
 
 ----
@@ -207,16 +207,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 1
 
-    echo "pytest" > requirements.txt
-
-  the terminal_ goes back to the command line.
-
-* I add `pytest-watcher`_ to the requirements file_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
+    echo "pytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line.
 
@@ -749,7 +740,7 @@ With these statements, I tell Python_ - "DO NOT CONTINUE, if :ref:`True<test_wha
 test_assertion_error_w_none
 *********************************************************************************
 
-:ref:`None<what is None?>` is used when there is no value, it is the simplest :ref:`data structure<data structures>` in Python_. I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`, this is useful if I want to check what value I get from a process.
+:ref:`None<what is None?>` is used when there is no value. I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`, this is useful if I want to check what value I get from a process.
 
 For example, if I have people fill a form and I want a test for when they leave something blank, I can use an :ref:`assertion<what is an assertion?>` to make sure that the value is :ref:`None<what is None?>`.
 
@@ -839,7 +830,7 @@ the test passes.
 
 ----
 
-* I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`False<test_what_is_false>`, another simple :ref:`data structure<data structures>`
+* I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`False<test_what_is_false>`.
 
   .. code-block:: python
     :lineno-start: 19
@@ -903,7 +894,7 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`, another simple :ref:`data structure<data structures>`
+* I add an :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`.
 
   .. code-block:: python
     :lineno-start: 19
@@ -5071,7 +5062,7 @@ I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>`
     :emphasize-lines: 4
     :emphasize-text: Not
 
-        def test_assertion_error_w_false(self):
+        def test_assertion_error_w_true(self):
             # assert None is True
             assert None is not True
             self.assertIs(None, True)
@@ -5105,7 +5096,7 @@ another way to test if something is NOT the same object as True
     :lineno-start: 95
     :emphasize-lines: 4-5
 
-        def test_assertion_error_w_false(self):
+        def test_assertion_error_w_true(self):
             # assert None is True
             assert None is not True
             # self.assertIs(None, True)
@@ -6379,7 +6370,7 @@ the test passes because ``None is equal to None`` is :ref:`True<test_what_is_tru
 ----
 
 =================================================================================
-another way to test if two things are NOT Equal
+another way to test if two things are not equal
 =================================================================================
 
 ----
@@ -6424,12 +6415,12 @@ I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if 
       assert None != None
       self.assertNotEqual(None, None)
 
-    they are asking the same question: ``is None NOT equal to None?`` or giving Python_ the command ``DO NOT CONTINUE if "None is NOT Equal to None" is False``
+    they are asking the same question: ``is None NOT equal to None?`` or giving Python_ the command ``DO NOT CONTINUE if "None is not equal to None" is False``
 
 ----
 
 =================================================================================
-another way to test if two things are Equal
+another way to test if two things are equal
 =================================================================================
 
 ----
@@ -6881,7 +6872,7 @@ another way to test if two things are Equal
 test_assertion_error_w_is_vs_equal
 *********************************************************************************
 
-Some of the tests I have written use ``is`` and some use ``==``, if they mean the same thing, why do I use different symbols? What is the difference between ``is`` and ``equal``?
+Some of the tests I have written use ``is`` and some use ``==``, if they mean the same thing, why do I use different symbols? What is the difference between ``is`` and ``==``?
 
 In Python_ they do not mean the same thing
 
@@ -7133,18 +7124,18 @@ review
 I can use `assert statements`_ and `assert methods`_ to test if something is
 
 * :ref:`None or NOT None<test_assertion_error_w_none>`
-* :ref:`False or NOT False<test_assertion_error_w_none>`
-* :ref:`True or NOT True<test_assertion_error_w_none>`
+* :ref:`False or NOT False<test_assertion_error_w_false>`
+* :ref:`True or NOT True<test_assertion_error_w_true>`
 
-and to test if 2 things are
+and to test if two things are
 
-* :ref:`NOT Equal<test_assertion_error_w_equality>` with assertNotEqual_
-* :ref:`Equal<test_assertion_error_w_equality>` with assertEqual_
+* :ref:`not equal<test_assertion_error_w_equality>` with assertNotEqual_
+* :ref:`equal<test_assertion_error_w_equality>` with assertEqual_
 
 The tests show that
 
 * :ref:`True<test_what_is_true>`, :ref:`False<test_what_is_false>` and :ref:`None<what is None?>` are different
-* ``is`` and ``Equal`` are different
+* ``is`` and ``==`` are different
 
 :ref:`How many questions can you answer about AssertionError?<questions about AssertionError>`
 
@@ -7165,7 +7156,7 @@ what is next?
 Congratulations! You now know
 
 * :ref:`how to make a Python test driven development environment any time you want<how to make a Python test driven development environment>` and
-* :ref:`how to raise AssertionError<what causes AssertionError?>`
+* :ref:`what causes AssertionError?`
 
 :ref:`Would you like to test functions?<what is a function?>`
 

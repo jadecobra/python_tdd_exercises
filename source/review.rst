@@ -63,24 +63,24 @@ AssertionError review
 *********************************************************************************
 
 * :ref:`what is an assertion?<what is an assertion?>`
-* :ref:`what is a variable?`
+* :ref:`what is a variable?<what is a variable?>`
 * :ref:`what causes AssertionError?<what causes AssertionError?>`
 * :ref:`how can I test if something is NOT the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is the same object as None?<test_assertion_error_w_none>`
 * :ref:`how can I test if something is the same object as False?<test_assertion_error_w_false>`
-* :ref:`how can I test if something is NOT the same object as False?<test_assertion_error_w_true>`
+* :ref:`how can I test if something is NOT the same object as False?<test_assertion_error_w_false>`
 * :ref:`how can I test if something is the same object as True?<test_assertion_error_w_true>`
-* :ref:`how can I test if something is NOT the same object as True?<test_assertion_error_w_false>`
-* :ref:`how can I test if 2 things are NOT Equal?<test_assertion_error_w_equality>`
-* :ref:`how can I test if 2 things are Equal?<test_assertion_error_w_equality>`
+* :ref:`how can I test if something is NOT the same object as True?<test_assertion_error_w_true>`
+* :ref:`how can I test if two things are NOT Equal?<test_assertion_error_w_equality>`
+* :ref:`how can I test if two things are Equal?<test_assertion_error_w_equality>`
 * :ref:`what is another way to test if something is the same object as None?<another way to test if something is the same object as None>`
 * :ref:`what is another way to test if something is NOT the same object as None?<another way to test if something is NOT the same object as None>`
 * :ref:`what is another way to test if something is the same object as False?<another way to test if something is the same object as False>`
 * :ref:`what is another way to test if something is NOT the same object as False?<another way to test if something is NOT the same object as False>`
-* :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is the same object as True>`
+* :ref:`what is another way to test if something is the same object as True?<another way to test if something is the same object as True>`
 * :ref:`what is another way to test if something is NOT the same object as True?<another way to test if something is NOT the same object as True>`
-* :ref:`what is another way test if 2 things are NOT Equal?<another way to test if two things are NOT Equal>`
-* :ref:`what is another way test if 2 things are Equal?<another way to test if two things are Equal>`
+* :ref:`what is another way to test if two things are NOT Equal?<another way to test if two things are NOT Equal>`
+* :ref:`what is another way to test if two things are Equal?<another way to test if two things are Equal>`
 * :ref:`what is the difference between is and equal<test_assertion_error_w_is_vs_equal>`
 
 ----
@@ -284,7 +284,7 @@ what is next?
 after that review you can confidently say you know something about Python_, you know
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
-* :ref:`how to raise AssertionError<what causes AssertionError?>`
+* :ref:`what causes AssertionError?`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`what is None and NOT None<what is None?>`
