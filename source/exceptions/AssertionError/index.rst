@@ -1119,19 +1119,24 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 12
+    :emphasize-lines: 17
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             assert 'a string' is None
 
 
@@ -1147,20 +1152,25 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 12-13
+    :emphasize-lines: 17-18
     :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
 
@@ -1172,7 +1182,7 @@ the test passes.
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 40
+    :lineno-start: 39
     :emphasize-lines: 2
 
     # NOTES
@@ -1193,21 +1203,27 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 14
+    :emphasize-lines: 20
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             assert (1, 2, 3, 'n') is None
 
 
@@ -1223,22 +1239,28 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 14-15
+    :emphasize-lines: 20-21
     :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
 
@@ -1272,23 +1294,30 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 16
+    :emphasize-lines: 23
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
+
             assert [1, 2, 3, 'n'] is None
 
 
@@ -1304,24 +1333,31 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 16-17
+    :emphasize-lines: 23-24
     :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
+
             # assert [1, 2, 3, 'n'] is None
             assert [1, 2, 3, 'n'] is not None
 
@@ -1333,7 +1369,7 @@ the test passes.
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 45
     :emphasize-lines: 2
 
     # NOTES
@@ -1356,25 +1392,33 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 18
+    :emphasize-lines: 26
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
+
             # assert [1, 2, 3, 'n'] is None
             assert [1, 2, 3, 'n'] is not None
+
             assert {1, 2, 3, 'n'} is None
 
 
@@ -1390,26 +1434,34 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 18-19
+    :emphasize-lines: 26-27
     :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
+
             # assert [1, 2, 3, 'n'] is None
             assert [1, 2, 3, 'n'] is not None
+
             # assert {1, 2, 3, 'n'} is None
             assert {1, 2, 3, 'n'} is not None
 
@@ -1421,7 +1473,7 @@ the test passes.
 * I add a note about sets_
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 48
     :emphasize-lines: 2
 
     # NOTES
@@ -1445,27 +1497,36 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 20
+    :emphasize-lines: 29
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
+
             # assert [1, 2, 3, 'n'] is None
             assert [1, 2, 3, 'n'] is not None
+
             # assert {1, 2, 3, 'n'} is None
             assert {1, 2, 3, 'n'} is not None
+
             assert {'key': 'value'} is None
 
 
@@ -1481,28 +1542,37 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 20-21
+    :emphasize-lines: 29-30
     :emphasize-text: not
 
         def test_assertion_error_w_none(self):
             # assert None is not None
             assert None is None
+
             # assert False is None
             assert False is not None
+
             # assert True is None
             assert True is not None
+
             # assert 0 is None
             assert 0 is not None
+
             # assert 0.0 is None
             assert 0.0 is not None
+
             # assert 'a string' is None
             assert 'a string' is not None
+
             # assert (1, 2, 3, 'n') is None
             assert (1, 2, 3, 'n') is not None
+
             # assert [1, 2, 3, 'n'] is None
             assert [1, 2, 3, 'n'] is not None
+
             # assert {1, 2, 3, 'n'} is None
             assert {1, 2, 3, 'n'} is not None
+
             # assert {'key': 'value'} is None
             assert {'key': 'value'} is not None
 
@@ -1514,7 +1584,7 @@ the test passes.
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 51
     :emphasize-lines: 2
 
     # NOTES
@@ -1536,9 +1606,10 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_assertion_error_w_none'
+    git commit --all --message \
+    'add test_assertion_error_w_none'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -1550,11 +1621,11 @@ another way to test if something is NOT the same object as None
 
 ----
 
-I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if something is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>` or not.
+I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if something is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>` or NOT.
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`assertion<what is an assertion?>` with the `assertIsNot method`_ which checks if the :ref:`object<what is a class?>` on the left is NOT the same as the :ref:`object<what is a class?>` on the right in the parentheses, in ``test_assertion_error.py``
+* I add an :ref:`assertion<what is an assertion?>` with the `assertIsNot method`_ which checks if the :ref:`object<what is a class?>` in the parentheses on the left is NOT the same as the :ref:`object<what is a class?>` in the parentheses on the right
 
   .. code-block:: python
     :lineno-start: 19
@@ -1568,25 +1639,6 @@ I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if 
 
             # assert False is None
             assert False is not None
-            # assert True is None
-            assert True is not None
-            # assert 0 is None
-            assert 0 is not None
-            # assert 0.0 is None
-            assert 0.0 is not None
-            # assert 'a string' is None
-            assert 'a string' is not None
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-            # assert {1, 2, 3, 'n'} is None
-            assert {1, 2, 3, 'n'} is not None
-            # assert {'key': 'value'} is None
-            assert {'key': 'value'} is not None
-
-
-    # NOTES
 
   the terminal_ is my friend, and shows AssertionError_
 
@@ -1619,7 +1671,7 @@ another way to test if something is the same object as None
 
 ----
 
-* I change the `assertIsNot method`_ to the `assertIs method`_ which checks if the :ref:`object<what is a class?>` in parentheses on the left is the same as the :ref:`object<what is a class?>` on the right
+* I change the `assertIsNot method`_ to the `assertIs method`_ which checks if the :ref:`object<what is a class?>` in parentheses on the left is the same as the :ref:`object<what is a class?>` in parentheses on the right
 
   .. code-block:: python
     :lineno-start: 19
@@ -1632,8 +1684,9 @@ another way to test if something is the same object as None
             self.assertIs(None, None)
 
             # assert False is None
+            assert False is not None
 
-  the test passes because :ref:`None<what is None?>` is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`
+  the test passes because :ref:`None<what is None?>` is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
 
 * I use the `assertIs method`_ to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
 
@@ -1652,6 +1705,7 @@ another way to test if something is the same object as None
             self.assertIs(False, None)
 
             # assert True is None
+            assert True is not None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1668,7 +1722,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 25
     :emphasize-lines: 3-4
 
             # assert False is None
@@ -1677,6 +1731,7 @@ another way to test if something is the same object as None
             self.assertIsNot(False, None)
 
             # assert True is None
+            assert True is not None
 
   the test passes.
 
@@ -1702,6 +1757,7 @@ another way to test if something is the same object as None
             self.assertIs(True, None)
 
             # assert 0 is None
+            assert 0 is not None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1718,7 +1774,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 30
     :emphasize-lines: 3-4
 
             # assert True is None
@@ -1727,13 +1783,14 @@ another way to test if something is the same object as None
             self.assertIsNot(True, None)
 
             # assert 0 is None
+            assert 0 is not None
 
   the test passes.
 
 * I use assertIs_ to compare an integer_ (a whole number without decimals) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 30
     :emphasize-lines: 8
 
             # assert True is None
@@ -1746,6 +1803,7 @@ another way to test if something is the same object as None
             self.assertIs(0, None)
 
             # assert 0.0 is None
+            assert 0.0 is not None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1762,7 +1820,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 35
     :emphasize-lines: 3-4
 
             # assert 0 is None
@@ -1771,30 +1829,15 @@ another way to test if something is the same object as None
             self.assertIsNot(0, None)
 
             # assert 0.0 is None
+            assert 0.0 is not None
 
   the test passes.
 
 * I use assertIs_ to compare a float_ (binary floating point decimal number) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 24
-
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
-            # self.assertIsNot(None, None)
-            self.assertIs(None, None)
-
-            # assert False is None
-            assert False is not None
-            # self.assertIs(False, None)
-            self.assertIsNot(False, None)
-
-            # assert True is None
-            assert True is not None
-            # self.assertIs(True, None)
-            self.assertIsNot(True, None)
+    :lineno-start: 35
+    :emphasize-lines: 8
 
             # assert 0 is None
             assert 0 is not None
@@ -1806,6 +1849,7 @@ another way to test if something is the same object as None
             self.assertIs(0.0, None)
 
             # assert 'a string' is None
+            assert 'a string' is not None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1822,7 +1866,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 40
     :emphasize-lines: 3-4
 
             # assert 0.0 is None
@@ -1831,13 +1875,14 @@ another way to test if something is the same object as None
             self.assertIsNot(0.0, None)
 
             # assert 'a string' is None
+            assert 'a string' is not None
 
   the test passes.
 
 * I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 40
     :emphasize-lines: 8
 
             # assert 0.0 is None
@@ -1850,6 +1895,7 @@ another way to test if something is the same object as None
             self.assertIs('a string', None)
 
             # assert (1, 2, 3, 'n') is None
+            assert (1, 2, 3, 'n') is not None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1866,7 +1912,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 45
     :emphasize-lines: 3-4
 
             # assert 'a string' is None
@@ -1875,13 +1921,14 @@ another way to test if something is the same object as None
             self.assertIsNot('a string', None)
 
             # assert (1, 2, 3, 'n') is None
+            assert (1, 2, 3, 'n') is not None
 
   the test passes.
 
 * I use assertIs_ to compare a tuple_ (anything in parentheses ``( )`` separated by a comma) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 51
+    :lineno-start: 45
     :emphasize-lines: 8
 
             # assert 'a string' is None
@@ -1894,6 +1941,7 @@ another way to test if something is the same object as None
             self.assertIs((1, 2, 3, 'n'), None)
 
             # assert [1, 2, 3, 'n'] is None
+            assert [1, 2, 3, 'n'] is not None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1910,7 +1958,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 50
     :emphasize-lines: 3-4
 
             # assert (1, 2, 3, 'n') is None
@@ -1919,13 +1967,14 @@ another way to test if something is the same object as None
             self.assertIsNot((1, 2, 3, 'n'), None)
 
             # assert [1, 2, 3, 'n'] is None
+            assert [1, 2, 3, 'n'] is not None
 
   the test passes.
 
 * I use assertIs_ to compare a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 50
     :emphasize-lines: 8
 
             # assert (1, 2, 3, 'n') is None
@@ -1938,6 +1987,7 @@ another way to test if something is the same object as None
             self.assertIs([1, 2, 3, 'n'], None)
 
             # assert {1, 2, 3, 'n'} is None
+            assert {1, 2, 3, 'n'} is not None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1954,7 +2004,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 55
     :emphasize-lines: 3-4
 
             # assert [1, 2, 3, 'n'] is None
@@ -1963,13 +2013,14 @@ another way to test if something is the same object as None
             self.assertIsNot([1, 2, 3, 'n'], None)
 
             # assert {1, 2, 3, 'n'} is None
+            assert {1, 2, 3, 'n'} is not None
 
   the test passes.
 
 * I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 61
+    :lineno-start: 55
     :emphasize-lines: 8
 
             # assert [1, 2, 3, 'n'] is None
@@ -1982,6 +2033,10 @@ another way to test if something is the same object as None
             self.assertIs({1, 2, 3, 'n'}, None)
 
             # assert {'key': 'value'} is None
+            assert {'key': 'value'} is not None
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1998,7 +2053,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 60
     :emphasize-lines: 3-4
 
             # assert {1, 2, 3, 'n'} is None
@@ -2007,13 +2062,17 @@ another way to test if something is the same object as None
             self.assertIsNot({1, 2, 3, 'n'}, None)
 
             # assert {'key': 'value'} is None
+            assert {'key': 'value'} is not None
+
+
+    # NOTES
 
   the test passes.
 
 * I use assertIs_ to compare a a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 60
     :emphasize-lines: 8
 
             # assert {1, 2, 3, 'n'} is None
@@ -2043,54 +2102,8 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 49-50
-
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
-            # self.assertIsNot(None, None)
-            self.assertIs(None, None)
-
-            # assert False is None
-            assert False is not None
-            # self.assertIs(False, None)
-            self.assertIsNot(False, None)
-
-            # assert True is None
-            assert True is not None
-            # self.assertIs(True, None)
-            self.assertIsNot(True, None)
-
-            # assert 0 is None
-            assert 0 is not None
-            # self.assertIs(0, None)
-            self.assertIsNot(0, None)
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-            # self.assertIs(0.0, None)
-            self.assertIsNot(0.0, None)
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-            # self.assertIs('a string', None)
-            self.assertIsNot('a string', None)
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
-
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-            # self.assertIs([1, 2, 3, 'n'], None)
-            self.assertIsNot([1, 2, 3, 'n'], None)
-
-            # assert {1, 2, 3, 'n'} is None
-            assert {1, 2, 3, 'n'} is not None
-            # self.assertIs({1, 2, 3, 'n'}, None)
-            self.assertIsNot({1, 2, 3, 'n'}, None)
+    :lineno-start: 65
+    :emphasize-lines: 3-4
 
             # assert {'key': 'value'} is None
             assert {'key': 'value'} is not None
@@ -2101,6 +2114,45 @@ another way to test if something is the same object as None
     # NOTES
 
   the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 19
+
+        def test_assertion_error_w_none(self):
+            assert None is None
+            self.assertIs(None, None)
+
+            assert False is not None
+            self.assertIsNot(False, None)
+
+            assert True is not None
+            self.assertIsNot(True, None)
+
+            assert 0 is not None
+            self.assertIsNot(0, None)
+
+            assert 0.0 is not None
+            self.assertIsNot(0.0, None)
+
+            assert 'a string' is not None
+            self.assertIsNot('a string', None)
+
+            assert (1, 2, 3, 'n') is not None
+            self.assertIsNot((1, 2, 3, 'n'), None)
+
+            assert [1, 2, 3, 'n'] is not None
+            self.assertIsNot([1, 2, 3, 'n'], None)
+
+            assert {1, 2, 3, 'n'} is not None
+            self.assertIsNot({1, 2, 3, 'n'}, None)
+
+            assert {'key': 'value'} is not None
+            self.assertIsNot({'key': 'value'}, None)
+
+
+    # NOTES
 
 * I add a git_ commit message in the other terminal_
 
