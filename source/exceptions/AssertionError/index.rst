@@ -2095,13 +2095,8 @@ another way to test if something is the same object as None
 * I use assertIs_ to compare a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) with :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 8
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
+    :lineno-start: 67
+    :emphasize-lines: 3
 
             # assert [1, 2, 3, 'n'] is None
             assert [1, 2, 3, 'n'] is not None
@@ -2125,7 +2120,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 55
+    :lineno-start: 67
     :emphasize-lines: 3-4
 
             # assert [1, 2, 3, 'n'] is None
@@ -2138,16 +2133,45 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`None<what is None?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the test
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 8
+    :lineno-start: 67
+    :emphasize-lines: 1
 
+            a_list = [1, 2, 3, 'n']
             # assert [1, 2, 3, 'n'] is None
             assert [1, 2, 3, 'n'] is not None
             # self.assertIs([1, 2, 3, 'n'], None)
             self.assertIsNot([1, 2, 3, 'n'], None)
+
+            # assert {1, 2, 3, 'n'} is None
+            assert {1, 2, 3, 'n'} is not None
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']`` from the test
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 2-3, 5, 7
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNot(a_list, None)
+            # assert [1, 2, 3, 'n'] is None
+            # assert [1, 2, 3, 'n'] is not None
+            # self.assertIs([1, 2, 3, 'n'], None)
+            # self.assertIsNot([1, 2, 3, 'n'], None)
+
+            # assert {1, 2, 3, 'n'} is None
+            assert {1, 2, 3, 'n'} is not None
+
+  the test is still green.
+
+* I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 3
 
             # assert {1, 2, 3, 'n'} is None
             assert {1, 2, 3, 'n'} is not None
@@ -2174,7 +2198,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 75
     :emphasize-lines: 3-4
 
             # assert {1, 2, 3, 'n'} is None
@@ -2190,16 +2214,51 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I use assertIs_ to compare a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`None<what is None?>`
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 8
+    :lineno-start: 75
+    :emphasize-lines: 1
 
+            a_set = {1, 2, 3, 'n'}
             # assert {1, 2, 3, 'n'} is None
             assert {1, 2, 3, 'n'} is not None
             # self.assertIs({1, 2, 3, 'n'}, None)
             self.assertIsNot({1, 2, 3, 'n'}, None)
+
+            # assert {'key': 'value'} is None
+            assert {'key': 'value'} is not None
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 2-3, 5, 7
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not None
+            self.assertIsNot(a_set, None)
+            # assert {1, 2, 3, 'n'} is None
+            # assert {1, 2, 3, 'n'} is not None
+            # self.assertIs({1, 2, 3, 'n'}, None)
+            # self.assertIsNot({1, 2, 3, 'n'}, None)
+
+            # assert {'key': 'value'} is None
+            assert {'key': 'value'} is not None
+
+
+    # NOTES
+
+  the test is still green.
+
+* I use assertIs_ to compare a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 3
 
             # assert {'key': 'value'} is None
             assert {'key': 'value'} is not None
@@ -2223,7 +2282,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 83
     :emphasize-lines: 3-4
 
             # assert {'key': 'value'} is None
@@ -2239,7 +2298,7 @@ another way to test if something is the same object as None
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 83
     :emphasize-lines: 3-4
 
             # assert {'key': 'value'} is False
@@ -2252,180 +2311,10 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0`` from the test
-
-  .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 1
-
-            an_integer = 0
-            # assert 0 is None
-            assert 0 is not None
-            # self.assertIs(0, None)
-            self.assertIsNot(0, None)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0`` from the test
-
-  .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 2-3, 5, 7
-    :emphasize-text: an_integer
-
-            an_integer = 0
-            assert an_integer is not None
-            self.assertIsNot(an_integer, None)
-            # assert 0 is None
-            # assert 0 is not None
-            # self.assertIs(0, None)
-            # self.assertIsNot(0, None)
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
-
-  the test is still green.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'`` from the test
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 1
-
-            a_string = 'a string'
-            # assert 'a string' is None
-            assert 'a string' is not None
-            # self.assertIs('a string', None)
-            self.assertIsNot('a string', None)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'a string'`` from the test
-
-  .. code-block:: python
-    :lineno-start: 45
-    :emphasize-lines: 2-3, 5, 7
-    :emphasize-text: a_string
-
-            a_string = 'a string'
-            assert a_string is not None
-            self.assertIsNot(a_string, None)
-            # assert 'a string' is None
-            # assert 'a string' is not None
-            # self.assertIs('a string', None)
-            # self.assertIsNot('a string', None)
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
-
-  the test is still green.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the test
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 1
-
-            a_tuple = (1, 2, 3, 'n')
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-            # self.assertIs((1, 2, 3, 'n'), None)
-            self.assertIsNot((1, 2, 3, 'n'), None)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(1, 2, 3, 'n')`` from the test
-
-  .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 2-3, 5, 7
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not None
-            self.assertIsNot(a_tuple, None)
-            # assert (1, 2, 3, 'n') is None
-            # assert (1, 2, 3, 'n') is not None
-            # self.assertIs((1, 2, 3, 'n'), None)
-            # self.assertIsNot((1, 2, 3, 'n'), None)
-
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-            # self.assertIs([1, 2, 3, 'n'], None)
-            self.assertIsNot([1, 2, 3, 'n'], None)
-
-  still green.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the test
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 1
-
-            a_list = [1, 2, 3, 'n']
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-            # self.assertIs([1, 2, 3, 'n'], None)
-            self.assertIsNot([1, 2, 3, 'n'], None)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']`` from the test
-
-  .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 2-3, 5, 7
-
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not None
-            self.assertIsNot(a_list, None)
-            # assert [1, 2, 3, 'n'] is None
-            # assert [1, 2, 3, 'n'] is not None
-            # self.assertIs([1, 2, 3, 'n'], None)
-            # self.assertIsNot([1, 2, 3, 'n'], None)
-
-            # assert {1, 2, 3, 'n'} is None
-            assert {1, 2, 3, 'n'} is not None
-            # self.assertIs({1, 2, 3, 'n'}, None)
-            self.assertIsNot({1, 2, 3, 'n'}, None)
-
-  green.
-
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
-
-  .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 1
-
-            a_set = {1, 2, 3, 'n'}
-            # assert {1, 2, 3, 'n'} is None
-            assert {1, 2, 3, 'n'} is not None
-            # self.assertIs({1, 2, 3, 'n'}, None)
-            self.assertIsNot({1, 2, 3, 'n'}, None)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}`` from the test
-
-  .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 2-3, 5, 7
-
-            a_set = {1, 2, 3, 'n'}
-            assert a_set is not None
-            self.assertIsNot(a_set, None)
-            # assert {1, 2, 3, 'n'} is None
-            # assert {1, 2, 3, 'n'} is not None
-            # self.assertIs({1, 2, 3, 'n'}, None)
-            # self.assertIsNot({1, 2, 3, 'n'}, None)
-
-            # assert {'key': 'value'} is None
-            assert {'key': 'value'} is not None
-            # self.assertIs({'key': 'value'}, None)
-            self.assertIsNot({'key': 'value'}, None)
-
-
-    # NOTES
-
-  still green.
-
 * I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{'key': 'value'}`` from the test
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 83
     :emphasize-lines: 1
 
             a_dictionary = {'key': 'value'}
@@ -2440,7 +2329,7 @@ another way to test if something is the same object as None
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``{'key': 'value'}`` from the test
 
   .. code-block:: python
-    :lineno-start: 77
+    :lineno-start: 83
     :emphasize-lines: 2-3, 5, 7
 
             a_dictionary = {'key': 'value'}
@@ -2471,28 +2360,36 @@ another way to test if something is the same object as None
             assert True is not None
             self.assertIsNot(True, None)
 
-            assert 0 is not None
-            self.assertIsNot(0, None)
+            an_integer = 0
+            assert an_integer is not None
+            self.assertIsNot(an_integer, None)
 
-            assert 0.0 is not None
-            self.assertIsNot(0.0, None)
+            a_float = 0.0
+            assert a_float is not None
+            self.assertIsNot(a_float, None)
 
-            assert 'a string' is not None
-            self.assertIsNot('a string', None)
+            a_string = 'a string'
+            assert a_string is not None
+            self.assertIsNot(a_string, None)
 
-            assert (1, 2, 3, 'n') is not None
-            self.assertIsNot((1, 2, 3, 'n'), None)
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not None
+            self.assertIsNot(a_tuple, None)
 
-            assert [1, 2, 3, 'n'] is not None
-            self.assertIsNot([1, 2, 3, 'n'], None)
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not None
+            self.assertIsNot(a_list, None)
 
-            assert {1, 2, 3, 'n'} is not None
-            self.assertIsNot({1, 2, 3, 'n'}, None)
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not None
+            self.assertIsNot(a_set, None)
 
-            assert {'key': 'value'} is not None
-            self.assertIsNot({'key': 'value'}, None)
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not None
+            self.assertIsNot(a_dictionary, None)
 
 
+    # NOTES
     # NOTES
 
 * I add a git_ commit message in the other terminal_
