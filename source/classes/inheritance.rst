@@ -1,6 +1,6 @@
 .. meta::
-  :description: Step-by-step TDD tutorial on Python inheritance, cooperative multiple inheritance, and Method Resolution Order (MRO). Learn how to inherit from parent classes, use the super() function to call parent constructors, inspect objects with dir(), and handle complex inheritance chains using double starred **kwargs. Learn to diagnose and resolve beginner bugs: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module has no attribute, and AssertionError: is not an instance of.
-  :keywords: Jacob Itegboje, Pumping Python, python inheritance tutorial for beginners, test-driven development multiple inheritance python, what is cooperative multiple inheritance, python method resolution order mro, how to use super function in python class, why do all python classes inherit from object, using isinstance and assertIsInstance in tests, how to use double starred expression kwargs in python class, class vs instance python, TypeError Blow.__init__ takes 1 positional argument but 2 were given, TypeError got an unexpected keyword argument last_name, TypeError Person.__init__ missing 1 required positional argument, AttributeError module classes has no attribute Doe, NameError name person is not defined, AssertionError is not an instance of, method resolution order python super constructor, C3 linearization python multiple inheritance, pass keyword in python class inheritance, python class with parentheses vs without parentheses, how to call parent __init__ constructor, python red green refactor multiple inheritance tutorial, diamond problem python super, Doe, Blow, Smith, Jane, Joe, Mary, John, Lil
+  :description: Step-by-step Python TDD tutorial for beginners explaining why everything in Python inherits from the base 'object' class. Learn how to use isinstance() and issubclass() in unittest, and understand the difference between subclasses and instances. Verify that None, bool, int, float, str, tuple, list, set, and dict are all children of object. Learn to inspect built-in classes with dir(object) and understand the inherited dunder methods. Resolve common beginner bugs: TypeError: issubclass() arg 1 must be a class, NameError: name 'src' is not defined, AttributeError: module has no attribute, and NameError: name 'E' is not defined.
+  :keywords: Jacob Itegboje, Pumping Python, python inheritance tutorial for beginners, everything in python is an object, why does all python classes inherit from object, is None an instance of object, is bool a subclass of object python, is int a subclass of object python, is float a subclass of object python, is str a subclass of object python, is list a subclass of object python, is tuple a subclass of object python, is set a subclass of object python, is dict a subclass of object python, difference between subclass and instance python, python isinstance vs issubclass tutorial, unittest assertIsInstance, unittest assertNotIsInstance, unittest assertIsSubclass, unittest assertNotIsSubclass, how to use dir on object class python, dunder methods of object class python, python object __init__ dunder, python object __str__ dunder, python object __repr__ dunder, TypeError issubclass arg 1 must be a class, NameError name src is not defined, AttributeError module classes has no attribute, AssertionError assert not True, NameError name E is not defined pytest, python test driven development classes object, class vs instance parentheses python, learning python dunder class doc init repr str
 
 .. include:: ../links.rst
 
@@ -118,7 +118,7 @@ open the project
 
     `Visual Studio Code`_ opens ``test_classes.py`` in the :ref:`editor<2 editors>`
 
-* I add :ref:`the first failing test<test_failure>` to ``test_functions.py``
+* I add :ref:`the first failing test<test_failure>` to ``test_classes.py``
 
   .. code-block:: python
     :linenos:
@@ -175,7 +175,7 @@ open the project
     :emphasize-lines: 7-8
     :emphasize-text: AssertionError
 
-    class TestFunctions(unittest.TestCase):
+    class TestClasses(unittest.TestCase):
 
         def test_failure(self):
             self.assertFalse(True)
@@ -1402,7 +1402,7 @@ the test passes.
 * I change assertNotIsSubclass_ to assertIsSubclass_
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 30
     :emphasize-lines: 4-5
 
         def test_is_an_integer_an_object(self):
@@ -1706,7 +1706,7 @@ the test passes.
     git commit -am \
     'add test_is_a_string_an_object'
 
-:ref:`A float is an object.<test_is_a_float_an_object>`
+:ref:`A string is an object.<test_is_a_string_an_object>`
 
 ----
 
@@ -2197,12 +2197,13 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
   .. code-block:: python
     :lineno-start: 54
-    :emphasize-lines: 3-4
+    :emphasize-lines: 4-5
 
-            # assert not isinstance(dict, object)
-            assert isinstance(dict, object)
-            # self.assertNotIsInstance(dict, object)
-            self.assertIsInstance(dict, object)
+        def test_is_a_dictionary_an_object(self):
+            # assert not issubclass(dict, object)
+            assert issubclass(dict, object)
+            # self.assertNotIsSubclass(dict, object)
+            self.assertIsSubclass(dict, object)
 
 
     # Exceptions seen
