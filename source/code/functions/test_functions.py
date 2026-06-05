@@ -206,10 +206,10 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (a_list, a_tuple)
         self.assertEqual(reality, my_expectation)
 
-    def test_w_positional_and_kwargs(self):
+    def test_w_args_and_kwargs(self):
         first, last = 'first', 'last'
         reality = (
-            src.functions.w_positional_and_kwargs(
+            src.functions.w_args_and_kwargs(
                 first, last_input=last,
             )
         )

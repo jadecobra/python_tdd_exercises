@@ -212,7 +212,7 @@ test_functions
 #. :ref:`test_identity_function`
 #. :ref:`test_w_positional_arguments`
 #. :ref:`test_w_keyword_arguments`
-#. :ref:`test_w_positional_and_kwargs`
+#. :ref:`test_w_args_and_kwargs`
 #. :ref:`test_w_optional_arguments`
 #. :ref:`test_w_unknown_arguments`
 

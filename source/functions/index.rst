@@ -3189,7 +3189,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 ----
 
 *********************************************************************************
-test_w_positional_and_kwargs
+test_w_args_and_kwargs
 *********************************************************************************
 
 I can write functions_ that take both :ref:`positional<test_w_positional_arguments>` and :ref:`keyword arguments<test_w_keyword_arguments>`, which is useful when I want some arguments to be required and some to be optional.
@@ -3220,9 +3220,9 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
             my_expectation = (a_list, a_tuple)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_positional_and_kwargs(self):
+        def test_w_args_and_kwargs(self):
             reality = (
-                src.functions.w_positional_and_kwargs(
+                src.functions.w_args_and_kwargs(
                     last_input='last', 'first',
                 )
             )
@@ -3269,9 +3269,9 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :emphasize-lines: 4-5
     :emphasize-text: first
 
-        def test_w_positional_and_kwargs(self):
+        def test_w_args_and_kwargs(self):
             reality = (
-                src.functions.w_positional_and_kwargs(
+                src.functions.w_args_and_kwargs(
                     # last_input='last', 'first',
                     'first', last_input='last',
                 )
@@ -3287,9 +3287,9 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
   .. code-block:: shell
 
     AttributeError: module 'src.functions'
-                    has no attribute 'w_positional_and_kwargs'
+                    has no attribute 'w_args_and_kwargs'
 
-  because ``functions.py`` does not have anything named ``w_positional_and_kwargs``
+  because ``functions.py`` does not have anything named ``w_args_and_kwargs``
 
 * I add a :ref:`function<what is a function?>` to ``functions.py``
 
@@ -3301,17 +3301,17 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
         return first_input, last_input
 
 
-    def w_positional_and_kwargs():
+    def w_args_and_kwargs():
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
-    TypeError: w_positional_and_kwargs() got
+    TypeError: w_args_and_kwargs() got
                an unexpected keyword argument 'last_input'
 
-  because the :ref:`definition<how to make a function>` for ``w_positional_and_kwargs`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``last_input``)
+  because the :ref:`definition<how to make a function>` for ``w_args_and_kwargs`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``last_input``)
 
 * I add the name to the :ref:`function definition<how to make a function>` in parentheses, in ``functions.py``
 
@@ -3320,18 +3320,18 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :emphasize-lines: 1-2
     :emphasize-text: last_input
 
-    # def w_positional_and_kwargs():
-    def w_positional_and_kwargs(last_input):
+    # def w_args_and_kwargs():
+    def w_args_and_kwargs(last_input):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
-    TypeError: w_positional_and_kwargs() got
+    TypeError: w_args_and_kwargs() got
                multiple values for argument 'last_input'
 
-  because the :ref:`definition<how to make a function>` for ``w_positional_and_kwargs`` takes one argument, and the test calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_w_positional_arguments>` and the :ref:`keyword<test_w_keyword_arguments>`?
+  because the :ref:`definition<how to make a function>` for ``w_args_and_kwargs`` takes one argument, and the test calls the :ref:`function<what is a function?>` with two arguments ``('first', last_input='last')``. How does Python_ know which value to use for ``last_input`` if I use the :ref:`position<test_w_positional_arguments>` and the :ref:`keyword<test_w_keyword_arguments>`?
 
 * I add another name in parentheses to make it clearer
 
@@ -3340,16 +3340,16 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :emphasize-lines: 2-3
     :emphasize-text: first_input
 
-    # def w_positional_and_kwargs():
-    # def w_positional_and_kwargs(last_input):
-    def w_positional_and_kwargs(last_input, first_input):
+    # def w_args_and_kwargs():
+    # def w_args_and_kwargs(last_input):
+    def w_args_and_kwargs(last_input, first_input):
         return None
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: shell
 
-    TypeError: w_positional_and_kwargs() got
+    TypeError: w_args_and_kwargs() got
                multiple values for argument 'last_input'
 
   because I have not fixed the problem, I gave confusing values in the call. Python_ still cannot tell the difference between the two values because I gave a positional value which according to the :ref:`function definition<how to make a function>` is ``last_input`` and I gave a value with the name ``last_input``.
@@ -3360,10 +3360,10 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :lineno-start: 34
     :emphasize-lines: 3-4
 
-    # def w_positional_and_kwargs():
-    # def w_positional_and_kwargs(last_input):
-    # def w_positional_and_kwargs(last_input, first_input):
-    def w_positional_and_kwargs(last_input, last_input):
+    # def w_args_and_kwargs():
+    # def w_args_and_kwargs(last_input):
+    # def w_args_and_kwargs(last_input, first_input):
+    def w_args_and_kwargs(last_input, last_input):
         return None
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -3380,11 +3380,11 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :emphasize-lines: 4-5
     :emphasize-text: first_input
 
-    # def w_positional_and_kwargs():
-    # def w_positional_and_kwargs(last_input):
-    # def w_positional_and_kwargs(last_input, first_input):
-    # def w_positional_and_kwargs(last_input, last_input):
-    def w_positional_and_kwargs(first_input, last_input):
+    # def w_args_and_kwargs():
+    # def w_args_and_kwargs(last_input):
+    # def w_args_and_kwargs(last_input, first_input):
+    # def w_args_and_kwargs(last_input, last_input):
+    def w_args_and_kwargs(first_input, last_input):
         return None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -3401,7 +3401,7 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :lineno-start: 34
     :emphasize-lines: 4
 
-    def w_positional_and_kwargs(first_input, last_input):
+    def w_args_and_kwargs(first_input, last_input):
         return first_input, last_input
 
   the test passes.
@@ -3415,19 +3415,19 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
         return first_input, last_input
 
 
-    def w_positional_and_kwargs(first_input, last_input):
+    def w_args_and_kwargs(first_input, last_input):
         return first_input, last_input
 
-* I add :ref:`variables<what is a variable?>` to use them to remove the repetition of ``'first'`` and ``'last'`` from :ref:`test_w_positional_and_kwargs` in ``test_functions.py``
+* I add :ref:`variables<what is a variable?>` to use them to remove the repetition of ``'first'`` and ``'last'`` from :ref:`test_w_args_and_kwargs` in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 209
     :emphasize-lines: 2
 
-        def test_w_positional_and_kwargs(self):
+        def test_w_args_and_kwargs(self):
             first, last = 'first', 'last'
             reality = (
-                src.functions.w_positional_and_kwargs(
+                src.functions.w_args_and_kwargs(
                     # last_input='last', 'first',
                     'first', last_input='last',
                 )
@@ -3444,10 +3444,10 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :lineno-start: 209
     :emphasize-lines: 6-7, 10-11
 
-        def test_w_positional_and_kwargs(self):
+        def test_w_args_and_kwargs(self):
             first, last = 'first', 'last'
             reality = (
-                src.functions.w_positional_and_kwargs(
+                src.functions.w_args_and_kwargs(
                     # last_input='last', 'first',
                     # 'first', last_input='last',
                     first, last_input=last,
@@ -3467,10 +3467,10 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
   .. code-block:: python
     :lineno-start: 209
 
-        def test_w_positional_and_kwargs(self):
+        def test_w_args_and_kwargs(self):
             first, last = 'first', 'last'
             reality = (
-                src.functions.w_positional_and_kwargs(
+                src.functions.w_args_and_kwargs(
                     first, last_input=last,
                 )
             )
@@ -3486,11 +3486,11 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_w_positional_and_kwargs'
+    'add test_w_args_and_kwargs'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can call a function with positional and keyword arguments<test_w_positional_and_kwargs>`
+:ref:`I can call a function with positional and keyword arguments<test_w_args_and_kwargs>`
 
 ----
 
@@ -3516,10 +3516,10 @@ I can use :ref:`positional<test_w_positional_arguments>` and :ref:`keyword argum
     :lineno-start: 209
     :emphasize-lines: 11-17
 
-        def test_w_positional_and_kwargs(self):
+        def test_w_args_and_kwargs(self):
             first, last = 'first', 'last'
             reality = (
-                src.functions.w_positional_and_kwargs(
+                src.functions.w_args_and_kwargs(
                     first, last_input=last,
                 )
             )
@@ -3561,7 +3561,7 @@ I add a :ref:`function<what is a function?>` named ``w_optional_arguments`` to `
   :lineno-start: 34
   :emphasize-lines: 5-6
 
-    def w_positional_and_kwargs(first_input, last_input):
+    def w_args_and_kwargs(first_input, last_input):
         return first_input, last_input
 
 
@@ -3646,7 +3646,7 @@ the test passes.
   .. code-block:: python
     :lineno-start:
 
-    def w_positional_and_kwargs(first_input, last_input):
+    def w_args_and_kwargs(first_input, last_input):
         return first_input, last_input
 
 
@@ -3884,7 +3884,7 @@ the test passes.
 
   * ``w_keyword_arguments``
   * ``w_positional_arguments``
-  * ``w_positional_and_kwargs``
+  * ``w_args_and_kwargs``
   * ``w_optional_arguments``
 
   are the same, they always ``return first_input, last_input``, their names are different.
@@ -3894,7 +3894,7 @@ the test passes.
 
     def w_positional_arguments(first_input, last_input):
     def w_keyword_arguments(first_input, last_input):
-    def w_positional_and_kwargs(first_input, last_input):
+    def w_args_and_kwargs(first_input, last_input):
     def w_optional_arguments(first_input, last_input='doe'):
 
   ``first_input`` and ``last_input`` are also names (:ref:`variables<what is a variable?>`), they can be any names. The difference that matters in the tests is how I call the functions_
@@ -3940,7 +3940,7 @@ the test passes.
   .. code-block:: python
     :emphasize-text: last
 
-    w_positional_and_kwargs('first', last_input='last')
+    w_args_and_kwargs('first', last_input='last')
                      return 'first', 'last'
 
   .. code-block:: python
@@ -4070,7 +4070,7 @@ I can make functions_ that take any number of :ref:`positional<test_w_positional
     TypeError: w_unknown_arguments() got
                multiple values for argument 'a'
 
-  I had this same problem in :ref:`test_w_positional_and_kwargs`. Python_ cannot tell if ``a`` is a :ref:`positional<test_w_positional_arguments>` or :ref:`keyword argument<test_w_keyword_arguments>` based on my :ref:`function definition<how to make a function>`.
+  I had this same problem in :ref:`test_w_args_and_kwargs`. Python_ cannot tell if ``a`` is a :ref:`positional<test_w_positional_arguments>` or :ref:`keyword argument<test_w_keyword_arguments>` based on my :ref:`function definition<how to make a function>`.
 
 ----
 
@@ -4991,7 +4991,7 @@ I ran tests to show that I can make functions_ with
 * the def_ keyword
 * :ref:`positional arguments<test_w_positional_arguments>`
 * :ref:`keyword arguments<test_w_keyword_arguments>`
-* :ref:`positional and keyword arguments<test_w_positional_and_kwargs>`
+* :ref:`positional and keyword arguments<test_w_args_and_kwargs>`
 * :ref:`default values<test_w_optional_arguments>`
 * :ref:`can take any number of inputs<test_w_unknown_arguments>`
 

@@ -4061,11 +4061,12 @@ test_assertion_error_w_true
 * I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 4-5
+    :lineno-start: 91
+    :emphasize-lines: 5-6
 
-            assert {'key': 'value'} is not False
-            self.assertIsNot({'key': 'value'}, False)
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not False
+            self.assertIsNot(a_dictionary, False)
 
         def test_assertion_error_w_true(self):
             assert None is True

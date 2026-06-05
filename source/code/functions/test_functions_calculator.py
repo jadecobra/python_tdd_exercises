@@ -78,9 +78,9 @@ class TestFunctions(unittest.TestCase):
             ('last', 'first')
         )
 
-    def test_w_positional_and_kwargs(self):
+    def test_w_args_and_kwargs(self):
         self.assertEqual(
-            src.functions.w_positional_and_kwargs(
+            src.functions.w_args_and_kwargs(
                 'first', last_input='last',
             ),
             ('first', 'last')

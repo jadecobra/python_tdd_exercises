@@ -5756,7 +5756,7 @@ what happens when the child has more than one parent?
     SyntaxError: parameter without a default
                  follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
 
   this is a problem, I just broke the ``mary = src.classes.Mary()`` which was working before.
 
@@ -5923,7 +5923,7 @@ what happens when the child has more than one parent?
     SyntaxError: parameter without a default
                  follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
 
 * I give ``last_name`` a :ref:`default value<test_w_optional_arguments>`
 

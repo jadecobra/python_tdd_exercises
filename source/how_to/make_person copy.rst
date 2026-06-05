@@ -2420,7 +2420,7 @@ I want to see what happens when I try to make a person without a value for the `
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -2454,7 +2454,7 @@ I want to see what happens when I try to make a person without a value for the `
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
 
 * I add a default value for ``year_of_birth``
 
@@ -5410,7 +5410,7 @@ I want to write the solution without looking at the tests
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_positional_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
 
 * I add a default value for ``sex``
 
