@@ -52,7 +52,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/tests/test_assertion_error.py
+.. literalinclude:: ../../code/assertion_error/test_assertion_error.py
   :language: python
   :linenos:
 

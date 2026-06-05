@@ -27,22 +27,11 @@
 AssertionError 2: use the setUp method
 #################################################################################
 
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/jxbttz7R0ho?si=Oiv1Y0WPwQhlw5i9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ----
 
-An :ref:`assertion<what is an assertion?>` or `assert statement`_ is a way for me to tell Python_, "DO NOT CONTINUE, if this statement is False", or said a different way "GO TO THE NEXT LINE, ONLY if this statement is True".
+I used the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` in :ref:`classes` to remove repetition of :ref:`variables<what is a variable?>` by making them :ref:`class attributes<what is a class attribute?>` that the test :ref:`methods<what is a method?>` could all use.
 
-I use assertions_ in tests when making a program_ to make sure something is :ref:`True<test_what_is_true>` about the program_ before I continue building or to test ideas and see if they work, without worrying about if I will remember the ideas later.
-
-I use them to test how the program_ behaves, for example when it is given inputs. Assertions_ can help catch things that make tests that were passing, start failing if I add new lines of code. They help me answer 2 questions
-
-* what is the same?
-* what is different?
-
-The difference between my expectations (tests and ideas) and reality (what happens if the program_ runs), tells me what to change to make them match. The closer my program_ is to reality, the better.
+I want to do the same thing with the :ref:`assertion_project<what is an assertion?>`.
 
 ----
 
@@ -52,7 +41,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../../code/tests/test_assertion_error.py
+.. literalinclude:: ../../code/assertion_error/test_assertion_error_2.py
   :language: python
   :linenos:
 
