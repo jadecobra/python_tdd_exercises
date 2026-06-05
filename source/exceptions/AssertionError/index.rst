@@ -4995,7 +4995,7 @@ the test passes.
             assert {1, 2, 3, 'n'} is not True
 
             # assert {'key': 'value'} is True
-            assert {'key': 'value'} is True
+            assert {'key': 'value'} is not True
 
 
     # NOTES
@@ -5353,7 +5353,7 @@ another way to test if something is NOT the same object as True
 * I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 153
+    :lineno-start: 127
     :emphasize-lines: 3
 
             # assert 'a string' is True
@@ -5361,6 +5361,7 @@ another way to test if something is NOT the same object as True
             self.assertIs('a string', True)
 
             # assert (1, 2, 3, 'n') is True
+            assert (1, 2, 3, 'n') is not True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5377,7 +5378,7 @@ another way to test if something is NOT the same object as True
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 153
+    :lineno-start: 127
     :emphasize-lines: 3-4
 
             # assert 'a string' is True
@@ -5386,13 +5387,48 @@ another way to test if something is NOT the same object as True
             self.assertIsNot('a string', True)
 
             # assert (1, 2, 3, 'n') is True
+            assert (1, 2, 3, 'n') is not True
 
   the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'`` from the test
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 1
+
+            a_string = 'a string'
+            # assert 'a string' is True
+            assert 'a string' is not True
+            # self.assertIs('a string', True)
+            self.assertNot('a string', True)
+
+            # assert (1, 2, 3, 'n') is True
+            assert (1, 2, 3, 'n') is not True
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'a string'`` from the test
+
+  .. code-block:: python
+    :lineno-start: 127
+    :emphasize-lines: 2-3, 5, 7
+
+            a_string = 'a string'
+            assert a_string is not True
+            self.assertIsNot(a_string, True)
+            # assert 'a string' is True
+            # assert 'a string' is not True
+            # self.assertIs('a string', True)
+            # self.assertIsNot('a string', True)
+
+            # assert (1, 2, 3, 'n') is True
+            assert (1, 2, 3, 'n') is not True
+
+  the test is still green.
 
 * I use assertIs_ to compare a tuple_ (anything in parentheses ``( )`` separated by a comma) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 158
+    :lineno-start: 135
     :emphasize-lines: 3
 
             # assert (1, 2, 3, 'n') is True
@@ -5400,6 +5436,7 @@ another way to test if something is NOT the same object as True
             self.assertIs((1, 2, 3, 'n'), True)
 
             # assert [1, 2, 3, 'n'] is True
+            assert [1, 2, 3, 'n'] is not True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5416,7 +5453,7 @@ another way to test if something is NOT the same object as True
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 158
+    :lineno-start: 135
     :emphasize-lines: 3-4
 
             # assert (1, 2, 3, 'n') is True
@@ -5425,13 +5462,48 @@ another way to test if something is NOT the same object as True
             self.assertIsNot((1, 2, 3, 'n'), True)
 
             # assert [1, 2, 3, 'n'] is True
+            assert [1, 2, 3, 'n'] is not True
 
   the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the test
+
+  .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 1
+
+            a_tuple = (1, 2, 3, 'n')
+            # assert (1, 2, 3, 'n') is True
+            assert (1, 2, 3, 'n') is not True
+            # self.assertIs((1, 2, 3, 'n'), True)
+            self.assertNot((1, 2, 3, 'n'), True)
+
+            # assert [1, 2, 3, 'n'] is True
+            assert [1, 2, 3, 'n'] is not True
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(1, 2, 3, 'n')`` from the test
+
+  .. code-block:: python
+    :lineno-start: 135
+    :emphasize-lines: 2-3, 5, 7
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not True
+            self.assertIsNot(a_tuple, True)
+            # assert (1, 2, 3, 'n') is True
+            # assert (1, 2, 3, 'n') is not True
+            # self.assertIs((1, 2, 3, 'n'), True)
+            # self.assertIsNot((1, 2, 3, 'n'), True)
+
+            # assert [1, 2, 3, 'n'] is True
+            assert [1, 2, 3, 'n'] is not True
+
+  the test is still green.
 
 * I use assertIs_ to compare a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 163
+    :lineno-start: 143
     :emphasize-lines: 3
 
             # assert [1, 2, 3, 'n'] is True
@@ -5439,6 +5511,7 @@ another way to test if something is NOT the same object as True
             self.assertIs([1, 2, 3, 'n'], True)
 
             # assert {1, 2, 3, 'n'} is True
+            assert {1, 2, 3, 'n'} is not True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5455,7 +5528,7 @@ another way to test if something is NOT the same object as True
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 163
+    :lineno-start: 143
     :emphasize-lines: 3-4
 
             # assert [1, 2, 3, 'n'] is True
@@ -5464,13 +5537,48 @@ another way to test if something is NOT the same object as True
             self.assertIsNot([1, 2, 3, 'n'], True)
 
             # assert {1, 2, 3, 'n'} is True
+            assert {1, 2, 3, 'n'} is not True
 
   the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the test
+
+  .. code-block:: python
+    :lineno-start: 143
+    :emphasize-lines: 1
+
+            a_list = [1, 2, 3, 'n']
+            # assert [1, 2, 3, 'n'] is True
+            assert [1, 2, 3, 'n'] is not True
+            # self.assertIs([1, 2, 3, 'n'], True)
+            self.assertNot([1, 2, 3, 'n'], True)
+
+            # assert {1, 2, 3, 'n'} is True
+            assert {1, 2, 3, 'n'} is not True
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']`` from the test
+
+  .. code-block:: python
+    :lineno-start: 143
+    :emphasize-lines: 2-3, 5, 7
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not True
+            self.assertIsNot(a_list, True)
+            # assert [1, 2, 3, 'n'] is True
+            # assert [1, 2, 3, 'n'] is not True
+            # self.assertIs([1, 2, 3, 'n'], True)
+            # self.assertIsNot([1, 2, 3, 'n'], True)
+
+            # assert {1, 2, 3, 'n'} is True
+            assert {1, 2, 3, 'n'} is not True
+
+  the test is still green.
 
 * I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 168
+    :lineno-start: 151
     :emphasize-lines: 3
 
             # assert {1, 2, 3, 'n'} is True
@@ -5478,6 +5586,10 @@ another way to test if something is NOT the same object as True
             self.assertIs({1, 2, 3, 'n'}, True)
 
             # assert {'key': 'value'} is True
+            assert {'key': 'value'} is not True
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -5494,7 +5606,7 @@ another way to test if something is NOT the same object as True
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 168
+    :lineno-start: 151
     :emphasize-lines: 3-4
 
             # assert {1, 2, 3, 'n'} is True
@@ -5503,13 +5615,57 @@ another way to test if something is NOT the same object as True
             self.assertIsNot({1, 2, 3, 'n'}, True)
 
             # assert {'key': 'value'} is True
+            assert {'key': 'value'} is not True
+
+
+    # NOTES
 
   the test passes.
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 1
+
+            a_set = {1, 2, 3, 'n'}
+            # assert {1, 2, 3, 'n'} is True
+            assert {1, 2, 3, 'n'} is not True
+            # self.assertIs({1, 2, 3, 'n'}, True)
+            self.assertNot({1, 2, 3, 'n'}, True)
+
+            # assert {'key': 'value'} is True
+            assert {'key': 'value'} is not True
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+
+  .. code-block:: python
+    :lineno-start: 151
+    :emphasize-lines: 2-3, 5, 7
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not True
+            self.assertIsNot(a_set, True)
+            # assert {1, 2, 3, 'n'} is True
+            # assert {1, 2, 3, 'n'} is not True
+            # self.assertIs({1, 2, 3, 'n'}, True)
+            # self.assertIsNot({1, 2, 3, 'n'}, True)
+
+            # assert {'key': 'value'} is True
+            assert {'key': 'value'} is not True
+
+
+    # NOTES
+
+  the test is still green.
 
 * I use assertIs_ to compare a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 173
+    :lineno-start: 159
     :emphasize-lines: 3
 
             # assert {'key': 'value'} is True
@@ -5534,54 +5690,8 @@ another way to test if something is NOT the same object as True
 * I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 49-50
-
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
-            # self.assertIs(None, True)
-            self.assertIsNot(None, True)
-
-            # assert False is True
-            assert False is not True
-            # self.assertIs(False, True)
-            self.assertIsNot(False, True)
-
-            # assert True is not True
-            assert True is True
-            # self.assertIsNot(True, True)
-            self.assertIs(True, True)
-
-            # assert 0 is True
-            assert 0 is not True
-            # self.assertIs(0, True)
-            self.assertIsNot(0, True)
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-            # self.assertIs(0.0, True)
-            self.assertIsNot(0.0, True)
-
-            # assert 'a string' is True
-            assert 'a string' is not True
-            # self.assertIs('a string', True)
-            self.assertIsNot('a string', True)
-
-            # assert (1, 2, 3, 'n') is True
-            assert (1, 2, 3, 'n') is not True
-            # self.assertIs((1, 2, 3, 'n'), True)
-            self.assertIsNot((1, 2, 3, 'n'), True)
-
-            # assert [1, 2, 3, 'n'] is True
-            assert [1, 2, 3, 'n'] is not True
-            # self.assertIs([1, 2, 3, 'n'], True)
-            self.assertIsNot([1, 2, 3, 'n'], True)
-
-            # assert {1, 2, 3, 'n'} is True
-            assert {1, 2, 3, 'n'} is not True
-            # self.assertIs({1, 2, 3, 'n'}, True)
-            self.assertIsNot({1, 2, 3, 'n'}, True)
+    :lineno-start: 159
+    :emphasize-lines: 3-4
 
             # assert {'key': 'value'} is True
             assert {'key': 'value'} is not True
@@ -5593,6 +5703,86 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 1
+
+            a_dictionary = {'key': 'value'}
+            # assert {'key': 'value'} is True
+            assert {'key': 'value'} is not True
+            # self.assertIs({'key': 'value'}, True)
+            self.assertIsNot({'key': 'value'}, True)
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+
+  .. code-block:: python
+    :lineno-start: 159
+    :emphasize-lines: 2-3, 5, 7
+
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not True
+            self.assertIsNot(a_dictionary, True)
+            # assert {'key': 'value'} is True
+            # assert {'key': 'value'} is not True
+            # self.assertIs({'key': 'value'}, True)
+            # self.assertIsNot({'key': 'value'}, True)
+
+
+    # NOTES
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 95
+
+        def test_assertion_error_w_true(self):
+            assert None is not True
+            self.assertIsNot(None, True)
+
+            assert False is not True
+            self.assertIsNot(False, True)
+
+            assert True is True
+            self.assertIs(True, True)
+
+            an_integer = 0
+            assert an_integer is not True
+            self.assertIsNot(an_integer, True)
+
+            a_float = 0.0
+            assert a_float is not True
+            self.assertIsNot(a_float, True)
+
+            a_string = 'a string'
+            assert a_string is not True
+            self.assertIsNot(a_string, True)
+
+            a_tuple = (1, 2, 3, 'n')
+            assert a_tuple is not True
+            self.assertIsNot(a_tuple, True)
+
+            a_list = [1, 2, 3, 'n']
+            assert a_list is not True
+            self.assertIsNot(a_list, True)
+
+            a_set = {1, 2, 3, 'n'}
+            assert a_set is not True
+            self.assertIsNot(a_set, True)
+
+            a_dictionary = {'key': 'value'}
+            assert a_dictionary is not True
+            self.assertIsNot(a_dictionary, True)
+
+
+    # NOTES
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -5603,7 +5793,7 @@ another way to test if something is NOT the same object as True
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can use assertions to test if something is the same object as True or NOT<test_assertion_error_w_true>`
+:ref:`I can use assertions to test if something is the same object as True or NOT<test_assertion_error_w_true>`.
 
 ----
 
