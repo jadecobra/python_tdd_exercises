@@ -589,79 +589,30 @@ more about instances vs subclasses
 
   the test is still green.
 
-* I also add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.person.Person`` from the test
+----
+
+=================================================================================
+what happens when a child calls the parent?
+=================================================================================
+
+----
+
+* I add a call to the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`, this time with an :ref:`instance<how to test if something is an instance of a class>` of ``Doe``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 2
-
-        def test_making_a_class_w_inheritance(self):
-            person_class = src.person.Person
-            doe_class = src.family_ties.Doe
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.person.Person`` from the test
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 6-7, 13-14, 19-20
-
-        def test_making_a_class_w_inheritance(self):
-            person_class = src.person.Person
-            doe_class = src.family_ties.Doe
-
-            # self.assertIsInstance(
-            self.assertNotIsInstance(
-                # src.family_ties.Doe,
-                # doe_class,
-                # src.person.Person
-                doe_class, person_class
-            )
-
-            # self.assertIsInstance(
-            self.assertNotIsInstance(
-                # src.family_ties.Doe,
-                # src.family_ties.Doe
-                doe_class, doe_class
-            )
+    :lineno-start: 24
+    :emphasize-lines: 7-10
 
             self.assertIsSubclass(
                 # src.family_ties.Doe,
-                # doe_class,
-                # src.person.Person
-                doe_class, person_class
+                doe_class,
+                src.person.Person
             )
 
-
-    # Exceptions seen
-
-  still green.
-
-* I add another :ref:`assertion<what is an assertion?>`, this time with an :ref:`instance<how to test if something is an instance of a class>` of ``Doe``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 19-20
-
-        def test_making_a_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
-            self.assertNotIsInstance(
-                doe_class, src.person.Person
+            self.assertIsInstance(
+                src.family_ties.Doe(),
+                src.person.Person
             )
-            assert issubclass(doe_class, src.person.Person)
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                doe_class, src.person.Person
-            )
-            # assert isinstance(doe_class, doe_class)
-            assert not isinstance(doe_class, doe_class)
-            # self.assertIsInstance(doe_class, doe_class)
-            self.assertNotIsInstance(doe_class, doe_class)
-
-            doe_instance = src.family_ties.Doe()
-            assert isinstance(doe_instance, src.person.Person)
 
 
     # Exceptions seen
@@ -671,33 +622,25 @@ more about instances vs subclasses
   .. code-block:: python
 
     TypeError: Person.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
   I called ``Doe`` to make an :ref:`instance<how to test if something is an instance of a class>`. How did ``Person.__init__`` get called?
 
-----
-
-=================================================================================
-what happens when a child calls the parent?
-=================================================================================
-
-----
-
-* Here is what is happens when ``doe_instance = src.class.Doe()`` runs
+* Here is what is happens when ``src.class.Doe()`` runs
 
   .. code-block:: python
 
-    doe_instance = src.family_ties.Doe()
-                  Doe # has no __init__
-                  # call the parent of Doe (Person)
-                  Person.__init__()
+    src.family_ties.Doe()
+    Doe # has no __init__
+    # call the parent of Doe (Person)
+    Person.__init__()
 
   which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` takes one required argument for ``first_name``.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 36
     :emphasize-lines: 6
     :emphasize-text: TypeError
 
@@ -716,11 +659,11 @@ how to call the parent from the child
 
 ----
 
-* I add the `super built-in function`_ to ``Doe`` to call the parent (``Person``) ``__init__`` :ref:`method<what is a method?>` directly from ``Doe``, in ``family_ties.py``
+* I add the `super built-in function`_ to ``Doe`` to call the parent ``__init__`` :ref:`method<what is a method?>` (``Parent.__init__``) directly from ``Doe``, in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 5
-    :emphasize-lines: 4, 6-7
+    :emphasize-lines: 3-4, 6-7
 
     # class Doe(object): pass
     # class Doe(person.Person): pass
@@ -731,36 +674,39 @@ how to call the parent from the child
             super().__init__()
 
   - the `super built-in function`_ calls the ``__init__`` :ref:`method<what is a method?>` of the parent :ref:`class<what is a class?>`
-  - ``super()`` is the parent - "super class" for parent, "subclass" for child
+  - ``super()`` is the parent - ":ref:`super class<how to call the parent from the child>`" for parent, ":ref:`subclass<how to test if something is a subclass of a class>`" for child
   - ``super`` is ``Person`` in this case
+  - ``super().__init__()`` is ``Person.__init__()`` in this case
   - the terminal_ still shows :ref:`TypeError<what causes TypeError?>`
 
     .. code-block:: python
 
       TypeError: Person.__init__() missing 1
-                 required positional argument: 'the_first'
+                 required positional argument: 'first_name'
 
-    because this is what happens now when ``doe_instance = src.class.Doe()`` runs
+    because this is what happens now when ``src.class.Doe()`` runs
 
     .. code-block:: python
 
-      doe_instance = src.family_ties.Doe()
-                    Doe.__init__()
-                        super().__init__()
-                    # super is the parent (Person)
-                    Person.__init__()
+      src.family_ties.Doe()
+      Doe.__init__()
+          super().__init__()
+      # super is the parent (Person)
+      Person.__init__()
 
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` takes one required argument for ``first_name``.
 
-* I add a value to ``src.family_ties.Doe`` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
+* I add a value for ``first_name`` to the call to ``src.family_ties.Doe()`` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 1-2
+    :lineno-start: 30
+    :emphasize-lines: 2-3
 
-            # doe_instance = src.family_ties.Doe()
-            doe_instance = src.family_ties.Doe('the_first')
-            assert isinstance(doe_instance, src.person.Person)
+            self.assertIsInstance(
+                # src.family_ties.Doe(),
+                src.family_ties.Doe('the_first'),
+                src.person.Person
+            )
 
 
     # Exceptions seen
@@ -772,21 +718,15 @@ how to call the parent from the child
     TypeError: Doe.__init__() takes
                1 positional argument but 2 were given
 
-  because this happens when ``doe_instance = src.family_ties.Doe('the_first')`` runs
+  because this happens when ``src.family_ties.Doe('the_first')`` runs
 
   .. code-block:: python
 
-    doe_instance = src.family_ties.Doe('the_first')
-                  Doe.__init__('the_first')
+    src.family_ties.Doe('the_first')
+    Doe.__init__('the_first')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``first_name``)
-  - ``self`` is the :ref:`class<what is a class?>`, for example
-
-    .. code-block:: python
-
-      Doe.__init__()
-
-    in ``Doe``, ``self`` is ``Doe``, it would be like calling ``__init__(Doe)``
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
+  - ``self`` is the :ref:`class<what is a class?>`, which means that for ``Doe.__init__()``, ``self`` is ``Doe`` in ``Doe``. It would be like calling ``Doe.__init__(Doe)``.
 
 * I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``family_ties.py``
 
@@ -808,25 +748,19 @@ how to call the parent from the child
   .. code-block:: python
 
     TypeError: Person.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
-  because this happens when ``doe_instance = src.family_ties.Doe('the_first')`` runs
+  because this happens when ``src.family_ties.Doe('the_first')`` runs
 
   .. code-block:: python
 
-    doe_instance = src.family_ties.Doe('the_first')
-                  Doe.__init__('the_first')
-                      super().__init__() # call the parent
-                  Person.__init__()
+    src.family_ties.Doe('the_first')
+    Doe.__init__('the_first')
+        super().__init__() # call the parent
+    Person.__init__()
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Person`` requires a :ref:`positional argument<test_w_positional_arguments>` for ``first_name`` it was called with ``self``
-  - ``self`` is the :ref:`class<what is a class?>`, for example
-
-    .. code-block:: python
-
-      Person.__init__()
-
-    in ``Person``, ``self`` is ``Person``, it would be like calling ``__init__(Person)``
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Person`` requires a :ref:`positional argument<test_w_positional_arguments>` for ``first_name`` and it was called with ``self``
+  - ``self`` is the :ref:`class<what is a class?>`, which means that for ``Person.__init__()``, ``self`` is ``Person`` in ``Person``. It would be like calling ``Person.__init__(Person)``.
 
 * I add the required parameter to ``super().__init__()`` in ``Doe``
 
@@ -846,74 +780,27 @@ how to call the parent from the child
 
   the test passes because
 
-  - an instance of ``Doe`` is an instance of ``Person``
+  - :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Doe`` is an :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Person``
   - ``Person`` is the parent of ``Doe``
-  - the test shows that this happens when ``doe_instance = src.family_ties.Doe('the_first')`` runs
+  - the test shows that this happens when ``src.family_ties.Doe('the_first')`` runs
 
     .. code-block:: python
 
-      doe_instance = src.family_ties.Doe('the_first')
-                    Doe.__init__('the_first')
-                        super().__init__('the_first')
-                    Person.__init__('the_first')
-
-* I add a call to the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>`
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 4-6
-
-            # doe_instance = src.family_ties.Doe()
-            doe_instance = src.family_ties.Doe('the_first')
-            assert isinstance(doe_instance, src.person.Person)
-            self.assertNotIsInstance(
-                doe_instance, src.person.Person
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.family_ties.Doe object at 0xffff01a2bc34> is
-        an instance of <class 'src.person.Person'>
-
-  because an instance of ``Doe`` is an instance of ``Person``.
-
-* I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to :ref:`assertIsInstance<another way to test if something is an instance of a class>`
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 4-5
-
-            # doe_instance = src.family_ties.Doe()
-            doe_instance = src.family_ties.Doe('the_first')
-            assert isinstance(doe_instance, src.person.Person)
-            # self.assertNotIsInstance(
-            self.assertIsInstance(
-                doe_instance, src.person.Person
-            )
-
-
-    # Exceptions seen
-
-  the test passes.
+      src.family_ties.Doe('the_first')
+      Doe.__init__('the_first')
+          super().__init__('the_first')
+      Person.__init__('the_first')
 
 * I add a test for the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Doe`` :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 9-12
+    :lineno-start: 30
+    :emphasize-lines: 7-10
 
-            # doe_instance = src.family_ties.Doe()
-            doe_instance = src.family_ties.Doe('the_first')
-            assert isinstance(doe_instance, src.person.Person)
-            # self.assertNotIsInstance(
             self.assertIsInstance(
-                doe_instance, src.person.Person
+                # src.family_ties.Doe(),
+                src.family_ties.Doe('the_first'),
+                src.person.Person
             )
 
             self.assertEqual(
@@ -936,7 +823,7 @@ how to call the parent from the child
 * I change the expectation to the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the ``Person`` :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 36
     :emphasize-lines: 3-4
 
             self.assertEqual(
@@ -950,38 +837,131 @@ how to call the parent from the child
 
   the test passes because ``Doe`` has the same :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` as ``Person`` because ``Doe`` is a :ref:`child<how to test if something is a subclass of a class>` of ``Parent``.
 
-* I remove the commented lines
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.person.Person`` from the test
 
   .. code-block:: python
     :lineno-start: 7
+    :emphasize-lines: 2
 
         def test_making_a_class_w_inheritance(self):
+            person_class = src.person.Person
             doe_class = src.family_ties.Doe
 
-            assert not isinstance(doe_class, src.person.Person)
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.person.Person`` from the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 9-10, 23-24, 30-31, 37-38
+
+        def test_making_a_class_w_inheritance(self):
+            person_class = src.person.Person
+            doe_class = src.family_ties.Doe
+
+            # self.assertIsInstance(
             self.assertNotIsInstance(
-                doe_class, src.person.Person
+                # src.family_ties.Doe,
+                doe_class,
+                # src.person.Person
+                person_class
             )
 
-            assert issubclass(doe_class, src.person.Person)
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                # src.family_ties.Doe,
+                # src.family_ties.Doe
+                doe_class, doe_class
+            )
+
             self.assertIsSubclass(
-                doe_class, src.person.Person
+                # src.family_ties.Doe,
+                doe_class,
+                # src.person.Person
+                person_class
             )
 
-            assert not isinstance(doe_class, doe_class)
-            self.assertNotIsInstance(doe_class, doe_class)
-
-            doe_instance = src.family_ties.Doe('the_first')
-            assert isinstance(
-                doe_instance, src.person.Person
-            )
             self.assertIsInstance(
-                doe_instance, src.person.Person
+                # src.family_ties.Doe(),
+                src.family_ties.Doe('the_first'),
+                # src.person.Person
+                person_class
             )
 
             self.assertEqual(
                 dir(doe_class),
-                dir(src.person.Person)
+                # []
+                # dir(src.person.Person)
+                dir(person_class)
+            )
+
+
+    # Exceptions seen
+
+  still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``src.family_ties.Doe('the_first')``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4
+
+        def test_making_a_class_w_inheritance(self):
+            person_class = src.person.Person
+            doe_class = src.family_ties.Doe
+            doe_instance = doe_class('the_first')
+
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                # src.family_ties.Doe,
+                doe_class,
+                # src.person.Person
+                person_class
+            )
+
+* I use the new :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 3-4
+
+            self.assertIsInstance(
+                # src.family_ties.Doe(),
+                # src.family_ties.Doe('the_first'),
+                doe_instance,
+                # src.person.Person
+                person_class
+            )
+
+  green, because ``doe_class()`` and ``src.classes.Doe()`` are the same since ``doe_class = src.classes.Doe``.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 7, 11, 15, 19, 23
+
+        def test_making_a_class_w_inheritance(self):
+            person_class = src.person.Person
+            doe_class = src.family_ties.Doe
+            doe_instance = doe_class('the_first')
+
+            self.assertNotIsInstance(
+                doe_class, person_class
+            )
+
+            self.assertNotIsInstance(
+                doe_class, doe_class
+            )
+
+            self.assertIsSubclass(
+                doe_class, person_class
+            )
+
+            self.assertIsInstance(
+                doe_instance, person_class
+            )
+
+            self.assertEqual(
+                dir(doe_class), dir(person_class)
             )
 
 
@@ -993,15 +973,6 @@ how to call the parent from the child
     :linenos:
 
     import src.person
-
-
-    class WPass: pass
-
-
-    class WParentheses(): pass
-
-
-    class WObject(object): pass
 
 
     class Doe(src.person.Person):
@@ -1609,7 +1580,7 @@ Can a :ref:`class<what is a class?>` have more than one parent?
   .. code-block:: python
 
     TypeError: Person.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
   because this happens when ``jane = src.family_ties.Jane()`` runs
 
@@ -1766,7 +1737,7 @@ the test passes.
   .. code-block:: python
 
     TypeError: Doe.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
   because this happens when ``jane = src.family_ties.Jane()`` runs
 
@@ -1869,7 +1840,7 @@ the test passes.
   .. code-block:: python
 
     TypeError: Jane.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
   I broke the :ref:`assertion<what is an assertion?>` for ``jane`` because this happens when ``jane = src.family_ties.Jane()`` runs
 
@@ -2047,7 +2018,7 @@ the test passes.
   .. code-block:: python
 
     TypeError: Person.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
   because this happens when ``joe = src.family_ties.Joe()`` runs
 
@@ -2614,7 +2585,7 @@ what happens when a child has more than one parent?
   .. code-block:: python
 
     TypeError: Joe.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
   I broke the call that makes ``joe = src.family_ties.Joe()`` because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
 
@@ -2981,7 +2952,7 @@ what happens when a child has more than one parent?
   .. code-block:: python
 
     TypeError: Person.__init__() missing 1
-               required positional argument: 'the_first'
+               required positional argument: 'first_name'
 
   because this happens when ``john = src.family_ties.John()`` runs
 
