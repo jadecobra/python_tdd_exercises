@@ -3032,7 +3032,7 @@ You now know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make classes<classes>`
 
-:ref:`Would you like to use the setUp method with the assertion_error project?<AssertionError 2: use class attributes>`
+:ref:`Would you like to use class attributes to remove repetition from the assertion_error project?<AssertionError 2: use class attributes>`
 
 ----
 

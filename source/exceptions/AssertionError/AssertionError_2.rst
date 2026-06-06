@@ -1,6 +1,6 @@
 .. meta::
-  :description: Part 2 of the beginner Python TDD AssertionError tutorial: learn to use the unittest.TestCase setUp method to DRY up repeated variable initialization across test methods. Refactor the tests from part 1 (None, True, False, is vs ==, 0 vs 0.0 identity vs equality) by moving an_integer = 0 and a_float = 0.0 into def setUp(self): so self.an_integer and self.a_float are freshly set for every test without duplicating the lines in test_assertion_error_w_none, w_false, w_true etc. See before/after with commented old local variables, updating asserts to use self.xxx, adding setUp to the class, and running the evolved tests with pytest-watcher in the existing uv project. Teaches how setUp provides per-test isolation for instance attributes, reducing repetition while keeping tests focused on the assertions. Continues the red-green-refactor cycle and same core examples from the first AssertionError chapter.
-  :keywords: Jacob Itegboje, Pumping Python, unittest setUp method, setUp python unittest example, python TestCase setUp, refactor tests with setUp, DRY unittest tests setUp, self. in setUp unittest, remove repetition setUp python, an_integer setUp, a_float setUp, AssertionError 2, setUp for None tests, setUp True False tests, unittest setUp beginners, setUp vs local variables in tests, per test setup python unittest, AssertionError setUp method, continuing TDD project setUp, python unittest DRY test data, setUp instance variables, test_assertion_error_2.py
+  :description: Part 2 of the beginner Python TDD AssertionError tutorial continuing in the assertion_error project: refactor repeated variable initializations (an_integer = 0, a_float = 0.0, a_string, tuples/lists/sets/dicts) by using class attributes on the TestAssertionError class instead of duplicating inside test_assertion_error_w_none, w_false, w_true (and the equality/is-vs-equal tests). The chapter first explores adding the setUp method (as introduced in the classes chapter) with self.an_integer = 0 etc and updating tests to self.xxx (with old local inits commented out), then concludes "In this case, I do not need the setUp method because the class attributes are the same for every test and I do not need anything to run before each test. I move them out", hits NameError: name 'self' is not defined when trying self. = directly under class, fixes by using bare "an_integer = 0" etc at class level, removes the commented setUp and duplicate locals, commits with 'extract class attributes'. The "I have these tests by the end of the chapter" literalinclude of test_assertion_error_2.py shows the final: 7 class attrs + self. access in the w_* tests (test_what_is_an_assertion keeps its local reality/my_expectation vars), still mixing bare `assert` + self.assertIs / self.assertIsNot / self.assertEqual etc on the same None/True/False/0-vs-0.0 examples from part 1. Teaches choosing plain class attributes vs setUp for DRY unittest.TestCase based on whether fresh-per-test values are required (constants vs randoms/mutables). Continues red-green-refactor + uv run pytest-watcher . --now in the existing project.
+  :keywords: Jacob Itegboje, Pumping Python, AssertionError 2, AssertionError 2: use class attributes, use class attributes unittest TestCase, python class attributes for DRY tests, class attributes vs setUp unittest, when not to use setUp, "In this case, I do not need the setUp method", "I do not need anything to run before each test", "extract class attributes", NameError: name 'self' is not defined, self is not defined class body python, an_integer = 0 class attribute, a_float = 0.0, a_string a_tuple a_list a_set a_dictionary class attrs, test_assertion_error_2.py, refactor locals to class attributes python, unittest no setUp needed for constants, red green refactor class attributes, continuing assertion_error project uv pytest-watcher, 0 is not 0.0 class attribute, None is not False, True is not None, is vs == with class attrs, bare assert self.assertIsNot, Pumping Python TDD AssertionError chapter 2, test_what_is_an_assertion, test_assertion_error_w_none w_false w_true w_equality w_is_vs_equal
 
 .. include:: ../../links.rst
 
@@ -10,7 +10,7 @@ AssertionError 2: use class attributes
 
 ----
 
-I used the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` in :ref:`classes` to remove repetition of :ref:`variables<what is a variable?>` by making them :ref:`class attributes<what is a class attribute?>` that the test :ref:`methods<what is a method?>` could all use.
+I used the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` in :ref:`classes` to remove repetition of :ref:`variables<what is a variable?>` by making them :ref:`class attributes<what is a class attribute?>` that the test :ref:`methods<what is a method?>` can all use.
 
 I want to do the same thing with the :ref:`assertion_project<what is an assertion?>`.
 
@@ -89,7 +89,7 @@ continue the project
 remove repetition with class attributes
 *********************************************************************************
 
-* I add the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute?>` to use to remove repetition of ``an_integer = 0``
+* I add the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute?>` to use to remove repetition of ``an_integer = 0``
 
   .. code-block:: python
     :lineno-start: 4
@@ -254,7 +254,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_float = 0.0``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_float = 0.0``
 
   .. code-block:: python
     :lineno-start: 6
@@ -424,7 +424,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_string = 'a string'``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_string = 'a string'``
 
   .. code-block:: python
     :lineno-start: 6
@@ -601,7 +601,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_tuple = (1, 2, 3, 'n')``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_tuple = (1, 2, 3, 'n')``
 
   .. code-block:: python
     :lineno-start: 6
@@ -785,7 +785,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_list = [1, 2, 3, 'n']``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_list = [1, 2, 3, 'n']``
 
   .. code-block:: python
     :lineno-start: 6
@@ -976,7 +976,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_set = {1, 2, 3, 'n'}``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_set = {1, 2, 3, 'n'}``
 
   .. code-block:: python
     :lineno-start: 6
@@ -1174,7 +1174,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`a class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_dictionary = {'key': 'value'}``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_dictionary = {'key': 'value'}``
 
   .. code-block:: python
     :lineno-start: 6
@@ -1495,7 +1495,7 @@ remove repetition with class attributes
 
 ----
 
-* In this case, I do not need the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` because the :ref:`class attributes<what is a class attribute?>` are the same for every test and I do not need any thing to run before each test. I move them out
+* In this case, I do not need the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` because the :ref:`class attributes<what is a class attribute?>` are the same for every test and I do not need anything to run before each test. I move them out
 
   .. code-block:: python
     :lineno-start: 4
@@ -1529,6 +1529,16 @@ remove repetition with class attributes
     NameError: name 'self' is not defined
 
   because ``self`` is not defined outside the :ref:`methods<what is a method?>` I can declare the :ref:`class attributes<what is a class attribute?>` the same way I do :ref:`variables<what is a variable?>` as long as it is indented under the :ref:`class definition<how to make a class>`
+
+* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<errors>`
+
+  .. code-block:: python
+    :lineno-start: 200
+    :emphasize-text: NameError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
 
 * I remove ``self.``
 
@@ -1641,12 +1651,16 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-Congratulations! You now know
+As a reminder, you know
 
-* :ref:`how to make a Python test driven development environment any time you want<how to make a Python test driven development environment>` and
+* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`what causes AssertionError?`
+* :ref:`how to make functions<what is a function?>`
+* :ref:`how to pass values from tests to functions<telephone>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`how to make classes<classes>`
 
-:ref:`Would you like to test functions?<what is a function?>`
+:ref:`Would you like to test classes with more than one parent?<family ties>`
 
 ----
 
