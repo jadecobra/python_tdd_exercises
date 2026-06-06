@@ -204,7 +204,7 @@ start the project
 
         def test_failure(self):
             self.assertFalse(True)
-            
+
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
@@ -391,7 +391,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     class TestTelephone(unittest.TestCase):
 
-  - ``import src.telephone`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
+  - ``import src.telephone`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the ``telephone.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_telephone.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: shell

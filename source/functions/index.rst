@@ -1339,7 +1339,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
     class TestFunctions(unittest.TestCase):
 
-  - ``import src.functions`` brings in an :ref:`object<what is a class?>` that represents the ``functions.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_functions.py``
+  - ``import src.functions`` brings in an :ref:`object<what is a class?>` for the ``functions.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_functions.py``
   - I like to sort my `import statements`_ alphabetically
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 

@@ -194,7 +194,7 @@ start the project
 
         def test_failure(self):
             self.assertFalse(True)
-            
+
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
@@ -376,7 +376,7 @@ test_factory_w_keyword_arguments
     import src.person
     import unittest
 
-  - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
+  - ``import src.person`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_person.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -1419,7 +1419,7 @@ I want the value of the age to be a calculation based on the current year so tha
     import src.person
     import unittest
 
-  ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``test_person.py``
+  ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ so I can use it in ``test_person.py``
 
 * I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a method?>` from the `datetime module`_
 
@@ -1493,7 +1493,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
     import unittest
 
   - random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used to make fake random numbers
-  - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `random module`_ so I can use it in ``test_person.py``
+  - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `random module`_ so I can use it in ``test_person.py``
   - I like to sort my `import statements`_ alphabetically
 
 * I use a random integer_ (a whole number without decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
@@ -1593,7 +1593,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
             sex, year_of_birth,
         ):
 
-  - ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` that represents the `datetime module`_ so I can use it in ``person.py``
+  - ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ so I can use it in ``person.py``
   - the test passes.
 
 ----

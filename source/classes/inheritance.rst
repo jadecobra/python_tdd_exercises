@@ -274,7 +274,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
 
     class TestClasses(unittest.TestCase):
 
-  - ``import src.classes`` brings in an :ref:`object<what is a class?>` that represents the ``classes.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_classes.py``
+  - ``import src.classes`` brings in an :ref:`object<what is a class?>` for the ``classes.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_classes.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python

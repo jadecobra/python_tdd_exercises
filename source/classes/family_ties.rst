@@ -56,16 +56,16 @@ questions about inheritance
 Questions to think about as I go through the chapter
 
 * :ref:`what is Python's Method Resolution Order?`
-* :ref:`how can I make a class with inheritance?<test_making_doe_class_w_inheritance>`
+* :ref:`how can I make a class with inheritance?<test_making_a_class_w_inheritance>`
 * :ref:`what is the difference between an instance and a subclass?<more about instances vs subclasses>`
 * :ref:`how can I make a class with one parent?<test_classes_w_one_parent>`
 * :ref:`what happens when a child calls the parent?`
 * :ref:`how can I make a class with more than one parent?<test_classes_w_multiple_parents>`
 * :ref:`how can I call a parent class from a child class?<how to call the parent from the child>`
 * :ref:`what happens when a class has more than one parent?<what happens when a child has more than one parent?>`
-* :ref:`how can I make a class with pass?<test_making_doe_class_w_pass>`
-* :ref:`how can I make a class with parentheses?<test_making_doe_class_w_parentheses>`
-* :ref:`how can I make a class with object?<test_making_doe_class_w_object>`
+* :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
+* :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
+* :ref:`how can I make a class with object?<test_making_a_class_w_object>`
 * :ref:`is None an object?<test_is_none_an_object>`
 * :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
 * :ref:`is an integer an object?<test_is_an_integer_an_object>`
@@ -214,10 +214,10 @@ continue the project
 ----
 
 *********************************************************************************
-test_making_doe_class_w_inheritance
+test_making_a_class_w_inheritance
 *********************************************************************************
 
-I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<what is a class?>` with :ref:`inheritance<test_attributes_and_methods_of_objects>` by stating the parent :ref:`class<what is a class?>` and that :ref:`an instance (a copy)<how to test if something is an instance of a class>` and a :ref:`subclass (child)<how to test if something is a subclass of a class>` are different.
+I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<what is a class?>` with :ref:`inheritance<test_attributes_and_methods_of_objects>` by stating the parent :ref:`class<what is a class?>` and that :ref:`an instance (a copy)<how to test if something is an instance of a class>` and a :ref:`subclass (child)<how to test if something is a subclass of a class>` are different.
 
 ----
 
@@ -228,19 +228,18 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 ----
 
 * I go back to the terminal_ that is running the tests
-* I change ``test_failure`` to :ref:`test_making_doe_class_w_inheritance`
+* I change ``test_failure`` to :ref:`test_making_a_class_w_inheritance` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 3-4, 6-8
+    :emphasize-lines: 3-7
 
     class TestFamilyTies(unittest.TestCase):
 
         def test_making_a_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-
-            assert isinstance(
-                doe_class, src.person.Person
+            self.assertIsInstance(
+                src.family_ties.Doe,
+                src.person.Person
             )
 
 
@@ -252,12 +251,12 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 
     NameError: name 'src' is not defined
 
-  because ``src`` is not defined in this file_
+  because ``src`` is not defined in this file_.
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 13
     :emphasize-lines: 3
     :emphasize-text: NameError
 
@@ -285,7 +284,7 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 
     class TestFamilyTies(unittest.TestCase):
 
-  - ``import src.family_ties`` brings in an :ref:`object<what is a class?>` that represents the ``family_ties.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_family_ties.py``
+  - ``import src.family_ties`` brings in an :ref:`object<what is a class?>` for the ``family_ties.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_family_ties.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -298,7 +297,7 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 12
+    :lineno-start: 14
     :emphasize-lines: 4
 
     # Exceptions seen
@@ -318,30 +317,31 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    AssertionError: assert False
+    AssertionError:
+        <class 'src.family_ties.Doe'> is not
+        an instance of <class 'src.person.Person'>
 
-  because
+  because ``Doe`` is not an :ref:`instance (a copy)<how to test if something is an instance of a class>` of ``Person``.
 
-  - ``doe`` is just a name for the ``Doe`` :ref:`class<what is a class?>`
-  - ``Doe`` and ``Person`` are children of :ref:`object<what is a class?>`
-
-* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_doe_class_w_inheritance` in ``test_family_ties.py``
+* I change the :ref:`assertion<what is an assertion?>` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 3-4
+    :emphasize-lines: 2-3
 
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
+        def test_making_a_class_w_inheritance(self):
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                src.family_ties.Doe,
+                src.person.Person
+            )
 
 
     # Exceptions seen
 
-  the test passes. ``Doe`` is not an :ref:`instance<how to test if something is an instance of a class>` of the ``Person`` :ref:`class.<what is a class?>`
+  the test passes. ``Doe`` is NOT an :ref:`instance<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>`, they are siblings - both children of :ref:`object<what is a class?>`.
 
 ----
 
@@ -351,17 +351,23 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 
 ----
 
-* I add a call to the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`
+* I add a call to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 5
+    :emphasize-lines: 8-11
 
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            self.assertIsInstance(doe_class, src.person.Person)
+        def test_making_a_class_w_inheritance(self):
+            self.assertIsInstance(
+            # self.assertNotIsInstance(
+                src.family_ties.Doe,
+                src.person.Person
+            )
+
+            self.assertIsSubclass(
+                src.family_ties.Doe,
+                src.person.Person
+            )
 
 
     # Exceptions seen
@@ -371,61 +377,15 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
   .. code-block:: shell
 
     AssertionError:
-        <class 'src.family_ties.Doe'> is not
-        an instance of <class 'src.person.Person'>
-
-* I change :ref:`assertIsInstance<another way to test if something is an instance of a class>` to :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 5-9
-
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
-            self.assertNotIsInstance(
-                doe_class,
-                src.person.Person
-            )
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I use the :ref:`issubclass built-in function<how to test if something is a subclass of a class>` to test if ``Doe`` is a :ref:`child<how to test if something is a subclass of a class>` of ``Person``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 9
-
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
-            self.assertNotIsInstance(
-                doe_class, src.person.Person
-            )
-            assert issubclass(doe_class, src.person.Person)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: assert False
+        <class 'src.family_ties.Doe'> is not a
+        subclass of <class 'src.person.Person'>
 
   because ``Doe`` is not a child of ``Person``, yet.
 
 * I change the parent of ``Doe`` from ``object`` to ``Person`` in ``family_ties.py``
 
   .. code-block:: python
-    :linenos: 1
+    :linenos:
     :emphasize-lines: 1-2
 
     # class Doe(object): pass
@@ -457,7 +417,7 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 
     E   ModuleNotFoundError: No module named 'person'
 
-  because Python_ cannot find ``person.py`` in the main project folder_ where I run the tests from, so it cannot :ref:`import the Module<test_module_not_found_error>`.
+  because Python_ cannot find ``person.py`` in the main project folder_ (the parent of ``src`` and ``tests``) where I run the tests from, so it cannot :ref:`import the Module<test_module_not_found_error>`.
 
 * I add :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>` to the list of :ref:`Exceptions<errors>` seen, in ``test_family_ties.py``
 
@@ -472,7 +432,7 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
     # AttributeError
     # ModuleNotFoundError
 
-* I change the `import statement`_ so the path to ``person.py`` from the main project folder_ is correct, in ``family_ties.py``
+* I add the path of ``person.py`` from the main project folder_ (the parent of ``src`` and ``tests``) to the `import statement`_, in ``family_ties.py``
 
   .. code-block:: python
     :linenos:
@@ -491,7 +451,7 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
 
     NameError: name 'person' is not defined
 
-  because there is no definition for ``person`` in this file_
+  because there is no definition for ``person`` in this file_.
 
 * I add ``src.`` to the parent of ``Doe``
 
@@ -503,70 +463,11 @@ I know from :ref:`test_making_doe_class_w_object` that I can make :ref:`classes<
     # class Doe(person.Person): pass
     class Doe(src.person.Person): pass
 
-  - the test passes because ``Doe`` is now a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Person``.
-  - ``import src.person`` brings in an :ref:`object<what is a class?>` that represents the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``family_ties.py``.
-  - I have to use ``src.person.Person`` in ``family_ties.py`` because I am testing from the root folder_ of the project.
+  - ``import src.person`` brings in an :ref:`object<what is a class?>` for the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``family_ties.py``.
+  - I have to use ``src.person.Person`` in ``family_ties.py`` because I am testing from the root folder_ of the project (the parent folder_ of ``src`` and ``tests``).
   - The test needs to know where ``person.py`` is in relation to where I ran the tests from.
-  - This is a problem because if ``family_ties.py`` is run from inside ``src`` the `import statement`_ will not be able to find ``src.person`` from inside ``src``. Same thing if I run the tests from inside ``tests``. That is a problem for another time.
-
-* I add the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>` to :ref:`test_making_doe_class_w_inheritance` in ``test_family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 11-14
-
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
-            self.assertNotIsInstance(
-                doe_class,
-                src.person.Person
-            )
-
-            assert issubclass(doe_class, src.person.Person)
-            self.assertNotIsSubclass(
-                doe_class, src.person.Person
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <class 'src.family_ties.Doe'> is a
-        subclass of <class 'src.person.Person'>
-
-* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 11-12
-
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
-            self.assertNotIsInstance(
-                doe_class,
-                src.person.Person
-            )
-
-            assert issubclass(doe_class, src.person.Person)
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                doe_class, src.person.Person
-            )
-
-
-    # Exceptions seen
-
-  the test passes.
+  - This is a problem because if ``family_ties.py`` is run from inside ``src`` the `import statement`_ will not be able to find ``src.person`` from inside ``src``. Same thing if I run the tests from inside ``tests`` :ref:`(a problem for another time)<test_module_not_found_error>`.
+  - The test passes because ``Doe`` is now a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Person``.
 
 ----
 
@@ -576,94 +477,28 @@ more about instances vs subclasses
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` to show that ``doe_class`` which points to ``Doe`` is just a name (:ref:`a variable<what is a variable?>`) I gave Python_ for the :ref:`class<what is a class?>` not an :ref:`instance<how to test if something is an instance of a class>`
+* I add a call to :ref:`assertIsInstance<another way to test if something is an instance of a class>` to show that ``src.family_ties.Doe`` is not an :ref:`instance<how to test if something is an instance of a class>`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 17
+    :emphasize-lines: 8-11
 
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
+        def test_making_a_class_w_inheritance(self):
+            # self.assertIsInstance(
             self.assertNotIsInstance(
-                doe_class,
+                src.family_ties.Doe,
                 src.person.Person
             )
 
-            assert issubclass(doe_class, src.person.Person)
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                doe_class, src.person.Person
+            self.assertIsInstance(
+                src.family_ties.Doe,
+                src.family_ties.Doe
             )
 
-            assert isinstance(doe_class, doe_class)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: assert False
-
-  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance of a class>`.
-
-* I change the :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 17-18
-
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
-            self.assertNotIsInstance(
-                doe_class,
+            self.assertIsSubclass(
+                src.family_ties.Doe,
                 src.person.Person
             )
-
-            assert issubclass(doe_class, src.person.Person)
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                doe_class, src.person.Person
-            )
-
-            # assert isinstance(doe_class, doe_class)
-            assert not isinstance(doe_class, doe_class)
-
-
-    # Exceptions seen
-
-* I add :ref:`assertIsInstance<another way to test if something is an instance of a class>`
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 19
-
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
-            self.assertNotIsInstance(
-                doe_class,
-                src.person.Person
-            )
-
-            assert issubclass(doe_class, src.person.Person)
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                doe_class, src.person.Person
-            )
-
-            # assert isinstance(doe_class, doe_class)
-            assert not isinstance(doe_class, doe_class)
-            self.assertIsInstance(doe_class, doe_class)
 
 
     # Exceptions seen
@@ -676,37 +511,130 @@ more about instances vs subclasses
         <class 'src.family_ties.Doe'> is not
         an instance of <class 'src.family_ties.Doe'>
 
-  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance of a class>`
+  because a :ref:`class<what is a class?>` is not an :ref:`instance<how to test if something is an instance of a class>`.
 
 * I change :ref:`assertIsInstance<another way to test if something is an instance of a class>` to :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 19-20
+    :emphasize-lines: 8-9
 
-        def test_making_doe_class_w_inheritance(self):
-            doe_class = src.family_ties.Doe
-            # assert isinstance(doe_class, src.person.Person)
-            assert not isinstance(doe_class, src.person.Person)
-            # self.assertIsInstance(doe_class, src.person.Person)
+        def test_making_a_class_w_inheritance(self):
+            # self.assertIsInstance(
             self.assertNotIsInstance(
+                src.family_ties.Doe,
+                src.person.Person
+            )
+
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                src.family_ties.Doe,
+                src.family_ties.Doe
+            )
+
+            self.assertIsSubclass(
+                src.family_ties.Doe,
+                src.person.Person
+            )
+
+
+    # Exceptions seen
+
+* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.family_ties.Doe`` from the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 2
+
+        def test_making_a_class_w_inheritance(self):
+            doe_class = src.family_ties.Doe
+
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                src.family_ties.Doe,
+                src.person.Person
+            )
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.family_ties.Doe`` from the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6-7, 13-15, 19-20
+
+        def test_making_a_class_w_inheritance(self):
+            doe_class = src.family_ties.Doe
+
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                # src.family_ties.Doe,
                 doe_class,
                 src.person.Person
             )
 
-            assert issubclass(doe_class, src.person.Person)
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                doe_class, src.person.Person
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                # src.family_ties.Doe,
+                # src.family_ties.Doe
+                doe_class, doe_class
             )
 
-            # assert isinstance(doe_class, doe_class)
-            assert not isinstance(doe_class, doe_class)
-            # self.assertIsInstance(doe_class, doe_class)
-            self.assertNotIsInstance(doe_class, doe_class)
+            self.assertIsSubclass(
+                # src.family_ties.Doe,
+                doe_class,
+                src.person.Person
+            )
 
 
     # Exceptions seen
+
+  the test is still green.
+
+* I also add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.person.Person`` from the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 2
+
+        def test_making_a_class_w_inheritance(self):
+            person_class = src.person.Person
+            doe_class = src.family_ties.Doe
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.person.Person`` from the test
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6-7, 13-14, 19-20
+
+        def test_making_a_class_w_inheritance(self):
+            person_class = src.person.Person
+            doe_class = src.family_ties.Doe
+
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                # src.family_ties.Doe,
+                # doe_class,
+                # src.person.Person
+                doe_class, person_class
+            )
+
+            # self.assertIsInstance(
+            self.assertNotIsInstance(
+                # src.family_ties.Doe,
+                # src.family_ties.Doe
+                doe_class, doe_class
+            )
+
+            self.assertIsSubclass(
+                # src.family_ties.Doe,
+                # doe_class,
+                # src.person.Person
+                doe_class, person_class
+            )
+
+
+    # Exceptions seen
+
+  still green.
 
 * I add another :ref:`assertion<what is an assertion?>`, this time with an :ref:`instance<how to test if something is an instance of a class>` of ``Doe``
 
@@ -714,7 +642,7 @@ more about instances vs subclasses
     :lineno-start: 7
     :emphasize-lines: 19-20
 
-        def test_making_doe_class_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             doe_class = src.family_ties.Doe
             # assert isinstance(doe_class, src.person.Person)
             assert not isinstance(doe_class, src.person.Person)
@@ -824,7 +752,7 @@ how to call the parent from the child
 
     which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of the ``Person`` :ref:`class<what is a class?>` takes one required argument for ``first_name``.
 
-* I add a value to ``src.family_ties.Doe`` in :ref:`test_making_doe_class_w_inheritance` in ``test_family_ties.py``
+* I add a value to ``src.family_ties.Doe`` in :ref:`test_making_a_class_w_inheritance` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 28
@@ -1027,7 +955,7 @@ how to call the parent from the child
   .. code-block:: python
     :lineno-start: 7
 
-        def test_making_doe_class_w_inheritance(self):
+        def test_making_a_class_w_inheritance(self):
             doe_class = src.family_ties.Doe
 
             assert not isinstance(doe_class, src.person.Person)
@@ -1087,9 +1015,9 @@ how to call the parent from the child
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_making_doe_class_w_inheritance'
+    'add test_making_a_class_w_inheritance'
 
-:ref:`I can make a class with inheritance.<test_making_doe_class_w_inheritance>`
+:ref:`I can make a class with inheritance.<test_making_a_class_w_inheritance>`
 
 ----
 
@@ -4688,13 +4616,13 @@ review
 
 I can make a :ref:`class<what is a class?>` with
 
-* :ref:`pass<test_making_doe_class_w_pass>`
-* :ref:`parentheses<test_making_doe_class_w_parentheses>`
-* :ref:`object<test_making_doe_class_w_object>`
-* :ref:`its parent<test_making_doe_class_w_inheritance>`
+* :ref:`pass<test_making_a_class_w_pass>`
+* :ref:`parentheses<test_making_a_class_w_parentheses>`
+* :ref:`object<test_making_a_class_w_object>`
+* :ref:`its parent<test_making_a_class_w_inheritance>`
 * :ref:`multiple parents<test_classes_w_multiple_parents>`
-* :ref:`I can make a class with object<test_making_doe_class_w_object>`
-* :ref:`all classes inherit from 'object'<test_making_doe_class_w_object>`.
+* :ref:`I can make a class with object<test_making_a_class_w_object>`
+* :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
 
 ----
 
