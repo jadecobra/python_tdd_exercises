@@ -215,7 +215,6 @@
 .. _HyperText Markup Language file: HTML_
 .. _I do not repeat myself: `remove duplication`_
 .. _Indentation: https://peps.python.org/pep-0008/#indentation
-.. _Inheritance: https://grokipedia.com/page/Inheritance_(object-oriented_programming)
 .. _Integrated Development Environment (IDE): https://grokipedia.com/page/Integrated_development_environment
 .. _JSON: https://grokipedia.com/page/JSON
 .. _JavaScript Object Notation file: JSON_

@@ -177,16 +177,6 @@ start the project
 
 * I open ``test_assertion_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. tip::
-
-    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      code tests/test_assertion_error.py
-
-    `Visual Studio Code`_ opens ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
 
 * I delete the text then add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
 

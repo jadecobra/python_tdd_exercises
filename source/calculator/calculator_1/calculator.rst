@@ -141,16 +141,6 @@ start the project
 
 * I open ``test_calculator.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. tip::
-
-    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
-
-    .. code-block:: python
-      :emphasize-lines: 1
-
-      code tests/test_calculator.py
-
-    `Visual Studio Code`_ opens ``test_calculator.py`` in the :ref:`editor<2 editors>`
 
 * I add :ref:`the first failing test<test_failure>` to ``test_calculator.py``
 
@@ -165,7 +155,7 @@ start the project
 
         def test_failure(self):
             self.assertFalse(True)
-            
+
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python

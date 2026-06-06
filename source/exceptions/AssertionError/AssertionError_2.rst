@@ -1659,6 +1659,7 @@ As a reminder, you know
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make classes<classes>`
+* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 
 :ref:`Would you like to test classes with more than one parent?<family ties>`
 
