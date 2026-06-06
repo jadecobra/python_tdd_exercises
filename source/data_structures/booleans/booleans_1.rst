@@ -272,7 +272,7 @@ test_what_is_false
 
 ----
 
-I change ``test_failure`` to :ref:`test_what_is_false`, then use the `assertNotIsInstance method`_ I learned from :ref:`testing None<what is None?>` to check if False_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the `bool class`_. I think this will fail
+I change ``test_failure`` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`testing None<what is None?>` to check if False_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the `bool class`_. I think this will fail
 
 .. code-block:: python
   :linenos:
@@ -325,7 +325,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   so far this is something I already know from :ref:`testing None<what is None?>`
 
-* I change assertNotIsInstance_ to assertIsInstance_
+* I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to :ref:`assertIsInstance<another way to test if something is an instance of a class>`
 
   .. code-block:: python
     :lineno-start: 7

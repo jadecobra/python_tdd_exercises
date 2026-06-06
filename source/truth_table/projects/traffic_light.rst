@@ -186,7 +186,7 @@ start the project
 
         def test_failure(self):
             self.assertFalse(True)
-            
+
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
@@ -405,7 +405,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``traffic_light.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``traffic_light.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` to ``traffic_light.py``
 

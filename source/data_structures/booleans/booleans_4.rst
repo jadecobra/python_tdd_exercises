@@ -104,7 +104,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change assertIsInstance_ to assertNotIsInstance_
+I change :ref:`assertIsInstance<another way to test if something is an instance of a class>` to :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
 .. code-block:: python
   :lineno-start: 52

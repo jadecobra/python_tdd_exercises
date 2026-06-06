@@ -396,7 +396,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``elevator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``elevator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add a :ref:`function<what is a function?>` named ``elevator`` to ``elevator.py``
 

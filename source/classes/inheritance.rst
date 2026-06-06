@@ -107,7 +107,6 @@ continue the project
 
 * I open ``test_classes.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-
 * I add :ref:`the first failing test<test_failure>` to ``test_classes.py``
 
   .. code-block:: python
@@ -297,7 +296,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``classes.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``classes.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * then I add a :ref:`class<what is a class?>` definition for ``WPass`` to ``classes.py``
 

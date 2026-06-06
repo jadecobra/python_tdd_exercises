@@ -183,7 +183,7 @@ start the project
 
         def test_failure(self):
             self.assertFalse(True)
-            
+
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
   .. code-block:: python
@@ -358,7 +358,7 @@ test_attribute_error_w_variables
 
 ----
 
-* I use the :ref:`Explorer<explorer on left>` to open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
+* I open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
 
 * I add the name to ``attribute_error.py``
 

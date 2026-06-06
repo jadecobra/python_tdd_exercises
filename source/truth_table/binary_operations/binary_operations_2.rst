@@ -176,7 +176,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
 ----
 
-** I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+** I open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
 
 * I add the :ref:`function<what is a function?>` to ``truth_table.py``
 

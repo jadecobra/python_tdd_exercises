@@ -95,7 +95,7 @@ in Python_, False_ is a :ref:`boolean<what are booleans?>` and an integer_
 
 ----
 
-I change assertNotIsInstance_ to assertIsInstance_
+I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to :ref:`assertIsInstance<another way to test if something is an instance of a class>`
 
 .. code-block:: python
   :lineno-start: 8
@@ -148,7 +148,7 @@ the test passes.
 
   :ref:`False<test_what_is_false>` is not a float_
 
-* I change assertIsInstance_ to assertNotIsInstance_
+* I change :ref:`assertIsInstance<another way to test if something is an instance of a class>` to :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
   .. code-block:: python
     :lineno-start: 8
@@ -174,7 +174,7 @@ the test passes.
     # Exceptions Encountered
     # AssertionError
 
-* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
+* I can use an :ref:`iterable<what is an iterable?>` with the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`, the same way I do with the `isinstance function`_ in the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -349,7 +349,7 @@ in Python_, :ref:`True<test_what_is_true>` is a :ref:`boolean<what are booleans?
 
 ----
 
-I change assertNotIsInstance_ to assertIsInstance_
+I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to :ref:`assertIsInstance<another way to test if something is an instance of a class>`
 
 .. code-block:: python
   :lineno-start: 24
@@ -419,7 +419,7 @@ the test passes.
     # True is not a float
     # the empty dictionary is False
 
-* I can use an :ref:`iterable<what is an iterable?>` with the `assertIsInstance method`_, the same way I do with the `isinstance function`_ in the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
+* I can use an :ref:`iterable<what is an iterable?>` with the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`, the same way I do with the `isinstance function`_ in the ``numbers_only`` :ref:`function<what is a function?>` in the :ref:`calculator<how to make a calculator>`
 
   .. code-block:: python
     :lineno-start: 22
