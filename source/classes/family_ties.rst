@@ -256,7 +256,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 4
     :emphasize-lines: 3
     :emphasize-text: NameError
 
@@ -725,8 +725,8 @@ how to call the parent from the child
     src.family_ties.Doe('the_first')
     Doe.__init__('the_first')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
-  - ``self`` is the :ref:`class<what is a class?>`, which means that for ``Doe.__init__()``, ``self`` is ``Doe`` in ``Doe``. It would be like calling ``Doe.__init__(Doe)``.
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method\?>` of ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
+  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Doe.__init__()``, ``self`` is ``Doe`` in ``Doe``. It would be like calling ``Doe.__init__(Doe)``.
 
 * I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``family_ties.py``
 
@@ -759,8 +759,8 @@ how to call the parent from the child
         super().__init__() # call the parent
     Person.__init__()
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` in ``Person`` requires a :ref:`positional argument<test_w_positional_arguments>` for ``first_name`` and it was called with ``self``
-  - ``self`` is the :ref:`class<what is a class?>`, which means that for ``Person.__init__()``, ``self`` is ``Person`` in ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method\?>` of ``Person`` requires a :ref:`positional argument<test_w_positional_arguments>` for ``first_name`` and it was called with ``self``
+  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` in ``Person``. It would be like calling ``Person.__init__(Person)``.
 
 * I add the required parameter to ``super().__init__()`` in ``Doe``
 
@@ -994,7 +994,9 @@ how to call the parent from the child
 
 *********************************************************************************
 test_classes_w_one_parent
-*********************************************************************************
+********************************************************************************
+
+I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`classes<what is a class?>` are set if they have only one parent (super :ref:`class<what is a class?>`).
 
 ----
 
@@ -1005,19 +1007,18 @@ test_classes_w_one_parent
 ----
 
 * I go back to the terminal_ that is running the tests
-* I add a new test for Inheritance_ with an :ref:`assertion<what is an assertion?>`
+* I add a new test for :ref:`Inheritance<test_attributes_and_methods_of_objects>` with an :ref:`assertion<what is an assertion?>`, in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 112
-    :emphasize-lines: 6-8
+    :lineno-start: 28
+    :emphasize-lines: 5-7
 
             self.assertEqual(
-                dir(doe_class),
-                dir(src.person.Person)
+                dir(doe_class), dir(person_class)
             )
 
         def test_classes_w_one_parent(self):
-            doe = src.family_ties.Doe('doe')
+            doe = src.family_ties.Doe('the_first')
             self.assertEqual(doe.last_name, '')
 
 
@@ -1040,27 +1041,27 @@ test_classes_w_one_parent
 I change the expectation
 
 .. code-block:: python
-  :lineno-start: 117
+  :lineno-start: 32
   :emphasize-lines: 3-4
 
       def test_classes_w_one_parent(self):
-          doe = src.family_ties.Doe('doe')
+          doe = src.family_ties.Doe('the_first')
           # self.assertEqual(doe.last_name, '')
           self.assertEqual(doe.last_name, 'doe')
 
 
   # Exceptions seen
 
-the test passes because this happens when ``doe = src.family_ties.Doe('doe')`` runs
+the test passes because this happens when ``doe = src.family_ties.Doe('the_first')`` runs
 
 .. code-block:: python
 
-  doe = src.family_ties.Doe('doe')
-        Doe.__init__('doe')
+  doe = src.family_ties.Doe('the_first')
+        Doe.__init__('the_first')
             super().__init__(first_name)
         Person.__init__('the_first')
-            Person.__init__('the_first', last_name='doe')
-            self.last_name = 'doe' # use the default value
+            Person.__init__('the_first', last_name='the_first')
+            self.last_name = 'the_first' # use the default value
 
 the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
 
@@ -1075,31 +1076,33 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 117
+    :lineno-start: 32
     :emphasize-lines: 6-7
     :emphasize-text: joe
 
         def test_classes_w_one_parent(self):
-            doe = src.family_ties.Doe('doe')
+            doe = src.family_ties.Doe('the_first')
             # self.assertEqual(doe.last_name, '')
             self.assertEqual(doe.last_name, 'doe')
 
-            joe = src.family_ties.Doe('joe')
+            joe = src.family_ties.Blow('joe')
             self.assertEqual(joe.last_name, 'blow')
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AssertionError: 'doe' != 'blow'
+    AttributeError: module 'src.family_ties' has no attribute 'Blow'
+
+  because there is no :ref:`definition<how to make a class>` for ``Blow`` in ``classes.py``
 
 * I add a new :ref:`class definition<how to make a class>` to ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 4
     :emphasize-lines: 7
 
     class Doe(src.person.Person):
@@ -1110,28 +1113,27 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     class Blow(src.person.Person): pass
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
-
-* I change ``joe`` to use the new ``Blow`` :ref:`class<what is a class?>`, in :ref:`test_classes_w_one_parent` in ``test_family_ties.py``
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 1-2
-    :emphasize-text: joe Blow
 
-            # joe = src.family_ties.Doe('joe')
-            joe = src.family_ties.Blow('joe')
-            self.assertEqual(joe.last_name, 'blow')
+    AssertionError: 'doe' != 'blow'
 
+  because this happens when ``joe = src.family_ties.Blow('joe')`` runs
 
-    # Exceptions seen
+  .. code-block:: python
 
-  the terminal_ still shows :ref:`AssertionError<what causes AssertionError?>`
+    joe = src.family_ties.Blow('joe')
+          Blow # has no __init__
+          # call the parent of Blow (Person)
+          Person.__init__('joe')
+              Person.__init__('joe', last_name='doe')
+              self.last_name = 'doe' # use the default value
 
 * I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` in the ``Blow`` :ref:`class<what is a class?>` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 10
     :emphasize-lines: 1-2, 4
 
     # class Blow(src.person.Person): pass
@@ -1139,12 +1141,24 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
         last_name = 'blow'
 
-  the terminal_ does not feel like my friend, it still shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ does not feel like my friend, it still shows :ref:`AssertionError<what causes AssertionError?>` because this happens when ``joe = src.family_ties.Blow('joe')`` runs
+
+  .. code-block:: python
+
+    joe = src.family_ties.Blow('joe')
+          Blow # has no __init__
+          # call the parent of Blow (Person)
+              self.last_name = 'blow'
+          Person.__init__('joe')
+              Person.__init__('joe', last_name='doe')
+              self.last_name = 'doe' # use the default value
+
+  the value for ``last_name`` does not get sent to the parent (``Person.__init__``)
 
 * I add the ``__init__`` :ref:`method<what is a method?>` to customize the last name
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 10
     :emphasize-lines: 4, 6-7
 
     # class Blow(src.person.Person): pass
@@ -1169,12 +1183,15 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     joe = src.family_ties.Blow('joe')
           Blow.__init__('joe')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` o of ``Blow`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Blow`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
 
-* I add ``first_name`` to the parentheses for the ``__init__`` :ref:`method<what is a method?>`
+  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Blow.__init__('joe')``, ``self`` is ``Blow`` in ``Blow``. It would be like calling ``Blow.__init__(Blow, 'joe')``.
+
+
+* I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method definition<how to make a function>`
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 10
     :emphasize-lines: 6-7
 
     # class Blow(src.person.Person): pass
@@ -1194,16 +1211,16 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
           Blow.__init__('joe')
               self.last_name = 'joe'
 
-  I can define :ref:`classes<what is a class?>` that are related and have their own defaults. In this test
+  I can :ref:`make classes<how to make a class>` that are related and have their own defaults. In this test
 
-  - the ``Doe`` :ref:`class<what is a class?>` has a default ``last_name`` that is the same as the default last name for ``Person``
-  - the ``Blow`` :ref:`class<what is a class?>` has a different default ``last_name``
+  - the ``Doe`` :ref:`class<what is a class?>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_w_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribut?>` of ``Person``
+  - the ``Blow`` :ref:`class<what is a class?>` has a different :ref:`default value<test_w_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>`
   - ``Doe`` and ``Blow`` are :ref:`children (subclasses)<how to test if something is a subclass of a class>` of ``Person``
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 4
 
     class Doe(src.person.Person):
 
@@ -1216,14 +1233,18 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
         def __init__(self, first_name):
             self.last_name = 'blow'
 
-* In this case there is a simpler way to make ``joe`` and ``doe``. I could directly pass the values to the ``Person`` :ref:`class<what is a class?>` since all the ``Blow`` :ref:`class<what is a class?>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<what is a class?>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_family_ties.py``
+* In this case there is a simpler way to make ``joe`` and ``doe``. I could pass the values to the ``Person`` :ref:`class<what is a class?>` directly, since all the ``Blow`` :ref:`class<what is a class?>` does is customize the ``last_name`` :ref:`attribute<what is a class attribute?>`, there is nothing special about it or the ``Doe`` :ref:`class<what is a class?>`. I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 122
-    :emphasize-lines: 5-6
+    :lineno-start: 32
+    :emphasize-lines: 9-10
     :emphasize-text: person
 
-            # joe = src.family_ties.Doe('joe')
+        def test_classes_w_one_parent(self):
+            doe = src.family_ties.Doe('the_first')
+            # self.assertEqual(doe.last_name, '')
+            self.assertEqual(doe.last_name, 'doe')
+
             joe = src.family_ties.Blow('joe')
             self.assertEqual(joe.last_name, 'blow')
 
@@ -1242,7 +1263,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add ``last_name='blow'`` to the call
 
   .. code-block:: python
-    :lineno-start: 126
+    :lineno-start: 40
     :emphasize-lines: 1-2
 
             # blow = src.person.Person('joe')
@@ -1252,12 +1273,12 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  the test passes. I can make instances of :ref:`classes<what is a class?>` by customizing its :ref:`attributes<what is a class attribute?>` without having to make a new :ref:`class<what is a class?>`.
+  the test passes. I can make :ref:`an instance of a class<how to test if something is an instance of a class>` and change the values of its :ref:`attributes<what is a class attribute?>` without making a new :ref:`class<what is a class?>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 126
+    :lineno-start: 40
     :emphasize-lines: 5-6
 
             # blow = src.person.Person('joe')
@@ -1279,7 +1300,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 130
+    :lineno-start: 44
     :emphasize-lines: 2-3
 
             jane = src.person.Person('jane')
@@ -1294,7 +1315,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add an :ref:`assertion<what is an assertion?>` for ``john``
 
   .. code-block:: python
-    :lineno-start: 130
+    :lineno-start: 44
     :emphasize-lines: 5-6
 
             jane = src.person.Person('jane')
@@ -1311,12 +1332,13 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   .. code-block:: python
 
-    AttributeError: module 'src.family_ties' has no attribute 'Smith'
+    AttributeError: module 'src.family_ties'
+                    has no attribute 'Smith'
 
 * I add a :ref:`class definition<how to make a class>` for ``Smith`` to ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 10
     :emphasize-lines: 7
 
     class Blow(src.person.Person):
@@ -1338,12 +1360,13 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   .. code-block:: python
 
     john = src.family_ties.Smith('john')
-           Smith # Smith has no __init__, call Person
+           Smith # Smith has no __init__,
+           # call the parent of Smith (Person)
            Person.__init__('john')
                Person.__init__('john', last_name='doe')
                self.last_name = 'doe' # use the default value
 
-* I add the ``__init__`` :ref:`method<what is a method?>` in ``Smith``
+* I add the ``__init__`` :ref:`method<what is a method?>` to ``Smith``
 
   .. code-block:: Python
     :lineno-start: 25
@@ -1369,9 +1392,10 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     john = src.family_ties.Smith('john')
            Smith.__init__('john')
 
-  the definition for the ``__init__`` :ref:`method<what is a method?>` only allows one input (``self``) and it got called with two (``self`` and ``first_name``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method\?>` of ``Smith`` takes only one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
+  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Smith.__init__()``, ``self`` is ``Smith`` in ``Smith``. It would be like calling ``Smith.__init__(Smith)``.
 
-* I add ``first_name`` in parentheses
+* I add ``first_name`` to the parentheses of the ``__init__ `` :ref:`method<what is a method?>`
 
   .. code-block:: python
     :lineno-start: 25
@@ -1395,7 +1419,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 10
 
     class Blow(src.person.Person):
 
@@ -1413,7 +1437,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add another :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 134
+    :lineno-start: 44
     :emphasize-lines: 4-5
     :emphasize-text: person
 
@@ -1435,7 +1459,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 137
+    :lineno-start: 47
     :emphasize-lines: 2-3
 
             smith = src.person.Person('john', 'smith')
@@ -1453,7 +1477,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     :lineno-start: 112
 
         def test_classes_w_one_parent(self):
-            doe = src.family_ties.Doe('doe')
+            doe = src.family_ties.Doe('the_first')
             self.assertEqual(doe.last_name, 'doe')
 
             joe = src.family_ties.Blow('joe')
@@ -1518,7 +1542,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 test_classes_w_multiple_parents
 *********************************************************************************
 
-Can a :ref:`class<what is a class?>` have more than one parent?
+Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref:`attributes<what is a class attribute?>` set if they have more than one parent (super :ref:`class<what is a class?>`).
 
 ----
 
@@ -1533,7 +1557,7 @@ Can a :ref:`class<what is a class?>` have more than one parent?
 * I add a test with an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 133
+    :lineno-start: 43
     :emphasize-lines: 4-6
     :emphasize-text: Jane
 
@@ -1636,7 +1660,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for the last name of ``jane`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 46
     :emphasize-lines: 4
 
         def test_classes_w_multiple_parents(self):
@@ -1677,7 +1701,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 46
     :emphasize-lines: 5-7
 
         def test_classes_w_multiple_parents(self):
@@ -1784,7 +1808,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``mary``, another instance of ``Jane`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 46
     :emphasize-lines: 9-10
 
         def test_classes_w_multiple_parents(self):
@@ -1968,7 +1992,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``joe``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 46
     :emphasize-lines: 2-3
     :emphasize-text: Joe
 
@@ -2065,7 +2089,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure that ``joe`` is a ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 41
     :emphasize-lines: 5
 
         def test_classes_w_multiple_parents(self):
@@ -2101,7 +2125,7 @@ the test passes.
 * I add :ref:`issubclass<how to test if something is a subclass of a class>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 41
     :emphasize-lines: 5-7
 
         def test_classes_w_multiple_parents(self):
@@ -2174,7 +2198,7 @@ the test passes.
 * I add ``self.first_name`` to ``Blow``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 10
     :emphasize-lines: 4
 
     class Blow(src.person.Person):
@@ -2213,7 +2237,7 @@ the test passes.
 * I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 41
     :emphasize-lines: 8-10
 
         def test_classes_w_multiple_parents(self):
@@ -2238,7 +2262,7 @@ the test passes.
 * I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>` to make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 46
     :emphasize-lines: 8-9
 
         def test_classes_w_multiple_parents(self):
@@ -3211,7 +3235,7 @@ what happens when a child has more than one parent?
 * I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 5-7
 
             lil = src.family_ties.Lil()
@@ -3236,7 +3260,7 @@ what happens when a child has more than one parent?
 * I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>`
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 5-6
 
             lil = src.family_ties.Lil()
@@ -3256,7 +3280,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` to test ``John`` and ``Mary`` as parents of ``Lil``?
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 9-11
 
             lil = src.family_ties.Lil()
@@ -3294,7 +3318,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``first_name`` :ref:`attribute<what is a class attribute?>` of ``lil`` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 2
 
             lil = src.family_ties.Lil()
@@ -3349,7 +3373,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is an attribute?>` of ``lil``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 3
 
             lil = src.family_ties.Lil()
@@ -3649,7 +3673,7 @@ what happens when a child has more than one parent?
 * I add a call to the `super built-in function`_ in ``Blow``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 10
     :emphasize-lines: 4-7
 
     class Blow(src.person.Person):
@@ -3758,7 +3782,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for ``lil.last_name`` in :ref:`test_classes_w_multiple_parents`
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 3-4
 
             lil = src.family_ties.Lil()
@@ -3825,7 +3849,7 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instance<how to test if something is an instance of a class>` of ``Lil`` inherit ``eye_color`` from ``Jane``, the parent of ``Mary``
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 5
 
             lil = src.family_ties.Lil()
@@ -3856,7 +3880,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 190
+    :lineno-start: 100
     :emphasize-lines: 5-6
 
             lil = src.family_ties.Lil()
@@ -3996,7 +4020,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` in :ref:`test_classes_w_multiple_parents`
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 101
     :emphasize-lines: 6-7
 
             lil = src.family_ties.Lil()
@@ -4049,7 +4073,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` for ``lil.last_name``
 
   .. code-block:: python
-    :lineno-start: 191
+    :lineno-start: 101
     :emphasize-lines: 3-4
 
             lil = src.family_ties.Lil()
@@ -4448,7 +4472,7 @@ what happens when a child has more than one parent?
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 4
 
     class Doe(src.person.Person): pass
 
@@ -4499,7 +4523,7 @@ what happens when a child has more than one parent?
 * I remove the commented lines from :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 131
+    :lineno-start: 41
 
         def test_classes_w_multiple_parents(self):
             joe = src.family_ties.Joe()
