@@ -1498,7 +1498,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  * From the :ref:`class definition<how to make a class>` of ``Doe``, this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Doe`` is made
+  * From the :ref:`class definition<how to make a class>` of ``Doe``, this happens when :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Doe`` is made
 
     .. code-block:: python
 
@@ -1511,7 +1511,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     because :ref:`a method uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`.
 
-  * From the :ref:`class definitions<how to make a class>` of ``Smith`` and ``Blow`` this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Smith`` or ``Blow`` is made
+  * From the :ref:`class definitions<how to make a class>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Smith`` or ``Blow`` is made
 
     .. code-block:: python
 
@@ -1521,14 +1521,16 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     where ``ClassName`` is ``Smith`` or ``Blow``
 
-  * this happens when instances of the ``Person`` :ref:`class<what is a class?>` are made
+  * From the :ref:`class definition of Person<test_factory_person_says_hello>`, this happens when :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>` is made
 
     .. code-block:: python
 
-      instance = src.person.Person(first_name, last_name=last_name)
-                 Person.__init__(first_name, last_name=last_name)
-                 self.first_name = first_name
-                 self.last_name = last_name
+      src.person.Person(first_name, last_name=last_name)
+      Person.__init__(first_name, last_name=last_name)
+          self.first_name = first_name
+          self.last_name = last_name
+
+  it will use the :ref:`default value<test_w_optional_arguments>` for ``last_name`` if no value is given because :ref:`a function uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1537,7 +1539,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     git commit -am 'add test_classes_w_one_parent'
 
-:ref:`I can customize child classes with the __init__ method<test_classes_w_one_parent>`
+:ref:`I can customize child classes with the __init__ method<test_classes_w_one_parent>`.
 
 ----
 
@@ -1545,7 +1547,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 test_classes_w_multiple_parents
 *********************************************************************************
 
-Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref:`attributes<what is a class attribute?>` set if they have more than one parent (super :ref:`class<what is a class?>`).
+Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref:`attributes<what is a class attribute?>` set if they have more than one parent (super :ref:`class<what is a class?>`)?
 
 ----
 
@@ -1560,7 +1562,7 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
 * I add a test with an :ref:`assertion<what is an assertion?>` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 48
     :emphasize-lines: 4-6
     :emphasize-text: Jane
 
@@ -1578,7 +1580,8 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
 
   .. code-block:: python
 
-    AttributeError: module 'src.family_ties' has no attribute 'Jane'
+    AttributeError: module 'src.family_ties'
+                    has no attribute 'Jane'
 
 ----
 
@@ -1588,7 +1591,7 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
 
 ----
 
-* I add a :ref:`class<what is a class?>` for ``Jane`` to ``family_ties.py``
+* I add a :ref:`class definition<how to make a class>` for ``Jane`` to ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 16
