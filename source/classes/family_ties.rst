@@ -1213,7 +1213,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   I can :ref:`make classes<how to make a class>` that are related and have their own defaults. In this test
 
-  - the ``Doe`` :ref:`class<what is a class?>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_w_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribut?>` of ``Person``
+  - the ``Doe`` :ref:`class<what is a class?>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_w_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribute?>` of ``Person``
   - the ``Blow`` :ref:`class<what is a class?>` has a different :ref:`default value<test_w_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>`
   - ``Doe`` and ``Blow`` are :ref:`children (subclasses)<how to test if something is a subclass of a class>` of ``Person``
 
@@ -1369,7 +1369,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``Smith``
 
   .. code-block:: Python
-    :lineno-start: 25
+    :lineno-start: 16
     :emphasize-lines: 1-2, 4-5
 
     # class Smith(src.person.Person): pass
@@ -1392,13 +1392,13 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     john = src.family_ties.Smith('john')
            Smith.__init__('john')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method\?>` of ``Smith`` takes only one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
-  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Smith.__init__()``, ``self`` is ``Smith`` in ``Smith``. It would be like calling ``Smith.__init__(Smith)``.
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Smith`` takes only one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Smith.__init__('john')``, ``self`` is ``Smith`` in ``Smith``. It would be like calling ``Smith.__init__(Smith, 'john')``.
 
-* I add ``first_name`` to the parentheses of the ``__init__ `` :ref:`method<what is a method?>`
+* I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 16
     :emphasize-lines: 4-5
 
     # class Smith(src.person.Person): pass
@@ -1414,7 +1414,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     john = src.family_ties.Smith('john')
            Smith.__init__('john')
-           self.last_name = 'smith'
+               self.last_name = 'smith'
 
 * I remove the commented lines
 
@@ -1437,7 +1437,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I add another :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_one_parent` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 44
+    :lineno-start: 48
     :emphasize-lines: 4-5
     :emphasize-text: person
 
@@ -1459,7 +1459,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I change the expectation
 
   .. code-block:: python
-    :lineno-start: 47
+    :lineno-start: 51
     :emphasize-lines: 2-3
 
             smith = src.person.Person('john', 'smith')
@@ -1474,7 +1474,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 32
 
         def test_classes_w_one_parent(self):
             doe = src.family_ties.Doe('the_first')
@@ -1498,25 +1498,28 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     # Exceptions seen
 
-  * this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Doe`` is made
+  * From the :ref:`class definition<how to make a class>` of ``Doe``, this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Doe`` is made
 
     .. code-block:: python
 
-      instance = src.family_ties.Doe('the_first')
-                 Doe.__init__('the_first')
-                 super().__init__(first_name)
-                 Person.__init__('the_first')
-                 Person.__init__('the_first', last_name='doe')
-                 self.last_name = 'doe' # use the default value
+      src.family_ties.Doe('first_name')
+      Doe.__init__('first_name')
+          super().__init__(first_name)
+      Person.__init__('first_name')
+          Person.__init__('first_name', last_name='doe')
+          self.last_name = 'doe' # use the default value
 
-  * this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Smith`` and ``Blow`` are made
+    because :ref:`a method uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`.
+
+  * From the :ref:`class definitions<how to make a class>` of ``Smith`` and ``Blow`` this happens when an :ref:`instance<how to test if something is an instance of a class>` of ``Smith`` or ``Blow`` is made
 
     .. code-block:: python
 
-      instance = src.family_ties.ClassName('the_first')
-                 ClassName.__init__('the_first')
-                 self.last_name = 'last_name'
+      src.family_ties.ClassName('first_name')
+      ClassName.__init__('first_name')
+          self.last_name = 'last_name'
 
+    where ``ClassName`` is ``Smith`` or ``Blow``
 
   * this happens when instances of the ``Person`` :ref:`class<what is a class?>` are made
 
@@ -1588,7 +1591,7 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
 * I add a :ref:`class<what is a class?>` for ``Jane`` to ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 16
     :emphasize-lines: 7
 
     class Smith(src.person.Person):
@@ -1940,7 +1943,7 @@ the test passes.
 * I remove the commented lines and ``return None``
 
   .. code-block:: python
-    :lineno-start: 25
+    :lineno-start: 16
 
     class Smith(src.person.Person):
 
