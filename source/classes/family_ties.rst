@@ -1,6 +1,6 @@
 .. meta::
-  :description: Step-by-step TDD tutorial on Python inheritance, cooperative multiple inheritance, and Method Resolution Order (MRO). Learn how to inherit from parent classes, use the super() function to call parent constructors, inspect objects with dir(), and handle complex inheritance chains using double starred **kwargs. Learn to diagnose and resolve beginner bugs: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module has no attribute, and AssertionError: is not an instance of.
-  :keywords: Jacob Itegboje, Pumping Python, python inheritance tutorial for beginners, test-driven development multiple inheritance python, what is cooperative multiple inheritance, python method resolution order mro, how to use super function in python class, why do all python classes inherit from object, using isinstance and assertIsInstance in tests, how to use double starred expression kwargs in python class, class vs instance python, TypeError Blow.__init__ takes 1 positional argument but 2 were given, TypeError got an unexpected keyword argument last_name, TypeError Person.__init__ missing 1 required positional argument, AttributeError module classes has no attribute Doe, NameError name person is not defined, AssertionError is not an instance of, method resolution order python super constructor, C3 linearization python multiple inheritance, pass keyword in python class inheritance, python class with parentheses vs without parentheses, how to call parent __init__ constructor, python red green refactor multiple inheritance tutorial, diamond problem python super, Doe, Blow, Smith, Jane, Joe, Mary, John, Lil
+  :description: Step-by-step TDD tutorial on Python cooperative multiple inheritance (family ties chapter), Method Resolution Order (MRO), super() for parent __init__ calls, and inheriting from a Person base class built in prior chapters. Follow red-green-refactor to create Doe, Blow, Smith (class attr eye_color), Jane, Joe, Mary (Joe + Jane), John, Lil (Mary + John) with custom last_name and eye_color. Diagnose and fix real beginner errors shown: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module 'src.family_ties' has no attribute 'Blow', AssertionError: 'brown' != '', "is not an instance of", initial AssertionError: True is not false. Uses only local variables in TestFamilyTies methods (no setUp), assertIsInstance/assertNotIsInstance/assertIsSubclass on classes vs instances, dir() comparisons. Builds directly on how_to/make_person (Person + factory), classes, and inheritance ("everything is an object").
+  :keywords: Jacob Itegboje, Pumping Python, python cooperative multiple inheritance tutorial, python MRO method resolution order for beginners, super __init__ cooperative inheritance python, family ties python tdd Doe Blow Smith Jane Joe Mary John Lil, python multiple inheritance order of parents matters, TypeError takes 1 positional argument but 2 were given, TypeError got an unexpected keyword argument last_name, AttributeError module src.family_ties has no attribute, AssertionError is not an instance of, python inherit from Person class TDD, no setUp needed local variables each test, assertIsSubclass assertIsInstance unittest inheritance, C3 linearization python, diamond problem python super, red green refactor multiple inheritance, python class with parent tutorial for beginners
 
 .. include:: ../links.rst
 
@@ -63,20 +63,6 @@ Questions to think about as I go through the chapter
 * :ref:`how can I make a class with more than one parent?<test_classes_w_multiple_parents>`
 * :ref:`how can I call a parent class from a child class?<how to call the parent from the child>`
 * :ref:`what happens when a class has more than one parent?<what happens when a child has more than one parent?>`
-* :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
-* :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
-* :ref:`how can I make a class with object?<test_making_a_class_w_object>`
-* :ref:`is None an object?<test_is_none_an_object>`
-* :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
-* :ref:`is an integer an object?<test_is_an_integer_an_object>`
-* :ref:`is a float an object?<test_is_a_float_an_object>`
-* :ref:`is a string an object?<test_is_a_string_an_object>`
-* :ref:`is a tuple an object?<test_is_a_tuple_an_object>`
-* :ref:`is a list an object?<test_is_a_list_an_object>`
-* :ref:`is a set an object?<test_is_a_set_an_object>`
-* :ref:`is a dictionary an object?<test_is_a_dictionary_an_object>`
-* :ref:`what is the difference between an instance and a subclass?<instance vs subclass>`
-* :ref:`what do all Python objects inherit from?<everything is an object>`
 
 ----
 
@@ -1007,7 +993,7 @@ I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`cl
 ----
 
 * I go back to the terminal_ that is running the tests
-* I add a new test for :ref:`Inheritance<test_attributes_and_methods_of_objects>` with an :ref:`assertion<what is an assertion?>`, in ``test_classes.py``
+* I add a new test for :ref:`Inheritance<test_attributes_and_methods_of_objects>` with an :ref:`assertion<what is an assertion?>`, in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 28
@@ -1097,7 +1083,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
     AttributeError: module 'src.family_ties' has no attribute 'Blow'
 
-  because there is no :ref:`definition<how to make a class>` for ``Blow`` in ``classes.py``
+  because there is no :ref:`definition<how to make a class>` for ``Blow`` in ``family_ties.py``
 
 * I add a new :ref:`class definition<how to make a class>` to ``family_ties.py``
 
@@ -2850,7 +2836,7 @@ what happens when a child has more than one parent?
     * the  ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called
 
 
-* I remove the commented lines from ``Joe`` and ``Mary`` in ``classes.py``
+* I remove the commented lines from ``Joe`` and ``Mary`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 23
@@ -3712,7 +3698,7 @@ what happens when a child has more than one parent?
 
   the order of the parents matters.
 
-* I remove the commented lines from ``classes.py``
+* I remove the commented lines from ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 10
@@ -3774,7 +3760,7 @@ what happens when a child has more than one parent?
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 90
@@ -3887,7 +3873,7 @@ what happens when a child has more than one parent?
 
     AttributeError: 'John' object has no attribute 'eye_color'
 
-* I add the ``eye_color`` :ref:`attribute<what is a class attribute?>` to ``Smith`` in ``classes.py``
+* I add the ``eye_color`` :ref:`attribute<what is a class attribute?>` to ``Smith`` in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -3909,7 +3895,7 @@ what happens when a child has more than one parent?
 
     AssertionError: 'brown' != ''
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``john.eye_color`` in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``john.eye_color`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
     :lineno-start: 85
@@ -4022,7 +4008,7 @@ what happens when a child has more than one parent?
 
   .. code-block:: python
 
-    lil = src.person.Lil()
+    lil = src.family_ties.Lil()
     lil = src.person.Person('lil', john.last_name)
     lil.eye_color = mary.eye_color
 
@@ -4051,8 +4037,7 @@ I can make a :ref:`class<what is a class?>` with
 * :ref:`object<test_making_a_class_w_object>`
 * :ref:`its parent<test_making_a_class_w_inheritance>`
 * :ref:`multiple parents<test_classes_w_multiple_parents>`
-* :ref:`I can make a class with object<test_making_a_class_w_object>`
-* :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`.
+* :ref:`all classes inherit from 'object'<test_making_a_class_w_object>`
 
 ----
 
@@ -4085,22 +4070,6 @@ code from the chapter
 *************************************************************************************
 
 :ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
-
-----
-
-*************************************************************************************
-what is next?
-*************************************************************************************
-
-you have gone through a lot of things and know
-
-* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
-* :ref:`what causes AssertionError?`
-* :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to use classes<classes>`
-* :ref:`how to make classes<everything is an object>`
 
 ----
 

@@ -5,15 +5,15 @@
 .. include:: ../links.rst
 
 #################################################################################
-functions 2: use variables
+functions 2: use class attributes
 #################################################################################
 
-Since I know how to use :ref:`variables<what is a variable?>`, I can do better with the results of :ref:`test_why_use_a_function`
+In :ref:`Assertion Error 2: use class attributes` I used :ref:`class attributes<what is a class attribute?>` to remove repetition from the :ref:`assertion_error project<what is an assertion?>`. I want to do the same thing in the :ref:`functions project<what is a function?>`.
 
 ----
 
 *********************************************************************************
-open the project
+continue the project
 *********************************************************************************
 
 * I `change directory`_ to the ``functions`` folder_
@@ -44,13 +44,134 @@ open the project
 
     rootdir: .../pumping_python/functions
     configfile: pyproject.toml
-    collected 11 items
+    collected 12 items
 
-    tests/test_functions.py ...........                           [100%]
+    tests/test_functions.py ............                  [100%]
 
-    ======================= 11 passed in X.YZs =========================
+    =================== 12 passed in X.YZs =====================
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_functions.py`` to open it in the :ref:`editor<2 editors>`
+
+----
+
+* I add :ref:`class attributes<what is a class attribute?>` to use to remove repetition of ``'first'`` and ``'last'`` from the tests
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 3-4
+
+    class TestFunctions(unittest.TestCase):
+
+        first = 'first'
+        last = 'last'
+
+        def test_why_use_a_function(self):
+
+* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_w_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 136
+    :emphasize-lines: 2, 5-6, 8-9, 13-14, 16-17
+
+        def test_w_positional_arguments(self):
+            # first, last = 'first', 'last'
+
+            reality = src.functions.w_positional_arguments(
+                # first, last,
+                self.first, self.last,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_positional_arguments(
+                # last, first,
+                self.last, self.first,
+            )
+            # my_expectation = (last, first)
+            my_expectation = (self.last, self.first)
+            self.assertEqual(reality, my_expectation)
+
+  the test is still green.
+
+* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_w_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 170
+    :emphasize-lines: 2, 5-7, 9-10, 14-16, 18-19, 23-24, 26-27
+
+        def test_w_keyword_arguments(self):
+            # first, last = 'first', 'last'
+
+            reality = src.functions.w_keyword_arguments(
+                # first_input=first, last_input=last,
+                first_input=self.first,
+                last_input=self.last,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                # last_input=last, first_input=first,
+                last_input=self.last,
+                first_input=self.first,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                # last, first,
+                self.last, self.first,
+            )
+            # my_expectation = (last, first)
+            my_expectation = (self.last, self.first)
+            self.assertEqual(reality, my_expectation)
+
+  still green.
+
+* I use the :ref:`class attributes<what is a class attribute?>` to remove ``'first'`` and ``'last'`` from :ref:`test_w_args_and_kwargs`
+
+  .. code-block:: python
+    :lineno-start: 224
+    :emphasize-lines: 2, 5-6, 9-10
+
+        def test_w_args_and_kwargs(self):
+            # first, last = 'first', 'last'
+            reality = (
+                src.functions.w_args_and_kwargs(
+                    # first, last_input=last,
+                    self.first, last_input=self.last,
+                )
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+        def test_w_optional_arguments(self):
+
+  green.
+
+* I remove the commented lines from :ref:`test_w_args_and_kwargs`
+
+  .. code-block:: python
+    :lineno-start: 224
+
+        def test_w_args_and_kwargs(self):
+            reality = (
+                src.functions.w_args_and_kwargs(
+                    self.first, last_input=self.last,
+                )
+            )
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+        def test_w_optional_arguments(self):
+
+----
+
+* 
 
 ----
 
