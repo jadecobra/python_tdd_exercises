@@ -1530,7 +1530,7 @@ remove repetition with class attributes
 
   because ``self`` is not defined outside the :ref:`methods<what is a method?>` I can declare the :ref:`class attributes<what is a class attribute?>` the same way I do :ref:`variables<what is a variable?>` as long as it is indented under the :ref:`class definition<how to make a class>`
 
-* I add :ref:`NameError<test_catching_name_error>` to the list of :ref:`Exceptions<errors>`
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>`
 
   .. code-block:: python
     :lineno-start: 200
@@ -1661,7 +1661,7 @@ As a reminder, you know
 * :ref:`how to make classes<classes>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 
-:ref:`Would you like to test AttributeError?<what causes AttributeError?>`
+:ref:`Would you like to use class attributes with the 'functions' project?<Functions 2: use class attributes>`
 
 ----
 
