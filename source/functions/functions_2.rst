@@ -8,7 +8,7 @@
 functions 2: use class attributes
 #################################################################################
 
-In :ref:`Assertion Error 2: use class attributes` I used :ref:`class attributes<what is a class attribute?>` to remove repetition from the :ref:`assertion_error project<what is an assertion?>`. I want to do the same thing in the :ref:`functions project<what is a function?>`.
+In :ref:`AssertionError 2: use class attributes` I used :ref:`class attributes<what is a class attribute?>` to remove repetition from the :ref:`assertion_error project<what is an assertion?>`. I want to do the same thing in the :ref:`functions project<what is a function?>`.
 
 ----
 
@@ -171,7 +171,154 @@ continue the project
 
 ----
 
-* 
+* I add a :ref:`class attribute<what is a class attribute?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the tests
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 5
+
+    class TestFunctions(unittest.TestCase):
+
+        first = 'first'
+        last = 'last'
+        a_tuple = (1, 2, 3, 'n')
+
+        def test_why_use_a_function(self):
+
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_w_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 137
+    :emphasize-lines: 27, 30-31, 33-34
+
+        def test_w_positional_arguments(self):
+            # first, last = 'first', 'last'
+
+            reality = src.functions.w_positional_arguments(
+                # first, last,
+                self.first, self.last,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_positional_arguments(
+                # last, first,
+                self.last, self.first,
+            )
+            # my_expectation = (last, first)
+            my_expectation = (self.last, self.first)
+            self.assertEqual(reality, my_expectation)
+
+            first_number, second_number = 0, 1
+            reality = src.functions.w_positional_arguments(
+                first_number, second_number,
+            )
+            my_expectation = (first_number, second_number)
+            self.assertEqual(reality, my_expectation)
+
+            # a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            reality = src.functions.w_positional_arguments(
+                # a_tuple, a_list,
+                self.a_tuple, a_list,
+            )
+            # my_expectation = (a_tuple, a_list)
+            my_expectation = (self.a_tuple, a_list)
+            self.assertEqual(reality, my_expectation)
+
+        def test_w_keyword_arguments(self):
+
+  still green.
+
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_w_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 173
+    :emphasize-lines: 46, 50-51, 53-54
+
+        def test_w_keyword_arguments(self):
+            # first, last = 'first', 'last'
+
+            reality = src.functions.w_keyword_arguments(
+                # first_input=first, last_input=last,
+                first_input=self.first,
+                last_input=self.last,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                # last_input=last, first_input=first,
+                last_input=self.last,
+                first_input=self.first,
+            )
+            # my_expectation = (first, last)
+            my_expectation = (self.first, self.last)
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.w_keyword_arguments(
+                # last, first,
+                self.last, self.first,
+            )
+            # my_expectation = (last, first)
+            my_expectation = (self.last, self.first)
+            self.assertEqual(reality, my_expectation)
+
+            zero, one = 0, 1
+            reality = src.functions.w_keyword_arguments(
+                last_input=zero, first_input=one,
+            )
+            my_expectation = (one, zero)
+            self.assertEqual(reality, my_expectation)
+
+            a_set = {1, 2, 3, 'n'}
+            a_dictionary = {'key': 'value'}
+            reality = src.functions.w_keyword_arguments(
+                first_input=a_set,
+                last_input=a_dictionary,
+            )
+            my_expectation = (a_set, a_dictionary)
+            self.assertEqual(reality, my_expectation)
+
+            # a_tuple = (1, 2, 3, 'n')
+            a_list = [1, 2, 3, 'n']
+            reality = src.functions.w_positional_arguments(
+                first_input=a_list,
+                # last_input=a_tuple,
+                last_input=self.a_tuple,
+            )
+            # my_expectation = (a_list, a_tuple)
+            my_expectation = (a_list, self.a_tuple)
+            self.assertEqual(reality, my_expectation)
+
+        def test_w_args_and_kwargs(self):
+
+  the test is still green.
+
+----
+
+* I add a :ref:`class attribute<what is a class attribute?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the tests
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 6
+
+    class TestFunctions(unittest.TestCase):
+
+        first = 'first'
+        last = 'last'
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+
+        def test_why_use_a_function(self):
+
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[1, 2, 3, 'n']`` from :ref:`test_w_positional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 138
+    :emphasize-lines: 27, 30-31, 33-34
 
 ----
 
@@ -627,7 +774,7 @@ you know
 * :ref:`what is True and False in Python<what are booleans?>`
 * :ref:`how to write programs that make decisions<truth table>`
 * :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to use a variable<functions 2: use variables>`
+* :ref:`how to use a variable<functions 2: use class attributes>`
 
 There is a problem, I have done these same steps for each of the chapters up till now
 
