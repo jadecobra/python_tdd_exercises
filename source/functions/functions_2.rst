@@ -593,7 +593,7 @@ continue the project
             )
             # my_expectation = (one, zero)
             my_expectation = (
-                self.first_number, self.second_number
+                self.second_number, self.first_number
             )
             self.assertEqual(reality, my_expectation)
 
@@ -652,7 +652,7 @@ continue the project
                 first_input=self.second_number,
             )
             my_expectation = (
-                self.first_number, self.second_number
+                self.second_number, self.first_number
             )
             self.assertEqual(reality, my_expectation)
 
@@ -706,7 +706,24 @@ close the project
 review
 *********************************************************************************
 
-I can use :ref:`class attributes<what is a class attribute?>` for things that repeat, which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them.
+In :ref:`AssertionError 2: use class attributes` I used :ref:`class attributes<what is a class attribute?>` to remove repetition. The :ref:`classes` chapter shows the :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>` to make new values before every test, for example when I want random values for each test.
+
+In some cases the values I need are the same for every test, which means I do not need :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>` because the :ref:`class attributes<what is a class attribute?>` are the same for every test and I do not need anything to run before each test.
+
+I can place the constants directly under the ``TestFunctions`` class:
+
+.. code-block:: python
+
+    first = 'first'
+    last = 'last'
+    a_tuple = (1, 2, 3, 'n')
+    a_list = [1, 2, 3, 'n']
+    first_number = 0
+    second_number = 1
+
+then :ref:`test_w_positional_arguments`, :ref:`test_w_keyword_arguments` and :ref:`test_w_args_and_kwargs` use ``self.first`` and so on, instead repeated values.
+
+I can use :ref:`class attributes<what is a class attribute?>` for things that repeat (when they are constants), which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them without :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>`.
 
 ----
 

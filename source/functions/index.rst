@@ -5010,6 +5010,11 @@ you have covered a bit so far and know
 * :ref:`what causes AssertionError?` and
 * :ref:`how to make functions<what is a function?>`
 
+Optional continuations in the same ``functions`` project (after you know :ref:`classes<what is a class?>` and :ref:`AssertionError 2<AssertionError 2: use class attributes>`):
+
+* :ref:`Functions 2: use class attributes<Functions 2: use class attributes>` - remove repetition of literal values in ``test_w_positional_arguments``, ``test_w_keyword_arguments`` and ``test_w_args_and_kwargs`` by using class attributes on ``TestFunctions`` (no setUp needed for these constants)
+* functions 3 - use for loops (and list comprehensions) to DRY the repetitive ``test_why_use_a_function``
+
 :ref:`Would you like to test how to pass values from tests to functions with assert methods?<telephone>`
 
 ----

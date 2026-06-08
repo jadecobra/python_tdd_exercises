@@ -28,9 +28,9 @@ the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a f
 functions 2: tests
 *********************************************************************************
 
-the code from ``functions/tests/test_functions.py`` from :ref:`functions 2`
+the code from ``functions/tests/test_functions.py`` (after refactor) from :ref:`Functions 2: use class attributes`
 
-.. literalinclude:: functions/test_functions_calculator.py
+.. literalinclude:: functions/test_functions_2.py
   :language: python
   :linenos:
 
