@@ -147,17 +147,6 @@ requirements
 
 * I open ``test_none.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. tip::
-
-    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      code tests/test_none.py
-
-    `Visual Studio Code`_ opens ``test_none.py`` in the :ref:`editor<2 editors>`
-
 * I add :ref:`the first failing test<test_failure>` to ``test_none.py``
 
   .. code-block:: python
@@ -205,14 +194,14 @@ requirements
 
   the terminal_ goes back to the command line.
 
-* I install the `Python packages`_ that I wrote in the requirements file_
+* I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
 
-  the terminal_ shows that it installed the `Python packages`_
+  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies
 
 * I use `pytest-watcher`_ to run the tests automatically
 

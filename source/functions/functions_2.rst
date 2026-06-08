@@ -674,7 +674,14 @@ continue the project
 
         def test_w_args_and_kwargs(self):
 
-:ref:`I can use a variable to remove repetition<what is a variable?>`
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'extract class attributes'
+
+:ref:`I can use class attributes to remove repetition<what is a class attribute?>`
 
 ----
 
@@ -683,6 +690,7 @@ close the project
 *********************************************************************************
 
 * I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
+* I go back to the terminal_ that is running the tests
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``functions``

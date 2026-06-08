@@ -61,14 +61,14 @@ open the project
     flask
     streamlit
 
-* I install the `Python packages`_ that I wrote in the requirements file_
+* I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
 
-  the terminal_ shows that it installed the `Python packages`_
+  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies
 
 * I use ``pytest-watcher`` to run the tests
 

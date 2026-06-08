@@ -16,7 +16,7 @@ what causes AttributeError?
 
 ----
 
-AttributeError_ is raised when I use a name that is NOT in an :ref:`object<what is a class?>`.
+So far, all the tests show that I get AttributeError_ when I use a name that is NOT in an :ref:`object<what is a class?>`.
 
 ----
 
@@ -24,7 +24,7 @@ AttributeError_ is raised when I use a name that is NOT in an :ref:`object<what 
 what is an attribute?
 *********************************************************************************
 
-An :ref:`attribute<what causes AttributeError?>` is a name for something that belongs to an :ref:`object<what is a class?>`, for example, a human being has attributes like height, weight, sex and color, they are also known as properties.
+An :ref:`attribute<what causes AttributeError?>` is a :ref:`name (variable?)<what is a variable?>` for something that belongs to :ref:`an object (a class)<what is a class?>`, for example, a human being has attributes like height, weight, sex and color, they are also known as properties.
 
 ----
 
@@ -46,14 +46,21 @@ start the project
 
 * I name this project ``attribute_error``
 * I open a terminal_
-* I make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir attribute_error
+    uv init attribute_error
 
-  the terminal_ goes back to the command line.
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    Initialized project `attribute-error`
+    at `.../pumping_python/attribute_error`
+
+  then goes back to the command line.
 
 * I change directory_ to the project
 
@@ -77,7 +84,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``attribute_error.py`` and move it to the ``src`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -88,7 +95,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch src/attribute_error.py
+        mv main.py src/attribute_error.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -96,7 +103,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item src/attribute_error.py
+        Move-Item main.py src/attribute_error.py
 
   the terminal_ goes back to the command line.
 
@@ -159,17 +166,6 @@ start the project
 
 * I open ``test_attribute_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
 
-  .. tip::
-
-    I can open a file_ from the terminal_ in the `Integrated Development Environment (IDE)`_ with the name of the program_ and the name of the file_. That means if I type this in the terminal_
-
-    .. code-block:: shell
-      :emphasize-lines: 1
-
-      code tests/test_attribute_error.py
-
-    `Visual Studio Code`_ opens ``test_attribute_error.py`` in the :ref:`editor<2 editors>`
-
 * I add :ref:`the first failing test<test_failure>` to ``test_attribute_error.py``
 
   .. code-block:: python
@@ -193,38 +189,14 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `attribute_error`
-
-  then goes back to the command line.
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line.
-
-* I install the `Python packages`_ that I wrote in the requirements file_
+* I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
 
     uv add --requirement requirements.txt
 
-  the terminal_ shows that it installed the `Python packages`_
+  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -239,8 +211,8 @@ start the project
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ================================ FAILURES ================================
-    ____________________ TestAttributeError.test_failure _____________________
+    ============================ FAILURES ============================
+    ________________ TestAttributeError.test_failure _________________
 
     self = <tests.test_attribute_error.AttributeError testMethod=test_failure>
 
@@ -249,9 +221,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_attribute_error.py:7: AssertionError
-    ======================== short test summary info =========================
+    ==================== short test summary info =====================
     FAILED tests/test_attribute_error.py::TestAttributeError::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    ======================= 1 failed in X.YZs ========================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
@@ -330,12 +302,12 @@ test_attribute_error_w_variables
   - ``src`` is the ``src`` folder_
   - ``src.attribute_error`` points to ``attribute_error.py`` in the ``src`` folder_
   - ``src.attribute_error.variable_00`` points to ``variable_00`` in ``attribute_error.py`` in the ``src`` folder_
-
-  Since ``attribute_error.py`` is empty, Python_ cannot find ``variable_00`` inside it and raises AttributeError_
+  - since there is nothing in ``attribute_error.py`` named ``variable_00``, Python_ cannot find ``variable_00`` inside ``attribute_error.py`` and raises AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.attribute_error' has no attribute 'variable_00'
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_00'
 
   ``variable_00`` is NOT an attribute of ``attribute_error.py`` in the ``src`` folder_
 
@@ -360,7 +332,7 @@ test_attribute_error_w_variables
 
 * I open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
 
-* I add the name to ``attribute_error.py``
+* I delete all the text in the file_, then add the name to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -374,7 +346,7 @@ test_attribute_error_w_variables
 
     NameError: name 'variable_00' is not defined
 
-  :ref:`NameError<test_catching_name_error_in_tests>` is raised when I use a name that is not defined in the file_ I am working in
+  because I used a name that is not defined in this file_
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
@@ -388,7 +360,7 @@ test_attribute_error_w_variables
     # AttributeError
     # NameError
 
-* I point ``variable_00`` to :ref:`None<what is None?>` in ``attribute_error.py``
+* I point ``variable_00`` to :ref:`None<what is None?>`, in ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -396,9 +368,8 @@ test_attribute_error_w_variables
 
     variable_00 = None
 
-  the test passes.
-
-``variable_00`` is now an attribute or property of ``attribute_error.py`` in the ``src`` folder_, I can use it with ``src.attribute_error.variable_00``
+  - the test passes because ``variable_00`` is now an :ref:`attribute<what is a class attribute?>` or property of ``attribute_error.py`` in the ``src`` folder_
+  - I can use it from outside the file_ with ``src.attribute_error.variable_00``
 
 ----
 
@@ -418,11 +389,16 @@ test_attribute_error_w_variables
             src.attribute_error.variable_00
             src.attribute_error.variable_01
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.attribute_error' has no attribute 'variable_01'. Did you mean: 'variable_00'?
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_01'.
+                    Did you mean: 'variable_00'?
 
 * I add the name to ``attribute_error.py``
 
@@ -461,12 +437,17 @@ test_attribute_error_w_variables
             src.attribute_error.variable_01
             src.attribute_error.variable_02
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
     :force:
 
-    AttributeError: module 'src.attribute_error' has no attribute 'variable_02'. Did you mean: 'variable_00'?
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_02'.
+                    Did you mean: 'variable_00'?
 
 * I add the name and point it to :ref:`None<what is None?>` in ``attribute_error.py``
 
@@ -480,7 +461,7 @@ test_attribute_error_w_variables
 
   the test passes.
 
-* one more line in ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.variable_03`` in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -493,13 +474,18 @@ test_attribute_error_w_variables
             src.attribute_error.variable_02
             src.attribute_error.variable_03
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.attribute_error' has no attribute 'variable_03'. Did you mean: 'variable_00'?
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_03'.
+                    Did you mean: 'variable_00'?
 
-* I add the attribute to ``attribute_error.py``
+* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
 
   .. code-block:: python
     :linenos:
@@ -512,9 +498,270 @@ test_attribute_error_w_variables
 
   the test passes.
 
-.. note::
+* I add a line for ``src.attribute_error.variable_04`` in ``test_attribute_error.py``
 
-  :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 6
+
+
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
+            src.attribute_error.variable_03
+            src.attribute_error.variable_04
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_04'.
+                    Did you mean: 'variable_00'?
+
+* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 5
+
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.variable_05`` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 7
+
+
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
+            src.attribute_error.variable_03
+            src.attribute_error.variable_04
+            src.attribute_error.variable_05
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_05'.
+                    Did you mean: 'variable_00'?
+
+* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6
+
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+    variable_05 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.variable_06`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 8
+
+
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
+            src.attribute_error.variable_03
+            src.attribute_error.variable_04
+            src.attribute_error.variable_05
+            src.attribute_error.variable_06
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_06'.
+                    Did you mean: 'variable_00'?
+
+* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7
+
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+    variable_05 = None
+    variable_06 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.variable_07`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 9
+
+
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
+            src.attribute_error.variable_03
+            src.attribute_error.variable_04
+            src.attribute_error.variable_05
+            src.attribute_error.variable_06
+            src.attribute_error.variable_07
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_07'.
+                    Did you mean: 'variable_00'?
+
+* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8
+
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+    variable_05 = None
+    variable_06 = None
+    variable_07 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.variable_08`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 10
+
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
+            src.attribute_error.variable_03
+            src.attribute_error.variable_04
+            src.attribute_error.variable_05
+            src.attribute_error.variable_06
+            src.attribute_error.variable_07
+            src.attribute_error.variable_08
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_08'.
+                    Did you mean: 'variable_00'?
+
+* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 9
+
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+    variable_05 = None
+    variable_06 = None
+    variable_07 = None
+    variable_08 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.variable_09`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 11
+
+
+        def test_attribute_error_w_variables(self):
+            src.attribute_error.variable_00
+            src.attribute_error.variable_01
+            src.attribute_error.variable_02
+            src.attribute_error.variable_03
+            src.attribute_error.variable_04
+            src.attribute_error.variable_05
+            src.attribute_error.variable_06
+            src.attribute_error.variable_07
+            src.attribute_error.variable_08
+            src.attribute_error.variable_09
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'variable_09'.
+                    Did you mean: 'variable_00'?
+
+* I add the :ref:`variable<what is a variable?>` to ``attribute_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10
+
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+    variable_05 = None
+    variable_06 = None
+    variable_07 = None
+    variable_08 = None
+    variable_09 = None
+
+  the test passes.
+
+:ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
 ----
 
@@ -624,7 +871,7 @@ the terminal_ is my friend, and shows AttributeError_
 
 ----
 
-* time to do it as a drill, I add another call in ``test_attribute_error.py``
+* time to do it as a drill, I add another call to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -691,7 +938,7 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-* I add another failing line in ``test_attribute_error.py``
+* I add another failing line to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -927,7 +1174,7 @@ the terminal_ is my friend, and shows AttributeError_
 
     AttributeError: type object 'AClass' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
 
-* I add the attribute to ``AClass`` in ``attribute_error.py``
+* I add the :ref:`variable<what is a variable?>` to ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 23

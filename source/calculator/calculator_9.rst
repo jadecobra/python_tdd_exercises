@@ -76,7 +76,7 @@ open the project
 
   Flask_ is a Python_ library that is used for making websites, it is not part of `The Python Standard Library`_
 
-* I install the `Python packages`_ that I wrote in the requirements file_
+* I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
     :emphasize-lines: 1
