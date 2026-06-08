@@ -1,43 +1,39 @@
-import src.classes
+import src.family_ties
 import unittest
 
 
-class TestClasses(unittest.TestCase):
+class TestFamilyTies(unittest.TestCase):
 
     def test_making_a_class_w_inheritance(self):
-        a_class = src.classes.Doe
+        person_class = src.person.Person
+        doe_class = src.family_ties.Doe
+        doe_instance = doe_class('the_first')
 
-        assert not isinstance(a_class, src.person.Person)
         self.assertNotIsInstance(
-            a_class, src.person.Person
+            doe_class, person_class
         )
 
-        assert issubclass(a_class, src.person.Person)
+        self.assertNotIsInstance(
+            doe_class, doe_class
+        )
+
         self.assertIsSubclass(
-            a_class, src.person.Person
+            doe_class, person_class
         )
 
-        assert not isinstance(a_class, a_class)
-        self.assertNotIsInstance(a_class, a_class)
-
-        an_instance = src.classes.Doe('first_name')
-        assert isinstance(
-            an_instance, src.person.Person
-        )
         self.assertIsInstance(
-            an_instance, src.person.Person
+            doe_instance, person_class
         )
 
         self.assertEqual(
-            dir(a_class),
-            dir(src.person.Person)
+            dir(doe_class), dir(person_class)
         )
 
     def test_classes_w_one_parent(self):
-        doe = src.classes.Doe('doe')
+        doe = src.family_ties.Doe('the_first')
         self.assertEqual(doe.last_name, 'doe')
 
-        joe = src.classes.Blow('joe')
+        joe = src.family_ties.Blow('joe')
         self.assertEqual(joe.last_name, 'blow')
 
         blow = src.person.Person('joe', last_name='blow')
@@ -46,84 +42,57 @@ class TestClasses(unittest.TestCase):
         jane = src.person.Person('jane')
         self.assertEqual(jane.last_name, doe.last_name)
 
-        john = src.classes.Smith('john')
+        john = src.family_ties.Smith('john')
         self.assertEqual(john.last_name, 'smith')
 
         smith = src.person.Person('john', 'smith')
         self.assertEqual(smith.last_name, john.last_name)
 
     def test_classes_w_multiple_parents(self):
-        joe = src.classes.Joe()
+        joe = src.family_ties.Joe()
         self.assertEqual(joe.first_name, 'joe')
         self.assertEqual(joe.last_name, 'blow')
-        assert issubclass(
-            src.classes.Joe, src.classes.Blow
-        )
-        # self.assertNotIsSubclass(
+        self.assertEqual(joe.eye_color, 'blue')
         self.assertIsSubclass(
-            src.classes.Joe, src.classes.Blow
+            src.family_ties.Joe, src.family_ties.Blow
         )
 
-        jane = src.classes.Jane()
+        jane = src.family_ties.Jane()
         self.assertEqual(jane.first_name, 'jane')
         self.assertEqual(jane.last_name, 'doe')
-        self.assertEqual(jane.eye_color, 'brown')
+        self.assertEqual(jane.eye_color, 'green')
         self.assertIsSubclass(
-            src.classes.Jane, src.classes.Doe
+            src.family_ties.Jane, src.family_ties.Doe
         )
 
-        # mary = src.classes.Jane('mary')
-        mary = src.classes.Mary()
+        mary = src.family_ties.Mary()
         self.assertEqual(mary.first_name, 'mary')
-        # self.assertEqual(mary.last_name, mary.first_name)
-        # self.assertEqual(mary.last_name, jane.last_name)
-        self.assertEqual(mary.last_name, joe.last_name)
-        # self.assertEqual(mary.eye_color, jane.eye_color)
-        self.assertEqual(mary.eye_color, 'red')
-        # assert not issubclass(
-        assert issubclass(
-            src.classes.Mary, src.classes.Jane
-        )
-        # self.assertNotIsSubclass(
+        self.assertEqual(mary.last_name, jane.last_name)
+        self.assertEqual(mary.eye_color, joe.eye_color)
         self.assertIsSubclass(
-            src.classes.Mary, src.classes.Jane
+            src.family_ties.Mary, src.family_ties.Jane
         )
-        assert issubclass(
-            src.classes.Mary, src.classes.Joe
-        )
-        # self.assertNotIsSubclass(
         self.assertIsSubclass(
-            src.classes.Mary, src.classes.Joe
+            src.family_ties.Mary, src.family_ties.Joe
         )
 
-        john = src.classes.John()
+        john = src.family_ties.John()
         self.assertEqual(john.first_name, 'john')
         self.assertEqual(john.last_name, 'smith')
-        self.assertEqual(john.eye_color, 'orange')
-        assert issubclass(
-            src.classes.John, src.classes.Smith
-        )
-        # self.assertNotIsSubclass(
+        self.assertEqual(john.eye_color, 'brown')
         self.assertIsSubclass(
-            src.classes.John, src.classes.Smith
+            src.family_ties.John, src.family_ties.Smith
         )
 
-        lil = src.classes.Lil()
+        lil = src.family_ties.Lil()
         self.assertEqual(lil.first_name, 'lil')
-        self.assertEqual(lil.last_name, mary.last_name)
-        # self.assertEqual(lil.last_name, john.last_name)
-        # self.assertEqual(lil.eye_color, '')
-        # self.assertEqual(lil.eye_color, jane.eye_color)
+        self.assertEqual(lil.last_name, john.last_name)
         self.assertEqual(lil.eye_color, mary.eye_color)
-        assert issubclass(
-            src.classes.Lil, src.classes.John
-        )
-        # self.assertNotIsSubclass(
         self.assertIsSubclass(
-            src.classes.Lil, src.classes.John
+            src.family_ties.Lil, src.family_ties.John
         )
-        assert issubclass(
-            src.classes.Lil, src.classes.Mary
+        self.assertIsSubclass(
+            src.family_ties.Lil, src.family_ties.Mary
         )
 
 

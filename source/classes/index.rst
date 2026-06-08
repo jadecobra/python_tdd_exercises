@@ -70,8 +70,6 @@ the chapters
   classes
   inheritance
   AssertionError 2<../exceptions/AssertionError/AssertionError_2>
-  family_ties
-  Telephone 2<../how_to/telephone/telephone2>
 
 ----
 

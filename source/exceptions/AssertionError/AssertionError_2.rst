@@ -1661,7 +1661,7 @@ As a reminder, you know
 * :ref:`how to make classes<classes>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 
-:ref:`Would you like to test classes with more than one parent?<family ties>`
+:ref:`Would you like to test AttributeError?<what causes AttributeError?>`
 
 ----
 

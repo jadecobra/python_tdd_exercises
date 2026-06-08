@@ -725,8 +725,8 @@ how to call the parent from the child
     src.family_ties.Doe('the_first')
     Doe.__init__('the_first')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method\?>` of ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
-  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Doe.__init__()``, ``self`` is ``Doe`` in ``Doe``. It would be like calling ``Doe.__init__(Doe)``.
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Doe.__init__()``, ``self`` is ``Doe`` in ``Doe``. It would be like calling ``Doe.__init__(Doe)``.
 
 * I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``family_ties.py``
 
@@ -759,8 +759,8 @@ how to call the parent from the child
         super().__init__() # call the parent
     Person.__init__()
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method\?>` of ``Person`` requires a :ref:`positional argument<test_w_positional_arguments>` for ``first_name`` and it was called with ``self``
-  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` in ``Person``. It would be like calling ``Person.__init__(Person)``.
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires a :ref:`positional argument<test_w_positional_arguments>` for ``first_name`` and it was called with ``self``
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` in ``Person``. It would be like calling ``Person.__init__(Person)``.
 
 * I add the required parameter to ``super().__init__()`` in ``Doe``
 
@@ -1185,7 +1185,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Blow`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
 
-  - ``self`` is the :ref:`class<what is a class\?>` itself, which means that for ``Blow.__init__('joe')``, ``self`` is ``Blow`` in ``Blow``. It would be like calling ``Blow.__init__(Blow, 'joe')``.
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Blow.__init__('joe')``, ``self`` is ``Blow`` in ``Blow``. It would be like calling ``Blow.__init__(Blow, 'joe')``.
 
 
 * I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method definition<how to make a function>`
@@ -1360,7 +1360,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
   .. code-block:: python
 
     john = src.family_ties.Smith('john')
-           Smith # Smith has no __init__,
+           Smith # has no __init__
            # call the parent of Smith (Person)
            Person.__init__('john')
                Person.__init__('john', last_name='doe')
@@ -1617,7 +1617,8 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
   .. code-block:: python
 
     jane = src.family_ties.Jane()
-           Jane # Jane has no __init__, call Person
+           Jane # has no __init__
+           # call the parent of Jane (Person)
            Person.__init__()
 
   which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires one positional argument (``first_name``) and it got called with zero
@@ -1625,7 +1626,7 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
 * I add the ``__init__`` :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``Jane``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 1-2, 4-5
 
     # class Jane(src.person.Person): pass
@@ -1638,12 +1639,12 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
 
   .. code-block:: python
 
-    AttributeError: 'Jane' object has no attribute 'the_first'
+    AttributeError: 'Jane' object has no attribute 'first_name'
 
 * I add a value for ``first_name`` to the :ref:`definition<how to make a class>`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 5
 
     # class Jane(src.person.Person): pass
@@ -1663,10 +1664,10 @@ the test passes.
 
 ----
 
-* I add an :ref:`assertion<what is an assertion?>` for the last name of ``jane`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>` of ``jane`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 51
     :emphasize-lines: 4
 
         def test_classes_w_multiple_parents(self):
@@ -1683,12 +1684,12 @@ the test passes.
 
     AttributeError:
         'Jane' object has no attribute 'last_name'.
-        Did you mean: 'the_first'?
+        Did you mean: 'first_name'?
 
 * I add a value for ``last_name`` to ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 6
 
     # class Jane(src.person.Person): pass
@@ -1707,7 +1708,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 51
     :emphasize-lines: 5-7
 
         def test_classes_w_multiple_parents(self):
@@ -1732,7 +1733,7 @@ the test passes.
 * I change the parent of ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 2-3
 
     # class Jane(src.person.Person): pass
@@ -1744,12 +1745,12 @@ the test passes.
             self.last_name = 'doe'
             return None
 
-  the test passes
+  the test passes.
 
 * I add a call to the `super built-in function`_ to use to remove the repetition of ``last_name``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 6-8
 
     # class Jane(src.person.Person): pass
@@ -1783,7 +1784,7 @@ the test passes.
 * I add ``jane`` as the value for ``first_name`` in the call to the parent
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 6-7
 
     # class Jane(src.person.Person): pass
@@ -1811,10 +1812,14 @@ the test passes.
                self.first_name = 'jane'
                self.last_name = 'doe' # use the default value
 
+  :ref:`a method uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`.
+
+----
+
 * I add an :ref:`assertion<what is an assertion?>` for ``mary``, another instance of ``Jane`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 51
     :emphasize-lines: 9-10
 
         def test_classes_w_multiple_parents(self):
@@ -1850,7 +1855,7 @@ the test passes.
 * I add ``first_name`` to the parentheses for the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 6
 
     # class Jane(src.person.Person): pass
@@ -1879,12 +1884,12 @@ the test passes.
     jane = src.family_ties.Jane()
            Jane.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``).
 
 * I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 6-7
 
     # class Jane(src.person.Person): pass
@@ -1909,7 +1914,7 @@ the test passes.
   because this happens when ``mary = src.family_ties.Jane('mary')`` runs
 
   .. code-block:: python
-    :emphasize-lines: jane
+    :emphasize-text: jane
 
     mary = src.family_ties.Jane('mary')
            Jane.__init__('mary')
@@ -1921,10 +1926,12 @@ the test passes.
                self.first_name = 'jane'
                self.last_name = 'doe'
 
+  The parent of ``Jane (Doe)`` gets called with a different value for the ``first_name`` parameter.
+
 * I change the call to the `super built-in function`_ to use the name instead of a fixed value
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 9-10
 
     # class Jane(src.person.Person): pass
@@ -1962,7 +1969,8 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` that will fail, for the last name of ``mary`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 144
+    :lineno-start: 59
+    :emphasize-lines: 3
 
             mary = src.family_ties.Jane('mary')
             self.assertEqual(mary.first_name, 'mary')
@@ -1980,7 +1988,7 @@ the test passes.
 * I change the expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 144
+    :lineno-start: 59
     :emphasize-lines: 3-4
 
             mary = src.family_ties.Jane('mary')
@@ -1998,7 +2006,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` for ``joe``
 
   .. code-block:: python
-    :lineno-start: 46
+    :lineno-start: 51
     :emphasize-lines: 2-3
     :emphasize-text: Joe
 
@@ -2029,10 +2037,10 @@ the test passes.
         module 'src.family_ties' has no attribute 'Joe'.
         Did you mean: 'Doe'?
 
-* I add a :ref:`definition<how to make a class>` for the ``Joe`` :ref:`class<what is a class?>` to ``family_ties.py``
+* I add a :ref:`class definition<how to make a class>` for the ``Joe`` :ref:`class<what is a class?>` to ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 22
     :emphasize-lines: 7
 
     class Jane(Doe):
@@ -2057,12 +2065,13 @@ the test passes.
     joe = src.family_ties.Joe()
           Person.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional argument<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Joe.__init__()``, ``self`` is ``Joe`` in ``Joe``. It would be like calling ``Joe.__init__(Joe)``
 
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``Joe``
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 28
     :emphasize-lines: 1-2, 4-5
 
     # class Joe(src.person.Person): pass
@@ -2075,12 +2084,12 @@ the test passes.
 
   .. code-block:: python
 
-    AttributeError: 'Joe' object has no attribute 'the_first'
+    AttributeError: 'Joe' object has no attribute 'first_name'
 
 * I add ``self.first_name`` to ``Joe`` with a value
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 28
     :emphasize-lines: 5
 
     # class Joe(src.person.Person): pass
@@ -2095,12 +2104,11 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure that ``joe`` is a ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5
+    :lineno-start: 51
+    :emphasize-lines: 4
 
         def test_classes_w_multiple_parents(self):
             joe = src.family_ties.Joe()
-            # self.assertEqual(joe.first_name, 'mary')
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
 
@@ -2110,12 +2118,12 @@ the test passes.
 
     AttributeError:
         'Joe' object has no attribute 'last_name'.
-        Did you mean: 'the_first'?
+        Did you mean: 'first_name'?
 
 * I add ``last_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 28
     :emphasize-lines: 6
 
     # class Joe(src.person.Person): pass
@@ -2128,30 +2136,32 @@ the test passes.
 
   the test passes. I cheated, which means I need a better test.
 
-* I add :ref:`issubclass<how to test if something is a subclass of a class>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Blow``, in ``test_family_ties.py``
+* I add :ref:`assertIsSubclass<another way to test if something is a subclass of a class>` to :ref:`test_classes_w_multiple_parents` to make sure ``Joe`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Blow``, in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 51
     :emphasize-lines: 5-7
 
         def test_classes_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Joe, src.family_ties.Blow
             )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    AssertionError: assert False
+    AssertionError:
+        <class 'src.family_ties.Joe'> is
+        not a subclass of <class 'src.family_ties.Blow'>
 
 * I change the parent of ``Joe`` to ``Blow`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 28
     :emphasize-lines: 2-3
 
     # class Joe(src.person.Person): pass
@@ -2168,7 +2178,7 @@ the test passes.
 * I no longer need ``self.last_name = 'blow'`` because it is a repetition. I add a call to the `super built-in function`_
 
   .. code-block:: python
-    :lineno-start: 37
+    :lineno-start: 28
     :emphasize-lines: 6-8
 
     # class Joe(src.person.Person): pass
@@ -2186,7 +2196,7 @@ the test passes.
   .. code-block:: shell
 
     AttributeError:
-        'Joe' object has no attribute 'the_first'.
+        'Joe' object has no attribute 'first_name'.
         Did you mean: 'last_name'?
 
   because this happens when ``joe = src.family_ties.Joe()`` runs
@@ -2199,7 +2209,7 @@ the test passes.
           Blow.__init__('joe')
               self.last_name = 'blow'
 
-  there is no assignment of a value to the ``first_name`` :ref:`attribute<what is a class attribute?>` in ``Blow``
+  there is no assignment of a value to the ``first_name`` :ref:`attribute<what is a class attribute?>` in ``Blow``.
 
 * I add ``self.first_name`` to ``Blow``
 
@@ -2224,10 +2234,10 @@ the test passes.
               self.first_name = 'joe'
               self.last_name = 'blow'
 
-* I remove the commented lines and ``return None`` from ``Joe``
+* I remove the commented lines and ``return None``, from ``Joe``
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 23
 
     class Jane(Doe):
 
@@ -2240,55 +2250,12 @@ the test passes.
         def __init__(self):
             super().__init__('joe')
 
-* I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 8-10
-
-        def test_classes_w_multiple_parents(self):
-            joe = src.family_ties.Joe()
-            self.assertEqual(joe.first_name, 'joe')
-            self.assertEqual(joe.last_name, 'blow')
-            assert issubclass(
-                src.family_ties.Joe, src.family_ties.Blow
-            )
-            self.assertNotIsSubclass(
-                src.family_ties.Joe, src.family_ties.Blow
-            )
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.family_ties.Joe object at 0xffffabcdef80>
-        is a subclass of <class 'src.family_ties.Blow'>
-
-* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>` to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 8-9
-
-        def test_classes_w_multiple_parents(self):
-            joe = src.family_ties.Joe()
-            self.assertEqual(joe.first_name, 'joe')
-            self.assertEqual(joe.last_name, 'blow')
-            assert issubclass(
-                src.family_ties.Joe, src.family_ties.Blow
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Joe, src.family_ties.Blow
-            )
-
-  the test passes.
+----
 
 * I change ``mary`` to be an :ref:`instance<how to test if something is an instance of a class>` of ``Mary``, a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Jane``
 
   .. code-block:: python
-    :lineno-start: 155
+    :lineno-start: 66
     :emphasize-lines: 1-2
 
             # mary = src.family_ties.Jane('mary')
@@ -2304,12 +2271,13 @@ the test passes.
 
   .. code-block:: python
 
-    AttributeError: module 'src.family_ties' has no attribute 'Mary'
+    AttributeError: module 'src.family_ties'
+                    has no attribute 'Mary'
 
 * I add a :ref:`class definition<how to make a class>` for ``Mary`` to ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 29
     :emphasize-lines: 7, 9-10
 
     class Joe(Blow):
@@ -2331,7 +2299,8 @@ the test passes.
   .. code-block:: python
 
     mary = src.family_ties.Mary()
-           Mary # has no __init__ call Jane
+           Mary # has no __init__
+           # call the parent of Mary (Jane)
            Jane.__init__()
                # use the default value
                Jane.__init__(first_name='jane')
@@ -2346,8 +2315,8 @@ the test passes.
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``Mary``
 
   .. code-block:: python
-    :lineno-start: 44
-    :emphasize-lines: 1-2
+    :lineno-start: 35
+    :emphasize-lines: 1-2, 4-5
 
     # class Mary(Jane): pass
     class Mary(Jane):
@@ -2361,7 +2330,7 @@ the test passes.
 
     AttributeError:
         'Mary' object has no attribute 'last_name'.
-        Did you mean: 'the_first'?
+        Did you mean: 'first_name'?
 
   because this happens when ``mary = src.family_ties.Mary()`` runs
 
@@ -2421,10 +2390,10 @@ the test passes.
                 self.first_name = 'mary'
                 self.last_name = 'doe' # use the default value
 
-* I add an :ref:`assertion<what is an assertion?>` with the :ref:`issubclass built-in function<how to test if something is a subclass of a class>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 155
+    :lineno-start: 66
     :emphasize-lines: 6-8
 
             # mary = src.family_ties.Jane('mary')
@@ -2432,55 +2401,6 @@ the test passes.
             self.assertEqual(mary.first_name, 'mary')
             # self.assertEqual(mary.last_name, mary.first_name)
             self.assertEqual(mary.last_name, jane.last_name)
-            assert not issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert not True
-
-* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 6-7
-
-            # mary = src.family_ties.Jane('mary')
-            mary = src.family_ties.Mary()
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, mary.first_name)
-            self.assertEqual(mary.last_name, jane.last_name)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add a call to :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>`
-
-  .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 10-12
-
-            # mary = src.family_ties.Jane('mary')
-            mary = src.family_ties.Mary()
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, mary.first_name)
-            self.assertEqual(mary.last_name, jane.last_name)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
             self.assertNotIsSubclass(
                 src.family_ties.Mary, src.family_ties.Jane
             )
@@ -2496,21 +2416,17 @@ the test passes.
         <class 'src.family_ties.Mary'> is
         a subclass of <class 'src.family_ties.Jane'>
 
-* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to the `assertIsSubclass method`_
+* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to the :ref:`assertIsSubclass method<another way to test if something is a subclass of a class>`
 
   .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 10-11
+    :lineno-start: 66
+    :emphasize-lines: 6-7
 
             # mary = src.family_ties.Jane('mary')
             mary = src.family_ties.Mary()
             self.assertEqual(mary.first_name, 'mary')
             # self.assertEqual(mary.last_name, mary.first_name)
             self.assertEqual(mary.last_name, jane.last_name)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
             # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Jane
@@ -2532,23 +2448,19 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` to test if I can make ``Joe`` and ``Jane`` both be parents of ``Mary``?
 
   .. code-block:: python
-    :lineno-start: 155
-    :emphasize-lines: 14-16
+    :lineno-start: 66
+    :emphasize-lines: 10-12
 
             # mary = src.family_ties.Jane('mary')
             mary = src.family_ties.Mary()
             self.assertEqual(mary.first_name, 'mary')
             # self.assertEqual(mary.last_name, mary.first_name)
             self.assertEqual(mary.last_name, jane.last_name)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
             # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Jane
             )
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Joe
             )
 
@@ -2557,11 +2469,13 @@ what happens when a child has more than one parent?
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
-    AssertionError: assert False
+    AssertionError:
+        <class 'src.family_ties.Mary'> is not
+        a subclass of <class 'src.family_ties.Joe'>
 
-  because ``Mary`` is not a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Joe``
+  because ``Mary`` is not a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Joe``.
 
 * I add ``Joe`` as a parent of ``Mary`` in ``family_ties.py``
 
@@ -2594,14 +2508,18 @@ what happens when a child has more than one parent?
                super().__init__('mary')
            Jane.__init__('mary')
                super().__init__(first_name)
+           Doe.__init__('mary')
+               super().__init__(first_name)
+           # call the next parent of Mary
            Joe.__init__('mary')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Joe.__init__('mary')``, ``self`` is ``Joe`` in ``Joe``. It would be like calling ``Joe.__init__(Joe, 'mary')``.
 
-* I change the ``__init__`` :ref:`method<what is a method?>` in ``Joe`` to take a ``first_name`` argument
+* I change the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` to take a ``first_name`` argument
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 29
     :emphasize-lines: 3-4
 
     class Joe(Blow):
@@ -2617,7 +2535,7 @@ what happens when a child has more than one parent?
     TypeError: Joe.__init__() missing 1
                required positional argument: 'first_name'
 
-  I broke the call that makes ``joe = src.family_ties.Joe()`` because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+  I broke the ``joe = src.family_ties.Joe()`` call because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
 
 * I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
 
@@ -2638,7 +2556,7 @@ what happens when a child has more than one parent?
 
     AssertionError: 'joe' != 'mary'
 
-  for the first name of ``mary`` because this happens when ``mary = src.family_ties.Mary()`` runs
+  for ``mary.first_name`` because this happens when ``mary = src.family_ties.Mary()`` runs
 
   .. code-block:: python
 
@@ -2646,6 +2564,8 @@ what happens when a child has more than one parent?
            Mary.__init__()
                super().__init__('mary')
            Jane.__init__('mary')
+               super().__init__(first_name)
+           Doe.__init__('mary')
                super().__init__(first_name)
            Joe.__init__('mary')
                super().__init__('joe') # the problem
@@ -2656,7 +2576,7 @@ what happens when a child has more than one parent?
 * I use the parameter name in the call to ``super`` instead of a fixed value in ``Joe``
 
   .. code-block:: python
-    :lineno-start: 38
+    :lineno-start: 29
     :emphasize-lines: 6-7
 
         class Joe(Blow):
@@ -2676,7 +2596,7 @@ what happens when a child has more than one parent?
 * I change the expectation of the :ref:`assertion<what is an assertion?>` in :ref:`test_classes_w_multiple_parents` for the last name of ``mary`` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 148
+    :lineno-start: 66
     :emphasize-lines: 5-6
 
             # mary = src.family_ties.Jane('mary')
@@ -2685,90 +2605,14 @@ what happens when a child has more than one parent?
             # self.assertEqual(mary.last_name, mary.first_name)
             # self.assertEqual(mary.last_name, jane.last_name)
             self.assertEqual(mary.last_name, joe.last_name)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
             # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Jane
             )
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Joe
-            )
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>`
-
-  .. code-block:: python
-    :lineno-start: 148
-    :emphasize-lines: 19-21
-
-            # mary = src.family_ties.Jane('mary')
-            mary = src.family_ties.Mary()
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, mary.first_name)
-            # self.assertEqual(mary.last_name, jane.last_name)
-            self.assertEqual(mary.last_name, joe.last_name)
-            self.assertEqual(mary.eye_color, jane.eye_color)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Joe
-            )
-            self.assertNotIsSubclass(
-                src.family_ties.Mary, src.family_ties.Joe
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <class 'src.family_ties.Mary'> is
-        a subclass of <class 'src.family_ties.Joe'>
-
-* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>`
-
-  .. code-block:: python
-    :lineno-start: 148
-    :emphasize-lines: 19-20
-
-            # mary = src.family_ties.Jane('mary')
-            mary = src.family_ties.Mary()
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, mary.first_name)
-            # self.assertEqual(mary.last_name, jane.last_name)
-            self.assertEqual(mary.last_name, joe.last_name)
-            self.assertEqual(mary.eye_color, jane.eye_color)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Joe
-            )
-            # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Joe
             )
+
 
     # Exceptions seen
 
@@ -2776,7 +2620,7 @@ what happens when a child has more than one parent?
 
 ----
 
-* I change the order of the parents of ``Mary`` to see what it does to the value of ``last_name`` in ``family_ties.py``
+* I change the order of the parents of ``Mary`` to see what it does to the value of ``last_name``, in ``family_ties.py``
 
   .. code-block:: python
     :lineno-start: 47
@@ -2801,25 +2645,27 @@ what happens when a child has more than one parent?
                super().__init__('mary')
            Joe.__init__('mary')
                super().__init__(first_name)
-           Blow.__init__('joe')
-               self.first_name = 'joe'
+           Blow.__init__('mary')
+               self.first_name = 'mary'
                self.last_name = 'blow'
 
-  the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` never gets called even though it is a parent of ``Mary``
+  the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called even though it is a parent of ``Mary``
 
-* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` in ``family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` to show this in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 148
+    :lineno-start: 59
     :emphasize-lines: 4
 
             jane = src.family_ties.Jane()
             self.assertEqual(jane.first_name, 'jane')
             self.assertEqual(jane.last_name, 'doe')
-            self.assertEqual(jane.eye_color, 'brown')
+            self.assertEqual(jane.eye_color, 'green')
             self.assertIsSubclass(
                 src.family_ties.Jane, src.family_ties.Doe
             )
+
+            # mary = src.family_ties.Jane('mary')
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2830,21 +2676,22 @@ what happens when a child has more than one parent?
 * I add a :ref:`class attribute<what is a class attribute?>` to ``Jane`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 32
+    :lineno-start: 23
     :emphasize-lines: 5
 
     class Jane(Doe):
 
         def __init__(self, first_name='jane'):
             super().__init__(first_name)
-            self.eye_color = 'brown'
+            self.eye_color = 'green'
+
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``marry`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` for the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Mary`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 156
+    :lineno-start: 67
     :emphasize-lines: 7
 
             # mary = src.family_ties.Jane('mary')
@@ -2854,21 +2701,14 @@ what happens when a child has more than one parent?
             # self.assertEqual(mary.last_name, jane.last_name)
             self.assertEqual(mary.last_name, joe.last_name)
             self.assertEqual(mary.eye_color, jane.eye_color)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
             # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Jane
             )
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Joe
-            )
-            # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Joe
             )
+
 
     # Exceptions seen
 
@@ -2878,10 +2718,12 @@ what happens when a child has more than one parent?
 
     AttributeError: 'Mary' object has no attribute 'eye_color'
 
-* I change the order of the parents of ``Mary`` from ``(Joe, Jane)`` to ``(Jane, Joe)`` in ``family_ties.py``
+  because the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called.
+
+* I change the order of the parents of ``Mary`` from ``(Joe, Jane)`` back to ``(Jane, Joe)`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 39
     :emphasize-lines: 3-4
 
     # class Mary(Jane): pass
@@ -2903,25 +2745,68 @@ what happens when a child has more than one parent?
                super().__init__('mary')
            Jane.__init__('mary')
                super().__init__(first_name)
-               self.eye_color = 'brown'
+               self.eye_color = 'green'
+           Doe.__init__('mary')
+               super().__init__(first_name)
            Joe.__init__('mary')
-               super().__init__('joe') # the problem
-           Blow.__init__('joe')
-               self.first_name = 'joe'
+               super().__init__('joe')
+           Blow.__init__('mary')
+               self.first_name = 'mary'
                self.last_name = 'blow'
 
-  the order of the parents matters.
+  The order of the parents matters.
 
-  - if the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance of a class>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``
-  - if the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance of a class>`  of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a class attribute?>`
+  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance of a class>` of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
+  - If the order is ``(Joe, Jane)`` then :ref:`instances<how to test if something is an instance of a class>` of ``Mary`` do NOT get the ``eye_color`` :ref:`attribute<what is a class attribute?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called.
 
-----
-
-* I add ``john`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I change the order of the parents to ``(Joe, Jane)`` again
 
   .. code-block:: python
-    :lineno-start: 156
-    :emphasize-lines: 24-25
+    :lineno-start: 39
+    :emphasize-lines: 3-4
+
+    # class Mary(Jane): pass
+    # class Mary(Jane):
+    # class Mary(Jane, Joe):
+    class Mary(Joe, Jane):
+
+        def __init__(self):
+            super().__init__('mary')
+            # self.first_name = 'mary'
+            # self.last_name = 'doe'
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: 'Mary' object has no attribute 'eye_color'
+
+* I add the ``eye_color`` :ref:`class attribute<what is a class attribute?>` to ``Joe``
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 8
+
+    class Joe(Blow):
+
+        # def __init__(self):
+        # def __init__(self, first_name):
+        def __init__(self, first_name='joe'):
+            # super().__init__('joe')
+            super().__init__(first_name)
+            self.eye_color = 'blue'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'blue' != 'green'
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.eye_color`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 7-8
 
             # mary = src.family_ties.Jane('mary')
             mary = src.family_ties.Mary()
@@ -2929,19 +2814,86 @@ what happens when a child has more than one parent?
             # self.assertEqual(mary.last_name, mary.first_name)
             # self.assertEqual(mary.last_name, jane.last_name)
             self.assertEqual(mary.last_name, joe.last_name)
-            self.assertEqual(mary.eye_color, jane.eye_color)
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
+            # self.assertEqual(mary.eye_color, jane.eye_color)
+            self.assertEqual(mary.eye_color, joe.eye_color)
             # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Jane
             )
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Joe
             )
+
+
+    # Exceptions seen
+
+  the test passes because this happens when ``mary = src.family_ties.Mary()`` runs
+
+  .. code-block:: python
+
+    mary = src.family_ties.Mary()
+           Mary.__init__()
+               super().__init__('mary')
+           Joe.__init__('mary')
+               super().__init__(first_name)
+               self.eye_color = 'blue'
+           Blow.__init__('mary')
+               self.first_name = 'mary'
+               self.last_name = 'blow'
+
+  The order of the parents matters.
+
+  - If the order is ``(Jane, Joe)`` then :ref:`instances<how to test if something is an instance of a class>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane``.
+  - If the order is ``(Joe, Jane)`` then
+
+    * :ref:`instances<how to test if something is an instance of a class>`  of ``Mary`` get the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Joe``
+    * the  ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not get called
+
+
+* I remove the commented lines from ``Joe`` and ``Mary`` in ``classes.py``
+
+  .. code-block:: python
+    :lineno-start: 23
+
+    class Jane(Doe):
+
+        def __init__(self, first_name='jane'):
+            super().__init__(first_name)
+            self.eye_color = 'green'
+
+
+    class Joe(Blow):
+
+        def __init__(self, first_name='joe'):
+            super().__init__(first_name)
+            self.eye_color = 'blue'
+
+
+    class Mary(Joe, Jane):
+
+        def __init__(self):
+            super().__init__('mary')
+
+----
+
+* I add ``john`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 17-18
+
+            # mary = src.family_ties.Jane('mary')
+            mary = src.family_ties.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            # self.assertEqual(mary.last_name, jane.last_name)
+            self.assertEqual(mary.last_name, joe.last_name)
+            # self.assertEqual(mary.eye_color, jane.eye_color)
+            self.assertEqual(mary.eye_color, joe.eye_color)
             # self.assertNotIsSubclass(
+            self.assertIsSubclass(
+                src.family_ties.Mary, src.family_ties.Jane
+            )
             self.assertIsSubclass(
                 src.family_ties.Mary, src.family_ties.Joe
             )
@@ -2956,23 +2908,19 @@ what happens when a child has more than one parent?
 
   .. code-block:: python
 
-    AttributeError: module 'src.family_ties' has no attribute 'John'
+    AttributeError: module 'src.family_ties'
+                    has no attribute 'John'
 
 * I add a :ref:`class definition<how to make a class>` for ``John`` to ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 12
+    :lineno-start: 37
+    :emphasize-lines: 7
 
-    # class Mary(Jane): pass
-    # class Mary(Jane):
-    class Mary(Jane, Joe):
-    # class Mary(Joe, Jane):
+    class Mary(Joe, Jane):
 
         def __init__(self):
             super().__init__('mary')
-            # self.first_name = 'mary'
-            # self.last_name = 'doe'
 
 
     class John(src.person.Person): pass
@@ -2996,7 +2944,7 @@ what happens when a child has more than one parent?
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``John`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 43
     :emphasize-lines: 1-2, 4-5
 
     # class John(src.person.Person): pass
@@ -3010,53 +2958,12 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` to make sure that ``John`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Smith``
 
   .. code-block:: python
-    :lineno-start: 179
+    :lineno-start: 83
     :emphasize-lines: 3-5
 
             john = src.family_ties.John()
             self.assertEqual(john.first_name, 'john')
-            assert issubclass(
-                src.family_ties.John, src.family_ties.Smith
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert False
-
-  no cheating this time.
-
-* I change the parent of ``John`` to ``Smith`` in ``family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 2-3
-
-    # class John(src.person.Person): pass
-    # class John(src.person.Person):
-    class John(Smith):
-
-        def __init__(self):
-            self.first_name = 'john'
-
-  the test passes.
-
-* I add a call to `assertNotIsSubclass`_ in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 179
-    :emphasize-lines: 6-8
-
-            john = src.family_ties.John()
-            self.assertEqual(john.first_name, 'john')
-            assert issubclass(
-                src.family_ties.John, src.family_ties.Smith
-            )
-            self.assertNotIsSubclass(
+            self.assertIsSubclass(
                 src.family_ties.John, src.family_ties.Smith
             )
 
@@ -3071,40 +2978,32 @@ what happens when a child has more than one parent?
         <class 'src.family_ties.John'> is
         a subclass of <class 'src.family_ties.Smith'>
 
-* I change the call to `assertNotIsSubclass`_ to the `assertIsSubclass method`_
+  no cheating this time.
+
+* I change the parent of ``John`` to ``Smith`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 179
-    :emphasize-lines: 6-7
+    :lineno-start: 43
+    :emphasize-lines: 2-3
 
-            john = src.family_ties.John()
-            self.assertEqual(john.first_name, 'john')
-            assert issubclass(
-                src.family_ties.John, src.family_ties.Smith
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.John, src.family_ties.Smith
-            )
+    # class John(src.person.Person): pass
+    # class John(src.person.Person):
+    class John(Smith):
 
-
-    # Exceptions seen
+        def __init__(self):
+            self.first_name = 'john'
 
   the test passes.
 
 * I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is a class attribute?>`
 
   .. code-block:: python
-    :lineno-start: 179
+    :lineno-start: 83
     :emphasize-lines: 3
 
             john = src.family_ties.John()
             self.assertEqual(john.first_name, 'john')
             self.assertEqual(john.last_name, 'smith')
-            assert issubclass(
-                src.family_ties.John, src.family_ties.Smith
-            )
-            # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.John, src.family_ties.Smith
             )
@@ -3118,12 +3017,12 @@ what happens when a child has more than one parent?
 
     AttributeError:
         'John' object has no attribute 'last_name'.
-        Did you mean: 'the_first'?
+        Did you mean: 'first_name'?
 
-* I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` in ``John`` in ``family_ties.py``
+* I add a :ref:`class attribute<what is a class attribute?>` for ``last_name`` to ``John`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 43
     :emphasize-lines: 7
 
     # class John(src.person.Person): pass
@@ -3137,12 +3036,12 @@ what happens when a child has more than one parent?
   the test passes. This is a repetition because
 
   - ``John`` is a ``Smith``
-  - the ``last_name`` :ref:`attribute<what is a class attribute?>` of :ref:`instance<how to test if something is an instance of a class>` of ``Smith`` is ``'smith'``
+  - the ``last_name`` :ref:`attribute<what is a class attribute?>` of :ref:`instances<how to test if something is an instance of a class>` of ``Smith`` is ``'smith'``
 
 * I add a call to the `super built-in function`_ so :ref:`instances<how to test if something is an instance of a class>` of ``John`` can inherit the ``last_name`` :ref:`class attribute<what is a class attribute?>`
 
   .. code-block:: python
-    :lineno-start: 59
+    :lineno-start: 43
     :emphasize-lines: 6-8
 
     # class John(src.person.Person): pass
@@ -3159,14 +3058,14 @@ what happens when a child has more than one parent?
   .. code-block:: shell
 
     AttributeError:
-        'John' object has no attribute 'the_first'.
+        'John' object has no attribute 'first_name'.
         Did you mean: 'last_name'?
 
-* I add the :ref:`attribute<what is a class attribute?>` to ``Smith``
+* I add the ``first_name`` :ref:`attribute<what is a class attribute?>` to ``Smith``
 
   .. code-block:: python
-    :lineno-start: 26
-    :emphasize-lines: 5
+    :lineno-start: 17
+    :emphasize-lines: 4
 
     class Smith(src.person.Person):
 
@@ -3185,27 +3084,39 @@ what happens when a child has more than one parent?
                self.first_name = 'john'
                self.last_name = 'smith'
 
-----
-
-* I add another person, a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``John`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I remove the commented lines from ``John``
 
   .. code-block:: python
-    :lineno-start: 179
-    :emphasize-lines: 12-15
+    :lineno-start: 38
+
+    class Mary(Joe, Jane):
+
+        def __init__(self):
+            super().__init__('mary')
+
+
+    class John(Smith):
+
+        def __init__(self):
+            super().__init__('john')
+
+----
+
+* I add ``lil``, an :ref:`instance<how to test if something is an instance of a class>` of a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``John`` to :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+
+  .. code-block:: python
+    :lineno-start: 83
+    :emphasize-lines: 8-11
 
             john = src.family_ties.John()
             self.assertEqual(john.first_name, 'john')
             self.assertEqual(john.last_name, 'smith')
-            assert issubclass(
-                src.family_ties.John, src.family_ties.Smith
-            )
-            # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.John, src.family_ties.Smith
             )
 
             lil = src.family_ties.Lil()
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.John
             )
 
@@ -3221,35 +3132,31 @@ what happens when a child has more than one parent?
 * I add a :ref:`class definition<how to make a class>` for ``Lil`` to ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 11
+    :lineno-start: 44
+    :emphasize-lines: 7
 
-    # class John(src.person.Person): pass
-    # class John(src.person.Person):
     class John(Smith):
 
         def __init__(self):
             super().__init__('john')
-            # self.first_name = 'john'
-            # self.last_name = 'smith'
 
 
     class Lil(John): pass
 
   the test passes.
 
-* I add a call to the :ref:`assertNotIsSubclass method<another way to test if something is NOT a subclass of a class>` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I add an :ref:`assertion<what is an assertion?>` to test ``John`` and ``Mary`` as parents of ``Lil``?
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 90
     :emphasize-lines: 5-7
 
             lil = src.family_ties.Lil()
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.John
             )
-            self.assertNotIsSubclass(
-                src.family_ties.Lil, src.family_ties.John
+            self.assertIsSubclass(
+                src.family_ties.Lil, src.family_ties.Mary
             )
 
 
@@ -3259,61 +3166,13 @@ what happens when a child has more than one parent?
 
   .. code-block:: shell
 
-    AssertionError:
-        <class 'src.family_ties.Lil'> is
-        a subclass of <class 'src.family_ties.John'>
-
-* I change :ref:`assertNotIsSubclass<another way to test if something is NOT a subclass of a class>` to :ref:`assertIsSubclass<another way to test if something is a subclass of a class>`
-
-  .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 5-6
-
-            lil = src.family_ties.Lil()
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-
-
-    # Exceptions seen
-
-  the test passes
-
-* I add an :ref:`assertion<what is an assertion?>` to test ``John`` and ``Mary`` as parents of ``Lil``?
-
-  .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 9-11
-
-            lil = src.family_ties.Lil()
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.Mary
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: assert False
+    AssertionError: <class 'src.family_ties.Lil'> is not
+                    a subclass of <class 'src.family_ties.Mary'>
 
 * I add ``Mary`` as a parent to ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 50
     :emphasize-lines: 1-2
 
     # class Lil(John): pass
@@ -3324,19 +3183,15 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``first_name`` :ref:`attribute<what is a class attribute?>` of ``lil`` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 90
     :emphasize-lines: 2
 
             lil = src.family_ties.Lil()
             self.assertEqual(lil.first_name, 'lil')
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
             self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.John
             )
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.Mary
             )
 
@@ -3354,17 +3209,18 @@ what happens when a child has more than one parent?
   .. code-block:: python
 
     lil = src.family_ties.Lil()
-          Lil # has no __init__, call John
+          Lil # has no __init__
+          # call the parent of Lil (John)
           John.__init__()
-               super().__init__('john')
+              super().__init__('john')
           Smith.__init__('john')
               self.first_name = 'john'
               self.last_name = 'smith'
 
-* I add the ``__init__`` :ref:`method<what is a method?>` with a value for the ``first_name`` :ref:`attribute<what is a class attribute?>` in ``Lil`` in ``family_ties.py``
+* I add the ``__init__`` :ref:`method<what is a method?>` with a value for the ``first_name`` :ref:`attribute<what is a class attribute?>` into ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 50
     :emphasize-lines: 2-3, 5-6
 
     # class Lil(John): pass
@@ -3379,38 +3235,34 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for the ``last_name`` :ref:`attribute<what is an attribute?>` of ``lil``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 90
     :emphasize-lines: 3
 
             lil = src.family_ties.Lil()
             self.assertEqual(lil.first_name, 'lil')
-            self.assertEqual(lil.last_name, mary.last_name)
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
+            self.assertEqual(lil.last_name, john.last_name)
             self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.John
             )
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.Mary
             )
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AttributeError?>`
 
   .. code-block:: shell
 
     AttributeError:
         'Lil' object has no attribute 'last_name'.
-        Did you mean: 'the_first'?
+        Did you mean: 'first_name'?
 
 * I add a value for ``last_name`` to ``Lil`` in ``family_ties.py``
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 50
     :emphasize-lines: 7
 
     # class Lil(John): pass
@@ -3419,14 +3271,14 @@ what happens when a child has more than one parent?
 
         def __init__(self):
             self.first_name = 'lil'
-            self.last_name = 'blow'
+            self.last_name = 'smith'
 
   the test passes. This is a repetition, and a problem if the value of the ``last_name`` :ref:`attribute<what is a class attribute?>` of the parent changes.
 
 * I add a call to the `super built-in function`_ to remove the repetition
 
   .. code-block:: python
-    :lineno-start: 70
+    :lineno-start: 50
     :emphasize-lines: 6-8
 
     # class Lil(John): pass
@@ -3436,9 +3288,9 @@ what happens when a child has more than one parent?
         def __init__(self):
             super().__init__('lil')
             # self.first_name = 'lil'
-            # self.last_name = 'blow'
+            # self.last_name = 'smith'
 
-  the terminal_ shows :ref:`TypeError<what causes TypeError?>`
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
@@ -3452,31 +3304,26 @@ what happens when a child has more than one parent?
     lil = src.family_ties.Lil()
           Lil.__init__()
               super().__init__('lil')
-          John.__init__()
+          John.__init__('lil')
 
   which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``John`` takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``lil``)
 
 * I change the ``__init__`` :ref:`method<what is a method?>` in ``John`` to take in a parameter for ``first_name`` with a :ref:`default value<test_w_optional_arguments>` to make it optional
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 5-8
+    :lineno-start: 44
+    :emphasize-lines: 3-6
 
-    # class John(src.person.Person): pass
-    # class John(src.person.Person):
     class John(Smith):
 
         # def __init__(self):
         def __init__(self, first_name='john'):
             # super().__init__('john')
             super().__init__(first_name)
-            # self.first_name = 'john'
-            # self.last_name = 'smith'
 
   the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start:
 
     AssertionError: 'smith' != 'blow'
 
@@ -3494,12 +3341,12 @@ what happens when a child has more than one parent?
               self.first_name = first_name
               self.last_name = last_name
 
-  no other ``__init__`` :ref:`methods<what is a method?>` get called for the parents of ``Lil``
+  the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` did not get called.
 
-* I add a call to the `super built-in function`_ in ``Smith`` to see what will happen
+* I add a call to the `super built-in function`_ in ``Smith``
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 17
     :emphasize-lines: 4-9
 
     class Smith(src.person.Person):
@@ -3517,7 +3364,7 @@ what happens when a child has more than one parent?
   .. code-block:: shell
 
     TypeError: Mary.__init__() got
-               an unexpected keyword argument 'the_first'
+               an unexpected keyword argument 'first_name'
 
   because this happens when ``lil = src.family_ties.Lil()`` runs
 
@@ -3530,29 +3377,30 @@ what happens when a child has more than one parent?
               super().__init__(first_name)
           Smith.__init__('lil')
               super().__init__(
-                  first_name=first_name, last_name='smith',
+                  first_name=first_name,
+                  last_name='smith',
               )
-          Mary.__init__('lil', 'smith')
+          # call the next parent of Lil
+          Mary.__init__(
+              first_name='lil',
+              last_name='smith'
+          )
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` was called with a :ref:`keyword argument<test_w_keyword_arguments>` not ``self``
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` was called with a :ref:`keyword argument<test_w_keyword_arguments>` and it only takes ``self``
+  - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Mary.__init__(first_name='lil', last_name='smith')``, ``self`` is ``Mary`` in ``Mary``. It would be like calling ``Mary.__init__(Mary, first_name='lil', last_name='smith')``.
 
 * I add ``first_name`` with a :ref:`default value<test_w_optional_arguments>` to the ``__init__`` :ref:`method<what is a method?>` of ``Mary``
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 6-7
+    :lineno-start: 42
+    :emphasize-lines: 3-6
 
-    # class Mary(Jane): pass
-    # class Mary(Jane):
-    class Mary(Jane, Joe):
-    # class Mary(Joe, Jane):
+    class Mary(Joe, Jane):
 
         # def __init__(self):
         def __init__(self, first_name='mary'):
             # super().__init__('mary')
             super().__init__(first_name)
-            # self.first_name = 'mary'
-            # self.last_name = 'doe'
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -3560,26 +3408,21 @@ what happens when a child has more than one parent?
 
     TypeError: Mary.__init__() got
                an unexpected keyword argument 'last_name'.
-               Did you mean 'the_first'?
+               Did you mean 'first_name'?
 
 * I add ``last_name`` to the ``__init__`` :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 7-8
+    :lineno-start: 42
+    :emphasize-lines: 4-5
 
-    # class Mary(Jane): pass
-    # class Mary(Jane):
-    class Mary(Jane, Joe):
-    # class Mary(Joe, Jane):
+    class Mary(Joe, Jane):
 
         # def __init__(self):
         # def __init__(self, first_name='mary'):
         def __init__(self, first_name='mary', last_name):
             # super().__init__('mary')
             super().__init__(first_name)
-            # self.first_name = 'mary'
-            # self.last_name = 'doe'
 
   the terminal_ shows SyntaxError_
 
@@ -3588,20 +3431,15 @@ what happens when a child has more than one parent?
     SyntaxError: parameter without a default
                  follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
-
-  this is a problem, I just broke the ``mary = src.family_ties.Mary()`` which was working before.
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
 
 * I add a :ref:`default value<test_w_optional_arguments>` for ``last_name``
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 8-12
+    :lineno-start: 42
+    :emphasize-lines: 5-9
 
-    # class Mary(Jane): pass
-    # class Mary(Jane):
-    class Mary(Jane, Joe):
-    # class Mary(Joe, Jane):
+    class Mary(Joe, Jane):
 
         # def __init__(self):
         # def __init__(self, first_name='mary'):
@@ -3612,10 +3450,8 @@ what happens when a child has more than one parent?
             ):
             # super().__init__('mary')
             super().__init__(first_name)
-            # self.first_name = 'mary'
-            # self.last_name = 'doe'
 
-  because this happens when ``lil = src.family_ties.Lil()`` runs
+  the test passes because this happens when ``lil = src.family_ties.Lil()`` runs
 
   .. code-block:: python
 
@@ -3626,23 +3462,25 @@ what happens when a child has more than one parent?
               super().__init__(first_name)
           Smith.__init__('lil')
               super().__init__(
-                  first_name=first_name, last_name='smith',
+                  first_name=first_name,
+                  last_name='smith',
               )
           Mary.__init__('lil', 'smith')
               super().__init__(first_name)
-          Jane.__init__('lil')
-              super().__init__(first_name)
-              self.eye_color = 'brown'
+              # no last_name passed to Parent
           Joe.__init__('lil')
-              super().__init__('lil')
+              super().__init__(first_name)
+              self.eye_color = 'blue'
           Blow.__init__('lil')
               self.first_name = 'lil'
               self.last_name = 'blow'
 
+  the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called.
+
 * I change the order of the parents of ``Lil`` to ``(Mary, John)`` to see if the value will change to ``john.last_name``
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 63
     :emphasize-lines: 3-4
 
     # class Lil(John): pass
@@ -3653,7 +3491,7 @@ what happens when a child has more than one parent?
         def __init__(self):
             super().__init__('lil')
             # self.first_name = 'lil'
-            # self.last_name = 'blow'
+            # self.last_name = 'smith'
 
   the test is still green because this happens when ``lil = src.family_ties.Lil()`` runs
 
@@ -3664,17 +3502,17 @@ what happens when a child has more than one parent?
               super().__init__('lil')
           Mary.__init__('lil')
               Mary.__init__('lil', last_name=None)
+              # use the default value
               super().__init__(first_name)
-          Jane.__init__('lil')
-              super().__init__(first_name)
-              self.eye_color = 'brown'
+              # no last_name passed to Parent
           Joe.__init__('lil')
-              super().__init__('lil')
+              super().__init__(first_name)
+              self.eye_color = 'blue'
           Blow.__init__('lil')
               self.first_name = 'lil'
               self.last_name = 'blow'
 
-  no other ``__init__`` :ref:`methods<what is a method?>` get called for the parents of ``Lil``
+  the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` did not get called.
 
 * I add a call to the `super built-in function`_ in ``Blow``
 
@@ -3697,9 +3535,9 @@ what happens when a child has more than one parent?
   .. code-block:: shell
 
     TypeError:
-        John.__init__() got
+        Jane.__init__() got
         an unexpected keyword argument 'last_name'.
-        Did you mean 'the_first'?
+        Did you mean 'first_name'?
 
   because this happens when ``lil = src.family_ties.Lil()`` runs
 
@@ -3710,52 +3548,43 @@ what happens when a child has more than one parent?
               super().__init__('lil')
           Mary.__init__('lil')
               Mary.__init__('lil', last_name=None)
+              # use the default value
               super().__init__(first_name)
-          Jane.__init__('lil')
-              super().__init__(first_name)
-              self.eye_color = 'brown'
-          Doe.__init__('lil')
-              super().__init__(first_name)
+              # no last_name passed to Parent
           Joe.__init__('lil')
-              super().__init__('lil')
+              super().__init__(first_name)
+              self.eye_color = 'blue'
           Blow.__init__('lil')
               super().__init__(
                   first_name=first_name,
-                  last_name='blow',
+                  last_name='blow'
               )
-          John.__init__(
-              first_name='lil',
-              last_name='blow',
-          )
+          # call the next parent of Mary
+          Jane.__init__('lil', last_name='blow')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``John`` does not have a parameter named ``last_name``
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` does not have a parameter named ``last_name``. Confused?
 
-* I add ``last_name`` to ``John``
+* I add ``last_name`` to ``Jane``
 
   .. code-block:: python
-    :lineno-start: 75
-    :emphasize-lines: 6-7
+    :lineno-start: 32
+    :emphasize-lines: 3-4
 
-    # class John(src.person.Person): pass
-    # class John(src.person.Person):
-    class John(Smith):
+    class Jane(Doe):
 
-        # def __init__(self):
-        # def __init__(self, first_name='john'):
-        def __init__(self, first_name='john', last_name):
-            # super().__init__('john')
+        # def __init__(self, first_name='jane'):
+        def __init__(self, first_name='jane', last_name):
             super().__init__(first_name)
-            # self.first_name = 'john'
-            # self.last_name = 'smith'
+            self.eye_color = 'green'
 
-  the terminal_ shows SyntaxError_
+  the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
 
     SyntaxError: parameter without a default
                  follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
 
 * I give ``last_name`` a :ref:`default value<test_w_optional_arguments>`
 
@@ -3783,31 +3612,58 @@ what happens when a child has more than one parent?
 
   .. code-block:: python
 
-    AssertionError: 'smith' != 'blow'
+    AssertionError: 'doe' != 'blow'
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``lil.last_name`` in :ref:`test_classes_w_multiple_parents`
+  for the expectation of ``mary.last_name`` because this happens when ``mary = src.family_ties.Mary()`` runs, if the parents of ``Mary`` are ``(Joe, Jane)``
 
   .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 3-4
 
-            lil = src.family_ties.Lil()
-            self.assertEqual(lil.first_name, 'lil')
-            # self.assertEqual(lil.last_name, mary.last_name)
-            self.assertEqual(lil.last_name, john.last_name)
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
+    mary = src.family_ties.Mary()
+           Mary.__init__(
+               first_name='mary',
+               last_name=None,
+           )
+               super().__init__(first_name)
+           Joe.__init__('mary')
+               super().__init__(first_name)
+               self.eye_color = 'blue'
+           Blow.__init__('mary')
+               super().__init__(
+                   first_name=first_name,
+                   last_name='blow'
+               )
+           # call the next parent of Mary
+           Jane.__init__('mary', last_name='blow')
+               super().__init__('mary')
+               self.eye_color = 'green'
+           Doe.__init__('mary')
+               super().__init__('mary')
+           Person.__init__('mary')
+               Person.__init__('mary', last_name='doe')
+               self.first_name = 'mary'
+               self.last_name = 'doe' # use the default value
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.last_name`` in :ref:`test_classes_w_multiple_parents`
+
+  .. code-block:: python
+    :lineno-start: 67
+    :emphasize-lines: 4-5
+
+            # mary = src.family_ties.Jane('mary')
+            mary = src.family_ties.Mary()
+            self.assertEqual(mary.first_name, 'mary')
+            # self.assertEqual(mary.last_name, mary.first_name)
+            self.assertEqual(mary.last_name, jane.last_name)
+            # self.assertEqual(mary.last_name, joe.last_name)
+            # self.assertEqual(mary.eye_color, jane.eye_color)
+            self.assertEqual(mary.eye_color, joe.eye_color)
             # self.assertNotIsSubclass(
             self.assertIsSubclass(
-                src.family_ties.Lil, src.family_ties.John
+                src.family_ties.Mary, src.family_ties.Jane
             )
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.Mary
+            self.assertIsSubclass(
+                src.family_ties.Mary, src.family_ties.Joe
             )
-
-
-    # Exceptions seen
 
   the test passes because this happens when ``lil = src.family_ties.Lil()`` runs
 
@@ -3816,25 +3672,31 @@ what happens when a child has more than one parent?
     lil = src.family_ties.Lil()
           Lil.__init__()
               super().__init__('lil')
-          Mary.__init__('lil')
-              Mary.__init__('lil', last_name=None)
-              super().__init__(first_name)
-          Jane.__init__('lil')
-              super().__init__(first_name)
-              self.eye_color = 'brown'
-          Doe.__init__('lil')
+          Mary.__init__(
+              first_name='lil',
+              last_name=None,
+          )
               super().__init__(first_name)
           Joe.__init__('lil')
-              super().__init__('lil')
+              super().__init__(first_name)
+              self.eye_color = 'blue'
           Blow.__init__('lil')
               super().__init__(
                   first_name=first_name,
-                  last_name='blow',
+                  last_name='blow'
               )
-          John.__init__(
+          # call the next parent of Mary
+          Jane.__init__(
               first_name='lil',
               last_name='blow',
           )
+              super().__init__('lil')
+              # last_name does not get passed to parent
+              self.eye_color = 'green'
+          Doe.__init__('lil')
+              super().__init__('lil')
+          # call the next parent of Lil
+          John.__init__('lil')
               super().__init__(first_name)
           Smith.__init__('lil')
               super().__init__(
@@ -3850,254 +3712,157 @@ what happens when a child has more than one parent?
 
   the order of the parents matters.
 
-----
-
-* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instance<how to test if something is an instance of a class>` of ``Lil`` inherit ``eye_color`` from ``Jane``, the parent of ``Mary``
+* I remove the commented lines from ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 5
+    :lineno-start: 10
 
-            lil = src.family_ties.Lil()
-            self.assertEqual(lil.first_name, 'lil')
-            # self.assertEqual(lil.last_name, mary.last_name)
-            self.assertEqual(lil.last_name, john.last_name)
-            self.assertEqual(lil.eye_color, '')
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.Mary
+    class Blow(src.person.Person):
+
+        def __init__(self, first_name):
+            super().__init__(
+                first_name=first_name,
+                last_name='blow',
             )
 
 
-    # Exceptions seen
+    class Smith(src.person.Person):
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'brown' != ''
-
-* I change the expectation of the :ref:`assertion<what causes AssertionError?>`
-
-  .. code-block:: python
-    :lineno-start: 100
-    :emphasize-lines: 5-6
-
-            lil = src.family_ties.Lil()
-            self.assertEqual(lil.first_name, 'lil')
-            # self.assertEqual(lil.last_name, mary.last_name)
-            self.assertEqual(lil.last_name, john.last_name)
-            # self.assertEqual(lil.eye_color, '')
-            self.assertEqual(lil.eye_color, jane.eye_color)
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.Mary
+        def __init__(self, first_name):
+            super().__init__(
+                first_name=first_name,
+                last_name='smith',
             )
 
 
-    # Exceptions seen
+    class Jane(Doe):
 
-  :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` and ``Mary`` get ``eye_color`` from ``Jane`` if ``Jane`` is an ancestor of the first parent in the order of parents.
+        def __init__(
+                self, first_name='jane',
+                last_name=None
+            ):
+            super().__init__(first_name)
+            self.eye_color = 'green'
 
-----
 
-* I want to see what happens when I add the ``eye_color`` :ref:`attribute<what is a class attribute?>` to ``Mary`` in ``family_ties.py``
+    class Joe(Blow):
 
-  .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 8-12
+        def __init__(self, first_name='joe'):
+            super().__init__(first_name)
+            self.eye_color = 'blue'
 
-    # class Mary(Jane): pass
-    # class Mary(Jane):
-    class Mary(Jane, Joe):
-    # class Mary(Joe, Jane):
 
-        # def __init__(self):
-        # def __init__(self, first_name='mary'):
-        # def __init__(self, first_name='mary', last_name):
+    class Mary(Joe, Jane):
+
         def __init__(
                 self, first_name='mary',
                 last_name=None,
             ):
-            # super().__init__('mary')
             super().__init__(first_name)
-            self.eye_color = 'red'
-            # self.first_name = 'mary'
-            # self.last_name = 'doe'
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+    class John(Smith):
 
-    AssertionError: 'red' != 'brown'
+        def __init__(self, first_name='john'):
+            super().__init__(first_name)
 
-  for ``mary.eye_color`` because :ref:`instances<how to test if something is an instance of a class>` of :ref:`classes<what is a class?>` can override the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` they inherit
 
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``mary.eye_color`` in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+    class Lil(Mary, John):
 
-  .. code-block:: python
-    :lineno-start: 156
-    :emphasize-lines: 7-8
+        def __init__(self):
+            super().__init__('lil')
 
-            # mary = src.family_ties.Jane('mary')
-            mary = src.family_ties.Mary()
-            self.assertEqual(mary.first_name, 'mary')
-            # self.assertEqual(mary.last_name, mary.first_name)
-            # self.assertEqual(mary.last_name, jane.last_name)
-            self.assertEqual(mary.last_name, joe.last_name)
-            # self.assertEqual(mary.eye_color, jane.eye_color)
-            self.assertEqual(mary.eye_color, 'red')
-            # assert not issubclass(
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Mary, src.family_ties.Jane
-            )
-            assert issubclass(
-                src.family_ties.Mary, src.family_ties.Joe
-            )
-            # self.assertNotIsSubclass(
-            self.assertIsSubclass(
-                src.family_ties.Mary, src.family_ties.Joe
-            )
+----
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+* I add an :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` to test if :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` inherit ``eye_color`` from ``Jane`` or ``Joe``, in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
 
   .. code-block:: python
-
-    AssertionError: 'red' != 'brown'
-
-  for ``lil.eye_color`` because this happens when ``lil = src.family_ties.Lil()`` runs
-
-  .. code-block:: python
-
-    lil = src.family_ties.Lil()
-          Lil.__init__()
-              super().__init__('lil')
-          Mary.__init__('lil')
-              Mary.__init__('lil', last_name=None)
-              super().__init__(first_name)
-              self.eye_color = 'red'
-          Jane.__init__('lil')
-              super().__init__(first_name)
-              # self.eye_color = 'brown' does not affect instance
-          Doe.__init__('lil')
-              super().__init__(first_name)
-          Joe.__init__('lil')
-              super().__init__('lil')
-          Blow.__init__('lil')
-              super().__init__(
-                  first_name=first_name,
-                  last_name='blow',
-              )
-          John.__init__(
-              first_name='lil',
-              last_name='blow',
-          )
-              super().__init__(first_name)
-          Smith.__init__('lil')
-              super().__init__(
-                  first_name=first_name,
-                  last_name='smith',
-              )
-          Person.__init__(
-              first_name='lil',
-              last_name='smith',
-          )
-              self.first_name = 'lil'
-              self.last_name = 'smith'
-
-  the ``eye_color`` :ref:`attribute<what is a class attribute?>` of ``Jane`` never gets set for :ref:`instances<how to test if something is an instance of a class>` of ``Mary``
-
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``lil.eye_color`` in :ref:`test_classes_w_multiple_parents`
-
-  .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 6-7
+    :lineno-start: 90
+    :emphasize-lines: 4
 
             lil = src.family_ties.Lil()
             self.assertEqual(lil.first_name, 'lil')
-            # self.assertEqual(lil.last_name, mary.last_name)
             self.assertEqual(lil.last_name, john.last_name)
-            # self.assertEqual(lil.eye_color, '')
-            # self.assertEqual(lil.eye_color, jane.eye_color)
-            self.assertEqual(lil.eye_color, mary.eye_color)
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
+            self.assertEqual(lil.eye_color, jane.eye_color)
             self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.John
             )
-            assert issubclass(
+            self.assertIsSubclass(
                 src.family_ties.Lil, src.family_ties.Mary
             )
 
 
     # Exceptions seen
 
-  the test passes.
-
-* I change the order of the parents of ``Lil`` in ``family_ties.py``
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 3-4
 
-    # class Lil(John): pass
-    # class Lil(John, Mary): pass
-    class Lil(John, Mary):
-    # class Lil(Mary, John):
+    AssertionError: 'blue' != 'green'
 
-        def __init__(self):
-            super().__init__('lil')
-            # self.first_name = 'lil'
-            # self.last_name = 'blow'
+* I change the expectation of the :ref:`assertion<what causes AssertionError?>`
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 4-5
+
+            lil = src.family_ties.Lil()
+            self.assertEqual(lil.first_name, 'lil')
+            self.assertEqual(lil.last_name, john.last_name)
+            # self.assertEqual(lil.eye_color, jane.eye_color)
+            self.assertEqual(lil.eye_color, mary.eye_color)
+            self.assertIsSubclass(
+                src.family_ties.Lil, src.family_ties.John
+            )
+            self.assertIsSubclass(
+                src.family_ties.Lil, src.family_ties.Mary
+            )
+
+
+    # Exceptions seen
+
+  - :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Mary``
+  - :ref:`instances<how to test if something is an instance of a class>` of ``Mary`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``eye_color`` from ``Joe``
+  - :ref:`instances<how to test if something is an instance of a class>` of ``Lil`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``John``
+  - :ref:`instances<how to test if something is an instance of a class>` of ``John`` :ref:`inherit<test_attributes_and_methods_of_objects>` ``last_name`` from ``Smith``
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>` for ``joe.eye_color`` that will fail
+
+  .. code-block:: python
+    :lineno-start: 51
+    :emphasize-lines: 5
+
+        def test_classes_w_multiple_parents(self):
+            joe = src.family_ties.Joe()
+            self.assertEqual(joe.first_name, 'joe')
+            self.assertEqual(joe.last_name, 'blow')
+            self.assertEqual(joe.eye_color, '')
+            self.assertIsSubclass(
+                src.family_ties.Joe, src.family_ties.Blow
+            )
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'blow' != 'smith'
+    AssertionError: 'blue' != ''
 
-  because the order of the parents has an effect on the ``last_name`` :ref:`attribute<what is a class attribute?>`.
-
-* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``lil.last_name``
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 3-4
+    :lineno-start: 51
+    :emphasize-lines: 5-6
 
-            lil = src.family_ties.Lil()
-            self.assertEqual(lil.first_name, 'lil')
-            self.assertEqual(lil.last_name, mary.last_name)
-            # self.assertEqual(lil.last_name, john.last_name)
-            # self.assertEqual(lil.eye_color, '')
-            # self.assertEqual(lil.eye_color, jane.eye_color)
-            self.assertEqual(lil.eye_color, mary.eye_color)
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            # self.assertNotIsSubclass(
+        def test_classes_w_multiple_parents(self):
+            joe = src.family_ties.Joe()
+            self.assertEqual(joe.first_name, 'joe')
+            self.assertEqual(joe.last_name, 'blow')
+            # self.assertEqual(joe.eye_color, '')
+            self.assertEqual(joe.eye_color, 'blue')
             self.assertIsSubclass(
-                src.family_ties.Lil, src.family_ties.John
-            )
-            assert issubclass(
-                src.family_ties.Lil, src.family_ties.Mary
+                src.family_ties.Joe, src.family_ties.Blow
             )
 
   the test passes.
@@ -4105,17 +3870,13 @@ what happens when a child has more than one parent?
 * I add an :ref:`assertion<what is an assertion?>` for ``john.eye_color``
 
   .. code-block:: python
-    :lineno-start: 180
+    :lineno-start: 85
     :emphasize-lines: 4
 
             john = src.family_ties.John()
             self.assertEqual(john.first_name, 'john')
             self.assertEqual(john.last_name, 'smith')
-            self.assertEqual(john.eye_color, 'orange')
-            assert issubclass(
-                src.family_ties.John, src.family_ties.Smith
-            )
-            # self.assertNotIsSubclass(
+            self.assertEqual(john.eye_color, '')
             self.assertIsSubclass(
                 src.family_ties.John, src.family_ties.Smith
             )
@@ -4126,442 +3887,104 @@ what happens when a child has more than one parent?
 
     AttributeError: 'John' object has no attribute 'eye_color'
 
-* I add a value for the ``eye_color`` :ref:`attribute<what is a class attribute?>` to ``Smith`` in ``family_ties.py``
+* I add the ``eye_color`` :ref:`attribute<what is a class attribute?>` to ``Smith`` in ``classes.py``
 
   .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 8
+    :lineno-start: 19
+    :emphasize-lines: 3
 
     class Smith(src.person.Person):
+
+        eye_color = 'brown'
 
         def __init__(self, first_name):
             super().__init__(
                 first_name=first_name,
                 last_name='smith',
             )
-            self.eye_color = 'orange'
-            # self.first_name = first_name
-            # self.last_name = 'smith'
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'orange' != 'red'
+    AssertionError: 'brown' != ''
 
-  because if the parents of ``Lil`` are ``(John, Mary)``, this happens when ``lil = src.family_ties.Lil()`` runs
-
-  .. code-block:: python
-
-    lil = src.family_ties.Lil()
-          Lil.__init__()
-              super().__init__('lil')
-          John.__init__('lil')
-              super().__init__(first_name)
-          Smith.__init__('lil')
-              super().__init__(
-                  first_name=first_name, last_name='smith',
-              )
-              self.eye_color = 'orange'
-          Mary.__init__('lil', 'smith')
-              super().__init__(first_name)
-              # self.eye_color = 'red' does not affect instance
-          Jane.__init__('lil')
-              super().__init__(first_name)
-              # self.eye_color = 'brown' does not affect instance
-          Joe.__init__('lil')
-              super().__init__('lil')
-          Blow.__init__('lil')
-              self.first_name = 'lil'
-              self.last_name = 'blow'
-
-*
-
-----
-
-----
-
-----
-
-----
-
-
-
-----
-
-
-
-* I add an :ref:`assertion<what is an assertion?>` for the ``first_name``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
+* I change the expectation of the :ref:`assertion<what is an assertion?>` for ``john.eye_color`` in :ref:`test_classes_w_multiple_parents` in ``test_classes.py``
 
   .. code-block:: python
-    :lineno-start: 164
-    :emphasize-lines: 3
+    :lineno-start: 85
+    :emphasize-lines: 4-5
 
-            lil = src.family_ties.Lil()
-            self.assertIsInstance(lil, src.family_ties.John)
-            self.assertEqual(lil.first_name, 'lil')
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'john' != 'lil'
-
-* I add the ``__init__`` :ref:`method<what is a method?>` in the :ref:`definition<how to make a class>` of ``Lil`` in ``family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 1-2, 4-5
-
-    # class Lil(John): pass
-    class Lil(John):
-
-        def __init__(self, first_name='lil'):
-            super().__init__(first_name=first_name)
+            john = src.family_ties.John()
+            self.assertEqual(john.first_name, 'john')
+            self.assertEqual(john.last_name, 'smith')
+            # self.assertEqual(john.eye_color, '')
+            self.assertEqual(john.eye_color, 'brown')
+            self.assertIsSubclass(
+                src.family_ties.John, src.family_ties.Smith
+            )
 
   the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` for the last name of ``lil``, in :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 164
-    :emphasize-lines: 4
-
-            lil = src.family_ties.Lil()
-            self.assertIsInstance(lil, src.family_ties.John)
-            self.assertEqual(lil.first_name, 'lil')
-            self.assertEqual(lil.last_name, lil.first_name)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'smith' != 'lil'
-
-* I change the expectation
-
-  .. code-block:: python
-    :lineno-start: 164
-    :emphasize-lines: 4-5
-
-            lil = src.family_ties.Lil()
-            self.assertIsInstance(lil, src.family_ties.John)
-            self.assertEqual(lil.first_name, 'lil')
-            # self.assertEqual(lil.last_name, lil.first_name)
-            self.assertEqual(lil.last_name, john.last_name)
-
-
-    # Exceptions seen
-
-  the test passes because Python_ makes the following calls to resolve the call to make an instance of the ``Lil`` :ref:`class<what is a class?>` when ``John`` is the parent
-
-  .. code-block:: python
-
-    lil = src.family_ties.Lil()
-          Lil.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = John.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = Smith.__init__('lil')
-          super().__init__(first_name, last_name='smith')
-        = Person.__init__('lil', last_name='smith')
-          self.first_name = 'lil'
-          self.last_name = 'smith'
-
-* I add :ref:`assertIsInstance<another way to test if something is an instance of a class>` to test if ``Lil`` is an instance of ``Mary``
-
-  .. code-block:: python
-    :lineno-start: 164
-    :emphasize-lines: 3
-
-            lil = src.family_ties.Lil()
-            self.assertIsInstance(lil, src.family_ties.John)
-            self.assertIsInstance(lil, src.family_ties.Mary)
-            self.assertEqual(lil.first_name, 'lil')
-            # self.assertEqual(lil.last_name, lil.first_name)
-            self.assertEqual(lil.last_name, john.last_name)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError:
-        <src.family_ties.Lil object at 0xffffaaaaaaaa>
-        is not an instance of <class 'src.family_ties.Mary'>
-
-  because ``Lil`` is not a child of ``Mary``, yet.
-
-* I add ``Mary`` as a parent of ``Lil`` before ``John`` to see if it will change the ``last_name`` value, in ``family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 2-3
-
-    # class Lil(John): pass
-    # class Lil(John):
-    class Lil(Mary, John):
-
-        def __init__(self, first_name='lil'):
-            super().__init__(first_name=first_name)
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-
-    TypeError: John.__init__() got
-               an unexpected keyword argument 'last_name'.
-               Did you mean 'the_first'?
-
-  because Python_ makes the following calls to resolve the call to make an instance of the ``Lil`` :ref:`class<what is a class?>` if the parents are ``(Mary, John)``
-
-  first it makes these calls for the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = src.family_ties.Lil()
-          Lil.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = Mary.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = Jane.__init__(first_name='lil', **kwargs)
-          super().__init__(first_name=first_name)
-        = Doe # Doe has no __init__, skip to Joe
-        = Joe.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = Blow.__init__('lil')
-          super().__init__(first_name, last_name='blow')
-
-  then it makes this call for the ``John`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = John.__init__(first_name='lil', last_name='blow')
-
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``John`` only takes one :ref:`keyword_argument<test_w_keyword_arguments>` (``first_name``) and the call provides two (``first_name`` and ``last_name``)
-
-* I add a :ref:`double starred expression<double starred expressions>` to ``John`` so it can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
-
-  .. code-block:: python
-    :lineno-start: 50
-    :emphasize-lines: 4-5
-
-    # class John(src.person.Person):
-    class John(Smith):
-
-        # def __init__(self, first_name='john'):
-        def __init__(self, first_name='john', **kwargs):
-            super().__init__(first_name=first_name)
-
-  the test passes Python_ makes this call for the ``John`` parent after it gets values from the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = John.__init__(first_name='lil', last_name='blow')
-          super().__init__(first_name=first_name)
-        = Smith.__init__(first_name='lil')
-          super().__init__(first_name, last_name='smith')
-        = Person.__init__('lil', last_name='smith')
-          self.first_name = 'lil'
-          self.last_name = 'smith'
-
-----
-
-* I change the order of the parents of ``Lil``
-
-  .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 3-4
-
-    # class Lil(John): pass
-    # class Lil(John):
-    # class Lil(Mary, John):
-    class Lil(John, Mary):
-
-        def __init__(self, first_name='lil'):
-            super().__init__(first_name=first_name)
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-
-    TypeError: Mary.__init__() got
-               an unexpected keyword argument 'last_name'.
-               Did you mean 'the_first'?
-
-  same problem, same solution
-
-* I add a :ref:`double starred expression<double starred expressions>` to ``Mary`` so it can take any number of :ref:`keyword arguments<test_w_keyword_arguments>`
-
-  .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 6-7
-
-    # class Mary(Jane): pass
-    # class Mary(Joe, Jane): pass
-    # class Mary(Joe, Jane):
-    class Mary(Jane, Joe):
-
-        # def __init__(self, first_name='mary'):
-        def __init__(self, first_name='mary', **kwargs):
-            super().__init__(first_name=first_name)
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: 'blow' != 'smith'
-
-  the order of the parents matters because Python_ makes the following calls to resolve the call to make an instance of the ``Lil`` :ref:`class<what is a class?>` if the parents are ``(John, Mary)``
-
-  first it makes these calls for the ``John`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = src.family_ties.Lil()
-          Lil.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = John.__init__(first_name='lil', **kwargs)
-          super().__init__(first_name=first_name)
-        = Smith.__init__(first_name='lil')
-          super().__init__(first_name, last_name='smith')
-
-  then it makes these calls for the ``Mary`` parent, to resolve the :ref:`attributes<what is a class attribute?>`
-
-  .. code-block:: python
-
-    lil = Mary.__init__(first_name='lil', **kwargs)
-          super().__init__(first_name=first_name)
-        = Jane.__init__(first_name='lil', **kwargs)
-          super().__init__(first_name=first_name)
-        = Doe # Doe has no __init__, skip to Joe
-        = Joe.__init__(first_name='lil')
-          super().__init__(first_name=first_name)
-        = Blow.__init__('lil')
-          super().__init__(first_name, last_name='blow')
-        = Person.__init__(first_name='lil', last_name='blow')
-          self.first_name = 'lil'
-          self.last_name = 'blow'
-
-  - ``Jane`` and ``Mary`` do not pass on the value they receive for ``last_name`` to their parents when they call  ``super().__init__`` which means :ref:`the method uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`
-  - ``Blow`` always calls ``Person`` with ``blow`` as the value for ``last_name`` it does not matter if I send a different value
-  - ``Smith`` always calls ``Person`` with ``smith`` as the value for ``last_name`` it does not matter if I send a different value
-  - whichever parent calls ``Person`` last will be the values that the instance gets
-
-* I change the order of the parents of ``Lil`` back to ``(Mary, John)``
-
-  .. code-block:: python
-    :lineno-start: 59
-    :emphasize-lines: 3-4
-
-    # class Lil(John): pass
-    # class Lil(John):
-    class Lil(Mary, John):
-    # class Lil(John, Mary):
-
-        def __init__(self, first_name='lil'):
-            super().__init__(first_name=first_name)
-
-  the test is green again. The test shows that
-
-  - if the parents of ``Lil`` are defined as ``(Mary, John)`` the default value for ``last_name`` is the value for ``last_name`` of ``John``
-  - if the parents of ``Lil`` are defined as ``(John, Mary)`` the default value for ``last_name`` is the value for the ``last_name`` of ``Mary``
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 4
-
-    class Doe(src.person.Person): pass
-
-
-    class Blow(src.person.Person):
-
-        def __init__(self, first_name):
-            super().__init__(first_name, last_name='blow')
-
-
-    class Smith(src.person.Person):
-
-        def __init__(self, first_name):
-            super().__init__(first_name, last_name='smith')
-
-
-    class Jane(Doe):
-
-        def __init__(self, first_name='jane', **kwargs):
-            super().__init__(first_name=first_name)
-
-
-    class Joe(Blow):
-
-        def __init__(self, first_name='joe'):
-            super().__init__(first_name=first_name)
-
-
-    class Mary(Jane, Joe):
-
-        def __init__(self, first_name='mary', **kwargs):
-            super().__init__(first_name=first_name)
-
-
-    class John(Smith):
-
-        def __init__(self, first_name='john', **kwargs):
-            super().__init__(first_name=first_name)
-
-
-    class Lil(Mary, John):
-
-        def __init__(self, first_name='lil'):
-            super().__init__(first_name=first_name)
-
-----
-
-* I remove the commented lines from :ref:`test_classes_w_multiple_parents` in ``test_family_ties.py``
-
-  .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 51
 
         def test_classes_w_multiple_parents(self):
             joe = src.family_ties.Joe()
             self.assertEqual(joe.first_name, 'joe')
             self.assertEqual(joe.last_name, 'blow')
-            self.assertIsInstance(joe, src.family_ties.Blow)
+            self.assertEqual(joe.eye_color, 'blue')
+            self.assertIsSubclass(
+                src.family_ties.Joe, src.family_ties.Blow
+            )
 
             jane = src.family_ties.Jane()
             self.assertEqual(jane.first_name, 'jane')
             self.assertEqual(jane.last_name, 'doe')
-            self.assertIsInstance(jane, src.family_ties.Doe)
+            self.assertEqual(jane.eye_color, 'green')
+            self.assertIsSubclass(
+                src.family_ties.Jane, src.family_ties.Doe
+            )
 
             mary = src.family_ties.Mary()
             self.assertEqual(mary.first_name, 'mary')
-            self.assertEqual(mary.last_name, joe.last_name)
-            self.assertIsInstance(mary, src.family_ties.Jane)
-            self.assertIsInstance(mary, src.family_ties.Doe)
-            self.assertIsInstance(mary, src.family_ties.Joe)
+            self.assertEqual(mary.last_name, jane.last_name)
+            self.assertEqual(mary.eye_color, joe.eye_color)
+            self.assertIsSubclass(
+                src.family_ties.Mary, src.family_ties.Jane
+            )
+            self.assertIsSubclass(
+                src.family_ties.Mary, src.family_ties.Joe
+            )
 
             john = src.family_ties.John()
             self.assertEqual(john.first_name, 'john')
             self.assertEqual(john.last_name, 'smith')
-            self.assertIsInstance(john, src.family_ties.Smith)
+            self.assertEqual(john.eye_color, 'brown')
+            self.assertIsSubclass(
+                src.family_ties.John, src.family_ties.Smith
+            )
 
             lil = src.family_ties.Lil()
-            self.assertIsInstance(lil, src.family_ties.John)
-            self.assertIsInstance(lil, src.family_ties.Mary)
             self.assertEqual(lil.first_name, 'lil')
             self.assertEqual(lil.last_name, john.last_name)
+            self.assertEqual(lil.eye_color, mary.eye_color)
+            self.assertIsSubclass(
+                src.family_ties.Lil, src.family_ties.John
+            )
+            self.assertIsSubclass(
+                src.family_ties.Lil, src.family_ties.Mary
+            )
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # ModuleNotFoundError
+    # TypeError
 
 * I add a git_ commit message in the other terminal_
 
@@ -4571,34 +3994,39 @@ what happens when a child has more than one parent?
     git commit -am \
     'add test_classes_w_multiple_parents'
 
-.. NOTE:: All the instances could have been made with only the ``Person`` :ref:`class<what is a class?>` because there was nothing unique about the :ref:`classes<what is a class?>` I made it ``family_ties.py`` and it would not have given me the chance to practice making classes with multiple parents and seeing how Python_ resolves the order - this is called `Method Resolution Order`_
+.. NOTE:: All the instances could have been made with only the ``Person`` :ref:`class<what is a class?>` because there was nothing unique about the :ref:`classes<what is a class?>` I made in ``family_ties.py`` and it would not have given me the chance to practice making classes with multiple parents and seeing how Python_ resolves them.
 
   .. code-block:: python
 
     joe = src.family_ties.Joe()
     joe = src.person.Person('joe', last_name='blow')
+    joe.eye_color = 'blue'
 
   .. code-block:: python
 
     jane = src.family_ties.Jane()
     jane = src.person.Person('jane')
+    jane.eye_color = 'green'
 
   .. code-block:: python
 
     mary = src.family_ties.Mary()
-    mary = src.person.Person('mary', 'blow')
+    mary = src.person.Person('mary', joe.last_name)
+    mary.eye_color = joe.eye_color
 
   .. code-block:: python
 
     john = src.family_ties.John()
     john = src.person.Person('john', 'smith')
+    john.eye_color = 'brown'
 
   .. code-block:: python
 
     lil = src.person.Lil()
-    lil = src.person.Person('lil', 'smith')
+    lil = src.person.Person('lil', john.last_name)
+    lil.eye_color = mary.eye_color
 
-  which would have just been Python_ making this call to make instances of the ``Person`` :ref:`class<what is a class?>`
+  which would have just been Python_ making these calls to make :ref:`instances (copies)<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>`
 
   .. code-block:: python
 
@@ -4606,6 +4034,7 @@ what happens when a child has more than one parent?
              Person.__init__(first_name, last_name=last_name)
              self.first_name = first_name
              self.last_name = last_name
+    a_name.eye_color = color
 
 :ref:`I can make classes with multiple parents<test_classes_w_multiple_parents>`
 
@@ -4631,7 +4060,7 @@ I can make a :ref:`class<what is a class?>` with
 close the project
 *********************************************************************************
 
-* I close the file(s) I have open in the :ref:`editor(s)<2 editors>`
+* I close ``test_family_ties.py`` and ``family_ties.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``person``
@@ -4672,8 +4101,6 @@ you have gone through a lot of things and know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to use classes<classes>`
 * :ref:`how to make classes<everything is an object>`
-
-:ref:`Would you like to use test classes with parents?<family ties>`
 
 ----
 
