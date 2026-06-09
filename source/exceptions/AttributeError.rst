@@ -1,6 +1,6 @@
 .. meta::
-  :description: Getting an AttributeError in Python? Learn to fix the common 'NoneType' object and other attribute errors with our step-by-step guide and video tutorial.
-  :keywords: Jacob Itegboje, python AttributeError 'NoneType' object has no attribute, how to fix AttributeError in python, python 'int' object has no attribute 'append', python AttributeError 'str' object has no attribute, AttributeError: 'list' object has no attribute 'add', python check if attribute exists before access, python debug AttributeError in class, python common causes of AttributeError, AttributeError vs TypeError in Python
+  :description: What causes AttributeError in Python? Step-by-step TDD tutorial that deliberately triggers AttributeError: module 'src.attribute_error' has no attribute 'variable_01' (and with Did you mean suggestions), type object 'AClass' has no attribute 'attribute_01', plus side-effect TypeError when calling methods defined without self (AClass.method_04(AClass) / takes 0 positional arguments but 1 was given) and SyntaxError during class vs function edits. Fix by adding 10 module variables, 10 functions, 10 class attributes and 10 methods (mixed with/without self, all returning or set to None) using bare attribute access in tests (no assert statement needed; the access itself must not raise for the test to pass). Covers uv init attribute_error, src/ package layout, import src.attribute_error, tests/__init__.py, uv add pytest-watcher, uv run pytest-watcher . --now, git commits after each RED/GREEN/REFACTOR step, that variables/functions are attributes of modules, class attributes and methods are attributes of classes, and "in Python everything is an object". Builds on AssertionError (re-uses initial test_failure with "AssertionError: True is not false") and None chapters. Part of the Pumping Python TDD book by Jacob Itegboje.
+  :keywords: Jacob Itegboje, Pumping Python, python AttributeError, what causes AttributeError, AttributeError: module 'src.attribute_error' has no attribute, AttributeError type object 'AClass' has no attribute, AttributeError Did you mean, python AttributeError fix, TDD AttributeError, red green refactor attributes, uv init attribute_error, src.attribute_error, bare attribute access unittest, no assert needed for AttributeError test, python module has no attribute, python class has no attribute, methods without self TypeError, python everything is an object, attributes of modules vs classes, class attributes tutorial, what is a method python, python TDD src layout, pytest-watcher AttributeError, AssertionError True is not false in AttributeError chapter, NameError TypeError SyntaxError alongside AttributeError, Pumping Python exceptions, python TDD for beginners AttributeError
 
 .. include:: ../links.rst
 
@@ -2469,6 +2469,11 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 
     # Exceptions seen
+    # AssertionError
+    # AttributeError
+    # NameError
+    # TypeError
+    # SyntaxError
 
   the terminal_ is my friend, and shows AttributeError_
 
@@ -2588,7 +2593,7 @@ I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`TypeError<what causes TypeError?>` and
+* :ref:`TypeError<what causes TypeError?>`
 * SyntaxError_
 
 ----
@@ -2616,7 +2621,7 @@ I know
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 
-:ref:`Would you like to test None (the simplest object)?<telephone>`
+:ref:`Would you like to None (the simplest object)?<what is None?>`
 
 ----
 
