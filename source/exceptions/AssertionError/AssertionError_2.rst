@@ -81,7 +81,7 @@ continue the project
 
     ================== 6 passed in A.BCs ===================
 
-* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_assertion_error.py`` with the mouse to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_assertion_error.py`` with the mouse to open it
 
 ----
 
@@ -1611,7 +1611,7 @@ remove repetition with class attributes
 close the project
 *********************************************************************************
 
-* I close ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
+* I close ``test_assertion_error.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``assertion_error``

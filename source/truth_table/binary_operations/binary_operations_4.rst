@@ -2483,7 +2483,7 @@ examples of Material Implication
 close the project
 *********************************************************************************
 
-* I close ``test_truth_table.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
+* I close ``test_truth_table.py`` and ``truth_table.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``

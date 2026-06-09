@@ -91,7 +91,7 @@ continue the project
 
     ================== 8 passed in G.HIs ===================
 
-* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it
 
 ----
 
@@ -176,7 +176,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
 ----
 
-** I open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+** I open ``truth_table.py`` from the ``src`` folder_
 
 * I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
@@ -2291,7 +2291,7 @@ examples of Logical Disjunction
 close the project
 *********************************************************************************
 
-* I close ``test_binary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
+* I close ``test_binary.py`` and ``truth_table.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``

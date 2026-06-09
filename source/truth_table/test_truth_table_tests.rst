@@ -2701,7 +2701,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 close the project
 *********************************************************************************
 
-* I close ``truth_table.py`` in the :ref:`editor<2 editors>`
+* I close ``truth_table.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``

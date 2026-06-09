@@ -62,7 +62,7 @@ start the project
   .. note:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
 
 * I name this project ``type_error``
-* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1``
 
   .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
@@ -168,7 +168,7 @@ start the project
     FAILED tests/test_type_error.py::TestTypeError::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_type_error.py:7`` to put the cursor on line 7
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
@@ -242,7 +242,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
 
 ----
 
-* I open ``type_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
+* I open ``type_error.py`` from the ``src`` folder_ of my `Integrated Development Environment (IDE)`_, then add the name and point it to :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -1167,7 +1167,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``test_type_error.py``  and ``type_error.py`` in the :ref:`editor<2 editors>`
+* I close ``test_type_error.py``  and ``type_error.py``
 
 * then I click in the terminal_ and exit the tests with :kbd:`ctrl/command+c` on the keyboard, the terminal_ goes back to the command line.
 

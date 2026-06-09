@@ -119,7 +119,7 @@ continue the project
 
     touch src/family_ties.py
 
-* I open ``test_family_ties.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_family_ties.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_family_ties.py``
 
@@ -171,7 +171,7 @@ continue the project
     FAILED tests/test_family_ties.py::TestFamilyTies::test_failure - AssertionError: True is not false
     ================= 1 failed, 6 passed in X.YZs ==================
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -291,7 +291,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
     # NameError
     # AttributeError
 
-* I open ``family_ties.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``family_ties.py`` from the ``src`` folder_
 
 * I add a :ref:`class definition<how to make a class>` definition to ``family_ties.py``
 

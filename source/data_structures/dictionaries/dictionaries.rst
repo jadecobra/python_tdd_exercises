@@ -47,7 +47,7 @@ start the project
 *********************************************************************************
 
 * I name this project ``dictionaries``
-* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1``
 
   .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
@@ -153,7 +153,7 @@ start the project
     FAILED tests/test_dictionaries.py::TestDictionaries::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_dictionaries.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_dictionaries.py:7`` to put the cursor on line 7
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
@@ -3615,7 +3615,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``test_dictionaries.py`` in the :ref:`editor<2 editors>`
+* I close ``test_dictionaries.py``
 
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

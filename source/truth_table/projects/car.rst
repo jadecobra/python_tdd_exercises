@@ -156,7 +156,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_car.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_car.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_car.py``
 
@@ -392,7 +392,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I open ``car.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``car.py`` from the ``src`` folder_
 
 * I add a :ref:`function<what is a function?>` named ``starter`` to ``car.py``
 
@@ -3060,7 +3060,7 @@ key         brake               start               gear                output
 close the project
 *********************************************************************************
 
-* I close ``test_car.py`` and ``car.py`` in the :ref:`editor<2 editors>`
+* I close ``test_car.py`` and ``car.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``car``

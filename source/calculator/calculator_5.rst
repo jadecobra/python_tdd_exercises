@@ -62,7 +62,7 @@ open the project
 
     ======================== 5 passed in X.YZs =========================
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it
 
 ----
 
@@ -262,7 +262,7 @@ how to multiply a list
 
     AssertionError: [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3] != 'brmph?! Numbers only. Try again...'
 
-* I open ``calculator.py`` in the :ref:`editor<2 editors>`
+* I open ``calculator.py``
 
 * I add an :ref:`if statement<if statements>` to the :ref:`multiply function<test_multiplication>` in ``calculator.py``
 
@@ -1060,7 +1060,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
+* I close ``test_calculator.py`` and ``calculator.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

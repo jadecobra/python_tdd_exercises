@@ -97,7 +97,7 @@ streamlit_ has a `session state object`_ that I can use to keep values in betwee
 
 ----
 
-* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it
 
 * I add a test for the `session state object`_, I want it to hold the number when I click the buttons, in ``test_streamlit_calculator.py``
 
@@ -2531,7 +2531,7 @@ That was a lot! I am going to take a nap. I will work on the operations after th
 close the project
 *********************************************************************************
 
-* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py``
 * I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

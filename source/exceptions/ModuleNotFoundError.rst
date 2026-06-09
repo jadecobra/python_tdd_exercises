@@ -68,7 +68,7 @@ start the project
 
     tests/test_module_not_found_error.py:7: AssertionError
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_module_not_found_error.py:7`` to put the cursor on line 7
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -332,7 +332,7 @@ I change ``module_not_found_error.py`` in the ``src`` folder to ``module_00.py``
 close the project
 *********************************************************************************
 
-* I close ``test_module_not_found_error.py`` in the :ref:`editor<2 editors>`
+* I close ``test_module_not_found_error.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
   * I `change directory`_ to the parent of ``module_not_found_error``

@@ -84,7 +84,7 @@ how to make a shell script
 
 * I name this project ``magic_again``
 
-* I open the file_ I just made in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open the file_ I just made of the `Integrated Development Environment (IDE)`_
 
   .. tip::
 
@@ -101,7 +101,7 @@ how to make a shell script
 
           code makePythonTdd.sh
 
-        `Visual Studio Code`_ opens ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
+        `Visual Studio Code`_ opens ``makePythonTdd.sh``
 
       .. tab-item:: no WSL
         :sync: no_wsl
@@ -111,9 +111,9 @@ how to make a shell script
 
           code makePythonTdd.ps1
 
-        `Visual Studio Code`_ opens ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+        `Visual Studio Code`_ opens ``makePythonTdd.ps1``
 
-* I add the commands I use to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project to the file_ in the :ref:`editor<2 editors>`
+* I add the commands I use to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project to the file_
 
   .. tab-set::
     :sync-group: os
@@ -483,9 +483,9 @@ how to make a shell script run as a command
 how to use makePythonTdd to make a different project
 *********************************************************************************
 
-* I hold :kbd:`ctrl` on the keyboard, and click on ``tests/test_magic_again.py`` to open it in the :ref:`editor<2 editors>` then make the test pass
+* I hold :kbd:`ctrl` on the keyboard, and click on ``tests/test_magic_again.py`` to open it then make the test pass
 
-* I close ``test_magic_again.py`` in the :ref:`editor<2 editors>`
+* I close ``test_magic_again.py``
 
 * I click in the terminal_, and use :kbd:`q` on the keyboard to leave the tests, the terminal_ shows
 
@@ -495,7 +495,7 @@ how to use makePythonTdd to make a different project
 
   I am back in the ``pumping_python`` directory_
 
-* I want to use ``makePythonTdd`` to make another project with a different name. I change ``magic_again`` to the name of the new project in the :ref:`editor<2 editors>`
+* I want to use ``makePythonTdd`` to make another project with a different name. I change ``magic_again`` to the name of the new project
 
   .. note:: The lines that are changing in the code are highlighted
 
@@ -561,7 +561,7 @@ how to use makePythonTdd to make a different project
 
   I am back in the ``pumping_python`` directory_
 
-* I close ``test_more_magic.py`` in the :ref:`editor<2 editors>`
+* I close ``test_more_magic.py``
 
 The program_ works and can automatically make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` the way I want every time. What a beautiful life.
 

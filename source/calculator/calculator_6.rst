@@ -62,7 +62,7 @@ open the project
 
     ======================== 7 passed in X.YZs =========================
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it
 
 ----
 
@@ -279,7 +279,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the `unittest.TestCase.subTest method`_ runs the code under it as a sub test, showing the values I give in ``data_type=data_type`` so that I can see which one caused the error. In this case the failures were caused by :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. :ref:`Is a boolean a number?<booleans 3: values of True and False>`
 
-* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``calculator.py`` from the ``src`` folder_
 
 * then add a :ref:`condition<if statements>` for :ref:`booleans<what are booleans?>` to the :ref:`add function<test_addition>` in ``calculator.py``
 
@@ -1117,7 +1117,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 close the project
 *********************************************************************************
 
-* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editors<2 editors>`
+* I close ``test_calculator.py`` and ``calculator.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

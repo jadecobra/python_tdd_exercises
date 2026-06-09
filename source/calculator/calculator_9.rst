@@ -120,7 +120,7 @@ test_home_page
 
 ----
 
-* I open ``test_calculator_website.py`` from the ``tests`` folder_ in the :ref:`editor<2 editors>`
+* I open ``test_calculator_website.py`` from the ``tests`` folder_
 
 * I add a test to ``test_calculator_website.py``
 
@@ -416,7 +416,7 @@ how to view the website
       b"double quote bytes"
       b"""triple double quote bytes"""
 
-* I open ``index.html`` from the ``templates`` folder_ in the :ref:`editor<2 editors>`, then add some HTML_
+* I open ``index.html`` from the ``templates`` folder_, then add some HTML_
 
   .. code-block:: HTML
     :linenos:
@@ -2151,7 +2151,7 @@ time to fix the problem with the second input in :ref:`test_calculator_sends_mes
 close the project
 *********************************************************************************
 
-* I close ``test_calculator.py``, ``test_calculator_website.py``, ``calculator.py``, ``website.py`` and ``index.html`` in the :ref:`editor<2 editors>`
+* I close ``test_calculator.py``, ``test_calculator_website.py``, ``calculator.py``, ``website.py`` and ``index.html``
 * I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

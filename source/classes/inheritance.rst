@@ -105,7 +105,7 @@ continue the project
 
     touch src/classes.py
 
-* I open ``test_classes.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_classes.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_classes.py``
 
@@ -157,7 +157,7 @@ continue the project
     FAILED tests/test_classes.py::TestClasses::test_failure - AssertionError: True is not false
     ================= 1 failed, 6 passed in X.YZs ==================
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -296,7 +296,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
     # NameError
     # AttributeError
 
-* I open ``classes.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``classes.py`` from the ``src`` folder_
 
 * then I add a :ref:`class<what is a class?>` definition for ``WPass`` to ``classes.py``
 

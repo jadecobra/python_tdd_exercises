@@ -164,7 +164,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_attribute_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_attribute_error.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_attribute_error.py``
 
@@ -252,7 +252,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -348,7 +348,7 @@ test_attribute_error_w_variables
 
 ----
 
-* I open ``attribute_error.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
+* I open ``attribute_error.py`` from the ``src`` folder_ of my `Integrated Development Environment (IDE)`_
 
 * I delete all the text in the file_, then add the name to ``attribute_error.py``
 
@@ -1310,9 +1310,9 @@ the terminal_ is my friend, and shows AttributeError_
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-The tests show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is an attribute?>` of the :ref:`module<what is a module?>`.
+The tests show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is a class attribute?>` of the :ref:`module<what is a module?>`.
 
-Is a :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` also an :ref:`attribute` of the :ref:`module<what is a module?>`?
+Is a :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` also an :ref:`attribute<what is a class attribute?>` of the :ref:`module<what is a module?>`?
 
 ----
 
@@ -2153,7 +2153,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_03():
             return None
 
-  the test passes because in this case, I reference the :ref:`method<what is a method?>` (``AClass().method_03``), I do not call it (``AClass().method_03()``).
+  the test passes because in this case I reference the :ref:`method<what is a method?>` (``AClass().method_03``), I do not call it (``AClass().method_03()``).
 
 * I add a line for ``src.attribute_error.AClass.method_04`` to ``test_attribute_error.py``
 
@@ -2397,98 +2397,75 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     :lineno-start: 84
     :emphasize-lines: 4-5
 
-        def method_06():
+        def method_07():
             return None
+
+        def method_08():
+            return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: AClass.method_08() takes
+               0 positional arguments but 1 was given
+
+  because this happens when ``AClass().method_08()`` is called
+
+  .. code-block:: python
+
+    AClass().method_08()
+        AClass.method_08(AClass)
+
+  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>` (the parentheses are empty).
+
+* I add ``self`` to the parentheses of ``method_08``
+
+  .. code-block:: python
+    :lineno-start: 90
+    :emphasize-lines: 1-2
+
+        # def method_08():
+        def method_08(self):
+            return None
+
+  the test passes because this happens when ``AClass().method_08()`` is called
+
+  .. code-block:: python
+
+    AClass().method_08()
+        AClass.method_08(self)
+
+  where ``self`` is ``AClass``.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 87
 
         def method_07():
             return None
 
-  the test passes.
+        def method_08(self):
+            return None
 
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* You know the "drill", I add a new failing line to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.AClass.method_09`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 3
+    :lineno-start: 43
+    :emphasize-lines: 11
 
         def test_attribute_error_w_class_methods(self):
             src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01()
-
-  the terminal_ is my friend, and shows AttributeError_
-
-  .. code-block:: shell
-
-    AttributeError: type object 'AClass' has no attribute 'method_01'. Did you mean: 'method_00'?
-
-* I add a definition for it in ``attribute_error.py``
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 4-5
-
-        def method_00():
-            return None
-
-        def method_01():
-            return None
-
-  the test passes.
-
-* I add another failing line to ``test_attribute_error.py``
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 4
-
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01()
-            src.attribute_error.AClass.method_02()
-
-  the terminal_ is my friend, and shows AttributeError_
-
-  .. code-block:: shell
-
-    AttributeError: type object 'AClass' has no attribute 'method_02'. Did you mean: 'method_00'?
-
-* I add the :ref:`method<what is a method?>` to ``AClass`` in ``attribute_error.py``
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 7-8
-
-        def method_00():
-            return None
-
-        def method_01():
-            return None
-
-        def method_02():
-            return None
-
-  the test passes.
-
-* I add the last line to ``test_attribute_error.py``
-
-  .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5
-
-        def test_attribute_error_w_class_methods(self):
-            src.attribute_error.AClass.method_00()
-            src.attribute_error.AClass.method_01()
-            src.attribute_error.AClass.method_02()
-            src.attribute_error.AClass.method_03()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+            src.attribute_error.AClass().method_03
+            src.attribute_error.AClass().method_04()
+            src.attribute_error.AClass.method_05
+            src.attribute_error.AClass.method_06()
+            src.attribute_error.AClass.method_07
+            src.attribute_error.AClass().method_08()
+            src.attribute_error.AClass().method_09
 
 
     # Exceptions seen
@@ -2497,13 +2474,15 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass' has no attribute 'method_03'. Did you mean: 'method_00'?
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_09'.
+                    Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to ``AClass`` in ``attribute_error.py``
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 17-18
+    :lineno-start: 53
+    :emphasize-lines: 41-42
 
     class AClass(object):
 
@@ -2511,6 +2490,12 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         attribute_01 = None
         attribute_02 = None
         attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+        attribute_08 = None
+        attribute_09 = None
 
         def method_00():
             return None
@@ -2518,20 +2503,39 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_01():
             return None
 
-        def method_02():
+        def method_02(self):
             return None
 
         def method_03():
             return None
 
-  the test passes.
+        def method_04(self):
+            return None
+
+        def method_05():
+            return None
+
+        def method_06():
+            return None
+
+        def method_07():
+            return None
+
+        def method_08(self):
+            return None
+
+        def method_09():
+            return None
+
+  the test passes because in this case I reference the :ref:`method<what is a method?>` (``AClass().method_09``), I do not call it (``AClass().method_09()``).
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add '
+    git commit -am \
+    'add test_attribute_error_w_class_methods'
 
 
 * :ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
@@ -2540,15 +2544,17 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
+:ref:`because in Python everything is an object<everything is an object>`
+
 ----
 
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close ``attribute_error.py`` and ``test_attribute_error.py``  in the :ref:`editors<2 editors>`
-* I go back to the terminal_ that is running the tests
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
+* I close ``attribute_error.py`` and ``test_attribute_error.py``
+* I click in the terminal_ where the tests are running
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``attribute_error``
 
@@ -2575,8 +2581,8 @@ I ran tests for AttributeError_ with
 
 * :ref:`variables<what is a variable?>`
 * :ref:`functions<test_attribute_error_w_functions>`
-* :ref:`variables in classes also known as class attributes<test_attribute_error_w_class_attributes>`
-* :ref:`functions in classes also known as methods<test_attribute_error_w_class_methods>`
+* :ref:`variables in classes (class attributes)<test_attribute_error_w_class_attributes>`
+* :ref:`functions in classes (methods)<test_attribute_error_w_class_methods>`
 
 I also saw these :ref:`Exceptions<errors>`
 
@@ -2599,14 +2605,18 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you know
+I know
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`what causes AssertionError?`
-* :ref:`how to make functions<what is a function?>` and
+* :ref:`how to make functions<what is a function?>`
+* :ref:`how to pass values from tests to functions<telephone>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`how to make classes<classes>`
+* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 
-:ref:`Would you like to test how to pass values from tests to functions with assert methods?<telephone>`
+:ref:`Would you like to test None (the simplest object)?<telephone>`
 
 ----
 

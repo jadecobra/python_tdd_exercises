@@ -175,7 +175,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_assertion_error.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_assertion_error.py`` of the `Integrated Development Environment (IDE)`_
 
 
 * I delete the text then add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
@@ -279,7 +279,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -744,7 +744,7 @@ For example, if I have people fill a form and I want a test for when they leave 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a new failing test to ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
+* I add a new failing test to ``test_assertion_error.py``
 
   .. code-block:: python
     :lineno-start: 15
@@ -5795,7 +5795,7 @@ I can also use :ref:`assertions<what is an assertion?>` to test if 2 things are 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a new test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is NOT equal to :ref:`None<what is None?>`, in ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
+* I add a new test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is NOT equal to :ref:`None<what is None?>`, in ``test_assertion_error.py``
 
   .. note::
 
@@ -7087,7 +7087,7 @@ The tests show that an integer_ can be ``EQUAL`` to a float_ but an integer_ ``I
 close the project
 *********************************************************************************
 
-* I close ``test_assertion_error.py`` in the :ref:`editor<2 editors>`
+* I close ``test_assertion_error.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``assertion_error``

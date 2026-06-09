@@ -129,7 +129,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_booleans.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_booleans.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_booleans.py``
 
@@ -221,7 +221,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_booleans.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_booleans.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2150,7 +2150,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 close the project
 *********************************************************************************
 
-* I close ``test_booleans.py`` in the :ref:`editor<2 editors>`
+* I close ``test_booleans.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``booleans``

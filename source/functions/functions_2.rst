@@ -64,7 +64,7 @@ continue the project
 
     =================== 12 passed in X.YZs =====================
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_functions.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_functions.py`` to open it
 
 ----
 
@@ -689,7 +689,7 @@ continue the project
 close the project
 *********************************************************************************
 
-* I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
+* I close ``test_functions.py`` and ``functions.py``
 * I go back to the terminal_ that is running the tests
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

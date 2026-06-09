@@ -92,7 +92,7 @@ open the project
 
     ======================== 8 passed in X.YZs =========================
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_exceptions.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_exceptions.py`` to open it
 
 ----
 
@@ -653,7 +653,7 @@ how to use try...except...else
 close the project
 *********************************************************************************
 
-* I close ``exceptions.py`` and ``test_exceptions.py`` in the :ref:`editor<2 editors>`
+* I close ``exceptions.py`` and ``test_exceptions.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``exceptions``

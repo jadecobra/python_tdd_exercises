@@ -158,7 +158,7 @@ number the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_elevator.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_elevator.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_elevator.py``
 
@@ -385,7 +385,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I open ``elevator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``elevator.py`` from the ``src`` folder_
 
 * I add a :ref:`function<what is a function?>` named ``elevator`` to ``elevator.py``
 
@@ -3127,7 +3127,7 @@ doors             floor number        weight limit        emergency button      
 close the project
 *********************************************************************************
 
-* I close ``test_elevator.py`` and ``elevator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_elevator.py`` and ``elevator.py``
 * I click in the terminal_, then use :kbd:`q` on the doorsboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``elevator``

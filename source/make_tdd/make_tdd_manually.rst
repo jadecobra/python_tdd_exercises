@@ -638,7 +638,7 @@ how to make a Python file for the tests in the 'tests' directory
 :red:`RED`: make it fail
 ********************************************************************************************
 
-* I use the `Integrated Development Environment (IDE)`_ to open ``tests/magic.py`` in the :ref:`editor<2 editors>`
+* I use the `Integrated Development Environment (IDE)`_ to open ``tests/magic.py``
 
   .. tip::
 
@@ -649,11 +649,11 @@ how to make a Python file for the tests in the 'tests' directory
 
       code tests/magic.py
 
-    ``magic.py`` from the ``tests`` folder_ opens in the :ref:`editor<2 editors>`.
+    ``magic.py`` from the ``tests`` folder_ opens.
 
     I can also open a file_ from the terminal_ with :kbd:`ctrl` (Windows_/Linux_) or :kbd:`command` (MacOS_) on the keyboard and a click with the mouse on the name of the file_
 
-* I add the Python_ code below in ``tests/magic.py`` in the :ref:`editor<2 editors>`
+* I add the Python_ code below in ``tests/magic.py``
 
   .. note:: the line numbers below are a guide, no need to copy them
 
@@ -787,9 +787,9 @@ how to make the tests a Python package
 
   because unittest_ does not know that ``magic.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name
 
-* I close ``magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I close ``magic.py`` of the `Integrated Development Environment (IDE)`_
 
-  .. danger:: if you do not close ``magic.py`` in the :ref:`editor<2 editors>`, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open in the :ref:`editor<2 editors>` after you change its name
+  .. danger:: if you do not close ``magic.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name
 
 * I use the `mv program`_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
 
@@ -886,7 +886,7 @@ how to make the tests a Python package
 
   * ``F`` shows a failure
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ in the :ref:`editor<2 editors>` with the cursor at the line where the failure happened
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 7`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ with the cursor at the line where the failure happened
 
 ----
 
@@ -894,7 +894,7 @@ how to make the tests a Python package
 :green:`GREEN`: make it pass
 ********************************************************************************************
 
-I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py`` in the :ref:`editor<2 editors>`
+I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 7 of ``test_magic.py``
 
 .. code-block:: python
   :linenos:
@@ -934,7 +934,7 @@ the test passes! the terminal_ is my friend, and shows
 :yellow:`REFACTOR`: make it better
 ********************************************************************************************
 
-I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to help me know them better, it helps when I run into them later, because I will be more familiar with them. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_magic.py`` in the :ref:`editor<2 editors>`
+I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to help me know them better, it helps when I run into them later, because I will be more familiar with them. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_magic.py``
 
 .. code-block:: python
   :linenos:
@@ -1278,7 +1278,7 @@ how to open the test file in the editor from the terminal
 
 ----
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py`` to place the cursor of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
   .. code-block:: python
     :linenos:
@@ -1311,7 +1311,7 @@ how to open the test file in the editor from the terminal
     FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
     =================== 1 failed in X.YZs ======================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py:7`` to place the cursor in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py:7`` to place the cursor of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1341,7 +1341,7 @@ I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the te
 close the project
 ********************************************************************************************
 
-* I close ``test_magic.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I close ``test_magic.py`` of the `Integrated Development Environment (IDE)`_
 
 * I click in the terminal and `change directory`_ to the parent of ``magic``
 

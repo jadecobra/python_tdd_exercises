@@ -46,7 +46,7 @@ The program_ should always make this structure
 
 Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
-* I open ``makePythonTdd.sh`` in the :ref:`editor<2 editors>`
+* I open ``makePythonTdd.sh``
 
   .. tip:: Here is a quick way to open ``makePythonTdd.sh`` if you are using `Visual Studio Code`_
 
@@ -148,7 +148,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
   this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made, :ref:`there has to be a better way<BONUS: makePythonTdd.sh Pro>`
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/pro_magic.py`` in the terminal_ to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/pro_magic.py`` in the terminal_ to open it
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -262,7 +262,7 @@ Here are a few other examples
     FAILED tests/test_pro_magic_plus.py::Testpro_magic_plus::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_pro_magic_plus.py`` to open it in the :ref:`editor<2 editors>`, then make the test pass
+* I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_pro_magic_plus.py`` to open it, then make the test pass
 
 * I use :kbd:`ctrl/command+c` on the keyboard in the terminal_ to stop the tests
 

@@ -105,7 +105,7 @@ test_streamlit_calculator_title
 
 ----
 
-* I open ``test_streamlit_calculator.py`` from the ``tests`` folder_ in the :ref:`editor<2 editors>`
+* I open ``test_streamlit_calculator.py`` from the ``tests`` folder_
 
 * I add a new test in ``test_streamlit_calculator.py``
 
@@ -275,7 +275,7 @@ test_streamlit_calculator_title
 
 * I make a new file_ in the ``src`` folder_ and call it ``streamlit_calculator.py``
 
-* I open ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I open ``streamlit_calculator.py``
 
 * I add code to make a streamlit_ application with a title, in ``streamlit_calculator.py``
 
@@ -1047,7 +1047,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 close the project
 *********************************************************************************
 
-* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py``
 * I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

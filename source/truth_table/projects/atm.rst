@@ -171,7 +171,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_atm.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_atm.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_atm.py``
 
@@ -398,7 +398,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I open ``atm.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``atm.py`` from the ``src`` folder_
 
 * I add a :ref:`function<what is a function?>` to ``atm.py``
 
@@ -2924,7 +2924,7 @@ The ``withdraw`` :ref:`function<what is a function?>` can be written with :ref:`
 close the project
 *********************************************************************************
 
-* I close ``test_atm.py`` and ``atm.py`` in the :ref:`editor<2 editors>`
+* I close ``test_atm.py`` and ``atm.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``atm``

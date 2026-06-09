@@ -139,7 +139,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_calculator.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_calculator.py`` of the `Integrated Development Environment (IDE)`_
 
 
 * I add :ref:`the first failing test<test_failure>` to ``test_calculator.py``
@@ -210,7 +210,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_calculator.py:7`` to put the cursor on line 7
 
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_calculator.py``
 
@@ -371,7 +371,7 @@ test_addition
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`, then add the name
+* I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder, then add the name
 
   .. code-block:: python
     :linenos:
@@ -1085,7 +1085,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
                 first_number+first_number
             )
 
-  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times in the :ref:`editor<2 editors>` to run the tests and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
+  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times to run the tests and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   .. code-block:: python
 
@@ -2251,7 +2251,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 close the project
 *********************************************************************************
 
-* I close ``calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``calculator.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

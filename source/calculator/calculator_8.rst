@@ -64,7 +64,7 @@ open the project
 
     ======================== 5 passed in X.YZs =========================
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it
 
 ----
 
@@ -1237,8 +1237,8 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-* I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
-* I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* I close ``test_calculator.py``
+* I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder
 * then I delete everything in ``calculator.py``, the terminal_ is my friend, and shows 3 passing tests and :ref:`AttributeError<what causes AttributeError?>` for 70 failing tests, I start with the last one
 
   .. code-block:: python
@@ -2186,7 +2186,7 @@ I wonder what else I missed. I am still learning
 close the project
 *********************************************************************************
 
-* I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_calculator.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

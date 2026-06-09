@@ -160,7 +160,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_traffic_light.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_traffic_light.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_traffic_light.py``
 
@@ -394,7 +394,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I open ``traffic_light.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``traffic_light.py`` from the ``src`` folder_
 
 * I add a :ref:`function<what is a function?>` to ``traffic_light.py``
 
@@ -5117,7 +5117,7 @@ What does it return if I call the ``show`` :ref:`function<what is a function?>` 
 close the project
 *********************************************************************************
 
-* I close ``test_traffic_light.py`` and ``traffic_light.py`` in the :ref:`editor<2 editors>`
+* I close ``test_traffic_light.py`` and ``traffic_light.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``traffic_light``

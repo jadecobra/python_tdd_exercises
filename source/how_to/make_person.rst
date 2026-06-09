@@ -168,7 +168,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_person.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_person.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_person.py``
 
@@ -272,7 +272,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -387,7 +387,7 @@ test_factory_w_keyword_arguments
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``person.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``person.py`` from the ``src`` folder
 
 * I delete the text, then add a :ref:`function<what is a function?>` to ``person.py``
 
@@ -4691,7 +4691,7 @@ I want to write the solution without looking at the tests
 ----
 
 * I go back to the terminal_ that is running the tests
-* I close ``test_person.py`` in the :ref:`editor<2 editors>`
+* I close ``test_person.py``
 * then I delete all the text in ``person.py``, the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
@@ -5464,7 +5464,7 @@ I want to write the solution without looking at the tests
 close the project
 *********************************************************************************
 
-* I close ``person.py`` in the :ref:`editor<2 editors>`
+* I close ``person.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``person``

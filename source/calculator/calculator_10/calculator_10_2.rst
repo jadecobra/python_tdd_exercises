@@ -95,7 +95,7 @@ I want to add buttons for the numbers and operations.
 
 -----
 
-* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it
 
 * I add a new test with an :ref:`assertion<what is an assertion?>` for the first button, in ``test_streamlit_calculator.py``
 
@@ -2358,7 +2358,7 @@ I want the calculator to show the number when I press a button
 close the project
 *********************************************************************************
 
-* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py``
 * I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

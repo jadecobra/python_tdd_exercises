@@ -62,7 +62,7 @@ open the project
 
     ======================== 4 passed in X.YZs =========================
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it
 
 ----
 
@@ -128,7 +128,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
     # TypeError
     # ZeroDivisionError
 
-* I open ``calculator.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``calculator.py`` from the ``src`` folder_
 
 * I add an :ref:`exception handler<how to use try...except...else>` to the ``divide`` :ref:`function<what is a function?>`
 
@@ -228,7 +228,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 close the project
 *********************************************************************************
 
-* I close ``test_calculator.py`` and ``calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_calculator.py`` and ``calculator.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

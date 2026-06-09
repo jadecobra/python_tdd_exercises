@@ -156,7 +156,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_parking_garage.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_parking_garage.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_parking_garage.py``
 
@@ -391,7 +391,7 @@ because I do not have a definition for ``src`` in this file_
     # NameError
     # AttributeError
 
-* I open ``parking garage.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>`
+* I open ``parking garage.py`` from the ``src`` folder_
 
 * I add a :ref:`function<what is a function?>` named ``parking garage`` to ``parking garage.py``
 
@@ -2878,7 +2878,7 @@ door           timer           start button       too hot             output
 close the project
 *********************************************************************************
 
-* I close ``test_parking_garage.py`` and ``parking garage.py`` in the :ref:`editor<2 editors>`
+* I close ``test_parking_garage.py`` and ``parking garage.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``parking garage``

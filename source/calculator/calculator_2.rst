@@ -62,7 +62,7 @@ open the project
 
     ======================== 4 passed in X.YZs =========================
 
-* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` on the keyboard, then click on ``tests/test_calculator.py`` to open it
 
 ----
 
@@ -133,7 +133,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``test_calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_calculator.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

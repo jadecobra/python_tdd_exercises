@@ -145,7 +145,7 @@ requirements
 
   the terminal_ goes back to the command line.
 
-* I open ``test_none.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_none.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_none.py``
 
@@ -239,7 +239,7 @@ requirements
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_none.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_none.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2198,7 +2198,7 @@ the test passes.
 close the project
 *********************************************************************************
 
-* I close ``test_none.py`` in the :ref:`editor<2 editors>`
+* I close ``test_none.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``none``

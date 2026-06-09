@@ -95,7 +95,7 @@ I want the ``C`` and ``AC`` buttons to change the number the Calculator shows ba
 
 ----
 
-* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl/command` on the keyboard and click on ``tests/test_streamlit_calculator.py`` with the mouse to open it
 
 * I add a test to ``test_streamlit_calculator.py``
 
@@ -2002,7 +2002,7 @@ All tests are green and when I try calculations, they work... there is a problem
 close the project
 *********************************************************************************
 
-* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py`` in the :ref:`editor<2 editors>`
+* I close ``test_streamlit_calculator.py``, ``streamlit_calculator.py``
 * I click in the first terminal_, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``calculator``

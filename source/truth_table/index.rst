@@ -169,7 +169,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_truth_table.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_truth_table.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_truth_table.py``
 

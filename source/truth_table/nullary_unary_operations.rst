@@ -121,7 +121,7 @@ test_logical_true
     # AssertionError
     # AttributeError
 
-** I open ``truth_table.py`` from the ``src`` folder_ in the :ref:`editor<2 editors>` of my `Integrated Development Environment (IDE)`_
+** I open ``truth_table.py`` from the ``src`` folder_ of my `Integrated Development Environment (IDE)`_
 
 * I add a :ref:`function<what is a function?>` to ``truth_table.py``
 
@@ -747,7 +747,7 @@ input           output
 close the project
 *********************************************************************************
 
-* I close ``test_nullary_unary.py`` and ``truth_table.py`` in the :ref:`editor<2 editors>`
+* I close ``test_nullary_unary.py`` and ``truth_table.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``truth_table``

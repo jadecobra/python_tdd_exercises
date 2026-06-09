@@ -81,7 +81,7 @@ start the project
   .. note:: if you are not in the ``pumping_python`` folder_, try ``cd ~/pumping_python``
 
 * I name this project ``exceptions``
-* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` in the :ref:`editor<2 editors>`
+* I open ``makePythonTdd.sh`` or ``makePythonTdd.ps1``
 
   .. tip:: Here is a quick way to open ``makePythonTdd.sh`` or ``makePythonTdd.ps1`` if you are using `Visual Studio Code`_
 
@@ -161,7 +161,7 @@ start the project
     FAILED tests/test_exceptions.py::TestExceptions::test_failure - AssertionError: True is not false
     ============================ 1 failed in X.YZs =============================
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to put the cursor on line 7 in the :ref:`editor<2 editors>`
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_exceptions.py:7`` to put the cursor on line 7
 
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
@@ -443,7 +443,7 @@ test_catching_type_error_in_tests
 
     AttributeError: module 'src.exceptions' has no attribute 'function_name'
 
-* I use the :ref:`Explorer<explorer on left>` to open ``exceptions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``exceptions.py`` from the ``src`` folder
 
 * I add the name to ``exceptions.py``
 
@@ -1198,7 +1198,7 @@ I know :ref:`how to test that an Exception is raised`. As a rule of thumb I writ
 close the exceptions project
 *********************************************************************************
 
-* I close ``test_exceptions.py`` in the :ref:`editor<2 editors>`
+* I close ``test_exceptions.py``
 
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 

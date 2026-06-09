@@ -221,7 +221,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_functions.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_functions.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_functions.py``
 
@@ -325,7 +325,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -1278,7 +1278,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
 * I go back to the terminal_ that is running the tests
 
-* I add a new test to ``test_functions.py`` in the :ref:`editor<2 editors>`
+* I add a new test to ``test_functions.py``
 
   .. code-block:: python
     :lineno-start: 93
@@ -1361,7 +1361,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``functions.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``functions.py`` from the ``src`` folder
 
 * I delete the text in the file_ then add a :ref:`function definition<how to make a function>` to ``functions.py``
 
@@ -4942,7 +4942,7 @@ how Python reads positional and keyword arguments
 close the project
 *********************************************************************************
 
-* I close ``test_functions.py`` and ``functions.py`` in the :ref:`editor<2 editors>`
+* I close ``test_functions.py`` and ``functions.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``functions``

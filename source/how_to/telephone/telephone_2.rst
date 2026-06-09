@@ -178,7 +178,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_telephone.py`` in the :ref:`editor<2 editors>` of the `Integrated Development Environment (IDE)`_
+* I open ``test_telephone.py`` of the `Integrated Development Environment (IDE)`_
 
 * I add :ref:`the first failing test<test_failure>` to ``test_telephone.py``
 
@@ -282,7 +282,7 @@ start the project
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
-* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py`` in the :ref:`editor<2 editors>`
+* I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -402,7 +402,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``telephone.py`` from the ``src`` folder in the :ref:`editor<2 editors>`
+* I use the :ref:`Explorer<explorer on left>` to open ``telephone.py`` from the ``src`` folder
 
 * I delete the text, then add a name to ``telephone.py``
 
@@ -2299,7 +2299,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
 ----
 
-* I close ``test_telephone.py`` in the :ref:`editor<2 editors>`
+* I close ``test_telephone.py``
 
 * I delete the text in ``telephone.py`` and the terminal_ shows 9 failures. I start with the last :ref:`AttributeError<what causes AttributeError?>`
 
@@ -2488,7 +2488,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 close the project
 *********************************************************************************
 
-* I close ``telephone.py`` in the :ref:`editor<2 editors>`
+* I close ``telephone.py``
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``telephone``
