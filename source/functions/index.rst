@@ -221,7 +221,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I open ``test_functions.py`` of the `Integrated Development Environment (IDE)`_
+* I open ``test_functions.py``
 
 * I add :ref:`the first failing test<test_failure>` to ``test_functions.py``
 
@@ -321,7 +321,7 @@ start the project
   .. admonition:: if the terminal_ does not show the same error, then check
 
     * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
+    * if you ran ``echo "pytest-watcher" > requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 

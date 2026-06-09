@@ -787,7 +787,7 @@ how to make the tests a Python package
 
   because unittest_ does not know that ``magic.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name
 
-* I close ``magic.py`` of the `Integrated Development Environment (IDE)`_
+* I close ``magic.py``
 
   .. danger:: if you do not close ``magic.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name
 
@@ -1341,7 +1341,7 @@ I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the te
 close the project
 ********************************************************************************************
 
-* I close ``test_magic.py`` of the `Integrated Development Environment (IDE)`_
+* I close ``test_magic.py``
 
 * I click in the terminal and `change directory`_ to the parent of ``magic``
 

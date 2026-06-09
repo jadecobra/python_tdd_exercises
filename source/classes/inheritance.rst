@@ -105,7 +105,7 @@ continue the project
 
     touch src/classes.py
 
-* I open ``test_classes.py`` of the `Integrated Development Environment (IDE)`_
+* I open ``test_classes.py``
 
 * I add :ref:`the first failing test<test_failure>` to ``test_classes.py``
 

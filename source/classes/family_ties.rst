@@ -119,7 +119,7 @@ continue the project
 
     touch src/family_ties.py
 
-* I open ``test_family_ties.py`` of the `Integrated Development Environment (IDE)`_
+* I open ``test_family_ties.py``
 
 * I add :ref:`the first failing test<test_failure>` to ``test_family_ties.py``
 

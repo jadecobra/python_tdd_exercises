@@ -16,15 +16,15 @@ what is None?
 
 ----
 
-None_ is used when there is no value. In Mathematics_ we use ``0`` to represent no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we use None_, It is the simplest :ref:`data structure<data structures>`.
+None_ is used when there is no value. In Mathematics_ we use ``0`` to represent no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we use None_.
 
-I used assertIsNone_ and assertIsNotNone_ to :ref:`test_assertion_error_w_none` in :ref:`AssertionError<what causes AssertionError?>`, where I saw that
+I used :ref:`assertIs<another way to test if something is the same object as None>` and :ref:`assertIsNot<another way to test if something is NOT the same object as None>` in the :ref:`assertion_error project<what is an assertion?>` :ref:`test_assertion_error_w_none` in :ref:`AssertionError<what causes AssertionError?>`, where I saw that
 
 * :ref:`True<test_what_is_true>` is NOT None_ and NOT equal to None_
 * :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_
 * None_ is None_ and equal to None_
 
-I want to use `assert methods`_ to compare None_ with the other :ref:`Python data structures<data structures>` to see what it is and what it is not
+I want to use `assert methods`_ to compare None_ with the other :ref:`Python data structures<data structures>` to see what it is and what it is not.
 
 ----
 
@@ -55,8 +55,6 @@ Questions to think about as I go through the chapter
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
 * :ref:`how can I test if something is the same object as None?<how to test if something is None>`
 * :ref:`how can I test if something is NOT the same object as None?<how to test if something is None>`
-* :ref:`how can I test if something is an instance of a class?<how to test if something is an instance of a class>`
-* :ref:`how can I test if something is NOT an instance of class<how to test if something is an instance of a class>`
 
 ----
 
@@ -66,14 +64,21 @@ requirements
 
 * I name this project ``none``
 * I open a terminal_
-* I make a directory_ for the project
+* I use uv_ to make a directory_ for the project and initialize it
 
-  .. code-block:: shell
+  .. code-block:: python
     :emphasize-lines: 1
 
-    mkdir none
+    uv init none
 
-  the terminal_ goes back to the command line.
+  the terminal_ shows
+
+  .. code-block:: shell
+
+    Initialized project `none`
+    at `.../pumping_python/none`
+
+  then goes back to the command line.
 
 * I change directory_ to the project
 
@@ -122,7 +127,7 @@ requirements
 
   the terminal_ goes back to the command line.
 
-* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``test_none.py`` and move it to the ``tests`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -133,7 +138,7 @@ requirements
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch tests/test_none.py
+        mv main.py tests/test_none.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -141,13 +146,11 @@ requirements
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item tests/test_none.py
+        Move-Item main.py tests/test_none.py
 
   the terminal_ goes back to the command line.
 
-* I open ``test_none.py`` of the `Integrated Development Environment (IDE)`_
-
-* I add :ref:`the first failing test<test_failure>` to ``test_none.py``
+* I delete the text then add :ref:`the first failing test<test_failure>` to ``test_none.py``
 
   .. code-block:: python
     :linenos:
@@ -170,30 +173,6 @@ requirements
 
   the terminal_ goes back to the command line.
 
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `none`
-
-  then goes back to the command line.
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line.
-
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
@@ -202,6 +181,22 @@ requirements
     uv add --requirement requirements.txt
 
   the terminal_ shows that it installed `pytest-watcher`_ and its dependencies
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'setup project'
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -216,8 +211,8 @@ requirements
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ================================ FAILURES ================================
-    _________________________ TestNone.test_failure __________________________
+    ============================ FAILURES ============================
+    _____________________ TestNone.test_failure ______________________
 
     self = <tests.test_none.TestNone testMethod=test_failure>
 
@@ -226,16 +221,16 @@ requirements
     E       AssertionError: True is not false
 
     tests/test_none.py:7: AssertionError
-    ======================== short test summary info =========================
+    ==================== short test summary info =====================
     FAILED tests/test_none.py::TestNone::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    ======================= 1 failed in X.YZs ========================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
     * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
+    * if you ran ``echo "pytest-watcher" > requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
