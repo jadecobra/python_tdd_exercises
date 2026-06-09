@@ -386,7 +386,7 @@ test_attribute_error_w_variables
 
     variable_00 = None
 
-  - the test passes because ``variable_00`` is now an :ref:`attribute<what is a class attribute?>` or property of ``attribute_error.py`` in the ``src`` folder_
+  - the test passes because ``variable_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_
   - I can use it from outside the file_ with ``src.attribute_error.variable_00``
 
 ----
@@ -898,7 +898,7 @@ the terminal_ is my friend, and shows AttributeError_
     def function_00():
         return None
 
-  - the test passes because ``function_00`` is now an :ref:`attribute<what is a class attribute?>` or property of ``attribute_error.py`` in the ``src`` folder_
+  - the test passes because ``function_00`` is now an :ref:`attribute/property<what is a class attribute?>` of ``attribute_error.py`` in the ``src`` folder_
   - I can call it from outside the file_ with ``src.attribute_error.function_00()``
 
 
@@ -1327,7 +1327,7 @@ Is a :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` also a
 I add a test for :ref:`class attributes<what is a class attribute?>` to ``test_attribute_error.py``
 
 .. code-block:: python
-  :lineno-start: 13
+  :lineno-start: 26
   :emphasize-lines: 6-7
 
           src.attribute_error.function_06()
@@ -1336,7 +1336,7 @@ I add a test for :ref:`class attributes<what is a class attribute?>` to ``test_a
           src.attribute_error.function_09()
 
       def test_attribute_error_w_class_attributes(self):
-        src.attribute_error.AClass.attribute_00
+          src.attribute_error.AClass.attribute_00
 
 
   # Exceptions seen
@@ -1392,10 +1392,11 @@ the terminal_ is my friend, and shows AttributeError_
 * I use the :ref:`class<what is a class?>` keyword to change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 1
+    :lineno-start: 53
+    :emphasize-lines: 1-2
 
-    class AClass():
+    # def AClass():
+    class AClass(object):
 
         attribute_00 = None
         return None
@@ -1408,12 +1409,12 @@ the terminal_ is my friend, and shows AttributeError_
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-  I cannot use a `return statement`_ outside a :ref:`function<what is a function?>`
+  because I cannot use a `return statement`_ outside a :ref:`function<what is a function?>`.
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 35
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
@@ -1424,18 +1425,21 @@ the terminal_ is my friend, and shows AttributeError_
     # TypeError
     # SyntaxError
 
-* I remove the `return statement`_ from ``AClass`` in ``attribute_error.py`` since it is no longer a :ref:`function<what is a function?>`
+* I comment out the `return statement`_ from ``AClass`` in ``attribute_error.py`` since it is no longer a :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 53
+    :emphasize-lines: 4
 
-    class AClass():
+    # def AClass():
+    class AClass(object):
 
         attribute_00 = None
+        # return None
 
-  the test passes.
-
-``attribute_00`` is now an attribute of the ``AClass`` :ref:`class<what is a class?>` which is an attribute of ``attribute_error.py`` in the ``src`` folder_ and I can get to it with ``src.attribute_error.AClass.attribute_00``
+  - the test passes because ``attribute_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<what is a class?>`
+  - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
+  - I can use ``attribute_00`` from outside the file_ with ``src.attribute_error.AClass.attribute_00`` or ``src.attribute_error.AClass().attribute_00``
 
 ----
 
@@ -1445,10 +1449,23 @@ the terminal_ is my friend, and shows AttributeError_
 
 ----
 
-* I add another failing line for practice to ``test_attribute_error.py``
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 49
+
+    def function_09():
+        return None
+
+
+    class AClass(object):
+
+        attribute_00 = None
+
+* I add a line for ``src.attribute_error.AClass.attribute_01`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 31
     :emphasize-lines: 3
 
         def test_attribute_error_w_class_attributes(self):
@@ -1462,25 +1479,27 @@ the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass' has no attribute 'attribute_01'. Did you mean: 'attribute_00'?
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_01'.
+                    Did you mean: 'attribute_00'?
 
-* I add the name to the :ref:`class<what is a class?>` definition in ``attribute_error.py``
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 53
     :emphasize-lines: 4
 
-    class AClass():
+    class AClass(object):
 
         attribute_00 = None
         attribute_01 = None
 
   the test passes.
 
-* I add another line to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.AClass.attribute_02`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 31
     :emphasize-lines: 4
 
         def test_attribute_error_w_class_attributes(self):
@@ -1488,19 +1507,24 @@ the terminal_ is my friend, and shows AttributeError_
             src.attribute_error.AClass.attribute_01
             src.attribute_error.AClass.attribute_02
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass' has no attribute 'attribute_02'. Did you mean: 'attribute_00'?
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_02'.
+                    Did you mean: 'attribute_00'?
 
-* I add the :ref:`variable<what is a variable?>` to ``AClass`` in ``attribute_error.py``
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 53
     :emphasize-lines: 5
 
-    class AClass():
+    class AClass(object):
 
         attribute_00 = None
         attribute_01 = None
@@ -1508,10 +1532,10 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-* I add another line to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.AClass.attribute_03`` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 31
     :emphasize-lines: 5
 
         def test_attribute_error_w_class_attributes(self):
@@ -1527,15 +1551,17 @@ the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass' has no attribute 'attribute_03'. Did you mean: 'attribute_00'?
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_03'.
+                    Did you mean: 'attribute_00'?
 
-* I add the name to ``AClass`` in ``attribute_error.py``
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
+    :lineno-start: 53
     :emphasize-lines: 6
 
-    class AClass():
+    class AClass(object):
 
         attribute_00 = None
         attribute_01 = None
@@ -1544,12 +1570,283 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
+* I add a line for ``src.attribute_error.AClass.attribute_04`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 6
+
+        def test_attribute_error_w_class_attributes(self):
+            src.attribute_error.AClass.attribute_00
+            src.attribute_error.AClass.attribute_01
+            src.attribute_error.AClass.attribute_02
+            src.attribute_error.AClass.attribute_03
+            src.attribute_error.AClass.attribute_04
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_04'.
+                    Did you mean: 'attribute_00'?
+
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 7
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.AClass().attribute_05`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 7
+
+        def test_attribute_error_w_class_attributes(self):
+            src.attribute_error.AClass.attribute_00
+            src.attribute_error.AClass.attribute_01
+            src.attribute_error.AClass.attribute_02
+            src.attribute_error.AClass.attribute_03
+            src.attribute_error.AClass.attribute_04
+            src.attribute_error.AClass().attribute_05
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_05'.
+                    Did you mean: 'attribute_00'?
+
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 8
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+
+  the test passes because it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or :ref:`an instance of the class<how to test if something is an instance of a class>`  (``AClass()``).
+
+* I add a line for ``src.attribute_error.AClass().attribute_06`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 8
+
+        def test_attribute_error_w_class_attributes(self):
+            src.attribute_error.AClass.attribute_00
+            src.attribute_error.AClass.attribute_01
+            src.attribute_error.AClass.attribute_02
+            src.attribute_error.AClass.attribute_03
+            src.attribute_error.AClass.attribute_04
+            src.attribute_error.AClass().attribute_05
+            src.attribute_error.AClass().attribute_06
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_06'.
+                    Did you mean: 'attribute_00'?
+
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 9
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.AClass().attribute_07`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 9
+
+        def test_attribute_error_w_class_attributes(self):
+            src.attribute_error.AClass.attribute_00
+            src.attribute_error.AClass.attribute_01
+            src.attribute_error.AClass.attribute_02
+            src.attribute_error.AClass.attribute_03
+            src.attribute_error.AClass.attribute_04
+            src.attribute_error.AClass().attribute_05
+            src.attribute_error.AClass().attribute_06
+            src.attribute_error.AClass().attribute_07
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_07'.
+                    Did you mean: 'attribute_00'?
+
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 10
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.AClass().attribute_08`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 10
+
+        def test_attribute_error_w_class_attributes(self):
+            src.attribute_error.AClass.attribute_00
+            src.attribute_error.AClass.attribute_01
+            src.attribute_error.AClass.attribute_02
+            src.attribute_error.AClass.attribute_03
+            src.attribute_error.AClass.attribute_04
+            src.attribute_error.AClass().attribute_05
+            src.attribute_error.AClass().attribute_06
+            src.attribute_error.AClass().attribute_07
+            src.attribute_error.AClass().attribute_08
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_08'.
+                    Did you mean: 'attribute_00'?
+
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 11
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+        attribute_08 = None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.AClass().attribute_09`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 11
+
+        def test_attribute_error_w_class_attributes(self):
+            src.attribute_error.AClass.attribute_00
+            src.attribute_error.AClass.attribute_01
+            src.attribute_error.AClass.attribute_02
+            src.attribute_error.AClass.attribute_03
+            src.attribute_error.AClass.attribute_04
+            src.attribute_error.AClass().attribute_05
+            src.attribute_error.AClass().attribute_06
+            src.attribute_error.AClass().attribute_07
+            src.attribute_error.AClass().attribute_08
+            src.attribute_error.AClass().attribute_09
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'attribute_09'.
+                    Did you mean: 'attribute_00'?
+
+* I add the name to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 12
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+        attribute_08 = None
+        attribute_09 = None
+
+  the test passes.
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add '
+    git commit -am \
+    'add test_attribute_error_w_class_attributes'
 
 
 * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
@@ -1563,11 +1860,9 @@ the terminal_ is my friend, and shows AttributeError_
 test_attribute_error_w_class_methods
 *********************************************************************************
 
-I know that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` in a :ref:`module<what is a module?>` are attributes of the :ref:`module<what is a module?>`.
+The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>` in a :ref:`module<what is a module?>` are :ref:`attributes of the module<what is a class attribute?>`, and :ref:`variables<what is a variable?>` in a :ref:`class<what is a class?>` are :ref:`attributes of the class<what is a class attribute?>`.
 
-I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is a class?>` are attributes of the :ref:`class<what is a class?>`.
-
-:ref:`functions<what is a function?>` in a :ref:`class<what is a class?>` are also attributes, they are called :ref:`methods<what is a method?>`
+:ref:`Methods of a class<what is a method?>` are also :ref:`attributes of the class<what is a class attribute?>`.
 
 ----
 
@@ -1578,17 +1873,16 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 ----
 
 * I go back to the terminal_ that is running the tests
-* I add a new test to ``test_attribute_error.py``
+* I add a test for :ref:`methods<what is a method?>` to ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 7-8
+    :lineno-start: 38
+    :emphasize-lines: 6-7
 
-        def test_attribute_error_w_class_attributes(self):
-            src.attribute_error.AClass.attribute_00
-            src.attribute_error.AClass.attribute_01
-            src.attribute_error.AClass.attribute_02
-            src.attribute_error.AClass.attribute_03
+            src.attribute_error.AClass().attribute_06
+            src.attribute_error.AClass().attribute_07
+            src.attribute_error.AClass().attribute_08
+            src.attribute_error.AClass().attribute_09
 
         def test_attribute_error_w_class_methods(self):
             src.attribute_error.AClass.method_00()
@@ -1600,7 +1894,8 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
   .. code-block:: shell
 
-    AttributeError: type object 'AClass' has no attribute 'method_00'
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_00'
 
 ----
 
@@ -1613,15 +1908,21 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 * I add the name to ``AClass`` and point it to :ref:`None<what is None?>`, in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 8
+    :lineno-start: 53
+    :emphasize-lines: 14
 
-    class AClass():
+    class AClass(object):
 
         attribute_00 = None
         attribute_01 = None
         attribute_02 = None
         attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+        attribute_08 = None
+        attribute_09 = None
 
         method_00 = None
 
@@ -1631,27 +1932,98 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
     TypeError: 'NoneType' object is not callable
 
-  ``method_00`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
+  because ``method_00`` points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
-* I make it a :ref:`method<what is a method?>` with the def_ keyword
+* I use the def_ keyword to change it from a :ref:`variable (attribute)<what is a variable?>` to a :ref:`method<what is a method?>`
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 8-9
+    :lineno-start: 53
+    :emphasize-lines: 14-16
 
-    class AClass():
+    class AClass(object):
 
         attribute_00 = None
         attribute_01 = None
         attribute_02 = None
         attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+        attribute_08 = None
+        attribute_09 = None
+
+        # method_00 = None
+        def method_00():
+            return None
+
+  - the test passes because ``method_00`` is now an :ref:`attribute/property<what is a class attribute?>` of the ``AClass`` :ref:`class<what is a class?>`
+  - ``AClass`` is an :ref:`attribute<what is a class attribute?>` of the ``attribute_error.py`` :ref:`module<what is a module?>` in the ``src`` folder_
+  - I can call ``method_00`` from outside the file_ with ``src.attribute_error.AClass.method_00()`` or ``src.attribute_error.AClass().method_00()``
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 53
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+        attribute_08 = None
+        attribute_09 = None
 
         def method_00():
             return None
 
+* I add a line for ``src.attribute_error.AClass.method_01`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 3
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_01'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 53
+    :emphasize-lines: 4
+
+    class AClass(object):
+
+        attribute_00 = None
+        attribute_01 = None
+
   the test passes.
 
-``method_00`` is now an attribute of ``AClass`` which is an attribute of ``attribute_error.py`` in the ``src`` folder_ and I can call it with ``src.attribute_error.AClass.method_00()``
 
 ----
 
@@ -1752,7 +2124,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
     :lineno-start: 23
     :emphasize-lines: 17-18
 
-    class AClass():
+    class AClass(object):
 
         attribute_00 = None
         attribute_01 = None
