@@ -1310,9 +1310,9 @@ the terminal_ is my friend, and shows AttributeError_
 test_attribute_error_w_class_attributes
 *********************************************************************************
 
-I know that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are attributes of the :ref:`module<what is a module?>`.
+The tests show that :ref:`variables<what is a variable?>` and :ref:`functions<what is a function?>` in a :ref:`module<what is a module?>` are :ref:`attributes<what is an attribute?>` of the :ref:`module<what is a module?>`.
 
-A :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` is also an attribute of the :ref:`module<what is a module?>`, and :ref:`variables<what is a variable?>` in the :ref:`class<what is a class?>` are attributes of the :ref:`class<what is a class?>`.
+Is a :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` also an :ref:`attribute` of the :ref:`module<what is a module?>`?
 
 ----
 
@@ -1324,29 +1324,29 @@ A :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` is also a
 
 * I go back to the terminal_ that is running the tests
 
-I add a new test to ``test_attribute_error.py``
+I add a test for :ref:`class attributes<what is a class attribute?>` to ``test_attribute_error.py``
 
 .. code-block:: python
   :lineno-start: 13
-  :emphasize-lines: 7-8
+  :emphasize-lines: 6-7
 
-      def test_attribute_error_w_functions(self):
-          src.attribute_error.function_00()
-          src.attribute_error.function_01()
-          src.attribute_error.function_02()
-          src.attribute_error.function_03()
+          src.attribute_error.function_06()
+          src.attribute_error.function_07()
+          src.attribute_error.function_08()
+          src.attribute_error.function_09()
 
       def test_attribute_error_w_class_attributes(self):
-          src.attribute_error.AClass.attribute_00
+        src.attribute_error.AClass.attribute_00
 
 
   # Exceptions seen
 
 the terminal_ is my friend, and shows AttributeError_
 
-.. code-block:: shell
+.. code-block:: python
 
-  AttributeError: module 'src.attribute_error' has no attribute 'AClass'
+  AttributeError: module 'src.attribute_error'
+                  has no attribute 'AClass'
 
 ----
 
@@ -1359,10 +1359,10 @@ the terminal_ is my friend, and shows AttributeError_
 * I add a :ref:`function<what is a function?>` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 49
     :emphasize-lines: 5-6
 
-    def function_03():
+    def function_09():
         return None
 
 
@@ -1371,24 +1371,25 @@ the terminal_ is my friend, and shows AttributeError_
 
   the terminal_ is my friend, and shows AttributeError_
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: 'function' object has no attribute 'attribute_00'
+    AttributeError: 'function' object
+                    has no attribute 'attribute_00'
 
-* I add a :ref:`variable<what is a variable?>` inside the :ref:`function <what is a function?>`
+* I add a :ref:`variable<what is a variable?>` to the :ref:`function <what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 3-4
+    :lineno-start: 53
+    :emphasize-lines: 3
 
     def AClass():
 
         attribute_00 = None
         return None
 
-  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`
+  the terminal_ still shows the same :ref:`Exception<errors>` because I cannot get to a :ref:`variable<what is a variable?>` inside a :ref:`function<what is a function?>` from outside the :ref:`function<what is a function?>`. The :ref:`variable<what is a variable?>` is only used within the :ref:`function<what is a function?>` when it runs.
 
-* I use the :ref:`class<what is a class?>` keyword instead of the def_ keyword to make ``AClass`` a :ref:`class<what is a class?>`
+* I use the :ref:`class<what is a class?>` keyword to change ``AClass`` from a :ref:`function<what is a function?>` to a :ref:`class<what is a class?>`
 
   .. code-block:: python
     :lineno-start: 23
