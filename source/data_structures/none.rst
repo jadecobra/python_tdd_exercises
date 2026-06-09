@@ -6,9 +6,9 @@
 
 .. _None: https://docs.python.org/3/library/constants.html?highlight=none#None
 .. _assertIsNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone
-.. _assertIsNone method: assertIsNone_
+.. _assertIsNone method: assertIs:ref:`None<what is None?>`
 .. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
-.. _assertIsNotNone method: assertIsNotNone_
+.. _assertIsNotNone method: assertIsNot:ref:`None<what is None?>`
 
 #################################################################################
 what is None?
@@ -20,15 +20,15 @@ what is None?
 
 ----
 
-None_ is used when there is no value. In Mathematics_ we use ``0`` to represent no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we use None_.
+None_ is used when there is no value. In Mathematics_ we use ``0`` to represent no quantity. In some languages or domains we use ``NULL``, in forms we use ``N/A`` when the options do not apply. In Python_ we can use None_.
 
 I used :ref:`assertIs<another way to test if something is the same object as None>` and :ref:`assertIsNot<another way to test if something is NOT the same object as None>` in the :ref:`assertion_error project<what is an assertion?>` :ref:`test_assertion_error_w_none` in :ref:`AssertionError<what causes AssertionError?>`, where I saw that
 
-* :ref:`True<test_what_is_true>` is NOT None_ and NOT equal to None_
-* :ref:`False<test_what_is_false>` is NOT None_ and NOT equal to None_
-* None_ is None_ and equal to None_
+* :ref:`True<test_what_is_true>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* :ref:`None<what is None?>` is :ref:`None<what is None?>` and equal to :ref:`None<what is None?>`
 
-I want to use `assert methods`_ to compare None_ with the other :ref:`Python data structures<data structures>` to see what it is and what it is not.
+I want to use `assert methods`_ to compare :ref:`None<what is None?>` with the other :ref:`Python data structures<data structures>` to see what it is and what it is not.
 
 ----
 
@@ -49,14 +49,14 @@ questions about None
 Questions to think about as I go through the chapter
 
 * :ref:`what is None?<test_what_is_none>`
-* :ref:`Is None a boolean?<test_is_none_a_boolean>`
-* :ref:`Is None an integer?<test_is_none_an_integer>`
-* :ref:`Is None a float?<test_is_none_a_float>`
-* :ref:`Is None a string?<test_is_none_a_string>`
-* :ref:`Is None a tuple?<test_is_none_a_tuple>`
-* :ref:`Is None a list?<test_is_none_a_list>`
-* :ref:`Is None a set?<test_is_none_a_set>`
-* :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
+* :ref:`Is None a boolean?<test_is_:ref:`None<what is None?>`a_boolean>`
+* :ref:`Is None an integer?<test_is_:ref:`None<what is None?>`an_integer>`
+* :ref:`Is None a float?<test_is_:ref:`None<what is None?>`a_float>`
+* :ref:`Is None a string?<test_is_:ref:`None<what is None?>`a_string>`
+* :ref:`Is None a tuple?<test_is_:ref:`None<what is None?>`a_tuple>`
+* :ref:`Is None a list?<test_is_:ref:`None<what is None?>`a_list>`
+* :ref:`Is None a set?<test_is_:ref:`None<what is None?>`a_set>`
+* :ref:`Is None a dictionary?<test_is_:ref:`None<what is None?>`a_dictionary>`
 * :ref:`how can I test if something is the same object as None?<how to test if something is None>`
 * :ref:`how can I test if something is NOT the same object as None?<how to test if something is None>`
 
@@ -200,7 +200,7 @@ requirements
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit --all --message 'setup project'
+    git commit -am 'setup project'
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -358,7 +358,7 @@ how to test if something is NOT None
 
     AssertionError: unexpectedly None
 
-  because assertIsNotNone_ raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is :ref:`None<what is None?>`.
+  because assertIsNot:ref:`None<what is None?>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is :ref:`None<what is None?>`.
 
 ----
 
@@ -368,7 +368,7 @@ how to test if something is None
 
 ----
 
-* I change assertIsNotNone_ to the `assertIsNone method`_
+* I change assertIsNot:ref:`None<what is None?>` to the `assertIsNone method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -383,7 +383,7 @@ how to test if something is None
 
     # Exceptions seen
 
-  the test passes because None_ is None_ and assertIsNone_ raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is NOT :ref:`None<what is None?>`.
+  the test passes because :ref:`None<what is None?>` is :ref:`None<what is None?>` and assertIs:ref:`None<what is None?>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is NOT :ref:`None<what is None?>`.
 
 * I remove the commented lines
 
@@ -418,14 +418,22 @@ how to test if something is None
     # Exceptions seen
     # AssertionError
 
-this is the same comment from :ref:`the assertion_error chapter<what is an assertion?>`
+  this is the same comment from :ref:`the assertion_error chapter<what is an assertion?>`
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_what_is_none'
+
 
 :ref:`None is None<test_what_is_none>`.
 
 ----
 
 *********************************************************************************
-test_is_none_a_boolean
+test_is_:ref:`None<what is None?>`a_boolean
 *********************************************************************************
 
 ----
@@ -436,27 +444,28 @@ test_is_none_a_boolean
 
 ----
 
-I add a test to see if None_ is a :ref:`boolean<what are booleans?>`
+* I go back to the terminal_ that is running the tests
+* I add a test to see if :ref:`None<what is None?>` is a :ref:`boolean<what are booleans?>`
 
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 5-6
 
-      def test_what_is_none(self):
-          self.assertIs(None, None)
-          self.assertIsNone(None)
+        def test_what_is_none(self):
+            self.assertIs(None, None)
+            self.assertIsNone(None)
 
-      def test_is_none_a_boolean(self):
-          self.assertIsNone(False)
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
+            self.assertIsNone(False)
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: False is not None
+    AssertionError: False is not None
 
 ----
 
@@ -472,7 +481,7 @@ I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>
   :lineno-start: 10
   :emphasize-lines: 2-3
 
-      def test_is_none_a_boolean(self):
+      def test_is_:ref:`None<what is None?>`a_boolean(self):
           # self.assertIsNone(False)
           self.assertIsNotNone(False)
 
@@ -512,7 +521,7 @@ the test passes.
     :emphasize-lines: 4
     :emphasize-text: True
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             self.assertIsNone(True)
@@ -526,14 +535,14 @@ the test passes.
 
     AssertionError: True is not None
 
-* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with assertIsNot:ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 9
     :emphasize-lines: 4-5
     :emphasize-text: Not
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             # self.assertIsNone(True)
@@ -564,7 +573,7 @@ the test passes.
     :emphasize-lines: 6
     :emphasize-text: assertNotIsInstance
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             # self.assertIsNone(True)
@@ -588,7 +597,7 @@ the test passes.
     :lineno-start: 10
     :emphasize-lines: 6-7
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             # self.assertIsNone(True)
@@ -608,7 +617,7 @@ the test passes.
     :emphasize-lines: 8
     :emphasize-text: assertNotIsInstance
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             # self.assertIsNone(True)
@@ -634,7 +643,7 @@ the test passes.
     :lineno-start: 10
     :emphasize-lines: 8-9
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             # self.assertIsNone(True)
@@ -649,13 +658,13 @@ the test passes.
 
   the test passes.
 
-* I add :ref:`assertIsInstance<another way to test if something is an instance of a class>` to test if None_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
+* I add :ref:`assertIsInstance<another way to test if something is an instance of a class>` to test if :ref:`None<what is None?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 9
     :emphasize-lines: 10
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             # self.assertIsNone(True)
@@ -683,7 +692,7 @@ the test passes.
     :lineno-start: 10
     :emphasize-lines: 10-11
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             # self.assertIsNone(False)
             self.assertIsNotNone(False)
             # self.assertIsNone(True)
@@ -705,7 +714,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 10
 
-        def test_is_none_a_boolean(self):
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
             self.assertIsNotNone(False)
             self.assertIsNotNone(True)
             self.assertIsInstance(False, bool)
@@ -715,7 +724,7 @@ the test passes.
 
     # NOTES
 
-* I change the last 2 comments I added (``True is NOT None`` and ``False is NOT None``) since this is about None_
+* I change the last 2 comments I added (``True is NOT None`` and ``False is NOT None``) since this is about :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 18
@@ -731,37 +740,34 @@ the test passes.
 
   Okay, this is new, not something from :ref:`the assertion_error chapter<what is an assertion?>`.
 
-:ref:`None is NOT a boolean<test_is_none_a_boolean>`.
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add test_is_:ref:`None<what is None?>`a_boolean'
+
+:ref:`None is NOT a boolean<test_is_:ref:`None<what is None?>`a_boolean>`.
 
 I know two new `assert methods`_
 
-* :ref:`assertIsNotNone<how to test if something is NOT None>` to see if something is NOT :ref:`None<what is None?>`
+* :ref:`assertIsNotNone<how to test if something is NOT None>` to test if something is NOT :ref:`None<what is None?>`
 * :ref:`assertIsNone<how to test if something is None>` to test if something is :ref:`None<what is None?>`
 
 .. caution:: the names of the `assert methods`_ can be confusing,
 
-  * there is
+  * there is ``assertIsNotNone`` where ``Not`` comes after ``Is``
 
-    .. code-block:: python
+  * then there is ``assertNotIsInstance`` where ``Is`` comes after ``Not``
 
-      assertIsNotNone
+  Would ``assertIsNotInstance`` be better than ``assertNotIsInstance``, since ``assertNotIsNone`` does not sound better than ``assertIsNotNone``?
 
-    where ``Not`` comes after ``Is``
-
-  * then there is
-
-    .. code-block:: python
-
-      assertNotIsInstance
-
-    where ``Is`` comes after ``Not``
-
-  Would ``assertIsNotInstance`` be better than ``assertNotIsInstance``, since ``assertNotIsNone`` does not sound better than ``assertIsNotNone``? Naming things is its own challenge.
+  Naming things is its own challenge.
 
 ----
 
 *********************************************************************************
-test_is_none_an_integer
+test_is_:ref:`None<what is None?>`an_integer
 *********************************************************************************
 
 ----
@@ -772,30 +778,31 @@ test_is_none_an_integer
 
 ----
 
-I add a test to see if None_ is an integer_ (a whole number)
+* I go back to the terminal_ that is running the tests
+* I add a test to see if :ref:`None<what is None?>` is an integer_ (a whole number)
 
-.. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 8-9
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 8-9
 
-      def test_is_none_a_boolean(self):
-          self.assertIsNotNone(False)
-          self.assertIsNotNone(True)
-          self.assertIsInstance(False, bool)
-          self.assertIsInstance(True, bool)
-          self.assertNotIsInstance(None, bool)
+        def test_is_:ref:`None<what is None?>`a_boolean(self):
+            self.assertIsNotNone(False)
+            self.assertIsNotNone(True)
+            self.assertIsInstance(False, bool)
+            self.assertIsInstance(True, bool)
+            self.assertNotIsInstance(None, bool)
 
-      def test_is_none_an_integer(self):
-          self.assertIsNone(-1)
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            self.assertIsNone(-1)
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: -1 is not None
+    AssertionError: -1 is not None
 
 ----
 
@@ -805,13 +812,18 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+I make the statement :ref:`True<test_what_is_true>` with assertIsNot:ref:`None<what is None?>`
 
 .. code-block:: python
   :lineno-start: 17
-  :emphasize-lines: 1
+  :emphasize-lines: 2-3
 
+      def test_is_:ref:`None<what is None?>`an_integer(self):
+          # self.assertIsNone(-1)
           self.assertIsNotNone(-1)
+
+
+  # NOTES
 
 the test passes.
 
@@ -823,15 +835,19 @@ the test passes.
 
 ----
 
-* I add a new failing line with assertIsNone_
+* I add a new failing line with assertIs:ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 3
+    :lineno-start: 17
+    :emphasize-lines: 4
 
-        def test_is_none_an_integer(self):
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
             self.assertIsNotNone(-1)
             self.assertIsNone(0)
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -839,26 +855,38 @@ the test passes.
 
     AssertionError: 0 is not None
 
-* I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the statement :ref:`True<test_what_is_true>` with assertIsNot:ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 1
+    :lineno-start: 17
+    :emphasize-lines: 4-5
 
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
+            self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
             self.assertIsNotNone(0)
+
+
+    # NOTES
 
   the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 4
+    :lineno-start: 17
+    :emphasize-lines: 6
 
-        def test_is_none_an_integer(self):
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
             self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
             self.assertIsNotNone(0)
             self.assertIsNone(1)
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -869,55 +897,91 @@ the test passes.
 * I change the line to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 1
+    :lineno-start: 17
+    :emphasize-lines: 6-7
 
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
+            self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
+            self.assertIsNotNone(0)
+            # self.assertIsNone(1)
             self.assertIsNotNone(1)
+
+
+    # NOTES
 
   the test passes.
 
 * I add a new failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 5
+    :lineno-start: 17
+    :emphasize-lines: 8
 
-        def test_is_none_an_integer(self):
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
             self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
             self.assertIsNotNone(0)
+            # self.assertIsNone(1)
             self.assertIsNotNone(1)
             self.assertNotIsInstance(-1, int)
 
-  int_ is the :ref:`class<what is a class?>` for integers_, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+    # NOTES
 
-    AssertionError: -1 is an instance of <class 'int'>
+  - int_ is the :ref:`class<what is a class?>` for integers_
+  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
+    .. code-block:: shell
+
+      AssertionError: -1 is an instance of <class 'int'>
+
+    because ``-1`` is an integer_
+
+  - I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
 
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 1
+    :lineno-start: 17
+    :emphasize-lines: 8-9
 
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
+            self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
+            self.assertIsNotNone(0)
+            # self.assertIsNone(1)
+            self.assertIsNotNone(1)
+            # self.assertNotIsInstance(-1, int)
             self.assertIsInstance(-1, int)
+
+
+    # NOTES
 
   the test passes.
 
 * I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 6
+    :lineno-start: 17
+    :emphasize-lines: 10
 
-        def test_is_none_an_integer(self):
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
             self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
             self.assertIsNotNone(0)
+            # self.assertIsNone(1)
             self.assertIsNotNone(1)
+            # self.assertNotIsInstance(-1, int)
             self.assertIsInstance(-1, int)
             self.assertNotIsInstance(0, int)
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -925,32 +989,52 @@ the test passes.
 
     AssertionError: 0 is an instance of <class 'int'>
 
-  ``0`` is an integer_
+  because ``0`` is an integer_.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 1
+    :lineno-start: 17
+    :emphasize-lines: 10-11
 
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
+            self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
+            self.assertIsNotNone(0)
+            # self.assertIsNone(1)
+            self.assertIsNotNone(1)
+            # self.assertNotIsInstance(-1, int)
+            self.assertIsInstance(-1, int)
+            # self.assertNotIsInstance(0, int)
             self.assertIsInstance(0, int)
+
+
+    # NOTES
 
   the test passes.
 
 * I add another failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 3
+    :lineno-start: 17
+    :emphasize-lines: 12
 
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
+            self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
+            self.assertIsNotNone(0)
+            # self.assertIsNone(1)
+            self.assertIsNotNone(1)
+            # self.assertNotIsInstance(-1, int)
             self.assertIsInstance(-1, int)
+            # self.assertNotIsInstance(0, int)
             self.assertIsInstance(0, int)
             self.assertNotIsInstance(1, int)
 
 
     # NOTES
-    # None is NOT a boolean
-    # None is None
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -963,14 +1047,29 @@ the test passes.
 * I make the failing line :ref:`True<test_what_is_true>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 1
+    :lineno-start: 17
+    :emphasize-lines: 12-13
 
+        def test_is_:ref:`None<what is None?>`an_integer(self):
+            # self.assertIsNone(-1)
+            self.assertIsNotNone(-1)
+            # self.assertIsNone(0)
+            self.assertIsNotNone(0)
+            # self.assertIsNone(1)
+            self.assertIsNotNone(1)
+            # self.assertNotIsInstance(-1, int)
+            self.assertIsInstance(-1, int)
+            # self.assertNotIsInstance(0, int)
+            self.assertIsInstance(0, int)
+            # self.assertNotIsInstance(1, int)
             self.assertIsInstance(1, int)
+
+
+    # NOTES
 
   the test passes.
 
-* I add one more failing line to test if None_ is an integer_ with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I add one more failing line to test if :ref:`None<what is None?>` is an integer_ with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
 
   .. code-block:: python
     :lineno-start: 20
@@ -990,10 +1089,10 @@ the test passes.
 * I make the line :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 17
     :emphasize-lines: 8
 
-        def test_is_none_an_integer(self):
+        def test_is_:ref:`None<what is None?>`an_integer(self):
             self.assertIsNotNone(-1)
             self.assertIsNotNone(0)
             self.assertIsNotNone(1)
@@ -1022,12 +1121,21 @@ the test passes.
     # Exceptions seen
     # AssertionError
 
-:ref:`None is NOT an integer<test_is_none_an_integer>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is NOT an integer<test_is_:ref:`None<what is None?>`an_integer>`
 
 ----
 
 *********************************************************************************
-test_is_none_a_float
+test_is_:ref:`None<what is None?>`a_float
 *********************************************************************************
 
 ----
@@ -1038,13 +1146,13 @@ test_is_none_a_float
 
 ----
 
-I add a test to see if None_ is a float_ (binary floating point decimal number)
+I add a test to see if :ref:`None<what is None?>` is a float_ (binary floating point decimal number)
 
 .. code-block:: python
-  :lineno-start: 16
+  :lineno-start: 17
   :emphasize-lines: 10-11
 
-      def test_is_none_an_integer(self):
+      def test_is_:ref:`None<what is None?>`an_integer(self):
           self.assertIsNotNone(-1)
           self.assertIsNotNone(0)
           self.assertIsNotNone(1)
@@ -1053,7 +1161,7 @@ I add a test to see if None_ is a float_ (binary floating point decimal number)
           self.assertIsInstance(1, int)
           self.assertNotIsInstance(None, int)
 
-      def test_is_none_a_float(self):
+      def test_is_:ref:`None<what is None?>`a_float(self):
           self.assertIsNone(-0.1)
 
 
@@ -1073,7 +1181,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+I make the statement :ref:`True<test_what_is_true>` with assertIsNot:ref:`None<what is None?>`
 
 .. code-block:: python
   :lineno-start: 26
@@ -1091,13 +1199,13 @@ the test passes.
 
 ----
 
-* I add another failing line with assertIsNone_
+* I add another failing line with assertIs:ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 3
 
-        def test_is_none_a_float(self):
+        def test_is_:ref:`None<what is None?>`a_float(self):
             self.assertIsNotNone(-0.1)
             self.assertIsNone(0.0)
 
@@ -1107,7 +1215,7 @@ the test passes.
 
     AssertionError: 0.0 is not None
 
-* I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the statement :ref:`True<test_what_is_true>` with assertIsNot:ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 27
@@ -1117,13 +1225,13 @@ the test passes.
 
   the test passes.
 
-* I add a failing line with assertIsNone_
+* I add a failing line with assertIs:ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 25
     :emphasize-lines: 4
 
-        def test_is_none_a_float(self):
+        def test_is_:ref:`None<what is None?>`a_float(self):
             self.assertIsNotNone(-0.1)
             self.assertIsNotNone(0.0)
             self.assertIsNone(0.1)
@@ -1134,7 +1242,7 @@ the test passes.
 
     AssertionError: 0.1 is not None
 
-* I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+* I make the statement :ref:`True<test_what_is_true>` with assertIsNot:ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -1150,7 +1258,7 @@ the test passes.
     :lineno-start: 25
     :emphasize-lines: 5
 
-        def test_is_none_a_float(self):
+        def test_is_:ref:`None<what is None?>`a_float(self):
             self.assertIsNotNone(-0.1)
             self.assertIsNotNone(0.0)
             self.assertIsNotNone(0.1)
@@ -1180,7 +1288,7 @@ the test passes.
     :lineno-start: 25
     :emphasize-lines: 6
 
-        def test_is_none_a_float(self):
+        def test_is_:ref:`None<what is None?>`a_float(self):
             self.assertIsNotNone(-0.1)
             self.assertIsNotNone(0.0)
             self.assertIsNotNone(0.1)
@@ -1262,7 +1370,7 @@ the test passes.
     :lineno-start: 25
     :emphasize-lines: 8
 
-        def test_is_none_a_float(self):
+        def test_is_:ref:`None<what is None?>`a_float(self):
             self.assertIsNotNone(-0.1)
             self.assertIsNotNone(0.0)
             self.assertIsNotNone(0.1)
@@ -1292,12 +1400,21 @@ the test passes.
     # Exceptions seen
     # AssertionError
 
-:ref:`None is NOT a float<test_is_none_a_float>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is NOT a float<test_is_:ref:`None<what is None?>`a_float>`
 
 ----
 
 *********************************************************************************
-test_is_none_a_string
+test_is_:ref:`None<what is None?>`a_string
 *********************************************************************************
 
 ----
@@ -1308,13 +1425,13 @@ test_is_none_a_string
 
 ----
 
-I add a test to see if None_ is a string_ (anything inside :ref:`quotes`)
+I add a test to see if :ref:`None<what is None?>` is a string_ (anything inside :ref:`quotes`)
 
 .. code-block:: python
   :lineno-start: 25
   :emphasize-lines: 10-11
 
-      def test_is_none_a_float(self):
+      def test_is_:ref:`None<what is None?>`a_float(self):
           self.assertIsNotNone(-0.1)
           self.assertIsNotNone(0.0)
           self.assertIsNotNone(0.1)
@@ -1323,7 +1440,7 @@ I add a test to see if None_ is a string_ (anything inside :ref:`quotes`)
           self.assertIsInstance(0.1, float)
           self.assertNotIsInstance(None, float)
 
-      def test_is_none_a_string(self):
+      def test_is_:ref:`None<what is None?>`a_string(self):
           self.assertIsNone('')
 
 
@@ -1345,7 +1462,7 @@ the empty string_ (``''``) is NOT :ref:`None<what is None?>`
 
 ----
 
-I make the statement :ref:`True<test_what_is_true>` with assertIsNotNone_
+I make the statement :ref:`True<test_what_is_true>` with assertIsNot:ref:`None<what is None?>`
 
 .. code-block:: python
   :lineno-start: 35
@@ -1363,13 +1480,13 @@ the test passes.
 
 ----
 
-* I add another failing line with assertIsNone_
+* I add another failing line with assertIs:ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 34
     :emphasize-lines: 3
 
-        def test_is_none_a_string(self):
+        def test_is_:ref:`None<what is None?>`a_string(self):
             self.assertIsNotNone('')
             self.assertIsNone("text")
 
@@ -1395,7 +1512,7 @@ the test passes.
     :lineno-start: 34
     :emphasize-lines: 4
 
-        def test_is_none_a_string(self):
+        def test_is_:ref:`None<what is None?>`a_string(self):
             self.assertIsNotNone('')
             self.assertIsNotNone("text")
             self.assertNotIsInstance('', str)
@@ -1424,7 +1541,7 @@ the test passes.
     :lineno-start: 34
     :emphasize-lines: 5
 
-        def test_is_none_a_string(self):
+        def test_is_:ref:`None<what is None?>`a_string(self):
             self.assertIsNotNone('')
             self.assertIsNotNone("text")
             self.assertIsInstance('', str)
@@ -1473,7 +1590,7 @@ the test passes.
     :lineno-start: 34
     :emphasize-lines: 6
 
-        def test_is_none_a_string(self):
+        def test_is_:ref:`None<what is None?>`a_string(self):
             self.assertIsNotNone('')
             self.assertIsNotNone("text")
             self.assertIsInstance('', str)
@@ -1502,12 +1619,21 @@ the test passes.
     # Exceptions seen
     # AssertionError
 
-:ref:`None is NOT a string<test_is_none_a_string>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is NOT a string<test_is_:ref:`None<what is None?>`a_string>`
 
 ----
 
 *********************************************************************************
-test_is_none_a_tuple
+test_is_:ref:`None<what is None?>`a_tuple
 *********************************************************************************
 
 ----
@@ -1518,20 +1644,20 @@ test_is_none_a_tuple
 
 ----
 
-I add a test to see if None_ is a tuple_ (anything in parentheses (``()``) separated by commas), pronounced ``too-pull``
+I add a test to see if :ref:`None<what is None?>` is a tuple_ (anything in parentheses (``()``) separated by commas), pronounced ``too-pull``
 
 .. code-block:: python
   :lineno-start: 34
   :emphasize-lines: 8-9
 
-      def test_is_none_a_string(self):
+      def test_is_:ref:`None<what is None?>`a_string(self):
           self.assertIsNotNone('')
           self.assertIsNotNone("text")
           self.assertIsInstance('', str)
           self.assertIsInstance("text", str)
           self.assertNotIsInstance(None, str)
 
-      def test_is_none_a_tuple(self):
+      def test_is_:ref:`None<what is None?>`a_tuple(self):
           self.assertIsNone(())
 
 
@@ -1576,7 +1702,7 @@ the test passes.
     :lineno-start: 42
     :emphasize-lines: 3
 
-        def test_is_none_a_tuple(self):
+        def test_is_:ref:`None<what is None?>`a_tuple(self):
             self.assertIsNotNone(())
             self.assertIsNone((1, 2, 3, 'n'))
 
@@ -1603,7 +1729,7 @@ the test passes.
     :lineno-start: 41
     :emphasize-lines: 4
 
-        def test_is_none_a_tuple(self):
+        def test_is_:ref:`None<what is None?>`a_tuple(self):
             self.assertIsNotNone(())
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertNotIsInstance((), tuple)
@@ -1632,7 +1758,7 @@ the test passes.
     :lineno-start: 41
     :emphasize-lines: 5
 
-        def test_is_none_a_tuple(self):
+        def test_is_:ref:`None<what is None?>`a_tuple(self):
             self.assertIsNotNone(())
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertIsInstance((), tuple)
@@ -1662,7 +1788,7 @@ the test passes.
     :lineno-start: 41
     :emphasize-lines: 6
 
-        def test_is_none_a_tuple(self):
+        def test_is_:ref:`None<what is None?>`a_tuple(self):
             self.assertIsNotNone(())
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertIsInstance((), tuple)
@@ -1681,7 +1807,7 @@ the test passes.
     :lineno-start: 41
     :emphasize-lines: 6
 
-        def test_is_none_a_tuple(self):
+        def test_is_:ref:`None<what is None?>`a_tuple(self):
             self.assertIsNotNone(())
             self.assertIsNotNone((1, 2, 3, 'n'))
             self.assertIsInstance((), tuple)
@@ -1707,14 +1833,23 @@ the test passes.
     # None is NOT a boolean
     # None is None
 
-  it looks like None_ is None_ and not anything else
+  it looks like :ref:`None<what is None?>` is :ref:`None<what is None?>` and not anything else
 
-:ref:`None is NOT a tuple<test_is_none_a_tuple>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is NOT a tuple<test_is_:ref:`None<what is None?>`a_tuple>`
 
 ----
 
 *********************************************************************************
-test_is_none_a_list
+test_is_:ref:`None<what is None?>`a_list
 *********************************************************************************
 
 ----
@@ -1725,20 +1860,20 @@ test_is_none_a_list
 
 ----
 
-I add a new test to see if None_ is a :ref:`list<lists>` (anything in square brackets (``[]``))
+I add a new test to see if :ref:`None<what is None?>` is a :ref:`list<lists>` (anything in square brackets (``[]``))
 
 .. code-block:: python
   :lineno-start: 41
   :emphasize-lines: 8-9
 
-      def test_is_none_a_tuple(self):
+      def test_is_:ref:`None<what is None?>`a_tuple(self):
           self.assertIsNotNone(())
           self.assertIsNotNone((1, 2, 3, 'n'))
           self.assertIsInstance((), tuple)
           self.assertIsInstance((1, 2, 3, 'n'), tuple)
           self.assertNotIsInstance(None, tuple)
 
-      def test_is_none_a_list(self):
+      def test_is_:ref:`None<what is None?>`a_list(self):
           self.assertIsNone([])
 
 
@@ -1783,7 +1918,7 @@ the test passes.
     :lineno-start: 48
     :emphasize-lines: 3
 
-        def test_is_none_a_list(self):
+        def test_is_:ref:`None<what is None?>`a_list(self):
             self.assertIsNotNone([])
             self.assertIsNone([1, 2, 3, 'n'])
 
@@ -1810,7 +1945,7 @@ the test passes.
     :lineno-start: 48
     :emphasize-lines: 4
 
-        def test_is_none_a_list(self):
+        def test_is_:ref:`None<what is None?>`a_list(self):
             self.assertIsNotNone([])
             self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertNotIsInstance([], list)
@@ -1839,7 +1974,7 @@ the test passes.
     :lineno-start: 48
     :emphasize-lines: 5
 
-        def test_is_none_a_list(self):
+        def test_is_:ref:`None<what is None?>`a_list(self):
             self.assertIsNotNone([])
             self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertIsInstance([], list)
@@ -1888,7 +2023,7 @@ the test passes.
     :lineno-start: 48
     :emphasize-lines: 6
 
-        def test_is_none_a_list(self):
+        def test_is_:ref:`None<what is None?>`a_list(self):
             self.assertIsNotNone([])
             self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertIsInstance([], list)
@@ -1915,12 +2050,21 @@ the test passes.
     # None is NOT a boolean
     # None is None
 
-:ref:`None is NOT a list<test_is_none_a_list>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is NOT a list<test_is_:ref:`None<what is None?>`a_list>`
 
 ----
 
 *********************************************************************************
-test_is_none_a_set
+test_is_:ref:`None<what is None?>`a_set
 *********************************************************************************
 
 ----
@@ -1931,20 +2075,20 @@ test_is_none_a_set
 
 ----
 
-I want to see if None_ is a set_
+I want to see if :ref:`None<what is None?>` is a set_
 
 .. code-block:: python
   :lineno-start: 48
   :emphasize-lines: 8-9
 
-        def test_is_none_a_list(self):
+        def test_is_:ref:`None<what is None?>`a_list(self):
             self.assertIsNotNone([])
             self.assertIsNotNone([1, 2, 3, 'n'])
             self.assertIsInstance([], list)
             self.assertIsInstance([1, 2, 3, 'n'], list)
             self.assertNotIsInstance(None, list)
 
-        def test_is_none_a_set(self):
+        def test_is_:ref:`None<what is None?>`a_set(self):
             self.assertIsNone(set())
 
 
@@ -1989,7 +2133,7 @@ the test passes.
     :lineno-start: 55
     :emphasize-lines: 3
 
-        def test_is_none_a_set(self):
+        def test_is_:ref:`None<what is None?>`a_set(self):
             self.assertIsNotNone(set())
             self.assertIsNone({1, 2, 3, 'n'})
 
@@ -2016,7 +2160,7 @@ the test passes.
     :lineno-start: 55
     :emphasize-lines: 4
 
-        def test_is_none_a_set(self):
+        def test_is_:ref:`None<what is None?>`a_set(self):
             self.assertIsNotNone(set())
             self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertNotIsInstance({1, 2, 3, 'n'}, set)
@@ -2043,7 +2187,7 @@ the test passes.
     :lineno-start: 55
     :emphasize-lines: 5
 
-        def test_is_none_a_set(self):
+        def test_is_:ref:`None<what is None?>`a_set(self):
             self.assertIsNotNone(set())
             self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertIsInstance({1, 2, 3, 'n'}, set)
@@ -2061,7 +2205,7 @@ the test passes.
     :lineno-start: 55
     :emphasize-lines: 5
 
-        def test_is_none_a_set(self):
+        def test_is_:ref:`None<what is None?>`a_set(self):
             self.assertIsNotNone(set())
             self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertIsInstance({1, 2, 3, 'n'}, set)
@@ -2088,12 +2232,21 @@ the test passes.
     # None is NOT a boolean
     # None is None
 
-:ref:`None is NOT a set<test_is_none_a_set>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is NOT a set<test_is_:ref:`None<what is None?>`a_set>`
 
 ----
 
 *********************************************************************************
-test_is_none_a_dictionary
+test_is_:ref:`None<what is None?>`a_dictionary
 *********************************************************************************
 
 ----
@@ -2104,19 +2257,19 @@ test_is_none_a_dictionary
 
 ----
 
-One last test, this one is to see if None_ is a :ref:`dictionary<what is a dictionary?>`
+One last test, this one is to see if :ref:`None<what is None?>` is a :ref:`dictionary<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 55
   :emphasize-lines: 7-8
 
-      def test_is_none_a_set(self):
+      def test_is_:ref:`None<what is None?>`a_set(self):
           self.assertIsNotNone(set())
           self.assertIsNotNone({1, 2, 3, 'n'})
           self.assertIsInstance({1, 2, 3, 'n'}, set)
           self.assertNotIsInstance(None, set)
 
-      def test_is_none_a_dictionary(self):
+      def test_is_:ref:`None<what is None?>`a_dictionary(self):
           self.assertIsNone(dict())
 
 
@@ -2163,7 +2316,7 @@ the test passes.
     :lineno-start: 61
     :emphasize-lines: 3
 
-        def test_is_none_a_dictionary(self):
+        def test_is_:ref:`None<what is None?>`a_dictionary(self):
             self.assertIsNotNone(dict())
             self.assertIsNone({'key': 'value'})
 
@@ -2190,7 +2343,7 @@ the test passes.
     :lineno-start: 61
     :emphasize-lines: 4
 
-        def test_is_none_a_dictionary(self):
+        def test_is_:ref:`None<what is None?>`a_dictionary(self):
             self.assertIsNotNone(dict())
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
@@ -2219,7 +2372,7 @@ the test passes.
     :lineno-start: 61
     :emphasize-lines: 5
 
-        def test_is_none_a_dictionary(self):
+        def test_is_:ref:`None<what is None?>`a_dictionary(self):
             self.assertIsNotNone(dict())
             self.assertIsNotNone({'key': 'value'})
             self.assertIsInstance({}, dict)
@@ -2266,7 +2419,7 @@ the test passes.
     :lineno-start: 61
     :emphasize-lines: 6
 
-        def test_is_none_a_dictionary(self):
+        def test_is_:ref:`None<what is None?>`a_dictionary(self):
             self.assertIsNotNone(dict())
             self.assertIsNotNone({'key': 'value'})
             self.assertIsInstance({}, dict)
@@ -2285,7 +2438,7 @@ the test passes.
     :lineno-start: 61
     :emphasize-lines: 6
 
-        def test_is_none_a_dictionary(self):
+        def test_is_:ref:`None<what is None?>`a_dictionary(self):
             self.assertIsNotNone(dict())
             self.assertIsNotNone({'key': 'value'})
             self.assertIsInstance({}, dict)
@@ -2318,7 +2471,16 @@ the test passes.
     # Exceptions seen
     # AssertionError
 
-:ref:`None is NOT a dictionary<test_is_none_a_dictionary>`
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is NOT a dictionary<test_is_:ref:`None<what is None?>`a_dictionary>`
 
 ----
 
@@ -2350,10 +2512,10 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what None_ is and what it is NOT. I used 2 from :ref:`the assertion_error chapter<what is an assertion?>`
+I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it is NOT. I used 2 from :ref:`the assertion_error chapter<what is an assertion?>`
 
-* assertIsNone_ - which tests if the thing in parentheses is None_
-* assertIsNotNone_ - which tests if the thing in parentheses is NOT None_
+* assertIs:ref:`None<what is None?>` - which tests if the thing in parentheses is :ref:`None<what is None?>`
+* assertIsNot:ref:`None<what is None?>` - which tests if the thing in parentheses is NOT :ref:`None<what is None?>`
 
 and 2 new `assert methods`_
 
@@ -2362,7 +2524,7 @@ and 2 new `assert methods`_
 
 I also used :ref:`Python's basic data structures<data structures>` in the tests
 
-* None_ - the simplest
+* :ref:`None<what is None?>` - the simplest
 * integers_ - whole numbers, negative and positive, including ``0``
 * floats_ - binary floating point decimal numbers, negative and positive including ``0.0``
 * strings_ - anything inside :ref:`quotes`
