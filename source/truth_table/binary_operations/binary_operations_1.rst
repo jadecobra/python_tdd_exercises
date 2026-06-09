@@ -792,7 +792,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   green.
 
-* I add bool_ to the `if statements`_
+* I add :ref:`bool<what are booleans?>` to the `if statements`_
 
   .. code-block:: python
     :lineno-start: 21
@@ -837,7 +837,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   - ``if bool(something)`` checks if ``bool(something)`` returns :ref:`True <test_what_is_true>`
   - ``if bool(something) == True`` is the same as ``if bool(something)``
 
-* I can remove bool_
+* I can remove :ref:`bool<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 21
@@ -1691,7 +1691,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   the test passes.
 
-* I add bool_
+* I add :ref:`bool<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -1746,7 +1746,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   - ``if not bool(something) == True`` is the same as ``if not bool(something)``
   - ``if bool(something) == True`` is the same as ``if bool(something)``
 
-* I remove bool_
+* I remove :ref:`bool<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 29

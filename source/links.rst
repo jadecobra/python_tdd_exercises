@@ -5,19 +5,12 @@
 .. _assertFalse method: assertFalse_
 .. _assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
 .. _assertTrue method: assertTrue_
-.. _assertIsNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone
-.. _assertIsNone method: assertIsNone_
-.. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
-.. _assertIsNotNone method: assertIsNotNone_
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaises method: assertRaises_
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
 .. _assertRaisesRegex method: assertRaisesRegex_
 .. _bash: https://www.gnu.org/software/bash/
 .. _bash file: bash_
-.. _bool: https://docs.python.org/3/library/functions.html#bool
-.. _bool class: bool_
-.. _bool built-in function: bool_
 .. _brew: https://brew.sh
 .. _bytes: https://docs.python.org/3/library/stdtypes.html#bytes
 .. _call: https://docs.python.org/3/reference/expressions.html#calls

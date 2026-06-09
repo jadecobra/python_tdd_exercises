@@ -4,13 +4,13 @@
 
 .. include:: ../../links.rst
 
-.. _bool function: bool_
+.. _bool function: :ref:`bool<what are booleans?>`
 
 #################################################################################
 booleans 2: test with bool
 #################################################################################
 
-I want to use the `bool built-in function`_ with the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true`.
+I want to use the :ref:`bool built-in function<what are booleans?>` with the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true`.
 
 
 The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. Which means the result of ``bool(something)`` is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
@@ -139,7 +139,7 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` with bool_
+* I add another :ref:`assertion<what is an assertion?>` with :ref:`bool<what are booleans?>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -478,7 +478,7 @@ Oh No! More of the same thing
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` with bool_ to :ref:`test_what_is_true`
+I add an :ref:`assertion<what is an assertion?>` with :ref:`bool<what are booleans?>` to :ref:`test_what_is_true`
 
 .. code-block:: python
   :lineno-start: 26

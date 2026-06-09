@@ -4,7 +4,7 @@
 
 .. include:: ../../links.rst
 
-.. _booleans: bool_
+.. _booleans: :ref:`bool<what are booleans?>`
 .. _binary floating point numbers: float_
 
 #################################################################################
@@ -261,7 +261,7 @@ test_what_is_false
 
 ----
 
-I change ``test_failure`` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`testing None<what is None?>` to check if False_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the `bool class`_. I think this will fail
+I change ``test_failure`` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`testing None<what is None?>` to check if False_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`. I think this will fail
 
 .. code-block:: python
   :linenos:

@@ -50,7 +50,7 @@ class TestBooleans(unittest.TestCase):
         self.assertEqual(True*1, 1)
         self.assertEqual(True/1, 1)
 
-    def test_if_bool_is_an_int(self):
+    def test_if_:ref:`bool<what are booleans?>`is_an_int(self):
         self.assertNotIsInstance(bool, int)
 
 
