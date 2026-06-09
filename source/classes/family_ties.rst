@@ -27,7 +27,7 @@ It can also be more complicated because I can make new :ref:`instances<how to te
 what is Python's Method Resolution Order?
 *********************************************************************************
 
-When an :ref:`instance<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` is made, Python_ calls every ``__init__`` :ref:`method<what is a method?>` of the parent and its parent going through every ancestor until it gets to the last one that is needed to make the :ref:`instance<how to test if something is an instance of a class>`.
+When :ref:`an instance of a class<how to test if something is an instance of a class>` is made, Python_ calls every ``__init__`` :ref:`method<what is a method?>` of the parent and its parent going through every ancestor until it gets to the last one that is needed to make the :ref:`instance<how to test if something is an instance of a class>`.
 
 ----
 

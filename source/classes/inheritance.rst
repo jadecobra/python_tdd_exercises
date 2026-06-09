@@ -352,7 +352,7 @@ how to test if something is an instance of a class
 
 ----
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy) of a class<how to test if something is an instance of a class>` or NOT - assertIsInstance_ and assertNotIsInstance_
 
 ----
 

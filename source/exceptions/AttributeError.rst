@@ -1650,7 +1650,7 @@ the terminal_ is my friend, and shows AttributeError_
         attribute_04 = None
         attribute_05 = None
 
-  the test passes because it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or :ref:`an instance of the class<how to test if something is an instance of a class>`  (``AClass()``).
+  the test passes because in this case it does not matter if I use the :ref:`class<what is a class?>` (``AClass``) or :ref:`an instance of the class<how to test if something is an instance of a class>`  (``AClass()``).
 
 * I add a line for ``src.attribute_error.AClass().attribute_06`` to ``test_attribute_error.py``
 
@@ -1990,7 +1990,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_00():
             return None
 
-* I add a line for ``src.attribute_error.AClass.method_01`` to ``test_attribute_error.py``
+* You know the "drill", I add a line for ``src.attribute_error.AClass.method_01`` to ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 43
@@ -2011,16 +2011,397 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
                     has no attribute 'method_01'.
                     Did you mean: 'method_00'?
 
-* I add the :ref:`method<what is a method?>` to the :ref:`class definition<how to make a class>` in ``attribute_error.py``
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 53
-    :emphasize-lines: 4
+    :emphasize-lines: 17-18
 
     class AClass(object):
 
         attribute_00 = None
         attribute_01 = None
+        attribute_02 = None
+        attribute_03 = None
+        attribute_04 = None
+        attribute_05 = None
+        attribute_06 = None
+        attribute_07 = None
+        attribute_08 = None
+        attribute_09 = None
+
+        def method_00():
+            return None
+
+        def method_01():
+            return None
+
+  the test passes because in this case it does not matter if I reference the :ref:`method<what is a method?>` (``AClass.method_01``) or call it  (``AClass.method_01()``).
+
+* I add a line for ``src.attribute_error.AClass.method_02`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 4
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_02'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 4-5
+
+        def method_01():
+            return None
+
+        def method_02():
+            return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: AClass.method_02() takes
+               0 positional arguments but 1 was given
+
+  because this happens when ``AClass().method_02()`` is called
+
+  .. code-block:: python
+
+    AClass().method_02()
+        AClass.method_02(AClass)
+
+  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_02`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>` (the parentheses are empty).
+
+* I add ``self`` to the parentheses of ``method_02``
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 1-2
+
+        # def method_02():
+        def method_02(self):
+            return None
+
+  the test passes because this happens when ``AClass().method_02()`` is called
+
+  .. code-block:: python
+
+    AClass().method_02()
+        AClass.method_02(self)
+
+  where ``self`` is ``AClass``.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 69
+
+        def method_01():
+            return None
+
+        def method_02(self):
+            return None
+
+* I add a line for ``src.attribute_error.AClass.method_03`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 5
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+            src.attribute_error.AClass().method_03
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_03'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 4-5
+
+        def method_02(self):
+            return None
+
+        def method_03():
+            return None
+
+  the test passes because in this case, I reference the :ref:`method<what is a method?>` (``AClass().method_03``), I do not call it (``AClass().method_03()``).
+
+* I add a line for ``src.attribute_error.AClass.method_04`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 6
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+            src.attribute_error.AClass().method_03
+            src.attribute_error.AClass().method_04()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_04'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 75
+    :emphasize-lines: 4-5
+
+        def method_03():
+            return None
+
+        def method_04():
+            return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: AClass.method_04() takes
+               0 positional arguments but 1 was given
+
+  because this happens when ``AClass().method_04()`` is called
+
+  .. code-block:: python
+
+    AClass().method_04()
+        AClass.method_04(AClass)
+
+  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_04`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>`.
+
+* I add ``self`` to the parentheses of ``method_04``
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 1-2
+
+        # def method_04():
+        def method_04(self):
+            return None
+
+  the test passes because this happens when ``AClass().method_04()`` is called
+
+  .. code-block:: python
+
+    AClass().method_04()
+        AClass.method_04(self)
+
+  where ``self`` is ``AClass``.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 75
+
+        def method_03():
+            return None
+
+        def method_04(self):
+            return None
+
+* I add a line for ``src.attribute_error.AClass.method_05`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 7
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+            src.attribute_error.AClass().method_03
+            src.attribute_error.AClass().method_04()
+            src.attribute_error.AClass.method_05
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_05'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 78
+    :emphasize-lines: 4-5
+
+        def method_04():
+            return None
+
+        def method_05():
+            return None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.AClass.method_06`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 8
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+            src.attribute_error.AClass().method_03
+            src.attribute_error.AClass().method_04()
+            src.attribute_error.AClass.method_05
+            src.attribute_error.AClass.method_06()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_06'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 4-5
+
+        def method_05():
+            return None
+
+        def method_06():
+            return None
+
+  the test passes because this happens when ``AClass.method_06()`` is called
+
+  .. code-block:: python
+
+    AClass.method_06()
+
+  I called the :ref:`method<what is a method>` with the :ref:`class<what is a class?>` (``AClass.method_06()``) not :ref:`an instance of the class<how to test if something is an instance of a class>` (``AClass().method_06()``).
+
+* I add a line for ``src.attribute_error.AClass.method_07`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 9
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+            src.attribute_error.AClass().method_03
+            src.attribute_error.AClass().method_04()
+            src.attribute_error.AClass.method_05
+            src.attribute_error.AClass.method_06()
+            src.attribute_error.AClass.method_07
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_07'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 4-5
+
+        def method_06():
+            return None
+
+        def method_07():
+            return None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.AClass.method_08`` to ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 10
+
+        def test_attribute_error_w_class_methods(self):
+            src.attribute_error.AClass.method_00()
+            src.attribute_error.AClass.method_01
+            src.attribute_error.AClass().method_02()
+            src.attribute_error.AClass().method_03
+            src.attribute_error.AClass().method_04()
+            src.attribute_error.AClass.method_05
+            src.attribute_error.AClass.method_06()
+            src.attribute_error.AClass.method_07
+            src.attribute_error.AClass().method_08()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: type object 'AClass'
+                    has no attribute 'method_08'.
+                    Did you mean: 'method_00'?
+
+* I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 84
+    :emphasize-lines: 4-5
+
+        def method_06():
+            return None
+
+        def method_07():
+            return None
 
   the test passes.
 
