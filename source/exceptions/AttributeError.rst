@@ -189,6 +189,24 @@ start the project
 
   the terminal_ goes back to the command line.
 
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
@@ -761,6 +779,27 @@ test_attribute_error_w_variables
 
   the test passes.
 
+* I open a new terminal_ then change directories to ``assertion_error``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cd assertion_error
+
+  the terminal_ shows I am in the ``assertion_error`` folder_
+
+  .. code-block:: python
+
+    .../pumping_python/assertion_error
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_what_is_an_assertion'
+
 :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
 ----
@@ -777,19 +816,15 @@ test_attribute_error_w_functions
 
 ----
 
-I add a new test to ``test_attribute_error.py``
+I add a test for :ref:`functions<what is a function?>` to ``test_attribute_error.py``
 
 .. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 9-10
+  :lineno-start: 15
+  :emphasize-lines: 5-6
 
-  class TestAttributeError(unittest.TestCase):
-
-      def test_attribute_error_w_variables(self):
-          src.attribute_error.variable_00
-          src.attribute_error.variable_01
-          src.attribute_error.variable_02
-          src.attribute_error.variable_03
+          src.attribute_error.variable_07
+          src.attribute_error.variable_08
+          src.attribute_error.variable_09
 
       def test_attribute_error_w_functions(self):
           src.attribute_error.function_00()
@@ -799,9 +834,10 @@ I add a new test to ``test_attribute_error.py``
 
 the terminal_ is my friend, and shows AttributeError_
 
-.. code-block:: shell
+.. code-block:: python
 
-  AttributeError: module 'src.attribute_error' has no attribute 'function_00'
+  AttributeError: module 'src.attribute_error'
+                  has no attribute 'function_00'
 
 ----
 
@@ -815,12 +851,18 @@ the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7
+    :emphasize-lines: 13
 
     variable_00 = None
     variable_01 = None
     variable_02 = None
     variable_03 = None
+    variable_04 = None
+    variable_05 = None
+    variable_06 = None
+    variable_07 = None
+    variable_08 = None
+    variable_09 = None
 
 
     function_00 = None
@@ -831,10 +873,12 @@ the terminal_ is my friend, and shows AttributeError_
 
     TypeError: 'NoneType' object is not callable
 
+  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
+
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 17
+    :lineno-start: 23
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -847,21 +891,16 @@ the terminal_ is my friend, and shows AttributeError_
 * I change the :ref:`variable<what is a variable?>` to a :ref:`function<what is a function?>` in ``attribute_error.py``
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 7-8
+    :lineno-start: 13
+    :emphasize-lines: 1-3
 
-    variable_00 = None
-    variable_01 = None
-    variable_02 = None
-    variable_03 = None
-
-
+    # function_00 = None
     def function_00():
         return None
 
-  the test passes.
+  - the test passes because ``function_00`` is now an :ref:`attribute<what is a class attribute?>` or property of ``attribute_error.py`` in the ``src`` folder_
+  - I can call it from outside the file_ with ``src.attribute_error.function_00()``
 
-``function_00`` is now an attribute or property of ``attribute_error.py`` in the ``src`` folder_. I can call it with ``src.attribute_error.function_00()``
 
 ----
 
@@ -871,26 +910,53 @@ the terminal_ is my friend, and shows AttributeError_
 
 ----
 
-* time to do it as a drill, I add another call to ``test_attribute_error.py``
+* I remove the commented line
 
   .. code-block:: python
-    :lineno-start: 13
+    :linenos:
+
+    variable_00 = None
+    variable_01 = None
+    variable_02 = None
+    variable_03 = None
+    variable_04 = None
+    variable_05 = None
+    variable_06 = None
+    variable_07 = None
+    variable_08 = None
+    variable_09 = None
+
+
+    def function_00():
+        return None
+
+  time to make it a drill.
+
+* I add a call to ``src.attribute_error.function_01`` in :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 19
     :emphasize-lines: 3
 
         def test_attribute_error_w_functions(self):
             src.attribute_error.function_00()
             src.attribute_error.function_01()
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.attribute_error' has no attribute 'function_01'. Did you mean: 'function_00'?
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_01'.
+                    Did you mean: 'function_00'?
 
 * I add the :ref:`function<what is a function?>` to ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 13
     :emphasize-lines: 5-6
 
     def function_00():
@@ -902,7 +968,7 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-* I add another line to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.function_02`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -913,21 +979,22 @@ the terminal_ is my friend, and shows AttributeError_
             src.attribute_error.function_01()
             src.attribute_error.function_02()
 
+
+    # Exceptions seen
+
   the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.attribute_error' has no attribute 'function_02'. Did you mean: 'function_00'?
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_02'.
+                    Did you mean: 'function_00'?
 
 * I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 9-10
-
-    def function_00():
-        return None
-
+    :lineno-start: 17
+    :emphasize-lines: 5-6
 
     def function_01():
         return None
@@ -938,10 +1005,10 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-* I add another failing line to ``test_attribute_error.py``
+* I add a line for ``src.attribute_error.function_03`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 19
     :emphasize-lines: 5
 
         def test_attribute_error_w_functions(self):
@@ -957,21 +1024,15 @@ the terminal_ is my friend, and shows AttributeError_
 
   .. code-block:: shell
 
-    AttributeError: module 'src.attribute_error' has no attribute 'function_03'. Did you mean: 'function_00'?
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_03'.
+                    Did you mean: 'function_00'?
 
-* I add the :ref:`function<what is a function?>` to ``attribute_error.py``
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 13-14
-
-    def function_00():
-        return None
-
-
-    def function_01():
-        return None
-
+    :lineno-start: 21
+    :emphasize-lines: 5-6
 
     def function_02():
         return None
@@ -982,10 +1043,266 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-.. note::
+* I add a line for ``src.attribute_error.function_04`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
 
-  * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-  * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 6
+
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
+            src.attribute_error.function_03()
+            src.attribute_error.function_04()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_04'.
+                    Did you mean: 'function_00'?
+
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 5-6
+
+    def function_03():
+        return None
+
+
+    def function_04():
+        return None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.function_05`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 7
+
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
+            src.attribute_error.function_03()
+            src.attribute_error.function_04()
+            src.attribute_error.function_05()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_05'.
+                    Did you mean: 'function_00'?
+
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 5-6
+
+    def function_04():
+        return None
+
+
+    def function_05():
+        return None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.function_06`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 8
+
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
+            src.attribute_error.function_03()
+            src.attribute_error.function_04()
+            src.attribute_error.function_05()
+            src.attribute_error.function_06()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_06'.
+                    Did you mean: 'function_00'?
+
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 5-6
+
+    def function_05():
+        return None
+
+
+    def function_06():
+        return None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.function_07`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 9
+
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
+            src.attribute_error.function_03()
+            src.attribute_error.function_04()
+            src.attribute_error.function_05()
+            src.attribute_error.function_06()
+            src.attribute_error.function_07()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_07'.
+                    Did you mean: 'function_00'?
+
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 37
+    :emphasize-lines: 5-6
+
+    def function_06():
+        return None
+
+
+    def function_07():
+        return None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.function_08`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 10
+
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
+            src.attribute_error.function_03()
+            src.attribute_error.function_04()
+            src.attribute_error.function_05()
+            src.attribute_error.function_06()
+            src.attribute_error.function_07()
+            src.attribute_error.function_08()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_08'.
+                    Did you mean: 'function_00'?
+
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 5-6
+
+    def function_07():
+        return None
+
+
+    def function_08():
+        return None
+
+  the test passes.
+
+* I add a line for ``src.attribute_error.function_09`` to :ref:`test_attribute_error_w_functions` in ``test_attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 19
+    :emphasize-lines: 11
+
+        def test_attribute_error_w_functions(self):
+            src.attribute_error.function_00()
+            src.attribute_error.function_01()
+            src.attribute_error.function_02()
+            src.attribute_error.function_03()
+            src.attribute_error.function_04()
+            src.attribute_error.function_05()
+            src.attribute_error.function_06()
+            src.attribute_error.function_07()
+            src.attribute_error.function_08()
+            src.attribute_error.function_09()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows AttributeError_
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.attribute_error'
+                    has no attribute 'function_09'.
+                    Did you mean: 'function_00'?
+
+* I add a :ref:`function<what is a function?>` for it in ``attribute_error.py``
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 5-6
+
+    def function_08():
+        return None
+
+
+    def function_09():
+        return None
+
+  the test passes.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'add test_attribute_error_w_functions'
+
+
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+* :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
 ----
 
@@ -1004,6 +1321,8 @@ A :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` is also a
 =================================================================================
 
 ----
+
+* I go back to the terminal_ that is running the tests
 
 I add a new test to ``test_attribute_error.py``
 
@@ -1224,12 +1543,18 @@ the terminal_ is my friend, and shows AttributeError_
 
   the test passes.
 
-.. note::
+* I add a git_ commit message in the other terminal_
 
-  * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
-  * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
-  * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-  * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+
+* :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
+* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+* :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
 ----
 
@@ -1251,6 +1576,7 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
 ----
 
+* I go back to the terminal_ that is running the tests
 * I add a new test to ``test_attribute_error.py``
 
   .. code-block:: python
@@ -1446,13 +1772,19 @@ I also know that :ref:`variables<what is a variable?>` in a :ref:`class<what is 
 
   the test passes.
 
-.. note::
+* I add a git_ commit message in the other terminal_
 
-  * :ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
-  * :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
-  * :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
-  * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
-  * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
+
+* :ref:`A function in a class is an attribute of the class and is called a method<test_attribute_error_w_class_methods>`
+* :ref:`A variable in a class is an attribute of the class<test_attribute_error_w_class_attributes>`
+* :ref:`A class in a module is an attribute of the module<test_attribute_error_w_class_attributes>`
+* :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
+* :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
 ----
 
@@ -1461,6 +1793,7 @@ close the project
 *********************************************************************************
 
 * I close ``attribute_error.py`` and ``test_attribute_error.py``  in the :ref:`editors<2 editors>`
+* I go back to the terminal_ that is running the tests
 * I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``attribute_error``
