@@ -2634,7 +2634,7 @@ I know
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 
-:ref:`Would you like to None (the simplest object)?<what is None?>`
+:ref:`Would you like to test None (the simplest object)?<what is None?>`
 
 ----
 

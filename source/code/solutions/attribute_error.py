@@ -69,13 +69,15 @@ class AClass(object):
     def method_01():
         return None
 
-    def method_02(self):
+    @staticmethod
+    def method_02():
         return None
 
     def method_03():
         return None
 
-    def method_04(self):
+    @staticmethod
+    def method_04():
         return None
 
     def method_05():
@@ -87,7 +89,8 @@ class AClass(object):
     def method_07():
         return None
 
-    def method_08(self):
+    @staticmethod
+    def method_08():
         return None
 
     def method_09():
