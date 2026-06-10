@@ -28,10 +28,10 @@ I test booleans_ in the chapters below
   :maxdepth: 1
 
   booleans_1
+  ../../truth_table/index
   booleans_2
   booleans_3
   booleans_4
-  ../../truth_table/index
 
 ----
 

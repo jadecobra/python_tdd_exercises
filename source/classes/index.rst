@@ -69,8 +69,9 @@ the chapters
 
   classes
   inheritance
-  AssertionError 2<../exceptions/AssertionError/AssertionError_2>
-  Functions 2<../functions/functions_2>
+  ../exceptions/AssertionError/AssertionError_2
+  family_ties
+  ../functions/functions_2
 
 ----
 

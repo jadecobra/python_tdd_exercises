@@ -3100,7 +3100,7 @@ so far you have seen
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`what None is and is not<what is None?>`
 
-:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<what are booleans?>`
+:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<AssertionError 3: use assertIsNotNone and assertIsNone>`
 
 ----
 

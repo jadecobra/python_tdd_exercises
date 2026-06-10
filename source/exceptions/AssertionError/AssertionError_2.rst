@@ -1662,7 +1662,7 @@ As a reminder, you know
 * :ref:`how to make classes<classes>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 
-:ref:`Would you like to use class attributes with the 'functions' project?<Functions 2: use class attributes>`
+:ref:`Would you like to test what happens when classes have one or more parents?<family ties>`
 
 ----
 

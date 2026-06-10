@@ -140,6 +140,21 @@ Questions to think about as I go through the chapter
 ----
 
 *********************************************************************************
+family ties review
+*********************************************************************************
+
+* :ref:`what is Python's Method Resolution Order?`
+* :ref:`how can I make a class with inheritance?<test_making_a_class_w_inheritance>`
+* :ref:`what is the difference between an instance and a subclass?<more about instances vs subclasses>`
+* :ref:`how can I make a class with one parent?<test_classes_w_one_parent>`
+* :ref:`what happens when a child calls the parent?`
+* :ref:`how can I make a class with more than one parent?<test_classes_w_multiple_parents>`
+* :ref:`how can I call a parent class from a child class?<how to call the parent from the child>`
+* :ref:`what happens when a class has more than one parent?<what happens when a child has more than one parent?>`
+
+----
+
+*********************************************************************************
 None review
 *********************************************************************************
 

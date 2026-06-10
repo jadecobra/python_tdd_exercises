@@ -45,7 +45,7 @@ table of contents
   classes/index
   what causes AttributeError?<exceptions/AttributeError>
   data_structures/none/index
-  what is a boolean?<data_structures/booleans/booleans_1>
+  what are booleans?<data_structures/booleans/index>
   truth table<truth_table/index>
   make a calculator<calculator/calculator_1/index>
   make TDD project 2<make_tdd/make_tdd_automatically>

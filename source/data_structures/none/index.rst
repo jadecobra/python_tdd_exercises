@@ -35,7 +35,7 @@ the chapters
   :maxdepth: 1
 
   none
-  AssertionError 3: user assertIsNotNone and assertIsNone<../../exceptions/AssertionError/AssertionError_3>
+  AssertionError 3: use assertIsNotNone and assertIsNone<../../exceptions/AssertionError/AssertionError_3>
 
 ----
 

@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-AssertionError 3: user assertIsNotNone and assertIsNone
+AssertionError 3: use assertIsNotNone and assertIsNone
 #################################################################################
 
 ----
@@ -84,7 +84,7 @@ continue the project
 ----
 
 *********************************************************************************
-user assertIsNotNone and assertIsNone
+use assertIsNotNone and assertIsNone
 *********************************************************************************
 
 * I add a call to :ref:`assertIsNotNone<how I test if something is NOT None>` in :ref:`test_assertion_error_w_none`
@@ -469,7 +469,7 @@ user assertIsNotNone and assertIsNone
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can use assertIsNotNone and assertIsNone instead of assertIsNot(x, None) and assertIs(x, None)<user assertIsNotNone and assertIsNone>`.
+:ref:`I can use assertIsNotNone and assertIsNone instead of assertIsNot(x, None) and assertIs(x, None)<use assertIsNotNone and assertIsNone>`.
 
 ----
 
@@ -519,6 +519,21 @@ what is next?
 *************************************************************************************
 
 As a reminder, you know
+
+* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
+* :ref:`what causes AssertionError?`
+* :ref:`how to make functions<what is a function?>`
+* :ref:`how to pass values from tests to functions<telephone>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`how to make classes<classes>`
+* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
+* :ref:`what causes AttributeError<what causes AttributeError?>`
+* :ref:`what None is and is not<what is None?>`
+* :ref:`how to use the assertIsNotNone and assertIsNone?<AssertionError 3: use assertIsNotNone and assertIsNone?>`
+
+:ref:`Would you like to test the booleans (there are only 2)?<what are booleans?>`
+
+
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`what causes AssertionError?`

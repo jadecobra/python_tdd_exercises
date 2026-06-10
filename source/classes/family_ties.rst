@@ -1,5 +1,3 @@
-:orphan:
-
 .. meta::
   :description: Step-by-step TDD tutorial on Python cooperative multiple inheritance (family ties chapter), Method Resolution Order (MRO), super() for parent __init__ calls, and inheriting from a Person base class built in prior chapters. Follow red-green-refactor to create Doe, Blow, Smith (class attr eye_color), Jane, Joe, Mary (Joe + Jane), John, Lil (Mary + John) with custom last_name and eye_color. Diagnose and fix real beginner errors shown: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module 'src.family_ties' has no attribute 'Blow', AssertionError: 'brown' != '', "is not an instance of", initial AssertionError: True is not false. Uses only local variables in TestFamilyTies methods (no setUp), assertIsInstance/assertNotIsInstance/assertIsSubclass on classes vs instances, dir() comparisons. Builds directly on how_to/make_person (Person + factory), classes, and inheritance ("everything is an object").
   :keywords: Jacob Itegboje, Pumping Python, python cooperative multiple inheritance tutorial, python MRO method resolution order for beginners, super __init__ cooperative inheritance python, family ties python tdd Doe Blow Smith Jane Joe Mary John Lil, python multiple inheritance order of parents matters, TypeError takes 1 positional argument but 2 were given, TypeError got an unexpected keyword argument last_name, AttributeError module src.family_ties has no attribute, AssertionError is not an instance of, python inherit from Person class TDD, no setUp needed local variables each test, assertIsSubclass assertIsInstance unittest inheritance, C3 linearization python, diamond problem python super, red green refactor multiple inheritance, python class with parent tutorial for beginners
@@ -52,7 +50,7 @@ To use :ref:`inheritance<test_attributes_and_methods_of_objects>` I put the "par
 ----
 
 *********************************************************************************
-questions about inheritance
+questions about family ties
 *********************************************************************************
 
 Questions to think about as I go through the chapter
@@ -4073,6 +4071,26 @@ code from the chapter
 *************************************************************************************
 
 :ref:`Do you want to see all the CODE I typed in this chapter?<classes: tests and solutions>`
+
+----
+
+*************************************************************************************
+what is next?
+*************************************************************************************
+
+you know
+
+* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
+* :ref:`what causes AssertionError?`
+* :ref:`how to make functions<what is a function?>`
+* :ref:`how to pass values from tests to functions<telephone>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`how to make classes<classes>`
+* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
+:ref:`what happens when classes have one or more parents<family ties>`
+
+
+:ref:`Would you like to use class attributes with the 'functions' project?<Functions 2: use class attributes>`
 
 ----
 
