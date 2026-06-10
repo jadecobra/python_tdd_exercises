@@ -4,11 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
-.. _assert statement: assert_
-.. _assertion: assert_
-.. _assertions: assert_
-.. _assert statements: assert_
 .. _AssertionError: https://docs.python.org/3/library/exceptions.html?highlight=AssertionError#AssertionError
 .. _unittest.TestCase.assertEqual: assertEqual_
 .. _unittest.TestCase.assertNotEqual: assertNotEqual_
@@ -1366,7 +1361,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ for a set_ (anything in curly braces ``{ }`` separated by a comma)
+* I add an `assert statement`_ for a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 19
@@ -2145,7 +2140,7 @@ another way to test if something is the same object as None
 
   the test is still green.
 
-* I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`None<what is None?>`
+* I use assertIs_ to compare a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) with :ref:`None<what is None?>`
 
   .. code-block:: python
     :lineno-start: 75
@@ -3056,7 +3051,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -3807,7 +3802,7 @@ another way to test if something is NOT the same object as False
 
   the test is still green.
 
-* I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`False<test_what_is_false>`
+* I use assertIs_ to compare a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) with :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 113
@@ -4771,7 +4766,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -5553,7 +5548,7 @@ another way to test if something is NOT the same object as True
 
   the test is still green.
 
-* I use assertIs_ to compare a set_ (anything in curly braces ``{ }`` separated by a comma) with :ref:`True<test_what_is_true>`
+* I use assertIs_ to compare a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 151

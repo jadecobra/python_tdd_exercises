@@ -15,4 +15,10 @@ AssertionError: tests
     :language: python
     :linenos:
 
+* the code from ``assertion_error/tests/test_assertion_error.py`` from :ref:`AssertionError 3: use class attributes`
+
+  .. literalinclude:: assertion_error/test_assertion_error_3.py
+    :language: python
+    :linenos:
+
 ----

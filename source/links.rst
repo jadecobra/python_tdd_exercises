@@ -1,4 +1,9 @@
 .. _and: https://docs.python.org/3/reference/expressions.html#and
+.. _assert: https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement
+.. _assert statement: assert_
+.. _assertion: assert_
+.. _assertions: assert_
+.. _assert statements: assert_
 .. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
 .. _assert methods: `assert method`_
 .. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse

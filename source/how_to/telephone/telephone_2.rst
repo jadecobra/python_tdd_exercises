@@ -1530,7 +1530,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 test_passing_a_dictionary
 *********************************************************************************
 
-I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }`` separated by a comma) from a test to a :ref:`function<what is a function?>`
+I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -2134,7 +2134,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` anything in curly braces ``{ }`` separated by a comma)
+* I add an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 113
@@ -2174,7 +2174,7 @@ the test passes.
 
   the test passes
 
-* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
+* I add an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 118

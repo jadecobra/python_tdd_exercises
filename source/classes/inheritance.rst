@@ -1972,7 +1972,7 @@ the test passes.
 test_is_a_set_an_object
 *********************************************************************************
 
-I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`.
+I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is an :ref:`object<what is a class?>`.
 
 ----
 
@@ -1984,7 +1984,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that :ref:`in Python everything is an object<everything is an object>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`), to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -2120,7 +2120,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that :ref:`in Python everything is an object<everything is an object>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 50

@@ -2464,7 +2464,7 @@ test_is_none_a_set
 ----
 
 * I go back to the terminal_ that is running the tests
-* I want to test if :ref:`None<what is None?>` is a set_ (anything in curly braces ``{ }`` separated by a comma)
+* I want to test if :ref:`None<what is None?>` is a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
     :lineno-start: 49
@@ -2700,7 +2700,7 @@ test_is_none_a_dictionary
 ----
 
 * I go back to the terminal_ that is running the tests
-* One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
+* One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 56
@@ -3080,7 +3080,7 @@ I also used :ref:`Python's basic data structures<data structures>` in the tests
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<data structures: None: tests>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<None (the simplest object): tests>`
 
 ----
 
