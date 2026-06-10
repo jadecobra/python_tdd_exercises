@@ -1312,7 +1312,7 @@ the test passes.
 
     # NOTES
 
-  the test passes. Time for :ref:`:ref:`instance test<how to test if something is an instance of a class>`s<how to test if something is an instance of a class>`.
+  the test passes. Time for :ref:`instance tests<how to test if something is an instance of a class>`.
 
 * I add a failing line with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
@@ -2088,7 +2088,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'tuple'>
 
-  because :ref:`None<what is None>?` is not a tuple_.
+  because :ref:`None<what is None?>` is not a tuple_.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 

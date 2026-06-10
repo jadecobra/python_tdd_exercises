@@ -107,6 +107,8 @@ use assertIsNone
 
     AssertionError: unexpectedly None
 
+  because :ref:`None is None<what is None?>`
+
 * I change :ref:`assertIsNotNone<how I test if something is NOT None>` to a call to :ref:`the assertIsNone method<how I test if something is None>`
 
   .. code-block:: python
@@ -124,7 +126,7 @@ use assertIsNone
 
   the test passes
 
-* I add :ref:`assertIsNone<how I test if something is None>` for the next :ref:`assertion<what is an assertion?>`
+* I add :ref:`assertIsNone<how I test if something is None>` for :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 36
@@ -141,7 +143,59 @@ use assertIsNone
 
   .. code-block:: python
 
-    
+    AssertionError: False is not None
+
+* I change the call to :ref:`assertIsNone<how I test if something is None>` to :ref:`assertIsNotNone<how I test if something is NOT None>`
+
+  .. code-block:: python
+    :lineno-start: 36
+    :emphasize-lines: 3-4
+
+            assert False is not None
+            self.assertIsNot(False, None)
+            # self.assertIsNone(False)
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNot(True, None)
+
+  the test passes because :ref:`False<test_what_is_false>` is not :ref:`None<what is None?>`.
+
+* I add :ref:`assertIsNone<how I test if something is None>` for :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3
+
+            assert True is not None
+            self.assertIsNot(True, None)
+            self.assertIsNone(True)
+
+            assert self.an_integer is not None
+            self.assertIsNot(self.an_integer, None)
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not None
+
+
+* I change the call to :ref:`assertIsNone<how I test if something is None>` to :ref:`assertIsNotNone<how I test if something is NOT None>`
+
+  .. code-block:: python
+    :lineno-start: 41
+    :emphasize-lines: 3-4
+
+            assert False is not None
+            self.assertIsNot(False, None)
+            # self.assertIsNone(False)
+            self.assertIsNotNone(False)
+
+            assert True is not None
+            self.assertIsNot(True, None)
+
+  the test passes because :ref:`True<test_what_is_true>` is not :ref:`None<what is None?>`.
 
 
 :ref:`I can use assertIsNotNone and assertIsNone instead of assertIsNot(x, None) and assertIs(x, None)<use assertIsNone>`
