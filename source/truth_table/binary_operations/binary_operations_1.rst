@@ -964,7 +964,7 @@ conditional expressions
   - ``return True`` comes first instead of after the `if statement`_
   - ``first_input and second_input`` come next, without the ``if``
   - ``else`` comes after ``first_input and second_input``
-  - then ``False`` without the return comes after ``else``
+  - then :ref:`False<test_what_is_false>` without the return comes after ``else``
 
   this means that
 

@@ -139,7 +139,7 @@ start the project
     :emphasize-lines: 10
     :emphasize-text: tests/test_dictionaries.py:7
 
-    ============================= FAILURES =============================
+    ========================= FAILURES =========================
     _______________________ TestDictionaries.test_failure ________________________
 
     self = <tests.test_dictionaries.TestDictionaries testMethod=test_failure>
@@ -149,9 +149,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_dictionaries.py:7: AssertionError
-    ====================== short test summary info ========================
+    ================== short test summary info ====================
     FAILED tests/test_dictionaries.py::TestDictionaries::test_failure - AssertionError: True is not false
-    ======================== 1 failed in X.YZs =========================
+    ==================== 1 failed in X.YZs =====================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_dictionaries.py:7`` to put the cursor on line 7
 

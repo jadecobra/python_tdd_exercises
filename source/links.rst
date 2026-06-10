@@ -6,10 +6,6 @@
 .. _assert statements: assert_
 .. _assert method: https://docs.python.org/3/library/unittest.html#assert-methods
 .. _assert methods: `assert method`_
-.. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
-.. _assertFalse method: assertFalse_
-.. _assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
-.. _assertTrue method: assertTrue_
 .. _assertRaises: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertRaises
 .. _assertRaises method: assertRaises_
 .. _assertRaisesRegex: https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertRaisesRegex
@@ -151,8 +147,6 @@
 .. _types: type_
 .. _unittest: https://docs.python.org/3/library/unittest.html
 .. _unittest module: unittest_
-.. _unittest.TestCase.assertFalse: assertFalse_
-.. _unittest.TestCase.assertTrue: assertTrue_
 .. _unittest.TestCase.assertRaises: assertRaises_
 .. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
 .. _unittest.TestCase.setUp: setUp_

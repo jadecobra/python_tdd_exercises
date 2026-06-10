@@ -247,7 +247,7 @@ start the project
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ============================ FAILURES ============================
+    ======================== FAILURES ========================
     _____________________ TestTruthTable.test_failure ________________________
 
     self = <tests.test_truth_table.TestTruthTable testMethod=test_failure>
@@ -257,9 +257,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_truth_table.py:7: AssertionError
-    ==================== short test summary info =====================
+    ================ short test summary info =================
     FAILED tests/test_truth_table.py::TestTruthTable::test_failure - AssertionError: True is not false
-    ======================= 1 failed in X.YZs ========================
+    =================== 1 failed in X.YZs ====================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 

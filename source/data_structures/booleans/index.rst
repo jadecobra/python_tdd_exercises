@@ -4,11 +4,6 @@
 
 .. include:: ../../links.rst
 
-.. _bool: https://docs.python.org/3/library/functions.html#bool
-.. _bool class: bool_
-.. _bool built-in function: bool_
-.. _booleans: bool_
-
 #################################################################################
 what are booleans?
 #################################################################################

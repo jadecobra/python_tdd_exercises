@@ -347,7 +347,7 @@ I go back to the terminal_ to run the program_
     .. code-block:: PowerShell
       :emphasize-lines: 10
 
-      ============================= FAILURES =============================
+      ========================= FAILURES =========================
       ___________________ TestMagicAgain.test_failure ____________________
 
       self = <tests.test_magic_again.TestMagicAgain testMethod=test_failure>
@@ -357,9 +357,9 @@ I go back to the terminal_ to run the program_
       E       AssertionError: True is not false
 
       tests/test_magic_again.py:7: AssertionError
-      ==================== short test summary info =======================
+      ================ short test summary info ===================
       FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
-      ======================== 1 failed in X.YZs =========================
+      ==================== 1 failed in X.YZs =====================
 
     Success! I just made a program_ that can make the ``magic_again`` project anytime I want and it automatically does the steps I did manually.
 
@@ -460,7 +460,7 @@ how to make a shell script run as a command
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ============================== FAILURES ===============================
+    ========================== FAILURES ===========================
     ____________________ TestMagicAgain.test_failure ______________________
 
     self = <tests.test_magic_again.TestMagicAgain testMethod=test_failure>
@@ -470,9 +470,9 @@ how to make a shell script run as a command
     E       AssertionError: True is not false
 
     tests/test_magic_again.py:7: AssertionError
-    ====================== short test summary info ========================
+    ================== short test summary info ====================
     FAILED tests/test_magic_again.py::TestMagicAgain::test_failure - AssertionError: True is not false
-    ========================= 1 failed in X.YZs ===========================
+    ===================== 1 failed in X.YZs =======================
 
   Success! I just made a program_ that can make the ``magic_again`` project anytime I want and it automatically does the steps I used to do.
 

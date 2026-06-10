@@ -6,9 +6,9 @@
 
 .. _None: https://docs.python.org/3/library/constants.html?highlight=none#None
 .. _assertIsNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNone
-.. _assertIsNone method: :ref:`assertIsNotNone<how I test if something is NOT None>`
+.. _assertIsNone method: assertIsNone_
 .. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
-.. _assertIsNotNone method: :ref:`assertIsNotNone<how I test if something is NOT None>`
+.. _assertIsNotNone method: assertIsNotNone_
 .. _unittest.TestCase.assertIsNone: assertIsNone_
 .. _unittest.TestCase.assertIsNotNone: assertIsNotNone_
 
@@ -51,8 +51,8 @@ Questions to think about as I go through the chapter
 * :ref:`Is None a list?<test_is_none_a_list>`
 * :ref:`Is None a set?<test_is_none_a_set>`
 * :ref:`Is None a dictionary?<test_is_none_a_dictionary>`
-* :ref:`how can I test if something is the same object as None?<how I test if something is None>`
-* :ref:`how can I test if something is NOT the same object as None?<how I test if something is None>`
+* :ref:`how can I test if something is the same object as None?<one more way to test if something is None>`
+* :ref:`how can I test if something is NOT the same object as None?<one more way to test if something is NOT None>`
 
 ----
 
@@ -209,7 +209,7 @@ requirements
   .. code-block:: python
     :emphasize-lines: 8, 10
 
-    ============================ FAILURES ============================
+    ======================== FAILURES ========================
     _____________________ TestNone.test_failure ______________________
 
     self = <tests.test_none.TestNone testMethod=test_failure>
@@ -219,9 +219,9 @@ requirements
     E       AssertionError: True is not false
 
     tests/test_none.py:7: AssertionError
-    ==================== short test summary info =====================
+    ================ short test summary info =================
     FAILED tests/test_none.py::TestNone::test_failure - AssertionError: True is not false
-    ======================= 1 failed in X.YZs ========================
+    =================== 1 failed in X.YZs ====================
 
   because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
 
@@ -327,7 +327,7 @@ I can also use another `assert method`_ from the `unittest.TestCase class`_ to t
 ----
 
 ---------------------------------------------------------------------------------
-how I test if something is NOT None
+one more way to test if something is NOT None
 ---------------------------------------------------------------------------------
 
 ----
@@ -352,17 +352,17 @@ how I test if something is NOT None
 
     AssertionError: unexpectedly None
 
-  because :ref:`assertIsNotNone<how I test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is :ref:`None<what is None?>`.
+  because :ref:`assertIsNotNone<one more way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is :ref:`None<what is None?>`.
 
 ----
 
 ---------------------------------------------------------------------------------
-how I test if something is None
+one more way to test if something is None
 ---------------------------------------------------------------------------------
 
 ----
 
-* I change :ref:`assertIsNotNone<how I test if something is NOT None>` to the `assertIsNone method`_
+* I change :ref:`assertIsNotNone<one more way to test if something is NOT None>` to the `assertIsNone method`_
 
   .. code-block:: python
     :lineno-start: 6
@@ -377,7 +377,7 @@ how I test if something is None
 
     # Exceptions seen
 
-  the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNotNone<how I test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is NOT :ref:`None<what is None?>`.
+  the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNotNone<one more way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is NOT :ref:`None<what is None?>`.
 
 * I remove the commented lines
 
@@ -529,7 +529,7 @@ the test passes.
 
     AssertionError: True is not None
 
-* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<how I test if something is NOT None>`
+* I make the :ref:`assertion<what is an assertion?>` :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -745,8 +745,8 @@ the test passes.
 
 I know two new `assert methods`_
 
-* :ref:`assertIsNotNone<how I test if something is NOT None>` to test if something is NOT :ref:`None<what is None?>`
-* :ref:`assertIsNone<how I test if something is None>` to test if something is :ref:`None<what is None?>`
+* :ref:`assertIsNotNone<one more way to test if something is NOT None>` to test if something is NOT :ref:`None<what is None?>`
+* :ref:`assertIsNone<one more way to test if something is None>` to test if something is :ref:`None<what is None?>`
 
 .. caution:: the names of the `assert methods`_ can be confusing,
 
@@ -807,7 +807,7 @@ test_is_none_an_integer
 
 ----
 
-I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<how I test if something is NOT None>`
+I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
 .. code-block:: python
   :lineno-start: 17
@@ -830,7 +830,7 @@ the test passes.
 
 ----
 
-* I add a new failing line with :ref:`assertIsNotNone<how I test if something is NOT None>`
+* I add a new failing line with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -850,7 +850,7 @@ the test passes.
 
     AssertionError: 0 is not None
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<how I test if something is NOT None>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 17
@@ -1213,7 +1213,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<how I test if something is NOT None>`
+I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
 .. code-block:: python
   :lineno-start: 26
@@ -1236,7 +1236,7 @@ the test passes.
 
 ----
 
-* I add a call to :ref:`assertIsNone<how I test if something is None>`
+* I add a call to :ref:`assertIsNone<one more way to test if something is None>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1256,7 +1256,7 @@ the test passes.
 
     AssertionError: 0.0 is not None
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<how I test if something is NOT None>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1273,7 +1273,7 @@ the test passes.
 
   the test passes.
 
-* I add another call to :ref:`assertIsNone<how I test if something is None>`
+* I add another call to :ref:`assertIsNone<one more way to test if something is None>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1295,7 +1295,7 @@ the test passes.
 
     AssertionError: 0.1 is not None
 
-* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<how I test if something is NOT None>`
+* I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -1623,7 +1623,7 @@ test_is_none_a_string
 
 ----
 
-I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<how I test if something is NOT None>`
+I make the statement :ref:`True<test_what_is_true>` with :ref:`assertIsNotNone<one more way to test if something is NOT None>`
 
 .. code-block:: python
   :lineno-start: 35
@@ -1646,7 +1646,7 @@ the test passes.
 
 ----
 
-* I add a call to :ref:`assertIsNone<how I test if something is None>`
+* I add a call to :ref:`assertIsNone<one more way to test if something is None>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -3057,8 +3057,8 @@ I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it 
 
 * And two new `assert methods`_ for :ref:`None<what is None?>`:
 
-  * :ref:`assertIsNone<how I test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<another way to test if something is the same object as None>` from :ref:`the assertion_error project<what is an assertion?>` except in :ref:`test_what_is_none`
-  * :ref:`assertIsNotNone<how I test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<another way to test if something is NOT the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
+  * :ref:`assertIsNone<one more way to test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<another way to test if something is the same object as None>` from :ref:`the assertion_error project<what is an assertion?>` except in :ref:`test_what_is_none`
+  * :ref:`assertIsNotNone<one more way to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<another way to test if something is NOT the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
 
 I also used :ref:`Python's basic data structures<data structures>` in the tests
 

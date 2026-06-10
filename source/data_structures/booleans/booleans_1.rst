@@ -3,6 +3,16 @@
   :keywords: Jacob Itegboje, Python booleans for beginners, Python truthiness and falsiness, what is False in Python, Python unittest assertTrue, Python unittest assertFalse, TDD Red Green Refactor tutorial, Python bool type explained, is empty list True or False, is 0.0 False in Python, is None False or True, testing Python data structures, python uv init, pytest-watcher tutorial, boolean logic in programming, truthy and falsy values list, python empty string boolean, python empty dict truthiness, python zero-based indexing, python unit testing tutorial
 
 .. include:: ../../links.rst
+.. _bool: https://docs.python.org/3/library/functions.html#bool
+.. _bool class: bool_
+.. _bool built-in function: bool_
+.. _booleans: bool_
+.. _assertFalse: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertFalse
+.. _assertFalse method: assertFalse_
+.. _assertTrue: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertTrue
+.. _assertTrue method: assertTrue_
+.. _unittest.TestCase.assertFalse: assertFalse_
+.. _unittest.TestCase.assertTrue: assertTrue_
 
 #################################################################################
 booleans: only two
@@ -201,8 +211,8 @@ start the project
     :emphasize-lines: 8, 10
 
 
-    ============================ FAILURES ============================
-    ___________________ TestBooleans.test_failure ____________________
+    ======================== FAILURES ========================
+    _______________ TestBooleans.test_failure ________________
 
     self = <tests.test_booleans.TestBooleans testMethod=test_failure>
 
@@ -211,9 +221,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_booleans.py:7: AssertionError
-    ==================== short test summary info =====================
+    ================ short test summary info =================
     FAILED tests/test_booleans.py::TestBooleans::test_failure - AssertionError: True is not false
-    ======================= 1 failed in X.YZs ========================
+    =================== 1 failed in X.YZs ====================
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
@@ -262,7 +272,7 @@ test_what_is_false
 
 ----
 
-I change ``test_failure`` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`testing None<what is None?>` to check if False_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`. I think this will fail
+I change ``test_failure`` to :ref:`test_what_is_false`, then use the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`everything is an object` to check if False_ is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
 
 .. code-block:: python
   :linenos:
@@ -286,6 +296,8 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: False is an instance of <class 'bool'>
 
+this was also in :ref:`test_is_none_a_boolean`.
+
 ----
 
 =================================================================================
@@ -294,38 +306,215 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I add comments
+I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to the :ref:`assertIsInstance method<another way to test if something is an instance of a class>`
+
+.. code-block:: python
+  :lineno-start: 6
+  :emphasize-lines: 2-3
+
+      def test_what_is_false(self):
+          # self.assertNotIsInstance(False, bool)
+          self.assertIsInstance(False, bool)
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a comment
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
-
-    class TestBooleans(unittest.TestCase):
+    :lineno-start: 6
+    :emphasize-lines: 6-7
 
         def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
             self.assertIsInstance(False, bool)
 
 
     # NOTES
     # False is a boolean
 
+    # Exceptions seen
+    # AssertionError
+
+  I already know this from :ref:`testing None<what is None?>`.
+
+* I use the :ref:`assertIsNot method<another way to test if something is NOT the same object as False>` like I did in :ref:`test_assertion_error_w_false`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            self.assertIsNot(False, False)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`ASsertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: unexpectedly identical: False
+
+* I change :ref:`assertIsNot<another way to test if something is NOT the same object as False>` to :ref:`assertIs<another way to test if something is the same object as False>`
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4-5
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            # self.assertIsNot(False, False)
+            self.assertIs(False, False)
+
+
+    # NOTES
+
+  the test passes. I know this from :ref:`test_assertion_error_w_false`.
+
+----
+
+=================================================================================
+how to test if something should be grouped as False or True
+=================================================================================
+
+----
+
+I can test if I should group an :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>` with the `bool built-in function`_ from `The Python Standard Library`_. It checks if Python_ groups the thing in parentheses as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
+
+* I add an :ref:`assertion<what is an assertion?>` with a call to bool_ in
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 6
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            # self.assertIsNot(False, False)
+            self.assertIs(False, False)
+            self.assertEqual(bool(False), True)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False != True
+
+  because this is what happens when ``self.assertEqual(bool(False), True)`` runs
+
+  .. code-block:: python
+
+    self.assertEqual(bool(False), True)
+    self.assertEqual(False      , True)
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`False<test_what_is_false>` which is the result of ``bool(False)`` is not equal to :ref:`True<test_what_is_true>`.
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 2
+
+    # NOTES
+    # False is NOT equal to True
+    # False is a boolean
 
     # Exceptions seen
     # AssertionError
 
-  so far this is something I already know from :ref:`testing None<what is None?>`
-
-* I change :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` to :ref:`assertIsInstance<another way to test if something is an instance of a class>`
+* I change the expectation of the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 7
+    :lineno-start: 6
+    :emphasize-lines: 6-7
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            # self.assertIsNot(False, False)
+            self.assertIs(False, False)
+            # self.assertEqual(bool(False), True)
+            self.assertEqual(bool(False), False)
+
+
+    # NOTES
+
+  the test passes because ``bool(False) == False``.
+
+----
+
+=================================================================================
+another way to test if something should be grouped as False
+=================================================================================
+
+----
+
+The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can also use to test if the result of calling the :ref:`bool<how to test if something should be grouped as False or True>` with the :ref:`object<what is a class?>` is :ref:`False<test_what_is_false>` - assertFalse_, it was in :ref:`the first failing test<test_failure>`
+
+  .. code-block:: python
+
+    self.assertFalse(True)
+
+  which checks is the same as ``self.assertEqual(bool(True), False)``
+
+* I add assertFalse_ to the test
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 8
+
+        def test_what_is_false(self):
+            # self.assertNotIsInstance(False, bool)
+            self.assertIsInstance(False, bool)
+            # self.assertIsNot(False, False)
+            self.assertIs(False, False)
+            # self.assertEqual(bool(False), True)
+            self.assertEqual(bool(False), False)
+            self.assertFalse(bool(True))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  because this is what happens when ``self.assertEqual(bool(False), True)`` runs
+
+  .. code-block:: python
+
+    self.assertFalse(bool(True))
+    self.assertFalse(True)
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since
+
+* I open a new terminal_, then add a git_ commit message
+
+  .. code-block:: python
     :emphasize-lines: 1
 
-            self.assertIsInstance(False, bool)
+    git commit --all --message 'add test_what_is_false'
 
-  the test passes.
-
-:ref:`False is a boolean<test_what_is_false>`
+:ref:`False is a boolean<test_what_is_false>`.
 
 ----
 
@@ -341,7 +530,7 @@ test_what_is_true
 
 ----
 
-* I add another failing test for True_
+* I add a test for True_
 
   .. code-block:: python
     :lineno-start: 6
@@ -578,24 +767,32 @@ the test passes. :ref:`True is a boolean<test_what_is_true>`
 
     # NOTES
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
 
 All of these are still statements from the :ref:`AssertionError<what causes AssertionError?>` and :ref:`None<what is None?>` chapters.
 
 Next up, I test the other :ref:`Python basic data structures<data structures>` to see which ones are False_ or True_. What do you think?
 
-* :ref:`should I group None as False or True\?`
-* :ref:`should I group an integer as False or True\?`
-* :ref:`should I group a float as False or True\?`
-* :ref:`should I group a string as False or True\?`
-* :ref:`should I group a tuple as False or True\?`
-* :ref:`should I group a list as False or True\?`
-* :ref:`should I group a set as False or True\?`
-* :ref:`should I group a dictionary as False or True\?`
+* :ref:`should I group None as False or True?`
+* :ref:`should I group an integer as False or True?`
+* :ref:`should I group a float as False or True?`
+* :ref:`should I group a string as False or True?`
+* :ref:`should I group a tuple as False or True?`
+* :ref:`should I group a list as False or True?`
+* :ref:`should I group a set as False or True?`
+* :ref:`should I group a dictionary as False or True?`
 
 ----
 
 *****************************************************************************************
-should I group None as False or True\?
+should I group None as False or True?
 *****************************************************************************************
 
 ----
@@ -606,6 +803,7 @@ should I group None as False or True\?
 
 ----
 
+* I go back to the terminal_ that is running the tests
 I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to test if :ref:`None<what is None?>` is True_
 
 .. code-block:: python
@@ -691,13 +889,22 @@ the test passes.
 
     # NOTES
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
 
 :ref:`None is False<should I group None as False or True?>` and I learned from :ref:`the AssertionError chapter<what causes AssertionError?>` that :ref:`False is not None<test_assertion_error_w_false>`
 
 ----
 
 *********************************************************************************
-should I group an integer as False or True\?
+should I group an integer as False or True?
 *********************************************************************************
 
 ----
@@ -934,12 +1141,22 @@ the test passes.
 
     # NOTES
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
+
 :ref:`in Python 0 is False, and positive and negative integers are True<should I group an integer as False or True?>`
 
 -----
 
 *********************************************************************************
-should I group a float as False or True\?
+should I group a float as False or True?
 *********************************************************************************
 
 ----
@@ -1029,6 +1246,16 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 
     # NOTES
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
 
 :ref:`Negative floats are True in Python<should I group a float as False or True?>`
 
@@ -1201,12 +1428,22 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
     # False is not true
     # False is a boolean
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
+
 :ref:`in Python, 0.0 is False and positive and negative floats are True<should I group a float as False or True?>`
 
 -----
 
 *********************************************************************************
-should I group a string as False or True\?
+should I group a string as False or True?
 *********************************************************************************
 
 ----
@@ -1369,12 +1606,22 @@ the test passes.
 
     # NOTES
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
+
 :ref:`in Python, the empty string is False and a string with things is True<should I group a string as False or True?>`
 
 ----
 
 *********************************************************************************
-should I group a tuple as False or True\?
+should I group a tuple as False or True?
 *********************************************************************************
 
 ----
@@ -1551,12 +1798,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # NOTES
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
+
 :ref:`in Python, the empty tuple is False and a tuple with things is True<should I group a tuple as False or True?>`
 
 ----
 
 *********************************************************************************
-should I group a list as False or True\?
+should I group a list as False or True?
 *********************************************************************************
 
 ----
@@ -1736,12 +1993,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # NOTES
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
+
 :ref:`in Python, the empty list is False and a list with things is True<should I group a list as False or True?>`. I can see a pattern.
 
 -----
 
 *********************************************************************************
-should I group a set as False or True\?
+should I group a set as False or True?
 *********************************************************************************
 
 ----
@@ -1925,12 +2192,22 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     # NOTES
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
+
 :ref:`in Python, the empty set is False and a set with things is True<should I group a set as False or True?>`
 
 ----
 
 *********************************************************************************
-should I group a dictionary as False or True\?
+should I group a dictionary as False or True?
 *********************************************************************************
 
 ----
@@ -2142,6 +2419,16 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 
     # NOTES
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add '
+
+* I go back to the terminal_ that is running the tests
 
 :ref:`in Python, the empty dictionary is False, and a dictionary with things is True<should I group a dictionary as False or True?>`
 

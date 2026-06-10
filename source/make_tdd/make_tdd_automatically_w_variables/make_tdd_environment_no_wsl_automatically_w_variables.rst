@@ -128,7 +128,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
   .. code-block:: shell
     :emphasize-lines: 2, 4, 10, 12
 
-    ============================= FAILURES =============================
+    ========================= FAILURES =========================
     _______________________ Testpro_magic.test_failure _________________________
 
     self = <tests.test_pro_magic.Testpro_magic testMethod=test_failure>
@@ -138,9 +138,9 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
     E       AssertionError: True is not false
 
     tests/test_pro_magic.py:7: AssertionError
-    ==================== short test summary info =====================
+    ================ short test summary info =================
     FAILED tests/test_pro_magic.py::Testpro_magic::test_failure - AssertionError: True is not false
-    ======================== 1 failed in X.YZs =========================
+    ==================== 1 failed in X.YZs =====================
 
 this program_ does not make the class names in the :ref:`CapWords format<CapWords>` so they are in :ref:`snake_case` when made. :ref:`There has to be a better way<BONUS: makePythonTdd.sh Pro>`
 
@@ -245,7 +245,7 @@ Here are a few other examples
   .. code-block:: shell
     :emphasize-lines: 10
 
-    ============================= FAILURES =============================
+    ========================= FAILURES =========================
     ____________________ Testpro_magic_plus.test_failure _______________________
 
     self = <tests.test_pro_magic_plus.Testpro_magic_plus testMethod=test_failure>
@@ -255,9 +255,9 @@ Here are a few other examples
     E       AssertionError: True is not false
 
     tests/test_pro_magic_plus.py:7: AssertionError
-    ==================== short test summary info =====================
+    ================ short test summary info =================
     FAILED tests/test_pro_magic_plus.py::Testpro_magic_plus::test_failure - AssertionError: True is not false
-    ======================== 1 failed in X.YZs =========================
+    ==================== 1 failed in X.YZs =====================
 
 * I hold :kbd:`ctrl` on the keyboard in the terminal_ and click on ``tests/test_pro_magic_plus.py`` to open it, then make the test pass
 
@@ -295,7 +295,7 @@ Here are a few other examples
 
   .. code-block:: PowerShell
 
-    ============================ FAILURES ==============================
+    ======================== FAILURES ==========================
 
     _________________________ Testperson.test_failure ___________________________
 
@@ -306,9 +306,9 @@ Here are a few other examples
     E       AssertionError: True is not false
 
     tests/test_person.py:7: AssertionError
-    ====================== short test summary info ======================
+    ================== short test summary info ==================
     FAILED tests/test_person.py::Testperson::test_failure - AssertionError: True is not false
-    ========================= 1 failed in X.YZs =========================
+    ===================== 1 failed in X.YZs =====================
 
   the computer makes a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` for a project called :ref:`person<how to make a person>` and runs :ref:`the first failing test<test_failure>`. I continue this in :ref:`how to make a person`
 

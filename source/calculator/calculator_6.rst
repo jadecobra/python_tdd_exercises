@@ -415,7 +415,7 @@ The `isinstance function`_ can take a tuple_ as the second input, which means I 
 
   .. code-block:: python
 
-    ===================== short test summary info ======================
+    ================= short test summary info ==================
     SUBFAILED(data_type=None) ... - AssertionError: 'brmph?! Numbers only. Try again...' != 'BOOM!!!'
     SUBFAILED(data_type=True) ... - AssertionError: -A.BCDEFGHIJKLMNOPQRS != 'BOOM!!!'
     SUBFAILED(data_type=False) ...- AssertionError: -T.U != 'BOOM!!!'
