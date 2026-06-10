@@ -2530,12 +2530,16 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 3
+    :lineno-start: 56
+    :emphasize-lines: 4
 
         def test_is_none_a_set(self):
+            # self.assertIsNone(set())
             self.assertIsNotNone(set())
             self.assertIsNone({1, 2, 3, 'n'})
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2546,24 +2550,36 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 1
+    :lineno-start: 56
+    :emphasize-lines: 4-5
     :emphasize-text: Not
 
+        def test_is_none_a_set(self):
+            # self.assertIsNone(set())
+            self.assertIsNotNone(set())
+            # self.assertIsNone({1, 2, 3, 'n'})
             self.assertIsNotNone({1, 2, 3, 'n'})
+
+
+    # NOTES
 
   the test passes.
 
 * I add an :ref:`instance test<how to test if something is an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 4
+    :lineno-start: 56
+    :emphasize-lines: 6
 
         def test_is_none_a_set(self):
+            # self.assertIsNone(set())
             self.assertIsNotNone(set())
+            # self.assertIsNone({1, 2, 3, 'n'})
             self.assertIsNotNone({1, 2, 3, 'n'})
             self.assertNotIsInstance({1, 2, 3, 'n'}, set)
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2574,24 +2590,39 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 1
+    :lineno-start: 56
+    :emphasize-lines: 6-7
 
+        def test_is_none_a_set(self):
+            # self.assertIsNone(set())
+            self.assertIsNotNone(set())
+            # self.assertIsNone({1, 2, 3, 'n'})
+            self.assertIsNotNone({1, 2, 3, 'n'})
+            # self.assertNotIsInstance({1, 2, 3, 'n'}, set)
             self.assertIsInstance({1, 2, 3, 'n'}, set)
+
+
+    # NOTES
 
   the test passes.
 
 * I add another :ref:`instance test<how to test if something is an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 55
-    :emphasize-lines: 5
+    :lineno-start: 56
+    :emphasize-lines: 8
 
         def test_is_none_a_set(self):
+            # self.assertIsNone(set())
             self.assertIsNotNone(set())
+            # self.assertIsNone({1, 2, 3, 'n'})
             self.assertIsNotNone({1, 2, 3, 'n'})
+            # self.assertNotIsInstance({1, 2, 3, 'n'}, set)
             self.assertIsInstance({1, 2, 3, 'n'}, set)
             self.assertIsInstance(None, set)
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2603,7 +2634,27 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 5
+    :emphasize-lines: 8-9
+
+        def test_is_none_a_set(self):
+            # self.assertIsNone(set())
+            self.assertIsNotNone(set())
+            # self.assertIsNone({1, 2, 3, 'n'})
+            self.assertIsNotNone({1, 2, 3, 'n'})
+            # self.assertNotIsInstance({1, 2, 3, 'n'}, set)
+            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            # self.assertIsInstance(None, set)
+            self.assertNotIsInstance(None, set)
+
+
+    # NOTES
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 55
 
         def test_is_none_a_set(self):
             self.assertIsNotNone(set())
@@ -2614,12 +2665,10 @@ the test passes.
 
     # NOTES
 
-  the test passes.
-
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 63
     :emphasize-lines: 2
 
     # NOTES
@@ -2637,9 +2686,8 @@ the test passes.
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add '
+    git commit -am 'add test_is_none_a_set'
 
-* I go back to the terminal_ that is running the tests
 
 :ref:`None is NOT a set<test_is_none_a_set>`
 
@@ -2657,31 +2705,32 @@ test_is_none_a_dictionary
 
 ----
 
-One last test, this one is to see if :ref:`None<what is None?>` is a :ref:`dictionary<what is a dictionary?>`
+* I go back to the terminal_ that is running the tests
+* One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
 
-.. code-block:: python
-  :lineno-start: 55
-  :emphasize-lines: 7-8
+  .. code-block:: python
+    :lineno-start: 56
+    :emphasize-lines: 7-8
 
-      def test_is_none_a_set(self):
-          self.assertIsNotNone(set())
-          self.assertIsNotNone({1, 2, 3, 'n'})
-          self.assertIsInstance({1, 2, 3, 'n'}, set)
-          self.assertNotIsInstance(None, set)
+        def test_is_none_a_set(self):
+            self.assertIsNotNone(set())
+            self.assertIsNotNone({1, 2, 3, 'n'})
+            self.assertIsInstance({1, 2, 3, 'n'}, set)
+            self.assertNotIsInstance(None, set)
 
-      def test_is_none_a_dictionary(self):
-          self.assertIsNone(dict())
+        def test_is_none_a_dictionary(self):
+            self.assertIsNone(dict())
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: {} is not None
+    AssertionError: {} is not None
 
-wait a minute! Python_ uses ``{}`` for sets_. It also uses them for :ref:`dictionaries<what is a dictionary?>` with a difference.
+  wait a minute! Python_ uses ``{}`` for sets_. It also uses them for :ref:`dictionaries<what is a dictionary?>` with a difference.
 
 ----
 
