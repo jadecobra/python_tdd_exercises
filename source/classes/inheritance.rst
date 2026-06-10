@@ -418,7 +418,7 @@ another way to test if something is an instance of a class
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WPass()``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -656,7 +656,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WParentheses()``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 12
@@ -2350,7 +2350,7 @@ the test passes.
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WPass``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2510,7 +2510,7 @@ the test passes.
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WParentheses``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -2674,7 +2674,7 @@ the test passes.
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.classes.WObject``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 25

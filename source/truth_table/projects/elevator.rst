@@ -791,7 +791,7 @@ the test passes.
 
   because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of :red:`'NOT MOVE'`
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :linenos:

@@ -526,7 +526,7 @@ more about instances vs subclasses
 
     # Exceptions seen
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.family_ties.Doe`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -823,7 +823,7 @@ how to call the parent from the child
 
   the test passes because ``Doe`` has the same :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` as ``Person`` because ``Doe`` is a :ref:`child<how to test if something is a subclass of a class>` of ``Parent``.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``src.person.Person`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 7

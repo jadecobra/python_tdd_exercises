@@ -68,7 +68,7 @@ continue the project
 
 ----
 
-* I add :ref:`class attributes<what is a class attribute?>` to use to remove repetition of ``'first'`` and ``'last'`` from the tests
+* I add :ref:`class attributes<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -185,7 +185,7 @@ continue the project
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the tests
+* I add a :ref:`class attribute<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -314,7 +314,7 @@ continue the project
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the tests
+* I add a :ref:`class attribute<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 10
@@ -447,7 +447,7 @@ continue the project
 
 ----
 
-* I add :ref:`class attribute<what is a class attribute?>` to use to remove repetition of ``0`` and ``1`` from the tests
+* I add :ref:`class attribute<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 10

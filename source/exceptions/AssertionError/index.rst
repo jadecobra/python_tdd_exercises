@@ -1806,7 +1806,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 35
@@ -1881,7 +1881,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0.0`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -1956,7 +1956,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 51
@@ -2031,7 +2031,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 59
@@ -2106,7 +2106,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 67
@@ -2187,7 +2187,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 75
@@ -2284,7 +2284,7 @@ another way to test if something is the same object as None
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{'key': 'value'}`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 83
@@ -3481,7 +3481,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 73
@@ -3555,7 +3555,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0.0`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 81
@@ -3627,7 +3627,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 89
@@ -3699,7 +3699,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 97
@@ -3771,7 +3771,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 105
@@ -3849,7 +3849,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 113
@@ -3921,7 +3921,7 @@ another way to test if something is NOT the same object as False
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{'key': 'value'}`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 121
@@ -5214,7 +5214,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 111
@@ -5289,7 +5289,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``0.0`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 119
@@ -5364,7 +5364,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'a string'`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 127
@@ -5439,7 +5439,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``(1, 2, 3, 'n')`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 135
@@ -5514,7 +5514,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``[1, 2, 3, 'n']`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 143
@@ -5595,7 +5595,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 151
@@ -5676,7 +5676,7 @@ another way to test if something is NOT the same object as True
 
   the test passes.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``{1, 2, 3, 'n'}`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 159

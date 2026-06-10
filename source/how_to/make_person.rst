@@ -1627,7 +1627,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
   ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ so I can use it in ``person.py``.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``datetime.datetime.now().year`` from the test in ``test_person.py``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -2017,7 +2017,7 @@ extract pick_one function
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_ to use to remove repetition of ``random.choice`` from the test in ``test_person.py``
+* I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_
 
   .. code-block:: python
     :linenos:
@@ -3704,7 +3704,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`function<what is a function?>` to use to remove repetition of the age calculation
+* I add a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 11

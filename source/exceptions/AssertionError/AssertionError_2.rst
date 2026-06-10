@@ -89,7 +89,7 @@ continue the project
 remove repetition with class attributes
 *********************************************************************************
 
-* I add the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute?>` to use to remove repetition of ``an_integer = 0``
+* I add the :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to the ``TestAssertionError`` :ref:`class<what is a class?>` with :ref:`a class attribute<what is a class attribute?>`
 
   .. code-block:: python
     :lineno-start: 4
@@ -254,7 +254,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_float = 0.0``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -424,7 +424,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_string = 'a string'``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -601,7 +601,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_tuple = (1, 2, 3, 'n')``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -785,7 +785,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_list = [1, 2, 3, 'n']``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -976,7 +976,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_set = {1, 2, 3, 'n'}``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -1174,7 +1174,7 @@ remove repetition with class attributes
 
 ----
 
-* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>` to use to remove repetition of ``a_dictionary = {'key': 'value'}``
+* I add a :ref:`class attribute<what is a class attribute?>` to the  :ref:`setUp method<how to use the setUp method to reset class attributes for every test>`
 
   .. code-block:: python
     :lineno-start: 6

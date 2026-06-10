@@ -632,7 +632,7 @@ what is string interpolation?
 
   the test is still green.
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``'yes'`` from the test
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -1041,7 +1041,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1234``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -1180,7 +1180,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of ``1.234``
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 38
@@ -1321,7 +1321,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the tuple_
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -1463,7 +1463,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`list<what is a list?>`
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 50
@@ -1621,7 +1621,7 @@ the test passes.
 
 ----
 
-* I add a :ref:`variable<what is a variable?>` to use to remove repetition of the :ref:`dictionary<what is a dictionary?>`
+* I add a :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 56

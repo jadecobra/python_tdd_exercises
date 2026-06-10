@@ -1391,7 +1391,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
 * I go back to the terminal_ that is running the tests
 
-* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'joe'``, ``'blow'`` and ``1996`` from :ref:`test_classy_person_says_hello`
+* I add :ref:`variables<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -1439,7 +1439,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
   the test is still green.
 
-* I add :ref:`variables<what is a variable?>` to use to remove repetition of ``'jane'`` and ``1991`` from :ref:`test_classy_person_says_hello`
+* I add :ref:`variables<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 108
