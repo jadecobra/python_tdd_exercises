@@ -3046,19 +3046,19 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it is NOT. Two from :ref:`the inheritance chapter<everything is an object>`:
+I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it is NOT.
 
-* :ref:`assertIsInstance<another way to test if something is an instance of a class>` which checks if something is :ref:`an instance of a given class<how to test if something is an instance of a class>`
-* :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` which checks if something is :ref:`NOT an instance of a given class<how to test if something is NOT an instance of a class>`
+* Two from :ref:`the inheritance chapter<everything is an object>`:
 
-to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance of a class>` of the other :ref:`basic types<data structures>`.
+  * :ref:`assertIsInstance<another way to test if something is an instance of a class>` which checks if something is :ref:`an instance of a given class<how to test if something is an instance of a class>`
+  * :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` which checks if something is :ref:`NOT an instance of a given class<how to test if something is NOT an instance of a class>`
 
-I used two new `assert methods` for :ref:`None<what is None?>`.
+  to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance of a class>` of the other :ref:`basic types<data structures>`.
 
-* :ref:`assertIsNone<how I test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<another way to test if something is the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
-* :ref:`assertIsNotNone<how I test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<another way to test if something is NOT the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
+* And two new `assert methods`_ for :ref:`None<what is None?>`:
 
-They raise :ref:`AssertionError<what causes AssertionError?>` on :ref:`the logical negation of the condition<test_logical_negation>`
+  * :ref:`assertIsNone<how I test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<another way to test if something is the same object as None>` from :ref:`the assertion_error project<what is an assertion?>` except in :ref:`test_what_is_none`
+  * :ref:`assertIsNotNone<how I test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<another way to test if something is NOT the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
 
 I also used :ref:`Python's basic data structures<data structures>` in the tests
 
