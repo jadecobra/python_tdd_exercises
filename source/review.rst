@@ -89,8 +89,6 @@ AssertionError review
 functions review
 *********************************************************************************
 
-Questions to think about as I go through the chapter
-
 * :ref:`what is a function?<what is a function?>`
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
 * :ref:`what happens after a function returns?<test_what_happens_after_functions_return>`
@@ -110,11 +108,23 @@ Questions to think about as I go through the chapter
 classes review
 *********************************************************************************
 
+* :ref:`what is a class?`
+* :ref:`what is a class attribute?`
+* :ref:`what is a method?`
+* :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset class attributes for every test>`
+* :ref:`what is the staticmethod decorator?`
+
+----
+
+*********************************************************************************
+everything is an object review
+*********************************************************************************
+
 Questions to think about as I go through the chapter
 
-* :ref:`how can I make a class with pass<test_making_a_class_w_pass>`
-* :ref:`how can I make a class with parentheses<test_making_a_class_w_parentheses>`
-* :ref:`how can I make a class with object<test_making_a_class_w_object>`
+* :ref:`how can I make a class with pass?<test_making_a_class_w_pass>`
+* :ref:`how can I make a class with parentheses?<test_making_a_class_w_parentheses>`
+* :ref:`how can I make a class with object?<test_making_a_class_w_object>`
 * :ref:`is None an object?<test_is_none_an_object>`
 * :ref:`is a boolean an object?<test_is_a_boolean_an_object>`
 * :ref:`is an integer an object?<test_is_an_integer_an_object>`

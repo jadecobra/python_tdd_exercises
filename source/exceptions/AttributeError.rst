@@ -2207,14 +2207,17 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_04`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>`.
 
-* I add ``self`` to the parentheses of ``method_04``
+* I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<what is a class?>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to ``method_04``
 
   .. code-block:: python
-    :lineno-start: 78
-    :emphasize-lines: 1-2
+    :lineno-start: 75
+    :emphasize-lines: 4
 
-        # def method_04():
-        def method_04(self):
+        def method_03():
+            return None
+
+        @staticmethod
+        def method_04():
             return None
 
   the test passes because this happens when ``AClass().method_04()`` is called
@@ -2222,20 +2225,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
   .. code-block:: python
 
     AClass().method_04()
-        AClass.method_04(self)
-
-  where ``self`` is ``AClass``.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 75
-
-        def method_03():
-            return None
-
-        def method_04(self):
-            return None
+        AClass.method_04()
 
 * I add a line for ``src.attribute_error.AClass.method_05`` to ``test_attribute_error.py``
 
@@ -2266,8 +2256,9 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
     :lineno-start: 78
-    :emphasize-lines: 4-5
+    :emphasize-lines: 5-6
 
+        @staticmethod
         def method_04():
             return None
 
@@ -2305,7 +2296,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 81
+    :lineno-start: 82
     :emphasize-lines: 4-5
 
         def method_05():

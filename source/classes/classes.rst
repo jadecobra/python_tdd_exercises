@@ -37,6 +37,7 @@ Questions to think about as I go through the chapter
 * :ref:`what is a class attribute?`
 * :ref:`what is a method?`
 * :ref:`how can I make sure things my tests need are run before every test?<how to use the setUp method to reset class attributes for every test>`
+* :ref:`what is the staticmethod decorator?`
 
 ----
 
@@ -422,6 +423,14 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
         but 2 were given
 
   because :ref:`methods<what is a method?>` take the copy of the :ref:`class<what is a class?>` (``self``) they belong to as the first argument.
+
+----
+
+=================================================================================
+what is the staticmethod decorator?
+=================================================================================
+
+----
 
 * I can use the `staticmethod decorator`_ if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<what is a class?>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to ``say_hello``
 
