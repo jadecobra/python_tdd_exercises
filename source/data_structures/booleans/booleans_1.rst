@@ -417,7 +417,7 @@ I can test if I should group an :ref:`object<what is a class?>` as :ref:`False<t
 
     AssertionError: False != True
 
-  because this is what happens when ``self.assertEqual(bool(False), True)`` runs
+  because this happens when ``self.assertEqual(bool(False), True)`` runs
 
   .. code-block:: python
 
@@ -468,11 +468,15 @@ another way to test if something should be grouped as False
 
 The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can also use to test if the result of calling the :ref:`bool<how to test if something should be grouped as False or True>` with the :ref:`object<what is a class?>` is :ref:`False<test_what_is_false>` - assertFalse_, it was in :ref:`the first failing test<test_failure>`
 
-  .. code-block:: python
+.. code-block:: python
 
-    self.assertFalse(True)
+  self.assertFalse(True)
 
-  which checks is the same as ``self.assertEqual(bool(True), False)``
+which is the same as
+
+.. code-block:: python
+
+  self.assertEqual(bool(True), False)
 
 * I add assertFalse_ to the test
 
@@ -498,7 +502,7 @@ The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can also
 
     AssertionError: True is not false
 
-  because this is what happens when ``self.assertEqual(bool(False), True)`` runs
+  because this happens when ``self.assertEqual(bool(False), True)`` runs
 
   .. code-block:: python
 
