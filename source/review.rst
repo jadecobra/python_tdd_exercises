@@ -182,14 +182,14 @@ booleans review
 
 * :ref:`what is False?<test_what_is_false>`
 * :ref:`what is True?<test_what_is_true>`
-* :ref:`Is None False or True?<is None False or True?>`
-* :ref:`Is an integer False or True?<is an integer False or True?>`
-* :ref:`Is a float False or True?<is a float False or True?>`
-* :ref:`Is a string False or True?<is a string False or True?>`
-* :ref:`Is a tuple False or True?<is a tuple False or True?>`
-* :ref:`Is a list False or True?<is a list False or True?>`
-* :ref:`Is a set False or True?<is a set False or True?>`
-* :ref:`Is a dictionary False or True?<is a dictionary False or True?>`
+* :ref:`Is None False or True?<should I group None as False or True?>`
+* :ref:`Is an integer False or True?<should I group an integer as False or True?>`
+* :ref:`Is a float False or True?<should I group a float as False or True?>`
+* :ref:`Is a string False or True?<should I group a string as False or True?>`
+* :ref:`Is a tuple False or True?<should I group a tuple as False or True?>`
+* :ref:`Is a list False or True?<should I group a list as False or True?>`
+* :ref:`Is a set False or True?<should I group a set as False or True?>`
+* :ref:`Is a dictionary False or True?<should I group a dictionary as False or True?>`
 
 ----
 

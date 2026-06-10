@@ -188,7 +188,7 @@ start the project
 
     uv add --requirement requirements.txt
 
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies
+  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
 
 * I use tree_ to look at the structure of the project
 

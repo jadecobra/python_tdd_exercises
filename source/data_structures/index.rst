@@ -21,7 +21,7 @@ These chapters test Python_ basic data structures/types, which are a way to repr
   :maxdepth: 1
 
   None (the simplest object)<none/index>
-  Booleans: only 2<booleans/index>
+  booleans/index
   Lists: anything in [ ]<lists/index>
   Dictionaries: key-value pairs<dictionaries/index>
 

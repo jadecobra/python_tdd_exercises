@@ -148,7 +148,7 @@ requirements
 
   the terminal_ goes back to the command line.
 
-* I delete the text then add :ref:`the first failing test<test_failure>` to ``test_none.py``
+* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_none.py``
 
   .. code-block:: python
     :linenos:
@@ -178,7 +178,7 @@ requirements
 
     uv add --requirement requirements.txt
 
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies
+  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
 
 * I add the new files_ and folder_ to git_ for tracking
 

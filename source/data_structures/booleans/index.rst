@@ -19,9 +19,15 @@ what are booleans?
 
 ----
 
-Imagine we have to divide everything into two and there are only two options - things that are True_ and things that are False_, these are the booleans_: True_ and False_.
+Imagine we have to divide everything into two and the options are things that are True_ and things that are False_. These are the booleans_: True_ and False_.
 
-I test booleans_ in the chapters below
+I used :ref:`assertIs<another way to test if something is the same object as True>` and :ref:`assertIsNot<another way to test if something is NOT the same object as True>` in :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_true` in :ref:`AssertionError<what causes AssertionError?>`, where I saw that
+
+* :ref:`True<test_what_is_true>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* :ref:`None is None<what is None?>` and equal to :ref:`None<what is None?>`
+
+I test :ref:`booleans<what are booleans?>` in the chapters below
 
 .. toctree::
   :titlesonly:
@@ -39,4 +45,4 @@ I test booleans_ in the chapters below
 what is next?
 *************************************************************************************
 
-:ref:`Test booleans<booleans 1>`
+:ref:`test booleans<booleans: only two>`

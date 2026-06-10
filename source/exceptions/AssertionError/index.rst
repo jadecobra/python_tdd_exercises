@@ -172,7 +172,7 @@ start the project
 
 * I open ``test_assertion_error.py``
 
-* I delete the text then add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
+* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -202,7 +202,7 @@ start the project
 
     uv add --requirement requirements.txt
 
-  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies
+  the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
 
 * I add the new files_ and folder_ to git_ for tracking
 
@@ -2382,7 +2382,7 @@ another way to test if something is the same object as None
 test_assertion_error_w_false
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and :ref:`test_assertion_error_w_none` shows that :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>`. :ref:`is None False?<is None False or True?>`
+:ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and :ref:`test_assertion_error_w_none` shows that :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>`. :ref:`is None False?<should I group None as False or True?>`
 
 I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>` or not.
 
