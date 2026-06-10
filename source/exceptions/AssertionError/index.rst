@@ -1624,7 +1624,7 @@ I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if 
 
     E       AssertionError: unexpectedly identical: None
 
-  because :ref:`None<what is None?>` is :ref:`None<what is None?>`, they are the same :ref:`object<what is a class?>`. Compare this error message with the one for ``assert None is not None``
+  because :ref:`None is None<what is None?>`, they are the same :ref:`object<what is a class?>`. Compare this error message with the one for ``assert None is not None``
 
   .. code-block:: python
 
