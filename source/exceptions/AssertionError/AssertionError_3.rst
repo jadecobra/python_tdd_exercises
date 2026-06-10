@@ -518,7 +518,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-As a reminder, you know
+I know
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`what causes AssertionError?`
@@ -527,23 +527,12 @@ As a reminder, you know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make classes<classes>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
+* :ref:`what happens when classes have one or more parents<family ties>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`what None is and is not<what is None?>`
-* :ref:`how to use the assertIsNotNone and assertIsNone?<AssertionError 3: use assertIsNotNone and assertIsNone?>`
+* :ref:`how to use the assertIsNotNone and assertIsNone<AssertionError 3: use assertIsNotNone and assertIsNone>`
 
 :ref:`Would you like to test the booleans (there are only 2)?<what are booleans?>`
-
-
-
-* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
-* :ref:`what causes AssertionError?`
-* :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`how to make classes<classes>`
-* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
-
-:ref:`Would you like to use class attributes with the 'functions' project?<Functions 2: use class attributes>`
 
 ----
 

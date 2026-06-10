@@ -980,7 +980,7 @@ how to call the parent from the child
 
 *********************************************************************************
 test_classes_w_one_parent
-********************************************************************************
+*********************************************************************************
 
 I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`classes<what is a class?>` are set if they have only one parent (super :ref:`class<what is a class?>`).
 
@@ -4087,7 +4087,7 @@ you know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make classes<classes>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
-:ref:`what happens when classes have one or more parents<family ties>`
+* :ref:`what happens when classes have one or more parents<family ties>`
 
 
 :ref:`Would you like to use class attributes with the 'functions' project?<Functions 2: use class attributes>`

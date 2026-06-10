@@ -2632,6 +2632,7 @@ I know
 * :ref:`how to make dictionaries with functions<how to make a person>`
 * :ref:`how to make classes<classes>`
 * :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
+* :ref:`what happens when classes have one or more parents<family ties>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 
 :ref:`Would you like to test None (the simplest object)?<what is None?>`
