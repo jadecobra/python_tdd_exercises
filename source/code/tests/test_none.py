@@ -4,6 +4,7 @@ import unittest
 class TestNone(unittest.TestCase):
 
     def test_what_is_none(self):
+        self.assertIs(None, None)
         self.assertIsNone(None)
 
     def test_is_none_a_boolean(self):
@@ -62,7 +63,9 @@ class TestNone(unittest.TestCase):
         self.assertIsNotNone(dict())
         self.assertIsNotNone({'key': 'value'})
         self.assertIsInstance({}, dict)
-        self.assertIsInstance({'key': 'value'}, dict)
+        self.assertIsInstance(
+            {'key': 'value'}, dict
+        )
         self.assertNotIsInstance(None, dict)
 
 

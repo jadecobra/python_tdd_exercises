@@ -2744,10 +2744,15 @@ I make the statement :ref:`True<test_what_is_true>`
 
 .. code-block:: python
   :lineno-start: 62
-  :emphasize-lines: 1
+  :emphasize-lines: 2-3
   :emphasize-text: Not
 
+      def test_is_none_a_dictionary(self):
+          # self.assertIsNone(dict())
           self.assertIsNotNone(dict())
+
+
+  # NOTES
 
 the test passes.
 
@@ -2762,12 +2767,16 @@ the test passes.
 * I add another failing line
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 3
+    :lineno-start: 62
+    :emphasize-lines: 4
 
         def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
             self.assertIsNotNone(dict())
             self.assertIsNone({'key': 'value'})
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2778,102 +2787,136 @@ the test passes.
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 1
+    :lineno-start: 62
+    :emphasize-lines: 4-5
     :emphasize-text: Not
 
+        def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
+            self.assertIsNotNone(dict())
+            # self.assertIsNone({'key': 'value'})
             self.assertIsNotNone({'key': 'value'})
+
+
+    # NOTES
 
   the test passes.
 
 * I add a failing :ref:`instance test<how to test if something is an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 4
+    :lineno-start: 62
+    :emphasize-lines: 6
 
         def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
             self.assertIsNotNone(dict())
+            # self.assertIsNone({'key': 'value'})
             self.assertIsNotNone({'key': 'value'})
             self.assertNotIsInstance({}, dict)
 
-  :ref:`dict<dictionaries>` is the :ref:`class<what is a class?>` for :ref:`dictionaries<what is a dictionary?>`, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+    # NOTES
 
-    AssertionError: {} is an instance of <class 'dict'>
+  - :ref:`dict<dictionaries>` is the :ref:`class<what is a class?>` for :ref:`dictionaries<what is a dictionary?>`
+  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  ``{}`` is the empty :ref:`dictionary<what is a dictionary?>`
+    .. code-block:: shell
+
+      AssertionError: {} is an instance of <class 'dict'>
+
+    ``{}`` is the empty :ref:`dictionary<what is a dictionary?>`
 
 * I change the `assert method`_
 
   .. code-block:: python
-    :lineno-start: 64
-    :emphasize-lines: 1
+    :lineno-start: 62
+    :emphasize-lines: 6-7
 
+        def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
+            self.assertIsNotNone(dict())
+            # self.assertIsNone({'key': 'value'})
+            self.assertIsNotNone({'key': 'value'})
+            # self.assertNotIsInstance({}, dict)
             self.assertIsInstance({}, dict)
+
+
+    # NOTES
 
   the test passes.
 
 * I add another :ref:`instance test<how to test if something is an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 5
+    :lineno-start: 62
+    :emphasize-lines: 8-10
 
         def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
             self.assertIsNotNone(dict())
+            # self.assertIsNone({'key': 'value'})
             self.assertIsNotNone({'key': 'value'})
+            # self.assertNotIsInstance({}, dict)
             self.assertIsInstance({}, dict)
-            self.assertNotIsInstance({'key': 'value'}, dict)
+            self.assertNotIsInstance(
+                {'key': 'value'}, dict
+            )
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: shell
 
-    AssertionError: {'key': 'value'} is an instance of <class 'dict'>
-
-  .. note::
-
-    ``{'key': 'value'}`` is a :ref:`dictionary<what is a dictionary?>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
-
-    I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas, for example
-
-    .. code-block:: python
-
-      {
-          'key': 'value',
-          'another_key': 'another value',
-          'one_more_key': 'one more value',
-          'magic_key': 'magic value',
-          ...
-          'keyN': 'valueN',
-      }
-
-    sets_ do NOT have key-value pairs.
+    AssertionError:
+        {'key': 'value'} is an instance of <class 'dict'>
 
 * I make the statement :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 1
+    :lineno-start: 62
+    :emphasize-lines: 8-9
 
-            self.assertIsInstance({'key': 'value'}, dict)
+        def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
+            self.assertIsNotNone(dict())
+            # self.assertIsNone({'key': 'value'})
+            self.assertIsNotNone({'key': 'value'})
+            # self.assertNotIsInstance({}, dict)
+            self.assertIsInstance({}, dict)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                {'key': 'value'}, dict
+            )
+
+
+    # NOTES
 
   the test passes.
 
 * I add the last failing :ref:`instance test<how to test if something is an instance of a class>` with :ref:`assertIsInstance<another way to test if something is an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 6
+    :lineno-start: 62
+    :emphasize-lines: 12
 
         def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
             self.assertIsNotNone(dict())
+            # self.assertIsNone({'key': 'value'})
             self.assertIsNotNone({'key': 'value'})
+            # self.assertNotIsInstance({}, dict)
             self.assertIsInstance({}, dict)
-            self.assertIsInstance({'key': 'value'}, dict)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                {'key': 'value'}, dict
+            )
             self.assertIsInstance(None, dict)
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2881,17 +2924,26 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'dict'>
 
+  because :ref:`None<what is None?>` is not a :ref:`dictionary<what is a dictionary?>`.
+
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 6
+    :lineno-start: 62
+    :emphasize-lines: 12-13
 
         def test_is_none_a_dictionary(self):
+            # self.assertIsNone(dict())
             self.assertIsNotNone(dict())
+            # self.assertIsNone({'key': 'value'})
             self.assertIsNotNone({'key': 'value'})
+            # self.assertNotIsInstance({}, dict)
             self.assertIsInstance({}, dict)
-            self.assertIsInstance({'key': 'value'}, dict)
+            # self.assertNotIsInstance(
+            self.assertIsInstance(
+                {'key': 'value'}, dict
+            )
+            # self.assertIsInstance(None, dict)
             self.assertNotIsInstance(None, dict)
 
 
@@ -2899,10 +2951,27 @@ the test passes.
 
   the test passes.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 62
+
+        def test_is_none_a_dictionary(self):
+            self.assertIsNotNone(dict())
+            self.assertIsNotNone({'key': 'value'})
+            self.assertIsInstance({}, dict)
+            self.assertIsInstance(
+                {'key': 'value'}, dict
+            )
+            self.assertNotIsInstance(None, dict)
+
+
+    # NOTES
+
 * I add the last comment
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 72
     :emphasize-lines: 2
 
     # NOTES
@@ -2923,13 +2992,34 @@ the test passes.
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit -am 'add '
+    git commit -am \
+    'add test_is_none_a_dictionary'
 
-* I go back to the terminal_ that is running the tests
+:ref:`None is NOT a dictionary<test_is_none_a_dictionary>`.
 
-:ref:`None is NOT a dictionary<test_is_none_a_dictionary>`
+----
+
+*********************************************************************************
+sets vs dictionaries
+*********************************************************************************
+
+``{'key': 'value'}`` is a :ref:`dictionary<what is a dictionary?>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
+
+I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas, for example
+
+.. code-block:: python
+
+  {
+      'key': 'value',
+      'another_key': 'another value',
+      'one_more_key': 'one more value',
+      'magic_key': 'magic value',
+      'keyN': 'valueN',
+  }
+
+sets_ do NOT have key-value pairs.
 
 ----
 
@@ -2938,7 +3028,8 @@ close the project
 *********************************************************************************
 
 * I close ``test_none.py``
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
+* I click in the terminal_ where the tests are running
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``none``
 
@@ -2961,15 +3052,15 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it is NOT. I used 2 from :ref:`the assertion_error chapter<what is an assertion?>`
+I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it is NOT. I used 2 from :ref:`the assertion_error chapter<what is an assertion?>`:
 
-* :ref:`assertIsNotNone<how to test if something is NOT None>` - which tests if the thing in parentheses is :ref:`None<what is None?>`
-* :ref:`assertIsNotNone<how to test if something is NOT None>` - which tests if the thing in parentheses is NOT :ref:`None<what is None?>`
+* :ref:`assertIsInstance<another way to test if something is an instance of a class>` which checks if something is :ref:`an instance of a given class<how to test if something is an instance of a class>`
+* :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` which checks if something is :ref:`NOT an instance of a given class<how to test if something is NOT an instance of a class>`
 
 and 2 new `assert methods`_
 
-* :ref:`assertIsInstance<another way to test if something is an instance of a class>` which checks if something is an instance of a given :ref:`class<what is a class?>`
-* :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` which checks if something is NOT an instance of a given :ref:`class<what is a class?>`
+* :ref:`assertIsNotNone<how to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`
+* :ref:`assertIsNotNone<how to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`
 
 I also used :ref:`Python's basic data structures<data structures>` in the tests
 
@@ -2978,10 +3069,10 @@ I also used :ref:`Python's basic data structures<data structures>` in the tests
 * floats_ - binary floating point decimal numbers, negative and positive including ``0.0``
 * strings_ - anything inside :ref:`quotes`
 * :ref:`booleans - True and False<what are booleans?>`
-* tuples_ - anything in parentheses (``()``) separated by commas separated by commas
-* :ref:`lists - anything in square brackets ([])<what is a list?>`
-* sets_ - anything in curly braces (``{}``) separated by commas and NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
-* :ref:`dictionaries - key-value pairs in curly braces ({})<what is a dictionary?>`
+* tuples_ - anything in parentheses (``( )``) separated by commas
+* :ref:`lists - anything in square brackets ([ ])<what is a list?>`
+* sets_ - anything in curly braces (``{ }``) separated by commas and NOT :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+* :ref:`dictionaries - key-value pairs in curly braces ({ })<what is a dictionary?>`
 
 :ref:`How many questions can you answer after going through this chapter?<questions about None>`
 
@@ -2999,14 +3090,17 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-so far you have covered
+so far you have seen
 
 * :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
 * :ref:`what causes AssertionError?`
 * :ref:`how to make functions<what is a function?>`
+* :ref:`how to pass values from tests to functions<telephone>`
+* :ref:`how to make dictionaries with functions<how to make a person>`
+* :ref:`how to make classes<classes>`
+* :ref:`how to use class attributes to remove repetition<AssertionError 2: use class attributes>`
 * :ref:`what causes AttributeError<what causes AttributeError?>`
-* :ref:`how to pass values from tests to functions<telephone>` and
-* :ref:`what is None and NOT None and learned new assert methods<what is None?>`
+* :ref:`what None is and is not<what is None?>`
 
 :ref:`Would you like to test what is True and False in Python?<what are booleans?>`
 

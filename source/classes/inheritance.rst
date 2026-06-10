@@ -2981,7 +2981,8 @@ close the project
 *********************************************************************************
 
 * I close ``test_classes.py`` and ``classes.py`` in the :ref:`editor(s)<2 editors>`
-* I click in the terminal_ where the tests are running, then use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
+* I click in the terminal_ where the tests are running
+* I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
 * I `change directory`_ to the parent of ``person``
 
