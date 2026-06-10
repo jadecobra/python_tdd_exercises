@@ -201,8 +201,8 @@ start the project
     :emphasize-lines: 8, 10
 
 
-    ================================ FAILURES ================================
-    _______________________ TestBooleans.test_failure ________________________
+    ============================ FAILURES ============================
+    ___________________ TestBooleans.test_failure ____________________
 
     self = <tests.test_booleans.TestBooleans testMethod=test_failure>
 
@@ -211,9 +211,9 @@ start the project
     E       AssertionError: True is not false
 
     tests/test_booleans.py:7: AssertionError
-    ======================== short test summary info =========================
+    ==================== short test summary info =====================
     FAILED tests/test_booleans.py::TestBooleans::test_failure - AssertionError: True is not false
-    =========================== 1 failed in X.YZs ============================
+    ======================= 1 failed in X.YZs ========================
 
   .. admonition:: if the terminal_ does not show the same error, then check
 

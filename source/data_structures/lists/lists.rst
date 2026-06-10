@@ -176,7 +176,7 @@ start the project
     :emphasize-lines: 10
     :emphasize-text: tests/test_lists.py:7
 
-    ================================= FAILURES =================================
+    ============================= FAILURES =============================
     ___________________________ TestLists.test_failure ___________________________
 
     self = <tests.test_lists.TestLists testMethod=test_failure>
@@ -188,7 +188,7 @@ start the project
     tests/test_lists.py:7: AssertionError
     ====================== short test summary info ========================
     FAILED tests/test_lists.py::TestLists::test_failure - AssertionError: True is not false
-    ============================ 1 failed in X.YZs =============================
+    ======================== 1 failed in X.YZs =========================
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``tests/test_lists.py:7`` to put the cursor on line 7
 
