@@ -59,7 +59,7 @@ open the project
 ----
 
 *********************************************************************************
-test_if_:ref:`bool<what are booleans?>`is_an_int
+test_if_bool_is_an_int
 *********************************************************************************
 
 ----
@@ -82,7 +82,7 @@ I add a new test
           self.assertEqual(True*1, 1)
           self.assertEqual(True/1, 1)
 
-      def test_if_:ref:`bool<what are booleans?>`is_an_int(self):
+      def test_if_bool_is_an_int(self):
           self.assertIsInstance(bool, int)
 
 
@@ -94,7 +94,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: <class 'bool'> is not an instance of <class 'int'>
 
-:ref:`the bool class is NOT a child of the int class<test_if_:ref:`bool<what are booleans?>`is_an_int>`
+:ref:`the bool class is NOT a child of the int class<test_if_bool_is_an_int>`
 
 ----
 
@@ -122,7 +122,7 @@ review
 
 * :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are :ref:`booleans<what are booleans?>`
 * :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>` are also integers_
-* :ref:`the bool class is NOT a child of the int class<test_if_:ref:`bool<what are booleans?>`is_an_int>`, they are different
+* :ref:`the bool class is NOT a child of the int class<test_if_bool_is_an_int>`, they are different
 
 ----
 

@@ -26,6 +26,51 @@ I find that sometimes when I am working on a project and have an idea, I remembe
 I recommend `Test Driven Development by Example`_ by `Kent Beck`_ and Refactoring_ by `Martin Fowler`_, they both influenced the way I write programs_.
 
 *********************************************************************************
+table of contents
+*********************************************************************************
+
+.. toctree::
+  :titlesonly:
+  :maxdepth: 2
+
+  self
+  hatches/index
+  conventions
+  start here<setup/index>
+  make TDD project 1<make_tdd/make_tdd_manually>
+  what is an assertion?<exceptions/AssertionError/index>
+  what is a function?<functions/index>
+  telephone<how_to/telephone/index>
+  make a person<how_to/make_person>
+  classes/index
+  what causes AttributeError?<exceptions/AttributeError>
+  data_structures/none
+  what is a boolean?<data_structures/booleans/booleans_1>
+  truth table<truth_table/index>
+  make a calculator<calculator/calculator_1/index>
+  make TDD project 2<make_tdd/make_tdd_automatically>
+  handling Exceptions<exceptions/exception_handling/index>
+  exceptions/type_error/index
+  data_structures/lists/index
+  data_structures/dictionaries/index
+  make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
+  what is a module?<exceptions/ModuleNotFoundError>
+  questions the book answers<review>
+  make TDD project 1<make_tdd/make_tdd_manually>
+
+  connect the dots<dot_notation>
+  exceptions/index
+  data_structures/index
+  how to<how_to/index>
+  catalog of tests<catalog_of_tests>
+  all the code in this book<catalog_of_code>
+  learning_models
+  what do people think of this?<reviews>
+  videos<videos>
+
+----
+
+*********************************************************************************
 who is this for?
 *********************************************************************************
 
@@ -85,49 +130,6 @@ do you like videos?
 .. raw:: html
 
   <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=_H3teEnFxh8QC0Xo&amp;list=PL5lANtH-CRODKvc0QPDAOlsis6f9z-MDo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-*********************************************************************************
-table of contents
-*********************************************************************************
-
-.. toctree::
-  :titlesonly:
-  :maxdepth: 2
-
-  self
-  hatches/index
-  conventions
-  start here<setup/index>
-  make TDD project 1<make_tdd/make_tdd_manually>
-  what is an assertion?<exceptions/AssertionError/index>
-  what is a function?<functions/index>
-  telephone<how_to/telephone/index>
-  make a person<how_to/make_person>
-  classes/index
-  what causes AttributeError?<exceptions/AttributeError>
-  data_structures/none
-  what is a boolean?<data_structures/booleans/booleans_1>
-  truth table<truth_table/index>
-  make a calculator<calculator/calculator_1/index>
-  make TDD project 2<make_tdd/make_tdd_automatically>
-  handling Exceptions<exceptions/exception_handling/index>
-  exceptions/type_error/index
-  data_structures/lists/index
-  data_structures/dictionaries/index
-  make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
-  what is a module?<exceptions/ModuleNotFoundError>
-  questions the book answers<review>
-  make TDD project 1<make_tdd/make_tdd_manually>
-
-  connect the dots<dot_notation>
-  exceptions/index
-  data_structures/index
-  how to<how_to/index>
-  catalog of tests<catalog_of_tests>
-  all the code in this book<catalog_of_code>
-  learning_models
-  what do people think of this?<reviews>
-  videos<videos>
 
 ----
 

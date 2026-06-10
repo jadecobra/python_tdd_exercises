@@ -2107,6 +2107,29 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   where ``self`` is ``AClass``.
 
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` :ref:`method definition<how to make a function>` instead of ``self`` since it does not use anything in the :ref:`class<what is a class?>`. That way I do not send more information than what the :ref:`method<what is a method?>` needs.
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 4-6
+
+        def method_01():
+            return None
+
+        @staticmethod
+        def method_02():
+        # def method_02(self):
+            return None
+
+  the test is still green because this now happens when ``AClass().method_02()`` is called
+
+  .. code-block:: python
+
+    AClass().method_02()
+        AClass.method_02()
+
+  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance of a class>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
+
 * I remove the commented line
 
   .. code-block:: python
@@ -2115,7 +2138,8 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_01():
             return None
 
-        def method_02(self):
+        @staticmethod
+        def method_02():
             return None
 
 * I add a line for ``src.attribute_error.AClass.method_03`` to ``test_attribute_error.py``
@@ -2145,9 +2169,10 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
     :lineno-start: 72
-    :emphasize-lines: 4-5
+    :emphasize-lines: 5-6
 
-        def method_02(self):
+        @staticmethod
+        def method_02():
             return None
 
         def method_03():
@@ -2182,7 +2207,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 76
     :emphasize-lines: 4-5
 
         def method_03():
@@ -2207,10 +2232,10 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_04`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>`.
 
-* I can use the :ref:`staticmethod decorator<what is the staticmethod decorator?>` if I do not want to add ``self`` to the :ref:`method definition<how to make a function>` when it does not use anything in the :ref:`class<what is a class?>` that way I am not sending more information than what the :ref:`method<what is a method?>` needs. I add ``@staticmethod`` to ``method_04``
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`definition<how to make a function>` for ``method_04``
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 76
     :emphasize-lines: 4
 
         def method_03():
@@ -2220,12 +2245,14 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_04():
             return None
 
-  the test passes because this happens when ``AClass().method_04()`` is called
+  the test passes because this now happens when ``AClass().method_04()`` is called
 
   .. code-block:: python
 
     AClass().method_04()
         AClass.method_04()
+
+  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance of a class>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
 
 * I add a line for ``src.attribute_error.AClass.method_05`` to ``test_attribute_error.py``
 
@@ -2255,7 +2282,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 78
+    :lineno-start: 79
     :emphasize-lines: 5-6
 
         @staticmethod
@@ -2296,7 +2323,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 82
+    :lineno-start: 83
     :emphasize-lines: 4-5
 
         def method_05():
@@ -2343,7 +2370,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 86
     :emphasize-lines: 4-5
 
         def method_06():
@@ -2385,7 +2412,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * I add the :ref:`method<what is a method?>` to the :ref:`definition<how to make a class>` of ``AClass`` in ``attribute_error.py``
 
   .. code-block:: python
-    :lineno-start: 84
+    :lineno-start: 89
     :emphasize-lines: 4-5
 
         def method_07():
@@ -2410,35 +2437,27 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>` (the parentheses are empty).
 
-* I add ``self`` to the parentheses of ``method_08``
+* I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` since it does not use anything in the :ref:`class<what is a class?>`
 
   .. code-block:: python
-    :lineno-start: 90
-    :emphasize-lines: 1-2
-
-        # def method_08():
-        def method_08(self):
-            return None
-
-  the test passes because this happens when ``AClass().method_08()`` is called
-
-  .. code-block:: python
-
-    AClass().method_08()
-        AClass.method_08(self)
-
-  where ``self`` is ``AClass``.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 87
+    :lineno-start: 89
+    :emphasize-lines: 4
 
         def method_07():
             return None
 
-        def method_08(self):
+        @staticmethod
+        def method_08():
             return None
+
+  the test passes because this now happens when ``AClass().method_08()`` is called
+
+  .. code-block:: python
+
+    AClass().method_08()
+        AClass.method_08()
+
+  with the :ref:`staticmethod decorator<what is the staticmethod decorator?>` it does not matter if I call the :ref:`method<what is a method?>` from :ref:`an instance<how to test if something is an instance of a class>` (``AClass()``) or from the :ref:`class<what is a class?>` (``AClass``).
 
 * I add a line for ``src.attribute_error.AClass.method_09`` to ``test_attribute_error.py``
 
@@ -2478,7 +2497,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
   .. code-block:: python
     :lineno-start: 53
-    :emphasize-lines: 41-42
+    :emphasize-lines: 44-45
 
     class AClass(object):
 
@@ -2499,13 +2518,15 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_01():
             return None
 
-        def method_02(self):
+        @staticmethod
+        def method_02():
             return None
 
         def method_03():
             return None
 
-        def method_04(self):
+        @staticmethod
+        def method_04():
             return None
 
         def method_05():
@@ -2517,7 +2538,8 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
         def method_07():
             return None
 
-        def method_08(self):
+        @staticmethod
+        def method_08():
             return None
 
         def method_09():
@@ -2540,7 +2562,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 * :ref:`A function in a module is an attribute of the module<test_attribute_error_w_functions>`
 * :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`
 
-:ref:`because in Python everything is an object<everything is an object>`
+:ref:`because in Python everything is an object<everything is an object>`.
 
 ----
 

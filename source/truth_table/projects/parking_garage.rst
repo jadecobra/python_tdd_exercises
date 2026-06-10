@@ -1,3 +1,5 @@
+.. orphan::
+
 .. meta::
   :description: Build a safety-critical ParkingGarage logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—door status, timers, and too_hot failsafes—while writing clean, verified code.
   :keywords: Python parking garage logic project, safety-critical systems python tutorial, TDD python parking garage example, how to code a parking garage in python, python multiple boolean inputs tutorial, red green refactor examples, python truth table practice, learn Converse Non-Implication python, uv python project management, pytest-watcher logic testing, Jacob Itegboje

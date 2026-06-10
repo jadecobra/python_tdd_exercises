@@ -1,8 +1,10 @@
+.. orphan::
+
 .. meta::
   :description: Learn Python TDD by building a project with uv and pytest-watcher. Master passing 9 data types—strings, None, booleans, integers, floats, tuples, lists, dictionaries, and classes—to functions, and learn to debug AssertionError, NameError, AttributeError, and TypeError step-by-step.
   :keywords: Jacob Itegboje, Python TDD tutorial, red green refactor practical example, uv init python project, pytest-watcher automatic testing, passing arguments in python, python pass None to function, python pass list to function, python pass dictionary to function, python pass tuple vs list, python pass class as argument, TypeError: 'NoneType' object is not callable, TypeError: takes 0 positional arguments but 1 was given, NameError: name is not defined python, AttributeError: module has no attribute, assertEqual reality vs expectation, python string interpolation f-string, python unit testing for beginners, python project structure src tests, how to write a failing test first, test driven development python step by step
 
-.. include:: ../links.rst
+.. include:: ../../links.rst
 
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 .. _f-strings: `f-string`_git config

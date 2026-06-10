@@ -1151,7 +1151,7 @@ issubclass_ checks if the thing in the parentheses on the left is a :ref:`subcla
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that in Python_ :ref:`everything is an object`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1580,7 +1580,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what 
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that in Python_ :ref:`everything is an object`
+* I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -1715,7 +1715,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that in Python_ :ref:`everything is an object`
+* I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 38
@@ -1850,7 +1850,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that in Python_ :ref:`everything is an object`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 42
@@ -1984,7 +1984,7 @@ I want to test if a set_ (anything in curly braces ``{ }`` separated by a comma)
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that in Python_ :ref:`everything is an object`
+* I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }`` separated by a comma), to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 46
@@ -2120,7 +2120,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that in Python_ :ref:`everything is an object`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 50

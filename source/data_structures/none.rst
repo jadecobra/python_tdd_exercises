@@ -1,6 +1,6 @@
 .. meta::
-  :description: In-depth beginner tutorial on Python's None: the simplest data structure / singleton value. Learn exactly how None differs from 0, False, empty string, empty list, empty dict etc. See extensive identity testing with `is None` / `is not None`, assertIs / assertIsNot, and why "is" is preferred over == for None. Builds on the AssertionError TDD chapters with real test examples checking that containers, integers, floats, strings, tuples are not the same object as None (and not equal in identity terms). Covers function returns None, form blank values, None vs False/True gotchas, and how to properly test for absence of value in Python. Includes unit testing patterns for None from the earlier red-green-refactor AssertionError project.
-  :keywords: Jacob Itegboje, Pumping Python, python None, what is None python, NoneType python, python None vs 0, python None vs False, python None vs empty string, python None vs empty list, is None vs == None, python is not None, assertIsNone, assertIsNotNone, testing for None in python, python function returns None, None singleton, python None identity, None in unittest, python TDD None, check if value is None, None in data structures, simplest data structure python, python None best practices, None vs falsy values, python None in tests, how to test None python beginners
+  :description: Beginner Python TDD tutorial on None — the simplest data structure / singleton. Step-by-step red-green-refactor with unittest: test_what_is_none using assertIs / assertIsNone / assertIsNotNone, then exhaustive "is None a boolean / int / float / str / tuple / list / set / dict?" tests using assertIsNotNone + assertIsInstance + assertNotIsInstance. Learn exactly why None is not False, not 0, not '', not [], not {}, not 0.0; identity ("is") vs equality ("=="); common None gotchas; and how to test for absence of value. Reproduces real AssertionError messages including "unexpectedly identical: None", "unexpectedly None", and "X is not None". Builds directly on the AssertionError chapters (bare assert, assertIs, test_failure patterns) before booleans/truthiness. Full uv init + pytest-watcher + git workflow. Part of Jacob Itegboje's Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, python None, what is None python, NoneType, python None vs False, python None vs 0, python None vs empty list, python None vs empty dict, is None vs == None, assertIsNone, assertIsNotNone, assertIs, assertIsNot, assertIsInstance, assertNotIsInstance, testing for None, None singleton, None identity, None in unittest, TDD None, None is not False, unexpectedly identical None, AssertionError unexpectedly None, False is not None, 0 is not None, simplest data structure python, python data structures TDD, red green refactor None, python None best practices, None vs falsy values, uv pytest-watcher none project
 
 .. include:: ../links.rst
 
@@ -9,6 +9,8 @@
 .. _assertIsNone method: :ref:`assertIsNotNone<how to test if something is NOT None>`
 .. _assertIsNotNone: https://docs.python.org/3/library/unittest.html?highlight=unittest#unittest.TestCase.assertIsNotNone
 .. _assertIsNotNone method: :ref:`assertIsNotNone<how to test if something is NOT None>`
+.. _unittest.TestCase.assertIsNone: assertIsNone_
+.. _unittest.TestCase.assertIsNotNone: assertIsNotNone_
 
 #################################################################################
 what is None?
@@ -3052,15 +3054,19 @@ close the project
 review
 *********************************************************************************
 
-I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it is NOT. I used 2 from :ref:`the assertion_error chapter<what is an assertion?>`:
+I used `assert methods`_ to test what :ref:`None<what is None?>` is and what it is NOT. Two from :ref:`the inheritance chapter<everything is an object>`:
 
 * :ref:`assertIsInstance<another way to test if something is an instance of a class>` which checks if something is :ref:`an instance of a given class<how to test if something is an instance of a class>`
 * :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>` which checks if something is :ref:`NOT an instance of a given class<how to test if something is NOT an instance of a class>`
 
-and 2 new `assert methods`_
+to show that :ref:`None<what is None?>` is not an :ref:`instance<how to test if something is an instance of a class>` of the other :ref:`basic types<data structures>`.
 
-* :ref:`assertIsNotNone<how to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`
-* :ref:`assertIsNotNone<how to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`
+I used two new `assert methods` for :ref:`None<what is None?>`.
+
+* :ref:`assertIsNone<how to test if something is None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is NOT :ref:`None<what is None?>`. It replaced :ref:`assertIs<another way to test if something is the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
+* :ref:`assertIsNotNone<how to test if something is NOT None>` which raises :ref:`AssertionError<what causes AssertionError?>` if the thing in parentheses is :ref:`None<what is None?>`. It replaced :ref:`assertIsNot<another way to test if something is NOT the same object as None>` from :ref:`the assertion_error project<what is an assertion?>`
+
+They raise :ref:`AssertionError<what causes AssertionError?>` on :ref:`the logical negation of the condition<test_logical_negation>`
 
 I also used :ref:`Python's basic data structures<data structures>` in the tests
 
@@ -3102,7 +3108,7 @@ so far you have seen
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`what None is and is not<what is None?>`
 
-:ref:`Would you like to test what is True and False in Python?<what are booleans?>`
+:ref:`Would you like to use the assertIsNotNone and assertIsNone methods with the assertion_error project?<what are booleans?>`
 
 ----
 

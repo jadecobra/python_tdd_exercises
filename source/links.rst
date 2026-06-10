@@ -147,8 +147,6 @@
 .. _unittest: https://docs.python.org/3/library/unittest.html
 .. _unittest module: unittest_
 .. _unittest.TestCase.assertFalse: assertFalse_
-.. _unittest.TestCase.assertIsNone: assertIsNone_
-.. _unittest.TestCase.assertIsNotNone: assertIsNotNone_
 .. _unittest.TestCase.assertTrue: assertTrue_
 .. _unittest.TestCase.assertRaises: assertRaises_
 .. _unittest.TestCase.assertRaisesRegex: assertRaisesRegex_
