@@ -1,4 +1,4 @@
-.. orphan::
+:orphan:
 
 .. meta::
   :description: Build a safety-critical elevator control system from scratch using Python and Test Driven Development (TDD). This project-based tutorial teaches beginners how to manage multiple boolean inputs—including door sensors, floor requests, weight limits, and emergency stop buttons—to create robust, failsafe logic. Master the professional Red-Green-Refactor cycle using modern tools like uv, unittest, and pytest-watcher.

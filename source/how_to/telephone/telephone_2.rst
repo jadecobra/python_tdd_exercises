@@ -1,4 +1,4 @@
-.. orphan::
+:orphan:
 
 .. meta::
   :description: Learn Python TDD by building a project with uv and pytest-watcher. Master passing 9 data types—strings, None, booleans, integers, floats, tuples, lists, dictionaries, and classes—to functions, and learn to debug AssertionError, NameError, AttributeError, and TypeError step-by-step.

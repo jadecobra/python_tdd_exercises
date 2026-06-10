@@ -1,4 +1,4 @@
-.. orphan::
+:orphan:
 
 .. meta::
   :description: Step-by-step TDD tutorial on Python cooperative multiple inheritance (family ties chapter), Method Resolution Order (MRO), super() for parent __init__ calls, and inheriting from a Person base class built in prior chapters. Follow red-green-refactor to create Doe, Blow, Smith (class attr eye_color), Jane, Joe, Mary (Joe + Jane), John, Lil (Mary + John) with custom last_name and eye_color. Diagnose and fix real beginner errors shown: TypeError: Blow.__init__() takes 1 positional argument but 2 were given, TypeError: got an unexpected keyword argument 'last_name', TypeError: missing 1 required positional argument, AttributeError: module 'src.family_ties' has no attribute 'Blow', AssertionError: 'brown' != '', "is not an instance of", initial AssertionError: True is not false. Uses only local variables in TestFamilyTies methods (no setUp), assertIsInstance/assertNotIsInstance/assertIsSubclass on classes vs instances, dir() comparisons. Builds directly on how_to/make_person (Person + factory), classes, and inheritance ("everything is an object").

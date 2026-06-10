@@ -1,4 +1,4 @@
-.. orphan::
+:orphan:
 
 .. meta::
   :description: Build a safety-critical ParkingGarage logic system in Python using truth tables and TDD. This beginner tutorial teaches how to manage multiple boolean inputs—door status, timers, and too_hot failsafes—while writing clean, verified code.

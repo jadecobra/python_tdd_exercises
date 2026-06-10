@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 #################################################################################
-AssertionError 3: use assertIsNone
+AssertionError 3: user assertIsNotNone and assertIsNone
 #################################################################################
 
 ----
@@ -84,7 +84,7 @@ continue the project
 ----
 
 *********************************************************************************
-use assertIsNone
+user assertIsNotNone and assertIsNone
 *********************************************************************************
 
 * I add a call to :ref:`assertIsNotNone<how I test if something is NOT None>` in :ref:`test_assertion_error_w_none`
@@ -198,7 +198,7 @@ use assertIsNone
   the test passes because :ref:`True<test_what_is_true>` is not :ref:`None<what is None?>`.
 
 
-:ref:`I can use assertIsNotNone and assertIsNone instead of assertIsNot(x, None) and assertIs(x, None)<use assertIsNone>`
+:ref:`I can use assertIsNotNone and assertIsNone instead of assertIsNot(x, None) and assertIs(x, None)<user assertIsNotNone and assertIsNone>`
 
 ----
 
