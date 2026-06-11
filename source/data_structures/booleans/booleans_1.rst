@@ -1,6 +1,6 @@
 .. meta::
   :description: Master Python's truthiness and falsiness rules through Test Driven Development (TDD). This step-by-step tutorial uses unittest.assertTrue and assertFalse to explore why 0, 0.0, None, and empty collections (strings, lists, tuples, sets, and dicts) are False, while non-zero numbers and populated collections are True. Includes instructions for setting up a Python project with uv and automating tests with pytest-watcher.
-  :keywords: Jacob Itegboje, Python booleans for beginners, Python truthiness and falsiness, what is False in Python, Python unittest assertTrue, Python unittest assertFalse, TDD Red Green Refactor tutorial, Python bool type explained, is empty list True or False, is 0.0 False in Python, is None False or True, testing Python data structures, python uv init, pytest-watcher tutorial, boolean logic in programming, truthy and falsy values list, python empty string boolean, python empty dict truthiness, python zero-based indexing, python unit testing tutorial
+  :keywords: Jacob Itegboje, Python booleans for beginners, Python truthiness and falsiness, what is False Python unittest assertTrue, Python unittest assertFalse, TDD Red Green Refactor tutorial, Python bool type explained, is empty list True or False, is 0.0 False is None False or True, testing Python data structures, python uv init, pytest-watcher tutorial, boolean logic in programming, truthy and falsy values list, python empty string boolean, python empty dict truthiness, python zero-based indexing, python unit testing tutorial
 
 .. include:: ../../links.rst
 .. _bool: https://docs.python.org/3/library/functions.html#bool
@@ -1606,7 +1606,7 @@ the test passes.
     git commit --all --message \
     'add test_is_an_integer_falsy_or_truthy'
 
-* :ref:`In Python '0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
+* :ref:`'0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
 ----
@@ -2029,8 +2029,8 @@ the test passes.
     'add test_is_a_float_falsy_or_truthy'
 
 
-* :ref:`In Python '0.0' is grouped as False, and positive and negative floats are grouped as True<test_is_a_float_falsy_or_truthy>`.
-* :ref:`In Python '0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
+* :ref:`'0.0' is grouped as False, and positive and negative floats are grouped as True<test_is_a_float_falsy_or_truthy>`.
+* :ref:`'0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
 * I go back to the terminal_ that is running the tests
@@ -2211,7 +2211,9 @@ the test passes.
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty string is False and a string with things is True<test_is_a_string_falsy_or_truthy>`
+* :ref:`the empty string is grouped as False and a string with things is grouped as  True<test_is_a_string_falsy_or_truthy>`
+* :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_an_integer_falsy_or_truthy>`
+* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
 ----
 
@@ -2403,7 +2405,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty tuple is False and a tuple with things is True<test_is_a_tuple_falsy_or_truthy>`
+:ref:`the empty tuple is False and a tuple with things is True<test_is_a_tuple_falsy_or_truthy>`
 
 ----
 
@@ -2598,7 +2600,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty list is False and a list with things is True<is_a_list_falsy_or_truthy>`. I can see a pattern.
+:ref:`the empty list is False and a list with things is True<is_a_list_falsy_or_truthy>`. I can see a pattern.
 
 -----
 
@@ -2797,7 +2799,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty set is False and a set with things is True<is_a_set_falsy_or_truthy>`
+:ref:`the empty set is False and a set with things is True<is_a_set_falsy_or_truthy>`
 
 ----
 
@@ -3025,7 +3027,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty dictionary is False, and a dictionary with things is True<is_a_dictionary_falsy_or_truthy>`
+:ref:`the empty dictionary is False, and a dictionary with things is True<is_a_dictionary_falsy_or_truthy>`
 
 ----
 
