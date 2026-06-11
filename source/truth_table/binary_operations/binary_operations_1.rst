@@ -234,7 +234,7 @@ first input     second input   return
     def contradiction(first_input, second_input):
         return None
 
-  the test passes because :ref:`None is False<should I group None as False or True?>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+  the test passes because :ref:`None is False<test_is_none_falsy_or_truthy>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
 
 ----
 
@@ -772,7 +772,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
                 return True
         return None
 
-  still green, because :ref:`None is False<should I group None as False or True?>`
+  still green, because :ref:`None is False<test_is_none_falsy_or_truthy>`
 
 * I change :ref:`None<what is None?>` to :ref:`False<test_what_is_false>` in the `return statement`_, to make it clearer
 

@@ -2382,7 +2382,7 @@ another way to test if something is the same object as None
 test_assertion_error_w_false
 *********************************************************************************
 
-:ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and :ref:`test_assertion_error_w_none` shows that :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>`. :ref:`is None False?<should I group None as False or True?>`
+:ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and :ref:`test_assertion_error_w_none` shows that :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>`. :ref:`is None False?<test_is_none_falsy_or_truthy>`
 
 I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>` or not.
 

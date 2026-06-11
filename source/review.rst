@@ -182,14 +182,14 @@ booleans review
 
 * :ref:`what is False?<test_what_is_false>`
 * :ref:`what is True?<test_what_is_true>`
-* :ref:`Is None False or True?<should I group None as False or True?>`
-* :ref:`Is an integer False or True?<should I group an integer as False or True?>`
-* :ref:`Is a float False or True?<should I group a float as False or True?>`
-* :ref:`Is a string False or True?<should I group a string as False or True?>`
-* :ref:`Is a tuple False or True?<should I group a tuple as False or True?>`
-* :ref:`Is a list False or True?<should I group a list as False or True?>`
-* :ref:`Is a set False or True?<should I group a set as False or True?>`
-* :ref:`Is a dictionary False or True?<should I group a dictionary as False or True?>`
+* :ref:`Is None grouped as False or True?<test_is_none_falsy_or_truthy>`
+* :ref:`Is an integer grouped as False or True?<test_is_an_integer_falsy_or_truthy>`
+* :ref:`Is a float grouped as False or True?<test_is_a_float_falsy_or_truthy>`
+* :ref:`Is a string grouped as False or True?<test_is_a_string_falsy_or_truthy>`
+* :ref:`Is a tuple grouped as False or True?<test_is_a_tuple_falsy_or_truthy>`
+* :ref:`Is a list grouped as False or True?<is_a_list_falsy_or_truthy>`
+* :ref:`Is a set grouped as False or True?<is_a_set_falsy_or_truthy>`
+* :ref:`Is a dictionary grouped as False or True?<is_a_dictionary_falsy_or_truthy>`
 
 ----
 

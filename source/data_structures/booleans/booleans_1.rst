@@ -44,14 +44,14 @@ Questions to think about as we divide :ref:`Python's basic data structures<data 
 
 * :ref:`what is False?<test_what_is_false>`
 * :ref:`what is True?<test_what_is_true>`
-* :ref:`Is None False or True?<should I group None as False or True?>`
-* :ref:`Is an integer False or True?<should I group an integer as False or True?>`
-* :ref:`Is a float False or True?<should I group a float as False or True?>`
-* :ref:`Is a string False or True?<should I group a string as False or True?>`
-* :ref:`Is a tuple False or True?<should I group a tuple as False or True?>`
-* :ref:`Is a list False or True?<should I group a list as False or True?>`
-* :ref:`Is a set False or True?<should I group a set as False or True?>`
-* :ref:`Is a dictionary False or True?<should I group a dictionary as False or True?>`
+* :ref:`Is None grouped as False or True?<test_is_none_falsy_or_truthy>`
+* :ref:`Is an integer grouped as False or True?<test_is_an_integer_falsy_or_truthy>`
+* :ref:`Is a float grouped as False or True?<test_is_a_float_falsy_or_truthy>`
+* :ref:`Is a string grouped as False or True?<test_is_a_string_falsy_or_truthy>`
+* :ref:`Is a tuple grouped as False or True?<test_is_a_tuple_falsy_or_truthy>`
+* :ref:`Is a list grouped as False or True?<is_a_list_falsy_or_truthy>`
+* :ref:`Is a set grouped as False or True?<is_a_set_falsy_or_truthy>`
+* :ref:`Is a dictionary grouped as False or True?<is_a_dictionary_falsy_or_truthy>`
 
 ----
 
@@ -1074,7 +1074,7 @@ the test passes because ``bool(True)`` is equal to :ref:`True<test_what_is_true>
 ----
 
 *****************************************************************************************
-test_is_none_false_or_true
+test_is_none_falsy_or_truthy
 *****************************************************************************************
 
 ----
@@ -1099,7 +1099,7 @@ test_is_none_false_or_true
             self.assertTrue(bool(True))
             self.assertTrue(True)
 
-        def test_is_none_false_or_true(self):
+        def test_is_none_falsy_or_truthy(self):
             self.assertTrue(bool(None))
 
 
@@ -1111,7 +1111,7 @@ test_is_none_false_or_true
 
     AssertionError: False is not true
 
-  because the result of ``bool(None)`` is :ref:`False<test_what_is_false>`
+  because the result of ``bool(None)`` is :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -1127,7 +1127,7 @@ I change assertTrue_ to assertFalse_
   :lineno-start: 20
   :emphasize-lines: 1-2
 
-      def test_is_none_false_or_true(self):
+      def test_is_none_falsy_or_truthy(self):
           # self.assertTrue(bool(None))
           self.assertFalse(bool(None))
 
@@ -1165,7 +1165,7 @@ the test passes.
     :lineno-start: 20
     :emphasize-lines: 4
 
-        def test_is_none_false_or_true(self):
+        def test_is_none_falsy_or_truthy(self):
             # self.assertTrue(bool(None))
             self.assertFalse(bool(None))
             self.assertTrue(None)
@@ -1186,7 +1186,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 20
 
-        def test_is_none_false_or_true(self):
+        def test_is_none_falsy_or_truthy(self):
             # self.assertTrue(bool(None))
             self.assertFalse(bool(None))
             # self.assertTrue(None)
@@ -1202,7 +1202,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 20
 
-        def test_is_none_false_or_true(self):
+        def test_is_none_falsy_or_truthy(self):
             self.assertFalse(bool(None))
             self.assertFalse(None)
 
@@ -1215,16 +1215,16 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_is_none_false_or_true'
+    'add test_is_none_falsy_or_truthy'
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`None is False<should I group None as False or True?>` and I learned from :ref:`the AssertionError chapter<what causes AssertionError?>` that :ref:`False is not None<test_assertion_error_w_false>`
+:ref:`None is grouped as False<test_is_none_falsy_or_truthy>`. :ref:`The AssertionError chapter<what causes AssertionError?>` showed that :ref:`False is not None<test_assertion_error_w_false>` and :ref:`None is not False<test_assertion_error_w_none>`.
 
 ----
 
 *********************************************************************************
-should I group an integer as False or True?
+test_is_an_integer_falsy_or_truthy
 *********************************************************************************
 
 ----
@@ -1235,27 +1235,30 @@ should I group an integer as False or True?
 
 ----
 
-I add a failing :ref:`assertion<what is an assertion?>` to the :ref:`test_what_is_false method<test_what_is_false>` to test if an integer_ (a whole number) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` or :ref:`True<test_what_is_true>`
+I add a test for if an integer_ (a whole number) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` or :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 5
+  :lineno-start: 20
+  :emphasize-lines: 5-6
 
-      def test_what_is_false(self):
-          self.assertIsInstance(False, bool)
-          self.assertFalse(False)
+      def test_is_none_falsy_or_truthy(self):
+          self.assertFalse(bool(None))
           self.assertFalse(None)
-          self.assertFalse(-1)
 
-      def test_what_is_true(self):
+      def test_is_an_integer_falsy_or_truthy(self):
+          self.assertFalse(bool(-1))
+
+
+  # NOTES
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
-  AssertionError: -1 is not false
+  AssertionError: True is not false
 
-I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
+- because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
+- I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``.
 
 ----
 
@@ -1265,15 +1268,114 @@ I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
 
 ----
 
-I change the :ref:`method<what is a method?>`
+I change assertTrue_ to assertFalse_
 
 .. code-block:: python
-  :lineno-start: 10
-  :emphasize-lines: 1
+  :lineno-start: 20
+  :emphasize-lines: 1-2
 
-          self.assertTrue(-1)
+      def test_is_none_falsy_or_truthy(self):
+          # self.assertTrue(bool(None))
+          self.assertFalse(bool(None))
+
+
+  # NOTES
 
 the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 5
+
+    # NOTES
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
+
+* I add an :ref:`assertion<what is an assertion?>` without bool_
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4
+
+        def test_is_none_falsy_or_truthy(self):
+            # self.assertTrue(bool(None))
+            self.assertFalse(bool(None))
+            self.assertTrue(None)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: None is not true
+
+  I know this from :ref:`test_is_none_a_boolean`.
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_is_none_falsy_or_truthy(self):
+            # self.assertTrue(bool(None))
+            self.assertFalse(bool(None))
+            # self.assertTrue(None)
+            self.assertFalse(None)
+
+
+    # NOTES
+
+  the test passes because the result of ``bool(None)`` is not :ref:`True<test_what_is_true>`.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_is_none_falsy_or_truthy(self):
+            self.assertFalse(bool(None))
+            self.assertFalse(None)
+
+
+    # NOTES
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_is_none_falsy_or_truthy'
+
+* I go back to the terminal_ that is running the tests
+
+:ref:`None is grouped as False<test_is_none_falsy_or_truthy>`. :ref:`The AssertionError chapter<what causes AssertionError?>` showed that :ref:`False is not None<test_assertion_error_w_false>` and :ref:`None is not False<test_assertion_error_w_none>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
 
 ----
 
@@ -1298,6 +1400,20 @@ the test passes.
     # False is False
     # False is not true
     # False is a boolean
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  AssertionError: -1 is not false
+I change the :ref:`method<what is a method?>`
+
+.. code-block:: python
+  :lineno-start: 10
+  :emphasize-lines: 1
+
+          self.assertTrue(-1)
+
+the test passes.
 
 * I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_false` to :ref:`test_what_is_true`
 
@@ -1320,7 +1436,7 @@ the test passes.
 
     # NOTES
 
-  :ref:`negative integers are True in Python<should I group an integer as False or True?>`
+  :ref:`negative integers are True in Python<test_is_an_integer_falsy_or_truthy>`
 
 * I add a new failing line to :ref:`test_what_is_true` to test if ``0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1386,7 +1502,7 @@ the test passes.
 
         def test_what_is_true(self):
 
-  :ref:`0 is False in Python<should I group an integer as False or True?>`
+  :ref:`0 is False in Python<test_is_an_integer_falsy_or_truthy>`
 
 * I add another failing line to :ref:`test_what_is_false` to see if ``1`` is False
 
@@ -1471,12 +1587,12 @@ the test passes.
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python 0 is False, and positive and negative integers are True<should I group an integer as False or True?>`
+:ref:`in Python 0 is False, and positive and negative integers are True<test_is_an_integer_falsy_or_truthy>`
 
 -----
 
 *********************************************************************************
-should I group a float as False or True?
+test_is_a_float_falsy_or_truthy
 *********************************************************************************
 
 ----
@@ -1577,7 +1693,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`Negative floats are True in Python<should I group a float as False or True?>`
+:ref:`Negative floats are True in Python<test_is_a_float_falsy_or_truthy>`
 
 ----
 
@@ -1656,7 +1772,7 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
         def test_what_is_true(self):
 
-  :ref:`0.0 is False in Python<should I group a float as False or True?>`
+  :ref:`0.0 is False in Python<test_is_a_float_falsy_or_truthy>`
 
 * I add another :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false` to test if ``0.1`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1758,12 +1874,12 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, 0.0 is False and positive and negative floats are True<should I group a float as False or True?>`
+:ref:`in Python, 0.0 is False and positive and negative floats are True<test_is_a_float_falsy_or_truthy>`
 
 -----
 
 *********************************************************************************
-should I group a string as False or True?
+test_is_a_string_falsy_or_truthy
 *********************************************************************************
 
 ----
@@ -1798,7 +1914,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: '' is not true
 
-:ref:`the empty string ('') is not True<should I group a string as False or True?>`
+:ref:`the empty string ('') is not True<test_is_a_string_falsy_or_truthy>`
 
 ----
 
@@ -1936,12 +2052,12 @@ the test passes.
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty string is False and a string with things is True<should I group a string as False or True?>`
+:ref:`in Python, the empty string is False and a string with things is True<test_is_a_string_falsy_or_truthy>`
 
 ----
 
 *********************************************************************************
-should I group a tuple as False or True?
+test_is_a_tuple_falsy_or_truthy
 *********************************************************************************
 
 ----
@@ -1977,7 +2093,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: () is not true
 
-:ref:`the empty tuple is not True<should I group a tuple as False or True?>`
+:ref:`the empty tuple is not True<test_is_a_tuple_falsy_or_truthy>`
 
 ----
 
@@ -2061,7 +2177,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: (1, 2, 3, 'n') is not false
 
-  :ref:`a tuple with things is NOT False<should I group a tuple as False or True?>`
+  :ref:`a tuple with things is NOT False<test_is_a_tuple_falsy_or_truthy>`
 
 * I change the :ref:`method<what is a method?>`
 
@@ -2128,12 +2244,12 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty tuple is False and a tuple with things is True<should I group a tuple as False or True?>`
+:ref:`in Python, the empty tuple is False and a tuple with things is True<test_is_a_tuple_falsy_or_truthy>`
 
 ----
 
 *********************************************************************************
-should I group a list as False or True?
+is_a_list_falsy_or_truthy
 *********************************************************************************
 
 ----
@@ -2170,7 +2286,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: [] is not true
 
-:ref:`the empty list is NOT True<should I group a list as False or True?>`
+:ref:`the empty list is NOT True<is_a_list_falsy_or_truthy>`
 
 ----
 
@@ -2323,12 +2439,12 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty list is False and a list with things is True<should I group a list as False or True?>`. I can see a pattern.
+:ref:`in Python, the empty list is False and a list with things is True<is_a_list_falsy_or_truthy>`. I can see a pattern.
 
 -----
 
 *********************************************************************************
-should I group a set as False or True?
+is_a_set_falsy_or_truthy
 *********************************************************************************
 
 ----
@@ -2359,7 +2475,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: set() is not true
 
-:ref:`the empty set is NOT True<should I group a set as False or True?>`
+:ref:`the empty set is NOT True<is_a_set_falsy_or_truthy>`
 
 ----
 
@@ -2450,7 +2566,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: {1, 2, 3, 'n'} is not false
 
-  :ref:`a set with things is NOT False<should I group a set as False or True?>`
+  :ref:`a set with things is NOT False<is_a_set_falsy_or_truthy>`
 
 * I change the :ref:`method<what is a method?>`
 
@@ -2522,12 +2638,12 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty set is False and a set with things is True<should I group a set as False or True?>`
+:ref:`in Python, the empty set is False and a set with things is True<is_a_set_falsy_or_truthy>`
 
 ----
 
 *********************************************************************************
-should I group a dictionary as False or True?
+is_a_dictionary_falsy_or_truthy
 *********************************************************************************
 
 ----
@@ -2566,7 +2682,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: {} is not true
 
-:ref:`the empty dictionary is NOT True<should I group a dictionary as False or True?>`
+:ref:`the empty dictionary is NOT True<is_a_dictionary_falsy_or_truthy>`
 
 ----
 
@@ -2661,7 +2777,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     AssertionError: {'key': 'value'} is not false
 
-  :ref:`a dictionary with things is NOT False<should I group a dictionary as False or True?>`
+  :ref:`a dictionary with things is NOT False<is_a_dictionary_falsy_or_truthy>`
 
 * I change assertFalse_ to assertTrue_
 
@@ -2750,7 +2866,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`in Python, the empty dictionary is False, and a dictionary with things is True<should I group a dictionary as False or True?>`
+:ref:`in Python, the empty dictionary is False, and a dictionary with things is True<is_a_dictionary_falsy_or_truthy>`
 
 ----
 
