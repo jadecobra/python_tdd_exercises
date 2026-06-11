@@ -1344,7 +1344,8 @@ the test passes.
 
     # NOTES
 
-  the test passes because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`.
+  - the test passes because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
+  - negative integers_ are grouped as :ref:`True<test_what_is_true>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1576,7 +1577,8 @@ the test passes.
 
     # NOTES
 
-  the test passes because the result of ``bool(1)`` is :ref:`True<test_what_is_true>`.
+  - the test passes because the result of ``bool(1)`` is :ref:`True<test_what_is_true>`
+  - positive integers_ are grouped as :ref:`True<test_what_is_true>`
 
 * I remove the commented lines
 
@@ -1740,7 +1742,8 @@ the test passes.
 
     # NOTES
 
-  the test passes because the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`.
+  - the test passes because the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`
+  - negative floats_ are grouped as :ref:`True<test_what_is_true>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1975,7 +1978,8 @@ the test passes.
 
     # NOTES
 
-  the test passes because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`.
+  - the test passes because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`
+  - positive floats_ are grouped as :ref:`True<test_what_is_true>`
 
 * I remove the commented lines
 
