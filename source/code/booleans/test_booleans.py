@@ -22,7 +22,7 @@ class TestBooleans(unittest.TestCase):
         self.assertTrue(1)
         self.assertTrue(-0.1)
         self.assertTrue(0.1)
-        self.assertTrue("text")
+        self.assertTrue("a string with things")
         self.assertTrue((1, 2, 3, 'n'))
         self.assertTrue([1, 2, 3, 'n'])
         self.assertTrue({1, 2, 3, 'n'})

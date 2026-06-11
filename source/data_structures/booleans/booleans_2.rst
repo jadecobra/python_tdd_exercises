@@ -493,7 +493,7 @@ I add an :ref:`assertion<what is an assertion?>` with :ref:`bool<what are boolea
           self.assertTrue(1)
           self.assertTrue(-0.1)
           self.assertTrue(0.1)
-          self.assertTrue("text")
+          self.assertTrue("a string with things")
           self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue({1, 2, 3, 'n'})
@@ -587,7 +587,7 @@ the test passes.
             self.assertTrue(-0.1)
             self.assertFalse(bool(-0.1))
             self.assertTrue(0.1)
-            self.assertTrue("text")
+            self.assertTrue("a string with things")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
@@ -625,7 +625,7 @@ the test passes.
             self.assertTrue(bool(-0.1))
             self.assertTrue(0.1)
             self.assertFalse(bool(0.1))
-            self.assertTrue("text")
+            self.assertTrue("a string with things")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
@@ -662,8 +662,8 @@ the test passes.
             self.assertTrue(bool(-0.1))
             self.assertTrue(0.1)
             self.assertTrue(bool(0.1))
-            self.assertTrue("text")
-            self.assertFalse(bool("text"))
+            self.assertTrue("a string with things")
+            self.assertFalse(bool("a string with things"))
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
@@ -678,7 +678,7 @@ the test passes.
 
     AssertionError: True is not false
 
-  the result of ``bool("text")`` is :ref:`True<test_what_is_true>`
+  the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`
 
 * I change assertFalse_ to assertTrue_
 
@@ -686,7 +686,7 @@ the test passes.
     :lineno-start: 38
     :emphasize-lines: 1
 
-            self.assertTrue(bool("text"))
+            self.assertTrue(bool("a string with things"))
 
   the test passes.
 
@@ -697,8 +697,8 @@ the test passes.
     :emphasize-lines: 4
     :emphasize-text: bool assertFalse
 
-            self.assertTrue("text")
-            self.assertTrue(bool("text"))
+            self.assertTrue("a string with things")
+            self.assertTrue(bool("a string with things"))
             self.assertTrue((1, 2, 3, 'n'))
             self.assertFalse(bool((1, 2, 3, 'n')))
             self.assertTrue([1, 2, 3, 'n'])
@@ -733,8 +733,8 @@ the test passes.
     :emphasize-lines: 6
     :emphasize-text: bool assertFalse
 
-            self.assertTrue("text")
-            self.assertTrue(bool("text"))
+            self.assertTrue("a string with things")
+            self.assertTrue(bool("a string with things"))
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue(bool((1, 2, 3, 'n')))
             self.assertTrue([1, 2, 3, 'n'])
@@ -839,8 +839,8 @@ the test passes.
             self.assertTrue(bool(-0.1))
             self.assertTrue(0.1)
             self.assertTrue(bool(0.1))
-            self.assertTrue("text")
-            self.assertTrue(bool("text"))
+            self.assertTrue("a string with things")
+            self.assertTrue(bool("a string with things"))
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue(bool((1, 2, 3, 'n')))
             self.assertTrue([1, 2, 3, 'n'])

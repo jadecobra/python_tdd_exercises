@@ -1655,7 +1655,7 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            self.assertIsNone("text")
+            self.assertIsNone("characters")
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -1672,8 +1672,8 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            # self.assertIsNone("text")
-            self.assertIsNotNone("text")
+            # self.assertIsNone("characters")
+            self.assertIsNotNone("characters")
 
 
     # NOTES
@@ -1689,8 +1689,8 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            # self.assertIsNone("text")
-            self.assertIsNotNone("text")
+            # self.assertIsNone("characters")
+            self.assertIsNotNone("characters")
             self.assertNotIsInstance('', str)
 
 
@@ -1714,8 +1714,8 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            # self.assertIsNone("text")
-            self.assertIsNotNone("text")
+            # self.assertIsNone("characters")
+            self.assertIsNotNone("characters")
             # self.assertNotIsInstance('', str)
             self.assertIsInstance('', str)
 
@@ -1733,11 +1733,11 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            # self.assertIsNone("text")
-            self.assertIsNotNone("text")
+            # self.assertIsNone("characters")
+            self.assertIsNotNone("characters")
             # self.assertNotIsInstance('', str)
             self.assertIsInstance('', str)
-            self.assertNotIsInstance("text", str)
+            self.assertNotIsInstance("characters", str)
 
 
     # NOTES
@@ -1759,12 +1759,12 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            # self.assertIsNone("text")
-            self.assertIsNotNone("text")
+            # self.assertIsNone("characters")
+            self.assertIsNotNone("characters")
             # self.assertNotIsInstance('', str)
             self.assertIsInstance('', str)
-            # self.assertNotIsInstance("text", str)
-            self.assertIsInstance("text", str)
+            # self.assertNotIsInstance("characters", str)
+            self.assertIsInstance("characters", str)
 
 
     # NOTES
@@ -1780,12 +1780,12 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            # self.assertIsNone("text")
-            self.assertIsNotNone("text")
+            # self.assertIsNone("characters")
+            self.assertIsNotNone("characters")
             # self.assertNotIsInstance('', str)
             self.assertIsInstance('', str)
-            # self.assertNotIsInstance("text", str)
-            self.assertIsInstance("text", str)
+            # self.assertNotIsInstance("characters", str)
+            self.assertIsInstance("characters", str)
             self.assertIsInstance(None, str)
 
 
@@ -1806,12 +1806,12 @@ the test passes.
         def test_is_none_a_string(self):
             # self.assertIsNone('')
             self.assertIsNotNone('')
-            # self.assertIsNone("text")
-            self.assertIsNotNone("text")
+            # self.assertIsNone("characters")
+            self.assertIsNotNone("characters")
             # self.assertNotIsInstance('', str)
             self.assertIsInstance('', str)
-            # self.assertNotIsInstance("text", str)
-            self.assertIsInstance("text", str)
+            # self.assertNotIsInstance("characters", str)
+            self.assertIsInstance("characters", str)
             # self.assertIsInstance(None, str)
             self.assertNotIsInstance(None, str)
 
@@ -1827,9 +1827,9 @@ the test passes.
 
         def test_is_none_a_string(self):
             self.assertIsNotNone('')
-            self.assertIsNotNone("text")
+            self.assertIsNotNone("characters")
             self.assertIsInstance('', str)
-            self.assertIsInstance("text", str)
+            self.assertIsInstance("characters", str)
             self.assertNotIsInstance(None, str)
 
 
@@ -1885,9 +1885,9 @@ test_is_none_a_tuple
 
         def test_is_none_a_string(self):
             self.assertIsNotNone('')
-            self.assertIsNotNone("text")
+            self.assertIsNotNone("characters")
             self.assertIsInstance('', str)
-            self.assertIsInstance("text", str)
+            self.assertIsInstance("characters", str)
             self.assertNotIsInstance(None, str)
 
         def test_is_none_a_tuple(self):

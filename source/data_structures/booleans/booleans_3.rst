@@ -475,8 +475,8 @@ the test passes.
             # self.assertTrue(bool(-0.1))
             # self.assertTrue(0.1)
             # self.assertTrue(bool(0.1))
-            # self.assertTrue("text")
-            # self.assertTrue(bool("text"))
+            # self.assertTrue("a string with things")
+            # self.assertTrue(bool("a string with things"))
             # self.assertTrue((1, 2, 3, 'n'))
             # self.assertTrue(bool((1, 2, 3, 'n')))
             # self.assertTrue([1, 2, 3, 'n'])
@@ -489,7 +489,7 @@ the test passes.
                 True,
                 -1, bool(-1), 1, bool(1),
                 -0.1, bool(-0.1), 0.1, bool(0.1),
-                "text", bool("text"),
+                "a string with things", bool("a string with things"),
                 ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
                 [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
                 {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),
@@ -545,7 +545,7 @@ the test passes.
                 True,
                 -1, bool(-1), 1, bool(1),
                 -0.1, bool(-0.1), 0.1, bool(0.1),
-                "text", bool("text"),
+                "a string with things", bool("a string with things"),
                 ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
                 [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
                 {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),

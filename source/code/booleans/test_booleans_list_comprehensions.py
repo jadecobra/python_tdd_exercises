@@ -28,7 +28,7 @@ class TestBooleans(unittest.TestCase):
             True,
             -1, bool(-1), 1, bool(1),
             -0.1, bool(-0.1), 0.1, bool(0.1),
-            "text", bool("text"),
+            "a string with things", bool("a string with things"),
             ((1, 2, 3, 'n')), bool((1, 2, 3, 'n')),
             [1, 2, 3, 'n'], bool([1, 2, 3, 'n']),
             {1, 2, 3, 'n'}, bool({1, 2, 3, 'n'}),

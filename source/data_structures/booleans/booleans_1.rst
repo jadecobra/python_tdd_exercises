@@ -1196,7 +1196,8 @@ the test passes.
 
     # NOTES
 
-  the test passes because the result of ``bool(None)`` is not :ref:`True<test_what_is_true>`.
+  - the test passes because the result of ``bool(None)`` is not :ref:`True<test_what_is_true>`
+  - :ref:`None is not the same object as False<test_assertion_error_w_false>`.
 
 * I remove the commented lines
 
@@ -1346,6 +1347,7 @@ the test passes.
 
   - the test passes because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
   - negative integers_ are grouped as :ref:`True<test_what_is_true>`
+  - :ref:`an integer is not the same object as True<test_assertion_error_w_true>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1452,7 +1454,8 @@ the test passes.
 
     # NOTES
 
-  the test passes because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`.
+  - the test passes because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`
+  - :ref:`an integer is not the same object as False<test_assertion_error_w_false>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``1`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1579,6 +1582,7 @@ the test passes.
 
   - the test passes because the result of ``bool(1)`` is :ref:`True<test_what_is_true>`
   - positive integers_ are grouped as :ref:`True<test_what_is_true>`
+  - :ref:`an integer is not the same object as True<test_assertion_error_w_true>`
 
 * I remove the commented lines
 
@@ -1744,6 +1748,7 @@ the test passes.
 
   - the test passes because the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`
   - negative floats_ are grouped as :ref:`True<test_what_is_true>`
+  - :ref:`a float is not the same object as True<test_assertion_error_w_true>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1853,7 +1858,8 @@ the test passes.
 
     # NOTES
 
-  the test passes because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
+  - the test passes because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`
+  - :ref:`a float is not the same object as False<test_assertion_error_w_false>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if ``0.1`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -1980,6 +1986,7 @@ the test passes.
 
   - the test passes because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`
   - positive floats_ are grouped as :ref:`True<test_what_is_true>`
+  - :ref:`a float is not the same object as True<test_assertion_error_w_true>`
 
 * I remove the commented lines
 
@@ -2033,7 +2040,6 @@ the test passes.
 * :ref:`'0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
-* I go back to the terminal_ that is running the tests
 
 -----
 
@@ -2049,31 +2055,37 @@ test_is_a_string_falsy_or_truthy
 
 ----
 
-I add a failing :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to test if a string_ (anything in :ref:`quotes`) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I go back to the terminal_ that is running the tests
+* I add a test for if a string_ (anything in :ref:`quotes`) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 8
+  :lineno-start: 34
+  :emphasize-lines: 11-12
 
-      def test_what_is_true(self):
-          self.assertIsInstance(True, bool)
-          self.assertTrue(True)
-          self.assertTrue(-1)
-          self.assertTrue(1)
+      def test_is_a_float_falsy_or_truthy(self):
+          self.assertTrue(bool(-0.1))
           self.assertTrue(-0.1)
+
+          self.assertFalse(bool(0.0))
+          self.assertFalse(0.0)
+
+          self.assertTrue(bool(0.1))
           self.assertTrue(0.1)
-          self.assertTrue(str())
+
+      def test_is_string_falsy_or_truthy(self):
+          self.assertTrue(bool(str()))
 
 
   # NOTES
 
 the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
-  AssertionError: '' is not true
+  AssertionError: False is not true
 
-:ref:`the empty string ('') is not True<test_is_a_string_falsy_or_truthy>`
+* because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`
+* ``str()`` is another way to write ``''`` or ``""`` or ``''''''`` or ``""""""`` (the empty string_)
 
 ----
 
@@ -2083,13 +2095,18 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the :ref:`method<what is a method?>`
+I change assertTrue_ to assertFalse_
 
 .. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 1
+  :lineno-start: 44
+  :emphasize-lines: 2-3
 
-          self.assertFalse(str())
+      def test_is_string_falsy_or_truthy(self):
+          # self.assertTrue(bool(str()))
+          self.assertFalse(bool(str()))
+
+
+  # NOTES
 
 the test passes.
 
@@ -2104,102 +2121,209 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 23
-    :emphasize-lines: 6
-
-    # NOTES
-    # positive and negative numbers are True
-    # True is True
-    # True is not false
-    # True is a boolean
-    # the empty string is False
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
-
-* I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
-
-  .. code-block:: python
-    :lineno-start: 6
+    :lineno-start: 49
     :emphasize-lines: 7
 
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertFalse(None)
-            self.assertFalse(0)
-            self.assertFalse(0.0)
-            self.assertFalse(str())
+    # NOTES
+    # bool(positive number) is True
+    # bool(negative number) is True
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(str()) is False
+    # bool(zero) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
 
-        def test_what_is_true(self):
-
-* I add a failing :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
+* I add an :ref:`assertion<what is an assertion?>` without bool_
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 3
+    :lineno-start: 44
+    :emphasize-lines: 4
 
-            self.assertFalse(0.0)
-            self.assertFalse(str())
-            self.assertFalse("text")
+        def test_is_string_falsy_or_truthy(self):
+            # self.assertTrue(bool(str()))
+            self.assertFalse(bool(str()))
+            self.assertTrue(str())
+
+
+    # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError: 'text' is not false
+    AssertionError: '' is not true
 
-* I change the :ref:`method<what is a method?>`
+  because the result of ``bool(str())`` which is ``bool('')`` is :ref:`False<test_what_is_false>`.
+
+* I change assertTrue_ to assertFalse_
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 1
+    :lineno-start: 44
+    :emphasize-lines: 4-5
 
-            self.assertTrue("text")
+        def test_is_string_falsy_or_truthy(self):
+            # self.assertTrue(bool(str()))
+            self.assertFalse(bool(str()))
+            # self.assertTrue(str())
+            self.assertFalse(str())
+
+
+    # NOTES
+
+  - the test passes because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`
+  - the empty string_ is grouped as :ref:`True<test_what_is_true>`
+  - :ref:`a string is not the same object as False<test_assertion_error_w_false>`
+
+* I add an :ref:`assertion<what is an assertion?>` to test if a string_ with things should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 6
+
+        def test_is_string_falsy_or_truthy(self):
+            # self.assertTrue(bool(str()))
+            self.assertFalse(bool(str()))
+            # self.assertTrue(str())
+            self.assertFalse(str())
+            self.assertFalse(bool("a string with things"))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  because the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`.
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 44
+    :emphasize-lines: 6-7
+
+        def test_is_string_falsy_or_truthy(self):
+            # self.assertTrue(bool(str()))
+            self.assertFalse(bool(str()))
+            # self.assertTrue(str())
+            self.assertFalse(str())
+            # self.assertFalse(bool("a string with things"))
+            self.assertTrue(bool("a string with things"))
+
+
+    # NOTES
 
   the test passes.
 
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 24
+    :lineno-start: 53
     :emphasize-lines: 2
 
     # NOTES
-    # a string with things is True
-    # positive and negative numbers are True
-    # True is True
-    # True is not false
+    # bool("a string with things") is True
+    # bool(positive number) is True
+    # bool(negative number) is True
+    # True is NOT False
+    # True is NOT equal to False
     # True is a boolean
-    # the empty string is False
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
+    # bool(str()) is False
+    # bool(zero) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
     # False is a boolean
 
-* I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
+* I add an :ref:`assertion<what is an assertion?>` without bool_
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 11
+    :lineno-start: 44
+    :emphasize-lines: 8
 
-            self.assertFalse(0.0)
+        def test_is_string_falsy_or_truthy(self):
+            # self.assertTrue(bool(str()))
+            self.assertFalse(bool(str()))
+            # self.assertTrue(str())
             self.assertFalse(str())
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
-            self.assertTrue(-1)
-            self.assertTrue(1)
-            self.assertTrue(-0.1)
-            self.assertTrue(0.1)
-            self.assertTrue("text")
+            # self.assertFalse(bool("a string with things"))
+            self.assertTrue(bool("a string with things"))
+            self.assertFalse("a string with things")
 
 
     # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'a string with things' is not false
+
+  because the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`.
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 8-9
+
+        def test_is_string_falsy_or_truthy(self):
+            # self.assertTrue(bool(str()))
+            self.assertFalse(bool(str()))
+            # self.assertTrue(str())
+            self.assertFalse(str())
+            # self.assertFalse(bool("a string with things"))
+            self.assertTrue(bool("a string with things"))
+            # self.assertFalse("a string with things")
+            self.assertTrue("a string with things")
+
+
+    # NOTES
+
+  - the test passes because the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`
+  - strings_ with things are grouped as :ref:`True<test_what_is_true>`
+  - :ref:`a string is not the same object as True<test_assertion_error_w_true>`
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 44
+
+        def test_is_string_falsy_or_truthy(self):
+            self.assertFalse(bool(str()))
+            self.assertFalse(str())
+
+            self.assertTrue(bool("a string with things"))
+            self.assertTrue("a string with things")
+
+
+    # NOTES
+
+* I change the new comments to make them clearer
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 2, 8
+
+    # NOTES
+    # bool(a string with things) is True
+    # bool(positive number) is True
+    # bool(negative number) is True
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(the empty string) is False
+    # bool(zero) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
 
 * I add a git_ commit message in the other terminal_
 
@@ -2207,13 +2331,13 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add '
-
-* I go back to the terminal_ that is running the tests
+    'add test_is_a_string_falsy_or_truthy'
 
 * :ref:`the empty string is grouped as False and a string with things is grouped as  True<test_is_a_string_falsy_or_truthy>`
 * :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
+
+* I go back to the terminal_ that is running the tests
 
 ----
 
@@ -2242,7 +2366,7 @@ I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to 
           self.assertTrue(1)
           self.assertTrue(-0.1)
           self.assertTrue(0.1)
-          self.assertTrue("text")
+          self.assertTrue("a string with things")
           self.assertTrue(tuple())
 
 
@@ -2389,7 +2513,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue("text")
+            self.assertTrue("a string with things")
             self.assertTrue((1, 2, 3, 'n'))
 
 
@@ -2434,7 +2558,7 @@ I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list<lists>`
           self.assertTrue(1)
           self.assertTrue(-0.1)
           self.assertTrue(0.1)
-          self.assertTrue("text")
+          self.assertTrue("a string with things")
           self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue(list())
 
@@ -2583,7 +2707,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue("text")
+            self.assertTrue("a string with things")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
 
@@ -2622,7 +2746,7 @@ I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to 
   :lineno-start: 23
   :emphasize-lines: 4
 
-          self.assertTrue("text")
+          self.assertTrue("a string with things")
           self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue(set())
@@ -2781,7 +2905,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue("text")
+            self.assertTrue("a string with things")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
@@ -2828,7 +2952,7 @@ I add an :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true` to 
           self.assertTrue(1)
           self.assertTrue(-0.1)
           self.assertTrue(0.1)
-          self.assertTrue("text")
+          self.assertTrue("a string with things")
           self.assertTrue((1, 2, 3, 'n'))
           self.assertTrue([1, 2, 3, 'n'])
           self.assertTrue({1, 2, 3, 'n'})
@@ -3008,7 +3132,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             self.assertTrue(1)
             self.assertTrue(-0.1)
             self.assertTrue(0.1)
-            self.assertTrue("text")
+            self.assertTrue("a string with things")
             self.assertTrue((1, 2, 3, 'n'))
             self.assertTrue([1, 2, 3, 'n'])
             self.assertTrue({1, 2, 3, 'n'})
