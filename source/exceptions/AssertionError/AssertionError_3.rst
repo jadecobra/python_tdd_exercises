@@ -446,7 +446,6 @@ use assertIsNotNone and assertIsNone
 
         def test_assertion_error_w_none(self):
             self.assertIsNone(None)
-            self.assertIsNot(False, None)
             self.assertIsNotNone(False)
             self.assertIsNotNone(True)
             self.assertIsNotNone(self.an_integer)

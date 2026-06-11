@@ -1235,30 +1235,30 @@ test_is_an_integer_falsy_or_truthy
 ----
 
 * I go back to the terminal_ that is running the tests
-I add a test for if an integer_ (a whole number) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` or :ref:`True<test_what_is_true>`
+* I add a test for if an integer_ (a whole number) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
-.. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 5-6
 
-      def test_is_none_falsy_or_truthy(self):
-          self.assertFalse(bool(None))
-          self.assertFalse(None)
+        def test_is_none_falsy_or_truthy(self):
+            self.assertFalse(bool(None))
+            self.assertFalse(None)
 
-      def test_is_an_integer_falsy_or_truthy(self):
-          self.assertFalse(bool(-1))
+        def test_is_an_integer_falsy_or_truthy(self):
+            self.assertFalse(bool(-1))
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AssertionError: True is not false
+    AssertionError: True is not false
 
-- because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
-- I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``.
+  - because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
+  - I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
 
 ----
 
@@ -1294,10 +1294,11 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 25
-    :emphasize-lines: 5
+    :lineno-start: 29
+    :emphasize-lines: 2
 
     # NOTES
+    # bool(-1) is True
     # True is NOT False
     # True is NOT equal to False
     # True is a boolean
@@ -1309,13 +1310,13 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` without bool_
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 24
     :emphasize-lines: 4
 
-        def test_is_none_falsy_or_truthy(self):
-            # self.assertTrue(bool(None))
-            self.assertFalse(bool(None))
-            self.assertTrue(None)
+        def test_is_an_integer_falsy_or_truthy(self):
+            # self.assertFalse(bool(-1))
+            self.assertTrue(bool(-1))
+            self.assertFalse(-1)
 
 
     # NOTES
@@ -1324,25 +1325,141 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: None is not true
+    AssertionError: -1 is not false
 
-  I know this from :ref:`test_is_none_a_boolean`.
+  because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`.
 
-* I change assertTrue_ to assertFalse_
+* I change assertFalse_ to assertTrue_
 
   .. code-block:: python
-    :lineno-start: 20
+    :lineno-start: 24
+    :emphasize-lines: 4-5
 
-        def test_is_none_falsy_or_truthy(self):
-            # self.assertTrue(bool(None))
-            self.assertFalse(bool(None))
-            # self.assertTrue(None)
-            self.assertFalse(None)
+        def test_is_an_integer_falsy_or_truthy(self):
+            # self.assertFalse(bool(-1))
+            self.assertTrue(bool(-1))
+            # self.assertFalse(-1)
+            self.assertTrue(-1)
 
 
     # NOTES
 
-  the test passes because the result of ``bool(None)`` is not :ref:`True<test_what_is_true>`.
+  the test passes because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if ``0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 6
+
+        def test_is_an_integer_falsy_or_truthy(self):
+            # self.assertFalse(bool(-1))
+            self.assertTrue(bool(-1))
+            # self.assertFalse(-1)
+            self.assertTrue(-1)
+            self.assertTrue(bool(0))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`.
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 6-7
+
+        def test_is_an_integer_falsy_or_truthy(self):
+            # self.assertFalse(bool(-1))
+            self.assertTrue(bool(-1))
+            # self.assertFalse(-1)
+            self.assertTrue(-1)
+            # self.assertTrue(bool(0))
+            self.assertFalse(bool(0))
+
+
+    # NOTES
+
+  the test passes.
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 6
+
+    # NOTES
+    # bool(-1) is True
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(0) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
+
+* I add an :ref:`assertion<what is an assertion?>` without bool_
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 8
+
+        def test_is_an_integer_falsy_or_truthy(self):
+            # self.assertFalse(bool(-1))
+            self.assertTrue(bool(-1))
+            # self.assertFalse(-1)
+            self.assertTrue(-1)
+            # self.assertTrue(bool(0))
+            self.assertFalse(bool(0))
+            self.assertTrue(0)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0 is not true
+
+  because the result of ``bool(0)`` is :ref:`False<test_what_is_false>`.
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 8-9
+
+        def test_is_an_integer_falsy_or_truthy(self):
+            # self.assertFalse(bool(-1))
+            self.assertTrue(bool(-1))
+            # self.assertFalse(-1)
+            self.assertTrue(-1)
+            # self.assertTrue(bool(0))
+            self.assertFalse(bool(0))
+            # self.assertTrue(0)
+            self.assertFalse(0)
+
+
+    # NOTES
+
+  the test passes because the result of ``bool(0)`` is :ref:`True<test_what_is_true>`.
+
+
+
+
+
+
+
+
 
 * I remove the commented lines
 
@@ -1362,102 +1479,17 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_is_none_falsy_or_truthy'
+    'add test_is_an_integer_falsy_or_truthy'
 
 * I go back to the terminal_ that is running the tests
 
-:ref:`None is grouped as False<test_is_none_falsy_or_truthy>`. :ref:`The AssertionError chapter<what causes AssertionError?>` showed that :ref:`False is not None<test_assertion_error_w_false>` and :ref:`None is not False<test_assertion_error_w_none>`.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add a comment
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 2
-
-    # NOTES
-    # negative integers are True
-    # True is True
-    # True is not false
-    # True is a boolean
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  AssertionError: -1 is not false
-I change the :ref:`method<what is a method?>`
-
-.. code-block:: python
-  :lineno-start: 10
-  :emphasize-lines: 1
-
-          self.assertTrue(-1)
-
-the test passes.
-
-* I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_false` to :ref:`test_what_is_true`
 
 
 
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 9
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertFalse(None)
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
-            self.assertTrue(-1)
+:ref:`An integer is grouped as False<test_is_none_falsy_or_truthy>`. :ref:`The AssertionError chapter<what causes AssertionError?>` showed that :ref:`False is not None<test_assertion_error_w_false>` and :ref:`None is not False<test_assertion_error_w_none>`.
 
 
-    # NOTES
 
-  :ref:`negative integers are True in Python<test_is_an_integer_falsy_or_truthy>`
-
-* I add a new failing line to :ref:`test_what_is_true` to test if ``0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 5
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
-            self.assertTrue(-1)
-            self.assertTrue(0)
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: 0 is not true
 
 * I change the :ref:`method<what is a method?>` to assertFalse_
 
@@ -1603,7 +1635,7 @@ test_is_a_float_falsy_or_truthy
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` to test if floats_ (binary floating point decimal numbers) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` or :ref:`True<test_what_is_true>` in :ref:`test_what_is_false`
+I add an :ref:`assertion<what is an assertion?>` to test if floats_ (binary floating point decimal numbers) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` in :ref:`test_what_is_false`
 
 .. code-block:: python
   :lineno-start: 6
