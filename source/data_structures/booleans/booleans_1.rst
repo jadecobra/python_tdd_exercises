@@ -1235,7 +1235,7 @@ test_is_an_integer_falsy_or_truthy
 ----
 
 * I go back to the terminal_ that is running the tests
-* I add a test for if an integer_ (a whole number) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I add a test for if an integer_ (a whole number without decimals) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 20
@@ -1258,7 +1258,7 @@ test_is_an_integer_falsy_or_truthy
     AssertionError: True is not false
 
   - because the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
-  - I use ``-1`` for all the integers_ (whole numbers) that are smaller than ``0``
+  - I use ``-1`` for all the integers_ (whole numbers without decimals) that are smaller than ``0``
 
 ----
 
@@ -1480,7 +1480,7 @@ the test passes.
     AssertionError: True is not false
 
   - because the result of ``bool(1)`` is :ref:`True<test_what_is_true>`
-  - I use ``1`` for all the integers_ (whole numbers) that are bigger than ``0``
+  - I use ``1`` for all the integers_ (whole numbers without decimals) that are bigger than ``0``
 
 * I change assertFalse_ to assertTrue_
 
@@ -1553,7 +1553,7 @@ the test passes.
 
   because the result of ``bool(1)`` is :ref:`True<test_what_is_true>`.
 
-* I change assertTrue_ to assertFalse_
+* I change assertFalse_ to assertTrue_
 
   .. code-block:: python
     :lineno-start: 24
@@ -1604,11 +1604,10 @@ the test passes.
     git commit --all --message \
     'add test_is_an_integer_falsy_or_truthy'
 
-* I go back to the terminal_ that is running the tests
+* :ref:`In Python '0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
+* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
-:ref:`In Python '0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`.
-
------
+----
 
 *********************************************************************************
 test_is_a_float_falsy_or_truthy
@@ -1622,28 +1621,37 @@ test_is_a_float_falsy_or_truthy
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` to test if floats_ (binary floating point decimal numbers) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` in :ref:`test_what_is_false`
+* I go back to the terminal_ that is running the tests
+* I add a test for if a float_ (binary floating point decimal number) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
-.. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 6
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 11-12
 
-      def test_what_is_false(self):
-          self.assertIsInstance(False, bool)
-          self.assertFalse(False)
-          self.assertFalse(None)
-          self.assertFalse(0)
-          self.assertFalse(-0.1)
+        def test_is_an_integer_falsy_or_truthy(self):
+            self.assertTrue(bool(-1))
+            self.assertTrue(-1)
 
-      def test_what_is_true(self):
+            self.assertFalse(bool(0))
+            self.assertFalse(0)
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+            self.assertTrue(bool(1))
+            self.assertTrue(1)
 
-.. code-block:: shell
+        def test_is_a_float_falsy_or_truthy(self):
+            self.assertFalse(bool(-0.1))
 
-  AssertionError: -0.1 is not false
 
-I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller than ``0.0``.
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  - because the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`
+  - I use ``-0.1`` for all the floats_ (binary floating point decimal numbers) that are smaller than ``0.0``
 
 ----
 
@@ -1653,66 +1661,20 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 ----
 
-* I change the :ref:`method<what is a method?>`
+I change assertFalse_ to assertTrue_
 
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 1
+.. code-block:: python
+  :lineno-start: 34
+  :emphasize-lines: 2-3
 
-            self.assertTrue(-0.1)
-
-  the test passes.
-
-* I add comments
-
-  .. code-block:: python
-    :lineno-start: 20
-    :emphasize-lines: 2
-
-    # NOTES
-    # negative floats are True
-    # positive and negative integers are True
-    # True is True
-    # True is not false
-    # True is a boolean
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
-
-* I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
-
-
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 9
-
-            self.assertFalse(None)
-            self.assertFalse(0)
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
-            self.assertTrue(-1)
-            self.assertTrue(1)
-            self.assertTrue(-0.1)
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
 
 
     # NOTES
 
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit --all --message \
-    'add '
-
-* I go back to the terminal_ that is running the tests
-
-:ref:`Negative floats are True in Python<test_is_a_float_falsy_or_truthy>`
+the test passes.
 
 ----
 
@@ -1722,18 +1684,140 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
 ----
 
-* I add another failing line to :ref:`test_what_is_true` to test if ``0.0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I add a comment
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 7
+    :lineno-start: 39
+    :emphasize-lines: 2
 
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
-            self.assertTrue(-1)
-            self.assertTrue(1)
+    # NOTES
+    # bool(-0.1) is True
+    # bool(1) is True
+    # bool(-1) is True
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(0) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
+
+* I add an :ref:`assertion<what is an assertion?>` without bool_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 4
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            self.assertFalse(-0.1)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: -0.1 is not false
+
+  because the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`.
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 4-5
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
             self.assertTrue(-0.1)
+
+
+    # NOTES
+
+  the test passes because the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if ``0.0`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 6
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            self.assertTrue(bool(0.0))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 6-7
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertTrue(bool(0.0))
+            self.assertFalse(bool(0.0))
+
+
+    # NOTES
+
+  the test passes.
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 8
+
+    # NOTES
+    # bool(-0.1) is True
+    # bool(1) is True
+    # bool(-1) is True
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(0.0) is False
+    # bool(0) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
+
+* I add an :ref:`assertion<what is an assertion?>` without bool_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 8
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertTrue(bool(0.0))
+            self.assertFalse(bool(0.0))
             self.assertTrue(0.0)
 
 
@@ -1741,126 +1825,171 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: 0.0 is not true
 
-* I change the :ref:`method<what is a method?>`
+  because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
+
+* I change assertTrue_ to assertFalse_
 
   .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 1
+    :lineno-start: 34
+    :emphasize-lines: 8-9
 
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertTrue(bool(0.0))
+            self.assertFalse(bool(0.0))
+            # self.assertTrue(0.0)
             self.assertFalse(0.0)
+
+
+    # NOTES
+
+  the test passes because the result of ``bool(0.0)`` is :ref:`False<test_what_is_false>`.
+
+* I add an :ref:`assertion<what is an assertion?>` to test if ``0.1`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 10
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertTrue(bool(0.0))
+            self.assertFalse(bool(0.0))
+            # self.assertTrue(0.0)
+            self.assertFalse(0.0)
+            self.assertFalse(bool(0.1))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  - because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`
+  - I use ``0.1`` for all the floats_ (binary floating point decimal numbers) that are bigger than ``0.0``
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 10-11
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertTrue(bool(0.0))
+            self.assertFalse(bool(0.0))
+            # self.assertTrue(0.0)
+            self.assertFalse(0.0)
+            # self.assertFalse(bool(0.1))
+            self.assertTrue(bool(0.1))
+
+
+    # NOTES
 
   the test passes.
 
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 7
-
-    # NOTES
-    # negative floats are True
-    # positive and negative integers are True
-    # True is True
-    # True is not false
-    # True is a boolean
-    # 0.0 is False
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
-
-* I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
-
-
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 6
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertFalse(None)
-            self.assertFalse(0)
-            self.assertFalse(0.0)
-
-        def test_what_is_true(self):
-
-  :ref:`0.0 is False in Python<test_is_a_float_falsy_or_truthy>`
-
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false` to test if ``0.1`` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 7
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertFalse(None)
-            self.assertFalse(0)
-            self.assertFalse(0.0)
-            self.assertFalse(0.1)
-
-        def test_what_is_true(self):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: 0.1 is not false
-
-  I use ``0.1`` for all the `binary floating point numbers`_ that are bigger than ``0.0``.
-
-* I change the :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 1
-
-            self.assertTrue(0.1)
-
-  the test passes.
-
-* I add to the comment about negative floats
-
-  .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 37
     :emphasize-lines: 2
 
     # NOTES
-    # positive and negative floats are True
-    # positive and negative integers are True
-    # True is True
-    # True is not false
+    # bool(0.1) is True
+    # bool(-0.1) is True
+    # True is NOT False
+    # True is NOT equal to False
     # True is a boolean
-    # 0.0 is False
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
+    # bool(0.0) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
     # False is a boolean
 
-* I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
+* I add an :ref:`assertion<what is an assertion?>` without bool_
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 10
+    :lineno-start: 34
+    :emphasize-lines: 12
 
-            self.assertFalse(0)
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertTrue(bool(0.0))
+            self.assertFalse(bool(0.0))
+            # self.assertTrue(0.0)
+            self.assertFalse(0.0)
+            # self.assertFalse(bool(0.1))
+            self.assertTrue(bool(0.1))
+            self.assertFalse(0.1)
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 0.1 is not false
+
+  because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`.
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 34
+    :emphasize-lines: 12-13
+
+        def test_is_a_float_falsy_or_truthy(self):
+            # self.assertFalse(bool(-0.1))
+            self.assertTrue(bool(-0.1))
+            # self.assertFalse(-0.1)
+            self.assertTrue(-0.1)
+            # self.assertTrue(bool(0.0))
+            self.assertFalse(bool(0.0))
+            # self.assertTrue(0.0)
+            self.assertFalse(0.0)
+            # self.assertFalse(bool(0.1))
+            self.assertTrue(bool(0.1))
+            # self.assertFalse(0.1)
+            self.assertTrue(0.1)
+
+
+    # NOTES
+
+  the test passes because the result of ``bool(0.1)`` is :ref:`True<test_what_is_true>`.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 34
+
+        def test_is_a_float_falsy_or_truthy(self):
+            self.assertTrue(bool(-0.1))
+            self.assertTrue(-0.1)
+
+            self.assertFalse(bool(0.0))
             self.assertFalse(0.0)
 
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
-            self.assertTrue(-1)
-            self.assertTrue(1)
-            self.assertTrue(-0.1)
+            self.assertTrue(bool(0.1))
             self.assertTrue(0.1)
 
 
@@ -1869,19 +1998,23 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
 * I make the new comments simpler because floats_ and integers_ are numbers and ``0.0`` is the same as ``0`` even though they are different types_
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 2, 6
+    :lineno-start: 45
+    :emphasize-lines: 2-3, 7
 
     # NOTES
-    # positive and negative numbers are True
-    # True is True
-    # True is not false
+    # bool(positive number) is True
+    # bool(negative number) is True
+    # True is NOT False
+    # True is NOT equal to False
     # True is a boolean
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
+    # bool(zero) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
     # False is a boolean
+
+    # Exceptions seen
+    # AssertionError
 
 * I add a git_ commit message in the other terminal_
 
@@ -1889,11 +2022,14 @@ I use ``-0.1`` for all the `binary floating point numbers`_ that are smaller tha
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add '
+    'add test_is_a_float_falsy_or_truthy'
+
+
+* :ref:`In Python '0.0' is grouped as False, and positive and negative floats are grouped as True<test_is_a_float_falsy_or_truthy>`.
+* :ref:`In Python '0' is grouped as False, and positive and negative integers are grouped as True<test_is_an_integer_falsy_or_truthy>`
+* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
 * I go back to the terminal_ that is running the tests
-
-:ref:`in Python, 0.0 is False and positive and negative floats are True<test_is_a_float_falsy_or_truthy>`
 
 -----
 
