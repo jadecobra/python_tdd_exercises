@@ -1125,7 +1125,7 @@ I change assertTrue_ to assertFalse_
 
 .. code-block:: python
   :lineno-start: 20
-  :emphasize-lines: 1-2
+  :emphasize-lines: 2-3
 
       def test_is_none_falsy_or_truthy(self):
           # self.assertTrue(bool(None))
@@ -1179,12 +1179,13 @@ the test passes.
 
     AssertionError: None is not true
 
-  I know this from :ref:`test_is_none_a_boolean`.
+  I know this from :ref:`test_assertion_error_w_true`.
 
 * I change assertTrue_ to assertFalse_
 
   .. code-block:: python
     :lineno-start: 20
+    :emphasize-lines: 4-5
 
         def test_is_none_falsy_or_truthy(self):
             # self.assertTrue(bool(None))
@@ -1217,9 +1218,7 @@ the test passes.
     git commit --all --message \
     'add test_is_none_falsy_or_truthy'
 
-* I go back to the terminal_ that is running the tests
-
-:ref:`None is grouped as False<test_is_none_falsy_or_truthy>`. :ref:`The AssertionError chapter<what causes AssertionError?>` showed that :ref:`False is not None<test_assertion_error_w_false>` and :ref:`None is not False<test_assertion_error_w_none>`.
+:ref:`None is grouped as False<test_is_none_falsy_or_truthy>`. :ref:`The AssertionError chapter<what causes AssertionError?>` showed that :ref:`None is not False<test_assertion_error_w_false>` and :ref:`False is not None<test_assertion_error_w_none>`.
 
 ----
 
@@ -1235,6 +1234,7 @@ test_is_an_integer_falsy_or_truthy
 
 ----
 
+* I go back to the terminal_ that is running the tests
 I add a test for if an integer_ (a whole number) should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` or :ref:`True<test_what_is_true>`
 
 .. code-block:: python
@@ -1268,15 +1268,15 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change assertTrue_ to assertFalse_
+I change assertFalse_ to assertTrue_
 
 .. code-block:: python
-  :lineno-start: 20
-  :emphasize-lines: 1-2
+  :lineno-start: 24
+  :emphasize-lines: 2-3
 
-      def test_is_none_falsy_or_truthy(self):
-          # self.assertTrue(bool(None))
-          self.assertFalse(bool(None))
+      def test_is_an_integer_falsy_or_truthy(self):
+          # self.assertFalse(bool(-1))
+          self.assertTrue(bool(-1))
 
 
   # NOTES
