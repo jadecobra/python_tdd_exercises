@@ -2157,7 +2157,7 @@ test_is_a_string_falsy_or_truthy
 
     AssertionError: False is not true
 
-  because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`
+  because the result of ``bool(str())`` is :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -2478,7 +2478,7 @@ test_is_a_tuple_falsy_or_truthy
 
     AssertionError: False is not true
 
-  because the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`
+  because the result of ``bool(tuple())`` is :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -2778,7 +2778,7 @@ test_is_a_list_falsy_or_truthy
 
     AssertionError: False is not true
 
-  because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`
+  because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -3064,15 +3064,15 @@ test_is_a_set_falsy_or_truthy
 * I add a test for if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 64
+    :lineno-start: 68
     :emphasize-lines: 5-6
 
             a_list = [1, 2, 3, 'n']
-            self.assertTrue(bool(a_tuple))
-            self.assertTrue(a_tuple)
+            self.assertTrue(bool(a_list))
+            self.assertTrue(a_list)
 
         def test_is_a_set_falsy_or_truthy(self):
-            self.assertTrue(bool(list()))
+            self.assertTrue(bool(set()))
 
 
     # NOTES
@@ -3083,7 +3083,7 @@ test_is_a_set_falsy_or_truthy
 
     AssertionError: False is not true
 
-  because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`
+  because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`.
 
 ----
 
@@ -3100,8 +3100,8 @@ I change assertTrue_ to assertFalse_
   :emphasize-lines: 2-3
 
       def test_is_a_set_falsy_or_truthy(self):
-          # self.assertTrue(bool(list()))
-          self.assertFalse(bool(list()))
+          # self.assertTrue(bool(set()))
+          self.assertFalse(bool(set()))
 
 
   # NOTES
@@ -3119,10 +3119,11 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 9
+    :lineno-start: 77
+    :emphasize-lines: 10
 
     # NOTES
+    # bool(a list with things) is True
     # bool(a tuple with things) is True
     # bool(a string with things) is True
     # bool(a positive number) is True
@@ -3130,6 +3131,7 @@ the test passes.
     # True is NOT False
     # True is NOT equal to False
     # True is a boolean
+    # bool(the empty set) is False
     # bool(the empty list) is False
     # bool(the empty tuple) is False
     # bool(the empty string) is False
@@ -3146,9 +3148,9 @@ the test passes.
     :emphasize-lines: 4
 
         def test_is_a_set_falsy_or_truthy(self):
-            # self.assertTrue(bool(list()))
-            self.assertFalse(bool(list()))
-            self.assertTrue(list())
+            # self.assertTrue(bool(set()))
+            self.assertFalse(bool(set()))
+            self.assertTrue(set())
 
 
     # NOTES
@@ -3157,10 +3159,10 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: [] is not true
+    AssertionError: set() is not true
 
-  - because the result of ``bool(list())`` which is ``bool([])`` is :ref:`False<test_what_is_false>`
-  - ``list()`` is another way to write ``[]`` (the empty set_)
+  - because the result of ``bool(set())`` which is ``bool(set())`` is :ref:`False<test_what_is_false>`
+  - ``set()`` is another way to write ``set()`` (the empty set_)
 
 * I change assertTrue_ to assertFalse_
 
@@ -3169,15 +3171,15 @@ the test passes.
     :emphasize-lines: 4-5
 
         def test_is_a_set_falsy_or_truthy(self):
-            # self.assertTrue(bool(list()))
-            self.assertFalse(bool(list()))
-            # self.assertTrue(list())
-            self.assertFalse(list())
+            # self.assertTrue(bool(set()))
+            self.assertFalse(bool(set()))
+            # self.assertTrue(set())
+            self.assertFalse(set())
 
 
     # NOTES
 
-  - the test passes because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`
+  - the test passes because the result of ``bool(set())`` is :ref:`False<test_what_is_false>`
   - the empty :ref:`list (anything in square brackets '[ ]')<what is a list?>` is grouped as :ref:`True<test_what_is_true>`
   - :ref:`a list is not the same object as False<test_assertion_error_w_false>`
 
@@ -3188,10 +3190,10 @@ the test passes.
     :emphasize-lines: 7
 
         def test_is_a_set_falsy_or_truthy(self):
-            # self.assertTrue(bool(list()))
-            self.assertFalse(bool(list()))
-            # self.assertTrue(list())
-            self.assertFalse(list())
+            # self.assertTrue(bool(set()))
+            self.assertFalse(bool(set()))
+            # self.assertTrue(set())
+            self.assertFalse(set())
 
             self.assertFalse(bool({1, 2, 3, 'n'}))
 
@@ -3290,10 +3292,10 @@ the test passes.
     :emphasize-lines: 7
 
         def test_is_a_set_falsy_or_truthy(self):
-            # self.assertTrue(bool(list()))
-            self.assertFalse(bool(list()))
-            # self.assertTrue(list())
-            self.assertFalse(list())
+            # self.assertTrue(bool(set()))
+            self.assertFalse(bool(set()))
+            # self.assertTrue(set())
+            self.assertFalse(set())
 
             a_set = {1, 2, 3, 'n'}
             # self.assertFalse(bool({1, 2, 3, 'n'}))
@@ -3327,8 +3329,8 @@ the test passes.
     :lineno-start: 72
 
         def test_is_a_set_falsy_or_truthy(self):
-            self.assertFalse(bool(list()))
-            self.assertFalse(list())
+            self.assertFalse(bool(set()))
+            self.assertFalse(set())
 
             a_set = {1, 2, 3, 'n'}
             self.assertTrue(bool(a_list))
