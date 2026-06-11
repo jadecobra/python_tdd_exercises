@@ -219,7 +219,7 @@ I can test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<h
 
 isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
-* I change ``test_failure`` to :ref:`test_making_a_class_w_pass` then add an :ref:`assertion<what is an assertion?>` with isinstance_
+* I change :ref:`test_failure` to :ref:`test_making_a_class_w_pass` then add an :ref:`assertion<what is an assertion?>` with isinstance_
 
   .. code-block:: python
     :lineno-start: 4

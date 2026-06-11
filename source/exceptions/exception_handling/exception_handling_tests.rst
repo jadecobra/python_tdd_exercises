@@ -189,7 +189,7 @@ test_catching_module_not_found_error_in_tests
 
 ----
 
-I change ``test_failure`` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_ in ``test_exceptions.py``
+I change :ref:`test_failure` to ``test_catching_module_not_found_error_in_tests`` with an `import statement`_ in ``test_exceptions.py``
 
 .. code-block:: python
   :lineno-start: 5

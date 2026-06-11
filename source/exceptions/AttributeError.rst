@@ -301,7 +301,7 @@ test_attribute_error_w_variables
     import src.attribute_error
     import unittest
 
-* I change ``test_failure`` to ``test_attribute_error_w_variables``
+* I change :ref:`test_failure` to ``test_attribute_error_w_variables``
 
   .. code-block:: python
     :lineno-start: 5

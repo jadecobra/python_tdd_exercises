@@ -205,7 +205,7 @@ There are :ref:`objects<what is a class?>` that can NOT be called
     import src.type_error
     import unittest
 
-* I change ``test_failure`` to ``test_type_error_w_the_uncallables`` with a failing line
+* I change :ref:`test_failure` to ``test_type_error_w_the_uncallables`` with a failing line
 
   .. code-block:: python
     :lineno-start: 5

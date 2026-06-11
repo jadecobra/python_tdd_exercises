@@ -326,7 +326,7 @@ I can pass a string_ from a test to a :ref:`function<what is a function?>`
 
 ----
 
-I change ``test_failure`` to ``test_passing_a_string``
+I change :ref:`test_failure` to ``test_passing_a_string``
 
 .. code-block:: python
   :lineno-start: 4

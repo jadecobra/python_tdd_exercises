@@ -299,7 +299,7 @@ key             start button        output
 
 ----
 
-I change ``test_failure`` to ``test_key_close``, then add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :green:`pressed`
+I change :ref:`test_failure` to ``test_key_close``, then add an :ref:`assertion<what is an assertion?>` for when the key is :green:`close` and the start button is :green:`pressed`
 
 ==============  ==================  =================
 key             start button        output

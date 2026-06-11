@@ -276,7 +276,7 @@ test_addition
 
 ----
 
-* I change ``test_failure`` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
+* I change :ref:`test_failure` to ``test_addition`` then change `assertFalse`_ to `assertEqual`_
 
   .. code-block:: python
     :linenos:

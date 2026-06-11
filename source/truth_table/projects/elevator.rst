@@ -292,7 +292,7 @@ test_doors_clear_number_pushed
 
 ----
 
-I change ``test_failure`` to ``test_doors_clear_number_pushed``, then add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear` and the button for a floor is :green:`pushed`
+I change :ref:`test_failure` to ``test_doors_clear_number_pushed``, then add an :ref:`assertion<what is an assertion?>` for when the doors are :green:`clear` and the button for a floor is :green:`pushed`
 
 ================  ==================  =================
 doors             floor button        output

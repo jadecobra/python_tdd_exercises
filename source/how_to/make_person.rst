@@ -312,7 +312,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I change ``test_failure`` to :ref:`test_factory_w_keyword_arguments`
+* I change :ref:`test_failure` to :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 4

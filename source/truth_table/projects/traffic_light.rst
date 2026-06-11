@@ -301,7 +301,7 @@ current light     timer            show
 
 ----
 
-I change ``test_failure`` to ``test_red_traffic_light``, then add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED` and the timer is :green:`done`
+I change :ref:`test_failure` to ``test_red_traffic_light``, then add an :ref:`assertion<what is an assertion?>` for when the light is :red:`RED` and the timer is :green:`done`
 
 ================  ==============  =================
 current light     timer done      show

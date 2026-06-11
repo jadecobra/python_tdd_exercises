@@ -216,7 +216,7 @@ test_making_a_list
 
 ----
 
-I change ``test_failure`` to ``test_making_a_list``
+I change :ref:`test_failure` to ``test_making_a_list``
 
 .. code-block:: python
   :lineno-start: 4

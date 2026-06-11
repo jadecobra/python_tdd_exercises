@@ -200,7 +200,7 @@ I can make a :ref:`list<lists>` with ``list()`` or with square brackets (``[]``)
 
 ----
 
-I change ``test_failure`` to ``test_making_a_list_w_a_for_loop`` to show what happens when I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` with more than one item
+I change :ref:`test_failure` to ``test_making_a_list_w_a_for_loop`` to show what happens when I use the :ref:`append method<test_append_adds_item_to_end_of_a_list>` with more than one item
 
 .. code-block:: python
   :lineno-start: 4

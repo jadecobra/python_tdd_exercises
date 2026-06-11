@@ -367,7 +367,7 @@ Why would I use a :ref:`function<what is a function?>` when I can just write cod
 
 ----
 
-* I change ``test_failure`` to ``test_why_use_a_function`` with an :ref:`assertion<what is an assertion?>`
+* I change :ref:`test_failure` to ``test_why_use_a_function`` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 4

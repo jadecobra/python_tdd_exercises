@@ -214,7 +214,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
 ----
 
 * I go back to the terminal_ that is running the tests
-* I change ``test_failure`` to :ref:`test_making_a_class_w_inheritance` with an :ref:`assertion<what is an assertion?>`
+* I change :ref:`test_failure` to :ref:`test_making_a_class_w_inheritance` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 4

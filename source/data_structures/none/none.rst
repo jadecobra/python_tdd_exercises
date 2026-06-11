@@ -272,7 +272,7 @@ test_what_is_none
 
 ----
 
-* I change ``test_failure`` to ``test_what_is_none``
+* I change :ref:`test_failure` to ``test_what_is_none``
 
   .. code-block:: python
     :lineno-start: 4

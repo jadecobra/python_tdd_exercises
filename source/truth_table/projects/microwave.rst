@@ -299,7 +299,7 @@ door                start button       output
 
 ----
 
-I change ``test_failure`` to ``test_open_door``, then add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :green:`pushed`
+I change :ref:`test_failure` to ``test_open_door``, then add an :ref:`assertion<what is an assertion?>` for when the door is :green:`open` and the start button is :green:`pushed`
 
 ==================  =================  =================
 door                start button       output

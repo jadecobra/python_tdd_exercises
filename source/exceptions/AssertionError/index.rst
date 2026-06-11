@@ -335,7 +335,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
 ----
 
-* I change ``test_failure`` to ``test_what_is_an_assertion`` then add :ref:`variables<what is a variable?>` with a statement
+* I change :ref:`test_failure` to ``test_what_is_an_assertion`` then add :ref:`variables<what is a variable?>` with a statement
 
   .. code-block:: python
     :linenos:

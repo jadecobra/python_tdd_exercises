@@ -305,7 +305,7 @@ test_right_pin_enough_money
 
 ----
 
-I change ``test_failure`` to :ref:`test_right_pin_enough_money`, then add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered and there is :green:`enough money` in the account
+I change :ref:`test_failure` to :ref:`test_right_pin_enough_money`, then add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered and there is :green:`enough money` in the account
 
 ==================  ======================= =================
 PIN                 money                   withdrawal

@@ -179,7 +179,7 @@ test_making_a_dictionary
 
 ----
 
-I change ``test_failure`` to ``test_making_a_dictionary`` then add an assertion_
+I change :ref:`test_failure` to ``test_making_a_dictionary`` then add an assertion_
 
 .. code-block:: python
   :linenos:

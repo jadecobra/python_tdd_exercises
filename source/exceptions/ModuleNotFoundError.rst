@@ -102,7 +102,7 @@ test_module_not_found_error
 
 ----
 
-* I change ``test_failure`` to ``test_module_not_found_error``
+* I change :ref:`test_failure` to ``test_module_not_found_error``
 
   .. code-block:: python
     :linenos:
