@@ -1089,22 +1089,29 @@ test_is_none_false_or_true
 * I add a test to see if :ref:`None<what is None?>` should be grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 4
+    :lineno-start: 13
+    :emphasize-lines: 8-9
 
         def test_what_is_true(self):
             self.assertIsInstance(True, bool)
+            self.assertIs(True, True)
+            self.assertEqual(bool(True), True)
+            self.assertTrue(bool(True))
             self.assertTrue(True)
-            self.assertTrue(None)
+
+        def test_is_none_false_or_true(self):
+            self.assertTrue(bool(None))
 
 
     # NOTES
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AssertionError: None is not true
+    AssertionError: False is not true
+
+  because the result of ``bool(None)`` is :ref:`False<test_what_is_false>`
 
 ----
 
@@ -1114,13 +1121,18 @@ test_is_none_false_or_true
 
 ----
 
-I change the :ref:`method<what is a method?>`
+I change assertTrue_ to assertFalse_
 
 .. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 1
+  :lineno-start: 20
+  :emphasize-lines: 1-2
 
-          self.assertFalse(None)
+      def test_is_none_false_or_true(self):
+          # self.assertTrue(bool(None))
+          self.assertFalse(bool(None))
+
+
+  # NOTES
 
 the test passes.
 
@@ -1135,38 +1147,64 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 16
+    :lineno-start: 25
     :emphasize-lines: 5
+
+    # NOTES
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
+
+* I add an :ref:`assertion<what is an assertion?>` without bool_
+
+  .. code-block:: python
+    :lineno-start: 20
+    :emphasize-lines: 4
+
+        def test_is_none_false_or_true(self):
+            # self.assertTrue(bool(None))
+            self.assertFalse(bool(None))
+            self.assertTrue(None)
 
 
     # NOTES
-    # True is True
-    # True is not false
-    # True is a boolean
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
 
-
-    # Exceptions seen
-
-* I move the :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_true` to :ref:`test_what_is_false`
-
-
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4
 
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
+    AssertionError: None is not true
+
+  I know this from :ref:`test_is_none_a_boolean`.
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_is_none_false_or_true(self):
+            # self.assertTrue(bool(None))
+            self.assertFalse(bool(None))
+            # self.assertTrue(None)
             self.assertFalse(None)
 
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
+
+    # NOTES
+
+  the test passes because the result of ``bool(None)`` is not :ref:`True<test_what_is_true>`.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 20
+
+        def test_is_none_false_or_true(self):
+            self.assertFalse(bool(None))
+            self.assertFalse(None)
 
 
     # NOTES
@@ -1177,7 +1215,7 @@ the test passes.
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add '
+    'add test_is_none_false_or_true'
 
 * I go back to the terminal_ that is running the tests
 
