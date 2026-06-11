@@ -932,7 +932,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
 * I move the first :ref:`if statement<if statements>` below this new one
 
-  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
+
 
   .. code-block:: python
     :lineno-start: 55
@@ -1904,7 +1904,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
 * I move the first :ref:`if statement<if statements>` below the new one
 
-  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
+
 
   .. code-block:: python
     :lineno-start: 52

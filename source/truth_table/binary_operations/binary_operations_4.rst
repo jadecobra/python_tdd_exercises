@@ -1475,7 +1475,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
 * I put the :ref:`if statements` that return the same thing together
 
-  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
+
 
   .. code-block:: python
     :lineno-start: 116

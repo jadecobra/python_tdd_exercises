@@ -1776,7 +1776,7 @@ the test passes.
 
 * I move ``return None``, to make it the first `return statement`_
 
-  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
+
 
   .. code-block:: python
     :lineno-start: 13

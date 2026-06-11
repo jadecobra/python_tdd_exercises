@@ -505,7 +505,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
 * I move the :ref:`if statements` to put them together
 
-  .. tip:: In `Visual Studio Code`_ I can move lines I select or where the cursor is, with :kbd:`alt/option+Up` on the keyboard to move lines up or :kbd:`alt/option+Down` to move lines down
+
 
   .. code-block:: python
     :lineno-start: 62
