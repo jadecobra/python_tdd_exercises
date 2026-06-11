@@ -343,6 +343,7 @@ the test passes.
     # NOTES
     # False is a boolean
 
+
     # Exceptions seen
     # AssertionError
 
@@ -445,6 +446,7 @@ I can test if Python_ groups an :ref:`object<what is a class?>` as :ref:`False<t
     # NOTES
     # False is NOT equal to True
     # False is a boolean
+
 
     # Exceptions seen
     # AssertionError
@@ -549,9 +551,6 @@ it raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object
     # True is NOT False
     # False is NOT equal to True
     # False is a boolean
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
@@ -753,9 +752,6 @@ the test passes.
     # False is NOT equal to True
     # False is a boolean
 
-    # Exceptions seen
-    # AssertionError
-
   I know this also from :ref:`testing None<what is None?>`.
 
 * I use the :ref:`assertIsNot method<another way to test if something is NOT the same object as True>` like I did in :ref:`test_assertion_error_w_true`
@@ -859,6 +855,7 @@ I will use the `bool built-in function`_ from `The Python Standard Library`_ to 
     # False is NOT equal to True
     # False is a boolean
 
+
     # Exceptions seen
     # AssertionError
 
@@ -953,9 +950,6 @@ The `unittest.TestCase class`_ has a :ref:`method<what is a method?>` I can use 
     # False is NOT True
     # False is NOT equal to True
     # False is a boolean
-
-    # Exceptions seen
-    # AssertionError
 
 ----
 
@@ -2113,9 +2107,6 @@ the test passes.
     # False is NOT equal to True
     # False is a boolean
 
-    # Exceptions seen
-    # AssertionError
-
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2446,7 +2437,7 @@ the test passes.
     git commit --all --message \
     'add test_is_a_string_falsy_or_truthy'
 
-* :ref:`the empty string is grouped as False and a string with things is grouped as  True<test_is_a_string_falsy_or_truthy>`
+* :ref:`the empty string is grouped as False and a string with things is grouped as True<test_is_a_string_falsy_or_truthy>`
 * :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
@@ -2612,7 +2603,7 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 62
-    :emphasize-lines: 2-3
+    :emphasize-lines: 1-2
 
             # self.assertFalse(bool((1, 2, 3, 'n')))
             self.assertTrue(bool((1, 2, 3, 'n')))
@@ -2745,8 +2736,8 @@ the test passes.
     git commit --all --message \
     'add test_is_a_tuple_falsy_or_truthy'
 
-* :ref:`the empty tuple is grouped as False and a tuple with things is grouped as  True<test_is_a_tuple_falsy_or_truthy>`
-* :ref:`the empty string is grouped as False and a string with things is grouped as  True<test_is_a_string_falsy_or_truthy>`
+* :ref:`the empty tuple is grouped as False and a tuple with things is grouped as True<test_is_a_tuple_falsy_or_truthy>`
+* :ref:`the empty string is grouped as False and a string with things is grouped as True<test_is_a_string_falsy_or_truthy>`
 * :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
@@ -2768,7 +2759,7 @@ test_is_a_list_falsy_or_truthy
 * I add a test for if a :ref:`list (anything in square brackets '[ ]')<what is a list?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 60
     :emphasize-lines: 5-6
 
             a_tuple = (1, 2, 3, 'n')
@@ -2823,16 +2814,18 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 61
-    :emphasize-lines: 8
+    :lineno-start: 69
+    :emphasize-lines: 9
 
     # NOTES
+    # bool(a tuple with things) is True
     # bool(a string with things) is True
     # bool(a positive number) is True
     # bool(a negative number) is True
     # True is NOT False
     # True is NOT equal to False
     # True is a boolean
+    # bool(the empty list) is False
     # bool(the empty tuple) is False
     # bool(the empty string) is False
     # bool(zero) is False
@@ -2859,10 +2852,10 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: () is not true
+    AssertionError: [] is not true
 
-  - because the result of ``bool(list())`` which is ``bool(())`` is :ref:`False<test_what_is_false>`
-  - ``list()`` is another way to write ``()`` (the empty :ref:`list (anything in square brackets '[ ]')<what is a list?>`)
+  - because the result of ``bool(list())`` which is ``bool([])`` is :ref:`False<test_what_is_false>`
+  - ``list()`` is another way to write ``[]`` (the empty :ref:`list<what is a list?>`)
 
 * I change assertTrue_ to assertFalse_
 
@@ -2881,7 +2874,7 @@ the test passes.
 
   - the test passes because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`
   - the empty :ref:`list (anything in square brackets '[ ]')<what is a list?>` is grouped as :ref:`True<test_what_is_true>`
-  - :ref:`a tuple is not the same object as False<test_assertion_error_w_false>`
+  - :ref:`a list is not the same object as False<test_assertion_error_w_false>`
 
 * I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list (anything in square brackets '[ ]')<what is a list?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
@@ -2911,8 +2904,8 @@ the test passes.
 * I change assertFalse_ to assertTrue_
 
   .. code-block:: python
-    :lineno-start: 62
-    :emphasize-lines: 2-3
+    :lineno-start: 70
+    :emphasize-lines: 1-2
 
             # self.assertFalse(bool([1, 2, 3, 'n']))
             self.assertTrue(bool([1, 2, 3, 'n']))
@@ -2925,10 +2918,11 @@ the test passes.
 * I add a comment
 
   .. code-block:: python
-    :lineno-start: 66
+    :lineno-start: 74
     :emphasize-lines: 2
 
     # NOTES
+    # bool(a list with things) is True
     # bool(a tuple with things) is True
     # bool(a string with things) is True
     # bool(a positive number) is True
@@ -2936,6 +2930,7 @@ the test passes.
     # True is NOT False
     # True is NOT equal to False
     # True is a boolean
+    # bool(the empty list) is False
     # bool(the empty tuple) is False
     # bool(the empty string) is False
     # bool(zero) is False
@@ -2947,7 +2942,7 @@ the test passes.
 * I add an :ref:`assertion<what is an assertion?>` without bool_
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 70
     :emphasize-lines: 3
 
             # self.assertFalse(bool([1, 2, 3, 'n']))
@@ -2968,7 +2963,7 @@ the test passes.
 * I change assertFalse_ to assertTrue_
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 70
     :emphasize-lines: 3-4
 
             # self.assertFalse(bool([1, 2, 3, 'n']))
@@ -2980,8 +2975,8 @@ the test passes.
     # NOTES
 
   - the test passes because the result of ``bool([1, 2, 3, 'n'])`` is :ref:`True<test_what_is_true>`
-  - tuples_ with things are grouped as :ref:`True<test_what_is_true>`
-  - :ref:`a tuple is not the same object as True<test_assertion_error_w_true>`
+  - :ref:`lists<what is a list?>` with things are grouped as :ref:`True<test_what_is_true>`
+  - :ref:`a list is not the same object as True<test_assertion_error_w_true>`
 
 * I add a :ref:`variable<what is a variable?>` for ``[1, 2, 3, 'n']``
 
@@ -3007,7 +3002,7 @@ the test passes.
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']``
 
   .. code-block:: python
-    :lineno-start: 62
+    :lineno-start: 70
     :emphasize-lines: 3-4, 6-7
 
             a_list = [1, 2, 3, 'n']
@@ -3045,207 +3040,13 @@ the test passes.
     git commit --all --message \
     'add test_is_a_list_falsy_or_truthy'
 
-* :ref:`the empty tuple is grouped as False and a tuple with things is grouped as  True<test_is_a_list_falsy_or_truthy>`
-* :ref:`the empty string is grouped as False and a string with things is grouped as  True<test_is_a_:ref:`list (anything in square brackets '[ ]')<what is a list?>`falsy_or_truthy>`
+* :ref:`the empty list is grouped as False and a list with things is grouped as True<test_is_a_list_falsy_or_truthy>`
+* :ref:`the empty tuple is grouped as False and a tuple with things is grouped as True<test_is_a_tuple_falsy_or_truthy>`
+* :ref:`the empty string is grouped as False and a string with things is grouped as True<test_is_a_string_falsy_or_truthy>`
 * :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
-----
 
-*********************************************************************************
-is_a_list_falsy_or_truthy
-*********************************************************************************
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list<lists>` (anything in square brackets (``[]``)) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
-
-.. code-block:: python
-  :lineno-start: 15
-  :emphasize-lines: 10
-
-      def test_what_is_true(self):
-          self.assertIsInstance(True, bool)
-          self.assertTrue(True)
-          self.assertTrue(-1)
-          self.assertTrue(1)
-          self.assertTrue(-0.1)
-          self.assertTrue(0.1)
-          self.assertTrue("a string with things")
-          self.assertTrue((1, 2, 3, 'n'))
-          self.assertTrue(list())
-
-
-  # NOTES
-
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: shell
-
-  AssertionError: [] is not true
-
-:ref:`the empty list is NOT True<is_a_list_falsy_or_truthy>`
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I change the :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 24
-    :emphasize-lines: 1
-
-            self.assertFalse(list())
-
-  the test passes.
-
-* I add a comment
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 8
-
-    # NOTES
-    # a tuple with things is True
-    # a string with things is True
-    # positive and negative numbers are True
-    # True is True
-    # True is not false
-    # True is a boolean
-    # the empty list is False
-    # the empty tuple is False
-    # the empty string is False
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
-
-* I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false`
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 9
-
-        def test_what_is_false(self):
-            self.assertIsInstance(False, bool)
-            self.assertFalse(False)
-            self.assertFalse(None)
-            self.assertFalse(0)
-            self.assertFalse(0.0)
-            self.assertFalse(str())
-            self.assertFalse(tuple())
-            self.assertFalse(list())
-
-        def test_what_is_true(self):
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add another :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_false` to test if a :ref:`list<lists>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 4
-
-            self.assertFalse(str())
-            self.assertFalse(tuple())
-            self.assertFalse(list())
-            self.assertFalse([1, 2, 3, 'n'])
-
-        def test_what_is_true(self):
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: [1, 2, 3, 'n'] is not false
-
-* I change the :ref:`method<what is a method?>`
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 1
-
-            self.assertTrue([1, 2, 3, 'n'])
-
-  the test passes.
-
-* I add a comment
-
-  .. code-block:: python
-    :lineno-start: 28
-    :emphasize-lines: 2
-
-    # NOTES
-    # a list with things is True
-    # a tuple with things is True
-    # a string with things is True
-    # positive and negative numbers are True
-    # True is True
-    # True is not false
-    # True is a boolean
-    # the empty list is False
-    # the empty tuple is False
-    # the empty string is False
-    # 0 is False
-    # None is False
-    # False is False
-    # False is not true
-    # False is a boolean
-
-* I move the :ref:`assertion<what is an assertion?>` to :ref:`test_what_is_true`
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 13
-
-            self.assertFalse(tuple())
-            self.assertFalse(list())
-
-        def test_what_is_true(self):
-            self.assertIsInstance(True, bool)
-            self.assertTrue(True)
-            self.assertTrue(-1)
-            self.assertTrue(1)
-            self.assertTrue(-0.1)
-            self.assertTrue(0.1)
-            self.assertTrue("a string with things")
-            self.assertTrue((1, 2, 3, 'n'))
-            self.assertTrue([1, 2, 3, 'n'])
-
-
-    # NOTES
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit --all --message \
-    'add '
-
-* I go back to the terminal_ that is running the tests
-
-:ref:`the empty list is False and a list with things is True<is_a_list_falsy_or_truthy>`. I can see a pattern.
-
------
 
 *********************************************************************************
 is_a_set_falsy_or_truthy
