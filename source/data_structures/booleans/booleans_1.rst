@@ -3046,7 +3046,312 @@ the test passes.
 * :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_an_integer_falsy_or_truthy>`
 * :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
 
+-----
 
+*********************************************************************************
+test_is_a_set_falsy_or_truthy
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ that is running the tests
+* I add a test for if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 64
+    :emphasize-lines: 5-6
+
+            a_list = [1, 2, 3, 'n']
+            self.assertTrue(bool(a_tuple))
+            self.assertTrue(a_tuple)
+
+        def test_is_a_set_falsy_or_truthy(self):
+            self.assertTrue(bool(list()))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change assertTrue_ to assertFalse_
+
+.. code-block:: python
+  :lineno-start: 72
+  :emphasize-lines: 2-3
+
+      def test_is_a_set_falsy_or_truthy(self):
+          # self.assertTrue(bool(list()))
+          self.assertFalse(bool(list()))
+
+
+  # NOTES
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 9
+
+    # NOTES
+    # bool(a tuple with things) is True
+    # bool(a string with things) is True
+    # bool(a positive number) is True
+    # bool(a negative number) is True
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(the empty list) is False
+    # bool(the empty tuple) is False
+    # bool(the empty string) is False
+    # bool(zero) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
+
+* I add an :ref:`assertion<what is an assertion?>` without bool_
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 4
+
+        def test_is_a_set_falsy_or_truthy(self):
+            # self.assertTrue(bool(list()))
+            self.assertFalse(bool(list()))
+            self.assertTrue(list())
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: [] is not true
+
+  - because the result of ``bool(list())`` which is ``bool([])`` is :ref:`False<test_what_is_false>`
+  - ``list()`` is another way to write ``[]`` (the empty set_)
+
+* I change assertTrue_ to assertFalse_
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 4-5
+
+        def test_is_a_set_falsy_or_truthy(self):
+            # self.assertTrue(bool(list()))
+            self.assertFalse(bool(list()))
+            # self.assertTrue(list())
+            self.assertFalse(list())
+
+
+    # NOTES
+
+  - the test passes because the result of ``bool(list())`` is :ref:`False<test_what_is_false>`
+  - the empty :ref:`list (anything in square brackets '[ ]')<what is a list?>` is grouped as :ref:`True<test_what_is_true>`
+  - :ref:`a list is not the same object as False<test_assertion_error_w_false>`
+
+* I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`list (anything in square brackets '[ ]')<what is a list?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 7
+
+        def test_is_a_set_falsy_or_truthy(self):
+            # self.assertTrue(bool(list()))
+            self.assertFalse(bool(list()))
+            # self.assertTrue(list())
+            self.assertFalse(list())
+
+            self.assertFalse(bool({1, 2, 3, 'n'}))
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: True is not false
+
+  because the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`.
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 1-2
+
+            # self.assertFalse(bool({1, 2, 3, 'n'}))
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+
+
+    # NOTES
+
+  the test passes.
+
+* I add a comment
+
+  .. code-block:: python
+    :lineno-start: 74
+    :emphasize-lines: 2
+
+    # NOTES
+    # bool(a list with things) is True
+    # bool(a tuple with things) is True
+    # bool(a string with things) is True
+    # bool(a positive number) is True
+    # bool(a negative number) is True
+    # True is NOT False
+    # True is NOT equal to False
+    # True is a boolean
+    # bool(the empty list) is False
+    # bool(the empty tuple) is False
+    # bool(the empty string) is False
+    # bool(zero) is False
+    # bool(None) is False
+    # False is NOT True
+    # False is NOT equal to True
+    # False is a boolean
+
+* I add an :ref:`assertion<what is an assertion?>` without bool_
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 3
+
+            # self.assertFalse(bool({1, 2, 3, 'n'}))
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+            self.assertFalse({1, 2, 3, 'n'})
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: {1, 2, 3, 'n'} is not false
+
+  because the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`.
+
+* I change assertFalse_ to assertTrue_
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 3-4
+
+            # self.assertFalse(bool({1, 2, 3, 'n'}))
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+            # self.assertFalse({1, 2, 3, 'n'})
+            self.assertTrue({1, 2, 3, 'n'})
+
+
+    # NOTES
+
+  - the test passes because the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`
+  - sets_ with things are grouped as :ref:`True<test_what_is_true>`
+  - :ref:`a list is not the same object as True<test_assertion_error_w_true>`
+
+* I add a :ref:`variable<what is a variable?>` for ``{1, 2, 3, 'n'}``
+
+  .. code-block:: python
+    :lineno-start: 72
+    :emphasize-lines: 7
+
+        def test_is_a_set_falsy_or_truthy(self):
+            # self.assertTrue(bool(list()))
+            self.assertFalse(bool(list()))
+            # self.assertTrue(list())
+            self.assertFalse(list())
+
+            a_set = {1, 2, 3, 'n'}
+            # self.assertFalse(bool({1, 2, 3, 'n'}))
+            self.assertTrue(bool({1, 2, 3, 'n'}))
+            # self.assertFalse({1, 2, 3, 'n'})
+            self.assertTrue({1, 2, 3, 'n'})
+
+
+    # NOTES
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}``
+
+  .. code-block:: python
+    :lineno-start: 70
+    :emphasize-lines: 3-4, 6-7
+
+            a_set = {1, 2, 3, 'n'}
+            # self.assertFalse(bool({1, 2, 3, 'n'}))
+            # self.assertTrue(bool({1, 2, 3, 'n'}))
+            self.assertTrue(bool(a_list))
+            # self.assertFalse({1, 2, 3, 'n'})
+            # self.assertTrue({1, 2, 3, 'n'})
+            self.assertTrue(a_list)
+
+
+    # NOTES
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 72
+
+        def test_is_a_set_falsy_or_truthy(self):
+            self.assertFalse(bool(list()))
+            self.assertFalse(list())
+
+            a_set = {1, 2, 3, 'n'}
+            self.assertTrue(bool(a_list))
+            self.assertTrue(a_list)
+
+
+    # NOTES
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_is_a_set_falsy_or_truthy'
+
+* :ref:`the empty list is grouped as False and a list with things is grouped as True<test_is_a_set_falsy_or_truthy>`
+* :ref:`the empty tuple is grouped as False and a tuple with things is grouped as True<test_is_a_tuple_falsy_or_truthy>`
+* :ref:`the empty string is grouped as False and a string with things is grouped as True<test_is_a_string_falsy_or_truthy>`
+* :ref:`zero is grouped as False, and positive and negative numbers are grouped as True<test_is_an_integer_falsy_or_truthy>`
+* :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`
+
+----
 
 *********************************************************************************
 is_a_set_falsy_or_truthy
