@@ -40,7 +40,7 @@ Questions to think about as I go through the chapter
 * :ref:`How many inputs do Unary Operations take?<Unary Operations>`
 * :ref:`what is a function that returns its input as output?<test_logical_identity>`
 * :ref:`what is not?<test_logical_negation>`
-* :ref:`what is a function that returns the negation of its input?<test_logical_negation>`
+* :ref:`what is a function that returns the negation of its input as output?<test_logical_negation>`
 * :ref:`how can I return the opposite of a boolean?<how to return the opposite of a boolean>`
 
 ----
@@ -818,7 +818,7 @@ I ran these tests for :ref:`Nullary Operations<Nullary Operations>` which take n
 * :ref:`test_logical_true`
 * :ref:`test_logical_false`
 
-and for :ref:`Unary operations<Unary Operations>` which take 1 input
+and for :ref:`Unary operations<Unary Operations>` which take one input
 
 * :ref:`test_logical_identity`
 * :ref:`test_logical_negation`
@@ -840,7 +840,7 @@ not the_input   :red:`False`  :green:`True` :ref:`logical_negation (NOT)<test_lo
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed for the Truth Table?<truth table: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed for Nullary and Unary Operations?<Nullary and Unary Operations tests>`
 
 ----
 
@@ -848,7 +848,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to test binary operations? they take 2 inputs<truth table: Binary Operations>`
+:ref:`Would you like to test binary operations? they take only two inputs<truth table: Binary Operations>`
 
 ----
 

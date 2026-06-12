@@ -194,22 +194,16 @@ booleans review
 ----
 
 *********************************************************************************
-Nullary Operations review
+Nullary and Unary Operations review
 *********************************************************************************
 
 * :ref:`what are the Nullary Operations?<Nullary Operations>`
 * :ref:`How many inputs do Nullary Operations take?<Nullary Operations>`
 * :ref:`what are the Unary Operations?<Unary Operations>`
-
-----
-
-*********************************************************************************
-Unary Operations review
-*********************************************************************************
-
 * :ref:`How many inputs do Unary Operations take?<Unary Operations>`
 * :ref:`what is a function that returns its input as output?<test_logical_identity>`
-* :ref:`what is a function that returns the negation of its input?<test_logical_negation>`
+* :ref:`what is not?<test_logical_negation>`
+* :ref:`what is a function that returns the negation of its input as output?<test_logical_negation>`
 * :ref:`how can I return the opposite of a boolean?<how to return the opposite of a boolean>`
 
 ----
