@@ -467,6 +467,8 @@ first input     second input   return
 
     # Exceptions seen
 
+  the test is still green.
+
 * I remove the commented lines
 
   .. code-block:: python
@@ -916,7 +918,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green, because :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`.
 
-* I change :ref:`None<what is None?>` to :ref:`False<test_what_is_false>` in the `return statement`_, to make it clearer
+* I change :ref:`None<what is None?>` to :red:`False` in the `return statement`_, to make it clearer
 
   .. code-block:: python
     :lineno-start: 21
@@ -956,9 +958,9 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  still green because ``bool(anything)`` returns :ref:`True<test_what_is_true>` if the :ref:`object<what is a class?>` in parentheses is grouped as :ref:`True<test_what_is_true>`.
+  still green because ``bool(anything)`` returns :green:`True` if the :ref:`object<what is a class?>` in parentheses is grouped as :green:`True`.
 
-* Since ``bool(True)`` is the same as :ref:`True<test_what_is_true>`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition. I remove ``== True`` from the `if statements`_
+* Since ``bool(True)`` is the same as :green:`True`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition. I remove ``== True`` from the `if statements`_
 
   .. code-block:: python
     :lineno-start: 21
@@ -984,7 +986,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   - ``if bool(something)`` checks if ``bool(something)`` returns :ref:`True <test_what_is_true>`
   - ``if bool(something) == True`` is the same as ``if bool(something)``
-  - if the result of ``bool(something)`` is :ref:`True<test_what_is_true>` then ``if bool(something)`` is the same thing as ``if True``
+  - if the result of ``bool(something)`` is :green:`True` then ``if bool(something)`` is the same thing as ``if True``
 
 * I can remove :ref:`bool<how to test if something is grouped as True>`
 
@@ -1014,15 +1016,15 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   .. note::
 
-    - ``if something == True:`` checks if ``something`` is equal to :ref:`True<test_what_is_true>`
+    - ``if something == True:`` checks if ``something`` is equal to :green:`True`
 
-    - these `if statements`_ check if the result of ``bool(something)`` is equal to :ref:`True<test_what_is_true>`, it is what the :ref:`assertTrue method<another way to test if something is grouped as True>` does
+    - these `if statements`_ check if the result of ``bool(something)`` is equal to :green:`True`, it is what the :ref:`assertTrue method<another way to test if something is grouped as True>` does
 
       * ``if bool(something) == True:``
       * ``if bool(something):``
       * ``if something:``
 
-    all the above `if statements`_ have the same result, they check if ``something`` is grouped as :ref:`True<test_what_is_true>`.
+    all the above `if statements`_ have the same result, they check if ``something`` is grouped as :green:`True`.
 
 * I can use :ref:`AND<test_logical_conjunction>` to put two `if statements`_ together when one is indented under the other. For example
 
@@ -1104,12 +1106,26 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 conditional expressions
 *********************************************************************************
 
-* There is a way to write the `if statement`_ and `else clause`_ on one line instead of four. It is called a `ternary operator`_ or `conditional expression`_. I add one to the :ref:`function<what is a function?>`
+* There is a way to write the `if statement`_ and `else clause`_ on one line instead of four lines. It is called a `ternary operator`_ or `conditional expression`_. I add one to the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 33
-    :emphasize-lines: 1-2, 4-9
+    :lineno-start: 21
+    :emphasize-lines: 15-16, 18-23
 
+    def logical_conjunction(first_input, second_input):
+        # return False
+        # return True
+        # if first_input == False:
+        #     return False
+        # return second_input
+        # if first_input == True:
+        # if bool(first_input) == True:
+        # if bool(first_input):
+        # if first_input:
+            # if second_input == True:
+            # if bool(second_input) == True:
+            # if bool(second_input):
+            # if second_input:
         # if first_input and second_input:
         #     return True
         # return None
@@ -1122,10 +1138,10 @@ conditional expressions
 
   the test is still green, because this is the same statement in a different order
 
-  - ``return True`` comes first instead of after the `if statement`_
+  - ``return True`` comes first instead of after ``if first_input and second_input``
   - ``first_input and second_input`` come next, without the ``if``
   - ``else`` comes after ``first_input and second_input``
-  - then :ref:`False<test_what_is_false>` without the return comes after ``else``
+  - then :red:`False` without the return comes after ``else``
 
   this means that
 
@@ -1146,9 +1162,11 @@ conditional expressions
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 18-22
+    :emphasize-lines: 20-24
 
     def logical_conjunction(first_input, second_input):
+        # return False
+        # return True
         # if first_input == False:
         #     return False
         # return second_input
@@ -1171,15 +1189,145 @@ conditional expressions
         # )
         return first_input and second_input
 
-  still green!
+  still green! This means that
+
+  .. code-block:: python
+
+    return something
+
+  is a simpler way to write
+
+  .. code-block:: python
+
+    return True if something else False
+
+  which is a simpler way to write
+
+  .. code-block:: python
+
+    if something:
+        return True
+    else:
+        return False
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 17
+
+    def contradiction(first_input, second_input):
+        return False
+
 
     def logical_conjunction(first_input, second_input):
         return first_input and second_input
+
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.logical_conjunction`` in :ref:`test_logical_conjunction` in ``test_truth_table.py``
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 2-4
+
+        def test_logical_conjunction(self):
+            logical_conjunction = (
+                src.truth_table.logical_conjunction
+            )
+            self.assertTrue(
+                src.truth_table.logical_conjunction(
+                    True, True
+                )
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(
+                    True, False
+                )
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(
+                    False, True
+                )
+            )
+            self.assertFalse(
+                src.truth_table.logical_conjunction(
+                    False, False
+                )
+            )
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.logical_conjunction``  from the test
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 6-7, 12-13, 18-19, 24-25
+
+        def test_logical_conjunction(self):
+            logical_conjunction = (
+                src.truth_table.logical_conjunction
+            )
+            self.assertTrue(
+                # src.truth_table.logical_conjunction(
+                logical_conjunction(
+                    True, True
+                )
+            )
+            self.assertFalse(
+                # src.truth_table.logical_conjunction(
+                logical_conjunction(
+                    True, False
+                )
+            )
+            self.assertFalse(
+                # src.truth_table.logical_conjunction(
+                logical_conjunction(
+                    False, True
+                )
+            )
+            self.assertFalse(
+                # src.truth_table.logical_conjunction(
+                logical_conjunction(
+                    False, False
+                )
+            )
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 6, 9, 12, 15
+
+        def test_logical_conjunction(self):
+            logical_conjunction = (
+                src.truth_table.logical_conjunction
+            )
+            self.assertTrue(
+                logical_conjunction(True, True)
+            )
+            self.assertFalse(
+                logical_conjunction(True, False)
+            )
+            self.assertFalse(
+                logical_conjunction(False, True)
+            )
+            self.assertFalse(
+                logical_conjunction(False, False)
+            )
+
+
+    # Exceptions seen
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add logical_conjunction'
 
 :ref:`logical_conjunction<test_logical_conjunction>` also known as and_, always returns
 
@@ -1282,11 +1430,9 @@ examples of Logical Conjunction
 
 -----
 
-.. note::
+.. admonition:: All of the statements below have the same result
 
-  All of the statements below have the same result
-
-  * return :ref:`True<test_what_is_true>`  if ``something`` is equal to :ref:`True<test_what_is_true>`
+  * return :green:`True`  if ``something`` is equal to :green:`True`
 
     .. code-block:: python
 
@@ -1295,7 +1441,7 @@ examples of Logical Conjunction
       else:
           return False
 
-  * return :green:`True` if the result of  ``bool(something)`` is equal to :ref:`True<test_what_is_true>`
+  * return :green:`True` if the result of  ``bool(something)`` is equal to :green:`True`
 
     .. code-block:: python
 
@@ -1304,7 +1450,7 @@ examples of Logical Conjunction
       else:
           return False
 
-  * return :green:`True` if the result of  ``bool(something)`` is :ref:`True<test_what_is_true>`
+  * return :green:`True` if the result of  ``bool(something)`` is :green:`True`
 
     .. code-block:: python
 
@@ -1313,7 +1459,7 @@ examples of Logical Conjunction
       else:
           return False
 
-  * return :green:`True` if the result of  ``bool(something)`` is :ref:`True<test_what_is_true>`
+  * return :green:`True` if the result of  ``bool(something)`` is :green:`True`
 
     .. code-block:: python
 
@@ -1322,13 +1468,13 @@ examples of Logical Conjunction
       else:
           return False
 
-  * return :green:`True` if the result of  ``bool(something)`` is :ref:`True<test_what_is_true>`
+  * return :green:`True` if the result of  ``bool(something)`` is :green:`True`
 
     .. code-block:: python
 
       return True if something else False
 
-  * return :green:`True` if the result of  ``bool(something)`` is :ref:`True<test_what_is_true>`
+  * return :green:`True` if the result of  ``bool(something)`` is :green:`True`
 
     .. code-block:: python
 
@@ -1358,6 +1504,8 @@ first input     second input   return
 =================================================================================
 
 ----
+
+* I go back to the terminal_ that is running the tests
 
 I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
@@ -1539,6 +1687,19 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
   still green.
 
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.project_second``
+
+* I use the :ref:`variable<what is a variable?>`
+
+* I remove the commented lines
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
+
 :ref:`project_second<test_project_second>` always returns the second input, it does not care about the first input
 
 ----
@@ -1630,49 +1791,50 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I go back to the terminal_ that is running the tests
+* I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  ==============  ============== ==============
 
-.. code-block:: python
-  :lineno-start: 43
-  :emphasize-lines: 15-20
+  .. code-block:: python
+    :lineno-start: 43
+    :emphasize-lines: 15-20
 
-      def test_project_second(self):
-          self.assertTrue(
-              src.truth_table.project_second(True, True)
-          )
-          self.assertFalse(
-              src.truth_table.project_second(True, False)
-          )
-          self.assertTrue(
-              src.truth_table.project_second(False, True)
-          )
-          self.assertFalse(
-              src.truth_table.project_second(False, False)
-          )
+        def test_project_second(self):
+            self.assertTrue(
+                src.truth_table.project_second(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.project_second(True, False)
+            )
+            self.assertTrue(
+                src.truth_table.project_second(False, True)
+            )
+            self.assertFalse(
+                src.truth_table.project_second(False, False)
+            )
 
-      def test_converse_non_implication(self):
-          self.assertFalse(
-              src.truth_table.converse_non_implication(
-                  True, True
-              )
-          )
+        def test_converse_non_implication(self):
+            self.assertFalse(
+                src.truth_table.converse_non_implication(
+                    True, True
+                )
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
+    AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
 
-because there is no definition for :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py`` in the ``src`` folder_
+  because there is no definition for :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py`` in the ``src`` folder_
 
 ----
 
@@ -1868,7 +2030,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   the test is still green.
 
-* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :ref:`True<test_what_is_true>`
+* I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the first `if statement`_ in terms of :green:`True`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2147,6 +2309,19 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         return not first_input and second_input
 
   I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+
+* I add a :ref:`variable<what is a variable?>` for ``src.truth_table.project_second``
+
+* I use the :ref:`variable<what is a variable?>`
+
+* I remove the commented lines
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add '
 
 :ref:`Converse Non-Implication<test_converse_non_implication>` always returns
 
