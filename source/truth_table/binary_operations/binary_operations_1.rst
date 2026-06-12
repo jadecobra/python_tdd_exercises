@@ -1506,56 +1506,51 @@ first input     second input   return
 ----
 
 * I go back to the terminal_ that is running the tests
+* I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
-I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  ==============  ============== ==============
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
+  .. code-block:: python
+    :lineno-start: 14
+    :emphasize-lines: 18-21
 
-.. code-block:: python
-  :lineno-start: 21
-  :emphasize-lines: 23-26
+        def test_logical_conjunction(self):
+            logical_conjunction = (
+                src.truth_table.logical_conjunction
+            )
+            self.assertTrue(
+                logical_conjunction(True, True)
+            )
+            self.assertFalse(
+                logical_conjunction(True, False)
+            )
+            self.assertFalse(
+                logical_conjunction(False, True)
+            )
+            self.assertFalse(
+                logical_conjunction(False, False)
+            )
 
-      def test_logical_conjunction(self):
-          self.assertTrue(
-              src.truth_table.logical_conjunction(
-                  True, True
-              )
-          )
-          self.assertFalse(
-              src.truth_table.logical_conjunction(
-                  True, False
-              )
-          )
-          self.assertFalse(
-              src.truth_table.logical_conjunction(
-                  False, True
-              )
-          )
-          self.assertFalse(
-              src.truth_table.logical_conjunction(
-                  False, False
-              )
-          )
-
-      def test_project_second(self):
-          self.assertTrue(
-              src.truth_table.project_second(True, True)
-          )
+        def test_project_second(self):
+            self.assertTrue(
+                src.truth_table.project_second(True, True)
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.truth_table' has no attribute 'project_second'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'project_second'
 
-because I do not have a definition for the :ref:`project_second function<test_project_second>` in ``truth_table.py``
+  because I do not have a :ref:`definition<how to make a function>` for the :ref:`project_second function<test_project_second>` in ``truth_table.py``
 
 ----
 
@@ -1568,7 +1563,7 @@ because I do not have a definition for the :ref:`project_second function<test_pr
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 21
+  :lineno-start: 31
   :emphasize-lines: 5-6
 
   def logical_conjunction(first_input, second_input):
@@ -1597,7 +1592,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 31
     :emphasize-lines: 5-7
 
         def test_project_second(self):
@@ -1627,17 +1622,26 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
   .. code-block:: python
     :lineno-start: 25
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
+
+    def project_second(first_input, second_input):
+        # return True
+        return second_input
+
+  the test passes. :ref:`project_second function<test_project_second>` returns the second input.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 25
 
     def project_second(first_input, second_input):
         return second_input
 
-  the test passes. :ref:`project_second function<test_project_second>` returns the second input
-
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_project_second` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`, in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 31
     :emphasize-lines: 8-10
 
         def test_project_second(self):
@@ -1665,7 +1669,7 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 31
     :emphasize-lines: 11-13
 
         def test_project_second(self):
@@ -1689,16 +1693,80 @@ the test passes. :ref:`project_second<test_project_second>` returns :green:`True
 
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.project_second``
 
-* I use the :ref:`variable<what is a variable?>`
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2
+
+        def test_project_second(self):
+            project_second = src.truth_table.project_second
+            self.assertTrue(
+                src.truth_table.project_second(True, True)
+            )
+            self.assertFalse(
+                src.truth_table.project_second(True, False)
+            )
+            self.assertTrue(
+                src.truth_table.project_second(False, True)
+            )
+            self.assertFalse(
+                src.truth_table.project_second(False, False)
+            )
+
+
+    # Exceptions seen
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``src.truth_table.project_second`` from the test
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 4-5, 8-9, 12-13, 16-17
+
+        def test_project_second(self):
+            project_second = src.truth_table.project_second
+            self.assertTrue(
+                # src.truth_table.project_second(True, True)
+                project_second(True, True)
+            )
+            self.assertFalse(
+                # src.truth_table.project_second(True, False)
+                project_second(True, False)
+            )
+            self.assertTrue(
+                # src.truth_table.project_second(False, True)
+                project_second(False, True)
+            )
+            self.assertFalse(
+                # src.truth_table.project_second(False, False)
+                project_second(False, False)
+            )
+
+
+    # Exceptions seen
+
+  the test is still green.
 
 * I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 3-6
+
+        def test_project_second(self):
+            project_second = src.truth_table.project_second
+            self.assertTrue(project_second(True, True))
+            self.assertFalse(project_second(True, False))
+            self.assertTrue(project_second(False, True))
+            self.assertFalse(project_second(False, False))
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'add '
+    git commit -am 'add project_second'
 
 :ref:`project_second<test_project_second>` always returns the second input, it does not care about the first input
 
