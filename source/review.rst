@@ -187,9 +187,9 @@ booleans review
 * :ref:`Is a float grouped as False or True?<test_is_a_float_falsy_or_truthy>`
 * :ref:`Is a string grouped as False or True?<test_is_a_string_falsy_or_truthy>`
 * :ref:`Is a tuple grouped as False or True?<test_is_a_tuple_falsy_or_truthy>`
-* :ref:`Is a list grouped as False or True?<is_a_list_falsy_or_truthy>`
-* :ref:`Is a set grouped as False or True?<is_a_set_falsy_or_truthy>`
-* :ref:`Is a dictionary grouped as False or True?<is_a_dictionary_falsy_or_truthy>`
+* :ref:`Is a list grouped as False or True?<test_is_a_list_falsy_or_truthy>`
+* :ref:`Is a set grouped as False or True?<test_is_a_set_falsy_or_truthy>`
+* :ref:`Is a dictionary grouped as False or True?<test_is_a_dictionary_falsy_or_truthy>`
 
 ----
 
