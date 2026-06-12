@@ -15,9 +15,9 @@
 family ties
 #################################################################################
 
-The tests from :ref:`everything is an object` show that in Python everything :ref:`inherits<test_attributes_and_methods_of_objects>`. This allows me to make new :ref:`objects<what is a class?>` that get their magic powers from other :ref:`objects<what is a class?>`.
+The tests from :ref:`everything is an object` show that in Python everything :ref:`inherits<test_attributes_and_methods_of_objects>`. This allows me to make new :ref:`objects<everything is an object>` that get their magic powers from other :ref:`objects<everything is an object>`.
 
-Making new :ref:`objects<what is a class?>` can be easier with :ref:`Inheritance<test_attributes_and_methods_of_objects>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_attributes_and_methods_of_objects>` them instead and change the new :ref:`objects<what is a class?>` to do what I want.
+Making new :ref:`objects<everything is an object>` can be easier with :ref:`Inheritance<test_attributes_and_methods_of_objects>` because I do not have to write things that have already been written again, I can :ref:`inherit<test_attributes_and_methods_of_objects>` them instead and change the new :ref:`objects<everything is an object>` to do what I want.
 
 It can also be more complicated because I can make new :ref:`instances<how to test if something is an instance of a class>` to :ref:`inherit<test_attributes_and_methods_of_objects>` from one :ref:`class<what is a class?>` and customize it for what I need instead of making new :ref:`classes<what is a class?>` that require me to keep track of `Python's Method Resolution Order`_.
 
@@ -35,7 +35,7 @@ When :ref:`an instance of a class<how to test if something is an instance of a c
 how to make a class with a parent
 *********************************************************************************
 
-To use :ref:`inheritance<test_attributes_and_methods_of_objects>` I put the "parent" in parentheses when I :ref:`make<how to make a class>` the new :ref:`object<what is a class?>` (the child) to make the relationship.
+To use :ref:`inheritance<test_attributes_and_methods_of_objects>` I put the "parent" in parentheses when I :ref:`make<how to make a class>` the new :ref:`object<everything is an object>` (the child) to make the relationship.
 
 .. code-block:: python
 
@@ -270,7 +270,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
 
     class TestFamilyTies(unittest.TestCase):
 
-  - ``import src.family_ties`` brings in an :ref:`object<what is a class?>` for the ``family_ties.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_family_ties.py``
+  - ``import src.family_ties`` brings in an :ref:`object<everything is an object>` for the ``family_ties.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_family_ties.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -327,7 +327,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
 
     # Exceptions seen
 
-  the test passes. ``Doe`` is NOT an :ref:`instance<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>`, they are siblings - both children of :ref:`object<what is a class?>`.
+  the test passes. ``Doe`` is NOT an :ref:`instance<how to test if something is an instance of a class>` of the ``Person`` :ref:`class<what is a class?>`, they are siblings - both children of :ref:`object<everything is an object>`.
 
 ----
 
@@ -449,7 +449,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
     # class Doe(person.Person): pass
     class Doe(src.person.Person): pass
 
-  - ``import src.person`` brings in an :ref:`object<what is a class?>` for the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``family_ties.py``.
+  - ``import src.person`` brings in an :ref:`object<everything is an object>` for the ``person.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``family_ties.py``.
   - I have to use ``src.person.Person`` in ``family_ties.py`` because I am testing from the root folder_ of the project (the parent folder_ of ``src`` and ``tests``).
   - The test needs to know where ``person.py`` is in relation to where I ran the tests from.
   - This is a problem because if ``family_ties.py`` is run from inside ``src`` the `import statement`_ will not be able to find ``src.person`` from inside ``src``. Same thing if I run the tests from inside ``tests`` :ref:`(a problem for another time)<test_module_not_found_error>`.

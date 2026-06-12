@@ -4,6 +4,9 @@
 
 .. include:: ../../links.rst
 
+.. _True: https://docs.python.org/3/library/constants.html?highlight=true#True
+.. _False: https://docs.python.org/3/library/constants.html?highlight=true#False
+
 #################################################################################
 what are booleans?
 #################################################################################
@@ -18,8 +21,8 @@ Imagine we have to divide everything into two and the options are things that ar
 
 I used :ref:`assertIs<another way to test if something is the same object as True>` and :ref:`assertIsNot<another way to test if something is NOT the same object as True>` in :ref:`test_assertion_error_w_false` and :ref:`test_assertion_error_w_true` in :ref:`AssertionError<what causes AssertionError?>`, where I saw that
 
-* :ref:`True<test_what_is_true>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
-* :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* True_ is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
+* :ref:False_ is NOT :ref:`None<what is None?>` and NOT equal to :ref:`None<what is None?>`
 * :ref:`None is None<what is None?>` and equal to :ref:`None<what is None?>`
 
 I test :ref:`booleans<what are booleans?>` in the chapters below

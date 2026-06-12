@@ -326,7 +326,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
   - the test calls the ``say_hello`` :ref:`function<what is a function?>`
   - the ``say_hello`` :ref:`function<what is a function?>` expects a :ref:`dictionary<what is a dictionary?>`
   - the ``say_hello`` :ref:`function<what is a function?>` calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` on what it receives and
-  - the ``Person`` :ref:`object<what is a class?>` it receives is not a :ref:`dictionary<what is a dictionary?>` and does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
+  - the ``Person`` :ref:`object<everything is an object>` it receives is not a :ref:`dictionary<what is a dictionary?>` and does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
 
 * I change ``reality`` in :ref:`test_classy_person_says_hello` to use a :ref:`method<what is a method?>` I can add to ``Person``, in ``test_person.py``
 
@@ -587,7 +587,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         Person.__init__() missing
         1 required positional argument: 'sex'
 
-  because when the test calls the ``Person`` :ref:`object<what is a class?>` to make ``joe`` it does not provide a value for ``sex`` which I just made a required argument when I added it to the ``__init__`` :ref:`method definition<how to make a function>`, I have to make it a choice
+  because when the test calls the ``Person`` :ref:`object<everything is an object>` to make ``joe`` it does not provide a value for ``sex`` which I just made a required argument when I added it to the ``__init__`` :ref:`method definition<how to make a function>`, I have to make it a choice
 
 * I add a default value for ``sex`` to make it optional
 
@@ -611,7 +611,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         Person.__init__() missing
         1 required positional argument: 'last_name'
 
-  because when the test calls the ``Person`` :ref:`object<what is a class?>` to make ``jane`` it does not provide a value for ``last_name`` which is a required argument, I have to make it a choice as well
+  because when the test calls the ``Person`` :ref:`object<everything is an object>` to make ``jane`` it does not provide a value for ``last_name`` which is a required argument, I have to make it a choice as well
 
 * I add a default value for ``last_name`` to make it optional
 
@@ -708,7 +708,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hi, my name is jane blow and I am 30'
      != 'Hi, my name is joe blow and I am 30'
 
-  because I used a fixed value (``jane``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``joe``. I have to get the value from the :ref:`object<what is a class?>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
+  because I used a fixed value (``jane``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``joe``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
 * I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``first_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<what is a class?>` is made
 
@@ -824,7 +824,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hi, my name is joe doe and I am 30'
      != 'Hi, my name is joe blow and I am 30'
 
-  because I used a fixed value (``doe``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``blow``. I have to get the value from the :ref:`object<what is a class?>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
+  because I used a fixed value (``doe``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``blow``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
 * I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``last_name`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<what is a class?>` is made
 
@@ -994,7 +994,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
         'Hi, my name is joe blow and I am 35'
      != 'Hi, my name is joe blow and I am 30'
 
-  because I used a fixed value (``1991``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``datetime.datetime.now().year-1996``. I have to get the value from the :ref:`object<what is a class?>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
+  because I used a fixed value (``1991``) and the first :ref:`assertion<what is an assertion?>` of the test expects ``datetime.datetime.now().year-1996``. I have to get the value from the :ref:`object<everything is an object>` that is passed to the ``say_hello`` :ref:`method<what is a function?>`.
 
 * I add a :ref:`variable<what is a variable?>` to the ``__init__`` :ref:`method<what is a method?>` to use it to allow changing the ``year_of_birth`` :ref:`attribute<what is a class attribute?>` anytime a copy of the ``Person`` :ref:`class<what is a class?>` is made
 
@@ -1694,7 +1694,7 @@ I make the values for ``first_name`` in the tests the same way each time, since 
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`class attribute<what is a class attribute?>` called ``random_first_name`` to the ``TestPerson`` :ref:`object<what is a class?>`
+* I add a :ref:`class attribute<what is a class attribute?>` called ``random_first_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -1842,7 +1842,7 @@ I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`class attribute<what is a class attribute?>` called ``random_year_of_birth`` to the ``TestPerson`` :ref:`object<what is a class?>`
+* I add a :ref:`class attribute<what is a class attribute?>` called ``random_year_of_birth`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2007,7 +2007,7 @@ The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in t
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`class attribute<what is a class attribute?>` called ``random_last_name`` to the ``TestPerson`` :ref:`object<what is a class?>`
+* I add a :ref:`class attribute<what is a class attribute?>` called ``random_last_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2142,7 +2142,7 @@ I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``sel
 
 * I go back to the terminal_ that is running the tests
 
-* I add a :ref:`class attribute<what is a class attribute?>` called ``age`` to the ``TestPerson`` :ref:`object<what is a class?>`
+* I add a :ref:`class attribute<what is a class attribute?>` called ``age`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 32
@@ -2734,7 +2734,7 @@ The `unittest.TestCase.setUp method`_ runs before every test, in this case it se
 test_attributes_and_methods_of_person_instance
 *********************************************************************************
 
-Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<what is a class?>` it is given in parentheses. It allows me to see what makes up an :ref:`object<what is a class?>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
+Python has the `dir built-in function`_ which shows the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of the :ref:`object<everything is an object>` it is given in parentheses. It allows me to see what makes up an :ref:`object<everything is an object>` without looking at the code or reading the documentation. I can then run tests to see what each thing does.
 
 ----
 

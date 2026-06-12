@@ -289,7 +289,7 @@ the test passes. I can make an empty list_ with ``list()`` or ``[]``
 what is an iterable?
 ---------------------------------------------------------------------------------
 
-An :ref:`iterable<what is an iterable?>` is an :ref:`object<what is a class?>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries<what is a dictionary?>` are :ref:`iterable<what is an iterable?>`
+An :ref:`iterable<what is an iterable?>` is an :ref:`object<everything is an object>` that can return what it has, one at a time. In order words, I can loop over it. strings_, tuples_, lists_, sets_ and :ref:`dictionaries<what is a dictionary?>` are :ref:`iterable<what is an iterable?>`
 
 * I change the input to a tuple_ (anything in parentheses (``()``) separated by commas, separated by a comma)
 
@@ -332,7 +332,7 @@ how to see the attributes and methods of an object
 
 ----
 
-I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`objects<what is a class?>`, it is part of `Python's Built-in Functions`_
+I want to test the things I can do with lists_. I can use the dir_ :ref:`function<what is a function?>` to see the :ref:`attributes<what is a class attribute?>` and :ref:`methods<what is a method?>` of :ref:`objects<everything is an object>`, it is part of `Python's Built-in Functions`_
 
 ----
 

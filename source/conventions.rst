@@ -207,7 +207,7 @@ tuples
 
 
 
-A tuple_ is a sequence or container of :ref:`objects<what is a class?>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), and the things in them are separated by commas, for example
+A tuple_ is a sequence or container of :ref:`objects<everything is an object>` that cannot be changed later, this means it is immutable. They are represented with parentheses/brackets (``()``), and the things in them are separated by commas, for example
 
 .. code-block:: python
 
@@ -224,7 +224,7 @@ lists
 *********************************************************************************
 
 
-A :ref:`list/array<lists>` is a sequence or container of :ref:`objects<what is a class?>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
+A :ref:`list/array<lists>` is a sequence or container of :ref:`objects<everything is an object>` that can be changed after it is defined, it is mutable. They are represented with square brackets (``[]``) and the things in them are separated by commas, for example
 
 .. code-block:: python
 
@@ -239,7 +239,7 @@ sets
 *********************************************************************************
 
 
-A set_ is a container of :ref:`objects<what is a class?>` that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
+A set_ is a container of :ref:`objects<everything is an object>` that have no duplicates, and are represented with curly braces/brackets (``{}``), for example
 
 .. code-block:: python
 

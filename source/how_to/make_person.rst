@@ -22,7 +22,7 @@ how to make a person
 
 ----
 
-This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`, two important :ref:`objects<what is a class?>` to know in Python_.
+This is an exercise in making :ref:`dictionaries<what is a dictionary?>` with :ref:`functions<what is a function?>`, two important :ref:`objects<everything is an object>` to know in Python_.
 
 Imagine I want to make a contact list or database of people. I can use a :ref:`function<what is a function?>` to represent filling out information for a person, for example
 

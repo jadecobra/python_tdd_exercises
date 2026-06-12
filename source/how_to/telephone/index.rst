@@ -1711,7 +1711,7 @@ the test passes.
 test_passing_a_class
 *********************************************************************************
 
-I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<what is a function?>`
+I can pass an :ref:`object<everything is an object>` from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -1753,7 +1753,7 @@ I can pass an :ref:`object<what is a class?>` from a test to a :ref:`function<wh
     AssertionError: "I got: <class 'object'>"
                  != 'I got:         object'
 
-  :ref:`object<what is a class?>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and everything in Python_ is an :ref:`object<what is a class?>`
+  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and everything in Python_ is an :ref:`object<everything is an object>`
 
 ----
 

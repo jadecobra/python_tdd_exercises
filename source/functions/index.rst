@@ -1338,7 +1338,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
     class TestFunctions(unittest.TestCase):
 
-  - ``import src.functions`` brings in an :ref:`object<what is a class?>` for the ``functions.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_functions.py``
+  - ``import src.functions`` brings in an :ref:`object<everything is an object>` for the ``functions.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_functions.py``
   - I like to sort my `import statements`_ alphabetically
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
@@ -1372,7 +1372,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
     def w_pass():
         pass
 
-  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_pass(), None)`` checks if the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`
+  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_pass(), None)`` checks if the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
 
   * the :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
   * pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body)
@@ -1473,7 +1473,7 @@ the test passes.
         # pass
         return
 
-  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_return(), None)`` checks if the result of a call to ``w_return`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_return``, is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`
+  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_return(), None)`` checks if the result of a call to ``w_return`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
   * the :ref:`function definition<how to make a function>` simply says return_ and the test passes.
   * return_ is a special keyword that is used to send output from a :ref:`function<what is a function?>`.
   * the test is still green because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`

@@ -471,7 +471,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   E           }
   E       ) is not None
 
-I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionary<what is a dictionary?>`. I know how to work with :ref:`dictionaries<what is a dictionary?>`.
+I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`dictionary<what is a dictionary?>`. I know how to work with :ref:`dictionaries<what is a dictionary?>`.
 
 ----
 
@@ -534,7 +534,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
     NameError: name 'Title' is not defined
 
-* I change the ``Title`` :ref:`object<what is a class?>` to ``tester.title[0]``
+* I change the ``Title`` :ref:`object<everything is an object>` to ``tester.title[0]``
 
   .. code-block:: python
     :lineno-start: 19
@@ -829,7 +829,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
     # Exceptions seen
 
-* I add a :ref:`variable<what is a variable?>` for the ``flex_container`` :ref:`object<what is a class?>`
+* I add a :ref:`variable<what is a variable?>` for the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 14
@@ -872,7 +872,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
             self.assertEqual(display.gap_config.gap_size, 1)
 
-* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<what is a class?>`
+* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -897,7 +897,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<what is a class?>`
+* I add an :ref:`assertion<what is an assertion?>` for the next :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 24
@@ -923,7 +923,7 @@ I see that the ``children`` :ref:`object<what is a class?>` is a :ref:`dictionar
 
   the test passes.
 
-* I add the last :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<what is a class?>`
+* I add the last :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``flex_container`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 24

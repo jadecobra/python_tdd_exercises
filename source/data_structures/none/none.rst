@@ -322,7 +322,7 @@ the test passes. So far this is the same as :ref:`test_assertion_error_w_none`.
 :yellow:`REFACTOR`: make it better
 =================================================================================
 
-I can also use another `assert method`_ from the `unittest.TestCase class`_ to test if something is NOT the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
+I can also use another `assert method`_ from the `unittest.TestCase class`_ to test if something is NOT the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 ----
 
@@ -352,7 +352,7 @@ one more way to test if something is NOT None
 
     AssertionError: unexpectedly None
 
-  because :ref:`assertIsNotNone<one more way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is :ref:`None<what is None?>`.
+  because :ref:`assertIsNotNone<one more way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` given in parentheses is :ref:`None<what is None?>`.
 
 ----
 
@@ -377,7 +377,7 @@ one more way to test if something is None
 
     # Exceptions seen
 
-  the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNotNone<one more way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<what is a class?>` given in parentheses is NOT :ref:`None<what is None?>`.
+  the test passes because :ref:`None is None<what is None?>` and :ref:`assertIsNotNone<one more way to test if something is NOT None>` raises :ref:`AssertionError<what causes AssertionError?>` if the :ref:`object<everything is an object>` given in parentheses is NOT :ref:`None<what is None?>`.
 
 * I remove the commented lines
 

@@ -14,7 +14,7 @@ what causes TypeError?
 
 ----
 
-:ref:`TypeError<what causes TypeError?>` is raised when an :ref:`object<what is a class?>` is used in a way that it should not be. This helps understand how to use :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>`
+:ref:`TypeError<what causes TypeError?>` is raised when an :ref:`object<everything is an object>` is used in a way that it should not be. This helps understand how to use :ref:`functions<what is a function?>` and :ref:`classes<what is a class?>`
 
 ----
 

@@ -215,7 +215,7 @@ how to test if something is NOT an instance of a class
 
 ----
 
-I can test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of another :ref:`object<what is a class?>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_.
+I can test if an :ref:`object<everything is an object>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of another :ref:`object<everything is an object>` or NOT with the `isinstance built-in function`_ from `The Python Standard Library`_.
 
 isinstance_ checks if the thing in the parentheses on the left is an :ref:`instance (a copy)<how to test if something is an instance of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
@@ -274,7 +274,7 @@ isinstance_ checks if the thing in the parentheses on the left is an :ref:`insta
 
     class TestClasses(unittest.TestCase):
 
-  - ``import src.classes`` brings in an :ref:`object<what is a class?>` for the ``classes.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_classes.py``
+  - ``import src.classes`` brings in an :ref:`object<everything is an object>` for the ``classes.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_classes.py``
   - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
     .. code-block:: python
@@ -352,7 +352,7 @@ how to test if something is an instance of a class
 
 ----
 
-The `unittest.TestCase class`_ has two :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is :ref:`an instance (a copy) of a class<how to test if something is an instance of a class>` or NOT - assertIsInstance_ and assertNotIsInstance_
+The `unittest.TestCase class`_ has two :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<everything is an object>` is :ref:`an instance (a copy) of a class<how to test if something is an instance of a class>` or NOT - assertIsInstance_ and assertNotIsInstance_
 
 ----
 
@@ -827,7 +827,7 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 
 ----
 
-* I add :ref:`object<what is a class?>` to the parentheses of the :ref:`class definition<how to make a class>` for ``WObject`` in ``classes.py``
+* I add :ref:`object<everything is an object>` to the parentheses of the :ref:`class definition<how to make a class>` for ``WObject`` in ``classes.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -997,7 +997,7 @@ I like to write my :ref:`classes<what is a class?>` with ``(object)``, so that a
 test_is_none_an_object
 *********************************************************************************
 
-I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?>`.
+I want to test if :ref:`None<what is None?>` is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -1032,7 +1032,7 @@ I want to test if :ref:`None<what is None?>` is an :ref:`object<what is a class?
 
     E       assert not True
 
-  because :ref:`None<what is None?>` is an :ref:`object<what is a class?>`.
+  because :ref:`None<what is None?>` is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -1085,7 +1085,7 @@ the test passes.
 
     AssertionError: None is an instance of <class 'object'>
 
-  because :ref:`None<what is None?>` is an :ref:`object<what is a class?>`.
+  because :ref:`None<what is None?>` is an :ref:`object<everything is an object>`.
 
 * I change assertNotIsInstance_ to assertIsInstance_
 
@@ -1129,7 +1129,7 @@ the test passes.
 test_is_a_boolean_an_object
 *********************************************************************************
 
-I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<what is a class?>`.
+I want to test if a :ref:`boolean<what are booleans?>` is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -1145,7 +1145,7 @@ how to test if something is NOT a subclass of a class
 
 ----
 
-I can test if an :ref:`object<what is a class?>` is a :ref:`subclass (child) <what is a class?>` of another :ref:`object<what is a class?>` or NOT with the `issubclass built-in function`_ from `The Python Standard Library`_.
+I can test if an :ref:`object<everything is an object>` is a :ref:`subclass (child) <what is a class?>` of another :ref:`object<everything is an object>` or NOT with the `issubclass built-in function`_ from `The Python Standard Library`_.
 
 issubclass_ checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
@@ -1212,7 +1212,7 @@ the test passes.
 
 ----
 
-The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<what is a class?>` is a :ref:`subclass (child)<how to test if something is a subclass of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsSubclass_ and assertNotIsSubclass_.
+The `unittest.TestCase class`_ has 2 :ref:`methods<what is a method?>` I can also use to test if an :ref:`object<everything is an object>` is a :ref:`subclass (child)<how to test if something is a subclass of a class>` of a :ref:`class<what is a class?>` or NOT - assertIsSubclass_ and assertNotIsSubclass_.
 
 ----
 
@@ -1298,7 +1298,7 @@ another way to test if something is a subclass of a class
 test_is_an_integer_an_object
 *********************************************************************************
 
-I want to test if an integer_ (a whole number without decimals) is an :ref:`object<what is a class?>`.
+I want to test if an integer_ (a whole number without decimals) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -1433,7 +1433,7 @@ the test passes.
 test_is_a_float_an_object
 *********************************************************************************
 
-I want to test if a float_ (a binary floating point decimal number) is an :ref:`object<what is a class?>`
+I want to test if a float_ (a binary floating point decimal number) is an :ref:`object<everything is an object>`
 
 ----
 
@@ -1568,7 +1568,7 @@ the test passes.
 test_is_a_string_an_object
 *********************************************************************************
 
-I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<what is a class?>`.
+I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -1703,7 +1703,7 @@ the test passes.
 test_is_a_tuple_an_object
 *********************************************************************************
 
-I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object<what is a class?>`.
+I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -1838,7 +1838,7 @@ the test passes.
 test_is_a_list_an_object
 *********************************************************************************
 
-I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<what is a class?>`.
+I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -1972,7 +1972,7 @@ the test passes.
 test_is_a_set_an_object
 *********************************************************************************
 
-I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is an :ref:`object<what is a class?>`.
+I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -2106,7 +2106,7 @@ the test passes.
 test_is_a_dictionary_an_object
 *********************************************************************************
 
-I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<what is a class?>`.
+I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -2959,7 +2959,7 @@ I can make a :ref:`class<what is a class?>` with
 * :ref:`parentheses<test_making_a_class_w_parentheses>`
 * :ref:`object<test_making_a_class_w_object>`
 
-Everything in Python_ is an :ref:`object<what is a class?>`
+Everything in Python_ is an :ref:`object<everything is an object>`
 
 * :ref:`None is an object<test_is_none_an_object>`
 * :ref:`A boolean is an object<test_is_a_boolean_an_object>`

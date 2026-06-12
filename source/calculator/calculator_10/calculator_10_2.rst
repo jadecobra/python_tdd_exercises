@@ -189,7 +189,7 @@ I want to add buttons for the numbers and operations.
 
     AssertionError: Button(key='<-', label='<-') is not None
 
-  the ``Button`` :ref:`object<what is a class?>` has two keys - ``key`` and ``label``
+  the ``Button`` :ref:`object<everything is an object>` has two keys - ``key`` and ``label``
 
 * I change the :ref:`assertion<what is an assertion?>` in ``test_streamlit_calculator.py``
 

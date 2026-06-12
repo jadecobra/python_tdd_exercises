@@ -679,7 +679,7 @@ what is the difference between ``=`` and ``==``?
 
 ----
 
-* ``=`` is the symbol for assignment, pointing, defining references. It is how to give a name (:ref:`variable<what is a variable?>`) to an :ref:`object<what is a class?>` in Python_, for example
+* ``=`` is the symbol for assignment, pointing, defining references. It is how to give a name (:ref:`variable<what is a variable?>`) to an :ref:`object<everything is an object>` in Python_, for example
 
   .. code-block:: python
 
@@ -724,7 +724,7 @@ With these statements, I tell Python_ - "DO NOT CONTINUE, if :ref:`True<test_wha
 test_assertion_error_w_none
 *********************************************************************************
 
-:ref:`None<what is None?>` is used when there is no value. I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`, this is useful if I want to check what value I get from a process.
+:ref:`None<what is None?>` is used when there is no value. I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`, this is useful if I want to check what value I get from a process.
 
 For example, if I have people fill a form and I want a test for when they leave something blank, I can use an :ref:`assertion<what is an assertion?>` to make sure that the value is :ref:`None<what is None?>`.
 
@@ -1594,11 +1594,11 @@ another way to test if something is NOT the same object as None
 
 ----
 
-I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if something is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>` or NOT.
+I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if something is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>` or NOT.
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`assertion<what is an assertion?>` with the `assertIsNot method`_ which checks if the :ref:`object<what is a class?>` in the parentheses on the left is NOT the same as the :ref:`object<what is a class?>` in the parentheses on the right
+* I add an :ref:`assertion<what is an assertion?>` with the `assertIsNot method`_ which checks if the :ref:`object<everything is an object>` in the parentheses on the left is NOT the same as the :ref:`object<everything is an object>` in the parentheses on the right
 
   .. code-block:: python
     :lineno-start: 19
@@ -1619,7 +1619,7 @@ I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if 
 
     E       AssertionError: unexpectedly identical: None
 
-  because :ref:`None is None<what is None?>`, they are the same :ref:`object<what is a class?>`. Compare this error message with the one for ``assert None is not None``
+  because :ref:`None is None<what is None?>`, they are the same :ref:`object<everything is an object>`. Compare this error message with the one for ``assert None is not None``
 
   .. code-block:: python
 
@@ -1644,7 +1644,7 @@ another way to test if something is the same object as None
 
 ----
 
-* I change the `assertIsNot method`_ to the `assertIs method`_ which checks if the :ref:`object<what is a class?>` in parentheses on the left is the same as the :ref:`object<what is a class?>` in parentheses on the right
+* I change the `assertIsNot method`_ to the `assertIs method`_ which checks if the :ref:`object<everything is an object>` in parentheses on the left is the same as the :ref:`object<everything is an object>` in parentheses on the right
 
   .. code-block:: python
     :lineno-start: 19
@@ -1659,7 +1659,7 @@ another way to test if something is the same object as None
             # assert False is None
             assert False is not None
 
-  the test passes because :ref:`None<what is None?>` is the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
+  the test passes because :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 
 * I use the `assertIs method`_ to compare :ref:`False<test_what_is_false>` with :ref:`None<what is None?>`
 
@@ -2384,7 +2384,7 @@ test_assertion_error_w_false
 
 :ref:`False<test_what_is_false>` is one of the two :ref:`booleans<what are booleans?>` and :ref:`test_assertion_error_w_none` shows that :ref:`False<test_what_is_false>` is NOT :ref:`None<what is None?>`. :ref:`is None False?<test_is_none_falsy_or_truthy>`
 
-I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>` or not.
+I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` or not.
 
 ----
 
@@ -2532,7 +2532,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if :ref:`True<test_what_is_true>` is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if :ref:`True<test_what_is_true>` is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -2601,7 +2601,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -2677,7 +2677,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -2760,7 +2760,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -2850,7 +2850,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -2947,7 +2947,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -3051,7 +3051,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -3162,7 +3162,7 @@ the test passes.
 
 -----
 
-* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -3300,11 +3300,11 @@ another way to test if something is the same object as False
 
 ----
 
-I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>` from the `unittest.TestCase class`_ to test if something is the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>` or not.
+I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>` from the `unittest.TestCase class`_ to test if something is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` or not.
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`assertion<what is an assertion?>` with the `assertIs method`_ (it checks if the two :ref:`objects<what is a class?>` in parentheses are the same)
+* I add an :ref:`assertion<what is an assertion?>` with the `assertIs method`_ (it checks if the two :ref:`objects<everything is an object>` in parentheses are the same)
 
   .. code-block:: python
     :lineno-start: 57
@@ -3325,7 +3325,7 @@ I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>`
 
     E       AssertionError: None is not False
 
-  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`. Compare this error message with the one for ``assert None is False``
+  because :ref:`None<what is None?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`. Compare this error message with the one for ``assert None is False``
 
   .. code-block:: python
 
@@ -3341,7 +3341,7 @@ another way to test if something is NOT the same object as False
 
 ----
 
-* I change the `assertIs method`_ to the `assertIsNot method`_ which checks if the two :ref:`objects<what is a class?>` in parentheses are NOT the same
+* I change the `assertIs method`_ to the `assertIsNot method`_ which checks if the two :ref:`objects<everything is an object>` in parentheses are NOT the same
 
   .. code-block:: python
     :lineno-start: 57
@@ -3356,7 +3356,7 @@ another way to test if something is NOT the same object as False
             # assert False is not False
             assert False is False
 
-  the test passes because :ref:`None<what is None?>` is NOT the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because :ref:`None<what is None?>` is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
 
 * I use the `assertIsNot method`_ to compare :ref:`False<test_what_is_false>` with itself
 
@@ -4019,7 +4019,7 @@ another way to test if something is NOT the same object as False
 test_assertion_error_w_true
 *********************************************************************************
 
-:ref:`True<test_what_is_true>` is the other :ref:`boolean<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>` or not.
+:ref:`True<test_what_is_true>` is the other :ref:`boolean<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>` or not.
 
 ----
 
@@ -4031,7 +4031,7 @@ test_assertion_error_w_true
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 91
@@ -4116,7 +4116,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if :ref:`False<test_what_is_false>` is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -4266,7 +4266,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -4352,7 +4352,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -4445,7 +4445,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -4545,7 +4545,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -4652,7 +4652,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -4766,7 +4766,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -4887,7 +4887,7 @@ the test passes.
 
 -----
 
-* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -5035,11 +5035,11 @@ another way to test if something is the same object as True
 
 ----
 
-I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>` from the `unittest.TestCase class`_ to test if something is the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>` or not.
+I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>` from the `unittest.TestCase class`_ to test if something is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>` or not.
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`assertion<what is an assertion?>` with the `assertIs method`_ (it checks if the two :ref:`objects<what is a class?>` in parentheses are the same)
+* I add an :ref:`assertion<what is an assertion?>` with the `assertIs method`_ (it checks if the two :ref:`objects<everything is an object>` in parentheses are the same)
 
   .. code-block:: python
     :lineno-start: 95
@@ -5060,7 +5060,7 @@ I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>`
 
     E       AssertionError: None is not True
 
-  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`. Compare this error message with the one for ``assert None is True``
+  because :ref:`None<what is None?>` is not the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`. Compare this error message with the one for ``assert None is True``
 
   .. code-block:: python
 
@@ -5074,7 +5074,7 @@ another way to test if something is NOT the same object as True
 
 ----
 
-* I change the `assertIs method`_ to the `assertIsNot method`_ which checks if the two :ref:`objects<what is a class?>` in parentheses are NOT the same :ref:`object<what is a class?>`
+* I change the `assertIs method`_ to the `assertIsNot method`_ which checks if the two :ref:`objects<everything is an object>` in parentheses are NOT the same :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -5089,7 +5089,7 @@ another way to test if something is NOT the same object as True
             # assert False is True
             assert False is not True
 
-  the test passes because :ref:`None<what is None?>` is NOT the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+  the test passes because :ref:`None<what is None?>` is NOT the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`.
 
 * I use the `assertIs method`_ to compare :ref:`False<test_what_is_false>` with :ref:`True<test_what_is_true>`
 
@@ -6384,7 +6384,7 @@ I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if 
 
     E       AssertionError: None == None
 
-  because :ref:`None<what is None?>` is equal to :ref:`None<what is None?>`, they are exactly the same :ref:`object<what is a class?>`. Compare this error message with the one for ``assert None != None``
+  because :ref:`None<what is None?>` is equal to :ref:`None<what is None?>`, they are exactly the same :ref:`object<everything is an object>`. Compare this error message with the one for ``assert None != None``
 
   .. code-block:: python
 
@@ -6860,12 +6860,12 @@ Some of the tests I have written use ``is`` and some use ``==``, if they mean th
 
 In Python_ they do not mean the same thing
 
-* ``x is y`` states that ``x`` is the same exact :ref:`object<what is a class?>` as ``y``
-* ``x is not y`` states that ``x`` is NOT the same exact :ref:`object<what is a class?>` as ``y``
+* ``x is y`` states that ``x`` is the same exact :ref:`object<everything is an object>` as ``y``
+* ``x is not y`` states that ``x`` is NOT the same exact :ref:`object<everything is an object>` as ``y``
 * ``x == y`` states that ``x`` is equal to ``y`` according to a rule or instruction programmed in Python_
 * ``x != y`` states that ``x`` is NOT equal to ``y`` according to a rule or instruction programmed in Python_
 
-This means that things can be equal without being the same exact :ref:`object<what is a class?>`. For example, an integer_ (a whole number without decimals) can be equal to a float_ (binary floating point decimal numbers) and they are NOT the same :ref:`object<what is a class?>`.
+This means that things can be equal without being the same exact :ref:`object<everything is an object>`. For example, an integer_ (a whole number without decimals) can be equal to a float_ (binary floating point decimal numbers) and they are NOT the same :ref:`object<everything is an object>`.
 
 ----
 

@@ -329,7 +329,7 @@ the only difference are the data types
   isinstance(something, str)
   isinstance(something, bool)
 
-The `isinstance function`_ can take a tuple_ as the second input, which means I can if the first input is an instance of any of the :ref:`objects<what is a class?>` in the tuple_
+The `isinstance function`_ can take a tuple_ as the second input, which means I can if the first input is an instance of any of the :ref:`objects<everything is an object>` in the tuple_
 
 * I add a new :ref:`if statement<if statements>` to the :ref:`add function<test_addition>`
 

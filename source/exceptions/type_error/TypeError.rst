@@ -186,7 +186,7 @@ start the project
 test_type_error_w_the_uncallables
 *********************************************************************************
 
-There are :ref:`objects<what is a class?>` that can NOT be called
+There are :ref:`objects<everything is an object>` that can NOT be called
 
 ----
 
@@ -993,7 +993,7 @@ I have to call a :ref:`function<what is a function?>` with the same number of in
 test_type_error_w_objects_that_do_not_mix
 *********************************************************************************
 
-Some operations do not work if the :ref:`objects<what is a class?>` are NOT the same type_
+Some operations do not work if the :ref:`objects<everything is an object>` are NOT the same type_
 
 ----
 

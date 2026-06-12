@@ -112,7 +112,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   AttributeError: module 'src.calculator' has no attribute 'BOOM!!!'
 
-* ``__getattribute__`` is a :ref:`method<what is a method?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<what is a class?>`
+* ``__getattribute__`` is a :ref:`method<what is a method?>` that takes a name and checks if the name is an :ref:`attribute<what is an attribute?>` of the :ref:`object<everything is an object>`
 
   - if the name is NOT an :ref:`attribute<what is an attribute?>` it raises :ref:`AttributeError<what causes AttributeError?>`
   - if the name is an :ref:`attribute<what is an attribute?>` it returns the object it points to

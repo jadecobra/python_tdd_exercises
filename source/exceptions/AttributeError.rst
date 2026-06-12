@@ -16,7 +16,7 @@ what causes AttributeError?
 
 ----
 
-So far, all the tests show that I get AttributeError_ when I use a name that is NOT in an :ref:`object<what is a class?>`.
+So far, all the tests show that I get AttributeError_ when I use a name that is NOT in an :ref:`object<everything is an object>`.
 
 ----
 

@@ -44,7 +44,7 @@ what is a list?
 
 ----
 
-A list_ is a container :ref:`object<what is a class?>` that can hold any objects_
+A list_ is a container :ref:`object<everything is an object>` that can hold any objects_
 
 * they are represented with ``[]``
 * they can be made with ``list()`` or ``[]``

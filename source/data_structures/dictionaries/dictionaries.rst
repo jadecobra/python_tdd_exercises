@@ -1727,7 +1727,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-* I copy the ``dict_items`` :ref:`object<what is a class?>` from the terminal_ and paste  it as the expectation
+* I copy the ``dict_items`` :ref:`object<everything is an object>` from the terminal_ and paste  it as the expectation
 
   .. code-block:: python
     :lineno-start: 128
@@ -1745,7 +1745,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
     NameError: name 'dict_items' is not defined
 
-  this new :ref:`object<what is a class?>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+  this new :ref:`object<everything is an object>` has a :ref:`list<lists>` and :ref:`I know how to work with lists<lists>`, just like :ref:`dict_items<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -1808,7 +1808,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   the test passes.
 
-This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the :ref:`dictionary<what is a dictionary?>`. The ``dict_items`` :ref:`object<what is a class?>` is :ref:`iterable<what is an iterable?>`
+This works because the `items method`_ returns an :ref:`iterable<what is an iterable?>` of the key-value pairs of the :ref:`dictionary<what is a dictionary?>`. The ``dict_items`` :ref:`object<everything is an object>` is :ref:`iterable<what is an iterable?>`
 
 ----
 
@@ -1957,7 +1957,7 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
 ----
 
-* I copy the ``dict_keys`` :ref:`object<what is a class?>` from the terminal_ and paste it as the expectation
+* I copy the ``dict_keys`` :ref:`object<everything is an object>` from the terminal_ and paste it as the expectation
 
   .. code-block:: python
     :lineno-start: 140
@@ -1976,9 +1976,9 @@ this looks like the error in :ref:`test_items_returns_iterable_of_key_value_pair
 
     NameError: name 'dict_keys' is not defined
 
-  the ``dict_keys`` :ref:`object<what is a class?>` has a :ref:`list<lists>`
+  the ``dict_keys`` :ref:`object<everything is an object>` has a :ref:`list<lists>`
 
-* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<what is a class?>` as the expectation
+* I use the :ref:`list<lists>` in the ``dict_keys`` :ref:`object<everything is an object>` as the expectation
 
   .. code-block:: python
     :lineno-start: 140
@@ -3219,7 +3219,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 
     NameError: name 'dict_values' is not defined
 
-* I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<what is a class?>`
+* I remove the things around the :ref:`list<lists>` in the ``dict_values`` :ref:`object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 212
@@ -3642,7 +3642,7 @@ close the project
 review
 *********************************************************************************
 
-Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<what is a class?>` can be used as values.
+Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<everything is an object>` can be used as values.
 
 I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 

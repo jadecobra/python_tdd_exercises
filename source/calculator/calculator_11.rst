@@ -1199,7 +1199,7 @@ how to change a bytes object to a string
 
     AssertionError: '<h2>RS.TUVWXYZABCDEFG + 1.0 = RH.TUVWXYZABCDEFG</h2>' != '<h2>0.0 + 1.0 = 1.0</h2>'
 
-  - ``response.data.decode()`` returns the result of calling the `decode method`_ of the ``data`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``response`` :ref:`object<what is a class?>`
+  - ``response.data.decode()`` returns the result of calling the `decode method`_ of the ``data`` :ref:`attribute<test_attribute_error_w_class_attributes>` of the ``response`` :ref:`object<everything is an object>`
   - the `decode method`_ is part of the bytes_ data type, it converts bytes_ to strings_
 
 * I add the :ref:`variable<what is a variable?>` to the expectation
@@ -1605,7 +1605,7 @@ I change the assertion to look for the title and not the entire page
 
       def test_calculations(self):
 
-the test passes because the `assertIn method`_ of the `unittest.TestCase class`_ checks if the thing on the left is in the :ref:`object<what is a class?>` on the right
+the test passes because the `assertIn method`_ of the `unittest.TestCase class`_ checks if the thing on the left is in the :ref:`object<everything is an object>` on the right
 
 ----
 
