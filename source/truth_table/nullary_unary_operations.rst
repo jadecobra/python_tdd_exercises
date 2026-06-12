@@ -163,7 +163,14 @@ test_logical_true
     def logical_true():
         return True
 
-* I open a new terminal_, then add a git_ commit message
+* I open a new terminal_, then add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+* I add a git_ commit message
 
   .. code-block:: python
     :emphasize-lines: 1
