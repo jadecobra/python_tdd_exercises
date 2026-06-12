@@ -834,14 +834,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   because this happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
 
-  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-
-- if ``first_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is grouped as :green:`True`, it checks if ``second_input`` is grouped as :green:`True`
-
-    * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as its output then then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, which returns the value of ``second_input`` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, which returns :red:`False` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -1098,11 +1092,11 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green because this happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called. When ``if first_input and second_input:`` runs, Python_ checks if ``first_input`` is grouped as :green:`True`
 
-  - if ``first_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
   - if ``first_input`` is grouped as :green:`True`, it checks if ``second_input`` is grouped as :green:`True`
 
-    * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as its output then then leaves the :ref:`function<what is a function?>` because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as its output then then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 ----
 
