@@ -4,7 +4,7 @@
 
 .. include:: ../../links.rst
 
-.. _bool function: :ref:`bool<what are booleans?>`
+.. _bool function: :ref:`bool<how to test if something is grouped as True>`
 
 #################################################################################
 booleans 2: test with bool
@@ -13,7 +13,7 @@ booleans 2: test with bool
 I want to use the :ref:`bool built-in function<what are booleans?>` with the :ref:`assertFalse method<another way to test if something is grouped as False>` in :ref:`test_what_is_false` and the :ref:`assertTrue method<another way to test if something is grouped as True>` in :ref:`test_what_is_true`.
 
 
-The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. Which means the result of ``bool(something)`` is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
+The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`. Which means the result of ``bool(something)`` is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -139,7 +139,7 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>` with :ref:`bool<what are booleans?>`
+* I add another :ref:`assertion<what is an assertion?>` with :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 6
@@ -478,7 +478,7 @@ Oh No! More of the same thing
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` with :ref:`bool<what are booleans?>` to :ref:`test_what_is_true`
+I add an :ref:`assertion<what is an assertion?>` with :ref:`bool<how to test if something is grouped as True>` to :ref:`test_what_is_true`
 
 .. code-block:: python
   :lineno-start: 26

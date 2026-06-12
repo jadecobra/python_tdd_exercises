@@ -551,7 +551,7 @@ the test passes because ``1 + 1 == 2`` is NOT :ref:`False<test_what_is_false>`, 
 
     # Exceptions seen
 
-  the test is still green because ``reality == my_expectation`` is just a statement. Python_ does not care whether it is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` and the statement follows Python_ rules.
+  the test is still green because ``reality == my_expectation`` is just a statement. Python_ does not care whether it is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` and the statement follows Python_ rules.
 
 * I change the statement to an :ref:`assertion<what is an assertion?>`
 

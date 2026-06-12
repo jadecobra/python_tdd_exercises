@@ -1,6 +1,6 @@
 .. meta::
-  :description: Booleans 4: how Python booleans and truthiness interact with class inheritance and custom objects. Learn to control bool() behavior with __:ref:`bool<what are booleans?>`_ and __len__ through TDD testing. Continues the booleans series with advanced data structure and OOP connections.
-  :keywords: Jacob Itegboje, Pumping Python, python booleans inheritance, __:ref:`bool<what are booleans?>`_ python, custom bool python, truthiness custom classes, TDD booleans advanced, python bool inheritance tutorial, testing __:ref:`bool<what are booleans?>`_ and __len__
+  :description: Booleans 4: how Python booleans and truthiness interact with class inheritance and custom objects. Learn to control bool() behavior with __:ref:`bool<how to test if something is grouped as True>`_ and __len__ through TDD testing. Continues the booleans series with advanced data structure and OOP connections.
+  :keywords: Jacob Itegboje, Pumping Python, python booleans inheritance, __:ref:`bool<how to test if something is grouped as True>`_ python, custom bool python, truthiness custom classes, TDD booleans advanced, python bool inheritance tutorial, testing __:ref:`bool<how to test if something is grouped as True>`_ and __len__
 
 .. include:: ../../links.rst
 
@@ -12,7 +12,7 @@ booleans 4: inheritance
 
 Earlier on, I tested if :ref:`booleans are Integers<booleans 4: inheritance>` and the tests showed that :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>` are both integers_ and :ref:`booleans<what are booleans?>`.
 
-Is :ref:`bool<what are booleans?>` a child of int_ or are they both parents of :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`?
+Is :ref:`bool<how to test if something is grouped as True>` a child of int_ or are they both parents of :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`?
 
 ----
 

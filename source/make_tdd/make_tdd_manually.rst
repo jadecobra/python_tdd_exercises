@@ -693,7 +693,7 @@ how to make a Python file for the tests in the 'tests' directory
 
       .. tip:: the name ``self`` is :ref:`Python convention<conventions>`. I can use any name though it is easier to stick with convention for this one
 
-    * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>` (a way to make sure something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`)
+    * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>` (a way to make sure something is :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`)
 
       - :ref:`assertFalse<another way to test if something is grouped as False>` is a :ref:`method<what is a method?>` in the `unittest.TestCase class`_ that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input

@@ -23,12 +23,12 @@ truth table: Binary Operations
   Do you still want to continue?
 
 
-The last chapter covered 2 types of operations
+The last chapter covered two types of operations
 
-- :ref:`Nullary Operations` which do not take input and
-- :ref:`Unary Operations` which take 1 input
+- :ref:`Nullary Operations` which do not take input
+- :ref:`Unary Operations` which take one input
 
-We know that there are two :ref:`booleans<what are booleans?>`: :ref:`True<test_what_is_true>` and :ref:`False<test_what_is_false>`. There are also :ref:`Binary Operations<truth table: Binary Operations>`, they take 2 inputs. Each input can be :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which means there are 4 possible ways the inputs can be sent to a :ref:`binary operation<truth table: binary operations>`
+There are also :ref:`Binary Operations<truth table: Binary Operations>`, they take two inputs. Each input can be :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` which means there are 4 possible ways the inputs can be sent to a :ref:`binary operation<truth table: binary operations>`
 
 ==============  ==============
 first input     second input
@@ -39,19 +39,19 @@ first input     second input
 :red:`False`    :red:`False`
 ==============  ==============
 
-These combinations give us :ref:`16 binary operations<truth table: binary operations>`, and each operation returns :green:`True` or :red:`False`. Here are the 16 operations covered in these chapters and what they return
+These combinations give :ref:`16 binary operations<truth table: binary operations>`, and each operation returns :green:`True` or :red:`False`. The :ref:`truth table<truth table: Binary Operations>` shows the 16 operations covered in these chapters and what they return when they receive input.
 
 =============================================== ============= ============= ============= ============= ==============================================================
 return                                          True,         True,         False,        False,        operation
                                                 True          False         True          False
 =============================================== ============= ============= ============= ============= ==============================================================
-False                                           :red:`False`  :red:`False`  :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
+:red:`False`                                    :red:`False`  :red:`False`  :red:`False`  :red:`False`  :ref:`contradiction<test_contradiction>`
 first and second                                :green:`True` :red:`False`  :red:`False`  :red:`False`  :ref:`logical_conjunction<test_logical_conjunction>`
 second                                          :green:`True` :red:`False`  :green:`True` :red:`False`  :ref:`project_second<test_project_second>`
 (not first) and second                          :red:`False`  :red:`False`  :green:`True` :red:`False`  :ref:`converse_non_implication<test_converse_non_implication>`
 not first                                       :red:`False`  :red:`False`  :green:`True` :green:`True` :ref:`negate_first<test_negate_first>`
 not (first and second)                          :red:`False`  :green:`True` :green:`True` :green:`True` :ref:`logical_nand<test_logical_nand>`
-True                                            :green:`True` :green:`True` :green:`True` :green:`True` :ref:`tautology<test_tautology>`
+:green:`True`                                   :green:`True` :green:`True` :green:`True` :green:`True` :ref:`tautology<test_tautology>`
 first or second                                 :green:`True` :green:`True` :green:`True` :red:`False`  :ref:`logical_disjunction<test_logical_disjunction>`
 (not (first and second)) and (first or second)  :red:`False`  :green:`True` :green:`True` :red:`False`  :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 first and (not second)                          :red:`False`  :green:`True` :red:`False`  :red:`False`  :ref:`material_non_implication<test_material_non_implication>`

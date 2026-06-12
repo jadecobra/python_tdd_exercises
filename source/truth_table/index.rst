@@ -1,3 +1,7 @@
+.. meta::
+  :description: Truth Table in Python for beginners using TDD. Start the truth_table project with uv, pytest-watcher, tests package, initial test_failure with assertFalse, then continue through Nullary/Unary Operations (logical_true, logical_false, identity, not/negation) and Binary Operations. Uses assertTrue/assertFalse from booleans chapter, demonstrates Truth Table fundamentals (always returns True or False / 1 or 0), conditional logic foundations, and full Red-Green-Refactor workflow with real error messages. Previews final test_nullary_unary.py and test_binary.py. Part of Jacob Itegboje Pumping Python TDD series.
+  :keywords: Jacob Itegboje, Pumping Python, truth table python, python truth table tutorial, assertTrue assertFalse booleans, TDD if statements, conditional expressions python, logical and or not truth table, uv init truth_table, pytest-watcher, AssertionError True is not false, beginner boolean logic, what is and what is or python, test driven development truth table, python 1 or 0 true false, nullary unary operations
+
 .. include:: ../links.rst
 
 .. _truth_table:
@@ -20,7 +24,7 @@ I can add these to a program so that when it gets information about the person i
 
 These are exercises on writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue methods<another way to test if something is grouped as True>` from :ref:`booleans<what are booleans?>`.
 
-The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which can also be thought of as ``1`` or ``0``.
+The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` which can also be thought of as ``1`` or ``0``.
 
 ----
 
@@ -42,12 +46,8 @@ These are the tests I have at the end of the chapters
 questions about The Truth Table
 *********************************************************************************
 
-* :ref:`what is and?<test_logical_conjunction>`
+
 * :ref:`what is or?<test_logical_disjunction>`
-* :ref:`what is an if statement?<if statements>`
-* :ref:`what is a conditional expression?<conditional expressions>`
-* :ref:`what is a ternary operator?<conditional expressions>`
-* what are the possible combinations of two inputs?
 
 ----
 

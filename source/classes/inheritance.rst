@@ -1151,7 +1151,7 @@ issubclass_ checks if the thing in the parentheses on the left is a :ref:`subcla
 
 * I go back to the terminal_ that is running the tests
 
-* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<what are booleans?>` to show that :ref:`in Python everything is an object<everything is an object>`
+* I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<how to test if something is grouped as True>` to show that :ref:`in Python everything is an object<everything is an object>`
 
   .. code-block:: python
     :lineno-start: 22
@@ -1173,7 +1173,7 @@ issubclass_ checks if the thing in the parentheses on the left is a :ref:`subcla
 
     E       assert not True
 
-  because :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`.
+  because :ref:`bool<how to test if something is grouped as True>` is a :ref:`child of object<what is a class?>`.
 
 ----
 
@@ -1243,7 +1243,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what is an assertion?
   AssertionError:
       <class 'bool'> is a subclass of <class 'object'>
 
-because :ref:`bool<what are booleans?>` is a :ref:`child of object<what is a class?>`.
+because :ref:`bool<how to test if something is grouped as True>` is a :ref:`child of object<what is a class?>`.
 
 ----
 

@@ -435,7 +435,8 @@ I can test if Python_ groups an :ref:`object<everything is an object>` as :ref:`
     self.assertEqual(bool(False), True)
     self.assertEqual(False      , True)
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`False<test_what_is_false>`, which is the result of ``bool(False)`` is not equal to :ref:`True<test_what_is_true>`.
+  - which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`False<test_what_is_false>`, which is the result of ``bool(False)`` is not equal to :ref:`True<test_what_is_true>`
+  - ``bool(anything)`` returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the thing in parentheses
 
 * I add a comment
 
@@ -842,7 +843,8 @@ I will use the `bool built-in function`_ from `The Python Standard Library`_ to 
     self.assertEqual(bool(True), False)
     self.assertEqual(True      , False)
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`True<test_what_is_true>`, which is the result of ``bool(True)`` is not equal to :ref:`False<test_what_is_false>`.
+  - which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`True<test_what_is_true>`, which is the result of ``bool(True)`` is not equal to :ref:`False<test_what_is_false>`
+  - ``bool(anything)`` returns :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the thing in parentheses
 
 * I add a comment
 

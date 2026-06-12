@@ -57,7 +57,7 @@ requirements
 Nullary Operations
 *********************************************************************************
 
-There are 2 Nullary operations - :ref:`Logical True<test_logical_true>` and :ref:`Logical False<test_logical_false>`. They do not take input and always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
+There are 2 Nullary operations - :ref:`Logical True<test_logical_true>` and :ref:`Logical False<test_logical_false>`. They do not take input and always return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -296,7 +296,7 @@ test_logical_false
 Unary Operations
 *********************************************************************************
 
-There are 2 unary operations: :ref:`Logical Identity<test_logical_identity>` and :ref:`Logical Negation<test_logical_negation>`, they each take one input and return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
+There are 2 unary operations: :ref:`Logical Identity<test_logical_identity>` and :ref:`Logical Negation<test_logical_negation>`, they each take one input and return :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -448,13 +448,15 @@ test_logical_identity
 
   .. code-block:: python
     :lineno-start: 16
-    :emphasize-lines: 4-5
+    :emphasize-lines: 4-9
 
         def test_logical_identity(self):
-            reality = src.truth_table.logical_identity(True)
-            self.assertTrue(reality)
-            reality = src.truth_table.logical_identity(False)
-            self.assertFalse(reality)
+            self.assertTrue(
+                src.truth_table.logical_identity(True)
+            )
+            self.assertFalse(
+                src.truth_table.logical_identity(False)
+            )
 
 
     # Exceptions seen
@@ -717,7 +719,7 @@ how to return the opposite of a boolean
 
 ----
 
-* I can use the "not_" keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the `return statement`_
+* I can use the not_ keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 13
@@ -739,7 +741,7 @@ how to return the opposite of a boolean
     def logical_negation(the_input):
         return not the_input
 
-  This is what happens when the :ref:`logical_identity function<test_logical_identity>` is called
+  This is what happens when the :ref:`logical_negation function<test_logical_negation>` is called
 
   - it returns :red:`False`, if the input is :ref:`True<test_what_is_true>`
   - it returns :green:`True`, if the input is :ref:`False<test_what_is_false>`

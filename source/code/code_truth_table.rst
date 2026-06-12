@@ -7,7 +7,7 @@ truth table: tests and solutions
 Nullary and Unary Operations tests
 *********************************************************************************
 
-the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Nullary and Unary Operations`
+the code from ``truth_table/tests/test_nullary_unary.py`` from :ref:`truth table: Nullary and Unary Operations`
 
 .. literalinclude:: truth_table/tests/test_nullary_unary.py
   :language: python
@@ -115,7 +115,7 @@ the code from ``car/tests/test_car.py`` from :ref:`Car`
   :language: python
   :linenos:
 
-the code from ``car/src/car.py`` from :ref:`Microwave`
+the code from ``car/src/car.py`` from :ref:`Car`
 
 .. literalinclude:: truth_table/solutions/car.py
   :language: python
