@@ -978,7 +978,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
     AssertionError: False != ''
 
-* I change the :ref:`assertEqual method<another way to test if two things are Equal>` to assertFalse_ and remove the expectation
+* I change the :ref:`assertEqual method<another way to test if two things are Equal>` to :ref:`assertFalse<another way to test if something is grouped as False>` and remove the expectation
 
   .. code-block:: python
     :lineno-start: 28
@@ -988,7 +988,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
 
   the test passes.
 
-* I change the assertFalse_ to assertTrue_
+* I change the :ref:`assertFalse<another way to test if something is grouped as False>` to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 14

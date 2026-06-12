@@ -682,32 +682,34 @@ test_what_is_true
 
 ----
 
-I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
+* I go back to the terminal_ that is running the tests
 
-.. code-block:: python
-  :lineno-start: 13
-  :emphasize-lines: 8-9
+* I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
 
-      def test_what_is_false(self):
-          self.assertIsInstance(False, bool)
-          self.assertIs(False, False)
-          self.assertEqual(bool(False), False)
-          self.assertFalse(bool(False))
-          self.assertFalse(False)
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 8-9
 
-      def test_what_is_true(self):
-          self.assertNotIsInstance(True, bool)
+        def test_what_is_false(self):
+            self.assertIsInstance(False, bool)
+            self.assertIs(False, False)
+            self.assertEqual(bool(False), False)
+            self.assertFalse(bool(False))
+            self.assertFalse(False)
+
+        def test_what_is_true(self):
+            self.assertNotIsInstance(True, bool)
 
 
-  # NOTES
+    # NOTES
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AssertionError: True is an instance of <class 'bool'>
+    AssertionError: True is an instance of <class 'bool'>
 
-this was also in :ref:`test_is_none_a_boolean`.
+  this was also in :ref:`test_is_none_a_boolean`.
 
 ----
 
@@ -3760,7 +3762,7 @@ you now know
 * :ref:`what causes AttributeError<what causes AttributeError?>`
 * :ref:`what None is and is not<what is None?>`
 * :ref:`how to use the assertIsNotNone and assertIsNone methods<AssertionError 3: use assertIsNotNone and assertIsNone>`
-* :ref:`what are booleans<what are booleans?>`
+* :ref:`what booleans are<what are booleans?>`
 
 :ref:`Would you like to test the truth table?<truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
 

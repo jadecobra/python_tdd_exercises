@@ -10,7 +10,7 @@
 booleans 2: test with bool
 #################################################################################
 
-I want to use the :ref:`bool built-in function<what are booleans?>` with the `assertFalse method`_ in :ref:`test_what_is_false` and the `assertTrue method`_ in :ref:`test_what_is_true`.
+I want to use the :ref:`bool built-in function<what are booleans?>` with the :ref:`assertFalse method<another way to test if something is grouped as False>` in :ref:`test_what_is_false` and the :ref:`assertTrue method<another way to test if something is grouped as True>` in :ref:`test_what_is_true`.
 
 
 The `bool function`_ tells if Python_ groups the thing in parentheses as :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`. Which means the result of ``bool(something)`` is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
@@ -121,7 +121,7 @@ the result of ``bool(None)`` is :ref:`False<test_what_is_false>`
 
 ----
 
-I change assertTrue_ to assertFalse_
+I change :ref:`assertTrue<another way to test if something is grouped as True>` to assertFalse_
 
 .. code-block:: python
   :lineno-start: 10
@@ -255,7 +255,7 @@ the test passes.
 
   the result of ``bool(str())`` is :ref:`False<test_what_is_false>`
 
-* I change assertTrue_ to assertFalse_
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to assertFalse_
 
   .. code-block:: python
     :lineno-start: 16
@@ -359,7 +359,7 @@ the test passes.
 
   the result of ``bool(set())`` is :ref:`False<test_what_is_false>`
 
-* I change assertTrue_ to assertFalse_
+* I change :ref:`assertTrue<another way to test if something is grouped as True>` to assertFalse_
 
   .. code-block:: python
     :lineno-start:  22
@@ -423,7 +423,7 @@ the test passes.
 
   the test passes.
 
-* The `assertFalse method`_ uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
+* The :ref:`assertFalse method<another way to test if something is grouped as False>` uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
 
   .. code-block:: python
 
@@ -432,7 +432,7 @@ the test passes.
         if something:
             raise AssertionError(message)
 
-  here is what happens when the `assertFalse method`_ is called
+  here is what happens when the :ref:`assertFalse method<another way to test if something is grouped as False>` is called
 
   - it raises :ref:`AssertionError<what causes AssertionError?>` if ``something`` is :ref:`True<test_what_is_true>`, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
   - it returns :ref:`None<what is None?>` if something is :ref:`False<test_what_is_false>` because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
@@ -518,7 +518,7 @@ the result of ``bool(-1)`` is :ref:`True<test_what_is_true>`
 
 ----
 
-I change assertFalse_ to assertTrue_
+I change assertFalse_ to :ref:`assertTrue<another way to test if something is grouped as True>`
 
 .. code-block:: python
   :lineno-start: 30
@@ -604,7 +604,7 @@ the test passes.
 
   the result of ``bool(-0.1)`` is :ref:`True<test_what_is_true>`
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -680,7 +680,7 @@ the test passes.
 
   the result of ``bool("a string with things")`` is :ref:`True<test_what_is_true>`
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 38
@@ -716,7 +716,7 @@ the test passes.
 
   the result of ``bool((1, 2, 3, 'n'))`` is :ref:`True<test_what_is_true>`
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 40
@@ -787,7 +787,7 @@ the test passes.
 
   the result of ``bool({1, 2, 3, 'n'})`` is :ref:`True<test_what_is_true>`
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 44
@@ -822,7 +822,7 @@ the test passes.
 
   the result of ``bool({'key': 'value'})`` is :ref:`True<test_what_is_true>`
 
-* I change assertFalse_ to assertTrue_
+* I change assertFalse_ to :ref:`assertTrue<another way to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 26
@@ -855,7 +855,7 @@ the test passes.
 
   the test passes.
 
-* The `assertTrue method`_ uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
+* The :ref:`assertTrue method<another way to test if something is grouped as True>` uses an :ref:`if statement<if statements>` to check if what it gets as input is :ref:`False<test_what_is_false>`, this is what the code looks like
 
   .. code-block:: python
 
@@ -864,7 +864,7 @@ the test passes.
         if not something:
             raise AssertionError(message)
 
-  here is what happens when the `assertTrue method`_ is called
+  here is what happens when the :ref:`assertTrue method<another way to test if something is grouped as True>` is called
 
   - it raises :ref:`AssertionError<what causes AssertionError?>` if ``something`` is :ref:`False<test_what_is_false>`, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
   - it returns :ref:`None<what is None?>` if something is :ref:`True<test_what_is_true>` because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`

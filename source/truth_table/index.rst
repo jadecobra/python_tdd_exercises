@@ -18,9 +18,9 @@ Sometimes I want programs_ to choose what to do based on inputs or :ref:`conditi
 
 I can add these to a program so that when it gets information about the person it returns  :ref:`True<test_what_is_true>` for "Yes, they can vote" or :ref:`False<test_what_is_false>` for "No, they can NOT vote".
 
-These are exercises on writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the assertFalse_ and assertTrue_ :ref:`methods<what is a method?>` from :ref:`AssertionError<what causes AssertionError?>`, :ref:`None<what is None?>` and :ref:`booleans<what are booleans?>`.
+These are exercises on writing :ref:`conditional expressions` in Python_ with the `Truth Table`_ from Mathematics_ and the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue methods<another way to test if something is grouped as True>` from :ref:`booleans<what are booleans?>`.
 
-The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`.
+The operations in these chapters are fundamental to how the computer works. All operations from the `Truth Table`_ always return :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` which can also be thought of as ``1`` or ``0``.
 
 ----
 
@@ -42,13 +42,12 @@ These are the tests I have at the end of the chapters
 questions about The Truth Table
 *********************************************************************************
 
-* :ref:`what is not?<test_logical_negation>`
 * :ref:`what is and?<test_logical_conjunction>`
 * :ref:`what is or?<test_logical_disjunction>`
 * :ref:`what is an if statement?<if statements>`
 * :ref:`what is a conditional expression?<conditional expressions>`
 * :ref:`what is a ternary operator?<conditional expressions>`
-* What are the possible combinations of two inputs?
+* what are the possible combinations of two inputs?
 
 ----
 
@@ -96,7 +95,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I make a :ref:`Python file<what is a module?>` to hold the source code in the ``src`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``truth_table.py`` and move it to the ``src`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -107,7 +106,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch src/truth_table.py
+        mv main.py src/truth_table.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -115,7 +114,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item src/truth_table.py
+        Move-Item main.py src/truth_table.py
 
   the terminal_ goes back to the command line.
 
@@ -201,30 +200,6 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I set up the project with uv_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    uv init
-
-  the terminal_ shows
-
-  .. code-block:: shell
-
-    Initialized project `truth-table`
-
-  then goes back to the command line.
-
-* I remove ``main.py`` from the project because I do not use it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    rm main.py
-
-  the terminal_ goes back to the command line.
-
 * I use uv_ to install `pytest-watcher`_ with the requirements file_
 
   .. code-block:: python
@@ -233,6 +208,24 @@ start the project
     uv add --requirement requirements.txt
 
   the terminal_ shows that it installed `pytest-watcher`_ and its dependencies.
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'setup project'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 * I use `pytest-watcher`_ to run the tests automatically
 
@@ -248,7 +241,7 @@ start the project
     :emphasize-lines: 8, 10
 
     ======================== FAILURES ========================
-    _____________________ TestTruthTable.test_failure ________________________
+    _____________ TestTruthTable.test_failure ________________
 
     self = <tests.test_truth_table.TestTruthTable testMethod=test_failure>
 

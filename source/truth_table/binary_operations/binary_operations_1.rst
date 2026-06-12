@@ -118,7 +118,7 @@ first input     second input   return
 
 ----
 
-* I open the :ref:`Explorer<explorer on left>` to make a new file_ in the ``tests`` folder_
+* I make a new file_ in the ``tests`` folder_
 
 * I right click the ``tests`` folder_ then select ``New File`` and name the new file_ ``test_binary.py``
 
@@ -810,7 +810,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  still green, because ``bool(anything)`` returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the thing in parentheses like the tests in :ref:`the booleans chapter<what are booleans?>` with the assertFalse_ and assertTrue_ :ref:`methods<what is a method?>`
+  still green, because ``bool(anything)`` returns :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>` for the thing in parentheses like the tests in :ref:`the booleans chapter<what are booleans?>` with the :ref:`assertFalse<another way to test if something is grouped as False>` and :ref:`assertTrue<another way to test if something is grouped as True>` :ref:`methods<what is a method?>`
 
 * Since ``bool(True)`` is the same as :ref:`True<test_what_is_true>`, ``bool(first_input) == True`` is the same thing as ``True == True`` when ``first_input`` is :green:`True`, which is a repetition. I remove ``== True`` from the `if statements`_
 
@@ -865,7 +865,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
     - ``if something == True:`` checks if ``something`` is equal to :ref:`True<test_what_is_true>`
 
-    - these `if statements`_ check if the result of ``bool(something)`` is equal to :ref:`True<test_what_is_true>`, the same way the `assertTrue method`_ does
+    - these `if statements`_ check if the result of ``bool(something)`` is equal to :ref:`True<test_what_is_true>`, the same way the :ref:`assertTrue method<another way to test if something is grouped as True>` does
 
       * ``if bool(something) == True:``
       * ``if bool(something):``

@@ -695,7 +695,7 @@ how to make a Python file for the tests in the 'tests' directory
 
     * ``self.assertFalse(True)`` is an :ref:`assertion<what is an assertion?>` (a way to make sure something is :ref:`True<test_what_is_true>` or :ref:`False<test_what_is_false>`)
 
-      - assertFalse_ is a :ref:`method<what is a method?>` in the `unittest.TestCase class`_ that checks if its input is :ref:`False<test_what_is_false>`
+      - :ref:`assertFalse<another way to test if something is grouped as False>` is a :ref:`method<what is a method?>` in the `unittest.TestCase class`_ that checks if its input is :ref:`False<test_what_is_false>`
       - :ref:`True<test_what_is_true>` is given as the input
 
       I expect this line to fail because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`. If it does not fail, then Python_ and I have a problem
