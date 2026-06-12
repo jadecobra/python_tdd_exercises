@@ -22,21 +22,21 @@ class TestBooleans(unittest.TestCase):
         self.assertFalse(None)
 
     def test_is_an_integer_falsy_or_truthy(self):
-        negative_integer = -1
-        self.assertTrue(bool(negative_integer))
-        self.assertTrue(negative_integer)
+        a_negative_integer = -1
+        self.assertTrue(bool(a_negative_integer))
+        self.assertTrue(a_negative_integer)
 
         self.assertFalse(bool(0))
         self.assertFalse(0)
 
-        positive_integer = 1
-        self.assertTrue(bool(positive_integer))
-        self.assertTrue(positive_integer)
+        a_positive_integer = 1
+        self.assertTrue(bool(a_positive_integer))
+        self.assertTrue(a_positive_integer)
 
     def test_is_a_float_falsy_or_truthy(self):
-        negative_float = -0.1
-        self.assertTrue(bool(negative_float))
-        self.assertTrue(negative_float)
+        a_negative_float = -0.1
+        self.assertTrue(bool(a_negative_float))
+        self.assertTrue(a_negative_float)
 
         self.assertFalse(bool(0.0))
         self.assertFalse(0.0)

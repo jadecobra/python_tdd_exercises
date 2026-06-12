@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python's truthiness and falsiness rules through Test Driven Development (TDD). This step-by-step tutorial uses unittest.assertTrue and assertFalse to explore why 0, 0.0, None, and empty collections (strings, lists, tuples, sets, and dicts) are False, while non-zero numbers and populated collections are True. Includes instructions for setting up a Python project with uv and automating tests with pytest-watcher.
-  :keywords: Jacob Itegboje, Python booleans for beginners, Python truthiness and falsiness, what is False Python unittest assertTrue, Python unittest assertFalse, TDD Red Green Refactor tutorial, Python bool type explained, is empty list True or False, is 0.0 False is None False or True, testing Python data structures, python uv init, pytest-watcher tutorial, boolean logic in programming, truthy and falsy values list, python empty string boolean, python empty dict truthiness, python zero-based indexing, python unit testing tutorial
+  :description: Master Python's truthiness and falsiness rules through Test Driven Development (TDD) in the "booleans" project. Step-by-step red-green-refactor with unittest.TestCase.assertTrue, assertFalse, bool(), assertIsInstance, assertIs and assertEqual. Tests the False and True singletons themselves (showing they are bool instances, identical only to themselves, and not equal to None or 0), then exhaustively groups the prior data structures: None (falsy), negative/zero/positive integers, negative/0.0/positive floats, empty vs populated strings/tuples/lists/sets/dicts. Demonstrates repeated real AssertionError messages from the terminal ("AssertionError: False is not true", "AssertionError: True is not false", "AssertionError: 0 is not true", "AssertionError: 1 is not false", "AssertionError: {} is not true", "AssertionError: False is not true" and equivalents for other empties). Uses local variables inside test methods (no setUp), "I remove the commented lines" after each GREEN, accumulating # NOTES list of every bool() fact at the bottom, "the terminal is my friend", uv init booleans, tests/ package with __init__.py, pytest-watcher, per-test git commits. Builds directly on AssertionError (assertIs for True/False identity) and None chapters. "I have these tests by the end of the chapter" preview via literalinclude. Part of Jacob Itegboje's Pumping Python TDD series for beginners.
+  :keywords: Jacob Itegboje, Pumping Python, Python booleans for beginners, Python truthiness and falsiness, unittest assertTrue, unittest assertFalse, assertTrue assertFalse, TDD Red Green Refactor, bool built-in function, is empty list True or False, is 0.0 False, is None False or True, 0 is not False, empty string is not False, empty list is not False, empty dict is not False, AssertionError: False is not true, AssertionError: True is not false, AssertionError: 0 is not true, AssertionError: 1 is not false, AssertionError: {} is not true, bool(0) is False, bool(None) is False, bool('') is False, bool([]) is False, bool({}) is False, truthy non-zero non-empty, falsy values 0 0.0 None empty container, testing Python data structures, python uv init booleans, pytest-watcher, remove the commented lines, the terminal is my friend, I have these tests by the end of the chapter, test_what_is_false, test_is_an_integer_falsy_or_truthy, test_is_a_dictionary_falsy_or_truthy, python unit testing tutorial, python bool type, boolean logic TDD, data structures booleans chapter
 
 .. include:: ../../links.rst
 .. _bool: https://docs.python.org/3/library/functions.html#bool
@@ -3724,7 +3724,6 @@ I know from the tests, that :ref:`True<test_what_is_true>` and :ref:`False<test_
   * ``0.0``
   * :ref:`None<what is None?>`
 
-
 * :ref:`True<test_what_is_true>`
 
   * a container with things is :ref:`True<test_what_is_true>`
@@ -3763,7 +3762,7 @@ you now know
 * :ref:`how to use the assertIsNotNone and assertIsNone methods<AssertionError 3: use assertIsNotNone and assertIsNone>`
 * :ref:`what are booleans<what are booleans?>`
 
-:ref:`Would you like to test the truth table?<truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`
+:ref:`Would you like to test the truth table?<truth table>` It will help you understand writing programs_ that make decisions based on :ref:`conditions<if statements>`.
 
 ----
 
