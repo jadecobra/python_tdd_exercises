@@ -1837,10 +1837,10 @@ test factory with random last name
     AssertionError:
         {'first_name': 'jane', 'last_name': 'doe', 'sex': Y,
          'age': X}
-     != {'first_name': 'jane', 'last_name': A, 'sex': Y,
+     != {'first_name': 'jane', 'last_name': Z, 'sex': Y,
          'age': X}
 
-  where ``Z`` and ``A`` are the different random last names, ``X`` is the random age, and ``Y`` is the random sex.
+  where ``Z`` is the random last name, ``X`` is the random age, and ``Y`` is the random sex.
 
 ----
 

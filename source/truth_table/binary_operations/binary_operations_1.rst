@@ -2120,7 +2120,9 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
       bool(first_input)
       bool(False)
-      if bool(first_input) == False`` is the result of ``if bool(False) == False`` is the result of ``if False == False``
+      if bool(first_input) == False
+      if bool(False) == False
+      if False == False``
     * writing it in terms of :green:`True`, the result of ``if False == False`` is the result of ``if True == True`` is the result of ``if not False == True`` is the result of ``if not bool(False) == True`` which is the same as ``if not bool(first_input) == True``
 
   - if ``first_input`` is :green:`True`
