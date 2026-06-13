@@ -2114,27 +2114,31 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   still green because this happens when ``if bool(first_input) == False:`` runs, Python_ checks if the result of ``bool(first_input)`` is equal to as :red:`False`
 
-  - if ``first_input`` is :red:`False` then these all have the same result
+  - if ``first_input`` is :red:`False`
 
     .. code-block:: python
 
-      bool(first_input)
-      bool(False)
-      if bool(first_input) == False
-      if bool(False) == False
-      if False == False``
-    * writing it in terms of :green:`True`, the result of ``if False == False`` is the result of ``if True == True`` is the result of ``if not False == True`` is the result of ``if not bool(False) == True`` which is the same as ``if not bool(first_input) == True``
+      bool(first_input)        == bool(False)
+      if bool(first_input)     == False
+      if bool(False)           == False
+      if False                 == False
+      if True                  == True # write in terms of True
+      if not False             == True
+      if not bool(False)       == True
+      if not bool(first_input) == True
 
   - if ``first_input`` is :green:`True`
 
-    * the result of ``bool(first_input)`` is the result of ``bool(False)
+    .. code-block:: python
 
-
-
+      bool(first_input)        == bool(True)
+      if bool(first_input)     == True
+      if bool(True)            == True
+      if True                  == True
 
   this means that ``if bool(something) == False`` is the same as ``if not bool(something) == True``
 
-* I remove ``== True``
+* I remove ``== True`` to remove repetition
 
   .. code-block:: python
     :lineno-start: 29
