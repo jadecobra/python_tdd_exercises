@@ -1098,7 +1098,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   - if ``first_input`` is grouped as :green:`True`, it checks if ``second_input`` is grouped as :green:`True`
 
     * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as its output then then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 ----
 
@@ -1869,22 +1869,15 @@ first input     second input   return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 15-20
+    :lineno-start: 31
+    :emphasize-lines: 8-13
 
         def test_project_second(self):
-            self.assertTrue(
-                src.truth_table.project_second(True, True)
-            )
-            self.assertFalse(
-                src.truth_table.project_second(True, False)
-            )
-            self.assertTrue(
-                src.truth_table.project_second(False, True)
-            )
-            self.assertFalse(
-                src.truth_table.project_second(False, False)
-            )
+            project_second = src.truth_table.project_second
+            self.assertTrue(project_second(True, True))
+            self.assertFalse(project_second(True, False))
+            self.assertTrue(project_second(False, True))
+            self.assertFalse(project_second(False, False))
 
         def test_converse_non_implication(self):
             self.assertFalse(
@@ -1900,9 +1893,10 @@ first input     second input   return
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'converse_non_implication'
 
-  because there is no definition for :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py`` in the ``src`` folder_
+  because there is no definition for :ref:`converse_non_implication<test_converse_non_implication>` in ``truth_table.py`` in the ``src`` folder_.
 
 ----
 
@@ -1925,7 +1919,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
     def converse_non_implication(first_input, second_input):
         return False
 
-the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`converse_non_implication<test_converse_non_implication>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
 ----
 
@@ -1944,7 +1938,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 38
     :emphasize-lines: 7-11
 
         def test_converse_non_implication(self):
@@ -1976,7 +1970,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 38
     :emphasize-lines: 12-16
 
         def test_converse_non_implication(self):
@@ -2005,7 +1999,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
     AssertionError: False is not true
 
-  because the :ref:`converse_non_implication function<test_converse_non_implication>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+  because the :ref:`converse_non_implication function<test_converse_non_implication>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 * I add an `if statement`_ for this case to the :ref:`converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
 
@@ -2023,6 +2017,11 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   - :green:`True` if the first input is :red:`False`
   - :red:`False` if the above condition is NOT met
 
+  because this happens when the :ref:`converse_non_implication function<test_converse_non_implication>` is called. When ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to as :red:`False`
+
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it runs ``return True``, which returns :green:`True` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
 
   ==============  ============== ==============
@@ -2032,7 +2031,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 57
+    :lineno-start: 38
     :emphasize-lines: 17-21
 
         def test_converse_non_implication(self):
@@ -2066,7 +2065,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
 * I add an `if statement`_ for the one case that returns :green:`True`, to the one in :ref:`the converse_non_implication function<test_converse_non_implication>` in ``truth_table.py``
 
@@ -2113,7 +2112,25 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True``
+  still green because this happens when ``if bool(first_input) == False:`` runs, Python_ checks if the result of ``bool(first_input)`` is equal to as :red:`False`
+
+  - if ``first_input`` is :red:`False` then these all have the same result
+
+    .. code-block:: python
+
+      bool(first_input)
+      bool(False)
+      if bool(first_input) == False`` is the result of ``if bool(False) == False`` is the result of ``if False == False``
+    * writing it in terms of :green:`True`, the result of ``if False == False`` is the result of ``if True == True`` is the result of ``if not False == True`` is the result of ``if not bool(False) == True`` which is the same as ``if not bool(first_input) == True``
+
+  - if ``first_input`` is :green:`True`
+
+    * the result of ``bool(first_input)`` is the result of ``bool(False)
+
+
+
+
+  this means that ``if bool(something) == False`` is the same as ``if not bool(something) == True``
 
 * I remove ``== True``
 

@@ -1835,7 +1835,7 @@ test factory with random last name
   .. code-block:: python
 
     AssertionError:
-        {'first_name': 'jane', 'last_name': Z, 'sex': Y,
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': Y,
          'age': X}
      != {'first_name': 'jane', 'last_name': A, 'sex': Y,
          'age': X}
