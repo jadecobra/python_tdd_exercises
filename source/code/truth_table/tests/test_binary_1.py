@@ -5,75 +5,51 @@ import unittest
 class TestBinaryOperations(unittest.TestCase):
 
     def test_contradiction(self):
-        self.assertFalse(
-            src.truth_table.contradiction(True, True)
-        )
-        self.assertFalse(
-            src.truth_table.contradiction(True, False)
-        )
-        self.assertFalse(
-            src.truth_table.contradiction(False, True)
-        )
-        self.assertFalse(
-            src.truth_table.contradiction(False, False)
-        )
+        contradiction = src.truth_table.contradiction
+        self.assertFalse(contradiction(True, True))
+        self.assertFalse(contradiction(True, False))
+        self.assertFalse(contradiction(False, True))
+        self.assertFalse(contradiction(False, False))
 
     def test_logical_conjunction(self):
+        logical_conjunction = (
+            src.truth_table.logical_conjunction
+        )
         self.assertTrue(
-            src.truth_table.logical_conjunction(
-                True, True
-            )
+            logical_conjunction(True, True)
         )
         self.assertFalse(
-            src.truth_table.logical_conjunction(
-                True, False
-            )
+            logical_conjunction(True, False)
         )
         self.assertFalse(
-            src.truth_table.logical_conjunction(
-                False, True
-            )
+            logical_conjunction(False, True)
         )
         self.assertFalse(
-            src.truth_table.logical_conjunction(
-                False, False
-            )
+            logical_conjunction(False, False)
         )
 
     def test_project_second(self):
-        self.assertTrue(
-            src.truth_table.project_second(True, True)
-        )
-        self.assertFalse(
-            src.truth_table.project_second(True, False)
-        )
-        self.assertTrue(
-            src.truth_table.project_second(False, True)
-        )
-        self.assertFalse(
-            src.truth_table.project_second(False, False)
-        )
+        project_second = src.truth_table.project_second
+        self.assertTrue(project_second(True, True))
+        self.assertFalse(project_second(True, False))
+        self.assertTrue(project_second(False, True))
+        self.assertFalse(project_second(False, False))
 
     def test_converse_non_implication(self):
-        self.assertFalse(
-            src.truth_table.converse_non_implication(
-                True, True
-            )
+        converse_non_implication = (
+            src.truth_table.converse_non_implication
         )
         self.assertFalse(
-            src.truth_table.converse_non_implication(
-                True, False
-            )
+            converse_non_implication(True, True)
+        )
+        self.assertFalse(
+            converse_non_implication(True, False)
         )
         self.assertTrue(
-            src.truth_table.converse_non_implication(
-                False, True
-            )
+            converse_non_implication(False, True)
         )
         self.assertFalse(
-            src.truth_table.converse_non_implication(
-                False, False
-            )
+            converse_non_implication(False, False)
         )
 
 

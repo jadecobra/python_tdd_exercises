@@ -2508,7 +2508,7 @@ close the project
 review
 *********************************************************************************
 
-Binary Operations take 2 inputs, each input can be :ref:`True<test_what_is_true>` or :red:`False`, if I name the first input ``first_input`` and the second one ``second_input``, the tests show that
+:ref:`Binary Operations<truth table: Binary Operations>` take two inputs, each input can be :green:`True` or :red:`False`. If I name the first input ``first_input`` and the second input ``second_input``, the tests show that
 
 * :ref:`Material/Logical Implication<test_material_implication>`
 

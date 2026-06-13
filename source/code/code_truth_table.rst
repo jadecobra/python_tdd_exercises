@@ -19,9 +19,57 @@ the code from ``truth_table/tests/test_nullary_unary.py`` from :ref:`truth table
 Binary Operations tests
 *********************************************************************************
 
-the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table`
+=================================================================================
+Binary Operations 1 tests
+=================================================================================
 
-.. literalinclude:: truth_table/tests/test_binary.py
+----
+
+the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 1`
+
+.. literalinclude:: truth_table/tests/test_binary_1.py
+  :language: python
+  :linenos:
+
+----
+
+=================================================================================
+Binary Operations 2 tests
+=================================================================================
+
+----
+
+the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 2`
+
+.. literalinclude:: truth_table/tests/test_binary_2.py
+  :language: python
+  :linenos:
+
+----
+
+=================================================================================
+Binary Operations 3 tests
+=================================================================================
+
+----
+
+the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 3`
+
+.. literalinclude:: truth_table/tests/test_binary_3.py
+  :language: python
+  :linenos:
+
+----
+
+=================================================================================
+Binary Operations 4 tests
+=================================================================================
+
+----
+
+the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 4`
+
+.. literalinclude:: truth_table/tests/test_binary_4.py
   :language: python
   :linenos:
 
