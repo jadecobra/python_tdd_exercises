@@ -1933,7 +1933,7 @@ test factory with random first name
 
     AssertionError:
         {'first_name': 'jane', 'last_name': Z, 'sex': Y, 'age': X}
-     != {'first_name': B,      'last_name': Z, 'sex': Y, 'age': X}
+     != {'first_name': A,      'last_name': Z, 'sex': Y, 'age': X}
 
   where ``A`` is the random first name, ``X`` is the random age, ``Y`` is the random sex, and ``Z`` is the random last name
 

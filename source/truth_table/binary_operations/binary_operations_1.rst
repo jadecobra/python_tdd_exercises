@@ -2112,7 +2112,27 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  still green because this happens when ``if bool(first_input) == False:`` runs, Python_ checks if the result of ``bool(first_input)`` is equal to as :red:`False`
+  still green.
+  this means that ``if bool(something) == False`` is the same as ``if not bool(something) == True``
+
+* I remove ``== True`` to remove repetition
+
+  .. code-block:: python
+    :lineno-start: 29
+    :emphasize-lines: 4-5, 7-8
+
+    def converse_non_implication(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if not bool(first_input) == True:
+        if not bool(first_input):
+            # if second_input == True:
+            # if bool(second_input) == True:
+            if bool(second_input):
+                return True
+        return False
+
+  green, because when ``if bool(first_input) == False:`` runs, Python_ checks if the result of ``bool(first_input)`` is equal to as :red:`False`
 
   - if ``first_input`` is :red:`False`
 
@@ -2136,26 +2156,6 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       if bool(True)            == True
       if True                  == True
 
-  this means that ``if bool(something) == False`` is the same as ``if not bool(something) == True``
-
-* I remove ``== True`` to remove repetition
-
-  .. code-block:: python
-    :lineno-start: 29
-    :emphasize-lines: 4-5, 7-8
-
-    def converse_non_implication(first_input, second_input):
-        # if first_input == False:
-        # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
-            # if second_input == True:
-            # if bool(second_input) == True:
-            if bool(second_input):
-                return True
-        return False
-
-  green, because
 
   - ``if not bool(something) == True`` is the same as ``if not bool(something)``
   - ``if bool(something) == True`` is the same as ``if bool(something)``
