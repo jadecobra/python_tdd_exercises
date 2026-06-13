@@ -35,7 +35,6 @@ I test :ref:`booleans<what are booleans?>` in the chapters below
   ../../truth_table/index
   booleans_2
   booleans_3
-  booleans_4
 
 ----
 

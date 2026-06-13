@@ -93,7 +93,6 @@ Binary Operations
   :titlesonly:
 
   Binary Operations 1<binary_operations_1>
-  Booleans 2<../../data_structures/booleans/booleans_2>
   Binary Operations 2<binary_operations_2>
   Binary Operations 3<binary_operations_3>
   Binary Operations 4<binary_operations_4>

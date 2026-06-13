@@ -76,18 +76,6 @@ the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binar
 ----
 
 *********************************************************************************
-Booleans 2 tests
-*********************************************************************************
-
-the code from ``booleans/tests/test_booleans.py`` from :ref:`booleans 2: test with bool`
-
-.. literalinclude:: booleans/test_booleans_truth_table.py
-  :language: python
-  :linenos:
-
-----
-
-*********************************************************************************
 solutions
 *********************************************************************************
 
