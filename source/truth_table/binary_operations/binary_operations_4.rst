@@ -307,7 +307,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
   the test is still green.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`negate_second function<test_negate_second>` in ``truth_table.py``
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`negate_second function<test_negate_second>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 102
@@ -352,7 +352,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
 
   still green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 102
@@ -684,7 +684,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   the test passes.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 106
@@ -738,7 +738,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 106
@@ -1311,7 +1311,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   the test passes.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 116
@@ -1380,7 +1380,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 116
@@ -2092,7 +2092,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   the test passes.
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 125
@@ -2144,7 +2144,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 125

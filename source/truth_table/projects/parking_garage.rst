@@ -601,7 +601,7 @@ the test passes.
 
 ----
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :linenos:
@@ -653,7 +653,7 @@ the test passes.
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :linenos:
@@ -1212,7 +1212,7 @@ the test passes.
 
 ----
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :linenos:
@@ -1272,7 +1272,7 @@ the test passes.
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :linenos:

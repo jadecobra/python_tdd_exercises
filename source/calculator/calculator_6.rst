@@ -1208,7 +1208,7 @@ you know
 * :ref:`what you can do with Lists<lists>`
 * :ref:`how to use list comprehensions<list comprehensions>`
 
-:ref:`Would you like to test if a boolean is an integer or a float?<booleans 2: test with bool>`
+:ref:`Would you like to test if a boolean is an integer or a float?<how to test if something is grouped as True>`
 
 -----
 

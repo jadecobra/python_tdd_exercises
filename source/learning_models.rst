@@ -18,7 +18,7 @@ An Infinite Learning Model
 
 ----
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``learning`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd` with ``learning`` as the name of the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -27,7 +27,7 @@ An Infinite Learning Model
 
   .. note::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd` instead of :ref:`makePythonTdd`
 
     .. code-block:: shell
 

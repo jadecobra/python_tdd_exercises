@@ -315,7 +315,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   the test is still green.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statement<if statements>` in the :ref:`negate_first function<test_negate_first>` in ``truth_table.py``
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in the :ref:`negate_first function<test_negate_first>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 37
@@ -360,7 +360,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   still green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 37
@@ -782,7 +782,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   - :red:`False` if the first input is :green:`True` and the second input is :green:`True`
   - :red:`True` if the above condition is NOT met
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -826,7 +826,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   still green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 41
@@ -1754,7 +1754,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   the test passes.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 52
@@ -1808,7 +1808,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 52

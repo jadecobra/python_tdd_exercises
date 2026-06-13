@@ -23,7 +23,7 @@ This is part 1 of a program_ that calculates the difference between a given wake
 requirements
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``sleep_duration`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd` with ``sleep_duration`` as the name of the project
 
   .. code-block:: shell
     :emphasize-lines: 1
@@ -32,7 +32,7 @@ requirements
 
   .. note::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd` instead of :ref:`makePythonTdd`
 
     .. code-block:: shell
 

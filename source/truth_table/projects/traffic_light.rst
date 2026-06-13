@@ -531,7 +531,7 @@ because I do not have a definition for ``src`` in this file_
 
   the test passes.
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :linenos:
@@ -576,7 +576,7 @@ because I do not have a definition for ``src`` in this file_
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :linenos:
@@ -1306,7 +1306,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
 ----
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 16
@@ -1335,7 +1335,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   still green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 16

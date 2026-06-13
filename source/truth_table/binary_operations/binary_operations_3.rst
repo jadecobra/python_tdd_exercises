@@ -390,7 +390,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   the test is still green.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -467,7 +467,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   still green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 62
@@ -1579,7 +1579,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   the test passes.
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>`
+* I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 82
@@ -1631,7 +1631,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 82
@@ -2178,7 +2178,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   the test is still green.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``truth_table.py``
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in the :ref:`project_first function<test_project_first>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 90
@@ -2223,7 +2223,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
 
   still green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 90
@@ -2652,7 +2652,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   the test passes.
 
-* I add the :ref:`bool built-in function<booleans 2: test with bool>`
+* I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 94
@@ -2704,7 +2704,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   green.
 
-* I remove :ref:`bool<booleans 2: test with bool>`
+* I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
     :lineno-start: 94
@@ -2959,7 +2959,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   :green:`True`   :red:`False`    :green:`True`   :green:`True`
   :red:`False`    :green:`True`   :red:`False`    :red:`False`
   :red:`False`    :red:`False`    :green:`True`   :green:`True`
-  ==============  =============== =============== ================
+  ==============  =============== =============== =====================
 
   I add a `return statement`_ to show this
 

@@ -1883,7 +1883,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 ----
 
-* I use the :ref:`bool built-in function<booleans 2: test with bool>` to the :ref:`if statements` of the :ref:`functions<what is a function?>`
+* I use :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statements` of the :ref:`functions<what is a function?>`
 
   .. code-block:: python
     :linenos:

@@ -43,7 +43,7 @@ I have these tests by the end of the chapter
 start the project
 *********************************************************************************
 
-* I open a terminal_ to run :ref:`makePythonTdd.sh` with ``module_not_found_error`` as the name of the project
+* I open a terminal_ to run :ref:`makePythonTdd` with ``module_not_found_error`` as the name of the project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -52,7 +52,7 @@ start the project
 
   .. note::
 
-    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd.ps1` instead of :ref:`makePythonTdd.sh`
+    on Windows_ without `Windows Subsystem for Linux`_ use :ref:`makePythonTdd` instead of :ref:`makePythonTdd`
 
     .. code-block:: shell
 
