@@ -1816,7 +1816,19 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  still green because when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`. I can assume the following substitutions
+
+  - if the value of ``something`` is :red:`False`
+
+    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+      :language: python
+
+  - if the value of ``something`` is :green:`True`
+
+    .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+      :language: python
+
+  ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
