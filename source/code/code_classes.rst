@@ -33,7 +33,7 @@ inheritance tests
 
 the code from ``person/tests/test_classes.py`` from :ref:`inheritance<family ties>`
 
-.. literalinclude:: tests/test_classes.py
+.. literalinclude:: person/tests/test_classes.py
   :language: python
   :linenos:
 

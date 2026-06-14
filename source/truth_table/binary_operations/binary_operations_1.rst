@@ -1012,33 +1012,17 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  still green because when ``if something == True:`` runs, Python_ checks if ``something`` is equal to :green:`True`
+  still green because when ``if something == True:`` runs, Python_ checks if ``something`` is equal to :green:`True`. I can assume the following substitutions
 
-  - if ``something`` is :red:`False`
+  - if the value of ``something`` is :red:`False`
 
-    .. code-block:: python
+    .. literalinclude:: ../../code/truth_table/solutions/if_something_false.py
+      :language: python
 
-      if something           == True
-      if bool(something   )  == True
-      if bool(False       )  == True
-      if False               == True
-      if not True            == True # in terms of True
-      if not bool(False    ) == True
-      if not bool(something) == True
-      if not bool(something)
-      if not something
+  - if the value of ``something`` is :green:`True`
 
-  - if ``something`` is :green:`True`
-
-    .. code-block:: python
-
-      if something           == True
-      if bool(something    ) == True
-      if bool(True         ) == True
-      if True                == True
-      if bool(True         )
-      if bool(something    )
-      if something
+    .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
+      :language: python
 
   this means that ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
@@ -1447,7 +1431,7 @@ examples of Logical Conjunction
 
 -----
 
-.. admonition:: All of the statements below have the same result
+.. admonition:: All of the statements below have the same result as ``return something`` because Python_ groups :ref:`objects<what is a class>` as :red:`False` or :green:`True`
 
   * return :green:`True`  if ``something`` is equal to :green:`True`
 
@@ -1490,12 +1474,6 @@ examples of Logical Conjunction
     .. code-block:: python
 
       return True if something else False
-
-  * return :green:`True` if the result of  ``bool(something)`` is :green:`True`
-
-    .. code-block:: python
-
-      return something
 
 ----
 
@@ -2171,63 +2149,29 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   still green, because
 
-  * when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
+  * when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`. I can assume the following substitutions
 
-    - if ``first_input`` is :red:`False`
+    - if the value of ``something`` is :red:`False`
 
-      .. code-block:: python
+      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_false.py
+        :language: python
 
-        if first_input           == False
-        if bool(first_input   )  == False
-        if bool(False         )  == False
-        if False                 == False
-        if not False             == True # in terms of True
-        if not bool(False     )  == True
-        if not bool(first_input) == True
-        if not bool(first_input)
-        if not first_input
+    - if the value of ``something`` is :green:`True`
 
-    - if ``first_input`` is :green:`True`
+      .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
+        :language: python
 
-      .. code-block:: python
+  * when ``if first_input == True:`` runs, Python_ checks if ``(first_input)`` is equal to :green:`True`. I can assume the following substitutions
 
-        if first_input           == False
-        if bool(first_input   )  == False
-        if bool(True         )   == False
-        if True                  == False
-        if not True              == True # in terms of True
-        if not bool(True     )   == True
-        if not bool(first_input) == True
-        if not bool(first_input)
-        if not first_input
+    - if the value of ``something`` is :red:`False`
 
-  * when ``if first_input == True:`` runs, Python_ checks if ``(first_input)`` is equal to :green:`True`
+      .. literalinclude:: ../../code/truth_table/solutions/if_something_false.py
+        :language: python
 
-    - if ``first_input`` is :red:`False`
+    - if the value of ``something`` is :green:`True`
 
-      .. code-block:: python
-
-        if first_input           == True
-        if bool(first_input    ) == True
-        if bool(False          ) == True
-        if False                 == True
-        if not True              == True # in terms of True
-        if not bool(True       ) == True
-        if not bool(first_input) == True
-        if not bool(first_input)
-        if not first_input
-
-    - if ``first_input`` is :green:`True`
-
-      .. code-block:: python
-
-        if first_input           == True
-        if bool(first_input    ) == True
-        if bool(True           ) == True
-        if True                  == True
-        if bool(True)
-        if bool(first_input)
-        if first_input
+      .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
+        :language: python
 
   this means that
 
