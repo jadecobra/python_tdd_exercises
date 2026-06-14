@@ -836,8 +836,8 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   because this happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
 
-  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, which returns the value of ``second_input`` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, which returns :red:`False` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, which returns the value of ``second_input`` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -1094,11 +1094,11 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green because this happens when the :ref:`logical_conjunction function<test_logical_conjunction>` is called. When ``if first_input and second_input:`` runs, Python_ checks if ``first_input`` is grouped as :green:`True`
 
-  - if ``first_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
   - if ``first_input`` is grouped as :green:`True`, it checks if ``second_input`` is grouped as :green:`True`
 
-    * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is grouped as :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``else: return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is grouped as :green:`True`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 ----
 
@@ -2014,8 +2014,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   because this happens when the :ref:`converse_non_implication function<test_converse_non_implication>` is called. When ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to as :red:`False`
 
-  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is equal to :red:`False`, it runs ``return True``, which returns :green:`True` as its output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it runs ``return True``, which returns :green:`True` as the output then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_converse_non_implication` in ``test_binary.py``
 
@@ -2101,7 +2101,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             # if second_input == True:
             if bool(second_input) == True:
                 return True
@@ -2118,8 +2118,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             # if second_input == True:
             # if bool(second_input) == True:
             if bool(second_input):
@@ -2137,8 +2137,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2175,7 +2175,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   this means that
 
-  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together
@@ -2187,8 +2187,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2220,8 +2220,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2243,8 +2243,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2271,8 +2271,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2372,8 +2372,8 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
     def converse_non_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:

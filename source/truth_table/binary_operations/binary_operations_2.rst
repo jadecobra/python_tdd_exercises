@@ -301,8 +301,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
 
   the test is still green because this happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
 
-  - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>` to the :ref:`if statement<if statements>` in :ref:`the negate_first function<test_negate_first>` in ``truth_table.py``
 
@@ -327,7 +327,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             return True
         return False
 
@@ -342,8 +342,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             return True
         return False
 
@@ -358,8 +358,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             return True
         return False
@@ -376,7 +376,7 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
       :language: python
 
-  ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``.
+  ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I add an :ref:`else clause<if statements>` to be clearer
 
@@ -387,8 +387,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             return True
         else:
@@ -405,8 +405,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
         #     return True
         # else:
@@ -424,8 +424,8 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
         #     return True
         # else:
@@ -682,8 +682,8 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   because this happens when ``if second_input == False:`` runs, Python_ checks if ``second_input`` is equal to :red:`False`
 
-  - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
   - ``second_input`` is :green:`True` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
 * I add an :ref:`if statement<if statements>` to the :ref:`logical_nand function<test_logical_nand>` in ``truth_table.py``
@@ -730,14 +730,14 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   the test is still green because this happens when :ref:`logical_nand<test_logical_nand>` is called. First it runs ``first_input == False``, where Python_ checks if ``first_input`` is equal to :red:`False`
 
-  * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
   * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next line in the :ref:`function<what is a function?>` - ``if second_input == False``
 
     - when ``if second_input == False:`` runs, Python_ checks if ``second_input`` is equal to :red:`False`
 
-      * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-      * if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+      * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+      * if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` (the first case, when the first input is :green:`True` and the second input is :green:`True`). I add :ref:`if statements` for it, in ``truth_table.py``
 
@@ -763,11 +763,11 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   this happens when ``if first_input == True:`` runs, Python_ checks if ``first_input`` is equal to :green:`True`
 
-  - if ``first_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
   - if ``first_input`` is equal to :green:`True`, it goes to the next line - ``if second_input == True``, which checks if ``second_input`` is equal to :green:`True`
 
-    * if ``second_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-    * if ``second_input`` is equal to :green:`True`, it goes to the next line - ``return False``, which returns :red:`False` as its output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is equal to :green:`True`, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I use :ref:`the bool built-in function<how to test if something is grouped as True>`
 
@@ -1076,7 +1076,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
     return not (something)
 
-  this means ``if something: return False`` is the same as ``return not (something)``
+  this means ``if something: return False`` is the same as ``return not (something)`` since Python_ groups objects as :red:`False` or :green:`True`
 
 * :ref:`logical_nand<test_logical_nand>` returns ``not (first_input and second_input)`` which is the :ref:`Logical Negation (NOT)<test_logical_negation>` of the :ref:`Logical Conjunction (AND)<test_logical_conjunction>` of the first input and second input, which means that in the four cases
 
@@ -1307,26 +1307,18 @@ first input     second input   return
 
 .. code-block:: python
   :lineno-start: 62
-  :emphasize-lines: 15-18
+  :emphasize-lines: 8-10
 
       def test_logical_nand(self):
-          self.assertFalse(
-              src.truth_table.logical_nand(True, True)
-          )
-          self.assertTrue(
-              src.truth_table.logical_nand(True, False)
-          )
-          self.assertTrue(
-              src.truth_table.logical_nand(False, True)
-          )
-          self.assertTrue(
-              src.truth_table.logical_nand(False, False)
-          )
+          logical_nand = src.truth_table.logical_nand
+          self.assertFalse(logical_nand(True, True))
+          self.assertTrue(logical_nand(True, False))
+          self.assertTrue(logical_nand(False, True))
+          self.assertTrue(logical_nand(False, False))
 
       def test_tautology(self):
-          self.assertTrue(
-              src.truth_table.tautology(True, True)
-          )
+          tautology = src.truth_table.tautology
+          self.assertTrue(tautology(True, True))
 
 
   # Exceptions seen
@@ -1335,9 +1327,10 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 .. code-block:: python
 
-  AttributeError: module 'src.truth_table' has no attribute 'tautology'
+  AttributeError: module 'src.truth_table'
+                  has no attribute 'tautology'
 
-``truth_table.py`` does not have :ref:`tautology<test_tautology>` in it
+``truth_table.py`` does not have :ref:`tautology<test_tautology>` in it.
 
 ----
 
@@ -1351,11 +1344,13 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
   :lineno-start: 41
-  :emphasize-lines: 8-9
+  :emphasize-lines: 10-11
 
     def logical_nand(first_input, second_input):
-        return not (
-            logical_conjunction(first_input, second_input)
+        return logical_negation(
+            logical_conjunction(
+                first_input, second_input
+            )
         )
         return not (first_input and second_input)
 
@@ -1363,7 +1358,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
     def tautology(first_input, second_input):
         return True
 
-the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
 
 ----
 
@@ -1382,16 +1377,13 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 5-7
+    :lineno-start: 69
+    :emphasize-lines: 4
 
         def test_tautology(self):
-            self.assertTrue(
-                src.truth_table.tautology(True, True)
-            )
-            self.assertTrue(
-                src.truth_table.tautology(True, False)
-            )
+            tautology = src.truth_table.tautology
+            self.assertTrue(tautology(True, True))
+            self.assertTrue(tautology(True, False))
 
 
     # Exceptions seen
@@ -1411,19 +1403,14 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 8-10
+    :lineno-start: 69
+    :emphasize-lines: 5
 
         def test_tautology(self):
-            self.assertTrue(
-                src.truth_table.tautology(True, True)
-            )
-            self.assertTrue(
-                src.truth_table.tautology(True, False)
-            )
-            self.assertTrue(
-                src.truth_table.tautology(False, True)
-            )
+            tautology = src.truth_table.tautology
+            self.assertTrue(tautology(True, True))
+            self.assertTrue(tautology(True, False))
+            self.assertTrue(tautology(False, True))
 
 
     # Exceptions seen
@@ -1442,29 +1429,22 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 11-13
+    :lineno-start: 69
+    :emphasize-lines: 6
 
         def test_tautology(self):
-            self.assertTrue(
-                src.truth_table.tautology(True, True)
-            )
-            self.assertTrue(
-                src.truth_table.tautology(True, False)
-            )
-            self.assertTrue(
-                src.truth_table.tautology(False, True)
-            )
-            self.assertTrue(
-                src.truth_table.tautology(False, False)
-            )
+            tautology = src.truth_table.tautology
+            self.assertTrue(tautology(True, True))
+            self.assertTrue(tautology(True, False))
+            self.assertTrue(tautology(False, True))
+            self.assertTrue(tautology(False, False))
 
 
     # Exceptions seen
 
   still green, there is only one result for this operation.
 
-:ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`
+:ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`.
 
 ----
 
@@ -1482,10 +1462,10 @@ examples of Tautology
   ===============  =================  ================
   have work?       feel like work?    work?
   ===============  =================  ================
-  :green:`yes`     :green:`yes`       :green:`work`
-  :green:`yes`     :red:`no`          :green:`work`
-  :red:`no`        :green:`yes`       :green:`work`
-  :red:`no`        :red:`no`          :green:`work`
+  :green:`yes`     :green:`yes`       :green:`yes`
+  :green:`yes`     :red:`no`          :green:`yes`
+  :red:`no`        :green:`yes`       :green:`yes`
+  :red:`no`        :red:`no`          :green:`yes`
   ===============  =================  ================
 
 * the customer is always right, if the inputs are
@@ -1521,14 +1501,14 @@ examples of Tautology
   - am I good?
   - have I done this before?
 
-  ===============  =================  ================
+  ===============  =================  ==================
   good?            done before?       can I get better?
-  ===============  =================  ================
+  ===============  =================  ==================
   :green:`yes`     :green:`yes`       :green:`yes`
   :green:`yes`     :red:`no`          :green:`yes`
   :red:`no`        :green:`yes`       :green:`yes`
   :red:`no`        :red:`no`          :green:`yes`
-  ===============  =================  ================
+  ===============  =================  ==================
 
 * a noun is the name of a person, place or thing, if the inputs are
 
@@ -1552,10 +1532,10 @@ examples of Tautology
   ===============  =================  ================
   been good?       deserving?         love?
   ===============  =================  ================
-  :green:`yes`     :green:`yes`       :green:`love`
-  :green:`yes`     :red:`no`          :green:`love`
-  :red:`no`        :green:`yes`       :green:`love`
-  :red:`no`        :red:`no`          :green:`love`
+  :green:`yes`     :green:`yes`       :green:`yes`
+  :green:`yes`     :red:`no`          :green:`yes`
+  :red:`no`        :green:`yes`       :green:`yes`
+  :red:`no`        :red:`no`          :green:`yes`
   ===============  =================  ================
 
 ----
@@ -1592,29 +1572,21 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 107
-  :emphasize-lines: 15-20
+  :lineno-start: 69
+  :emphasize-lines: 8-12
 
       def test_tautology(self):
-          self.assertTrue(
-              src.truth_table.tautology(True, True)
-          )
-          self.assertTrue(
-              src.truth_table.tautology(True, False)
-          )
-          self.assertTrue(
-              src.truth_table.tautology(False, True)
-          )
-          self.assertTrue(
-              src.truth_table.tautology(False, False)
-          )
+          tautology = src.truth_table.tautology
+          self.assertTrue(tautology(True, True))
+          self.assertTrue(tautology(True, False))
+          self.assertTrue(tautology(False, True))
+          self.assertTrue(tautology(False, False))
 
       def test_logical_disjunction(self):
-          self.assertTrue(
-              src.truth_table.logical_disjunction(
-                  True, True
-              )
+          logical_disjunction = (
+              src.truth_table.logical_disjunction
           )
+          self.assertTrue(logical_disjunction(True, True))
 
 
   # Exceptions seen
@@ -1627,7 +1599,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
                   has no attribute 'logical_disjunction'.
                   Did you mean: 'logical_conjunction'?
 
-there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py`` in the ``src`` folder_, yet
+there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py`` in the ``src`` folder_, yet.
 
 ----
 
@@ -1640,7 +1612,7 @@ there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_tabl
 I add the :ref:`function<what is a function?>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 41
+  :lineno-start: 50
   :emphasize-lines: 5-6
 
   def tautology(first_input, second_input):
@@ -1650,7 +1622,7 @@ I add the :ref:`function<what is a function?>` to ``truth_table.py``
   def logical_disjunction(first_input, second_input):
       return True
 
-the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
 
 ----
 
@@ -1669,20 +1641,15 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 7-11
+    :lineno-start: 76
+    :emphasize-lines: 6
 
         def test_logical_disjunction(self):
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    True, True
-                )
+            logical_disjunction = (
+                src.truth_table.logical_disjunction
             )
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    True, False
-                )
-            )
+            self.assertTrue(logical_disjunction(True, True))
+            self.assertTrue(logical_disjunction(True, False))
 
 
     # Exceptions seen
@@ -1693,7 +1660,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - :green:`True`, if the first input is :green:`True`
 
-  so far this is the same as :ref:`Tautology<test_tautology>`
+  so far this is the same as :ref:`tautology<test_tautology>`.
 
 * I add an :ref:`assertion<what is an assertion?>` for the next case, which is when the first input is :red:`False` and the second input is :green:`True`
 
@@ -1704,25 +1671,16 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 12-16
+    :lineno-start: 76
+    :emphasize-lines: 7
 
         def test_logical_disjunction(self):
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    True, True
-                )
+            logical_disjunction = (
+                src.truth_table.logical_disjunction
             )
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    True, False
-                )
-            )
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    False, True
-                )
-            )
+            self.assertTrue(logical_disjunction(True, True))
+            self.assertTrue(logical_disjunction(True, False))
+            self.assertTrue(logical_disjunction(False, True))
 
 
     # Exceptions seen
@@ -1741,30 +1699,17 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 17-21
+    :lineno-start: 76
+    :emphasize-lines: 8
 
         def test_logical_disjunction(self):
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    True, True
-                )
+            logical_disjunction = (
+                src.truth_table.logical_disjunction
             )
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    True, False
-                )
-            )
-            self.assertTrue(
-                src.truth_table.logical_disjunction(
-                    False, True
-                )
-            )
-            self.assertFalse(
-                src.truth_table.logical_disjunction(
-                    False, False
-                )
-            )
+            self.assertTrue(logical_disjunction(True, True))
+            self.assertTrue(logical_disjunction(True, False))
+            self.assertTrue(logical_disjunction(False, True))
+            self.assertFalse(logical_disjunction(False, False))
 
 
     # Exceptions seen
@@ -1775,12 +1720,12 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
     AssertionError: True is not false
 
-  because the :ref:`logical_disjunction function<test_logical_disjunction>` returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`
+  because the :ref:`logical_disjunction function<test_logical_disjunction>` returns :green:`True` and this :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
 * I add :ref:`if statements` for the new case to :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 2-4
 
     def logical_disjunction(first_input, second_input):
@@ -1789,12 +1734,18 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  the test passes.
+  the test passes happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
+
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``if second_input == False``, which checks if ``second_input`` is equal to :red:`False`
+
+    * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    * if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add :ref:`the bool built-in function<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 2-5
 
     def logical_disjunction(first_input, second_input):
@@ -1810,16 +1761,16 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to write the :ref:`if statements` in terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 3-4, 6-7
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool(second_input) == True:
+            if bool(not second_input) == True:
                 return False
         return True
 
@@ -1828,18 +1779,18 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 4-5, 8-9
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            if not bool(second_input):
+            # if bool(not second_input) == True:
+            if bool(not second_input):
                 return False
         return True
 
@@ -1848,41 +1799,41 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove :ref:`bool<how to test if something is grouped as True>`
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 5-6, 10-11
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             if not second_input:
                 return False
         return True
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 6, 11-12
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         if not first_input and not second_input:
                 return False
@@ -1904,19 +1855,19 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add an :ref:`else clause<if statements>` to make it clearer
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 13-15
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         if not first_input and not second_input:
             return False
@@ -1941,22 +1892,20 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
 * I move the first :ref:`if statement<if statements>` below the new one
 
-
-
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 15-16
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # else:
         if not (not first_input and not second_input):
@@ -2178,19 +2127,19 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   I add a `return statement`_ to show this
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
     :emphasize-lines: 24-29
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # else:
         # if not (not first_input and not second_input):
@@ -2224,7 +2173,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 52
+    :lineno-start: 54
 
     def logical_disjunction(first_input, second_input):
         return logical_negation(

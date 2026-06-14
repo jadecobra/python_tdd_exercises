@@ -554,7 +554,7 @@ because I do not have a definition for ``src`` in this file_
     def show(current_light, timer_done):
         # if timer_done == False:
         # if bool(timer_done) == False:
-        if not bool(timer_done) == True:
+        if bool(not timer_done) == True:
             return 'RED'
         return 'GREEN'
 
@@ -569,8 +569,8 @@ because I do not have a definition for ``src`` in this file_
     def show(current_light, timer_done):
         # if timer_done == False:
         # if bool(timer_done) == False:
-        # if not bool(timer_done) == True:
-        if not bool(timer_done):
+        # if bool(not timer_done) == True:
+        if bool(not timer_done):
             return 'RED'
         return 'GREEN'
 
@@ -585,13 +585,13 @@ because I do not have a definition for ``src`` in this file_
     def show(current_light, timer_done):
         # if timer_done == False:
         # if bool(timer_done) == False:
-        # if not bool(timer_done) == True:
-        # if not bool(timer_done):
+        # if bool(not timer_done) == True:
+        # if bool(not timer_done):
         if not timer_done:
             return 'RED'
         return 'GREEN'
 
-  still green because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+  still green because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if not something``
 
 * I remove the commented lines
 

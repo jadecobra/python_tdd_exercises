@@ -330,7 +330,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
     def negate_second(first_input, second_input):
         # if second_input == False:
         # if bool(second_input) == False:
-        if not bool(second_input) == True:
+        if bool(not second_input) == True:
             return True
         return False
 
@@ -345,8 +345,8 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
     def negate_second(first_input, second_input):
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        if not bool(second_input):
+        # if bool(not second_input) == True:
+        if bool(not second_input):
             return True
         return False
 
@@ -361,13 +361,13 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
     def negate_second(first_input, second_input):
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         if not second_input:
             return True
         return False
 
-  the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  the test is still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -378,8 +378,8 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
     def negate_second(first_input, second_input):
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         # if not second_input:
         #     return True
         # return False
@@ -396,8 +396,8 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
     def negate_second(first_input, second_input):
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         # if not second_input:
         #     return True
         # return False
@@ -709,10 +709,10 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     def logical_nor(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool(second_input) == True:
+            if bool(not second_input) == True:
                 return True
         return False
 
@@ -727,12 +727,12 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     def logical_nor(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            if not bool(second_input):
+            # if bool(not second_input) == True:
+            if bool(not second_input):
                 return True
         return False
 
@@ -747,18 +747,18 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     def logical_nor(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             if not second_input:
                 return True
         return False
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
@@ -769,13 +769,13 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     def logical_nor(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         if not first_input and not second_input:
                 return True
@@ -803,13 +803,13 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     def logical_nor(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if not first_input and not second_input:
         #         return True
@@ -831,13 +831,13 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     def logical_nor(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if not first_input and not second_input:
         #         return True
@@ -958,13 +958,13 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
     def logical_nor(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if not first_input and not second_input:
         #         return True
@@ -1340,15 +1340,15 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     def logical_equality(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool(second_input) == True:
+            if bool(not second_input) == True:
                 return True
             return False
         # if second_input == False:
         # if bool(second_input) == False:
-        if not bool(second_input) == True:
+        if bool(not second_input) == True:
             return False
         return
 
@@ -1363,18 +1363,18 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     def logical_equality(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            if not bool(second_input):
+            # if bool(not second_input) == True:
+            if bool(not second_input):
                 return True
             return False
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        if not bool(second_input):
+        # if bool(not second_input) == True:
+        if bool(not second_input):
             return False
         return True
 
@@ -1389,25 +1389,25 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     def logical_equality(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             if not second_input:
                 return True
             return False
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         if not second_input:
             return False
         return True
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to make two of the cases clearer
 
@@ -1418,13 +1418,13 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     def logical_equality(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         if not first_input and not second_input:
             return True
@@ -1432,8 +1432,8 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         if not second_input:
             return False
         return True
@@ -1463,8 +1463,8 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         # if not second_input:
         if first_input and not second_input:
             return False
@@ -1484,18 +1484,18 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     def logical_equality(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         # if not second_input:
         if not first_input and second_input:
             return False
@@ -1724,18 +1724,18 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
     def logical_equality(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if second_input == False:
         # if bool(second_input) == False:
-        # if not bool(second_input) == True:
-        # if not bool(second_input):
+        # if bool(not second_input) == True:
+        # if bool(not second_input):
         # if not second_input:
         # if not first_input and second_input:
         #     return False
@@ -2119,7 +2119,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         if bool(first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool(second_input) == True:
+            if bool(not second_input) == True:
                 return False
         return True
 
@@ -2137,8 +2137,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            if not bool(second_input):
+            # if bool(not second_input) == True:
+            if bool(not second_input):
                 return False
         return True
 
@@ -2157,8 +2157,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             if not second_input:
                 return False
         return True
@@ -2166,7 +2166,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   still green, because
 
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
-  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
@@ -2181,8 +2181,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         # if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         if first_input and not second_input:
                 return False
@@ -2214,8 +2214,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         # if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         if first_input and not second_input:
             return False
@@ -2410,8 +2410,8 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         # if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if first_input and not second_input:
         #     return False

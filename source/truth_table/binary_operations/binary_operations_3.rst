@@ -421,17 +421,17 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool(second_input) == True:
+            if bool(not second_input) == True:
                 return False
             return True
         # if first_input == True:
         if bool(first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool(second_input) == True:
+            if bool(not second_input) == True:
                 return True
             return False
 
@@ -446,12 +446,12 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            if not bool(second_input):
+            # if bool(not second_input) == True:
+            if bool(not second_input):
                 return False
             return True
         # if first_input == True:
@@ -459,8 +459,8 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
         if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            if not bool(second_input):
+            # if bool(not second_input) == True:
+            if bool(not second_input):
                 return True
             return False
 
@@ -476,13 +476,13 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             if not second_input:
                 return False
             return True
@@ -492,15 +492,15 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
         if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             if not second_input:
                 return True
             return False
 
   the test is still green, because
 
-  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
 * I move the :ref:`if statements` to put them together
@@ -514,19 +514,19 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if first_input == True:
         # if bool(first_input) == True:
         # if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         if not first_input:
             if not second_input:
                 return False
@@ -547,19 +547,19 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if first_input == True:
         # if bool(first_input) == True:
         # if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         if not first_input:
             if not second_input:
                 return False
@@ -582,19 +582,19 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if first_input == True:
         # if bool(first_input) == True:
         # if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if not first_input:
         #     if not second_input:
         if not first_input and not second_input:
@@ -632,19 +632,19 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if first_input == True:
         # if bool(first_input) == True:
         # if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if not first_input:
         #     if not second_input:
             # if second_input:
@@ -1120,19 +1120,19 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
     def exclusive_disjunction(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if first_input == True:
         # if bool(first_input) == True:
         # if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
         # if not first_input:
         #     if not second_input:
             # if second_input:
@@ -1606,7 +1606,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         if bool(first_input) == True:
             # if second_input == False:
             # if bool(second_input) == False:
-            if not bool(second_input) == True:
+            if bool(not second_input) == True:
                 return True
         return False
 
@@ -1624,8 +1624,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         if bool(first_input):
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            if not bool(second_input):
+            # if bool(not second_input) == True:
+            if bool(not second_input):
                 return True
         return False
 
@@ -1644,8 +1644,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             if not second_input:
                 return True
         return False
@@ -1653,7 +1653,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   still green, because
 
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
-  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
@@ -1668,8 +1668,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         # if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         if first_input and not second_input:
                 return True
@@ -1701,8 +1701,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         # if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if first_input and not second_input:
         #         return True
@@ -1812,8 +1812,8 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         # if first_input:
             # if second_input == False:
             # if bool(second_input) == False:
-            # if not bool(second_input) == True:
-            # if not bool(second_input):
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
             # if not second_input:
         # if first_input and not second_input:
         #         return True
@@ -2201,7 +2201,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             return False
         return True
 
@@ -2216,8 +2216,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             return False
         return True
 
@@ -2232,13 +2232,13 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             return False
         return True
 
-  the test is still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  the test is still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
 
 * I add an :ref:`else clause<if statements>` to make it clearer
 
@@ -2249,8 +2249,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             return False
         else:
@@ -2267,8 +2267,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             return False
         # else:
@@ -2286,8 +2286,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             return False
         # else:
@@ -2306,8 +2306,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
         #     return False
         # else:
@@ -2327,8 +2327,8 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
         #     return False
         # else:
@@ -2677,7 +2677,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     def converse_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        if not bool(first_input) == True:
+        if bool(not first_input) == True:
             # if second_input == True:
             if bool(second_input) == True:
                 return False
@@ -2694,8 +2694,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     def converse_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        if not bool(first_input):
+        # if bool(not first_input) == True:
+        if bool(not first_input):
             # if second_input == True:
             # if bool(second_input) == True:
             if bool(second_input):
@@ -2713,8 +2713,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     def converse_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2725,7 +2725,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   still green, because
 
-  - ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not bool(something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
@@ -2737,8 +2737,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     def converse_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2770,8 +2770,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     def converse_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:
@@ -2970,8 +2970,8 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
     def converse_implication(first_input, second_input):
         # if first_input == False:
         # if bool(first_input) == False:
-        # if not bool(first_input) == True:
-        # if not bool(first_input):
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
         # if not first_input:
             # if second_input == True:
             # if bool(second_input) == True:

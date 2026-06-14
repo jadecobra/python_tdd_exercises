@@ -582,7 +582,7 @@ the test passes.
     def withdraw(right_pin, enough_money):
         # if enough_money == False:
         # if bool(enough_money) == False:
-        if not bool(enough_money) == True:
+        if bool(not enough_money) == True:
             return 'DENIED'
 
         return 'CASH'
@@ -598,8 +598,8 @@ the test passes.
     def withdraw(right_pin, enough_money):
         # if enough_money == False:
         # if bool(enough_money) == False:
-        # if not bool(enough_money) == True:
-        if not bool(enough_money):
+        # if bool(not enough_money) == True:
+        if bool(not enough_money):
             return 'DENIED'
 
         return 'CASH'
@@ -615,14 +615,14 @@ the test passes.
     def withdraw(right_pin, enough_money):
         # if enough_money == False:
         # if bool(enough_money) == False:
-        # if not bool(enough_money) == True:
-        # if not bool(enough_money):
+        # if bool(not enough_money) == True:
+        # if bool(not enough_money):
         if not enough_money:
             return 'DENIED'
 
         return 'CASH'
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if not something``
 
 * I remove the commented lines
 
@@ -757,7 +757,7 @@ the test passes.
     def withdraw(right_pin, enough_money):
         # if right_pin == False:
         # if bool(right_pin) == False:
-        if not bool(right_pin) == True:
+        if bool(not right_pin) == True:
             return 'DENIED'
 
         if not enough_money:
@@ -776,8 +776,8 @@ the test passes.
     def withdraw(right_pin, enough_money):
         # if right_pin == False:
         # if bool(right_pin) == False:
-        # if not bool(right_pin) == True:
-        if not bool(right_pin):
+        # if bool(not right_pin) == True:
+        if bool(not right_pin):
             return 'DENIED'
 
         if not enough_money:
@@ -796,8 +796,8 @@ the test passes.
     def withdraw(right_pin, enough_money):
         # if right_pin == False:
         # if bool(right_pin) == False:
-        # if not bool(right_pin) == True:
-        # if not bool(right_pin):
+        # if bool(not right_pin) == True:
+        # if bool(not right_pin):
         if not right_pin:
             return 'DENIED'
 
@@ -806,7 +806,7 @@ the test passes.
 
         return 'CASH'
 
-  still green, because ``if bool(something) == False`` is the same as ``if not bool(something) == True`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if not something``
 
 * I remove the commented lines
 
