@@ -1891,7 +1891,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I use :ref:`Logical Negation (NOT)<test_logical_negation>` to change the :ref:`else clause<if statements>` to the opposite of the :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 65
     :emphasize-lines: 3-4
 
         if not first_input and not second_input:
@@ -1930,9 +1930,20 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I change it to an :ref:`else clause<if statements>`
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 4-5
+    :lineno-start: 54
+    :emphasize-lines: 15-16
 
+    def logical_disjunction(first_input, second_input):
+        # if first_input == False:
+        # if bool(first_input) == False:
+        # if bool(not first_input) == True:
+        # if bool(not first_input):
+        # if not first_input:
+            # if second_input == False:
+            # if bool(second_input) == False:
+            # if bool(not second_input) == True:
+            # if bool(not second_input):
+            # if not second_input:
         # else:
         if not (not first_input and not second_input):
             return True
@@ -1945,7 +1956,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add a :ref:`conditional expression (ternary operator)<conditional expressions>`
 
   .. code-block:: python
-    :lineno-start: 63
+    :lineno-start: 65
     :emphasize-lines: 2-3, 5-11
 
         # else:
@@ -1965,8 +1976,8 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove ``True if`` and ``else False`` to make it simpler
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 7-14
+    :lineno-start: 65
+    :emphasize-lines: 8, 10
 
         # else:
         # if not (not first_input and not second_input):
@@ -1974,20 +1985,19 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         # if not first_input and not second_input:
         # else:
         #     return False
-        # return (
-        #     True if
-        #     not (not first_input and not second_input)
-        #     else False
-        # )
-        return not (not first_input and not second_input)
+        return (
+            # True if
+            not (not first_input and not second_input)
+            # else False
+        )
 
   still green.
 
 * :ref:`not<test_logical_negation>` happens 3 times in this statement. I "multiply" it by every symbol in the statement to try to make it simpler
 
   .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 12-17
+    :lineno-start: 65
+    :emphasize-lines: 7-8, 10-16
 
         # else:
         # if not (not first_input and not second_input):
@@ -1996,11 +2006,10 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         # else:
         #     return False
         # return (
-        #     True if
-        #     not (not first_input and not second_input)
-        #     else False
+            # True if
+            # not (not first_input and not second_input)
+            # else False
         # )
-        # return not (not first_input and not second_input)
         return (
             (not not first_input)
             (not and)
@@ -2018,7 +2027,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_binary.py``
 
   .. code-block:: python
-    :lineno-start: 136
+    :lineno-start: 86
     :emphasize-lines: 5
     :emphasize-text: SyntaxError
 
@@ -2031,7 +2040,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I change ``not and`` to ``or`` in the :ref:`logical_disjunction function<test_logical_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 76
     :emphasize-lines: 3-4
 
         return (
@@ -2046,7 +2055,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 * I remove ``not not`` because they cancel out
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 76
     :emphasize-lines: 2-3, 6-7
 
         return (
@@ -2073,7 +2082,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   - ``not first_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``first_input``
 
-    * if the first input is :green:`True`, this part of the statement is :red:`False`
+    * if the first input is :green:`True`, this part of the statement is :red:`False` and exits the :ref:`function<what is a function?>`
     * if the first input is :red:`False`, this part of the statement is :green:`True`
 
   - ``not second_input`` is the :ref:`Logical Negation (NOT)<test_logical_negation>` of ``second_input``
@@ -2140,7 +2149,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   .. code-block:: python
     :lineno-start: 54
-    :emphasize-lines: 24-29
+    :emphasize-lines: 23-28
 
     def logical_disjunction(first_input, second_input):
         # if first_input == False:
@@ -2160,11 +2169,10 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         # else:
         #     return False
         # return (
-        #     True if
-        #     not (not first_input and not second_input)
-        #     else False
+            # True if
+            # not (not first_input and not second_input)
+            # else False
         # )
-        # return not (not first_input and not second_input)
         return logical_negation(
             logical_conjunction(
                 logical_negation(first_input),
@@ -2186,6 +2194,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   .. code-block:: python
     :lineno-start: 54
+    :emphasize-lines: 8
 
     def logical_disjunction(first_input, second_input):
         return logical_negation(
