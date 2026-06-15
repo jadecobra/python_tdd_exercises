@@ -90,6 +90,17 @@ continue the project
 
     ================== 16 passed in G.HIs ===================
 
+* Up to this point I have tested
+
+  - :ref:`contradiction<test_contradiction>` which always returns :red:`False`
+  - :ref:`logical_conjunction aka and<test_logical_conjunction>` which returns ``first_input and second_input``
+  - :ref:`project_second<test_project_second>` which always returns ``second_input``
+  - :ref:`converse_non_implication<test_converse_non_implication>` which returns ``not first_input and second_input``
+  - :ref:`negate_first<test_negate_first>` which always returns ``not first_input``
+  - :ref:`logical_nand<test_logical_nand>` which returns ``not (first_input and second_input)``
+  - :ref:`tautology<test_tautology>` which always returns :green:`True`
+  - :ref:`logical_disjunction<test_logical_disjunction>` which returns ``first_input or second_input``
+
 ----
 
 *********************************************************************************

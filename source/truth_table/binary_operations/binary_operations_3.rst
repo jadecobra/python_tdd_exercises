@@ -3330,15 +3330,11 @@ review
   :red:`False`    :red:`False`   :red:`False`
   ==============  ============== ==============
 
-and
+All the :ref:`binary operations<truth table: binary operations>` or conditions have been written with some combination of some or all of these three
 
-* :ref:`Logical Disjunction is "OR"<test_logical_disjunction>`
-* :ref:`Logical Conjunction is "AND"<test_logical_conjunction>`
-* :ref:`Logical Negation is "NOT" <test_logical_negation>`
-
-All the :ref:`binary operations<truth table: binary operations>` or conditions have been written with some or all of the above 3.
-
-The :ref:`binary operations<truth table: binary operations>` can be written with some combination of :ref:`AND<test_logical_conjunction>`, :ref:`NOT<test_logical_negation>` and :ref:`OR<test_logical_disjunction>`.
+* :ref:`Logical Disjunction (OR)<test_logical_disjunction>`
+* :ref:`Logical Conjunction (AND)<test_logical_conjunction>`
+* :ref:`Logical Negation is (NOT)<test_logical_negation>`
 
 =============================================== =============  ============= ============= ============= ==============================================================
 return                                          True,          True,         False,        False,        name of operation
