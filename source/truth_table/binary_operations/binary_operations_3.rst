@@ -137,48 +137,35 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 121
-  :emphasize-lines: 23-28
+  :lineno-start: 76
+  :emphasize-lines: 10-14
 
       def test_logical_disjunction(self):
-          self.assertTrue(
-              src.truth_table.logical_disjunction(
-                  True, True
-              )
+          logical_disjunction = (
+              src.truth_table.logical_disjunction
           )
-          self.assertTrue(
-              src.truth_table.logical_disjunction(
-                  True, False
-              )
-          )
-          self.assertTrue(
-              src.truth_table.logical_disjunction(
-                  False, True
-              )
-          )
-          self.assertFalse(
-              src.truth_table.logical_disjunction(
-                  False, False
-              )
-          )
+          self.assertTrue(logical_disjunction(True, True))
+          self.assertTrue(logical_disjunction(True, False))
+          self.assertTrue(logical_disjunction(False, True))
+          self.assertFalse(logical_disjunction(False, False))
 
       def test_exclusive_disjunction(self):
-          self.assertFalse(
-              src.truth_table.exclusive_disjunction(
-                  True, True
-              )
+          exclusive_disjunction = (
+              src.truth_table.exclusive_disjunction
           )
+          self.assertFalse(exclusive_disjunction(True, True))
 
 
   # Exceptions seen
 
 the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+.. code-block:: python
 
-  AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
+  AttributeError: module 'src.truth_table'
+                  has no attribute 'exclusive_disjunction'
 
-because ``truth_table.py`` does not have anything in it with that name
+because ``truth_table.py`` does not have anything in it with that name.
 
 ----
 
@@ -191,17 +178,23 @@ because ``truth_table.py`` does not have anything in it with that name
 I add :ref:`exclusive_disjunction<test_exclusive_disjunction>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 52
-  :emphasize-lines: 5-6
+  :lineno-start: 54
+  :emphasize-lines: 11-12
 
   def logical_disjunction(first_input, second_input):
+      return logical_negation(
+          logical_conjunction(
+              logical_negation(first_input),
+              logical_negation(second_input)
+          )
+      )
       return first_input or second_input
 
 
   def exclusive_disjunction(first_input, second_input):
       return False
 
-the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
 ----
 
@@ -220,31 +213,26 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 7-11
+    :lineno-start: 85
+    :emphasize-lines: 6
 
         def test_exclusive_disjunction(self):
-            self.assertFalse(
-                src.truth_table.exclusive_disjunction(
-                    True, True
-                )
+            exclusive_disjunction = (
+                src.truth_table.exclusive_disjunction
             )
-            self.assertTrue(
-                src.truth_table.exclusive_disjunction(
-                    True, False
-                )
-            )
+            self.assertFalse(exclusive_disjunction(True, True))
+            self.assertTrue(exclusive_disjunction(True, False))
 
 
     # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+  because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 * I add an :ref:`if statement<if statements>` to the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
 
@@ -271,36 +259,30 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 12-16
+    :lineno-start: 85
+    :emphasize-lines: 7
 
         def test_exclusive_disjunction(self):
-            self.assertFalse(
-                src.truth_table.exclusive_disjunction(
-                    True, True
-                )
+            exclusive_disjunction = (
+                src.truth_table.exclusive_disjunction
             )
-            self.assertTrue(
-                src.truth_table.exclusive_disjunction(
-                    True, False
-                )
-            )
-            self.assertTrue(
-                src.truth_table.exclusive_disjunction(
-                    False, True
-                )
-            )
+            self.assertFalse(exclusive_disjunction(True, True))
+            self.assertTrue(exclusive_disjunction(True, False))
+            self.assertTrue(exclusive_disjunction(False, True))
 
 
     # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: False is not true
 
-  because the :ref:`function<what is a function?>` returned :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
+  because this happens when ``if second_input == False:`` runs, Python_ checks if ``second_input`` is equal to :red:`False`
+
+  - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - ``second_input`` is :green:`True` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
 * I add an :ref:`if statement<if statements>` to :ref:`exclusive_disjunction<test_exclusive_disjunction>` in ``truth_table.py``
 
@@ -315,11 +297,18 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             return True
         return False
 
-  the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns
+  the test passes because this happens when :ref:`exclusive_disjunction<test_exclusive_disjunction>` is called - it runs ``if first_input == False:``, where Python_ checks if ``first_input`` is equal to :red:`False`
 
-  - :green:`True`, if the first input is :red:`False`
-  - :green:`True`, if the second input is :red:`False`
-  - :red:`False`, if the above conditions are not met
+  * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next line in the :ref:`function<what is a function?>` - ``if second_input == False:``
+
+    - when ``if second_input == False:`` runs, Python_ checks if ``second_input`` is equal to :red:`False`
+
+      * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+      * if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+  * so far this is the same as the first three cases of :ref:`logical_nand<test_logical_nand>`
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False` to :ref:`test_exclusive_disjunction`, in ``test_binary.py``
 
@@ -330,33 +319,20 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 143
-    :emphasize-lines: 17-21
+    :lineno-start: 85
+    :emphasize-lines: 8
 
         def test_exclusive_disjunction(self):
-            self.assertFalse(
-                src.truth_table.exclusive_disjunction(
-                    True, True
-                )
+            exclusive_disjunction = (
+                src.truth_table.exclusive_disjunction
             )
-            self.assertTrue(
-                src.truth_table.exclusive_disjunction(
-                    True, False
-                )
-            )
-            self.assertTrue(
-                src.truth_table.exclusive_disjunction(
-                    False, True
-                )
-            )
-            self.assertFalse(
-                src.truth_table.exclusive_disjunction(
-                    False, False
-                )
-            )
+            self.assertFalse(exclusive_disjunction(True, True))
+            self.assertTrue(exclusive_disjunction(True, False))
+            self.assertTrue(exclusive_disjunction(False, True))
+            self.assertFalse(exclusive_disjunction(False, False))
 
 
-    # Exceptions
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -364,7 +340,17 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returned :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+  because this happens when :ref:`exclusive_disjunction<test_exclusive_disjunction>` is called - it runs ``if first_input == False:``, where Python_ checks if ``first_input`` is equal to :red:`False`
+
+  * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next line in the :ref:`function<what is a function?>` - ``if second_input == False:``
+
+    - when ``if second_input == False:`` runs, Python_ checks if ``second_input`` is equal to :red:`False`
+
+      * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+      * if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+      * ``second_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :green:`False`
 
 * I add an :ref:`if statement<if statements>` for this case, to the one for when the first input is :red:`False` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
 
@@ -1353,7 +1339,7 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 143
+  :lineno-start: 85
   :emphasize-lines: 23-28
 
       def test_exclusive_disjunction(self):
