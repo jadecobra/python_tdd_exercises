@@ -2165,7 +2165,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
 
   still green, because
 
-  - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
   - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together

@@ -853,7 +853,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
     .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
       :language: python
 
-  ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 

@@ -1250,7 +1250,7 @@ because the test called the ``elevator`` :ref:`function<what is a function?>` wi
         if above_weight_limit:
             return not_move
 
-  green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
 * I remove the commented lines
 

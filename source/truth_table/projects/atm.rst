@@ -1203,7 +1203,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
         if above_daily_limit:
             return 'DENIED'
 
-  green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
 * I add a :ref:`variable<what is a variable?>` to use them to remove repetition of ``'DENIED'``
 
@@ -2152,7 +2152,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
         if card_expired:
             return denied
 
-  green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  green, because ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
 * I remove the commented lines
 

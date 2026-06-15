@@ -2176,7 +2176,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   this means that
 
   - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
-  - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
+  - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two `if statements`_ together
 
