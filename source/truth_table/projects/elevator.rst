@@ -609,7 +609,7 @@ the test passes.
 
         return 'MOVE'
 
-  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I remove the commented lines
 
@@ -789,7 +789,7 @@ the test passes.
 
         return 'MOVE'
 
-  because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I add a :ref:`variable<what is a variable?>`
 

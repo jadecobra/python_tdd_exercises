@@ -367,7 +367,7 @@ the test passes. :ref:`negate_second<test_negate_second>` returns :red:`False`, 
             return True
         return False
 
-  the test is still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  the test is still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I add a :ref:`conditional expression<conditional expressions>`
 
@@ -758,7 +758,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                 return True
         return False
 
-  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
@@ -1407,7 +1407,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         return True
 
-  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to make two of the cases clearer
 
@@ -2166,7 +2166,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   still green, because
 
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
-  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 

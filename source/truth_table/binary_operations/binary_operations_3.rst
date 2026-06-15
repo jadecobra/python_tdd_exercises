@@ -539,7 +539,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
       .. literalinclude:: ../../code/truth_table/solutions/if_something_true.py
         :language: python
 
-  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
 * I move the :ref:`if statements` to put them together
@@ -1626,7 +1626,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   still green, because
 
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
-  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
 
@@ -1968,6 +1968,14 @@ because
             (first_input and not second_input)
         )
 
+
+    def material_non_implication(first_input, second_input):
+        return logical_conjunction(
+            first_input,
+            logical_negation(second_input)
+        )
+        return first_input and not second_input
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2011,34 +2019,28 @@ first input     second input   return
 
 .. code-block:: python
   :lineno-start: 94
-  :emphasize-lines: 23-26
+  :emphasize-lines: 18-20
 
       def test_material_non_implication(self):
+          material_non_implication = (
+              src.truth_table.material_non_implication
+          )
           self.assertFalse(
-              src.truth_table.material_non_implication(
-                  True, True
-              )
+              material_non_implication(True, True)
           )
           self.assertTrue(
-              src.truth_table.material_non_implication(
-                  True, False
-              )
+              material_non_implication(True, False)
           )
           self.assertFalse(
-              src.truth_table.material_non_implication(
-                  False, True
-              )
+              material_non_implication(False, True)
           )
           self.assertFalse(
-              src.truth_table.material_non_implication(
-                  False, False
-              )
+              material_non_implication(False, False)
           )
 
       def test_project_first(self):
-          self.assertTrue(
-              src.truth_table.project_first(True, True)
-          )
+          project_first = src.truth_table.project_first
+          self.assertTrue(project_first(True, True))
 
 
   # Exceptions seen
@@ -2047,7 +2049,8 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 .. code-block:: shell
 
-  AttributeError: module 'src.truth_table' has no attribute 'project_first'
+  AttributeError: module 'src.truth_table'
+                  has no attribute 'project_first'
 
 there is nothing named :ref:`project_first<test_project_first>` in ``truth_table.py``
 
@@ -2062,7 +2065,7 @@ there is nothing named :ref:`project_first<test_project_first>` in ``truth_table
 I add a :ref:`function<what is a function?>` for :ref:`project_first<test_project_first>` to ``truth_table.py``
 
 .. code-block:: python
-  :lineno-start: 83
+  :lineno-start: 82
   :emphasize-lines: 9-10
 
   def material_non_implication(first_input, second_input):
@@ -2076,7 +2079,7 @@ I add a :ref:`function<what is a function?>` for :ref:`project_first<test_projec
   def project_first(first_input, second_input):
       return True
 
-the test passes. :ref:`project_first<test_project_first>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`project_first<test_project_first>` returns :green:`True`, if the first input is :green:`True` and the second input is :green:`True`.
 
 ----
 
@@ -2095,16 +2098,13 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 187
-    :emphasize-lines: 5-7
+    :lineno-start: 111
+    :emphasize-lines: 4
 
         def test_project_first(self):
-            self.assertTrue(
-                src.truth_table.project_first(True, True)
-            )
-            self.assertTrue(
-                src.truth_table.project_first(True, False)
-            )
+            project_first = src.truth_table.project_first
+            self.assertTrue(project_first(True, True))
+            self.assertTrue(project_first(True, False))
 
 
     # Exceptions seen
@@ -2124,30 +2124,25 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 187
-    :emphasize-lines: 8-10
+    :lineno-start: 111
+    :emphasize-lines: 5
 
         def test_project_first(self):
-            self.assertTrue(
-                src.truth_table.project_first(True, True)
-            )
-            self.assertTrue(
-                src.truth_table.project_first(True, False)
-            )
-            self.assertFalse(
-                src.truth_table.project_first(False, True)
-            )
+            project_first = src.truth_table.project_first
+            self.assertTrue(project_first(True, True))
+            self.assertTrue(project_first(True, False))
+            self.assertFalse(project_first(False, True))
 
 
     # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
     AssertionError: True is not false
 
-  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`
+  because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
 * I add an :ref:`if statement<if statements>` for this case to the :ref:`project_first function<test_project_first>` in ``truth_table.py``
 
@@ -2160,10 +2155,10 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
             return False
         return True
 
-  the test passes. :ref:`project_first<test_project_first>` returns
+  the test passes because when :ref:`project_first<test_project_first>` is called, it runs ``if first_input == False:``
 
-  - :red:`False`, if the first input is :red:`False`
-  - :green:`True`, if the above condition is NOT met
+  - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``
+  - if ``first_input`` is equal to :red:`False`, it runs ``return False``
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_project_first` in ``test_binary.py``
 
@@ -2174,22 +2169,15 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
   ==============  ============== ==============
 
   .. code-block:: python
-    :lineno-start: 187
-    :emphasize-lines: 11-13
+    :lineno-start: 111
+    :emphasize-lines: 6
 
         def test_project_first(self):
-            self.assertTrue(
-                src.truth_table.project_first(True, True)
-            )
-            self.assertTrue(
-                src.truth_table.project_first(True, False)
-            )
-            self.assertFalse(
-                src.truth_table.project_first(False, True)
-            )
-            self.assertFalse(
-                src.truth_table.project_first(False, False)
-            )
+            project_first = src.truth_table.project_first
+            self.assertTrue(project_first(True, True))
+            self.assertTrue(project_first(True, False))
+            self.assertFalse(project_first(False, True))
+            self.assertFalse(project_first(False, False))
 
 
     # Exceptions seen
@@ -2256,7 +2244,7 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
             return False
         return True
 
-  the test is still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  the test is still green, because ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
 
 * I add an :ref:`else clause<if statements>` to make it clearer
 
@@ -2366,7 +2354,14 @@ the test passes. :ref:`project_first<test_project_first>` returns :green:`True`,
     def project_first(first_input, second_input):
         return first_input
 
-:ref:`Project First always returns the first input<test_project_first>` it does not care about the second input, like :ref:`Project Second which always returns the second input<test_project_second>` and does not care about the first input
+* I add a git_ commit message in another terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add project_first'
+
+:ref:`Project First always returns the first input<test_project_first>` it does not care about the second input, like :ref:`Project Second which always returns the second input<test_project_second>` and does not care about the first input.
 
 ----
 
@@ -2390,6 +2385,8 @@ examples of Project First
   :red:`no`         :red:`no`           :red:`no`
   ================  ==================  ==================
 
+  "if a tree falls in the forest, does it make a sound?"
+
 * able to login with or without Multi Factor Authentication, if the inputs are
 
   - did user provide the right password?
@@ -2399,7 +2396,7 @@ examples of Project First
   right password  right MFA code log in
   ==============  ============== ==============
   :green:`yes`    :green:`yes`   :green:`yes`
-  :green:`yes`    :red:`no`      :green:`yes` (why ask for MFA code?)
+  :green:`yes`    :red:`no`      :green:`yes`
   :red:`no`       :green:`yes`   :red:`no` (how did user get the MFA code?)
   :red:`no`       :red:`no`      :red:`no`
   ==============  ============== ==============
@@ -2410,7 +2407,7 @@ examples of Project First
   - what you think I should do?
 
   ==============  ============== ==============
-  what I want     your thoughts  what happens
+  what I want     your thoughts  my actions
   ==============  ============== ==============
   :green:`yes`    :green:`yes`   :green:`yes`
   :green:`yes`    :red:`no`      :green:`yes`
@@ -2466,29 +2463,21 @@ first input     second input   return
 ==============  ============== ==============
 
 .. code-block:: python
-  :lineno-start: 187
-  :emphasize-lines: 15-20
+  :lineno-start: 111
+  :emphasize-lines: 8-12
 
       def test_project_first(self):
-          self.assertTrue(
-              src.truth_table.project_first(True, True)
-          )
-          self.assertTrue(
-              src.truth_table.project_first(True, False)
-          )
-          self.assertFalse(
-              src.truth_table.project_first(False, True)
-          )
-          self.assertFalse(
-              src.truth_table.project_first(False, False)
-          )
+          project_first = src.truth_table.project_first
+          self.assertTrue(project_first(True, True))
+          self.assertTrue(project_first(True, False))
+          self.assertFalse(project_first(False, True))
+          self.assertFalse(project_first(False, False))
 
       def test_converse_implication(self):
-          self.assertTrue(
-              src.truth_table.converse_implication(
-                  True, True
-              )
+          converse_implication = (
+              src.truth_table.converse_implication
           )
+          self.assertTrue(converse_implication(True, True))
 
 
   # Exceptions seen
@@ -2497,7 +2486,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 .. code-block:: shell
 
-  AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
+  AttributeError: module 'src.truth_table'
+                  has no attribute 'converse_implication'.
+                  Did you mean: 'converse_non_implication'?
 
 because ``truth_table.py`` does not have anything named :ref:`converse_implication<test_converse_implication>` in it
 
@@ -2743,7 +2734,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   still green, because
 
-  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``
+  - ``if bool(something) == False`` is the same as ``if bool(not something) == True`` is the same as ``if bool(not something)`` is the same as ``if not something``.
   - ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``
 
 * I use :ref:`Logical Conjunction (AND)<test_logical_conjunction>` to put the two :ref:`if statements` together
