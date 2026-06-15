@@ -2664,7 +2664,7 @@ review
 
   - returns ``not (first_input and second_input)``
   - returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
-  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (AND)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return

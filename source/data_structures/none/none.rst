@@ -438,7 +438,7 @@ test_is_none_a_boolean
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test to see if :ref:`None<what is None?>` is a :ref:`boolean<what are booleans?>`
 
   .. code-block:: python
@@ -773,7 +773,7 @@ test_is_none_an_integer
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test to see if :ref:`None<what is None?>` is an integer_ (a whole number)
 
   .. code-block:: python
@@ -1177,7 +1177,7 @@ test_is_none_a_float
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test to see if :ref:`None<what is None?>` is a float_ (binary floating point decimal number)
 
 .. code-block:: python
@@ -1584,7 +1584,7 @@ test_is_none_a_string
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test to see if :ref:`None<what is None?>` is a string_ (anything inside :ref:`quotes`)
 
@@ -1875,7 +1875,7 @@ test_is_none_a_tuple
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test to see if :ref:`None<what is None?>` is a tuple_ (anything in parentheses (``( )``) separated by commas), pronounced ``two-pull``
 
@@ -2172,7 +2172,7 @@ test_is_none_a_list
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a new test to see if :ref:`None<what is None?>` is a :ref:`list<lists>` (anything in square brackets (``[ ]``))
 
   .. code-block:: python
@@ -2463,7 +2463,7 @@ test_is_none_a_set
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I want to test if :ref:`None<what is None?>` is a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
@@ -2699,7 +2699,7 @@ test_is_none_a_dictionary
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * One last test, this one for if :ref:`None<what is None?>` is a :ref:`dictionary (key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`
 
   .. code-block:: python

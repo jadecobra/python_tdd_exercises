@@ -1322,7 +1322,7 @@ Is a :ref:`class<what is a class?>` in a :ref:`module<what is a module?>` also a
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 I add a test for :ref:`class attributes<what is a class attribute?>` to ``test_attribute_error.py``
 
@@ -1872,7 +1872,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for :ref:`methods<what is a method?>` to ``test_attribute_error.py``
 
   .. code-block:: python

@@ -1423,7 +1423,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I change ``2026`` in ``my_expectation`` to use a :ref:`method<what is a method?>` from the `datetime module`_
 
@@ -1707,7 +1707,7 @@ test factory with random sex
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add randomness to the ``sex`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
@@ -1804,7 +1804,7 @@ test factory with random last name
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I use `random.choice`_ for the ``last_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
@@ -1898,7 +1898,7 @@ test factory with random first name
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add randomness to the ``first_name`` :ref:`variable<what is a variable?>` in ``test_person.py``
 
@@ -2015,7 +2015,7 @@ extract pick_one function
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`function<what is a function?>` for the calls to the `random.choice method`_
 
@@ -2116,7 +2116,7 @@ The difference between the call to the :ref:`factory function<test_factory_w_key
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
 
@@ -2420,7 +2420,7 @@ I want to see what happens when I try to make a person without a value for the `
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I make a copy of :ref:`test_factory_w_keyword_arguments` and paste it below in ``test_person.py``
 
   .. code-block:: python
@@ -3702,7 +3702,7 @@ extract calculate_age function
 
 Each :ref:`assertion<what is an assertion?>` in every test has a calculation for the age
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`function<what is a function?>`
 
@@ -4078,7 +4078,7 @@ test_factory_person_says_hello with random values
 
 I want to use random values to :ref:`test_factory_person_says_hello`
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add random values to use for the ``first_name``, ``last_name``, ``sex``, ``year_of_birth``  and ``age`` :ref:`variables<what is a variable?>`
 
@@ -4502,7 +4502,7 @@ extract get_random_year_of_birth function
 
 I make the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` the same way in all three tests.
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`function<what is a function?>` to use to replace the repetition of making the values for the ``this_year`` and ``year_of_birth`` :ref:`variables<what is a variable?>` in ``test_person.py``
 
@@ -4690,7 +4690,7 @@ I want to write the solution without looking at the tests
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I close ``test_person.py``
 * then I delete all the text in ``person.py``, the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 

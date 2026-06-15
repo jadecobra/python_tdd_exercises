@@ -1019,7 +1019,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 -----
 
@@ -1276,7 +1276,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a new test to ``test_functions.py``
 
@@ -1406,7 +1406,7 @@ I can also make a function with a `return statement`_
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a new failing test to ``test_functions.py``
 
@@ -1528,7 +1528,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add another failing test to ``test_functions.py``
 
@@ -1690,7 +1690,7 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test to ``test_functions.py``
 
@@ -1828,7 +1828,7 @@ constant functions_ always return the same thing when they are called
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test to ``test_functions.py``
 
@@ -1937,7 +1937,7 @@ The identity :ref:`function<what is a function?>` returns its input as output, i
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a failing test to ``test_functions.py``
 
@@ -2110,7 +2110,7 @@ So far, the :ref:`functions<what is a function?>` take no input or one input, th
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a failing test to ``test_functions.py``
 
@@ -2514,7 +2514,7 @@ I can use `Keyword Arguments`_ to make sure the :ref:`function<what is a functio
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a new test to ``test_functions.py``
 
@@ -3182,7 +3182,7 @@ I can write functions_ that take both :ref:`positional<test_w_positional_argumen
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a failing test to ``test_functions.py``
 
@@ -3488,7 +3488,7 @@ I can use :ref:`positional<test_w_positional_arguments>` and :ref:`keyword argum
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a failing test to ``test_functions.py``
 
@@ -3969,7 +3969,7 @@ I can make functions_ that take any number of :ref:`positional<test_w_positional
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a new test to ``test_functions.py``
 

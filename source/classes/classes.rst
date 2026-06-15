@@ -1389,7 +1389,7 @@ test_classy_person_says_hello with random values
 
 I want to use random values to :ref:`test_classy_person_says_hello`
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add :ref:`variables<what is a variable?>`
 
@@ -1692,7 +1692,7 @@ extract random_first_name class attribute
 
 I make the values for ``first_name`` in the tests the same way each time, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use a :ref:`class attribute<what is a class attribute?>` to remove repetition of how I make it, then have all the :ref:`methods<what is a method?>` reference it
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`class attribute<what is a class attribute?>` called ``random_first_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
@@ -1840,7 +1840,7 @@ extract random_year_of_birth class attribute
 
 I call the ``get_random_year_of_birth`` :ref:`function<what is a function?>` for ``year_of_birth`` in each test, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use a :ref:`class attribute<what is a class attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value it returns
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`class attribute<what is a class attribute?>` called ``random_year_of_birth`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
@@ -2005,7 +2005,7 @@ extract random_last_name class attribute
 
 The ``last_name`` :ref:`variable<what is a variable?>` is made the same way in three of the four tests, I can use a :ref:`class attribute<what is a class attribute?>` to remove its repetition then have all the :ref:`methods<what is a method?>` reference the value
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`class attribute<what is a class attribute?>` called ``random_last_name`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
@@ -2140,7 +2140,7 @@ extract age class attribute
 
 I call the ``calculate_age`` :ref:`function<what is a function?>` with the ``self.random_year_of_birth`` :ref:`attribute<what is a class attribute?>` in each test, since ``TestPerson`` is a :ref:`class<what is a class?>`, I can use a :ref:`class attribute<what is a class attribute?>` to remove repetition of those calls, then have all the :ref:`methods<what is a method?>` reference the value  it returns
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a :ref:`class attribute<what is a class attribute?>` called ``age`` to the ``TestPerson`` :ref:`object<everything is an object>`
 
@@ -2415,7 +2415,7 @@ I want each test to get new random values every time they run and the `unittest.
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add the `unittest.TestCase.setUp method`_ to ``TestPerson`` then move the :ref:`class attributes<what is a class attribute?>` into it
 
@@ -2744,7 +2744,7 @@ Python has the `dir built-in function`_ which shows the :ref:`attributes<what is
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a new test with the `dir built-in function`_ in ``test_person.py``
 

@@ -443,6 +443,13 @@ there is no definition for :ref:`negate_first<test_negate_first>` in ``truth_tab
     def negate_first(first_input, second_input):
         return not first_input
 
+* I add a git_ commit message in another terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add negate_first'
+
 :ref:`Negate First<test_negate_first>` always returns
 
 * ``not first_input``
@@ -539,41 +546,42 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`logical_nand<test_logical_nand>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I go back to the terminal_ where the tests are running
+* I add a test for :ref:`logical_nand<test_logical_nand>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  ==============  ============== ==============
 
-.. code-block:: python
-  :lineno-start: 55
-  :emphasize-lines: 8-10
+  .. code-block:: python
+    :lineno-start: 55
+    :emphasize-lines: 8-10
 
-      def test_negate_first(self):
-          negate_first = src.truth_table.negate_first
-          self.assertFalse(negate_first(True, True))
-          self.assertFalse(negate_first(True, False))
-          self.assertTrue(negate_first(False, True))
-          self.assertTrue(negate_first(False, False))
+        def test_negate_first(self):
+            negate_first = src.truth_table.negate_first
+            self.assertFalse(negate_first(True, True))
+            self.assertFalse(negate_first(True, False))
+            self.assertTrue(negate_first(False, True))
+            self.assertTrue(negate_first(False, False))
 
-      def test_logical_nand(self):
-          logical_nand = src.truth_table.logical_nand
-          self.assertFalse(logical_nand(True, True))
+        def test_logical_nand(self):
+            logical_nand = src.truth_table.logical_nand
+            self.assertFalse(logical_nand(True, True))
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.truth_table'
-                  has no attribute 'logical_nand'.
-                  Did you mean: 'logical_false'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_nand'.
+                    Did you mean: 'logical_false'?
 
-because there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
+  because there is no definition for :ref:`logical_nand<test_logical_nand>` in ``truth_table.py``
 
 ----
 
@@ -1172,6 +1180,13 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add logical_nand'
+
 :ref:`Logical NAND<test_logical_nand>`
 
 * returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
@@ -1297,40 +1312,41 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`tautology<test_tautology>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I go back to the terminal_ where the tests are running
+* I add a test for :ref:`tautology<test_tautology>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  ==============  ============== ==============
 
-.. code-block:: python
-  :lineno-start: 62
-  :emphasize-lines: 8-10
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 8-10
 
-      def test_logical_nand(self):
-          logical_nand = src.truth_table.logical_nand
-          self.assertFalse(logical_nand(True, True))
-          self.assertTrue(logical_nand(True, False))
-          self.assertTrue(logical_nand(False, True))
-          self.assertTrue(logical_nand(False, False))
+        def test_logical_nand(self):
+            logical_nand = src.truth_table.logical_nand
+            self.assertFalse(logical_nand(True, True))
+            self.assertTrue(logical_nand(True, False))
+            self.assertTrue(logical_nand(False, True))
+            self.assertTrue(logical_nand(False, False))
 
-      def test_tautology(self):
-          tautology = src.truth_table.tautology
-          self.assertTrue(tautology(True, True))
+        def test_tautology(self):
+            tautology = src.truth_table.tautology
+            self.assertTrue(tautology(True, True))
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: python
+  .. code-block:: python
 
-  AttributeError: module 'src.truth_table'
-                  has no attribute 'tautology'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'tautology'
 
-``truth_table.py`` does not have :ref:`tautology<test_tautology>` in it.
+  ``truth_table.py`` does not have :ref:`tautology<test_tautology>` in it.
 
 ----
 
@@ -1443,6 +1459,13 @@ the test passes. :ref:`tautology<test_tautology>` returns :green:`True`, if the 
     # Exceptions seen
 
   still green, there is only one result for this operation.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add tautology'
 
 :ref:`Tautology<test_tautology>` always returns :green:`True`, it does not care about the inputs. It is the opposite of :ref:`contradiction<test_contradiction>`  which always returns :red:`False`.
 
@@ -1563,43 +1586,44 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`logical_disjunction<test_logical_disjunction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I go back to the terminal_ where the tests are running
+* I add a test for :ref:`logical_disjunction<test_logical_disjunction>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  ==============  ============== ==============
 
-.. code-block:: python
-  :lineno-start: 69
-  :emphasize-lines: 8-12
+  .. code-block:: python
+    :lineno-start: 69
+    :emphasize-lines: 8-12
 
-      def test_tautology(self):
-          tautology = src.truth_table.tautology
-          self.assertTrue(tautology(True, True))
-          self.assertTrue(tautology(True, False))
-          self.assertTrue(tautology(False, True))
-          self.assertTrue(tautology(False, False))
+        def test_tautology(self):
+            tautology = src.truth_table.tautology
+            self.assertTrue(tautology(True, True))
+            self.assertTrue(tautology(True, False))
+            self.assertTrue(tautology(False, True))
+            self.assertTrue(tautology(False, False))
 
-      def test_logical_disjunction(self):
-          logical_disjunction = (
-              src.truth_table.logical_disjunction
-          )
-          self.assertTrue(logical_disjunction(True, True))
+        def test_logical_disjunction(self):
+            logical_disjunction = (
+                src.truth_table.logical_disjunction
+            )
+            self.assertTrue(logical_disjunction(True, True))
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.truth_table'
-                  has no attribute 'logical_disjunction'.
-                  Did you mean: 'logical_conjunction'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_disjunction'.
+                    Did you mean: 'logical_conjunction'?
 
-there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py`` in the ``src`` folder_, yet.
+  there is no :ref:`logical_disjunction<test_logical_disjunction>` in ``truth_table.py`` in the ``src`` folder_, yet.
 
 ----
 
@@ -2207,6 +2231,13 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
 
   I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add logical_disjunction'
+
 :ref:`Logical Disjunction<test_logical_disjunction>` also known as "OR_" returns
 
 * ``first_input or second_input``
@@ -2359,7 +2390,7 @@ review
 
   - returns ``not (first_input and second_input)``
   - returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
-  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (AND)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return

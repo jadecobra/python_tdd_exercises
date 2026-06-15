@@ -683,7 +683,7 @@ test_what_is_true
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test for :ref:`True<test_what_is_true>` with the :ref:`assertNotIsInstance method<another way to test if something is NOT an instance of a class>` I learned from :ref:`everything is an object` to check if :ref:`True<test_what_is_true>` is :ref:`an instance (a copy)<how to test if something is an instance of a class>` of the :ref:`bool class<what are booleans?>`
 
@@ -1083,7 +1083,7 @@ test_is_none_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test to see if :ref:`None<what is None?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -1233,7 +1233,7 @@ test_is_an_integer_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for if an integer_ (a whole number without decimals) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -1671,7 +1671,7 @@ test_is_a_float_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for if a float_ (binary floating point decimal number) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -2138,7 +2138,7 @@ test_is_a_string_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for if a string_ (anything in :ref:`quotes`) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -2461,7 +2461,7 @@ test_is_a_tuple_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for if a tuple_ (anything in parentheses ``( )`` separated by a comma) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -2763,7 +2763,7 @@ test_is_a_list_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for if a :ref:`list (anything in square brackets '[ ]')<what is a list?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -3070,7 +3070,7 @@ test_is_a_set_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
@@ -3381,7 +3381,7 @@ test_is_a_dictionary_falsy_or_truthy
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for if a :ref:`dictionary (any key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>` is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python

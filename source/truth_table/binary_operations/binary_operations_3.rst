@@ -92,6 +92,17 @@ continue the project
 
 * I hold :kbd:`ctrl` (Windows_) or :kbd:`option` (MacOS_) on the keyboard, then click on ``tests/test_binary.py`` with the mouse to open it
 
+* Up to this point I have tested
+
+  - :ref:`contradiction<test_contradiction>` which always returns :red:`False`
+  - :ref:`logical_conjunction aka and<test_logical_conjunction>` which returns ``first_input and second_input``
+  - :ref:`project_second<test_project_second>` which always returns ``second_input``
+  - :ref:`converse_non_implication<test_converse_non_implication>` which returns ``not first_input and second_input``
+  - :ref:`negate_first<test_negate_first>` which always returns ``not first_input``
+  - :ref:`logical_nand<test_logical_nand>` which returns ``not (first_input and second_input)``
+  - :ref:`tautology<test_tautology>` which always returns :green:`True`
+  - :ref:`logical_disjunction<test_logical_disjunction>` which returns ``first_input or second_input``
+
 ----
 
 *********************************************************************************
@@ -3195,7 +3206,7 @@ review
 
   - returns ``not (first_input and second_input)``
   - returns :red:`False` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
-  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
+  - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (AND)<test_logical_conjunction>` which returns :green:`True` only if ``first_input`` is :green:`True` and ``second_input`` is :green:`True`
 
   ==============  ============== ==============
   first input     second input   return

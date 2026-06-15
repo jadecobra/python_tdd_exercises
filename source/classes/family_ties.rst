@@ -213,7 +213,7 @@ I know from :ref:`test_making_a_class_w_object` that I can make :ref:`classes<wh
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I change :ref:`test_failure` to :ref:`test_making_a_class_w_inheritance` with an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
@@ -992,7 +992,7 @@ I want to test how the :ref:`attributes<what is a class attribute?>` of :ref:`cl
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a new test for :ref:`Inheritance<test_attributes_and_methods_of_objects>` with an :ref:`assertion<what is an assertion?>`, in ``test_family_ties.py``
 
   .. code-block:: python
@@ -1543,7 +1543,7 @@ Can a :ref:`class<what is a class?>` have more than one parent? How are the :ref
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for ``jane``
 

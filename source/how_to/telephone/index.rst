@@ -726,7 +726,7 @@ I can pass :ref:`None<what is None?>` from a test to a :ref:`function<what is a 
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a failing test for :ref:`None<what is None?>` (the simplest :ref:`Python data structure<data structures>`) to ``test_telephone.py``
 
@@ -833,7 +833,7 @@ I can pass :ref:`booleans<what are booleans?>` from a test to a :ref:`function<w
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test for :ref:`booleans<what are booleans?>`, first with an :ref:`assertion<what is an assertion?>` for :ref:`False<test_what_is_false>`
 
@@ -979,7 +979,7 @@ I can pass an integer_ (a whole number without decimals) from a test to a :ref:`
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test for an integer_
 
@@ -1117,7 +1117,7 @@ I can pass a float_ (binary floating point decimal number) from a test to a :ref
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for a float_ (binary floating point decimal numbers)
 
   .. code-block:: python
@@ -1256,7 +1256,7 @@ I can pass a tuple_ (anything in parentheses ``( )`` separated by a comma) from 
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test for a tuple_
 
@@ -1397,7 +1397,7 @@ I can pass a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) 
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test for a :ref:`list <lists>`
 
@@ -1538,7 +1538,7 @@ I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces 
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test for a :ref:`dictionary<what is a dictionary?>`
 
@@ -1721,7 +1721,7 @@ I can pass an :ref:`object<everything is an object>` from a test to a :ref:`func
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a failing test to see what happens when I pass a :ref:`class <what is a class?>` from a test to the ``text`` :ref:`function<what is a function?>`, in ``test_telephone.py``
 

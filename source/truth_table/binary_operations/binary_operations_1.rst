@@ -599,7 +599,7 @@ first input     second input   return
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for :ref:`logical_conjunction<test_logical_conjunction>` with an :ref:`assertion<what is an assertion?>` for the first case, which is when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
   ==============  ============== ==============
@@ -1500,7 +1500,7 @@ first input     second input   return
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for :ref:`project_second<test_project_second>` with an :ref:`assertion<what is an assertion?>` for the case when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============
@@ -1854,7 +1854,7 @@ first input     second input   return
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for :ref:`converse_non_implication<test_converse_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
   ==============  ============== ==============

@@ -2786,7 +2786,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`False<t
 
     - returns ``not (first and second)``
     - returns :red:`False` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
-    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (and)<test_logical_conjunction>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Conjunction (AND)<test_logical_conjunction>` which returns :green:`True` only if ``first`` is :ref:`True<test_what_is_true>` and ``second`` is :ref:`True<test_what_is_true>`
 
   * :ref:`Logical NOR<test_logical_nor>`
 

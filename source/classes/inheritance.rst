@@ -502,7 +502,7 @@ I can also make a :ref:`class<what is a class?>` with parentheses/brackets ``( )
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add another test
 
   .. code-block:: python
@@ -751,7 +751,7 @@ I can make a :ref:`class<what is a class?>` with :ref:`object (the mother of all
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test with an :ref:`assertion<what is an assertion?>` for a new :ref:`class<what is a class?>`
 
   .. code-block:: python
@@ -1007,7 +1007,7 @@ I want to test if :ref:`None<what is None?>` is an :ref:`object<everything is an
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>`
 
@@ -1149,7 +1149,7 @@ I can test if an :ref:`object<everything is an object>` is a :ref:`subclass (chi
 
 issubclass_ checks if the thing in the parentheses on the left is a :ref:`subclass<how to test if something is a subclass of a class>` of the :ref:`class<what is a class?>` on the right in the parentheses.
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`bool<how to test if something is grouped as True>` to show that :ref:`in Python everything is an object<everything is an object>`
 
@@ -1308,7 +1308,7 @@ I want to test if an integer_ (a whole number without decimals) is an :ref:`obje
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for int_ (the :ref:`class<what is a class?>` for whole numbers without decimals), to show that everything in Python_ is a :ref:`child of object.<what is a class?>`
 
@@ -1443,7 +1443,7 @@ I want to test if a float_ (a binary floating point decimal number) is an :ref:`
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for float_ (the :ref:`class<what is a class?>` for binary floating point decimal numbers), to show that everything in Python_ is a :ref:`child of object.<what is a class?>`
 
@@ -1578,7 +1578,7 @@ I want to test if a string_ (anything in :ref:`quotes`) is an :ref:`object<every
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for str_ (the :ref:`class<what is a class?>` for anything in :ref:`quotes`), to show that :ref:`in Python everything is an object<everything is an object>`
 
@@ -1713,7 +1713,7 @@ I want to test if a tuple_ (anything in parentheses ``( )`` separated by a comma
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for tuple_ (the :ref:`class<what is a class?>` for anything in parentheses ``( )`` separated by a comma), to show that :ref:`in Python everything is an object<everything is an object>`
 
@@ -1848,7 +1848,7 @@ I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`list (the class for anything in square brackets '[ ]')<what is a list?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
@@ -1982,7 +1982,7 @@ I want to test if a set_ (anything in curly braces ``{ }``, not :ref:`key-value 
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for set_ (the :ref:`class<what is a class?>` for anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`), to show that :ref:`in Python everything is an object<everything is an object>`
 
@@ -2118,7 +2118,7 @@ I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-valu
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test with an :ref:`assertion<what is an assertion?>` for :ref:`dict (the class for key-value pairs in curly braces '{ }' separated by a comma)<what is a dictionary?>`, to show that :ref:`in Python everything is an object<everything is an object>`
 
@@ -2779,7 +2779,7 @@ I want to test the :ref:`attributes<what is a class attribute?>` and :ref:`metho
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 
 * I add a test to ``test_classes.py``
 

@@ -193,7 +193,7 @@ test_logical_false
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a test for :ref:`logical_false<test_logical_false>` to ``test_nullary_unary.py``
 
   .. code-block:: python
@@ -312,7 +312,7 @@ test_logical_identity
 
 ----
 
-* I go back to the terminal_ that is running the tests
+* I go back to the terminal_ where the tests are running
 * I add a new TestCase_ for Unary Operations with a test for :ref:`logical_identity<test_logical_identity>` when it gets :ref:`True<test_what_is_true>` as input
 
   ==============  =============
