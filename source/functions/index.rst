@@ -4442,7 +4442,7 @@ starred expressions
         (((0, 1), {'a': 2, 'b': 3}), {})
      != ((0, 1), {'a': 2, 'b': 3})
 
-  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>`- ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and a :ref:`dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
+  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>` - ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and a :ref:`dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
