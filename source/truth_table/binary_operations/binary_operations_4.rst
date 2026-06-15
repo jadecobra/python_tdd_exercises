@@ -781,7 +781,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
                 return True
         return False
 
-  still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
+  still green, because I can put two :ref:`if statements` together when one is indented under the other
 
   .. code-block:: python
 
@@ -1438,7 +1438,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             return False
         return True
 
-  the test is still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
+  the test is still green, because I can put two :ref:`if statements` together when one is indented under the other
 
   .. code-block:: python
 
@@ -1529,7 +1529,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
         else:
             return False
 
-  green, because I can put two :ref:`if statements` together when they both return the same thing and are at the same indentation level. For example
+  green, because I can put two :ref:`if statements` together when they both return the same thing and are at the same indentation level
 
   .. code-block:: python
 
@@ -2188,7 +2188,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
                 return False
         return True
 
-  the test is still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
+  the test is still green, because I can put two :ref:`if statements` together when one is indented under the other
 
   .. code-block:: python
 

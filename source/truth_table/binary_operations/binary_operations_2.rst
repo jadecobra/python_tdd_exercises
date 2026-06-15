@@ -739,12 +739,10 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
 
   * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
-  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next line in the :ref:`function<what is a function?>` - ``if second_input == False:``
+  * if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next :ref:`if statement<if statements>` in the :ref:`function<what is a function?>` - ``if second_input == False:`` which checks if ``second_input`` is equal to :red:`False`
 
-    - when ``if second_input == False:`` runs, Python_ checks if ``second_input`` is equal to :red:`False`
-
-      * if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-      * if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+    - if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * There is only one case where :ref:`logical_nand<test_logical_nand>` returns :red:`False` (the first case, when the first input is :green:`True` and the second input is :green:`True`). I add :ref:`if statements` for it, in ``truth_table.py``
 
@@ -771,7 +769,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   this happens when ``if first_input == True:`` runs, Python_ checks if ``first_input`` is equal to :green:`True`
 
   - if ``first_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is equal to :green:`True`, it goes to the next line - ``if second_input == True``, which checks if ``second_input`` is equal to :green:`True`
+  - if ``first_input`` is equal to :green:`True`, it goes to the next :ref:`if statement<if statements>` - ``if second_input == True``, which checks if ``second_input`` is equal to :green:`True`
 
     * if ``second_input`` is NOT equal to :green:`True`, it leaves the :ref:`if statement<if statements>` and continues to run the rest of the :ref:`function<what is a function?>` - ``return True``, which returns :green:`True` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
     * if ``second_input`` is equal to :green:`True`, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
@@ -843,7 +841,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
                 return False
         return True
 
-  the test is still green, because when ``if first_input == True:`` runs, Python_ checks if ``(first_input)`` is equal to :green:`True`. I can assume the following substitions
+  the test is still green, because when ``if first_input == True:`` runs, Python_ checks if ``(first_input)`` is equal to :green:`True`. I can assume the following substitutions
 
   - if the value of ``something`` is :red:`False`
 
@@ -881,7 +879,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
                 return False
         return True
 
-  still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
+  still green, because I can put two :ref:`if statements` together when one is indented under the other
 
   .. code-block:: python
 
@@ -1874,7 +1872,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
                 return False
         return True
 
-  still green, because I can put two :ref:`if statements` together when one is indented under the other. For example
+  still green, because I can put two :ref:`if statements` together when one is indented under the other
 
   .. code-block:: python
 

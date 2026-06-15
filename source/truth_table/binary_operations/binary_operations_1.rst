@@ -1026,7 +1026,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   this means that ``if bool(something) == True`` is the same as ``if bool(something)`` is the same as ``if something``.
 
-* I can use :ref:`AND<test_logical_conjunction>` to put two `if statements`_ together when one is indented under the other. For example
+* I can use :ref:`AND<test_logical_conjunction>` to put two `if statements`_ together when one is indented under the other
 
   .. code-block:: python
 
@@ -2198,7 +2198,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
                 return True
         return False
 
-  the test is still green, because I can put two `if statements`_ together when one is indented under the other. For example
+  the test is still green, because I can put two `if statements`_ together when one is indented under the other
 
   .. code-block:: python
 
