@@ -2263,7 +2263,7 @@ I use a :ref:`double starred expression<double starred expressions>` for the :re
 
   # Exceptions seen
 
-the test is green again, because :ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``*choices``).
+the test is green again, because :ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``**a_person``).
 
 ----
 

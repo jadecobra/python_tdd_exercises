@@ -1319,47 +1319,49 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`material_non_implication<test_material_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I go back to the terminal_ where the tests are running
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :red:`False`
-==============  ============== ==============
+* I add a test for :ref:`material_non_implication<test_material_non_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
-.. code-block:: python
-  :lineno-start: 85
-  :emphasize-lines: 10-16
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :red:`False`
+  ==============  ============== ==============
 
-      def test_exclusive_disjunction(self):
-          exclusive_disjunction = (
-              src.truth_table.exclusive_disjunction
-          )
-          self.assertFalse(exclusive_disjunction(True, True))
-          self.assertTrue(exclusive_disjunction(True, False))
-          self.assertTrue(exclusive_disjunction(False, True))
-          self.assertFalse(exclusive_disjunction(False, False))
+  .. code-block:: python
+    :lineno-start: 85
+    :emphasize-lines: 10-16
 
-      def test_material_non_implication(self):
-          material_non_implication = (
-              src.truth_table.material_non_implication
-          )
-          self.assertFalse(
-              material_non_implication(True, True)
-          )
+        def test_exclusive_disjunction(self):
+            exclusive_disjunction = (
+                src.truth_table.exclusive_disjunction
+            )
+            self.assertFalse(exclusive_disjunction(True, True))
+            self.assertTrue(exclusive_disjunction(True, False))
+            self.assertTrue(exclusive_disjunction(False, True))
+            self.assertFalse(exclusive_disjunction(False, False))
+
+        def test_material_non_implication(self):
+            material_non_implication = (
+                src.truth_table.material_non_implication
+            )
+            self.assertFalse(
+                material_non_implication(True, True)
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.truth_table'
-                  has no attribute 'material_non_implication'.
-                  Did you mean: 'converse_non_implication'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'material_non_implication'.
+                    Did you mean: 'converse_non_implication'?
 
-:ref:`material_non_implication<test_material_non_implication>` is not in ``truth_table.py``
+  :ref:`material_non_implication<test_material_non_implication>` is not in ``truth_table.py``
 
 ----
 
@@ -2009,50 +2011,51 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`project_first<test_project_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
+* I go back to the terminal_ where the tests are running
+* I add a test for :ref:`project_first<test_project_first>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, in ``test_binary.py``
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  ==============  ============== ==============
 
-.. code-block:: python
-  :lineno-start: 94
-  :emphasize-lines: 18-20
+  .. code-block:: python
+    :lineno-start: 94
+    :emphasize-lines: 18-20
 
-      def test_material_non_implication(self):
-          material_non_implication = (
-              src.truth_table.material_non_implication
-          )
-          self.assertFalse(
-              material_non_implication(True, True)
-          )
-          self.assertTrue(
-              material_non_implication(True, False)
-          )
-          self.assertFalse(
-              material_non_implication(False, True)
-          )
-          self.assertFalse(
-              material_non_implication(False, False)
-          )
+        def test_material_non_implication(self):
+            material_non_implication = (
+                src.truth_table.material_non_implication
+            )
+            self.assertFalse(
+                material_non_implication(True, True)
+            )
+            self.assertTrue(
+                material_non_implication(True, False)
+            )
+            self.assertFalse(
+                material_non_implication(False, True)
+            )
+            self.assertFalse(
+                material_non_implication(False, False)
+            )
 
-      def test_project_first(self):
-          project_first = src.truth_table.project_first
-          self.assertTrue(project_first(True, True))
+        def test_project_first(self):
+            project_first = src.truth_table.project_first
+            self.assertTrue(project_first(True, True))
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.truth_table'
-                  has no attribute 'project_first'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'project_first'
 
-there is nothing named :ref:`project_first<test_project_first>` in ``truth_table.py``
+  there is nothing named :ref:`project_first<test_project_first>` in ``truth_table.py``
 
 ----
 
@@ -2454,45 +2457,46 @@ first input     second input   return
 
 ----
 
-I add a test for :ref:`converse_implication<test_converse_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
+* I go back to the terminal_ where the tests are running
+* I add a test for :ref:`converse_implication<test_converse_implication>` with an :ref:`assertion<what is an assertion?>` for when the first input is :green:`True` and the second input is :green:`True`, to ``test_binary.py``
 
-==============  ============== ==============
-first input     second input   return
-==============  ============== ==============
-:green:`True`   :green:`True`  :green:`True`
-==============  ============== ==============
+  ==============  ============== ==============
+  first input     second input   return
+  ==============  ============== ==============
+  :green:`True`   :green:`True`  :green:`True`
+  ==============  ============== ==============
 
-.. code-block:: python
-  :lineno-start: 111
-  :emphasize-lines: 8-14
+  .. code-block:: python
+    :lineno-start: 111
+    :emphasize-lines: 8-14
 
-      def test_project_first(self):
-          project_first = src.truth_table.project_first
-          self.assertTrue(project_first(True, True))
-          self.assertTrue(project_first(True, False))
-          self.assertFalse(project_first(False, True))
-          self.assertFalse(project_first(False, False))
+        def test_project_first(self):
+            project_first = src.truth_table.project_first
+            self.assertTrue(project_first(True, True))
+            self.assertTrue(project_first(True, False))
+            self.assertFalse(project_first(False, True))
+            self.assertFalse(project_first(False, False))
 
-      def test_converse_implication(self):
-          converse_implication = (
-              src.truth_table.converse_implication
-          )
-          self.assertTrue(
-              converse_implication(True, True)
-          )
+        def test_converse_implication(self):
+            converse_implication = (
+                src.truth_table.converse_implication
+            )
+            self.assertTrue(
+                converse_implication(True, True)
+            )
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-.. code-block:: shell
+  .. code-block:: shell
 
-  AttributeError: module 'src.truth_table'
-                  has no attribute 'converse_implication'.
-                  Did you mean: 'converse_non_implication'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'converse_implication'.
+                    Did you mean: 'converse_non_implication'?
 
-because ``truth_table.py`` does not have anything named :ref:`converse_implication<test_converse_implication>` in it.
+  because ``truth_table.py`` does not have anything named :ref:`converse_implication<test_converse_implication>` in it.
 
 ----
 
@@ -2646,7 +2650,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` then runs ``return True``
   - if ``first_input`` is equal to :red:`False`, it runs ``return False``
-  - ``first_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :green:`True` and the :ref:`function<what is a function>` returns :red:`False`
+  - ``first_input`` is :red:`False` in this case, which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`assertion<what is an assertion?>` expects :green:`True` and the :ref:`function<what is a function?>` returns :red:`False`
 
 * I add an :ref:`if statement<if statements>` for the only case that returns :green:`True`
 
