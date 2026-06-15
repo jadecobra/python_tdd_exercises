@@ -371,7 +371,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   * if ``first_input`` is equal to :red:`False`, it goes to the next line - ``if second_input == False``, which checks if ``if second_input`` is equal to :red:`False`
 
-    - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statement>` and continues to the next line for ``if first_input == False:`` - ``return True``
+    - if ``second_input`` is NOT equal to :red:`False`, it leaves the :ref:`if statement<if statements>` and continues to the next line for ``if first_input == False:`` - ``return True``
     - if ``second_input`` is equal to :red:`False`, it goes to the next line - ``return False``
 
 * there are two cases where :ref:`exclusive_disjunction<test_exclusive_disjunction>` returns :red:`False` and two cases where it returns :green:`True`. I add an :ref:`if statement<if statements>` for the other case where it returns :green:`True`, to make it clearer
@@ -1196,6 +1196,13 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
 
   I can use any of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
+* I add a git_ commit message in another terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit -am 'add exclusive_disjunction'
+
 :ref:`Exclusive Disjunction<test_exclusive_disjunction>` returns
 
 * :green:`True`, if ``first_input`` is NOT EQUAL to ``second_input``
@@ -1229,7 +1236,7 @@ examples of Exclusive Disjunction
   :red:`off`        :red:`off`          :red:`no`
   ================  ==================  ==================
 
-* magnets attract or repel, if the inputs are
+* magnets attract, if the inputs are
 
   - what is the direction of magnet A?
   - what is the direction of magnet B?
@@ -1285,6 +1292,8 @@ examples of Exclusive Disjunction
   :red:`no`         :red:`no`           :red:`no`
   ================  ==================  ==================
 
+  should I complain when ``I did not pay`` and ``I got what I want``?
+
 ----
 
 *********************************************************************************
@@ -1320,35 +1329,23 @@ first input     second input   return
 
 .. code-block:: python
   :lineno-start: 85
-  :emphasize-lines: 23-28
+  :emphasize-lines: 10-16
 
       def test_exclusive_disjunction(self):
-          self.assertFalse(
-              src.truth_table.exclusive_disjunction(
-                  True, True
-              )
+          exclusive_disjunction = (
+              src.truth_table.exclusive_disjunction
           )
-          self.assertTrue(
-              src.truth_table.exclusive_disjunction(
-                  True, False
-              )
-          )
-          self.assertTrue(
-              src.truth_table.exclusive_disjunction(
-                  False, True
-              )
-          )
-          self.assertFalse(
-              src.truth_table.exclusive_disjunction(
-                  False, False
-              )
-          )
+          self.assertFalse(exclusive_disjunction(True, True))
+          self.assertTrue(exclusive_disjunction(True, False))
+          self.assertTrue(exclusive_disjunction(False, True))
+          self.assertFalse(exclusive_disjunction(False, False))
 
       def test_material_non_implication(self):
+          material_non_implication = (
+              src.truth_table.material_non_implication
+          )
           self.assertFalse(
-              src.truth_table.material_non_implication(
-                  True, True
-              )
+              material_non_implication(True, True)
           )
 
 
@@ -1358,7 +1355,9 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
 .. code-block:: shell
 
-  AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'. Did you mean: 'converse_non_implication'?
+  AttributeError: module 'src.truth_table'
+                  has no attribute 'material_non_implication'.
+                  Did you mean: 'converse_non_implication'?
 
 :ref:`material_non_implication<test_material_non_implication>` is not in ``truth_table.py``
 
@@ -1374,15 +1373,14 @@ I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_
 
 .. code-block:: python
   :lineno-start: 64
-  :emphasize-lines: 21-22
+  :emphasize-lines: 20-21
 
   def exclusive_disjunction(first_input, second_input):
       return first_input != second_input
       return not (first_input == second_input)
       return logical_disjunction(
           converse_non_implication(
-              first_input,
-              second_input
+              first_input, second_input
           ),
           logical_conjunction(
               first_input,
@@ -1399,7 +1397,7 @@ I add :ref:`material_non_implication<test_material_non_implication>` to ``truth_
   def material_non_implication(first_input, second_input):
       return False
 
-the test passes. :ref:`material_non_implication<test_material_non_implication>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`
+the test passes. :ref:`material_non_implication<test_material_non_implication>` returns :red:`False`, if the first input is :green:`True` and the second input is :green:`True`.
 
 ----
 
