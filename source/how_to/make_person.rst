@@ -4706,7 +4706,9 @@ I want to write the solution without looking at the tests
         AttributeError: module 'src.person' has
                         no attribute 'factory'
 
-  because there is nothing in ``person.py`` with the name ``factory``
+  because there is nothing in ``person.py`` with the name ``factory``.
+
+Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done.
 
 ----
 

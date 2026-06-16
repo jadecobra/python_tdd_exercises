@@ -2324,6 +2324,8 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     FAILED ...test_passing_none - AttributeError:
             module 'src.telephone' has no attribute 'text'
 
+  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done.
+
 ----
 
 =================================================================================

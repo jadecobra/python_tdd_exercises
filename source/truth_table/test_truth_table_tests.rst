@@ -94,6 +94,8 @@ continue the project
 
   because ...
 
+  Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done.
+
 ----
 
 *********************************************************************************
@@ -777,7 +779,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ is my friend, and shows ``12 failed, 8 passed`` with :ref:`AttributeError<what causes AtttributeError?>`
+  the terminal_ is my friend, and shows ``12 failed, 8 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1018,7 +1020,7 @@ continue the project
 
   the terminal_ is my friend, and shows ``8 failed, 12 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'logical_nand'.
@@ -1058,10 +1060,11 @@ continue the project
 
   the terminal_ is my friend, and shows ``7 failed, 13 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table'
-                    has no attribute 'logical_equality'
+                    has no attribute 'logical_equality'.
+                    Did you mean: 'logical_identity'?
 
 * I add the :ref:`function<what is a function?>`
 
@@ -1086,7 +1089,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 88
     :emphasize-lines: 2
 
     def logical_equality(first, second):
@@ -1102,7 +1105,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 88
     :emphasize-lines: 3
 
     def logical_equality(first, second):
@@ -1110,7 +1113,7 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``6 failed, 14 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1120,7 +1123,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`logical_disjunction<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 88
     :emphasize-lines: 7-8
 
     def logical_equality(first, second):
@@ -1141,14 +1144,14 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 94
     :emphasize-lines: 2
 
     def logical_disjunction(first, second):
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``5 failed, 15 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -1159,7 +1162,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`logical_conjunction<test_logical_conjunction>`
 
   .. code-block:: python
-    :lineno-start: 71
+    :lineno-start: 94
     :emphasize-lines: 6-7
 
     def logical_disjunction(first, second):
@@ -1179,7 +1182,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 99
     :emphasize-lines: 2
 
     def logical_conjunction(first, second):
@@ -1195,7 +1198,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 99
     :emphasize-lines: 3
 
     def logical_conjunction(first, second):
@@ -1212,7 +1215,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 99
     :emphasize-lines: 4
 
     def logical_conjunction(first, second):
@@ -1221,7 +1224,7 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``4 failed, 16 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1231,7 +1234,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 99
     :emphasize-lines: 8-9
 
     def logical_conjunction(first, second):
@@ -1253,7 +1256,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 2
 
     def exclusive_disjunction(first, second):
@@ -1269,7 +1272,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 3
 
     def exclusive_disjunction(first, second):
@@ -1277,9 +1280,9 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``3 failed, 17 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'converse_non_implication'.
@@ -1288,7 +1291,7 @@ continue the project
 * I add :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 7-8
 
     def exclusive_disjunction(first, second):
@@ -1309,7 +1312,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 112
     :emphasize-lines: 2
 
     def converse_non_implication(first, second):
@@ -1325,7 +1328,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 112
     :emphasize-lines: 3
 
     def converse_non_implication(first, second):
@@ -1342,7 +1345,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 112
     :emphasize-lines: 4
 
     def converse_non_implication(first, second):
@@ -1351,18 +1354,18 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``2 passed, 18 failed`` for :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: python
+  .. code-block:: shell
 
     AttributeError: module 'src.truth_table'
                     has no attribute 'converse_implication'.
                     Did you mean: 'converse_non_implication'?
 
-* I :ref:`converse_implication<test_converse_implication>`
+* I add :ref:`converse_implication<test_converse_implication>`
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 112
     :emphasize-lines: 8-9
 
     def converse_non_implication(first, second):
@@ -1384,14 +1387,14 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 119
     :emphasize-lines: 2
 
     def converse_implication(first, second):
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``1 failed, 19 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -1401,7 +1404,7 @@ continue the project
 * I add :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 119
     :emphasize-lines: 6-7
 
     def converse_implication(first, second):
@@ -1421,7 +1424,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 124
     :emphasize-lines: 2
 
     def contradiction(first, second):
@@ -1437,7 +1440,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 124
     :emphasize-lines: 3
 
     def contradiction(first, second):
@@ -1454,7 +1457,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 124
     :emphasize-lines: 4
 
     def contradiction(first, second):
@@ -1472,7 +1475,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 124
     :emphasize-lines: 5
 
     def contradiction(first, second):
@@ -1488,7 +1491,7 @@ continue the project
 
     ======================== 20 passed in G.HIs ========================
 
-All the tests are passing and the world is a better place than when I started! I am going home. Wait, there is more...
+All the tests are passing and the world is a better place than when I started! I am going home.
 
 ----
 
@@ -1496,38 +1499,38 @@ All the tests are passing and the world is a better place than when I started! I
 :yellow:`REFACTOR`: make it better
 *********************************************************************************
 
-I can play with the :ref:`functions<what is a function?>` I have to make them simpler and understand why my solutions work, since all the tests are passing.
+Wait, there is more... Since all the tests are passing, I can play with the :ref:`functions<what is a function?>` I have to make them simpler and understand why my solutions work.
 
 * :ref:`contradiction<test_contradiction>`  returns :red:`False` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
 
   .. code-block:: python
-    :lineno-start: 101
-    :emphasize-lines: 2
+    :lineno-start: 124
+    :emphasize-lines: 2-7
 
     def contradiction(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
         return False
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, True): return False
-        if (first, second) == (False, False): return False
-        return first, second
 
   the test is still green.
 
-* I remove the other lines in :ref:`contradiction<test_contradiction>`
+* I remove the commented lines from :ref:`contradiction<test_contradiction>`
 
   .. code-block:: python
-    :lineno-start: 101
+    :lineno-start: 124
 
     def contradiction(first, second):
         return False
 
 ----
 
-* :ref:`converse_implication<test_converse_implication>` returns :red:`False` in only one case. I write out the :ref:`if statement<if statements>`
+* :ref:`converse_implication<test_converse_implication>` returns :red:`False` in only one case. I write out the :ref:`if statement<if statements>` for that case, to make it clearer
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 119
     :emphasize-lines: 2-3
 
     def converse_implication(first, second):
@@ -1541,10 +1544,11 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I change the statement with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 2-3
+    :lineno-start: 119
+    :emphasize-lines: 3-4
 
     def converse_implication(first, second):
+        # if (first, second) == (False, True): return False
         # if first == False and second == True:
         if not first == True and second == True:
             return False
@@ -1555,10 +1559,12 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 2-3
+    :lineno-start: 119
+    :emphasize-lines: 4-5
 
     def converse_implication(first, second):
+        # if (first, second) == (False, True): return False
+        # if first == False and second == True:
         # if not first == True and second == True:
         if not first and second:
             return False
@@ -1569,26 +1575,35 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I use a `return statement`_ because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 2
+    :lineno-start: 119
+    :emphasize-lines: 5-8
 
     def converse_implication(first, second):
+        # if (first, second) == (False, True): return False
+        # if first == False and second == True:
+        # if not first == True and second == True:
+        # if not first and second:
+        #     return False
+        # return first, second
         return not (not first and second)
-        if not first and second:
-            return False
-        return first, second
 
   the test is still green.
 
-* I remove the other statements then "multiply :ref:`not<test_logical_negation>`" by the things in the parentheses
+* I "multiply :ref:`not<test_logical_negation>`" by the things in the parentheses
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 2
+    :lineno-start: 119
+    :emphasize-lines: 8-9
 
     def converse_implication(first, second):
+        # if (first, second) == (False, True): return False
+        # if first == False and second == True:
+        # if not first == True and second == True:
+        # if not first and second:
+        #     return False
+        # return first, second
+        # return not (not first and second)
         return (not not first) (not and) (not second)
-        return not (not first and second)
 
   the terminal_ is my friend, and shows SyntaxError_
 
@@ -1599,31 +1614,44 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 2
+    :lineno-start: 119
+    :emphasize-lines: 9-10
 
     def converse_implication(first, second):
+        # if (first, second) == (False, True): return False
+        # if first == False and second == True:
+        # if not first == True and second == True:
+        # if not first and second:
+        #     return False
+        # return first, second
+        # return not (not first and second)
+        # return (not not first) (not and) (not second)
         return (not not first) or (not second)
-        return not (not first and second)
 
-  the test is green again
+  the test is green again.
 
-* I remove the other `return statement`_ and ``not not`` because two :ref:`nots<test_logical_negation>` make a right?
+* I remove ``not not`` because two :ref:`nots<test_logical_negation>` make a right?
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 2
+    :lineno-start: 119
+    :emphasize-lines: 10-11
 
     def converse_implication(first, second):
+        # if (first, second) == (False, True): return False
+        # if first == False and second == True:
+        # if not first == True and second == True:
+        # if not first and second:
+        #     return False
+        # return first, second
+        # return not (not first and second)
+        # return (not not first) (not and) (not second)
+        # return (not not first) or (not second)
         return first or not second
-        return (not not first) or (not second)
 
-  the test is still green.
-
-* I remove the other statement in :ref:`converse_implication<test_converse_implication>`
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 96
+    :lineno-start: 119
 
     def converse_implication(first, second):
         return first or not second
@@ -1637,44 +1665,32 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I add an :ref:`if statement<if statements>` for the only case that returns :green:`True` in :ref:`converse_non_implication<test_converse_non_implication>`
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 2
+    :lineno-start: 112
+    :emphasize-lines: 2-9
 
     def converse_non_implication(first, second):
-        if (first, second) == (False, True): return True
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, False): return False
-        return first, second
-
-  the test is still green.
-
-* I break the statement up then add an `else clause`_ for the other 3 statements
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 2-6
-
-    def converse_non_implication(first, second):
-        # if (first, second) == (False, True): return True
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
         if first == False and second == True:
             return True
         else:
             return False
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, False): return False
-        return first, second
 
-  still green.
+  the test is still green.
 
-* I remove the commented line and other statements, then change the :ref:`if statement<if statements>` with :ref:`True<test_what_is_true>`
+* I change ``if first == False`` to terms of :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 2-3
+    :lineno-start: 112
+    :emphasize-lines: 6-7
 
     def converse_non_implication(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
         # if first == False and second == True:
         if not first == True and second == True:
             return True
@@ -1686,10 +1702,15 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 2-3
+    :lineno-start: 112
+    :emphasize-lines: 7-8
 
     def converse_non_implication(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
+        # if first == False and second == True:
         # if not first == True and second == True:
         if not first and second:
             return True
@@ -1701,22 +1722,28 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I add a `return statement`_ because ``if something: return True`` is the same as ``return something``
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 2
+    :lineno-start: 112
+    :emphasize-lines: 8-12
 
     def converse_non_implication(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
+        # if first == False and second == True:
+        # if not first == True and second == True:
+        # if not first and second:
+        #     return True
+        # else:
+        #     return False
         return not first and second
-        if not first and second:
-            return True
-        else:
-            return False
 
   the test is still green.
 
-* I remove the other statements in :ref:`converse_non_implication<test_converse_non_implication>`
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 112
 
     def converse_non_implication(first, second):
         return not first and second
@@ -1725,62 +1752,74 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
     def converse_implication(first, second):
         return first or not second
 
+
+    def contradiction(first, second):
+        return False
+
 ----
 
 * I make the :ref:`if statements` in :ref:`exclusive_disjunction<test_exclusive_disjunction>` simpler
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 2-7
+    :lineno-start: 106
+    :emphasize-lines: 2-9
 
     def exclusive_disjunction(first, second):
-        if (first, second) == (True, True): return False
-        if (first, second) == (False, False): return False
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
         if first == True and second == True:
             return False
         if first == False and second == False:
             return False
-        return first, second
+        return True
 
   the test is still green.
 
-* I remove the first two :ref:`if statements` then change the new second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
+* I change the new second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 4-5
+    :lineno-start: 106
+    :emphasize-lines: 7-8
 
     def exclusive_disjunction(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
         if first == True and second == True:
             return False
         # if first == False and second == False:
         if not first == True and not second == True:
             return False
-        return first, second
+        return True
 
   still green.
 
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 2-3, 5-6
+    :lineno-start: 106
+    :emphasize-lines: 5-6, 9-10
 
     def exclusive_disjunction(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
         # if first == True and second == True:
         if first and second:
             return False
+        # if first == False and second == False:
         # if not first == True and not second == True:
         if not first and not second:
             return False
-        return first, second
+        return True
 
   green.
 
 * I write everything in the second :ref:`if statement<if statements>` with :ref:`not<test_logical_negation>` because it happens two times in the line, I might as well make it three
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 4-5
 
     def exclusive_disjunction(first, second):
@@ -1800,7 +1839,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I factor out the :ref:`nots<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 5-6
 
     def exclusive_disjunction(first, second):
@@ -1817,7 +1856,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I put the two :ref:`if statements` together to make one
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 2-5
 
     def exclusive_disjunction(first, second):
@@ -1833,7 +1872,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove the commented lines, then add a `return statement`_ because ``if something: return False`` is the same as ``return not (something)``
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 2-6
 
     def exclusive_disjunction(first, second):
@@ -1851,7 +1890,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove the other statements then multiply :ref:`not<test_logical_negation>` by everything in the parentheses because it happens two times in the line
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 2-5
 
     def exclusive_disjunction(first, second):
@@ -1875,7 +1914,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I change ``not or`` to :ref:`and<test_logical_conjunction>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 4
 
     def exclusive_disjunction(first, second):
@@ -1895,7 +1934,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove ``not not`` because "the negation of a negation is ..."
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
     :emphasize-lines: 2
 
     def exclusive_disjunction(first, second):
@@ -1911,7 +1950,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove the other statements in :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 83
+    :lineno-start: 106
 
     def exclusive_disjunction(first, second):
         return (not (first and second)) and (first or second)
