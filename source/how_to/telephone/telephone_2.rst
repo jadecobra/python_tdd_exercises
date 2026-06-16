@@ -1755,7 +1755,7 @@ I can pass an :ref:`object<everything is an object>` from a test to a :ref:`func
     AssertionError: "I got: <class 'object'>"
                  != 'I got:         object'
 
-  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and everything in Python_ is an :ref:`object<everything is an object>`
+  :ref:`object<everything is an object>` is the :ref:`mother class<what is a class?>` that all :ref:`Python classes<what is a class?>` come from, and :ref:`everything in Python is an object<everything is an object>`
 
 ----
 
