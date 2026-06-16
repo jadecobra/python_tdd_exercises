@@ -44,7 +44,7 @@ These are the tests I have at the end of the chapter
 requirements
 *********************************************************************************
 
-* :ref:`truth table: Binary Operations 5`
+* :ref:`truth table: Binary Operations Examples`
 
 ----
 
@@ -178,6 +178,12 @@ number the project
 
   .. code-block:: python
     :emphasize-lines: 1
+
+    echo "pytest" > requirements.txt
+
+  the terminal_ goes back to the command line.
+
+* I add `pytest-watcher`_ to the requirements file_
 
     echo "pytest-watcher" > requirements.txt
 

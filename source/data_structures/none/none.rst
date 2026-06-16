@@ -167,6 +167,12 @@ requirements
   .. code-block:: python
     :emphasize-lines: 1
 
+    echo "pytest" > requirements.txt
+
+  the terminal_ goes back to the command line.
+
+* I add `pytest-watcher`_ to the requirements file_
+
     echo "pytest-watcher" > requirements.txt
 
   the terminal_ goes back to the command line.
