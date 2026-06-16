@@ -247,7 +247,7 @@ continue the project
         # return something
         return not something
 
-  the terminal_ shows 19 failed, 1 passed, progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows ``19 failed, 1 passed``, progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -352,7 +352,7 @@ continue the project
         # return False
         return something
 
-  the terminal_ shows 18 failed, 2 passed, more progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows ``18 failed, 2 passed``, more progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ continue the project
     def logical_false():
         return None
 
-  16 failed, 4 passed, simple again. I am getting it. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows ``16 failed, 4 passed``, simple again. I am getting it. The terminal_ also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
@@ -468,7 +468,7 @@ continue the project
         # return None
         return True
 
-  15 failed, 5 passed, Yes! the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal shows ``15 failed, 5 passed``, Yes! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -575,7 +575,7 @@ continue the project
 
     AssertionError: (True, False) is not false
 
-  ``second`` is :red:`False` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`
+  ``second`` is :red:`False` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
 
 * I remove ``first`` from the `return statement`_  since ``second`` is :ref:`False<test_what_is_false>`
 
@@ -591,7 +591,7 @@ continue the project
         # return first, second
         return second
 
-  the terminal_ shows 14 failed, 6 passed, and :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows ``14 failed, 6 passed``, and :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
@@ -623,14 +623,15 @@ continue the project
     TypeError: project_first() takes
                0 positional arguments but 2 were given
 
-  okay, I have seen this before
+  okay, I have seen this before.
 
-* I add 2 names in parentheses
+* I add 2 names in the parentheses
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 1
+    :lineno-start: 43
+    :emphasize-lines: 1-2
 
+    # def project_first():
     def project_first(first, second):
         return None
 
@@ -643,10 +644,12 @@ continue the project
 * I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
+    :lineno-start: 43
+    :emphasize-lines: 3-4
 
+    # def project_first():
     def project_first(first, second):
+        # return None
         return True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -655,15 +658,18 @@ continue the project
 
     AssertionError: True is not false
 
-  the :ref:`assertion<what is an assertion?>` expects :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
 * I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
+    :lineno-start: 43
+    :emphasize-lines: 4-5
 
+    # def project_first():
     def project_first(first, second):
+        # return None
+        # return True
         return False
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -672,18 +678,23 @@ continue the project
 
     AssertionError: False is not true
 
-  the :ref:`assertion<what is an assertion?>` expects
+  the :ref:`function<what is a function?>` returned
 
-  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
+  - :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
+  - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
+    :lineno-start: 43
+    :emphasize-lines: 5-6
 
+    # def project_first():
     def project_first(first, second):
+        # return None
+        # return True
+        # return False
         return first, second
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -692,28 +703,41 @@ continue the project
 
     AssertionError: (False, True) is not false
 
+  ``second`` is :red:`True` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
+
 * I remove ``second`` from the `return statement`_ since ``first`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 2
+    :lineno-start: 43
+    :emphasize-lines: 6-7
 
+    # def project_first():
     def project_first(first, second):
+        # return None
+        # return True
+        # return False
+        # return first, second
         return first
 
-  13 failed, 7 passed. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows ``13 failed, 7 passed``, and :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'negate_second'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'negate_second'
 
 * I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 41
-    :emphasize-lines: 5-6
+    :lineno-start: 43
+    :emphasize-lines: 10-11
 
+    # def project_first():
     def project_first(first, second):
+        # return None
+        # return True
+        # return False
+        # return first, second
         return first
 
 
@@ -729,7 +753,7 @@ continue the project
 * I add an :ref:`if statement<if statements>` to :ref:`negate_second<test_negate_second>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 52
     :emphasize-lines: 2
 
     def negate_second(first, second):
@@ -745,7 +769,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 52
     :emphasize-lines: 3
 
     def negate_second(first, second):
@@ -753,16 +777,17 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``12 failed, 8 passed`` with :ref:`AttributeError<what causes AtttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'negate_first'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'negate_first'
 
 * I add a :ref:`function<what is a function?>` for it with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 52
     :emphasize-lines: 7-8
 
     def negate_second(first, second):
@@ -780,10 +805,10 @@ continue the project
 
     AssertionError: (True, True)
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 58
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -799,7 +824,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 58
     :emphasize-lines: 3
 
     def negate_first(first, second):
@@ -807,16 +832,17 @@ continue the project
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``11 failed, 9 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'material_non_implication'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'material_non_implication'
 
 * I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 58
     :emphasize-lines: 7-8
 
     def negate_first(first, second):
@@ -834,10 +860,10 @@ continue the project
 
     AssertionError: (True, True) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` since ``first`` and ``second`` are both not :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 64
     :emphasize-lines: 2
 
     def material_non_implication(first, second):
@@ -853,7 +879,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 64
     :emphasize-lines: 3
 
     def material_non_implication(first, second):
@@ -870,7 +896,7 @@ continue the project
 * I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 64
     :emphasize-lines: 4
 
     def material_non_implication(first, second):
@@ -879,16 +905,17 @@ continue the project
         if (first, second) == (False, False): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``10 failed, 10 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'material_implication'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'material_implication'
 
 * I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 64
     :emphasize-lines: 8-9
 
     def material_non_implication(first, second):
@@ -907,26 +934,27 @@ continue the project
 
     AssertionError: (True, False) is not false
 
-* I add an :ref:`if statement<if statements>`
+* I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 71
     :emphasize-lines: 2
 
     def material_implication(first, second):
         if (first, second) == (True, False): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``9 failed, 11 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_nor'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_nor'
 
 * I add a :ref:`function<what is a function?>` for :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 71
     :emphasize-lines: 6-7
 
     def material_implication(first, second):
@@ -946,7 +974,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 76
     :emphasize-lines:  2
 
     def logical_nor(first, second):
@@ -962,7 +990,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 76
     :emphasize-lines: 3
 
     def logical_nor(first, second):
@@ -979,7 +1007,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 76
     :emphasize-lines: 4
 
     def logical_nor(first, second):
@@ -988,16 +1016,18 @@ continue the project
         if (first, second) == (False, True): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``8 failed, 12 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_nand'. Did you mean: 'logical_nor'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_nand'.
+                    Did you mean: 'logical_nor'?
 
 * I add a :ref:`function<what is a function?>` for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 76
     :emphasize-lines: 8-9
 
     def logical_nor(first, second):
@@ -1019,23 +1049,24 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 83
     :emphasize-lines: 2
 
     def logical_nand(first, second):
         if (first, second) == (True, True): return False
         return first, second
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows ``7 failed, 13 passed`` with :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_equality'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_equality'
 
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 83
     :emphasize-lines: 6-7
 
     def logical_nand(first, second):
@@ -1081,9 +1112,10 @@ continue the project
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_disjunction'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_disjunction'
 
 * I add a :ref:`function<what is a function?>` for :ref:`logical_disjunction<test_logical_disjunction>`
 
@@ -1120,7 +1152,9 @@ continue the project
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_conjunction'. Did you mean: 'logical_disjunction'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_conjunction'.
+                    Did you mean: 'logical_disjunction'?
 
 * I add a :ref:`function<what is a function?>` for :ref:`logical_conjunction<test_logical_conjunction>`
 
@@ -1189,9 +1223,10 @@ continue the project
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'exclusive_disjunction'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'exclusive_disjunction'
 
 * I add a :ref:`function<what is a function?>` for :ref:`exclusive_disjunction<test_exclusive_disjunction>`
 
@@ -1244,9 +1279,11 @@ continue the project
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'converse_non_implication'. Did you mean: 'material_non_implication'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'converse_non_implication'.
+                    Did you mean: 'material_non_implication'?
 
 * I add :ref:`converse_non_implication<test_converse_non_implication>`
 
@@ -1316,9 +1353,11 @@ continue the project
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'converse_implication'. Did you mean: 'converse_non_implication'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'converse_implication'.
+                    Did you mean: 'converse_non_implication'?
 
 * I :ref:`converse_implication<test_converse_implication>`
 
@@ -1354,9 +1393,10 @@ continue the project
 
   the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'contradiction'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'contradiction'
 
 * I add :ref:`contradiction<test_contradiction>`
 
@@ -2555,7 +2595,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the  case that returns :green:`True`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 43
     :emphasize-lines: 2
 
     def material_non_implication(first, second):
@@ -2570,7 +2610,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I make the `return statement`_ simpler
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 43
     :emphasize-lines: 2
 
     def material_non_implication(first, second):
@@ -2582,7 +2622,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I use :ref:`not<test_logical_negation>` and remove ``== True`` and ``== False``
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 43
     :emphasize-lines: 2
 
     def material_non_implication(first, second):
@@ -2594,7 +2634,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove the other statement in :ref:`material_non_implication<test_material_non_implication>`
 
   .. code-block:: python
-    :lineno-start: 41
+    :lineno-start: 43
 
     def material_non_implication(first, second):
         return first and not second
@@ -2608,7 +2648,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * ``first`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :red:`False`, I add an :ref:`if statement<if statements>` for them
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 58
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -2622,7 +2662,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 58
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -2637,7 +2677,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I add a `return statement`_ because ...
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 58
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -2652,7 +2692,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove the other statements from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
-    :lineno-start: 35
+    :lineno-start: 58
     :emphasize-lines: 2
 
     def negate_first(first, second):
@@ -2667,7 +2707,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * ``second`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :red:`False`. I add a `return statement`_ ``if something: return False`` is the same as ...
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 52
     :emphasize-lines: 2
 
     def negate_second(first, second):
@@ -2681,7 +2721,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 29
+    :lineno-start: 52
     :emphasize-lines: 2
 
     def negate_second(first, second):
