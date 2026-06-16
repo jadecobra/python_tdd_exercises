@@ -226,9 +226,11 @@ continue the project
     AssertionError: True is not false
 
   - the :ref:`assertion<what is an assertion?>` expects the :ref:`opposite<test_logical_negation>` of the input
-  - the :ref:`function<what is a function?>` returned :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
-  - the :ref:`function<what is a function?>` returned :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
-  - the :ref:`function<what is a function?>` returned :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - the :ref:`function<what is a function?>` returned
+
+    * :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+    * :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
+    * :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
 * I use :ref:`not<test_logical_negation>` in the `return statement`_
 
@@ -331,9 +333,11 @@ continue the project
 
     AssertionError: False is not true
 
-  - the :ref:`function<what is a function?>` returned :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
-  - the :ref:`function<what is a function?>` returned :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
-  - the :ref:`function<what is a function?>` returned :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  the :ref:`function<what is a function?>` returned
+
+  - :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
+  - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
@@ -512,7 +516,7 @@ continue the project
 * I change the `return statement`_ to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 34
     :emphasize-lines: 3-4
 
     # def project_second():
@@ -531,7 +535,7 @@ continue the project
 * I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 21
+    :lineno-start: 34
     :emphasize-lines: 4-5
 
     # def project_second():
@@ -546,17 +550,23 @@ continue the project
 
     AssertionError: False is not true
 
-  - the :ref:`function<what is a function?>` returned :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
-  - the :ref:`function<what is a function?>` returned :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
-  - the :ref:`function<what is a function?>` returned :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  the :ref:`function<what is a function?>` returned
+
+  - :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
+  - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2
+    :lineno-start: 34
+    :emphasize-lines: 5-6
 
+    # def project_second():
     def project_second(first, second):
+        # return None
+        # return True
+        # return False
         return first, second
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -565,28 +575,41 @@ continue the project
 
     AssertionError: (True, False) is not false
 
+  ``second`` is :red:`False` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`
+
 * I remove ``first`` from the `return statement`_  since ``second`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2
+    :lineno-start: 34
+    :emphasize-lines: 6-7
 
+    # def project_second():
     def project_second(first, second):
+        # return None
+        # return True
+        # return False
+        # return first, second
         return second
 
-  14 failed, 6 passed. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows 14 failed, 6 passed, and :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'project_first'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'project_first'
 
 * I add a :ref:`function<what is a function?>` for it
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5-6
+    :lineno-start: 34
+    :emphasize-lines: 10-11
 
+    # def project_second():
     def project_second(first, second):
+        # return None
+        # return True
+        # return False
+        # return first, second
         return second
 
 
@@ -597,7 +620,8 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: project_first() takes 0 positional arguments but 2 were given
+    TypeError: project_first() takes
+               0 positional arguments but 2 were given
 
   okay, I have seen this before
 
