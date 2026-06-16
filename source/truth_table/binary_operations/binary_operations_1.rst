@@ -837,7 +837,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   because this happens when ``if first_input == False:`` runs, Python_ checks if ``first_input`` is equal to :red:`False`
 
   - if ``first_input`` is NOT equal to :red:`False`, it leaves the `if statement`_ and continues to run the rest of the :ref:`function<what is a function?>` - ``return second_input``, which returns the value of ``second_input`` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False``, which returns :red:`False` as the output, then leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+  - if ``first_input`` is equal to :red:`False`, it goes to the next line - ``return False`` and leaves the :ref:`function<what is a function?>` since :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
 
 * I add an :ref:`assertion<what is an assertion?>` for the last case, which is when the first input is :red:`False` and the second input is :red:`False`, to :ref:`test_logical_conjunction` in ``test_binary.py``
 
@@ -1012,7 +1012,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
         # return None
         return False
 
-  still green because when ``if something == True:`` runs, Python_ checks if ``something`` is equal to :green:`True`. I can assume the following substitutions
+  still green because I can assume the following substitutions for ``if something == True:``
 
   - if the value of ``something`` is :red:`False`
 
@@ -1431,7 +1431,7 @@ examples of Logical Conjunction
 
 -----
 
-.. admonition:: All of the statements below have the same result as ``return something`` because Python_ groups :ref:`objects<what is a class>` as :red:`False` or :green:`True`
+.. admonition:: All of the statements below have the same result as ``return something`` because Python_ groups :ref:`objects<what is a class?>` as :red:`False` or :green:`True`
 
   * return :green:`True`  if ``something`` is equal to :green:`True`
 
@@ -2161,7 +2161,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
       .. literalinclude:: ../../code/truth_table/solutions/if_not_something_true.py
         :language: python
 
-  * when ``if first_input == True:`` runs, Python_ checks if ``(first_input)`` is equal to :green:`True`. I can assume the following substitutions
+  * when ``if second_input == True:`` runs, Python_ checks if ``(second_input)`` is equal to :green:`True`. I can assume the following substitutions
 
     - if the value of ``something`` is :red:`False`
 
