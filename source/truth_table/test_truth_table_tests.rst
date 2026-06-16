@@ -84,12 +84,15 @@ continue the project
 :red:`RED`: make it fail
 *********************************************************************************
 
-* I use the :ref:`Explorer<explorer on left>` to open ``truth_table.py`` from the ``src`` folder_
+* I open ``truth_table.py`` from the ``src`` folder_
 * I delete everything in ``truth_table.py``, the terminal_ is my friend, and shows 20 failures, I start with the last one
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_negation'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_negation'
+
+  because ...
 
 ----
 
@@ -125,14 +128,15 @@ continue the project
 
     TypeError: 'NoneType' object is not callable
 
-  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
+  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
 * I make it a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-2
+    :emphasize-lines: 1-3
 
+    # logical_negation
     def logical_negation():
         return None
 
@@ -140,15 +144,17 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: logical_negation() takes 0 positional arguments
-               but 1 was given
+    TypeError: logical_negation() takes
+               0 positional arguments but 1 was given
 
 * I add a name in parentheses
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 2-3
 
+    # logical_negation
+    # def logical_negation():
     def logical_negation(something):
         return None
 
@@ -158,15 +164,18 @@ continue the project
 
     AssertionError: None is not true
 
-  the :ref:`assertion<what is an assertion?>` expects :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
 * I change :ref:`None<what is None?>` in the `return statement`_ to give the test what it wants
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 4-5
 
+    # logical_negation
+    # def logical_negation():
     def logical_negation(something):
+        # return None
         return True
 
   the terminal shows :ref:`AssertionError<what causes AssertionError?>`
@@ -175,15 +184,19 @@ continue the project
 
     AssertionError: True is not false
 
-  the :ref:`assertion<what is an assertion?>` expects :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
 * I change the `return statement`_
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 5-6
 
+    # logical_negation
+    # def logical_negation():
     def logical_negation(something):
+        # return None
+        # return True
         return False
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -192,18 +205,18 @@ continue the project
 
     AssertionError: False is not true
 
-  the :ref:`assertion<what is an assertion?>` expects
-
-  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
-
-* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects, remember :ref:`the identity_function?<test_identity_function>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 6-7
 
+    # logical_negation
+    # def logical_negation():
     def logical_negation(something):
+        # return None
+        # return True
+        # return False
         return something
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -212,34 +225,46 @@ continue the project
 
     AssertionError: True is not false
 
-  the :ref:`assertion<what is an assertion?>` expects
-
-  - the :ref:`opposite<test_logical_negation>` of the input
-  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
+  - the :ref:`assertion<what is an assertion?>` expects the :ref:`opposite<test_logical_negation>` of the input
+  - the :ref:`function<what is a function?>` returned :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - the :ref:`function<what is a function?>` returned :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
+  - the :ref:`function<what is a function?>` returned :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
 * I use :ref:`not<test_logical_negation>` in the `return statement`_
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2
+    :emphasize-lines: 7-8
 
+    # logical_negation
+    # def logical_negation():
     def logical_negation(something):
+        # return None
+        # return True
+        # return False
+        # return something
         return not something
 
-  1 test passes with 19 failures to go, progress! the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ shows 19 failed, 1 passed, progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_identity'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_identity'
 
 * I add a :ref:`function<what is a function?>` for it
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 11-12
 
+    # logical_negation
+    # def logical_negation():
     def logical_negation(something):
+        # return None
+        # return True
+        # return False
+        # return something
         return not something
 
 
@@ -250,15 +275,16 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: logical_identity() takes 0 positional arguments
-               but 1 was given
+    TypeError: logical_identity() takes
+               0 positional arguments but 1 was given
 
 * I add a name in parentheses
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 1
+    :lineno-start: 11
+    :emphasize-lines: 2-3
 
+    # def logical_identity():
     def logical_identity(something):
         return None
 
@@ -271,10 +297,12 @@ continue the project
 * I change the `return statement`_ for :ref:`logical_identity<test_logical_identity>` to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 2
+    :lineno-start: 11
+    :emphasize-lines: 3-4
 
+    # def logical_identity():
     def logical_identity(something):
+        # return None
         return True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -283,15 +311,18 @@ continue the project
 
     AssertionError: True is not false
 
-  the :ref:`assertion<what is an assertion?>` expects :green:`True` if the :ref:`function<what is a function?>` returns :green:`True`
+  the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
 * I change the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 2
+    :lineno-start: 11
+    :emphasize-lines: 4-5
 
+    # def logical_identity():
     def logical_identity(something):
+        # return None
+        # return True
         return False
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -300,33 +331,41 @@ continue the project
 
     AssertionError: False is not true
 
-  the :ref:`assertion<what is an assertion?>` expects
-
-  - :red:`False` if the :ref:`function<what is a function?>` returns :red:`False`
-  - :green:`True` if the :ref:`function<what is a function?>` returns :green:`True`
+  - the :ref:`function<what is a function?>` returned :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - the :ref:`function<what is a function?>` returned :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
+  - the :ref:`function<what is a function?>` returned :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 2
+    :lineno-start: 11
+    :emphasize-lines: 5-6
 
+    # def logical_identity():
     def logical_identity(something):
+        # return None
+        # return True
+        # return False
         return something
 
-  18 failed, 2 passed, more progress! the terminal_ is my friend, and shows :ref:`AttributeError<what causes ATtributeError?>`
+  the terminal_ shows 18 failed, 2 passed, more progress! It also shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_true'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_true'
 
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5-6
+    :lineno-start: 11
+    :emphasize-lines: 9-10
 
+    # def logical_identity():
     def logical_identity(something):
+        # return None
+        # return True
+        # return False
         return something
 
 
@@ -342,25 +381,29 @@ continue the project
 * I change the `return statement`_ for :ref:`logical_true<test_logical_true>` to give the test what it wants
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 2
+    :lineno-start: 19
+    :emphasize-lines: 2-3
 
     def logical_true():
+        # return None
         return True
 
   17 failed, 3 passed. That was simple. the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'logical_false'. Did you mean: 'logical_true'?
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'logical_false'.
+                    Did you mean: 'logical_true'?
 
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5-6
+    :lineno-start: 19
+    :emphasize-lines: 6-7
 
     def logical_true():
+        # return None
         return True
 
 
@@ -371,12 +414,13 @@ continue the project
 
   .. code-block:: python
 
-    AttributeError: module 'src.truth_table' has no attribute 'tautology'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'tautology'
 
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 13
+    :lineno-start: 24
     :emphasize-lines: 5-6
 
     def logical_false():
@@ -390,14 +434,16 @@ continue the project
 
   .. code-block:: shell
 
-    TypeError: tautology() takes 0 positional arguments but 2 were given
+    TypeError: tautology() takes
+               0 positional arguments but 2 were given
 
 * I add two names in parentheses for the :ref:`function<what is a function?>` to take input arguments
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 1
+    :lineno-start: 28
+    :emphasize-lines: 1-2
 
+    # def tautology():
     def tautology(first, second):
         return None
 
@@ -410,25 +456,30 @@ continue the project
 * I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 2
+    :lineno-start: 28
+    :emphasize-lines: 3-4
 
+    # def tautology():
     def tautology(first, second):
+        # return None
         return True
 
-  15 failed, 5 passed, Ayy! the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  15 failed, 5 passed, Yes! the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
 
   .. code-block:: shell
 
-    AttributeError: module 'src.truth_table' has no attribute 'project_second'
+    AttributeError: module 'src.truth_table'
+                    has no attribute 'project_second'
 
 * I add the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 5-6
+    :lineno-start: 28
+    :emphasize-lines: 7-8
 
+    # def tautology():
     def tautology(first, second):
+        # return None
         return True
 
 
@@ -439,14 +490,16 @@ continue the project
 
   .. code-block:: python
 
-    TypeError: project_second() takes 0 positional arguments but 2 were given
+    TypeError: project_second() takes
+               0 positional arguments but 2 were given
 
 * I add two names in parentheses for the :ref:`function<what is a function?>` to take input arguments
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 1
+    :lineno-start: 34
+    :emphasize-lines: 1-2
 
+    # def project_second():
     def project_second(first, second):
         return None
 
@@ -460,26 +513,11 @@ continue the project
 
   .. code-block:: python
     :lineno-start: 21
-    :emphasize-lines: 2
+    :emphasize-lines: 3-4
 
+    # def project_second():
     def project_second(first, second):
-        return False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: False is not true
-
-  the :ref:`assertion<what is an assertion?>` expects :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
-
-* I change the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 2
-
-    def project_second(first, second):
+        # return None
         return True
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
@@ -488,10 +526,29 @@ continue the project
 
     AssertionError: True is not false
 
-  the :ref:`assertion<what is an assertion?>` expects
+  the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-  - :red:`False` if the :ref:`function<what is a function?>` returns :green:`True`
-  - :green:`True` if the :ref:`function<what is a function?>` returns :red:`False`
+* I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 4-5
+
+    # def project_second():
+    def project_second(first, second):
+        # return None
+        # return True
+        return False
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: False is not true
+
+  - the :ref:`function<what is a function?>` returned :red:`False` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
+  - the :ref:`function<what is a function?>` returned :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
+  - the :ref:`function<what is a function?>` returned :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
 * I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
@@ -865,7 +922,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines:  2
 
     def logical_nor(first, second):
@@ -881,7 +938,7 @@ continue the project
 * I add another :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 3
 
     def logical_nor(first, second):
@@ -898,7 +955,7 @@ continue the project
 * I add an :ref:`if statement<if statements>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 4
 
     def logical_nor(first, second):
@@ -916,7 +973,7 @@ continue the project
 * I add a :ref:`function<what is a function?>` for :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 8-9
 
     def logical_nor(first, second):
@@ -2291,7 +2348,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * :ref:`logical_nor<test_logical_nor>` has only one case that returns :green:`True`. I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 2-5
 
     def logical_nor(first, second):
@@ -2309,7 +2366,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove the other lines, then use :ref:`not<test_logical_negation>` and remove ``== False``
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 2-3
 
     def logical_nor(first, second):
@@ -2324,7 +2381,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I use a `return statement`_
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 2
 
     def logical_nor(first, second):
@@ -2339,7 +2396,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I write the statement with :ref:`not<test_logical_negation>` because it happens 2 times
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 2
 
     def logical_nor(first, second):
@@ -2355,7 +2412,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I factor out the :ref:`not<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
     :emphasize-lines: 2
 
     def logical_nor(first, second):
@@ -2368,7 +2425,7 @@ I can play with the :ref:`functions<what is a function?>` I have to make them si
 * I remove the other statements in :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 113
 
     def logical_nor(first, second):
         return not (first or second)

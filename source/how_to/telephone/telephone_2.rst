@@ -437,7 +437,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     TypeError: 'NoneType' object is not callable
 
-  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
+  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_telephone.py``
 

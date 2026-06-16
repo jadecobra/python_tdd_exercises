@@ -2920,7 +2920,7 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to see more examples of the truth table?<truth table: Binary Operations 5>`
+:ref:`Would you like to see more examples of the truth table?<truth table: Binary Operations Examples>`
 
 ----
 

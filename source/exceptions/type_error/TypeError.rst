@@ -259,7 +259,7 @@ There are :ref:`objects<everything is an object>` that can NOT be called
   - the ``()`` to the right of ``src.type_error.none`` makes it a call
   - the name ``none`` points to :ref:`None<what is None?>` which is NOT callable_
 
-  :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`
+  :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
 * I add TypeError_ to the list of :ref:`Exceptions<errors>` seen in ``test_type_error.py``
 
