@@ -2246,104 +2246,156 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I break up the :ref:`if statements` in :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-7
+    :lineno-start: 88
+    :emphasize-lines: 2-9
 
     def logical_equality(first, second):
         # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
         if first == True and second == False:
             return False
-        # if (first, second) == (False, True): return False
         if first == False and second == True:
             return False
-        return first, second
+        return True
 
   the test is still green.
 
-* I remove the comments then change the :ref:`if statements` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
+* I change the :ref:`if statements` with :ref:`not<test_logical_negation>` and :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-3, 5-6
+    :lineno-start: 88
+    :emphasize-lines: 5-6, 8-9
 
     def logical_equality(first, second):
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
         # if first == True and second == False:
         if first == True and not second == True:
             return False
         # if first == False and second == True:
         if not first == True and second == True:
             return False
-        return first, second
+        return True
 
   still green.
 
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-3, 5-6
+    :lineno-start: 88
+    :emphasize-lines: 6-7, 10-11
 
     def logical_equality(first, second):
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == True and second == False:
         # if first == True and not second == True:
         if first and not second:
             return False
+        # if first == False and second == True:
         # if not first == True and second == True:
         if not first and second:
             return False
-        return first, second
+        return True
 
   green.
 
-* I put the two :ref:`if statements` together to make one
+* I put the two :ref:`if statements` together as one
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-5
+    :lineno-start: 88
+    :emphasize-lines: 7-8, 11-16
 
     def logical_equality(first, second):
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == True and second == False:
+        # if first == True and not second == True:
         # if first and not second:
         #     return False
+        # if first == False and second == True:
+        # if not first == True and second == True:
         # if not first and second:
-        if (first and not second) or (not first and second):
+        if (
+            (first and not second)
+            or
+            (not first and second)
+        ):
             return False
-        return first, second
+        return True
+
 
   still green.
 
 * I use a `return statement`_ because ...
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-6
+    :lineno-start: 88
+    :emphasize-lines: 12-23
 
     def logical_equality(first, second):
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == True and second == False:
+        # if first == True and not second == True:
+        # if first and not second:
+        #     return False
+        # if first == False and second == True:
+        # if not first == True and second == True:
+        # if not first and second:
+        # if (
+        #     (first and not second)
+        #     or
+        #     (not first and second)
+        # ):
+        #     return False
+        # return True
         return not (
             (first and not second)
             or
             (not first and second)
         )
-        if (first and not second) or (not first and second):
-            return False
-        return first, second
 
   the test is still green.
 
 * I multiply :ref:`not<test_logical_negation>` by all the symbols in parentheses
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 2-6
+    :lineno-start: 88
+    :emphasize-lines: 19-28
 
     def logical_equality(first, second):
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == True and second == False:
+        # if first == True and not second == True:
+        # if first and not second:
+        #     return False
+        # if first == False and second == True:
+        # if not first == True and second == True:
+        # if not first and second:
+        # if (
+        #     (first and not second)
+        #     or
+        #     (not first and second)
+        # ):
+        #     return False
+        # return True
+        # return not (
+        #     (first and not second)
+        #     or
+        #     (not first and second)
+        # )
         return (
             (not (first and not second))
             (not or)
             (not (not first and second))
-        )
-        return not (
-            (first and not second)
-            or
-            (not first and second)
         )
 
   the terminal_ is my friend, and shows SyntaxError_
@@ -2355,33 +2407,28 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not or`` to :ref:`and<test_logical_conjunction>`
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 3
+    :lineno-start: 111
+    :emphasize-lines: 3-4
 
-    def logical_equality(first, second):
         return (
             (not (first and not second))
+            # (not or)
             and
             (not (not first and second))
         )
-        return not (
-            (first and not second)
-            or
-            (not first and second)
-        )
 
-  the test is green again
+  the test is green again.
 
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the first part of the statement
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 3-4
+    :lineno-start: 111
+    :emphasize-lines: 2-3
 
-    def logical_equality(first, second):
         return (
             # (not (first and not second))
             ((not first) (not and) (not not second))
+            # (not or)
             and
             (not (not first and second))
         )
@@ -2395,29 +2442,33 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 111
     :emphasize-lines: 3-4
 
-    def logical_equality(first, second):
         return (
             # (not (first and not second))
+            # ((not first) (not and) (not not second))
             ((not first) or (not not second))
+            # (not or)
             and
             (not (not first and second))
         )
+
 
   the test is green again
 
 * I remove ``not not``
 
   .. code-block:: python
-    :lineno-start: 65
-    :emphasize-lines: 3-4
+    :lineno-start: 111
+    :emphasize-lines: 4-5
 
-    def logical_equality(first, second):
         return (
+            # (not (first and not second))
+            # ((not first) (not and) (not not second))
             # ((not first) or (not not second))
             (not first or second)
+            # (not or)
             and
             (not (not first and second))
         )
@@ -2427,7 +2478,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the second part of the statement
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 88
     :emphasize-lines: 5-6
 
     def logical_equality(first, second):
@@ -2441,14 +2492,13 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
   the terminal_ is my friend, and shows SyntaxError_
 
   .. code-block:: python
-    :lineno-start: 65
 
     SyntaxError: invalid syntax
 
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 88
     :emphasize-lines: 5-6
 
     def logical_equality(first, second):
@@ -2464,7 +2514,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I remove ``not not``
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 88
     :emphasize-lines: 5-6
 
     def logical_equality(first, second):
@@ -2477,10 +2527,10 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I remove the comment
+* I remove the commented lines from :ref:`logical_equality<test_logical_equality>`
 
   .. code-block:: python
-    :lineno-start: 65
+    :lineno-start: 88
 
     def logical_equality(first, second):
         return (not first or second) and (first or not second)
