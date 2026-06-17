@@ -2208,7 +2208,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year- year_of_birth,
+                age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2865,7 +2865,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year- year_of_birth,
+                age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2942,7 +2942,7 @@ I use a :ref:`double starred expression<double starred expressions>` for the :re
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
-                age=this_year- year_of_birth,
+                age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2994,39 +2994,75 @@ the test is green again, because this happens
 
 * I use the :ref:`variable<what is a variable?>` for ``my_expectation``
 
-  
+  .. code-block:: python
+    :lineno-start: 33
+    :emphasize-lines: 10-13
 
-* I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` because they are now only used once, by ``a_person``
+            reality = src.person.factory(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                # a_person,
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                a_person,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green because this happens
+
+  .. code-block:: python
+
+    first_name = pick_one('jane', 'joe', 'john', 'person',)
+    last_name = pick_one('doe', 'smith', 'blow', 'public',)
+    sex = pick_one('F', 'M')
+
+  .. code-block:: python
+
+    a_person = dict(
+                   first_name=first_name,
+                   last_name=last_name,
+                   sex=sex,
+               )
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         a_person,
+                         age=this_year-year_of_birth
+                     )
+                     dict(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex=sex,
+                         age=this_year-year_of_birth
+                     )
+
+  the :ref:`dict constructor<test_making_a_dictionary>` can take another :ref:`dictionary<what is a dictionary?>` as input and uses the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as :ref:`keyword arguments<test_w_keyword_arguments>`.
+
+* I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` because they are now only used once (by ``a_person``)
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 6-8, 13-15, 18, 28-37
+    :emphasize-lines: 2-8, 11-20
 
         def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
-            # first_name = random.choice((
-            #     'jane', 'joe', 'john', 'person',
-            # ))
             # first_name = pick_one(
             #     'jane', 'joe', 'john', 'person',
             # )
-            # last_name = 'doe'
-            # last_name = random.choice((
-            #     'doe', 'smith', 'blow', 'public',
-            # ))
             # last_name = pick_one(
             #     'doe', 'smith', 'blow', 'public',
             # )
-            # sex = 'F'
-            # sex = random.choice(('F', 'M'))
             # sex = pick_one('F', 'M')
-            # year_of_birth = 1996
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
-            )
 
             a_person = dict(
                 # first_name=first_name,
@@ -3043,7 +3079,7 @@ the test is green again, because this happens
 
   still green.
 
-* I make a :ref:`function<what is a function?>` with a tuple_ of all the names for the test to have more random names to pick from
+* I add a :ref:`function<what is a function?>` with a tuple_ of all the names for the test to have more random names to pick from
 
   .. code-block:: python
     :lineno-start: 7
@@ -3067,8 +3103,17 @@ the test is green again, because this happens
 * I use the :ref:`function<what is a function?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 46
-    :emphasize-lines: 5-12
+    :lineno-start: 20
+    :emphasize-lines: 14-21
+
+        def test_factory_w_keyword_arguments(self):
+            # first_name = pick_one(
+            #     'jane', 'joe', 'john', 'person',
+            # )
+            # last_name = pick_one(
+            #     'doe', 'smith', 'blow', 'public',
+            # )
+            # sex = pick_one('F', 'M')
 
             a_person = dict(
                 # first_name=first_name,
@@ -3087,6 +3132,72 @@ the test is green again, because this happens
 
   green.
 
+* I change the :ref:`assertion<what is an assertion?>` to make sure the test works correctly
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 16-17
+
+            reality = src.person.factory(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                # a_person,
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                a_person,
+                age=this_year-year_of_birth,
+            )
+            # self.assertEqual(reality, my_expectation)
+            self.assertEqual(reality, {})
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError:
+        {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
+     != {}
+
+  where ``A`` is the random first name, ``Z`` is the random last name, ``Y`` is the random sex, and ``X`` is the random age.
+
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and I get random values for ``'first_name'``, ``'last_name'``, ``'sex'`` and ``'age'`` each time
+
+* I change the :ref:`assertion<what is an assertion?>` back
+
+  .. code-block:: python
+    :lineno-start: 49
+    :emphasize-lines: 16-17
+
+            reality = src.person.factory(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                # a_person,
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                a_person,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+            # self.assertEqual(reality, {})
+
+
+    # Exceptions seen
+
 * I remove the commented lines
 
   .. code-block:: python
@@ -3094,15 +3205,15 @@ the test is green again, because this happens
     :emphasize-text: get_random_name pick_one a_person
 
         def test_factory_w_keyword_arguments(self):
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
-            )
-
             a_person = dict(
                 first_name=get_random_name(),
                 last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
+            )
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
             )
 
             reality = src.person.factory(
@@ -3110,7 +3221,7 @@ the test is green again, because this happens
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
