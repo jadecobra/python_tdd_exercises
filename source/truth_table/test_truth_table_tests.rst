@@ -2455,7 +2455,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
         )
 
 
-  the test is green again
+  the test is green again.
 
 * I remove ``not not``
 
@@ -2478,12 +2478,15 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I multiply :ref:`not<test_logical_negation>` by the symbols in the second part of the statement
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 5-6
+    :lineno-start: 111
+    :emphasize-lines: 8-9
 
-    def logical_equality(first, second):
         return (
+            # (not (first and not second))
+            # ((not first) (not and) (not not second))
+            # ((not first) or (not not second))
             (not first or second)
+            # (not or)
             and
             # (not (not first and second))
             ((not not first) (not and) (not second))
@@ -2498,32 +2501,41 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 5-6
+    :lineno-start: 111
+    :emphasize-lines: 9-10
 
-    def logical_equality(first, second):
         return (
+            # (not (first and not second))
+            # ((not first) (not and) (not not second))
+            # ((not first) or (not not second))
             (not first or second)
+            # (not or)
             and
             # (not (not first and second))
+            # ((not not first) (not and) (not second))
             ((not not first) or (not second))
         )
 
-  the test is still green.
+  the test is green again.
 
 * I remove ``not not``
 
   .. code-block:: python
-    :lineno-start: 88
-    :emphasize-lines: 5-6
+    :lineno-start: 111
+    :emphasize-lines: 10-11
 
-    def logical_equality(first, second):
-        return (
-            (not first or second)
-            and
-            # ((not not first) or (not second))
-            (first or not second)
-        )
+    return (
+        # (not (first and not second))
+        # ((not first) (not and) (not not second))
+        # ((not first) or (not not second))
+        (not first or second)
+        # (not or)
+        and
+        # (not (not first and second))
+        # ((not not first) (not and) (not second))
+        # ((not not first) or (not second))
+        (first or not second)
+    )
 
   still green.
 
