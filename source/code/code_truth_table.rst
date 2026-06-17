@@ -69,7 +69,7 @@ Binary Operations 4 tests
 
 the code from ``truth_table/tests/test_binary.py`` from :ref:`truth table: Binary Operations 4`
 
-.. literalinclude:: truth_table/tests/test_binary_4.py
+.. literalinclude:: truth_table/tests/test_binary.py
   :language: python
   :linenos:
 
@@ -169,7 +169,7 @@ the code from ``elevator/tests/test_elevator.py`` from :ref:`Elevator`
   :language: python
   :linenos:
 
-the code from ``elevator/src/elevator.py`` from :ref:`Microwave`
+the code from ``elevator/src/elevator.py`` from :ref:`Elevator`
 
 .. literalinclude:: truth_table/solutions/elevator.py
   :language: python
@@ -187,7 +187,7 @@ the code from ``parking_garage/tests/test_parking_garage.py`` from :ref:`Parking
   :language: python
   :linenos:
 
-the code from ``parking_garage/src/parking_garage.py`` from :ref:`Microwave`
+the code from ``parking_garage/src/parking_garage.py`` from :ref:`Parking Garage`
 
 .. literalinclude:: truth_table/solutions/parking_garage.py
   :language: python

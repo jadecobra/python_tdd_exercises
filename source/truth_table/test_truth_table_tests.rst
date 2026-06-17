@@ -3207,14 +3207,14 @@ close the project
 review
 *********************************************************************************
 
-I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>` for the operations of the `Truth Table`_ from Mathematics
+I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`, for the operations of the `Truth Table`_ from Mathematics
 
-* there are :ref:`2 nullary operations<Nullary Operations>`, they do not take input and always return the same thing, they are :ref:`constant<test_constant_function>`
+* there are :ref:`two nullary operations<Nullary Operations>`, they do not take input and always return the same thing, they are :ref:`constant<test_constant_function>`
 
   - :ref:`Logical False<test_logical_false>` always returns :red:`False`
   - :ref:`Logical True<test_logical_true>` always returns :green:`True`
 
-* there are :ref:`2 unary operations<Unary Operations>`, they take one input
+* there are :ref:`two unary operations<Unary Operations>`, they take one input
 
   - :ref:`Logical Identity<test_logical_identity>` returns its input as output
   - :ref:`Logical Negation<test_logical_negation>` returns the negation of its input as output
@@ -3255,7 +3255,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`False<t
 
     - returns ``first or second``
     - returns :red:`False` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
-    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
+    - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical NOR<test_logical_nor>` which returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Logical Equality<test_logical_equality>`
 
@@ -3272,7 +3272,7 @@ I ran tests using :ref:`booleans<what are booleans?>` which can be :ref:`False<t
   * :ref:`Logical NOR<test_logical_nor>`
 
     - returns ``not (first or second)``
-    - returns :green:`True` only if ``first`` is :ref:`False<test_what_is_False>` and ``second`` is :ref:`False<test_what_is_false>`
+    - returns :green:`True` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
     - is the :ref:`Logical Negation (NOT)<test_logical_negation>` of :ref:`Logical Disjunction<test_logical_disjunction>` which returns :red:`False` only if ``first`` is :ref:`False<test_what_is_false>` and ``second`` is :ref:`False<test_what_is_false>`
 
   * :ref:`Material/Logical Implication<test_material_implication>`

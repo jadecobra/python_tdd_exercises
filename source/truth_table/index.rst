@@ -1,6 +1,6 @@
 .. meta::
-  :description: Truth Table in Python for beginners using TDD. Start the truth_table project with uv, pytest-watcher, tests package, initial test_failure with assertFalse, then continue through Nullary/Unary Operations (logical_true, logical_false, identity, not/negation) and Binary Operations. Uses assertTrue/assertFalse from booleans chapter, demonstrates Truth Table fundamentals (always returns True or False / 1 or 0), conditional logic foundations, and full Red-Green-Refactor workflow with real error messages. Previews final test_nullary_unary.py and test_binary.py. Part of Jacob Itegboje Pumping Python TDD series.
-  :keywords: Jacob Itegboje, Pumping Python, truth table python, python truth table tutorial, assertTrue assertFalse booleans, TDD if statements, conditional expressions python, logical and or not truth table, uv init truth_table, pytest-watcher, AssertionError True is not false, beginner boolean logic, what is and what is or python, test driven development truth table, python 1 or 0 true false, nullary unary operations
+  :description: Truth Table in Python for absolute beginners using Test Driven Development. Start the truth_table project manually with uv init, mkdir src/tests, tests/__init__.py, pytest-watcher, and the first failing test_failure (self.assertFalse(True) → AssertionError True is not false). Preview the full test suite for Nullary Operations (logical_true, logical_false — no inputs, always True/False), Unary Operations (logical_identity returns input, logical_negation/NOT returns opposite via not keyword), and all 16 Binary Operations (contradiction, AND/logical_conjunction, OR/logical_disjunction, NAND, NOR, XOR/exclusive_disjunction, material implication, project_first/second, negate_first/second, tautology, and more). Reuses assertTrue and assertFalse from the booleans chapter; builds conditional logic and if-statement foundations; every truth-table operation returns only True or False (1 or 0). Continue through Nullary and Unary Operations, Binary Operations 1–4, optional examples (BO5), the blank-file test_truth_table_tests challenge, and real-world projects. Red-Green-Refactor with AttributeError module has no attribute, TypeError takes N positional arguments, AssertionError None is not true. Part of Jacob Itegboje Pumping Python TDD series.
+  :keywords: Jacob Itegboje, Pumping Python, truth table python, python truth table tutorial, uv init truth_table, pytest-watcher, test_failure assertFalse, AssertionError True is not false, AssertionError None is not true, AttributeError module has no attribute logical_true, TypeError takes 0 positional arguments but 1 was given, assertTrue assertFalse booleans chapter, logical_true logical_false nullary operations, logical_identity logical_negation not keyword, logical_conjunction AND, logical_disjunction OR, logical_nand logical_nor XOR exclusive_disjunction, material implication python, 16 binary operations truth table, conditional expressions if statements python, TDD red green refactor truth table, python boolean logic beginners, truth table always returns True or False, test_nullary_unary.py test_binary.py, test_truth_table_tests challenge, beginner programming logic gates
 
 .. include:: ../links.rst
 
@@ -41,13 +41,6 @@ These are the tests I have at the end of the chapters
 .. literalinclude:: ../code/truth_table/tests/test_binary.py
   :language: python
   :linenos:
-
-*********************************************************************************
-questions about The Truth Table
-*********************************************************************************
-
-
-* :ref:`what is or?<test_logical_disjunction>`
 
 ----
 
@@ -202,7 +195,10 @@ start the project
 
 * I add `pytest-watcher`_ to the requirements file_
 
-    echo "pytest-watcher" > requirements.txt
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest-watcher" >> requirements.txt
 
   the terminal_ goes back to the command line.
 
@@ -319,6 +315,8 @@ truth table operations
   Binary Operations<binary_operations/index>
   Truth Table Test<test_truth_table_tests>
   Truth Table Projects<projects/index>
+
+:ref:`Do you want to see all the CODE for the Truth Table?<truth table: tests and solutions>`
 
 ----
 
