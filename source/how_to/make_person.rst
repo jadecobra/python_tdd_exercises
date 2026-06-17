@@ -3823,11 +3823,30 @@ I want to see what happens when I try to make a person without a value for the `
 
     where ``Y`` and ``Z`` are the random first names, and ``X`` is the random age
 
-* I add ``first_name`` to ``my_expectation``
+* I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``first_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lin
+    :lineno-start: 55
+    :emphasize-lines: 8
 
+            reality = src.person.factory(
+                # **a_person,
+                first_name=first_name,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                a_person,
+                first_name=first_name,
+                last_name='doe',
+                sex='M',
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test passes.
 
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
@@ -3836,6 +3855,7 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
             first_name = get_random_name()
+
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
                 this_year-120, this_year
@@ -3855,6 +3875,8 @@ I want to see what happens when I try to make a person without a value for the `
 
 
     # Exceptions seen
+
+  the test is still green.
 
 * I add a git_ commit message in the other terminal_
 
