@@ -645,12 +645,14 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                     None # the function returns None
+                     # the factory function returns
+                     None
 
   .. code-block:: python
 
     my_expectation = dict()
-                   = {}
+                     # the dict constructor returns
+                     {}
 
   .. code-block:: python
 
@@ -719,7 +721,7 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                     {} # the function returns {}
+                     {} # the factory function returns {}
 
   .. code-block:: python
 
@@ -729,6 +731,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(reality, my_expectation              )
+    # is the same as
     self.assertEqual({}     , {'first_name': 'first_name'})
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the :ref:`assertion<what is an assertion?>` expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`.
@@ -795,17 +798,19 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                     # the function returns
+                     # the factory function returns
                      {'first_name': 'first_name'}
 
   .. code-block:: python
 
     my_expectation = dict(first_name='jane')
+                     # the dict constructor returns
                      {'first_name': 'jane'}
 
   .. code-block:: python
 
     self.assertEqual(reality, my_expectation)
+    # is the same as
     self.assertEqual(
         {'first_name': 'first_name'},
         {'first_name': 'jane'}
@@ -931,7 +936,7 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                     # the function returns
+                     # the factory function returns
                      {'first_name': 'jane'}
 
   .. code-block:: python
@@ -940,6 +945,7 @@ test_factory_w_keyword_arguments
                          first_name=first_name,
                          last_name='last_name',
                      )
+                     # the dict constructor returns
                      {
                          'first_name': 'jane',
                          'last_name': 'last_name'
@@ -948,6 +954,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(reality, my_expectation)
+    # is the same as
     self.assertEqual(
         {'first_name': 'jane'},
         {'first_name': 'jane', 'last_name': 'last_name'}
@@ -1032,7 +1039,7 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                     # the function returns
+                     # the factory function returns
                      {
                          'first_name': 'jane',
                          'last_name': 'last_name'
@@ -1044,6 +1051,7 @@ test_factory_w_keyword_arguments
                          first_name=first_name,
                          last_name='doe',
                      )
+                     # the dict constructor returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe'
@@ -1052,6 +1060,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(reality, my_expectation)
+    # is the same as
     self.assertEqual(
         {'first_name': 'jane', 'last_name': 'last_name'},
         {'first_name': 'jane', 'last_name': 'doe'}
@@ -1196,7 +1205,7 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                     # the function returns
+                     # the factory function returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe'
@@ -1209,6 +1218,7 @@ test_factory_w_keyword_arguments
                          last_name=last_name,
                          sex='M'
                      )
+                     # the dict constructor returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe',
@@ -1218,6 +1228,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(reality, my_expectation)
+    # is the same as
     self.assertEqual(
         {'first_name': 'jane', 'last_name': 'doe'},
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
@@ -1311,7 +1322,7 @@ test_factory_w_keyword_arguments
                          sex='F',
                          year_of_birth=2000,
                      )
-                     # the function returns
+                     # the factory function returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe',
@@ -1325,6 +1336,7 @@ test_factory_w_keyword_arguments
                          last_name=last_name,
                          sex='F'
                      )
+                     # the dict constructor returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe',
@@ -1334,6 +1346,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
 
     self.assertEqual(reality, my_expectation)
+    # is the same as
     self.assertEqual(
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'},
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
@@ -1495,7 +1508,7 @@ test_factory_w_keyword_arguments
                          sex=sex,
                          year_of_birth=2000,
                      )
-                     # the function returns
+                     # the factory function returns
                      {
                          'first_name': 'jane',
                          'last_name': 'last_name',
@@ -1510,7 +1523,7 @@ test_factory_w_keyword_arguments
                          sex=sex,
                          age=2026-2000,
                      )
-                     # dict returns
+                     # the dict constructor returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe',
@@ -1626,7 +1639,7 @@ test_factory_w_keyword_arguments
                          sex=sex,
                          year_of_birth=1996,
                      )
-                     # the function returns
+                     # the factory function returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe',
@@ -1642,7 +1655,7 @@ test_factory_w_keyword_arguments
                          sex='F',
                          age=2026-1996
                      )
-                     # dict returns
+                     # the dict constructor returns
                      {
                          'first_name': 'jane',
                          'last_name': 'doe',
@@ -3466,6 +3479,7 @@ I want to see what happens when I try to make a person without a value for the `
                   last_name=None, # use the default value
                   year_of_birth=year_of_birth,
               )
+              # the factory function returns
               {'first_name': Z, 'last_name': None, 'sex': Y,
                'age': X}
 
@@ -3480,6 +3494,7 @@ I want to see what happens when I try to make a person without a value for the `
                          sex=pick_one('F', 'M'),
                          year_of_birth=year_of_birth,
                      )
+                     # the dict constructor returns
                      {'first_name': Z, 'sex': Y, 'age': X}
 
   - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
@@ -3588,9 +3603,53 @@ I want to see what happens when I try to make a person without a value for the `
     :emphasize-text: sex
 
     AssertionError:
-        {'first_name': Z, 'last_name': Y,
+        {'first_name': Y, 'last_name': 'doe,
          'sex': None, 'age': X}
-     != {'first_name': Z, 'last_name': Y, 'age': X}
+     != {'first_name': Y, 'last_name': 'doe', 'age': X}
+
+  because this happens when :ref:`the factory function<test_factory_w_keyword_arguments>` is called without a value for ``sex``
+
+  .. code-block:: python
+
+    a_person = dict(first_name=get_random_name())
+
+  .. code-block:: python
+
+    reality = src.person.factory(
+                  **a_person,
+                  year_of_birth=year_of_birth,
+              )
+              src.person.factory(
+                  first_name=get_random_name(),
+                  year_of_birth=year_of_birth,
+              )
+              src.person.factory(
+                  first_name=get_random_name(),
+                  sex=None,        # use the default value
+                  last_name='doe', # use the default value
+                  year_of_birth=year_of_birth,
+              )
+              # the factory function returns
+              {'first_name': Z, 'last_name': 'doe,
+               'sex': None, 'age': X}
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         a_person,
+                         last_name='doe',
+                         age=this_year-year_of_birth,
+                     )
+                     dict(
+                         first_name=get_random_name(),
+                         last_name='doe',
+                         year_of_birth=year_of_birth,
+                     )
+                     # the dict constructor returns
+                     {'first_name': Z, 'last_name': 'doe', 'age': X}
+
+  - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  - ``X`` is the random age, ``Y`` is the random first name
 
   the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
