@@ -1782,7 +1782,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the test is still green. I now only need to change the value of ``sex`` in one place in the test.
+  the test is still green. I now only need to change the value of ``year_of_birth`` in one place in the test.
 
 * I remove the commented lines
 
@@ -2706,9 +2706,9 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
   .. code-block:: python
 
     first_name = pick_one('jane', 'joe', 'john', 'person')
-                 pick_one(*choices)
-                 random.choice(*choices)
-                 random.choice(('jane', 'joe', 'john', 'person'))
+                     pick_one(*choices)
+                     random.choice(*choices)
+                     random.choice(('jane', 'joe', 'john', 'person'))
                  # randomly return
                  # 'jane' or 'joe' or 'john' or 'person'
 
@@ -2739,9 +2739,9 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
   .. code-block:: python
 
     last_name = pick_one('doe', 'smith', 'blow', 'public')
-                pick_one(*choices)
-                random.choice(*choices)
-                random.choice(('doe', 'smith', 'blow', 'public'))
+                    pick_one(*choices)
+                    random.choice(*choices)
+                    random.choice(('doe', 'smith', 'blow', 'public'))
                 # randomly return
                 # 'doe' or 'smith' or 'blow' or 'public'
 
@@ -2773,9 +2773,9 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
   .. code-block:: python
 
     sex = pick_one('F', 'M'')
-          pick_one(*choices)
-          random.choice(*choices)
-          random.choice(('F', 'M'))
+              pick_one(*choices)
+              random.choice(*choices)
+              random.choice(('F', 'M'))
           # randomly return 'F' or 'M'
 
   :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``).
@@ -3780,23 +3780,17 @@ I want to see what happens when I try to make a person without a value for the `
               )
                   src.person.factory(
                       first_name=first_name,
-                      first_name=first_name, # duplicate
+                      first_name=first_name, # repetition
                       year_of_birth=year_of_birth
                   )
 
-
-
-  the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same :ref:`keyword argument<test_w_keyword_arguments>` twice.
+  the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, ``src.person.factory`` gets called with the same :ref:`keyword argument<test_w_keyword_arguments>` twice.
 
 * I comment out ``**a_person,``
 
-  .. tip::
-
-    I can comment out a line in `Visual Studio Code`_ with :kbd:`ctrl/command+/` anywhere on the line
-
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 2, 7
+    :emphasize-lines: 2
 
             reality = src.person.factory(
                 # **a_person,
@@ -3804,8 +3798,7 @@ I want to see what happens when I try to make a person without a value for the `
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                # **a_person,
-                first_name=first_name,
+                a_person,
                 last_name='doe',
                 sex='M',
                 age=this_year-year_of_birth,
@@ -3815,7 +3808,26 @@ I want to see what happens when I try to make a person without a value for the `
 
     # Exceptions seen
 
-  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times
+
+  - if the values for ``first_name`` match, the test passes
+  - if the values for ``first_name`` are not the same the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+    .. code-block:: python
+
+      AssertionError:
+          {'first_name': Y, 'last_name': 'doe',
+           'sex': 'M', 'age': X}
+       != {'first_name': Z, 'last_name': 'doe',
+           'sex': 'M', 'age': X}
+
+    where ``Y`` and ``Z`` are the random first names, and ``X`` is the random age
+
+* I add ``first_name`` to ``my_expectation``
+
+  .. code-block:: python
+    :lin
+
 
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
