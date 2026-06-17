@@ -232,7 +232,7 @@ start the project
   .. code-block:: python
 
     [main (root-commit) a0b12c3] setup project
-     9 files changed, 148 insertions(+)
+     9 files changed, 145 insertions(+)
      create mode 100644 .gitignore
      create mode 100644 .python-version
      create mode 100644 README.md
@@ -277,7 +277,7 @@ start the project
   .. admonition:: if the terminal_ does not show the same error, then check
 
     * if your ``tests/__init__.py`` has two underscores (__) before and after ``init`` for ``__init__.py`` not ``_init_.py``
-    * if you ran ``echo "pytest-watcher" > requirements.txt``, to add ``pytest-watcher`` to the requirements file_
+    * if you ran ``echo "pytest-watcher" >> requirements.txt``, to add ``pytest-watcher`` to the requirements file_
 
     fix those errors and try to run ``uv run pytest-watcher . --now`` again
 
