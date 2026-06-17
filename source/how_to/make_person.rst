@@ -1958,7 +1958,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 test factory with random year_of_birth
 *********************************************************************************
 
-I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values and always calculates the right age.
+I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values for ``year_of_birth`` and always calculates the right age.
 
 I can do that with the `random module`_ from `The Python Standard Library`_ which is used to make fake random numbers.
 
@@ -2197,6 +2197,8 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 test factory with random sex
 *********************************************************************************
 
+I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values for ``sex``.
+
 ----
 
 =================================================================================
@@ -2212,19 +2214,14 @@ test factory with random sex
   .. code-block:: python
     :lineno-start: 9
     :emphasize-lines: 4-5
-7
+
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             # sex = 'F'
             sex = random.choice(('F', 'M'))
-            # year_of_birth = 1996
+
             this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
-            )
 
   I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
 
@@ -2239,12 +2236,20 @@ test factory with random sex
      != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M',
          'age': X}
 
-  where ``X`` is the random age
-
+  - where ``X`` is the random age
   - ``random`` is the `random module`_
-  - ``random.choice()`` is a call to the `random.choice method`_ from the `random module`_, it returns a random value from the :ref:`iterable<what is an iterable?>` it is given in parentheses
-  - ``('F', 'M')`` is a :ref:`tuple (an iterable)<what is an iterable?>` with values for the `random.choice method`_ to pick from randomly
-  - ``random.choice(('F', 'M'))`` randomly gives me ``F`` or ``M`` every time the test runs
+  - ``random.choice`` is a :ref:`method<what is a method?>` of the `random module`_
+  - ``('F', 'M')`` is a tuple_ with two strings_
+  - ``random.choice(('F', 'M'))`` is a call to the `choice method`_ of the `random module`_ with ``('F', 'M')`` as input. I can assume there is some definition in ``random.py`` that looks like this
+
+    .. code-block:: python
+
+      def choice(collection):
+          return random object from collection
+
+    it returns ``'F'`` or ``'M'`` randomly every time the test runs.
+
+  - I can also use random.choice(``'FM'``) to get the same result as ``random.choice(('F', 'M'))`` because a string_ like a tuple_ is :ref:`iterable<what is an iterable?>`
 
 ----
 
@@ -2293,6 +2298,8 @@ test factory with random sex
 *********************************************************************************
 test factory with random last name
 *********************************************************************************
+
+I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values for ``last_name``.
 
 ----
 
