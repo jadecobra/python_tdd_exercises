@@ -975,7 +975,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 8-9, 17-18
+    :emphasize-lines: 9-10, 20-21
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1012,14 +1012,51 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'last_name'}
      != {'first_name': 'jane', 'last_name': 'doe'}
 
-  because I changed the value for ``last_name`` in ``my_expectation``
+  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name='jane',
+                         last_name='doe',
+                         sex='M',
+                         year_of_birth=2000,
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'last_name'
+                     }
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         first_name='jane',
+                         last_name='doe',
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe'
+                     }
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(
+        {'first_name': 'jane', 'last_name': 'last_name'},
+        {'first_name': 'jane', 'last_name': 'doe'}
+    )
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``last_name`` to ``'doe'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'last_name'``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 11-12
+    :emphasize-lines: 14-15
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -1034,10 +1071,9 @@ test_factory_w_keyword_arguments
             'last_name': 'doe',
         }
 
-
   the test passes.
 
-* I typed the value for ``last_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'doe'`` from ``test_person.py``
+* I typed the value for ``last_name`` two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``'doe'`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1047,18 +1083,19 @@ test_factory_w_keyword_arguments
             first_name = 'jane'
             last_name = 'doe'
 
-            reality = src.person.factory(
+            # reality = src.person.factory()
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'doe'`` from the test
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 10-11, 20-21
+    :emphasize-lines: 11-12, 23-24
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1069,6 +1106,8 @@ test_factory_w_keyword_arguments
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
