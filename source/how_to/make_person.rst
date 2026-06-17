@@ -635,7 +635,7 @@ test_factory_w_keyword_arguments
 
     AssertionError: None != {}
 
-  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+  because this happens when the test runs
 
   .. code-block:: python
 
@@ -709,7 +709,7 @@ test_factory_w_keyword_arguments
 
     AssertionError: {} != {'first_name': 'first_name'}
 
-  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+  because this happens when the test runs
 
   .. code-block:: python
 
@@ -785,7 +785,7 @@ test_factory_w_keyword_arguments
     AssertionError: {'first_name': 'first_name'}
                  != {'first_name': 'jane'}
 
-  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+  because this happens when the test runs
 
   .. code-block:: python
 
@@ -877,7 +877,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``last_name`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -916,12 +916,16 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane'}
      != {'first_name': 'jane', 'last_name': 'last_name'}
 
-  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+  because this happens when the test runs
+
+  .. code-block:: python
+
+    first_name = 'jane'
 
   .. code-block:: python
 
     reality        = src.person.factory(
-                         first_name='jane',
+                         first_name=first_name,
                          last_name='last_name',
                          sex='M',
                          year_of_birth=2000,
@@ -931,7 +935,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
 
     my_expectation = dict(
-                         first_name='jane',
+                         first_name=first_name,
                          last_name='last_name',
                      )
                    = {
@@ -1012,12 +1016,16 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'last_name'}
      != {'first_name': 'jane', 'last_name': 'doe'}
 
-  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+  because this happens when the test runs
+
+  .. code-block:: python
+
+    first_name = 'jane'
 
   .. code-block:: python
 
     reality        = src.person.factory(
-                         first_name='jane',
+                         first_name=first_name,
                          last_name='doe',
                          sex='M',
                          year_of_birth=2000,
@@ -1030,7 +1038,7 @@ test_factory_w_keyword_arguments
   .. code-block:: python
 
     my_expectation = dict(
-                         first_name='jane',
+                         first_name=first_name,
                          last_name='doe',
                      )
                    = {
@@ -1125,16 +1133,17 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>`, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``test_person.py``
+* I add a :ref:`key<test_keys_of_a_dictionary>` called ``sex`` to the :ref:`dictionary<what is a dictionary?>` for ``my_expectation``, with the same :ref:`value<test_values_of_a_dictionary>` as what is given in the call to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 22
+    :emphasize-lines: 25
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1145,6 +1154,8 @@ test_factory_w_keyword_arguments
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1167,12 +1178,56 @@ test_factory_w_keyword_arguments
                  != {'first_name': 'jane', 'last_name': 'doe',
                      'sex': 'M'}
 
+  because this happens when the test runs
+
+  .. code-block:: python
+
+    first_name = 'jane'
+    last_name = 'doe'
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex='M',
+                         year_of_birth=2000,
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe'
+                     }
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex='M'
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe',
+                         'sex': 'M'
+                     }
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(
+        {'first_name': 'jane', 'last_name': 'doe'},
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
+    )
+
 * I add a new :ref:`key<test_keys_of_a_dictionary>` to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 13
+    :emphasize-lines: 16
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -1194,12 +1249,13 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 12-13, 23-24
+    :emphasize-lines: 13-14, 26-27
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1211,6 +1267,8 @@ test_factory_w_keyword_arguments
                 sex='F',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1234,14 +1292,59 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'}
      != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
 
-  because I changed the value for ``sex`` in ``my_expectation``
+  because this happens when the test runs
+
+  .. code-block:: python
+
+    first_name = 'jane'
+    last_name = 'doe'
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex='F',
+                         year_of_birth=2000,
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe',
+                         'sex': 'M'
+                     }
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex='F'
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe',
+                         'sex': 'F'
+                     }
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M'},
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
+    )
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``sex`` to ``'F'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'M'``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 13-14
+    :emphasize-lines: 16-17
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -1260,7 +1363,7 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I typed the value for ``sex`` two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'F'`` from ``test_person.py``
+* I typed the value for ``sex`` two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``'F'`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1271,19 +1374,20 @@ test_factory_w_keyword_arguments
             last_name = 'doe'
             sex = 'F'
 
-            reality = src.person.factory(
+            # reality = src.person.factory()
 
 * I use the :ref:`variable<what is a variable?>` to remove repetition of ``'F'``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 14-15, 26-27
+    :emphasize-lines: 15-16, 29-30
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1296,6 +1400,8 @@ test_factory_w_keyword_arguments
                 sex=sex,
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1320,13 +1426,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 28
+    :emphasize-lines: 31
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1339,6 +1446,8 @@ test_factory_w_keyword_arguments
                 sex=sex,
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1365,12 +1474,61 @@ test_factory_w_keyword_arguments
      != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
          'age': 26}
 
+  because this happens when the test runs
+
+  .. code-block:: python
+
+    first_name = 'jane'
+    last_name = 'doe'
+    sex = 'F'
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex=sex,
+                         year_of_birth=2000,
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'last_name',
+                         'sex': 'F'
+                     }
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex=sex,
+                         age=2026-2000,
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe',
+                         'sex': 'F',
+                         'age': 26
+                     }
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'},
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+         'age': 26}
+    )
+
 * I add a new :ref:`key<test_keys_of_a_dictionary>` to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 15
+    :emphasize-lines: 18
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -1394,13 +1552,14 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 16-17, 29-30
+    :emphasize-lines: 17-18, 32-33
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1414,6 +1573,8 @@ test_factory_w_keyword_arguments
                 # year_of_birth=2000,
                 year_of_birth=1996,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1442,7 +1603,55 @@ test_factory_w_keyword_arguments
      != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
          'age': 30}
 
-  because I changed ``2000`` in ``my_expectation``
+  because this happens when the test runs
+
+  .. code-block:: python
+
+    first_name = 'jane'
+    last_name = 'doe'
+    sex = 'F'
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex=sex,
+                         year_of_birth=1996,
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe',
+                         'sex': 'F'
+                         'age': 26
+                     }
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         first_name=first_name,
+                         last_name=last_name,
+                         sex='F',
+                         age=2026-1996
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'doe',
+                         'sex': 'F',
+                         'age': 30
+                     }
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+         'age': 26},
+        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+         'age': 30}
+    )
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the calculation for ``age`` to ``2026-1996`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``26``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
