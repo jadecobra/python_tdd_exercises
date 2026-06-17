@@ -1926,7 +1926,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
     import datetime    # import object for datetime.py
 
-* ``datetime.datetime`` is a call to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
+* ``datetime.datetime`` is a reference to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
 
   .. code-block:: python
 
