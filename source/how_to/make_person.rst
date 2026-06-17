@@ -2039,10 +2039,6 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
   where ``X`` is a random age
 
-  .. tip::
-
-    Anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`.
-
   - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `random module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``random.py`` file_ on the computer that came with Python_
 
     .. code-block:: python
@@ -2062,6 +2058,8 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
                  including second_number
 
     it returns a random number from 120 years ago, up to and including the current year
+
+  - anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a calculation for the age with the `today method`_ to the `return statement`_ in ``person.py``
 
@@ -2091,7 +2089,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
     NameError: name 'datetime' is not defined.
                Did you forget to import 'datetime'?
 
-  because datetime_ is not defined in this file_
+  because datetime_ is not defined in this file_.
 
 * I add an `import statement`_ for the `datetime module`_ at the top of ``person.py``
 
@@ -2107,22 +2105,37 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
             sex, year_of_birth,
         ):
 
-  the test passes.
+  the test passes because ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ so I can use it in ``person.py``.
 
-  ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ so I can use it in ``person.py``.
+----
 
-* I add a :ref:`variable<what is a variable?>`
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` for ``datetime.datetime.now().year`` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 6
+    :linenos:
+    :emphasize-lines: 14
+
+    import datetime
+    import src.person
+    import unittest
+    import random
+
+
+    class TestPerson(unittest.TestCase):
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
-            # year_of_birth = 1996
+
             this_year = datetime.datetime.now().year
+            # year_of_birth = 1996
             year_of_birth = random.randint(
                 datetime.datetime.now().year-120,
                 datetime.datetime.now().year
@@ -2132,14 +2145,15 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 8-10, 24-28
+    :emphasize-lines: 9-11, 26-27
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
             sex = 'F'
-            # year_of_birth = 1996
+
             this_year = datetime.datetime.now().year
+            # year_of_birth = 1996
             year_of_birth = random.randint(
                 # datetime.datetime.now().year-120,
                 # datetime.datetime.now().year
@@ -2157,11 +2171,11 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
                 last_name=last_name,
                 sex=sex,
                 # age=2026-year_of_birth,
-                # age=(
-                #     datetime.datetime.today().year
-                #   - year_of_birth
-                # ),
-                age=this_year-year_of_birth,
+                age=(
+                    # datetime.datetime.today().year
+                    this_year
+                  - year_of_birth
+                ),
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2198,7 +2212,7 @@ test factory with random sex
   .. code-block:: python
     :lineno-start: 9
     :emphasize-lines: 4-5
-
+7
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
             last_name = 'doe'
