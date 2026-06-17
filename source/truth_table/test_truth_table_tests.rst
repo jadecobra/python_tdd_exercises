@@ -1572,7 +1572,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I use a `return statement`_ because ``if something: return False`` can be written as ``return not (something)``
+* I add a `return statement`_ because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 119
@@ -2058,7 +2058,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I use a `return statement`_ because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
+* I add a `return statement`_ because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
 
   .. code-block:: python
     :lineno-start: 99
@@ -2331,7 +2331,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I use a `return statement`_ because ...
+* I add a `return statement`_ because ...
 
   .. code-block:: python
     :lineno-start: 88
@@ -2586,7 +2586,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I use a `return statement`_ because ...
+* I add a `return statement`_ because ...
 
   .. code-block:: python
     :lineno-start: 83
@@ -2621,44 +2621,53 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`logical_nor<test_logical_nor>` has only one case that returns :green:`True`. I add an :ref:`if statement<if statements>` for it
 
   .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 2-5
+    :lineno-start: 76
+    :emphasize-lines: 2-9
 
     def logical_nor(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
         if first == False and second == False:
             return True
         else:
             return False
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        if (first, second) == (False, True): return False
-        return first, second
 
   the test is still green.
 
-* I remove the other lines, then use :ref:`not<test_logical_negation>` and remove ``== False``
+* I use :ref:`not<test_logical_negation>` to write the :ref:`if statement<if statements>` in terms of :green:`True`
 
   .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 2-3
+    :lineno-start: 76
+    :emphasize-lines: 6-7
 
     def logical_nor(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
         # if first == False and second == False:
-        if not first and not second:
+        if not first == True and not second == True:
             return True
         else:
             return False
 
   still green.
 
-* I use a `return statement`_
+* I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 2
+    :lineno-start: 76
+    :emphasize-lines: 7-8
 
     def logical_nor(first, second):
-        return not first and not second
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == False and second == False:
+        # if not first == True and not second == True:
         if not first and not second:
             return True
         else:
@@ -2666,15 +2675,46 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   green.
 
+* I add a `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 76
+    :emphasize-lines: 7-12
+
+    def logical_nor(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == False and second == False:
+        # if not first == True and not second == True:
+        # if not first and not second:
+        #     return True
+        # else:
+        #     return False
+        return not first and not second
+
+  still green.
+
 * I write the statement with :ref:`not<test_logical_negation>` because it happens 2 times
 
   .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 2
+    :lineno-start: 76
+    :emphasize-lines: 12-13
 
     def logical_nor(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == False and second == False:
+        # if not first == True and not second == True:
+        # if not first and not second:
+        #     return True
+        # else:
+        #     return False
+        # return not first and not second
         return (not first) (not or) (not second)
-        return not first and not second
 
   the terminal_ is my friend, and shows `SyntaxError`_
 
@@ -2682,23 +2722,33 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
     SyntaxError: invalid syntax
 
-* I factor out the :ref:`not<test_logical_negation>`
+* I factor out :ref:`not<test_logical_negation>`
 
   .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 2
+    :lineno-start: 76
+    :emphasize-lines: 13-14
 
     def logical_nor(first, second):
-        return not (first or second)
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if first == False and second == False:
+        # if not first == True and not second == True:
+        # if not first and not second:
+        #     return True
+        # else:
+        #     return False
+        # return not first and not second
         # return (not first) (not or) (not second)
-        return not first and not second
+        return not (first or second)
 
-  the test is green again
+  the test is green again.
 
-* I remove the other statements in :ref:`logical_nor<test_logical_nor>`
+* I remove the commented lines from :ref:`logical_nor<test_logical_nor>`
 
   .. code-block:: python
-    :lineno-start: 113
+    :lineno-start: 76
 
     def logical_nor(first, second):
         return not (first or second)
@@ -2709,52 +2759,78 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 ----
 
-* :ref:`material_implication<test_material_implication>` has only one case that returns :red:`False`, I add a `return statement`_ for it because ``if something: return False`` can be written as ``return not (something)``
+* I add `return statement`_ for the :ref:`if statement<if statements>` of :ref:`material_implication<test_material_implication>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 2-4
 
     def material_implication(first, second):
+        # if (first, second) == (True, False): return False
+        # return first, second
         return not ((first, second) == (True, False))
-        if (first, second) == (True, False): return False
-        return first, second
 
   the test is still green.
 
 * I break up the `return statement`_ to make it simpler
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 4-5
 
     def material_implication(first, second):
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # return not ((first, second) == (True, False))
         return not (first == True and second == False)
-        return not ((first, second) == (True, False))
 
   still green.
 
-* I use :ref:`not<test_logical_negation>` and remove ``== True`` and ``== False``
+* I use :ref:`not<test_logical_negation>` to rewrite it in terms of :green:`True`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 5-6
 
     def material_implication(first, second):
-        return not (first and not second)
-        return not (first == True and second == False)
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # return not ((first, second) == (True, False))
+        # return not (first == True and second == False)
+        return not (first == True and not second == True)
 
   green.
 
-* I multiply :ref:`not<test_logical_negation>` by everything in the parentheses
+* I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 6-7
 
     def material_implication(first, second):
-        return (not first) (not and) (not not second)
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # return not ((first, second) == (True, False))
+        # return not (first == True and second == False)
+        # return not (first == True and not second == True)
         return not (first and not second)
+
+  still green.
+
+* I multiply :ref:`not<test_logical_negation>` by everything in parentheses
+
+  .. code-block:: python
+    :lineno-start: 71
+    :emphasize-lines: 7-8
+
+    def material_implication(first, second):
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # return not ((first, second) == (True, False))
+        # return not (first == True and second == False)
+        # return not (first == True and not second == True)
+        # return not (first and not second)
+        return (not first) (not and) (not not second)
 
   the terminal_ is my friend, and shows `SyntaxError`_
 
@@ -2765,32 +2841,44 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I change ``not and`` to :ref:`or<test_logical_disjunction>`
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 8-9
 
     def material_implication(first, second):
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # return not ((first, second) == (True, False))
+        # return not (first == True and second == False)
+        # return not (first == True and not second == True)
+        # return not (first and not second)
+        # return (not first) (not and) (not not second)
         return (not first) or (not not second)
-        return not (first and not second)
 
-  the test is green again
+  the test is green again.
 
 * I remove ``not not``
 
   .. code-block:: python
-    :lineno-start: 48
-    :emphasize-lines: 2
+    :lineno-start: 71
+    :emphasize-lines: 9-10
 
     def material_implication(first, second):
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # return not ((first, second) == (True, False))
+        # return not (first == True and second == False)
+        # return not (first == True and not second == True)
+        # return not (first and not second)
+        # return (not first) (not and) (not not second)
+        # return (not first) or (not not second)
         return not first or second
-        return (not first) or (not not second)
-        return not (first and not second)
 
-  still green.
+  the test is still green.
 
-* I remove the other statements in :ref:`material_implication<test_material_implication>`
+* I remove the commented lines from :ref:`material_implication<test_material_implication>`
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 71
 
     def material_implication(first, second):
         return not first or second
