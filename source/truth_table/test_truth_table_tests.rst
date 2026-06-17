@@ -2973,47 +2973,57 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   .. code-block:: python
     :lineno-start: 58
-    :emphasize-lines: 2
+    :emphasize-lines: 2-8
 
     def negate_first(first, second):
-        if first == True: return False
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        return first, second
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # return first, second
+        if first == True:
+            return False
+        else:
+            return True
 
   the test is still green.
-
-* I remove ``== True``
-
-  .. code-block:: python
-    :lineno-start: 58
-    :emphasize-lines: 2
-
-    def negate_first(first, second):
-        # if first == True: return False
-        if first: return False
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        return first, second
-
-  still green.
 
 * I add a `return statement`_ because ...
 
   .. code-block:: python
     :lineno-start: 58
-    :emphasize-lines: 2
+    :emphasize-lines: 5-9
 
     def negate_first(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # if first == True:
+        #     return False
+        # else:
+        #     return True
+        return not first == True
+
+  still green.
+
+* I remove ``== True``
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 9-10
+
+    def negate_first(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (True, False): return False
+        # return first, second
+        # if first == True:
+        #     return False
+        # else:
+        #     return True
+        # return not first == True
         return not first
-        if first: return False
-        if (first, second) == (True, True): return False
-        if (first, second) == (True, False): return False
-        return first, second
 
   green.
 
-* I remove the other statements from :ref:`negate_first<test_negate_first>`
+* I remove the commented lines from :ref:`negate_first<test_negate_first>`
 
   .. code-block:: python
     :lineno-start: 58
@@ -3028,33 +3038,61 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 ----
 
-* ``second`` is :ref:`True<test_what_is_true>` in the two cases where :ref:`negate_second<test_negate_second>` returns :red:`False`. I add a `return statement`_ ``if something: return False`` can be written as ...
+* ``second`` is :ref:`True<test_what_is_true>` in the two cases where :ref:`negate_second<test_negate_second>` returns :red:`False`. I add an :ref:`if statement<if statements>` for them
 
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 2
+    :emphasize-lines: 2-8
 
     def negate_second(first, second):
-        return not second == True
-        if (first, second) == (True, True): return False
-        if (first, second) == (False, True): return False
-        return first, second
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        if second == True:
+            return False
+        else:
+            return True
 
   the test is still green.
+
+* I add a `return statement`_ because ``if something == False:`` can be written as ``return not something``
+
+  .. code-block:: python
+    :lineno-start: 52
+    :emphasize-lines: 5-9
+
+    def negate_second(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if second == True:
+        #     return False
+        # else:
+        #     return True
+        return not second == True
+
+  still green.
 
 * I remove ``== True``
 
   .. code-block:: python
     :lineno-start: 52
-    :emphasize-lines: 2
+    :emphasize-lines: 9-10
 
     def negate_second(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # return first, second
+        # if second == True:
+        #     return False
+        # else:
+        #     return True
+        # return not second == True
         return not second
-        return not second == True
 
   green.
 
-I remove the commented lines from :ref:`negate_second<test_negate_second>`
+* I remove the commented lines from ``truth_table.py`` because all the other :ref:`functions<what is a function?>` are already simple
 
   .. code-block:: python
     :linenos:
@@ -3137,8 +3175,6 @@ I remove the commented lines from :ref:`negate_second<test_negate_second>`
 
     def contradiction(first, second):
         return False
-
-* all the other :ref:`functions<what is a function?>` are already simple
 
 ----
 
