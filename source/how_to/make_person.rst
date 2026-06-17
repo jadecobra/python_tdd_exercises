@@ -2256,20 +2256,22 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
             this_year = datetime.datetime.now().year
 
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times
 
-  If ``sex`` is randomly ``'M'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  - if the value of ``sex`` is ``'F'``, the test passes
+  - if the value of  ``sex`` is ``'M'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
-    :emphasize-text: M F
+    .. code-block:: python
+      :emphasize-text: M F
 
-    AssertionError:
-        {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
-         'age': X}
-     != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M',
-         'age': X}
+      AssertionError:
+          {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F',
+           'age': X}
+       != {'first_name': 'jane', 'last_name': 'doe', 'sex': 'M',
+           'age': X}
 
-  - where ``X`` is the random age
+    where ``X`` is the random age
+
   - ``random`` is the `random module`_
   - ``random.choice`` is a :ref:`method<what is a method?>` of the `random module`_
   - ``('F', 'M')`` is a tuple_ with two strings_
@@ -2280,9 +2282,9 @@ I want to use random values in the test to make sure the :ref:`factory function<
       def choice(collection):
           return random object from collection
 
-    it returns ``'F'`` or ``'M'`` randomly every time the test runs.
+    it randomly returns ``'F'`` or ``'M'`` every time the test runs.
 
-  - I can also use random.choice(``'FM'``) to get the same result as ``random.choice(('F', 'M'))`` because a string_ like a tuple_ is :ref:`iterable<what is an iterable?>`
+  - I can also use random.choice(``'FM'``) to get the same result as ``random.choice(('F', 'M'))`` because a string_ like a tuple_ is :ref:`iterable<what is an iterable?>` and `random.choice`_ expects an :ref:`iterable<what is an iterable?>` as input
 
 ----
 
@@ -2292,30 +2294,47 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-* I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'sex'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, to the `return statement`_ in ``person.py``
+I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'sex'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the `return statement`_ in ``person.py``
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 8-9
+
+  def factory(
+          first_name, last_name,
+          sex, year_of_birth,
+      ):
+      return {
+          'first_name': 'jane',
+          'last_name': 'doe',
+          # 'sex': 'F',
+          'sex': sex,
+          # 'age': 30,
+          'age': (
+              datetime.datetime.today().year
+            - year_of_birth
+          ),
+      }
+
+I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 8-9
+    :lineno-start: 9
 
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
-        return {
-            'first_name': 'jane',
-            'last_name': 'doe',
-            # 'sex': 'F',
-            'sex': sex,
-            # 'age': 30,
-            'age': (
-                datetime.datetime.today().year
-              - year_of_birth
-            ),
-        }
-
-
-  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = random.choice(('F', 'M'))
 
 * I add a git_ commit message in the other terminal_
 
@@ -2356,23 +2375,24 @@ I want to use random values in the test to make sure the :ref:`factory function<
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
             ))
-            # sex = 'F'
             sex = random.choice(('F', 'M'))
 
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes if ``last_name`` is ``'doe'``.
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times
 
-  If ``last_name`` is NOT ``doe``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  - if the value of ``last_name`` is ``'doe'``, the test passes
+  - if the value of ``last_name`` is NOT ``doe``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    AssertionError:
-        {'first_name': 'jane', 'last_name': 'doe', 'sex': Y,
-         'age': X}
-     != {'first_name': 'jane', 'last_name': Z,     'sex': Y,
-         'age': X}
+      AssertionError:
+          {'first_name': 'jane', 'last_name': 'doe', 'sex': Y,
+           'age': X}
+       != {'first_name': 'jane', 'last_name': Z,     'sex': Y,
+           'age': X}
 
-  - where ``Z`` is the random last name, ``Y`` is the random sex and ``X`` is the random age
-  - ``random.choice(('doe', 'smith', 'blow', 'public',))`` is a call to the `choice method`_ of the `random module`_ with ``('doe', 'smith', 'blow', 'public',)`` as input. It returns ``'doe'`` or ``'smith'`` or ``'blow'`` or ``'public'`` randomly every time the test runs.
+    where ``Z`` is the random last name, ``Y`` is the random sex and ``X`` is the random age
+
+  - ``random.choice(('doe', 'smith', 'blow', 'public',))`` is a call to the `choice method`_ of the `random module`_ with ``('doe', 'smith', 'blow', 'public',)`` as input. It randomly returns ``'doe'`` or ``'smith'`` or ``'blow'`` or ``'public'`` every time the test runs.
 
 ----
 
@@ -2382,30 +2402,50 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-* I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the `return statement`_ in ``person.py``
+I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the `return statement`_ in ``person.py``
+
+.. code-block:: python
+  :lineno-start: 4
+  :emphasize-lines: 7-8
+
+  def factory(
+          first_name, last_name,
+          sex, year_of_birth,
+      ):
+      return {
+          'first_name': 'jane',
+          # 'last_name': 'doe',
+          'last_name': last_name,
+          # 'sex': 'F',
+          'sex': sex,
+          # 'age': 30,
+          'age': (
+              datetime.datetime.today().year
+            - year_of_birth
+          ),
+      }
+
+I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented line from ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
+    :lineno-start: 9
 
-    def factory(
-            first_name, last_name,
-            sex, year_of_birth,
-        ):
-        return {
-            'first_name': 'jane',
-            # 'last_name': 'doe',
-            'last_name': last_name,
-            # 'sex': 'F',
-            'sex': sex,
-            # 'age': 30,
-            'age': (
-                datetime.datetime.today().year
-              - year_of_birth
-            ),
-        }
-
-  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures
+    def test_factory_w_keyword_arguments(self):
+        first_name = 'jane'
+        last_name = random.choice((
+            'doe', 'smith', 'blow', 'public',
+        ))
+        sex = random.choice(('F', 'M'))
 
 * I add a git_ commit message in the other terminal_
 
@@ -2445,25 +2485,25 @@ I want to use random values in the test to make sure the :ref:`factory function<
             first_name = random.choice((
                 'jane', 'joe', 'john', 'person',
             ))
-            # last_name = 'doe'
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
             ))
-            # sex = 'F'
             sex = random.choice(('F', 'M'))
 
-* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes if ``first_name`` is ``'jane'``.
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times
 
-  If ``first_name`` is not ``'jane'`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  - if the value of ``first_name`` is ``'jane'``, the test passes
+  - if the value of ``first_name`` is NOT ``'jane'`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
+    .. code-block:: python
 
-    AssertionError:
-        {'first_name': 'jane', 'last_name': Z, 'sex': Y, 'age': X}
-     != {'first_name': A,      'last_name': Z, 'sex': Y, 'age': X}
+      AssertionError:
+          {'first_name': 'jane', 'last_name': Z, 'sex': Y, 'age': X}
+       != {'first_name': A,      'last_name': Z, 'sex': Y, 'age': X}
 
-  - where ``A`` is the random first name, ``Z`` is the random last name, ``Y`` is the random sex, and ``X`` is the random age
-  - ``random.choice(('jane', 'joe', 'john', 'person',))`` is a call to the `choice method`_ of the `random module`_ with ``('jane', 'joe', 'john', 'person',)`` as input. It returns ``'jane'`` or ``'joe'`` or ``'john'`` or ``'person'`` randomly every time the test runs.
+    where ``A`` is the random first name, ``Z`` is the random last name, ``Y`` is the random sex, and ``X`` is the random age
+
+  - ``random.choice(('jane', 'joe', 'john', 'person',))`` is a call to the `choice method`_ of the `random module`_ with ``('jane', 'joe', 'john', 'person',)`` as input. It randomly returns ``'jane'`` or ``'joe'`` or ``'john'`` or ``'person'`` every time the test runs.
 
 
 ----
@@ -2474,7 +2514,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the `return statement`_ in ``person.py``
+I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, in the `return statement`_ in ``person.py``
 
 .. code-block:: python
   :lineno-start: 4
@@ -2530,6 +2570,20 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
             ),
         }
 
+* I remove the commented line from ``test_person.py``
+
+  .. code-block:: python
+    :lineno-start: 9
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = random.choice((
+                'jane', 'joe', 'john', 'person',
+            ))
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            sex = random.choice(('F', 'M'))
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2545,7 +2599,7 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 extract pick_one function
 *********************************************************************************
 
-The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable?>` all call the `random.choice method`_. I can add a :ref:`function<what is a function?>` to remove repetition of the calls.
+The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable?>` all call the `random.choice method`_. I can add a :ref:`function<what is a function?>` for the calls.
 
 ----
 
@@ -2571,83 +2625,52 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 
         def test_factory_w_keyword_arguments(self):
 
-* I use the new :ref:`function<what is a function?>` to remove repetition of `random.choice`_ from the ``first_name`` :ref:`variable<what is a variable?>`
+* I use the new :ref:`function<what is a function?>` for the ``first_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 3-4
+    :emphasize-lines: 2-3
 
         def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
             # first_name = random.choice((
             first_name = pick_one((
                 'jane', 'joe', 'john', 'person',
             ))
-            # last_name = 'doe'
             last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
             ))
-            # sex = 'F'
             sex = random.choice(('F', 'M'))
 
-  the test is still green.
+  the test is still green. So far, this is exactly the same as `random.choice`_, why would I make a :ref:`function<what is a function?>` that is exactly the same?
 
-* I use the new :ref:`function<what is a function?>` to remove repetition of `random.choice`_ from the ``last_name`` and ``sex`` :ref:`variables<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 8-9, 13-14
-
-        def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
-            # first_name = random.choice((
-            first_name = pick_one((
-                'jane', 'joe', 'john', 'person',
-            ))
-            # last_name = 'doe'
-            # last_name = random.choice((
-            last_name = pick_one((
-                'doe', 'smith', 'blow', 'public',
-            ))
-            # sex = 'F'
-            # sex = random.choice(('F', 'M'))
-            sex = pick_one(('F', 'M'))
-
-  still green. So far, this is exactly the same as `random.choice`_, why would I make a :ref:`function<what is a function?>` that is exactly the same?
-
-* Each call to the `random.choice`_ passes a tuple_ (:ref:`an iterable<what is an iterable?>`). I want the :ref:`function<what is a function?>` to be able to take any number of arguments I send, without it knowing how many I will send
+* Each call to the `random.choice`_ passes a tuple_ (:ref:`an iterable<what is an iterable?>`). I want the :ref:`function<what is a function?>` to be able to take any number of arguments I send, without knowing how many I will send
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 4-5, 7-8
+    :emphasize-lines: 3-4, 6-7
 
         def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
             # first_name = random.choice((
             # first_name = pick_one((
             first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             # ))
             )
-            # last_name = 'doe'
-            # last_name = random.choice((
-            last_name = pick_one((
+            last_name = random.choice((
                 'doe', 'smith', 'blow', 'public',
             ))
-            # sex = 'F'
-            # sex = random.choice(('F', 'M'))
-            sex = pick_one(('F', 'M'))
+            sex = random.choice(('F', 'M'))
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: pick_one() takes 1 positional argument
-               but 4 were given
+    TypeError: pick_one() takes
+               1 positional argument but 4 were given
 
   because the :ref:`function definition<how to make a function>` only takes one input and the test sends four.
 
-* I change the :ref:`definition<how to make a function>` of the ``pick_one`` :ref:`function<what is a function?>` with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_w_unknown_arguments` so that it can take any number of :ref:`positional arguments<test_w_positional_arguments>`
+* I add a :ref:`starred expression<starred expressions>` like I did in :ref:`test_w_unknown_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_w_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2656,63 +2679,84 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
     def pick_one(*choices):
         return random.choice(choices)
 
-  the test is green again, because :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``)
+  the test is green again, because
 
-* I do the same thing with ``last_name`` and ``sex``
+  .. code-block:: python
+
+    first_name = pick_one('jane', 'joe', 'john', 'person')
+                 pick_one(*choices)
+                 random.choice(*choices)
+                 random.choice(('jane', 'joe', 'john', 'person'))
+                 # randomly return
+                 # 'jane' or 'joe' or 'john' or 'person'
+
+  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``).
+
+* I use the new :ref:`function<what is a function?>` for the ``last_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines:
+    :emphasize-lines: 8-9, 11-12
 
         def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
             # first_name = random.choice((
             # first_name = pick_one((
             first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             # ))
             )
-            # last_name = 'doe'
             # last_name = random.choice((
-            # last_name = pick_one((
             last_name = pick_one(
                 'doe', 'smith', 'blow', 'public',
             # ))
             )
-            # sex = 'F'
-            # sex = random.choice(('F', 'M'))
-            # sex = pick_one(('F', 'M'))
-            sex = pick_one('F', 'M')
+            sex = random.choice(('F', 'M'))
 
-  the test is still green because this happens when ``pick_one`` is called
-
-  .. code-block:: python
-
-    first_name = pick_one('jane', 'joe', 'john', 'person')
-                 pick_one(*choices)
-                 random.choice(choices)
-                 random.choice(
-                     ('jane', 'joe', 'john', 'person')
-                 )
-                 # 'jane' or 'joe' or 'john' or 'person'
+  the test is still green, because
 
   .. code-block:: python
 
     last_name = pick_one('doe', 'smith', 'blow', 'public')
                 pick_one(*choices)
-                random.choice(choices)
-                random.choice(
-                    ('doe', 'smith', 'blow', 'public')
-                )
+                random.choice(*choices)
+                random.choice(('doe', 'smith', 'blow', 'public'))
+                # randomly return
                 # 'doe' or 'smith' or 'blow' or 'public'
+
+  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``).
+
+* I use the new :ref:`function<what is a function?>` for the ``sex`` :ref:`variable<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 13-14
+
+        def test_factory_w_keyword_arguments(self):
+            # first_name = random.choice((
+            # first_name = pick_one((
+            first_name = pick_one(
+                'jane', 'joe', 'john', 'person',
+            # ))
+            )
+            # last_name = random.choice((
+            last_name = pick_one(
+                'doe', 'smith', 'blow', 'public',
+            # ))
+            )
+            # sex = random.choice(('F', 'M'))
+            sex = pick_one('F', 'M')
+
+  still green, because
 
   .. code-block:: python
 
-    sex = pick_one('F', 'M')
+    sex = pick_one('F', 'M'')
           pick_one(*choices)
-          random.choice(choices)
+          random.choice(*choices)
           random.choice(('F', 'M'))
-          # 'F' or 'M'
+          # randomly return 'F' or 'M'
+
+  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``).
 
 * I remove the commented lines
 
@@ -2729,28 +2773,6 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
             )
             sex = pick_one('F', 'M')
 
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
-            )
-
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
-            )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                age=this_year-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -2766,7 +2788,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 test factory with a dictionary
 *********************************************************************************
 
-The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` (``reality``) and the :ref:`dictionary<what is a dictionary?>` for ``my_expectation`` in the test is that one has a year of birth and the other does a calculation with the year of birth, the other things are the same. I can use a :ref:`dictionary<what is a dictionary>` to remove the repeating parts.
+The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` (``reality``) and the :ref:`dictionary<what is a dictionary?>` for ``my_expectation`` in the test is that one has a year of birth and the other does a calculation with the year of birth, the other things are the same. I can use a :ref:`dictionary<what is a dictionary?>` to remove the repeating parts.
 
 ----
 
