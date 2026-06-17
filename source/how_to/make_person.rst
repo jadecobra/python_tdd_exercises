@@ -2925,10 +2925,6 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
                   year_of_birth
               )
                   src.person.factory(
-                      a_person,
-                      year_of_birth
-                  )
-                  src.person.factory(
                       first_name=a_person,
                       year_of_birth=year_of_birth
                   )
@@ -3062,12 +3058,12 @@ the test is green again, because this happens
                          a_person,
                          age=this_year-year_of_birth
                      )
-                     dict(
-                         first_name=first_name,
-                         last_name=last_name,
-                         sex=sex,
-                         age=this_year-year_of_birth
-                     )
+                         dict(
+                             first_name=first_name,
+                             last_name=last_name,
+                             sex=sex,
+                             age=this_year-year_of_birth
+                         )
 
   the :ref:`dict constructor<test_making_a_dictionary>` can take another :ref:`dictionary<what is a dictionary?>` as input and uses the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as :ref:`keyword arguments<test_w_keyword_arguments>`.
 
@@ -3468,20 +3464,20 @@ I want to see what happens when I try to make a person without a value for the `
                   **a_person,
                   year_of_birth=year_of_birth,
               )
-              src.person.factory(
-                  first_name=get_random_name(),
-                  sex=pick_one('F', 'M'),
-                  year_of_birth=year_of_birth,
-              )
-              src.person.factory(
-                  first_name=get_random_name(),
-                  sex=pick_one('F', 'M'),
-                  last_name=None, # use the default value
-                  year_of_birth=year_of_birth,
-              )
+                  src.person.factory(
+                      first_name=get_random_name(),
+                      sex=pick_one('F', 'M'),
+                      year_of_birth=year_of_birth,
+                  )
+                  src.person.factory(
+                      first_name=get_random_name(),
+                      sex=pick_one('F', 'M'),
+                      last_name=None, # use the default value
+                      year_of_birth=year_of_birth,
+                  )
               # the factory function returns
               {'first_name': Z, 'last_name': None, 'sex': Y,
-               'age': X}
+                'age': X}
 
   .. code-block:: python
 
@@ -3489,11 +3485,11 @@ I want to see what happens when I try to make a person without a value for the `
                          a_person,
                          age=this_year-year_of_birth,
                      )
-                     dict(
-                         first_name=get_random_name(),
-                         sex=pick_one('F', 'M'),
-                         year_of_birth=year_of_birth,
-                     )
+                         dict(
+                             first_name=get_random_name(),
+                             sex=pick_one('F', 'M'),
+                             year_of_birth=year_of_birth,
+                         )
                      # the dict constructor returns
                      {'first_name': Z, 'sex': Y, 'age': X}
 
@@ -3619,16 +3615,16 @@ I want to see what happens when I try to make a person without a value for the `
                   **a_person,
                   year_of_birth=year_of_birth,
               )
-              src.person.factory(
-                  first_name=get_random_name(),
-                  year_of_birth=year_of_birth,
-              )
-              src.person.factory(
-                  first_name=get_random_name(),
-                  sex=None,        # use the default value
-                  last_name='doe', # use the default value
-                  year_of_birth=year_of_birth,
-              )
+                  src.person.factory(
+                      first_name=get_random_name(),
+                      year_of_birth=year_of_birth,
+                  )
+                  src.person.factory(
+                      first_name=get_random_name(),
+                      sex=None,        # use the default value
+                      last_name='doe', # use the default value
+                      year_of_birth=year_of_birth,
+                  )
               # the factory function returns
               {'first_name': Z, 'last_name': 'doe,
                'sex': None, 'age': X}
@@ -3640,11 +3636,11 @@ I want to see what happens when I try to make a person without a value for the `
                          last_name='doe',
                          age=this_year-year_of_birth,
                      )
-                     dict(
-                         first_name=get_random_name(),
-                         last_name='doe',
-                         year_of_birth=year_of_birth,
-                     )
+                         dict(
+                             first_name=get_random_name(),
+                             last_name='doe',
+                             year_of_birth=year_of_birth,
+                         )
                      # the dict constructor returns
                      {'first_name': Z, 'last_name': 'doe', 'age': X}
 
