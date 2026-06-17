@@ -1657,8 +1657,11 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 15-16
+    :emphasize-lines: 18-19
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -1695,7 +1698,7 @@ test_factory_w_keyword_arguments
             'age': 30,
         }
 
-* I typed the year of birth two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of the year of birth from ``test_person.py``
+* I typed the year of birth two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``1996`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -1707,13 +1710,13 @@ test_factory_w_keyword_arguments
             sex = 'F'
             year_of_birth = 1996
 
-            reality = src.person.factory(
+            # reality = src.person.factory()
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of the year of birth
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``1996`` from the test
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 18-19, 32-33
+    :emphasize-lines: 19-20, 35-36
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1721,6 +1724,7 @@ test_factory_w_keyword_arguments
             sex = 'F'
             year_of_birth = 1996
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1735,6 +1739,8 @@ test_factory_w_keyword_arguments
                 # year_of_birth=1996,
                 year_of_birth=year_of_birth,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -1754,7 +1760,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the test is still green.
+  the test is still green. I now only need to change the value of ``sex`` in one place in the test.
 
 * I remove the commented lines
 
@@ -1783,8 +1789,6 @@ test_factory_w_keyword_arguments
 
 
     # Exceptions seen
-
-  I now only need to change the value of ``sex`` in one place in the test.
 
 * I open a new terminal_ then change directories to ``person``
 
