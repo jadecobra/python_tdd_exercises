@@ -398,7 +398,7 @@ test_factory_w_keyword_arguments
 
 * I open ``person.py`` from the ``src`` folder
 
-* I delete the text, then add a :ref:`function<what is a function?>` to ``person.py``
+* I delete all the text in the file_, then add a :ref:`function<what is a function?>` to ``person.py``
 
   .. code-block:: python
     :linenos:
@@ -407,7 +407,7 @@ test_factory_w_keyword_arguments
     def factory():
         return None
 
-  the test passes.
+  the test passes because when ``src.person.factory()`` is called, Python_ checks ``person.py`` in the ``src`` folder_ for a :ref:`function definition<how to make a function>` with the name ``factory`` and finds it.
 
 ----
 
@@ -417,13 +417,14 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_w_keyword_arguments>` called ``first_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take an argument called ``first_name``. I add it to the call from the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 2-4
+    :emphasize-lines: 2-5
 
         def test_factory_w_keyword_arguments(self):
+            # reality = src.person.factory()
             reality = src.person.factory(
                 first_name='first_name',
             )
@@ -440,12 +441,12 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'first_name'
 
-  because the :ref:`function definition<how to make a function>` for ``src.person.factory`` does not allow calling it with inputs (the parentheses are empty) and the test sends ``'first_name'`` as input.
+  because the :ref:`function definition<how to make a function>` for ``factory`` in ``person.py`` in the ``src`` folder_, does not allow calling it with inputs (the parentheses are empty) and the test sends ``'first_name'`` as input.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 16
     :emphasize-lines: 5
     :emphasize-text: TypeError
 
@@ -459,8 +460,9 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # def factory():
     def factory(first_name):
         return None
 
@@ -468,13 +470,14 @@ test_factory_w_keyword_arguments
 
 -----
 
-* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_w_keyword_arguments>` called ``last_name``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take an argument called ``last_name``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
         def test_factory_w_keyword_arguments(self):
+            # reality = src.person.factory()
             reality = src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
@@ -493,14 +496,16 @@ test_factory_w_keyword_arguments
                an unexpected keyword argument 'last_name'.
                Did you mean 'first_name'?
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``last_name``) that is not in the :ref:`function definition<how to make a function>`.
 
 * I add ``last_name`` to the :ref:`function definition<how to make a function>` in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 2-3
 
+    # def factory():
+    # def factory(first_name):
     def factory(first_name, last_name):
         return None
 
@@ -508,13 +513,14 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_w_keyword_arguments>` called ``sex``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take an argument called ``sex``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 5
+    :emphasize-lines: 6
 
         def test_factory_w_keyword_arguments(self):
+            # reality = src.person.factory()
             reality = src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
@@ -533,14 +539,17 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'sex'
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``sex``) that is not in the :ref:`function definition<how to make a function>`.
 
 * I add ``sex`` as an input parameter to the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-4
+    :emphasize-lines: 3-7
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex,
@@ -551,13 +560,14 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`function<what is a function?>` to take a :ref:`keyword argument<test_w_keyword_arguments>` for ``year_of_birth``. I add it to the test in ``test_person.py``
+* I want the :ref:`function<what is a function?>` to take an argument for ``year_of_birth``. I add it to the test in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 6
+    :emphasize-lines: 7
 
         def test_factory_w_keyword_arguments(self):
+            # reality = src.person.factory()
             reality = src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
@@ -577,14 +587,17 @@ test_factory_w_keyword_arguments
     TypeError: factory() got
                an unexpected keyword argument 'year_of_birth'
 
-  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`
+  because the test called the :ref:`factory function<test_factory_w_keyword_arguments>` with a :ref:`keyword argument<test_w_keyword_arguments>` (``year_of_birth``) that is not in the :ref:`function definition<how to make a function>`.
 
 * I add the name to the :ref:`function definition<how to make a function>` in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3
+    :emphasize-lines: 6
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -602,12 +615,14 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 8
 
         def test_factory_w_keyword_arguments(self):
+            # reality = src.person.factory()
             reality = src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
             my_expectation = dict()
             self.assertEqual(reality, my_expectation)
 
@@ -620,14 +635,39 @@ test_factory_w_keyword_arguments
 
     AssertionError: None != {}
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``{}``
+  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
 
-* I change :ref:`None<what is None?>` to a :ref:`dictionary<what is a dictionary?>` in the `return statement`_ in ``person.py``
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name='first_name',
+                         last_name='last_name',
+                         sex='M',
+                         year_of_birth=2000,
+                     )
+                   = None # the function returns None
+
+  .. code-block:: python
+
+    my_expectation = dict()
+                   = {}
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(None   , {}            )
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``{}``.
+
+* I change :ref:`None<what is None?>` in the `return statement`_, to give the test what it wants, in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 5-6
+    :emphasize-lines: 8-9
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -643,15 +683,18 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 9
+    :emphasize-lines: 10-13
 
         def test_factory_w_keyword_arguments(self):
+            # reality = src.person.factory()
             reality = src.person.factory(
                 first_name='first_name',
                 last_name='last_name',
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 first_name='first_name',
             )
@@ -666,14 +709,39 @@ test_factory_w_keyword_arguments
 
     AssertionError: {} != {'first_name': 'first_name'}
 
-  because the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the :ref:`assertion<what is an assertion?>` expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`
+  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name='first_name',
+                         last_name='last_name',
+                         sex='M',
+                         year_of_birth=2000,
+                     )
+                   = {} # the function returns {}
+
+  .. code-block:: python
+
+    my_expectation = dict(first_name='first_name')
+                   = {'first_name': 'first_name'}
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation              )
+    self.assertEqual({}     , {'first_name': 'first_name'})
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`function<what is a function?>` returns :ref:`the empty dictionary<test_making_a_dictionary>` and the :ref:`assertion<what is an assertion?>` expects one with ``first_name`` as the :ref:`key<test_keys_of_a_dictionary>`.
 
 * I change the `return statement`_ to give the test what it wants, in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-7
+    :emphasize-lines: 9-10
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -691,6 +759,7 @@ test_factory_w_keyword_arguments
     :emphasize-lines: 3-4, 10-11
 
         def test_factory_w_keyword_arguments(self):
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 first_name='jane',
@@ -698,6 +767,8 @@ test_factory_w_keyword_arguments
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 first_name='jane',
@@ -714,14 +785,42 @@ test_factory_w_keyword_arguments
     AssertionError: {'first_name': 'first_name'}
                  != {'first_name': 'jane'}
 
-  because I changed the value for ``first_name`` in ``my_expectation``
+  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name='jane',
+                         last_name='last_name',
+                         sex='M',
+                         year_of_birth=2000,
+                     )
+                   = {'first_name': 'first_name'}
+
+  .. code-block:: python
+
+    my_expectation = dict(first_name='jane')
+                   = {'first_name': 'jane'}
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(
+        {'first_name': 'first_name'},
+        {'first_name': 'jane'}
+    )
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``first_name`` to ``'jane'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'first_name'``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7-8
+    :emphasize-lines: 10-11
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -733,7 +832,7 @@ test_factory_w_keyword_arguments
 
   the test passes.
 
-* I typed the value for ``first_name`` two times in the test, which means I have to make a change in two places every time I want a different value for it. I add a :ref:`variable<what is a variable?>` to use to remove the repetition of ``'jane'`` from ``test_person.py``
+* I typed the value for ``first_name`` two times in the test, which means I had to make a change in two places when I wanted a different value for it. I add a :ref:`variable<what is a variable?>` for ``'jane'`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -742,17 +841,18 @@ test_factory_w_keyword_arguments
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
-            reality = src.person.factory(
+            # reality = src.person.factory()
 
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'``
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'jane'`` from the test
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 6-7, 14-15
+    :emphasize-lines: 7-8, 17-18
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -761,6 +861,8 @@ test_factory_w_keyword_arguments
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -779,11 +881,12 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 16
+    :emphasize-lines: 19
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -792,6 +895,8 @@ test_factory_w_keyword_arguments
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',
@@ -811,12 +916,46 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane'}
      != {'first_name': 'jane', 'last_name': 'last_name'}
 
+  because this happens when ``self.assertEqual(reality, my_expectation)`` runs
+
+  .. code-block:: python
+
+    reality        = src.person.factory(
+                         first_name='jane',
+                         last_name='last_name',
+                         sex='M',
+                         year_of_birth=2000,
+                     )
+                   = {'first_name': 'jane'}
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         first_name='jane',
+                         last_name='last_name',
+                     )
+                   = {
+                         'first_name': 'jane',
+                         'last_name': 'last_name'
+                     }
+
+  .. code-block:: python
+
+    self.assertEqual(reality, my_expectation)
+    self.assertEqual(
+        {'first_name': 'jane'},
+        {'first_name': 'jane', 'last_name': 'last_name'}
+    )
+
 * I change the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 8-12
+    :emphasize-lines: 11-15
 
+    # def factory():
+    # def factory(first_name):
+    # def factory(first_name, last_name):
     def factory(
             first_name, last_name,
             sex, year_of_birth,
@@ -841,6 +980,7 @@ test_factory_w_keyword_arguments
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
 
+            # reality = src.person.factory()
             reality = src.person.factory(
                 # first_name='first_name',
                 # first_name='jane',
@@ -850,6 +990,8 @@ test_factory_w_keyword_arguments
                 sex='M',
                 year_of_birth=2000,
             )
+            # my_expectation = None
+            # my_expectation = dict()
             my_expectation = dict(
                 # first_name='first_name',
                 # first_name='jane',

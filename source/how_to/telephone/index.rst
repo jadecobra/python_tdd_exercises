@@ -413,7 +413,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
 * I open ``telephone.py`` from the ``src`` folder
 
-* I delete the text, then add a name to ``telephone.py``
+* I delete all the text in the file_, then add a name to ``telephone.py``
 
   .. code-block:: python
     :linenos:
