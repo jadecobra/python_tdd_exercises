@@ -178,7 +178,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
             )
         )
 
-  the test passes with no more random failures, green, green, green, green all the way!
+  the test passes with no random failures, green, green, green, green all the way!
 
 *********************************************************************************
 :yellow:`REFACTOR`: make it better

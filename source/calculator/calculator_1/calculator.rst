@@ -1093,7 +1093,7 @@ I can do this with the `random module`_ from `The Python Standard Library`_, it 
                 first_number+first_number
             )
 
-  I use (:kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_)) a few times to run the tests and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
+  I use (:kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_)) a few times to run the tests and the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>` with random values that look like this
 
   .. code-block:: python
 

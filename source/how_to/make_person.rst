@@ -2059,7 +2059,7 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
     it returns a random number from 120 years ago, up to and including the current year
 
-  - anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`
+  - anytime I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a calculation for the age with the `today method`_ to the `return statement`_ in ``person.py``
 
@@ -2223,7 +2223,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
             this_year = datetime.datetime.now().year
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes if ``sex`` is randomly ``'F'``.
 
   If ``sex`` is randomly ``'M'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2259,7 +2259,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-* I add the ``sex`` input parameter instead of a value that does not change, to the `return statement`_ in ``person.py``
+* I use the ``sex`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'sex'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change, to the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2282,7 +2282,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
         }
 
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures
 
 * I add a git_ commit message in the other terminal_
 
@@ -2325,15 +2325,8 @@ I want to use random values in the test to make sure the :ref:`factory function<
             ))
             # sex = 'F'
             sex = random.choice(('F', 'M'))
-            # year_of_birth = 1996
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
-            )
 
-* I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``last_name`` is ``'doe'``.
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes if ``last_name`` is ``'doe'``.
 
   If ``last_name`` is NOT ``doe``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2345,7 +2338,8 @@ I want to use random values in the test to make sure the :ref:`factory function<
      != {'first_name': 'jane', 'last_name': Z,     'sex': Y,
          'age': X}
 
-  where ``Z`` is the random last name, ``X`` is the random age, and ``Y`` is the random sex.
+  - where ``Z`` is the random last name, ``Y`` is the random sex and ``X`` is the random age
+  - ``random.choice(('doe', 'smith', 'blow', 'public',))`` is a call to the `choice method`_ of the `random module`_ with ``('doe', 'smith', 'blow', 'public',)`` as input. It returns ``'doe'`` or ``'smith'`` or ``'blow'`` or ``'public'`` randomly every time the test runs.
 
 ----
 
@@ -2355,7 +2349,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
 
 ----
 
-* I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` in the `return statement`_ in ``person.py``
+* I use the ``last_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the `return statement`_ in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
@@ -2378,7 +2372,7 @@ I want to use random values in the test to make sure the :ref:`factory function<
             ),
         }
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures
 
 * I add a git_ commit message in the other terminal_
 
@@ -2394,6 +2388,8 @@ I want to use random values in the test to make sure the :ref:`factory function<
 *********************************************************************************
 test factory with random first name
 *********************************************************************************
+
+I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values for ``first_name``.
 
 ----
 
@@ -2422,15 +2418,8 @@ test factory with random first name
             ))
             # sex = 'F'
             sex = random.choice(('F', 'M'))
-            # year_of_birth = 1996
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
-            )
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if ``first_name`` is ``'jane'``.
+* I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes if ``first_name`` is ``'jane'``.
 
   If ``first_name`` is not ``'jane'`` the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -2440,7 +2429,9 @@ test factory with random first name
         {'first_name': 'jane', 'last_name': Z, 'sex': Y, 'age': X}
      != {'first_name': A,      'last_name': Z, 'sex': Y, 'age': X}
 
-  where ``A`` is the random first name, ``X`` is the random age, ``Y`` is the random sex, and ``Z`` is the random last name
+  - where ``A`` is the random first name, ``Z`` is the random last name, ``Y`` is the random sex, and ``X`` is the random age
+  - ``random.choice(('jane', 'joe', 'john', 'person',))`` is a call to the `choice method`_ of the `random module`_ with ``('jane', 'joe', 'john', 'person',)`` as input. It returns ``'jane'`` or ``'joe'`` or ``'john'`` or ``'person'`` randomly every time the test runs.
+
 
 ----
 
@@ -2450,31 +2441,31 @@ test factory with random first name
 
 ----
 
-I add the ``first_name`` input parameter instead of a value that does not change, to the `return statement`_ in ``person.py``
+I use the ``first_name`` input parameter as the :ref:`value<test_values_of_a_dictionary>` for the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>` instead of a value that does not change in the `return statement`_ in ``person.py``
 
 .. code-block:: python
   :lineno-start: 4
   :emphasize-lines: 6-7
 
-  def factory(
-          first_name, last_name,
-          sex, year_of_birth,
-      ):
-      return {
-          # 'first_name': 'jane',
-          'first_name': first_name,
-          # 'last_name': 'doe',
-          'last_name': last_name,
-          # 'sex': 'F',
-          'sex': sex,
-          # 'age': 30,
-          'age': (
-              datetime.datetime.today().year
-            - year_of_birth
-          ),
-      }
+    def factory(
+            first_name, last_name,
+            sex, year_of_birth,
+        ):
+        return {
+            # 'first_name': 'jane',
+            'first_name': first_name,
+            # 'last_name': 'doe',
+            'last_name': last_name,
+            # 'sex': 'F',
+            'sex': sex,
+            # 'age': 30,
+            'age': (
+                datetime.datetime.today().year
+              - year_of_birth
+            ),
+        }
 
-I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures.
 
 ----
 
@@ -2487,7 +2478,10 @@ I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the te
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 4
+    :linenos:
+
+    import datetime
+
 
     def factory(
             first_name, last_name,
@@ -3356,7 +3350,7 @@ I want to see what happens when I try to make a person without a value for the `
 
     # Exceptions seen
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures
 
 * I remove the commented lines and the ``a_person`` :ref:`dictionary<what is a dictionary?>`
 
@@ -4697,7 +4691,7 @@ I want to use random values to :ref:`test_factory_person_says_hello`
                 year_of_birth=year_of_birth,
             )
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes if the ``last_name`` is randomly ``'doe'``.
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes if the ``last_name`` is randomly ``'doe'``.
 
   If the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -4744,7 +4738,7 @@ I want to use random values to :ref:`test_factory_person_says_hello`
                 year_of_birth=year_of_birth,
             )
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and it passes with no more random failures.
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and it passes with no random failures.
 
 * I change the value for the ``sex`` parameter to the ``sex`` :ref:`variable<what is a variable?>` so it uses a random value in the call to ``src.person.factory`` for ``jane``
 
@@ -4923,7 +4917,7 @@ I want to use random values to :ref:`test_factory_person_says_hello`
 
     # Exceptions seen
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times, and each time the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times, and each time the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -5339,7 +5333,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
             'age': 55,
         }
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
@@ -5624,7 +5618,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
         last_name=None, sex='M',
     ):
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times and if the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and if the ``last_name`` is not ``'doe'``, the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
     :emphasize-text: doe
@@ -5818,7 +5812,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
 
     # factory
 
-  I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to run the test a few times, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times, and the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 

@@ -480,7 +480,7 @@ what is a while loop?
         * if ``x`` is equal to ``0`` the loop runs again
         * if ``x`` is not equal to ``0`` in the loop, it leaves the loop and goes to the next block which is ``else: self.tester.button(x).click().run()``
 
-  I use :kbd:`ctrl+s` on the keyboard a few times and there are no more random failures
+  I use :kbd:`ctrl+s` on the keyboard a few times and there are no random failures
 
 * I add a :ref:`for loop<what is a for loop?>` to test with a 10 digit number
 

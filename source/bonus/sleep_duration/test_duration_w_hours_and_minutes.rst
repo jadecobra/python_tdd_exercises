@@ -469,7 +469,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
         )
     )
 
-  the test passes with no more random failures
+  the test passes with no random failures
 
 * I take out the `unittest.skip decorator`_ from ``test_duration_w_hours_and_minutes``
 * and remove ``test_duration_calculation`` because it is covered by ``test_duration_w_hours_and_minutes`` which has the right calculation
