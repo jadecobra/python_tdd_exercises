@@ -1141,7 +1141,7 @@ test_factory_w_keyword_arguments
 
     # Exceptions seen
 
-  the test is still green. I now only need to change the value of ``first_name`` in one place in the test.
+  the test is still green. I now only need to change the value of ``last_name`` in one place in the test.
 
 ----
 
