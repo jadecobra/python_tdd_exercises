@@ -2182,12 +2182,45 @@ I can do that with the `random module`_ from `The Python Standard Library`_ whic
 
     # Exceptions seen
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 21
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = 'jane'
+            last_name = 'doe'
+            sex = 'F'
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year- year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    git commit -am 'use random values for age'
+    git commit -am 'use random values for year_of_birth'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -2512,6 +2545,8 @@ I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few tim
 extract pick_one function
 *********************************************************************************
 
+The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable?>` all call the `random.choice method`_. I can add a :ref:`function<what is a function?>` to remove repetition of the calls.
+
 ----
 
 * I go back to the terminal_ where the tests are running
@@ -2523,9 +2558,9 @@ extract pick_one function
     :emphasize-lines: 7-8
 
     import datetime
-    import random
     import src.person
     import unittest
+    import random
 
 
     def pick_one(choices):
@@ -2536,37 +2571,72 @@ extract pick_one function
 
         def test_factory_w_keyword_arguments(self):
 
-* I use the new :ref:`function<what is a function?>` to remove repetition of ``random.choice`` from the test
+* I use the new :ref:`function<what is a function?>` to remove repetition of `random.choice`_ from the ``first_name`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 3-8, 10-15, 17-18
+    :emphasize-lines: 3-4
 
         def test_factory_w_keyword_arguments(self):
             # first_name = 'jane'
             # first_name = random.choice((
-            #     'jane', 'joe', 'john', 'person',
-            # ))
+            first_name = pick_one((
+                'jane', 'joe', 'john', 'person',
+            ))
+            # last_name = 'doe'
+            last_name = random.choice((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            # sex = 'F'
+            sex = random.choice(('F', 'M'))
+
+  the test is still green.
+
+* I use the new :ref:`function<what is a function?>` to remove repetition of `random.choice`_ from the ``last_name`` and ``sex`` :ref:`variables<what is a variable?>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 8-9, 13-14
+
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            # first_name = random.choice((
+            first_name = pick_one((
+                'jane', 'joe', 'john', 'person',
+            ))
+            # last_name = 'doe'
+            # last_name = random.choice((
+            last_name = pick_one((
+                'doe', 'smith', 'blow', 'public',
+            ))
+            # sex = 'F'
+            # sex = random.choice(('F', 'M'))
+            sex = pick_one(('F', 'M'))
+
+  still green. So far, this is exactly the same as `random.choice`_, why would I make a :ref:`function<what is a function?>` that is exactly the same?
+
+* Each call to the `random.choice`_ passes a tuple_ (:ref:`an iterable<what is an iterable?>`). I want the :ref:`function<what is a function?>` to be able to take any number of arguments I send, without it knowing how many I will send
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 4-5, 7-8
+
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            # first_name = random.choice((
+            # first_name = pick_one((
             first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
+            # ))
             )
             # last_name = 'doe'
             # last_name = random.choice((
-            #     'doe', 'smith', 'blow', 'public',
-            # ))
-            last_name = pick_one(
+            last_name = pick_one((
                 'doe', 'smith', 'blow', 'public',
-            )
+            ))
             # sex = 'F'
             # sex = random.choice(('F', 'M'))
-            sex = pick_one('F', 'M')
-            # year_of_birth = 1996
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
-            )
+            sex = pick_one(('F', 'M'))
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -2575,9 +2645,7 @@ extract pick_one function
     TypeError: pick_one() takes 1 positional argument
                but 4 were given
 
-  because the :ref:`function definition<how to make a function>` only takes one input and the test sends four for ``first_name``, four for ``last_name`` and two for ``sex``.
-
-  I want the :ref:`function<what is a function?>` to be able to take any number of arguments I send, without it knowing how many I will send.
+  because the :ref:`function definition<how to make a function>` only takes one input and the test sends four.
 
 * I change the :ref:`definition<how to make a function>` of the ``pick_one`` :ref:`function<what is a function?>` with a :ref:`starred expression<starred expressions>` like I did in :ref:`test_w_unknown_arguments` so that it can take any number of :ref:`positional arguments<test_w_positional_arguments>`
 
@@ -2589,6 +2657,99 @@ extract pick_one function
         return random.choice(choices)
 
   the test is green again, because :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``)
+
+* I do the same thing with ``last_name`` and ``sex``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines:
+
+        def test_factory_w_keyword_arguments(self):
+            # first_name = 'jane'
+            # first_name = random.choice((
+            # first_name = pick_one((
+            first_name = pick_one(
+                'jane', 'joe', 'john', 'person',
+            # ))
+            )
+            # last_name = 'doe'
+            # last_name = random.choice((
+            # last_name = pick_one((
+            last_name = pick_one(
+                'doe', 'smith', 'blow', 'public',
+            # ))
+            )
+            # sex = 'F'
+            # sex = random.choice(('F', 'M'))
+            # sex = pick_one(('F', 'M'))
+            sex = pick_one('F', 'M')
+
+  the test is still green because this happens when ``pick_one`` is called
+
+  .. code-block:: python
+
+    first_name = pick_one('jane', 'joe', 'john', 'person')
+                 pick_one(*choices)
+                 random.choice(choices)
+                 random.choice(
+                     ('jane', 'joe', 'john', 'person')
+                 )
+                 # 'jane' or 'joe' or 'john' or 'person'
+
+  .. code-block:: python
+
+    last_name = pick_one('doe', 'smith', 'blow', 'public')
+                pick_one(*choices)
+                random.choice(choices)
+                random.choice(
+                    ('doe', 'smith', 'blow', 'public')
+                )
+                # 'doe' or 'smith' or 'blow' or 'public'
+
+  .. code-block:: python
+
+    sex = pick_one('F', 'M')
+          pick_one(*choices)
+          random.choice(choices)
+          random.choice(('F', 'M'))
+          # 'F' or 'M'
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 25
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = pick_one(
+                'jane', 'joe', 'john', 'person',
+            )
+            last_name = pick_one(
+                'doe', 'smith', 'blow', 'public',
+            )
+            sex = pick_one('F', 'M')
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+            reality = src.person.factory(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year-year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -2605,7 +2766,7 @@ extract pick_one function
 test factory with a dictionary
 *********************************************************************************
 
-The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` and the expected :ref:`dictionary<what is a dictionary?>` in the test is that one has a year of birth and the other does a calculation with the year of birth. The other things are the same.
+The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` (``reality``) and the :ref:`dictionary<what is a dictionary?>` for ``my_expectation`` in the test is that one has a year of birth and the other does a calculation with the year of birth, the other things are the same. I can use a :ref:`dictionary<what is a dictionary>` to remove the repeating parts.
 
 ----
 
@@ -2617,37 +2778,20 @@ The difference between the call to the :ref:`factory function<test_factory_w_key
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`dictionary<what is a dictionary?>` to use to remove the repeating parts
+* I add a :ref:`dictionary<what is a dictionary?>` for ``first_name``, ``last_name`` and ``year_of_birth``
 
   .. code-block:: python
     :lineno-start: 13
-    :emphasize-lines: 27-31
+    :emphasize-lines: 10-14
 
         def test_factory_w_keyword_arguments(self):
-            # first_name = 'jane'
-            # first_name = random.choice((
-            #     'jane', 'joe', 'john', 'person',
-            # ))
             first_name = pick_one(
                 'jane', 'joe', 'john', 'person',
             )
-            # last_name = 'doe'
-            # last_name = random.choice((
-            #     'doe', 'smith', 'blow', 'public',
-            # ))
             last_name = pick_one(
                 'doe', 'smith', 'blow', 'public',
             )
-            # sex = 'F'
-            # sex = random.choice(('F', 'M'))
             sex = pick_one('F', 'M')
-            # year_of_birth = 1996
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                # datetime.datetime.now().year-120,
-                # datetime.datetime.now().year
-                this_year-120, this_year
-            )
 
             a_person = dict(
                 first_name=first_name,
@@ -2655,29 +2799,12 @@ The difference between the call to the :ref:`factory function<test_factory_w_key
                 sex=sex,
             )
 
-            reality = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                year_of_birth=year_of_birth,
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
             )
-            my_expectation = dict(
-                first_name=first_name,
-                last_name=last_name,
-                sex=sex,
-                # age=2026-year_of_birth,
-                # age=(
-                #     datetime.datetime.today().year
-                #   - year_of_birth
-                # ),
-                age=this_year-year_of_birth,
-            )
-            self.assertEqual(reality, my_expectation)
 
-
-    # Exceptions seen
-
-* I use the new :ref:`variable<what is a variable?>` to remove the repeating parts
+* I use the new :ref:`variable<what is a variable?>` to remove ``first_name``, ``last_name``, and ``sex`` from the call to ``src.person.factory``
 
   .. code-block:: python
     :lineno-start: 39
