@@ -1652,7 +1652,7 @@ test_factory_w_keyword_arguments
     my_expectation = dict(
                          first_name=first_name,
                          last_name=last_name,
-                         sex='F',
+                         sex=sex,
                          age=2026-1996
                      )
                      # the dict constructor returns
@@ -3626,7 +3626,7 @@ I want to see what happens when I try to make a person without a value for the `
                       year_of_birth=year_of_birth,
                   )
               # the factory function returns
-              {'first_name': Z, 'last_name': 'doe,
+              {'first_name': Y, 'last_name': 'doe,
                'sex': None, 'age': X}
 
   .. code-block:: python
@@ -3642,12 +3642,10 @@ I want to see what happens when I try to make a person without a value for the `
                              year_of_birth=year_of_birth,
                          )
                      # the dict constructor returns
-                     {'first_name': Z, 'last_name': 'doe', 'age': X}
+                     {'first_name': Y, 'last_name': 'doe', 'age': X}
 
   - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
   - ``X`` is the random age, ``Y`` is the random first name
-
-  the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
@@ -3660,7 +3658,7 @@ I want to see what happens when I try to make a person without a value for the `
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 last_name='doe',
                 sex='M',
                 age=this_year-year_of_birth,
@@ -3681,24 +3679,23 @@ I want to see what happens when I try to make a person without a value for the `
      != {'first_name': Y, 'last_name': 'doe',
          'sex': 'M', 'age': X}
 
-  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``
+  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``.
 
 * I change the default value for ``sex`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 3
+    :emphasize-lines: 7-8
 
     def factory(
+            # first_name, last_name,
+            # first_name, last_name=None,
+            # sex, year_of_birth,
+            # sex=None, year_of_birth,
             first_name, last_name='doe',
+            # sex=None, year_of_birth=None,
             sex='M', year_of_birth=None,
         ):
-        return {
-            'first_name': first_name,
-            'last_name': last_name,
-            'sex': sex,
-            'age': datetime.datetime.now().year-year_of_birth,
-        }
 
   the test passes because the :ref:`default value<test_w_optional_arguments>` for the ``sex`` parameter of the :ref:`function<what is a function?>` is ``'M'``. This means that
 
@@ -3732,16 +3729,17 @@ I want to see what happens when I try to make a person without a value for the `
 
         def test_factory_w_optional_arguments(self):
             first_name = get_random_name()
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
+            a_person = dict(
+                first_name=get_random_name(),
+                # last_name=get_random_name(),
+                # sex=pick_one('F', 'M'),
             )
 
-* I use the :ref:`variable<what is a variable?>` for ``reality`` and ``my_expectation``
+* I use the :ref:`variable<what is a variable?>` for in teh call to ``src.person.factory``
 
   .. code-block:: python
     :lineno-start: 55
-    :emphasize-lines: 3, 8
+    :emphasize-lines: 3
 
             reality = src.person.factory(
                 **a_person,
@@ -3749,8 +3747,7 @@ I want to see what happens when I try to make a person without a value for the `
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
-                first_name=first_name,
+                a_person,
                 last_name='doe',
                 sex='M',
                 age=this_year-year_of_birth,
@@ -3767,7 +3764,29 @@ I want to see what happens when I try to make a person without a value for the `
     TypeError: src.person.factory() got multiple values
                for keyword argument 'first_name'
 
-  because the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same :ref:`keyword argument<test_w_keyword_arguments>` twice.
+  because this happens
+
+  .. code-block:: python
+
+    first_name = get_random_name()
+    a_person = dict(first_name=get_random_name())
+
+  .. code-block:: python
+
+    reality = src.person.factory(
+                  **a_person,
+                  first_name=first_name,
+                  year_of_birth=year_of_birth,
+              )
+                  src.person.factory(
+                      first_name=first_name,
+                      first_name=first_name, # duplicate
+                      year_of_birth=year_of_birth
+                  )
+
+
+
+  the ``a_person`` :ref:`dictionary<what is a dictionary?>` has a :ref:`key<test_keys_of_a_dictionary>` called ``first_name``, the call to ``src.person.factory`` gets called with the same :ref:`keyword argument<test_w_keyword_arguments>` twice.
 
 * I comment out ``**a_person,``
 
