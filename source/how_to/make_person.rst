@@ -3878,6 +3878,25 @@ I want to see what happens when I try to make a person without a value for the `
 
   the test is still green.
 
+* I remove the commented lines from ``person.py``
+
+  .. code-block:: python
+    :lineno-start: 4
+
+    def factory(
+            first_name, last_name='doe',
+            sex='M', year_of_birth=None,
+        ):
+        return {
+            'first_name': first_name,
+            'last_name': last_name,
+            'sex': sex,
+            'age': (
+                datetime.datetime.today().year
+              - year_of_birth
+            ),
+        }
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
@@ -3909,7 +3928,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
 * I add a new test to ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 50
     :emphasize-lines: 13-18, 20-22
 
             reality = src.person.factory(
@@ -3986,14 +4005,15 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
     TypeError: hello() takes
                0 positional arguments but 1 was given
 
-  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`positional argument<test_w_positional_arguments>` (``person``)
+  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`function<what is a function?>` with a :ref:`positional argument<test_w_positional_arguments>` (``person``).
 
 * I add a name to the definition
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
+    # def say_hello():
     def say_hello(person):
         return None
 
@@ -4044,19 +4064,20 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2-3
+    :emphasize-lines: 3-4
 
+    # def say_hello():
     def say_hello(person):
         # return None
         return 'Hi, my name is joe blow and I am 30'
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for another person to :ref:`test_factory_person_says_hello` in ``test_person.py``
+* I add an :ref:`assertion<what is an assertion?>` for another person, to :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 9-13, 15-20
+    :lineno-start: 69
+    :emphasize-lines: 9-13, 15-19
 
             reality = src.person.say_hello(joe)
             # my_expectation = None
@@ -4085,6 +4106,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
+    :emphasize-text: jane doe
 
     AssertionError:
           'Hi, my name is joe blow and I am 30'
@@ -4096,11 +4118,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 2, 5-9
+    :emphasize-lines: 3, 6-9
 
+    # def say_hello():
     def say_hello(person):
         first_name = person.get('first_name')
-
         # return None
         # return 'Hi, my name is joe blow and I am 30'
         return (
@@ -4117,19 +4139,62 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         'Hi, my name is jane blow and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
-  - the first names are the same because ``person.get('first_name')`` uses the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` of the ``'first_name'`` :ref:`key<test_keys_of_a_dictionary>`
-  - the last names and ages are different
+  the values for ``first_name`` are the same because this happens
+
+  .. code-block:: python
+
+    jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+                src.person.factory(
+                    first_name='joe',
+                    last_name='doe', # use the default value
+                    year_of_birth=1991,
+                    sex='F'
+                )
+            # the factory function returns
+            {'first_name': 'jane', 'last_name': 'doe',
+            'sex': 'F', 'age': 35}
+
+  .. code-block:: python
+
+    my_expectation = src.person.say_hello(jane)
+
+  * in ``say_hello``
+
+    .. code-block:: python
+
+      first_name = person.get('first_name')
+                        jane.get('first_name')
+                        {'first_name': 'jane',
+                        'last_name': 'doe',
+                        'sex': 'F', 'age': 35}.get('first_name')
+                        # the get method returns
+                        'jane'
+
+    .. code-block:: python
+
+      return (
+            f'Hi, my name is {first_name}'
+          ' blow and I am 30'
+      )
+      # the say_hello function returns
+      'Hi, my name is jane blow and I am 30'
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``last_name`` and ``age`` are different.
 
 * I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>`, then add it to the `return statement`_
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 3, 8-11
+    :emphasize-lines: 4, 8-11
 
+    # def say_hello():
     def say_hello(person):
         first_name = person.get('first_name')
         last_name = person.get('last_name')
-
         # return None
         # return 'Hi, my name is joe blow and I am 30'
         return (
@@ -4147,6 +4212,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     AssertionError:
         'Hi, my name is jane doe and I am 30'
      != 'Hi, my name is jane doe and I am 35'
+
+
 
   the age is the only thing that is different
 
