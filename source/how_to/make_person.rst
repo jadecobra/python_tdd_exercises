@@ -382,7 +382,7 @@ test_factory_w_keyword_arguments
       AttributeError: module 'src.person'
                       has no attribute 'factory'
 
-    because there is nothing in ``person.py`` with that name
+    because there is nothing in ``person.py`` named ``factory``
 
 * I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -396,7 +396,7 @@ test_factory_w_keyword_arguments
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``person.py`` from the ``src`` folder
+* I open ``person.py`` from the ``src`` folder
 
 * I delete the text, then add a :ref:`function<what is a function?>` to ``person.py``
 

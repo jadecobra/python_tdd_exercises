@@ -443,7 +443,7 @@ test_catching_type_error_in_tests
 
     AttributeError: module 'src.exceptions' has no attribute 'function_name'
 
-* I use the :ref:`Explorer<explorer on left>` to open ``exceptions.py`` from the ``src`` folder
+* I open ``exceptions.py`` from the ``src`` folder
 
 * I add the name to ``exceptions.py``
 

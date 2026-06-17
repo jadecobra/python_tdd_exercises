@@ -413,7 +413,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``telephone.py`` from the ``src`` folder
+* I open ``telephone.py`` from the ``src`` folder
 
 * I delete the text, then add a name to ``telephone.py``
 

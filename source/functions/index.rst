@@ -1370,7 +1370,7 @@ I can make a :ref:`function<what is a function?>` with the pass_ keyword
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``functions.py`` from the ``src`` folder
+* I open ``functions.py`` from the ``src`` folder
 
 * I delete the text in the file_ then add a :ref:`function definition<how to make a function>` to ``functions.py``
 

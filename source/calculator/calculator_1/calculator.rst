@@ -379,7 +379,7 @@ test_addition
     # NameError
     # AttributeError
 
-* I use the :ref:`Explorer<explorer on left>` to open ``calculator.py`` from the ``src`` folder, then add the name
+* I open ``calculator.py`` from the ``src`` folder, then add the name
 
   .. code-block:: python
     :linenos:
