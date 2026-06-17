@@ -296,7 +296,7 @@ test_addition
         def test_addition(self):
             self.assertEqual(src.calculator.add(0, 1), 1)
 
-  - the :ref:`assertEqual method<another way to test if two things are Equal>` from :ref:`AssertionError<what causes AssertionError?>` checks if the 2 things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
+  - the :ref:`assertEqual method<another way to test if two things are Equal>` from :ref:`AssertionError<what causes AssertionError?>` checks if the two things in parentheses are the same. It is like the statement ``assert x == y`` or asking ``is x equal to y?``
 
   - I think of
 
@@ -1445,7 +1445,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   - ``random_first_number-random_second_number`` which is
   - ``first_input-second_input``
-  - the difference between the 2 numbers
+  - the difference between the two numbers
 
 * I make the ``subtract`` :ref:`function<what is a function?>` return the difference between the inputs
 
@@ -2106,7 +2106,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     AssertionError: (XYZ.ABCDEFGHIJKLMN, YZA.BCDEFGHIJKLMNO) != ZAB.CDEFGHIJKLMNOP
 
-  the name of the :ref:`function<what is a function?>` is ``subtract`` and the :ref:`assertion<what is an assertion?>` expects the difference between the 2 inputs
+  the name of the :ref:`function<what is a function?>` is ``subtract`` and the :ref:`assertion<what is an assertion?>` expects the difference between the two inputs
 
 * I make the `return statement`_ match the expectation
 

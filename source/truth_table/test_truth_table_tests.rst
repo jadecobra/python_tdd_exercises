@@ -2892,46 +2892,73 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the  case that returns :green:`True`
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 2
+    :lineno-start: 64
+    :emphasize-lines: 2-6
 
     def material_non_implication(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
         return (first, second) == (True, False)
-        if (first, second) == (True, True): return False
-        if (first, second) == (False, True): return False
-        if (first, second) == (False, False): return False
-        return first, second
 
   the test is still green.
 
 * I make the `return statement`_ simpler
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 2
+    :lineno-start: 64
+    :emphasize-lines: 6-7
 
     def material_non_implication(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
+        # return (first, second) == (True, False)
         return first == True and second == False
-        return (first, second) == (True, False)
 
   still green.
 
-* I use :ref:`not<test_logical_negation>` and remove ``== True`` and ``== False``
+* I use :ref:`not<test_logical_negation>` to write it in terms of :green:`True`
 
   .. code-block:: python
-    :lineno-start: 43
-    :emphasize-lines: 2
+    :lineno-start: 64
+    :emphasize-lines: 7-8
 
     def material_non_implication(first, second):
-        return first and not second
-        return first == True and second == False
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
+        # return (first, second) == (True, False)
+        # return first == True and second == False
+        return first == True and not second == True
 
   green.
 
-* I remove the other statement in :ref:`material_non_implication<test_material_non_implication>`
+* I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 43
+    :lineno-start: 64
+    :emphasize-lines: 8-9
+
+    def material_non_implication(first, second):
+        # if (first, second) == (True, True): return False
+        # if (first, second) == (False, True): return False
+        # if (first, second) == (False, False): return False
+        # return first, second
+        # return (first, second) == (True, False)
+        # return first == True and second == False
+        # return first == True and not second == True
+        return first and not second
+
+  still green.
+
+* I remove the commented lines from :ref:`material_non_implication<test_material_non_implication>`
+
+  .. code-block:: python
+    :lineno-start: 64
 
     def material_non_implication(first, second):
         return first and not second
@@ -2942,7 +2969,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 ----
 
-* ``first`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_first<test_negate_first>` returns :red:`False`, I add an :ref:`if statement<if statements>` for them
+* ``first`` is :ref:`True<test_what_is_true>` in the two cases where :ref:`negate_first<test_negate_first>` returns :red:`False`, I add an :ref:`if statement<if statements>` for them
 
   .. code-block:: python
     :lineno-start: 58
@@ -3001,7 +3028,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 ----
 
-* ``second`` is :ref:`True<test_what_is_true>` in the 2 cases where :ref:`negate_second<test_negate_second>` returns :red:`False`. I add a `return statement`_ ``if something: return False`` can be written as ...
+* ``second`` is :ref:`True<test_what_is_true>` in the two cases where :ref:`negate_second<test_negate_second>` returns :red:`False`. I add a `return statement`_ ``if something: return False`` can be written as ...
 
   .. code-block:: python
     :lineno-start: 52
@@ -3027,7 +3054,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   green.
 
-* I remove the other statement in :ref:`negate_second<test_negate_second>`
+I remove the commented lines from :ref:`negate_second<test_negate_second>`
 
   .. code-block:: python
     :linenos:

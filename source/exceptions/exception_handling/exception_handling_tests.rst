@@ -1137,7 +1137,7 @@ one exception one exception handler
                 a_list[-5]
             # with self.assertRaises(IndexError):
 
-* If I add a `raise statement`_ between the 2 lines
+* If I add a `raise statement`_ between the two lines
 
   .. code-block:: python
     :lineno-start: 23

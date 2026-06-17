@@ -6369,7 +6369,7 @@ I can also use `assert methods`_ from the `unittest.TestCase class`_ to test if 
 
 * I go back to the terminal_ where the tests are running
 
-* I add an :ref:`assertion<what is an assertion?>` with the `assertNotEqual method`_ which checks if the 2 things in the parentheses are NOT equal
+* I add an :ref:`assertion<what is an assertion?>` with the `assertNotEqual method`_ which checks if the two things in the parentheses are NOT equal
 
   .. code-block:: python
     :lineno-start: 133
@@ -6415,7 +6415,7 @@ another way to test if two things are equal
 
 ----
 
-* I change the `assertNotEqual method`_ to the `assertEqual method`_ which checks if the 2 things in the parentheses are equal
+* I change the `assertNotEqual method`_ to the `assertEqual method`_ which checks if the two things in the parentheses are equal
 
   .. code-block:: python
     :lineno-start: 133

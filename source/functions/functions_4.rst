@@ -226,7 +226,7 @@ the test passes.
 
   the test is still green.
 
-* I can use a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>` instead of the 2 :ref:`for loops<what is a for loop?>`
+* I can use a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>` instead of the two :ref:`for loops<what is a for loop?>`
 
   .. code-block:: python
     :lineno-start: 11

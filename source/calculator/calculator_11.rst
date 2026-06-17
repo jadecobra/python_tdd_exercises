@@ -1677,7 +1677,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
 
 * I use :kbd:`ctrl+s` on the keyboard in ``website.py`` to run the tests, they are still green.
 
-* I want the operation to show up between the 2 numbers, I change the order in ``index.html``
+* I want the operation to show up between the two numbers, I change the order in ``index.html``
 
   .. code-block:: HTML
     :lineno-start: 2
@@ -1691,7 +1691,7 @@ the test passes because the `assertIn method`_ of the `unittest.TestCase class`_
         <input type="number" name="second_input" required>
     </form>
 
-* I go to the browser and click refresh to see the change, the operation is now between the 2 numbers
+* I go to the browser and click refresh to see the change, the operation is now between the two numbers
 
   .. image:: /_static/calculator/website/calculator_first_operation_reorder.png
     :width: 600
