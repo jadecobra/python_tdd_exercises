@@ -2001,7 +2001,7 @@ because the test called the ``starter`` :ref:`function<what is a function?>` wit
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
 
 * I add a :ref:`default value<test_w_optional_arguments>` for the ``in_park`` parameter in the :ref:`function signature<what is a function?>` to make it a choice
 

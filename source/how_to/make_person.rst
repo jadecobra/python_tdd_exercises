@@ -645,7 +645,7 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                   = None # the function returns None
+                     None # the function returns None
 
   .. code-block:: python
 
@@ -719,12 +719,12 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                   = {} # the function returns {}
+                     {} # the function returns {}
 
   .. code-block:: python
 
     my_expectation = dict(first_name='first_name')
-                   = {'first_name': 'first_name'}
+                     {'first_name': 'first_name'}
 
   .. code-block:: python
 
@@ -795,12 +795,13 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                   = {'first_name': 'first_name'}
+                     # the function returns
+                     {'first_name': 'first_name'}
 
   .. code-block:: python
 
     my_expectation = dict(first_name='jane')
-                   = {'first_name': 'jane'}
+                     {'first_name': 'jane'}
 
   .. code-block:: python
 
@@ -930,7 +931,8 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                   = {'first_name': 'jane'}
+                     # the function returns
+                     {'first_name': 'jane'}
 
   .. code-block:: python
 
@@ -938,7 +940,7 @@ test_factory_w_keyword_arguments
                          first_name=first_name,
                          last_name='last_name',
                      )
-                   = {
+                     {
                          'first_name': 'jane',
                          'last_name': 'last_name'
                      }
@@ -1030,7 +1032,8 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                   = {
+                     # the function returns
+                     {
                          'first_name': 'jane',
                          'last_name': 'last_name'
                      }
@@ -1041,7 +1044,7 @@ test_factory_w_keyword_arguments
                          first_name=first_name,
                          last_name='doe',
                      )
-                   = {
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe'
                      }
@@ -1193,7 +1196,8 @@ test_factory_w_keyword_arguments
                          sex='M',
                          year_of_birth=2000,
                      )
-                   = {
+                     # the function returns
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe'
                      }
@@ -1205,7 +1209,7 @@ test_factory_w_keyword_arguments
                          last_name=last_name,
                          sex='M'
                      )
-                   = {
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe',
                          'sex': 'M'
@@ -1307,7 +1311,8 @@ test_factory_w_keyword_arguments
                          sex='F',
                          year_of_birth=2000,
                      )
-                   = {
+                     # the function returns
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe',
                          'sex': 'M'
@@ -1320,7 +1325,7 @@ test_factory_w_keyword_arguments
                          last_name=last_name,
                          sex='F'
                      )
-                   = {
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe',
                          'sex': 'F'
@@ -1490,7 +1495,8 @@ test_factory_w_keyword_arguments
                          sex=sex,
                          year_of_birth=2000,
                      )
-                   = {
+                     # the function returns
+                     {
                          'first_name': 'jane',
                          'last_name': 'last_name',
                          'sex': 'F'
@@ -1504,7 +1510,8 @@ test_factory_w_keyword_arguments
                          sex=sex,
                          age=2026-2000,
                      )
-                   = {
+                     # dict returns
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe',
                          'sex': 'F',
@@ -1619,7 +1626,8 @@ test_factory_w_keyword_arguments
                          sex=sex,
                          year_of_birth=1996,
                      )
-                   = {
+                     # the function returns
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe',
                          'sex': 'F'
@@ -1634,7 +1642,8 @@ test_factory_w_keyword_arguments
                          sex='F',
                          age=2026-1996
                      )
-                   = {
+                     # dict returns
+                     {
                          'first_name': 'jane',
                          'last_name': 'doe',
                          'sex': 'F',
@@ -3266,7 +3275,7 @@ I want to see what happens when I try to make a person without a value for the `
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
@@ -3288,7 +3297,7 @@ I want to see what happens when I try to make a person without a value for the `
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
@@ -3308,7 +3317,7 @@ I want to see what happens when I try to make a person without a value for the `
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 age=this_year-year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
@@ -3324,14 +3333,9 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 42
-    :emphasize-lines: 9
+    :emphasize-lines: 4
 
         def test_factory_w_optional_arguments(self):
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
-            )
-
             a_person = dict(
                 first_name=get_random_name(),
                 # last_name=get_random_name(),
@@ -3345,7 +3349,7 @@ I want to see what happens when I try to make a person without a value for the `
     TypeError: factory() missing 1 required
                positional argument: 'last_name'
 
-  because this test no longer gives a value for ``last_name`` when it calls the :ref:`factory function<test_factory_w_keyword_arguments>`, I have to make it a choice.
+  because this test no longer gives a value for ``last_name`` when it calls the :ref:`factory function<test_factory_w_keyword_arguments>`, I have to make ``last_name`` a choice, not a requirement.
 
 ----
 
@@ -3359,9 +3363,10 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2
+    :emphasize-lines: 2-3
 
     def factory(
+            # first_name, last_name,
             first_name, last_name=None,
             sex, year_of_birth,
         ):
@@ -3373,7 +3378,7 @@ I want to see what happens when I try to make a person without a value for the `
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_person.py``
 
@@ -3393,10 +3398,12 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 3
+    :emphasize-lines: 4-5
 
     def factory(
+            # first_name, last_name,
             first_name, last_name=None,
+            # sex, year_of_birth,
             sex=None, year_of_birth,
         ):
 
@@ -3407,16 +3414,19 @@ I want to see what happens when I try to make a person without a value for the `
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
 
 * I add a default value for ``year_of_birth`` to make it optional
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 3
+    :emphasize-lines: 5-6
 
     def factory(
+            # first_name, last_name,
             first_name, last_name=None,
+            # sex, year_of_birth,
+            # sex=None, year_of_birth,
             sex=None, year_of_birth=None,
         ):
 
@@ -3430,8 +3440,50 @@ I want to see what happens when I try to make a person without a value for the `
          'age': X}
      != {'first_name': Z, 'sex': Y, 'age': X}
 
-  - where ``X`` is the random age, ``Y`` is the random sex and ``Z`` is the random first name
-  - the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  because this happens when :ref:`the factory function<test_factory_w_keyword_arguments>` is called without a value for ``last_name``
+
+  .. code-block:: python
+
+    a_person = dict(
+                   first_name=get_random_name(),
+                   sex=pick_one('F', 'M'),
+               )
+
+  .. code-block:: python
+
+    reality = src.person.factory(
+                  **a_person,
+                  year_of_birth=year_of_birth,
+              )
+              src.person.factory(
+                  first_name=get_random_name(),
+                  sex=pick_one('F', 'M'),
+                  year_of_birth=year_of_birth,
+              )
+              src.person.factory(
+                  first_name=get_random_name(),
+                  sex=pick_one('F', 'M'),
+                  last_name=None, # use the default value
+                  year_of_birth=year_of_birth,
+              )
+              {'first_name': Z, 'last_name': None, 'sex': Y,
+               'age': X}
+
+  .. code-block:: python
+
+    my_expectation = dict(
+                         a_person,
+                         age=this_year-year_of_birth,
+                     )
+                     dict(
+                         first_name=get_random_name(),
+                         sex=pick_one('F', 'M'),
+                         year_of_birth=year_of_birth,
+                     )
+                     {'first_name': Z, 'sex': Y, 'age': X}
+
+  - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  - ``X`` is the random age, ``Y`` is the random sex and ``Z`` is the random first name
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
 
@@ -3444,7 +3496,7 @@ I want to see what happens when I try to make a person without a value for the `
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 last_name='doe',
                 age=this_year-year_of_birth,
             )
@@ -3470,9 +3522,13 @@ I want to see what happens when I try to make a person without a value for the `
 
   .. code-block:: python
     :lineno-start: 4
-    :emphasize-lines: 2
+    :emphasize-lines: 3, 6
 
     def factory(
+            # first_name, last_name,
+            # first_name, last_name=None,
+            # sex, year_of_birth,
+            # sex=None, year_of_birth,
             first_name, last_name='doe',
             sex=None, year_of_birth=None,
         ):
@@ -5864,7 +5920,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`
+  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
 
 * I add a default value for ``sex`` to make it optional
 
