@@ -4139,49 +4139,53 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         'Hi, my name is jane blow and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
-  the values for ``first_name`` are the same because this happens
+  the values for ``first_name`` are the same because
 
-  .. code-block:: python
+  * this happens when ``jane = src.person.factory(first_name='jane', sex='F', year_of_birth=1991)`` runs
 
-    jane = src.person.factory(
-                first_name='jane',
-                sex='F',
-                year_of_birth=1991,
-            )
-                src.person.factory(
-                    first_name='joe',
-                    last_name='doe', # use the default value
-                    year_of_birth=1991,
-                    sex='F'
-                )
-            # the factory function returns
-            {'first_name': 'jane', 'last_name': 'doe',
-            'sex': 'F', 'age': 35}
+    .. code-block:: python
 
-  .. code-block:: python
+      jane = src.person.factory(
+                  first_name='jane',
+                  sex='F',
+                  year_of_birth=1991,
+              )
+                  src.person.factory(
+                      first_name='jane',
+                      last_name='doe', # use the default value
+                      year_of_birth=1991,
+                      sex='F'
+                  )
+              # the factory function returns
+              {'first_name': 'jane', 'last_name': 'doe',
+              'sex': 'F', 'age': 35}
 
-    my_expectation = src.person.say_hello(jane)
-
-  * in ``say_hello``
+  * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
 
     .. code-block:: python
 
       first_name = person.get('first_name')
                         jane.get('first_name')
-                        {'first_name': 'jane',
-                        'last_name': 'doe',
-                        'sex': 'F', 'age': 35}.get('first_name')
+                        {
+                            'first_name': 'jane',
+                            'last_name': 'doe',
+                            'sex': 'F', 'age': 35
+                        }.get('first_name')
                         # the get method returns
                         'jane'
 
     .. code-block:: python
 
       return (
-            f'Hi, my name is {first_name}'
+          f'Hi, my name is {first_name}'
           ' blow and I am 30'
       )
-      # the say_hello function returns
-      'Hi, my name is jane blow and I am 30'
+
+  .. code-block:: python
+
+    my_expectation = src.person.say_hello(jane)
+    # the say_hello function returns
+    'Hi, my name is jane blow and I am 30'
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``last_name`` and ``age`` are different.
 
@@ -4213,9 +4217,61 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         'Hi, my name is jane doe and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
+  the values for ``last_name`` are the same
 
+  * this happens when ``jane = src.person.factory(first_name='jane', sex='F', year_of_birth=1991)`` runs
 
-  the age is the only thing that is different
+    .. code-block:: python
+
+      jane = src.person.factory(
+                  first_name='jane',
+                  sex='F',
+                  year_of_birth=1991,
+              )
+                  src.person.factory(
+                      first_name='jane',
+                      last_name='doe', # use the default value
+                      year_of_birth=1991,
+                      sex='F'
+                  )
+              # the factory function returns
+              {'first_name': 'jane', 'last_name': 'doe',
+              'sex': 'F', 'age': 35}
+
+  * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
+
+    .. code-block:: python
+
+      first_name = person.get('first_name')
+                   # the get method returns
+                   'jane'
+
+    .. code-block:: python
+
+      last_name = person.get('last_name')
+                      jane.get('last_name')
+                      {
+                          'first_name': 'jane',
+                          'last_name': 'doe',
+                          'sex': 'F', 'age': 35
+                      }.get('last_name')
+                      # the get method returns
+                      'doe'
+
+    .. code-block:: python
+
+      return (
+          f'Hi, my name is {first_name} {last_name}'
+          ' and I am 30'
+      )
+
+  .. code-block:: python
+
+    my_expectation = src.person.say_hello(jane)
+    # the say_hello function returns
+    'Hi, my name is jane doe and I am 30'
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since the values for ``age`` are different.
 
 * I use the :ref:`get method of the dictionary<test_get_value_of_a_key_in_a_dictionary>` to get the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` , then add it to the `return statement`_
 
