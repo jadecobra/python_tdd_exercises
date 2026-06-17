@@ -1809,7 +1809,7 @@ test_factory_w_keyword_arguments
 ----
 
 *********************************************************************************
-test factory with random year_of_birth
+test factory with current year
 *********************************************************************************
 
 There is a problem with the calculation for the age, it will be wrong if this program_ is run after 2026.
@@ -1868,20 +1868,6 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
     NameError: name 'datetime' is not defined.
                Did you forget to import 'datetime'?
 
-  I can also use the `today method`_ to get the same value
-
-  .. code-block:: python
-
-    datetime.datetime.today().year
-
-  - ``datetime`` is the `datetime module`_
-  - ``datetime.datetime`` is a call to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
-  - ``datetime.datetime.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy!
-  - ``datetime.datetime.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_
-  - ``datetime.datetime.now().year`` or ``datetime.datetime.today().year`` asks for the value of the ``year`` :ref:`class attribute<what is a class attribute?>` of the `datetime.datetime object`_ returned by the `now method`_ or `today method`_ of the `datetime.datetime object`_ from the `datetime module`_
-
-  that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`.
-
 ----
 
 =================================================================================
@@ -1890,35 +1876,112 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
 ----
 
-I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
+* I add an `import statement`_ for the `datetime module`_ at the top of ``test_person.py``
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 1
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
 
-  import datetime
-  import src.person
-  import unittest
+    import datetime
+    import src.person
+    import unittest
 
-the test passes.
+  the test passes.
 
-``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ so I can use it in ``test_person.py``.
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'use current year for age calculation'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+* ``import datetime`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `datetime module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``datetime.py`` file_ on the computer that came with Python_
+
+  .. code-block:: python
+
+    import datetime    # import object for datetime.py
+
+* ``datetime.datetime`` is a call to the `datetime object`_ of the `datetime module`_. Wait a minute, that is the same name again. Do I have to remember all this?
+
+  .. code-block:: python
+
+    datetime.datetime  # use datetime object from datetime.py
+
+* ``datetime.datetime.now()`` is a call to the `now method`_ of the `datetime.datetime object`_ from the `datetime module`_, it returns a `datetime.datetime object`_. Oh boy!
+
+  .. code-block:: python
+
+    datetime.datetime.now()   # returns datetime.datetime object
+
+  I can also use the `today method`_ to get the same value
+
+* ``datetime.datetime.today()`` is a call to the `today method`_ of the `datetime.datetime object`_ from the `datetime module`_, it also returns a `datetime.datetime object`_
+
+  .. code-block:: python
+
+    datetime.datetime.today() # returns datetime.datetime object
+
+* ``datetime.datetime`` :ref:`objects<what is a class?>` have a ``year`` :ref:`attribute<what is a class attribute?>` that gives me the value of the current year which means I can do this to get the value of the current year
+
+  .. code-block:: python
+
+    result = datetime.datetime.now()
+    this_year = result.year
+
+  which is the same as
+
+  .. code-block:: python
+
+    this_year = datetime.datetime.today().year
+
+  or
+
+  .. code-block:: python
+
+    result = datetime.datetime.today()
+    this_year = result.year
+
+  which is the same as
+
+  .. code-block:: python
+
+    this_year = datetime.datetime.now().year
+
+  that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`.
 
 ----
 
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
+*********************************************************************************
+test factory with random year_of_birth
+*********************************************************************************
 
 I want to use random values in the test to make sure the :ref:`factory function<test_factory_w_keyword_arguments>` can handle different values and always calculates the right age.
+
+I can do that with the `random module`_ from `The Python Standard Library`_ which is used to make fake random numbers.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
 
 * I use a random integer_ (a whole number without decimals) for the ``year_of_birth`` :ref:`variable<what is a variable?>`
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 5-9
+    :linenos:
+    :emphasize-lines: 12-16
+
+    import datetime
+    import src.person
+    import unittest
+
+
+    class TestPerson(unittest.TestCase):
 
         def test_factory_w_keyword_arguments(self):
             first_name = 'jane'
@@ -1944,11 +2007,13 @@ I want to use random values in the test to make sure the :ref:`factory function<
     NameError: name 'random' is not defined.
                Did you forget to import 'random'?
 
-  - ``random`` is the `random module`_
-  - ``random.randint()`` is a call to the `randint method`_ from the `random module`_. Okay, this one does not use the same name again
-  - ``datetime.datetime.now().year`` gives me this year
-  - ``datetime.datetime.now().year-120`` gives me this year minus ``120``
-  - ``random.randint(datetime.datetime.now().year-120, datetime.datetime.now().year)`` gives me a random number from 120 years ago, up to and including the current year
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
 
 * I add an `import statement`_ for the `random module`_ at the top of ``test_person.py``
 
@@ -1961,26 +2026,42 @@ I want to use random values in the test to make sure the :ref:`factory function<
     import src.person
     import unittest
 
-  - the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+    :emphasize-lines: 3, 5
+
+    AssertionError:
+        {'first_name': 'jane', 'last_name': 'doe',
+          'sex': 'F', 'age': 30}
+      != {'first_name': 'jane', 'last_name': 'doe',
+          'sex': 'F', 'age': X}
+
+  where ``X`` is a random age
+
+  .. tip::
+
+    Anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`.
+
+  - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `random module`_ so I can use it in ``test_person.py``. This means I can assume there is a ``random.py`` file_ on the computer that came with Python_
 
     .. code-block:: python
-      :emphasize-lines: 3, 5
 
-      AssertionError:
-          {'first_name': 'jane', 'last_name': 'doe',
-           'sex': 'F', 'age': 30}
-       != {'first_name': 'jane', 'last_name': 'doe',
-           'sex': 'F', 'age': X}
+      import random    # import object for random.py
 
-    where ``X`` is a random age
+  - ``random.randint`` is a :ref:`method<what is a method?>` of the `random module`_. Okay, this one does not use the same name again.
+  - ``datetime.datetime.now().year`` gives me the value of the current year
+  - ``datetime.datetime.now().year-120`` gives me the value of the current year minus ``120`` (I assume there are no people older than ``120``, yet)
+  - ``random.randint(datetime.datetime.now().year-120, datetime.datetime.now().year)`` is a call to the `randint method`_ of the `random module`_ with ``datetime.datetime.now().year-120`` and ``datetime.datetime.now().year`` as :ref:`positional arguments<test_w_positional_arguments>`. I can assume there is some definition in ``random.py`` that looks like this
 
-    .. tip::
+    .. code-block:: python
 
-      Anytime I use :kbd:`ctrl+s` (Windows_/Linux_) or :kbd:`command+s` (MacOS_) to save the file_, the test runs again and I get a new random :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>`.
+      def randint(first_number, second_number):
+          return random number
+                 between first_number and second_number
+                 including second_number
 
-  - random_ is a :ref:`module<what is a module?>` from `The Python Standard Library`_ that is used to make fake random numbers
-  - ``import random`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the `random module`_ so I can use it in ``test_person.py``
-  - I like to sort my `import statements`_ alphabetically
+    it returns a random number from 120 years ago, up to and including the current year
 
 * I add a calculation for the age with the `today method`_ to the `return statement`_ in ``person.py``
 
