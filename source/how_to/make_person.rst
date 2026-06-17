@@ -2788,7 +2788,9 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 test factory with a dictionary
 *********************************************************************************
 
-The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` (``reality``) and the :ref:`dictionary<what is a dictionary?>` for ``my_expectation`` in the test is that one has a year of birth and the other does a calculation with the year of birth, the other things are the same. I can use a :ref:`dictionary<what is a dictionary?>` to remove the repeating parts.
+The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` (``reality``) and the :ref:`dictionary<what is a dictionary?>` for ``my_expectation`` in the test is - ``year_of_birth`` and ``age``. One takes in a value for ``year_of_birth`` and the other uses ``year_of_birth`` to calculate the age, the other things are the same.
+
+I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that are the same.
 
 ----
 
