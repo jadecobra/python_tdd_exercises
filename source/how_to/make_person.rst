@@ -2831,13 +2831,27 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 * I use the new :ref:`variable<what is a variable?>` to remove ``first_name``, ``last_name``, and ``sex`` from the call to ``src.person.factory``
 
   .. code-block:: python
-    :lineno-start: 39
-    :emphasize-lines: 8-11, 15-18
+    :lineno-start: 13
+    :emphasize-lines: 22-25
+
+        def test_factory_w_keyword_arguments(self):
+            first_name = pick_one(
+                'jane', 'joe', 'john', 'person',
+            )
+            last_name = pick_one(
+                'doe', 'smith', 'blow', 'public',
+            )
+            sex = pick_one('F', 'M')
 
             a_person = dict(
                 first_name=first_name,
                 last_name=last_name,
                 sex=sex,
+            )
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
             )
 
             reality = src.person.factory(
@@ -2848,16 +2862,10 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                # first_name=first_name,
-                # last_name=last_name,
-                # sex=sex,
-                a_person,
-                # age=2026-year_of_birth,
-                # age=(
-                #     datetime.datetime.today().year
-                #   - year_of_birth
-                # ),
-                age=this_year-year_of_birth,
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year- year_of_birth,
             )
             self.assertEqual(reality, my_expectation)
 
@@ -2868,10 +2876,43 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 
   .. code-block:: python
 
-    TypeError: factory() missing 2 required
-               positional arguments: 'last_name' and 'sex'
+    TypeError: factory() missing
+               2 required positional arguments:
+               'last_name' and 'sex'
 
-  because the :ref:`factory function<test_factory_w_keyword_arguments>` now takes ``a_person`` as the first :ref:`positional argument<test_w_positional_arguments>` (``first_name``), and wants the other required arguments.
+  because this happens
+
+  .. code-block:: python
+
+    first_name = pick_one('jane', 'joe', 'john', 'person',)
+    last_name = pick_one('doe', 'smith', 'blow', 'public',)
+    sex = pick_one('F', 'M')
+
+  .. code-block:: python
+
+    a_person = dict(
+                   first_name=first_name,
+                   last_name=last_name,
+                   sex=sex,
+               )
+
+  .. code-block:: python
+
+    reality = src.person.factory(
+                  a_person,
+                  year_of_birth
+              )
+                  src.person.factory(
+                      a_person,
+                      year_of_birth
+                  )
+                  src.person.factory(
+                      first_name=a_person,
+                      year_of_birth=year_of_birth
+                  )
+
+  - which raises :ref:`TypeError<what causes TypeError?>` since  I called the :ref:`factory function<test_factory_w_keyword_arguments>` with ``a_person`` as the first :ref:`positional argument<test_w_positional_arguments>` (``first_name``) and a value for ``year_of_birth``.  The :ref:`function<what is a function?>` wants the other required arguments.
+  - Python_ uses the value for ``year_of_birth`` for the ``year_of_birth`` parameter because the names are the same, even though this given as the second :ref:`positional argument<test_w_positional_arguments>`.
 
   I want the :ref:`function<what is a function?>` to take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` (``a_person``) as :ref:`keyword arguments<test_w_keyword_arguments>`.
 
@@ -2883,37 +2924,65 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 
 ----
 
-I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_w_unknown_arguments`
+I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_w_unknown_arguments` to make break it up so that the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` are taken as :ref:`keyword arguments<test_w_keyword_arguments>`
 
 .. code-block:: python
-  :lineno-start: 45
-  :emphasize-lines: 5, 12
+  :lineno-start: 33
+  :emphasize-lines: 5-6
 
-          reality = src.person.factory(
-              # first_name=first_name,
-              # last_name=last_name,
-              # sex=sex,
-              **a_person,
-              year_of_birth=year_of_birth,
-          )
-          my_expectation = dict(
-              # first_name=first_name,
-              # last_name=last_name,
-              # sex=sex,
-              **a_person,
-              # age=2026-year_of_birth,
-              # age=(
-              #     datetime.datetime.today().year
-              #   - year_of_birth
-              # ),
-              age=this_year-year_of_birth,
-          )
-          self.assertEqual(reality, my_expectation)
+            reality = src.person.factory(
+                # first_name=first_name,
+                # last_name=last_name,
+                # sex=sex,
+                # a_person,
+                **a_person,
+                year_of_birth=year_of_birth,
+            )
+            my_expectation = dict(
+                first_name=first_name,
+                last_name=last_name,
+                sex=sex,
+                age=this_year- year_of_birth,
+            )
+            self.assertEqual(reality, my_expectation)
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the test is green again, because :ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``**a_person``).
+the test is green again, because this happens
+
+.. code-block:: python
+
+  first_name = pick_one('jane', 'joe', 'john', 'person',)
+  last_name = pick_one('doe', 'smith', 'blow', 'public',)
+  sex = pick_one('F', 'M')
+
+.. code-block:: python
+
+  a_person = dict(
+                 first_name=first_name,
+                 last_name=last_name,
+                 sex=sex,
+             )
+
+.. code-block:: python
+
+  reality = src.person.factory(
+                a_person,
+                year_of_birth
+            )
+                src.person.factory(
+                    **a_person,
+                    year_of_birth
+                )
+                src.person.factory(
+                    first_name=first_name,
+                    last_name=last_name,
+                    sex=sex,
+                    year_of_birth=year_of_birth
+                )
+
+:ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``**a_person``).
 
 ----
 
@@ -2922,6 +2991,10 @@ the test is green again, because :ref:`Python sends the dictionary as keyword ar
 =================================================================================
 
 ----
+
+* I use the :ref:`variable<what is a variable?>` for ``my_expectation``
+
+  
 
 * I use the values of ``first_name``, ``last_name`` and the ``sex`` :ref:`variables<what is a variable?>` in the ``a_person`` :ref:`dictionary<what is a dictionary?>` because they are now only used once, by ``a_person``
 
