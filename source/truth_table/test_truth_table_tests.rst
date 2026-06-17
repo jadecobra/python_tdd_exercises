@@ -2524,20 +2524,20 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
     :lineno-start: 111
     :emphasize-lines: 10-11
 
-    return (
-        # (not (first and not second))
-        # ((not first) (not and) (not not second))
-        # ((not first) or (not not second))
-        (not first or second)
-        # (not or)
-        and
-        # (not (not first and second))
-        # ((not not first) (not and) (not second))
-        # ((not not first) or (not second))
-        (first or not second)
-    )
+        return (
+            # (not (first and not second))
+            # ((not first) (not and) (not not second))
+            # ((not first) or (not not second))
+            (not first or second)
+            # (not or)
+            and
+            # (not (not first and second))
+            # ((not not first) (not and) (not second))
+            # ((not not first) or (not second))
+            (first or not second)
+        )
 
-  still green.
+  the test is still green.
 
 * I remove the commented lines from :ref:`logical_equality<test_logical_equality>`
 
@@ -2556,49 +2556,58 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 * I make the :ref:`if statement<if statements>` in :ref:`logical_nand<test_logical_nand>` simpler
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 2
+    :lineno-start: 83
+    :emphasize-lines: 2-7
 
     def logical_nand(first, second):
         # if (first, second) == (True, True): return False
+        # return first, second
         if first == True and second == True:
             return False
-        return first, second
+        else:
+            return True
 
   the test is still green.
 
 * I remove ``== True``
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 2-3
+    :lineno-start: 83
+    :emphasize-lines: 4-5
 
     def logical_nand(first, second):
+        # if (first, second) == (True, True): return False
+        # return first, second
         # if first == True and second == True:
         if first and second:
             return False
-        return first, second
+        else:
+            return True
 
   still green.
 
-* I use I use a `return statement`_ because ...
+* I use a `return statement`_ because ...
 
   .. code-block:: python
-    :lineno-start: 60
-    :emphasize-lines: 2
+    :lineno-start: 83
+    :emphasize-lines: 5-9
 
     def logical_nand(first, second):
+        # if (first, second) == (True, True): return False
+        # return first, second
+        # if first == True and second == True:
+        # if first and second:
+        #     return False
+        # else:
+        #     return True
         return not (first and second)
-        if first and second:
-            return False
-        return first, second
 
   green.
 
-* I remove the other lines in :ref:`logical_nand<test_logical_nand>`
+* I remove the commented lines from :ref:`logical_nand<test_logical_nand>`
 
   .. code-block:: python
-    :lineno-start: 60
+    :lineno-start: 83
 
     def logical_nand(first, second):
         return not (first and second)
