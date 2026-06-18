@@ -4585,7 +4585,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
 * I go back to the terminal_ where the tests are running
 
-* I add a :ref:`function<what is a function?>`
+* I add a :ref:`function<what is a function?>` to calculate age
 
   .. code-block:: python
     :lineno-start: 11
@@ -4609,7 +4609,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_keyword_arguments(self):
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
+* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 39
@@ -4620,7 +4620,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 # age=this_year-year_of_birth,
                 age=calculate_age(year_of_birth),
             )
@@ -4637,15 +4637,15 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
     :emphasize-text: calculate_age
 
         def test_factory_w_keyword_arguments(self):
-            this_year = datetime.datetime.now().year
-            year_of_birth = random.randint(
-                this_year-120, this_year
-            )
-
             a_person = dict(
                 first_name=get_random_name(),
                 last_name=get_random_name(),
                 sex=pick_one('F', 'M'),
+            )
+
+            this_year = datetime.datetime.now().year
+            year_of_birth = random.randint(
+                this_year-120, this_year
             )
 
             reality = src.person.factory(
@@ -4653,7 +4653,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
                 year_of_birth=year_of_birth,
             )
             my_expectation = dict(
-                **a_person,
+                a_person,
                 age=calculate_age(year_of_birth),
             )
             self.assertEqual(reality, my_expectation)
@@ -4661,10 +4661,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
         def test_factory_w_optional_arguments(self):
 
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
+* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 56
+    :lineno-start: 49
     :emphasize-lines: 9-10
 
             reality = src.person.factory(
@@ -4692,6 +4692,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_optional_arguments(self):
             first_name = get_random_name()
+
             this_year = datetime.datetime.now().year
             year_of_birth = random.randint(
                 this_year-120, this_year
@@ -4711,147 +4712,110 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_person_says_hello(self):
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``joe`` in :ref:`test_factory_person_says_hello`
+* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``joe`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 5-8, 19-20
+    :lineno-start: 69
+    :emphasize-lines: 11-12
 
         def test_factory_person_says_hello(self):
-            first_name = 'joe'
-            last_name = 'blow'
-            year_of_birth = 1996
-            # age = (
-            #     datetime.datetime.now().year
-            #   - year_of_birth
-            # )
-
             joe = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
             )
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                # f' and I am {age}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is joe blow and I am'
+                # f' {datetime.datetime.now().year-1996}'
+                f' {calculate_age(1996)}'
             )
             self.assertEqual(reality, my_expectation)
+
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
 
   the test is still green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``jane`` in :ref:`test_factory_person_says_hello`
+* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 83
-    :emphasize-lines: 12-15, 26-27
-
-            reality = src.person.say_hello(joe)
-            my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                # f' and I am {age}'
-                f' and I am {calculate_age(year_of_birth)}'
-            )
-            self.assertEqual(reality, my_expectation)
-
-            first_name = 'jane'
-            last_name = 'doe'
-            year_of_birth = 1991
-            # age = (
-            #     datetime.datetime.now().year
-            #   - year_of_birth
-            # )
+    :lineno-start: 84
+    :emphasize-lines: 10-11
 
             jane = src.person.factory(
+                first_name='jane',
                 sex='F',
-                first_name=first_name,
-                year_of_birth=year_of_birth,
+                year_of_birth=1991,
             )
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                # f' and I am {age}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is jane doe and I am'
+                # f' {datetime.datetime.now().year-1991}'
+                f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
+
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
 
   still green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``john`` in :ref:`test_factory_person_says_hello`
+* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``john``
 
   .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 12-15, 26-27
-
-            reality = src.person.say_hello(jane)
-            my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                # f' and I am {age}'
-                f' and I am {calculate_age(year_of_birth)}'
-            )
-            self.assertEqual(reality, my_expectation)
-
-            first_name = 'john'
-            last_name = 'smith'
-            year_of_birth = 1580
-            # age = (
-            #     datetime.datetime.now().year
-            #   - year_of_birth
-            # )
+    :lineno-start: 98
+    :emphasize-lines: 10-11
 
             john = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
             )
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                # f' and I am {age}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is john smith and I am'
+                # f' {datetime.datetime.now().year-1580}'
+                f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
+
+            mary = src.person.factory(
+                first_name='mary',
+                last_name='public',
+                year_of_birth=2000,
+                sex='F',
+            )
 
   green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``mary`` in :ref:`test_factory_person_says_hello`
+* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``mary``
 
   .. code-block:: python
-    :lineno-start: 127
-    :emphasize-lines: 12-15, 27-28
-
-            reality = src.person.say_hello(john)
-            my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                # f' and I am {age}'
-                f' and I am {calculate_age(year_of_birth)}'
-            )
-            self.assertEqual(reality, my_expectation)
-
-            first_name = 'mary'
-            last_name = 'public'
-            year_of_birth = 2000
-            # age = (
-            #     datetime.datetime.now().year
-            #   - year_of_birth
-            # )
+    :lineno-start: 112
+    :emphasize-lines: 10-11
 
             mary = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+                first_name='mary',
+                last_name='public',
+                year_of_birth=2000,
                 sex='F',
             )
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                # f' and I am {age}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is mary public and I am'
+                # f' {datetime.datetime.now().year-2000}'
+                f' {calculate_age(2000)}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -4863,76 +4827,60 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 68
+    :lineno-start: 69
     :emphasize-text: calculate_age
 
         def test_factory_person_says_hello(self):
-            first_name = 'joe'
-            last_name = 'blow'
-            year_of_birth = 1996
-
             joe = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
             )
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is joe blow and I am'
+                f' {calculate_age(1996)}'
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'jane'
-            last_name = 'doe'
-            year_of_birth = 1991
-
             jane = src.person.factory(
+                first_name='jane',
                 sex='F',
-                first_name=first_name,
-                year_of_birth=year_of_birth,
+                year_of_birth=1991,
             )
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is jane doe and I am'
+                f' {calculate_age(1991)}'
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'john'
-            last_name = 'smith'
-            year_of_birth = 1580
-
             john = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
             )
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is john smith and I am'
+                f' {calculate_age(1580)}'
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'mary'
-            last_name = 'public'
-            year_of_birth = 2000
-
             mary = src.person.factory(
-                first_name=first_name,
-                last_name=last_name,
-                year_of_birth=year_of_birth,
+                first_name='mary',
+                last_name='public',
+                year_of_birth=2000,
                 sex='F',
             )
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                f'Hi, my name is {first_name} {last_name}'
-                f' and I am {calculate_age(year_of_birth)}'
+                'Hi, my name is mary public and I am'
+                f' {calculate_age(2000)}'
             )
             self.assertEqual(reality, my_expectation)
 
