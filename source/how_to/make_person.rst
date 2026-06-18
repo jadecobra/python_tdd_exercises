@@ -4926,6 +4926,102 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 ----
 
 *********************************************************************************
+extract get_current_year function
+*********************************************************************************
+
+Each test has uses ``datetime.datetime.now().year`` to get the current year.
+
+* I go back to the terminal_ where the tests are running
+
+* I add a :ref:`function<what is a function?>` that returns the value of the current year
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 8-9
+
+    def get_random_name():
+        return pick_one(
+            'jane', 'joe', 'john', 'person',
+            'doe', 'smith', 'blow', 'public',
+        )
+
+
+    def get_current_year():
+        return datetime.datetime.now().year
+
+
+    class TestPerson(unittest.TestCase):
+
+        def test_factory_w_keyword_arguments(self):
+
+* I use the new :ref:`function<what is a function?>` for ``this_year`` in :ref:`test_factory_w_keyword_arguments`
+
+  .. code-block:: python
+    :lineno-start: 24
+    :emphasize-lines: 8-9
+
+        def test_factory_w_keyword_arguments(self):
+            a_person = dict(
+                first_name=get_random_name(),
+                last_name=get_random_name(),
+                sex=pick_one('F', 'M'),
+            )
+
+            # this_year = datetime.datetime.now().year
+            this_year = get_current_year()
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+  the test is still green.
+
+* I use the :ref:`function<what is a function?>` for ``this_year`` in :ref:`test_factory_w_optional_arguments`
+
+  .. code-block:: python
+    :lineno-start: 47
+    :emphasize-lines: 4-5
+
+        def test_factory_w_optional_arguments(self):
+            first_name = get_random_name()
+
+            # this_year = datetime.datetime.now().year
+            this_year = get_current_year()
+            year_of_birth = random.randint(
+                this_year-120, this_year
+            )
+
+  still green.
+
+* I use the :ref:`function<what is a function?>` for ``this_year`` in :ref:`test_factory_person_says_hello`
+
+  .. code-block:: python
+    :lineno-start: 68
+    :emphasize-lines: 2-3
+
+        def test_factory_person_says_hello(self):
+            # this_year = datetime.datetime.now().year
+            this_year = get_current_year()
+
+            first_name = 'joe'
+            last_name = 'blow'
+            year_of_birth = 1996
+            age = this_year - year_of_birth
+
+  green.
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'extract get_current_year function'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+*********************************************************************************
 extract calculate_age function
 *********************************************************************************
 
@@ -4936,19 +5032,16 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 * I add a :ref:`function<what is a function?>` to calculate age
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 8-12
+    :lineno-start: 18
+    :emphasize-lines: 5-9
 
-    def get_random_name():
-        return pick_one(
-            'jane', 'joe', 'john', 'person',
-            'doe', 'smith', 'blow', 'public',
-        )
+    def get_current_year():
+        return datetime.datetime.now().year
 
 
-    def calculate_age(year_of_birth):
+    def calculator_age(year_of_birth):
         return (
-            datetime.datetime.now().year
+            get_current_year()
           - year_of_birth
         )
 
@@ -4957,7 +5050,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_keyword_arguments(self):
 
-* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
+* I use the :ref:`function<what is a function?>` to calculate the age for ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 39
@@ -5008,8 +5101,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_optional_arguments(self):
 
-
-* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
+* I use the :ref:`function<what is a function?>` to calculate the age for ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
     :lineno-start: 49
@@ -5060,7 +5152,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_person_says_hello(self):
 
-* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``joe`` in :ref:`test_factory_person_says_hello`
+* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``joe`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 69
@@ -5089,7 +5181,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   the test is still green.
 
-* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``jane``
+* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``jane``
 
   .. code-block:: python
     :lineno-start: 84
@@ -5117,7 +5209,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   still green.
 
-* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``john``
+* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``john``
 
   .. code-block:: python
     :lineno-start: 98
@@ -5146,7 +5238,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   green.
 
-* I use the :ref:`function<what is a function?>` to calculate the age in ``my_expectation`` for ``mary``
+* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``mary``
 
   .. code-block:: python
     :lineno-start: 112
