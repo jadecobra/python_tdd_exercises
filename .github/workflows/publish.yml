@@ -41,15 +41,42 @@ jobs:
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
           path: build/doctrees
-          key: ${{ runner.os }}-sphinx-doctrees-v1-${{ hashFiles('source/conf.py', 'uv.lock') }}
+          key: ${{ runner.os }}-sphinx-doctrees-v2-${{ hashFiles('source/conf.py', 'uv.lock') }}
           restore-keys: |
-            ${{ runner.os }}-sphinx-doctrees-v1-
+            ${{ runner.os }}-sphinx-doctrees-v2-
+
+      - name: normalize source mtimes for incremental sphinx
+        run: |
+          # actions/checkout sets fresh mtimes on every run, which makes Sphinx
+          # treat all 123+ sources as changed even when the doctree cache hits.
+          # Re-apply mtimes saved with the cached doctrees, then bump only files
+          # touched in this push so incremental rebuilds stay accurate.
+          MANIFEST=build/doctrees/.source-mtimes.tsv
+          if [ -f "$MANIFEST" ]; then
+            while IFS=$'\t' read -r ts path; do
+              [ -f "$path" ] || continue
+              touch -d "@${ts}" "$path"
+            done < "$MANIFEST"
+          fi
+          if [ "${{ github.event_name }}" = "push" ] && \
+             [ -n "${{ github.event.before }}" ] && \
+             [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- source | while read -r f; do
+              [ -n "$f" ] && [ -f "$f" ] && touch "$f"
+            done
+          fi
 
       - name: build sphinx documentation
         run: |
           uv run sphinx-build -d build/doctrees -j auto ./source ./build/html
           find build/html -name '.buildinfo' -delete
           find build/html -name 'objects.inv' -delete
+          MANIFEST=build/doctrees/.source-mtimes.tsv
+          mkdir -p build/doctrees
+          : > "$MANIFEST"
+          git ls-files -z source | while IFS= read -r -d '' f; do
+            printf '%s\t%s\n' "$(stat -c %Y "$f")" "$f" >> "$MANIFEST"
+          done
 
       - name: setup github_pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
