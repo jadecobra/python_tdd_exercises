@@ -170,4 +170,28 @@ latex_documents = [(
     'Jacob Itegboje', 'manual'
 )]
 
-suppress_warnings = ['ref.label', 'autosectionlabel.*']
+suppress_warnings = [
+    'ref.label',
+    'autosectionlabel.*',
+    'toc.not_readable',
+    'toc.not_included',
+]
+
+
+def setup(app):
+    import logging
+
+    class OnlyMissingLiteralIncludes(logging.Filter):
+        def filter(self, record: logging.LogRecord) -> bool:
+            return 'not found or reading it failed' in record.getMessage()
+
+    warning_filter = OnlyMissingLiteralIncludes()
+    sphinx_logger = logging.getLogger('sphinx')
+    sphinx_logger.addFilter(warning_filter)
+    for handler in sphinx_logger.handlers:
+        handler.addFilter(warning_filter)
+
+    return {
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }
