@@ -5039,7 +5039,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
         return datetime.datetime.now().year
 
 
-    def calculator_age(year_of_birth):
+    def calculate_age(year_of_birth):
         return (
             get_current_year()
           - year_of_birth
@@ -5050,10 +5050,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_keyword_arguments(self):
 
-* I use the :ref:`function<what is a function?>` to calculate the age for ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
+* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_keyword_arguments`
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 44
     :emphasize-lines: 7-8
 
             reality = src.person.factory(
@@ -5071,10 +5071,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   the test is still green.
 
-* I remove the commented line
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 27
+    :lineno-start: 31
     :emphasize-text: calculate_age
 
         def test_factory_w_keyword_arguments(self):
@@ -5084,7 +5084,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
                 sex=pick_one('F', 'M'),
             )
 
-            this_year = datetime.datetime.now().year
+            this_year = get_current_year()
             year_of_birth = random.randint(
                 this_year-120, this_year
             )
@@ -5101,10 +5101,10 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_w_optional_arguments(self):
 
-* I use the :ref:`function<what is a function?>` to calculate the age for ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
+* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` in ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 62
     :emphasize-lines: 9-10
 
             reality = src.person.factory(
@@ -5124,16 +5124,16 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   the test is still green.
 
-* I remove the commented line
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 49
+    :lineno-start: 53
     :emphasize-text: calculate_age
 
         def test_factory_w_optional_arguments(self):
             first_name = get_random_name()
 
-            this_year = datetime.datetime.now().year
+            this_year = get_current_year()
             year_of_birth = random.randint(
                 this_year-120, this_year
             )
@@ -5152,175 +5152,196 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
         def test_factory_person_says_hello(self):
 
-* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``joe`` in :ref:`test_factory_person_says_hello`
+* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``joe`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
-    :lineno-start: 69
-    :emphasize-lines: 11-12
+    :lineno-start: 73
+    :emphasize-lines: 8-9
 
         def test_factory_person_says_hello(self):
+            # this_year = datetime.datetime.now().year
+            this_year = get_current_year()
+
+            first_name = 'joe'
+            last_name = 'blow'
+            year_of_birth = 1996
+            # age = this_year - year_of_birth
+            age = calculate_age(year_of_birth)
+
             joe = src.person.factory(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
             )
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                'Hi, my name is joe blow and I am'
-                # f' {datetime.datetime.now().year-1996}'
-                f' {calculate_age(1996)}'
+                f'Hi, my name is {first_name}'
+                f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
-            jane = src.person.factory(
-                first_name='jane',
-                sex='F',
-                year_of_birth=1991,
-            )
+            first_name = 'jane'
+            year_of_birth = 1991
+            age = this_year - year_of_birth
 
   the test is still green.
 
-* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``jane``
+* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``jane``
 
   .. code-block:: python
-    :lineno-start: 84
-    :emphasize-lines: 10-11
+    :lineno-start: 96
+    :emphasize-lines: 3-4
+
+            first_name = 'jane'
+            year_of_birth = 1991
+            # age = this_year - year_of_birth
+            age = calculate_age(year_of_birth)
 
             jane = src.person.factory(
-                first_name='jane',
+                first_name=first_name,
                 sex='F',
-                year_of_birth=1991,
+                year_of_birth=year_of_birth
             )
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
-                # f' {datetime.datetime.now().year-1991}'
-                f' {calculate_age(1991)}'
+                f'Hi, my name is {first_name}'
+                f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
-            john = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
-            )
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = this_year - year_of_birth
 
   still green.
 
-* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``john``
+* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``john``
 
   .. code-block:: python
-    :lineno-start: 98
-    :emphasize-lines: 10-11
+    :lineno-start: 114
+    :emphasize-lines: 4-5
+
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            # age = this_year - year_of_birth
+            age = calculate_age(year_of_birth)
 
             john = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
             )
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                'Hi, my name is john smith and I am'
-                # f' {datetime.datetime.now().year-1580}'
-                f' {calculate_age(1580)}'
+                f'Hi, my name is {first_name}'
+                f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
-            mary = src.person.factory(
-                first_name='mary',
-                last_name='public',
-                year_of_birth=2000,
-                sex='F',
-            )
+            first_name = 'mary'
+            last_name = 'public'
+            year_of_birth = 2000
+            age = this_year - year_of_birth
 
   green.
 
-* I use the :ref:`function<what is a function?>` to calculate the age of ``my_expectation`` for ``mary``
+* I add a call to the :ref:`function<what is a function?>` for the value of ``age`` for ``mary``
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 133
     :emphasize-lines: 10-11
 
-            mary = src.person.factory(
-                first_name='mary',
-                last_name='public',
-                year_of_birth=2000,
-                sex='F',
-            )
-
-            reality = src.person.say_hello(mary)
-            my_expectation = (
-                'Hi, my name is mary public and I am'
-                # f' {datetime.datetime.now().year-2000}'
-                f' {calculate_age(2000)}'
-            )
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
+            first_name = 'mary'
+            last_name = 'public'
+            year_of_birth = 2000
+            # age = this_year - year_of_birth
+            age = calculate_age(year_of_birth)
 
   the test is still green.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 69
+    :lineno-start: 73
     :emphasize-text: calculate_age
 
         def test_factory_person_says_hello(self):
+            this_year = get_current_year()
+
+            first_name = 'joe'
+            last_name = 'blow'
+            year_of_birth = 1996
+            age = calculate_age(year_of_birth)
+
             joe = src.person.factory(
-                first_name='joe',
-                last_name='blow',
-                year_of_birth=1996,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
             )
 
             reality = src.person.say_hello(joe)
             my_expectation = (
-                'Hi, my name is joe blow and I am'
-                f' {calculate_age(1996)}'
+                f'Hi, my name is {first_name}'
+                f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
+            first_name = 'jane'
+            year_of_birth = 1991
+            age = calculate_age(year_of_birth)
+
             jane = src.person.factory(
-                first_name='jane',
+                first_name=first_name,
                 sex='F',
-                year_of_birth=1991,
+                year_of_birth=year_of_birth
             )
 
             reality = src.person.say_hello(jane)
             my_expectation = (
-                'Hi, my name is jane doe and I am'
-                f' {calculate_age(1991)}'
+                f'Hi, my name is {first_name}'
+                f' doe and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
+            first_name = 'john'
+            last_name = 'smith'
+            year_of_birth = 1580
+            age = calculate_age(year_of_birth)
+
             john = src.person.factory(
-                first_name='john',
-                last_name='smith',
-                year_of_birth=1580,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
             )
 
             reality = src.person.say_hello(john)
             my_expectation = (
-                'Hi, my name is john smith and I am'
-                f' {calculate_age(1580)}'
+                f'Hi, my name is {first_name}'
+                f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
+            first_name = 'mary'
+            last_name = 'public'
+            year_of_birth = 2000
+            age = calculate_age(year_of_birth)
+
             mary = src.person.factory(
-                first_name='mary',
-                last_name='public',
-                year_of_birth=2000,
+                first_name=first_name,
+                last_name=last_name,
+                year_of_birth=year_of_birth,
                 sex='F',
             )
 
             reality = src.person.say_hello(mary)
             my_expectation = (
-                'Hi, my name is mary public and I am'
-                f' {calculate_age(2000)}'
+                f'Hi, my name is {first_name}'
+                f' {last_name} and I am {age}'
             )
             self.assertEqual(reality, my_expectation)
 
@@ -5340,17 +5361,11 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
 ----
 
-----
-
-----
-
-----
-
 *********************************************************************************
-test_factory_person_says_hello with random values
+test_factory_person_says_hello with random year_of_birth
 *********************************************************************************
 
-I want to use random values to :ref:`test_factory_person_says_hello`
+I want to use random values for ``year_of_birth`` in :ref:`test_factory_person_says_hello`
 
 * I go back to the terminal_ where the tests are running
 
