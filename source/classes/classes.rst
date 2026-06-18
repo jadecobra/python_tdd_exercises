@@ -1301,7 +1301,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   the test passes.
 
-* I add an :ref:`assertion<what is an assertion?>` for ``a_person``
+* I add an :ref:`assertion<what is an assertion?>` for ``mary``
 
   .. code-block:: python
     :lineno-start: 128
@@ -1317,8 +1317,8 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
             )
             self.assertEqual(reality, my_expectation)
 
-            a_person = src.person.Person(
-                first_name='person',
+            mary = src.person.Person(
+                first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
                 sex='F',
@@ -1339,17 +1339,17 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is person public and I am 26'
+        'Hi, my name is mary public and I am 26'
      != 'Hi, my name is john smith and I am 446'
 
-* I change ``my_expectation`` to match ``reality`` for ``a_person``
+* I change ``my_expectation`` to match ``reality`` for ``mary``
 
   .. code-block:: python
     :lineno-start: 129
     :emphasize-lines: 10-11
 
-            a_person = src.person.Person(
-                first_name='person',
+            mary = src.person.Person(
+                first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
                 sex='F',
@@ -1357,7 +1357,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
             reality = a_person.say_hello()
             my_expectation = (
-                'Hi, my name is person public and I am'
+                'Hi, my name is mary public and I am'
                 f' {calculate_age(2000)}'
             )
             self.assertEqual(reality, my_expectation)
@@ -1546,7 +1546,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
   the test is still green.
 
-* I do the same thing with ``a_person``
+* I do the same thing with ``mary``
 
   .. code-block:: python
     :lineno-start: 159
@@ -1563,14 +1563,14 @@ I want to use random values to :ref:`test_classy_person_says_hello`
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person'
+            first_name = 'mary'
             last_name = 'public'
 
             year_of_birth = 2000
             age = calculate_age(year_of_birth)
 
-            a_person = src.person.Person(
-                # first_name='person',
+            mary = src.person.Person(
+                # first_name='mary',
                 # last_name='public',
                 # year_of_birth=2000,
                 first_name=first_name,
@@ -1583,7 +1583,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
             my_expectation = (
                 # 'Hi, my name is john smith and I am'
                 # f' {calculate_age(1580)}'
-                # 'Hi, my name is person public and I am'
+                # 'Hi, my name is mary public and I am'
                 # f' {calculate_age(2000)}'
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
@@ -1595,7 +1595,7 @@ I want to use random values to :ref:`test_classy_person_says_hello`
 
   the test is still green
 
-* I can add a random person with random values for the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.Person`` to replace ``joe``, ``jane``, ``john`` and ``a_person`` since they are all made the same way
+* I can add a random person with random values for the ``first_name``, ``last_name`` and ``age`` :ref:`variables<what is a variable?>` that are sent in the call to ``src.person.Person`` to replace ``joe``, ``jane``, ``john`` and ``mary`` since they are all made the same way
 
   .. code-block:: python
     :lineno-start: 91

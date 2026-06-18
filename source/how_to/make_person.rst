@@ -4451,14 +4451,14 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            a_person = src.person.factory(
-                first_name='person',
+            mary = src.person.factory(
+                first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = src.person.say_hello(mary)
             my_expectation = (
                 'Hi, my name is john smith and I am'
                 f' {datetime.datetime.now().year-1580}'
@@ -4473,27 +4473,27 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
   .. code-block:: python
 
     AssertionError:
-        'Hi, my name is person public and I am 26'
+        'Hi, my name is mary public and I am 26'
      != 'Hi, my name is john smith and I am 446'
 
-* I change ``my_expectation`` to match ``reality`` for ``a_person``
+* I change ``my_expectation`` to match ``reality`` for ``mary``
 
   .. code-block:: python
     :lineno-start: 104
     :emphasize-lines: 10-13
 
-            a_person = src.person.factory(
-                first_name='person',
+            mary = src.person.factory(
+                first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = src.person.say_hello(mary)
             my_expectation = (
                 # 'Hi, my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
-                'Hi, my name is person public and I am'
+                'Hi, my name is mary public and I am'
                 f' {datetime.datetime.now().year-2000}'
             )
             self.assertEqual(reality, my_expectation)
@@ -4520,7 +4520,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person'
+            first_name = 'mary'
             last_name = 'public'
             year_of_birth = 2000
             age = (
@@ -4528,8 +4528,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
               - year_of_birth
             )
 
-            a_person = src.person.factory(
-                first_name='person',
+            mary = src.person.factory(
+                first_name='mary',
                 last_name='public',
                 year_of_birth=2000,
                 sex='F',
@@ -4541,7 +4541,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     :lineno-start: 104
     :emphasize-lines: 10-15, 23-26
 
-            first_name = 'person'
+            first_name = 'mary'
             last_name = 'public'
             year_of_birth = 2000
             age = (
@@ -4549,8 +4549,8 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
               - year_of_birth
             )
 
-            a_person = src.person.factory(
-                # first_name='person',
+            mary = src.person.factory(
+                # first_name='mary',
                 # last_name='public',
                 # year_of_birth=2000,
                 first_name=first_name,
@@ -4559,11 +4559,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = src.person.say_hello(mary)
             my_expectation = (
                 # 'Hi, my name is john smith and I am'
                 # f' {datetime.datetime.now().year-1580}'
-                # 'Hi, my name is person public and I am'
+                # 'Hi, my name is mary public and I am'
                 # f' {datetime.datetime.now().year-2000}'
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
@@ -4575,7 +4575,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the test is still green.
 
-* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the :ref:`assertion<what is an assertion?>` before the one for ``a_person``
+* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the :ref:`assertion<what is an assertion?>` before the one for ``mary``
 
   .. code-block:: python
     :lineno-start: 82
@@ -4835,7 +4835,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person'
+            first_name = 'mary'
             last_name = 'public'
             year_of_birth = 2000
             age = (
@@ -4843,14 +4843,14 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
               - year_of_birth
             )
 
-            a_person = src.person.factory(
+            mary = src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = src.person.say_hello(mary)
             my_expectation = (
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {age}'
@@ -5113,7 +5113,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
 
   green.
 
-* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``a_person`` in :ref:`test_factory_person_says_hello`
+* I use the :ref:`function<what is a function?>` to remove repetition of the age calculation from ``my_expectation`` for ``mary`` in :ref:`test_factory_person_says_hello`
 
   .. code-block:: python
     :lineno-start: 127
@@ -5127,7 +5127,7 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person'
+            first_name = 'mary'
             last_name = 'public'
             year_of_birth = 2000
             # age = (
@@ -5135,14 +5135,14 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
             #   - year_of_birth
             # )
 
-            a_person = src.person.factory(
+            mary = src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = src.person.say_hello(mary)
             my_expectation = (
                 f'Hi, my name is {first_name} {last_name}'
                 # f' and I am {age}'
@@ -5213,18 +5213,18 @@ Each :ref:`assertion<what is an assertion?>` in every test has a calculation for
             )
             self.assertEqual(reality, my_expectation)
 
-            first_name = 'person'
+            first_name = 'mary'
             last_name = 'public'
             year_of_birth = 2000
 
-            a_person = src.person.factory(
+            mary = src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
                 sex='F',
             )
 
-            reality = src.person.say_hello(a_person)
+            reality = src.person.say_hello(mary)
             my_expectation = (
                 f'Hi, my name is {first_name} {last_name}'
                 f' and I am {calculate_age(year_of_birth)}'
@@ -5506,7 +5506,7 @@ I want to use random values to :ref:`test_factory_person_says_hello`
 
   the test is still green.
 
-* I comment out the ``first_name``, ``last_name`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``a_person`` in the last :ref:`assertion<what is an assertion?>`, so it uses the ones with random values
+* I comment out the ``first_name``, ``last_name`` and ``year_of_birth`` :ref:`variables<what is a variable?>` for ``mary`` in the last :ref:`assertion<what is an assertion?>`, so it uses the ones with random values
 
   .. code-block:: python
     :lineno-start: 129
@@ -5520,11 +5520,11 @@ I want to use random values to :ref:`test_factory_person_says_hello`
             )
             self.assertEqual(reality, my_expectation)
 
-            # first_name = 'person'
+            # first_name = 'mary'
             # last_name = 'public'
             # year_of_birth = 2000
 
-            a_person = src.person.factory(
+            mary = src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5533,13 +5533,13 @@ I want to use random values to :ref:`test_factory_person_says_hello`
 
   still green.
 
-* I add a random value for the ``sex`` parameter with the ``sex`` :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` for ``a_person``
+* I add a random value for the ``sex`` parameter with the ``sex`` :ref:`variable<what is a variable?>` in the call to ``src.person.factory`` for ``mary``
 
   .. code-block:: python
     :lineno-start: 141
     :emphasize-lines: 5-6
 
-            a_person = src.person.factory(
+            mary = src.person.factory(
                 first_name=first_name,
                 last_name=last_name,
                 year_of_birth=year_of_birth,
@@ -5549,13 +5549,13 @@ I want to use random values to :ref:`test_factory_person_says_hello`
 
   green.
 
-* I use the ``age`` :ref:`variable<what is a variable?>` in ``my_expectation`` for ``a_person``
+* I use the ``age`` :ref:`variable<what is a variable?>` in ``my_expectation`` for ``mary``
 
   .. code-block:: python
     :lineno-start: 149
     :emphasize-lines: 4-5
 
-        reality = src.person.say_hello(a_person)
+        reality = src.person.say_hello(mary)
         my_expectation = (
             f'Hi, my name is {first_name} {last_name}'
             # f' and I am {calculate_age(year_of_birth)}'
@@ -5572,7 +5572,7 @@ I want to use random values to :ref:`test_factory_person_says_hello`
     :lineno-start: 149
     :emphasize-lines: 9-14, 16-18
 
-            reality = src.person.say_hello(a_person)
+            reality = src.person.say_hello(mary)
             my_expectation = (
                 f'Hi, my name is {first_name} {last_name}'
                 # f' and I am {calculate_age(year_of_birth)}'
