@@ -1,9 +1,10 @@
 import sphinxawesome_theme
 
-
 project = 'pumping python'
 copyright = '%Y, JadeCobra LLC'
 author = 'Jacob Itegboje'
+version = '0.1.0'
+release = version
 
 rst_prolog = """
 .. role:: red
@@ -13,7 +14,7 @@ rst_prolog = """
 .. role:: yellow
    :class: custom-yellow
 """
-master_doc = 'index'
+root_doc = 'index'
 
 templates_path = ['_templates']
 exclude_patterns = [
@@ -32,7 +33,6 @@ extensions = [
     'notfound.extension',
 ]
 
-
 # -- Section Header Options ----------------------------------------------------
 text_sectionchars = '#*=-~"+`'
 
@@ -47,30 +47,25 @@ html_theme_options = {
     "show_prev_next": True,
 }
 html_sidebars = {
-  "**": ["sidebar_main_nav_links.html", "sidebar_toc.html", "localtoc.html"]
+    "**": ["sidebar_main_nav_links.html", "sidebar_toc.html"],
 }
 
-# syntax highlighting
-# pygments_style = "default"
 pygments_style = "default"
 pygments_style_dark = "monokai"
 
 html_extra_path = ['robots.txt', 'llms.txt']
 html_baseurl = 'https://www.pumpingpython.com/'
 html_favicon = '_static/dry_favicon_16x16.png'
-# html_logo = "_static/dry_favicon_16x16.png"
 html_title = 'pumping python: how I solve problems with Test Driven Development'
 html_short_title = 'pumping python'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 html_js_files = [
-    '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js',
+    'https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js',
 ]
 
 sitemap_url_scheme = '{link}'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
-
-# notfound_template = '_templates/layout.html'
 
 # -- Options for ePub output -------------------------------------------------
 epub_theme = 'epub'
@@ -81,93 +76,19 @@ epub_cover = ('_static/DRY.png', '')
 latex_logo = '_static/DRY.png'
 latex_show_pagerefs = True
 latex_show_urls = 'inline'
-latex_theme = 'manual' # 'howto'
+latex_theme = 'manual'
 
-# Define custom LaTeX elements for improved aesthetics
 latex_elements = {
-    'geometry': '',
-    # The paper size ('letterpaper' or 'a4paper').
     'papersize': 'a4paper',
-
-    # The font size ('10pt', '11pt' or '12pt').
     'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    # This is where you can load packages for custom fonts, colors, etc.
-#     'preamble': r'''
-# \usepackage{amsmath} % For advanced math
-# \usepackage{amsfonts} % For math fonts
-# \usepackage{amssymb} % For math symbols
-# \usepackage{microtype} % For better typesetting (adjusts spacing, etc.)
-
-# % Set page margins (tweak these values)
-# \geometry{
-#     a4paper,
-#     top=2.5cm,
-#     bottom=2.5cm,
-#     left=3cm,
-#     right=3cm,
-#     headheight=14.5pt,
-#     footskip=1cm
-# }
-
-# % Change the font for the entire document (e.g., use a cleaner font like Latin Modern)
-# % If you want a non-default font, you'll need the proper LaTeX package installed.
-# \usepackage{lmodern}
-# % For a professional look, you might consider setting a serif font for body text
-# % and a sans-serif for headings (if using a theme that supports it well).
-# % \renewcommand{\familydefault}{\sfdefault} % Uncomment for a sans-serif look
-
-# % Improve the look of code blocks (listings package can do this)
-# \usepackage{listings}
-# % \lstset{
-# %     basicstyle=\ttfamily\footnotesize, % Smaller font for code
-# %     breaklines=true, % Automatic line breaking
-# %     frame=single, % Add a frame around the code
-# %     framerule=0pt, % Remove the rule border
-# %     rulecolor=\color{lightgray}, % Color the rule
-# %     backgroundcolor=\color{lightgray!20} % Light background color
-# % }
-
-# % Custom title page look (optional, depends on 'maketitle' in 'maketitle' element)
-# \makeatletter
-# \def\maketitle{
-#   \begin{titlepage}
-#     \centering
-#     \includegraphics[width=0.4\textwidth]{DRY.png}\par\vspace{1em} % Your logo
-#     {\Huge\bfseries\textsf{pumping python}}\par\vspace{1em} % Project Title
-#     {\Large\textsf{how I solve problems with Test Driven Development}}\par\vspace{2em} % Subtitle
-#     {\large \@author}\par\vspace{0.5em} % Author
-#     {\large \@date}\par\vspace{2cm} % Date
-#     % You can add more info here, like a nice quote or a brief abstract
-#   \end{titlepage}
-# }
-# \makeatother
-
-# \hypersetup{
-#     colorlinks=true,
-#     linkcolor=blue,
-#     citecolor=blue,
-#     urlcolor=cyan,
-# }
-#     ''',
-
-    # Removes blank pages and adds to the aesthetic appeal
     'classoptions': ',openany,oneside',
-
-    # For 'howto', you might want to switch to 'manual' for a book-like PDF
-    # or keep 'howto' for a document/article look.
-    'fncychap': r'\usepackage[Bjornstrup]{fncychap}', # Custom chapter styles
-
-    # Custom document content setup
-    'maketitle': r'\maketitle', # Use the custom \maketitle defined in preamble
-    'tableofcontents': r'\setcounter{tocdepth}{2}\tableofcontents', # Only show sections up to level 2 in TOC
+    'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
+    'tableofcontents': r'\setcounter{tocdepth}{2}\tableofcontents',
 }
 
-# The LaTeX document class ('report', 'book', 'article', 'howto').
 latex_documents = [(
-    master_doc, 'pumpingpython.tex', 'pumping python Documentation',
-    'Jacob Itegboje', 'manual'
+    root_doc, 'pumpingpython.tex', 'pumping python Documentation',
+    'Jacob Itegboje', 'manual',
 )]
 
 suppress_warnings = [
@@ -176,22 +97,3 @@ suppress_warnings = [
     'toc.not_readable',
     'toc.not_included',
 ]
-
-
-def setup(app):
-    import logging
-
-    class OnlyMissingLiteralIncludes(logging.Filter):
-        def filter(self, record: logging.LogRecord) -> bool:
-            return 'not found or reading it failed' in record.getMessage()
-
-    warning_filter = OnlyMissingLiteralIncludes()
-    sphinx_logger = logging.getLogger('sphinx')
-    sphinx_logger.addFilter(warning_filter)
-    for handler in sphinx_logger.handlers:
-        handler.addFilter(warning_filter)
-
-    return {
-        'parallel_read_safe': True,
-        'parallel_write_safe': True,
-    }

@@ -3,6 +3,11 @@ name: Deploy Pumping Python
 on:
   push:
     branches: ["main"]
+    paths:
+      - 'source/**'
+      - '.github/workflows/publish.yml'
+      - 'pyproject.toml'
+      - 'uv.lock'
   workflow_dispatch:
 
 permissions:
@@ -36,12 +41,15 @@ jobs:
         uses: actions/cache@v5
         with:
           path: build/doctrees
-          key: ${{ runner.os }}-sphinx-doctrees-${{ hashFiles('source/**/*.rst', 'source/conf.py', 'source/code/**', 'uv.lock') }}
+          key: ${{ runner.os }}-sphinx-doctrees-v1-${{ hashFiles('source/conf.py', 'uv.lock') }}
           restore-keys: |
-            ${{ runner.os }}-sphinx-doctrees-
+            ${{ runner.os }}-sphinx-doctrees-v1-
 
       - name: build sphinx documentation
-        run: uv run sphinx-build -d build/doctrees -j auto ./source ./build/html
+        run: |
+          uv run sphinx-build -d build/doctrees -j auto ./source ./build/html
+          find build/html -name '.buildinfo' -delete
+          find build/html -name 'objects.inv' -delete
 
       - name: setup github_pages
         uses: actions/configure-pages@v6

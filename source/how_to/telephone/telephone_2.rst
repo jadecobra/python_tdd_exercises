@@ -50,7 +50,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_telephone.py
+.. literalinclude:: ../../code/tests/test_telephone.py
   :language: python
   :linenos:
 

@@ -32,7 +32,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_none.py
+.. literalinclude:: ../../code/tests/test_none.py
   :language: python
   :linenos:
 
