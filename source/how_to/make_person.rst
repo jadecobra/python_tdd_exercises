@@ -612,7 +612,7 @@ test_factory_w_keyword_arguments
 
   .. code-block:: python
     :lineno-start: 7
-    :emphasize-lines: 8
+    :emphasize-lines: 9-10
 
         def test_factory_w_keyword_arguments(self):
             # reality = src.person.factory()
@@ -4503,26 +4503,74 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the test passes.
 
-* I add :ref:`variables<what is a variable?>` for ``2000`` and ``datetime.datetime.now().year-2000``
+* I add a :ref:`variable<what is a variable?>` for ``datetime.datetime.now().year``
 
   .. code-block:: python
-    :lineno-start: 96
-    :emphasize-lines: 10-14
+    :lineno-start: 62
+    :emphasize-lines: 2
+
+        def test_factory_person_says_hello(self):
+            this_year = datetime.datetime.now().year
+
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``datetime.datetime.now().year`` from the test
+
+  .. code-block:: python
+    :lineno-start: 62
+    :emphasize-lines: 14-15, 29-30, 43-44, 61-62
+
+        def test_factory_person_says_hello(self):
+            this_year = datetime.datetime.now().year
+
+            joe = src.person.factory(
+                first_name='joe',
+                last_name='blow',
+                year_of_birth=1996,
+            )
+
+            reality = src.person.say_hello(joe)
+            # my_expectation = None
+            my_expectation = (
+                'Hi, my name is joe blow and I am'
+                # f' {datetime.datetime.now().year-1996}'
+                f' {this_year-1996}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            jane = src.person.factory(
+                first_name='jane',
+                sex='F',
+                year_of_birth=1991,
+            )
+
+            reality = src.person.say_hello(jane)
+            my_expectation = (
+                'Hi, my name is jane doe and I am'
+                # f' {datetime.datetime.now().year-1991}'
+                f' {this_year-1991}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+            john = src.person.factory(
+                first_name='john',
+                last_name='smith',
+                year_of_birth=1580,
+            )
 
             reality = src.person.say_hello(john)
             my_expectation = (
                 # 'Hi, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
                 'Hi, my name is john smith and I am'
-                f' {datetime.datetime.now().year-1580}'
+                # f' {datetime.datetime.now().year-1580}'
+                f' {this_year-1580}'
             )
             self.assertEqual(reality, my_expectation)
-
-            year_of_birth = 2000
-            age = (
-                datetime.datetime.now().year
-              - year_of_birth
-            )
 
             mary = src.person.factory(
                 first_name='mary',
@@ -4531,60 +4579,41 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
                 sex='F',
             )
 
-* I use the :ref:`variable<what is a variable?>` for ``2000`` in ``reality`` and the age calculation ``my_expectation``
+            reality = src.person.say_hello(mary)
+            my_expectation = (
+                # 'Hi my name is john smith and I am'
+                # f' {datetime.datetime.now().year-1580}'
+                'Hi, my name is mary public and I am'
+                # f' {datetime.datetime.now().year-2000}'
+                f' {this_year-2000}'
+            )
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the test is still green.
+
+* I add :ref:`variables<what is a variable?>` for ``'mary'``, ``'public'``, ``2000`` and the age calculation of ``mary``
 
   .. code-block:: python
-    :lineno-start: 105
-
-        year_of_birth = 2000
-        age = (
-            datetime.datetime.now().year
-          - year_of_birth
-        )
-
-        mary = src.person.factory(
-            first_name='mary',
-            last_name='public',
-            # year_of_birth=2000,
-            year_of_birth=year_of_birth,
-            sex='F',
-        )
-
-        reality = src.person.say_hello(mary)
-        my_expectation = (
-            # 'Hi my name is john smith and I am'
-            # f' {datetime.datetime.now().year-1580}'
-            'Hi, my name is mary public and I am'
-            # f' {datetime.datetime.now().year-2000}'
-            f' {age}'
-        )
-        self.assertEqual(reality, my_expectation)
-
-
-# Exceptions seen
-
-* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'person'``, ``'public'``, ``2000`` and the age calculation from the last :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 10-16
+    :lineno-start: 100
+    :emphasize-lines: 11-14
 
             reality = src.person.say_hello(john)
             my_expectation = (
                 # 'Hi, my name is jane doe and I am'
                 # f' {datetime.datetime.now().year-1991}'
                 'Hi, my name is john smith and I am'
-                f' {datetime.datetime.now().year-1580}'
+                # f' {datetime.datetime.now().year-1580}'
+                f' {this_year-1580}'
             )
             self.assertEqual(reality, my_expectation)
 
             first_name = 'mary'
             last_name = 'public'
             year_of_birth = 2000
-            age = (
-                datetime.datetime.now().year
-              - year_of_birth
-            )
+            age = this_year - year_of_birth
 
             mary = src.person.factory(
                 first_name='mary',
@@ -4593,11 +4622,11 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
                 sex='F',
             )
 
-* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'person'``, ``'public'``, ``2000`` and the age calculation
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'mary'``, ``'public'``, ``2000`` and the age calculation
 
   .. code-block:: python
     :lineno-start: 104
-    :emphasize-lines: 10-15, 23-26
+    :emphasize-lines: 11-13, 23-26
 
             first_name = 'mary'
             last_name = 'public'
@@ -4633,7 +4662,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   the test is still green.
 
-* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'john'``, ``'smith'``, ``1580`` and the age calculation from the :ref:`assertion<what is an assertion?>` before the one for ``mary``
+* I add :ref:`variables<what is a variable?>` for ``'john'``, ``'smith'``, ``1580`` and the age calculation from the :ref:`assertion<what is an assertion?>` before the one for ``mary``
 
   .. code-block:: python
     :lineno-start: 82
@@ -4690,7 +4719,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   still green.
 
-* I add the same :ref:`variable names<what is a variable?>` to use them to remove repetition of ``'jane'``, ``1991`` and the age calculation from the second :ref:`assertion<what is an assertion?>`
+* I add the same :ref:`variable names<what is a variable?>` for ``'jane'``, ``1991`` and the age calculation from the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 68
@@ -4759,7 +4788,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   green.
 
-* I add the :ref:`variable names<what is a variable?>` to use them to remove repetition of ``'joe'``, ``'blow'``, ``1996`` and the age calculation from the first :ref:`assertion<what is an assertion?>`
+* I add the :ref:`variable names<what is a variable?>` for ``'joe'``, ``'blow'``, ``1996`` and the age calculation from the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 61
