@@ -4370,7 +4370,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I add an :ref:`assertion<what is an assertion?>` for a new person to :ref:`test_factory_person_says_hello` in ``test_person.py``
 
   .. code-block:: python
-    :lineno-start: 76
+    :lineno-start: 77
     :emphasize-lines: 14-18, 20-25
 
             jane = src.person.factory(
@@ -4387,7 +4387,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             self.assertEqual(reality, my_expectation)
 
             john = src.person.factory(
-                first_name='john',
+                first_name = 'john',
                 last_name='smith',
                 year_of_birth=1580,
             )
@@ -4413,7 +4413,7 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 * I change ``my_expectation`` to match ``reality`` for ``john``
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 90
     :emphasize-lines: 9-12
 
             john = src.person.factory(
