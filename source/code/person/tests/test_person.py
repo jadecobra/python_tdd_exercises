@@ -1,7 +1,7 @@
 import datetime
-import random
 import src.person
 import unittest
+import random
 
 
 def pick_one(*choices):
@@ -15,15 +15,19 @@ def get_random_name():
     )
 
 
+def get_current_year():
+    return datetime.datetime.now().year
+
+
 def calculate_age(year_of_birth):
     return (
-        datetime.datetime.now().year
+        get_current_year()
       - year_of_birth
     )
 
 
 def get_random_year_of_birth():
-    this_year = datetime.datetime.now().year
+    this_year = get_current_year()
     return random.randint(
         this_year-120, this_year
     )
@@ -32,20 +36,19 @@ def get_random_year_of_birth():
 class TestPerson(unittest.TestCase):
 
     def test_factory_w_keyword_arguments(self):
-        year_of_birth = get_random_year_of_birth()
-
         a_person = dict(
             first_name=get_random_name(),
             last_name=get_random_name(),
             sex=pick_one('F', 'M'),
         )
+        year_of_birth = get_random_year_of_birth()
 
         reality = src.person.factory(
             **a_person,
             year_of_birth=year_of_birth,
         )
         my_expectation = dict(
-            **a_person,
+            a_person,
             age=calculate_age(year_of_birth),
         )
         self.assertEqual(reality, my_expectation)
@@ -67,24 +70,75 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(reality, my_expectation)
 
     def test_factory_person_says_hello(self):
-        first_name = get_random_name()
-        last_name = get_random_name()
-        sex = pick_one('F', 'M')
-
+        first_name = 'joe'
+        last_name = 'blow'
         year_of_birth = get_random_year_of_birth()
         age = calculate_age(year_of_birth)
 
-        a_random_person = src.person.factory(
+        joe = src.person.factory(
             first_name=first_name,
             last_name=last_name,
-            sex=sex,
             year_of_birth=year_of_birth,
         )
 
-        reality = src.person.say_hello(a_random_person)
+        reality = src.person.say_hello(joe)
         my_expectation = (
-            f'Hi, my name is {first_name} {last_name}'
-            f' and I am {age}'
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am {age}'
+        )
+        self.assertEqual(reality, my_expectation)
+
+        first_name = 'jane'
+        year_of_birth = get_random_year_of_birth()
+        age = calculate_age(year_of_birth)
+
+        jane = src.person.factory(
+            first_name=first_name,
+            sex='F',
+            year_of_birth=year_of_birth
+        )
+
+        reality = src.person.say_hello(jane)
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' doe and I am {age}'
+        )
+        self.assertEqual(reality, my_expectation)
+
+        first_name = 'john'
+        last_name = 'smith'
+        year_of_birth = get_random_year_of_birth()
+        age = calculate_age(year_of_birth)
+
+        john = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+        )
+
+        reality = src.person.say_hello(john)
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am {age}'
+        )
+        self.assertEqual(reality, my_expectation)
+
+        first_name = 'mary'
+        last_name = 'public'
+        year_of_birth = get_random_year_of_birth()
+        age = calculate_age(year_of_birth)
+
+        mary = src.person.factory(
+            first_name=first_name,
+            last_name=last_name,
+            year_of_birth=year_of_birth,
+            sex='F',
+        )
+
+        reality = src.person.say_hello(mary)
+        my_expectation = (
+            f'Hi, my name is {first_name}'
+            f' {last_name} and I am {age}'
         )
         self.assertEqual(reality, my_expectation)
 
