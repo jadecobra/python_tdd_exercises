@@ -4146,18 +4146,18 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     .. code-block:: python
 
       jane = src.person.factory(
-                  first_name='jane',
-                  sex='F',
-                  year_of_birth=1991,
-              )
-                  src.person.factory(
-                      first_name='jane',
-                      last_name='doe', # use the default value
-                      year_of_birth=1991,
-                      sex='F'
-                  )
-              # the factory function returns
-              {'first_name': 'jane', 'last_name': 'doe',
+                 first_name='jane',
+                 sex='F',
+                 year_of_birth=1991,
+             )
+                 src.person.factory(
+                     first_name='jane',
+                     last_name='doe', # use the default value
+                     year_of_birth=1991,
+                     sex='F'
+                 )
+             # the factory function returns
+             {'first_name': 'jane', 'last_name': 'doe',
               'sex': 'F', 'age': 35}
 
   * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
@@ -4165,14 +4165,14 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     .. code-block:: python
 
       first_name = person.get('first_name')
-                        jane.get('first_name')
-                        {
-                            'first_name': 'jane',
-                            'last_name': 'doe',
-                            'sex': 'F', 'age': 35
-                        }.get('first_name')
-                        # the get method returns
-                        'jane'
+                     jane.get('first_name')
+                     {
+                         'first_name': 'jane',
+                         'last_name': 'doe',
+                         'sex': 'F', 'age': 35
+                     }.get('first_name')
+                   # the get method returns
+                   'jane'
 
     .. code-block:: python
 
@@ -4217,25 +4217,25 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
         'Hi, my name is jane doe and I am 30'
      != 'Hi, my name is jane doe and I am 35'
 
-  the values for ``last_name`` are the same
+  the values for ``last_name`` are the same because
 
   * this happens when ``jane = src.person.factory(first_name='jane', sex='F', year_of_birth=1991)`` runs
 
     .. code-block:: python
 
       jane = src.person.factory(
-                  first_name='jane',
-                  sex='F',
-                  year_of_birth=1991,
-              )
-                  src.person.factory(
-                      first_name='jane',
-                      last_name='doe', # use the default value
-                      year_of_birth=1991,
-                      sex='F'
-                  )
-              # the factory function returns
-              {'first_name': 'jane', 'last_name': 'doe',
+                 first_name='jane',
+                 sex='F',
+                 year_of_birth=1991,
+             )
+                 src.person.factory(
+                     first_name='jane',
+                     last_name='doe', # use the default value
+                     year_of_birth=1991,
+                     sex='F'
+                 )
+             # the factory function returns
+             {'first_name': 'jane', 'last_name': 'doe',
               'sex': 'F', 'age': 35}
 
   * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
@@ -4249,14 +4249,14 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
     .. code-block:: python
 
       last_name = person.get('last_name')
-                      jane.get('last_name')
-                      {
-                          'first_name': 'jane',
-                          'last_name': 'doe',
-                          'sex': 'F', 'age': 35
-                      }.get('last_name')
-                      # the get method returns
-                      'doe'
+                    jane.get('last_name')
+                    {
+                        'first_name': 'jane',
+                        'last_name': 'doe',
+                        'sex': 'F', 'age': 35
+                    }.get('last_name')
+                  # the get method returns
+                  'doe'
 
     .. code-block:: python
 
@@ -4277,13 +4277,13 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
 
   .. code-block:: python
     :lineno-start: 19
-    :emphasize-lines: 4, 12-13
+    :emphasize-lines: 5, 12-13
 
+    # def say_hello():
     def say_hello(person):
         first_name = person.get('first_name')
         last_name = person.get('last_name')
         age = person.get('age')
-
         # return None
         # return 'Hi, my name is joe blow and I am 30'
         return (
@@ -4294,7 +4294,62 @@ I want the ``say_hello`` :ref:`function<what is a function?>` to return a string
             f' and I am {age}'
         )
 
-  the test passes.
+  the test passes because
+
+  * this happens when ``jane = src.person.factory(first_name='jane', sex='F', year_of_birth=1991)`` runs
+
+    .. code-block:: python
+
+      jane = src.person.factory(
+                 first_name='jane',
+                 sex='F',
+                 year_of_birth=1991,
+             )
+                 src.person.factory(
+                     first_name='jane',
+                     last_name='doe', # use the default value
+                     year_of_birth=1991,
+                     sex='F'
+                 )
+             # the factory function returns
+             {'first_name': 'jane', 'last_name': 'doe',
+              'sex': 'F', 'age': 35}
+
+  * this happens in ``say_hello`` when  ``my_expectation = src.person.say_hello(jane)`` runs
+
+    .. code-block:: python
+
+      first_name = person.get('first_name')
+                   # the get method returns
+                   'jane'
+      last_name  = person.get('last_name')
+                   # the get method returns
+                   'doe'
+
+    .. code-block:: python
+
+      age = person.get('last_name')
+              jane.get('last_name')
+              {
+                  'first_name': 'jane',
+                  'last_name': 'doe',
+                  'sex': 'F', 'age': 35
+              }.get('age')
+            # the get method returns
+            35
+
+    .. code-block:: python
+
+      return (
+          f'Hi, my name is {first_name} {last_name}'
+          f' and I am {age}'
+      )
+
+  .. code-block:: python
+
+    my_expectation = src.person.say_hello(jane)
+    # the say_hello function returns
+    'Hi, my name is jane doe and I am 35'
 
 * I remove the commented lines
 
