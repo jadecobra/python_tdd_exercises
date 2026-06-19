@@ -25,13 +25,10 @@ This is one way to automatically run tests in a :ref:`Python Test Driven Develop
 
 .. code-block:: python
 
-  mkdir
   cd
-  touch
   echo
+  tree
   cat
-  mv
-  rm
   uv run pytest-watcher
   source .venv/bin/activate
   deactivate
@@ -60,18 +57,18 @@ Questions to think about as I go through the chapter
 open the project
 *********************************************************************************
 
-* I `change directory`_ to the ``magic`` folder_
+* I `change directory`_ to the ``person`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd magic
+    cd person
 
-  the terminal_ shows I am in the ``magic`` folder_
+  the terminal_ shows I am in the ``person`` folder_
 
   .. code-block:: python
 
-    .../pumping_python/magic
+    .../pumping_python/person
 
 * I use tree_ to see what the project looks like, as a reminder
 
@@ -100,11 +97,11 @@ open the project
     ├── .python-version
     ├── README.md
     ├── src
-    │   └── magic.py
+    │   └── person.py
     └── tests
         ├── __init__.py
         ├── __pycache__
-        └── test_magic.py
+        └── test_person.py
 
 * I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a :ref:`Python file<what is a module?>` changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
@@ -156,11 +153,11 @@ open the project
     ├── .python-version
     ├── README.md
     ├── src
-    │   └── magic.py
+    │   └── person.py
     ├── tests
     │   ├── __init__.py
     │   ├── __pycache__
-    │   └── test_magic.py
+    │   └── test_person.py
     └── .venv
         ├── bin
         ├── CACHEDIR.TAG
@@ -238,7 +235,7 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
     ├── tests
     └── .venv
 
-  ``requirements.txt`` is now in the ``magic`` folder_
+  ``requirements.txt`` is now in the ``person`` folder_
 
 * I use the `cat program`_ to look at what is in ``requirements.txt``
 
@@ -349,7 +346,7 @@ how to install Python packages with uv
     :emphasize-lines: 8-9
 
     [project]
-    name = "magic"
+    name = "person"
     version = "0.1.0"
     description = "Add your description here"
     readme = "README.md"
@@ -368,20 +365,20 @@ how to activate a virtual environment
 *********************************************************************************
 
 
-* When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
+When I want to work in a `virtual environment`_, I make sure I am in the parent folder_ of the `virtual environment`. In this case ``person`` is the parent. I activate the `virtual environment`_ in the terminal_ to use it
 
-  .. code-block:: python
-    :emphasize-lines: 1
+.. code-block:: python
+  :emphasize-lines: 1
 
-    source .venv/bin/activate
+  source .venv/bin/activate
 
-  the terminal_ is my friend, and shows
+the terminal_ is my friend, and shows
 
-  .. code-block:: python
+.. code-block:: python
 
-    (magic) .../magic
+  (person) .../pumping_python/person
 
-  ``(magic)`` on the far left of the command line in the terminal_ shows that I am in the `virtual environment`_
+``(person)`` on the far left of the command line in the terminal_ shows that I am working in the `virtual environment`_.
 
 ----
 
@@ -389,18 +386,20 @@ how to activate a virtual environment
 how to deactivate a virtual environment
 *********************************************************************************
 
-* I leave the `virtual environment`_ by typing ``deactivate`` in the terminal_
+I can leave the `virtual environment`_ by typing ``deactivate`` in the terminal_
 
-  .. code-block:: python
-    :emphasize-lines: 1
+.. code-block:: python
+  :emphasize-lines: 1
 
-    deactivate
+  deactivate
 
-  the terminal_ goes back to the command line, ``(magic)`` is no longer on the left side
+the terminal_ goes back to the command line
 
-  .. code-block:: python
+.. code-block:: python
 
-    .../pumping_python/magic
+  .../pumping_python/person
+
+``(person)`` is no longer on the left side.
 
 ----
 
@@ -408,7 +407,21 @@ how to deactivate a virtual environment
 how to run tests automatically with uv and pytest-watcher
 *********************************************************************************
 
-* I try to run the test again, this time with uv_
+* I open ``test_person.py`` from the ``tests`` folder_
+* I change ``assert False is False`` to ``assert False is True`` in ``test_person.py``
+
+  .. code-block:: python
+    :emphasize-lines: 2-3
+
+    # False is True
+    assert False is True
+    # assert False is False
+
+
+    # Exceptions seen
+    # AssertionError
+
+* I go back to the terminal_ to run the test again
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -416,23 +429,29 @@ how to run tests automatically with uv and pytest-watcher
 
     uv run pytest-watcher . --now
 
-  the terminal_ is my friend, and shows results without going back to the command line
+  the terminal_ is my friend, and shows an error without going back to the command line
 
-  .. code-block:: python
-    :emphasize-lines: 10
+  .. code-block:: shell
+    :emphasize-lines: 14
 
     pytest-watcher version X.Y.Z
     Runner command: pytest
-    Waiting for file changes in .../pumping_python/magic
+    Waiting for file changes in .../pumping_python/person
     =================== test session starts ====================
     platform ____ -- Python 3.A.B, pytest-C.D.E, pluggy-F.G.H
-    rootdir: .../pumping_python/magic
+    rootdir: .../pumping_python/person
     configfile: pyproject.toml
-    collected 1 item
+    collected 0 items / 1 error
 
-    tests/test_magic.py .                                 [100%]
-
-    ==================== 1 passed in X.YZs =====================
+    ========================== ERRORS ==========================
+    ___________ ERROR collecting tests/test_person.py ___________
+    tests/test_person.py:2: in <module>
+        assert False is True
+    E   assert False is True
+    ================= short test summary info ==================
+    ERROR tests/test_person.py - assert False is True
+    !!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!
+    ===================== 1 error in I.JKs =====================
     [pytest-watcher]
     Current runner args: []
     Press w to show menu
@@ -443,48 +462,46 @@ how to run tests automatically with uv and pytest-watcher
 how to open the test file in the editor from the terminal
 *********************************************************************************
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py`` to place the cursor of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_person.py`` to go back to ``test_person.py``. I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 2
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 7
+    :emphasize-lines: 2-3
 
-    import unittest
+    # False is True
+    # assert False is True
+    assert False is False
 
 
-    class TestMagic(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
+    # Exceptions seen
+    # AssertionError
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 10
+    :emphasize-lines: 8
 
-    ======================== FAILURES ==========================
-    _________________ TestMagic.test_failure ___________________
+    [ptw] Detected modified: ./tests/test_person.py ->
+    =================== test session starts ====================
+    platform ____ -- Python 3.A.B, pytest-C.D.E, pluggy-F.G.H
+    rootdir: .../pumping_python/person
+    configfile: pyproject.toml
+    collecting ... [ptw] Detected modified: ./tests/test_person.py ->
+    [ptw] Detected modified: ./tests/test_person.py ->
+    collected 0 items
 
-    self = <tests.test_magic.TestMagic testMethod=test_failure>
+    ================== no tests ran in 0.01s ===================
 
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
+    [pytest-watcher]
+    Current runner args: []
+    Press w to show menu
 
-    tests/test_magic.py:7: AssertionError
-    =============== short test summary info ====================
-    FAILED tests/test_magic.py::TestMagic::test_failure - AssertionError: True is not false
-    =================== 1 failed in X.YZs ======================
+  - `pytest-watcher`_ "saw" the change I made to ``test_person.py`` and ran the test again
+  - the terminal_ shows ``no tests ran`` which is confusing since the only way I know the test passed, is because I saw it fail
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py:7`` to place the cursor of the `Integrated Development Environment (IDE)`_, then I change :ref:`True<test_what_is_true>` back to :ref:`False<test_what_is_false>` in ``test_magic.py``
+I can write the rest of the code for the project and get results back quickly because the tests run when I change the code.
 
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
-
-          self.assertFalse(False)
-
-  the test passes. I can write the rest of the code for the project and get results back quickly because the tests run when I change the code
+I want to write code that represents a person, after :ref:`I learn what an assertion is<what is an assertion?>`.
 
 ----
 
@@ -496,7 +513,7 @@ I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the te
 
 .. code-block:: python
 
-  .../pumping_python/magic
+  .../pumping_python/person
 
 ----
 
@@ -504,9 +521,28 @@ I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the te
 close the project
 ********************************************************************************************
 
-* I close ``test_magic.py``
+* I click in the terminal_ then add the new files_ and folders_ to git_ for tracking
 
-* I click in the terminal and `change directory`_ to the parent of ``magic``
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'automate tests'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+* I close ``test_person.py``
+
+* I `change directory`_ to the parent of ``person``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -519,7 +555,7 @@ close the project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` folder_
+  I am back in the ``pumping_python`` folder_.
 
 ----
 
@@ -527,17 +563,16 @@ close the project
 review
 ********************************************************************************************
 
-* I gave the computer some commands to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
-* I made some folders_
-* I made some files_
-* I made a :ref:`failing test<test_failure>`
-* I made the failing test pass
-* I made the test run automatically with `pytest-watcher`_
+* I gave the computer some commands to :ref:`automate running tests for my Python Test Driven Development environment<how to run tests automatically>`
+* I used uv_ to make a :ref:`virtual environment<what is a virtual environment?>`
+* :ref:`I made a requirements file_ for my project dependencies<how to write text to a file>`
+* :ref:`I installed pytest-watcher from the requirements file<how to install Python packages with uv>`
+* :ref:`I ran the test automatically with uv and pytest-watcher<how to run tests automatically with uv and pytest-watcher>`
 
 ----
 
 =====================================================================================================
-how to view all the commands typed in a terminal
+how to view all the commands I typed to automate running tests
 =====================================================================================================
 
 ----
@@ -551,11 +586,11 @@ how to view all the commands typed in a terminal
 
   the terminal_ shows
 
-  .. literalinclude:: ../code/make_tdd/makePythonTddHistory.sh
+  .. literalinclude:: ../code/make_tdd/makePythonTdd2History.sh
     :language: shell
-    :emphasize-lines: 1-2, 10, 14, 19, 21, 24, 33-34, 37, 41, 52
+    :emphasize-lines: 4, 7, 9, 14
 
-  the `history program`_ shows all the commands I typed in the terminal_ so far, and I use them to write the program_ that will :ref:`automatically make a Python Test Driven Development environment<how to make a Python test driven development environment 2>` for me
+  the `history program`_ shows all the commands I typed in the terminal_ so far
 
 * these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
 
@@ -602,7 +637,12 @@ how to view all the commands typed in a terminal
 what is next?
 *************************************************************************************
 
-:ref:`Would you like to find out what a module is?<what is a module?>`
+You know
+
+* :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+
+:ref:`Would you like to know what causes AssertionError<what is an assertion?>`
 
 -----
 

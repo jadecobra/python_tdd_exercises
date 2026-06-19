@@ -1,6 +1,6 @@
 .. meta::
-  :description: Build your first Python TDD project by hand with uv, the terminal, and unittest. Jacob Itegboje walks through pumping_python folder setup, uv init magic, mkdir src and tests, mv main.py to src/magic.py, touch tests/__init__.py, rename tests/magic.py to test_magic.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumping Python manual TDD environment chapter 1.
-  :keywords: Jacob Itegboje, Pumping Python, manual python tdd setup, uv init project, python unittest first test, assert False is True AssertionError, NO TESTS RAN unittest, test_ prefix discovery, tests __init__.py package, mkdir src tests, mv main.py, tree cat touch terminal, python3 -m unittest, red green refactor first failure, test driven development environment manually, pumping_python magic project, IDE auto save danger close file before mv
+  :description: Build your first Python TDD project by hand with uv, the terminal, and unittest. Jacob Itegboje walks through pumping_python folder setup, uv init person, mkdir src and tests, mv main.py to src/person.py, touch tests/__init__.py, rename tests/person.py to test_person.py, and the first RED test with assert False is True raising AssertionError (FAILED errors=1, NO TESTS RAN until test_ prefix and package). Learn cd, mkdir, tree, cat, mv, touch, python3 -m unittest discovery, module-level assert gotchas, and why passing tests still show NO TESTS RAN before pytest-watcher. Pumping Python manual TDD environment chapter 1.
+  :keywords: Jacob Itegboje, Pumping Python, manual python tdd setup, uv init project, python unittest first test, assert False is True AssertionError, NO TESTS RAN unittest, test_ prefix discovery, tests __init__.py package, mkdir src tests, mv main.py, tree cat touch terminal, python3 -m unittest, red green refactor first failure, test driven development environment manually, pumping_python person project, IDE auto save danger close file before mv
 
 .. include:: ../links.rst
 
@@ -30,13 +30,15 @@ This is one way to make a :ref:`Python Test Driven Development project<what is a
 
 .. code-block:: python
 
-  mkdir
   cd
+  tree
+  mkdir
   touch
   echo
   cat
   mv
   python3 -m unittest
+  history
 
 ----
 
@@ -67,7 +69,7 @@ Questions to think about as I go through the chapter
 how to setup the project
 ********************************************************************************************
 
-* I choose ``magic`` as the name of this project
+* I choose ``person`` as the name of this project
 
 * I click ``Terminal`` in the menu bar at the top of the `Integrated Development Environment (IDE)`_, then click ``New Terminal`` to open a terminal_
 
@@ -133,20 +135,20 @@ how to setup the project
 
     .. note:: If you have done other work in the ``pumping_python`` folder_ there will be files_ and folders_ not 0 directories_ and 0 files_
 
-* I `change directory`_ to the ``magic`` project in the ``pumping_python`` folder_
+* I `change directory`_ to the ``person`` project in the ``pumping_python`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd magic
+    cd person
 
   the terminal_ is my friend, and shows
 
   .. code-block:: python
 
-    cd: no such file or directory: magic
+    cd: no such file or directory: person
 
-  there is no folder_ with the name ``magic`` in this folder_, time to make ``magic``.
+  there is no folder_ with the name ``person`` in this folder_, time to make ``person``.
 
 ----
 
@@ -161,13 +163,13 @@ how to setup a project with uv
   .. code-block:: python
     :emphasize-lines: 1
 
-    uv init magic
+    uv init person
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    Initialized project `magic` at `.../pumping_python/magic`
+    Initialized project `person` at `.../pumping_python/person`
 
   uv_ is a program_ that makes files_ and folders_ needed for a project. It also handles Python_ and `Python Packages`_.
 
@@ -179,18 +181,18 @@ how to change directory to the project
 
 ----
 
-* I try to `change directory`_ to the ``magic`` folder_ again
+* I try to `change directory`_ to the ``person`` folder_ again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cd magic
+    cd person
 
   the terminal_ shows
 
   .. code-block:: python
 
-    .../pumping_python/magic
+    .../pumping_python/person
 
   uv_ made the directory_ for me.
 
@@ -275,7 +277,7 @@ how to see what is inside a file
   .. code-block:: python
 
     [project]
-    name = "magic"
+    name = "person"
     version = "0.1.0"
     description = "Add your description here"
     readme = "README.md"
@@ -307,7 +309,7 @@ how to see what is inside a file
 
   .. code-block:: python
 
-    .../pumping_python/magic
+    .../pumping_python/person
 
   the file_ is empty
 
@@ -319,19 +321,19 @@ how to run a Python program
 
 ----
 
-I use Python_ to run the ``magic`` program_
+I use Python_ to run the ``person`` program_
 
 .. code-block:: python
   :emphasize-lines: 1
 
-  python3 src/magic.py
+  python3 src/person.py
 
 the terminal_ is my friend, and shows
 
 .. code-block:: text
 
   python3: can't open file
-           '.../pumping_python/magic/src/magic.py':
+           '.../pumping_python/person/src/person.py':
            [Errno 2] No such file or directory
 
 Python_ cannot find the file_ because it does not exist, and there is no folder_ named ``src``, yet.
@@ -344,7 +346,7 @@ how to make a directory for the source code
 
 ----
 
-* I make a child folder_ in the ``magic`` directory_ for the program_ because I want to keep the files_ separate from the other files_ in the project
+* I make a child folder_ in the ``person`` directory_ for the program_ because I want to keep the files_ separate from the other files_ in the project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -353,7 +355,7 @@ how to make a directory for the source code
 
   the terminal_ goes back to the command line.
 
-* I use tree_ to see what changed in the ``magic`` directory_
+* I use tree_ to see what changed in the ``person`` directory_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -374,14 +376,14 @@ how to make a directory for the source code
     ├── README.md
     └── src
 
-* I try to run the ``magic`` program_ again
+* I try to run the ``person`` program_ again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    python3 src/magic.py
+    python3 src/person.py
 
-  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``magic.py`` in the ``src`` folder_.
+  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``person.py`` in the ``src`` folder_.
 
 ----
 
@@ -391,12 +393,12 @@ how to change the name of a file
 
 ----
 
-* I use the `mv program`_ to change the name of ``main.py`` to ``magic.py`` and move it to the ``src`` folder_
+* I use the `mv program`_ to change the name of ``main.py`` to ``person.py`` and move it to the ``src`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mv main.py src/magic.py
+    mv main.py src/person.py
 
   the terminal_ goes back to the command line.
 
@@ -427,38 +429,38 @@ how to change the name of a file
     ├── README.md
     ├── pyproject.toml
     └── src
-        └── magic.py
+        └── person.py
 
-  ``main.py`` is now ``magic.py`` in the ``src`` folder_.
+  ``main.py`` is now ``person.py`` in the ``src`` folder_.
 
-* I try to run the ``magic`` program_ again
+* I try to run the ``person`` program_ again
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    python3 src/magic.py
+    python3 src/person.py
 
   the terminal_ shows
 
   .. code-block:: shell
 
-    Hello from magic!
+    Hello from person!
 
   Success! The `uv Python package manager`_ made the file_ with some Python_ code in it, I can successfully run it because the file_ is now in the folder_.
 
-* I use cat_ to see what is in ``src/magic.py``
+* I use cat_ to see what is in ``src/person.py``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    cat src/magic.py
+    cat src/person.py
 
   the terminal_ shows
 
   .. code-block:: python
 
     def main():
-        print("Hello from magic!")
+        print("Hello from person!")
 
 
     if __name__ == "__main__":
@@ -553,7 +555,7 @@ how to make a Python file for the tests in the 'tests' directory
   .. code-block:: python
     :emphasize-lines: 1
 
-    touch tests/magic.py
+    touch tests/person.py
 
   the terminal_ goes back to the command line.
 
@@ -584,9 +586,9 @@ how to make a Python file for the tests in the 'tests' directory
     ├── .python-version
     ├── README.md
     ├── src
-    │   └── magic.py
+    │   └── person.py
     └── tests
-        └── magic.py
+        └── person.py
 
 * I run the test again
 
@@ -609,13 +611,13 @@ how to make a Python file for the tests in the 'tests' directory
 :red:`RED`: make it fail
 ********************************************************************************************
 
-* I open ``magic.py`` from the ``tests`` folder_
+* I open ``person.py`` from the ``tests`` folder_
 
   .. tip::
 
     I can open a file_ from the terminal_ with :kbd:`ctrl` (Windows_/Linux_) or :kbd:`command` (MacOS_) on the keyboard and a click with the mouse on the name of the file_
 
-* I add the Python_ code below in ``tests/magic.py``
+* I add the Python_ code below in ``tests/person.py``
 
   .. note:: the line numbers below are a guide, no need to copy them
 
@@ -692,10 +694,10 @@ how to make the tests a Python package
     ├── .python-version
     ├── README.md
     ├── src
-    │   └── magic.py
+    │   └── person.py
     └── tests
         ├── __init__.py
-        └── magic.py
+        └── person.py
 
 * I try to run the test again
 
@@ -710,18 +712,18 @@ how to make the tests a Python package
 
     NO TESTS RAN
 
-  because unittest_ does not know that ``magic.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
+  because unittest_ does not know that ``person.py`` in the ``tests`` folder is a test file_. I did not start the name with ``test_``. I have to change the name.
 
-* I close ``magic.py``
+* I close ``person.py``
 
-  .. danger:: if you do not close ``magic.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
+  .. danger:: if you do not close ``person.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
 
-* I use the `mv program`_ to change the name of ``magic.py`` in the ``tests`` folder_ to ``test_magic.py``
+* I use the `mv program`_ to change the name of ``person.py`` in the ``tests`` folder_ to ``test_person.py``
 
   .. code-block:: python
     :emphasize-lines: 1
 
-    mv tests/magic.py tests/test_magic.py
+    mv tests/person.py tests/test_person.py
 
   the terminal_ goes back to the command line.
 
@@ -752,15 +754,15 @@ how to make the tests a Python package
     ├── .python-version
     ├── README.md
     ├── src
-    │   └── magic.py
+    │   └── person.py
     └── tests
         ├── __init__.py
         ├── __pycache__
-        └── test_magic.py
+        └── test_person.py
 
   .. admonition:: if you do not see ``__pycache__`` in the tree do not worry,
 
-    the important thing is that you renamed ``magic.py`` to ``test_magic.py`` for unittest_ to find the test.
+    the important thing is that you renamed ``person.py`` to ``test_person.py`` for unittest_ to find the test.
 
 * I run the test again
 
@@ -771,7 +773,7 @@ how to make the tests a Python package
 
   the terminal_ still shows ``NO TESTS RAN``
 
-* I add ``assert`` before ``False is True`` in ``tests/test_magic.py``
+* I add ``assert`` before ``False is True`` in ``tests/test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -794,9 +796,9 @@ how to make the tests a Python package
 
     E
     ======================================================
-    ERROR: tests.test_magic (unittest.loader._FailedTest.tests.test_magic)
+    ERROR: tests.test_person (unittest.loader._FailedTest.tests.test_person)
     ------------------------------------------------------
-    ImportError: Failed to import test module: tests.test_magic
+    ImportError: Failed to import test module: tests.test_person
     Traceback (most recent call last):
       File "/usr/local/lib/python3.XY/unittest/loader.py",
         line 426, in _find_test_path
@@ -805,7 +807,7 @@ how to make the tests a Python package
         line 367, in _get_module_from_name
         __import__(name)
         ~~~~~~~~~~^^^^^^
-      File ".../pumping_python/magic/tests/test_magic.py",
+      File ".../pumping_python/person/tests/test_person.py",
         line 2, in <module>
         assert False is True
                ^^^^^^^^^^^^^
@@ -826,18 +828,18 @@ how to make the tests a Python package
   - ``AssertionError``: the :ref:`Error (Exception)<errors>` that happened. Since I used an :ref:`assert statement<what is an assertion?>` I get :ref:`AssertionError<what causes AssertionError?>` because the statement after ``assert`` is :ref:`False<test_what_is_false>` - :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`
   - ``assert False is True``: the line of code that caused :ref:`AssertionError<what causes AssertionError?>`
   - the arrows (``^^^^^^^^^^^^^``): point to the part of the line above, that Python_ thinks caused the :ref:`error<errors>`
-  - ``File ".../pumping_python/magic/tests/test_magic.py", line 2, in <module>``: the line number of the code that caused the :ref:`error<errors>` and the location of the file_ where the :ref:`error<errors>` happened and again the question - :ref:`what is a module?`
+  - ``File ".../pumping_python/person/tests/test_person.py", line 2, in <module>``: the line number of the code that caused the :ref:`error<errors>` and the location of the file_ where the :ref:`error<errors>` happened and again the question - :ref:`what is a module?`
   - ``__import__(name)`` shows another :ref:`error<errors>` that is triggered by the one from ``assert False is True``
   - ``File "/usr/local/lib/python3.XY/unittest/loader.py", line 367, in _get_module_from_name`` shows the line, :ref:`method<what is a method?>` and file_ where the :ref:`error<errors>` triggered by my ``assert False is True`` happened
   - ``module = self._get_module_from_name(name)`` a failure triggered by the failure triggered by my ``assert False is True``
   - ``File "/usr/local/lib/python3.XY/unittest/loader.py", line 426, in _find_test_path`` shows the line, :ref:`method<what is a method?>` and file_ where the :ref:`error<errors>` triggered by the one triggered by my ``assert False is True`` happened
   - ``Traceback (most recent call last):``: all the information shown after this line that is indented to the right shows the calls that led to the failure. The last line is usually the most important one that points to what caused the failure, this is why I like to read it from the bottom up. In this case it is the only one I care about because it is the one I added to cause the failure.
-  - ``ERROR: tests.test_magic (unittest.loader._FailedTest.tests.test_magic)`` is a header with information in :ref:`dot notation` about the failing test
+  - ``ERROR: tests.test_person (unittest.loader._FailedTest.tests.test_person)`` is a header with information in :ref:`dot notation` about the failing test
 
-    - I think of ``tests.test_magic `` as an address
+    - I think of ``tests.test_person `` as an address
 
       *  ``tests`` is the ``tests`` folder_
-      *  ``test_magic`` is the ``test_magic.py`` file_ in the ``tests`` folder_
+      *  ``test_person`` is the ``test_person.py`` file_ in the ``tests`` folder_
 
 ----
 
@@ -845,9 +847,9 @@ how to make the tests a Python package
 :green:`GREEN`: make it pass
 ********************************************************************************************
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/magic/tests/test_magic.py", line 2`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ with the cursor at the line where the failure happened.
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard and use the mouse to click on ``File ".../pumping_python/person/tests/test_person.py", line 2`` in the terminal_, and the `Integrated Development Environment (IDE)`_ opens the file_ with the cursor at the line where the failure happened.
 
-* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_magic.py``
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -881,7 +883,7 @@ how to make the tests a Python package
 :yellow:`REFACTOR`: make it better
 ********************************************************************************************
 
-* I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to help me know them better, familiarity. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_magic.py``
+* I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to help me know them better, familiarity. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_person.py``
 
   .. code-block:: python
     :linenos:
@@ -922,9 +924,9 @@ how to make the tests a Python package
 close the project
 ********************************************************************************************
 
-* I close ``test_magic.py``
+* I close ``test_person.py``
 
-* I click in the terminal and `change directory`_ to the parent of ``magic``
+* I click in the terminal and `change directory`_ to the parent of ``person``
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -950,6 +952,55 @@ review
 * I made some files_
 * I made a :ref:`failing test<test_failure>`
 * I made the failing test pass
+
+----
+
+=====================================================================================================
+how to view all the commands typed in a terminal
+=====================================================================================================
+
+----
+
+* I type history_ in the terminal_ to see all the commands I have typed so far
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    history
+
+  the terminal_ shows
+
+  .. literalinclude:: ../code/make_tdd/makePythonTdd1History.sh
+    :language: shell
+    :emphasize-lines: 2-3, 11, 13, 15, 20, 25, 28
+
+  the `history program`_ shows all the commands I typed in the terminal_ so far.
+
+* these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
+
+  .. code-block:: python
+
+    uv init NAME_OF_THE_PROJECT
+    cd NAME_OF_THE_PROJECT
+    mkdir src
+    mv main.py src/NAME_OF_THE_PROJECT.py
+    mkdir tests
+    touch tests/__init__.py
+    touch tests/test_NAME_OF_THE_PROJECT.py
+
+  where ``NAME_OF_THE_PROJECT`` is the name I give the project
+
+* these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
+
+  - give the project a name
+  - :ref:`make a directory for the project<how to setup a project with uv>`
+  - :ref:`change directory to the project<how to change directory to the project>`
+  - :ref:`make a directory for the source code<how to make a directory for the source code>`
+  - :ref:`make a Python file to hold the source code in the 'src' folder<how to make an empty file>`
+  - :ref:`make a directory for the tests<how to make a directory for the tests>`
+  - :ref:`make the 'tests' directory a Python package<how to make the tests a Python package>`
+  - :ref:`make a Python file for the tests in the 'tests' directory<how to make a Python file for the tests in the 'tests' directory>`
+  - :ref:`add the first failing test to the test file<test_failure>`
 
 ----
 

@@ -824,7 +824,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test ModuleNotFoundError'
+    'test ModuleNotFoundError'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -862,6 +862,38 @@ review
 
 ----
 
+=====================================================================================================
+how to view all the commands I typed to test ModuleNotFoundError
+=====================================================================================================
+
+----
+
+* I type history_ in the terminal_ to see all the commands I have typed so far
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    history
+
+  the terminal_ shows
+
+  .. literalinclude:: ../code/module_not_found_error/ModuleNotFoundErrorHistory.sh
+    :language: python
+    :emphasize-lines: 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32
+
+  the `history program`_ shows all the commands I typed in the terminal_ so far.
+
+  * I ran ``python3 -m unittest`` to see the test fail
+  * I ran ``python3 -m unittest`` every time I made a change until the test passed
+  * I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want
+
+  This means I have to run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
+
+  I do not want to type ``python3 -m unittest`` ever again, I want the computer to do it for me.
+
+
+----
+
 *************************************************************************************
 code from the chapter
 *************************************************************************************
@@ -879,15 +911,7 @@ You know
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
 
-In both chapters
-
-* I ran ``python3 -m unittest`` to see the test fail
-* I ran ``python3 -m unittest`` every time I made a change until the test passed
-* I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want
-
-This means I have to run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
-
-I do not want to type ``python3 -m unittest`` again, I want the computer to do it for me. :ref:`Would you like to see how to run tests automatically?<how to run tests automatically>`
+:ref:`Would you like to see how to run tests automatically?<how to run tests automatically>`
 
 ----
 
