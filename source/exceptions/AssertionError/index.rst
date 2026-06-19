@@ -1917,94 +1917,45 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
   .. code-block:: python
     :lineno-start: 57
-    :emphasize-lines: 29
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_false(self):
-            # assert None is False
-            assert None is not False
+    # assert set() is False
+    assert set() is not False
 
-            # assert False is not False
-            assert False is False
-
-            # assert True is False
-            assert True is not False
-
-            # assert 0 is False
-            assert 0 is not False
-
-            # assert 0.0 is False
-            assert 0.0 is not False
-
-            # assert 'a string' is False
-            assert 'a string' is not False
-
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-
-            assert {'key': 'value'} is False
+    assert {} is False
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert {'key': 'value'} is False
+    E   assert {} is False
+
+  because :ref:`a dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 29-30
+    :lineno-start: 51
+    :emphasize-lines: 4-5
 
+    # assert set() is False
+    assert set() is not False
 
-        def test_assertion_error_w_false(self):
-            # assert None is False
-            assert None is not False
-
-            # assert False is not False
-            assert False is False
-
-            # assert True is False
-            assert True is not False
-
-            # assert 0 is False
-            assert 0 is not False
-
-            # assert 0.0 is False
-            assert 0.0 is not False
-
-            # assert 'a string' is False
-            assert 'a string' is not False
-
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-
-            # assert {'key': 'value'} is False
-            assert {'key': 'value'} is not False
+    # assert {} is False
+    assert {} is not False
 
 
     # NOTES
 
-  the test passes.
+  the test passes because :ref:`a dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 64
     :emphasize-lines: 2
 
     # NOTES
@@ -2033,721 +1984,31 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
     # Exceptions seen
     # AssertionError
 
-* I add a git_ commit message in the other terminal_
+* I remove the commented :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :emphasize-lines: 1-2
+    :lineno-start: 31
 
-    git commit --all --message \
-    'add test_assertion_error_w_false'
+    # test AssertionError with False
+    assert None is not False
 
-  the terminal_ shows a summary of the changes then goes back to the command line.
+    assert False is False
 
-----
+    assert True is not False
 
-=================================================================================
-another way to test if something is the same object as False
-=================================================================================
+    assert 0 is not False
 
-----
+    assert 0.0 is not False
 
-I can also use the assertIs_ and assertIsNot_  :ref:`methods<what is a method?>` from the `unittest.TestCase class`_ to test if something is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>` or not.
+    assert '' is not False
 
-* I go back to the terminal_ where the tests are running
+    assert () is not False
 
-* I add an :ref:`assertion<what is an assertion?>` with the `assertIs method`_ (it checks if the two :ref:`objects<everything is an object>` in parentheses are the same)
+    assert [] is not False
 
-  .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 4
-    :emphasize-text: Not
+    assert set() is not False
 
-        def test_assertion_error_w_false(self):
-            # assert None is False
-            assert None is not False
-            self.assertIs(None, False)
-
-            # assert False is not False
-            assert False is False
-
-  the terminal_ is my friend, and shows AssertionError_
-
-  .. code-block:: python
-
-    E       AssertionError: None is not False
-
-  because :ref:`None<what is None?>` is not the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`. Compare this error message with the one for ``assert None is False``
-
-  .. code-block:: python
-
-    E       assert None is False
-
-  which do you like better?
-
-----
-
-=================================================================================
-another way to test if something is NOT the same object as False
-=================================================================================
-
-----
-
-* I change the `assertIs method`_ to the `assertIsNot method`_ which checks if the two :ref:`objects<everything is an object>` in parentheses are NOT the same
-
-  .. code-block:: python
-    :lineno-start: 57
-    :emphasize-lines: 4-5
-
-        def test_assertion_error_w_false(self):
-            # assert None is False
-            assert None is not False
-            # self.assertIs(None, False)
-            self.assertIsNot(None, False)
-
-            # assert False is not False
-            assert False is False
-
-  the test passes because :ref:`None<what is None?>` is NOT the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`.
-
-* I use the `assertIsNot method`_ to compare :ref:`False<test_what_is_false>` with itself
-
-  .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 3
-
-            # assert False is not False
-            assert False is False
-            self.assertIsNot(False, False)
-
-            # assert True is False
-            assert True is not False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: unexpectedly identical: False
-
-  compare this error message with the one for ``assert False is not False``
-
-  .. code-block:: python
-
-    E    assert False is not False
-
-* I change assertIsNot_ to assertIs_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 63
-    :emphasize-lines: 3-4
-
-            # assert False is not False
-            assert False is False
-            # self.assertIsNot(False, False)
-            self.assertIs(False, False)
-
-            # assert True is False
-            assert True is not False
-
-  the test passes.
-
-* I use assertIs_ to compare :ref:`True<test_what_is_true>` with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 3
-
-            # assert True is False
-            assert True is not False
-            self.assertIs(True, False)
-
-            # assert 0 is False
-            assert 0 is not False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: True is not False
-
-  compare this error message with the one for ``assert True is False``
-
-  .. code-block:: python
-
-    E    assert True is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 68
-    :emphasize-lines: 3-4
-
-            # assert True is False
-            assert True is not False
-            # self.assertIs(True, False)
-            self.assertIsNot(True, False)
-
-            # assert 0 is False
-            assert 0 is not False
-
-  the test passes.
-
-* I use assertIs_ to compare an integer_ (a whole number without decimals) with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 3
-
-            # assert 0 is False
-            assert 0 is not False
-            self.assertIs(0, False)
-
-            # assert 0.0 is False
-            assert 0.0 is not False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 0 is not False
-
-  compare this error message with the one for ``assert 0 is False``
-
-  .. code-block:: python
-
-    E    assert 0 is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 3-4
-
-            # assert 0 is False
-            assert 0 is not False
-            # self.assertIs(0, False)
-            self.assertIsNot(0, False)
-
-            # assert 0.0 is False
-            assert 0.0 is not False
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 1
-
-            an_integer = 0
-            # assert 0 is False
-            assert 0 is not False
-            # self.assertIs(0, False)
-            self.assertIsNot(0, False)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0`` from the test
-
-  .. code-block:: python
-    :lineno-start: 73
-    :emphasize-lines: 2-3, 5, 7
-
-            an_integer = 0
-            assert an_integer is not False
-            self.assertIsNot(an_integer, False)
-            # assert 0 is False
-            # assert 0 is not False
-            # self.assertIs(0, False)
-            # self.assertIsNot(0, False)
-
-            # assert 0.0 is False
-            assert 0.0 is not False
-            # self.assertIs(0.0, False)
-            self.assertIsNot(0.0, False)
-
-  the test is still green.
-
-* I use assertIs_ to compare a float_ (binary floating point decimal number) with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 3
-
-            # assert 0.0 is False
-            assert 0.0 is not False
-            self.assertIs(0.0, False)
-
-            # assert 'a string' is False
-            assert 'a string' is not False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: 0.0 is not False
-
-  compare this error message with the one for ``assert 0.0 is False``
-
-  .. code-block:: python
-
-    E    assert 0.0 is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 3-4
-
-            # assert 0.0 is False
-            assert 0.0 is not False
-            # self.assertIs(0.0, False)
-            self.assertIsNot(0.0, False)
-
-            # assert 'a string' is False
-            assert 'a string' is not False
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 1
-
-            a_float = 0.0
-            # assert 0.0 is False
-            assert 0.0 is not False
-            # self.assertIs(0.0, False)
-            self.assertIsNot(0.0, False)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``0.0`` from the test
-
-  .. code-block:: python
-    :lineno-start: 81
-    :emphasize-lines: 2-3, 5, 7
-
-            a_float = 0.0
-            assert a_float is not False
-            self.assertIsNot(a_float, False)
-            # assert 0.0 is False
-            # assert 0.0 is not False
-            # self.assertIs(0.0, False)
-            # self.assertIsNot(0.0, False)
-
-            # assert 'a string' is False
-            assert 'a string' is not False
-
-  the test is still green.
-
-* I use assertIs_ to compare a string_ (anything in :ref:`quotes`) with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 3
-
-            # assert 'a string' is False
-            assert 'a string' is not False
-            self.assertIs('a string', False)
-
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: 'a string' is not False
-
-  compare this error message with the one for ``assert 'a string' is False``
-
-  .. code-block:: python
-
-    E       AssertionError: assert 'a string' is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 3-4
-
-            # assert 'a string' is False
-            assert 'a string' is not False
-            # self.assertIs('a string', False)
-            self.assertIsNot('a string', False)
-
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 1
-
-            a_string = 'a string'
-            # assert 'a string' is False
-            assert 'a string' is not False
-            # self.assertIs('a string', False)
-            self.assertIsNot('a string', False)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'a string'`` from the test
-
-  .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 2-3, 5, 7
-
-            a_string = 'a string'
-            assert a_string is not False
-            self.assertIsNot(a_string, False)
-            # assert 'a string' is False
-            # assert 'a string' is not False
-            # self.assertIs('a string', None)
-            # self.assertIsNot('a string', None)
-
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-
-  the test is still green.
-
-* I use assertIs_ to compare a tuple_ (anything in parentheses ``( )`` separated by a comma) with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 97
-    :emphasize-lines: 3
-
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-            self.assertIs((1, 2, 3, 'n'), False)
-
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: (1, 2, 3, 'n') is not False
-
-  compare this error message with the one for ``assert (1, 2, 3, 'n') is False``
-
-  .. code-block:: python
-
-    E       AssertionError: assert (1, 2, 3, 'n') is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 97
-    :emphasize-lines: 3-4
-
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-            # self.assertIs((1, 2, 3, 'n'), False)
-            self.assertIsNot((1, 2, 3, 'n'), False)
-
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 97
-    :emphasize-lines: 1
-
-            a_tuple = (1, 2, 3, 'n')
-            # assert (1, 2, 3, 'n') is False
-            assert (1, 2, 3, 'n') is not False
-            # self.assertIs((1, 2, 3, 'n'), False)
-            self.assertIsNot((1, 2, 3, 'n'), False)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``(1, 2, 3, 'n')`` from the test
-
-  .. code-block:: python
-    :lineno-start: 97
-    :emphasize-lines: 2-3, 5, 7
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not False
-            self.assertIsNot(a_tuple, False)
-            # assert (1, 2, 3, 'n') is False
-            # assert (1, 2, 3, 'n') is not False
-            # self.assertIs((1, 2, 3, 'n'), False)
-            # self.assertIsNot((1, 2, 3, 'n'), False)
-
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-
-  the test is still green.
-
-* I use assertIs_ to compare a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 3
-
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-            self.assertIs([1, 2, 3, 'n'], False)
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: [1, 2, 3, 'n'] is not False
-
-  compare this error message with the one for ``assert [1, 2, 3, 'n'] is False``
-
-  .. code-block:: python
-
-    E       AssertionError: assert [1, 2, 3, 'n'] is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 3-4
-
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-            # self.assertIs([1, 2, 3, 'n'], False)
-            self.assertIsNot([1, 2, 3, 'n'], False)
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 1
-
-            a_list = [1, 2, 3, 'n']
-            # assert [1, 2, 3, 'n'] is False
-            assert [1, 2, 3, 'n'] is not False
-            # self.assertIs([1, 2, 3, 'n'], False)
-            self.assertIsNot([1, 2, 3, 'n'], False)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``[1, 2, 3, 'n']`` from the test
-
-  .. code-block:: python
-    :lineno-start: 105
-    :emphasize-lines: 2-3, 5, 7
-
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not False
-            self.assertIsNot(a_list, False)
-            # assert [1, 2, 3, 'n'] is False
-            # assert [1, 2, 3, 'n'] is not False
-            # self.assertIs([1, 2, 3, 'n'], False)
-            # self.assertIsNot([1, 2, 3, 'n'], False)
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-
-  the test is still green.
-
-* I use assertIs_ to compare a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 3
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-            self.assertIs({1, 2, 3, 'n'}, False)
-
-            # assert {'key': 'value'} is False
-            assert {'key': 'value'} is not False
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    E       AssertionError: {1, 2, 3, 'n'} is not False
-
-  compare this error message with the one for ``assert {1, 2, 3, 'n'} is False``
-
-  .. code-block:: python
-
-    E       AssertionError: assert {1, 2, 3, 'n'} is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 3-4
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-            # self.assertIs({1, 2, 3, 'n'}, False)
-            self.assertIsNot({1, 2, 3, 'n'}, False)
-
-            # assert {'key': 'value'} is False
-            assert {'key': 'value'} is not False
-
-
-    # NOTES
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 1
-
-            a_set = {1, 2, 3, 'n'}
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-            # self.assertIs({1, 2, 3, 'n'}, False)
-            self.assertIsNot({1, 2, 3, 'n'}, False)
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{1, 2, 3, 'n'}`` from the test
-
-  .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 2-3, 5, 7
-
-            a_set = {1, 2, 3, 'n'}
-            assert a_set is not False
-            self.assertIsNot(a_set, False)
-            # assert {1, 2, 3, 'n'} is False
-            # assert {1, 2, 3, 'n'} is not False
-            # self.assertIs({1, 2, 3, 'n'}, False)
-            # self.assertIsNot({1, 2, 3, 'n'}, False)
-
-            # assert {1, 2, 3, 'n'} is False
-            assert {1, 2, 3, 'n'} is not False
-
-  the test is still green.
-
-* I use assertIs_ to compare a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`False<test_what_is_false>`
-
-  .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 3
-
-            # assert {'key': 'value'} is False
-            assert {'key': 'value'} is not False
-            self.assertIs({'key': 'value'}, False)
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: {'key': 'value'} is not False
-
-  compare this error message with the one for ``assert {'key': 'value'} is False``
-
-  .. code-block:: python
-
-    E       AssertionError: assert {'key': 'value'} is False
-
-* I change assertIs_ to assertIsNot_ to make the statement :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 113
-    :emphasize-lines: 3-4
-
-            # assert {'key': 'value'} is False
-            assert {'key': 'value'} is not False
-            # self.assertIs({'key': 'value'}, False)
-            self.assertIsNot({'key': 'value'}, False)
-
-
-    # NOTES
-
-  the test passes.
-
-* I add a :ref:`variable<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 1
-
-            a_dictionary = {'key': 'value'}
-            # assert {'key': 'value'} is False
-            assert {'key': 'value'} is not False
-            # self.assertIs({'key': 'value'}, False)
-            self.assertIsNot({'key': 'value'}, False)
-
-
-    # NOTES
-
-* I use the :ref:`variable<what is a variable?>` to remove repetition of ``{'key': 'value'}`` from the test
-
-  .. code-block:: python
-    :lineno-start: 121
-    :emphasize-lines: 2-3, 5, 7
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-            # assert {'key': 'value'} is False
-            # assert {'key': 'value'} is not False
-            # self.assertIs({'key': 'value'}, False)
-            # self.assertIsNot({'key': 'value'}, False)
-
-
-    # NOTES
-
-  the test is still green.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 57
-
-        def test_assertion_error_w_false(self):
-            assert None is not False
-            self.assertIsNot(None, False)
-
-            assert False is False
-            self.assertIs(False, False)
-
-            assert True is not False
-            self.assertIsNot(True, False)
-
-            an_integer = 0
-            assert an_integer is not False
-            self.assertIsNot(an_integer, False)
-
-            a_float = 0.0
-            assert a_float is not False
-            self.assertIsNot(a_float, False)
-
-            a_string = 'a string'
-            assert a_string is not False
-            self.assertIsNot(a_string, False)
-
-            a_tuple = (1, 2, 3, 'n')
-            assert a_tuple is not False
-            self.assertIsNot(a_tuple, False)
-
-            a_list = [1, 2, 3, 'n']
-            assert a_list is not False
-            self.assertIsNot(a_list, False)
-
-            a_set = {1, 2, 3, 'n'}
-            assert a_set is not False
-            self.assertIsNot(a_set, False)
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
+    assert {} is not False
 
 
     # NOTES
@@ -2758,16 +2019,14 @@ another way to test if something is NOT the same object as False
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'test_assertion_error_w_false with assert methods'
+    'add test AssertionError with False'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
-
-:ref:`I can use assertions to test if something is the same object as False or NOT<test_assertion_error_w_false>`.
 
 ----
 
 *********************************************************************************
-test_assertion_error_w_true
+test AssertionError with True
 *********************************************************************************
 
 :ref:`True<test_what_is_true>` is the other :ref:`boolean<what are booleans?>` and is NOT :ref:`None<what is None?>`. I can use :ref:`assertions<what is an assertion?>` to test if something is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>` or not.
