@@ -126,7 +126,7 @@ open the project
     error: Failed to spawn: `pytest-watcher`
       Caused by: No such file or directory (os error 2)
 
-  - because `pytest-watcher`_ is not installed on the computer.
+  - because `pytest-watcher`_ is not installed on the computer. I can install `pytest-watcher`_ with the `uv Python Package Manager`_
   - the message also shows ``Creating virtual environment at: .venv``
 
 * I use tree_ to see what the project looks like now
@@ -172,7 +172,16 @@ open the project
 
   uv_ made a :ref:`virtual environment<what is a virtual environment?>` in a folder_ named ``.venv`` with files_ and folders_.
 
-I can install `pytest-watcher`_ with the `uv Python Package Manager`_.
+----
+
+*********************************************************************************
+what is a virtual environment?
+*********************************************************************************
+
+A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
+
+It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. I do not have to keep every program_ I have ever used for projects that do not need them.
+
 
 ----
 
@@ -272,11 +281,9 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
 ----
 
-=====================================================================================================
+*********************************************************************************
 how to install Python packages with uv
-=====================================================================================================
-
-----
+*********************************************************************************
 
 * I use uv_ to install `pytest-watcher`_ from the requirements file_
 
@@ -356,23 +363,10 @@ how to install Python packages with uv
 
 ----
 
-=====================================================================================================
-what is a virtual environment?
-=====================================================================================================
-
-----
-
-A `virtual environment`_ is a separate folder_ where I can install `Python packages`_ that my project needs. This helps me keep things that belong to the project in one place, separate from other things on the computer.
-
-It means I can have a separate `virtual environment`_ for every project with only the programs_ that the project needs. I do not have to keep every program_ I have ever used for projects that do not need them.
-
-----
-
-=====================================================================================================
+*********************************************************************************
 how to activate a virtual environment
-=====================================================================================================
+*********************************************************************************
 
-----
 
 * When I want to work in a `virtual environment`_, I make sure I am in the parent directory_ of it, for example, ``magic`` in this case. I activate the `virtual environment`_ in the terminal_ to use it
 
@@ -391,11 +385,9 @@ how to activate a virtual environment
 
 ----
 
-=====================================================================================================
+*********************************************************************************
 how to deactivate a virtual environment
-=====================================================================================================
-
-----
+*********************************************************************************
 
 * I leave the `virtual environment`_ by typing ``deactivate`` in the terminal_
 
@@ -412,11 +404,9 @@ how to deactivate a virtual environment
 
 ----
 
-=====================================================================================================
+*********************************************************************************
 how to run tests automatically with uv and pytest-watcher
-=====================================================================================================
-
-----
+*********************************************************************************
 
 * I try to run the test again, this time with uv_
 
@@ -449,11 +439,9 @@ how to run tests automatically with uv and pytest-watcher
 
 ----
 
-=====================================================================================================
+*********************************************************************************
 how to open the test file in the editor from the terminal
-=====================================================================================================
-
-----
+*********************************************************************************
 
 * I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_magic.py`` to place the cursor of the `Integrated Development Environment (IDE)`_, then I change :ref:`False<test_what_is_false>` to :ref:`True<test_what_is_true>` on line 7
 
@@ -500,11 +488,9 @@ how to open the test file in the editor from the terminal
 
 ----
 
-=====================================================================================================
+*********************************************************************************
 how to stop the automated tests
-=====================================================================================================
-
-----
+*********************************************************************************
 
 I go to the terminal_ and use :kbd:`q` on the keyboard to stop the tests, the terminal_ goes back to the command line.
 

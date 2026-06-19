@@ -47,7 +47,7 @@ html_theme_options = {
     "show_prev_next": True,
 }
 html_sidebars = {
-    "**": ["sidebar_main_nav_links.html", "sidebar_toc.html"],
+    "**": ["sidebar_main_nav_links.html", "sidebar_toc.html", "localtoc.html"],
 }
 
 pygments_style = "default"
