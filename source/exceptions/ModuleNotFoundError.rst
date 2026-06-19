@@ -273,7 +273,7 @@ start the project
     git commit --all --message \
     'setup project'
 
-  the terminal_ shows a summary of the changes then goes back to the command line
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -887,7 +887,7 @@ In both chapters
 
 This means I have to run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
 
-I do not want to type ``python3 -m unittest`` again, I want the computer to do it for me. :ref:`Would you like to see how to run tests automatically?<how to run the tests automatically>`
+I do not want to type ``python3 -m unittest`` again, I want the computer to do it for me. :ref:`Would you like to see how to run tests automatically?<how to run tests automatically>`
 
 ----
 

@@ -63,7 +63,7 @@ Questions to think about as I go through the chapter
 * :ref:`how can I test for failure?<test_failure>`
 * :ref:`how can I make a Python package?<how to make the tests a Python package>`
 * :ref:`how can I run tests manually?<how to manually run tests>`
-* :ref:`how can I run tests automatically?<how to run the tests automatically>`
+* :ref:`how can I run tests automatically?<how to run tests automatically>`
 * :ref:`how can I stop automated Python tests from running?<how to stop the automated tests>`
 * :ref:`how can I set up a project with uv?<how to setup a project with uv>`
 * :ref:`what is a Virtual Environment?<what is a virtual environment?>`
@@ -959,7 +959,7 @@ I do not want to type ``python3 -m unittest`` again, I want the computer to do i
 ----
 
 =====================================================================================================
-how to run the tests automatically
+how to run tests automatically
 =====================================================================================================
 
 ----
@@ -1228,7 +1228,7 @@ how to deactivate a virtual environment
 ----
 
 =====================================================================================================
-how to run the tests automatically with uv and pytest-watcher
+how to run tests automatically with uv and pytest-watcher
 =====================================================================================================
 
 ----
@@ -1417,7 +1417,7 @@ how to view all the commands typed in a terminal
   - :ref:`add the first failing test to the test file<test_failure>`
   - :ref:`make a requirements file for the Python packages I need<how to write text to a file>`
   - :ref:`install the Python packages I gave in the requirements file<how to install Python packages with uv>`
-  - :ref:`run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
+  - :ref:`run the tests automatically<how to run tests automatically with uv and pytest-watcher>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass
 

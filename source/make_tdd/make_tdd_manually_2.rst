@@ -5,8 +5,54 @@
 .. include:: ../links.rst
 
 #################################################################################
-how to run the tests automatically
+how to run tests automatically
 #################################################################################
+
+In the previous chapters
+
+* I ran ``python3 -m unittest`` to see the test fail
+* I ran ``python3 -m unittest`` every time I made a change until the test passed
+
+I run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change. I want the computer to automatically run the tests for me.
+
+----
+
+*********************************************************************************
+preview
+*********************************************************************************
+
+This is one way to automatically run tests in a :ref:`Python Test Driven Development project<what is a Test Driven Development Environment?>`. By the end of the chapter you will know these commands better
+
+.. code-block:: python
+
+  mkdir
+  cd
+  touch
+  echo
+  cat
+  mv
+  rm
+  uv run pytest-watcher
+  source .venv/bin/activate
+  deactivate
+  history
+
+----
+
+*********************************************************************************
+questions about how to run tests automatically
+*********************************************************************************
+
+Questions to think about as I go through the chapter
+
+* :ref:`how can I run tests automatically?<how to run tests automatically>`
+* :ref:`how can I stop automated Python tests from running?<how to stop the automated tests>`
+* :ref:`what is a Virtual Environment?<what is a virtual environment?>`
+* :ref:`how can I activate a Virtual Environment?<how to activate a virtual environment>`
+* :ref:`how can I deactivate a Virtual Environment?<how to deactivate a virtual environment>`
+* :ref:`how can I document the Python programs my project needs?<how to write text to a file>`
+* :ref:`how can I install the Python programs my project needs from a file?<how to install Python packages with uv>`
+* :ref:`how can I view all the commands I type in a terminal?<how to view all the commands typed in a terminal>`
 
 ----
 
@@ -26,6 +72,39 @@ open the project
   .. code-block:: python
 
     .../pumping_python/magic
+
+* I use tree_ to see what the project looks like, as a reminder
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -a -L 2
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 15
+
+    .
+    ├── .git
+    │   ├── config
+    │   ├── description
+    │   ├── FETCH_HEAD
+    │   ├── HEAD
+    │   ├── hooks
+    │   ├── info
+    │   ├── objects
+    │   └── refs
+    ├── .gitignore
+    ├── pyproject.toml
+    ├── .python-version
+    ├── README.md
+    ├── src
+    │   └── magic.py
+    └── tests
+        ├── __init__.py
+        ├── __pycache__
+        └── test_magic.py
 
 * I can use `pytest-watcher`_ to run tests automatically. It is a `Python program`_ that automatically runs pytest_ any time a :ref:`Python file<what is a module?>` changes in the folder_ it is looking at, this means it will run the tests for me every time I make a change.
 
@@ -47,51 +126,8 @@ open the project
     error: Failed to spawn: `pytest-watcher`
       Caused by: No such file or directory (os error 2)
 
-  because `pytest-watcher`_ is not installed on the computer. I can install it with the `uv Python Package Manager`_.
-
-----
-
-*********************************************************************************
-how to write text to a file
-*********************************************************************************
-
-----
-
-I want to make a file_ where I list all the `Python packages`_ that my project needs as a way to document it and have uv_ install the programs_ listed in the file_
-
-* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen (`standard output (stdout)`_) for example, if I type this in the terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest"
-
-  it shows
-
-  .. code-block:: python
-
-    pytest
-
-* I can also use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest" > requirements.txt
-
-  - ``>`` is an operator that is used to send output from a program_ to the given file_
-  - pytest_ is a `Python package`_ like unittest_, that is used for testing
-  - ``requirements.txt`` is the name of the file_ where I am adding `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file_
-
-* I add `pytest-watcher`_ to the requirements file_ as well
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    echo "pytest-watcher" >> requirements.txt
-
-  - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it
-  - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
+  - because `pytest-watcher`_ is not installed on the computer.
+  - the message also shows ``Creating virtual environment at: .venv``
 
 * I use tree_ to see what the project looks like now
 
@@ -107,29 +143,118 @@ I want to make a file_ where I list all the `Python packages`_ that my project n
 
     .
     ├── .git
-    │   ├── HEAD
-    │   ├── branches
     │   ├── config
     │   ├── description
+    │   ├── FETCH_HEAD
+    │   ├── HEAD
     │   ├── hooks
     │   ├── info
     │   ├── objects
     │   └── refs
     ├── .gitignore
+    ├── pyproject.toml
     ├── .python-version
     ├── README.md
-    ├── pyproject.toml
-    ├── requirements.txt
     ├── src
     │   └── magic.py
-    └── tests
-        ├── __init__.py
-        ├── __pycache__
-        └── test_magic.py
+    ├── tests
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   └── test_magic.py
+    └── .venv
+        ├── bin
+        ├── CACHEDIR.TAG
+        ├── .gitignore
+        ├── lib
+        ├── lib64 -> lib
+        ├── .lock
+        └── pyvenv.cfg
+
+  uv_ made a :ref:`virtual environment<what is a virtual environment?>` in a folder_ named ``.venv`` with files_ and folders_.
+
+I can install `pytest-watcher`_ with the `uv Python Package Manager`_.
+
+----
+
+*********************************************************************************
+how to write text to a file
+*********************************************************************************
+
+I want to make a file_ where I list all the `Python packages`_ that my project needs as a way to document it and have uv_ install the programs_ listed in the file_
+
+* I can write text to a file_ with the `echo program`_, it shows whatever it is given as an argument, on the screen. For example, if I type this in the terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "hi, my name is Jacob"
+
+  it shows
+
+  .. code-block:: python
+
+    hi, my name is Jacob
+
+* I can also use echo_ to add text to a file_. I use it to make the requirements file_ with pytest_ as what is inside it
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest" > requirements.txt
+
+  - ``>`` is an operator that is used to send output from a program_ to the given file_
+  - pytest_ is a `Python package`_ like unittest_, that is used for testing
+  - ``requirements.txt`` is the name of the file_ where I add names of `Python packages`_ for the `uv Python Package Manager`_ to install. The name ``requirements.txt`` is Python_ convention, I can use any name I want for the requirements file_.
+
+* I use tree_ to see what the project looks like now
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    tree -a -L 1
+
+  the terminal_ shows
+
+  .. code-block:: shell
+    :emphasize-lines: 7
+
+    .
+    ├── .git
+    ├── .gitignore
+    ├── pyproject.toml
+    ├── .python-version
+    ├── README.md
+    ├── requirements.txt
+    ├── src
+    ├── tests
+    └── .venv
 
   ``requirements.txt`` is now in the ``magic`` folder_
 
-* I use cat_ to make sure ``requirements.txt`` has ``pytest`` and ``pytest-watcher`` inside it
+* I use the `cat program`_ to look at what is in ``requirements.txt``
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    cat requirements.txt
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    pytest
+
+* I add `pytest-watcher`_ to the requirements file_ as well
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    echo "pytest-watcher" >> requirements.txt
+
+  - ``>>`` is an operator that is used to send output from a program_ to the given file_, it adds to what is in the file without writing over it
+  - `pytest-watcher`_ is a `Python program`_ that automatically runs pytest_ when I change code in the project
+
+* I use cat_ to look at what is in ``requirements.txt`` now
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -189,24 +314,21 @@ how to install Python packages with uv
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 5, 11
+    :emphasize-lines: 10
 
     .
     ├── .git
     ├── .gitignore
-    ├── .python-version
-    ├── .venv
-    ├── README.md
     ├── pyproject.toml
+    ├── .python-version
+    ├── README.md
     ├── requirements.txt
     ├── src
     ├── tests
-    └── uv.lock
+    ├── uv.lock
+    └── .venv
 
-  uv_ added 2 things
-
-  - ``.venv`` a folder_ for a :ref:`Virtual Environment<what is a virtual environment?>`
-  - ``uv.lock`` a file_ that has the exact versions of the `Python programs`_ that were installed
+  uv_ added ``uv.lock`` a file_ that has the exact versions of the `Python programs`_ that were installed.
 
 * I use cat_ to show what is now in ``pyproject.toml``
 
@@ -230,7 +352,7 @@ how to install Python packages with uv
         "pytest-watcher>=P.Q.R",
     ]
 
-  it added `pytest`_ and `pytest-watcher`_ to the dependencies of the project
+  it added `pytest`_ and `pytest-watcher`_ to the dependencies of the project.
 
 ----
 
@@ -291,7 +413,7 @@ how to deactivate a virtual environment
 ----
 
 =====================================================================================================
-how to run the tests automatically with uv and pytest-watcher
+how to run tests automatically with uv and pytest-watcher
 =====================================================================================================
 
 ----
@@ -480,7 +602,7 @@ how to view all the commands typed in a terminal
   - :ref:`add the first failing test to the test file<test_failure>`
   - :ref:`make a requirements file for the Python packages I need<how to write text to a file>`
   - :ref:`install the Python packages I gave in the requirements file<how to install Python packages with uv>`
-  - :ref:`run the tests automatically<how to run the tests automatically with uv and pytest-watcher>`
+  - :ref:`run the tests automatically<how to run tests automatically with uv and pytest-watcher>`
   - :ref:`open the test file in the editor from the terminal<how to open the test file in the editor from the terminal>`
   - make the test pass
 

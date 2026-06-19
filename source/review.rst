@@ -46,7 +46,7 @@ how to make a python test driven development environment review
 * :ref:`how can I test for failure?<test_failure>`
 * :ref:`how can I make a Python package?<how to make the tests a Python package>`
 * :ref:`how can I run tests manually?<how to manually run tests>`
-* :ref:`how can I run tests automatically?<how to run the tests automatically>`
+* :ref:`how can I run tests automatically?<how to run tests automatically>`
 * :ref:`how can I stop automated Python tests from running?<how to stop the automated tests>`
 * :ref:`how can I set up a project with uv?<how to setup a project with uv>`
 * :ref:`what is a Virtual Environment?<what is a virtual environment?>`
@@ -292,7 +292,7 @@ Questions to think about as I go through the chapter
 testing
 *********************************************************************************
 
-* :ref:`how can I run automated tests after I exit them in the terminal?<how to run the tests automatically with uv and pytest-watcher>`
+* :ref:`how can I run automated tests after I exit them in the terminal?<how to run tests automatically with uv and pytest-watcher>`
 
 ----
 

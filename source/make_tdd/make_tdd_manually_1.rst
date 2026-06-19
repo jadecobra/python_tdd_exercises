@@ -881,21 +881,40 @@ how to make the tests a Python package
 :yellow:`REFACTOR`: make it better
 ********************************************************************************************
 
-I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to help me know them better, familiarity. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_magic.py``
+* I keep a list of :ref:`Errors/Exceptions<errors>` that show up in the terminal_ as I go through this book to help me know them better, familiarity. I add :ref:`AssertionError<what causes AssertionError?>` to ``test_magic.py``
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 6-7
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7
 
-  # False is True
-  # assert False is True
-  assert False is False
+    # False is True
+    # assert False is True
+    assert False is False
 
 
-  # Exceptions seen
-  # AssertionError
+    # Exceptions seen
+    # AssertionError
 
-comments in Python_ are written with ``#`` at the beginning, they do not do anything, they are notes for me. Time to get some practice with :ref:`Python modules<what is a module?>`.
+  comments in Python_ are written with ``#`` at the beginning, they do not do anything, they are notes for me. Time to get some practice with :ref:`Python modules<what is a module?>`.
+
+* I add the new files_ and folders_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'setup project'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
