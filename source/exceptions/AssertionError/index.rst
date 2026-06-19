@@ -2041,6 +2041,43 @@ test AssertionError with True
 
 * I go back to the terminal_ where the tests are running
 
+* I add a new statement to ``test_assertion_error.py`` with a comment to group these new statements
+
+  .. code-block:: python
+    :lineno-start: 50
+    :emphasize-lines: 4-5
+
+    assert {} is not False
+
+
+    # test AssertionError with True
+    None is True
+
+    # NOTES
+
+  the test is still passing.
+
+* I add :ref:`the assert keyword`
+
+  .. code-block:: python
+    :lineno-start: 31
+    :emphasize-lines: 2-3
+
+    # test AssertionError with False
+    # None is False
+    assert None is False
+
+
+    # NOTES
+
+  the terminal_ is my friend, and shows
+
+  .. code-block:: python
+
+    E       assert None is False
+
+  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+
 * I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
