@@ -256,6 +256,25 @@ start the project
 
   the test passes. Time to test :ref:`modules<what is a module?>`
 
+* I add the new files_ and folders_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+  the terminal_ goes back to the command line.
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'setup project'
+
+  the terminal_ shows a summary of the changes then goes back to the command line
+
 ----
 
 *********************************************************************************
@@ -353,7 +372,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
     python3 -m unittest
 
   - the test passes because when ``import src.module_00`` runs, Python_ brings in an :ref:`object<what is a class?>` for the ``module_00.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``
-  - the terminal_ shows ``NO TESTS RAN`` which is confusing because the only way I know the test passed, is because I saw it fail
+  - the terminal_ shows ``NO TESTS RAN`` which is confusing since the only way I know the test passed, is because I saw it fail
 
 ----
 
@@ -384,7 +403,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError>`
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -406,7 +425,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the test passes.
+  the test passes because ``import src.module_01`` brings in an :ref:`object<what is a class?>` for the ``module_01.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
 * I add an `import statement`_ for ``src.module_02`` to ``test_module_not_found_error.py``
 
@@ -430,7 +449,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError>`
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -452,7 +471,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the test passes.
+  the test passes because ``import src.module_02`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the ``module_02.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
 * I add an `import statement`_ for ``src.module_03`` to ``test_module_not_found_error.py``
 
@@ -475,7 +494,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError>`
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -497,17 +516,18 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the test passes.
+  the test passes because ``import src.module_03`` brings in an :ref:`object<what is a class?>` for the ``module_03.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
 * I add an `import statement`_ for ``src.module_04`` to ``test_module_not_found_error.py``
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 4
+    :emphasize-lines: 5
 
     import src.module_00
     import src.module_01
     import src.module_02
+    import src.module_03
     import src.module_04
 
 
@@ -520,7 +540,7 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError>`
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
@@ -542,162 +562,271 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the test passes.
+  the test passes because ``import src.module_04`` brings in an :ref:`object (everything in Python is an object)<what is a class?>` for the ``module_04.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
 
-* I continue with another `import statement`_ in ``test_module_not_found_error.py``
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 4
-
-        def test_module_not_found_error(self):
-            import src.module_00
-            import src.module_01
-            import src.module_02
-
-  the terminal_ is my friend, and shows ModuleNotFoundError_
-
-  .. code-block:: shell
-
-    ModuleNotFoundError: No module called 'src.module_02'
-
-* I add ``module_02.py`` to the ``src`` folder and the test is green again, I close the file
-
-* I add another `import statement`_ in ``test_module_not_found_error.py``
+* I add an `import statement`_ for ``src.module_05`` to ``test_module_not_found_error.py``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 5
+    :linenos:
+    :emphasize-lines: 6
 
-        def test_module_not_found_error(self):
-            import src.module_00
-            import src.module_01
-            import src.module_02
-            import src.module_03
-
-  the terminal_ is my friend, and shows
-
-  .. code-block:: shell
-
-    ModuleNotFoundError: No module called 'src.module_03'
-
-* I add the file_ to the ``src`` folder_ and the test passes, I close the file_
-
-* I add an `import statement`_ to ``test_module_not_found_error.py``
-
-  .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 2
-
-            import src.module_03
-            import src.module_04
+    import src.module_00
+    import src.module_01
+    import src.module_02
+    import src.module_03
+    import src.module_04
+    import src.module_05
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows ModuleNotFoundError_
+* I go to the terminal_ to run the test
 
   .. code-block:: python
+    :emphasize-lines: 1
 
-    ModuleNotFoundError: No module named 'src.module_04'
+    python3 -m unittest
 
-* I add ``module_04.py`` to the ``src`` folder_, the test passes and I close the file_
-
-* I add another `import statement`_ to ``test_module_not_found_error.py``
-
-  .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 2
-
-            import src.module_04
-            import src.module_05
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows ModuleNotFoundError_
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
     ModuleNotFoundError: No module named 'src.module_05'
 
-* I add the file_ to the ``src`` folder_, the test passes and I close the file_
-
-* another `import statement`_ in ``test_module_not_found_error.py``
+* I make a new file_ named ``module_05.py`` in the ``src`` folder_
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-            import src.module_05
-            import src.module_06
+    touch src/module_05.py
+
+  the terminal_ goes back to the command line.
+
+* I run the test again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the test passes because ``import src.module_05`` brings in an :ref:`object<what is a class?>` for the ``module_05.py`` file_ from the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
+
+* I add an `import statement`_ for ``src.doe`` to ``test_module_not_found_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 7
+
+    import src.module_00
+    import src.module_01
+    import src.module_02
+    import src.module_03
+    import src.module_04
+    import src.module_05
+    import src.doe
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows ModuleNotFoundError_
+* I go to the terminal_ to run the test
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module named 'src.module_06'
+    ModuleNotFoundError: No module named 'src.doe'
 
-* I add ``module_06.py`` to the ``src`` folder_, the test passes, and I close the file_
-
-* I add an `import statement`_ in ``test_module_not_found_error.py``
+* I make a new folder_ named ``doe`` in the ``src`` folder_
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-            import src.module_06
-            import src.module_07
+    mkdir src/doe
+
+  the terminal_ goes back to the command line.
+
+* I run the test again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the test passes because ``import src.doe`` brings in an :ref:`object<what is a class?>` for the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
+
+* I add an `import statement`_ for ``src.doe.john`` to ``test_module_not_found_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 8
+
+    import src.module_00
+    import src.module_01
+    import src.module_02
+    import src.module_03
+    import src.module_04
+    import src.module_05
+    import src.doe
+    import src.doe.john
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows ModuleNotFoundError_
+* I go to the terminal_ to run the test
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module named 'src.module_07'
+    ModuleNotFoundError: No module named 'src.doe.john'
 
-* I add the :ref:`module<what is a module?>` to the ``src`` folder_, the test passes and I close the file_
-
-* I add an `import statement`_ to ``test_module_not_found_error.py``
+* I make a new file_ named ``john.py`` in the ``doe`` folder_ in the ``src`` folder_
 
   .. code-block:: python
-    :lineno-start: 14
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-            import src.module_07
-            import src.module_08
+    touch src/doe/john.py
+
+  the terminal_ goes back to the command line.
+
+* I run the test again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the test passes because ``import src.doe.john`` brings in an :ref:`object<what is a class?>` for the ``john.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
+
+* I add an `import statement`_ for ``src.doe.jane`` to ``test_module_not_found_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 9
+
+    import src.module_00
+    import src.module_01
+    import src.module_02
+    import src.module_03
+    import src.module_04
+    import src.module_05
+    import src.doe
+    import src.doe.john
+    import src.doe.jane
 
 
     # Exceptions seen
 
-  the test passes.
-
-* I add ``module_08.py`` to the ``src`` folder_, the test passes.
-
-* I add the last `import statement`_ to ``test_module_not_found_error.py``
+* I go to the terminal_ to run the test
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2
+    :emphasize-lines: 1
 
-            import src.module_08
-            import src.module_09
+    python3 -m unittest
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+
+  .. code-block:: python
+
+    ModuleNotFoundError: No module named 'src.doe.jane'
+
+* I make a new file_ named ``jane.py`` in the ``doe`` folder_ in the ``src`` folder_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch src/doe/jane.py
+
+  the terminal_ goes back to the command line.
+
+* I run the test again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the test passes because ``import src.doe.jane`` brings in an :ref:`object<what is a class?>` for the ``jane.py`` file_ from the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
+
+* I add an `import statement`_ for ``magic`` to ``test_module_not_found_error.py``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 10
+
+    import src.module_00
+    import src.module_01
+    import src.module_02
+    import src.module_03
+    import src.module_04
+    import src.module_05
+    import src.doe
+    import src.doe.john
+    import src.doe.jane
+    import magic
 
 
     # Exceptions seen
+    # AssertionError
+    # ModuleNotFoundError
 
-  the terminal_ is my friend, and shows ModuleNotFoundError_
+* I go to the terminal_ to run the test
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the terminal_ is my friend, and shows :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
 
   .. code-block:: python
 
-    ModuleNotFoundError: No module named 'src.module_09'
+    ModuleNotFoundError: No module named 'magic'
 
-* I add the file_ to the ``src`` folder_ and the test passes.
+* I make a new file_ named ``magic.py`` in the main folder_ of the project (``module_not_found_error``)
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    touch magic.py
+
+  the terminal_ goes back to the command line.
+
+* I run the test again
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    python3 -m unittest
+
+  the test passes because ``import magic`` brings in an :ref:`object<what is a class?>` for the ``magic.py`` that is in the ``module_not_found_error`` folder_ so I can use it in ``test_module_not_found_error.py``.
+
+* I add the new files_ and folder_ to git_ for tracking
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git add .
+
+* I add a git_ commit message in the terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test ModuleNotFoundError'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
@@ -730,7 +859,8 @@ close the project
 review
 *********************************************************************************
 
-I ran a test for ModuleNotFoundError_ to practice making :ref:`Python modules<what is a module?>`
+* I ran a test for ModuleNotFoundError_ to practice making :ref:`Python modules<what is a module?>`
+* The terminal_ shows ``NO TESTS RAN`` when there is no test and when my test passes which is confusing since the only way I know the test passed, is because I saw it fail. There has to be a better way.
 
 ----
 
@@ -746,27 +876,20 @@ code from the chapter
 what is next?
 *************************************************************************************
 
-you have gone through a lot of information and know
+You know
 
-* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
-* :ref:`what causes AssertionError?`
-* :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`what is None and NOT None<what is None?>`
-* :ref:`what is True and False in Python<what are booleans?>`
-* :ref:`how to write programs that make decisions<truth table>`
-* :ref:`how to make a calculator<how to make a calculator>`
-* :ref:`how to test that an Exception is raised with assertRaises<how to test that an Exception is raised>`
-* :ref:`how to handle Exceptions in programs with try...except...else<how to handle Exceptions (Errors) in programs>`
-* :ref:`how to raise TypeError<TypeError>`
-* :ref:`what you can do with Lists<lists>`
-* :ref:`how to use list comprehensions<list comprehensions>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
-* :ref:`what you can do with dictionaries<dictionaries>`
-* :ref:`what you can do with classes<what is a class?>`
-* :ref:`how to raise ModuleNotFoundError<what is a module?>`
+* :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
 
-:ref:`Are you ready for a review, How many questions do you think you can answer?<pumping python review>`
+In both chapters
+
+* I ran ``python3 -m unittest`` to see the test fail
+* I ran ``python3 -m unittest`` every time I made a change until the test passed
+* I will run ``python3 -m unittest`` again when I add any code, to make sure tests that passed before do not fail and that the new code I add does what I want
+
+This means I have to run ``python3 -m unittest`` for each part of the :ref:`Test Driven Development Cycle<what is the Test Driven Development Cycle?>` or any time there is a code change.
+
+I do not want to type ``python3 -m unittest`` again, I want the computer to do it for me. :ref:`Would you like to see how to run tests automatically?<how to run the tests automatically>`
 
 ----
 
