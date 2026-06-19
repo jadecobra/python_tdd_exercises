@@ -1957,7 +1957,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
   .. code-block:: python
 
-    this_year = datetime.datetime.today().year
+    this_year = datetime.datetime.now().year
 
   or
 
@@ -1970,7 +1970,7 @@ I can do that with the `datetime module`_ from `The Python Standard Library`_ wh
 
   .. code-block:: python
 
-    this_year = datetime.datetime.now().year
+    this_year = datetime.datetime.today().year
 
   that was a lot of words, they become clearer in the chapters on :ref:`classes<what is a class?>`.
 
