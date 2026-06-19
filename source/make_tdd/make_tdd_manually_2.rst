@@ -456,6 +456,8 @@ how to run tests automatically with uv and pytest-watcher
     Current runner args: []
     Press w to show menu
 
+  better!
+
 ----
 
 *********************************************************************************

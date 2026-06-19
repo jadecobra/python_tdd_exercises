@@ -37,6 +37,9 @@ I have these tests by the end of the chapter
 start the project
 *********************************************************************************
 
+* I name this project ``module_not_found_error``
+* I open a terminal_
+
 * I `change directory`_ to the ``module_not_found_error`` project in the ``pumping_python`` folder_
 
   .. code-block:: python
@@ -216,7 +219,7 @@ start the project
 
 
     ------------------------------------------------------
-    Ran 1 test in 0.001s
+    Ran 1 test in X.YZs
 
     FAILED (errors=1)
 

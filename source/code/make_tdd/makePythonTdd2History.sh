@@ -12,8 +12,6 @@ cat pyproject.toml
 source .venv/bin/activate
 deactivate
 uv run pytest-watcher . --now
-code tests/test_person.py
-uv run pytest-watcher . --now
 git add .
 git commit --all --message 'automate tests'
 cd ..
