@@ -718,7 +718,7 @@ the test passes.
 
     # NOTES
 
-  the terminal_ is my friend, and shows AssertionError_
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -774,7 +774,7 @@ the test passes.
 
     # NOTES
 
-  the terminal_ is my friend, and shows AssertionError_
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -827,7 +827,7 @@ the test passes.
 
     # NOTES
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -882,7 +882,7 @@ the test passes.
 
     # NOTES
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -938,11 +938,11 @@ the test passes.
 
     # NOTES
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert '' is None
+    E   assert '' is None
 
   because a string_ is not the same :ref:`object<what is a class>` as :ref:`None<what is None?>`.
 
@@ -997,11 +997,11 @@ the test passes.
 
     # NOTES
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert () is None
+    E   assert {} is None
 
   because a tuple_ is not the same :ref:`object<what is a class>` :ref:`None<what is None?>`.
 
@@ -1046,83 +1046,46 @@ the test passes.
 * I add an `assert statement`_ for a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 23
+    :lineno-start: 26
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert () is None
+    assert () is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-
-            assert [1, 2, 3, 'n'] is None
+    assert [] is None
 
 
     # NOTES
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert [1, 2, 3, 'n'] is None
+    E   assert [] is None
+
+  because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 23-24
+    :lineno-start: 26
+    :emphasize-lines: 4-5
 
+    # assert () is None
+    assert () is not None
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
-
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
+    # assert [] is None
+    assert [] is not None
 
 
     # NOTES
 
-  the test passes.
+  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
 
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 45
+    :lineno-start: 33
     :emphasize-lines: 2
 
     # NOTES
@@ -1144,35 +1107,13 @@ the test passes.
 * I add an `assert statement`_ for a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 26
+    :lineno-start: 29
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert [] is None
+    assert [] is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-
-            assert {1, 2, 3, 'n'} is None
+    assert set() is None
 
 
     # NOTES
@@ -1181,42 +1122,19 @@ the test passes.
 
   .. code-block:: python
 
-    E       AssertionError: assert {1, 2, 3, 'n'} is None
+    E   assert set() is None
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 26-27
+    :lineno-start: 29
+    :emphasize-lines: 4-5
 
+    # assert [] is None
+    assert [] is not None
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
-
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-
-            # assert {1, 2, 3, 'n'} is None
-            assert {1, 2, 3, 'n'} is not None
+    # assert set() is None
+    assert set() is not None
 
 
     # NOTES
@@ -1226,7 +1144,7 @@ the test passes.
 * I add a note about sets_
 
   .. code-block:: python
-    :lineno-start: 48
+    :lineno-start: 36
     :emphasize-lines: 2
 
     # NOTES
@@ -1249,85 +1167,34 @@ the test passes.
 * I add an `assert statement`_ for a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 29
+    :lineno-start: 32
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert set() is None
+    assert set() is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-
-            # assert {1, 2, 3, 'n'} is None
-            assert {1, 2, 3, 'n'} is not None
-
-            assert {'key': 'value'} is None
+    assert {} is None
 
 
     # NOTES
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert {'key': 'value'} is None
+    E   assert {} is None
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 29-30
+    :lineno-start: 32
+    :emphasize-lines: 4-5
 
+    # assert set() is None
+    assert set() is not None
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
-
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
-
-            # assert [1, 2, 3, 'n'] is None
-            assert [1, 2, 3, 'n'] is not None
-
-            # assert {1, 2, 3, 'n'} is None
-            assert {1, 2, 3, 'n'} is not None
-
-            # assert {'key': 'value'} is None
-            assert {'key': 'value'} is not None
+    # assert {} is None
+    assert {} is not None
 
 
     # NOTES
@@ -1356,13 +1223,59 @@ the test passes.
     # Exceptions seen
     # AssertionError
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 5
+
+    assert 'I am' + ' alive' == 'I am alive'
+
+    assert None is None
+
+    assert False is not None
+
+    assert True is not None
+
+    assert 0 is not None
+
+    assert 0.0 is not None
+
+    assert '' is not None
+
+    assert () is not None
+
+    assert [] is not None
+
+    assert set() is not None
+
+    assert {} is not None
+
+
+    # NOTES
+
+* I add comments to group the :ref:`assertions<what is an assertion?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1, 8
+
+    # test the assert keyword
+    assert 1 + 1 == 2
+
+    assert '1' + '1' == '11'
+
+    assert 'I am' + ' alive' == 'I am alive'
+
+    # test AssertionError with None
+    assert None is None
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_assertion_error_w_none'
+    'add test AssertionError with None'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
