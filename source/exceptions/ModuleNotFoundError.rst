@@ -27,7 +27,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/tests/test_module_not_found_error.py
+.. literalinclude:: ../code/module_not_found_error/test_module_not_found_error.py
   :language: python
   :linenos:
 
@@ -88,7 +88,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I use the `mv program`_ to move``main.py`` to the ``src`` folder_
+* I use the `mv program`_ to move ``main.py`` to the ``src`` folder_
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -147,7 +147,7 @@ start the project
 
 * I close ``module_not_found_error.py``
 
-  .. danger:: if you do not close ``magic.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
+  .. danger:: if you do not close ``module_not_found_error.py``, there will be 3 files in the ``tests`` folder after the next step (instead of 2), because the ``Auto Save`` feature (enabled earlier) will save the original file_ if it is still open after you change its name.
 
 * I use the `mv program`_ to change the name of ``module_not_found_error.py`` in the ``tests`` folder_ to ``test_module_not_found_error.py``
 
@@ -657,7 +657,8 @@ ModuleNotFoundError_ is raised when Python_ cannot find a module_ (a file that e
 
     python3 -m unittest
 
-  the test passes because ``import src.doe`` brings in an :ref:`object<what is a class?>` for the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``.
+  - the test passes because ``import src.doe`` brings in an :ref:`object<what is a class?>` for the ``doe`` folder_ that is in the ``src`` folder_ so I can use it in ``test_module_not_found_error.py``
+  - this worked even though I did not add an ``__init__.py`` file_ to the folder_
 
 * I add an `import statement`_ for ``src.doe.john`` to ``test_module_not_found_error.py``
 
@@ -868,7 +869,7 @@ how to view all the commands I typed to test ModuleNotFoundError
 
 ----
 
-* I type history_ in the terminal_ to see all the commands I have typed so far
+* I type history_ in the terminal_ to see all the commands I typed for this project
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -881,7 +882,7 @@ how to view all the commands I typed to test ModuleNotFoundError
     :language: python
     :emphasize-lines: 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32
 
-  the `history program`_ shows all the commands I typed in the terminal_ so far.
+  the `history program`_ shows all the commands I typed in the terminal_
 
   * I ran ``python3 -m unittest`` to see the test fail
   * I ran ``python3 -m unittest`` every time I made a change until the test passed

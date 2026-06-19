@@ -1,6 +1,6 @@
 .. meta::
-  :description: Stop manually setting up Python TDD projects. Learn to automate your entire test-driven development environment with one script in just 5 minutes.
-  :keywords: Jacob Itegboje, automate python tdd setup script, python test driven development workflow, how to structure a python project for testing, pytest-watcher for automatic testing, python virtual environment best practices, create python project from template, step-by-step python tdd tutorial, python project automation script
+  :description: Run Python tests automatically with pytest-watcher and uv on the person project from manual TDD setup. Jacob Itegboje adds requirements.txt with pytest and pytest-watcher, uv add --requirement requirements.txt, uv run pytest-watcher . --now, source .venv/bin/activate and deactivate, code tests/test_person.py from terminal, assert False is True collection error E assert False is True, fix to no tests ran on pass, Press q to stop watcher. Covers virtual environment .venv, pyproject.toml dependencies, uv.lock, NO TESTS RAN vs pytest collected 0 items, and why manual python3 -m unittest is replaced. Pumping Python make TDD project 1 part 2 after what is a module.
+  :keywords: Jacob Itegboje, Pumping Python, pytest-watcher automatic tests, uv add requirement requirements.txt, uv run pytest-watcher --now, python virtual environment activate deactivate, source .venv/bin/activate, echo pytest requirements.txt, NO TESTS RAN unittest, collected 0 items pytest, assert False is True collection error, person project pumping_python, automate python3 -m unittest, test driven development environment manually part 2, pyproject.toml dependencies pytest-watcher, Press q stop pytest-watcher, code tests/test_person.py terminal
 
 .. include:: ../links.rst
 
@@ -462,7 +462,7 @@ how to run tests automatically with uv and pytest-watcher
 how to open the test file in the editor from the terminal
 *********************************************************************************
 
-* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_person.py`` to go back to ``test_person.py``. I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` on line 2
+* I hold :kbd:`ctrl` (Windows_/Linux_) or :kbd:`option/command` (MacOS_) on the keyboard, then click on ``tests/test_person.py`` to go back to ``test_person.py``. I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :linenos:
@@ -476,7 +476,7 @@ how to open the test file in the editor from the terminal
     # Exceptions seen
     # AssertionError
 
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
     :emphasize-lines: 8
@@ -577,7 +577,7 @@ how to view all the commands I typed to automate running tests
 
 ----
 
-* I type history_ in the terminal_ to see all the commands I have typed so far
+* I type history_ in the terminal_ to see all the commands I typed in this chapter
 
   .. code-block:: python
     :emphasize-lines: 1
@@ -587,12 +587,12 @@ how to view all the commands I typed to automate running tests
   the terminal_ shows
 
   .. literalinclude:: ../code/make_tdd/makePythonTdd2History.sh
-    :language: shell
+    :language: python
     :emphasize-lines: 4, 7, 9, 14
 
-  the `history program`_ shows all the commands I typed in the terminal_ so far
+  the `history program`_ shows all the commands I typed in the terminal_
 
-* these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
+* these are the commands I used to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` then :ref:`run the tests automatically<how to run tests automatically>`
 
   .. code-block:: python
 
@@ -610,7 +610,7 @@ how to view all the commands I typed to automate running tests
 
   where ``NAME_OF_THE_PROJECT`` is the name I give the project
 
-* these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>`
+* these are the steps I took to make a :ref:`Python Test Driven Development environment<what is a Test Driven Development Environment?>` then :ref:`run the tests automatically<how to run tests automatically>`
 
   - give the project a name
   - :ref:`make a directory for the project<how to setup a project with uv>`
@@ -629,7 +629,7 @@ how to view all the commands I typed to automate running tests
 
 ----
 
-:ref:`How many questions can you answer after going through this chapter?<questions about making a Python Test Driven Development Environment>`
+:ref:`How many questions can you answer after going through this chapter?<questions about how to run tests automatically>`
 
 ----
 

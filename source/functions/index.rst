@@ -5015,7 +5015,7 @@ what is next?
 
 you have covered a bit so far and know
 
-* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
+:ref:`how to make a Python test driven development environment manually`
 * :ref:`what causes AssertionError?` and
 * :ref:`how to make functions<what is a function?>`
 

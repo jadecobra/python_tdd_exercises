@@ -2559,7 +2559,7 @@ what is next?
 
 You now know:
 
-* :ref:`how to make a Python test driven development environment manually<how to make a Python test driven development environment>`
+:ref:`how to make a Python test driven development environment manually`
 * :ref:`what causes AssertionError?`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<telephone>`

@@ -971,8 +971,8 @@ how to view all the commands typed in a terminal
   the terminal_ shows
 
   .. literalinclude:: ../code/make_tdd/makePythonTdd1History.sh
-    :language: shell
-    :emphasize-lines: 2-3, 11, 13, 15, 20, 25, 28
+    :language: python
+    :emphasize-lines: 2-3, 12, 14, 19, 21, 24, 27
 
   the `history program`_ shows all the commands I typed in the terminal_ so far.
 

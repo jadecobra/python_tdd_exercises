@@ -5,7 +5,6 @@ tree
 tree -a -L 2
 cat .gitignore
 cat pyproject.toml
-cat python-version
 cat .python-version
 cat README.md
 mkdir src
@@ -29,5 +28,6 @@ mv tests/person.py tests/test_person.py
 tree -a -L 2
 python3 -m unittest
 python3 -m unittest
+git add .
 git commit --all --message 'setup project'
 cd ..

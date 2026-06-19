@@ -14,7 +14,6 @@ deactivate
 uv run pytest-watcher . --now
 code tests/test_person.py
 uv run pytest-watcher . --now
-git status
 git add .
 git commit --all --message 'automate tests'
 cd ..

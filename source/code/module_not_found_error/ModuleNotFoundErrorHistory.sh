@@ -31,6 +31,5 @@ python3 -m unittest
 touch magic.py
 python3 -m unittest
 git add .
-git status
 git commit --all --message 'test ModuleNotFoundError'
 cd ..
