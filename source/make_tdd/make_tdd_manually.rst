@@ -52,7 +52,7 @@ Questions to think about as I go through the chapter
 
 * :ref:`what is a Test Driven Development Environment?`
 * :ref:`how can I make a Python Test Driven Development Environment manually?<how to make a Python Test Driven Development environment manually>`
-* :ref:`how can I change directories?<how to change directory>`
+* :ref:`how can I change directorisource/make_tdd/make_tdd_manually.rstes?<how to change directory>`
 * :ref:`how can I make a directory?<how to make a directory>`
 * :ref:`how can I see directory structure?<how to look at directory relationships>`
 * :ref:`how can I make an empty file?<how to make an empty file>`
@@ -158,7 +158,7 @@ how to setup the project
 
     cd: no such file or directory: magic
 
-  there is no folder_ with the name ``magic`` in this folder_, time to make ``magic``
+  there is no folder_ with the name ``magic`` in this folder_, time to make ``magic``.
 
 ----
 
@@ -181,7 +181,7 @@ how to setup a project with uv
 
     Initialized project `magic` at `.../pumping_python/magic`
 
-  uv_ is a program_ that makes files_ and folders_ needed for a project. It also handles Python_ and `Python Packages`_
+  uv_ is a program_ that makes files_ and folders_ needed for a project. It also handles Python_ and `Python Packages`_.
 
 ----
 
@@ -204,7 +204,7 @@ how to change directory to the project
 
     .../pumping_python/magic
 
-  uv_ made the directory_ for me
+  uv_ made the directory_ for me.
 
 * I use tree_ to see what uv_ added to the folder_
 
@@ -216,7 +216,6 @@ how to change directory to the project
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 2-15
 
     .
     ├── .git
@@ -343,7 +342,9 @@ the terminal_ is my friend, and shows
 
 .. code-block:: text
 
-  python3: can't open file '.../pumping_python/magic/src/magic.py': [Errno 2] No such file or directory
+  python3: can't open file
+           '.../pumping_python/magic/src/magic.py':
+           [Errno 2] No such file or directory
 
 Python_ cannot find the file_ because it does not exist, and there is no folder_ named ``src``, yet.
 
@@ -374,18 +375,10 @@ how to make a directory for the source code
   the terminal_ shows
 
   .. code-block:: shell
-    :emphasize-lines: 16
+    :emphasize-lines: 8
 
     .
     ├── .git
-    │   ├── HEAD
-    │   ├── branches
-    │   ├── config
-    │   ├── description
-    │   ├── hooks
-    │   ├── info
-    │   ├── objects
-    │   └── refs
     ├── .gitignore
     ├── .python-version
     ├── README.md
@@ -400,7 +393,7 @@ how to make a directory for the source code
 
     python3 src/magic.py
 
-  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``magic.py`` in the ``src`` folder_
+  the terminal_ is my friend, and shows the same error from before because there is no file_ named ``magic.py`` in the ``src`` folder_.
 
 ----
 
@@ -448,7 +441,7 @@ how to change the name of a file
     └── src
         └── magic.py
 
-  ``main.py`` is now ``magic.py`` in the ``src`` folder_
+  ``main.py`` is now ``magic.py`` in the ``src`` folder_.
 
 * I try to run the ``magic`` program_ again
 
@@ -519,8 +512,7 @@ how to manually run tests
 
   - ``python3`` is the `Python program`_
   - ``-m`` is an option/switch passed when calling Python_ to run the :ref:`module<what is a module?>` ( unittest_ in this case)
-  - a :ref:`Python module<what is a module?>` is any file_ that ends with ``.py``, this means somewhere on the computer there is a file_ named ``unittest.py``, `click here to see the source code for unittest`_
-
+  - which leads to the question of :ref:`what is a module?<what is a module?>`
 
 ----
 

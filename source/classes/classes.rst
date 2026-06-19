@@ -13,7 +13,9 @@
 classes
 #################################################################################
 
-I made :ref:`functions<what is a function?>` that make :ref:`dictionaries<what is a dictionary?>` and strings_ in :ref:`how to make a person`. I can also do the same thing with a :ref:`class<what is a class?>` since it is a group of :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a function?>` that belong together.
+I made :ref:`functions<what is a function?>` that make :ref:`dictionaries (test_factory_w_keyword_arguments)<test_factory_w_keyword_arguments>` and :ref:`strings (test_factory_person_says_hello)<test_factory_person_says_hello>` in :ref:`how to make a person`.
+
+I can also use a :ref:`class<what is a class?>` to represent a person, because it is a group of :ref:`attributes (variables)<what is a class attribute?>` and :ref:`methods (functions) <what is a function?>` that belong together.
 
 ----
 

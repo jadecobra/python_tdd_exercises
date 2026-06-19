@@ -37,6 +37,8 @@ table of contents
   hatches/index
   conventions
   start here<setup/index>
+  make TDD project 1<make_tdd/make_tdd_manually_1>
+  what is a module?<exceptions/ModuleNotFoundError>
   make TDD project 1<make_tdd/make_tdd_manually>
   what is an assertion?<exceptions/AssertionError/index>
   what is a function?<functions/index>
@@ -54,7 +56,6 @@ table of contents
   data_structures/lists/index
   data_structures/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
-  what is a module?<exceptions/ModuleNotFoundError>
   questions the book answers<review>
   make TDD project 1<make_tdd/make_tdd_manually>
 
