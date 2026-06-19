@@ -720,7 +720,7 @@ I can call a :ref:`function<what is a function?>`, :ref:`I cannot call None<test
 
     AttributeError: module 'src.type_error' has no attribute 'a_dictionary'
 
-* I add the name and point it to a :ref:`dictionary<what is a dictionary?>` in ``type_error.py``
+* I add the name and point it to :ref:`a dictionary<what is a dictionary?>` in ``type_error.py``
 
   .. code-block:: python
     :lineno-start: 33

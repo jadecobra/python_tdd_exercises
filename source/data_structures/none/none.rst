@@ -2927,7 +2927,7 @@ the test passes.
 
     AssertionError: None is not an instance of <class 'dict'>
 
-  because :ref:`None<what is None?>` is not a :ref:`dictionary<what is a dictionary?>`.
+  because :ref:`None<what is None?>` is not :ref:`a dictionary<what is a dictionary?>`.
 
 * I make the statement :ref:`True<test_what_is_true>` with :ref:`assertNotIsInstance<another way to test if something is NOT an instance of a class>`
 
@@ -3008,7 +3008,7 @@ the test passes.
 sets vs dictionaries
 *********************************************************************************
 
-``{'key': 'value'}`` is a :ref:`dictionary<what is a dictionary?>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
+``{'key': 'value'}`` is :ref:`a dictionary<what is a dictionary?>` with ``:`` separating the :ref:`key<test_keys_of_a_dictionary>` on the left from the :ref:`value<test_values_of_a_dictionary>` on the right.
 
 I can add more :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` separating them with commas, for example
 

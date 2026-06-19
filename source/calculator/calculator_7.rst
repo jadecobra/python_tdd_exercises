@@ -8,7 +8,7 @@
 how to make a calculator 7
 #################################################################################
 
-I want to test the :ref:`calculator<how to make a calculator>` with a :ref:`dictionary<what is a dictionary?>`
+I want to test the :ref:`calculator<how to make a calculator>` with :ref:`a dictionary<what is a dictionary?>`
 
 ----
 
@@ -179,7 +179,7 @@ I change the expectation to the right calculation
               self.random_first_number+self.random_second_number
           )
 
-the test passes. ``two_numbers`` is a :ref:`dictionary<what is a dictionary?>` with two :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+the test passes. ``two_numbers`` is :ref:`a dictionary<what is a dictionary?>` with two :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
 - ``'x': self.random_first_number``
 - ``'y': self.random_second_number``
@@ -959,7 +959,7 @@ the test is green again
 test_calculator_w_for_loops_and_dictionaries
 *********************************************************************************
 
-I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
+I can use :ref:`a dictionary<what is a dictionary?>` with a :ref:`for loop<what is a for loop?>` in :ref:`test_calculator_sends_message_when_input_is_not_a_number`
 
 ----
 
@@ -969,7 +969,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what 
 
 ----
 
-* I add a new test with a :ref:`dictionary<what is a dictionary?>`
+* I add a new test with :ref:`a dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 177
@@ -1039,7 +1039,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` with a :ref:`for loop<what 
 
     # Exceptions seen
 
-  ``arithmetic`` is a :ref:`dictionary<what is a dictionary?>` with the names of the Arithmetic_ operations as :ref:`keys<test_keys_of_a_dictionary>`, this means
+  ``arithmetic`` is :ref:`a dictionary<what is a dictionary?>` with the names of the Arithmetic_ operations as :ref:`keys<test_keys_of_a_dictionary>`, this means
 
   .. code-block:: python
 
@@ -1227,7 +1227,7 @@ the test passes.
 test_calculator_functions
 *********************************************************************************
 
-I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that covers all the :ref:`4 arithmetic functions: addition, subtraction, division and multiplication<how to make a calculator>` and check their results are correct
+I want to use :ref:`a dictionary<what is a dictionary?>` to write one test that covers all the :ref:`4 arithmetic functions: addition, subtraction, division and multiplication<how to make a calculator>` and check their results are correct
 
 ----
 
@@ -1312,7 +1312,7 @@ I want to use a :ref:`dictionary<what is a dictionary?>` to write one test that 
 
 ----
 
-* I add a :ref:`dictionary<what is a dictionary?>` for the calculations of each operation
+* I add :ref:`a dictionary<what is a dictionary?>` for the calculations of each operation
 
   .. code-block:: python
     :lineno-start: 206

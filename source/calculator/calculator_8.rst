@@ -194,7 +194,7 @@ the test passes because the :ref:`add function<test_addition>` is an :ref:`attri
 
   the test passes.
 
-* I add a :ref:`variables<what is a variable?>` and a :ref:`dictionary<what is a dictionary?>`
+* I add a :ref:`variables<what is a variable?>` and :ref:`a dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 179
@@ -2175,7 +2175,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
 All the tests are passing, and there are problems
 
-* What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not a :ref:`dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test
+* What happens when the :ref:`functions<what is a function?>` receive a bad input as the second input or something that is not :ref:`a dictionary<what is a dictionary?>`, set_, :ref:`list<what is a list?>`, string_ or :ref:`boolean<what are booleans?>`? I need a better test
 * It looks like the test for how the :ref:`calculator<how to make a calculator>` handles :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>` never runs. I need to make that test better
 
 I wonder what else I missed. I am still learning

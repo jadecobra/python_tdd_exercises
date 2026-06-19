@@ -229,7 +229,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`, this time with input to make a :ref:`dictionary<what is a dictionary?>` with things in it
+* I add another :ref:`assertion<what is an assertion?>`, this time with input to make :ref:`a dictionary<what is a dictionary?>` with things in it
 
   .. code-block:: python
     :lineno-start: 6
@@ -741,7 +741,7 @@ test_making_a_dictionary_w_a_dictionary_as_a_key
 
 ----
 
-I add another test, this time for a :ref:`dictionary<what is a dictionary?>`
+I add another test, this time for :ref:`a dictionary<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 36
@@ -1272,7 +1272,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
     AssertionError: {0: None, 1: None} is not None
 
-  the `fromkeys method`_ returns a :ref:`dictionary<what is a dictionary?>` that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None<what is None?>`. It reminds me of a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`
+  the `fromkeys method`_ returns :ref:`a dictionary<what is a dictionary?>` that uses the values in the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>` with default values of :ref:`None<what is None?>`. It reminds me of a :ref:`list comprehension<test_making_a_list_w_a_list_comprehension>`
 
 * I add the :ref:`dictionary<what is a dictionary?>` as an expectation
 
@@ -1418,7 +1418,7 @@ the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
                 {0: 'default', 1: 'default'}
             )
 
-  the test is green again. This is like a dict comprehension because it made a :ref:`dictionary<what is a dictionary?>` using the items from the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`
+  the test is green again. This is like a dict comprehension because it made :ref:`a dictionary<what is a dictionary?>` using the items from the :ref:`iterable<what is an iterable?>` as :ref:`keys<test_keys_of_a_dictionary>`
 
 * I change the name of the test
 
@@ -2527,7 +2527,7 @@ the test passes.
 
     AssertionError: Tuples differ: ('keyN', [0, 1, 2, 'n']) != ('key', 'value')
 
-  popitem_ removes and returns the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a :ref:`dictionary<what is a dictionary?>`
+  popitem_ removes and returns the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from :ref:`a dictionary<what is a dictionary?>`
 
 * I change the expectation in the first :ref:`assertEqual method<another way to test if two things are Equal>` to match
 
@@ -3044,7 +3044,7 @@ the test passes.
 
     AssertionError: {'key': 'updated value', 'new_key': [0, 1, 2, 'n']} != {'key': 'value', 'new_key': [0, 1, 2, 'n']}
 
-  the `update method`_ changes the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` that is already in a :ref:`dictionary<what is a dictionary?>`
+  the `update method`_ changes the :ref:`value<test_values_of_a_dictionary>` for a :ref:`key<test_keys_of_a_dictionary>` that is already in :ref:`a dictionary<what is a dictionary?>`
 
 * I change the expectation to match
 
@@ -3062,7 +3062,7 @@ the test passes.
 
   the test passes.
 
-* since the `update method`_ takes :ref:`keyword arguments<test_w_keyword_arguments>`, I can give it a :ref:`dictionary<what is a dictionary?>` as input. I add another :ref:`assertion<what is an assertion?>`
+* since the `update method`_ takes :ref:`keyword arguments<test_w_keyword_arguments>`, I can give it :ref:`a dictionary<what is a dictionary?>` as input. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 194
@@ -3358,7 +3358,7 @@ this is like :ref:`test_items_returns_iterable_of_key_value_pairs_of_a_dictionar
 test_key_error
 *********************************************************************************
 
-`KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with a :ref:`dictionary<what is a dictionary?>`. It happened earlier in :ref:`my test for the pop method<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
+`KeyError <https://docs.python.org/3/library/exceptions.html?highlight=exceptions#KeyError>`_ is an important :ref:`Exception<errors>` to know when working with :ref:`a dictionary<what is a dictionary?>`. It happened earlier in :ref:`my test for the pop method<test_pop_removes_given_key_from_a_dictionary_and_returns_its_value>`
 
 ----
 
@@ -3368,7 +3368,7 @@ test_key_error
 
 ----
 
-I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref:`key<test_keys_of_a_dictionary>` that is in a :ref:`dictionary<what is a dictionary?>`
+I add a test for getting the :ref:`value<test_values_of_a_dictionary>` of a :ref:`key<test_keys_of_a_dictionary>` that is in :ref:`a dictionary<what is a dictionary?>`
 
 .. code-block:: python
   :lineno-start: 215
@@ -3395,7 +3395,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: 'value' != ''
 
-I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in a :ref:`dictionary<what is a dictionary?>` by giving the :ref:`key<test_key_error>` in ``[]``, the same way :ref:`I can get items from a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in ``[]``
+I get ``'value'`` back. I can get the value for a :ref:`key<test_key_error>` in :ref:`a dictionary<what is a dictionary?>` by giving the :ref:`key<test_key_error>` in ``[]``, the same way :ref:`I can get items from a list <test_getting_items_of_a_list>` by giving the :ref:`index<test_index_returns_first_position_of_item_in_a_list>` in ``[]``
 
 ----
 
@@ -3451,7 +3451,7 @@ the test passes.
 
   the test passes.
 
-* I can use the `get method`_ when I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in a :ref:`dictionary<what is a dictionary?>`
+* I can use the `get method`_ when I do not want to get :ref:`KeyError<test_key_error>` with a :ref:`key<test_keys_of_a_dictionary>` that is not in :ref:`a dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 227
@@ -3569,7 +3569,7 @@ the test passes.
 
     KeyError: 'popitem(): dictionary is empty'
 
-  I cannot remove the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from a :ref:`dictionary<what is a dictionary?>` that has no :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
+  I cannot remove the last :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` from :ref:`a dictionary<what is a dictionary?>` that has no :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`
 
 * I add assertRaises_
 
@@ -3644,7 +3644,7 @@ review
 
 Dictionaries_ are also known as Mappings, they contain :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` and any :ref:`object<everything is an object>` can be used as values.
 
-I ran tests to show that I can make a :ref:`dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
+I ran tests to show that I can make :ref:`a dictionary<what is a dictionary?>` with ``dict()`` or curly braces ``{}``, then I ran these tests to see what :ref:`Python basic data types<data structures>` I can use as :ref:`keys in a dictionary<test_keys_of_a_dictionary>`
 
 * :ref:`test_making_a_dictionary_w_none_as_a_key`
 * :ref:`test_making_a_dictionary_w_a_boolean_as_a_key`

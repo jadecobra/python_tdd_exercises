@@ -471,7 +471,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   E           }
   E       ) is not None
 
-I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`dictionary<what is a dictionary?>`. I know how to work with :ref:`dictionaries<what is a dictionary?>`.
+I see that the ``children`` :ref:`object<everything is an object>` is :ref:`a dictionary<what is a dictionary?>`. I know how to work with :ref:`dictionaries<what is a dictionary?>`.
 
 ----
 
@@ -618,7 +618,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
        type='flex_container'
     )
 
-* I use the ``__dict__`` :ref:`attribute<test_attribute_error_w_class_attributes>` to get the `streamlit Block object`_ as a :ref:`dictionary<what is a dictionary?>`
+* I use the ``__dict__`` :ref:`attribute<test_attribute_error_w_class_attributes>` to get the `streamlit Block object`_ as :ref:`a dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 19
@@ -726,7 +726,7 @@ I see that the ``children`` :ref:`object<everything is an object>` is a :ref:`di
     # AssertionError
     # SyntaxError
 
-* I change the :ref:`assertion<what is an assertion?>` to use the ``proto`` :ref:`attribute<test_attribute_error_w_class_attributes>` since it looks like a :ref:`dictionary<what is a dictionary?>`
+* I change the :ref:`assertion<what is an assertion?>` to use the ``proto`` :ref:`attribute<test_attribute_error_w_class_attributes>` since it looks like :ref:`a dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 20

@@ -4317,7 +4317,7 @@ starred expressions
 
     AssertionError: ((0, 1), {'a': 2, 'b': 3}) != None
 
-  I get a tuple_ that has a tuple_ and a :ref:`dictionary<what is a dictionary?>`
+  I get a tuple_ that has a tuple_ and :ref:`a dictionary<what is a dictionary?>`
 
 * I change ``my_expectation`` to match ``reality`` in the first :ref:`assertion<what is an assertion?>`
 
@@ -4451,7 +4451,7 @@ starred expressions
         (((0, 1), {'a': 2, 'b': 3}), {})
      != ((0, 1), {'a': 2, 'b': 3})
 
-  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>` - ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and a :ref:`dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
+  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>` - ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and :ref:`a dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
@@ -4533,7 +4533,7 @@ starred expressions
             (((0, 1), {'a': 2, 'b': 3, 'c': 4}), {})
          != ((0, 1), {'a': 2, 'b': 3, 'c': 4})
 
-  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>` - ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and a :ref:`dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
+  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>` - ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and :ref:`a dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
@@ -4636,7 +4636,7 @@ starred expressions
             (((0, 1, 2), {'a': 3, 'b': 4, 'c': 5}), {})
          != ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5})
 
-  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>` - ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and a :ref:`dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
+  because passing in the values this way means I am sending in two :ref:`positional arguments<test_w_positional_arguments>` - ``(a_tuple, a_dictionary)`` so I get a tuple_ with a tuple_ of the arguments and an empty :ref:`dictionary<what is a dictionary?>` instead of a tuple_ with the arguments in the tuple_ I sent and :ref:`a dictionary<what is a dictionary?>` with the :ref:`dictionary<what is a dictionary?>` I sent
 
 * I change the inputs with ``*`` and ``**`` so that Python_ breaks up the contents, allowing them to be used as separate arguments
 
@@ -4778,7 +4778,7 @@ I change ``my_expectation`` to match ``reality``
 
     # Exceptions seen
 
-the test passes. The :ref:`function<what is a function?>` gives me back the :ref:`positional arguments<test_w_positional_arguments>` as an empty tuple_ (things in parentheses (``()``) separated by commas) because I did not give any in the call, it gives me a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) of the :ref:`keyword arguments<test_w_keyword_arguments>`.
+the test passes. The :ref:`function<what is a function?>` gives me back the :ref:`positional arguments<test_w_positional_arguments>` as an empty tuple_ (things in parentheses (``()``) separated by commas) because I did not give any in the call, it gives me :ref:`a dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) of the :ref:`keyword arguments<test_w_keyword_arguments>`.
 
 ----
 
@@ -4939,7 +4939,7 @@ how Python reads positional and keyword arguments
     a=4, b=5, c=6, d=7
     **{'a': 4, 'b': 5, 'c': 6, 'd': 7}
 
-  are :ref:`keyword arguments<test_w_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`.
+  are :ref:`keyword arguments<test_w_keyword_arguments>` which are taken as :ref:`a dictionary<what is a dictionary?>`.
 
   The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_w_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_w_keyword_arguments>` as :ref:`dictionaries<what is a dictionary?>`.
 
