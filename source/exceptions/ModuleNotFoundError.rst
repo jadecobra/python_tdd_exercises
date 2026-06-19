@@ -1,10 +1,10 @@
 .. meta::
-  :description: Struggling with Python's ModuleNotFoundError? Learn to fix import errors from other `folders (directories)`_& get your code running. Watch the full tutorial to solve it now!
-  :keywords: Jacob Itegboje, python ModuleNotFoundError no module named, how to fix ModuleNotFoundError in vscode, python import error from another folder, python relative import not working, ModuleNotFoundError: No module named 'src', python can't find module in same directory, pythonpath vscode setup, fix python import errors
+  :description: What is a Python module? Fix ModuleNotFoundError by creating the missing .py files and packages. Jacob Itegboje uses TDD with unittest and import src.module_00 through src.doe.jane plus import magic to show ModuleNotFoundError No module named src.module_00, src.module_01, src.doe, src.doe.john, and magic until touch and mkdir make imports pass. Covers .py modules, folders with __init__.py, dot notation imports, assert False is True setup AssertionError, NO TESTS RAN when imports-only pass, git add commit, and why you still run python3 -m unittest by hand until pytest-watcher. Pumping Python exceptions chapter after manual TDD setup.
+  :keywords: Jacob Itegboje, Pumping Python, what is a python module, ModuleNotFoundError No module named, import src.module_00, python package __init__.py, namespace folder import, nested import src.doe.john, import magic project root, unittest import error, python3 -m unittest NO TESTS RAN, touch module_01.py mkdir src/doe, module not found error tdd, fix python import missing file, red green refactor imports, uv init module_not_found_error
 
 .. include:: ../links.rst
 
-.. _ModuleNotFoundError: https://docs.python.org/3/library/exceptions.html?highlight=exceptions#AttributeError
+.. _ModuleNotFoundError: https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError
 .. _sys.path: https://docs.python.org/3/library/sys.html#sys.path
 
 #################################################################################
@@ -847,7 +847,7 @@ close the project
 
   .. code-block:: python
 
-    ...\pumping_python
+    .../pumping_python
 
   I am back in the ``pumping_python`` directory_
 
