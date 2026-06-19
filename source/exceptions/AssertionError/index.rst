@@ -1,6 +1,6 @@
 .. meta::
   :description: Step-by-step beginner Python TDD tutorial that teaches AssertionError by deliberately triggering it. See exactly why a bare `reality == my_expectation` line does not fail the test or raise an error (Python just evaluates it and continues), and how `assert` turns a false result into AssertionError. Understand the real error messages beginners hit: "AssertionError: True is not false", "unexpectedly identical: None", "AssertionError: 0 is not 0.0", "assert 0 != 0.0", and "AssertionError: 0 == 0.0". Master the difference between `=` (assignment) and `==` (equality), and especially `is` / `is not` (same object / identity) versus `==` / `!=` (value equality). Extensive practical examples testing None, True, False, 0 vs 0.0, strings, lists, dicts, sets and tuples using both the bare `assert` statement and unittest.TestCase methods (assertIs, assertIsNot, assertEqual, assertNotEqual). Full project setup with `uv init`, proper `tests/__init__.py` package, `uv add` for pytest + pytest-watcher, running via `uv run pytest-watcher . --now`, small git commits after every change, and the complete red-green-refactor cycle. Perfect for absolute beginners learning Python testing, None/True/False identity gotchas, why 0 == 0.0 is True but 0 is not 0.0, and how assertions actually control test outcomes.
-  :keywords: Jacob Itegboje, Pumping Python, python assertionerror, AssertionError python, what causes AssertionError in python, python assert statement, assert statement python for beginners, how does assert work python, python assert tutorial, TDD for beginners python, red green refactor python, red green refactor cycle, uv pytest-watcher, pytest-watcher uv, uv run pytest-watcher . --now, python unittest beginners, difference between = and == python, assignment vs equality python, python is vs ==, object identity vs value equality python, python is not vs !=, is None vs == None python, python None identity, python is not None, assertIsNot None, unittest assertIs, assertIs vs is python, unexpectedly identical None, AssertionError unexpectedly identical, AssertionError True is not false, True is not false python, assert 0 is 0.0, 0 is not 0.0 python, why is 0 == 0.0 but 0 is not 0.0, 0 == 0.0 is True python, python 0 is not False, an integer is not False, python 0 is not True, testing None True False python, bare comparison does not fail test, reality == my_expectation still green, why doesn't == fail my python test, python assert makes test fail, python assert "DO NOT CONTINUE if false", setting up tests directory python, tests __init__.py python, python tests package structure, common python beginner AssertionError, AssertionError 0 == 0.0, assert 0 != 0.0, unittest assertEqual beginners, mixing assert and self.assertEqual, python tdd None, python singleton is, python falsy is not False, a list is not None, a dict is not False, python test driven development assert, how to cause AssertionError, python assertions expectations vs reality, what is an assertion python, common python test gotchas None True False, python 0 == 0.0 identity equality, python why does my test not fail when I write ==, python bare expression vs assert, python assert turns false into error, python tdd uv init, pytest-watcher with unittest, python None is not False, True is not None test, 0.0 is not False python, dictionary is not None, how to write failing test first TDD, common mistakes is vs equal python, AssertionError assert 11 == 2, E assert None is not None, python expectations vs reality testing, what is the same what is different python test
+  :keywords: Jacob Itegboje, Pumping Python, python assertionerror, AssertionError python, what causes AssertionError in python, python assert statement, assert statement python for beginners, how does assert work python, python assert tutorial, TDD for beginners python, red green refactor python, red green refactor cycle, uv pytest-watcher, pytest-watcher uv, uv run pytest-watcher . --now, python unittest beginners, difference between = and == python, assignment vs equality python, python is vs ==, object identity vs value equality python, python is not vs !=, is None vs == None python, python None identity, python is not None, assertIsNot None, unittest assertIs, assertIs vs is python, unexpectedly identical None, AssertionError unexpectedly identical, AssertionError True is not false, True is not false python, assert 0 is 0.0, 0 is not 0.0 python, why is 0 == 0.0 but 0 is not 0.0, 0 == 0.0 is True python, python 0 is not False, an integer is not False, python 0 is not True, testing None True False python, bare comparison does not fail test, reality == my_expectation still green, why doesn't == fail my python test, python assert makes test fail, python assert "DO NOT CONTINUE if false", setting up tests directory python, tests __init__.py python, python tests package structure, common python beginner AssertionError, AssertionError 0 == 0.0, assert 0 != 0.0, unittest assertEqual beginners, mixing assert and self.assertEqual, python tdd None, python singleton is, python falsy is not False, a list is not None, a dict is not False, python test driven development assert, how to cause AssertionError, python assertions expectations vs reality, what is an assertion python, common python test gotchas None True False, python 0 == 0.0 identity equality, python why does my test not fail when I write ==, python bare expression vs assert, python assert turns false into error, python tdd uv init, pytest-watcher with unittest, python None is not False, True is not None test, 0.0 is not False python, dictionary is not None, how to write failing assertion first TDD, common mistakes is vs equal python, AssertionError assert 11 == 2, E assert None is not None, python expectations vs reality testing, what is the same what is different python test
 
 .. include:: ../../links.rst
 
@@ -195,7 +195,7 @@ start the project
 
 * I open ``test_assertion_error.py``
 
-* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
+* I delete the text in the file_ then add :ref:`the first failing :ref:`assertion<what is an assertion?>`<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -341,7 +341,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
 ----
 
-* I remove :ref:`the first failing test<test_failure>` then add the first statement
+* I remove :ref:`the first failing :ref:`assertion<what is an assertion?>`<test_failure>` then add the first statement
 
   .. code-block:: python
     :linenos:
@@ -475,7 +475,7 @@ the test passes.
 what causes AssertionError?
 *********************************************************************************
 
-AssertionError_ is raised if the statement after `the assert keyword`_ is :ref:`False<test_what_is_false>`. It was in :ref:`the first failing test<test_failure>`
+AssertionError_ is raised if the statement after `the assert keyword`_ is :ref:`False<test_what_is_false>`. It was in :ref:`the first failing :ref:`assertion<what is an assertion?>`<test_failure>`
 
 .. code-block:: python
 
@@ -619,19 +619,30 @@ For example, if I have people fill a form and I want a test for when they leave 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a new failing test to ``test_assertion_error.py``
+* I add a new statement to ``test_assertion_error.py``
 
   .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 5-6
+    :lineno-start: 5
+    :emphasize-lines: 3
 
-            reality = 'I am' + ' alive'
-            my_expectation = 'I am alive'
-            assert reality == my_expectation
+    assert 'I am' + ' alive' == 'I am alive'
 
-        def test_assertion_error_w_none(self):
-            assert None is not None
+    None is not None
 
+    # Exceptions seen
+
+  the test is still passing
+
+* I add :ref:`the assert keyword`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3-4
+
+    assert 'I am' + ' alive' == 'I am alive'
+
+    # None is not None
+    assert None is not None
 
     # Exceptions seen
 
@@ -654,16 +665,14 @@ For example, if I have people fill a form and I want a test for when they leave 
 I change the statement to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 19
+  :lineno-start: 7
   :emphasize-lines: 2-3
-  :emphasize-text: is
 
-      def test_assertion_error_w_none(self):
-          # assert None is not None
-          assert None is None
+    # None is not None
+    # assert None is not None
+    assert None is None
 
-
-  # Exceptions seen
+    # Exceptions seen
 
 the test passes.
 
@@ -678,17 +687,16 @@ the test passes.
 * I add a note with what I learned from the experiment
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 7
     :emphasize-lines: 6-7
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # None is not None
+    # assert None is not None
+    assert None is None
 
 
     # NOTES
     # None is None
-
 
     # Exceptions seen
     # AssertionError
@@ -698,14 +706,14 @@ the test passes.
 * I add a new :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`False<test_what_is_false>`.
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 7
     :emphasize-lines: 5
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # None is not None
+    # assert None is not None
+    assert None is None
 
-            assert False is None
+    assert False is None
 
 
     # NOTES
@@ -719,16 +727,15 @@ the test passes.
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
+    :lineno-start: 7
     :emphasize-lines: 5-6
-    :emphasize-text: not
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # None is not None
+    # assert None is not None
+    assert None is None
 
-            # assert False is None
-            assert False is not None
+    # assert False is None
+    assert False is not None
 
 
     # NOTES
@@ -738,41 +745,31 @@ the test passes.
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 10
+    :lineno-start: 11
+    :emphasize-lines: 6
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
-
-            # assert False is None
-            assert False is not None
+    # assert False is None
+    assert False is not None
 
 
     # NOTES
     # False is not None
     # None is None
 
-
     # Exceptions seen
-    # AssertionError
 
 ----
 
 * I add an :ref:`assertion<what is an assertion?>` to compare :ref:`None<what is None?>` with :ref:`True<test_what_is_true>`.
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 8
+    :lineno-start: 11
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert False is None
+    assert False is not None
 
-            # assert False is None
-            assert False is not None
-
-            assert True is None
+    assert True is None
 
 
     # NOTES
@@ -786,19 +783,14 @@ the test passes.
 * I change the `assert statement`_ to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 8-9
-    :emphasize-text: not
+    :lineno-start: 11
+    :emphasize-lines: 4-5
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert False is None
+    assert False is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
+    # assert True is None
+    assert True is not None
 
 
     # NOTES
@@ -808,14 +800,13 @@ the test passes.
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 18
     :emphasize-lines: 2
 
     # NOTES
     # True is not None
     # False is not None
     # None is None
-
 
     # Exceptions seen
     # AssertionError
@@ -825,20 +816,13 @@ the test passes.
 * I add an `assert statement`_ for an integer_ (a whole number without decimals)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11
+    :lineno-start: 14
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert True is None
+    assert True is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            assert 0 is None
+    assert 0 is None
 
 
     # NOTES
@@ -852,22 +836,14 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 11-12
-    :emphasize-text: not
+    :lineno-start: 14
+    :emphasize-lines: 4-5
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert True is None
+    assert True is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
+    # assert 0 is None
+    assert 0 is not None
 
 
     # NOTES
@@ -877,7 +853,7 @@ the test passes.
 * I add a note about integers_
 
   .. code-block:: python
-    :lineno-start: 33
+    :lineno-start: 21
     :emphasize-lines: 2
 
     # NOTES
@@ -895,23 +871,13 @@ the test passes.
 * I add an `assert statement`_ for a float_ (binary floating point decimal number)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 14
+    :lineno-start: 17
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert 0 is None
+    assert 0 is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            assert 0.0 is None
+    assert 0.0 is None
 
 
     # NOTES
@@ -925,25 +891,14 @@ the test passes.
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 14-15
-    :emphasize-text: not
+    :lineno-start: 17
+    :emphasize-lines: 4-5
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert 0 is None
+    assert 0 is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
+    # assert 0.0 is None
+    assert 0.0 is not None
 
 
     # NOTES
@@ -953,7 +908,7 @@ the test passes.
 * I add a note about floats_
 
   .. code-block:: python
-    :lineno-start: 36
+    :lineno-start: 24
     :emphasize-lines: 2
 
     # NOTES
@@ -972,26 +927,13 @@ the test passes.
 * I add an `assert statement`_ for a string_ (anything in :ref:`quotes`)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 17
+    :lineno-start: 20
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert 0.0 is None
+    assert 0.0 is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            assert 'a string' is None
+    assert '' is None
 
 
     # NOTES
@@ -1000,43 +942,31 @@ the test passes.
 
   .. code-block:: python
 
-    E       AssertionError: assert 'a string' is None
+    E       AssertionError: assert '' is None
+
+  because a string_ is not the same :ref:`object<what is a class>` as :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 17-18
-    :emphasize-text: not
+    :lineno-start: 20
+    :emphasize-lines: 4-5
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert 0.0 is None
+    assert 0.0 is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
+    # assert '' is None
+    assert '' is not None
 
 
     # NOTES
 
-  the test passes.
+  the test passes because a string_ is not the same :ref:`object<what is a class>` as :ref:`None<what is None?>`.
 
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 39
+    :lineno-start: 27
     :emphasize-lines: 2
 
     # NOTES
@@ -1056,29 +986,13 @@ the test passes.
 * I add an `assert statement`_ for a tuple_ (anything in parentheses ``( )`` separated by a comma)
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 20
+    :lineno-start: 26
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert '' is None
+    assert '' is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            assert (1, 2, 3, 'n') is None
+    assert () is None
 
 
     # NOTES
@@ -1087,46 +1001,31 @@ the test passes.
 
   .. code-block:: python
 
-    E       AssertionError: assert (1, 2, 3, 'n') is None
+    E       AssertionError: assert () is None
+
+  because a tuple_ is not the same :ref:`object<what is a class>` :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 20-21
-    :emphasize-text: not
+    :lineno-start: 26
+    :emphasize-lines: 4-5
 
-        def test_assertion_error_w_none(self):
-            # assert None is not None
-            assert None is None
+    # assert '' is None
+    assert '' is not None
 
-            # assert False is None
-            assert False is not None
-
-            # assert True is None
-            assert True is not None
-
-            # assert 0 is None
-            assert 0 is not None
-
-            # assert 0.0 is None
-            assert 0.0 is not None
-
-            # assert 'a string' is None
-            assert 'a string' is not None
-
-            # assert (1, 2, 3, 'n') is None
-            assert (1, 2, 3, 'n') is not None
+    # assert () is None
+    assert () is not None
 
 
     # NOTES
 
-  the test passes.
+  the test passes because a tuple_ is not the same :ref:`object<what is a class>` :ref:`None<what is None?>`.
 
 * I add a note about tuples_
 
   .. code-block:: python
-    :lineno-start: 42
+    :lineno-start: 30
     :emphasize-lines: 2
 
     # NOTES
@@ -1188,7 +1087,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 23-24
-    :emphasize-text: not
+
 
         def test_assertion_error_w_none(self):
             # assert None is not None
@@ -1289,7 +1188,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 26-27
-    :emphasize-text: not
+
 
         def test_assertion_error_w_none(self):
             # assert None is not None
@@ -1397,7 +1296,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 19
     :emphasize-lines: 29-30
-    :emphasize-text: not
+
 
         def test_assertion_error_w_none(self):
             # assert None is not None
@@ -2442,7 +2341,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 8-9
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -2514,7 +2413,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 11-12
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -2593,7 +2492,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 14-15
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -2679,7 +2578,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 17-18
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -2772,7 +2671,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 20-21
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -2872,7 +2771,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 23-24
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -2979,7 +2878,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 26-27
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -3093,7 +2992,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 57
     :emphasize-lines: 29-30
-    :emphasize-text: not
+
 
         def test_assertion_error_w_false(self):
             # assert None is False
@@ -4023,7 +3922,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 5-6
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -4179,7 +4078,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 11-12
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -4268,7 +4167,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 14-15
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -4364,7 +4263,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 17-18
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -4467,7 +4366,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 20-21
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -4577,7 +4476,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 23-24
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -4694,7 +4593,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 26-27
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -4818,7 +4717,7 @@ the test passes.
   .. code-block:: python
     :lineno-start: 95
     :emphasize-lines: 29-30
-    :emphasize-text: not
+
 
         def test_assertion_error_w_true(self):
             # assert None is True
@@ -6564,7 +6463,7 @@ another way to test if two things are equal
   .. code-block:: python
     :lineno-start: 6
     :emphasize-lines: 5
-    :emphasize-text: not
+
 
         def test_what_is_an_assertion(self):
             reality = 1 + 1
