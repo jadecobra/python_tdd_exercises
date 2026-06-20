@@ -20,13 +20,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build job: produce the site (or reuse a previous identical build).
+  # We only run Sphinx when the input tree actually changed (see paths: filter + html cache).
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: 1
 
       - name: install uv
         uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39 # v8.2.0
@@ -37,67 +38,53 @@ jobs:
       - name: install dependencies
         run: uv sync --frozen --no-dev --no-install-project --extra docs
 
-      - name: cache sphinx doctrees
+      # "Only rebuild what we must": if this exact source tree was already built and cached,
+      # restore the final HTML and skip the expensive sphinx-build entirely.
+      # Key must incorporate everything that affects rendered output.
+      - name: restore site html cache
+        id: site-cache
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
-          path: build/doctrees
-          key: ${{ runner.os }}-sphinx-doctrees-v3-${{ hashFiles('source/conf.py', 'uv.lock') }}
+          path: build/html
+          key: site-html-${{ hashFiles('source/**', 'pyproject.toml', 'uv.lock', 'source/conf.py') }}
           restore-keys: |
-            ${{ runner.os }}-sphinx-doctrees-v3-
-
-      - name: invalidate changed doctrees for incremental sphinx
-        run: |
-          mkdir -p build/doctrees
-          rm -f build/doctrees/.source-mtimes.tsv
-
-          invalidate_rst() {
-            local f="$1"
-            local doc="${f#source/}"
-            doc="${doc%.rst}"
-            rm -f "build/doctrees/${doc}.doctree"
-          }
-
-          if [ "${{ github.event_name }}" = "push" ] && \
-             [ -n "${{ github.event.before }}" ] && \
-             [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
-            mapfile -t changed < <(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- source)
-            if [ "${#changed[@]}" -gt 40 ]; then
-              find build/doctrees -mindepth 1 -delete
-            else
-              for f in "${changed[@]}"; do
-                [ -f "$f" ] || continue
-                case "$f" in
-                  source/links.rst)
-                    find build/doctrees -mindepth 1 -delete
-                    break
-                    ;;
-                  source/code/*)
-                    find build/doctrees/code -name '*.doctree' -delete 2>/dev/null || true
-                    ;;
-                  *.rst)
-                    invalidate_rst "$f"
-                    ;;
-                esac
-              done
-            fi
-          else
-            find build/doctrees -mindepth 1 -delete
-          fi
+            site-html-
 
       - name: build sphinx documentation
+        if: steps.site-cache.outputs.cache-hit != 'true'
         run: |
+          rm -rf build
           uv run sphinx-build -d build/doctrees -j auto ./source ./build/html
-          find build/html -name '.buildinfo' -delete
-          find build/html -name 'objects.inv' -delete
+          # Make sure the custom domain file is in the published root.
+          cp -f CNAME build/html/CNAME 2>/dev/null || true
 
-      - name: setup github_pages
-        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
-
-      - name: upload
+      - name: upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: './build/html'
 
+  # Deploy job: the only job that touches the live github-pages environment.
+  # This is the official recommended split (build produces artifact, deploy consumes it).
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: deploy to github_pages
         id: deployment
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+      # Fast, cheap smoke test after the deploy step has already published.
+      # Does not delay time-to-live. Helps surface "it said success but the bytes are wrong"
+      # so the author can react the moment a bad deploy happens.
+      - name: verify live site
+        run: |
+          curl -fsSL --retry 8 --retry-delay 2 --max-time 90 \
+            https://www.pumpingpython.com/ \
+            | grep -q "pumping python" || {
+              echo "ERROR: live site did not contain expected content after deploy"
+              exit 1
+            }
+          echo "Live site verified."
