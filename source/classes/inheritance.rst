@@ -1838,7 +1838,7 @@ the test passes.
 test_is_a_list_an_object
 *********************************************************************************
 
-I want to test if :ref:`a list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<everything is an object>`.
+I want to test if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is an :ref:`object<everything is an object>`.
 
 ----
 
@@ -2106,7 +2106,7 @@ the test passes.
 test_is_a_dictionary_an_object
 *********************************************************************************
 
-I want to test if :ref:`a dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<everything is an object>`.
+I want to test if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is an :ref:`object<everything is an object>`.
 
 ----
 

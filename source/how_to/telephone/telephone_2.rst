@@ -1539,7 +1539,7 @@ the test passes. Python_ changed the :ref:`double quotes<quotes>` (``"``) in the
 test_passing_a_dictionary
 *********************************************************************************
 
-I can pass :ref:`a dictionary<what is a dictionary?>` (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`
+I can pass a :ref:`dictionary<what is a dictionary?>` (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) from a test to a :ref:`function<what is a function?>`
 
 ----
 
@@ -1551,7 +1551,7 @@ I can pass :ref:`a dictionary<what is a dictionary?>` (anything in curly braces 
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test for :ref:`a dictionary<what is a dictionary?>`
+* I add a test for a :ref:`dictionary<what is a dictionary?>`
 
   .. code-block:: python
     :lineno-start: 50

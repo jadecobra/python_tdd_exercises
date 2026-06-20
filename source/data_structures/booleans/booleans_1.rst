@@ -3515,7 +3515,7 @@ the test passes.
   - the empty :ref:`dictionary<what is a dictionary?>` is grouped as :ref:`True<test_what_is_true>`
   - :ref:`a dictionary is not the same object as False<test_assertion_error_w_false>`
 
-* I add an :ref:`assertion<what is an assertion?>` to test if :ref:`a dictionary<what is a dictionary?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
+* I add an :ref:`assertion<what is an assertion?>` to test if a :ref:`dictionary<what is a dictionary?>` with things is grouped as :ref:`False<test_what_is_false>` or :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 80
@@ -3622,7 +3622,7 @@ the test passes.
     # NOTES
 
   - the test passes because the result of ``bool({'key': 'value'})`` is :ref:`True<test_what_is_true>`
-  - :ref:`a dictionary<what is a dictionary?>` with things is grouped as :ref:`True<test_what_is_true>`
+  - a :ref:`dictionary<what is a dictionary?>` with things is grouped as :ref:`True<test_what_is_true>`
   - :ref:`a dictionary is not the same object as True<test_assertion_error_w_true>`
 
 * I add a :ref:`variable<what is a variable?>` for ``{'key': 'value'}``

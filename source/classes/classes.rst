@@ -326,9 +326,9 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
   because
 
   - the test calls the ``say_hello`` :ref:`function<what is a function?>`
-  - the ``say_hello`` :ref:`function<what is a function?>` expects :ref:`a dictionary<what is a dictionary?>`
+  - the ``say_hello`` :ref:`function<what is a function?>` expects a :ref:`dictionary<what is a dictionary?>`
   - the ``say_hello`` :ref:`function<what is a function?>` calls the :ref:`get method<test_get_value_of_a_key_in_a_dictionary>` on what it receives and
-  - the ``Person`` :ref:`object<everything is an object>` it receives is not :ref:`a dictionary<what is a dictionary?>` and does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
+  - the ``Person`` :ref:`object<everything is an object>` it receives is not a :ref:`dictionary<what is a dictionary?>` and does not have a :ref:`get method<test_get_value_of_a_key_in_a_dictionary>`
 
 * I change ``reality`` in :ref:`test_classy_person_says_hello` to use a :ref:`method<what is a method?>` I can add to ``Person``, in ``test_person.py``
 

@@ -1133,7 +1133,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
   alright! Time to add the calculation for :ref:`subtraction<test_subtraction>`
 
 
-* I use the operation in :ref:`a dictionary<what is a dictionary?>` in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
+* I use the operation in a :ref:`dictionary<what is a dictionary?>` in the ``calculate`` :ref:`function<what is a function?>` in ``streamlit_calculator.py``
 
   .. code-block:: python
     :lineno-start: 19
@@ -1442,7 +1442,7 @@ I forgot that I used ``r'\+'`` as the :ref:`key<test_keys_of_a_dictionary>` for 
 
   this test is long and will get longer when I add the other two operations
 
-* I make :ref:`a dictionary<what is a dictionary?>` for the operations in :ref:`test_streamlit_calculator_operations`
+* I make a :ref:`dictionary<what is a dictionary?>` for the operations in :ref:`test_streamlit_calculator_operations`
 
   .. code-block:: python
     :lineno-start: 151

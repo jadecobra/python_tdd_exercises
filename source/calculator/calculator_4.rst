@@ -239,7 +239,7 @@ the test passes.
 
 :ref:`The calculator raises TypeError when None is given as input<test_calculator_raises_type_error_w_none>`.
 
-What does it do if the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<lists>`, set_ or :ref:`a dictionary<dictionaries>`?
+What does it do if the input is a :ref:`boolean<what are booleans?>`, string_, tuple_, :ref:`list<lists>`, set_ or a :ref:`dictionary<dictionaries>`?
 
 ----
 

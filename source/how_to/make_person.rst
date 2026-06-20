@@ -608,7 +608,7 @@ test_factory_w_keyword_arguments
 
 ----
 
-* I want the :ref:`factory function<test_factory_w_keyword_arguments>` to return :ref:`a dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) as output when it is called. I change ``my_expectation`` in ``test_person.py``
+* I want the :ref:`factory function<test_factory_w_keyword_arguments>` to return a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) as output when it is called. I change ``my_expectation`` in ``test_person.py``
 
   .. code-block:: python
     :lineno-start: 7
@@ -816,7 +816,7 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane'}
     )
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``first_name`` to ``'jane'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns :ref:`a dictionary<what is a dictionary?>` with a different value (``'first_name'``).
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``first_name`` to ``'jane'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'first_name'``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``first_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
@@ -1066,7 +1066,7 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'doe'}
     )
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``last_name`` to ``'doe'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns :ref:`a dictionary<what is a dictionary?>` with a different value (``'last_name'``).
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``last_name`` to ``'doe'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'last_name'``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``last_name`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
@@ -1352,7 +1352,7 @@ test_factory_w_keyword_arguments
         {'first_name': 'jane', 'last_name': 'doe', 'sex': 'F'}
     )
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``sex`` to ``'F'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns :ref:`a dictionary<what is a dictionary?>` with a different value (``'M'``).
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the :ref:`value<test_values_of_a_dictionary>` for ``sex`` to ``'F'`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``'M'``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``sex`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
@@ -1673,7 +1673,7 @@ test_factory_w_keyword_arguments
          'age': 30}
     )
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the calculation for ``age`` to ``2026-1996`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns :ref:`a dictionary<what is a dictionary?>` with a different value (``26``).
+  which raises :ref:`AssertionError<what causes AssertionError?>` since I changed the calculation for ``age`` to ``2026-1996`` in ``my_expectation`` and the :ref:`function<what is a function?>` returns a :ref:`dictionary<what is a dictionary?>` with a different value (``26``).
 
 * I change the :ref:`value<test_values_of_a_dictionary>` for the ``age`` :ref:`key<test_keys_of_a_dictionary>` in ``person.py``
 
@@ -2812,7 +2812,7 @@ test factory with a dictionary
 
 The difference between the call to the :ref:`factory function<test_factory_w_keyword_arguments>` (``reality``) and the :ref:`dictionary<what is a dictionary?>` for ``my_expectation`` in the test is - ``year_of_birth`` and ``age``. One takes in a value for ``year_of_birth`` and the other uses ``year_of_birth`` to calculate the age, the other things are the same.
 
-I can use :ref:`a dictionary<what is a dictionary?>` to remove the parts that are the same.
+I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that are the same.
 
 ----
 
@@ -2824,7 +2824,7 @@ I can use :ref:`a dictionary<what is a dictionary?>` to remove the parts that ar
 
 * I go back to the terminal_ where the tests are running
 
-* I add :ref:`a dictionary<what is a dictionary?>` for ``first_name``, ``last_name`` and ``year_of_birth``
+* I add a :ref:`dictionary<what is a dictionary?>` for ``first_name``, ``last_name`` and ``year_of_birth``
 
   .. code-block:: python
     :lineno-start: 13
@@ -3493,7 +3493,7 @@ I want to see what happens when I try to make a person without a value for the `
                      # the dict constructor returns
                      {'first_name': Z, 'sex': Y, 'age': X}
 
-  - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns :ref:`a dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects :ref:`a dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'last_name'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
   - ``X`` is the random age, ``Y`` is the random sex and ``Z`` is the random first name
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``last_name`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments` in ``test_person.py``
@@ -3527,7 +3527,7 @@ I want to see what happens when I try to make a person without a value for the `
      != {'first_name': Z, 'sex': Y,
          'last_name': 'doe', 'age': X}
 
-  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns :ref:`a dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``.
+  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``last_name`` and the :ref:`assertion<what is an assertion?>` expects ``'doe'``.
 
 * I change the default value for ``last_name`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
@@ -3644,7 +3644,7 @@ I want to see what happens when I try to make a person without a value for the `
                      # the dict constructor returns
                      {'first_name': Y, 'last_name': 'doe', 'age': X}
 
-  - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns :ref:`a dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects :ref:`a dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
+  - which raises :ref:`AssertionError<what causes AssertionError?>` since the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a ``'sex'`` :ref:`key<test_keys_of_a_dictionary>`, and the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` without that :ref:`key<test_keys_of_a_dictionary>`
   - ``X`` is the random age, ``Y`` is the random first name
 
 * I add a :ref:`key-value pair<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` for ``sex`` to ``my_expectation`` in :ref:`test_factory_w_optional_arguments`
@@ -3679,7 +3679,7 @@ I want to see what happens when I try to make a person without a value for the `
      != {'first_name': Y, 'last_name': 'doe',
          'sex': 'M', 'age': X}
 
-  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns :ref:`a dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``.
+  because the :ref:`factory function<test_factory_w_keyword_arguments>` returns a :ref:`dictionary<what is a dictionary?>` with a :ref:`value<test_values_of_a_dictionary>` of :ref:`None<what is None?>` for ``sex`` and the :ref:`assertion<what is an assertion?>` expects ``'M'``.
 
 * I change the default value for ``sex`` in the :ref:`factory function<test_factory_w_keyword_arguments>` in ``person.py``
 
@@ -3913,7 +3913,7 @@ I want to see what happens when I try to make a person without a value for the `
 test_factory_person_says_hello
 *********************************************************************************
 
-I have a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` for a person and returns :ref:`a dictionary<what is a dictionary?>` with ``first_name``, ``last_name``, ``sex`` and ``age`` (based on the ``year_of_birth``) as :ref:`keys<test_keys_of_a_dictionary>`.
+I have a :ref:`function<what is a function?>` that takes in ``first_name``, ``last_name``, ``sex`` and ``year_of_birth`` for a person and returns a :ref:`dictionary<what is a dictionary?>` with ``first_name``, ``last_name``, ``sex`` and ``age`` (based on the ``year_of_birth``) as :ref:`keys<test_keys_of_a_dictionary>`.
 
 What if I want the person to say hello, How would I do that? I can write a :ref:`function<what is a function?>` that takes in a person (:ref:`dictionary<what is a dictionary?>`) and returns a message (string_).
 
@@ -5932,9 +5932,9 @@ Can you make the tests pass without looking at how I solve it below? You can com
                              'last_name': 'doe',
                              'sex': 'M', 'age': X}
 
-  because the :ref:`assertion<what is an assertion?>` expects :ref:`a dictionary<what is a dictionary?>` and the :ref:`factory function<test_factory_w_keyword_arguments>` returns :ref:`None<what is None?>`
+  because the :ref:`assertion<what is an assertion?>` expects a :ref:`dictionary<what is a dictionary?>` and the :ref:`factory function<test_factory_w_keyword_arguments>` returns :ref:`None<what is None?>`
 
-* I copy and paste the :ref:`dictionary<what is a dictionary?>` from the terminal_ to make the :ref:`function<what is a function?>` return :ref:`a dictionary<what is a dictionary?>` instead of :ref:`None<what is None?>`
+* I copy and paste the :ref:`dictionary<what is a dictionary?>` from the terminal_ to make the :ref:`function<what is a function?>` return a :ref:`dictionary<what is a dictionary?>` instead of :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -6465,7 +6465,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
         {'first_name': A, 'last_name': Z, 'sex': Y, 'age': X}
     != 'Hi, my name is A Z and I am X'
 
-  the test sends :ref:`a dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` it receives
+  the test sends a :ref:`dictionary<what is a dictionary?>` as input and expects a string_ as output, and the string_ uses the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>` it receives
 
 * I return an :ref:`f-string<what is string interpolation?>` with the :ref:`values<test_values_of_a_dictionary>` of the ``first_name``, ``last_name`` and ``age`` :ref:`keys<test_keys_of_a_dictionary>` from the dictionary
 
@@ -6612,9 +6612,9 @@ review
 
 I ran tests to make
 
-* a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_w_keyword_arguments>` as input, has :ref:`default values<test_w_optional_arguments>` for some of them, performs an action based on an input and returns :ref:`a dictionary<what is a dictionary?>` as output
+* a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_w_keyword_arguments>` as input, has :ref:`default values<test_w_optional_arguments>` for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
 
-* a :ref:`function<what is a function?>` that takes in :ref:`a dictionary<what is a dictionary?>` and returns a string_ as output with :ref:`values<test_values_of_a_dictionary>` of :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
+* a :ref:`function<what is a function?>` that takes in a :ref:`dictionary<what is a dictionary?>` and returns a string_ as output with :ref:`values<test_values_of_a_dictionary>` of :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 
 I also saw these :ref:`Exceptions<errors>`
 

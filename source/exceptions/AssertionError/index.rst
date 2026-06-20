@@ -195,7 +195,7 @@ start the project
 
 * I open ``test_assertion_error.py``
 
-* I delete the text in the file_ then add :ref:`the first failing :ref:`assertion<what is an assertion?>`<test_failure>` to ``test_assertion_error.py``
+* I delete the text in the file_ then add :ref:`the first failing test<test_failure>` to ``test_assertion_error.py``
 
   .. code-block:: python
     :linenos:
@@ -341,7 +341,7 @@ I can use :ref:`assertions<what is an assertion?>` to make the computer check if
 
 ----
 
-* I remove :ref:`the first failing :ref:`assertion<what is an assertion?>`<test_failure>` then add the first statement
+* I remove :ref:`the first failing assertion<test_failure>` then add the first statement
 
   .. code-block:: python
     :linenos:
@@ -475,7 +475,7 @@ the test passes.
 what causes AssertionError?
 *********************************************************************************
 
-AssertionError_ is raised if the statement after `the assert keyword`_ is :ref:`False<test_what_is_false>`. It was in :ref:`the first failing :ref:`assertion<what is an assertion?>`<test_failure>`
+AssertionError_ is raised if the statement after `the assert keyword`_ is :ref:`False<test_what_is_false>`. It was in :ref:`the first failing assertion<test_failure>`
 
 .. code-block:: python
 
@@ -944,7 +944,7 @@ the test passes.
 
     E   AssertionError: assert '' is None
 
-  because a string_ is not the same :ref:`object<what is a class>` as :ref:`None<what is None?>`.
+  because a string_ is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -961,7 +961,7 @@ the test passes.
 
     # NOTES
 
-  the test passes because a string_ is not the same :ref:`object<what is a class>` as :ref:`None<what is None?>`.
+  the test passes because a string_ is not the same :ref:`object<what is a class?>` as :ref:`None<what is None?>`.
 
 * I add a note about strings_
 
@@ -1003,7 +1003,7 @@ the test passes.
 
     E   assert {} is None
 
-  because a tuple_ is not the same :ref:`object<what is a class>` :ref:`None<what is None?>`.
+  because a tuple_ is not the same :ref:`object<what is a class?>` :ref:`None<what is None?>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1020,7 +1020,7 @@ the test passes.
 
     # NOTES
 
-  the test passes because a tuple_ is not the same :ref:`object<what is a class>` :ref:`None<what is None?>`.
+  the test passes because a tuple_ is not the same :ref:`object<what is a class?>` :ref:`None<what is None?>`.
 
 * I add a note about tuples_
 
@@ -1164,7 +1164,7 @@ the test passes.
 
 ----
 
-* I add an `assert statement`_ for :ref:`a dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma)
+* I add an `assert statement`_ for a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma)
 
   .. code-block:: python
     :lineno-start: 32
@@ -1597,7 +1597,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -1727,7 +1727,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
@@ -1799,7 +1799,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert [] is False
 
-  because :ref:`a list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1816,7 +1816,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because :ref:`a list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about :ref:`lists<what is a list?>`
 
@@ -1913,7 +1913,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
 -----
 
-* I add an `assert statement`_ to see if :ref:`a dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
+* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 57
@@ -1933,7 +1933,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     E   assert {} is False
 
-  because :ref:`a dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -1950,7 +1950,7 @@ the test passes because :ref:`None<what is None?>` is not the same :ref:`object<
 
     # NOTES
 
-  the test passes because :ref:`a dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
+  the test passes because a :ref:`dictionary<what is a dictionary?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
 
 * I add a note about :ref:`dictionaries<what is a dictionary?>`
 
@@ -2053,6 +2053,7 @@ test AssertionError with True
     # test AssertionError with True
     None is True
 
+
     # NOTES
 
   the test is still passing.
@@ -2060,12 +2061,12 @@ test AssertionError with True
 * I add :ref:`the assert keyword`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 53
     :emphasize-lines: 2-3
 
-    # test AssertionError with False
-    # None is False
-    assert None is False
+    # test AssertionError with True
+    # None is True
+    assert None is True
 
 
     # NOTES
@@ -2074,31 +2075,9 @@ test AssertionError with True
 
   .. code-block:: python
 
-    E       assert None is False
-
-  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`False<test_what_is_false>`.
-
-* I add a test with an :ref:`assertion<what is an assertion?>` to see if :ref:`None<what is None?>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 91
-    :emphasize-lines: 5-6
-
-            a_dictionary = {'key': 'value'}
-            assert a_dictionary is not False
-            self.assertIsNot(a_dictionary, False)
-
-        def test_assertion_error_w_true(self):
-            assert None is True
-
-
-    # NOTES
-
-  the terminal_ is my friend, and shows AssertionError_
-
-  .. code-block:: python
-
     E       assert None is True
+
+  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -2108,21 +2087,21 @@ test AssertionError with True
 
 ----
 
-I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+I change the statement to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 95
-  :emphasize-lines: 2-3
-  :emphasize-text: not
+  :lineno-start: 53
+  :emphasize-lines: 3-4
 
-      def test_assertion_error_w_true(self):
-          # assert None is True
-          assert None is not True
+  # test AssertionError with True
+  # None is True
+  # assert None is True
+  assert None is not True
 
 
   # NOTES
 
-the test passes.
+the test passes because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 ----
 
@@ -2135,7 +2114,7 @@ the test passes.
 * I add a note about :ref:`None<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 100
+    :lineno-start: 59
     :emphasize-lines: 20
 
     # NOTES
@@ -2166,47 +2145,50 @@ the test passes.
 * I add an `assert statement`_ to see if :ref:`False<test_what_is_false>` is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 5
+    :lineno-start: 53
+    :emphasize-lines: 6
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # test AssertionError with True
+    # None is True
+    # assert None is True
+    assert None is not True
 
-            assert False is True
+    assert False is True
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
     E       assert False is True
 
+  because :ref:`False<test_what_is_false>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 5-6
+    :lineno-start: 53
+    :emphasize-lines: 6-7
 
+    # test AssertionError with True
+    # None is True
+    # assert None is True
+    assert None is not True
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
-
-            # assert False is True
-            assert False is not True
+    # assert False is True
+    assert False is not True
 
 
     # NOTES
 
-  the test passes.
+  the test passes because :ref:`False<test_what_is_false>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about :ref:`False<test_what_is_false>`
 
   .. code-block:: python
-    :lineno-start: 103
+    :lineno-start: 62
     :emphasize-lines: 18
 
     # NOTES
@@ -2238,52 +2220,44 @@ the test passes.
 * I add an `assert statement`_ about :ref:`True<test_what_is_true>`, that will fail
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 8
+    :lineno-start: 58
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert False is True
+    assert False is not True
 
-            # assert False is True
-            assert False is not True
-
-            assert True is not True
+    assert True is not True
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
     E       assert True is not True
 
-* I change the statement to make it :ref:`True<test_what_is_true>`
+  because :ref:`True is True<test_what_is_true>`.
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 8-9
+    :lineno-start: 58
+    :emphasize-lines: 4-5
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert False is True
+    assert False is not True
 
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
+    # assert True is not True
+    assert True is True
 
 
     # NOTES
 
-  the test passes.
+  the test passes because :ref:`True is True<test_what_is_true>`.
 
 * I add a note about :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 106
+    :lineno-start: 65
     :emphasize-lines: 16
 
     # NOTES
@@ -2316,59 +2290,46 @@ the test passes.
 * I add an `assert statement`_ to see if an integer_ (a whole number without decimals) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 11
+    :lineno-start: 61
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert True is not True
+    assert True is True
 
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            assert 0 is True
+    assert 0 is True
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
     E       assert 0 is True
 
+  because an integer_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 11-12
+    :lineno-start: 61
+    :emphasize-lines: 4-5
 
+    # assert True is not True
+    assert True is True
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
-
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
+    # assert 0 is True
+    assert 0 is not True
 
 
     # NOTES
 
-  the test passes.
+  the test passes because an integer_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about integers_
 
   .. code-block:: python
-    :lineno-start: 109
+    :lineno-start: 68
     :emphasize-lines: 14
 
     # NOTES
@@ -2402,65 +2363,46 @@ the test passes.
 * I add an `assert statement`_ to see if a float_ (binary floating point decimal number) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 14
+    :lineno-start: 64
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert 0 is True
+    assert 0 is not True
 
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            assert 0.0 is True
+    assert 0.0 is True
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
     E       assert 0.0 is True
 
+  because a float_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
+
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 14-15
+    :lineno-start: 64
+    :emphasize-lines: 4-5
 
+    # assert 0 is True
+    assert 0 is not True
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
-
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
+    # assert 0.0 is True
+    assert 0.0 is not True
 
 
     # NOTES
 
-  the test passes.
+  the test passes because a float_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about floats_
 
   .. code-block:: python
-    :lineno-start: 112
+    :lineno-start: 71
     :emphasize-lines: 12
 
     # NOTES
@@ -2495,26 +2437,13 @@ the test passes.
 * I add an `assert statement`_ to see if a string_ (anything in :ref:`quotes`) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 17
+    :lineno-start: 67
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert 0.0 is True
+    assert 0.0 is not True
 
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-
-            assert 'a string' is True
+    assert '' is True
 
 
     # NOTES
@@ -2523,43 +2452,31 @@ the test passes.
 
   .. code-block:: python
 
-    E       AssertionError: assert 'a string' is True
+    E       AssertionError: assert '' is True
+
+  because a string_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 17-18
+    :lineno-start: 67
+    :emphasize-lines: 4-5
 
+    # assert 0.0 is True
+    assert 0.0 is not True
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
-
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-
-            # assert 'a string' is True
-            assert 'a string' is not True
+    # assert '' is True
+    assert '' is not True
 
 
     # NOTES
 
-  the test passes.
+  the test passes because a string_ is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about strings_
 
   .. code-block:: python
-    :lineno-start: 115
+    :lineno-start: 74
     :emphasize-lines: 10
 
     # NOTES
@@ -2595,67 +2512,34 @@ the test passes.
 * I add an `assert statement`_ to see if a tuple_ (anything in parentheses ``( )`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 20
+    :lineno-start:
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert '' is True
+    assert '' is not True
 
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-
-            # assert 'a string' is True
-            assert 'a string' is not True
-
-            assert (1, 2, 3, 'n') is True
+    assert () is True
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert (1, 2, 3, 'n') is True
+    E   assert () is True
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 20-21
+    :lineno-start: 70
+    :emphasize-lines: 4-5
 
+    # assert '' is True
+    assert '' is not True
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
-
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-
-            # assert 'a string' is True
-            assert 'a string' is not True
-
-            # assert (1, 2, 3, 'n') is True
-            assert (1, 2, 3, 'n') is not True
+    # assert () is True
+    assert () is not True
 
 
     # NOTES
@@ -2665,7 +2549,7 @@ the test passes.
 * I add a note about tuples_
 
   .. code-block:: python
-    :lineno-start: 118
+    :lineno-start: 77
     :emphasize-lines: 8
 
     # NOTES
@@ -2702,83 +2586,46 @@ the test passes.
 * I add an `assert statement`_ to see if a :ref:`list<what is a list?>` (anything in square brackets ``[ ]``) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 23
+    :lineno-start: 73
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert () is True
+    assert () is not True
 
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-
-            # assert 'a string' is True
-            assert 'a string' is not True
-
-            # assert (1, 2, 3, 'n') is True
-            assert (1, 2, 3, 'n') is not True
-
-            assert [1, 2, 3, 'n'] is True
+    assert [] is True
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert [1, 2, 3, 'n'] is True
+    E   assert [] is True
+
+  because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 23-24
+    :lineno-start: 73
+    :emphasize-lines: 4-5
 
+    # assert () is True
+    assert () is not True
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
-
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-
-            # assert 'a string' is True
-            assert 'a string' is not True
-
-            # assert (1, 2, 3, 'n') is True
-            assert (1, 2, 3, 'n') is not True
-
-            # assert [1, 2, 3, 'n'] is True
-            assert [1, 2, 3, 'n'] is not True
+    # assert [] is True
+    assert [] is not True
 
 
     # NOTES
 
-  the test passes.
+  the test passes because a :ref:`list<what is a list?>` is not the same :ref:`object<what is a class?>` as :ref:`True<test_what_is_true>`.
 
 * I add a note about :ref:`lists<what is a list?>`
 
   .. code-block:: python
-    :lineno-start: 121
+    :lineno-start: 80
     :emphasize-lines: 6
 
     # NOTES
@@ -2816,44 +2663,22 @@ the test passes.
 * I add an `assert statement`_ to see if a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>`) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 95
-    :emphasize-lines: 26
+    :lineno-start: 76
+    :emphasize-lines: 4
 
-        def test_assertion_error_w_true(self):
-            # assert None is True
-            assert None is not True
+    # assert [] is True
+    assert [] is not True
 
-            # assert False is True
-            assert False is not True
-
-            # assert True is not True
-            assert True is True
-
-            # assert 0 is True
-            assert 0 is not True
-
-            # assert 0.0 is True
-            assert 0.0 is not True
-
-            # assert 'a string' is True
-            assert 'a string' is not True
-
-            # assert (1, 2, 3, 'n') is True
-            assert (1, 2, 3, 'n') is not True
-
-            # assert [1, 2, 3, 'n'] is True
-            assert [1, 2, 3, 'n'] is not True
-
-            assert {1, 2, 3, 'n'} is True
+    assert set() is True
 
 
     # NOTES
 
-  the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
+  the terminal_ shows
 
   .. code-block:: python
 
-    E       AssertionError: assert {1, 2, 3, 'n'} is True
+    E   assert set() is True
 
 * I change the statement to make it :ref:`True<test_what_is_true>`
 
@@ -2934,7 +2759,7 @@ the test passes.
 
 -----
 
-* I add an `assert statement`_ to see if :ref:`a dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
+* I add an `assert statement`_ to see if a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) is the same :ref:`object<everything is an object>` as :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 95
@@ -3682,7 +3507,7 @@ another way to test if something is NOT the same object as True
 
   the test is still green.
 
-* I use assertIs_ to compare :ref:`a dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`True<test_what_is_true>`
+* I use assertIs_ to compare a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) with :ref:`True<test_what_is_true>`
 
   .. code-block:: python
     :lineno-start: 159

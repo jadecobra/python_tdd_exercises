@@ -850,7 +850,7 @@ this is like :ref:`AttributeError<what causes AttributeError?>`, the address for
 * the ``post`` :ref:`method<what is a method?>` is called with 2 inputs in this case
 
   - ``'/calculate'`` - the path to the :ref:`function<what is a function?>` in ``website.py``
-  - ``data`` - :ref:`a dictionary<what is a dictionary?>` with the inputs I want the :ref:`function<what is a function?>` to process
+  - ``data`` - a :ref:`dictionary<what is a dictionary?>` with the inputs I want the :ref:`function<what is a function?>` to process
 
 ----
 
@@ -1287,7 +1287,7 @@ how to change a bytes object to a string
 
   the test is still green.
 
-* I want to test the other operations. I add :ref:`a dictionary<what is a dictionary?>` for the operations
+* I want to test the other operations. I add a :ref:`dictionary<what is a dictionary?>` for the operations
 
   .. code-block:: python
     :lineno-start: 17
@@ -1420,7 +1420,7 @@ how to change a bytes object to a string
 
   the test still shows :ref:`AssertionError<what causes AssertionError?>` for the 3 sub tests
 
-* I add :ref:`a dictionary<what is a dictionary?>` for the operations
+* I add a :ref:`dictionary<what is a dictionary?>` for the operations
 
   .. code-block:: python
     :lineno-start: 25
