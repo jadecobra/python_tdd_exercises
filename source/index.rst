@@ -37,7 +37,7 @@ table of contents
   hatches/index
   conventions
   start here<setup/index>
-  make TDD project 1<make_tdd/make_tdd_manually_1>
+  make TDD manually<make_tdd/make_tdd_manually_1>
   what is a module?<exceptions/ModuleNotFoundError>
   make_tdd/make_tdd_manually_2
   what is an assertion?<exceptions/AssertionError/index>
