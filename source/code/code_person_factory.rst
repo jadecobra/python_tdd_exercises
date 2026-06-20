@@ -25,7 +25,7 @@ solution
 
 * the solution in ``person/src/person.py`` from :ref:`how to make a person`
 
-  .. literalinclude:: solutions/person.py
+  .. literalinclude:: person/solutions/person.py
     :language: python
     :linenos:
 
