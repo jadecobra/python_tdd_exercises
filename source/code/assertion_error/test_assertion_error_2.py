@@ -11,7 +11,7 @@ class TestAssertionError(unittest.TestCase):
     a_set = {1, 2, 3, 'n'}
     a_dictionary = {'key': 'value'}
 
-    def test_what_is_an_assertion(self):
+    def test_assert_keyword(self):
         reality = 1 + 1
         my_expectation = 2
         assert reality == my_expectation

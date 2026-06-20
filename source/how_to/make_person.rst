@@ -2707,7 +2707,6 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 
     first_name = pick_one('jane', 'joe', 'john', 'person')
                      pick_one(*choices)
-                     random.choice(*choices)
                      random.choice(('jane', 'joe', 'john', 'person'))
                  # randomly return
                  # 'jane' or 'joe' or 'john' or 'person'
@@ -2740,7 +2739,6 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 
     last_name = pick_one('doe', 'smith', 'blow', 'public')
                     pick_one(*choices)
-                    random.choice(*choices)
                     random.choice(('doe', 'smith', 'blow', 'public'))
                 # randomly return
                 # 'doe' or 'smith' or 'blow' or 'public'
@@ -2774,7 +2772,6 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 
     sex = pick_one('F', 'M'')
               pick_one(*choices)
-              random.choice(*choices)
               random.choice(('F', 'M'))
           # randomly return 'F' or 'M'
 

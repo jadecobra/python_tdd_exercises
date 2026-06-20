@@ -1,6 +1,6 @@
 .. meta::
-  :description: Part 2 of the beginner Python TDD AssertionError tutorial continuing in the assertion_error project: refactor repeated variable initializations (an_integer = 0, a_float = 0.0, a_string, tuples/lists/sets/dicts) by using class attributes on the TestAssertionError class instead of duplicating inside test_assertion_error_w_none, w_false, w_true (and the equality/is-vs-equal tests). The chapter first explores adding the setUp method (as introduced in the classes chapter) with self.an_integer = 0 etc and updating tests to self.xxx (with old local inits commented out), then concludes "In this case, I do not need the setUp method because the class attributes are the same for every test and I do not need anything to run before each test. I move them out", hits NameError: name 'self' is not defined when trying self. = directly under class, fixes by using bare "an_integer = 0" etc at class level, removes the commented setUp and duplicate locals, commits with 'extract class attributes'. The "I have these tests by the end of the chapter" literalinclude of test_assertion_error_2.py shows the final: 7 class attrs + self. access in the w_* tests (test_what_is_an_assertion keeps its local reality/my_expectation vars), still mixing bare `assert` + self.assertIs / self.assertIsNot / self.assertEqual etc on the same None/True/False/0-vs-0.0 examples from part 1. Teaches choosing plain class attributes vs setUp for DRY unittest.TestCase based on whether fresh-per-test values are required (constants vs randoms/mutables). Continues red-green-refactor + uv run pytest-watcher . --now in the existing project.
-  :keywords: Jacob Itegboje, Pumping Python, AssertionError 2, AssertionError 2: use class attributes, use class attributes unittest TestCase, python class attributes for DRY tests, class attributes vs setUp unittest, when not to use setUp, "In this case, I do not need the setUp method", "I do not need anything to run before each test", "extract class attributes", NameError: name 'self' is not defined, self is not defined class body python, an_integer = 0 class attribute, a_float = 0.0, a_string a_tuple a_list a_set a_dictionary class attrs, test_assertion_error_2.py, refactor locals to class attributes python, unittest no setUp needed for constants, red green refactor class attributes, continuing assertion_error project uv pytest-watcher, 0 is not 0.0 class attribute, None is not False, True is not None, is vs == with class attrs, bare assert self.assertIsNot, Pumping Python TDD AssertionError chapter 2, test_what_is_an_assertion, test_assertion_error_w_none w_false w_true w_equality w_is_vs_equal
+  :description: Part 2 of the beginner Python TDD AssertionError tutorial continuing in the assertion_error project: refactor repeated variable initializations (an_integer = 0, a_float = 0.0, a_string, tuples/lists/sets/dicts) by using class attributes on the TestAssertionError class instead of duplicating inside test_assertion_error_w_none, w_false, w_true (and the equality/is-vs-equal tests). The chapter first explores adding the setUp method (as introduced in the classes chapter) with self.an_integer = 0 etc and updating tests to self.xxx (with old local inits commented out), then concludes "In this case, I do not need the setUp method because the class attributes are the same for every test and I do not need anything to run before each test. I move them out", hits NameError: name 'self' is not defined when trying self. = directly under class, fixes by using bare "an_integer = 0" etc at class level, removes the commented setUp and duplicate locals, commits with 'extract class attributes'. The "I have these tests by the end of the chapter" literalinclude of test_assertion_error_2.py shows the final: 7 class attrs + self. access in the w_* tests (test_assert_keyword keeps its local reality/my_expectation vars), still mixing bare `assert` + self.assertIs / self.assertIsNot / self.assertEqual etc on the same None/True/False/0-vs-0.0 examples from part 1. Teaches choosing plain class attributes vs setUp for DRY unittest.TestCase based on whether fresh-per-test values are required (constants vs randoms/mutables). Continues red-green-refactor + uv run pytest-watcher . --now in the existing project.
+  :keywords: Jacob Itegboje, Pumping Python, AssertionError 2, AssertionError 2: use class attributes, use class attributes unittest TestCase, python class attributes for DRY tests, class attributes vs setUp unittest, when not to use setUp, "In this case, I do not need the setUp method", "I do not need anything to run before each test", "extract class attributes", NameError: name 'self' is not defined, self is not defined class body python, an_integer = 0 class attribute, a_float = 0.0, a_string a_tuple a_list a_set a_dictionary class attrs, test_assertion_error_2.py, refactor locals to class attributes python, unittest no setUp needed for constants, red green refactor class attributes, continuing assertion_error project uv pytest-watcher, 0 is not 0.0 class attribute, None is not False, True is not None, is vs == with class attrs, bare assert self.assertIsNot, Pumping Python TDD AssertionError chapter 2, test_assert_keyword, test_assertion_error_w_none w_false w_true w_equality w_is_vs_equal
 
 .. include:: ../../links.rst
 
@@ -100,7 +100,7 @@ remove repetition with class attributes
         def setUp(self):
             self.an_integer = 0
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``an_integer = 0`` from :ref:`test_assertion_error_w_none`
 
@@ -264,7 +264,7 @@ remove repetition with class attributes
             self.an_integer = 0
             self.a_float = 0.0
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_float = 0.0`` from :ref:`test_assertion_error_w_none`
 
@@ -435,7 +435,7 @@ remove repetition with class attributes
             self.a_float = 0.0
             self.a_string = 'a string'
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_string = 'a string'`` from :ref:`test_assertion_error_w_none`
 
@@ -613,7 +613,7 @@ remove repetition with class attributes
             self.a_string = 'a string'
             self.a_tuple = (1, 2, 3, 'n')
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_tuple = (1, 2, 3, 'n')`` from :ref:`test_assertion_error_w_none`
 
@@ -798,7 +798,7 @@ remove repetition with class attributes
             self.a_tuple = (1, 2, 3, 'n')
             self.a_list = [1, 2, 3, 'n']
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_list = [1, 2, 3, 'n']`` from :ref:`test_assertion_error_w_none`
 
@@ -990,7 +990,7 @@ remove repetition with class attributes
             self.a_list = [1, 2, 3, 'n']
             self.a_set = {1, 2, 3, 'n'}
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_set = {1, 2, 3, 'n'}`` from :ref:`test_assertion_error_w_none`
 
@@ -1189,7 +1189,7 @@ remove repetition with class attributes
             self.a_set = {1, 2, 3, 'n'}
             self.a_dictionary = {'key': 'value'}
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I use the :ref:`class attribute<what is a class attribute?>` to remove repetition of ``a_dictionary = {'key': 'value'}`` from :ref:`test_assertion_error_w_none`
 
@@ -1520,7 +1520,7 @@ remove repetition with class attributes
         #    self.a_set = {1, 2, 3, 'n'}
         #    self.a_dictionary = {'key': 'value'}
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
   the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
@@ -1573,7 +1573,7 @@ remove repetition with class attributes
         #     self.a_set = {1, 2, 3, 'n'}
         #     self.a_dictionary = {'key': 'value'}
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
   the test is green again.
 
@@ -1592,7 +1592,7 @@ remove repetition with class attributes
         a_set = {1, 2, 3, 'n'}
         a_dictionary = {'key': 'value'}
 
-        def test_what_is_an_assertion(self):
+        def test_assert_keyword(self):
 
 * I add a git_ commit message in the other terminal_
 

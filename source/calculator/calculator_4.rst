@@ -255,7 +255,7 @@ test_calculator_raises_type_error_w_strings
 
 ----
 
-I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test_what_is_an_assertion`, to test the :ref:`add function<test_addition>` with strings_
+I add a new test with an :ref:`assertion<what is an assertion?>` from :ref:`test_assert_keyword`, to test the :ref:`add function<test_addition>` with strings_
 
 .. code-block:: python
   :lineno-start: 64

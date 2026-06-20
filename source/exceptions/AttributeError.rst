@@ -807,7 +807,7 @@ test_attribute_error_w_variables
     :emphasize-lines: 1-2
 
     git commit -am \
-    'add test_what_is_an_assertion'
+    'add test_assert_keyword'
 
 :ref:`A variable in a module is an attribute of the module<test_attribute_error_w_variables>`.
 
