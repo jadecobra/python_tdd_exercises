@@ -1184,10 +1184,13 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5-6
+    :lineno-start: 15
+    :emphasize-lines: 8-9
 
     def test_making_a_function_w_return_none():
+        def w_return_none():
+            return None
+
         assert w_return_none() is None
 
 
@@ -1206,7 +1209,6 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
   because Python_ does not know what I mean by ``return_leaves_the_function`` since I do not have a definition for it in this file_, yet.
 
-
 ----
 
 =================================================================================
@@ -1215,43 +1217,15 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
 ----
 
-* I add the name to the file_
-
-  .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5
-
-    def test_making_a_function_w_return_none():
-        assert w_return_none() is None
-
-
-    return_leaves_the_function
-
-
-    def test_what_happens_after_functions_return():
-        return_leaves_the_function
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>` because Python_ does not know what I mean by ``return_leaves_the_function``, it is just a word in the file_.
-
 * I change ``return_leaves_the_function`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 21
-    :emphasize-lines: 5-6
-
-    def test_making_a_function_w_return_none():
-        assert w_return_none() is None
-
-
-    # return_leaves_the_function
-    return_leaves_the_function = None
-
+    :lineno-start: 22
+    :emphasize-lines: 2-3
 
     def test_what_happens_after_functions_return():
-        return_leaves_the_function
+        # return_leaves_the_function
+        return_leaves_the_function = None
 
 
     # Exceptions seen
@@ -1265,6 +1239,45 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 =================================================================================
 
 ----
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 4
+
+    def test_what_happens_after_functions_return():
+        # return_leaves_the_function
+        return_leaves_the_function = None
+        assert return_leaves_the_function is 'something'
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None is 'something'
+
+  because ``return_leaves_the_function`` points to :ref:`None<what is None?>`. Using substitution
+
+  .. code-block:: python
+
+    return_leaves_the_function = None
+    assert return_leaves_the_function is 'something'
+    assert None                       is 'something'
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not the same object as a string<test_assertion_error_w_none>`.
+
+----
+
+----
+
+----
+
+----
+
 
 * I add a `return statement`_
 
