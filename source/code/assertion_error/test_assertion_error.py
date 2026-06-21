@@ -1,163 +1,104 @@
-import unittest
+def test_assert_keyword():
+    assert 1 + 1 == 2
+
+    assert '1' + '1' == '11'
+
+    assert 'I am' + ' alive' == 'I am alive'
 
 
-class TestAssertionError(unittest.TestCase):
+def test_assertion_error_w_none():
+    assert None is None
 
-    def test_assert_keyword(self):
-        reality = 1 + 1
-        my_expectation = 2
-        assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
+    assert False is not None
 
-        reality = '1' + '1'
-        my_expectation = '11'
-        assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
+    assert True is not None
 
-        reality = 'I am' + ' alive'
-        my_expectation = 'I am alive'
-        assert reality == my_expectation
-        self.assertEqual(reality, my_expectation)
+    assert 0 is not None
 
-    def test_assertion_error_w_none(self):
-        assert None is None
-        self.assertIs(None, None)
+    assert 0.0 is not None
 
-        assert False is not None
-        self.assertIsNot(False, None)
+    assert '' is not None
 
-        assert True is not None
-        self.assertIsNot(True, None)
+    assert () is not None
 
-        an_integer = 0
-        assert an_integer is not None
-        self.assertIsNot(an_integer, None)
+    assert [] is not None
 
-        a_float = 0.0
-        assert a_float is not None
-        self.assertIsNot(a_float, None)
+    assert set() is not None
 
-        a_string = 'a string'
-        assert a_string is not None
-        self.assertIsNot(a_string, None)
+    assert {} is not None
 
-        a_tuple = (1, 2, 3, 'n')
-        assert a_tuple is not None
-        self.assertIsNot(a_tuple, None)
 
-        a_list = [1, 2, 3, 'n']
-        assert a_list is not None
-        self.assertIsNot(a_list, None)
+def test_assertion_error_w_false():
+    assert None is not False
 
-        a_set = {1, 2, 3, 'n'}
-        assert a_set is not None
-        self.assertIsNot(a_set, None)
+    assert False is False
 
-        a_dictionary = {'key': 'value'}
-        assert a_dictionary is not None
-        self.assertIsNot(a_dictionary, None)
+    assert True is not False
 
-    def test_assertion_error_w_false(self):
-        assert None is not False
-        self.assertIsNot(None, False)
+    assert 0 is not False
 
-        assert False is False
-        self.assertIs(False, False)
+    assert 0.0 is not False
 
-        assert True is not False
-        self.assertIsNot(True, False)
+    assert '' is not False
 
-        an_integer = 0
-        assert an_integer is not False
-        self.assertIsNot(an_integer, False)
+    assert () is not False
 
-        a_float = 0.0
-        assert a_float is not False
-        self.assertIsNot(a_float, False)
+    assert [] is not False
 
-        a_string = 'a string'
-        assert a_string is not False
-        self.assertIsNot(a_string, False)
+    assert set() is not False
 
-        a_tuple = (1, 2, 3, 'n')
-        assert a_tuple is not False
-        self.assertIsNot(a_tuple, False)
+    assert {} is not False
 
-        a_list = [1, 2, 3, 'n']
-        assert a_list is not False
-        self.assertIsNot(a_list, False)
 
-        a_set = {1, 2, 3, 'n'}
-        assert a_set is not False
-        self.assertIsNot(a_set, False)
+def test_assertion_error_w_true():
+    assert None is not True
 
-        a_dictionary = {'key': 'value'}
-        assert a_dictionary is not False
-        self.assertIsNot(a_dictionary, False)
+    assert False is not True
 
-    def test_assertion_error_w_true(self):
-        assert None is not True
-        self.assertIsNot(None, True)
+    assert True is True
 
-        assert False is not True
-        self.assertIsNot(False, True)
+    assert 0 is not True
 
-        assert True is True
-        self.assertIs(True, True)
+    assert 0.0 is not True
 
-        an_integer = 0
-        assert an_integer is not True
-        self.assertIsNot(an_integer, True)
+    assert '' is not True
 
-        a_float = 0.0
-        assert a_float is not True
-        self.assertIsNot(a_float, True)
+    assert () is not True
 
-        a_string = 'a string'
-        assert a_string is not True
-        self.assertIsNot(a_string, True)
+    assert [] is not True
 
-        a_tuple = (1, 2, 3, 'n')
-        assert a_tuple is not True
-        self.assertIsNot(a_tuple, True)
+    assert set() is not True
 
-        a_list = [1, 2, 3, 'n']
-        assert a_list is not True
-        self.assertIsNot(a_list, True)
+    assert {} is not True
 
-        a_set = {1, 2, 3, 'n'}
-        assert a_set is not True
-        self.assertIsNot(a_set, True)
 
-        a_dictionary = {'key': 'value'}
-        assert a_dictionary is not True
-        self.assertIsNot(a_dictionary, True)
+def test_assertion_error_w_equality():
+    assert None == None
 
-    def test_assertion_error_w_equality(self):
-        assert None == None
-        self.assertEqual(None, None)
+    assert False != None
 
-        assert False != None
-        self.assertNotEqual(False, None)
+    assert False != True
 
-        assert False != True
-        self.assertNotEqual(False, True)
+    assert False == False
 
-        assert False == False
-        self.assertEqual(False, False)
+    assert True != None
 
-        assert True != None
-        self.assertNotEqual(True, None)
+    assert True == True
 
-        assert True == True
-        self.assertEqual(True, True)
 
-    def test_assertion_error_w_is_vs_equal(self):
-        assert 0 is not 0.0
-        self.assertIsNot(0, 0.0)
+def test_assertion_error_w_is_vs_equal():
+    assert 0 is not 0.0
 
-        assert 0 == 0.0
-        self.assertEqual(0, 0.0)
+    assert 0 == 0.0
+
+
+def will_not_run():
+    assert False == True
+
+
+def test_failure():
+    # assert False == True
+    assert False == False
 
 
 # NOTES
@@ -189,9 +130,8 @@ class TestAssertionError(unittest.TestCase):
 # False is False and equal to False
 # False is not None and NOT equal to None
 # None is not True and NOT equal to True
-# None is not False and NOT equal to False
+# None is not False and NOT equal to True
 # None is None and equal to None
-
 
 # Exceptions seen
 # AssertionError

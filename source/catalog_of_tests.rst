@@ -4,8 +4,6 @@
 catalog of tests
 #################################################################################
 
-:ref:`test_failure`
-
 *********************************************************************************
 test_calculator
 *********************************************************************************
@@ -74,10 +72,13 @@ test_exceptions
 test_assertion_error
 *********************************************************************************
 
+#. :ref:`test_assert_keyword`
 #. :ref:`test_assertion_error_w_none`
 #. :ref:`test_assertion_error_w_false`
 #. :ref:`test_assertion_error_w_true`
 #. :ref:`test_assertion_error_w_equality`
+#. :ref:`test_assertion_error_w_is_vs_equal`
+#. :ref:`test_failure`
 
 *********************************************************************************
 test_attribute_error
