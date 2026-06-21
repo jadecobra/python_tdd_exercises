@@ -359,7 +359,7 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
     >       w_pass
     E       NameError: name 'w_pass' is not defined
 
-  because Python_ does not know what I mean by ``w_pass`` since I do not have a definition for it in ``test_functions.py``
+  because Python_ does not know what I mean by ``w_pass`` since I do not have a definition for it in ``test_functions.py``.
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -435,9 +435,21 @@ the test passes.
 
     E       assert None is 0
 
-  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as ``0``.
+  because ``w_pass`` points to ``None``. Using substitution
+
+  .. code-block:: python
+
+    w_pass = None
+    assert w_pass is 0
+    assert None   is 0
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``0``.
 
 * I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 4-5
 
     def test_making_a_function_w_pass():
         # w_pass
@@ -449,7 +461,6 @@ the test passes.
     # Exceptions seen
 
   the test passes.
-
 
 ----
 
@@ -489,7 +500,7 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
+  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -497,7 +508,7 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
     w_pass()      # call the name
     None()        # substitute the value for the name
 
-  which raises :ref:`TypeError<what causes TypeError?>`.
+  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
 
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -519,7 +530,7 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 
 ----
 
-* I change ``w_pass`` to the simplest :ref:`function<what is a function?>` I can make with the def_ and pass_ keywords
+* I use the def_ and pass_ keywords to make ``w_pass`` the simplest :ref:`function<what is a function?>` I can make
 
   .. code-block:: python
     :linenos:
@@ -541,7 +552,7 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
   - The test passes because I get :ref:`None<what is None?>` when I call ``w_pass``.
   - The :ref:`assertion<what is an assertion?>` - ``assert w_pass() is None`` checks if the result of a call to ``w_pass``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
   - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
-  - pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
+  - pass_ is a keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
   - The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first cleanup time.
 
 ----
@@ -602,10 +613,13 @@ I can also make a function with a `return statement`_.
 * I add a new test with a name
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5-6
+    :linenos:
+    :emphasize-lines: 8-9
 
     def test_making_a_function_w_pass():
+        def w_pass():
+            pass
+
         assert w_pass() is None
 
 
@@ -622,7 +636,7 @@ I can also make a function with a `return statement`_.
     >       w_return
     E       NameError: name 'w_return' is not defined
 
-  because Python_ does not know what I mean by ``w_return`` since I do not have a definition for it in ``test_functions.py``
+  because Python_ does not know what I mean by ``w_return`` since I do not have a definition for it in ``test_functions.py``.
 
 ----
 
@@ -632,49 +646,15 @@ I can also make a function with a `return statement`_.
 
 ----
 
-* I add the name to the file_
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5
-
-    def test_making_a_function_w_pass():
-        assert w_pass() is None
-
-
-    w_return
-
-
-    def test_making_a_function_w_return():
-        w_return
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block:: python
-
-    NameError: name 'w_return' is not defined
-
-  because Python_ does not know what I mean by ``w_return``, it is just a word in the file_.
-
 * I change ``w_return`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 5-6
-
-    def test_making_a_function_w_pass():
-        assert w_pass() is None
-
-
-    # w_return
-    w_return = None
-
+    :lineno-start: 8
+    :emphasize-lines: 2-3
 
     def test_making_a_function_w_return():
-        w_return
+        # w_return
+        w_return = None
 
 
     # Exceptions seen
@@ -689,19 +669,65 @@ I can also make a function with a `return statement`_.
 
 ----
 
-* I add parentheses to call ``w_return`` from inside :ref:`test_making_a_function_w_return`
+* I add an :ref:`assertion<what is an assertion?>` for ``w_return``
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 6-7
-
-    # w_return
-    w_return = None
-
+    :lineno-start: 8
+    :emphasize-lines: 4
 
     def test_making_a_function_w_return():
         # w_return
-        w_return()
+        w_return = None
+        assert w_return is 1
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert None is 1
+
+  because ``w_return`` points to ``None``. Using substitution
+
+  .. code-block:: python
+
+    w_return = None
+    assert w_return is 1
+    assert None     is 1
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``1``.
+
+* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 4-5
+
+    def test_making_a_function_w_return():
+        # w_return
+        w_return = None
+        # assert w_return is 1
+        assert w_return is None
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add parentheses to call ``w_return`` inside :ref:`test_making_a_function_w_return`
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 6
+
+    def test_making_a_function_w_return():
+        # w_return
+        w_return = None
+        # assert w_return is 1
+        # assert w_return is None
+        assert w_return() is None
 
 
     # Exceptions seen
@@ -712,7 +738,7 @@ I can also make a function with a `return statement`_.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_return`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
+  because I called ``w_return`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
@@ -720,78 +746,23 @@ I can also make a function with a `return statement`_.
     w_return()      # call the name
     None()          # substitute the value for the name
 
-  which raises :ref:`TypeError<what causes TypeError?>`.
+  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
 
-* I change ``w_return`` to the simplest :ref:`function<what is a function?>` I can make with the def_ and pass_ keywords
+* I use the def_ and pass_ keywords to change ``w_return`` to the simplest :ref:`function<what is a function?>` I can make
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3-4
-
-    # w_return
-    # w_return = None
-    def w_return():
-        pass
-
+    :lineno-start: 8
+    :emphasize-lines: 6-7
 
     def test_making_a_function_w_return():
         # w_return
-        w_return()
+        # w_return = None
+        # assert w_return is 1
+        # assert w_return is None
+        def w_return():
+            pass
 
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>` to see what I get when I call ``w_return``
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3-5
-
-    def test_making_a_function_w_return():
-        # w_return
-        # w_return()
-        result = w_return()
-        assert result is 1
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    >       assert result is 1
-    E       assert None is 1
-
-  because ``result`` points to ``w_return`` and when I call ``w_return`` I get :ref:`None<what is None?>`. Using substitution
-
-  .. code-block:: python
-
-    result = w_return()
-    result = None
-
-  .. code-block:: python
-
-    assert result     is 1
-    assert w_return() is 1
-    assert None       is 1
-
-  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``1``.
-
-* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
-
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 5-6
-
-    def test_making_a_function_w_return():
-        # w_return
-        # w_return()
-        result = w_return()
-        # assert result is 1
-        assert result is None
+        assert w_return() is None
 
 
     # Exceptions seen
@@ -804,69 +775,49 @@ I can also make a function with a `return statement`_.
 the return statement
 *********************************************************************************
 
-The return_ keyword is used to state what a :ref:`function<what is a function?>` gives as output when it is called.
+The return_ keyword is used to define what a :ref:`function<what is a function?>` gives as output when it is called.
 
 * I change pass_ to a `return statement`_ with the return_ keyword
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 4-5
-
-    # w_return
-    # w_return = None
-    def w_return():
-        # pass
-        return
-
+    :lineno-start: 8
+    :emphasize-lines: 7-8
 
     def test_making_a_function_w_return():
         # w_return
-        # w_return()
-        result = w_return()
-        # assert result is 1
-        assert result is None
+        # w_return = None
+        # assert w_return is 1
+        # assert w_return is None
+        def w_return():
+            # pass
+            return
 
-
-    # Exceptions seen
-
-  - The test is still green because I get :ref:`None<what is None?>` when I call ``w_return``.
-  - The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_return()`` checks if the result of a call to ``w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
-  - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
-  - pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
-
-* I remove the :ref:`variable<what is a variable?>` from :ref:`test_making_a_function_w_return` because it is only used once
-
-  .. code-block:: python
-    :lineno-start: 16
-    :emphasize-lines: 4, 6-7
-
-    def test_making_a_function_w_return():
-        # w_return
-        # w_return()
-        # result = w_return()
-        # assert result is 1
-        # assert result is None
         assert w_return() is None
 
 
     # Exceptions seen
 
-  still green because I can use a :ref:`function call<how to call a function>` directly, without a middle man since I get the returned value.
+  - The test is still green because I get :ref:`None<what is None?>` when I call ``w_return``.
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_return() is None`` checks if the result of a call to ``w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+  - The :ref:`function definition<how to make a function>` simply says return_ and the test passes.
+  - return_ is a keyword that defines what the :ref:`function<what is a function?>` gives as output.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 5
+    :linenos:
 
     def test_making_a_function_w_pass():
+        def w_pass():
+            pass
+
         assert w_pass() is None
 
 
-    def w_return():
-        return
-
-
     def test_making_a_function_w_return():
+        def w_return():
+            return
+
         assert w_return() is None
 
 
@@ -1023,7 +974,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_return_none`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
+  because I called ``w_return_none`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
 
   .. code-block:: python
 
