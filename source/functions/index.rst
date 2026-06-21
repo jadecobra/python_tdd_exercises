@@ -531,7 +531,7 @@ I want to see what I get when I call ``w_pass``.
 
 ----
 
-I add an :ref:`assertion<what is an assertion?>` to find out what I get when I call ``w_pass``
+I add an :ref:`assertion<what is an assertion?>` to see what I get when I call ``w_pass``
 
 .. code-block:: python
   :lineno-start: 7
@@ -553,7 +553,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
   >       assert result is 0
   E       assert None is 0
 
-because ``result`` points to ``w_pass`` and when I call ``w_pass`` I get :ref:`None<what is None?>`, using substitution
+because ``result`` points to ``w_pass`` and when I call ``w_pass`` I get :ref:`None<what is None?>`. Using substitution
 
 .. code-block:: python
 
@@ -591,7 +591,7 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
   # Exceptions seen
 
 - The test passes because I get :ref:`None<what is None?>` when I call ``w_pass``.
-- The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_pass()`` checks if the result of a call to ``w_pass`` , is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+- The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_pass()`` checks if the result of a call to ``w_pass`` , is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
 - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
 - pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
 - The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first cleanup time.
@@ -621,7 +621,7 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
 
     # Exceptions seen
 
-  the test is still green because I can use ``w_pass()`` directly, without a middle man.
+  still green because I can use a :ref:`function call<how to call a function>` directly, without a middle man since I get the returned value.
 
 * I remove the commented lines
 
@@ -651,7 +651,7 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can make a function with pass.<test_making_a_function_w_pass>`
+:ref:`I can make a function with pass.<test_making_a_function_w_pass>`.
 
 ----
 
@@ -815,36 +815,128 @@ I can also make a function with a `return statement`_.
 
   the test passes.
 
+* I add an :ref:`assertion<what is an assertion?>` to see what I get when I call ``w_return``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3-5
+
+    def test_making_a_function_w_return():
+        # w_return
+        # w_return()
+        result = w_return()
+        assert result is 0
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    >       assert result is 0
+    E       assert None is 0
+
+  because ``result`` points to ``w_return`` and when I call ``w_return`` I get :ref:`None<what is None?>`. Using substitution
+
+  .. code-block:: python
+
+    result = w_return()
+    result = None
+
+  .. code-block:: python
+
+    assert result is 0
+    assert w_return() is 0
+    assert None is 0
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_return():
+        # w_return
+        # w_return()
+        result = w_return()
+        # assert result is 0
+        assert result is None
+
+
+    # Exceptions seen
+
+  the test passes.
+
 ----
 
 *********************************************************************************
 the return statement
 *********************************************************************************
 
-The `return statement`_ shows what a :ref:`function<what is a function?>` returns when it is called.
+The return_ keyword is used to state what a :ref:`function<what is a function?>` gives as output when it is called.
 
 * I change pass_ to a `return statement`_ with the return_ keyword
 
   .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 2-3
+    :lineno-start: 9
+    :emphasize-lines: 4-5
 
+    # w_return
+    # w_return = None
     def w_return():
         # pass
         return
 
-  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_return(), None)`` checks if the result of a call to ``w_return`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
-  * the :ref:`function definition<how to make a function>` simply says return_ and the test passes.
-  * return_ is a special keyword that is used to send output from a :ref:`function<what is a function?>`.
-  * the test is still green because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
 
-* I remove the commented line
+    def test_making_a_function_w_return():
+        # w_return
+        # w_return()
+        result = w_return()
+        # assert result is 0
+        assert result is None
+
+
+    # Exceptions seen
+
+  - The test is still green because I get :ref:`None<what is None?>` when I call ``w_return``.
+  - The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_return()`` checks if the result of a call to ``w_return`` , is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+  - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
+  - pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
+
+* I remove the :ref:`variable<what is a variable?>` from :ref:`test_making_a_function_w_return` because it is only used once
 
   .. code-block:: python
-    :lineno-start: 5
+    :lineno-start: 16
+    :emphasize-lines: 4, 6-7
+
+    def test_making_a_function_w_return():
+        # w_return
+        # w_return()
+        # result = w_return()
+        # assert result is 0
+        # assert result is None
+        assert w_return() is None
+
+
+    # Exceptions seen
+
+  still green because I can use a :ref:`function call<how to call a function>` directly, without a middle man since I get the returned value.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 9
 
     def w_return():
         return
+
+
+    def test_making_a_function_w_return():
+        assert w_return() is None
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -856,21 +948,22 @@ The `return statement`_ shows what a :ref:`function<what is a function?>` return
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
+:ref:`I can make a function with a return statement<test_making_a_function_w_return>`.
+
 I have two :ref:`functions<what is a function?>` with different statements, and the tests show that they both return :ref:`None<what is None?>`
 
 .. code-block:: python
 
-  src.functions.w_pass()
+  w_pass()
   pass
 
 .. code-block:: python
 
-  src.functions.w_return()
+  w_return()
   return
 
 their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`", which leads me to the next test.
 
-:ref:`I can make a function with a return statement<test_making_a_function_w_return>`
 
 ----
 
