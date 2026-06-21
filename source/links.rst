@@ -108,8 +108,6 @@
 .. _random.triangular: https://docs.python.org/3/library/random.html#random.triangular
 .. _random.randint: https://docs.python.org/3/library/random.html?highlight=random#random.randint
 .. _randint method: https://docs.python.org/3/library/random.html?highlight=random#random.randint
-.. _return statement: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
-.. _return statements: `return statement`_
 .. _rm: https://grokipedia.com/page/Rm_(Unix)
 .. _script: `computer program`_
 .. _set: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset

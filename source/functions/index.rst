@@ -10,7 +10,9 @@
 .. _arguments: argument_
 .. _keyword arguments: arguments_
 .. _positional arguments: arguments_
-.. _return: `return statement`_
+.. _return: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
+.. _return statement: return_
+.. _return statements: return_
 
 #################################################################################
 what is a function?
@@ -796,7 +798,7 @@ I can also make a function with a `return statement`_.
 
   .. code-block:: python
     :lineno-start: 9
-    :emphasize-lines: 8-9
+    :emphasize-lines: 3-4
 
     # w_return
     # w_return = None
@@ -811,9 +813,9 @@ I can also make a function with a `return statement`_.
 
     # Exceptions seen
 
-  the test passes
+  the test passes.
 
-* I change pass_ to a `return statement`_
+* I change pass_ to a `return statement`_ with the return_ keyword
 
   .. code-block:: python
     :lineno-start: 5
