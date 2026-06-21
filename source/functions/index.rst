@@ -342,7 +342,7 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 * I change ``test_failure`` to :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
-    :lineno-start: 11
+    :linenos:
     :emphasize-lines: 1-2
 
     def test_making_a_function_w_pass():
@@ -374,61 +374,82 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 
 ----
 
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I add the name to the file_
-
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 1
-
-  w_pass
-
-
-  def test_making_a_function_w_pass():
-      w_pass
-
-
-  # Exceptions seen
-  # AssertionError
-  # NameError
-
-the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-.. code-block:: python
-
-  NameError: name 'w_pass' is not defined
-
-because Python_ does not know what I mean by ``w_pass`` ,it is still just a name in the file_.
-
-----
-
 *********************************************************************************
 what is a variable?
 *********************************************************************************
 
 I can define a name in Python with a variable. It is a name that is used for any :ref:`object<what is a class?>`. For example, in Mathematics_ we use ``x`` to represent any number.
 
-Every time I use the name, Python_ knows that I am referring to the :ref:`object<what is a class?>` from where I defined the variable.
+Every time I use the name, Python_ "knows" that I am referring to the :ref:`object<what is a class?>` pointed the name to.
 
-* I change ``w_pass`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change ``w_pass`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 2-3
+
+  def test_making_a_function_w_pass():
+      # w_pass
+      w_pass = None
+
+
+  # Exceptions seen
+  # AssertionError
+  # NameError
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-2
-
-    # w_pass
-    w_pass = None
-
+    :emphasize-lines: 4
 
     def test_making_a_function_w_pass():
-        w_pass
+        # w_pass
+        w_pass = None
+        assert w_pass is 0
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert None is 0
+
+  because :ref:`None<what is None?>` is not the same :ref:`object<what is a class?>` as ``0``.
+
+* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+    def test_making_a_function_w_pass():
+        # w_pass
+        w_pass = None
+        # assert w_pass is 0
+        assert w_pass is None
+
+
+    # Exceptions seen
 
   the test passes.
+
 
 ----
 
@@ -446,22 +467,21 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 
 ----
 
-* I add parentheses to the test to call ``w_pass`` from inside :ref:`test_making_a_function_w_pass`
+* I add parentheses to the :ref:`assertion<what is an assertion?>` to call ``w_pass`` inside :ref:`test_making_a_function_w_pass`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-7
+    :emphasize-lines: 6
 
-      # w_pass
-      w_pass = None
+    def test_making_a_function_w_pass():
+        # w_pass
+        w_pass = None
+        # assert w_pass is 0
+        # assert w_pass is None
+        assert w_pass() is None
 
 
-      def test_making_a_function_w_pass():
-          # w_pass
-          w_pass()
-
-
-      # Exceptions seen
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -482,7 +502,7 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 * I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
 
   .. code-block:: python
-    :lineno-start: 10
+    :lineno-start: 9
     :emphasize-lines: 4
     :emphasize-text: TypeError
 
@@ -503,100 +523,26 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 2-3
-
-    # w_pass
-    # w_pass = None
-    def w_pass():
-        pass
-
+    :emphasize-lines: 6-7
 
     def test_making_a_function_w_pass():
+        # w_pass
+        # w_pass = None
+        # assert w_pass is 0
+        # assert w_pass is None
+        def w_pass():
+            pass
 
-  the test passes.
-
-----
-
-*********************************************************************************
-how to test the result of a function call
-*********************************************************************************
-
-I want to see what I get when I call ``w_pass``.
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-I add an :ref:`assertion<what is an assertion?>` to see what I get when I call ``w_pass``
-
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 3-5
-
-  def test_making_a_function_w_pass():
-      # w_pass
-      # w_pass()
-      result = w_pass()
-      assert result is 0
+        assert w_pass() is None
 
 
-  # Exceptions seen
+    # Exceptions seen
 
-the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-.. code-block:: python
-
-  >       assert result is 0
-  E       assert None is 0
-
-because ``result`` points to ``w_pass`` and when I call ``w_pass`` I get :ref:`None<what is None?>`. Using substitution
-
-.. code-block:: python
-
-  result = w_pass()
-  result = None
-
-.. code-block:: python
-
-  assert result   is 0
-  assert w_pass() is 0
-  assert None     is 0
-
-which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``0``.
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
-
-.. code-block:: python
-  :lineno-start: 7
-  :emphasize-lines: 5-6
-
-  def test_making_a_function_w_pass():
-      # w_pass
-      # w_pass()
-      result = w_pass()
-      # assert result is 0
-      assert result is None
-
-
-  # Exceptions seen
-
-- The test passes because I get :ref:`None<what is None?>` when I call ``w_pass``.
-- The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_pass()`` checks if the result of a call to ``w_pass`` , is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
-- The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
-- pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
-- The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first cleanup time.
+  - The test passes because I get :ref:`None<what is None?>` when I call ``w_pass``.
+  - The :ref:`assertion<what is an assertion?>` - ``assert w_pass() is None`` checks if the result of a call to ``w_pass``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`.
+  - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
+  - pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
+  - The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first cleanup time.
 
 ----
 
@@ -606,35 +552,15 @@ I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_
 
 ----
 
-* I remove the :ref:`variable<what is a variable?>` from :ref:`test_making_a_function_w_pass` because it is only used once
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4, 6-7
-
-    def test_making_a_function_w_pass():
-        # w_pass
-        # w_pass()
-        # result = w_pass()
-        # assert result is 0
-        # assert result is None
-        assert w_pass() is None
-
-
-    # Exceptions seen
-
-  still green because I can use a :ref:`function call<how to call a function>` directly, without a middle man since I get the returned value.
-
 * I remove the commented lines
 
   .. code-block:: python
     :linenos:
 
-    def w_pass():
-        pass
-
-
     def test_making_a_function_w_pass():
+        def w_pass():
+            pass
+
         assert w_pass() is None
 
 
@@ -904,7 +830,7 @@ The return_ keyword is used to state what a :ref:`function<what is a function?>`
     # Exceptions seen
 
   - The test is still green because I get :ref:`None<what is None?>` when I call ``w_return``.
-  - The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_return()`` checks if the result of a call to ``w_return`` , is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+  - The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_return()`` checks if the result of a call to ``w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
   - The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
   - pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
 
