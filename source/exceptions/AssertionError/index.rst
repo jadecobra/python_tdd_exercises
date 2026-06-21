@@ -1259,7 +1259,7 @@ the test passes.
     :linenos:
     :emphasize-lines: 1, 9
 
-    # test the assert keyword
+    # test assert keyword
     assert 1 + 1 == 2
 
     assert '1' + '1' == '11'
@@ -3623,9 +3623,11 @@ test_assertion_error_w_is_vs_equal
     assert True == True
 
 
-    def test_assertion_error_w_is_vs_equal():
+    def assertion_error_w_is_vs_equal():
     # test AssertionError with is vs equal
     assert 0 is not 0.0
+
+    assert 0 == 0.0
 
   the terminal_ is my friend, and shows IndentationError_
 
@@ -3639,9 +3641,33 @@ test_assertion_error_w_is_vs_equal
 * I indent the :ref:`assertions<what is an assertion?>` with 4 spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 89
-    :emphasize-lines: 1-2, 4
+    :lineno-start: 86
+    :emphasize-lines: 5-6, 8
 
+    assert True == True
+
+
+    def assertion_error_w_is_vs_equal():
+        # test AssertionError with is vs equal
+        assert 0 is not 0.0
+
+        assert 0 == 0.0
+
+
+    # NOTES
+
+  the test passes and the terminal_ still shows ``no tests ran``
+
+* I add ``test_`` to the name of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 86
+    :emphasize-lines: 4-5
+
+    assert True == True
+
+
+    # def assertion_error_w_is_vs_equal():
     def test_assertion_error_w_is_vs_equal():
         # test AssertionError with is vs equal
         assert 0 is not 0.0
@@ -3651,9 +3677,10 @@ test_assertion_error_w_is_vs_equal
 
     # NOTES
 
-  the test passes and the terminal_ shows :green:`green` and a better message
+  the terminal_ shows :green:`green` and the name of the test file_ with a better message
 
   .. code-block:: python
+    :emphasize-lines: 7, 9
 
     ================== test session starts ===================
     platform linux -- Python 3.X.Y, pytest-Z.A.B, pluggy-C.D.E
@@ -3668,12 +3695,15 @@ test_assertion_error_w_is_vs_equal
     Current runner args: []
     Press w to show menu
 
-  fantastic!
+  fantastic! pytest_ only runs the :ref:`function<what is a function?>` if the name starts with ``test_``.
 
-* I remove the comment since it is the same as the name of the :ref:`function<what is a function?>`
+* I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 89
+    :lineno-start: 86
+
+    assert True == True
+
 
     def test_assertion_error_w_is_vs_equal():
         assert 0 is not 0.0
@@ -3710,7 +3740,7 @@ test_assertion_error_w_equality
     assert {} is not True
 
 
-    def test_assertion_error_w_equality():
+    def assertion_error_w_equality():
     # test AssertionError with equality
     assert None == None
 
@@ -3727,9 +3757,12 @@ test_assertion_error_w_equality
 
   .. code-block:: python
     :lineno-start: 75
-    :emphasize-lines: 2-3, 5, 7, 9, 11, 13
+    :emphasize-lines: 5-6, 8, 10, 12, 14, 16
 
-    def test_assertion_error_w_equality():
+    assert {} is not True
+
+
+    def assertion_error_w_equality():
         # test AssertionError with equality
         assert None == None
 
@@ -3746,16 +3779,45 @@ test_assertion_error_w_equality
 
     def test_assertion_error_w_is_vs_equal():
 
-  the test passes and the terminal_ shows
+  the terminal_ shows
 
   .. code-block:: python
 
-    =================== 2 passed in L.MNs ====================
+    =================== 1 passed in L.MNs ====================
 
-* I remove the comment since it is the same as the name of the :ref:`function<what is a function?>`
+  I have two :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes one.
+
+* I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 75
+    :lineno-start: 72
+    :emphasize-lines: 4-5
+
+    assert {} is not True
+
+
+    # def assertion_error_w_equality():
+    def test_assertion_error_w_equality():
+        # test AssertionError with equality
+        assert None == None
+
+        assert False != None
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    =================== 2 passed in O.PQs ====================
+
+  because pytest_ only runs the :ref:`function<what is a function?>` if the name starts with ``test_``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 72
+
+    assert {} is not True
+
 
     def test_assertion_error_w_equality():
         assert None == None
@@ -3789,7 +3851,7 @@ test_assertion_error_w_true
     assert {} is not False
 
 
-    def test_assertion_error_w_true():
+    def assertion_error_w_true():
     # test AssertionError with True
     assert None is not True
 
@@ -3805,10 +3867,13 @@ test_assertion_error_w_true
 * I indent the :ref:`assertions<what is an assertion?>` with 4 spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 53
-    :emphasize-lines: 2-3, 5, 7, 9, 11, 13, 15, 17, 19, 21
+    :lineno-start: 50
+    :emphasize-lines: 5-6, 8, 10, 12, 14, 16, 18, 20, 22, 24
 
-    def test_assertion_error_w_true():
+    assert {} is not False
+
+
+    def assertion_error_w_true():
         # test AssertionError with True
         assert None is not True
 
@@ -3833,16 +3898,45 @@ test_assertion_error_w_true
 
     def test_assertion_error_w_equality():
 
-  the test passes and the terminal_ shows
+  the terminal_ shows
 
   .. code-block:: python
 
-    =================== 3 passed in O.PQs ====================
+    =================== 2 passed in R.STs ====================
 
-* I remove the comment since it is the same as the name of the :ref:`function<what is a function?>`
+  I have three :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes two.
+
+* I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 53
+    :lineno-start: 50
+    :emphasize-lines: 4-5
+
+    assert {} is not False
+
+
+    # def assertion_error_w_true():
+    def test_assertion_error_w_true():
+        # test AssertionError with True
+        assert None is not True
+
+        assert False is not True
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    =================== 3 passed in U.VWs ====================
+
+  because pytest_ only runs the :ref:`function<what is a function?>` if the name starts with ``test_``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 50
+
+    assert {} is not False
+
 
     def test_assertion_error_w_true():
         assert None is not True
@@ -3876,7 +3970,7 @@ test_assertion_error_w_false
     assert {} is not None
 
 
-    def test_assertion_error_w_false():
+    def assertion_error_w_false():
     # test AssertionError with False
     assert None is not False
 
@@ -3892,10 +3986,13 @@ test_assertion_error_w_false
 * I indent the :ref:`assertions<what is an assertion?>` with 4 spaces to make them the body of the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 28
     :emphasize-lines: 2-3, 5, 7, 9, 11, 13, 15, 17, 19, 21
 
-    def test_assertion_error_w_false():
+    assert {} is not None
+
+
+    def assertion_error_w_false():
         # test AssertionError with False
         assert None is not False
 
@@ -3920,16 +4017,46 @@ test_assertion_error_w_false
 
     def test_assertion_error_w_true():
 
-  the test passes and the terminal_ shows
+
+  the terminal_ shows
 
   .. code-block:: python
 
-    =================== 4 passed in R.STs ====================
+    =================== 3 passed in X.YZs ====================
 
-* I remove the comment since it is the same as the name of the :ref:`function<what is a function?>`
+  I have four :ref:`functions<what is a function?>` with :ref:`assertions<what is an assertion?>` and it only recognizes three.
+
+* I add ``test_`` to the name of the :ref:`function<what is a function?>`
 
   .. code-block:: python
-    :lineno-start: 31
+    :lineno-start: 28
+    :emphasize-lines: 4-5
+
+    assert {} is not None
+
+
+    # def assertion_error_w_false():
+    def test_assertion_error_w_false():
+        # test AssertionError with False
+        assert None is not False
+
+        assert False is False
+
+  the terminal_ shows
+
+  .. code-block:: python
+
+    =================== 4 passed in A.BCs ====================
+
+  because pytest_ only runs the :ref:`function<what is a function?>` if the name starts with ``test_``
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 28
+
+    assert {} is not None
+
 
     def test_assertion_error_w_false():
         assert None is not False
@@ -4034,6 +4161,79 @@ test_assertion_error_w_none
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
+
+=================================================================================
+test_assert_keyword
+=================================================================================
+
+----
+
+* I add a :ref:`function<what is a function?>` for ``# test assert keyword``
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    def test_assert_keyword():
+    # test assert keyword
+    assert 1 + 1 == 2
+
+  the terminal_ is my friend, and shows IndentationError_
+
+  .. code-block:: python
+
+    IndentationError: expected an indented block
+                      after function definition on line 1
+
+  because in Python_ the body of a :ref:`function<what is a function?>` is indented under the name.
+
+* I indent the :ref:`assertions<what is an assertion?>` with 4 spaces to make them the body of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3, 5, 7
+
+    def test_assert_keyword():
+        # test assert keyword
+        assert 1 + 1 == 2
+
+        assert '1' + '1' == '11'
+
+        assert 'I am' + ' alive' == 'I am alive'
+
+
+    def test_assertion_error_w_none():
+
+  the test passes and the terminal_ shows
+
+  .. code-block:: python
+
+    =================== 6 passed in U.VWs ====================
+
+* I remove the comment since it is the same as the name of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :linenos:
+
+    def test_assert_keyword():
+        assert 1 + 1 == 2
+
+        assert '1' + '1' == '11'
+
+        assert 'I am' + ' alive' == 'I am alive'
+
+
+    def test_assertion_error_w_none():
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_assertion_error_w_none'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
 
 ----
 
