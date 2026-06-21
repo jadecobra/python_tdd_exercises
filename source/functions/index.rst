@@ -354,7 +354,8 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 
   .. code-block:: python
 
-    NameError: name 'w_pass' is not defined
+    >       w_pass
+    E       NameError: name 'w_pass' is not defined
 
   because Python_ does not know what I mean by ``w_pass`` since I do not have a definition for it in ``test_functions.py``
 
@@ -377,31 +378,30 @@ The simplest :ref:`function<what is a function?>` I can make is with the pass_ k
 
 ----
 
-* I add the name to the file_
+I add the name to the file_
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 1
 
-    w_pass
-
-
-    def test_making_a_function_w_pass():
-        w_pass
+  w_pass
 
 
-    # Exceptions seen
-    # AssertionError
-    # NameError
+  def test_making_a_function_w_pass():
+      w_pass
 
-  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
+  # Exceptions seen
+  # AssertionError
+  # NameError
 
-    >       w_pass
-    E       NameError: name 'w_pass' is not defined
+the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  because Python_ does not know what I mean by ``w_pass`` it is still just a name in the file_.
+.. code-block:: python
+
+  NameError: name 'w_pass' is not defined
+
+because Python_ does not know what I mean by ``w_pass`` ,it is still just a name in the file_.
 
 ----
 
@@ -467,13 +467,13 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`, using substitution I imagine the series of steps that happen as
+  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
 
   .. code-block:: python
 
-    w_pass = None # point the name to None
+    w_pass = None # point the name to the object
     w_pass()      # call the name
-    None()        # substitute the name for the value
+    None()        # substitute the value for the name
 
   which raises :ref:`TypeError<what causes TypeError?>`.
 
@@ -692,7 +692,7 @@ I can also make a function with a `return statement`_.
     >       w_return
     E       NameError: name 'w_return' is not defined
 
-  because ``functions.py`` in the ``src`` folder_ does not have anything with the name ``w_return`` in it
+  because Python_ does not know what I mean by ``w_return`` since I do not have a definition for it in ``test_functions.py``
 
 ----
 
@@ -702,20 +702,54 @@ I can also make a function with a `return statement`_.
 
 ----
 
-I add the new :ref:`function<what is a function?>` with the pass_ keyword to ``functions.py``
+* I add the name to the file_
 
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5
 
-  def w_pass():
-      pass
+    def test_making_a_function_w_pass():
+        assert w_pass() is None
 
 
-  def w_return():
-      pass
+    w_return
 
-the test passes.
+
+    def test_making_a_function_w_return():
+        w_return
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'w_return' is not defined
+
+  because Python_ does not know what I mean by ``w_return``, it is still just a name in the file_.
+
+* I change ``w_return`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_pass():
+        assert w_pass() is None
+
+
+    # w_return
+    w_return = None
+
+
+    def test_making_a_function_w_return():
+        w_return
+
+
+    # Exceptions seen
+
+  the test passes.
 
 ----
 
@@ -724,6 +758,60 @@ the test passes.
 =================================================================================
 
 ----
+
+* I add parentheses to call ``w_return`` from inside :ref:`test_making_a_function_w_return`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 6-7
+
+    # w_return
+    w_return = None
+
+
+    def test_making_a_function_w_return():
+        # w_return
+        w_return()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
+
+  .. code-block:: python
+
+    w_return = None # point the name to the object
+    w_return()      # call the name
+    None()          # substitute the value for the name
+
+  which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I change ``w_return`` to the simplest :ref:`function<what is a function?>` I can make with the def_ and pass_ keywords
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 8-9
+
+    # w_return
+    # w_return = None
+    def w_return():
+        pass
+
+
+    def test_making_a_function_w_return():
+        # w_return
+        w_return()
+
+
+    # Exceptions seen
+
+  the test passes
 
 * I change pass_ to a `return statement`_
 
