@@ -478,7 +478,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
     AssertionError: None != [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-* I change the `return statement`_ to match
+* I change the :ref:`return statement<the return statement>` to match
 
   .. code-block:: python
     :linenos:
@@ -575,7 +575,7 @@ A `for loop`_ is a way to repeat the same command over an :ref:`iterable<what is
 
   the test passes.
 
-* I remove the second `return statement`_
+* I remove the second :ref:`return statement<the return statement>`
 
 :ref:`I know how to make a list with a for loop<test_making_a_list_w_a_for_loop>`
 
@@ -1429,7 +1429,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test is still green.
 
-* I remove the second `return statement`_ and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in ``get_odd_numbers``
+* I remove the second :ref:`return statement<the return statement>` and use :ref:`logical negation (NOT)<test_logical_negation>` with the new :ref:`function<what is a function?>` in ``get_odd_numbers``
 
   .. code-block:: python
     :lineno-start: 16
@@ -1445,7 +1445,7 @@ the test passes. This is a case where a `list comprehension`_ or a `for loop`_ i
 
   the test is still green.
 
-* I remove the second `return statement`_
+* I remove the second :ref:`return statement<the return statement>`
 
 * There is a `Python Built-in Function`_ I can use to do the same thing as this `list comprehension`_, it is called filter_, which is a way to say "make a list based on a condition" or "give me only the things that meet this condition". I try it in the ``get_even_numbers`` :ref:`function<what is a function?>`
 

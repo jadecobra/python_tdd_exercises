@@ -140,7 +140,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 :green:`GREEN`: make it pass
 *********************************************************************************
 
-* I make a copy of ``difference_hours`` in ``duration``, change the name, then add it to the `return statement`_
+* I make a copy of ``difference_hours`` in ``duration``, change the name, then add it to the :ref:`return statement<the return statement>`
 
   .. code-block:: python
 
@@ -226,7 +226,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 :green:`GREEN`: make it pass
 ---------------------------------------------------------------------------------
 
-* I add a `return statement`_ to the ``duration`` :ref:`function<what is a function?>` where I multiply ``difference_hours`` by ``60`` then add it to ``difference_minutes`` to get the total difference in minutes
+* I add a :ref:`return statement<the return statement>` to the ``duration`` :ref:`function<what is a function?>` where I multiply ``difference_hours`` by ``60`` then add it to ``difference_minutes`` to get the total difference in minutes
 
   .. code-block:: python
 
@@ -383,7 +383,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     # @unittest.skip
     def test_duration_calculation(self):
 
-* and change the first `return statement`_ in the ``duration`` :ref:`function<what is a function?>` to a :ref:`variable<what is a variable?>` for the total difference in minutes
+* and change the first :ref:`return statement<the return statement>` in the ``duration`` :ref:`function<what is a function?>` to a :ref:`variable<what is a variable?>` for the total difference in minutes
 
   .. code-block:: python
 
@@ -414,7 +414,7 @@ The ``%`` operator returns the remainder when a number is divided by another, it
     duration_hours = difference // 60
     duration_minutes = difference % 60
 
-  then change ``difference_hours`` and ``difference_minutes`` in the `return statement`_
+  then change ``difference_hours`` and ``difference_minutes`` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
 

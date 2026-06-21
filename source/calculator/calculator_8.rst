@@ -1326,7 +1326,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     AssertionError: None != TUV.WXYZABCDEFGHIJ
 
-* I change the `return statement`_
+* I change the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :linenos:
@@ -1460,7 +1460,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     NameError: name 'x' is not defined
 
-* I change the names in the `return statement`_
+* I change the names in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -1557,7 +1557,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     AssertionError: None != 'brmph?! Numbers only. Try again...'
 
-* I change the `return statement`_ of the :ref:`if statement<if statements>`
+* I change the :ref:`return statement<the return statement>` of the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :linenos:
@@ -1593,7 +1593,7 @@ I want to write the solution that will make all the tests in ``test_calculator.p
 
     AssertionError: None != 'brmph?! Numbers only. Try again...'
 
-* I change the `return statement`_ of the :ref:`if statement<if statements>`
+* I change the :ref:`return statement<the return statement>` of the :ref:`if statement<if statements>`
 
   .. code-block:: python
     :lineno-start: 11

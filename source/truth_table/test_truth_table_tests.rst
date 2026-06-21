@@ -168,7 +168,7 @@ continue the project
 
   the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I change :ref:`None<what is None?>` in the `return statement`_ to give the test what it wants
+* I change :ref:`None<what is None?>` in the :ref:`return statement<the return statement>` to give the test what it wants
 
   .. code-block:: python
     :linenos:
@@ -188,7 +188,7 @@ continue the project
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the `return statement`_
+* I change the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :linenos:
@@ -207,7 +207,7 @@ continue the project
 
     AssertionError: False is not true
 
-* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects, remember :ref:`the identity_function?<test_identity_function>`
+* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects, remember :ref:`the identity_function?<test_identity_function>`
 
   .. code-block:: python
     :linenos:
@@ -234,7 +234,7 @@ continue the project
     * :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
     * :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
-* I use :ref:`not<test_logical_negation>` in the `return statement`_
+* I use :ref:`not<test_logical_negation>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :linenos:
@@ -298,7 +298,7 @@ continue the project
 
     AssertionError: None is not true
 
-* I change the `return statement`_ for :ref:`logical_identity<test_logical_identity>` to give the test what it wants
+* I change the :ref:`return statement<the return statement>` for :ref:`logical_identity<test_logical_identity>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 11
@@ -317,7 +317,7 @@ continue the project
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the `return statement`_
+* I change the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 11
@@ -341,7 +341,7 @@ continue the project
   - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
   - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
-* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 11
@@ -384,7 +384,7 @@ continue the project
 
     AssertionError: None is not true
 
-* I change the `return statement`_ for :ref:`logical_true<test_logical_true>` to give the test what it wants
+* I change the :ref:`return statement<the return statement>` for :ref:`logical_true<test_logical_true>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 19
@@ -459,7 +459,7 @@ continue the project
 
     AssertionError: None is not true
 
-* I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the `return statement`_
+* I change :ref:`None<what is None?>` to :ref:`True<test_what_is_true>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 28
@@ -515,7 +515,7 @@ continue the project
 
     AssertionError: None is not true
 
-* I change the `return statement`_ to give the test what it wants
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 34
@@ -534,7 +534,7 @@ continue the project
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the `return statement`_
+* I change the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -558,7 +558,7 @@ continue the project
   - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
   - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
-* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 34
@@ -579,7 +579,7 @@ continue the project
 
   ``second`` is :red:`False` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
 
-* I remove ``first`` from the `return statement`_  since ``second`` is :ref:`False<test_what_is_false>`
+* I remove ``first`` from the :ref:`return statement<the return statement>`  since ``second`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 34
@@ -643,7 +643,7 @@ continue the project
 
     AssertionError: None is not true
 
-* I change the `return statement`_ to give the test what it wants
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 43
@@ -662,7 +662,7 @@ continue the project
 
   the :ref:`assertion<what is an assertion?>` expects :red:`False` and the :ref:`function<what is a function?>` returns :green:`True`.
 
-* I change the `return statement`_
+* I change the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -686,7 +686,7 @@ continue the project
   - :green:`True` when the :ref:`assertion<what is an assertion?>` expected :red:`False`
   - :ref:`None<what is None?>` when the :ref:`assertion<what is an assertion?>` expected :green:`True`
 
-* I change the `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I change the :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 43
@@ -707,7 +707,7 @@ continue the project
 
   ``second`` is :red:`True` and is equal to the expectation of the :ref:`assertion<what is an assertion?>`.
 
-* I remove ``second`` from the `return statement`_ since ``first`` is :ref:`False<test_what_is_false>`
+* I remove ``second`` from the :ref:`return statement<the return statement>` since ``first`` is :ref:`False<test_what_is_false>`
 
   .. code-block:: python
     :lineno-start: 43
@@ -728,7 +728,7 @@ continue the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'negate_second'
 
-* I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function<what is a function?>` for :ref:`negate_second<test_negate_second>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 43
@@ -786,7 +786,7 @@ continue the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'negate_first'
 
-* I add a :ref:`function<what is a function?>` for it with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function<what is a function?>` for it with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 52
@@ -841,7 +841,7 @@ continue the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'material_non_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function<what is a function?>` for :ref:`material_non_implication<test_material_non_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 58
@@ -914,7 +914,7 @@ continue the project
     AttributeError: module 'src.truth_table'
                     has no attribute 'material_implication'
 
-* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` with a `return statement`_ to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
+* I add a :ref:`function<what is a function?>` for :ref:`material_implication<test_material_implication>` with a :ref:`return statement<the return statement>` to see the difference between the input and what the :ref:`assertion<what is an assertion?>` expects
 
   .. code-block:: python
     :lineno-start: 64
@@ -1501,7 +1501,7 @@ All the tests are passing and the world is a better place than when I started! I
 
 Wait, there is more... Since all the tests are passing, I can play with the :ref:`functions<what is a function?>` I have to make them simpler and understand why my solutions work.
 
-* :ref:`contradiction<test_contradiction>`  returns :red:`False` in 4 cases, with 2 inputs there are only 4 cases. I add a `return statement`_
+* :ref:`contradiction<test_contradiction>`  returns :red:`False` in 4 cases, with 2 inputs there are only 4 cases. I add a :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 124
@@ -1572,7 +1572,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I add a `return statement`_ because ``if something: return False`` can be written as ``return not (something)``
+* I add a :ref:`return statement<the return statement>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 119
@@ -1719,7 +1719,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I add a `return statement`_ because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
+* I add a :ref:`return statement<the return statement>` because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
 
   .. code-block:: python
     :lineno-start: 112
@@ -1893,7 +1893,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I add a `return statement`_ because ``if something: return False`` can be written as ``return not (something)``
+* I add a :ref:`return statement<the return statement>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 106
@@ -2058,7 +2058,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I add a `return statement`_ because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
+* I add a :ref:`return statement<the return statement>` because ``if something: return True`` can be written as ``return something`` since ``something`` is grouped as :green:`True`
 
   .. code-block:: python
     :lineno-start: 99
@@ -2186,7 +2186,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is green again.
 
-* I add a `return statement`_ for the :ref:`opposite<test_logical_negation>` of the :ref:`if statement<if statements>` because ``if something: return False`` can be written as ``return not (something)``
+* I add a :ref:`return statement<the return statement>` for the :ref:`opposite<test_logical_negation>` of the :ref:`if statement<if statements>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 94
@@ -2331,7 +2331,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I add a `return statement`_ because ...
+* I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
     :lineno-start: 88
@@ -2586,7 +2586,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   still green.
 
-* I add a `return statement`_ because ...
+* I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
     :lineno-start: 83
@@ -2675,7 +2675,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   green.
 
-* I add a `return statement`_
+* I add a :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 76
@@ -2759,7 +2759,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 ----
 
-* I add `return statement`_ for the :ref:`if statement<if statements>` of :ref:`material_implication<test_material_implication>` because ``if something: return False`` can be written as ``return not (something)``
+* I add :ref:`return statement<the return statement>` for the :ref:`if statement<if statements>` of :ref:`material_implication<test_material_implication>` because ``if something: return False`` can be written as ``return not (something)``
 
   .. code-block:: python
     :lineno-start: 71
@@ -2772,7 +2772,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I break up the `return statement`_ to make it simpler
+* I break up the :ref:`return statement<the return statement>` to make it simpler
 
   .. code-block:: python
     :lineno-start: 71
@@ -2889,7 +2889,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
 ----
 
-* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a `return statement`_ for the  case that returns :green:`True`
+* :ref:`material_non_implication<test_material_non_implication>` has 3 cases that return :ref:`False<test_what_is_false>`. I add a :ref:`return statement<the return statement>` for the  case that returns :green:`True`
 
   .. code-block:: python
     :lineno-start: 64
@@ -2904,7 +2904,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I make the `return statement`_ simpler
+* I make the :ref:`return statement<the return statement>` simpler
 
   .. code-block:: python
     :lineno-start: 64
@@ -2986,7 +2986,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I add a `return statement`_ because ...
+* I add a :ref:`return statement<the return statement>` because ...
 
   .. code-block:: python
     :lineno-start: 58
@@ -3055,7 +3055,7 @@ Wait, there is more... Since all the tests are passing, I can play with the :ref
 
   the test is still green.
 
-* I add a `return statement`_ because ``if something == False:`` can be written as ``return not something``
+* I add a :ref:`return statement<the return statement>` because ``if something == False:`` can be written as ``return not something``
 
   .. code-block:: python
     :lineno-start: 52

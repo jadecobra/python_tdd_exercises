@@ -458,7 +458,7 @@ test_addition
 
   the ``add`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`, the :ref:`assertion<what is an assertion?>` expects ``1``
 
-* I make the `return statement`_ give the test what it wants
+* I make the :ref:`return statement<the return statement>` give the test what it wants
 
   .. code-block:: python
     :linenos:
@@ -498,7 +498,7 @@ The ``add`` :ref:`function<what is a function?>` passes the test, and does not d
 
   the :ref:`function<what is a function?>` returns ``1``, the :ref:`assertion<what is an assertion?>` expects ``2``
 
-* I change the `return statement`_ in ``calculator.py``
+* I change the :ref:`return statement<the return statement>` in ``calculator.py``
 
   .. code-block:: python
     :linenos:
@@ -2094,7 +2094,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     AssertionError: None != XYZ.ABCDEFGHIJKLMN
 
-* I change the `return statement`_ to see the difference between the inputs and expected output, remember the :ref:`identity function?<test_identity_function>`
+* I change the :ref:`return statement<the return statement>` to see the difference between the inputs and expected output, remember the :ref:`identity function?<test_identity_function>`
 
   .. code-block:: python
     :linenos:
@@ -2111,7 +2111,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
   the name of the :ref:`function<what is a function?>` is ``subtract`` and the :ref:`assertion<what is an assertion?>` expects the difference between the two inputs
 
-* I make the `return statement`_ match the expectation
+* I make the :ref:`return statement<the return statement>` match the expectation
 
   .. code-block:: python
     :linenos:
@@ -2162,7 +2162,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     AssertionError: None != XY.ZABCDEFGHIJKLM
 
-* I change the `return statement`_ to see the difference between the inputs and the expected output, this is the :ref:`identity function<test_identity_function>` again
+* I change the :ref:`return statement<the return statement>` to see the difference between the inputs and the expected output, this is the :ref:`identity function<test_identity_function>` again
 
   .. code-block:: python
     :lineno-start: 5
@@ -2213,7 +2213,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
     AssertionError: (-XYZ.ABCDEFGHIJKLMNO, YZA.BCDEFGHIJKLMNOPQ) != -ZAB.CDEFGHIJKLMNOPQR
 
-* I change the `return statement`_ to give the test what it wants
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 9
@@ -2230,7 +2230,7 @@ What other :ref:`Exceptions<errors>` do you think are raised as I go along?
 
 ----
 
-* the `return statement`_ of the last 3 :ref:`functions<what is a function?>` matched their names, I do the same thing for the new one
+* the :ref:`return statement<the return statement>` of the last 3 :ref:`functions<what is a function?>` matched their names, I do the same thing for the new one
 
   .. code-block:: python
     :linenos:

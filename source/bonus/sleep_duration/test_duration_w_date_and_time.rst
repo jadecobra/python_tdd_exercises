@@ -25,7 +25,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
 :red:`RED`: make it fail
 *********************************************************************************
 
-* I make a copy of ``random_timestamp``, change the name of the copy, then add a date to the `return statement`_
+* I make a copy of ``random_timestamp``, change the name of the copy, then add a date to the :ref:`return statement<the return statement>`
 
   .. code-block:: python
 
@@ -202,7 +202,7 @@ I want to test the ``duration`` :ref:`function<what is a function?>` with timest
     AssertionError: None != ('1999/12/31 13:10', '1999/12/31 12:00')
     AssertionError: None != ('1999/12/31 16:41', '1999/12/31 12:35')
 
-* I change the `return statement`_ in ``duration_a``
+* I change the :ref:`return statement<the return statement>` in ``duration_a``
 
   .. code-block:: python
 
@@ -445,7 +445,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
     AssertionError: Tuples differ: ('1999/12/31 20:50', '1999/12/31 14:22') != (datetime.datetime(1999, 12, 31, 20, 50), [35 chars] 22))
     AssertionError: Tuples differ: ('1999/12/31 16:40', '1999/12/31 13:39') != (datetime.datetime(1999, 12, 31, 16, 40), [35 chars] 39))
 
-  ``duration_a`` returns the timestamps as strings_ and the :ref:`assertion<what is an assertion?>` expects them as `datetime.datetime`_ objects. I change the `return statement`_ to match
+  ``duration_a`` returns the timestamps as strings_ and the :ref:`assertion<what is an assertion?>` expects them as `datetime.datetime`_ objects. I change the :ref:`return statement<the return statement>` to match
 
   .. code-block:: python
 
@@ -497,7 +497,7 @@ there are more details in `strftime() and strptime() behavior <https://docs.pyth
     def duration_a(wake_time=None, sleep_time=None):
     ...
 
-  and call it in the `return statement`_ of ``duration_a``
+  and call it in the :ref:`return statement<the return statement>` of ``duration_a``
 
   .. code-block:: python
 
@@ -732,7 +732,7 @@ and the test is still green.
     AssertionError: datetime.timedelta(seconds=31020) != '8:37:00'
     AssertionError: datetime.timedelta(seconds=49920) != '13:52:00'
 
-  when I make the same change to the `return statement`_ in ``duration_a``
+  when I make the same change to the :ref:`return statement<the return statement>` in ``duration_a``
 
   .. code-block:: python
 

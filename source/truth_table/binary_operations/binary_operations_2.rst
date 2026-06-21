@@ -1136,7 +1136,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
   :red:`False`    :red:`False`    :red:`False`    :green:`True`
   ==============  =============== =============== ================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 55
@@ -1175,7 +1175,7 @@ the test passes. :ref:`logical_nand<test_logical_nand>` returns :red:`False`, if
         )
         return not (first_input and second_input)
 
-  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use any of these two `return statements`_, the first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2166,7 +2166,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
   :red:`False`    :red:`False`    :green:`True`    :green:`True`    :green:`True`                   :red:`False`
   ==============  =============== ===============  ================ ==============================  ===================================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 54
@@ -2226,7 +2226,7 @@ the test passes. :ref:`logical_disjunction<test_logical_disjunction>` returns :g
         )
         return first_input or second_input
 
-  I can use any of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use any of these two `return statements`_, the first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in the other terminal_
 

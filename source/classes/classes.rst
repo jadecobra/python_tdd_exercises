@@ -504,7 +504,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
     AssertionError: None != 'Hi, my name is joe blow and I am 30'
 
-* I copy the value from the terminal_ and paste it in the `return statement`_ for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
+* I copy the value from the terminal_ and paste it in the :ref:`return statement<the return statement>` for the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` in ``person.py``
 
   .. code-block:: python
     :lineno-start: 40
@@ -665,7 +665,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   Progress. I can make the ``say_hello`` :ref:`function<what is a function?>` use :ref:`attributes<what is a class attribute?>` of the person it receives as input to make the message.
 
-* I change the string_ in the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is a class attribute?>` of the person it receives, in ``person.py``
+* I change the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>` of the ``Person`` :ref:`class<what is a class?>` to an :ref:`f-string<what is string interpolation?>` with the ``first_name`` :ref:`attribute<what is a class attribute?>` of the person it receives, in ``person.py``
 
   .. code-block:: python
     :lineno-start: 44
@@ -777,7 +777,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
 ----
 
-* I add the ``last_name`` :ref:`attribute<what is a class attribute?>` to the string_ in the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>`
+* I add the ``last_name`` :ref:`attribute<what is a class attribute?>` to the string_ in the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 48
@@ -942,7 +942,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
 ----
 
-* I add a calculation for the age with the ``year_of_birth`` :ref:`attribute<what is a class attribute?>` to the `return statement`_ of the ``say_hello`` :ref:`method<what is a function?>`
+* I add a calculation for the age with the ``year_of_birth`` :ref:`attribute<what is a class attribute?>` to the :ref:`return statement<the return statement>` of the ``say_hello`` :ref:`method<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 52
@@ -1069,7 +1069,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
 
   the test is still green.
 
-* ``datetime.datetime.today().year`` gets used to calculate the age in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` and the `return statement`_ of the :ref:`factory function<test_factory_w_keyword_arguments>`. I make a helper :ref:`function<what is a function?>` to calculate the age, the same way I do in the tests
+* ``datetime.datetime.today().year`` gets used to calculate the age in the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Person`` :ref:`class<what is a class?>` and the :ref:`return statement<the return statement>` of the :ref:`factory function<test_factory_w_keyword_arguments>`. I make a helper :ref:`function<what is a function?>` to calculate the age, the same way I do in the tests
 
   .. code-block:: python
     :linenos:

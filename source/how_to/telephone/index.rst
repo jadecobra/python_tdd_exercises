@@ -500,7 +500,7 @@ because there is no definition for ``src`` in ``test_telephone.py``
 
     because the :ref:`assertion<what is an assertion?>` expects ``'I got: hello'`` and the ``text`` :ref:`function<what is a function?>` returns :ref:`None<what is None?>`.
 
-* I copy the string_ from the terminal_ and paste it in the `return statement`_ to replace :ref:`None<what is None?>`
+* I copy the string_ from the terminal_ and paste it in the :ref:`return statement<the return statement>` to replace :ref:`None<what is None?>`
 
   .. code-block:: python
     :linenos:
@@ -551,7 +551,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
   because the ``text`` :ref:`function<what is a function?>` always returns ``'I got: hello'`` and this :ref:`assertion<what is an assertion?>` expects ``'I got: yes'``
 
-* I change the `return statement`_ in ``telephone.py`` to match
+* I change the :ref:`return statement<the return statement>` in ``telephone.py`` to match
 
   .. code-block:: python
     :linenos:
@@ -571,7 +571,7 @@ The problem with this solution is that the ``text`` :ref:`function<what is a fun
 
     AssertionError: 'I got: yes' != 'I got: hello'
 
-  it did not work, my change broke the :ref:`assertion<what is an assertion?>` that was passing before. The `return statement`_ has to use the input it gets as part of the output.
+  it did not work, my change broke the :ref:`assertion<what is an assertion?>` that was passing before. The :ref:`return statement<the return statement>` has to use the input it gets as part of the output.
 
 ----
 
@@ -2408,7 +2408,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     AssertionError: None != 'I got: None'
 
-* I copy the string_ from the terminal_ and paste it in the `return statement`_ to match the expectation of the test
+* I copy the string_ from the terminal_ and paste it in the :ref:`return statement<the return statement>` to match the expectation of the test
 
   .. code-block:: python
     :linenos:
@@ -2427,7 +2427,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     AssertionError: 'I got: None' != 'I got: False'
 
-* I add a `return statement`_ to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
+* I add a :ref:`return statement<the return statement>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
   .. code-block:: python
     :linenos:
@@ -2468,7 +2468,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   they all expect the input (``value``) as part of the message
 
-* I add a `return statement`_ with an `f-string`_
+* I add a :ref:`return statement<the return statement>` with an `f-string`_
 
   .. code-block:: python
     :linenos:

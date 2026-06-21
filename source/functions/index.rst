@@ -815,6 +815,14 @@ I can also make a function with a `return statement`_.
 
   the test passes.
 
+----
+
+*********************************************************************************
+the return statement
+*********************************************************************************
+
+The `return statement`_ shows what a :ref:`function<what is a function?>` returns when it is called.
+
 * I change pass_ to a `return statement`_ with the return_ keyword
 
   .. code-block:: python

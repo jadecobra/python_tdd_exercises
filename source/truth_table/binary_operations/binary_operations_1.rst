@@ -292,7 +292,7 @@ first input     second input   return
 
 ----
 
-* I change the `return statement`_ to make it clearer
+* I change the :ref:`return statement<the return statement>` to make it clearer
 
   .. code-block:: python
     :lineno-start: 17
@@ -740,7 +740,7 @@ the test passes. :ref:`logical_conjunction<test_logical_conjunction>` returns :g
   - :green:`True`, if the first input is :green:`True` and the second input is :green:`True`
   - the second input in these 2 cases
 
-* I change the `return statement`_ of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` of the :ref:`logical_conjunction function<test_logical_conjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 21
@@ -898,7 +898,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
   - :green:`True` when the :ref:`conditions<if statements>` are met
   - :ref:`None<what is None?>` when the :ref:`conditions<if statements>` are NOT met, because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
 
-* I add a `return statement`_ to make it clearer
+* I add a :ref:`return statement<the return statement>` to make it clearer
 
   .. code-block:: python
     :lineno-start: 21
@@ -917,7 +917,7 @@ An `if statement`_ is a way for a program_ to choose what to do based on somethi
 
   still green, because :ref:`None is grouped as False<test_is_none_falsy_or_truthy>`.
 
-* I change :ref:`None<what is None?>` to :red:`False` in the `return statement`_, to make it clearer
+* I change :ref:`None<what is None?>` to :red:`False` in the :ref:`return statement<the return statement>`, to make it clearer
 
   .. code-block:: python
     :lineno-start: 21
@@ -2261,7 +2261,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
 
   green.
 
-* I remove ``True if`` and ``else False`` to make the simpler `return statement`_
+* I remove ``True if`` and ``else False`` to make the simpler :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 29
@@ -2362,7 +2362,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
   :red:`False`    :green:`True`   :red:`False`    :red:`False`
   ==============  =============== =============== ================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 29
@@ -2407,7 +2407,7 @@ the test passes. :ref:`converse_non_implication<test_converse_non_implication>` 
         )
         return not first_input and second_input
 
-  I can use either of these two `return statements`_, the first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these two `return statements`_, the first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a :ref:`variable<what is a variable?>` for ``src.truth_table.converse_non_implication``
 

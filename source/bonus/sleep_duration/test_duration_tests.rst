@@ -123,7 +123,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
     # TypeError
     # AssertionError
 
-* I copy the value from the terminal_ to change :ref:`None<what is None?>` in the `return statement`_
+* I copy the value from the terminal_ to change :ref:`None<what is None?>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
 
@@ -154,7 +154,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   the expected values of the test changed
 
-* I change the `return statement`_ to see the difference between the input and expected output
+* I change the :ref:`return statement<the return statement>` to see the difference between the input and expected output
 
   .. code-block:: python
 
@@ -261,7 +261,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   it looks like the ``duration`` :ref:`function<what is a function?>` has to make a decision based on its inputs
 
-* I change the `return statement`_ to raise ValueError_ with the inputs or return the inputs to see the difference between them and the expected output
+* I change the :ref:`return statement<the return statement>` to raise ValueError_ with the inputs or return the inputs to see the difference between them and the expected output
 
   .. code-block:: python
 
@@ -357,7 +357,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
         #    'sleep_time: "8720/08/18 01:02"'
         # )
 
-  the terminal_ is my friend, and shows the :ref:`AssertionError<what causes AssertionError?>` I got before. I keep switching between the `return statement`_ and ``raise ValueError`` until I get the :ref:`AssertionError<what causes AssertionError?>` that the ValueError_ messages do not match
+  the terminal_ is my friend, and shows the :ref:`AssertionError<what causes AssertionError?>` I got before. I keep switching between the :ref:`return statement<the return statement>` and ``raise ValueError`` until I get the :ref:`AssertionError<what causes AssertionError?>` that the ValueError_ messages do not match
 
 * I :ref:`interpolate<what is string interpolation?>` ``wake_time`` and ``sleep_time`` in the message
 
@@ -438,7 +438,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   I still cannot subtract one string from another
 
-* I change the `return statement`_ back, then add calls to ``get_datetime`` because I can do arithmetic_ with `datetime.datetime`_ objects
+* I change the :ref:`return statement<the return statement>` back, then add calls to ``get_datetime`` because I can do arithmetic_ with `datetime.datetime`_ objects
 
   .. code-block:: python
 
@@ -494,7 +494,7 @@ I want to write a program_ that makes the tests in ``test_sleep_duration.py`` pa
 
   the ``duration`` :ref:`function<what is a function?>` returns negative timestamps and the :ref:`assertion<what is an assertion?>` expects positive timestamps, and the negative days all look like they are one number less than the expectation
 
-* I switch ``wake_time`` and ``sleep_time`` in the `return statement`_
+* I switch ``wake_time`` and ``sleep_time`` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
 

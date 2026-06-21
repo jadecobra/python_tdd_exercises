@@ -143,7 +143,7 @@ test_logical_true
 
   because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the `return statement`_
+* I change :ref:`None<what is None?>` to :ref:`True <test_what_is_true>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :linenos:
@@ -252,7 +252,7 @@ test_logical_false
 
   because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the `return statement`_
+* I change :ref:`True <test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 5
@@ -417,7 +417,7 @@ test_logical_identity
 
   because the :ref:`function<what is a function?>` returns :red:`False` and the :ref:`assertion<what is an assertion?>` expects :green:`True`
 
-* I change the `return statement`_ to give the test what it wants
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 9
@@ -469,7 +469,7 @@ test_logical_identity
 
   because the :ref:`function<what is a function?>` returns :green:`True` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I change the `return statement`_ of :ref:`logical_identity<test_logical_identity>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` of :ref:`logical_identity<test_logical_identity>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 9
@@ -488,7 +488,7 @@ test_logical_identity
 
   because the :ref:`assertion<what is an assertion?>` that was passing before, expects :green:`True` and the :ref:`function<what is a function?>` now returns :red:`False`.
 
-* I change the `return statement`_ of the :ref:`function<what is a function?>`
+* I change the :ref:`return statement<the return statement>` of the :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 9
@@ -618,7 +618,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
   because the :ref:`function<what is a function?>` returned :ref:`True<test_what_is_true>` and the :ref:`assertion<what is an assertion?>` expects :red:`False`.
 
-* I change the `return statement`_ to give the test what it wants
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
 
   .. code-block:: python
     :lineno-start: 13
@@ -669,7 +669,7 @@ there is no definition for :ref:`logical_negation<test_logical_negation>` in ``t
 
   because the :ref:`function<what is a function?>` returns :red:`False` and the new :ref:`assertion<what is an assertion?>` expects :green:`True`.
 
-* I change the `return statement`_ of the :ref:`logical_negation function<test_logical_negation>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` of the :ref:`logical_negation function<test_logical_negation>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 13
@@ -719,7 +719,7 @@ how to return the opposite of a boolean
 
 ----
 
-* I can use the not_ keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the `return statement`_
+* I can use the not_ keyword to return the opposite of the :ref:`boolean<what are booleans?>` after it. I add it to the :ref:`return statement<the return statement>`
 
   .. code-block:: python
     :lineno-start: 13

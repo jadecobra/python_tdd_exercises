@@ -981,7 +981,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
   :red:`False`    :red:`False`    :green:`True`   :green:`True`     :red:`False`      :red:`False`      :red:`False`
   ==============  =============== =============== ================  ================  ================= ========================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 109
@@ -1194,7 +1194,7 @@ the test passes. :ref:`exclusive_disjunction<test_exclusive_disjunction>` return
             (first_input and not second_input)
         )
 
-  I can use any of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use any of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 
@@ -1770,7 +1770,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
   :red:`False`    :red:`False`    :green:`True`   :red:`False`
   ==============  =============== =============== =======================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 83
@@ -1813,7 +1813,7 @@ the test passes. :ref:`material_non_implication<test_material_non_implication>` 
         )
         return first_input and not second_input
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 
@@ -1920,7 +1920,7 @@ because
 * :ref:`converse_non_implication<test_converse_non_implication>` returns ``not first_input and second_input``
 * :ref:`material_non_implication<test_material_non_implication>` returns ``first_input and not second_input``
 
-* I change the `return statement`_ in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
+* I change the :ref:`return statement<the return statement>` in the :ref:`exclusive_disjunction function<test_exclusive_disjunction>` in ``truth_table.py``
 
   .. code-block:: python
     :lineno-start: 64
@@ -3002,7 +3002,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
   :red:`False`    :red:`False`    :green:`True`   :green:`True`
   ==============  =============== =============== =====================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 94
@@ -3055,7 +3055,7 @@ the test passes. :ref:`converse_implication<test_converse_implication>` returns 
         )
         return first_input or not second_input
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 

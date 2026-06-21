@@ -1418,7 +1418,7 @@ the terminal_ is my friend, and shows AttributeError_
     E    ^^^^^^^^^^^
     E  SyntaxError: 'return' outside function
 
-  because I cannot use a `return statement`_ outside a :ref:`function<what is a function?>`.
+  because I cannot use a :ref:`return statement<the return statement>` outside a :ref:`function<what is a function?>`.
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_attribute_error.py``
 
@@ -1434,7 +1434,7 @@ the terminal_ is my friend, and shows AttributeError_
     # TypeError
     # SyntaxError
 
-* I comment out the `return statement`_ from ``AClass`` in ``attribute_error.py`` since it is no longer a :ref:`function<what is a function?>`
+* I comment out the :ref:`return statement<the return statement>` from ``AClass`` in ``attribute_error.py`` since it is no longer a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 53

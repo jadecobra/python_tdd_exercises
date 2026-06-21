@@ -937,7 +937,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
   :red:`False`    :red:`False`    :red:`False`    :green:`True`
   ==============  =============== =============== =====================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 106
@@ -995,7 +995,7 @@ the test passes. :ref:`logical_nor<test_logical_nor>` returns :red:`False`, if t
 
     git commit -am 'add logical_nor'
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 :ref:`Logical NOR<test_logical_nor>` returns
 
@@ -1743,7 +1743,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
   :red:`False`  :red:`False`  :red:`False`      :green:`True`     :green:`True`     :green:`True`
   ============= ============= ================  ================  ================  ======================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 147
@@ -1769,7 +1769,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
 
   still green.
 
-* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are the equal, which means I can write a much simpler `return statement`_ thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=` on the keyboard)
+* :ref:`logical_equality<test_logical_equality>` returns :green:`True`, if the first input and second input are the equal, which means I can write a much simpler :ref:`return statement<the return statement>` thanks to the equality (``==``) symbol (2 equal signs together :kbd:`=+=` on the keyboard)
 
   .. code-block:: python
     :lineno-start: 115
@@ -1845,7 +1845,7 @@ the test passes. :ref:`logical_equality<test_logical_equality>` returns :green:`
             not (first_input or second_input)
         )
 
-  I can use any of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use any of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -2513,7 +2513,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
   :red:`False`    :green:`True`   :red:`False`    :green:`True`
   ==============  =============== =============== =====================
 
-  I add a `return statement`_ to show this
+  I add a :ref:`return statement<the return statement>` to show this
 
   .. code-block:: python
     :lineno-start: 128
@@ -2564,7 +2564,7 @@ the test passes. :ref:`material_implication<test_material_implication>` returns 
         )
         return not first_input or second_input
 
-  I can use either of these `return statements`_. The first `return statement`_ is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+  I can use either of these `return statements`_. The first :ref:`return statement<the return statement>` is the only one that runs in this case, because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
 
 * I add a git_ commit message in another terminal_
 

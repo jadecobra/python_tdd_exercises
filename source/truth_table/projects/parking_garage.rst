@@ -468,7 +468,7 @@ because I do not have a definition for ``src`` in this file_
 
   the ``parking garage`` :ref:`function<what is a function?>` returned :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects :red:`'OFF'`
 
-* I change the `return statement`_ to give the test what it wants
+* I change the :ref:`return statement<the return statement>` to give the test what it wants
 
   .. code-block:: python
     :linenos:

@@ -154,7 +154,7 @@ the terminal_ is my friend, and shows :ref:`ZeroDivisionError<test_catching_zero
 
 There is a problem, the test uses random numbers, which means at some point ``random_second_number`` will have a value of ``0`` and the first :ref:`assertion<what is an assertion?>` of :ref:`test_division` will raise :ref:`ZeroDivisionError<test_catching_zero_division_error_in_tests>`
 
-* I add a `return statement`_ to the ``a_random_number`` :ref:`function<what is a function?>` in ``test_calculator.py`` to make it happen
+* I add a :ref:`return statement<the return statement>` to the ``a_random_number`` :ref:`function<what is a function?>` in ``test_calculator.py`` to make it happen
 
   .. code-block:: python
     :lineno-start: 6
@@ -204,7 +204,7 @@ There is a problem, the test uses random numbers, which means at some point ``ra
 
   the test passes.
 
-* I remove the `return statement`_ from ``a_random_number`` to go back to testing with a range of random numbers
+* I remove the :ref:`return statement<the return statement>` from ``a_random_number`` to go back to testing with a range of random numbers
 
   .. code-block:: python
     :linenos:

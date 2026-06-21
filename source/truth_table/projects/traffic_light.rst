@@ -469,7 +469,7 @@ because I do not have a definition for ``src`` in this file_
 
   the ``show`` :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'GREEN'``
 
-* I change the `return statement`_ to give the test what it expects
+* I change the :ref:`return statement<the return statement>` to give the test what it expects
 
   .. code-block:: python
     :linenos:
@@ -1014,7 +1014,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
   the test is still green. The ``show`` :ref:`function<what is a function?>` returns the current light when the timer is :red:`NOT done`
 
-* I add a `return statement`_ to return the current light when the timer is :red:`NOT done`
+* I add a :ref:`return statement<the return statement>` to return the current light when the timer is :red:`NOT done`
 
   .. code-block:: python
     :linenos:
@@ -3492,7 +3492,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
 ----
 
-I change the `return statement`_ for this case, in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+I change the :ref:`return statement<the return statement>` for this case, in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
 
 .. code-block:: python
   :linenos:
@@ -3576,7 +3576,7 @@ the test passes. This is what happens when the ``show`` :ref:`function<what is a
 
     AssertionError: 'GREEN' != ('GREEN', 'NO WALK')
 
-* I add ``'NO WALK'`` to the `return statement`_ for this case in ``traffic_light.py``
+* I add ``'NO WALK'`` to the :ref:`return statement<the return statement>` for this case in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -4277,7 +4277,7 @@ current light     timer           walk button       show
 
     AssertionError: 'GREEN' != ('GREEN', 'NO WALK')
 
-* I change the `return statement`_ of the :ref:`if statement<if statements>` for when the timer is :red:`NOT done` in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+* I change the :ref:`return statement<the return statement>` of the :ref:`if statement<if statements>` for when the timer is :red:`NOT done` in the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
 
   .. code-block:: python
     :lineno-start: 1
@@ -4914,7 +4914,7 @@ current light     timer           walk button       show
 
   green.
 
-* the ``walk`` :ref:`variable<what is a variable?>` which is ``'RED', 'WALK'``, happens 3 times in the :ref:`function<what is a function?>`, I add a `return statement`_ to make it the default state of the light
+* the ``walk`` :ref:`variable<what is a variable?>` which is ``'RED', 'WALK'``, happens 3 times in the :ref:`function<what is a function?>`, I add a :ref:`return statement<the return statement>` to make it the default state of the light
 
   .. code-block:: python
     :lineno-start: 38

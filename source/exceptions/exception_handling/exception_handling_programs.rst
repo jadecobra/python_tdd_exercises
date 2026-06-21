@@ -343,7 +343,7 @@ the terminal_ is my friend, and shows :ref:`AttributeError<what causes Attribute
 
   the result of the call to ``src.exceptions.an_exception_handler`` is :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``'failed'``
 
-* I change the `return statement`_ to match the expectation
+* I change the :ref:`return statement<the return statement>` to match the expectation
 
   .. code-block:: python
     :lineno-start: 9
@@ -573,7 +573,7 @@ how to use try...except...else
 
   this is still the same :ref:`Exception<errors>` and message
 
-* I change the `return statement`_ in the `else clause`_
+* I change the :ref:`return statement<the return statement>` in the `else clause`_
 
   .. code-block:: python
     :lineno-start: 13
