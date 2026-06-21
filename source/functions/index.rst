@@ -731,7 +731,7 @@ I can also make a function with a `return statement`_.
 
     NameError: name 'w_return' is not defined
 
-  because Python_ does not know what I mean by ``w_return``, it is still just a name in the file_.
+  because Python_ does not know what I mean by ``w_return``, it is just a word in the file_.
 
 * I change ``w_return`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
 
@@ -1042,7 +1042,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
     # Exceptions seen
 
-  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>` because Python_ does not know what I mean by ``w_return_none``, it is still just a name in the file_.
+  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>` because Python_ does not know what I mean by ``w_return_none``, it is just a word in the file_.
 
 * I change ``w_return_none`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
 
@@ -1341,7 +1341,7 @@ I like to write my :ref:`functions<what is a function?>` with explicit `return s
 test_what_happens_after_functions_return
 *********************************************************************************
 
-The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`. 
+The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`.
 
 ----
 
@@ -1356,30 +1356,28 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 * I add a test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 109
-    :emphasize-lines: 6-9
+    :lineno-start: 21
+    :emphasize-lines: 5-6
 
-        def test_making_a_function_w_return_none(self):
-            self.assertIs(
-                src.functions.w_return_none(), None
-            )
+    def test_making_a_function_w_return_none():
+        assert w_return_none() is None
 
-        def test_what_happens_after_functions_return(self):
-            self.assertIs(
-                src.functions.return_is_last(), None
-            )
+
+    def test_what_happens_after_functions_return():
+        return_leaves_the_function
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
   .. code-block:: python
 
-    AttributeError: module 'src.functions'
-                    has no attribute 'return_is_last'
+    NameError: name 'return_leaves_the_function'
+               is not defined
 
-  because ``functions.py`` does not have a definition for it, yet
+  because Python_ does not know what I mean by ``return_leaves_the_function`` since I do not have a definition for it in this file_, yet.
+
 
 ----
 
@@ -1389,20 +1387,48 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
 ----
 
-I add a :ref:`function<what is a function?>` to ``functions.py``
+* I add the name to the file_
 
-.. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5
 
-  def w_return_none():
-      return None
+    def test_making_a_function_w_return_none():
+        assert w_return_none() is None
 
 
-  def return_is_last():
-      return None
+    return_leaves_the_function
 
-the test passes.
+
+    def test_what_happens_after_functions_return():
+        return_leaves_the_function
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>` because Python_ does not know what I mean by ``return_leaves_the_function``, it is just a word in the file_.
+
+* I change ``return_leaves_the_function`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 21
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_return_none():
+        assert w_return_none() is None
+
+
+    # return_leaves_the_function
+    return_leaves_the_function = None
+
+
+    def test_what_happens_after_functions_return():
+        return_leaves_the_function
+
+
+    # Exceptions seen
+
+  the test passes.
 
 ----
 
@@ -1418,7 +1444,7 @@ the test passes.
     :lineno-start: 13
     :emphasize-lines: 2-3
 
-    def return_is_last():
+    def return_leaves_the_function():
         return 'something'
         return None
 
@@ -1444,7 +1470,7 @@ the test passes.
     :emphasize-lines: 2-3
     :emphasize-text: None
 
-    def return_is_last():
+    def return_leaves_the_function():
         return None
         return 'something'
 
@@ -1457,7 +1483,7 @@ the test passes.
     :emphasize-lines: 3
     :emphasize-text: will never run
 
-    def return_is_last():
+    def return_leaves_the_function():
         return None
         return 'will NEVER run'
 
@@ -1499,7 +1525,7 @@ constant functions_ always return the same thing when they are called
 
         def test_what_happens_after_a_function_returns(self):
             self.assertIs(
-                src.functions.return_is_last(), None
+                src.functions.return_leaves_the_function(), None
             )
 
         def test_constant_function(self):
@@ -1533,7 +1559,7 @@ constant functions_ always return the same thing when they are called
     :lineno-start: 13
     :emphasize-lines: 6-7
 
-    def return_is_last():
+    def return_leaves_the_function():
         return None
         return 'will never run'
 
