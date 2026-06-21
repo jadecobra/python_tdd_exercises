@@ -784,7 +784,7 @@ I can also make a function with a `return statement`_.
 
     TypeError: 'NoneType' object is not callable
 
-  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
+  because I called ``w_return`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
 
   .. code-block:: python
 
@@ -983,31 +983,29 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
 * I go back to the terminal_ where the tests are running
 
-* I add another failing test to ``test_functions.py``
+* I add a test with a name
 
   .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 4-7
+    :lineno-start: 13
+    :emphasize-lines: 5-6
 
-        def test_making_a_function_w_return(self):
-            self.assertIs(src.functions.w_return(), None)
+    def test_making_a_function_w_return():
+        assert w_return() is None
 
-        def test_making_a_function_w_return_none(self):
-            self.assertIs(
-                src.functions.w_return_none(), None
-            )
+
+    def test_making_a_function_w_return_none():
+        w_return_none
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.functions'
-                    has no attribute 'w_return_none'
+    NameError: name 'w_return_none' is not defined
 
-  because ``w_return_none`` is not defined in ``functions.py`` in the ``src`` folder_
+  because Python_ does not know what I mean by ``w_return_none`` since I do not have a definition for it in this file_.
 
 ----
 
@@ -1017,20 +1015,48 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
 ----
 
-I add a :ref:`function definition<how to make a function>` to ``functions.py``
+* I add the name to the file_
 
-.. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 5-6
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5
 
-  def w_return():
-      return
+    def test_making_a_function_w_return():
+        assert w_return() is None
 
 
-  def w_return_none():
-      return
+    w_return_none
 
-the test passes.
+
+    def test_making_a_function_w_return_none():
+        w_return_none
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>` because Python_ does not know what I mean by ``w_return_none``, it is still just a name in the file_.
+
+* I change ``w_return_none`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_return():
+        assert w_return() is None
+
+
+    # w_return_none
+    w_return_none = None
+
+
+    def test_making_a_function_w_return_none():
+        w_return_none
+
+
+    # Exceptions seen
+
+  the test passes.
 
 ----
 
@@ -1039,6 +1065,113 @@ the test passes.
 =================================================================================
 
 ----
+
+* I add parentheses to call ``w_return_none`` from inside :ref:`test_making_a_function_w_return_none`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 6-7
+
+    # w_return_none
+    w_return_none = None
+
+
+    def test_making_a_function_w_return_none():
+        # w_return_none
+        w_return_none()
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because I called ``w_return_none`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution I imagine the series of steps that happen as
+
+  .. code-block:: python
+
+    w_return_none = None # point the name to the object
+    w_return_none()      # call the name
+    None()               # substitute the value for the name
+
+  which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I change ``w_return_none`` to the simplest :ref:`function<what is a function?>` I can make with the def_ and pass_ keywords
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3-4
+
+    # w_return_none
+    # w_return_none = None
+    def w_return_none():
+        pass
+
+
+    def test_making_a_function_w_return_none():
+        # w_return_none
+        w_return_none()
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add an :ref:`assertion<what is an assertion?>` to see what I get when I call ``w_return_none``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3-5
+
+    def test_making_a_function_w_return_none():
+        # w_return_none
+        # w_return_none()
+        result = w_return_none()
+        assert result is 0
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    >       assert result is 0
+    E       assert None is 0
+
+  because ``result`` points to ``w_return_none`` and when I call ``w_return_none`` I get :ref:`None<what is None?>`. Using substitution
+
+  .. code-block:: python
+
+    result = w_return_none()
+    result = None
+
+  .. code-block:: python
+
+    assert result is 0
+    assert w_return_none() is 0
+    assert None is 0
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 15
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_return_none():
+        # w_return_none
+        # w_return_none()
+        result = w_return_none()
+        # assert result is 0
+        assert result is None
+
+
+    # Exceptions seen
+
+  the test passes.
 
 * I add :ref:`None<what is None?>` to the `return statement`_
 
