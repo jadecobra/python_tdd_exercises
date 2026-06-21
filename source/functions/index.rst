@@ -128,42 +128,6 @@ start the project
 
     .../pumping_python/functions
 
-* I make a directory_ for the source code
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    mkdir src
-
-  the terminal_ goes back to the command line.
-
-  .. code-block:: python
-
-    .../pumping_python/functions
-
-* I use the `mv program`_ to change the name of ``main.py`` to ``functions.py`` and move it to the ``src`` folder_
-
-  .. tab-set::
-    :sync-group: os
-
-    .. tab-item:: WSL/Linux/Mac
-      :sync: unix
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        mv main.py src/functions.py
-
-    .. tab-item:: no WSL
-      :sync: no_wsl
-
-      .. code-block:: shell
-        :emphasize-lines: 1
-
-        Move-Item main.py src/functions.py
-
-  the terminal_ goes back to the command line.
-
 * I `make a directory`_ for the tests
 
   .. code-block:: shell
@@ -198,7 +162,7 @@ start the project
 
   the terminal_ goes back to the command line.
 
-* I make a :ref:`Python file<what is a module?>` for the tests in the ``tests`` directory_
+* I use the `mv program`_ to change the name of ``main.py`` to ``test_functions.py`` and move it to the ``tests`` folder_
 
   .. tab-set::
     :sync-group: os
@@ -209,7 +173,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        touch tests/test_functions.py
+        mv main.py tests/test_functions.py
 
     .. tab-item:: no WSL
       :sync: no_wsl
@@ -217,7 +181,7 @@ start the project
       .. code-block:: shell
         :emphasize-lines: 1
 
-        New-Item tests/test_functions.py
+        Move-Item main.py tests/test_functions.py
 
   the terminal_ goes back to the command line.
 
@@ -227,15 +191,10 @@ start the project
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1, 4, 6-7
+    :emphasize-lines: 1-2
 
-    import unittest
-
-
-    class TestFunctions(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
+    def test_failure():
+        assert False is True
 
 * I go back to the terminal_ to make a requirements file_ for the `Python packages`_ I need
 
@@ -285,7 +244,7 @@ start the project
   .. code-block:: python
 
     [main (root-commit) a0b12c3] setup project
-     9 files changed, 148 insertions(+)
+     9 files changed, X insertions(+)
      create mode 100644 .gitignore
      create mode 100644 .python-version
      create mode 100644 README.md
@@ -309,23 +268,21 @@ start the project
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :emphasize-lines: 8, 10
+    :emphasize-lines: 6, 8, 10
 
     ======================== FAILURES ========================
-    _______________________ TestFunctions.test_failure _______________________
+    ______________________ test_failure ______________________
 
-    self = <tests.test_functions.TestFunctions testMethod=test_failure>
+        def test_failure():
+    >       assert False is True
+    E       assert False is True
 
-        def test_failure(self):
-    >       self.assertFalse(True)
-    E       AssertionError: True is not false
-
-    tests/test_functions.py:7: AssertionError
+    test_functions.py:2: AssertionError
     ================ short test summary info =================
-    FAILED tests/test_functions.py::TestFunctions::test_failure - AssertionError: True is not false
+    FAILED test_functions.py::test_failure - assert False is True
     =================== 1 failed in X.YZs ====================
 
-  because :ref:`True<test_what_is_true>` is NOT :ref:`False<test_what_is_false>`
+  because :ref:`False<test_what_is_false>` is NOT :ref:`True<test_what_is_true>`
 
   .. admonition:: if the terminal_ does not show the same error, then check
 
@@ -337,14 +294,12 @@ start the project
 * I add :ref:`AssertionError<what causes AssertionError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 7-8
+    :linenos:
+    :emphasize-lines: 5-6
     :emphasize-text: AssertionError
 
-    class TestFunctions(unittest.TestCase):
-
-        def test_failure(self):
-            self.assertFalse(True)
+    def test_failure():
+        assert False is True
 
 
     # Exceptions seen
@@ -353,12 +308,1053 @@ start the project
 * then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 1
+    :linenos:
+    :emphasize-lines: 2-3
 
-            self.assertFalse(False)
+    def test_failure():
+        # assert False is True
+        assert False is False
+
+
+    # Exceptions seen
+    # AssertionError
 
   the test passes.
+
+----
+
+*********************************************************************************
+test_making_a_function_w_pass
+*********************************************************************************
+
+The simplest :ref:`function<what is a function?>` I can make is with the pass_ keyword.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I change ``test_failure`` to :ref:`test_making_a_function_w_pass`
+
+  .. code-block:: python
+    :lineno-start: 11
+    :emphasize-lines: 1-2
+
+    def test_making_a_function_w_pass():
+        w_pass
+
+
+    # Exceptions seen
+    # AssertionError
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'w_pass' is not defined
+
+  because Python_ does not know what I mean by ``w_pass`` since I do not have a definition for it in ``test_functions.py``
+
+* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 3
+    :emphasize-text: NameError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add the name to the file_
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+
+    w_pass
+
+
+    def test_making_a_function_w_pass():
+        w_pass
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+
+  the terminal_ is my friend, and still shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    >       w_pass
+    E       NameError: name 'w_pass' is not defined
+
+  because Python_ does not know what I mean by ``w_pass`` it is still just a name in the file_.
+
+----
+
+*********************************************************************************
+what is a variable?
+*********************************************************************************
+
+I can define a name in Python with a variable. It is a name that is used for any :ref:`object<what is a class?>`. For example, in Mathematics_ we use ``x`` to represent any number.
+
+Every time I use the name, Python_ knows that I am referring to the :ref:`object<what is a class?>` from where I defined the variable.
+
+* I change ``w_pass`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 1-2
+
+    # w_pass
+    w_pass = None
+
+
+    def test_making_a_function_w_pass():
+        w_pass
+
+  the test passes.
+
+----
+
+*********************************************************************************
+how to call a function
+*********************************************************************************
+
+Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function?>` I have to call it, like a telephone number. The way to do that is with parentheses (``()``) after the name.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add parentheses to the test to call ``w_pass`` from inside :ref:`test_making_a_function_w_pass`
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 6-7
+
+      # w_pass
+      w_pass = None
+
+
+      def test_making_a_function_w_pass():
+          # w_pass
+          w_pass()
+
+
+      # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because I called ``w_pass`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`, using substitution I imagine the series of steps that happen as
+
+  .. code-block:: python
+
+    w_pass = None # point the name to None
+    w_pass()      # call the name
+    None()        # substitute the name for the value
+
+  which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 10
+    :emphasize-lines: 4
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I change ``w_pass`` to the simplest :ref:`function<what is a function?>` I can make with the def_ and pass_ keywords
+
+  .. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-3
+
+    # w_pass
+    # w_pass = None
+    def w_pass():
+        pass
+
+
+    def test_making_a_function_w_pass():
+
+  the test passes.
+
+----
+
+*********************************************************************************
+how to test the result of a function call
+*********************************************************************************
+
+I want to see what I get when I call ``w_pass``.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add an :ref:`assertion<what is an assertion?>` to find out what I get when I call ``w_pass``
+
+.. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 3-5
+
+  def test_making_a_function_w_pass():
+      # w_pass
+      # w_pass()
+      result = w_pass()
+      assert result is 0
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+.. code-block:: python
+
+  >       assert result is 0
+  E       assert None is 0
+
+because ``result`` points to ``w_pass`` and when I call ``w_pass`` I get :ref:`None<what is None?>`, using substitution
+
+.. code-block:: python
+
+  result = w_pass()
+  result = None
+
+.. code-block:: python
+
+  assert result is 0
+  assert w_pass() is 0
+  assert None is 0
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+.. code-block:: python
+  :lineno-start: 7
+  :emphasize-lines: 5-6
+
+  def test_making_a_function_w_pass():
+      # w_pass
+      # w_pass()
+      result = w_pass()
+      # assert result is 0
+      assert result is None
+
+
+  # Exceptions seen
+
+- The test passes because I get :ref:`None<what is None?>` when I call ``w_pass``.
+- The :ref:`assertion<what is an assertion?>` - ``assert result is None`` which is the same as ``assert w_pass()`` checks if the result of a call to ``w_pass`` , is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+- The :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
+- pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body).
+- The test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first cleanup time.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the :ref:`variable<what is a variable?>` from :ref:`test_making_a_function_w_pass` because it is only used once
+
+  .. code-block:: python
+    :lineno-start: 7
+    :emphasize-lines: 4, 6-7
+
+    def test_making_a_function_w_pass():
+        # w_pass
+        # w_pass()
+        # result = w_pass()
+        # assert result is 0
+        # assert result is None
+        assert w_pass() is None
+
+
+    # Exceptions seen
+
+  the test is still green because I can use ``w_pass()`` directly, without a middle man.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def w_pass():
+        pass
+
+
+    def test_making_a_function_w_pass():
+        assert w_pass() is None
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+
+* I open another terminal_ then add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_making_a_function_w_pass'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can make a function with pass.<test_making_a_function_w_pass>`
+
+----
+
+*********************************************************************************
+test_making_a_function_w_return
+*********************************************************************************
+
+I can also make a function with a `return statement`_.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a new test with a name
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 5-6
+
+    def test_making_a_function_w_pass():
+        assert w_pass() is None
+
+
+    def test_making_a_function_w_return():
+        w_return
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    >       w_return
+    E       NameError: name 'w_return' is not defined
+
+  because ``functions.py`` in the ``src`` folder_ does not have anything with the name ``w_return`` in it
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add the new :ref:`function<what is a function?>` with the pass_ keyword to ``functions.py``
+
+.. code-block:: python
+  :linenos:
+  :emphasize-lines: 5-6
+
+  def w_pass():
+      pass
+
+
+  def w_return():
+      pass
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I change pass_ to a `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 5
+    :emphasize-lines: 2-3
+
+    def w_return():
+        # pass
+        return
+
+  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_return(), None)`` checks if the result of a call to ``w_return`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
+  * the :ref:`function definition<how to make a function>` simply says return_ and the test passes.
+  * return_ is a special keyword that is used to send output from a :ref:`function<what is a function?>`.
+  * the test is still green because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 5
+
+    def w_return():
+        return
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_making_a_function_w_return'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+I have two :ref:`functions<what is a function?>` with different statements, and the tests show that they both return :ref:`None<what is None?>`
+
+.. code-block:: python
+
+  src.functions.w_pass()
+  pass
+
+.. code-block:: python
+
+  src.functions.w_return()
+  return
+
+their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`", which leads me to the next test.
+
+:ref:`I can make a function with a return statement<test_making_a_function_w_return>`
+
+----
+
+*********************************************************************************
+test_making_a_function_w_return_none
+*********************************************************************************
+
+I can make a :ref:`function<what is a function?>` with a `return statement`_ that says exactly what the :ref:`function<what is a function?>` returns
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add another failing test to ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 106
+    :emphasize-lines: 4-7
+
+        def test_making_a_function_w_return(self):
+            self.assertIs(src.functions.w_return(), None)
+
+        def test_making_a_function_w_return_none(self):
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'w_return_none'
+
+  because ``w_return_none`` is not defined in ``functions.py`` in the ``src`` folder_
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a :ref:`function definition<how to make a function>` to ``functions.py``
+
+.. code-block:: python
+  :lineno-start: 5
+  :emphasize-lines: 5-6
+
+  def w_return():
+      return
+
+
+  def w_return_none():
+      return
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add :ref:`None<what is None?>` to the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-3
+    :emphasize-text: None
+
+    def w_return_none():
+        # return
+        return None
+
+  the test is still green.
+
+* I change :ref:`None<what is None?>` to ``'something'``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3-4
+    :emphasize-text: something
+
+    def w_return_none():
+        # return
+        # return None
+        return 'something'
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'something' is not None
+
+  because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
+
+* I undo the change
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 3-4
+
+    def w_return_none():
+        # return
+        return None
+        # return 'something'
+
+  the test is green again.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 9
+
+    def w_return_none():
+        return None
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_making_a_function_w_return_none'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+I have three :ref:`functions<what is a function?>` with different statements, and the tests show that they all return :ref:`None<what is None?>`
+
+.. code-block:: python
+
+  src.functions.w_pass()
+  pass
+
+.. code-block:: python
+
+  src.functions.w_return()
+  return
+
+.. code-block:: python
+
+  src.functions.w_return_none()
+  return None
+
+their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says ...<test_making_a_function_w_return_none>`"
+
+I like to write my :ref:`functions<what is a function?>` with ``return None``, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
+
+:ref:`I can make a function with return None.<test_making_a_function_w_return_none>`
+
+----
+
+*********************************************************************************
+test_what_happens_after_functions_return
+*********************************************************************************
+
+The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a test to ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 109
+    :emphasize-lines: 6-9
+
+        def test_making_a_function_w_return_none(self):
+            self.assertIs(
+                src.functions.w_return_none(), None
+            )
+
+        def test_what_happens_after_functions_return(self):
+            self.assertIs(
+                src.functions.return_is_last(), None
+            )
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: python
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'return_is_last'
+
+  because ``functions.py`` does not have a definition for it, yet
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a :ref:`function<what is a function?>` to ``functions.py``
+
+.. code-block:: python
+  :lineno-start: 9
+  :emphasize-lines: 5-6
+
+  def w_return_none():
+      return None
+
+
+  def return_is_last():
+      return None
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add a `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2-3
+
+    def return_is_last():
+        return 'something'
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: 'something' is not None
+
+  - because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
+  - the :ref:`function<what is a function?>` does not run the second `return statement`_   because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code).
+
+  .. tip::
+
+    The `Integrated Development Environment (IDE)`_ shows that the second return statement will not run by graying it out
+
+* I move ``return None``, to make it the first `return statement`_
+
+
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 2-3
+    :emphasize-text: None
+
+    def return_is_last():
+        return None
+        return 'something'
+
+  the test is green again
+
+* I change the second `return statement`_ as a reminder
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 3
+    :emphasize-text: will never run
+
+    def return_is_last():
+        return None
+        return 'will NEVER run'
+
+  the second `return statement`_ is now like a comment, and the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_what_happens_after_functions_return'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+*********************************************************************************
+test_constant_function
+*********************************************************************************
+
+constant functions_ always return the same thing when they are called
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a test to ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 114
+    :emphasize-lines: 6-9
+
+        def test_what_happens_after_a_function_returns(self):
+            self.assertIs(
+                src.functions.return_is_last(), None
+            )
+
+        def test_constant_function(self):
+            reality = src.functions.constant()
+            my_expectation = 'the same thing'
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'constant'
+
+  because I have not added a definition for ``constant`` in ``functions.py`` in the ``src`` folder_
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add the :ref:`function<what is a function?>` to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 13
+    :emphasize-lines: 6-7
+
+    def return_is_last():
+        return None
+        return 'will never run'
+
+
+    def constant():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: None != 'the same thing'
+
+  because the :ref:`assertion<what is an assertion?>` expects ``'the same thing'`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
+
+* I change the `return statement`_ to give the test what it wants
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 2-3
+
+    def constant():
+        # return None
+        return 'the same thing'
+
+  the test passes.
+
+* I remove the commented line
+
+  .. code-block:: python
+    :lineno-start: 18
+
+    def constant():
+        return 'the same thing'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_constant_function'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+A constant :ref:`function<what is a function?>` always returns the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times (who's counting?)
+
+:ref:`a constant function always returns the same thing.<test_constant_function>`
+
+----
+
+*********************************************************************************
+test_identity_function
+*********************************************************************************
+
+The identity :ref:`function<what is a function?>` returns its input as output, it is also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I go back to the terminal_ where the tests are running
+
+* I add a failing test to ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 119
+    :emphasize-lines: 6-9
+
+        def test_constant_function(self):
+            reality = src.functions.constant()
+            my_expectation = 'the same thing'
+            self.assertEqual(reality, my_expectation)
+
+        def test_identity_function(self):
+            reality = src.functions.identity(None)
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+
+  .. code-block:: shell
+
+    AttributeError: module 'src.functions'
+                    has no attribute 'identity'
+
+  is it because ``functions.py`` has no ``identity``?
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a :ref:`function<what is a function?>` for ``identity`` to ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 18
+    :emphasize-lines: 5-6
+
+    def constant():
+        return 'the same thing'
+
+
+    def identity():
+        return None
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: shell
+
+    TypeError: identity() takes 0 positional arguments
+               but 1 was given
+
+  because the :ref:`definition<how to make a function>` for ``identity`` does not allow calling it with inputs and the test sends :ref:`None<what is None?>` as input
+
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 130
+    :emphasize-lines: 5
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # AttributeError
+    # TypeError
+
+* I add a name in parentheses for the ``identity`` :ref:`function<what is a function?>` to take input, in ``functions.py``
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 1-2
+
+    # def identity():
+    def identity(the_input):
+        return None
+
+  the test passes. I am genius.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+The requirement for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, this test passes when :ref:`None<what is None?>` is given as input.
+
+Does it pass when another value is given or does it always return :ref:`None<what is None?>`? Time to test it
+
+* I add a new :ref:`assertion<what is an assertion?>` to :ref:`test_identity_function` in ``test_functions.py``
+
+  .. code-block:: python
+    :lineno-start: 124
+    :emphasize-lines: 6-8
+
+        def test_identity_function(self):
+            reality = src.functions.identity(None)
+            my_expectation = None
+            self.assertEqual(reality, my_expectation)
+
+            reality = src.functions.identity(object)
+            my_expectation = object
+            self.assertEqual(reality, my_expectation)
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: shell
+
+    AssertionError: None != <class 'object'>
+
+  because the :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` not ``<class 'object'>`` or what it receives as input. I am not all the way genius, yet
+
+* I make the ``identity`` :ref:`function<what is a function?>` in ``functions.py`` return what it gets
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 3-4
+
+    # def identity():
+    def identity(the_input):
+        # return None
+        return the_input
+
+  the test passes.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 22
+
+    def identity(the_input):
+        return the_input
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1
+
+    git commit --all --message 'add test_identity_function'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send something (input) and get it back, I can start making changes to see how it affects the output.
+
+:ref:`The Identity Function returns its input as output.<test_identity_function>`
 
 ----
 
@@ -1268,840 +2264,6 @@ the test passes.
   the terminal_ shows a summary of the changes then goes back to the command line.
 
 :ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the changing results?<a better way to handle the results changing>`
-
-----
-
-*********************************************************************************
-test_making_a_function_w_pass
-*********************************************************************************
-
-I can make a :ref:`function<what is a function?>` with the pass_ keyword
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I add a new test to ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 93
-    :emphasize-lines: 10-11
-
-            # reality = 1 + 9
-            # reality = 2 + 9
-            reality = add_x(9)
-            # my_expectation = 9
-            # my_expectation = 10
-            # my_expectation = 11
-            my_expectation = 12
-            self.assertEqual(reality, my_expectation)
-
-        def test_making_a_function_w_pass(self):
-            self.assertIs(src.functions.w_pass(), None)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
-
-  .. code-block::
-
-    NameError: name 'src' is not defined
-
-  because Python_ does not know what I mean by ``src`` since I do not have a definition for it in ``test_functions.py``
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 3
-    :emphasize-text: NameError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-
-* I add an `import statement`_ at the top of the file_
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1
-
-    import src.functions
-    import unittest
-
-
-    class TestFunctions(unittest.TestCase):
-
-  - ``import src.functions`` brings in an :ref:`object<everything is an object>` for the ``functions.py`` :ref:`module<what is a module?>` from the ``src`` folder_ so I can use it in ``test_functions.py``
-  - I like to sort my `import statements`_ alphabetically
-  - the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-    .. code-block:: shell
-
-      AttributeError: module 'src.functions'
-                    has no attribute 'w_pass'
-
-    because ``functions.py`` in the ``src`` folder_ does not have anything named ``w_pass`` inside it
-
-* I add :ref:`AttributeError<what causes AttributeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 107
-    :emphasize-lines: 4
-    :emphasize-text: AttributeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-
-* I open ``functions.py`` from the ``src`` folder
-
-* I delete the text in the file_ then add a :ref:`function definition<how to make a function>` to ``functions.py``
-
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
-
-    def w_pass():
-        pass
-
-  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_pass(), None)`` checks if the result of a call to ``w_pass`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_pass``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
-
-  * the :ref:`function definition<how to make a function>` simply says pass_ and the test passes.
-  * pass_ is a special keyword that allows the :ref:`function definition<how to make a function>` to follow Python_ language rules (the :ref:`function<what is a function?>` must have a body)
-  * the test passes because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`, which leads me to the next test, but first git_ business
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit --all --message \
-    'add test_making_a_function_w_pass'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-:ref:`I can make a function with pass.<test_making_a_function_w_pass>`
-
-----
-
-*********************************************************************************
-test_making_a_function_w_return
-*********************************************************************************
-
-I can also make a function with a `return statement`_
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I add a new failing test to ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 103
-    :emphasize-lines: 4-5
-
-        def test_making_a_function_w_pass(self):
-            self.assertIs(src.functions.w_pass(), None)
-
-        def test_making_a_function_w_return(self):
-            self.assertIs(src.functions.w_return(), None)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.functions'
-                    has no attribute 'w_return'
-
-  because ``functions.py`` in the ``src`` folder_ does not have anything with the name ``w_return`` in it
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I add the new :ref:`function<what is a function?>` with the pass_ keyword to ``functions.py``
-
-.. code-block:: python
-  :linenos:
-  :emphasize-lines: 5-6
-
-  def w_pass():
-      pass
-
-
-  def w_return():
-      pass
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I change pass_ to a `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 2-3
-
-    def w_return():
-        # pass
-        return
-
-  * the :ref:`assertion<what is an assertion?>` - ``self.assertIs(src.functions.w_return(), None)`` checks if the result of a call to ``w_return`` in ``functions.py`` in the ``src`` folder_ also known as ``src.functions.w_return``, is the same :ref:`object<everything is an object>` as :ref:`None<what is None?>`
-  * the :ref:`function definition<how to make a function>` simply says return_ and the test passes.
-  * return_ is a special keyword that is used to send output from a :ref:`function<what is a function?>`.
-  * the test is still green because :ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 5
-
-    def w_return():
-        return
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit --all --message \
-    'add test_making_a_function_w_return'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-I have two :ref:`functions<what is a function?>` with different statements, and the tests show that they both return :ref:`None<what is None?>`
-
-.. code-block:: python
-
-  src.functions.w_pass()
-  pass
-
-.. code-block:: python
-
-  src.functions.w_return()
-  return
-
-their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says return None<test_making_a_function_w_return_none>`", which leads me to the next test.
-
-:ref:`I can make a function with a return statement<test_making_a_function_w_return>`
-
-----
-
-*********************************************************************************
-test_making_a_function_w_return_none
-*********************************************************************************
-
-I can make a :ref:`function<what is a function?>` with a `return statement`_ that says exactly what the :ref:`function<what is a function?>` returns
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I add another failing test to ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 106
-    :emphasize-lines: 4-7
-
-        def test_making_a_function_w_return(self):
-            self.assertIs(src.functions.w_return(), None)
-
-        def test_making_a_function_w_return_none(self):
-            self.assertIs(
-                src.functions.w_return_none(), None
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.functions'
-                    has no attribute 'w_return_none'
-
-  because ``w_return_none`` is not defined in ``functions.py`` in the ``src`` folder_
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I add a :ref:`function definition<how to make a function>` to ``functions.py``
-
-.. code-block:: python
-  :lineno-start: 5
-  :emphasize-lines: 5-6
-
-  def w_return():
-      return
-
-
-  def w_return_none():
-      return
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add :ref:`None<what is None?>` to the `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 2-3
-    :emphasize-text: None
-
-    def w_return_none():
-        # return
-        return None
-
-  the test is still green.
-
-* I change :ref:`None<what is None?>` to ``'something'``
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3-4
-    :emphasize-text: something
-
-    def w_return_none():
-        # return
-        # return None
-        return 'something'
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'something' is not None
-
-  because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
-
-* I undo the change
-
-  .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3-4
-
-    def w_return_none():
-        # return
-        return None
-        # return 'something'
-
-  the test is green again.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 9
-
-    def w_return_none():
-        return None
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit --all --message \
-    'add test_making_a_function_w_return_none'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-I have three :ref:`functions<what is a function?>` with different statements, and the tests show that they all return :ref:`None<what is None?>`
-
-.. code-block:: python
-
-  src.functions.w_pass()
-  pass
-
-.. code-block:: python
-
-  src.functions.w_return()
-  return
-
-.. code-block:: python
-
-  src.functions.w_return_none()
-  return None
-
-their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says ...<test_making_a_function_w_return_none>`"
-
-I like to write my :ref:`functions<what is a function?>` with ``return None``, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
-
-:ref:`I can make a function with return None.<test_making_a_function_w_return_none>`
-
-----
-
-*********************************************************************************
-test_what_happens_after_functions_return
-*********************************************************************************
-
-The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I add a test to ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 109
-    :emphasize-lines: 6-9
-
-        def test_making_a_function_w_return_none(self):
-            self.assertIs(
-                src.functions.w_return_none(), None
-            )
-
-        def test_what_happens_after_functions_return(self):
-            self.assertIs(
-                src.functions.return_is_last(), None
-            )
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: python
-
-    AttributeError: module 'src.functions'
-                    has no attribute 'return_is_last'
-
-  because ``functions.py`` does not have a definition for it, yet
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-I add a :ref:`function<what is a function?>` to ``functions.py``
-
-.. code-block:: python
-  :lineno-start: 9
-  :emphasize-lines: 5-6
-
-  def w_return_none():
-      return None
-
-
-  def return_is_last():
-      return None
-
-the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I add a `return statement`_
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2-3
-
-    def return_is_last():
-        return 'something'
-        return None
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 'something' is not None
-
-  - because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
-  - the :ref:`function<what is a function?>` does not run the second `return statement`_   because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code).
-
-  .. tip::
-
-    The `Integrated Development Environment (IDE)`_ shows that the second return statement will not run by graying it out
-
-* I move ``return None``, to make it the first `return statement`_
-
-
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2-3
-    :emphasize-text: None
-
-    def return_is_last():
-        return None
-        return 'something'
-
-  the test is green again
-
-* I change the second `return statement`_ as a reminder
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 3
-    :emphasize-text: will never run
-
-    def return_is_last():
-        return None
-        return 'will NEVER run'
-
-  the second `return statement`_ is now like a comment, and the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1-2
-
-    git commit --all --message \
-    'add test_what_happens_after_functions_return'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-----
-
-*********************************************************************************
-test_constant_function
-*********************************************************************************
-
-constant functions_ always return the same thing when they are called
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I add a test to ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 114
-    :emphasize-lines: 6-9
-
-        def test_what_happens_after_a_function_returns(self):
-            self.assertIs(
-                src.functions.return_is_last(), None
-            )
-
-        def test_constant_function(self):
-            reality = src.functions.constant()
-            my_expectation = 'the same thing'
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.functions'
-                    has no attribute 'constant'
-
-  because I have not added a definition for ``constant`` in ``functions.py`` in the ``src`` folder_
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add the :ref:`function<what is a function?>` to ``functions.py``
-
-  .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 6-7
-
-    def return_is_last():
-        return None
-        return 'will never run'
-
-
-    def constant():
-        return None
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: None != 'the same thing'
-
-  because the :ref:`assertion<what is an assertion?>` expects ``'the same thing'`` and the :ref:`function<what is a function?>` returns :ref:`None<what is None?>`
-
-* I change the `return statement`_ to give the test what it wants
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 2-3
-
-    def constant():
-        # return None
-        return 'the same thing'
-
-  the test passes.
-
-* I remove the commented line
-
-  .. code-block:: python
-    :lineno-start: 18
-
-    def constant():
-        return 'the same thing'
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit --all --message 'add test_constant_function'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-A constant :ref:`function<what is a function?>` always returns the same thing when called, I can use them in place of :ref:`variables<what is a variable?>`, though the number of cases where they are faster than :ref:`variables<what is a variable?>` is pretty small. It is something like if the :ref:`function<what is a function?>` is called less than 10 times (who's counting?)
-
-:ref:`a constant function always returns the same thing.<test_constant_function>`
-
-----
-
-*********************************************************************************
-test_identity_function
-*********************************************************************************
-
-The identity :ref:`function<what is a function?>` returns its input as output, it is also in the :ref:`Truth Table<truth table>` chapter in :ref:`test_logical_identity`
-
-----
-
-=================================================================================
-:red:`RED`: make it fail
-=================================================================================
-
-----
-
-* I go back to the terminal_ where the tests are running
-
-* I add a failing test to ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 119
-    :emphasize-lines: 6-9
-
-        def test_constant_function(self):
-            reality = src.functions.constant()
-            my_expectation = 'the same thing'
-            self.assertEqual(reality, my_expectation)
-
-        def test_identity_function(self):
-            reality = src.functions.identity(None)
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
-
-  .. code-block:: shell
-
-    AttributeError: module 'src.functions'
-                    has no attribute 'identity'
-
-  is it because ``functions.py`` has no ``identity``?
-
-----
-
-=================================================================================
-:green:`GREEN`: make it pass
-=================================================================================
-
-----
-
-* I add a :ref:`function<what is a function?>` for ``identity`` to ``functions.py``
-
-  .. code-block:: python
-    :lineno-start: 18
-    :emphasize-lines: 5-6
-
-    def constant():
-        return 'the same thing'
-
-
-    def identity():
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: shell
-
-    TypeError: identity() takes 0 positional arguments
-               but 1 was given
-
-  because the :ref:`definition<how to make a function>` for ``identity`` does not allow calling it with inputs and the test sends :ref:`None<what is None?>` as input
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen in ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 130
-    :emphasize-lines: 5
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # AttributeError
-    # TypeError
-
-* I add a name in parentheses for the ``identity`` :ref:`function<what is a function?>` to take input, in ``functions.py``
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 1-2
-
-    # def identity():
-    def identity(the_input):
-        return None
-
-  the test passes. I am genius.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-The requirement for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, this test passes when :ref:`None<what is None?>` is given as input.
-
-Does it pass when another value is given or does it always return :ref:`None<what is None?>`? Time to test it
-
-* I add a new :ref:`assertion<what is an assertion?>` to :ref:`test_identity_function` in ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 6-8
-
-        def test_identity_function(self):
-            reality = src.functions.identity(None)
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.identity(object)
-            my_expectation = object
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: shell
-
-    AssertionError: None != <class 'object'>
-
-  because the :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` not ``<class 'object'>`` or what it receives as input. I am not all the way genius, yet
-
-* I make the ``identity`` :ref:`function<what is a function?>` in ``functions.py`` return what it gets
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 3-4
-
-    # def identity():
-    def identity(the_input):
-        # return None
-        return the_input
-
-  the test passes.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 22
-
-    def identity(the_input):
-        return the_input
-
-* I add a git_ commit message in the other terminal_
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    git commit --all --message 'add test_identity_function'
-
-  the terminal_ shows a summary of the changes then goes back to the command line.
-
-I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send something (input) and get it back, I can start making changes to see how it affects the output.
-
-:ref:`The Identity Function returns its input as output.<test_identity_function>`
 
 ----
 
