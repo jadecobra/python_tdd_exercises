@@ -562,9 +562,11 @@ because ``result`` points to ``w_pass`` and when I call ``w_pass`` I get :ref:`N
 
 .. code-block:: python
 
-  assert result is 0
+  assert result   is 0
   assert w_pass() is 0
-  assert None is 0
+  assert None     is 0
+
+which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``0``.
 
 ----
 
@@ -825,7 +827,7 @@ I can also make a function with a `return statement`_.
         # w_return
         # w_return()
         result = w_return()
-        assert result is 0
+        assert result is 1
 
 
     # Exceptions seen
@@ -834,8 +836,8 @@ I can also make a function with a `return statement`_.
 
   .. code-block:: python
 
-    >       assert result is 0
-    E       assert None is 0
+    >       assert result is 1
+    E       assert None is 1
 
   because ``result`` points to ``w_return`` and when I call ``w_return`` I get :ref:`None<what is None?>`. Using substitution
 
@@ -846,9 +848,11 @@ I can also make a function with a `return statement`_.
 
   .. code-block:: python
 
-    assert result is 0
-    assert w_return() is 0
-    assert None is 0
+    assert result     is 1
+    assert w_return() is 1
+    assert None       is 1
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``1``.
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
@@ -860,7 +864,7 @@ I can also make a function with a `return statement`_.
         # w_return
         # w_return()
         result = w_return()
-        # assert result is 0
+        # assert result is 1
         assert result is None
 
 
@@ -893,7 +897,7 @@ The return_ keyword is used to state what a :ref:`function<what is a function?>`
         # w_return
         # w_return()
         result = w_return()
-        # assert result is 0
+        # assert result is 1
         assert result is None
 
 
@@ -914,7 +918,7 @@ The return_ keyword is used to state what a :ref:`function<what is a function?>`
         # w_return
         # w_return()
         # result = w_return()
-        # assert result is 0
+        # assert result is 1
         # assert result is None
         assert w_return() is None
 
@@ -926,7 +930,11 @@ The return_ keyword is used to state what a :ref:`function<what is a function?>`
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 5
+
+    def test_making_a_function_w_pass():
+        assert w_pass() is None
+
 
     def w_return():
         return
@@ -1099,7 +1107,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
   which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I change ``w_return_none`` to the simplest :ref:`function<what is a function?>` I can make with the def_ and pass_ keywords
+* I change ``w_return_none`` to a :ref:`function<what is a function?>` with the def_ and return_ keywords
 
   .. code-block:: python
     :lineno-start: 17
@@ -1108,7 +1116,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
     # w_return_none
     # w_return_none = None
     def w_return_none():
-        pass
+        return
 
 
     def test_making_a_function_w_return_none():
@@ -1123,14 +1131,14 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 * I add an :ref:`assertion<what is an assertion?>` to see what I get when I call ``w_return_none``
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 23
     :emphasize-lines: 3-5
 
     def test_making_a_function_w_return_none():
         # w_return_none
         # w_return_none()
         result = w_return_none()
-        assert result is 0
+        assert result is 2
 
 
     # Exceptions seen
@@ -1139,8 +1147,8 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
   .. code-block:: python
 
-    >       assert result is 0
-    E       assert None is 0
+    >       assert result is 2
+    E       assert None is 2
 
   because ``result`` points to ``w_return_none`` and when I call ``w_return_none`` I get :ref:`None<what is None?>`. Using substitution
 
@@ -1151,21 +1159,23 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
   .. code-block:: python
 
-    assert result is 0
-    assert w_return_none() is 0
-    assert None is 0
+    assert result          is 2
+    assert w_return_none() is 2
+    assert None            is 2
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``2``.
 
 * I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 15
+    :lineno-start: 23
     :emphasize-lines: 5-6
 
     def test_making_a_function_w_return_none():
         # w_return_none
         # w_return_none()
         result = w_return_none()
-        # assert result is 0
+        # assert result is 2
         assert result is None
 
 
@@ -1173,59 +1183,124 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
   the test passes.
 
-* I add :ref:`None<what is None?>` to the `return statement`_
+* I add :ref:`None<what is None?>` to the `return statement`_ of ``w_return_none``
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 2-3
-    :emphasize-text: None
+    :lineno-start: 17
+    :emphasize-lines: 4-5
 
+    # w_return_none
+    # w_return_none = None
     def w_return_none():
         # return
         return None
+
+
+    def test_making_a_function_w_return_none():
+        # w_return_none
+        # w_return_none()
+        result = w_return_none()
+        # assert result is 2
+        assert result is None
+
+
+    # Exceptions seen
 
   the test is still green.
 
 * I change :ref:`None<what is None?>` to ``'something'``
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3-4
+    :lineno-start: 17
+    :emphasize-lines: 5-6
     :emphasize-text: something
 
+    # w_return_none
+    # w_return_none = None
     def w_return_none():
         # return
         # return None
         return 'something'
 
+
+    def test_making_a_function_w_return_none():
+
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'something' is not None
+    AssertionError: assert 'something' is None
 
-  because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
+  because ``result`` points to ``w_return_none`` and when I call ``w_return_none`` I get ``'something'``. Using substitution
+
+  .. code-block:: python
+
+    result = w_return_none()
+    result = 'something'
+
+  .. code-block:: python
+
+    assert result          is None
+    assert w_return_none() is None
+    assert 'something'     is None
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None<what is None?>` is not the same object as ``'something'``.
 
 * I undo the change
 
   .. code-block:: python
-    :lineno-start: 9
-    :emphasize-lines: 3-4
+    :lineno-start: 17
+    :emphasize-lines: 5-6
 
+    # w_return_none
+    # w_return_none = None
     def w_return_none():
         # return
         return None
         # return 'something'
 
+
+    def test_making_a_function_w_return_none():
+
   the test is green again.
+
+* I remove the :ref:`variable<what is a variable?>` from :ref:`test_making_a_function_w_return_none` because it is only used one
+
+  .. code-block:: python
+    :lineno-start: 25
+    :emphasize-lines: 4, 6-7
+
+    def test_making_a_function_w_return_none():
+        # w_return_none
+        # w_return_none()
+        # result = w_return_none()
+        # assert result is 2
+        # assert result is None
+        assert w_return_none() is None
+
+
+    # Exceptions seen
+
+  the test is still green because I can use a :ref:`function call<how to call a function>` directly, without a middle man since I get the returned value.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 9
+    :lineno-start: 13
+
+    def test_making_a_function_w_return():
+        assert w_return() is None
+
 
     def w_return_none():
         return None
+
+
+    def test_making_a_function_w_return_none():
+        assert w_return_none() is None
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1241,22 +1316,22 @@ I have three :ref:`functions<what is a function?>` with different statements, an
 
 .. code-block:: python
 
-  src.functions.w_pass()
+  w_pass()
   pass
 
 .. code-block:: python
 
-  src.functions.w_return()
+  w_return()
   return
 
 .. code-block:: python
 
-  src.functions.w_return_none()
+  w_return_none()
   return None
 
 their contents are different, their results are the same because ":ref:`all functions return None by default, as if they have an invisible line that says ...<test_making_a_function_w_return_none>`"
 
-I like to write my :ref:`functions<what is a function?>` with ``return None``, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
+I like to write my :ref:`functions<what is a function?>` with explicit `return statements`_, so that anyone can see what the :ref:`function<what is a function?>` returns without having to think about it.
 
 :ref:`I can make a function with return None.<test_making_a_function_w_return_none>`
 
@@ -1266,7 +1341,7 @@ I like to write my :ref:`functions<what is a function?>` with ``return None``, s
 test_what_happens_after_functions_return
 *********************************************************************************
 
-The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`
+The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`. 
 
 ----
 
