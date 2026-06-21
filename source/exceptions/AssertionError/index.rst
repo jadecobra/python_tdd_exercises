@@ -3686,7 +3686,7 @@ test_assertion_error_w_is_vs_equal
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 1-2
 
     git commit --all --message \
     'add test_assertion_error_w_is_vs_equal'
@@ -3765,7 +3765,7 @@ test_assertion_error_w_equality
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 1-2
 
     git commit --all --message \
     'add test_assertion_error_w_equality'
@@ -3852,7 +3852,7 @@ test_assertion_error_w_true
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 1-2
 
     git commit --all --message \
     'add test_assertion_error_w_true'
@@ -3939,10 +3939,97 @@ test_assertion_error_w_false
 * I add a git_ commit message
 
   .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 1-2
 
     git commit --all --message \
     'add test_assertion_error_w_false'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+=================================================================================
+test_assertion_error_w_none
+=================================================================================
+
+----
+
+* I add a :ref:`function<what is a function?>` for ``# test AssertionError with None``
+
+  .. code-block:: python
+    :lineno-start: 6
+    :emphasize-lines: 4
+
+    assert 'I am' + ' alive' == 'I am alive'
+
+
+    def test_assertion_error_w_none():
+    # test AssertionError with None
+    assert None is None
+
+  the terminal_ is my friend, and shows IndentationError_
+
+  .. code-block:: python
+
+    IndentationError: expected an indented block
+                      after function definition on line 9
+
+  because in Python_ the body of a :ref:`function<what is a function?>` is indented under the name.
+
+* I indent the :ref:`assertions<what is an assertion?>` with 4 spaces to make them the body of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 2-3, 5, 7, 9, 11, 13, 15, 17, 19, 21
+
+    def test_assertion_error_w_none():
+        # test AssertionError with None
+        assert None is None
+
+        assert False is not None
+
+        assert True is not None
+
+        assert 0 is not None
+
+        assert 0.0 is not None
+
+        assert '' is not None
+
+        assert () is not None
+
+        assert [] is not None
+
+        assert set() is not None
+
+        assert {} is not None
+
+
+    def test_assertion_error_w_false():
+
+  the test passes and the terminal_ shows
+
+  .. code-block:: python
+
+    =================== 5 passed in R.STs ====================
+
+* I remove the comment since it is the same as the name of the :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+
+    def test_assertion_error_w_none():
+        assert None is None
+
+        assert False is not None
+
+* I add a git_ commit message
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit --all --message \
+    'add test_assertion_error_w_none'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
