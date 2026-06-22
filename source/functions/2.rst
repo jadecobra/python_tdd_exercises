@@ -201,53 +201,88 @@ I can call a :ref:`function<what is a function?>` with input by placing an :ref:
 
 ----
 
-* I add input to the :ref:`function call<how to call a function?>`
+I add input to the :ref:`function call<how to call a function?>`
+
+.. code-block:: python
+  :lineno-start: 37
+  :emphasize-lines: 5-6
+
+  def test_identity_function():
+      def identity():
+          return None
+
+      # assert identity() == None
+      assert identity(None) == None
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+.. code-block:: python
+
+  TypeError: test_identity_function.<locals>.identity()
+              takes 0 positional arguments but 1 was given
+
+because
+
+- I called ``identity`` which belongs to ``test_identity_function`` with one input (:ref:`None`).
+- The :ref:`function definition (signature)<how to make a function>` of ``identity``, does not allow any inputs when it is called, since the parentheses are empty.
+- I am violating the :ref:`function signature<how to make a function>` when I call it in a way that it was not designed to be called which raises :ref:`TypeError<what causes TypeError?>`.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+I add a name in parentheses for the ``identity`` :ref:`function<what is a function?>` to take input
+
+.. code-block:: python
+  :lineno-start: 37
+  :emphasize-lines: 2-3
+
+  def test_identity_function():
+      # def identity():
+      def identity(the_input):
+          return None
+
+      # assert identity() == None
+      assert identity(None) == None
+
+
+  # Exceptions seen
+
+the test passes. I am genius.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+The description for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, this test passes when :ref:`None<what is None?>` is given as input.
+
+Does it pass when another value is given or does it always return :ref:`None<what is None?>`? There is one way to find out
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_identity_function` in
 
   .. code-block:: python
     :lineno-start: 37
-    :emphasize-lines: 5-6
+    :emphasize-lines: 6-8
 
     def test_identity_function():
-        def identity():
+        # def identity():
+        def identity(the_input):
             return None
 
         # assert identity() == None
         assert identity(None) == None
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: test_identity_function.<locals>.identity()
-               takes 0 positional arguments but 1 was given
-
-  because
-
-  - I called ``identity`` which belongs to ``test_identity_function`` with one input (:ref:`None`).
-  - The :ref:`function definition (signature)<how to make a function>` of ``identity``, does not allow any inputs when it is called, since the parentheses are empty which raises :ref:`TypeError<what causes TypeError?>`.
-  - I am violating the :ref:`function signature<how to make a function>` when I call it in a way that it was not designed to be called.
-
-The requirement for the :ref:`identity function<test_logical_identity>` is that it returns the same thing it is given, this test passes when :ref:`None<what is None?>` is given as input.
-
-Does it pass when another value is given or does it always return :ref:`None<what is None?>`? Time to test it
-
-* I add a new :ref:`assertion<what is an assertion?>` to :ref:`test_identity_function` in ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 124
-    :emphasize-lines: 6-8
-
-        def test_identity_function(self):
-            reality = src.functions.identity(None)
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.identity(object)
-            my_expectation = object
-            self.assertEqual(reality, my_expectation)
+        assert identity(object) == object
 
 
     # Exceptions seen
@@ -256,30 +291,54 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
   .. code-block:: shell
 
-    AssertionError: None != <class 'object'>
+    E       assert None == object
 
-  because the :ref:`function<what is a function?>` always returns :ref:`None<what is None?>` not ``<class 'object'>`` or what it receives as input. I am not all the way genius, yet
+  - because when I call ``identity`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-* I make the ``identity`` :ref:`function<what is a function?>` in ``functions.py`` return what it gets
+    .. code-block:: python
+
+      assert identity(object) == object
+      assert None             == object
+
+    which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is only equal to None<what is None?>`
+
+  - :ref:`object<what is a class?>` is the mother of everything in Python_. :ref:`everything in Python is an object (they inherit from it)<everything is an object>`. I am not all the way genius, yet.
+
+* I make the ``identity`` :ref:`function<what is a function?>` return what it gets
 
   .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 3-4
+    :lineno-start: 37
+    :emphasize-lines: 4-5
 
-    # def identity():
-    def identity(the_input):
-        # return None
-        return the_input
+    def test_identity_function():
+        # def identity():
+        def identity(the_input):
+            # return None
+            return the_input
+
+        # assert identity() == None
+        assert identity(None) == None
+        assert identity(object) == object
+
+
+    # Exceptions seen
 
   the test passes.
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 22
+    :lineno-start: 37
 
-    def identity(the_input):
-        return the_input
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
+
+        assert identity(None) == None
+        assert identity(object) == object
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -290,9 +349,9 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to see if my test is connected to what I am testing. If I can send something (input) and get it back, I can start making changes to see how it affects the output.
-
 :ref:`The Identity Function returns its input as output.<test_identity_function>`
+
+I sometimes use the :ref:`Identity Function<test_identity_function>` when I am testing, to check connections. If I can send something (input) and get it back, I can start making changes to see how it affects the output.
 
 ----
 
@@ -310,34 +369,33 @@ Why would I use a :ref:`function<what is a function?>` when I can just write cod
 
 ----
 
-* I change :ref:`test_failure` to ``test_why_use_a_function`` with an :ref:`assertion<what is an assertion?>`
+* I add a test
 
   .. code-block:: python
-    :lineno-start: 4
-    :emphasize-lines: 3-6
+    :lineno-start: 37
+    :emphasize-lines: 9-10
 
-    class TestFunctions(unittest.TestCase):
+    def test_identity_function():
+        def identity(the_input):
+            return the_input
 
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            my_expectation = 0
-            self.assertEqual(reality, my_expectation)
+        assert identity(None) == None
+        assert identity(object) == object
+
+
+    def test_why_use_a_function():
+        assert 1 + 0 == 0
 
 
     # Exceptions seen
-    # AssertionError
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 1 != 0
+    E       assert (1 + 0) == 0
 
-  because ``1`` is NOT equal to ``0``
-
-  - ``reality`` is the name or :ref:`variable<what is a variable?>` I gave to the result of ``1 + 0``
-  - ``my_expectation`` is the name or :ref:`variable<what is a variable?>` I gave to ``0``
-  - ``assertEqual(reality, my_expectation)`` is  asking Python_ if ``1 + 0 is equal to 0``
+  because ``1 + 0`` is NOT equal to ``0``.
 
 ----
 
@@ -347,20 +405,18 @@ Why would I use a :ref:`function<what is a function?>` when I can just write cod
 
 ----
 
-I change ``my_expectation`` to match reality
+I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
 .. code-block:: python
-  :lineno-start: 6
-  :emphasize-lines: 3-4
+  :lineno-start: 45
+  :emphasize-lines: 2-3
 
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            # my_expectation = 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
+  def test_why_use_a_function():
+      # assert 1 + 0 == 0
+      assert 1 + 0 == 1
 
 
-    # Exceptions seen
+  # Exceptions seen
 
 the test passes.
 
@@ -372,21 +428,16 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`
+* I add an :ref:`assertion<what is an assertion?>` for ``1 + 1``
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 7-9
+    :lineno-start: 45
+    :emphasize-lines: 4
 
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            # my_expectation = 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 1
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
+    def test_why_use_a_function():
+        # assert 1 + 0 == 0
+        assert 1 + 0 == 1
+        assert 1 + 1 == 1
 
 
     # Exceptions seen
@@ -395,23 +446,40 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 2 != 1
+    E       assert (1 + 1) == 1
 
-* I change ``my_expectation`` to ``2``
+  because ``1 + 1`` is NOT equal to ``1``.
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 2-3
+    :lineno-start: 45
+    :emphasize-lines: 4-5
 
-            reality = 1 + 1
-            # my_expectation = 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
+    def test_why_use_a_function():
+        # assert 1 + 0 == 0
+        assert 1 + 0 == 1
+        # assert 1 + 1 == 1
+        assert 1 + 1 == 2
 
 
     # Exceptions seen
 
   the test passes.
+
+
+
+
+
+
+
+----
+
+----
+
+----
+
+----
 
 * I add another :ref:`assertion<what is an assertion?>`
 
