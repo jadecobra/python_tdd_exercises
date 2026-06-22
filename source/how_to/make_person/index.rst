@@ -445,7 +445,7 @@ I add another test :ref:`function<what is a function?>`
 
 
   def test_john():
-    assert john() == 'john, smith, M, 2000'
+      assert john() == 'john, smith, M, 2000'
 
 
 
@@ -561,7 +561,7 @@ because there is no definition for ``john`` in this file_, yet.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 5
+    :linenos:
 
     def joe():
         return 'joe, blow, M, 1996'
@@ -595,6 +595,194 @@ because there is no definition for ``john`` in this file_, yet.
     :emphasize-lines: 1-2
 
     git commit -am 'add test_john'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+----
+
+*********************************************************************************
+test_mary
+*********************************************************************************
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+I add another test :ref:`function<what is a function?>`
+
+.. code-block:: python
+  :lineno-start: 16
+  :emphasize-lines: 5-6
+
+  def test_john():
+      assert john() == 'john, smith, M, 1580'
+
+
+  def test_mary():
+      assert mary() == 'mary, public, F, 2000'
+
+
+  # Exceptions seen
+
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+.. code-block:: python
+
+  NameError: name 'mary' is not defined
+
+because there is no definition for ``mary``, it is just a name.
+
+----
+
+=================================================================================
+:green:`GREEN`: make it pass
+=================================================================================
+
+----
+
+* I add a :ref:`variable<what is a variable?>` for ``mary`` and point it to :ref:`None<what is None?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5
+
+    def john():
+        return 'john, smith, M, 2000'
+
+
+    mary = None
+
+
+    def test_joe():
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because I called ``mary`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+
+  .. code-block:: python
+
+    mary = None # point the name to the object
+    mary()      # call the name
+    None()      # substitute the value for the name
+
+  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
+
+* I change ``mary`` to a :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 5-7
+
+    def john():
+        return 'john, smith, M, 2000'
+
+
+    # mary = None
+    def mary():
+        return None
+
+
+    def test_joe():
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None == 'mary, public, F, 2000'
+
+  because when I call ``mary`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+
+  .. code-block:: python
+
+    assert mary() == 'mary, public, F, 2000'
+    assert None   == 'mary, public, F, 2000'
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is only equal to None<what is None?>`.
+
+* I change :ref:`the return statement` of ``mary``
+
+  .. code-block:: python
+    :lineno-start: 9
+    :emphasize-lines: 7-8
+
+    def john():
+        return 'john, smith, M, 2000'
+
+
+    # mary = None
+    def mary():
+        # return None
+        return 'mary, public, F, 2000'
+
+
+    def test_joe():
+
+  the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :linenos:
+
+    def joe():
+        return 'joe, blow, M, 1996'
+
+
+    def jane():
+        return 'jane, doe, F, 1991'
+
+
+    def john():
+        return 'john, smith, M, 2000'
+
+
+    def mary():
+        return 'mary, public, F, 2000'
+
+
+    def test_joe():
+        assert joe() == 'joe, blow, M, 1996'
+
+
+    def test_jane():
+        assert jane() == 'jane, doe, F, 1991'
+
+
+    def test_john():
+        assert john() == 'john, smith, M, 1580'
+
+
+    def test_mary():
+        assert mary() == 'mary, public, F, 2000'
+
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am 'add test_mary'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
