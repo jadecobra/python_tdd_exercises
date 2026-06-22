@@ -102,7 +102,7 @@ test_joe
 
     NameError: name 'joe' is not defined
 
-  because there is no definition for ``joe`` in ``test_person.py``
+  because there is no definition for ``joe`` in ``test_person.py``.
 
 * I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
 
@@ -130,6 +130,7 @@ test_joe
     :emphasize-lines: 1
 
     joe = None
+
 
     def test_joe():
         assert joe() == 'joe, blow, M, 1996'
@@ -175,6 +176,7 @@ test_joe
     def joe():
         return None
 
+
     def test_joe():
         assert joe() == 'joe, blow, M, 1996'
 
@@ -187,7 +189,7 @@ test_joe
 
     AssertionError: assert None == 'joe, blow, M, 1996'
 
-  because when I call ``w_return_none`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because when I call ``joe`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -206,6 +208,7 @@ test_joe
     def joe():
         # return None
         return 'joe, blow, M, 1996'
+
 
     def test_joe():
         assert joe() == 'joe, blow, M, 1996'
@@ -226,9 +229,11 @@ test_joe
 * I remove the commented lines
 
   .. code-block:: python
+    :linenos:
 
     def joe():
         return 'joe, blow, M, 1996'
+
 
     def test_joe():
         assert joe() == 'joe, blow, M, 1996'
@@ -259,37 +264,30 @@ test_jane
 
 ----
 
-* I remove the :ref:`assertion<what is an assertion?>` and comments then add a new test :ref:`function<what is a function?>`
+I add a test :ref:`function<what is a function?>`
 
-  .. code-block:: python
-    :linenos:
-    :emphasize-lines: 1-2
+.. code-block:: python
+  :lineno-start: 5
+  :emphasize-lines: 5-6
 
-    def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
+  def test_joe():
+      assert joe() == 'joe, blow, M, 1996'
 
 
-    # Exceptions seen
-    # AssertionError
+  def test_jane():
+      assert jane() == 'jane, doe, F, 1991'
 
-  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: python
 
-    NameError: name 'jane' is not defined
+  # Exceptions seen
 
-  because there is no definition for ``jane`` in ``test_person.py``
+the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-* I add :ref:`NameError<test_catching_name_error_in_tests>` to the list of :ref:`Exceptions<errors>` seen
+.. code-block:: python
 
-  .. code-block:: python
-    :lineno-start: 5
-    :emphasize-lines: 3
-    :emphasize-text: NameError
+  NameError: name 'jane' is not defined
 
-    # Exceptions seen
-    # AssertionError
-    # NameError
+because there is no definition for ``jane`` in this file_.
 
 ----
 
@@ -303,15 +301,16 @@ test_jane
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1
+    :emphasize-lines: 5
+
+    def joe():
+        return 'joe, blow, M, 1996'
+
 
     jane = None
 
-    def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
 
-
-    # Exceptions seen
+    def test_joe():
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
@@ -325,37 +324,26 @@ test_jane
 
     jane = None # point the name to the object
     jane()      # call the name
-    None()     # substitute the value for the name
+    None()      # substitute the value for the name
 
   ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
-
-* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
-
-  .. code-block:: python
-    :lineno-start: 7
-    :emphasize-lines: 4
-    :emphasize-text: TypeError
-
-    # Exceptions seen
-    # AssertionError
-    # NameError
-    # TypeError
 
 * I change ``jane`` to a :ref:`function<what is a function?>`
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 1-3
+    :emphasize-lines: 5-7
+
+    def joe():
+        return 'joe, blow, M, 1996'
+
 
     # jane = None
     def jane():
         return None
 
-    def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
 
-
-    # Exceptions seen
+    def test_joe():
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
@@ -363,12 +351,12 @@ test_jane
 
     AssertionError: assert None == 'jane, doe, F, 1991'
 
-  because when I call ``w_return_none`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because when I call ``jane`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
     assert jane() == 'jane, doe, F, 1991'
-    assert None  == 'jane, doe, F, 1991'
+    assert None   == 'jane, doe, F, 1991'
 
   which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is only equal to None<what is None?>`.
 
@@ -376,18 +364,19 @@ test_jane
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 3-4
+    :emphasize-lines: 7-8
+
+    def joe():
+        return 'joe, blow, M, 1996'
+
 
     # jane = None
     def jane():
         # return None
         return 'jane, doe, F, 1991'
 
-    def test_jane():
-        assert jane() == 'jane, doe, F, 1991'
 
-
-    # Exceptions seen
+    def test_joe():
 
   the test passes.
 
@@ -402,12 +391,23 @@ test_jane
 * I remove the commented lines
 
   .. code-block:: python
+    :linenos:
+
+    def joe():
+        return 'joe, blow, M, 1996'
+
 
     def jane():
         return 'jane, doe, F, 1991'
 
+
+    def test_joe():
+        assert joe() == 'joe, blow, M, 1996'
+
+
     def test_jane():
         assert jane() == 'jane, doe, F, 1991'
+
 
 
     # Exceptions seen
@@ -420,8 +420,6 @@ test_jane
     git commit -am 'add test_jane'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
-
-
 
 ----
 
