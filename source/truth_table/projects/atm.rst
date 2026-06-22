@@ -439,7 +439,7 @@ because I do not have a definition for ``src`` in this file_
     # AttributeError
     # TypeError
 
-* I add the :ref:`keyword argument<test_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``atm.py``
+* I add the :ref:`keyword argument<test_keyword_arguments>` to the :ref:`function<what is a function?>` in ``atm.py``
 
   .. code-block:: python
     :linenos:
@@ -1955,7 +1955,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_atm.py``
 

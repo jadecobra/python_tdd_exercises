@@ -391,7 +391,7 @@ because there is no definition for ``Person`` in ``person.py`` in the ``src`` fo
         Person.say_hello() takes 0 positional arguments
         but 2 were given
 
-  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`method<what is a method?>` with one :ref:`positional argument<test_w_positional_arguments>` (``person``). Why did the error say two were given when the test only sends one?
+  because the :ref:`definition<how to make a function>` for ``say_hello`` does not allow inputs and the test called the :ref:`method<what is a method?>` with one :ref:`positional argument<test_positional_arguments>` (``person``). Why did the error say two were given when the test only sends one?
 
 * I add ``person`` to the :ref:`method definition<how to make a function>`
 
@@ -637,7 +637,7 @@ I want the :ref:`say_hello method<test_classy_person_says_hello>` of the ``Perso
     SyntaxError: parameter without a default follows
                  parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
 * I add a default value for ``year_of_birth`` to make it optional
 

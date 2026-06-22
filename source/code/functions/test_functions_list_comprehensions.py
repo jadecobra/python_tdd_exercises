@@ -45,17 +45,17 @@ class TestFunctions(unittest.TestCase):
         self.assertIsNone(src.functions.identity(None))
         self.assertEqual(src.functions.identity(object), object)
 
-    def test_w_positional_arguments(self):
+    def test_positional_arguments(self):
         self.assertEqual(
-            src.functions.w_positional_arguments('first', 'last'),
+            src.functions.positional_arguments('first', 'last'),
             ('first', 'last')
         )
         self.assertEqual(
-            src.functions.w_positional_arguments('last', 'first'),
+            src.functions.positional_arguments('last', 'first'),
             ('last', 'first')
         )
 
-    def test_w_keyword_arguments(self):
+    def test_keyword_arguments(self):
         self.assertEqual(
             src.functions.w_keyword_arguments(
                 first_input='first', last_input='last',
@@ -73,9 +73,9 @@ class TestFunctions(unittest.TestCase):
             ('last', 'first')
         )
 
-    def test_w_args_and_kwargs(self):
+    def test_args_and_kwargs(self):
         self.assertEqual(
-            src.functions.w_args_and_kwargs(
+            src.functions.args_and_kwargs(
                 'first', last_input='last',
             ),
             ('first', 'last')

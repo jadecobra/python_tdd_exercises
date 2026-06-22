@@ -94,8 +94,8 @@ functions review
 * :ref:`what happens after a function returns?<test_what_happens_after_functions_return>`
 * :ref:`what is a constant function?<test_constant_function>`
 * :ref:`what is the identity function?<test_identity_function>`
-* :ref:`what is a positional argument?<test_w_positional_arguments>`
-* :ref:`what is a keyword argument?<test_w_keyword_arguments>`
+* :ref:`what is a positional argument?<test_positional_arguments>`
+* :ref:`what is a keyword argument?<test_keyword_arguments>`
 * :ref:`how can I make arguments a choice in a function?<test_w_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_w_unknown_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_w_unknown_arguments>`

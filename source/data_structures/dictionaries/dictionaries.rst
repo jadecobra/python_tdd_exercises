@@ -271,7 +271,7 @@ the test passes. These are two ways to make an empty :ref:`dictionary<what is a 
 
     TypeError: cannot convert dictionary update sequence element #0 to a sequence
 
-* I try a :ref:`keyword argument<test_w_keyword_arguments>`
+* I try a :ref:`keyword argument<test_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2995,7 +2995,7 @@ the test passes.
 
   I had the same error message when I tried to :ref:`make a dictionary with things in it<test_making_a_dictionary>`
 
-* I try a :ref:`keyword argument<test_w_keyword_arguments>`
+* I try a :ref:`keyword argument<test_keyword_arguments>`
 
   .. code-block:: python
     :lineno-start: 196
@@ -3062,7 +3062,7 @@ the test passes.
 
   the test passes.
 
-* since the `update method`_ takes :ref:`keyword arguments<test_w_keyword_arguments>`, I can give it a :ref:`dictionary<what is a dictionary?>` as input. I add another :ref:`assertion<what is an assertion?>`
+* since the `update method`_ takes :ref:`keyword arguments<test_keyword_arguments>`, I can give it a :ref:`dictionary<what is a dictionary?>` as input. I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 194

@@ -137,20 +137,20 @@ class TestFunctions(unittest.TestCase):
         my_expectation = object
         self.assertEqual(reality, my_expectation)
 
-    def test_w_positional_arguments(self):
-        reality = src.functions.w_positional_arguments(
+    def test_positional_arguments(self):
+        reality = src.functions.positional_arguments(
             self.first, self.last,
         )
         my_expectation = (self.first, self.last)
         self.assertEqual(reality, my_expectation)
 
-        reality = src.functions.w_positional_arguments(
+        reality = src.functions.positional_arguments(
             self.last, self.first,
         )
         my_expectation = (self.last, self.first)
         self.assertEqual(reality, my_expectation)
 
-        reality = src.functions.w_positional_arguments(
+        reality = src.functions.positional_arguments(
             self.first_number, self.second_number,
         )
         my_expectation = (
@@ -158,13 +158,13 @@ class TestFunctions(unittest.TestCase):
         )
         self.assertEqual(reality, my_expectation)
 
-        reality = src.functions.w_positional_arguments(
+        reality = src.functions.positional_arguments(
             self.a_tuple, self.a_list,
         )
         my_expectation = (self.a_tuple, self.a_list)
         self.assertEqual(reality, my_expectation)
 
-    def test_w_keyword_arguments(self):
+    def test_keyword_arguments(self):
         reality = src.functions.w_keyword_arguments(
             first_input=self.first,
             last_input=self.last,
@@ -203,16 +203,16 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (a_set, a_dictionary)
         self.assertEqual(reality, my_expectation)
 
-        reality = src.functions.w_positional_arguments(
+        reality = src.functions.positional_arguments(
             first_input=self.a_list,
             last_input=self.a_tuple,
         )
         my_expectation = (self.a_list, self.a_tuple)
         self.assertEqual(reality, my_expectation)
 
-    def test_w_args_and_kwargs(self):
+    def test_args_and_kwargs(self):
         reality = (
-            src.functions.w_args_and_kwargs(
+            src.functions.args_and_kwargs(
                 self.first, last_input=self.last,
             )
         )

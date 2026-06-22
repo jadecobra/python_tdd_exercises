@@ -211,9 +211,9 @@ test_functions
 #. :ref:`test_making_a_function_w_return_none`
 #. :ref:`test_constant_function`
 #. :ref:`test_identity_function`
-#. :ref:`test_w_positional_arguments`
-#. :ref:`test_w_keyword_arguments`
-#. :ref:`test_w_args_and_kwargs`
+#. :ref:`test_positional_arguments`
+#. :ref:`test_keyword_arguments`
+#. :ref:`test_args_and_kwargs`
 #. :ref:`test_w_optional_arguments`
 #. :ref:`test_w_unknown_arguments`
 

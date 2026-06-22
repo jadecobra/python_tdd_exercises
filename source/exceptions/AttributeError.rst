@@ -2095,7 +2095,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     AClass().method_02()
         AClass.method_02(AClass)
 
-  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_02`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>` (the parentheses are empty).
+  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_02`` does not allow it take any :ref:`positional arguments<test_positional_arguments>` (the parentheses are empty).
 
 * I add ``self`` to the parentheses of ``method_02``
 
@@ -2239,7 +2239,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     AClass().method_04()
         AClass.method_04(AClass)
 
-  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_04`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>`.
+  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_04`` does not allow it take any :ref:`positional arguments<test_positional_arguments>`.
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`definition<how to make a function>` for ``method_04``
 
@@ -2444,7 +2444,7 @@ The tests show that :ref:`variables<what is a variable?>`, :ref:`functions<what 
     AClass().method_08()
         AClass.method_08(AClass)
 
-  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_w_positional_arguments>` (the parentheses are empty).
+  which raises :ref:`TypeError<what causes TypeError?>` since :ref:`the definition<how to make a function>` of ``method_08`` does not allow it take any :ref:`positional arguments<test_positional_arguments>` (the parentheses are empty).
 
 * I add the :ref:`staticmethod decorator<what is the staticmethod decorator?>` to the :ref:`method definition<how to make a function>` since it does not use anything in the :ref:`class<what is a class?>`
 

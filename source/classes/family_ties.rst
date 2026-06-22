@@ -711,7 +711,7 @@ how to call the parent from the child
     src.family_ties.Doe('the_first')
     Doe.__init__('the_first')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'the_first'``)
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Doe.__init__()``, ``self`` is ``Doe`` in ``Doe``. It would be like calling ``Doe.__init__(Doe)``.
 
 * I add a parameter for ``first_name`` to the ``__init__`` :ref:`method<what is a method?>` of ``Doe`` in ``family_ties.py``
@@ -745,7 +745,7 @@ how to call the parent from the child
         super().__init__() # call the parent
     Person.__init__()
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires a :ref:`positional argument<test_w_positional_arguments>` for ``first_name`` and it was called with ``self``
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Person`` requires a :ref:`positional argument<test_positional_arguments>` for ``first_name`` and it was called with ``self``
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Person.__init__()``, ``self`` is ``Person`` in ``Person``. It would be like calling ``Person.__init__(Person)``.
 
 * I add the required parameter to ``super().__init__()`` in ``Doe``
@@ -1169,7 +1169,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     joe = src.family_ties.Blow('joe')
           Blow.__init__('joe')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Blow`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Blow`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``first_name``).
 
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Blow.__init__('joe')``, ``self`` is ``Blow`` in ``Blow``. It would be like calling ``Blow.__init__(Blow, 'joe')``.
 
@@ -1378,7 +1378,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
     john = src.family_ties.Smith('john')
            Smith.__init__('john')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Smith`` takes only one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the definition for the ``__init__`` :ref:`method<what is a method?>` of ``Smith`` takes only one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``'john'``)
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Smith.__init__('john')``, ``self`` is ``Smith`` in ``Smith``. It would be like calling ``Smith.__init__(Smith, 'john')``.
 
 * I add ``first_name`` to the parentheses of the ``__init__`` :ref:`method<what is a method?>`
@@ -1836,7 +1836,7 @@ the test passes.
     mary = src.family_ties.Jane('mary')
            Jane.__init__('mary')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``'mary'``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``'mary'``)
 
 * I add ``first_name`` to the parentheses for the ``__init__`` :ref:`method<what is a method?>` of ``Jane`` in ``family_ties.py``
 
@@ -1870,7 +1870,7 @@ the test passes.
     jane = src.family_ties.Jane()
            Jane.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``).
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``).
 
 * I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
 
@@ -2051,7 +2051,7 @@ the test passes.
     joe = src.family_ties.Joe()
           Person.__init__()
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Joe.__init__()``, ``self`` is ``Joe`` in ``Joe``. It would be like calling ``Joe.__init__(Joe)``
 
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``Joe``
@@ -2499,7 +2499,7 @@ what happens when a child has more than one parent?
            # call the next parent of Mary
            Joe.__init__('mary')
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` only takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` only takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it got called with two (``self`` and ``mary``)
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Joe.__init__('mary')``, ``self`` is ``Joe`` in ``Joe``. It would be like calling ``Joe.__init__(Joe, 'mary')``.
 
 * I change the ``__init__`` :ref:`method<what is a method?>` of ``Joe`` to take a ``first_name`` argument
@@ -2521,7 +2521,7 @@ what happens when a child has more than one parent?
     TypeError: Joe.__init__() missing 1
                required positional argument: 'first_name'
 
-  I broke the ``joe = src.family_ties.Joe()`` call because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
+  I broke the ``joe = src.family_ties.Joe()`` call because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
 
 * I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
 
@@ -2925,7 +2925,7 @@ what happens when a child has more than one parent?
     john = src.family_ties.John()
            Person.__init__()
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Person`` takes two :ref:`positional arguments<test_w_positional_arguments>` (``self`` and ``first_name``) and it got called with one (``self``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Person`` takes two :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it got called with one (``self``)
 
 * I add the ``__init__`` :ref:`method<what is a method?>` to ``John`` in ``family_ties.py``
 
@@ -3292,7 +3292,7 @@ what happens when a child has more than one parent?
               super().__init__('lil')
           John.__init__('lil')
 
-  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``John`` takes one :ref:`positional argument<test_w_positional_arguments>` (``self``) and it was called with two (``self`` and ``lil``)
+  which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``John`` takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``lil``)
 
 * I change the ``__init__`` :ref:`method<what is a method?>` in ``John`` to take in a parameter for ``first_name`` with a :ref:`default value<test_w_optional_arguments>` to make it optional
 
@@ -3372,7 +3372,7 @@ what happens when a child has more than one parent?
               last_name='smith'
           )
 
-  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` was called with a :ref:`keyword argument<test_w_keyword_arguments>` and it only takes ``self``
+  - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` was called with a :ref:`keyword argument<test_keyword_arguments>` and it only takes ``self``
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Mary.__init__(first_name='lil', last_name='smith')``, ``self`` is ``Mary`` in ``Mary``. It would be like calling ``Mary.__init__(Mary, first_name='lil', last_name='smith')``.
 
 * I add ``first_name`` with a :ref:`default value<test_w_optional_arguments>` to the ``__init__`` :ref:`method<what is a method?>` of ``Mary``
@@ -3417,7 +3417,7 @@ what happens when a child has more than one parent?
     SyntaxError: parameter without a default
                  follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
 * I add a :ref:`default value<test_w_optional_arguments>` for ``last_name``
 
@@ -3570,7 +3570,7 @@ what happens when a child has more than one parent?
     SyntaxError: parameter without a default
                  follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
 * I give ``last_name`` a :ref:`default value<test_w_optional_arguments>`
 

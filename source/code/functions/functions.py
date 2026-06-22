@@ -23,15 +23,15 @@ def identity(the_input):
     return the_input
 
 
-def w_positional_arguments(first_input, last_input):
+def positional_arguments(first_input, last_input):
     return first_input, last_input
 
 
-def w_keyword_arguments(first_input, last_input):
+def keyword_arguments(first_input, last_input):
     return first_input, last_input
 
 
-def w_args_and_kwargs(first_input, last_input):
+def args_and_kwargs(first_input, last_input):
     return first_input, last_input
 
 

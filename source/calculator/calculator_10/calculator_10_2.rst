@@ -2121,7 +2121,7 @@ I want the calculator to show the number when I press a button
 
     def add_buttons_to_column_1(column_1):
 
-* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is pressed. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_w_positional_arguments>` that the :ref:`function<what is a function?>` I give for the ``on_click`` parameter takes. I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
+* `streamlit buttons`_ have an ``on_click`` parameter that lets me call a :ref:`function<what is a function?>` when a button is pressed. It also takes an argument named ``args`` where I can pass in the :ref:`positional arguments<test_positional_arguments>` that the :ref:`function<what is a function?>` I give for the ``on_click`` parameter takes. I pass the :ref:`function<what is a function?>` and the ``display`` :ref:`variable<what is a variable?>` with a value as the arguments for the ``7`` button in the ``add_buttons_to_column_1`` :ref:`function<what is a function?>`
 
   .. code-block:: python
     :lineno-start: 8

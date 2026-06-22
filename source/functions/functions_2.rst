@@ -1,8 +1,8 @@
 .. _Functions 2: use class attributes:
 
 .. meta::
-  :description: Part 2 / continuation of the beginner Python TDD functions tutorial in the functions project: use class attributes on TestFunctions (first, last, a_tuple, a_list, first_number, second_number) to remove repetition of string literals, tuples, lists and numbers from test_w_positional_arguments, test_w_keyword_arguments, test_w_args_and_kwargs (and cross-call sites) instead of duplicating locals like first, last = 'first', 'last' or a_tuple = (1, 2, 3, 'n') inside each test. Builds directly on :ref:`AssertionError 2: use class attributes` and the setUp / class attributes lessons from the classes chapter. Although classes teaches the setUp method to reset fresh values before every test, here the values are constants identical across tests so plain class attributes at the Test class level suffice (no setUp needed, no per-test reset). The "I have these tests by the end of the chapter" literalinclude of test_functions_2.py shows the final state with 6 class attrs + self. access in the affected tests (test_why_use_a_function and maker/optional/unknown tests keep their original structure and local vars). Continues red-green-refactor + uv run pytest-watcher in the existing functions project after the base functions chapter. Demonstrates "extract class attributes" for DRY unittest.TestCase test code.
-  :keywords: Jacob Itegboje, Pumping Python, functions 2, Functions 2: use class attributes, use class attributes unittest TestCase, python class attributes for DRY tests, class attributes vs setUp unittest, when not to use setUp, "In this case, I do not need the setUp method", "I do not need anything to run before each test", "extract class attributes", test_functions_2.py, refactor locals to class attributes python, unittest no setUp needed for constants, red green refactor class attributes, continuing functions project uv pytest-watcher, test_w_positional_arguments, test_w_keyword_arguments, 'first', 'last', (1, 2, 3, 'n'), first_number second_number class attr, functions TDD class attributes, Pumping Python functions chapter 2
+  :description: Part 2 / continuation of the beginner Python TDD functions tutorial in the functions project: use class attributes on TestFunctions (first, last, a_tuple, a_list, first_number, second_number) to remove repetition of string literals, tuples, lists and numbers from test_positional_arguments, test_keyword_arguments, test_args_and_kwargs (and cross-call sites) instead of duplicating locals like first, last = 'first', 'last' or a_tuple = (1, 2, 3, 'n') inside each test. Builds directly on :ref:`AssertionError 2: use class attributes` and the setUp / class attributes lessons from the classes chapter. Although classes teaches the setUp method to reset fresh values before every test, here the values are constants identical across tests so plain class attributes at the Test class level suffice (no setUp needed, no per-test reset). The "I have these tests by the end of the chapter" literalinclude of test_functions_2.py shows the final state with 6 class attrs + self. access in the affected tests (test_why_use_a_function and maker/optional/unknown tests keep their original structure and local vars). Continues red-green-refactor + uv run pytest-watcher in the existing functions project after the base functions chapter. Demonstrates "extract class attributes" for DRY unittest.TestCase test code.
+  :keywords: Jacob Itegboje, Pumping Python, functions 2, Functions 2: use class attributes, use class attributes unittest TestCase, python class attributes for DRY tests, class attributes vs setUp unittest, when not to use setUp, "In this case, I do not need the setUp method", "I do not need anything to run before each test", "extract class attributes", test_functions_2.py, refactor locals to class attributes python, unittest no setUp needed for constants, red green refactor class attributes, continuing functions project uv pytest-watcher, test_positional_arguments, test_keyword_arguments, 'first', 'last', (1, 2, 3, 'n'), first_number second_number class attr, functions TDD class attributes, Pumping Python functions chapter 2
 
 .. include:: ../links.rst
 
@@ -81,16 +81,16 @@ continue the project
 
         def test_why_use_a_function(self):
 
-* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_w_positional_arguments`
+* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 136
     :emphasize-lines: 2, 5-6, 8-9, 13-14, 16-17
 
-        def test_w_positional_arguments(self):
+        def test_positional_arguments(self):
             # first, last = 'first', 'last'
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # first, last,
                 self.first, self.last,
             )
@@ -98,7 +98,7 @@ continue the project
             my_expectation = (self.first, self.last)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # last, first,
                 self.last, self.first,
             )
@@ -108,13 +108,13 @@ continue the project
 
   the test is still green.
 
-* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_w_keyword_arguments`
+* I use the :ref:`class attributes<what is a class attribute?>` to remove repetition of ``'first'`` and ``'last'`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 170
     :emphasize-lines: 2, 5-7, 9-10, 14-16, 18-19, 23-24, 26-27
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
             # first, last = 'first', 'last'
 
             reality = src.functions.w_keyword_arguments(
@@ -145,16 +145,16 @@ continue the project
 
   still green.
 
-* I use the :ref:`class attributes<what is a class attribute?>` to remove ``'first'`` and ``'last'`` from :ref:`test_w_args_and_kwargs`
+* I use the :ref:`class attributes<what is a class attribute?>` to remove ``'first'`` and ``'last'`` from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 224
     :emphasize-lines: 2, 5-6, 9-10
 
-        def test_w_args_and_kwargs(self):
+        def test_args_and_kwargs(self):
             # first, last = 'first', 'last'
             reality = (
-                src.functions.w_args_and_kwargs(
+                src.functions.args_and_kwargs(
                     # first, last_input=last,
                     self.first, last_input=self.last,
                 )
@@ -167,14 +167,14 @@ continue the project
 
   green.
 
-* I remove the commented lines from :ref:`test_w_args_and_kwargs`
+* I remove the commented lines from :ref:`test_args_and_kwargs`
 
   .. code-block:: python
     :lineno-start: 224
 
-        def test_w_args_and_kwargs(self):
+        def test_args_and_kwargs(self):
             reality = (
-                src.functions.w_args_and_kwargs(
+                src.functions.args_and_kwargs(
                     self.first, last_input=self.last,
                 )
             )
@@ -199,16 +199,16 @@ continue the project
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_w_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 137
     :emphasize-lines: 27, 30-31, 33-34
 
-        def test_w_positional_arguments(self):
+        def test_positional_arguments(self):
             # first, last = 'first', 'last'
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # first, last,
                 self.first, self.last,
             )
@@ -216,7 +216,7 @@ continue the project
             my_expectation = (self.first, self.last)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # last, first,
                 self.last, self.first,
             )
@@ -225,7 +225,7 @@ continue the project
             self.assertEqual(reality, my_expectation)
 
             first_number, second_number = 0, 1
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 first_number, second_number,
             )
             my_expectation = (first_number, second_number)
@@ -233,7 +233,7 @@ continue the project
 
             # a_tuple = (1, 2, 3, 'n')
             a_list = [1, 2, 3, 'n']
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # a_tuple, a_list,
                 self.a_tuple, a_list,
             )
@@ -241,17 +241,17 @@ continue the project
             my_expectation = (self.a_tuple, a_list)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_w_keyword_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``(1, 2, 3, 'n')`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 173
     :emphasize-lines: 46, 50-51, 53-54
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
             # first, last = 'first', 'last'
 
             reality = src.functions.w_keyword_arguments(
@@ -298,7 +298,7 @@ continue the project
 
             # a_tuple = (1, 2, 3, 'n')
             a_list = [1, 2, 3, 'n']
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 first_input=a_list,
                 # last_input=a_tuple,
                 last_input=self.a_tuple,
@@ -307,7 +307,7 @@ continue the project
             my_expectation = (a_list, self.a_tuple)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_args_and_kwargs(self):
+        def test_args_and_kwargs(self):
 
   the test is still green.
 
@@ -329,16 +329,16 @@ continue the project
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[1, 2, 3, 'n']`` from :ref:`test_w_positional_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[1, 2, 3, 'n']`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 138
     :emphasize-lines: 28, 31-32, 34-35
 
-        def test_w_positional_arguments(self):
+        def test_positional_arguments(self):
             # first, last = 'first', 'last'
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # first, last,
                 self.first, self.last,
             )
@@ -346,7 +346,7 @@ continue the project
             my_expectation = (self.first, self.last)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # last, first,
                 self.last, self.first,
             )
@@ -355,7 +355,7 @@ continue the project
             self.assertEqual(reality, my_expectation)
 
             first_number, second_number = 0, 1
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 first_number, second_number,
             )
             my_expectation = (first_number, second_number)
@@ -363,7 +363,7 @@ continue the project
 
             # a_tuple = (1, 2, 3, 'n')
             # a_list = [1, 2, 3, 'n']
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # a_tuple, a_list,
                 # self.a_tuple, a_list,
                 self.a_tuple, self.a_list,
@@ -373,17 +373,17 @@ continue the project
             my_expectation = (self.a_tuple, self.a_list)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
 
   still green.
 
-* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[1, 2, 3, 'n']`` from :ref:`test_w_keyword_arguments`
+* I use the new :ref:`class attribute<what is a class attribute?>` to remove repetition of ``[1, 2, 3, 'n']`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 176
     :emphasize-lines: 47, 49, 51, 55-56
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
             # first, last = 'first', 'last'
 
             reality = src.functions.w_keyword_arguments(
@@ -430,7 +430,7 @@ continue the project
 
             # a_tuple = (1, 2, 3, 'n')
             # a_list = [1, 2, 3, 'n']
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # first_input=a_list,
                 # last_input=a_tuple,
                 first_input=self.a_list,
@@ -441,7 +441,7 @@ continue the project
             my_expectation = (self.a_list, self.a_tuple)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_args_and_kwargs(self):
+        def test_args_and_kwargs(self):
 
   green.
 
@@ -464,16 +464,16 @@ continue the project
 
         def test_why_use_a_function(self):
 
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``0`` and ``1`` from :ref:`test_w_positional_arguments`
+* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``0`` and ``1`` from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 140
     :emphasize-lines: 20, 22-23, 25-28
 
-        def test_w_positional_arguments(self):
+        def test_positional_arguments(self):
             # first, last = 'first', 'last'
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # first, last,
                 self.first, self.last,
             )
@@ -481,7 +481,7 @@ continue the project
             my_expectation = (self.first, self.last)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # last, first,
                 self.last, self.first,
             )
@@ -490,7 +490,7 @@ continue the project
             self.assertEqual(reality, my_expectation)
 
             # first_number, second_number = 0, 1
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # first_number, second_number,
                 self.first_number, self.second_number,
             )
@@ -502,7 +502,7 @@ continue the project
 
             # a_tuple = (1, 2, 3, 'n')
             # a_list = [1, 2, 3, 'n']
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # a_tuple, a_list,
                 # self.a_tuple, a_list,
                 self.a_tuple, self.a_list,
@@ -512,29 +512,29 @@ continue the project
             my_expectation = (self.a_tuple, self.a_list)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
 
   still green.
 
-* I remove the commented lines from :ref:`test_w_positional_arguments`
+* I remove the commented lines from :ref:`test_positional_arguments`
 
   .. code-block:: python
     :lineno-start: 140
 
-        def test_w_positional_arguments(self):
-            reality = src.functions.w_positional_arguments(
+        def test_positional_arguments(self):
+            reality = src.functions.positional_arguments(
                 self.first, self.last,
             )
             my_expectation = (self.first, self.last)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 self.last, self.first,
             )
             my_expectation = (self.last, self.first)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 self.first_number, self.second_number,
             )
             my_expectation = (
@@ -542,21 +542,21 @@ continue the project
             )
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 self.a_tuple, self.a_list,
             )
             my_expectation = (self.a_tuple, self.a_list)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
 
-* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``0`` and ``1`` from :ref:`test_w_keyword_arguments`
+* I use the new :ref:`class attributes<what is a class attribute?>` to remove repetition of ``0`` and ``1`` from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 167
     :emphasize-lines: 30, 32-34, 36-39
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
             # first, last = 'first', 'last'
 
             reality = src.functions.w_keyword_arguments(
@@ -608,7 +608,7 @@ continue the project
 
             # a_tuple = (1, 2, 3, 'n')
             # a_list = [1, 2, 3, 'n']
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 # first_input=a_list,
                 # last_input=a_tuple,
                 first_input=self.a_list,
@@ -619,14 +619,14 @@ continue the project
             my_expectation = (self.a_list, self.a_tuple)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_args_and_kwargs(self):
+        def test_args_and_kwargs(self):
 
-* I remove the commented lines from :ref:`test_w_keyword_arguments`
+* I remove the commented lines from :ref:`test_keyword_arguments`
 
   .. code-block:: python
     :lineno-start: 167
 
-        def test_w_keyword_arguments(self):
+        def test_keyword_arguments(self):
             reality = src.functions.w_keyword_arguments(
                 first_input=self.first,
                 last_input=self.last,
@@ -665,14 +665,14 @@ continue the project
             my_expectation = (a_set, a_dictionary)
             self.assertEqual(reality, my_expectation)
 
-            reality = src.functions.w_positional_arguments(
+            reality = src.functions.positional_arguments(
                 first_input=self.a_list,
                 last_input=self.a_tuple,
             )
             my_expectation = (self.a_list, self.a_tuple)
             self.assertEqual(reality, my_expectation)
 
-        def test_w_args_and_kwargs(self):
+        def test_args_and_kwargs(self):
 
 * I add a git_ commit message
 
@@ -729,7 +729,7 @@ I can place the constants directly under the ``TestFunctions`` class:
     first_number = 0
     second_number = 1
 
-then :ref:`test_w_positional_arguments`, :ref:`test_w_keyword_arguments` and :ref:`test_w_args_and_kwargs` use ``self.first`` and so on, instead repeated values.
+then :ref:`test_positional_arguments`, :ref:`test_keyword_arguments` and :ref:`test_args_and_kwargs` use ``self.first`` and so on, instead repeated values.
 
 I can use :ref:`class attributes<what is a class attribute?>` for things that repeat (when they are constants), which allows :ref:`methods<what is a method?>` of the same :ref:`class<what is a class?>` to use them without :ref:`the setUp method<how to use the setUp method to reset class attributes for every test>`.
 

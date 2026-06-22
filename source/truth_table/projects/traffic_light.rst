@@ -435,7 +435,7 @@ because I do not have a definition for ``src`` in this file_
     # AttributeError
     # TypeError
 
-* I add the :ref:`keyword argument<test_w_keyword_arguments>` to the :ref:`function<what is a function?>` in ``traffic_light.py``
+* I add the :ref:`keyword argument<test_keyword_arguments>` to the :ref:`function<what is a function?>` in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -1230,7 +1230,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
 ----
 
-* I add a :ref:`keyword argument<test_w_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
+* I add a :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` in ``traffic_light.py``
 
   .. code-block:: python
     :linenos:
@@ -1260,7 +1260,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
   because all the other tests call the ``show`` :ref:`function<what is a function?>` with two arguments and I changed the :ref:`function signature<what is a function?>` to make it expect three. I need to make the third argument a choice.
 
-* I could add the ``walk_button`` parameter to every call to the ``show`` :ref:`function<what is a function?>` in every test or add a :ref:`default value<test_w_optional_arguments>` for the new :ref:`keyword argument<test_w_keyword_arguments>` to make it a choice, NOT a requirement. I make it a choice
+* I could add the ``walk_button`` parameter to every call to the ``show`` :ref:`function<what is a function?>` in every test or add a :ref:`default value<test_w_optional_arguments>` for the new :ref:`keyword argument<test_keyword_arguments>` to make it a choice, NOT a requirement. I make it a choice
 
   .. code-block:: python
     :linenos:
@@ -1716,7 +1716,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
         def test_yellow_traffic_light(self):
 
-* I add a :ref:`default value<test_w_optional_arguments>` for the ``current_light`` :ref:`keyword argument<test_w_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` ``traffic_light.py`` as a fail safe so that the light is always :red:`RED` if no value is given
+* I add a :ref:`default value<test_w_optional_arguments>` for the ``current_light`` :ref:`keyword argument<test_keyword_arguments>` to the ``show`` :ref:`function<what is a function?>` ``traffic_light.py`` as a fail safe so that the light is always :red:`RED` if no value is given
 
   .. code-block:: python
     :linenos:
@@ -1733,7 +1733,7 @@ because the ``show`` :ref:`function<what is a function?>` only takes 2 arguments
 
     SyntaxError: parameter without a default follows parameter with a default
 
-  because :ref:`parameters without default values must come before parameters with default values<test_w_args_and_kwargs>`.
+  because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen in ``test_traffic_light.py``
 
