@@ -6,7 +6,6 @@
 
 .. _function: https://docs.python.org/3/glossary.html#term-function
 .. _functions: :ref:`function<what is a function?>`
-.. _argument: https://docs.python.org/3/glossary.html#term-argument
 .. _arguments: argument_
 .. _keyword arguments: arguments_
 .. _positional arguments: arguments_

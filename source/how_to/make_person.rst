@@ -3541,7 +3541,7 @@ I want to see what happens when I try to make a person without a value for the `
             sex=None, year_of_birth=None,
         ):
 
-  the test passes because the :ref:`default value<test_w_optional_arguments>` for the ``last_name`` parameter of the :ref:`function<what is a function?>` is ``'doe'``. This means that
+  the test passes because the :ref:`default value<test_optional_arguments>` for the ``last_name`` parameter of the :ref:`function<what is a function?>` is ``'doe'``. This means that
 
   .. code-block:: python
 
@@ -3562,7 +3562,7 @@ I want to see what happens when I try to make a person without a value for the `
         last_name='doe',
     )
 
-  because :ref:`a function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
+  because :ref:`a function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 ----
 
@@ -3636,7 +3636,7 @@ I want to see what happens when I try to make a person without a value for the `
                          dict(
                              first_name=get_random_name(),
                              last_name='doe',
-                             year_of_birth=year_of_birth,
+                             age=this_year-year_of_birth,
                          )
                      # the dict constructor returns
                      {'first_name': Y, 'last_name': 'doe', 'age': X}
@@ -3694,7 +3694,7 @@ I want to see what happens when I try to make a person without a value for the `
             sex='M', year_of_birth=None,
         ):
 
-  the test passes because the :ref:`default value<test_w_optional_arguments>` for the ``sex`` parameter of the :ref:`function<what is a function?>` is ``'M'``. This means that
+  the test passes because the :ref:`default value<test_optional_arguments>` for the ``sex`` parameter of the :ref:`function<what is a function?>` is ``'M'``. This means that
 
   .. code-block:: python
 
@@ -3714,7 +3714,7 @@ I want to see what happens when I try to make a person without a value for the `
         sex='M',
     )
 
-  because :ref:`a function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
+  because :ref:`a function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 ----
 
@@ -6544,7 +6544,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
             ),
         }
 
-  This :ref:`factory function<test_factory_w_keyword_arguments>` only has two parameters with :ref:`default values<test_w_optional_arguments>` (``last_name`` and ``sex``)
+  This :ref:`factory function<test_factory_w_keyword_arguments>` only has two parameters with :ref:`default values<test_optional_arguments>` (``last_name`` and ``sex``)
 
   .. code-block:: python
     :emphasize-text: None
@@ -6554,7 +6554,7 @@ Can you make the tests pass without looking at how I solve it below? You can com
             last_name='doe', sex='M',
         ):
 
-  the first solution had three parameters with :ref:`default values<test_w_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
+  the first solution had three parameters with :ref:`default values<test_optional_arguments>` (``last_name``, ``sex`` and ``year_of_birth``)
 
   .. code-block:: python
     :emphasize-text: None
@@ -6609,7 +6609,7 @@ review
 
 I ran tests to make
 
-* a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_keyword_arguments>` as input, has :ref:`default values<test_w_optional_arguments>` for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
+* a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_keyword_arguments>` as input, has :ref:`default values<test_optional_arguments>` for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
 
 * a :ref:`function<what is a function?>` that takes in a :ref:`dictionary<what is a dictionary?>` and returns a string_ as output with :ref:`values<test_values_of_a_dictionary>` of :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
 

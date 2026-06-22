@@ -1049,7 +1049,7 @@ the test passes because this happens when ``doe = src.family_ties.Doe('the_first
             Person.__init__('the_first', last_name='the_first')
             self.last_name = 'the_first' # use the default value
 
-the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
+the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 ----
 
@@ -1199,8 +1199,8 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
 
   I can :ref:`make classes<how to make a class>` that are related and have their own defaults. In this test
 
-  - the ``Doe`` :ref:`class<what is a class?>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_w_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribute?>` of ``Person``
-  - the ``Blow`` :ref:`class<what is a class?>` has a different :ref:`default value<test_w_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>`
+  - the ``Doe`` :ref:`class<what is a class?>` has a default value for the ``last_name`` :ref:`attribute<what is a class attribute?>` that is the :ref:`default value<test_optional_arguments>` for the ``last_name`` :ref:`attribute<what is a class attribute?>` of ``Person``
+  - the ``Blow`` :ref:`class<what is a class?>` has a different :ref:`default value<test_optional_arguments>` for the value of the  ``last_name`` :ref:`attribute<what is a class attribute?>`
   - ``Doe`` and ``Blow`` are :ref:`children (subclasses)<how to test if something is a subclass of a class>` of ``Person``
 
 * I remove the commented lines
@@ -1495,7 +1495,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
           Person.__init__('first_name', last_name='doe')
           self.last_name = 'doe' # use the default value
 
-    because :ref:`a method uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`.
+    because :ref:`a method uses the default value for the parameter because it is called without the parameter<test_optional_arguments>`.
 
   * From the :ref:`class definitions<how to make a class>` of ``Smith`` and ``Blow`` this happens when :ref:`an instance (a copy)<how to test if something is an instance of a class>` of ``Smith`` or ``Blow`` is made
 
@@ -1516,7 +1516,7 @@ the value for ``doe.last_name`` is ``doe`` because :ref:`a method uses the defau
           self.first_name = first_name
           self.last_name = last_name
 
-  it will use the :ref:`default value<test_w_optional_arguments>` for ``last_name`` if no value is given because :ref:`a function uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`.
+  it will use the :ref:`default value<test_optional_arguments>` for ``last_name`` if no value is given because :ref:`a function uses the default value for the parameter because it is called without the parameter<test_optional_arguments>`.
 
 * I add a git_ commit message in the other terminal_
 
@@ -1688,7 +1688,7 @@ the test passes.
 
   the test passes. This is a repetition because
 
-  - the :ref:`default value<test_w_optional_arguments>` for ``Person`` is ``doe``
+  - the :ref:`default value<test_optional_arguments>` for ``Person`` is ``doe``
   - ``Jane`` is a :ref:`child (subclass)<how to test if something is a subclass of a class>` of ``Person``
 
 * I add an :ref:`assertion<what is an assertion?>` to :ref:`test_classes_w_multiple_parents` to make sure ``Jane`` is a ``Doe``, in ``test_family_ties.py``
@@ -1798,7 +1798,7 @@ the test passes.
                self.first_name = 'jane'
                self.last_name = 'doe' # use the default value
 
-  :ref:`a method uses the default value for the parameter because it is called without the parameter<test_w_optional_arguments>`.
+  :ref:`a method uses the default value for the parameter because it is called without the parameter<test_optional_arguments>`.
 
 ----
 
@@ -1872,7 +1872,7 @@ the test passes.
 
   which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` takes two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and the call only sends one (``self``).
 
-* I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
+* I add a :ref:`default value<test_optional_arguments>` to make ``first_name`` optional
 
   .. code-block:: python
     :lineno-start: 22
@@ -2344,7 +2344,7 @@ the test passes.
   - ``Mary`` is a ``Jane``
   - ``Jane`` is a ``Doe``
   - ``Doe`` is a ``Person``
-  - the :ref:`default value<test_w_optional_arguments>` for ``last_name`` in ``Person`` is ``'doe'``
+  - the :ref:`default value<test_optional_arguments>` for ``last_name`` in ``Person`` is ``'doe'``
 
 * I add a call to the `super built-in function`_ to remove the repetition
 
@@ -2523,7 +2523,7 @@ what happens when a child has more than one parent?
 
   I broke the ``joe = src.family_ties.Joe()`` call because the ``__init__`` :ref:`method<what is a method?>` now has two required :ref:`positional arguments<test_positional_arguments>` (``self`` and ``first_name``) and it was called with one (``self``)
 
-* I add a :ref:`default value<test_w_optional_arguments>` to make ``first_name`` optional
+* I add a :ref:`default value<test_optional_arguments>` to make ``first_name`` optional
 
   .. code-block:: python
     :lineno-start: 44
@@ -3294,7 +3294,7 @@ what happens when a child has more than one parent?
 
   which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``John`` takes one :ref:`positional argument<test_positional_arguments>` (``self``) and it was called with two (``self`` and ``lil``)
 
-* I change the ``__init__`` :ref:`method<what is a method?>` in ``John`` to take in a parameter for ``first_name`` with a :ref:`default value<test_w_optional_arguments>` to make it optional
+* I change the ``__init__`` :ref:`method<what is a method?>` in ``John`` to take in a parameter for ``first_name`` with a :ref:`default value<test_optional_arguments>` to make it optional
 
   .. code-block:: python
     :lineno-start: 44
@@ -3375,7 +3375,7 @@ what happens when a child has more than one parent?
   - which raises :ref:`TypeError<what causes TypeError?>` since the ``__init__`` :ref:`method<what is a method?>` of ``Mary`` was called with a :ref:`keyword argument<test_keyword_arguments>` and it only takes ``self``
   - ``self`` is the :ref:`class<what is a class?>` itself, which means that for ``Mary.__init__(first_name='lil', last_name='smith')``, ``self`` is ``Mary`` in ``Mary``. It would be like calling ``Mary.__init__(Mary, first_name='lil', last_name='smith')``.
 
-* I add ``first_name`` with a :ref:`default value<test_w_optional_arguments>` to the ``__init__`` :ref:`method<what is a method?>` of ``Mary``
+* I add ``first_name`` with a :ref:`default value<test_optional_arguments>` to the ``__init__`` :ref:`method<what is a method?>` of ``Mary``
 
   .. code-block:: python
     :lineno-start: 42
@@ -3419,7 +3419,7 @@ what happens when a child has more than one parent?
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I add a :ref:`default value<test_w_optional_arguments>` for ``last_name``
+* I add a :ref:`default value<test_optional_arguments>` for ``last_name``
 
   .. code-block:: python
     :lineno-start: 42
@@ -3572,7 +3572,7 @@ what happens when a child has more than one parent?
 
   because :ref:`parameters without default values must come before parameters with default values<test_args_and_kwargs>`.
 
-* I give ``last_name`` a :ref:`default value<test_w_optional_arguments>`
+* I give ``last_name`` a :ref:`default value<test_optional_arguments>`
 
   .. code-block:: python
     :lineno-start: 75

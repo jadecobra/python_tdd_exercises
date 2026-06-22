@@ -219,7 +219,7 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (self.first, self.last)
         self.assertEqual(reality, my_expectation)
 
-    def test_w_optional_arguments(self):
+    def test_optional_arguments(self):
         first_name, last_name = 'jane', 'doe'
         reality = src.functions.w_optional_arguments(
             first_name,

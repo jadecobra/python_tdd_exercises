@@ -1125,7 +1125,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
     because the other :ref:`assertions<what is an assertion?>` do not provide a value for ``above_daily_limit`` when they call the ``withdraw`` :ref:`function<what is a function?>`, I have to make it a choice
 
-* I add a :ref:`default value<test_w_optional_arguments>` for the ``above_daily_limit`` parameter to make it a choice
+* I add a :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter to make it a choice
 
   .. code-block:: python
     :linenos:
@@ -1292,7 +1292,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
 
 ----
 
-* I do not need to add anything to the next :ref:`assertion<what is an assertion?>` which is for when the :green:`right PIN` is entered, and there is :green:`enough money` in the account, and it is :red:`NOT above limit` for daily withdrawals, because the :ref:`default value<test_w_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
+* I do not need to add anything to the next :ref:`assertion<what is an assertion?>` which is for when the :green:`right PIN` is entered, and there is :green:`enough money` in the account, and it is :red:`NOT above limit` for daily withdrawals, because the :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`
 
   ==================  ======================= ======================  ==================
   PIN                 money                   daily limit             withdrawal
@@ -1319,7 +1319,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 argum
         above_daily_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_right_pin_enough_money` to :ref:`test_right_pin_enough_money_w_limit`
 
@@ -1404,7 +1404,7 @@ PIN                 money                   daily limit             withdrawal
 
     def test_wrong_pin_enough_money(self):
 
-  still green. I do not need to give a value for the ``above_daily_limit`` parameter because the :ref:`default value<test_w_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`. This means that
+  still green. I do not need to give a value for the ``above_daily_limit`` parameter because the :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`. This means that
 
   .. code-block:: python
 
@@ -1423,7 +1423,7 @@ PIN                 money                   daily limit             withdrawal
         above_daily_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_right_pin_not_enough_money` to :ref:`test_right_pin_not_enough_money_w_limit`
 
@@ -1513,7 +1513,7 @@ PIN                 money                   daily limit             withdrawal
 
         def test_wrong_pin_not_enough_money(self):
 
-  green. I do not need to give a value for the ``above_daily_limit`` parameter in the call to ``src.atm.withdraw`` because the :ref:`default value<test_w_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`. This means that
+  green. I do not need to give a value for the ``above_daily_limit`` parameter in the call to ``src.atm.withdraw`` because the :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`. This means that
 
   .. code-block:: python
 
@@ -1532,7 +1532,7 @@ PIN                 money                   daily limit             withdrawal
         above_daily_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_wrong_pin_enough_money` to :ref:`test_wrong_pin_enough_money_w_limit`
 
@@ -1623,7 +1623,7 @@ PIN                 money                   daily limit             withdrawal
 
     # Exceptions seen
 
-  the test is still green. I do not need to give a value for the ``above_daily_limit`` parameter in the call to ``src.atm.withdraw`` because the :ref:`default value<test_w_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`. This means that
+  the test is still green. I do not need to give a value for the ``above_daily_limit`` parameter in the call to ``src.atm.withdraw`` because the :ref:`default value<test_optional_arguments>` for the ``above_daily_limit`` parameter of the ``withdraw`` :ref:`function<what is a function?>` is :ref:`False<test_what_is_false>`. This means that
 
   .. code-block:: python
 
@@ -1642,7 +1642,7 @@ PIN                 money                   daily limit             withdrawal
         above_daily_limit=False,
     )
 
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_w_optional_arguments>`.
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 * I change the name of the test from :ref:`test_wrong_pin_not_enough_money` to :ref:`test_wrong_pin_not_enough_money_w_limit`
 
@@ -1971,7 +1971,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
     # TypeError
     # SyntaxError
 
-* I add a :ref:`default value<test_w_optional_arguments>` for ``card_expired`` in ``atm.py``
+* I add a :ref:`default value<test_optional_arguments>` for ``card_expired`` in ``atm.py``
 
   .. code-block:: python
     :linenos:
@@ -2033,7 +2033,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
                 'CASH'
             )
 
-  the test is still green. I add a value for the ``card_expired`` parameter to make it clearer, even though it is the :ref:`default value<test_w_optional_arguments>`
+  the test is still green. I add a value for the ``card_expired`` parameter to make it clearer, even though it is the :ref:`default value<test_optional_arguments>`
 
 * I add an :ref:`assertion<what is an assertion?>` for when the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :green:`expired`
 
@@ -2196,7 +2196,7 @@ because the ``withdraw`` :ref:`function<what is a function?>` only takes 2 requi
   * it returns :red:`'DENIED'` if there is :red:`NOT enough money` in the account
   * it gives me :green:`'CASH'` if the above :ref:`conditions<if statements>` are NOT met
 
-* I add values for the ``above_daily_limit`` and ``card_expired`` parameters to make it clearer even though they have :ref:`default values<test_w_optional_arguments>`, in the next :ref:`assertion<what is an assertion?>` in :ref:`test_right_pin_enough_money_w_limit` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`, in ``test_atm.py``
+* I add values for the ``above_daily_limit`` and ``card_expired`` parameters to make it clearer even though they have :ref:`default values<test_optional_arguments>`, in the next :ref:`assertion<what is an assertion?>` in :ref:`test_right_pin_enough_money_w_limit` for the case where the :green:`right PIN` is entered, there is :green:`enough money` in the account, it is :red:`NOT above limit` for daily withdrawals, and the card has :red:`NOT expired`, in ``test_atm.py``
 
   ==================  ===================== ======================  ==================  =============
   PIN                 money                 daily limit             card expired        withdrawal

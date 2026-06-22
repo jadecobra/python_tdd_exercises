@@ -214,7 +214,7 @@ test_functions
 #. :ref:`test_positional_arguments`
 #. :ref:`test_keyword_arguments`
 #. :ref:`test_args_and_kwargs`
-#. :ref:`test_w_optional_arguments`
+#. :ref:`test_optional_arguments`
 #. :ref:`test_w_unknown_arguments`
 
 *********************************************************************************
