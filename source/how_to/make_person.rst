@@ -2939,7 +2939,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 
 ----
 
-I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_w_unknown_arguments` to make break it up so that the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` are taken as :ref:`keyword arguments<test_keyword_arguments>`
+I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_w_unknown_arguments` to make it take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as :ref:`keyword arguments<test_keyword_arguments>`
 
 .. code-block:: python
   :lineno-start: 33

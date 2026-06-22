@@ -2326,7 +2326,8 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
   .. code-block:: python
 
     keyword_arguments(last_input='last', first_input='first')
-    keyword_arguments(first_input, last_input)
+    keyword_arguments(first_input='first', last_input='last')
+    keyword_arguments(first_input        , last_input       )
         return first_input, last_input
         return 'first'    , 'last'
 
@@ -2429,22 +2430,33 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 183
-    :emphasize-lines: 8-13
+    :lineno-start: 102
+    :emphasize-lines: 19-24
 
-            reality = src.functions.w_keyword_arguments(
-                last, first,
+        assert (
+            keyword_arguments(
+                # first_input='first', last_input='last',
+                first_input=first, last_input=last,
             )
-            # my_expectation = (first, last)
-            my_expectation = (last, first)
-            self.assertEqual(reality, my_expectation)
-
-            zero, one = 0, 1
-            reality = src.functions.w_keyword_arguments(
-                last_input=zero, first_input=one,
+        #  == None
+        #  == ('first', 'last')
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                # last_input='last', first_input='first',
+                last_input=last, first_input=first,
             )
-            my_expectation = (zero, one)
-            self.assertEqual(reality, my_expectation)
+        #  == ('last', 'first')
+        #  == ('first', 'last')
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                last_input=0, first_input=1,
+            )
+         == (0, 1)
+        )
 
 
     # Exceptions seen
@@ -2453,21 +2465,55 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: (1, 0) != (0, 1)
+    E       assert (1, 0) == (0, 1)
 
-* I change ``my_expectation`` to match ``reality``
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``0`` as ``last_input`` and ``1`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
-    :lineno-start: 190
-    :emphasize-lines: 5-6
 
-            zero, one = 0, 1
-            reality = src.functions.w_keyword_arguments(
-                last_input=zero, first_input=one,
+    keyword_arguments(last_input=0, first_input=1)
+    keyword_arguments(first_input=1, last_input=0)
+    keyword_arguments(first_input  , last_input  )
+        return first_input, last_input
+        return 1          , 0
+
+  .. code-block:: python
+
+    assert keyword_arguments(last_input=0, first_input=1)
+                  == (0, 1)
+    assert (1, 0) == (0, 1)
+
+* I change my expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 102
+    :emphasize-lines: 23-24
+
+        assert (
+            keyword_arguments(
+                # first_input='first', last_input='last',
+                first_input=first, last_input=last,
             )
-            # my_expectation = (zero, one)
-            my_expectation = (one, zero)
-            self.assertEqual(reality, my_expectation)
+        #  == None
+        #  == ('first', 'last')
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                # last_input='last', first_input='first',
+                last_input=last, first_input=first,
+            )
+        #  == ('last', 'first')
+        #  == ('first', 'last')
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                last_input=0, first_input=1,
+            )
+        #  == (0, 1)
+         == (1, 0)
+        )
 
 
     # Exceptions seen
@@ -2477,25 +2523,44 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 * I add an :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 190
-    :emphasize-lines: 9-16
+    :lineno-start: 102
+    :emphasize-lines: 27-35
 
-            zero, one = 0, 1
-            reality = src.functions.w_keyword_arguments(
-                last_input=zero, first_input=one,
+        assert (
+            keyword_arguments(
+                # first_input='first', last_input='last',
+                first_input=first, last_input=last,
             )
-            # my_expectation = (zero, one)
-            my_expectation = (one, zero)
-            self.assertEqual(reality, my_expectation)
+        #  == None
+        #  == ('first', 'last')
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                # last_input='last', first_input='first',
+                last_input=last, first_input=first,
+            )
+        #  == ('last', 'first')
+        #  == ('first', 'last')
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                last_input=0, first_input=1,
+            )
+        #  == (0, 1)
+         == (1, 0)
+        )
 
-            a_set = {1, 2, 3, 'n'}
-            a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                first_input=a_dictionary,
-                last_input=a_set,
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            keyword_arguments(
+                first_input=a_list,
+                last_input=a_tuple,
             )
-            my_expectation = (a_set, a_dictionary)
-            self.assertEqual(reality, my_expectation)
+         == (a_tuple, a_list)
+        )
 
 
     # Exceptions seen
@@ -2504,33 +2569,53 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   .. code-block:: python
 
-    AssertionError: Tuples differ:
-            ({'key': 'value'}, {1, 2, 3, 'n'})
-         != ({1, 2, 3, 'n'}, {'key': 'value'})
+    AssertionError:
+        assert ([1, 2, 3, 'n...1, 2, 3, 'n'))
+            == ((1, 2, 3, 'n...1, 2, 3, 'n'])
 
-* I change ``reality`` to match ``my_expectation``
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``[1, 2, 3, 'n']`` as ``first_input`` and ``(1, 2, 3, 'n')`` as ``last_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
-    :lineno-start: 198
-    :emphasize-lines: 4-7
 
-            a_set = {1, 2, 3, 'n'}
-            a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                # first_input=a_dictionary,
-                # last_input=a_set,
-                first_input=a_set,
-                last_input=a_dictionary,
+    keyword_arguments(
+        first_input=[0, 1, 2, 'n'], last_input=(0, 1, 2, 'n')
+    )
+    keyword_arguments(first_input, last_input)
+        return first_input   , last_input
+        return [0, 1, 2, 'n'], (0, 1, 2, 'n')
+
+  .. code-block:: python
+
+    assert keyword_arguments(
+        first_input=[0, 1, 2, 'n'], last_input=(0, 1, 2, 'n')
+    )   == ((0, 1, 2, 'n'), [0, 1, 2, 'n'])
+    assert  [0, 1, 2, 'n'], (0, 1, 2, 'n')
+        == ((0, 1, 2, 'n'), [0, 1, 2, 'n'])
+
+* I change reality to match my expectation
+
+  .. code-block:: python
+    :lineno-start: 128
+    :emphasize-lines: 5-8
+
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            keyword_arguments(
+                # first_input=a_list,
+                # last_input=a_tuple,
+                first_input=a_tuple,
+                last_input=a_list,
             )
-            my_expectation = (a_set, a_dictionary)
-            self.assertEqual(reality, my_expectation)
+         == (a_tuple, a_list)
+        )
 
 
     # Exceptions seen
 
   the test passes.
 
-* ``w_keyword_arguments`` and ``positional_arguments`` are the same functions_, they always
+* ``w_keyword_arguments`` and ``positional_arguments`` are the same :ref:`functions<what is a function?>`, they always
 
   .. code-block:: python
 
@@ -2544,7 +2629,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     def positional_arguments(first_input, last_input):
     def keyword_arguments(first_input, last_input):
 
-  The difference that matters in the tests is how I call the functions_
+  The difference that matters in the tests is how I call them
 
   - I have to give the input in order when I use :ref:`positional arguments<test_positional_arguments>`
 
@@ -2552,38 +2637,38 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
       :emphasize-text: first
 
       positional_arguments('first', 'last')
-                     return ('first', 'last')
+                   return ('first', 'last')
 
     .. code-block:: python
       :emphasize-text: first
 
       positional_arguments('last', 'first')
-                     return ('last', 'first')
+                   return ('last', 'first')
 
     .. code-block:: python
       :emphasize-text: first
 
       positional_arguments(0, 1)
-                     return (0, 1)
+                   return (0, 1)
 
     .. code-block:: python
       :emphasize-text: first
 
       positional_arguments((1, 2, 3, 'n'), [1, 2, 3, 'n'])
-                     return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
+                   return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
 
     .. code-block:: python
       :emphasize-text: first
 
-      w_keyword_arguments('last', 'first')
-                  return ('last', 'first')
+      keyword_arguments('last', 'first')
+                return ('last', 'first')
 
   - I can give the input in any order when I use `keyword arguments`_ because I use the names from the :ref:`function definition<how to make a function>` when I call it
 
     .. code-block:: python
       :emphasize-text: first
 
-      w_keyword_arguments(
+      keyword_arguments(
           first_input='first', last_input='last',
       )
           return ('first', 'last')
@@ -2591,7 +2676,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     .. code-block:: python
       :emphasize-text: first
 
-      w_keyword_arguments(
+      keyword_arguments(
           last_input='last', first_input='first',
       )
           return ('first', 'last')
@@ -2599,141 +2684,247 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
     .. code-block:: python
       :emphasize-text: first
 
-      w_keyword_arguments(last_input=0, first_input=1,)
-                  return (1, 0)
+      keyword_arguments(last_input=0, first_input=1,)
+                return (1, 0)
 
     .. code-block:: python
       :emphasize-text: first
 
-      w_keyword_arguments(
-          first_input={'key': 'value'},
-          last_input={1, 2, 3, 'n'},
+      keyword_arguments(
+          first_input=(1, 2, 3, 'n'),
+          last_input=[1, 2, 3, 'n'],
       )
-          return ({'key': 'value'}, {1, 2, 3, 'n'})
+          return ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
 
-  I add another :ref:`assertion<what is an assertion?>` to show that the two :ref:`functions<what is a function?>` are the same, by calling the ``positional_arguments`` :ref:`function<what is a function?>` with :ref:`keyword arguments<test_keyword_arguments>`
+  I add an :ref:`assertion<what is an assertion?>` to show that the two :ref:`functions<what is a function?>` are the same, by calling the :ref:`positional_arguments function<test_positional_arguments>` with :ref:`keyword arguments<test_keyword_arguments>`
 
   .. code-block:: python
-    :lineno-start: 198
-    :emphasize-lines: 12-20
+    :lineno-start: 128
+    :emphasize-lines: 13-21
     :emphasize-text: positional
 
-            a_set = {1, 2, 3, 'n'}
-            a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                # first_input=a_dictionary,
-                # last_input=a_set,
-                first_input=a_set,
-                last_input=a_dictionary,
-            )
-            my_expectation = (a_set, a_dictionary)
-            self.assertEqual(reality, my_expectation)
-
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
-            reality = src.functions.positional_arguments(
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            keyword_arguments(
+                # first_input=a_list,
+                # last_input=a_tuple,
                 first_input=a_tuple,
                 last_input=a_list,
             )
-            my_expectation = (a_list, a_tuple)
-            self.assertEqual(reality, my_expectation)
+         == (a_tuple, a_list)
+        )
 
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: Tuples differ:
-            ((1, 2, 3, 'n'), [1, 2, 3, 'n'])
-         != ([1, 2, 3, 'n'], (1, 2, 3, 'n'))
-
-  because these two calls are the same
-
-  .. code-block:: python
-
-    src.functions.positional_arguments(
-        first_input=a_tuple,
-        last_input=a_list,
-    )
-    src.functions.positional_arguments(
-        a_tuple,
-        a_list,
-    )
-
-* I change ``reality`` to match my ``expectation``
-
-  .. code-block:: python
-    :lineno-start: 209
-    :emphasize-lines: 4-7
-
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
-            reality = src.functions.positional_arguments(
-                # first_input=a_tuple,
-                # last_input=a_list,
-                first_input=a_list,
-                last_input=a_tuple,
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            positional_arguments(
+                last_input=a_dictionary,
+                first_input=a_set,
             )
-            my_expectation = (a_list, a_tuple)
-            self.assertEqual(reality, my_expectation)
+         == (a_set, a_dictionary)
+        )
 
 
     # Exceptions seen
 
-  the test passes.
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'positional_arguments' is not defined
+
+  because the :ref:`positional_arguments function<test_positional_arguments>`  belongs to the :ref:`test_positional_arguments function<test_positional_arguments>` and I cannot reach it from outside.
+
+* I move the :ref:`positional_arguments function<test_positional_arguments>` out of :ref:`test_positional_arguments` so that it can be called by any :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 58
+    :emphasize-lines: 4-5
+
+        assert add_x(9) == 12
+
+
+    def positional_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+    def test_positional_arguments():
+        first, last = 'first', 'last'
+
+        assert (
+            positional_arguments(first, last)
+         == (first, last)
+        )
+        assert (
+            positional_arguments(last, first)
+         == (last, first)
+        )
+        assert (
+            positional_arguments(0, 1)
+         == (0, 1)
+        )
+
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            positional_arguments(a_tuple, a_list)
+         == (a_tuple, a_list)
+        )
+
+
+    def test_keyword_arguments():
+
+  the test passes because these two calls are the same
+
+  .. code-block:: python
+
+    positional_arguments(
+        last_input=a_dictionary,
+        first_input=a_set,
+    )
+    positional_arguments(
+        a_set, a_dictionary,
+    )
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_positional_arguments` to show that I can call the :ref:`keyword_arguments function<test_keyword_arguments>` with :ref:`positional arguments<test_positional_arguments>`
+
+  .. code-block:: python
+    :lineno-start: 81
+    :emphasize-lines: 8-15
+    :emphasize-text: keyword
+
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            positional_arguments(a_tuple, a_list)
+         == (a_tuple, a_list)
+        )
+
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            keyword_arguments(
+                a_set, a_dictionary,
+            )
+         == (a_set, a_dictionary)
+        )
+
+
+    def test_keyword_arguments():
+
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
+
+  .. code-block:: python
+
+    NameError: name 'keyword_arguments' is not defined
+
+  because the :ref:`keyword_arguments function<test_positional_arguments>`  belongs to the :ref:`test_keyword_arguments function<test_positional_arguments>` and I cannot reach it from outside.
+
+* I move the :ref:`keyword_arguments function<test_positional_arguments>` out of :ref:`test_keyword_arguments` so that it can be called by any :ref:`function<what is a function?>`
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 11-12
+
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            keyword_arguments(
+                a_set, a_dictionary,
+            )
+         == (a_set, a_dictionary)
+        )
+
+
+    def keyword_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        # def keyword_arguments(the_input):
+        # def keyword_arguments(first_input):
+        # def keyword_arguments(first_input, the_input):
+            # return None
+
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+
+        first, last = 'first', 'last'
+
+  the test passes because these two calls are the same
+
+  .. code-block:: python
+
+    keyword_arguments(
+        a_set, a_dictionary,
+    )
+    keyword_arguments(
+        last_input=a_dictionary,
+        first_input=a_set,
+    )
 
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 163
+    :lineno-start: 88
 
-        def test_keyword_arguments(self):
-            first, last = 'first', 'last'
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            keyword_arguments(
+                a_set, a_dictionary,
+            )
+         == (a_set, a_dictionary)
+        )
 
-            reality = src.functions.w_keyword_arguments(
+
+    def keyword_arguments(first_input, last_input):
+        return first_input, last_input
+
+
+    def test_keyword_arguments():
+        first, last = 'first', 'last'
+
+        assert (
+            keyword_arguments(
                 first_input=first, last_input=last,
             )
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
                 last_input=last, first_input=first,
             )
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                last, first,
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
+                last_input=0, first_input=1,
             )
-            my_expectation = (last, first)
-            self.assertEqual(reality, my_expectation)
+         == (1, 0)
+        )
 
-            zero, one = 0, 1
-            reality = src.functions.w_keyword_arguments(
-                last_input=zero, first_input=one,
+        a_tuple = (1, 2, 3, 'n')
+        a_list = [1, 2, 3, 'n']
+        assert (
+            keyword_arguments(
+                first_input=a_tuple,
+                last_input=a_list,
             )
-            my_expectation = (one, zero)
-            self.assertEqual(reality, my_expectation)
+         == (a_tuple, a_list)
+        )
 
-            a_set = {1, 2, 3, 'n'}
-            a_dictionary = {'key': 'value'}
-            reality = src.functions.w_keyword_arguments(
-                first_input=a_set,
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            positional_arguments(
                 last_input=a_dictionary,
+                first_input=a_set,
             )
-            my_expectation = (a_set, a_dictionary)
-            self.assertEqual(reality, my_expectation)
-
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
-            reality = src.functions.positional_arguments(
-                first_input=a_list,
-                last_input=a_tuple,
-            )
-            my_expectation = (a_list, a_tuple)
-            self.assertEqual(reality, my_expectation)
+         == (a_set, a_dictionary)
+        )
 
 
     # Exceptions seen
@@ -2748,7 +2939,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can call a function with keyword arguments<test_keyword_arguments>`
+:ref:`I can call a function with keyword arguments<test_keyword_arguments>`.
 
 ----
 
@@ -2756,7 +2947,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 test_args_and_kwargs
 *********************************************************************************
 
-I can write functions_ that take both :ref:`positional<test_positional_arguments>` and :ref:`keyword arguments<test_keyword_arguments>`, which is useful when I want some arguments to be required and some to be optional.
+I can call :ref:`functions<what is a function>` with both :ref:`positional<test_positional_arguments>`.
 
 ----
 
@@ -2768,30 +2959,30 @@ I can write functions_ that take both :ref:`positional<test_positional_arguments
 
 * I go back to the terminal_ where the tests are running
 
-* I add a failing test to ``test_functions.py``
+* I add a test
 
   .. code-block:: python
-    :lineno-start: 200
-    :emphasize-lines: 10-17
+    :lineno-start: 134
+    :emphasize-lines: 11-17
     :emphasize-text: first
 
-            a_tuple = (1, 2, 3, 'n')
-            a_list = [1, 2, 3, 'n']
-            reality = src.functions.positional_arguments(
-                first_input=a_list,
-                last_input=a_tuple,
+        a_set = {1, 2, 3, 'n'}
+        a_dictionary = {'key': 'value'}
+        assert (
+            positional_arguments(
+                last_input=a_dictionary,
+                first_input=a_set,
             )
-            my_expectation = (a_list, a_tuple)
-            self.assertEqual(reality, my_expectation)
+         == (a_set, a_dictionary)
+        )
 
-        def test_args_and_kwargs(self):
-            reality = (
-                src.functions.args_and_kwargs(
-                    last_input='last', 'first',
-                )
+    def test_args_and_kwargs():
+        assert (
+            args_and_kwargs(
+                last_input='last', 'first',
             )
-            my_expectation = ('first', 'last')
-            self.assertEqual(reality, my_expectation)
+         == ('first', 'last')
+        )
 
 
     # Exceptions seen
@@ -2802,7 +2993,7 @@ I can write functions_ that take both :ref:`positional<test_positional_arguments
 
     SyntaxError: positional argument follows keyword argument
 
-  because I cannot put :ref:`keyword arguments<test_keyword_arguments>` before :ref:`positional arguments<test_positional_arguments>`. The `Integrated Development Environment (IDE)`_ also shows the error with a red squiggly line under ``'first'``.
+  because I cannot put :ref:`keyword arguments<test_keyword_arguments>` before :ref:`positional arguments<test_positional_arguments>`.
 
 ----
 
@@ -2815,33 +3006,31 @@ I can write functions_ that take both :ref:`positional<test_positional_arguments
 * I add SyntaxError_ to the list of :ref:`Exceptions<errors>` seen, in ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 217
+    :lineno-start: 153
     :emphasize-lines: 6
     :emphasize-text: SyntaxError
 
     # Exceptions seen
     # AssertionError
     # NameError
-    # AttributeError
     # TypeError
     # SyntaxError
 
 * I change the order of the arguments to follow Python_ rules
 
   .. code-block:: python
-    :lineno-start: 209
+    :lineno-start: 144
     :emphasize-lines: 4-5
     :emphasize-text: first
 
-        def test_args_and_kwargs(self):
-            reality = (
-                src.functions.args_and_kwargs(
-                    # last_input='last', 'first',
-                    'first', last_input='last',
-                )
+    def test_args_and_kwargs():
+        assert (
+            args_and_kwargs(
+                # last_input='last', 'first',
+                'first',last_input='last',
             )
-            my_expectation = ('first', 'last')
-            self.assertEqual(reality, my_expectation)
+         == ('first', 'last')
+        )
 
 
     # Exceptions seen
