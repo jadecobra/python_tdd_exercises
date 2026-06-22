@@ -343,9 +343,10 @@ Does it pass when another value is given or does it always return :ref:`None<wha
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'add test_identity_function'
+    git commit --all --message \
+    'add test_identity_function'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
@@ -978,439 +979,44 @@ the test passes.
 
 ----
 
-* I add another :ref:`assertion<what is an assertion?>`
+* all those :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``. If I want to test what happens when I add a number to ``2``, I would have to change ``1`` in 10 places. I change ``1`` to ``2`` for the calculation part of the :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 12
-    :emphasize-lines: 6-8
-
-            reality = 1 + 1
-            # my_expectation = 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 2
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<What causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 3 != 2
-
-* I change ``my_expectation`` to ``3``
-
-  .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 2-3
-
-            reality = 1 + 2
-            # my_expectation = 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 17
-    :emphasize-lines: 6-8
-
-            reality = 1 + 2
-            # my_expectation = 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 3
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 4 != 3
-
-* I change ``my_expectation`` to ``4``
-
-  .. code-block:: python
-    :lineno-start: 19
-    :emphasize-lines: 2-3
-
-            reality = 1 + 3
-            # my_expectation = 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 6-8
-
-            reality = 1 + 3
-            # my_expectation = 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 4
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 5 != 4
-
-* I change ``my_expectation`` to ``5``
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 2-3
-
-            reality = 1 + 4
-            # my_expectation = 4
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 27
-    :emphasize-lines: 6-8
-
-            reality = 1 + 4
-            # my_expectation = 4
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 5
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 6 != 5
-
-* I change ``my_expectation`` to ``6``
-
-  .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 2-3
-
-            reality = 1 + 5
-            # my_expectation = 5
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add another :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 32
-    :emphasize-lines: 6-8
-
-            reality = 1 + 5
-            # my_expectation = 5
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 6
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 7 != 6
-
-* I change ``my_expectation`` to ``7``
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 2-3
-
-            reality = 1 + 6
-            # my_expectation = 6
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 37
-    :emphasize-lines: 6-8
-
-            reality = 1 + 6
-            # my_expectation = 6
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 7
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 8 != 7
-
-* I change ``my_expectation`` to ``8``
-
-  .. code-block:: python
-    :lineno-start: 35
-    :emphasize-lines: 2-3
-
-            reality = 1 + 7
-            # my_expectation = 7
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add another :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 42
-    :emphasize-lines: 6-8
-
-            reality = 1 + 7
-            # my_expectation = 7
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 8
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 9 != 8
-
-* I change ``my_expectation`` to ``9``
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 2-3
-
-            reality = 1 + 8
-            # my_expectation = 8
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* I add an :ref:`assertion<what is an assertion?>`
-
-  .. code-block:: python
-    :lineno-start: 47
-    :emphasize-lines: 6-8
-
-            reality = 1 + 8
-            # my_expectation = 8
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 9
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: 10 != 9
-
-* I change ``my_expectation`` to ``10``
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 49-50
-
-        def test_why_use_a_function(self):
-            reality = 1 + 0
-            # my_expectation = 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 1
-            # my_expectation = 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 2
-            # my_expectation = 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 3
-            # my_expectation = 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 4
-            # my_expectation = 4
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 5
-            # my_expectation = 5
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 6
-            # my_expectation = 6
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 7
-            # my_expectation = 7
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 8
-            # my_expectation = 8
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-            reality = 1 + 9
-            # my_expectation = 9
-            my_expectation = 10
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
-
-* all those :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``, what if I want to test what happens when I add a number to ``2``? I would have to   change ``1`` in 10 places. I change ``1`` to ``2`` for the ``reality`` :ref:`variables<what is a variable?>`
-
-  .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 2-3, 8-9, 14-15, 20-21, 26-27, 32-33, 38-39, 44-45, 50-51, 56-57
+    :lineno-start: 45
+    :emphasize-lines: 3-4, 6-7, 9-10, 12-13, 15-16, 18-19, 21-22, 24-25, 27-28, 30-31
     :emphasize-text: 2
 
-        def test_why_use_a_function(self):
-            # reality = 1 + 0
-            reality = 2 + 0
-            # my_expectation = 0
-            my_expectation = 1
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 1
-            reality = 1 + 2
-            # my_expectation = 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 2
-            reality = 2 + 2
-            # my_expectation = 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 3
-            reality = 2 + 3
-            # my_expectation = 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 4
-            reality = 2 + 4
-            # my_expectation = 4
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 5
-            reality = 2 + 5
-            # my_expectation = 5
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 6
-            reality = 2 + 6
-            # my_expectation = 6
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 7
-            reality = 2 + 7
-            # my_expectation = 7
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 8
-            reality = 2 + 8
-            # my_expectation = 8
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 9
-            reality = 2 + 9
-            # my_expectation = 9
-            my_expectation = 10
-            self.assertEqual(reality, my_expectation)
+    def test_why_use_a_function():
+        # assert 1 + 0 == 0
+        # assert 1 + 0 == 1
+        assert 2 + 0 == 1
+        # assert 1 + 1 == 1
+        # assert 1 + 1 == 2
+        assert 2 + 1 == 2
+        # assert 1 + 2 == 2
+        # assert 1 + 2 == 3
+        assert 2 + 2 == 3
+        # assert 1 + 3 == 3
+        # assert 1 + 3 == 4
+        assert 2 + 3 == 4
+        # assert 1 + 4 == 4
+        # assert 1 + 4 == 5
+        assert 2 + 4 == 5
+        # assert 1 + 5 == 5
+        # assert 1 + 5 == 6
+        assert 2 + 5 == 6
+        # assert 1 + 6 == 6
+        # assert 1 + 6 == 7
+        assert 2 + 6 == 7
+        # assert 1 + 7 == 7
+        # assert 1 + 7 == 8
+        assert 2 + 7 == 8
+        # assert 1 + 8 == 8
+        # assert 1 + 8 == 9
+        assert 2 + 8 == 9
+        # assert 1 + 9 == 9
+        # assert 1 + 9 == 10
+        assert 2 + 9 == 10
 
 
     # Exceptions seen
@@ -1419,103 +1025,60 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: 2 != 1
+    E       assert (2 + 0) == 1
 
-* I change ``my_expectation`` for each :ref:`assertion<what is an assertion?>`
+* I change the result side of each :ref:`assertion<what is an assertion?>` to make them :ref:`True<test_what_is_true>`
 
   .. code-block:: python
-    :lineno-start: 6
-    :emphasize-lines: 5-6, 12-13, 19-20, 26-27, 33-34, 40-41, 47-48, 54-55, 61-62, 68-69
-    :emphasize-text: 2 3 4 5 6 7 8 9 10 11
+    :lineno-start: 45
+    :emphasize-lines: 4-5, 8-9, 12-13, 16-17, 20-21, 24-25, 28-29, 32-33, 36-37, 40-41
 
-        def test_why_use_a_function(self):
-            # reality = 1 + 0
-            reality = 2 + 0
-            # my_expectation = 0
-            # my_expectation = 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 1
-            reality = 1 + 2
-            # my_expectation = 1
-            # my_expectation = 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 2
-            reality = 2 + 2
-            # my_expectation = 2
-            # my_expectation = 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 3
-            reality = 2 + 3
-            # my_expectation = 3
-            # my_expectation = 4
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 4
-            reality = 2 + 4
-            # my_expectation = 4
-            # my_expectation = 5
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 5
-            reality = 2 + 5
-            # my_expectation = 5
-            # my_expectation = 6
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 6
-            reality = 2 + 6
-            # my_expectation = 6
-            # my_expectation = 7
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 7
-            reality = 2 + 7
-            # my_expectation = 7
-            # my_expectation = 8
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 8
-            reality = 2 + 8
-            # my_expectation = 8
-            # my_expectation = 9
-            my_expectation = 10
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 9
-            reality = 2 + 9
-            # my_expectation = 9
-            # my_expectation = 10
-            my_expectation = 11
-            self.assertEqual(reality, my_expectation)
+    def test_why_use_a_function():
+        # assert 1 + 0 == 0
+        # assert 1 + 0 == 1
+        # assert 2 + 0 == 1
+        assert 2 + 0 == 2
+        # assert 1 + 1 == 1
+        # assert 1 + 1 == 2
+        # assert 2 + 1 == 2
+        assert 2 + 1 == 3
+        # assert 1 + 2 == 2
+        # assert 1 + 2 == 3
+        # assert 2 + 2 == 3
+        assert 2 + 2 == 4
+        # assert 1 + 3 == 3
+        # assert 1 + 3 == 4
+        # assert 2 + 3 == 4
+        assert 2 + 3 == 5
+        # assert 1 + 4 == 4
+        # assert 1 + 4 == 5
+        # assert 2 + 4 == 5
+        assert 2 + 4 == 6
+        # assert 1 + 5 == 5
+        # assert 1 + 5 == 6
+        # assert 2 + 5 == 6
+        assert 2 + 5 == 7
+        # assert 1 + 6 == 6
+        # assert 1 + 6 == 7
+        # assert 2 + 6 == 7
+        assert 2 + 6 == 8
+        # assert 1 + 7 == 7
+        # assert 1 + 7 == 8
+        # assert 2 + 7 == 8
+        assert 2 + 7 == 9
+        # assert 1 + 8 == 8
+        # assert 1 + 8 == 9
+        # assert 2 + 8 == 9
+        assert 2 + 8 == 10
+        # assert 1 + 9 == 9
+        # assert 1 + 9 == 10
+        # assert 2 + 9 == 10
+        assert 2 + 9 == 11
 
 
     # Exceptions seen
 
   the test passes.
-
-* I open a new terminal_ then change directories to ``functions``
-
-  .. code-block:: python
-    :emphasize-lines: 1
-
-    cd functions
-
-  the terminal_ shows I am in the ``functions`` folder_
-
-  .. code-block:: python
-
-    .../pumping_python/functions
 
 * I add a git_ commit message
 
@@ -1531,238 +1094,252 @@ the test passes.
 
 -----
 
-* What if I want to test what happens when I add ``3`` to a number? Wait! No more, please! I do not want to have to make a change for each new number, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat, I add one to ``test_functions.py``
+* What if I want to test what happens when I add ``3`` to a number? Wait! No more, please! I do not want to have to make a change for each new number, there has to be a better way. I can use a :ref:`function<what is a function?>` for the parts that repeat. I add one
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4-5
+    :lineno-start: 45
+    :emphasize-lines: 2-3
 
-    import unittest
+    def test_why_use_a_function():
+        def add_x(number):
+            return 2 + number
 
+        # assert 1 + 0 == 0
+        # assert 1 + 0 == 1
+        # assert 2 + 0 == 1
+        assert 2 + 0 == 2
 
-    def add_x(number):
-        return 2 + number
-
-
-    class TestFunctions(unittest.TestCase):
-
-* I use the new :ref:`function<what is a function?>` for ``reality`` in the first :ref:`assertion<what is an assertion?>`
+* I use the new :ref:`function<what is a function?>` for the calculation in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 5-6
+    :lineno-start: 45
+    :emphasize-lines: 8-9
     :emphasize-text: add_x
 
-    class TestFunctions(unittest.TestCase):
+    def test_why_use_a_function():
+        def add_x(number):
+            return 2 + number
 
-        def test_why_use_a_function(self):
-            # reality = 1 + 0
-            # reality = 2 + 0
-            reality = add_x(0)
-            # my_expectation = 0
-            # my_expectation = 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
+        # assert 1 + 0 == 0
+        # assert 1 + 0 == 1
+        # assert 2 + 0 == 1
+        # assert 2 + 0 == 2
+        assert add_x(0) == 2
+        # assert 1 + 1 == 1
+        # assert 1 + 1 == 2
+        # assert 2 + 1 == 2
+        assert 2 + 1 == 3
 
+  the test is still green because when I call ``add_x`` with a number as input, it returns ``2`` plus the number as output. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
-  the test is still green.
+  .. code-block:: python
+
+    assert add_x(0) == 2
+           # inside add_x
+               add_x(number)
+               add_x(0)
+           # add_x returns 2 + number
+             2 + 0  == 2
+
+  ``2 + 0`` is equal to ``2``.
 
 * I use the ``add_x`` :ref:`function<what is a function?>` for the other :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 10
-    :emphasize-lines: 11-12, 19-20, 27-28, 35-36, 43-44, 51-52
+    :lineno-start: 45
+    :emphasize-lines: 13-14, 18-19, 23-24, 28-29, 33-34, 38-39, 43-44, 48-49, 53-54
     :emphasize-text: add_x
 
-        def test_why_use_a_function(self):
-            # reality = 1 + 0
-            # reality = 2 + 0
-            reality = add_x(0)
-            # my_expectation = 0
-            # my_expectation = 1
-            my_expectation = 2
-            self.assertEqual(reality, my_expectation)
+    def test_why_use_a_function():
+        def add_x(number):
+            return 2 + number
 
-            # reality = 1 + 1
-            # reality = 1 + 2
-            reality = add_x(1)
-            # my_expectation = 1
-            # my_expectation = 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
+        # assert 1 + 0 == 0
+        # assert 1 + 0 == 1
+        # assert 2 + 0 == 1
+        # assert 2 + 0 == 2
+        assert add_x(0) == 2
+        # assert 1 + 1 == 1
+        # assert 1 + 1 == 2
+        # assert 2 + 1 == 2
+        # assert 2 + 1 == 3
+        assert add_x(1) == 3
+        # assert 1 + 2 == 2
+        # assert 1 + 2 == 3
+        # assert 2 + 2 == 3
+        # assert 2 + 2 == 4
+        assert add_x(2) == 4
+        # assert 1 + 3 == 3
+        # assert 1 + 3 == 4
+        # assert 2 + 3 == 4
+        # assert 2 + 3 == 5
+        assert add_x(3) == 5
+        # assert 1 + 4 == 4
+        # assert 1 + 4 == 5
+        # assert 2 + 4 == 5
+        # assert 2 + 4 == 6
+        assert add_x(4) == 6
+        # assert 1 + 5 == 5
+        # assert 1 + 5 == 6
+        # assert 2 + 5 == 6
+        # assert 2 + 5 == 7
+        assert add_x(5) == 7
+        # assert 1 + 6 == 6
+        # assert 1 + 6 == 7
+        # assert 2 + 6 == 7
+        # assert 2 + 6 == 8
+        assert add_x(6) == 8
+        # assert 1 + 7 == 7
+        # assert 1 + 7 == 8
+        # assert 2 + 7 == 8
+        # assert 2 + 7 == 9
+        assert add_x(7) == 9
+        # assert 1 + 8 == 8
+        # assert 1 + 8 == 9
+        # assert 2 + 8 == 9
+        # assert 2 + 8 == 10
+        assert add_x(8) == 10
+        # assert 1 + 9 == 9
+        # assert 1 + 9 == 10
+        # assert 2 + 9 == 10
+        # assert 2 + 9 == 11
+        assert add_x(9) == 11
 
-            # reality = 1 + 2
-            # reality = 2 + 2
-            reality = add_x(2)
-            # my_expectation = 2
-            # my_expectation = 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
 
-            # reality = 1 + 3
-            # reality = 2 + 3
-            reality = add_x(3)
-            # my_expectation = 3
-            # my_expectation = 4
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 4
-            # reality = 2 + 4
-            reality = add_x(4)
-            # my_expectation = 4
-            # my_expectation = 5
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 5
-            # reality = 2 + 5
-            reality = add_x(5)
-            # my_expectation = 5
-            # my_expectation = 6
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 6
-            # reality = 2 + 6
-            reality = add_x(6)
-            # my_expectation = 6
-            # my_expectation = 7
-            my_expectation = 8
+    # Exceptions seen
 
   still green.
 
 * Now I only have to make a change in one place if I want to test what happens if I add ``3`` to a number
 
   .. code-block:: python
-    :linenos:
-    :emphasize-lines: 4
-    :emphasize-text: 5-6
+    :lineno-start: 45
+    :emphasize-lines: 3-4
 
-    import unittest
+    def test_why_use_a_function():
+        def add_x(number):
+            # return 2 + number
+            return 3 + number
 
-
-    def add_x(number):
-        # return 2 + number
-        return 3 + number
-
-
-    class TestFunctions(unittest.TestCase):
+        # assert 1 + 0 == 0
+        # assert 1 + 0 == 1
+        # assert 2 + 0 == 1
+        # assert 2 + 0 == 2
+        assert add_x(0) == 2
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 3 != 2
+    E       assert 3 == 2
 
-* I change the expectations for the :ref:`assertions<what is an assertion?>` one at a time
+* I change the results part of the :ref:`assertions<what is an assertion?>` one at a time
 
   .. code-block:: python
-    :lineno-start: 11
-    :emphasize-lines: 7-8, 16-17, 25-26, 34-35, 43-44, 52-53, 61-62, 70-71, 79-80, 88-89
+    :lineno-start: 45
+    :emphasize-lines: 10-11, 16-17, 22-23, 28-29, 34-35, 40-41, 46-47, 52-53, 58-59, 64-65
 
-        def test_why_use_a_function(self):
-            # reality = 1 + 0
-            # reality = 2 + 0
-            reality = add_x(0)
-            # my_expectation = 0
-            # my_expectation = 1
-            # my_expectation = 2
-            my_expectation = 3
-            self.assertEqual(reality, my_expectation)
+    def test_why_use_a_function():
+        def add_x(number):
+            # return 2 + number
+            return 3 + number
 
-            # reality = 1 + 1
-            # reality = 1 + 2
-            reality = add_x(1)
-            # my_expectation = 1
-            # my_expectation = 2
-            # my_expectation = 3
-            my_expectation = 4
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 2
-            # reality = 2 + 2
-            reality = add_x(2)
-            # my_expectation = 2
-            # my_expectation = 3
-            # my_expectation = 4
-            my_expectation = 5
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 3
-            # reality = 2 + 3
-            reality = add_x(3)
-            # my_expectation = 3
-            # my_expectation = 4
-            # my_expectation = 5
-            my_expectation = 6
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 4
-            # reality = 2 + 4
-            reality = add_x(4)
-            # my_expectation = 4
-            # my_expectation = 5
-            # my_expectation = 6
-            my_expectation = 7
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 5
-            # reality = 2 + 5
-            reality = add_x(5)
-            # my_expectation = 5
-            # my_expectation = 6
-            # my_expectation = 7
-            my_expectation = 8
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 6
-            # reality = 2 + 6
-            reality = add_x(6)
-            # my_expectation = 6
-            # my_expectation = 7
-            # my_expectation = 8
-            my_expectation = 9
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 7
-            # reality = 2 + 7
-            reality = add_x(7)
-            # my_expectation = 7
-            # my_expectation = 8
-            # my_expectation = 9
-            my_expectation = 10
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 8
-            # reality = 2 + 8
-            reality = add_x(8)
-            # my_expectation = 8
-            # my_expectation = 9
-            # my_expectation = 10
-            my_expectation = 11
-            self.assertEqual(reality, my_expectation)
-
-            # reality = 1 + 9
-            # reality = 2 + 9
-            reality = add_x(9)
-            # my_expectation = 9
-            # my_expectation = 10
-            # my_expectation = 11
-            my_expectation = 12
-            self.assertEqual(reality, my_expectation)
+        # assert 1 + 0 == 0
+        # assert 1 + 0 == 1
+        # assert 2 + 0 == 1
+        # assert 2 + 0 == 2
+        # assert add_x(0) == 2
+        assert add_x(0) == 3
+        # assert 1 + 1 == 1
+        # assert 1 + 1 == 2
+        # assert 2 + 1 == 2
+        # assert 2 + 1 == 3
+        # assert add_x(1) == 3
+        assert add_x(1) == 4
+        # assert 1 + 2 == 2
+        # assert 1 + 2 == 3
+        # assert 2 + 2 == 3
+        # assert 2 + 2 == 4
+        # assert add_x(2) == 4
+        assert add_x(2) == 5
+        # assert 1 + 3 == 3
+        # assert 1 + 3 == 4
+        # assert 2 + 3 == 4
+        # assert 2 + 3 == 5
+        # assert add_x(3) == 5
+        assert add_x(3) == 6
+        # assert 1 + 4 == 4
+        # assert 1 + 4 == 5
+        # assert 2 + 4 == 5
+        # assert 2 + 4 == 6
+        # assert add_x(4) == 6
+        assert add_x(4) == 7
+        # assert 1 + 5 == 5
+        # assert 1 + 5 == 6
+        # assert 2 + 5 == 6
+        # assert 2 + 5 == 7
+        # assert add_x(5) == 7
+        assert add_x(5) == 8
+        # assert 1 + 6 == 6
+        # assert 1 + 6 == 7
+        # assert 2 + 6 == 7
+        # assert 2 + 6 == 8
+        # assert add_x(6) == 8
+        assert add_x(6) == 9
+        # assert 1 + 7 == 7
+        # assert 1 + 7 == 8
+        # assert 2 + 7 == 8
+        # assert 2 + 7 == 9
+        # assert add_x(7) == 9
+        assert add_x(7) == 10
+        # assert 1 + 8 == 8
+        # assert 1 + 8 == 9
+        # assert 2 + 8 == 9
+        # assert 2 + 8 == 10
+        # assert add_x(8) == 10
+        assert add_x(8) == 11
+        # assert 1 + 9 == 9
+        # assert 1 + 9 == 10
+        # assert 2 + 9 == 10
+        # assert 2 + 9 == 11
+        # assert add_x(9) == 11
+        assert add_x(9) == 12
 
 
     # Exceptions seen
 
   the test passes.
 
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 45
+
+    def test_why_use_a_function():
+        def add_x(number):
+            return 3 + number
+
+        assert add_x(0) == 3
+        assert add_x(1) == 4
+        assert add_x(2) == 5
+        assert add_x(3) == 6
+        assert add_x(4) == 7
+        assert add_x(5) == 8
+        assert add_x(6) == 9
+        assert add_x(7) == 10
+        assert add_x(8) == 11
+        assert add_x(9) == 12
+
+
+    # Exceptions seen
+
 * I add a git_ commit message in the other terminal_
 
   .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1-2
 
-    git commit --all --message 'extract add_x function'
+    git commit --all --message \
+    'extract add_x function'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
