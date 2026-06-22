@@ -540,7 +540,7 @@ With this statement, I tell Python_ - "DO NOT CONTINUE, if :ref:`False<test_what
     # Exceptions seen
 
   - the test passes.
-  - the terminal_ shows ``no tests ran`` which is confusing since the only way I know the test passed, is because I saw it fail. There has to be a better way.
+  - the terminal_ shows ``no tests ran`` which is confusing since the only way I know the test passed, is because I saw it fail. :ref:`There has to bea better  way<a better way to organize tests>`.
 
 * I remove the commented lines
 

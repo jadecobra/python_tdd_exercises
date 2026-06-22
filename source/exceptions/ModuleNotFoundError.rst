@@ -862,7 +862,7 @@ review
 *********************************************************************************
 
 * I ran a test for ModuleNotFoundError_ to practice making :ref:`Python modules<what is a module?>`
-* The terminal_ shows ``NO TESTS RAN`` when there is no test and when my test passes which is confusing since the only way I know the test passed, is because I saw it fail. There has to be a better way.
+* The terminal_ shows ``NO TESTS RAN`` when there is no test and when my test passes which is confusing since the only way I know the test passed, is because I saw it fail. :ref:`There has to be a better way<a better way to organize tests>`.
 
 ----
 
