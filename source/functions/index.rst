@@ -1699,6 +1699,9 @@ the test passes.
 
 
     # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
 
 * I add a git_ commit message in the other terminal_
 
