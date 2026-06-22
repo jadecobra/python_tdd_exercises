@@ -534,7 +534,7 @@ Right now, ``w_pass`` is just a name. To use a :ref:`function<what is a function
 
   .. code-block:: python
     :linenos:
-    :emphasize-lines: 6-7
+    :emphasize-lines: 3, 6-7
 
     def test_making_a_function_w_pass():
         # w_pass
@@ -646,20 +646,20 @@ I can also make a function with a `return statement`_.
 
 ----
 
-* I change ``w_return`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+I change ``w_return`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
 
-  .. code-block:: python
-    :lineno-start: 8
-    :emphasize-lines: 2-3
+.. code-block:: python
+  :lineno-start: 8
+  :emphasize-lines: 2-3
 
-    def test_making_a_function_w_return():
-        # w_return
-        w_return = None
+  def test_making_a_function_w_return():
+      # w_return
+      w_return = None
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test passes.
+the test passes.
 
 ----
 
@@ -752,7 +752,7 @@ I can also make a function with a `return statement`_.
 
   .. code-block:: python
     :lineno-start: 8
-    :emphasize-lines: 6-7
+    :emphasize-lines: 3, 6-7
 
     def test_making_a_function_w_return():
         # w_return
@@ -903,20 +903,20 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
 ----
 
-* I change ``w_return_none`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+I change ``w_return_none`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
 
-  .. code-block:: python
-    :lineno-start: 15
-    :emphasize-lines: 2-3
+.. code-block:: python
+  :lineno-start: 15
+  :emphasize-lines: 2-3
 
-    def test_making_a_function_w_return_none():
-        # w_return_none
-        w_return_none = None
+  def test_making_a_function_w_return_none():
+      # w_return_none
+      w_return_none = None
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test passes.
+the test passes.
 
 ----
 
@@ -1009,7 +1009,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
 
   .. code-block:: python
     :lineno-start: 15
-    :emphasize-lines: 6-7
+    :emphasize-lines: 3, 6-7
 
     def test_making_a_function_w_return_none():
         # w_return_none
@@ -1083,7 +1083,7 @@ I can make a :ref:`function<what is a function?>` with a `return statement`_ tha
     assert w_return_none() is None
     assert 'something'     is None
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is not a string (anything in quotes)<test_assertion_error_w_none>`.
+  which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`a string (anything in quotes) is not None<test_assertion_error_w_none>`.
 
 * I undo the change
 
@@ -1217,20 +1217,20 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
 ----
 
-* I change ``return_leaves_the_function`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
+I change ``return_leaves_the_function`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None (the simplest object)<what is None?>`
 
-  .. code-block:: python
-    :lineno-start: 22
-    :emphasize-lines: 2-3
+.. code-block:: python
+  :lineno-start: 22
+  :emphasize-lines: 2-3
 
-    def test_what_happens_after_functions_return():
-        # return_leaves_the_function
-        return_leaves_the_function = None
+  def test_what_happens_after_functions_return():
+      # return_leaves_the_function
+      return_leaves_the_function = None
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-  the test passes.
+the test passes.
 
 ----
 
@@ -1270,65 +1270,185 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 
   which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not the same object as a string<test_assertion_error_w_none>`.
 
-----
+* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
 
-----
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 4-5
 
-----
+    def test_what_happens_after_functions_return():
+        # return_leaves_the_function
+        return_leaves_the_function = None
+        # assert return_leaves_the_function is 'something'
+        assert return_leaves_the_function is None
 
-----
 
+    # Exceptions seen
+
+  the test passes.
+
+* I add parentheses to call ``return_leaves_the_function`` inside :ref:`test_making_a_function_w_return_none`
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 6
+
+    def test_what_happens_after_functions_return():
+        # return_leaves_the_function
+        return_leaves_the_function = None
+        # assert return_leaves_the_function is 'something'
+        # assert return_leaves_the_function is None
+        assert return_leaves_the_function() is None
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because I called ``return_leaves_the_function`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+
+  .. code-block:: python
+
+    return_leaves_the_function = None # point the name to the object
+    return_leaves_the_function()      # call the name
+    None()                            # substitute the value for the name
+
+  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
+
+* I change ``return_leaves_the_function`` to a :ref:`function<what is a function?>` with the def_ and return_ keywords
+
+  .. code-block:: python
+    :lineno-start: 22
+    :emphasize-lines: 3, 6-7
+
+    def test_what_happens_after_functions_return():
+        # return_leaves_the_function
+        # return_leaves_the_function = None
+        # assert return_leaves_the_function is 'something'
+        # assert return_leaves_the_function is None
+        def return_leaves_the_function():
+            return None
+
+        assert return_leaves_the_function() is None
+
+
+    # Exceptions seen
+
+  the test passes.
 
 * I add a `return statement`_
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2-3
+    :lineno-start: 22
+    :emphasize-lines: 7
 
-    def return_leaves_the_function():
-        return 'something'
-        return None
+    def test_what_happens_after_functions_return():
+        # return_leaves_the_function
+        # return_leaves_the_function = None
+        # assert return_leaves_the_function is 'something'
+        # assert return_leaves_the_function is None
+        def return_leaves_the_function():
+            return 'something'
+            return None
+
+        assert return_leaves_the_function() is None
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'something' is not None
+    E       AssertionError: assert 'something' is None
 
-  - because the :ref:`assertion<what is an assertion?>` expects :ref:`None<what is None?>` and the :ref:`function<what is a function?>` returns ``'something'``
-  - the :ref:`function<what is a function?>` does not run the second `return statement`_   because the `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, which means the second `return statement`_ will never run. It is not reachable (this is called dead code).
+  because when I call ``return_leaves_the_function`` I get ``'something'``. Using substitution
+
+  .. code-block:: python
+
+    assert return_leaves_the_function() is None
+    assert 'something'                  is None
+
+  - which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`a string is not None<test_assertion_error_w_none>`.
+  - The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, it exits after the `return statement`_.
+  - It never gets to ``return None`` because it leaves after ``return 'something'``.
+  - The second `return statement`_ will never run. It is not reachable (this is called dead code).
+  - This means I can treat a :ref:`call to a function<how to call a function>` as the value it returns.
 
   .. tip::
 
-    The `Integrated Development Environment (IDE)`_ shows that the second return statement will not run by graying it out
+    The `Integrated Development Environment (IDE)`_ shows that the second return statement will not run by graying it out.
 
 * I move ``return None``, to make it the first `return statement`_
 
-
-
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 2-3
-    :emphasize-text: None
+    :lineno-start: 22
+    :emphasize-lines: 7-8
 
-    def return_leaves_the_function():
-        return None
-        return 'something'
+    def test_what_happens_after_functions_return():
+        # return_leaves_the_function
+        # return_leaves_the_function = None
+        # assert return_leaves_the_function is 'something'
+        # assert return_leaves_the_function is None
+        def return_leaves_the_function():
+            return None
+            return 'something'
 
-  the test is green again
+        assert return_leaves_the_function() is None
+
+
+    # Exceptions seen
+
+  the test is green again.
 
 * I change the second `return statement`_ as a reminder
 
   .. code-block:: python
-    :lineno-start: 13
-    :emphasize-lines: 3
-    :emphasize-text: will never run
+    :lineno-start: 22
+    :emphasize-lines: 8-9
 
-    def return_leaves_the_function():
-        return None
-        return 'will NEVER run'
+    def test_what_happens_after_functions_return():
+        # return_leaves_the_function
+        # return_leaves_the_function = None
+        # assert return_leaves_the_function is 'something'
+        # assert return_leaves_the_function is None
+        def return_leaves_the_function():
+            return None
+            # return 'something'
+            return 'only one way for this line to run'
 
-  the second `return statement`_ is now like a comment, and the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`
+        assert return_leaves_the_function() is None
+
+
+    # Exceptions seen
+
+  the second `return statement`_ is now like a comment, and the test is still green because :ref:`the return statement is the last thing to run in a function<test_what_happens_after_functions_return>`.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 15
+
+    def test_making_a_function_w_return_none():
+        def w_return_none():
+            return None
+
+        assert w_return_none() is None
+
+
+    def test_what_happens_after_functions_return():
+        def return_leaves_the_function():
+            return None
+            return 'only one way for this line to run'
+
+        assert return_leaves_the_function() is None
+
+
+    # Exceptions seen
 
 * I add a git_ commit message in the other terminal_
 
@@ -1346,7 +1466,7 @@ The `return statement`_ is the last thing to run in a :ref:`function<what is a f
 test_constant_function
 *********************************************************************************
 
-constant functions_ always return the same thing when they are called
+There are :ref:`functions<what is a function?>` that always return the same thing when they are called. They are singletons or constant :ref:`functions<what is a function?>`.
 
 ----
 
@@ -1358,33 +1478,33 @@ constant functions_ always return the same thing when they are called
 
 * I go back to the terminal_ where the tests are running
 
-* I add a test to ``test_functions.py``
+* I add a test
 
   .. code-block:: python
-    :lineno-start: 114
-    :emphasize-lines: 6-9
+    :lineno-start: 22
+    :emphasize-lines: 9-10
 
-        def test_what_happens_after_a_function_returns(self):
-            self.assertIs(
-                src.functions.return_leaves_the_function(), None
-            )
+    def test_what_happens_after_functions_return():
+        def return_leaves_the_function():
+            return None
+            return 'only one way for this line to run'
 
-        def test_constant_function(self):
-            reality = src.functions.constant()
-            my_expectation = 'the same thing'
-            self.assertEqual(reality, my_expectation)
+        assert return_leaves_the_function() is None
+
+
+    def test_constant_function():
+        constant
 
 
     # Exceptions seen
 
-  the terminal_ is my friend, and shows :ref:`AttributeError<what causes AttributeError?>`
+  the terminal_ is my friend, and shows :ref:`NameError<test_catching_name_error_in_tests>`
 
-  .. code-block:: shell
+  .. code-block:: python
 
-    AttributeError: module 'src.functions'
-                    has no attribute 'constant'
+    NameError: name 'constant' is not defined
 
-  because I have not added a definition for ``constant`` in ``functions.py`` in the ``src`` folder_
+  because Python_ does not know what I mean by ``constant`` since I do not have a definition for it in this file_.
 
 ----
 
@@ -1393,6 +1513,155 @@ constant functions_ always return the same thing when they are called
 =================================================================================
 
 ----
+
+I change ``constant`` to a :ref:`variable<what is a variable?>` by pointing it to :ref:`None<what is None?>`
+
+.. code-block:: python
+  :lineno-start: 30
+  :emphasize-lines: 2-3
+
+  def test_constant_function():
+      # constant
+      constant = None
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
+
+----
+
+* I add an :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 4
+
+    def test_constant_function():
+        # constant
+        constant = None
+        assert constant is 'the same thing'
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert None is 'the same thing'
+
+  because ``constant`` points to :ref:`None<what is None?>`. Using substitution
+
+  .. code-block:: python
+
+    constant = None
+    assert constant is 'the same thing'
+    assert None     is 'the same thing'
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not the same object as a string(anything in quotes)<test_assertion_error_w_none>`.
+
+* I change the :ref:`assertion<what is an assertion?>` to make the statement :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 4-5
+
+    def test_constant_function():
+        # constant
+        constant = None
+        # assert constant is 'the same thing'
+        assert constant is None
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I add parentheses to call ``constant``
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 6
+
+    def test_constant_function():
+        # constant
+        constant = None
+        # assert constant is 'the same thing'
+        # assert constant is None
+        assert constant() is None
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
+
+  .. code-block:: python
+
+    TypeError: 'NoneType' object is not callable
+
+  because I called ``constant`` which points to :ref:`None<what is None?>` and :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`. Using substitution
+
+  .. code-block:: python
+
+    constant = None # point the name to the object
+    constant()      # call the name
+    None()          # substitute the value for the name
+
+  ``None()`` raises :ref:`TypeError<what causes TypeError?>`.
+
+* I change ``constant`` to a :ref:`function<what is a function?>` with the def_ and return_ keywords
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 3-5
+
+    def test_constant_function():
+        # constant
+        # constant = None
+        def constant():
+            return None
+        # assert constant is 'the same thing'
+        # assert constant is None
+        assert constant() is None
+
+
+    # Exceptions seen
+
+  the test passes.
+
+* I change the `return statement`_
+
+  .. code-block:: python
+    :lineno-start: 30
+    :emphasize-lines: 5-6
+
+    def test_constant_function():
+        # constant
+        # constant = None
+        def constant():
+            # return None
+            return 'the same thing'
+        # assert constant is 'the same thing'
+        # assert constant is None
+        assert constant() is None
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    AssertionError: assert 'the same thing' is None
+
+
 
 * I add the :ref:`function<what is a function?>` to ``functions.py``
 
