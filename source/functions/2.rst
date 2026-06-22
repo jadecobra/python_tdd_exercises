@@ -1343,7 +1343,8 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the changing results?<a better way to handle the results changing>`
+* :ref:`I can use a function to remove repetition<test_why_use_a_function>`. Is there :ref:`a better way to handle the changing results?<a better way to handle the results changing>`
+* :ref:`I can use a function to organize tests<a better way to organize tests>`
 
 ----
 
@@ -1351,7 +1352,7 @@ the test passes.
 test_w_positional_arguments
 *********************************************************************************
 
-So far, the :ref:`functions<what is a function?>` take no input or one input, the next tests use functions_ that take more than one input.
+:ref:`test_identity_function` used one input, these next tests use :ref:`functions<what is a function?>` that take more than one input.
 
 ----
 
