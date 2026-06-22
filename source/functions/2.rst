@@ -359,7 +359,7 @@ I sometimes use the :ref:`Identity Function<test_identity_function>` when I am t
 test_why_use_a_function
 *********************************************************************************
 
-Why would I use a :ref:`function<what is a function?>` when I can just write code to do the thing I want?
+Why would I use a :ref:`function<what is a function?>` when I can just write code to do the thing I want? Let us assume I am writing a program to add up numbers.
 
 ----
 
@@ -467,7 +467,48 @@ the test passes.
 
   the test passes.
 
+* I add an :ref:`assertion<what is an assertion?>` for ``2 + 1``
 
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 6
+
+    def test_why_use_a_function():
+        # assert 1 + 0 == 0
+        assert 1 + 0 == 1
+        # assert 1 + 1 == 1
+        assert 1 + 1 == 2
+        assert 2 + 1 == 2
+
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+
+  .. code-block:: python
+
+    E       assert (2 + 1) == 1
+
+  because ``2 + 1`` is NOT equal to ``1``.
+
+* I change the :ref:`assertion<what is an assertion?>` to make it :ref:`True<test_what_is_true>`
+
+  .. code-block:: python
+    :lineno-start: 45
+    :emphasize-lines: 6-7
+
+    def test_why_use_a_function():
+        # assert 1 + 0 == 0
+        assert 1 + 0 == 1
+        # assert 1 + 1 == 1
+        assert 1 + 1 == 2
+        # assert 2 + 1 == 2
+        assert 2 + 1 == 3
+
+
+    # Exceptions seen
+
+  the test passes.
 
 
 
