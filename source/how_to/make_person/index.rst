@@ -1,6 +1,6 @@
 .. meta::
-  :description: A step-by-step Python Test-Driven Development (TDD) tutorial for beginners building a person dictionary factory function. Learn modern project setup with uv init and git; automate testing with pytest-watcher and unittest; and systematically resolve AssertionError, NameError, AttributeError, TypeError, and SyntaxError. Covers advanced refactoring using datetime.datetime.now(), random.choice, random.randint, starred parameter lists (*args), and double-star (**) dictionary unpacking.
-  :keywords: Jacob Itegboje, Python TDD tutorial for beginners, step by step python test driven development, how to use uv python package manager, pytest-watcher automatic test runner, unittest assertEqual AssertionError, datetime.datetime.now year calculation, how to use random.choice in tests, random.randint test parameters, python unexpected keyword argument TypeError, python parameters without default values order, python double star dictionary unpacking, red green refactor example, catching NameError and AttributeError in python tests, how to fix TypeError: 'NoneType' object is not callable, why blows my test show NameError: name 'src' is not defined, python SyntaxError: parameter without a default follows parameter with a default, testing python factory function returning dict, starred expression
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with variables. Use variables for person data (first name, last name, sex, year of birth). pytest-watcher shows "no tests ran". RED: add def test_joe(): assert joe() == 'joe, blow, M, 1996' → NameError: name 'joe' is not defined. GREEN: joe = None → TypeError: 'NoneType' object is not callable; make def joe(): return None → AssertionError: assert None == 'joe, blow, M, 1996'; fix return value. Repeat for jane, john, mary. REFACTOR: remove the commented lines, git commit -am. Ends with 4 module-level functions that return 'name, surname, X, YYYY' strings + 4 bare assert tests + # Exceptions seen list. Shows why one function per person doesn't scale. Code: person/tests/test_person_1.py. What is next: functions that take input.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with variables, python TDD variables, NameError: name 'joe' is not defined, TypeError: 'NoneType' object is not callable, AssertionError: assert None == 'joe, blow, M, 1996', bare assert, pytest-watcher "no tests ran", remove the commented lines, def joe(): return 'joe, blow, M, 1996', functions that return strings, red green refactor, repetition in tests, test_joe test_jane test_john test_mary, person attributes as variables, what is next functions that take input
 
 .. include:: ../../links.rst
 
@@ -18,12 +18,14 @@ how to make a person with variables
 
 ----
 
-I want to make a contact list of people. I can use variables to represent the :ref:`attributes<what is a class attribute?>` of a person, for example
+I want to make a contact list of people. I can use variables to represent a person, for example
 
 * First Name
 * Last Name (Surname)
 * Sex
 * Year of Birth
+
+can be placed in a string_ (anything in :ref:`quotes`).
 
 ----
 
@@ -584,7 +586,7 @@ because there is no definition for ``john`` in this file_, yet.
 
 
     def test_john():
-      assert john() == 'john, smith, M, 1580'
+        assert john() == 'john, smith, M, 1580'
 
 
     # Exceptions seen
@@ -792,7 +794,7 @@ because there is no definition for ``mary``, it is just a name.
 close the project
 *********************************************************************************
 
-* I close ``person.py``
+* I close ``test_person.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
