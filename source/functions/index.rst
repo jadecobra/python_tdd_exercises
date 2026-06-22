@@ -1,6 +1,6 @@
 .. meta::
-  :description: Master Python functions step-by-step using Test-Driven Development (TDD). Learn positional and keyword arguments, default values, *args, **kwargs, return statements, and argument unpacking with unittest. Perfect for programming beginners and hands-on coders.
-  :keywords: Jacob Itegboje, Python functions for beginners, learn Python functions with TDD, test-driven development Python tutorial, positional vs keyword arguments Python, what does a function return by default, how to write a function in Python, Python *args and **kwargs explained, Python function return None, constant and identity functions Python, Python unittest function examples, argument unpacking python asterisk, beginner Python coding exercises
+  :description: Learn Python functions with TDD: use def + pass, return, and explicit "return None". Discover that every function returns None by default (as if it has an invisible "return None"), that a return statement exits immediately (dead code after it never runs), and build constant functions that always return the exact same object. Practice bare "assert ... is None" and "is 'value'" inside tests; encounter real errors including "name 'w_pass' is not defined" (NameError), "TypeError: 'NoneType' object is not callable" when calling before defining, and AssertionError like "assert None is 0" or "assert 'the same thing' is None". Step-by-step RED/GREEN/REFACTOR with unittest and pytest-watcher. Part of Jacob Itegboje's Pumping Python series.
+  :keywords: Jacob Itegboje, Pumping Python, python functions for beginners, learn functions with TDD, def pass return python, functions return None by default, return statement exits immediately, constant function python, return None invisible, bare assert is None, NameError name 'w_pass' is not defined, TypeError NoneType object is not callable, AssertionError assert None is 0, what does a python function return, test function syntax unittest, red green refactor functions, python TDD def keyword, how to make a function python, constant functions always return the same, uv pytest-watcher functions project
 
 .. include:: ../links.rst
 
@@ -21,27 +21,6 @@ what is a function?
 A function_ is code that is callable_, this means I can write code to do something one time, and call the name for it to do that thing at a different time from when I write it.
 
 functions_ can make code simpler, easier to read, test, reuse, maintain and improve - all the good things.
-
-Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
-
-.. code-block:: python
-
-    input_data -> process -> output_data
-
-where ``process`` is the function_. I think of it like mapping a function ``f`` in Mathematics_ with inputs ``x`` and output ``y``
-
-.. math::
-
-  f(x) -> y
-
-in other words
-
-.. code-block:: python
-
-                  f(x) -> y
-  function(input_data) -> output_data
-
-the :ref:`function<what is a function?>` does something (the process) with ``input_data`` and returns ``output_data`` as the result.
 
 ----
 
@@ -70,7 +49,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/functions/test_functions.py
+.. literalinclude:: ../code/functions/test_functions_1.py
   :language: python
   :linenos:
 
@@ -1747,7 +1726,7 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make functions_ with the def_, :ref:`pass<test_making_functions_w_pass>` and :ref:`return<test_making_functions_w_return>` keywords.
+I ran tests to show that I can make functions_ with the def_, :ref:`pass<test_making_a_function_w_pass>` and :ref:`return<test_making_a_function_w_return>` keywords.
 
 :ref:`How many questions can you answer about functions?<questions about functions>`
 

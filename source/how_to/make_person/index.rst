@@ -33,7 +33,7 @@ preview
 
 I have these tests by the end of the chapter
 
-.. literalinclude:: ../code/person/tests/test_person.py
+.. literalinclude:: ../../code/person/tests/test_person_1.py
   :language: python
   :linenos:
 
@@ -445,7 +445,7 @@ I add another test :ref:`function<what is a function?>`
 
 
   def test_john():
-      assert john() == 'john, smith, M, 2000'
+      assert john() == 'john, smith, M, 1580'
 
 
 
@@ -519,14 +519,14 @@ because there is no definition for ``john`` in this file_, yet.
 
   .. code-block:: python
 
-    AssertionError: assert None == 'john, smith, M, 2000'
+    AssertionError: assert None == 'john, smith, M, 1580'
 
   because when I call ``john`` it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
-    assert john() == 'john, smith, M, 2000'
-    assert None   == 'john, smith, M, 2000'
+    assert john() == 'john, smith, M, 1580'
+    assert None   == 'john, smith, M, 1580'
 
   which raises :ref:`AssertionError<what causes AssertionError?>` because :ref:`None is only equal to None<what is None?>`.
 
@@ -543,7 +543,7 @@ because there is no definition for ``john`` in this file_, yet.
     # john = None
     def john():
         # return None
-        return 'john, smith, M, 2000'
+        return 'john, smith, M, 1580'
 
 
     def test_joe():
@@ -572,7 +572,7 @@ because there is no definition for ``john`` in this file_, yet.
 
 
     def john():
-        return 'john, smith, M, 2000'
+        return 'john, smith, M, 1580'
 
 
     def test_joe():
@@ -584,7 +584,7 @@ because there is no definition for ``john`` in this file_, yet.
 
 
     def test_john():
-      assert john() == 'john, smith, M, 2000'
+      assert john() == 'john, smith, M, 1580'
 
 
     # Exceptions seen
@@ -651,7 +651,7 @@ because there is no definition for ``mary``, it is just a name.
     :emphasize-lines: 5
 
     def john():
-        return 'john, smith, M, 2000'
+        return 'john, smith, M, 1580'
 
 
     mary = None
@@ -682,7 +682,7 @@ because there is no definition for ``mary``, it is just a name.
     :emphasize-lines: 5-7
 
     def john():
-        return 'john, smith, M, 2000'
+        return 'john, smith, M, 1580'
 
 
     # mary = None
@@ -714,7 +714,7 @@ because there is no definition for ``mary``, it is just a name.
     :emphasize-lines: 7-8
 
     def john():
-        return 'john, smith, M, 2000'
+        return 'john, smith, M, 1580'
 
 
     # mary = None
@@ -749,7 +749,7 @@ because there is no definition for ``mary``, it is just a name.
 
 
     def john():
-        return 'john, smith, M, 2000'
+        return 'john, smith, M, 1580'
 
 
     def mary():
@@ -817,19 +817,12 @@ close the project
 review
 *************************************************************************************
 
-I ran tests to make
+I ran tests to make :ref:`functions<what is a function?>` that return strings_ with information for people. There are a few problems with what I have so far
 
-* a :ref:`function<what is a function?>` that takes in :ref:`keyword arguments<test_w_keyword_arguments>` as input, has :ref:`default values<test_w_optional_arguments>` for some of them, performs an action based on an input and returns a :ref:`dictionary<what is a dictionary?>` as output
+- I made a :ref:`function<what is a function?>` for each person. What happens if I have to make 10 or 100 or 1000 people? I am not ready to make 1000 :ref:`functions<what is a function?>`.
+- Each test is basically a repetition of the information for each person.
 
-* a :ref:`function<what is a function?>` that takes in a :ref:`dictionary<what is a dictionary?>` and returns a string_ as output with :ref:`values<test_values_of_a_dictionary>` of :ref:`keys<test_keys_of_a_dictionary>` from the :ref:`dictionary<what is a dictionary?>`
-
-I also saw these :ref:`Exceptions<errors>`
-
-* :ref:`AssertionError<what causes AssertionError?>`
-* :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError<what causes AttributeError?>`
-* :ref:`TypeError<what causes TypeError?>`
-* SyntaxError_
+I want something that will take in information for a person and return a representation for the person. That way I can use one thing to make as many people as I want. I can do that with :ref:`functions that take input<what is a function?>`.
 
 ----
 
@@ -847,13 +840,11 @@ what is next?
 
 you know:
 
-:ref:`how to make a Python test driven development environment manually`
+* :ref:`how to make a Python test driven development environment manually`
 * :ref:`what causes AssertionError?`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
-* :ref:`how to make dictionaries with functions<how to make a person>`
 
-:ref:`Would you like to see another way to make a person?<what is a class?>`
+:ref:`Would you like to test functions with input?<functions that take input>`
 
 ----
 

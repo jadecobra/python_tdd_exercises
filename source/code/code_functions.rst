@@ -8,17 +8,7 @@ functions: tests
 
 the code from ``functions/tests/test_functions.py`` from :ref:`functions<what is a function?>`
 
-.. literalinclude:: functions/test_functions.py
-  :language: python
-  :linenos:
-
-*********************************************************************************
-functions: solutions
-*********************************************************************************
-
-the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a function?>`
-
-.. literalinclude:: functions/functions.py
+.. literalinclude:: functions/test_functions_1.py
   :language: python
   :linenos:
 
@@ -33,6 +23,19 @@ the code from ``functions/tests/test_functions.py`` (after refactor) from :ref:`
 .. literalinclude:: functions/test_functions_2.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+functions: solutions
+*********************************************************************************
+
+the solutions in ``functions/src/functions.py`` from :ref:`functions<what is a function?>`
+
+.. literalinclude:: functions/functions.py
+  :language: python
+  :linenos:
+
 
 ----
 
