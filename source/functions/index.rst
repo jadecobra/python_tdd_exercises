@@ -84,14 +84,6 @@ Questions to think about as I go through the chapter
 * :ref:`what do functions return by default?<test_making_a_function_w_return_none>`
 * :ref:`what happens after a function returns?<test_what_happens_after_functions_return>`
 * :ref:`what is a constant function?<test_constant_function>`
-* :ref:`what is the identity function?<test_identity_function>`
-* :ref:`what is a positional argument?<test_w_positional_arguments>`
-* :ref:`what is a keyword argument?<test_w_keyword_arguments>`
-* :ref:`how can I make arguments a choice in a function?<test_w_optional_arguments>`
-* :ref:`how can I make a function take any number of positional arguments?<test_w_unknown_arguments>`
-* :ref:`how can I make a function take any number of keyword arguments?<test_w_unknown_arguments>`
-* :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
-* :ref:`how does Python represent keyword arguments in a function?<how Python reads keyword arguments>`
 
 ----
 
@@ -1377,7 +1369,7 @@ the test passes.
   - The `return statement`_ is the last thing to run in a :ref:`function<what is a function?>`, it exits after the `return statement`_.
   - It never gets to ``return None`` because it leaves after ``return 'something'``.
   - The second `return statement`_ will never run. It is not reachable (this is called dead code).
-  - This means I can treat a :ref:`call to a function<how to call a function>` as the value it returns.
+  - This means I can treat a :ref:`call to a function<how to call a function>` as the :ref:`object<what is a class?>` it returns.
 
   .. tip::
 
