@@ -5,6 +5,7 @@
 .. include:: ../links.rst
 
 .. _arguments: argument_
+.. _keyword argument: arguments_
 .. _keyword arguments: arguments_
 .. _positional arguments: arguments_
 
@@ -976,15 +977,7 @@ the test passes.
 
   the test passes.
 
-----
-
-----
-
-----
-
-----
-
-* all those :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``. If I want to test what happens when I add a number to ``2``, I would have to change ``1`` in 10 places. I change ``1`` to ``2`` for the calculation part of the :ref:`assertions<what is an assertion?>`
+* all these :ref:`assertions<what is an assertion?>` test what happens when I add a number to ``1``. If I want to test what happens when I add a number to ``2``, I would have to change ``1`` in 10 places. I change ``1`` to ``2`` for the calculation part of the :ref:`assertions<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 45
@@ -1452,8 +1445,8 @@ the test passes.
   because
 
   - I called ``positional_arguments`` which belongs to ``test_positional_arguments`` with one input (``'first'``).
-  - The :ref:`function definition (signature)<how to make a function>` of ``positional_arguments`` does not allow any inputs when it is called, since the parentheses are empty.
-  - I am violating the :ref:`function signature<how to make a function>` when I call it in a way that it was not designed to be called which raises :ref:`TypeError<what causes TypeError?>`.
+  - The :ref:`function definition (signature)<how to make a function>` of ``positional_arguments`` does not allow any inputs when it is called since the parentheses are empty.
+  - I am violating the :ref:`function signature<how to make a function>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
 * I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
@@ -1463,7 +1456,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        def positional_arguments(first_input):
+        def positional_arguments(the_input):
             return None
 
         # assert positional_arguments() == None
@@ -1482,7 +1475,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        def positional_arguments(first_input):
+        def positional_arguments(the_input):
             return None
 
         # assert positional_arguments() == None
@@ -1506,7 +1499,7 @@ the test passes.
   - The :ref:`function definition (signature)<how to make a function>` of ``positional_arguments`` only allows one input.
   - I am violating the :ref:`function signature<how to make a function>` when I call it in a way that it was not designed to be called which raises :ref:`TypeError<what causes TypeError?>`.
 
-* I make the :ref:`function<what is a function?>` take another input by adding a name in parentheses
+* I make the :ref:`function<what is a function?>` take two inputs by changing the name of the first input to be clearer, and adding a name in parentheses
 
   .. code-block:: python
     :lineno-start: 61
@@ -1514,7 +1507,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             return None
 
@@ -1535,7 +1528,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             return None
 
@@ -1556,22 +1549,22 @@ the test passes.
 
     AssertionError: assert None == ('first', 'last')
 
-  because when I call ``positional_arguments`` with ``'first'`` and ``'last'`` as inputs, it returns ``None``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because when I call ``positional_arguments`` with ``'first'`` and ``'last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
-    positional_arguments('first'    , 'last'    ) == ('first', 'last')
+    positional_arguments('first'    , 'last'    )
     positional_arguments(first_input, last_input)
         return None
 
   .. code-block:: python
 
     assert positional_arguments('first', 'last') == ('first', 'last')
-    assert None                                    == ('first', 'last')
+    assert None                                  == ('first', 'last')
 
-  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None is not a tuple<test_assertion_error_w_none>`.
+  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None<what is None?>` is NOT equal to a tuple_.
 
-* I change :ref:`the return statement` to make the :ref:`function<what is a function?>` return its inputs as output
+* I change :ref:`the return statement` to make the :ref:`function<what is a function?>` return its inputs as output (like :ref:`the identity function<test_identity_function>`)
 
   .. code-block:: python
     :lineno-start: 61
@@ -1579,7 +1572,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             # return None
             return first_input, last_input
@@ -1597,7 +1590,7 @@ the test passes.
 
   the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``'first'`` as ``first_input`` and ``'last'`` as ``last_input``.
 
-* The problem with giving arguments this way is that they always have to be in the order the :ref:`function<what is a function?>` expects or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
+* The problem with giving arguments this way is that they always have to be in the order in the :ref:`function definition<how to make a function>` or I get something different. I add an :ref:`assertion<what is an assertion?>` to show this
 
   .. code-block:: python
     :lineno-start: 61
@@ -1605,7 +1598,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             # return None
             return first_input, last_input
@@ -1631,7 +1624,7 @@ the test passes.
 
     AssertionError: assert ('last', 'first') == ('first', 'last')
 
-  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this test sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``first_input`` and ``'first'`` as ``last_input``. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
 
   .. code-block:: python
 
@@ -1643,7 +1636,7 @@ the test passes.
   .. code-block:: python
 
     assert positional_arguments('last', 'first') == ('first', 'last')
-    assert ('last', 'first')                       == ('first', 'last')
+    assert ('last', 'first')                     == ('first', 'last')
 
 * I change my expectation to match reality
 
@@ -1654,7 +1647,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             # return None
             return first_input, last_input
@@ -1685,7 +1678,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             # return None
             return first_input, last_input
@@ -1717,7 +1710,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             # return None
             return first_input, last_input
@@ -1755,7 +1748,7 @@ the test passes.
 
     def test_positional_arguments():
         # def positional_arguments():
-        # def positional_arguments(first_input):
+        # def positional_arguments(the_input):
         def positional_arguments(first_input, last_input):
             # return None
             return first_input, last_input
@@ -2012,7 +2005,7 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
 
     NameError: name 'keyword_arguments' is not defined
 
-  because there is no definition for ``'keyword_arguments'`` in this file_.
+  because there is no definition for ``keyword_arguments`` in this file_.
 
 ----
 
@@ -2022,143 +2015,225 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
 
 ----
 
-* I add a :ref:`function definition<how to make a function>`
+I add a :ref:`function definition<how to make a function>`
+
+.. code-block:: python
+  :lineno-start: 88
+  :emphasize-lines: 2-3
+
+  def test_keyword_arguments():
+      def keyword_arguments():
+          return None
+
+      assert keyword_arguments() == None
+
+
+  # Exceptions seen
+
+the test passes.
+
+----
+
+*********************************************************************************
+what is a keyword argument
+*********************************************************************************
+
+A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`function call<how to call a function?>`. Where key is a name, and the value is any :ref:`object<what is a class?>`.
+
+----
+
+=================================================================================
+:red:`RED`: make it fail
+=================================================================================
+
+----
+
+* I add input to the :ref:`function call<how to call a function with input>` with a name
 
   .. code-block:: python
-    :lineno-start: 26
+    :lineno-start: 88
     :emphasize-lines: 5-6
 
-    def positional_arguments(first_input, last_input):
-        return first_input, last_input
+    def test_keyword_arguments():
+        def keyword_arguments():
+            return None
+
+        # assert keyword_arguments() == None
+        assert keyword_arguments(first_input='first') == None
 
 
-    def keyword_arguments():
-        return None
-
-  the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
-
-  .. code-block:: python
-
-    TypeError: w_keyword_arguments() got
-               an unexpected keyword argument 'first_input'
-
-  because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` does not allow inputs and the test uses two in the call (``first_input`` and ``last_input``)
-
-* I add the name of the unexpected argument_ in parentheses
-
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 1-2
-
-    # def keyword_arguments():
-    def keyword_arguments(first_input):
-        return None
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
   .. code-block:: python
 
-    TypeError: w_keyword_arguments() got
-               an unexpected keyword argument 'last_input'.
-               Did you mean 'first_input'?
+    TypeError:
+        test_keyword_arguments.<locals>.keyword_arguments()
+        got an unexpected keyword argument 'first_input'
 
-  because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` allows one input (``first_input``) and the test uses two in the call (``first_input`` and ``last_input``)
+  because
 
-* I add a name for the second argument_ in parentheses
+  - I called ``keyword_arguments`` which belongs to ``test_keyword_arguments`` with a name (``first_input``) and a value for the name (``'first'``).
+  - The :ref:`function definition (signature)<how to make a function>` of ``keyword_arguments`` does not allow any inputs when it is called since the parentheses are empty.
+  - I am violating the :ref:`function signature<how to make a function>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
+
+* I make the :ref:`function<what is a function?>` take input by adding a name in parentheses
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 88
     :emphasize-lines: 2-3
 
-    # def keyword_arguments():
-    # def keyword_arguments(first_input):
-    def keyword_arguments(first_input, second_input):
-        return None
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        def keyword_arguments(the_input):
+            return None
+
+        # assert keyword_arguments() == None
+        assert keyword_arguments(first_input='first') == None
+
+
+    # Exceptions seen
+
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the names in the :ref:`function call<how to call a function with input>` and :ref:`function definition<how to make a function>` are different.
+
+* I change the name of the input to match the one used in the call
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 3-4
+
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        # def keyword_arguments(the_input):
+        def keyword_arguments(first_input):
+            return None
+
+        # assert keyword_arguments() == None
+        assert keyword_arguments(first_input='first') == None
+
+
+    # Exceptions seen
+
+  the test passes because I use the same name in the :ref:`function definition<how to make a function>` when I call it with a `keyword argument`_.
+
+* I add another input to the :ref:`function call<how to call a function with input>`
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 8-14
+
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        # def keyword_arguments(the_input):
+        def keyword_arguments(first_input):
+            return None
+
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+        assert (
+            keyword_arguments(
+                first_input='first', last_input='last',
+            )
+         == None
+        )
+
+
+    # Exceptions seen
 
   the terminal_ is my friend, and shows :ref:`TypeError<what causes TypeError?>`
 
-  .. code-block:: none
+  .. code-block:: shell
 
-    TypeError: w_keyword_arguments() got
-               an unexpected keyword argument 'last_input'.
-               Did you mean 'first_input'?
+    TypeError:
+        test_keyword_arguments.<locals>.keyword_arguments()
+        got an unexpected keyword argument 'last_input'.
+        Did you mean 'first_input'?
 
-  because the :ref:`definition<how to make a function>` for ``w_keyword_arguments`` allows two inputs with the names ``first_input`` and ``second_input``, and the test calls the :ref:`function<what is a function?>` with ``first_input`` and ``last_input``, the names must match when I am using :ref:`keyword arguments<test_keyword_arguments>`
+  because
 
-* I change the name of the second argument to match the name used in the call
+  - I called ``keyword_arguments`` which belongs to ``test_keyword_arguments`` with two names (``first_input`` and ``last_input``) and values for the names (``'first'`` and ``'last'``).
+  - The :ref:`function definition (signature)<how to make a function>` of ``keyword_arguments`` only allows one input when it is called.
+  - I am violating the :ref:`function signature<how to make a function>` when I call it in a way that it was not designed to be called, which raises :ref:`TypeError<what causes TypeError?>`.
 
-  .. code-block:: python
-    :lineno-start: 30
-    :emphasize-lines: 3-4
-    :emphasize-text: last
-
-    # def keyword_arguments():
-    # def keyword_arguments(first_input):
-    # def keyword_arguments(first_input, second_input):
-    def keyword_arguments(first_input, last_input):
-        return None
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+* I make the :ref:`function<what is a function?>` take two inputs by adding another name in parentheses
 
   .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 4-5
 
-    AssertionError: None != ('first', 'last')
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        # def keyword_arguments(the_input):
+        # def keyword_arguments(first_input):
+        def keyword_arguments(first_input, second_input):
+            return None
 
-  because the :ref:`function<what is a function?>` returns :ref:`None<what is None?>` and the :ref:`assertion<what is an assertion?>` expects ``('first', 'last')``
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+        assert (
+            keyword_arguments(
+                first_input='first', last_input='last',
+            )
+         == None
+        )
 
-* I change the `return statement`_ to make the :ref:`function<what is a function?>` return its inputs
+
+    # Exceptions seen
+
+  the terminal_ still shows :ref:`TypeError<what causes TypeError?>` because the names in the :ref:`function call<how to call a function with input>` and :ref:`function definition<how to make a function>` are different.
+
+* I change name of the input to match the one used in the call
 
   .. code-block:: python
-    :lineno-start: 30
+    :lineno-start: 88
     :emphasize-lines: 5-6
 
-    # def keyword_arguments():
-    # def keyword_arguments(first_input):
-    # def keyword_arguments(first_input, second_input):
-    def keyword_arguments(first_input, last_input):
-        # return None
-        return first_input, last_input
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        # def keyword_arguments(the_input):
+        # def keyword_arguments(first_input):
+        # def keyword_arguments(first_input, second_input):
+        def keyword_arguments(first_input, last_input):
+            return None
 
-  the test passes.
-
-----
-
-=================================================================================
-:yellow:`REFACTOR`: make it better
-=================================================================================
-
-----
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start: 26
-
-    def positional_arguments(first_input, last_input):
-        return first_input, last_input
-
-
-    def keyword_arguments(first_input, last_input):
-        return first_input, last_input
-
-* I add another :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order in :ref:`test_keyword_arguments` in ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 163
-    :emphasize-lines: 8-12
-
-        def test_keyword_arguments(self):
-            reality = src.functions.w_keyword_arguments(
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+        assert (
+            keyword_arguments(
                 first_input='first', last_input='last',
             )
-            my_expectation = ('first', 'last')
-            self.assertEqual(reality, my_expectation)
+         == None
+        )
 
-            reality = src.functions.w_keyword_arguments(
-                last_input='last', first_input='first',
+
+    # Exceptions seen
+
+  the test passes because I use the same name in the :ref:`function definition<how to make a function>` when I call it with a `keyword argument`_.
+
+* I change the expectation of the :ref:`assertion<what is an assertion?>`
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 15-16
+
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        # def keyword_arguments(the_input):
+        # def keyword_arguments(first_input):
+        # def keyword_arguments(first_input, the_input):
+        def keyword_arguments(first_input, last_input):
+            return None
+
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+        assert (
+            keyword_arguments(
+                first_input='first', last_input='last',
             )
-            my_expectation = ('last', 'first')
-            self.assertEqual(reality, my_expectation)
+        #  == None
+         == ('first', 'last')
+        )
 
 
     # Exceptions seen
@@ -2167,145 +2242,189 @@ Another way to :ref:`call a function<how to call a function with input>` is to u
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('first', 'last')
-                                != ('last', 'first')
+    AssertionError: assert None == ('first', 'last')
 
-  the order the :ref:`function<what is a function?>` returns the values stayed the same this time, because it always returns ``first_input, last_input``.
-
-  Compare this call that uses :ref:`positional arguments<test_positional_arguments>` and its result
+  because when I call ``keyword_arguments`` with ``first_input='first'`` and ``last_input='last'`` as inputs, it returns :ref:`None<what is None?>`. Using substitution
 
   .. code-block:: python
 
-    src.functions.positional_arguments('last', 'first')
-    ('last', 'first')
-
-  with this call that uses :ref:`keyword arguments<test_keyword_arguments>` and its result
-
-  .. code-block:: python
-
-    src.functions.w_keyword_arguments(
-        last_input='last', first_input='first',
-    )
-    ('first', 'last')
-
-  in both cases the :ref:`function<what is a function?>` returns ``first_input, last_input``
-
-* I change ``my_expectation`` to match ``reality``
+    keyword_arguments(first_input='first', last_input='last')
+    keyword_arguments(first_input        , last_input       )
+        return None
 
   .. code-block:: python
-    :lineno-start: 170
-    :emphasize-lines: 4-5
-    :emphasize-text: last
 
-            reality = src.functions.w_keyword_arguments(
-                last_input='last', first_input='first',
+    assert keyword_arguments(first_input='first', last_input='last')
+                         == ('first', 'last')
+    assert None          == ('first', 'last')
+
+  which raises :ref:`AssertionError<what causes AssertionError?>` since :ref:`None<what is None?>` is NOT equal to a tuple_.
+
+* I change :ref:`the return statement` to make the :ref:`function<what is a function?>` return its inputs as output (like :ref:`the identity function<test_identity_function>`)
+
+  .. code-block:: python
+    :lineno-start: 88
+    :emphasize-lines: 7-8
+
+    def test_keyword_arguments():
+        # def keyword_arguments():
+        # def keyword_arguments(the_input):
+        # def keyword_arguments(first_input):
+        # def keyword_arguments(first_input, the_input):
+        def keyword_arguments(first_input, last_input):
+            # return None
+            return first_input, last_input
+
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+        assert (
+            keyword_arguments(
+                first_input='first', last_input='last',
             )
-            # my_expectation = ('last', 'first')
-            my_expectation = ('first', 'last')
-            self.assertEqual(reality, my_expectation)
+        #  == None
+         == ('first', 'last')
+        )
 
 
     # Exceptions seen
 
-  the test passes. The order does not matter when I use `keyword arguments`_.
+  the test passes, because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in the test sends ``first_input='first'`` and ``last_input='last'``.
 
-* I add :ref:`variables<what is a variable?>` to use them to remove repetition of ``'first'`` and ``'last'`` from the test
+* The problem with giving arguments this way, is I must use the exact names. The advantage of giving arguments this way is that they do not have to be in the order in the :ref:`function definition<how to make a function>`. I add an :ref:`assertion<what is an assertion?>` with the `keyword arguments`_ given out of order
 
   .. code-block:: python
-    :lineno-start: 163
-    :emphasize-lines: 2
+    :lineno-start: 97
+    :emphasize-lines: 10-15
 
-        def test_keyword_arguments(self):
-            first, last = 'first', 'last'
-
-            reality = src.functions.w_keyword_arguments(
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+        assert (
+            keyword_arguments(
                 first_input='first', last_input='last',
             )
-            my_expectation = ('first', 'last')
-            self.assertEqual(reality, my_expectation)
+        #  == None
+         == ('first', 'last')
+        )
+        assert (
+            keyword_arguments(
+                last_input='last', first_input='first',
+            )
+         == ('last', 'first')
+        )
 
-* I use the new :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'`` from the test
+
+    # Exceptions seen
+
+  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
-    :lineno-start: 163
-    :emphasize-lines: 5-6, 8-9, 13-14, 17-18
 
-        def test_keyword_arguments(self):
-            first, last = 'first', 'last'
+    AssertionError: assert ('first', 'last') == ('last', 'first')
 
-            reality = src.functions.w_keyword_arguments(
+  because the :ref:`function<what is a function?>` always returns ``first_input, last_input`` and the call in this :ref:`assertion<what is an assertion?>` sends ``'last'`` as ``last_input`` and ``'first'`` as ``first_input``, the order does not matter because I used the names. Using substitution since :ref:`I can treat a call to a function as the object it returns<test_what_happens_after_functions_return>`
+
+  .. code-block:: python
+
+    keyword_arguments(last_input='last', first_input='first')
+    keyword_arguments(first_input, last_input)
+        return first_input, last_input
+        return 'first'    , 'last'
+
+  .. code-block:: python
+
+    assert keyword_arguments(last_input='last', first_input='first')
+                             == ('last', 'first')
+    assert ('first', 'last') == ('last', 'first')
+
+* I change my expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 14-15
+
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+        assert (
+            keyword_arguments(
+                first_input='first', last_input='last',
+            )
+        #  == None
+         == ('first', 'last')
+        )
+        assert (
+            keyword_arguments(
+                last_input='last', first_input='first',
+            )
+        #  == ('last', 'first')
+         == ('first', 'last')
+        )
+
+
+    # Exceptions seen
+
+* I add :ref:`variables<what is a variable?>` for ``'first'`` and ``'last'``
+
+  .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 4
+
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+
+        first, last = 'first', 'last'
+
+        assert (
+            keyword_arguments(
+                first_input='first', last_input='last',
+            )
+        #  == None
+         == ('first', 'last')
+        )
+        assert (
+            keyword_arguments(
+                last_input='last', first_input='first',
+            )
+        #  == ('last', 'first')
+         == ('first', 'last')
+        )
+
+
+    # Exceptions seen
+
+* I use the :ref:`variables<what is a variable?>` to remove repetition of ``'first'`` and ``'last'``
+
+  .. code-block:: python
+    :lineno-start: 97
+    :emphasize-lines: 8-9, 12-13, 17-18, 21-22
+
+        # assert keyword_arguments() == None
+        # assert keyword_arguments(first_input='first') == None
+
+        first, last = 'first', 'last'
+
+        assert (
+            keyword_arguments(
                 # first_input='first', last_input='last',
                 first_input=first, last_input=last,
             )
-            # my_expectation = ('first', 'last')
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
+        #  == None
+        #  == ('first', 'last')
+         == (first, last)
+        )
+        assert (
+            keyword_arguments(
                 # last_input='last', first_input='first',
                 last_input=last, first_input=first,
             )
-            # my_expectation = ('last', 'first')
-            # my_expectation = ('first', 'last')
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
+        #  == ('last', 'first')
+        #  == ('first', 'last')
+         == (first, last)
+        )
 
 
     # Exceptions seen
 
   the test is still green.
-
-* I can still call the :ref:`function<what is a function?>` the same way I did in :ref:`test_positional_arguments` (without using the names). I add an :ref:`assertion<what is an assertion?>` to show this
-
-  .. code-block:: python
-    :lineno-start: 174
-    :emphasize-lines: 10-14
-
-            reality = src.functions.w_keyword_arguments(
-                # last_input='last', first_input='first',
-                last_input=last, first_input=first,
-            )
-            # my_expectation = ('last', 'first')
-            # my_expectation = ('first', 'last')
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-            reality = src.functions.w_keyword_arguments(
-                last, first,
-            )
-            my_expectation = (first, last)
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
-
-  .. code-block:: python
-
-    AssertionError: Tuples differ: ('last', 'first')
-                                != ('first', 'last')
-
-  because the :ref:`function<what is a function?>` uses the order (positions) when I do not use the names
-
-* I change ``my_expectation`` to match ``reality``
-
-  .. code-block:: python
-    :lineno-start: 183
-    :emphasize-lines: 4-5
-    :emphasize-text: first
-
-            reality = src.functions.w_keyword_arguments(
-                last, first,
-            )
-            # my_expectation = (first, last)
-            my_expectation = (last, first)
-            self.assertEqual(reality, my_expectation)
-
-
-    # Exceptions seen
-
-  the test passes.
 
 * I add another :ref:`assertion<what is an assertion?>`
 
