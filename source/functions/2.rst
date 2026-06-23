@@ -5088,13 +5088,15 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
+:ref:`I can make a function that can take any number of positional or keyword arguments<test_unknown_number_of_arguments>`
+
 ----
 
 *********************************************************************************
 close the project
 *********************************************************************************
 
-* I close ``test_functions.py`` and ``functions.py``
+* I close ``test_functions.py``
 * I click in the terminal_ where the tests are running
 * I use :kbd:`q` on the keyboard to leave the tests. The terminal_ goes back to the command line.
 
@@ -5121,17 +5123,19 @@ review
 
 I ran tests to show that I can make :ref:`functions<what is a function>` that take input
 
-* I can use a :ref:`function to remove repetition<test_why_use_a_function>`
+* I can use a :ref:`function to remove repetition<test_why_use_a_function>`.
 * I can call a :ref:`function<what is a function?>` with input by placing an :ref:`object<what is a class?>` in parentheses when I call it.
-* The :ref:`identity or passthrough function<test_identity_function>` returns its input as output
-* :ref:`I can call functions with positional arguments<test_positional_arguments>`
-* :ref:`I can call a function with keyword arguments<test_keyword_arguments>`
-* :ref:`I can call a function with positional and keyword arguments<test_args_and_kwargs>`
+* The :ref:`identity or passthrough function<test_identity_function>` returns its input as output.
+* :ref:`I can call functions with positional arguments<test_positional_arguments>`.
+* :ref:`I can call a function with keyword arguments<test_keyword_arguments>`.
+* :ref:`I can call a function with positional and keyword arguments<test_args_and_kwargs>`.
+* :ref:`I can make a function with optional arguments<test_optional_arguments>`.
+* :ref:`I can make a function that can take any number of positional or keyword arguments<test_unknown_number_of_arguments>`
 
-* If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
-* If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
-* If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-* If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 :ref:`How many questions can you answer about functions?<questions about functions>`
 
