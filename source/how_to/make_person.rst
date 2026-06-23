@@ -3959,7 +3959,7 @@ What if I want the person to say hello, How would I do that? I can write a :ref:
   .. code-block:: python
 
     AttributeError: module 'src.person'
-                    has no attribute 'hello'
+                    has no attribute 'say_hello'
 
   because ``person.py`` does not have a :ref:`function<what is a function?>` named ``say_hello``, yet.
 
