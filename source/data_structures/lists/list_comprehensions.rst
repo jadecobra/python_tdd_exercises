@@ -1950,7 +1950,7 @@ I click in the terminal_, then use :kbd:`q` on the keyboard to leave the tests. 
 
       ...\pumping_python
 
-    I am back in the ``pumping_python`` directory_
+    I am back in the ``pumping_python`` directory_.
 
 ----
 

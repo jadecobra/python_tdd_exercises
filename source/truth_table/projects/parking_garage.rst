@@ -2906,7 +2906,7 @@ close the project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_.
 
 ----
 

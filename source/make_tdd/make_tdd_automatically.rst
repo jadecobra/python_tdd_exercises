@@ -493,7 +493,7 @@ how to use makePythonTdd to make a different project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_.
 
 * I want to use ``makePythonTdd`` to make another project with a different name. I change ``magic_again`` to the name of the new project
 
@@ -559,7 +559,7 @@ how to use makePythonTdd to make a different project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_.
 
 * I close ``test_more_magic.py``
 

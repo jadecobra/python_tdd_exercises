@@ -1063,7 +1063,7 @@ close the project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_.
 
 * I click in the second terminal_, then use :kbd:`ctrl/command+c` on the keyboard to close the web server. The terminal_ goes back to the command line.
 
@@ -1080,7 +1080,7 @@ close the project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_.
 
 ----
 

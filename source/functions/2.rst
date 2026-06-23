@@ -4250,8 +4250,8 @@ how Python reads starred and double starred expressions
         return  positional_arguments, keyword_arguments
         return ((0, 1              ), {'a': 2, 'b': 3  })
 
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>` it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` a :ref:`function definition<how to make a function>` it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 * I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>`
 
@@ -4302,8 +4302,8 @@ how Python reads starred and double starred expressions
         return  positional_arguments, keyword_arguments
         return ((0, 1              ), {'a': 2, 'b': 3, 'c':4})
 
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>` it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` a :ref:`function definition<how to make a function>` it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 * I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>`
 
@@ -4358,8 +4358,8 @@ how Python reads starred and double starred expressions
         return  positional_arguments, keyword_arguments
         return ((0, 1, 2           ), {'a': 3, 'b': 4, 'c':5})
 
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>` it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
-  - If I use ``**something`` a :ref:`function definition<how to make a function>` it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 * I change my expectation to match reality in the last :ref:`assertion<what is an assertion?>`
 
@@ -4507,8 +4507,8 @@ how Python reads starred expressions
     unknown_number_of_arguments(*(0, 1) , **{'a':2, 'b':3})
     unknown_number_of_arguments(0, 1    , a=2, b=3        )
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>` it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
-  - If I use ``**something`` a :ref:`function call<how to call a function>` it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the second :ref:`assertion<what is an assertion?>`
 
@@ -4624,8 +4624,8 @@ how Python reads starred expressions
     unknown_number_of_arguments(*(0, 1) , **{'a': 2, 'b': 3, 'c': 4})
     unknown_number_of_arguments(0, 1    , a=2, b=3, c=4             )
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>` it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
-  - If I use ``**something`` a :ref:`function call<how to call a function>` it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the last :ref:`assertion<what is an assertion?>`
 
@@ -4747,8 +4747,8 @@ how Python reads starred expressions
     unknown_number_of_arguments(*(0, 1, 2), **{'a': 2, 'b': 3, 'c': 4})
     unknown_number_of_arguments(0, 1, 2   , a=3, b=4, c=5             )
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>` it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
-  - If I use ``**something`` a :ref:`function call<how to call a function>` it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
 * I add an :ref:`assertion<what is an assertion?>` with a call to ``unknown_number_of_arguments`` using only :ref:`positional arguments<test_positional_arguments>`
 
@@ -4817,8 +4817,8 @@ how Python reads starred expressions
         return ((1, 2, 3, 'n')      , {})
 
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>` it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
-  - If I use ``*something`` in a :ref:`function definition<how to make a function>` it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
 
 * I change my expectation to match reality
 
@@ -4913,8 +4913,8 @@ Using substitution
       return (()                  , {'a': 1, 'b': 2, 'c': 3, 'd': 'n'})
 
 
-- If I use ``**something`` a :ref:`function call<how to call a function>` it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
-- If I use ``**something`` a :ref:`function definition<how to make a function>` it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+- If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
+- If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 ----
 
@@ -4927,45 +4927,46 @@ Using substitution
 I change my expectation to match reality
 
 .. code-block:: python
-  :lineno-start: 299
-  :emphasize-lines: 5-6
+  :lineno-start: 262
+  :emphasize-lines: 4-5
 
-            a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
-            reality = src.functions.unknown_number_of_arguments(
-                **a_dictionary
-            )
-            # my_expectation = ()
-            my_expectation = ((), a_dictionary)
-            self.assertEqual(reality, my_expectation)
+      a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+      assert (
+          unknown_number_of_arguments(**a_dictionary)
+      #  == ()
+       == ((), a_dictionary)
+      )
 
 
-    # Exceptions seen
+  # Exceptions seen
 
-the test passes. The :ref:`function<what is a function?>` gives me back the :ref:`positional arguments<test_positional_arguments>` as an empty tuple_ (things in parentheses (``()``) separated by commas) because I did not give any in the call, it gives me a :ref:`dictionary<what is a dictionary?>` (any :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` in curly braces ``{ }`` separated by a comma) of the :ref:`keyword arguments<test_keyword_arguments>`.
+the test passes.
 
 ----
 
-*********************************************************************************
-how Python reads positional and keyword arguments
-*********************************************************************************
+=================================================================================
+:yellow:`REFACTOR`: make it better
+=================================================================================
 
-* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`function<what is a function?>` with no inputs
+----
+
+* I add one more :ref:`assertion<what is an assertion?>` to see what happens when I call the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>` with no inputs
 
   .. code-block:: python
-    :lineno-start: 299
-    :emphasize-lines: 9-11
+    :lineno-start: 262
+    :emphasize-lines: 8-11
 
-            a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
-            reality = src.functions.unknown_number_of_arguments(
-                **a_dictionary
-            )
-            # my_expectation = ()
-            my_expectation = ((), a_dictionary)
-            self.assertEqual(reality, my_expectation)
+        a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+        assert (
+            unknown_number_of_arguments(**a_dictionary)
+        #  == ()
+         == ((), a_dictionary)
+        )
 
-            reality = src.functions.unknown_number_of_arguments()
-            my_expectation = TypeError
-            self.assertEqual(reality, my_expectation)
+        assert (
+            unknown_number_of_arguments()
+         == TypeError
+        )
 
 
     # Exceptions seen
@@ -4974,18 +4975,41 @@ how Python reads positional and keyword arguments
 
   .. code-block:: python
 
-    AssertionError: ((), {}) != <class 'TypeError'>
+    E       assert ((), {}) == TypeError
 
-* I change the my expectation to match reality
+  because ``unknown_number_of_arguments`` gets called with no arguments_ so I get a tuple_ with
+
+  - an empty tuple_ since there are no :ref:`positional arguments<test_positional_arguments>`
+  - an empty :ref:`dictionary<what is a dictionary?>` since there are no :ref:`keyword arguments<test_keyword_arguments>`
+
+  Using substitution
 
   .. code-block:: python
-    :lineno-start: 307
-    :emphasize-lines: 2-3
 
-            reality = src.functions.unknown_number_of_arguments()
-            # my_expectation = TypeError
-            my_expectation = ((), {})
-            self.assertEqual(reality, my_expectation)
+    unknown_number_of_arguments()
+    unknown_number_of_arguments(
+        *positional_arguments, **keyword_arguments
+    )
+        positional_arguments = ()
+        keyword_arguments = {}
+        return  positional_arguments, keyword_arguments
+        return (()                  , {}               )
+
+
+  - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+  - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
+
+* I change my expectation to match reality
+
+  .. code-block:: python
+    :lineno-start: 269
+    :emphasize-lines: 3-4
+
+        assert (
+            unknown_number_of_arguments()
+        #  == TypeError
+         == ((), {})
+        )
 
 
     # Exceptions seen
@@ -4995,71 +5019,64 @@ how Python reads positional and keyword arguments
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 249
+    :lineno-start: 200
 
-        def test_unknown_number_of_arguments(self):
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3}
-            reality = src.functions.unknown_number_of_arguments(
+    def test_unknown_number_of_arguments():
+        def unknown_number_of_arguments(
+            *positional_arguments, **keyword_arguments
+        ):
+            return positional_arguments, keyword_arguments
+
+        a_tuple = (0, 1)
+        a_dictionary = {'a': 2, 'b': 3}
+        assert (
+            unknown_number_of_arguments(
                 *a_tuple, **a_dictionary
             )
-            my_expectation = (a_tuple, a_dictionary)
-            self.assertEqual(reality, my_expectation)
+         == (a_tuple, a_dictionary)
+        )
 
-            a_tuple = (0, 1)
-            a_dictionary = {'a': 2, 'b': 3, 'c': 4}
-            reality = src.functions.unknown_number_of_arguments(
+        a_tuple = (0, 1)
+        a_dictionary = {'a': 2, 'b': 3, 'c': 4}
+        assert (
+            unknown_number_of_arguments(
                 *a_tuple, **a_dictionary
             )
-            my_expectation = (
-                a_tuple, a_dictionary
-            )
-            self.assertEqual(reality, my_expectation)
+         == (a_tuple, a_dictionary)
+        )
 
-            a_tuple = (0, 1, 2)
-            a_dictionary = {'a': 3, 'b': 4, 'c': 5}
-            reality = src.functions.unknown_number_of_arguments(
-                *a_tuple, **a_dictionary,
+        a_tuple = (0, 1, 2)
+        a_dictionary = {'a': 3, 'b': 4, 'c': 5}
+        assert (
+            unknown_number_of_arguments(
+                *a_tuple, **a_dictionary
             )
-            my_expectation = (
-                a_tuple, a_dictionary
-            )
-            self.assertEqual(reality, my_expectation)
+         == (a_tuple, a_dictionary)
+        )
 
-            a_tuple = (0, 1, 2, 3)
-            reality = src.functions.unknown_number_of_arguments(
-                *a_tuple
-            )
-            my_expectation = (a_tuple, {})
-            self.assertEqual(reality, my_expectation)
+        a_tuple = (1, 2, 3, 'n')
+        assert (
+            unknown_number_of_arguments(*a_tuple)
+         == (a_tuple, {})
+        )
 
-            a_dictionary = {'a': 4, 'b': 5, 'c': 6, 'd': 7}
-            reality = src.functions.unknown_number_of_arguments(
-                **a_dictionary
-            )
-            my_expectation = ((), a_dictionary)
-            self.assertEqual(reality, my_expectation)
+        a_dictionary = {'a': 1, 'b': 2, 'c': 3, 'd': 'n'}
+        assert (
+            unknown_number_of_arguments(**a_dictionary)
+         == ((), a_dictionary)
+        )
 
-            reality = src.functions.unknown_number_of_arguments()
-            my_expectation = ((), {})
-            self.assertEqual(reality, my_expectation)
+        assert (
+            unknown_number_of_arguments()
+         == ((), {})
+        )
 
 
     # Exceptions seen
-
-* I remove the commented lines from the :ref:`unknown_number_of_arguments function<test_unknown_number_of_arguments>`
-
-  .. code-block:: python
-    :lineno-start: 38
-
-    def optional_arguments(first_input, last_input='doe'):
-        return first_input, last_input
-
-
-    def unknown_number_of_arguments(
-            *positional_arguments, **keyword_arguments
-        ):
-        return positional_arguments, keyword_arguments
+    # AssertionError
+    # NameError
+    # TypeError
+    # SyntaxError
 
 * I add a git_ commit message in the other terminal_
 
@@ -5070,43 +5087,6 @@ how Python reads positional and keyword arguments
     'add test_unknown_number_of_arguments'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
-
-.. note::
-
-  these statements are the same
-
-  .. code-block:: python
-
-    unknown_number_of_arguments(0, 1, 2, 3, a=4, b=5, c=6, d=7)
-    unknown_number_of_arguments(
-        *(0, 1, 2, 3), **{'a': 4, 'b': 5, 'c': 6, 'd': 7}
-    )
-
-  because ``unknown_number_of_arguments``  in the ``src`` folder will always
-
-  .. code-block:: python
-
-    return positional_arguments, keyword_arguments
-
-  in this case
-
-  .. code-block:: python
-
-    0, 1, 2, 3
-    *(0, 1, 2, 3)
-
-  are :ref:`positional arguments<test_positional_arguments>` which are taken as a tuple_ and
-
-  .. code-block:: python
-
-    a=4, b=5, c=6, d=7
-    **{'a': 4, 'b': 5, 'c': 6, 'd': 7}
-
-  are :ref:`keyword arguments<test_keyword_arguments>` which are taken as a :ref:`dictionary<what is a dictionary?>`.
-
-  The :ref:`function<what is a function?>` reads :ref:`positional arguments<test_positional_arguments>` as tuples_, and :ref:`keyword arguments<test_keyword_arguments>` as :ref:`dictionaries<what is a dictionary?>`.
-
-  Is this :ref:`why the update method of dictionaries can take a dictionary as input<test_update_a_dictionary>`?
 
 ----
 
@@ -5131,7 +5111,7 @@ close the project
 
     .../pumping_python
 
-  I am back in the ``pumping_python`` directory_
+  I am back in the ``pumping_python`` directory_.
 
 ----
 
@@ -5139,9 +5119,14 @@ close the project
 review
 *********************************************************************************
 
-I ran tests to show that I can make functions_ with
+I ran tests to show that I can make :ref:`functions<what is a function>` that take input
 
 * the def_, :ref:`pass<test_making_functions_w_pass>` and :ref:`return<test_making_functions_w_return>` keywords
+
+* If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+* If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
+* If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
+* If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
 
 :ref:`How many questions can you answer about functions?<questions about functions>`
 

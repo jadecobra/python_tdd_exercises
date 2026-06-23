@@ -742,7 +742,7 @@ how to see what is in a directory
 
     .../pumping_python
 
-  - I am back in the ``pumping_python`` directory_
+  - I am back in the ``pumping_python`` directory_.
   - ``..`` is for the parent of the directory_ I am in
   - ``..`` is ``pumping_python`` when I am in ``doe``
   - ``pumping_python`` is the parent of ``doe``
