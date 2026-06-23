@@ -4445,7 +4445,7 @@ what is next?
 Congratulations! You now know
 
 * :ref:`how to make a Python test driven development environment any time you want<how to make a Python test driven development environment>` and
-* :ref:`what causes AssertionError?`
+* :ref:`what causes AssertionError<what causes AssertionError?>`
 
 :ref:`Would you like to test functions?<what is a function?>`
 

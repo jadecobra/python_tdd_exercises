@@ -3,7 +3,7 @@ functions: tests and solutions
 #################################################################################
 
 *********************************************************************************
-functions: tests
+what is a function?: tests
 *********************************************************************************
 
 the code from ``functions/tests/test_functions.py`` from :ref:`functions<what is a function?>`
@@ -11,6 +11,19 @@ the code from ``functions/tests/test_functions.py`` from :ref:`functions<what is
 .. literalinclude:: functions/test_functions_1.py
   :language: python
   :linenos:
+
+----
+
+*********************************************************************************
+functions that take input: tests
+*********************************************************************************
+
+the code from ``functions/tests/test_functions.py`` from :ref:`functions<functions that take input>`
+
+.. literalinclude:: functions/test_functions_1.py
+  :language: python
+  :linenos:
+
 
 ----
 

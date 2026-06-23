@@ -1733,7 +1733,7 @@ I ran tests to show that I can make functions_ with the def_, :ref:`pass<test_ma
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<functions: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<what is a function?: tests>`
 
 ----
 
@@ -1744,7 +1744,7 @@ what is next?
 you have covered a bit so far and know
 
 :ref:`how to make a Python test driven development environment manually`
-* :ref:`what causes AssertionError?` and
+* :ref:`what causes AssertionError<what causes AssertionError?>` and
 * :ref:`how to make functions<what is a function?>`
 
 :ref:`Would you like to use variables to make a person?<how to make a person with variables>`

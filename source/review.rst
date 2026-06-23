@@ -99,8 +99,28 @@ functions review
 * :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
-* :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
-* :ref:`how does Python represent keyword arguments in a function?<how Python reads keyword arguments>`
+* :ref:`how does Python represent positional arguments in a function?<how Python reads starred expressions>`
+* :ref:`how does Python represent keyword arguments in a function?<how Python reads double starred expressions>`
+
+----
+
+*********************************************************************************
+functions that take input review
+*********************************************************************************
+
+* :ref:`how can I make a function take input?<how to make a function that takes input>`
+* :ref:`how can I use a function to remove repetition?<test_why_use_a_function>`
+* :ref:`how can I call a function with input?<how to call a function with input>`
+* :ref:`what is the identity function?<test_identity_function>`
+* :ref:`what is a positional argument?<test_positional_arguments>`
+* :ref:`what is a keyword argument?<test_keyword_arguments>`
+* :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
+* :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
+* :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
+* :ref:`what can I do with starred expressions?<starred expression>`
+* :ref:`what can I do with double starred expressions?<double starred expression>`
+* :ref:`how does Python read starred expressions?<how Python reads starred expressions>`
+* :ref:`how does Python read double starred expressions?<how Python reads double starred expressions>`
 
 ----
 
@@ -303,7 +323,7 @@ what is next?
 after that review you can confidently say you know something about Python_, you know
 
 :ref:`how to make a Python test driven development environment manually`
-* :ref:`what causes AssertionError?`
+* :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`what is None and NOT None<what is None?>`

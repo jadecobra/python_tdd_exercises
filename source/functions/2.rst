@@ -76,14 +76,19 @@ questions about functions that take input
 
 Questions to think about as I go through the chapter
 
+* :ref:`how can I make a function take input?<how to make a function that takes input>`
+* :ref:`how can I use a function to remove repetition?<test_why_use_a_function>`
+* :ref:`how can I call a function with input?<how to call a function with input>`
 * :ref:`what is the identity function?<test_identity_function>`
 * :ref:`what is a positional argument?<test_positional_arguments>`
 * :ref:`what is a keyword argument?<test_keyword_arguments>`
 * :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
 * :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
 * :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
-* :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
-* :ref:`how does Python represent keyword arguments in a function?<how Python reads keyword arguments>`
+* :ref:`what can I do with starred expressions?<starred expression>`
+* :ref:`what can I do with double starred expressions?<double starred expression>`
+* :ref:`how does Python read starred expressions?<how Python reads starred expressions>`
+* :ref:`how does Python read double starred expressions?<how Python reads double starred expressions>`
 
 ----
 
@@ -4507,7 +4512,7 @@ how Python reads starred expressions
     unknown_number_of_arguments(*(0, 1) , **{'a':2, 'b':3})
     unknown_number_of_arguments(0, 1    , a=2, b=3        )
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the second :ref:`assertion<what is an assertion?>`
@@ -4624,7 +4629,7 @@ how Python reads starred expressions
     unknown_number_of_arguments(*(0, 1) , **{'a': 2, 'b': 3, 'c': 4})
     unknown_number_of_arguments(0, 1    , a=2, b=3, c=4             )
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
 * I add :ref:`variables<what is a variable?>` for the tuple_ and :ref:`dictionary<what is a dictionary?>` of the last :ref:`assertion<what is an assertion?>`
@@ -4747,7 +4752,7 @@ how Python reads starred expressions
     unknown_number_of_arguments(*(0, 1, 2), **{'a': 2, 'b': 3, 'c': 4})
     unknown_number_of_arguments(0, 1, 2   , a=3, b=4, c=5             )
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
 
 * I add an :ref:`assertion<what is an assertion?>` with a call to ``unknown_number_of_arguments`` using only :ref:`positional arguments<test_positional_arguments>`
@@ -4817,7 +4822,7 @@ how Python reads starred expressions
         return ((1, 2, 3, 'n')      , {})
 
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
 
 * I change my expectation to match reality
@@ -5088,7 +5093,7 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-:ref:`I can make a function that can take any number of positional or keyword arguments<test_unknown_number_of_arguments>`
+:ref:`I can make a function that can take any number of positional or keyword arguments<test_unknown_number_of_arguments>`.
 
 ----
 
@@ -5132,7 +5137,7 @@ I ran tests to show that I can make :ref:`functions<what is a function>` that ta
 * :ref:`I can make a function with optional arguments<test_optional_arguments>`.
 * :ref:`I can make a function that can take any number of positional or keyword arguments<test_unknown_number_of_arguments>`
 
-  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the elements of ``something`` as :ref:`positional arguments<test_positional_arguments>`.
+  - If I use ``*something`` in a :ref:`function call<how to call a function>`, it sends the things in ``something`` as :ref:`positional arguments<test_positional_arguments>`.
   - If I use ``**something`` in a :ref:`function call<how to call a function>`, it sends the :ref:`key-value pairs<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` of ``something`` as :ref:`keyword arguments<test_keyword_arguments>`.
   - If I use ``*something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`positional arguments<test_positional_arguments>` as a tuple_ (anything in parentheses ``( )`` separated by a comma).
   - If I use ``**something`` in a :ref:`function definition<how to make a function>`, it takes any number of :ref:`keyword arguments<test_positional_arguments>` as a :ref:`dictionary<any key-value pairs in curly braces '{ }' separated by a comma>`.
@@ -5145,7 +5150,7 @@ I ran tests to show that I can make :ref:`functions<what is a function>` that ta
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<functions: tests and solutions>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<functions that take input: tests>`
 
 ----
 
@@ -5155,11 +5160,12 @@ what is next?
 
 you have covered a bit so far and know
 
-:ref:`how to make a Python test driven development environment manually`
-* :ref:`what causes AssertionError?` and
+* :ref:`how to make a Python test driven development environment manually`
+* :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
+* :ref:`how to make functions that take input<functions that take input>`
 
-:ref:`Would you like to use variables and functions to make a person?<make_a_person>`
+:ref:`would you like to test using a function to make a string from input?<telephone>` I am going for a walk.
 
 ----
 

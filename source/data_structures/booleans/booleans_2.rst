@@ -980,7 +980,7 @@ what is next?
 you know
 
 :ref:`how to make a Python test driven development environment manually`
-* :ref:`what causes AssertionError?`
+* :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<telephone>`
 * :ref:`what is None and NOT None<what is None?>`

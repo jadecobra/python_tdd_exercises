@@ -843,7 +843,7 @@ what is next?
 you know:
 
 * :ref:`how to make a Python test driven development environment manually`
-* :ref:`what causes AssertionError?`
+* :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 
 :ref:`Would you like to test functions with input?<functions that take input>`
