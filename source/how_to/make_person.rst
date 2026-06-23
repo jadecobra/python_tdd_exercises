@@ -3808,7 +3808,7 @@ I want to see what happens when I try to make a person without a value for the `
   I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times
 
   - if the values for ``first_name`` match, the test passes
-  - if the values for ``first_name`` are not the same the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
+  - if the values for ``first_name`` are not the same, the terminal_ shows :ref:`AssertionError<what causes AssertionError?>`
 
     .. code-block:: python
 
