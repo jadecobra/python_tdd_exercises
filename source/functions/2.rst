@@ -2616,7 +2616,7 @@ A `keyword argument`_ is a key-value pair that is used to pass input in a :ref:`
 
   the test passes.
 
-* ``w_keyword_arguments`` and ``positional_arguments`` are the same :ref:`functions<what is a function?>`, they always
+* ``keyword_arguments`` and ``positional_arguments`` are the same :ref:`functions<what is a function?>`, they always
 
   .. code-block:: python
 
@@ -3356,7 +3356,6 @@ I can make an argument_ of a :ref:`function<what is a function?>` optional, whic
 
     def test_optional_arguments():
         first_name, last_name = 'jane', 'doe'
-
         assert (
             optional_arguments(
                 first_name, last_input=last_name,
@@ -3394,7 +3393,6 @@ I add the :ref:`function definition<how to make a function>` for ``optional_argu
           return first_input, last_input
 
       first_name, last_name = 'jane', 'doe'
-
       assert (
           optional_arguments(
               first_name, last_input=last_name,
@@ -3419,14 +3417,13 @@ the test passes.
 
   .. code-block:: python
     :lineno-start: 159
-    :emphasize-lines: 9-10
+    :emphasize-lines: 8-9
 
     def test_optional_arguments():
         def optional_arguments(first_input, last_input):
             return first_input, last_input
 
         first_name, last_name = 'jane', 'doe'
-
         assert (
             optional_arguments(
                 # first_name, last_input=last_name,
@@ -3442,80 +3439,74 @@ the test passes.
 
   .. code-block:: python
 
-    TypeError: optional_arguments() missing 1
-               required positional argument: 'last_input'
+    TypeError:
+        test_optional_arguments.<locals>.optional_arguments()
+        missing 1 required positional argument: 'last_input'
 
   because the ``last_input`` argument MUST be given when this :ref:`function<what is a function?>` is called (it is required).
 
-* I make the argument optional by giving it a default value
+* I give the argument a default value to make it optional
 
   .. code-block:: python
-    :lineno-start: 38
-    :emphasize-lines: 1-2
+    :lineno-start: 159
+    :emphasize-lines: 2-5
 
-    # def optional_arguments(first_input, last_input):
-    def optional_arguments(first_input, last_input='doe'):
-        return first_input, last_input
+    def test_optional_arguments():
+        # def optional_arguments(first_input, last_input):
+        def optional_arguments(
+            first_input, last_input='doe',
+        ):
+            return first_input, last_input
 
-  the test passes since I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.optional_arguments`` because the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``. This means that
-
-  .. code-block:: python
-
-    src.functions.optional_arguments('jane')
-
-  is the same as
-
-  .. code-block:: python
-
-    src.functions.optional_arguments('jane', last_input='doe')
-
-  is the same as
-
-  .. code-block:: python
-
-    return 'jane', 'doe'
-
-  because ``optional_arguments`` will always
-
-  .. code-block:: python
-
-    return first_input, last_input
-
-  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
-
-* I remove the commented lines
-
-  .. code-block:: python
-    :lineno-start:
-
-    def args_and_kwargs(first_input, last_input):
-        return first_input, last_input
-
-
-    def optional_arguments(first_input, last_input='doe'):
-        return first_input, last_input
-
-* I add another :ref:`assertion<what is an assertion?>` to show that I can still call the :ref:`function<what is a function?>` with different values, in :ref:`test_optional_arguments` in ``test_functions.py``
-
-  .. code-block:: python
-    :lineno-start: 219
-    :emphasize-lines: 10-15
-
-        def test_optional_arguments(self):
-            first_name, last_name = 'jane', 'doe'
-            reality = src.functions.optional_arguments(
+        first_name, last_name = 'jane', 'doe'
+        assert (
+            optional_arguments(
                 # first_name, last_input=last_name,
                 first_name,
             )
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+         == (first_name, last_name)
+        )
 
-            first_name, blow = 'joe', 'blow'
-            reality = src.functions.optional_arguments(
-                first_name, blow,
+
+    # Exceptions seen
+
+  the test passes because I do not need to give a value for the ``last_input`` parameter when I call the :ref:`function<what is a function>` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the :ref:`function<what is a function?>` is ``doe``
+
+  .. code-block:: python
+
+    optional_arguments('jane')
+    optional_arguments(first_input, last_input='doe')
+
+  is the same as
+
+  .. code-block:: python
+
+    optional_arguments('jane'     , last_input='doe')
+    optional_arguments(first_input, last_input='doe')
+
+  :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
+
+* I add another :ref:`assertion<what is an assertion?>` to show that I can still call the :ref:`function<what is a function?>` with different values
+
+  .. code-block:: python
+    :lineno-start: 168
+    :emphasize-lines: 9-15
+
+        assert (
+            optional_arguments(
+                # first_name, last_input=last_name,
+                first_name,
             )
-            my_expectation = ()
-            self.assertEqual(reality, my_expectation)
+         == (first_name, last_name)
+        )
+
+        first_name, blow = 'joe', 'blow'
+        assert (
+            optional_arguments(
+                first_name, blow
+            )
+         == ()
+        )
 
 
     # Exceptions seen
@@ -3524,21 +3515,22 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('joe', 'blow') != ()
+    AssertionError: assert ('joe', 'blow') == ()
 
-* I change ``my_expectation`` to match ``reality``
+* I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 228
-    :emphasize-lines: 5-6
+    :lineno-start: 176
+    :emphasize-lines: 6-7
 
-            first_name, blow = 'joe', 'blow'
-            reality = src.functions.optional_arguments(
-                first_name, blow,
+        first_name, blow = 'joe', 'blow'
+        assert (
+            optional_arguments(
+                first_name, blow
             )
-            # my_expectation = ()
-            my_expectation = (first_name, blow)
-            self.assertEqual(reality, my_expectation)
+        #  == ()
+         == (first_name, blow)
+        )
 
 
     # Exceptions seen
@@ -3548,23 +3540,25 @@ the test passes.
 * I add another :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 228
-    :emphasize-lines: 9-14
+    :lineno-start: 176
+    :emphasize-lines: 10-16
 
-            first_name, blow = 'joe', 'blow'
-            reality = src.functions.optional_arguments(
-                first_name, blow,
+        first_name, blow = 'joe', 'blow'
+        assert (
+            optional_arguments(
+                first_name, blow
             )
-            # my_expectation = ()
-            my_expectation = (first_name, blow)
-            self.assertEqual(reality, my_expectation)
+        #  == ()
+         == (first_name, blow)
+        )
 
-            first_name = 'john'
-            reality = src.functions.optional_arguments(
-                first_input=first_name,
+        first_name = 'john'
+        assert (
+            optional_arguments(
+                first_input=first_name
             )
-            my_expectation = ()
-            self.assertEqual(reality, my_expectation)
+         == ()
+        )
 
 
     # Exceptions seen
@@ -3573,74 +3567,65 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('john', 'doe') != ()
+    AssertionError: assert ('john', 'doe') == ()
 
-* I change ``my_expectation`` to match ``reality``
+* I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 236
+    :lineno-start: 185
     :emphasize-lines: 5-6
 
-            first_name = 'john'
-            reality = src.functions.optional_arguments(
-                first_input=first_name,
+        first_name = 'john'
+        assert (
+            optional_arguments(
+                first_input=first_name
             )
-            # my_expectation = ()
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+        #  == ()
+         == (first_name, last_name)
+        )
 
 
     # Exceptions seen
 
-  the test passes since I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.optional_arguments`` because the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
+  the test passes because nce I do not need to give a value for the ``last_input`` parameter in the call to ``src.functions.optional_arguments`` since the :ref:`default value<test_optional_arguments>` for the ``last_input`` parameter of the ``optional_arguments`` :ref:`function<what is a function?>` is ``doe``. This means that
 
   .. code-block:: python
 
-    src.functions.optional_arguments(first_input='john')
+    optional_arguments('john')
+    optional_arguments(first_input, last_input='doe')
 
   is the same as
 
   .. code-block:: python
 
-    src.functions.optional_arguments(
-        first_input='john', last_input='doe',
-    )
-
-  is the same as
-
-  .. code-block:: python
-
-    return 'john', 'doe'
-
-  because ``optional_arguments`` will always
-
-  .. code-block:: python
-
-    return first_input, last_input
+    optional_arguments('john'     , last_input='doe')
+    optional_arguments(first_input, last_input='doe')
 
   :ref:`A function uses the default value for a parameter when it is called without the parameter<test_optional_arguments>`.
 
 * I add one more :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
-    :lineno-start: 236
-    :emphasize-lines: 9-15
+    :lineno-start: 185
+    :emphasize-lines: 10-17
 
-            first_name = 'john'
-            reality = src.functions.optional_arguments(
-                first_input=first_name,
+        first_name = 'john'
+        assert (
+            optional_arguments(
+                first_input=first_name
             )
-            # my_expectation = ()
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+        #  == ()
+         == (first_name, last_name)
+        )
 
-            last_name = 'smith'
-            reality = src.functions.optional_arguments(
+        last_name = 'smith'
+        assert (
+            optional_arguments(
                 last_input=last_name,
                 first_input=first_name,
             )
-            my_expectation = (last_name, first_name)
-            self.assertEqual(reality, my_expectation)
+         == (last_name, first_name)
+        )
 
 
     # Exceptions seen
@@ -3649,23 +3634,24 @@ the test passes.
 
   .. code-block:: python
 
-    AssertionError: Tuples differ: ('john', 'smith')
-                                != ('smith', 'john')
+    AssertionError: assert ('john', 'smith')
+                        == ('smith', 'john')
 
-* I change ``my_expectation`` to match ``reality``
+* I change my expectation to match reality
 
   .. code-block:: python
-    :lineno-start: 244
-    :emphasize-lines: 6-7
+    :lineno-start: 194
+    :emphasize-lines: 7-8
 
-            last_name = 'smith'
-            reality = src.functions.optional_arguments(
+        last_name = 'smith'
+        assert (
+            optional_arguments(
                 last_input=last_name,
                 first_input=first_name,
             )
-            # my_expectation = (last_name, first_name)
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+        #  == (last_name, first_name)
+         == (first_name, last_name)
+        )
 
 
     # Exceptions seen
@@ -3675,37 +3661,47 @@ the test passes.
 * I remove the commented lines
 
   .. code-block:: python
-    :lineno-start: 219
+    :lineno-start: 159
 
-        def test_optional_arguments(self):
-            first_name, last_name = 'jane', 'doe'
-            reality = src.functions.optional_arguments(
+    def test_optional_arguments():
+        def optional_arguments(
+            first_input, last_input='doe',
+        ):
+            return first_input, last_input
+
+        first_name, last_name = 'jane', 'doe'
+
+        assert (
+            optional_arguments(
                 first_name,
             )
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+         == (first_name, last_name)
+        )
 
-            first_name, blow = 'joe', 'blow'
-            reality = src.functions.optional_arguments(
-                first_name, blow,
+        first_name, blow = 'joe', 'blow'
+        assert (
+            optional_arguments(
+                first_name, blow
             )
-            my_expectation = (first_name, blow)
-            self.assertEqual(reality, my_expectation)
+         == (first_name, blow)
+        )
 
-            first_name = 'john'
-            reality = src.functions.optional_arguments(
-                first_input=first_name,
+        first_name = 'john'
+        assert (
+            optional_arguments(
+                first_input=first_name
             )
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+         == (first_name, last_name)
+        )
 
-            last_name = 'smith'
-            reality = src.functions.optional_arguments(
+        last_name = 'smith'
+        assert (
+            optional_arguments(
                 last_input=last_name,
                 first_input=first_name,
             )
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+         == (first_name, last_name)
+        )
 
 
     # Exceptions seen
@@ -3720,100 +3716,102 @@ the test passes.
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 
-.. note::
+:ref:`I can make a function with optional and required arguments<test_optional_arguments>`.
 
-  these four :ref:`functions<what is a function?>`
+----
 
-  * ``w_keyword_arguments``
-  * ``positional_arguments``
-  * ``args_and_kwargs``
-  * ``optional_arguments``
+These four :ref:`functions<what is a function?>`
 
-  are the same, they always ``return first_input, last_input``, their names are different.
+* :ref:`keyword_arguments`
+* :ref:`positional_arguments`
+* :ref:`args_and_kwargs`
+* :ref:`optional_arguments`
 
-  .. code-block:: python
-    :emphasize-text: positional keyword default kwargs optional
+are the same, they always ``return first_input, last_input``, their names are different.
 
-    def positional_arguments(first_input, last_input):
-    def keyword_arguments(first_input, last_input):
-    def args_and_kwargs(first_input, last_input):
-    def optional_arguments(first_input, last_input='doe'):
+.. code-block:: python
+  :emphasize-text: positional keyword default kwargs optional
 
-  ``first_input`` and ``last_input`` are also names (:ref:`variables<what is a variable?>`), they can be any names. The difference that matters in the tests is how I call the functions_
+  def positional_arguments(first_input, last_input):
+  def keyword_arguments(first_input, last_input):
+  def args_and_kwargs(first_input, last_input):
+  def optional_arguments(first_input, last_input='doe'):
 
-  .. code-block:: python
-    :emphasize-text: last
+``first_input`` and ``last_input`` are also names (:ref:`variables<what is a variable?>`), they can be any names. The difference that matters in the tests is how I call the functions_
 
-    positional_arguments('first', 'last')
-                    return 'first', 'last'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  positional_arguments('first', 'last')
+               return 'first', 'last'
 
-    positional_arguments('last', 'first')
-                    return 'last', 'first'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  positional_arguments('last', 'first')
+                return 'last', 'first'
 
-    positional_arguments(
-        first_input=[1, 2, 3, 'n'], last_input=(1, 2, 3, 'n')
-    )
-        return [1, 2, 3, 'n'], (1, 2, 3, 'n')
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  positional_arguments(
+      first_input=[1, 2, 3, 'n'], last_input=(1, 2, 3, 'n')
+  )
+      return [1, 2, 3, 'n'], (1, 2, 3, 'n')
 
-    w_keyword_arguments(first_input='first', last_input='last')
-                return 'first', 'last'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  keyword_arguments(first_input='first', last_input='last')
+            return 'first'             , 'last'
 
-    w_keyword_arguments(last_input='last', first_input='first')
-                return 'first', 'last'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  keyword_arguments(last_input='last', first_input='first')
+              return 'first', 'last'
 
-    w_keyword_arguments('last', 'first')
-                 return 'last', 'first'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  keyword_arguments('last', 'first')
+             return 'last', 'first'
 
-    args_and_kwargs('first', last_input='last')
-                     return 'first', 'last'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  args_and_kwargs('first', last_input='last')
+           return 'first', 'last'
 
-    optional_arguments('jane', last_input='doe')
-                  return 'jane', 'doe'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  optional_arguments('jane', last_input='doe')
+              return 'jane', 'doe'
 
-    optional_arguments('jane')
-                  return 'jane', 'doe'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  optional_arguments('jane')
+              return 'jane', 'doe'
 
-    optional_arguments('joe', 'blow')
-                  return 'joe', 'blow'
+.. code-block:: python
+  :emphasize-text: last
 
-  .. code-block:: python
-    :emphasize-text: last
+  optional_arguments('joe', 'blow')
+              return 'joe', 'blow'
 
-    optional_arguments(
-        first_input='john', last_input='smith'
-    )
-        return 'john', 'smith'
+.. code-block:: python
+  :emphasize-text: last
+
+  optional_arguments(
+      first_input='john', last_input='smith'
+  )
+      return 'john', 'smith'
 
 .. tip::
 
-  as a rule of thumb I use :ref:`keyword arguments<test_keyword_arguments>` when I have 2 or more inputs so I do not have to remember the order.
+  As a rule of thumb I use :ref:`keyword arguments<test_keyword_arguments>` when the :ref:`function<what is a function?>` takes two or more inputs so I do not have to remember the order.
 
 ----
 
@@ -3863,7 +3861,7 @@ I can make functions_ that take any number of :ref:`positional<test_positional_a
 
     AttributeError: module 'src.functions'
                     has no attribute 'w_unknown_arguments'.
-                    Did you mean: 'w_keyword_arguments'?
+                    Did you mean: 'keyword_arguments'?
 
   because ``functions.py`` does not have ``w_unknown_arguments``
 
@@ -4034,7 +4032,7 @@ double starred expressions
 
     AssertionError: None != ()
 
-* I change ``my_expectation`` to match ``reality``
+* I change my expectation to match reality
 
   .. code-block:: python
     :lineno-start: 256
@@ -4172,7 +4170,7 @@ starred expressions
 
   I get a tuple_ that has a tuple_ and a :ref:`dictionary<what is a dictionary?>`
 
-* I change ``my_expectation`` to match ``reality`` in the first :ref:`assertion<what is an assertion?>`
+* I change my expectation to match reality in the first :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 249
@@ -4192,7 +4190,7 @@ starred expressions
 
     AssertionError: ((0, 1), {'a': 2, 'b': 3, 'c': 4}) != None
 
-* I change ``my_expectation`` to match ``reality`` in the second :ref:`assertion<what is an assertion?>`
+* I change my expectation to match reality in the second :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 249
@@ -4224,7 +4222,7 @@ starred expressions
             ((0, 1, 2), {'a': 3, 'b': 4, 'c': 5})
          != None
 
-* I change ``my_expectation`` to match ``reality`` in the last :ref:`assertion<what is an assertion?>`
+* I change my expectation to match reality in the last :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 249
@@ -4558,7 +4556,7 @@ the terminal_ is my friend, and shows :ref:`AssertionError<what causes Assertion
 
   AssertionError: Tuples differ: ((0, 1, 2, 3), {}) != ()
 
-I change ``my_expectation`` to match ``reality``
+I change my expectation to match reality
 
 .. code-block:: python
   :lineno-start: 291
@@ -4614,7 +4612,7 @@ the terminal_ is my friend, and shows
   AssertionError: Tuples differ:
                   ((), {'a': 4, 'b': 5, 'c': 6, 'd': 7}) != ()
 
-I change ``my_expectation`` to match ``reality``
+I change my expectation to match reality
 
 .. code-block:: python
   :lineno-start: 299
@@ -4666,7 +4664,7 @@ how Python reads positional and keyword arguments
 
     AssertionError: ((), {}) != <class 'TypeError'>
 
-* I change the ``my_expectation`` to match ``reality``
+* I change the my expectation to match reality
 
   .. code-block:: python
     :lineno-start: 307

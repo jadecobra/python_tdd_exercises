@@ -3732,7 +3732,7 @@ I want to see what happens when I try to make a person without a value for the `
                 # sex=pick_one('F', 'M'),
             )
 
-* I use the :ref:`variable<what is a variable?>` for in teh call to ``src.person.factory``
+* I use the :ref:`variable<what is a variable?>` for in the call to ``src.person.factory``
 
   .. code-block:: python
     :lineno-start: 55
