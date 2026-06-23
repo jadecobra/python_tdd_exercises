@@ -215,7 +215,7 @@ test_functions
 #. :ref:`test_keyword_arguments`
 #. :ref:`test_args_and_kwargs`
 #. :ref:`test_optional_arguments`
-#. :ref:`test_w_unknown_arguments`
+#. :ref:`test_unknown_number_of_arguments`
 
 *********************************************************************************
 test_classes

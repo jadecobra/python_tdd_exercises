@@ -2692,7 +2692,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 
   because the :ref:`function definition<how to make a function>` only takes one input and the test sends four.
 
-* I add a :ref:`starred expression<starred expressions>` like I did in :ref:`test_w_unknown_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_positional_arguments>`
+* I add a :ref:`starred expression<starred expressions>` like I did in :ref:`test_unknown_number_of_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2939,7 +2939,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 
 ----
 
-I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_w_unknown_arguments` to make it take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as :ref:`keyword arguments<test_keyword_arguments>`
+I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_unknown_number_of_arguments` to make it take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as :ref:`keyword arguments<test_keyword_arguments>`
 
 .. code-block:: python
   :lineno-start: 33

@@ -80,8 +80,8 @@ Questions to think about as I go through the chapter
 * :ref:`what is a positional argument?<test_positional_arguments>`
 * :ref:`what is a keyword argument?<test_keyword_arguments>`
 * :ref:`how can I make arguments a choice in a function?<test_optional_arguments>`
-* :ref:`how can I make a function take any number of positional arguments?<test_w_unknown_arguments>`
-* :ref:`how can I make a function take any number of keyword arguments?<test_w_unknown_arguments>`
+* :ref:`how can I make a function take any number of positional arguments?<test_unknown_number_of_arguments>`
+* :ref:`how can I make a function take any number of keyword arguments?<test_unknown_number_of_arguments>`
 * :ref:`how does Python represent positional arguments in a function?<how Python reads positional arguments>`
 * :ref:`how does Python represent keyword arguments in a function?<how Python reads keyword arguments>`
 
@@ -3816,10 +3816,10 @@ are the same, they always ``return first_input, last_input``, their names are di
 ----
 
 *********************************************************************************
-test_w_unknown_arguments
+test_unknown_number_of_arguments
 *********************************************************************************
 
-I can make functions_ that take any number of :ref:`positional<test_positional_arguments>` and :ref:`keyword<test_keyword_arguments>` arguments. This means I do not need to know how many inputs the :ref:`function<what is a function?>` should take when it is called.
+I can make :ref:`functions<what is a function?>` that take any number of :ref:`positional<test_positional_arguments>` and :ref:`keyword<test_keyword_arguments>` arguments. This means I do not need to know how many inputs the :ref:`function<what is a function?>` should take when it is called, it can handle whatever I give it.
 
 ----
 
@@ -3834,23 +3834,26 @@ I can make functions_ that take any number of :ref:`positional<test_positional_a
 * I add a new test to ``test_functions.py``
 
   .. code-block:: python
-    :lineno-start: 241
-    :emphasize-lines: 9-14
+    :lineno-start: 190
+    :emphasize-lines: 11-17
 
-            last_name = 'smith'
-            reality = src.functions.optional_arguments(
+        last_name = 'smith'
+        assert (
+            optional_arguments(
                 last_input=last_name,
                 first_input=first_name,
             )
-            my_expectation = (first_name, last_name)
-            self.assertEqual(reality, my_expectation)
+         == (first_name, last_name)
+        )
 
-        def test_w_unknown_arguments(self):
-            reality = src.functions.w_unknown_arguments(
+
+    def test_unknown_number_of_arguments():
+        assert (
+            unknown_number_of_arguments(
                 0, 1, a=2, b=3,
             )
-            my_expectation = None
-            self.assertEqual(reality, my_expectation)
+         == None
+        )
 
 
     # Exceptions seen
@@ -4010,7 +4013,7 @@ double starred expressions
     :lineno-start: 249
     :emphasize-lines: 8-12
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             reality = src.functions.w_unknown_arguments(
                 0, 1, a=2, b=3,
             )
@@ -4176,7 +4179,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 5-6
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             reality = src.functions.w_unknown_arguments(
                 0, 1, a=2, b=3,
             )
@@ -4196,7 +4199,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 13-16
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             reality = src.functions.w_unknown_arguments(
                 0, 1, a=2, b=3,
             )
@@ -4228,7 +4231,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 22-25
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             reality = src.functions.w_unknown_arguments(
                 0, 1, a=2, b=3,
             )
@@ -4266,7 +4269,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 2-3
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
@@ -4282,7 +4285,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 5-6, 9-10
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
@@ -4310,7 +4313,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 6-7
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
@@ -4331,7 +4334,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 14-15
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
@@ -4415,7 +4418,7 @@ starred expressions
     :lineno-start: 249
     :emphasize-lines: 29-30
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
@@ -4685,7 +4688,7 @@ how Python reads positional and keyword arguments
   .. code-block:: python
     :lineno-start: 249
 
-        def test_w_unknown_arguments(self):
+        def test_unknown_number_of_arguments(self):
             a_tuple = (0, 1)
             a_dictionary = {'a': 2, 'b': 3}
             reality = src.functions.w_unknown_arguments(
@@ -4735,7 +4738,7 @@ how Python reads positional and keyword arguments
 
     # Exceptions seen
 
-* I remove the commented lines from the :ref:`w_unknown_arguments function<test_w_unknown_arguments>`
+* I remove the commented lines from the :ref:`w_unknown_arguments function<test_unknown_number_of_arguments>`
 
   .. code-block:: python
     :lineno-start: 38
@@ -4755,7 +4758,7 @@ how Python reads positional and keyword arguments
     :emphasize-lines: 1-2
 
     git commit --all --message \
-    'add test_w_unknown_arguments'
+    'add test_unknown_number_of_arguments'
 
   the terminal_ shows a summary of the changes then goes back to the command line.
 

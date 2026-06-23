@@ -246,7 +246,7 @@ class TestFunctions(unittest.TestCase):
         my_expectation = (first_name, last_name)
         self.assertEqual(reality, my_expectation)
 
-    def test_w_unknown_arguments(self):
+    def test_unknown_number_of_arguments(self):
         a_tuple = (0, 1)
         a_dictionary = {'a': 2, 'b': 3}
         reality = src.functions.w_unknown_arguments(

@@ -96,7 +96,7 @@ class TestFunctions(unittest.TestCase):
             ('joe', 'blow')
         )
 
-    def test_w_unknown_arguments(self):
+    def test_unknown_number_of_arguments(self):
         self.assertEqual(
             src.functions.w_unknown_arguments(
                 0, 1, 2, 3, a=4, b=5, c=6, d=7,

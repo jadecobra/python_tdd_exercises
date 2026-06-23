@@ -369,7 +369,7 @@ test calculator with ** expression
 
 ----
 
-I use ``**`` like I did for the :ref:`keyword arguments<test_keyword_arguments>` in :ref:`test_w_unknown_arguments`
+I use ``**`` like I did for the :ref:`keyword arguments<test_keyword_arguments>` in :ref:`test_unknown_number_of_arguments`
 
 .. code-block:: python
   :lineno-start: 136
