@@ -120,7 +120,7 @@
 .. _sys module: sys_
 .. _source code: https://grokipedia.com/page/Source_code
 .. _click here to see the source code for unittest: https://github.com/python/cpython/blob/3.14/Lib/unittest/__init__.py
-.. _starred expression: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
+.. _starred expressions: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
 .. _str.split: https://docs.python.org/3/library/stdtypes.html#str.split
 .. _str: https://docs.python.org/3/library/stdtypes.html#str
 .. _string: str_

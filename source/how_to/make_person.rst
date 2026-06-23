@@ -1,6 +1,6 @@
 .. meta::
   :description: A step-by-step Python Test-Driven Development (TDD) tutorial for beginners building a person dictionary factory function. Learn modern project setup with uv init and git; automate testing with pytest-watcher and unittest; and systematically resolve AssertionError, NameError, AttributeError, TypeError, and SyntaxError. Covers advanced refactoring using datetime.datetime.now(), random.choice, random.randint, starred parameter lists (*args), and double-star (**) dictionary unpacking.
-  :keywords: Jacob Itegboje, Python TDD tutorial for beginners, step by step python test driven development, how to use uv python package manager, pytest-watcher automatic test runner, unittest assertEqual AssertionError, datetime.datetime.now year calculation, how to use random.choice in tests, random.randint test parameters, python unexpected keyword argument TypeError, python parameters without default values order, python double star dictionary unpacking, red green refactor example, catching NameError and AttributeError in python tests, how to fix TypeError: 'NoneType' object is not callable, why does my test show NameError: name 'src' is not defined, python SyntaxError: parameter without a default follows parameter with a default, testing python factory function returning dict, starred expression
+  :keywords: Jacob Itegboje, Python TDD tutorial for beginners, step by step python test driven development, how to use uv python package manager, pytest-watcher automatic test runner, unittest assertEqual AssertionError, datetime.datetime.now year calculation, how to use random.choice in tests, random.randint test parameters, python unexpected keyword argument TypeError, python parameters without default values order, python double star dictionary unpacking, red green refactor example, catching NameError and AttributeError in python tests, how to fix TypeError: 'NoneType' object is not callable, why does my test show NameError: name 'src' is not defined, python SyntaxError: parameter without a default follows parameter with a default, testing python factory function returning dict, starred expressions
 
 .. include:: ../links.rst
 
@@ -2692,7 +2692,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
 
   because the :ref:`function definition<how to make a function>` only takes one input and the test sends four.
 
-* I add a :ref:`starred expression<starred expressions>` like I did in :ref:`test_unknown_number_of_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_positional_arguments>`
+* I add a :ref:`starred expressions<starred expressions>` like I did in :ref:`test_unknown_number_of_arguments` so that the ``pick_one`` :ref:`function<what is a function?>` can take any number of :ref:`positional arguments<test_positional_arguments>`
 
   .. code-block:: python
     :lineno-start: 7
@@ -2711,7 +2711,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
                  # randomly return
                  # 'jane' or 'joe' or 'john' or 'person'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<starred expressions>` (``*choices``).
 
 * I use the new :ref:`function<what is a function?>` for the ``last_name`` :ref:`variable<what is a variable?>`
 
@@ -2743,7 +2743,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
                 # randomly return
                 # 'doe' or 'smith' or 'blow' or 'public'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<starred expressions>` (``*choices``).
 
 * I use the new :ref:`function<what is a function?>` for the ``sex`` :ref:`variable<what is a variable?>`
 
@@ -2775,7 +2775,7 @@ The ``first_name``, ``last_name`` and ``sex`` :ref:`variables<what is a variable
               random.choice(('F', 'M'))
           # randomly return 'F' or 'M'
 
-  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expression<starred expressions>` (``*choices``).
+  :ref:`Python reads the positional arguments as a tuple<how Python reads positional arguments>` in the :ref:`function<what is a function?>` since I used a :ref:`starred expressions<starred expressions>` (``*choices``).
 
 * I remove the commented lines
 
@@ -2939,7 +2939,7 @@ I can use a :ref:`dictionary<what is a dictionary?>` to remove the parts that ar
 
 ----
 
-I use a :ref:`double starred expression<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_unknown_number_of_arguments` to make it take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as :ref:`keyword arguments<test_keyword_arguments>`
+I use a :ref:`double starred expressions<double starred expressions>` for the :ref:`dictionary<what is a dictionary?>` like I did in :ref:`test_unknown_number_of_arguments` to make it take the :ref:`key-value pairs of the dictionary<test_items_returns_iterable_of_key_value_pairs_of_a_dictionary>` as :ref:`keyword arguments<test_keyword_arguments>`
 
 .. code-block:: python
   :lineno-start: 33
@@ -2997,7 +2997,7 @@ the test is green again, because this happens
                     year_of_birth=year_of_birth
                 )
 
-:ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expression<double starred expressions>` (``**a_person``).
+:ref:`Python sends the dictionary as keyword arguments<how Python reads keyword arguments>` since I used a :ref:`double starred expressions<double starred expressions>` (``**a_person``).
 
 ----
 
@@ -3732,7 +3732,7 @@ I want to see what happens when I try to make a person without a value for the `
                 # sex=pick_one('F', 'M'),
             )
 
-* I use the :ref:`variable<what is a variable?>` for in the call to ``src.person.factory``
+* I use the :ref:`variable<what is a variable?>` for ``first_name`` in the call to ``src.person.factory``
 
   .. code-block:: python
     :lineno-start: 55

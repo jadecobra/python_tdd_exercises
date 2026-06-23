@@ -672,7 +672,7 @@ test calculator with * expression
 
 ----
 
-I can use a `starred expression`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the :ref:`positional arguments<test_positional_arguments>` in :ref:`test_unknown_number_of_arguments`
+I can use a `starred expressions`_ to unpack the :ref:`list<what is a list?>` in an :ref:`assertion<what is an assertion?>` like the :ref:`positional arguments<test_positional_arguments>` in :ref:`test_unknown_number_of_arguments`
 
 .. code-block:: python
   :lineno-start: 139
@@ -715,7 +715,7 @@ I change the expectation to match the result of adding the two numbers from the 
               self.random_first_number+self.random_second_number
           )
 
-the test passes. The `starred expression`_ gives the items of the list in the same order every time, this means these statements are the same
+the test passes. The `starred expressions`_ gives the items of the list in the same order every time, this means these statements are the same
 
 .. code-block:: python
 
@@ -889,7 +889,7 @@ because ``two_numbers`` is a :ref:`list<what is a list?>` with two items - ``sel
 test_calculator_raises_type_error_when_given_more_than_two_inputs
 *********************************************************************************
 
-It is important to remember that the `starred expression`_ always gives the items from the :ref:`list<what is a list?>` in order, and I cannot use a :ref:`list<lists>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
+It is important to remember that the `starred expressions`_ always gives the items from the :ref:`list<what is a list?>` in order, and I cannot use a :ref:`list<lists>` that has more than 2 numbers with these :ref:`calculator functions<how to make a calculator>` since they only take 2 inputs
 
 ----
 
@@ -899,7 +899,7 @@ It is important to remember that the `starred expression`_ always gives the item
 
 ----
 
-I add a new test to show the problem when I have more than 2 inputs and use a `starred expression`_
+I add a new test to show the problem when I have more than 2 inputs and use a `starred expressions`_
 
 .. code-block:: python
   :lineno-start: 158

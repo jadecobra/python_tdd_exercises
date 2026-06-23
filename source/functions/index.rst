@@ -7,8 +7,6 @@
 .. _function: https://docs.python.org/3/glossary.html#term-function
 .. _functions: :ref:`function<what is a function?>`
 .. _arguments: argument_
-.. _keyword arguments: arguments_
-.. _positional arguments: arguments_
 .. _return: https://docs.python.org/3/reference/simple_stmts.html#the-return-statement
 .. _return statement: return_
 .. _return statements: return_
