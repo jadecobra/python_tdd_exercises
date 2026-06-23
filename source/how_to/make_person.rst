@@ -3776,8 +3776,8 @@ I want to see what happens when I try to make a person without a value for the `
                   year_of_birth=year_of_birth,
               )
                   src.person.factory(
-                      first_name=first_name,
-                      first_name=first_name, # repetition
+                      first_name=get_random_nam(),
+                      first_name=first_name, # repeated keyword
                       year_of_birth=year_of_birth
                   )
 
