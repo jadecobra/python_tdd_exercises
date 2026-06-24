@@ -2524,7 +2524,7 @@ close the project
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass :ref:`Python basic data structures<data structures>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation<what is string interpolation?>`
+Here are the tests I ran to see what happens when I pass :ref:`objects<what is a class?>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation<what is string interpolation?>`
 
 * `test_passing_a_string`_
 * `test_passing_none`_

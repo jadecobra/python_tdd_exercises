@@ -1,2 +1,2 @@
-def text(the_input):
-    return f'I got: {the_input}'
+def text(value):
+    return f'I got: {value}'

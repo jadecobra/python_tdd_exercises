@@ -24,7 +24,7 @@ booleans: only two
 
 ----
 
-I want to test what groups the :ref:`Python basic data structures<data structures>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries<what is a dictionary?>`, fall into Python_ divides them into two groups - :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`. What do you think will happen?
+I want to test what groups the :ref:`objects<what is a class?>` seen so far - :ref:`None<what is None?>`, integers_, floats_, strings_, tuples_, :ref:`lists`, sets_ and :ref:`dictionaries<what is a dictionary?>`, fall into Python_ divides them into two groups - :ref:`False<test_what_is_false>` and :ref:`True<test_what_is_true>`. What do you think will happen?
 
 *********************************************************************************
 preview

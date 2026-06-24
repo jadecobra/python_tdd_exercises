@@ -5,7 +5,7 @@
 .. include:: ../../links.rst
 
 .. _f-string: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
-.. _f-strings: `f-string`_git config
+.. _f-strings: `f-string`_
 .. _string interpolation: https://peps.python.org/pep-0498/
 
 #################################################################################
@@ -585,7 +585,7 @@ how to write an f-string
   f'characters {object}'
 
 
-* I change :ref:`the return statement` to an `f-string`_
+* I change :ref:`the return statement` to an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :linenos:
@@ -2458,6 +2458,13 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
   - ``telephone`` is something in ``src``, in this case it is the ``telephone.py`` :ref:`module<what is a module?>` in the ``src`` folder_
   - ``src`` is something Python_ can import (a :ref:`module<what is a module?>`, `Python package`_ or folder_)
 
+    .. code-block:: shell
+
+      src
+      └── telephone.py
+          └── def text(the_input):
+                  return f'I got: {the input}'
+
 * I remove the commented lines from ``test_telephone.py``
 
   .. code-block:: python
@@ -2494,7 +2501,24 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_an_integer():
 
-  the test is still green.
+  the test is still green because when ``src.telephone.text`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── telephone.py
+          └── def text(the_input):
+                  return f'I got: {the input}'
+
+  then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+  .. code-block:: python
+
+    text(None)
+        text(the_input)
+            the_input = None
+            return f'I got: {the_input}'
+            return  'I got:  None      '
 
 * I make the same change for the next :ref:`assertion<what is an assertion?>`
 
@@ -2583,7 +2607,26 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_a_string():
 
-  green.
+  still green because when ``src.telephone.text`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── telephone.py
+          └── def text(the_input):
+                  return f'I got: {the input}'
+
+  then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+  .. code-block:: python
+
+    a_float = 5.678
+
+    text(a_float)
+        text(the_input)
+            the_input = 5.678
+            return f'I got: {the_input}'
+            return  'I got:  5.678     '
 
 * I remove the commented line
 
@@ -2600,7 +2643,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_a_string():
 
-  still green.
+  the test is still green.
 
 * I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_s_string`
 
@@ -2649,7 +2692,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_a_list():
 
-  the test is still green.
+  still green.
 
 * I remove the commented line
 
@@ -2682,7 +2725,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_a_set():
 
-  still green.
+  green.
 
 * I remove the commented line
 
@@ -2715,7 +2758,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_a_dictionary():
 
-  green.
+  still green.
 
 * I remove the commented line
 
@@ -2751,7 +2794,32 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
     def test_passing_a_class():
 
-  still green.
+  the test is still green because when ``src.telephone.text`` is called, Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── telephone.py
+          └── def text(the_input):
+                  return f'I got: {the input}'
+
+  then uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``
+
+  .. code-block:: python
+
+    a_dictionary = {
+        'key0': 'value0',
+        'keyN': [0, 1, 2, 'n'],
+    }
+
+    text(a_dictionary)
+        text(the_input)
+            the_input = {
+                'key0': 'value0',
+                'keyN': [0, 1, 2, 'n'],
+            }
+            return f'I got: {the_input}'
+            return  "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
 
 * I remove the commented line
 
@@ -2833,29 +2901,95 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
   .. code-block:: python
     :lineno-start:
 
+    def test_passing_a_class():
+        reality = src.telephone.text(object)
+        my_expectation = "I got: <class 'object'>"
+        assert reality == my_expectation
+
+        reality = src.telephone.text(bool)
+        my_expectation = "I got: <class 'bool'>"
+        assert reality == my_expectation
+
+        reality = src.telephone.text(int)
+        my_expectation = "I got: <class 'int'>"
+        assert reality == my_expectation
+
+        reality = src.telephone.text(float)
+        my_expectation = "I got: <class 'float'>"
+        assert reality == my_expectation
+
+        reality = src.telephone.text(str)
+        my_expectation = "I got: <class 'str'>"
+        assert reality == my_expectation
+
+        reality = src.telephone.text(tuple)
+        my_expectation = "I got: <class 'tuple'>"
+        assert reality == my_expectation
+
+        # assert text(list) == "I got: <class 'list'>"
+        reality = src.telephone.text(list)
+        my_expectation = "I got: <class 'list'>"
+        assert reality == my_expectation
+
+        # assert text(set) == "I got: <class 'set'>"
+        reality = src.telephone.text(set)
+        my_expectation = "I got: <class 'set'>"
+        assert reality == my_expectation
+
+        # assert text(dict) == "I got: <class 'dict'>"
+        reality = src.telephone.text(dict)
+        my_expectation = "I got: <class 'dict'>"
+        assert reality == my_expectation
 
 
-----
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # ModuleNotFoundError
+    # AttributeError
 
-----
+* I remove the ``text`` :ref:`function<what is a function?>` from ``test_telephone.py``
 
-----
+  .. code-block:: python
+    :linenos:
 
-----
+    import src.telephone
 
-----
 
-----
+    def test_passing_none():
+        reality = src.telephone.text(None)
+        my_expectation = 'I got: None'
+        assert reality == my_expectation
 
-----
 
-----
+    def test_passing_booleans():
+
+  all the tests are still green because all the calls that were to the ``text`` :ref:`function<what is a function?>` in ``test_telephone.py`` have been rerouted to the ``text`` :ref:`function<what is a function?>` in ``telephone.py`` in the ``src`` folder_. When ``src.telephone.text`` is called Python_ follows this path
+
+  .. code-block:: shell
+
+      src
+      └── telephone.py
+          └── def text(the_input):
+                  return f'I got: {the input}'
+
+* I add a git_ commit message in the other terminal_
+
+  .. code-block:: python
+    :emphasize-lines: 1-2
+
+    git commit -am \
+    'solution from tests'
+
+  the terminal_ shows a summary of the changes then goes back to the command line.
+
+:ref:`I can write solutions in a different module from the tests<separate and equal>`.
 
 *********************************************************************************
 test_telephone
 *********************************************************************************
 
-Time to write the program_ that makes the tests pass without looking at ``test_telephone.py``
+Now that the solution is separate from the tests, I can write the program_ that makes the tests pass without looking at ``test_telephone.py``.
 
 ----
 
@@ -2871,24 +3005,38 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: python
 
-    FAILED ...test_passing_a_class - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_a_dictionary - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_a_float - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_a_list - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_a_string - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_a_tuple - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_an_integer - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_booleans - AttributeError:
-            module 'src.telephone' has no attribute 'text'
-    FAILED ...test_passing_none - AttributeError:
-            module 'src.telephone' has no attribute 'text'
+    FAILED ...::test_passing_none -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_booleans -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_an_integer -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_a_float -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_a_string -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_a_tuple -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_a_list -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_a_set -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_a_dictionary -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    FAILED ...::test_passing_a_class -
+        AttributeError: module 'src.telephone'
+                        has no attribute 'text'
+    =================== 10 failed in A.BCs ===================
+
 
   Can you make the tests pass without looking at how I solve it below? You can come back to compare solutions when you are done.
 
@@ -2914,7 +3062,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
     NameError: name 'text' is not defined
 
-* I point it to :ref:`None<what is None?>` to define it
+* I point it to :ref:`None (the simplest object)<what is None?>` to define it
 
   .. code-block:: python
     :linenos:
@@ -2928,6 +3076,8 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
   .. code-block:: python
 
     TypeError: 'NoneType' object is not callable
+
+  because :ref:`I cannot call None like a function<test_type_error_w_the_uncallables>`.
 
 * I make ``text`` a :ref:`function<what is a function?>` to make it callable_
 
@@ -2947,7 +3097,9 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     TypeError: text() takes 0 positional arguments
                but 1 was given
 
-* I make the :ref:`function<what is a function?>` take input
+  because this :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
+
+* I :ref:`make the function take input<how to make a function that takes input>`
 
   .. code-block:: python
     :linenos:
@@ -2963,7 +3115,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
 
   .. code-block:: python
 
-    AssertionError: None != 'I got: None'
+    E       assert None == "I got: <class 'object'>"
 
 * I copy the string_ from the terminal_ and paste it in the :ref:`return statement<the return statement>` to match the expectation of the test
 
@@ -2976,13 +3128,14 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     # def text():
     def text(value):
         # return None
-        return 'I got: None'
+        return "I got: <class 'object'>"
 
   the terminal_ is my friend, and shows :ref:`AssertionError<what causes AssertionError?>`
 
   .. code-block:: python
 
-    AssertionError: 'I got: None' != 'I got: False'
+    E       assert "I got: <class 'object'>"
+                == "I got: <class 'bool'>"
 
 * I add a :ref:`return statement<the return statement>` to see the difference between the input and the expected output (remember :ref:`the identity function?<test_identity_function>`)
 
@@ -2995,37 +3148,39 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     # def text():
     def text(value):
         # return None
-        # return 'I got: None'
+        # return "I got: <class 'object'>"
         return value
 
   the test summary info shows that every test has :ref:`AssertionError<what causes AssertionError?>`
 
-  .. code-block:: python
-    :emphasize-text: I got:
+  .. code-block:: shell
+    :emphasize-text: got:
 
-    AssertionError:
-        <class 'object'> != "I got: <class 'object'>"
-    AssertionError:
-                 {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
-      != "I got: {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}"
-    AssertionError:
-        5.678 != 'I got: 5.678'
-    AssertionError:
-        [0, 1, 2, 'n'] != "I got: [0, 1, 2, 'n']"
-    AssertionError:
-        'hello' != 'I got: hello'
-    AssertionError:
-        (0, 1, 2, 'n') != "I got: (0, 1, 2, 'n')"
-    AssertionError:
-        1234 != 'I got: 1234'
-    AssertionError:
-        False != 'I got: False'
-    AssertionError:
-        None != 'I got: None'
+    FAILED ...::test_passing_none -
+        AssertionError: assert None == 'I got: None'
+    FAILED ...::test_passing_booleans -
+        AssertionError: assert False == 'I got: False'
+    FAILED ...::test_passing_an_integer -
+        AssertionError: assert 1234 == 'I got: 1234'
+    FAILED ...::test_passing_a_float -
+        AssertionError: assert 5.678 == 'I got: 5.678'
+    FAILED ...::test_passing_a_string -
+        AssertionError: assert 'hi' == 'I got: hi'
+    FAILED ...::test_passing_a_tuple -
+        assert (0, 1, 2, 'n') == "I got: (0, 1, 2, 'n')"
+    FAILED ...::test_passing_a_list -
+        assert [0, 1, 2, 'n'] == "I got: [0, 1, 2, 'n']"
+    FAILED ...::test_passing_a_set -
+        assert {0, 1, 2, 'n'} == "I got: {0, 1, 2, 'n'}"
+    FAILED ...::test_passing_a_dictionary -
+        assert {'key0': 'value0', 'keyN': [0, 1, 2, 'n']}
+    == "I got: {'key0': 'value0',...
+    FAILED ...::test_passing_a_class -
+        assert <class 'object'> == "I got: <class 'object'>"
 
   they all expect the input (``value``) as part of the message
 
-* I add a :ref:`return statement<the return statement>` with an `f-string`_
+* I add a :ref:`return statement<the return statement>` with an :ref:`f-string<what is string interpolation?>`
 
   .. code-block:: python
     :linenos:
@@ -3036,7 +3191,7 @@ Time to write the program_ that makes the tests pass without looking at ``test_t
     # def text():
     def text(value):
         # return None
-        # return 'I got: None'
+        # return "I got: <class 'object'>"
         # return value
         return f'I got: {value}'
 
@@ -3081,7 +3236,7 @@ close the project
 review
 *********************************************************************************
 
-Here are the tests I ran to see what happens when I pass :ref:`Python basic data structures<data structures>` from a test to a program_ and place them in an `f-string`_ which is one way to do :ref:`string interpolation<what is string interpolation?>`
+Here are the tests I ran to see what happens when I pass :ref:`objects<what is a class?>` from a test to a program_ and place them in an :ref:`f-string<what is string interpolation?>` which is one way to do :ref:`string interpolation<what is string interpolation?>`
 
 * `test_passing_a_string`_
 * `test_passing_none`_
