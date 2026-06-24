@@ -59,7 +59,7 @@ open the project
 ----
 
 *********************************************************************************
-test_joe
+test_person_factory_w_keyword_arguments
 *********************************************************************************
 
 ----
@@ -69,6 +69,20 @@ test_joe
 =================================================================================
 
 ----
+
+* I add an :ref:`assertion<what is an assertion?>` to :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 17
+    :emphasize-lines: 3
+
+    def test_joe():
+        assert joe() == 'joe, blow, M, 1996'
+        assert factory() == 'joe', 'blow', 'M', '1996'
+
+
+    def test_jane():
+
 
 * I remove the :ref:`assertion<what is an assertion?>` and comments then add a new test :ref:`function<what is a function?>`
 

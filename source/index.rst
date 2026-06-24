@@ -37,15 +37,15 @@ table of contents
   hatches/index
   start here<setup/index>
   conventions
-  make TDD manually<make_tdd/make_tdd_manually_1>
+  make TDD manually<make_tdd/make_tdd_manually>
   what is a module?<exceptions/ModuleNotFoundError>
-  make_tdd/make_tdd_manually_2
+  make_tdd/run_tests_automatically
   what is an assertion?<exceptions/AssertionError/index>
   functions/index
   make a person with variables<how_to/make_person/index>
-  functions/functions_2
+  functions/functions_w_input
   how_to/telephone/index
-  make a person with f-strings<how_to/make_person/make_person_2>
+  make a person with f-strings<how_to/make_person/make_person_w_fstrings>
   make a person<how_to/make_person>
   classes/index
   what causes AttributeError?<exceptions/AttributeError>
@@ -60,7 +60,7 @@ table of contents
   data_structures/dictionaries/index
   make TDD project 3<make_tdd/make_tdd_automatically_w_variables/index>
   questions the book answers<review>
-  make TDD manually<make_tdd/make_tdd_manually_1>
+  make TDD manually<make_tdd/make_tdd_manually>
 
   connect the dots<dot_notation>
   exceptions/index

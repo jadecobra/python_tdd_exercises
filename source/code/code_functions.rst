@@ -8,7 +8,7 @@ what is a function?: tests
 
 the code from ``functions/tests/test_functions.py`` from :ref:`functions<what is a function?>`
 
-.. literalinclude:: functions/test_functions_1.py
+.. literalinclude:: functions/test_functions.py
   :language: python
   :linenos:
 
