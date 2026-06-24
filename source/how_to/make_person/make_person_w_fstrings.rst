@@ -571,7 +571,7 @@ the test passes.
 
     def test_jane():
 
-* I add a :ref:`variable<what is a variable?>` to remove repetition of ``'joe'`` from :ref:`test_joe`
+* I add a :ref:`variable<what is a variable?>` for ``'joe'`` to :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 27
@@ -622,7 +622,7 @@ the test passes.
 
   the test is still green.
 
-* I add a :ref:`variable<what is a variable?>` to remove repetition of ``'blow'`` from :ref:`test_joe`
+* I add a :ref:`variable<what is a variable?>` for ``'blow'`` to :ref:`test_joe`
 
   .. code-block:: python
     :lineno-start: 27
@@ -681,6 +681,153 @@ the test passes.
     def test_jane():
 
   still green.
+
+* I add a :ref:`variable<what is a variable?>` for ``'M'`` to :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 5
+
+    def test_joe():
+        # assert joe() == 'joe, blow, M, 1996'
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+
+        reality = factory(
+            # first_name='joe',
+            first_name=first_name,
+            # last_name='blow',
+            last_name=last_name,
+            sex='M',
+            year_of_birth=1996,
+        )
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``'M'``
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 12-13, 20-21
+
+    def test_joe():
+        # assert joe() == 'joe, blow, M, 1996'
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+
+        reality = factory(
+            # first_name='joe',
+            first_name=first_name,
+            # last_name='blow',
+            last_name=last_name,
+            # sex='M',
+            sex=sex,
+            year_of_birth=1996,
+        )
+        # my_expectation = 'joe, blow, M, 1996'
+        my_expectation = (
+            # f'{first_name}, blow,'
+            f'{first_name}, {last_name},'
+            # ' M, 1996'
+            f' {sex}, 1996'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  green.
+
+* I add a :ref:`variable<what is a variable?>` for ``1996`` to :ref:`test_joe`
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 6
+
+    def test_joe():
+        # assert joe() == 'joe, blow, M, 1996'
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        reality = factory(
+            # first_name='joe',
+            first_name=first_name,
+            # last_name='blow',
+            last_name=last_name,
+            # sex='M',
+            sex=sex,
+            year_of_birth=1996,
+        )
+
+* I use the :ref:`variable<what is a variable?>` to remove repetition of ``1996``
+
+  .. code-block:: python
+    :lineno-start: 27
+    :emphasize-lines: 15-16, 23-24
+
+    def test_joe():
+        # assert joe() == 'joe, blow, M, 1996'
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        reality = factory(
+            # first_name='joe',
+            first_name=first_name,
+            # last_name='blow',
+            last_name=last_name,
+            # sex='M',
+            sex=sex,
+            # year_of_birth=1996,
+            year_of_birth=year_of_birth,
+        )
+        # my_expectation = 'joe, blow, M, 1996'
+        my_expectation = (
+            # f'{first_name}, blow,'
+            f'{first_name}, {last_name},'
+            # ' M, 1996'
+            # f' {sex}, 1996'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+  still green.
+
+* I remove the commented lines
+
+  .. code-block:: python
+    :lineno-start: 27
+
+    def test_joe():
+        first_name = 'joe'
+        last_name = 'blow'
+        sex = 'M'
+        year_of_birth = 1996
+
+        reality = factory(
+            first_name=first_name,
+            last_name=last_name,
+            sex=sex,
+            year_of_birth=year_of_birth,
+        )
+        my_expectation = (
+            f'{first_name}, {last_name},'
+            f' {sex}, {year_of_birth}'
+        )
+        assert reality == my_expectation
+
+
+    def test_jane():
+
+----
+
+
 
 ----
 BOOM
