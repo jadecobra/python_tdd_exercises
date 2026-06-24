@@ -3099,7 +3099,7 @@ what is next?
 
 so far you have seen
 
-:ref:`how to make a Python test driven development environment manually`
+* :ref:`how to make a Python test driven development environment manually`
 * :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 * :ref:`how to pass values from tests to functions<telephone>`

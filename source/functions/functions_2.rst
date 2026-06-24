@@ -5161,8 +5161,11 @@ what is next?
 you have covered a bit so far and know
 
 * :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
 * :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
+* :ref:`how to make a person with strings`
 * :ref:`how to make functions that take input<functions that take input>`
 
 I am going for a walk. :ref:`Would you like to test using a function to make a string from input?<telephone>`

@@ -1742,11 +1742,13 @@ what is next?
 
 you have covered a bit so far and know
 
-:ref:`how to make a Python test driven development environment manually`
-* :ref:`what causes AssertionError<what causes AssertionError?>` and
+* :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
+* :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
 
-:ref:`Would you like to use variables to make a person?<how to make a person with variables>`
+:ref:`Would you like to use variables to make a person?<how to make a person with strings>`
 
 ----
 

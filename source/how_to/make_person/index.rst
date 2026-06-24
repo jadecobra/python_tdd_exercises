@@ -1,6 +1,6 @@
 .. meta::
-  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with variables. Use variables for person data (first name, last name, sex, year of birth). pytest-watcher shows "no tests ran". RED: add def test_joe(): assert joe() == 'joe, blow, M, 1996' → NameError: name 'joe' is not defined. GREEN: joe = None → TypeError: 'NoneType' object is not callable; make def joe(): return None → AssertionError: assert None == 'joe, blow, M, 1996'; fix return value. Repeat for jane, john, mary. REFACTOR: remove the commented lines, git commit -am. Ends with 4 module-level functions that return 'name, surname, X, YYYY' strings + 4 bare assert tests + # Exceptions seen list. Shows why one function per person doesn't scale. Code: person/tests/test_person_1.py. What is next: functions that take input.
-  :keywords: Jacob Itegboje, Pumping Python, how to make a person with variables, python TDD variables, NameError: name 'joe' is not defined, TypeError: 'NoneType' object is not callable, AssertionError: assert None == 'joe, blow, M, 1996', bare assert, pytest-watcher "no tests ran", remove the commented lines, def joe(): return 'joe, blow, M, 1996', functions that return strings, red green refactor, repetition in tests, test_joe test_jane test_john test_mary, person attributes as variables, what is next functions that take input
+  :description: Beginner Python TDD tutorial (Jacob Itegboje, Pumping Python): how to make a person with strings. Use variables for person data (first name, last name, sex, year of birth). pytest-watcher shows "no tests ran". RED: add def test_joe(): assert joe() == 'joe, blow, M, 1996' → NameError: name 'joe' is not defined. GREEN: joe = None → TypeError: 'NoneType' object is not callable; make def joe(): return None → AssertionError: assert None == 'joe, blow, M, 1996'; fix return value. Repeat for jane, john, mary. REFACTOR: remove the commented lines, git commit -am. Ends with 4 module-level functions that return 'name, surname, X, YYYY' strings + 4 bare assert tests + # Exceptions seen list. Shows why one function per person doesn't scale. Code: person/tests/test_person_1.py. What is next: functions that take input.
+  :keywords: Jacob Itegboje, Pumping Python, how to make a person with strings, python TDD variables, NameError: name 'joe' is not defined, TypeError: 'NoneType' object is not callable, AssertionError: assert None == 'joe, blow, M, 1996', bare assert, pytest-watcher "no tests ran", remove the commented lines, def joe(): return 'joe, blow, M, 1996', functions that return strings, red green refactor, repetition in tests, test_joe test_jane test_john test_mary, person attributes as variables, what is next functions that take input
 
 .. include:: ../../links.rst
 
@@ -13,12 +13,12 @@
 .. _random.choice method: `random.choice`_
 
 #################################################################################
-how to make a person with variables
+how to make a person with strings
 #################################################################################
 
 ----
 
-I want to make a contact list of people. I can use variables to represent a person, for example
+I want to make a contact list of people. I can use strings_ to represent a person, for example
 
 * First Name
 * Last Name (Surname)
@@ -843,8 +843,11 @@ what is next?
 you know:
 
 * :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
 * :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
+* :ref:`how to make a person with strings`
 
 :ref:`Would you like to test functions with input?<functions that take input>`
 

@@ -1,13 +1,13 @@
 
 #################################################################################
-how to pass values: tests and solution
+telephone: tests and solution
 #################################################################################
 
 *********************************************************************************
 tests
 *********************************************************************************
 
-the code from ``telephone/tests/test_telephone.py`` from :ref:`how to pass values<telephone>`
+the code from ``telephone/tests/test_telephone.py`` from :ref:`telephone`
 
 .. literalinclude:: tests/test_telephone.py
   :language: python
@@ -17,7 +17,7 @@ the code from ``telephone/tests/test_telephone.py`` from :ref:`how to pass value
 solution
 *********************************************************************************
 
-the solution in ``telephone.py`` from :ref:`how to pass values<telephone>`
+the solution in ``telephone/src/telephone.py`` from :ref:`telephone`
 
 .. literalinclude:: solutions/telephone.py
   :language: python

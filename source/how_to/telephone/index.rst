@@ -12,10 +12,6 @@
 telephone
 #################################################################################
 
-.. raw:: html
-
-  <iframe style="border-radius:12px" width="560" height="315" src="https://www.youtube-nocookie.com/embed/QEiyAO7aEVQ?si=gN_vRO0VrSyWR7R6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 Part of `Computer Programming`_ is sending :ref:`input data<data structures>` to a process and getting :ref:`output data<data structures>` back
 
 .. code-block:: python
@@ -69,7 +65,7 @@ start the project
 
   the terminal_ shows
 
-  .. code-block:: python
+  .. code-block:: shell
 
     Initialized project `telephone`
     at `.../pumping_python/telephone`
@@ -359,9 +355,21 @@ I can pass :ref:`None (the simplest object)<what is None?>` as input to a :ref:`
     TypeError: test_passing_none.<locals>.text()
                takes 0 positional arguments but 1 was given
 
-  because the :ref:`assertion<what is an assertion?>` called the ``text`` :ref:`function<what is a function?>` which belongs to :ref:`test_passing_none` with input (:ref:`None<what is None?>`) and the :ref:`function definition<how to make a function with input>` does not allow any inputs, the parentheses are empty.
+  because the :ref:`assertion<what is an assertion?>` called the ``text`` :ref:`function<what is a function?>` which belongs to :ref:`test_passing_none` with input (:ref:`None<what is None?>`) and the :ref:`function definition<how to make a function that takes input>` does not allow any inputs, the parentheses are empty.
 
-* I add a name to the :ref:`function definition<how to make a function with input>`
+* I add :ref:`TypeError<what causes TypeError?>` to the list of :ref:`Exceptions<errors>` seen
+
+  .. code-block:: python
+    :lineno-start: 8
+    :emphasize-lines: 4
+    :emphasize-text: TypeError
+
+    # Exceptions seen
+    # AssertionError
+    # NameError
+    # TypeError
+
+* I add a name to the :ref:`function definition<how to make a function that takes input>`
 
   .. code-block:: python
     :linenos:
@@ -1511,7 +1519,7 @@ Can I pass a set_ (anything in curly braces ``{ }``, not :ref:`key-value pairs<t
     # Exceptions seen
 
   - I use :kbd:`ctrl/command+s` (Windows_ & Linux_/MacOS_) to run the test a few times and the test stays green with no random failures because Python_ uses the string_ representation of the :ref:`object<what is a class?>` in the curly braces ``{ }``.
-  - It can guarantee the order when I use a :ref:`variable<what is a variable?>` and the :ref:`f-string<what is string interpolation>` to refer to the same exact set_.
+  - It can guarantee the order when I use a :ref:`variable<what is a variable?>` and the :ref:`f-string<what is string interpolation?>` to refer to the same exact set_.
 
 ----
 
@@ -2343,12 +2351,13 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   .. code-block:: python
     :lineno-start: 73
-    :emphasize-lines: 4
+    :emphasize-lines: 5
     :emphasize-text: ModuleNotFoundError
 
     # Exceptions seen
     # AssertionError
     # NameError
+    # TypeError
     # ModuleNotFoundError
 
 * I go to the other terminal_
@@ -2376,12 +2385,13 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   .. code-block:: python
     :lineno-start: 73
-    :emphasize-lines: 5
+    :emphasize-lines: 6
     :emphasize-text: AttributeError
 
     # Exceptions seen
     # AssertionError
     # NameError
+    # TypeError
     # ModuleNotFoundError
     # AttributeError
 
@@ -2645,7 +2655,7 @@ I can also place them in other :ref:`modules<what is a module?>` then use the `i
 
   the test is still green.
 
-* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_s_string`
+* I change the call in the :ref:`assertion<what is an assertion?>` of :ref:`test_passing_a_string`
 
   .. code-block:: python
     :lineno-start: 40
@@ -3252,8 +3262,9 @@ I also saw these :ref:`Exceptions<errors>`
 
 * :ref:`AssertionError<what causes AssertionError?>`
 * :ref:`NameError<test_catching_name_error_in_tests>`
-* :ref:`AttributeError<what causes AttributeError?>`
 * :ref:`TypeError<what causes TypeError?>`
+* :ref:`ModuleNotFoundError<what causes ModuleNotFoundError?>`
+* :ref:`AttributeError<what causes AttributeError?>`
 
 ----
 
@@ -3261,7 +3272,7 @@ I also saw these :ref:`Exceptions<errors>`
 code from the chapter
 *************************************************************************************
 
-:ref:`Do you want to see all the CODE I typed in this chapter?<how to pass values: tests and solution>`
+:ref:`Do you want to see all the CODE I typed in this chapter?<telephone: tests and solution>`
 
 ----
 
@@ -3271,12 +3282,16 @@ what is next?
 
 You now know:
 
-:ref:`how to make a Python test driven development environment manually`
+* :ref:`how to make a Python test driven development environment manually`
+* :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
 * :ref:`what causes AssertionError<what causes AssertionError?>`
 * :ref:`how to make functions<what is a function?>`
-* :ref:`how to pass values from tests to functions<telephone>`
+* :ref:`how to make a person with strings`
+* :ref:`how to make functions that take input<functions that take input>`
+* :ref:`how to place values in strings<telephone>`
 
-:ref:`would you like to test using dictionaries and functions to make a person?<how to make a person>`
+:ref:`would you like to test using f-strings to make a person with one function?<how to make a person with f-strings>`
 
 ----
 

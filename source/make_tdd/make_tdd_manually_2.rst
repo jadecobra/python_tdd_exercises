@@ -643,6 +643,7 @@ You know
 
 * :ref:`how to make a Python test driven development environment manually`
 * :ref:`what a Python module is<what is a module?>`
+* :ref:`how to run tests automatically`
 
 :ref:`Would you like to know what causes AssertionError<what is an assertion?>`
 

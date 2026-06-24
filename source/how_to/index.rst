@@ -42,6 +42,6 @@ Here is the code you will have at the end of the above chapters
 * :ref:`makePythonTdd`
 * :ref:`how to make a calculator: tests and solutions`
 * :ref:`how to make a person: tests and solution`
-* :ref:`how to pass values: tests and solution`
+* :ref:`how to pass values (telephone): tests and solution<telephone: tests and solution>`
 * :ref:`how to handle Exceptions (Errors): tests and solutions`
 * :ref:`how to measure sleep duration: tests and solution`

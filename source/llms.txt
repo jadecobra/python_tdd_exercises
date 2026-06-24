@@ -28,7 +28,7 @@
 - [lists: tests and solutions](https://www.pumpingpython.com/code/code_lists.html)
 - [ModuleNotFoundError: test](https://www.pumpingpython.com/code/code_module_not_found_error.html)
 - [data structures: None: tests](https://www.pumpingpython.com/code/code_none.html)
-- [how to pass values: tests and solution](https://www.pumpingpython.com/code/code_telephone.html)
+- [telephone: tests and solution](https://www.pumpingpython.com/code/code_telephone.html)
 - [how to make a person: tests and solution](https://www.pumpingpython.com/code/code_person_factory.html)
 - [how to measure sleep duration: tests and solution](https://www.pumpingpython.com/code/code_sleep_duration.html)
 - [truth table: tests and solutions](https://www.pumpingpython.com/code/code_truth_table.html)
