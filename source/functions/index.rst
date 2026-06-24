@@ -157,7 +157,7 @@ start the project
 
 * I open ``test_functions.py``
 
-* I add :ref:`the first failing test<test_failure>` to ``test_functions.py``
+* I delete all the text then add :ref:`the first failing test<test_failure>` to ``test_functions.py``
 
   .. code-block:: python
     :linenos:
@@ -214,13 +214,12 @@ start the project
   .. code-block:: python
 
     [main (root-commit) a0b12c3] setup project
-     9 files changed, X insertions(+)
+     8 files changed, X insertions(+)
      create mode 100644 .gitignore
      create mode 100644 .python-version
      create mode 100644 README.md
      create mode 100644 pyproject.toml
      create mode 100644 requirements.txt
-     create mode 100644 src/functions.py
      create mode 100644 tests/__init__.py
      create mode 100644 tests/test_functions.py
      create mode 100644 uv.lock
@@ -275,7 +274,7 @@ start the project
     # Exceptions seen
     # AssertionError
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :linenos:

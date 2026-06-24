@@ -150,7 +150,7 @@ Time to use a :ref:`variable<what is a variable?>` for the name of the project
 
 * I hold :kbd:`ctrl` on the keyboard, then click on ``tests/pro_magic.py`` in the terminal_ to open it
 
-* then I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
+* I change :ref:`True<test_what_is_true>` to :ref:`False<test_what_is_false>` in the :ref:`assertion<what is an assertion?>`
 
   .. code-block:: python
     :lineno-start: 7
